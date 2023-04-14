@@ -27,9 +27,9 @@
                         </p>
                         <div>
                             <a href="{{ route('register') }}?type=2"
-                                class="btn btn-primary fw-700 py-3 px-4 rounded-1">{{ translate('I want to Hire') }}</a>
+                                class="btn btn-primary fw-700 py-3 px-4 mb-3 rounded-1">{{ translate('I want to Hire') }}</a>
                             <a href="{{ route('register') }}?type=1"
-                                class="btn btn-outline-primary py-3 px-4 ml-3 rounded-1">{{ translate('I want to Work') }}</a>
+                                class="btn btn-outline-primary py-3 px-4 ml-lg-3 mb-3 rounded-1">{{ translate('I want to Work') }}</a>
                         </div>
                     </div>
                 </div>
