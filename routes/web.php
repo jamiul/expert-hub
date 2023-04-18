@@ -64,6 +64,14 @@ Route::post('/user-account-type', 'UserController@set_account_type')->name('user
 Route::get('/blog', 'BlogController@all_blog')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
 
+//why scholarships
+Route::get('/success-stories', function (){
+    return view('frontend.default.success-stories');
+})->name('success-stories');
+Route::get('/review', function (){
+    return view('frontend.default.review');
+})->name('review');
+
 Route::group(['middleware' => ['user']], function(){
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');
     Route::get('/packages/free-package-purchase/{id}', 'PackageController@package_purchase_free')->name('package_purchase_free');
