@@ -1,8 +1,13 @@
+<style type="text/css">
+    .dropdown:hover .dropdown-menu{
+        display:block;
+    }
+</style>
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
     <div class="aiz-navbar py-0px fs-14 position-relative">
         <div class="container-fluid py-18px px-lg-5 d-none d-md-block">
             <div class="d-flex align-items-center justify-content-between">
-            
+
             @if (!Auth::check())
             <div class="col-4 p-0">
                     <a href="{{ route('register') }}?type=2"
@@ -89,7 +94,7 @@
                                                     <path id="Path_25813" data-name="Path 25813" d="M10,310.65a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Z" fill="#5a6780"/>
                                                 </g>
                                             </svg>
-                                                
+
                                             @php $noti_num = \App\Utility\NotificationUtility::get_my_notifications(10,true,true); @endphp
                                             @if($noti_num != 0)
                                                 <span class="badge badge-circle badge-primary position-absolute absolute-top-right">
@@ -97,7 +102,7 @@
                                                     {{  $noti_num }}
                                                 </span>
                                             @endif
-    
+
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-lg py-0">
                                             <div class="p-3 bg-light border-bottom">
@@ -161,7 +166,7 @@
                                             <div class="p-3 bg-light border-bottom">
                                                 <h6 class="mb-0">{{ translate('Messages') }}</h6>
                                             </div>
-    
+
                                             <div class="c-scrollbar-light" style="overflow-y:auto;max-height:300px;">
                                                 @forelse ($unseen_chat_threads as $key => $chat_thread_id)
                                                     @php
@@ -261,9 +266,9 @@
                             </ul>
                         </nav>
                     </div>
-                </div>            
+                </div>
 
-                
+
             </div>
         </div>
 
@@ -278,7 +283,7 @@
                 <div class="aiz-navbar py-17px  fs-14 position-relative ">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between">
-                            
+
                             <nav class="navbar navbar-expand-lg ">
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
@@ -305,17 +310,24 @@
                                         <li class="nav-item">
                                             <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white " href="#">{{ translate('Why Scholarships Australia') }}</a>
-                                        </li>
+                                        <div class="dropdown">
+                                                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                {{ translate('Why Scholarships Australia') }}
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">{{ translate('Ways to earn') }}</a>
+                                                    <a class="dropdown-item pe-2" href="#">{{ translate('Find ways to promote yourself') }}</a>
+                                                    <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                                                </div>
+                                            </div>
                                     </ul>
                                 </div>
                             </nav>
-                            
+
                             <li class="dropdown ml-3 d-block d-sm-none">
                                 <button class="btn p-0 dropdown-toggle no-arrow" type="button" data-toggle="dropdown">
                                     <span class="las la-bars text-white fs-24">
-                                    
+
                                     </span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -353,7 +365,7 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
         @endif
     </div>
