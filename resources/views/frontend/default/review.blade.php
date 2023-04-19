@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <div class="mx-3 rounded-md my-2 py-2" style="background: #F2F7F2;">
+    <div class="mx-3 rounded-md my-2 py-5" style="background: #F2F7F2;">
         <div class="row">
             <div class="col-lg-6 my-auto py-2 px-5">
                 <h3 class="fw-700 text-success fs-24px">Reviews on Australia scholarship</h3>
@@ -43,11 +43,19 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h2>What they're saying</h2>
-                
+                <div class="mt-3">
+                    <h5 class="fw-bold">All Specializations</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Development & IT</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Design & Creative</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Sales & Marketing</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Writing & Translation</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Admin & Customer Support</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Finance & Accounting</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Engineering & Architecture</h5>
+                    <h5 class="text-muted " style="cursor:pointer;">Legal</h5>
+                </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 " style="height:450px;
-  overflow-y: scroll;
-">
+            <div class="col-lg-8 col-md-8 col-sm-12 " style="height:450px; overflow-y:scroll;">
                 <div class="border border border-white rounded-2 p-3 my-2">
                     <h3>Stephen and Amiya worked together through Talent Marketplace</h3>
                     <div class="mt-5 ">
@@ -105,6 +113,118 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5 py-5" style="background: #F7FAF7;">
+        <div class="container py-3">
+            <h3 class="fw-700 text-black fs-25">See how businesses get work done on Australia scholarship</h3>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <iframe class="embed-responsive-item d-block" src=""></iframe>
+                    <button class="bg-success mt-4 py-2 px-4 text-white fw-bold fs-16 rounded-1 border-none">
+                        Read more success stories
+                    </button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card bg-white ">
+                                <div class="p-3">
+                                    <h4 class="fw-700 fs-22 mb-5">Nasdaq Leans on Hybrid Teams to Transform Itself into a Digital Media Leader</h4>
+                                    <a href="" class="fs-16 mt-5">Read Article</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+
+                            <div class="card bg-white">
+                                <div class="p-3">
+                                    <h4 class="fw-700 fs-22 mb-5">Nasdaq Leans on Hybrid Teams to Transform Itself into a Digital Media Leader</h4>
+                                    <a href="" class="fs-16 mt-5 underline">Read Article</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2 d-flex align-content-center mt-5  ">
+                <h4 class="text-muted py-3 px-5">Trusted By </h4>
+                <img class=" py-3 px-5" src="{{my_asset('Microsoft.svg')}}" alt="">
+                <img class=" py-3 px-5" src="{{my_asset('Airbnb.svg')}}" alt="">
+                <img class=" py-3 px-5" src="{{my_asset('automatic.svg')}}" alt="">
+                <img class=" py-3 px-5" src="{{my_asset('Bissell.svg')}}" alt="">
+                <img class=" py-3 px-5" src="{{my_asset('NASDAQ.svg')}}" alt="">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-white">
+        <div class="container">
+            <h3 class="fw-700 text-black fs-25">Explore worldwide reviews</h3>
+            <div class="row mt-3">
+                <div class="col-lg-3 col-md-6 col-sm-12 ">
+                    <h5 class="fs-16 py-1">Upwork South Africa Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork Pakistan Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork Nigeria Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork United Arab Emirates...</h5>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fs-16 py-1">Upwork Australia Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork Great Britain Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork Canada Reviews</h5>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fs-16 py-1">Upwork India Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork Philippines Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork Israel Reviews</h5>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fs-16 py-1">Upwork Singapore Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork New Zealand Reviews</h5>
+                    <h5 class="fs-16 py-1">Upwork United States Reviews</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h3 class="mb-5 fw-700 text-black fs-25">See what people say about other ways to work</h3>
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 rounded-2 mx-3 " style="background: #E4EBE4; cursor:pointer;">
+                <div class="py-2 px-1">
+                    <h4 class="mb-3 py-2 text-black fs-20 display-2 fw-700">Talent Marketplace</h4>
+                    <a class="my-3 fs-16 " href="">Read Reviews</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 rounded-2 mx-3 " style="background: #E4EBE4;cursor:pointer;">
+                <div class="py-2 px-1">
+                    <h4 class="mb-3 py-2 text-black fs-20 display-2 fw-700">Enterprise Suite</h4>
+                    <a class="my-3 fs-16 " href="">Read Reviews</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 rounded-2 mx-3" style="background: #E4EBE4; cursor:pointer;">
+                <div class="py-2 px-1">
+                    <h4 class="mb-3 py-2 text-black fs-20 display-2 fw-700">Project Catalog</h4>
+                    <a class="my-3 fs-16 " href="">Read Reviews</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h4 class="fw-700 text-black fs-25">How to get started</h4>
+        <div class="border-bottom mt-3">
+            <div class="d-flex">
+                <h5 class="mr-3">Hiring talent</h5>
+                <h5>Finding work</h5>
             </div>
         </div>
     </div>
