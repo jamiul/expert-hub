@@ -447,6 +447,100 @@
 
     </div>
 
+    <!-- support  -->
+    <div class="row jumbotron container  mx-5">
+
+      <div class="row">
+        <div class="col-sm-4 container-fluid">
+          <div class="">
+            <div class="d-flex align-items-center mb-2 g-2">
+
+              <h2>Our support</h2>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 ">
+          <div class="container ">
+            <div class="row">
+              <div class="col-lg-6">
+
+                <div class=" border-bottom border-success">
+                  <p class="m-0 h4 ">Client reviews
+                  </p>
+                </div>
+
+                <p class="h5 mb-2 ">Read client details and feedback from professionals like
+                  you.</p>
+
+
+                <div class=" border-top border-success text-lg mt-5">
+
+                  <div class="d-flex align-items-center gap-5 mt-2">
+
+                    <p class="text-center m-0 h4 ">Protected payments</p>
+                  </div>
+
+                  <p class="h5 mb-2">Get paid the way you want, secure and fully protected.</p>
+
+                </div>
+                <div class=" border-top border-success text-lg mt-5">
+
+                  <div class="d-flex align-items-center gap-5 mt-2">
+
+                    <p class="text-center m-0 h4 ">Answers to questions</p>
+                  </div>
+
+                  <p class="h5 mb-2">Everything you need in our help center, resources, and community.</p>
+
+                </div>
+
+              </div>
+              <div class="col-lg-6">
+
+                <div class=" border-bottom border-success">
+                  <p class="m-0 h4 ">Client reviews
+                  </p>
+                </div>
+
+                <p class="h5 mb-2 ">Read client details and feedback from professionals like
+                  you.</p>
+
+
+                <div class=" border-top border-success text-lg mt-5">
+
+                  <div class="d-flex align-items-center gap-5 mt-2">
+
+                    <p class="text-center m-0 h4 ">Trusted jobs</p>
+                  </div>
+
+                  <p class="h5 mb-2">We use various tools to detect and reduce fraud with a dedicated team 24/7.</p>
+
+                </div>
+                <div class=" border-top border-success text-lg mt-5">
+
+                  <div class="d-flex align-items-center gap-5 mt-2">
+
+                    <p class="text-center m-0 h4 ">Help with disputes
+                    </p>
+                  </div>
+
+                  <p class="h5 mb-2">We’ll step in and help you resolve a tricky situation.</p>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
 
 
 
