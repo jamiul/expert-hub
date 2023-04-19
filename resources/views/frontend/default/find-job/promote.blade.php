@@ -1,0 +1,1 @@
+<h1>This is promote page</h1>
