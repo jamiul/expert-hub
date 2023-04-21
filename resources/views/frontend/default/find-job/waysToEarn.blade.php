@@ -146,14 +146,11 @@
       <div class="row">
         <div class="col-sm-6 container-fluid">
           <div class="">
-            <div class="d-flex align-items-center justify-content-center mb-2 g-2">
-              <img class="text-center text-success" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
+            <div class="d-flex align-items-center mb-2">
+              <img class="text-center" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
                 style="width:15px;" />
-              <h6 class="text-center  m-0">
-
-                Take control. Find work that hits your financial goals faster with ambitious startups and well-known
-                brands.</h6>
-
+              <p class="text-center m-0 ">Work and earn your way. Search for jobs or have clients come to you. The
+                opportunities are endless.</p>
             </div>
             <div class="d-flex align-items-center mb-2">
               <img class="text-center" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
@@ -164,7 +161,7 @@
                 connections.</p>
 
 
-              </p>
+
             </div>
             <div class="d-flex align-items-center mb-2">
               <img class="text-center" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
@@ -263,9 +260,9 @@
           <div class="col-md-7 d-flex align-items-center justify-content-center ">
 
             <div>
-              <h4>Kolya T.</h4>
-              <h5>Owner of Wordpress Lab Agency, USA. Certified Wordpress expert who built his own agency on Upwork.
-              </h5>
+              <h5>Kolya T.</h5>
+              <h6>Owner of Wordpress Lab Agency, USA. Certified Wordpress expert who built his own agency on Upwork.
+              </h6>
               <div class="d-flex mr-5">
                 <button type=" button" class="btn btn-light border border-1 mt-3">$50/hr</button>
                 <div class="d-flex align-items-center ml-5">
@@ -277,10 +274,10 @@
                 </div>
               </div>
 
-              <p class="lead my-3">"Scholarships Australia is more than a platform. It is a lifestyle. It has helped me
+              <h6 class="lead my-3">"Scholarships Australia is more than a platform. It is a lifestyle. It has helped me
                 grow my agency
                 by
-                three digits and generates more leads than any other channel."</p>
+                three digits and generates more leads than any other channel."</h6>
             </div>
           </div>
 
