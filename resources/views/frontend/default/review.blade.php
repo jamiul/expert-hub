@@ -5,7 +5,7 @@
     <div class="mx-3 rounded-md my-2 py-5" style="background: #F2F7F2;">
         <div class="row">
             <div class="col-lg-6 my-auto py-2 px-5">
-                <h3 class="fw-700 text-success fs-24px">Reviews on Australia scholarship</h3>
+                <h3 class="fw-700 text-success fs-24px">Reviews on Scholarship australia</h3>
                 <p class="fs-18px text-black">See how clients and talent celebrate their wins and stay accountable for their work together, or join today to make your own connections.</p>
 
                 <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2">Join scholarship</button>
@@ -119,7 +119,7 @@
 
     <div class="my-5 py-5" style="background: #F7FAF7;">
         <div class="container py-3">
-            <h3 class="fw-700 text-black fs-25">See how businesses get work done on Australia scholarship</h3>
+            <h3 class="fw-700 text-black fs-25">See how businesses get work done on Scholarship australia</h3>
 
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -169,26 +169,26 @@
             <h3 class="fw-700 text-black fs-25">Explore worldwide reviews</h3>
             <div class="row mt-3">
                 <div class="col-lg-3 col-md-6 col-sm-12 ">
-                    <h5 class="fs-16 py-1">Upwork South Africa Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork Pakistan Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork Nigeria Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork United Arab Emirates...</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia South Africa Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Pakistan Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Nigeria Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia United Arab Emirates...</h5>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <h5 class="fs-16 py-1">Upwork Australia Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork Great Britain Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork Canada Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Australia Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Great Britain Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Canada Reviews</h5>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <h5 class="fs-16 py-1">Upwork India Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork Philippines Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork Israel Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia India Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Philippines Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Israel Reviews</h5>
 
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <h5 class="fs-16 py-1">Upwork Singapore Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork New Zealand Reviews</h5>
-                    <h5 class="fs-16 py-1">Upwork United States Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia Singapore Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia New Zealand Reviews</h5>
+                    <h5 class="fs-16 py-1">Scholarship australia United States Reviews</h5>
                 </div>
             </div>
         </div>
@@ -227,6 +227,39 @@
                 <h5>Finding work</h5>
             </div>
         </div>
+        <div>
+            <div class=" row mt-3" >
+                <div class="mr-3 shadow-sm col-lg-3 col-md-6 col-sm-12"  style="background: #F2F7F2;">
+                   <div class="my-2 rounded-1 h-150px" style="background: #91E6B3;">
+                   <img class="mx-auto d-block w-150px h-120px" src="{{my_asset('Post-A-Job.png')}}" alt="" style="">
+                   </div>
+                    <h5>Post a job (it’s free)</h5>
+                    <p class="fs-16 text-muted">Tell us what you need. Provide as many details as possible, but don’t worry about getting it perfect.</p>
+                </div>
+                <div class=" shadow-sm col-lg-3 col-md-6 col-sm-12"  style="background: #F2F7F2;">
+                   <div class="my-2  text-center rounded-1 h-150px" style="background: #91E6B3;">
+                   <img class="mx-auto d-block w-170px h-120px" src="{{my_asset('Post-A-Job.png')}}" alt="" style="">
+                   </div>
+                    <h5>Post a job (it’s free)</h5>
+                    <p class="fs-16 text-muted">Tell us what you need. Provide as many details as possible, but don’t worry about getting it perfect.</p>
+                </div>
+                <div class=" shadow-sm col-lg-3 col-md-6 col-sm-12"  style="background: #F2F7F2;">
+                   <div class="my-2  text-center rounded-1 h-150px" style="background: #91E6B3;">
+                   <img class="mx-auto d-block w-170px h-120px" src="{{my_asset('Post-A-Job.png')}}" alt="" style="">
+                   </div>
+                    <h5>Post a job (it’s free)</h5>
+                    <p class="fs-16 text-muted">Tell us what you need. Provide as many details as possible, but don’t worry about getting it perfect.</p>
+                </div>
+                <div class=" shadow-sm col-lg-3 col-md-6 col-sm-12"  style="background: #F2F7F2;">
+                   <div class="my-2  text-center rounded-1 h-150px" style="background: #91E6B3;">
+                   <img class="mx-auto d-block w-180px h-120px" src="{{my_asset('Post-A-Job.png')}}" alt="" style="">
+                   </div>
+                    <h5>Post a job (it’s free)</h5>
+                    <p class="fs-16 text-muted">Tell us what you need. Provide as many details as possible, but don’t worry about getting it perfect.</p>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 @endsection
