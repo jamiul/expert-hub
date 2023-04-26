@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WhyScholarshipController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -68,9 +69,8 @@ Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
 Route::get('/success-stories', function (){
     return view('frontend.default.success-stories');
 })->name('success-stories');
-Route::get('/review', function (){
-    return view('frontend.default.review');
-})->name('review');
+Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
+Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
 
 Route::group(['middleware' => ['user']], function(){
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');

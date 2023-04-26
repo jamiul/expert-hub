@@ -4,8 +4,8 @@
     }
 </style>
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
-    <div class="aiz-navbar py-0px fs-14 position-relative">
-        <div class="container-fluid py-18px px-lg-5 d-none d-md-block">
+    <div class="aiz-navbar py-0px fs-15 position-relative">
+        <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
             <div class="d-flex align-items-center justify-content-between">
 
                 @if (!Auth::check())
@@ -266,7 +266,7 @@
                         <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
                     </a>
                 </div>
-                <div class="aiz-navbar py-17px  fs-14 position-relative ">
+                <div class="aiz-navbar py-17px  fs-15 position-relative ">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between">
 
@@ -303,8 +303,8 @@
                                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown" style="width:400px;">
                                                 <a class="dropdown-item" href="{{route('success-stories')}}">{{ translate('Success Stories') }}</a>
                                                 <a class="dropdown-item pe-2" href="{{route('review')}}">{{translate('Reviews')}}</a>
-                                                <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('How to Hire') }}</a>
-                                                <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('How to find job') }}</a>
+                                                <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
+                                                <a class="dropdown-item" href="{{route('search') }}?keyword=&type=project">{{ translate('How to find job') }}</a>
                                             </ul>
                                         </li>
                                     </ul>

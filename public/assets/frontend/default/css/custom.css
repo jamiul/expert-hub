@@ -1,1 +1,69 @@
 /*your custom css goes here*/
+
+.dropdown-menu {
+    max-width: unset;
+}
+
+.aiz-navbar .menu a {
+    font-size: 15px;
+}
+
+.aiz-main-wrapper {
+    overflow-x: unset;
+  }
+/* why scholarship - review */
+
+#ch {
+    display: none;
+}
+#leave {
+    display: none;
+}
+#contest {
+    display: none;
+}
+#ch:checked ~ label{
+    display: none;
+}
+#ch:checked ~ .content{
+    display: block;
+}
+#leave:checked ~ label{
+    display: none;
+}
+#leave:checked ~ .content{
+    display: block;
+}
+#contest:checked ~ label{
+    display: none;
+}
+#contest:checked ~ .content{
+    display: block;
+}
+.content{
+    display: none;
+}
+label{
+    display: inline-block;
+    cursor: pointer;
+    margin: 0;
+    color:rgb(77, 95, 230) ;
+    font-size: 15px;
+    margin-bottom: 10px;
+
+}
+p{
+    margin: 0 !important;
+    font-size: 16px;
+}
+.joinscholarship{
+    cursor:pointer;
+}
+.joinscholarship:hover{
+    background: #1C51AF;
+}
+.get-work-title{
+    margin-bottom: 25px;
+    color: black;
+    width: 600px;
+}
