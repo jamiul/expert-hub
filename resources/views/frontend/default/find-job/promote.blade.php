@@ -76,7 +76,9 @@
               <h5 class="card-title mt-3">Availability badge</h5>
               <p class="card-text">Let clients know you’re ready to work and available now with a bold, blue badge on
                 your profile, and in search results. Help clients find you faster.</p>
-              <button class="btn btn rounded-pill border border-secondary">Learn more</button>
+              <button class="btn btn rounded-pill border border-secondary"><a class="text-dark"
+                  href="{{route('badge')}}">Learn
+                  more</a> </button>
             </div>
           </div>
         </div>
@@ -91,7 +93,9 @@
                 boost your proposal. If your bid wins, you’ll land in the client’s top three slots with an
                 eye-catching
                 blue lightning bolt</p>
-              <button class="btn btn rounded-pill border border-secondary">Learn more</button>
+              <button class="btn btn rounded-pill border border-secondary"><a class="text-dark"
+                  href="{{route('proposal')}}">Learn
+                  more</a> </button>
             </div>
           </div>
         </div>

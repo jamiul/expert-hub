@@ -74,10 +74,19 @@ Route::get('/waysToEarn', function(){
 
 	return view('frontend.default.find-job.waysToEarn');
 })->name('waysToEarn');
+
 Route::get('/promote', function(){
 
 	return view('frontend.default.find-job.promote');
 })->name('promote');
+Route::get('/badge', function(){
+
+	return view('frontend.default.find-job.badge');
+})->name('badge');
+Route::get('/proposal', function(){
+
+	return view('frontend.default.find-job.proposal');
+})->name('proposal');
 Route::get('/skills', function(){
 
 	return view('frontend.default.find-job.skills');
