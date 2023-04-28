@@ -20,7 +20,9 @@
           <h5 class="my-3">Stand out from the competition and get more control over your chances of winning the work you
             want.
           </h5>
-          <button class="btn btn rounded-pill bg-white mt-3">Find work</button>
+
+          <button class="btn btn rounded-pill bg-white mt-3"><a class="text-dark" href="{{route('home')}}">Find
+              work</a> </button>
       </div>
       <div class=" rounded">
         <img src="{{url('/public/assets/findJob/promote.jpg')}}" alt="Image" "
@@ -43,8 +45,9 @@
               career. Win more work, increase your earning power and build longer-lasting relationships with clients who
               know you best.
             </h6>
-            <button class="btn btn rounded-pill mt-5" style="background-color:#50A907;"><span class="text-white">Learn
-                more</span></button>
+            <button class="btn btn rounded-pill mt-5" style="background-color:#50A907;"><span class="text-white"><a
+                  class="text-dark" href="{{route('sendProposal')}}">Learn
+                  more</a> </span></button>
           </div>
         </div>
 

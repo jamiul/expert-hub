@@ -75,10 +75,17 @@ Route::get('/waysToEarn', function(){
 	return view('frontend.default.find-job.waysToEarn');
 })->name('waysToEarn');
 
+// promote content 
+
 Route::get('/promote', function(){
 
 	return view('frontend.default.find-job.promote');
 })->name('promote');
+Route::get('/sendProposal', function(){
+
+	return view('frontend.default.find-job.sendProposal');
+})->name('sendProposal');
+
 Route::get('/badge', function(){
 
 	return view('frontend.default.find-job.badge');
