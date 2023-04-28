@@ -10,7 +10,7 @@
 
 
     @section('content')
-    <>
+    <div>
         <div class="mx-2 rounded-2 my-3" style="background: #F2F7F2;">
             <div class="row py-3">
                 <div class="col-lg-6 py-2 px-5 mt-3 wrap  ">
@@ -104,11 +104,11 @@
                                     <p class=" text-black fw-700 fs-20px">Ron Z.</p>
                                     <p class="card-text">Front-end developer</p>
                                 </div>
-                              <div>
-                                  <p class="fw-700 text-black text-center my-5">5.0
-                                    /5
-                                    (124 jobs)</p>
-                              </div>
+                                <div>
+                                    <p class="fw-700 text-black text-center my-5">5.0
+                                        /5
+                                        (124 jobs)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,10 +122,128 @@
                 </div>
             </div>
 
+            <div class="row my-5">
+                <div class="col-lg-6 col-sm-12 my-auto">
+                    <h1 class="fw-700 text-black ">4 Ways to Use Upwork to Achieve Your Goals</h1>
+                    <p class="text-muted">As the world’s work marketplace, there’s more than one way to use Upwork—and at least one that works for you. From quick project turnarounds to major strategic transformations, businesses of all sizes and ambitions can develop the trusted relationships they need to thrive and grow.</p>
+                </div>
+                <div class="col-lg-6 col-sm-12 ">
+
+                    <iframe class="embed-responsive-item d-block" src=""></iframe>
+
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h1 class="text-black fw-700">The seal of approval</h1>
+                <div class=" border-bottom mt-3"></div>
+                <div class="row mt-3">
+                    <div class="col-lg-6 col-12">
+                        <p class="approvalHead">You’ll have plenty of help choosing the right person for the job. And no matter who you’re hiring you can:</p>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="approvalCheckMark">
+                            <div class="d-flex mb-2 approvalCheckMark">
+                                <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                                <p>Browse similar projects they’ve worked on</p>
+                            </div>
+                            <div class="d-flex mb-2 approvalCheckMark">
+                                <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                                <p>Directly access proven talent without unnecessary layers</p>
+                            </div>
+                            <div class="d-flex mb-2 approvalCheckMark">
+                                <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                                <p>Check their portfolio</p>
+                            </div>
+                            <div class="d-flex mb-2 approvalCheckMark">
+                                <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                                <p>Check qualifications</p>
+                            </div>
+                            <div class="d-flex  approvalCheckMark">
+                                <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                                <p>Run a chat or video interview</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trusted By -->
+                    <div class=" border-bottom   trusted-main">
+                        <p class="text-muted trusted mr-4">Trusted By </p>
+                        <img class=" py-3 px-5 mr-4" src="{{my_asset('Microsoft.svg')}}" alt="">
+                        <img class=" py-3 px-5 mr-4" src="{{my_asset('Airbnb.svg')}}" alt="">
+                        <img class=" py-3 px-5 mr-4" src="{{my_asset('automatic.svg')}}" alt="">
+                        <img class=" py-3 px-5 mr-4" src="{{my_asset('Bissell.svg')}}" alt="">
+                        <img class=" py-3 px-5 mx-4" src="{{my_asset('NASDAQ.svg')}}" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-5 col-sm-12 mr-5">
+                    <img class="img-fluid rounded-2 h-650px" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-12 mt-5 ml-5">
+                    <div>
+                        <h1 class="fw-700 text-black ">You’re safe with us</h1>
+                        <h3 class="text-muted">You get what you pay for. And we can prove it.</h3>
+                        <p class="text-black fw-bold mb-4 fs-18">On hourly contracts, <span class="text-muted">we count keystrokes and take random screenshots of your freelancer’s screen so you can see they’re putting in the time.</span></p>
+
+                        <p class="text-black fw-bold mt-4 fs-18">On fixed-price contracts,<span class="text-muted">you agree on milestones and only pay up when those milestones are hit.</span> </p>
+                    </div>
+                    <div class="mt-4">
+                        <h1 class="fw-700 text-black ">All in one place</h1>
+                        <h3 class="text-muted">Once you sign in you’ll get your own online space to manage your project.</h3>
+                        <p class="text-muted fs-18">Use it to securely send and receive files, give real-time feedback and make payments. And if you’re out and about a lot, you’ll want to download the app too.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Frequently asked questions -->
+        <div class="container mt-5 rounded-2" style="background: #F2F7F2;">
+            <div class="mx-2 row">
+                <div class="col-lg-6 col-sm-12 py-3">
+                    <h1 class="fw-700 text-black fs-30px">
+                        Frequently asked questions
+                    </h1>
+                </div>
+                <div class="col-lg-6 col-sm-12 py-3">
+                    <div class=" border-bottom">
+                        <h4 class="fw-700 text-black fs-16px mt-3">What projects can I do on Upwork?
+                        </h4>
+                        <p class="text-muted fs-14px my-3">
+                            Anything people generally do on a computer. Popular tasks are web, mobile and software development, design work and copywriting, but you can also find lawyers, accountants and more.
+                        </p>
+                    </div>
+                    <div class="border-bottom">
+                        <h4 class="fw-700 text-black fs-16px mt-3">How does Upwork make money?</h4>
+                        <p class="text-muted fs-14px my-3 ">
+                            We charge freelancers and agencies a 10% freelancer service fee on their earnings.
+                        </p>
+                    </div>
+                    <div class="  my-2">
+                        <h4 class="fw-700 text-black fs-16px mt-3">What’s the Top Rated program?</h4>
+                        <p class="text-muted fs-14px my-3">
+                            It’s a badge of honor for talent who consistently do great work.
+                        </p>
+
+
+
+
+                    </div>
+                </div>
+            </div>
 
         </div>
-        </div>
-        @endsection
+
+    </div>
+
+    @endsection
 </body>
 
 </html>
