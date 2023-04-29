@@ -94,3 +94,29 @@ p{
     margin-right: 30px;
 
 }
+/* how-to-find-job */
+.img-works{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.blog-img{
+    height: 225px;
+    margin-bottom: 0;
+}
+.Explore-blog-card{
+    border-radius: 0 0 10px 10px;
+}
+.payments-img{
+    border-radius: 0px 10px  10px 0;
+}
+#buildingBusiness {
+    display: none;
+}
+#ch:checked ~ .buildingBusiness{
+    display: block;
+}
+#buildingBusiness:checked ~ label{
+    display: none;
+}

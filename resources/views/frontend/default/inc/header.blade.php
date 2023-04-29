@@ -304,7 +304,7 @@
                                                 <a class="dropdown-item" href="{{route('success-stories')}}">{{ translate('Success Stories') }}</a>
                                                 <a class="dropdown-item pe-2" href="{{route('review')}}">{{translate('Reviews')}}</a>
                                                 <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
-                                                <a class="dropdown-item" href="{{route('search') }}?keyword=&type=project">{{ translate('How to find job') }}</a>
+                                                <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
                                             </ul>
                                         </li>
                                     </ul>

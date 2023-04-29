@@ -71,6 +71,7 @@ Route::get('/success-stories', function (){
 })->name('success-stories');
 Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
 Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
+Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
 Route::group(['middleware' => ['user']], function(){
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');
