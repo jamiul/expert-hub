@@ -11,16 +11,16 @@
 
     @section('content')
     <div>
-        <div class="mx-2 rounded-2 my-3" style="background: #F2F7F2;">
+        <div class="mx-2 rounded-2 my-3 position-relative" style="background: #F2F7F2;">
             <div class="row py-3">
                 <div class="col-lg-6 py-2 px-5 mt-3 wrap  ">
-                    <h3 class="fw-700 text-success fs-40px">Choose your way to get work done</h3>
-                    <p class="fs-18px text-black fw-bold py-3">Find freelancers and run projects your way at the world’s work marketplace.</p>
+                    <h3 class="how-to-hire-banner-title text-success">Choose your way to get work done</h3>
+                    <p class="how-to-hire-banner-text">Find freelancers and run projects your way at the world’s work marketplace.</p>
 
                     <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2">Find talent</button>
 
 
-                    <p class='mt-auto'>Looking to get hired? <a href="#">Sign up here</a></p>
+                    <p class='find-job-banner-rating-section fs-20'>Looking to get hired? <u class="text-success"><a class="text-decoration-underline" href="#">Sign up here</a></u></p>
                 </div>
                 <div class="col-lg-6 py-2 px-5 ">
                     <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 img-fluid" alt="">
@@ -28,10 +28,10 @@
             </div>
         </div>
 
-        <div class="container mt-4 ">
+        <div class="container-main  ">
             <div class="">
-                <h1 class="text-black fw-700 ">Let’s get to work</h1>
-                <p class="get-work-title">Build relationships and create your own Virtual Talent Bench™ for quick project turnarounds or big transformations.</p>
+                <h1 class="hth-lets-work-title ">Let’s get to work</h1>
+                <p class="hth-lets-work-text">Build relationships and create your own Virtual Talent Bench™ for quick project turnarounds or big transformations.</p>
                 <div class="border-bottom border-gray mt-3"></div>
             </div>
 
@@ -41,20 +41,20 @@
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-sm-12 my-auto">
-                    <h1 class="fw-700 text-black ">Post a job and hire a pro</h1>
-                    <h3 class="text-muted">Connect with talent that gets you with Talent Marketplace</h3>
-                    <p class="text-muted">Post your job on the world’s work marketplace and wait for the proposals to flood in from talented people around the world.</p>
-                    <p class="text-muted mt-2">Our advanced algorithms help you shortlist candidates who are the best fit. And you can check profiles, portfolios, and reviews before you give someone the green light.</p>
+                    <h1 class="get-work-child-title ">Post a job and hire a pro</h1>
+                    <h3 class="get-work-child-text">Connect with talent that gets you with Talent Marketplace</h3>
+                    <p class="get-work-child-details mb-3">Post your job on the world’s work marketplace and wait for the proposals to flood in from talented people around the world.</p>
+                    <p class="get-work-child-details">Our advanced algorithms help you shortlist candidates who are the best fit. And you can check profiles, portfolios, and reviews before you give someone the green light.</p>
                     <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find talent</button>
                 </div>
             </div>
 
             <div class="row my-5">
                 <div class="col-lg-5 col-sm-12 my-auto">
-                    <h1 class="fw-700 text-black ">Browse and buy projects</h1>
-                    <h3 class="text-muted">Start critical work right away with Project Catalog</h3>
-                    <p class="text-muted">Rather skip the guesswork? Shop projects already planned for you by the talent who know them best.</p>
-                    <p class="text-muted mt-2">No need to create a job post or sift through a shortlist. Just browse, buy, and get going right away, with clear expectations from the start.</p>
+                    <h1 class="get-work-child-title ">Browse and buy projects</h1>
+                    <h3 class="get-work-child-text">Start critical work right away with Project Catalog</h3>
+                    <p class="get-work-child-details">Rather skip the guesswork? Shop projects already planned for you by the talent who know them best.</p>
+                    <p class="get-work-child-details">No need to create a job post or sift through a shortlist. Just browse, buy, and get going right away, with clear expectations from the start.</p>
                     <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Browse Projects</button>
                 </div>
                 <div class="col-lg-1"></div>
@@ -115,17 +115,17 @@
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-sm-12 my-auto">
-                    <h1 class="fw-700 text-black ">Take the fastlane to the right talent</h1>
-                    <h3 class="text-muted">Let us pinpoint the talent to reach your goals with Talent Scout</h3>
-                    <p class="text-muted mt-2">Talk us through your budget and goals and we’ll do the recruitment for you. You’ll get a shortlist of our very best talent, all perfectly suited to the task.</p>
+                    <h1 class="get-work-child-title  ">Take the fastlane to the right talent</h1>
+                    <h3 class="get-work-child-text">Let us pinpoint the talent to reach your goals with Talent Scout</h3>
+                    <p class="get-work-child-detailsmt-2">Talk us through your budget and goals and we’ll do the recruitment for you. You’ll get a shortlist of our very best talent, all perfectly suited to the task.</p>
                     <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find Out More</button>
                 </div>
             </div>
 
             <div class="row my-5">
                 <div class="col-lg-6 col-sm-12 my-auto">
-                    <h1 class="fw-700 text-black ">4 Ways to Use Upwork to Achieve Your Goals</h1>
-                    <p class="text-muted">As the world’s work marketplace, there’s more than one way to use Upwork—and at least one that works for you. From quick project turnarounds to major strategic transformations, businesses of all sizes and ambitions can develop the trusted relationships they need to thrive and grow.</p>
+                    <h1 class="get-work-child-title  ">4 Ways to Use Upwork to Achieve Your Goals</h1>
+                    <p class="get-work-child-details">As the world’s work marketplace, there’s more than one way to use Upwork—and at least one that works for you. From quick project turnarounds to major strategic transformations, businesses of all sizes and ambitions can develop the trusted relationships they need to thrive and grow.</p>
                 </div>
                 <div class="col-lg-6 col-sm-12 ">
 
@@ -135,7 +135,7 @@
             </div>
 
             <div class="mt-5">
-                <h1 class="text-black fw-700">The seal of approval</h1>
+                <h1 class="hth-lets-work-title">The seal of approval</h1>
                 <div class=" border-bottom mt-3"></div>
                 <div class="row mt-3">
                     <div class="col-lg-6 col-12">
@@ -188,15 +188,15 @@
 
                 <div class="col-lg-5 col-sm-12 mt-5 ml-5">
                     <div>
-                        <h1 class="fw-700 text-black ">You’re safe with us</h1>
-                        <h3 class="text-muted">You get what you pay for. And we can prove it.</h3>
+                        <h1 class="hth-safe-us ">You’re safe with us</h1>
+                        <h3 class="hth-safe-text">You get what you pay for. And we can prove it.</h3>
                         <p class="text-black fw-bold mb-4 fs-18">On hourly contracts, <span class="text-muted">we count keystrokes and take random screenshots of your freelancer’s screen so you can see they’re putting in the time.</span></p>
 
                         <p class="text-black fw-bold mt-4 fs-18">On fixed-price contracts,<span class="text-muted">you agree on milestones and only pay up when those milestones are hit.</span> </p>
                     </div>
                     <div class="mt-4">
-                        <h1 class="fw-700 text-black ">All in one place</h1>
-                        <h3 class="text-muted">Once you sign in you’ll get your own online space to manage your project.</h3>
+                        <h1 class="hth-safe-us ">All in one place</h1>
+                        <h3 class="hth-place-text">Once you sign in you’ll get your own online space to manage your project.</h3>
                         <p class="text-muted fs-18">Use it to securely send and receive files, give real-time feedback and make payments. And if you’re out and about a lot, you’ll want to download the app too.</p>
                     </div>
 
@@ -205,30 +205,30 @@
         </div>
 
         <!-- Frequently asked questions -->
-        <div class="container mt-5 rounded-2" style="background: #F2F7F2;">
+        <div class="container-main rounded-2" style="background: #F2F7F2;">
             <div class="mx-2 row">
                 <div class="col-lg-6 col-sm-12 py-3">
-                    <h1 class="fw-700 text-black fs-30px">
+                    <h1 class="frequently-qsn-main-title">
                         Frequently asked questions
                     </h1>
                 </div>
                 <div class="col-lg-6 col-sm-12 py-3">
                     <div class=" border-bottom">
-                        <h4 class="fw-700 text-black fs-16px mt-3">What projects can I do on Upwork?
+                        <h4 class="frequently-qsn-title">What projects can I do on Upwork?
                         </h4>
-                        <p class="text-muted fs-14px my-3">
+                        <p class="frequently-qsn-details">
                             Anything people generally do on a computer. Popular tasks are web, mobile and software development, design work and copywriting, but you can also find lawyers, accountants and more.
                         </p>
                     </div>
                     <div class="border-bottom">
-                        <h4 class="fw-700 text-black fs-16px mt-3">How does Upwork make money?</h4>
-                        <p class="text-muted fs-14px my-3 ">
+                        <h4 class="frequently-qsn-title">How does Upwork make money?</h4>
+                        <p class="frequently-qsn-details ">
                             We charge freelancers and agencies a 10% freelancer service fee on their earnings.
                         </p>
                     </div>
                     <div class="  my-2">
-                        <h4 class="fw-700 text-black fs-16px mt-3">What’s the Top Rated program?</h4>
-                        <p class="text-muted fs-14px my-3">
+                        <h4 class="frequently-qsn-title">What’s the Top Rated program?</h4>
+                        <p class="frequently-qsn-details">
                             It’s a badge of honor for talent who consistently do great work.
                         </p>
 
