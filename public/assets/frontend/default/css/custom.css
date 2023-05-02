@@ -13,6 +13,253 @@
 }
 /* why scholarship - review */
 
+.review-banner-title{
+    letter-spacing: -.035em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Upworkrza,sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.review-banner-text{
+    padding-bottom: 35px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #5e6d55;
+}
+.review-per-week-title{
+    color: #001e00;
+    letter-spacing: -.032em;
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-family: Upworkrza,sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+    width: 50%;
+}
+.review-clients{
+    color: #001e00;
+    letter-spacing: -.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.review-they-say-topic{
+    color: #001e00;
+    font-size: 20px;
+    padding: 5px 0 ;
+    font-weight: 500;
+    cursor:pointer
+}
+.tye-review-saying-topic{
+    background-color: #f2f7f2;
+    border-radius: 15px;
+    padding: 8.5px 15px;
+    font-size: 12px;
+    line-height: 13px;
+}
+.review-they-say-topic:hover{
+    color: #1f57c3;
+}
+
+.review-say-customer{
+    height:450px;
+
+    overflow-y: scroll;
+}
+.review-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.review-details h5{
+    color: #001e00;
+    font-size: 30px;
+    font-weight: 700;
+}
+.review-details p{
+    color: #5e6d55;
+    font-size: 30px;
+    font-weight: 700;
+}
+.review-work-done{
+    width: 84%;
+    margin: 50px 8% 0 8%;
+}
+.review-work-done h3{
+    color: #001e00;
+    letter-spacing: -.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    font-family: Upworkrza,sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.review-work-done-card h4{
+    color: #001e00;
+    letter-spacing: -.004em;
+    margin-bottom: 40px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.review-work-done-read{
+    color: #1f57c3;
+    font-family: Neuemontreal,sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 16px;
+    letter-spacing: .6px;
+}
+.review-work-done-card img{
+    z-index: 2;
+    width: 13px;
+    height: 15px;
+    margin-left: 2px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+}
+.review-explore-worldwide-title{
+    color: #001e00;
+    letter-spacing: -.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza,sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+
+}
+.review-explore-worldwide-topic h5{
+    display: inline-block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    font-size: 16px;
+}
+.review-explore-worldwide-topic h5:hover{
+    color: #1f57c3;
+}
+.review-say-other-way-title{
+    color: #001e00;
+    letter-spacing: -.032em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    font-family: Upworkrza,sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.review-say-other-way-card-text{
+    color: #001e00;
+    letter-spacing: -.004em;
+    margin-bottom: 40px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.review-get-started-title{
+    color: #001e00;
+    letter-spacing: -.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza,sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.nav-link{
+    transition: all 0.2s;
+    /* border: none !important; */
+    margin-right: 5px !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: gray !important;
+    position: relative;
+
+
+}
+.nav-link::after{
+    content: ' ';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+.nav-link:hover::after {
+    opacity: 1;
+}
+.nav-link::active{
+    content: ' ';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.review-hf-card-title{
+    color: #222;
+    margin-bottom: 5px;
+    font-weight: 500;
+    letter-spacing: .6px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+}
+.review-say-customer-review{
+    width: 100%;
+    color: #001e00;
+    letter-spacing: -.6px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.review-hf-card-text{
+    color: #5e6d55;
+    letter-spacing: .6px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.join-scholarship-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.join-scholarship-btn:hover{
+    background: #1c51af;
+}
+.container-main-powerful{
+    width: 84%;
+    margin: 100px 8% 80px 8%;
+}
+
 #ch {
     display: none;
 }
@@ -55,12 +302,7 @@ p {
     margin: 0 !important;
     font-size: 16px;
 }
-.joinscholarship {
-    cursor: pointer;
-}
-.joinscholarship:hover {
-    background: #1c51af;
-}
+
 .get-work-title {
     margin-bottom: 25px;
     color: black;

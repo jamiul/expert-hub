@@ -4,7 +4,7 @@
     }
 </style>
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
-    <div class="aiz-navbar py-0px fs-15 position-relative">
+    <div class="aiz-navbar me-auto ps-lg-0 py-0px fs-15 position-relative" style="padding-left: 0.15rem">
         <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
             <div class="d-flex align-items-center justify-content-between">
 
@@ -272,7 +272,7 @@
 
                             <nav class="navbar navbar-expand-lg ">
                                 <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav">
+                                    <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
                                         <li class="nav-item ">
                                             <a class="nav-link text-white" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
                                         </li>
@@ -298,7 +298,7 @@
                                         </li>
                                         <li class="dropdown">
                                             <a class=" dropdown-toggle nav-link text-white " type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                {{ translate('Why Scholarships Australia') }}
+                                                {{ translate('About Us') }}
                                             </a>
                                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown" style="width:400px;">
                                                 <a class="dropdown-item" href="{{route('success-stories')}}">{{ translate('Success Stories') }}</a>
@@ -306,6 +306,35 @@
                                                 <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
                                                 <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
                                             </ul>
+                                        </li>
+                                        <li class="nav-item dropdown dropdown-hover position-static">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                                {{ translate('About Us') }}
+                                            </a>
+                                            <!-- Dropdown menu -->
+                                            <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                          ">
+
+                                                <div class="container">
+                                                    <div class="row my-4">
+                                                        <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                                            <div class="list-group list-group-flush">
+                                                                <a class="dropdown-item" href="{{route('success-stories')}}">{{ translate('Success Stories') }}</a>
+                                                                <a class="dropdown-item pe-2" href="{{route('review')}}">{{translate('Reviews')}}</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                                            <div class="list-group list-group-flush">
+                                                                <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
+                                                                <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -345,7 +374,7 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">
                                         <i class="las la-university"></i>
-                                        {{ translate('Why Scholarships Australia') }}
+                                        {{ translate('About us') }}
                                     </a>
                                 </div>
                             </li>
@@ -354,6 +383,62 @@
                 </div>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler px-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExampleOnHover" aria-controls="navbarExampleOnHover" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarExampleOnHover">
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
+
+                        <!-- Navbar dropdown -->
+                        <li class="nav-item dropdown dropdown-hover position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                Mega menu
+                            </a>
+                            <!-- Dropdown menu -->
+                            <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                          ">
+
+                                <div class="container">
+                                    <div class="row my-4">
+                                        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                            <div class="list-group list-group-flush">
+                                                <a href="" class="list-group-item list-group-item-action">Lorem ipsum</a>
+                                                <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
+                                                <a href="" class="list-group-item list-group-item-action">Amet consectetur</a>
+                                                <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                                                <a href="" class="list-group-item list-group-item-action">Adipisicing elit</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                            <div class="list-group list-group-flush">
+                                                <a href="" class="list-group-item list-group-item-action">Explicabo voluptas</a>
+                                                <a href="" class="list-group-item list-group-item-action">Perspiciatis quo</a>
+                                                <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                                                <a href="" class="list-group-item list-group-item-action">Laudantium maiores</a>
+                                                <a href="" class="list-group-item list-group-item-action">Provident dolor</a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Left links -->
+                </div>
+                <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
         @endif
     </div>
 </header>
