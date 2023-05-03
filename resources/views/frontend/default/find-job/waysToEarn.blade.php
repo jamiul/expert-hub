@@ -29,18 +29,22 @@
   @section('content')
   <div class="   mx-5 my-5 rounded-1" style="background-color:#50A907; ">
     <div class="d-flex justify-content-between p-2">
-      <div class="row justify-content-between px-4 text-white" style="width:35%;">
+      <div class="row justify-content-between px-4 text-white p-3" style="width:32%;">
         <div>
-          <h1 class="display-4" style="font-family:sans-serif; letter-spacing: -.032em;">Do the work you love, your way
-            </>
-            <h5 class=" my-3">Build rewarding relationships in the world’s Work Marketplace. Your home for the work you
-              want.
-            </h5>
+          <h1 class="display-4 fw-400" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">Do the
+            work you love,
+            your
+            way
+          </h1>
+          <p class="fs-18 my-3">Build rewarding relationships in the world’s Work Marketplace. Your home for the work
+            you
+            want.
+          </p>
 
-            <button class="btn btn rounded-pill bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1"
-                href="{{route('home')}}">Sign
-                Up</a>
-            </button>
+          <button class="btn btn rounded-pill bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1"
+              href="{{route('home')}}">Sign
+              Up</a>
+          </button>
         </div>
 
         <h6 class="border-top " style="margin-top:80px;">Trusted By</h6>
@@ -62,18 +66,18 @@
 
     <!-- navbar -->
     <div class="container">
-      <h2 class="my-5 fs-30 fw-500">Explore the different ways to earn</h2>
+      <h2 class="my-5 fs-25 fw-600">Explore the different ways to earn</h2>
       <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <h5 class="nav-link active text-decoration-underline" id="home-tab" data-toggle="tab" data-target="#home"
-            role="tab" aria-controls="home" aria-selected="true">Talent Marketplace™</h5>
+          <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+            data-target="#home" role="tab" aria-controls="home" aria-selected="true">Talent Marketplace™</h5>
         </li>
         <li class="nav-item" role="presentation">
-          <h5 class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+          <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
             aria-controls="profile" aria-selected="false">Project Catalog™</h5>
         </li>
         <li class="nav-item" role="presentation">
-          <h5 class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+          <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
             aria-controls="contact" aria-selected="false">Talent Scout™</h5>
         </li>
       </ul>
@@ -88,9 +92,9 @@
                   <img class="mx-auto d-block" src=" {{url('/public/assets/findJob/image-1.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
-                <h5 class="text-center">1. Create a project
+                <h5 class="text-center fs-16">1. Create a project
                 </h5>
-                <p class="text-center"> Create a unique project that showcases your expertise.</p>
+                <p class="text-center "> Create a unique project that showcases your expertise.</p>
 
               </div>
             </div>
@@ -337,8 +341,8 @@
 
     <div class=" container mt-5 ">
 
-      <h2 class="my-3">Our award-winning platform</h2>
-      <div class="row g-5 my-5">
+      <h2 class="my-3 fs-25 fw-600">Our award-winning platform</h2>
+      <div class="row g-5 mt-4 mb-5">
         <div class="col-lg-5 col-sm-12 ">
           <div class="">
             <div class="d-flex ">
@@ -346,7 +350,7 @@
                 <img class="mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
               </div>
               <div>
-                <p class="h6 "><span class="fw-700"> Take control. </span> Find work that hits your financial goals
+                <p class="fs-16 "><span class="fw-700"> Take control. </span> Find work that hits your financial goals
                   faster
                   with
                   ambitious startups
@@ -450,7 +454,7 @@
 
 
     <div class="container marketing  " style="margin-top:100px;">
-      <h2 class="fs-38 fw-sans-serif ">Like-minded professionals</h2>
+      <h2 class="fs-25 fw-600 fw-sans-serif muted">Like-minded professionals</h2>
 
       <div id="demo" class="rounded-1 carousel slide jumbotron my-4" data-ride="carousel">
 
@@ -474,28 +478,32 @@
               <div class="col-md-7 d-flex align-items-center justify-content-center ">
 
                 <div>
-                  <h5>Kolya T.</h5>
-                  <h6>Owner of Wordpress Lab Agency, USA. Certified Wordpress expert who built his own agency on
+                  <h4 class="fs-26" style="color: #001e00;
+">Kolya T.</h4>
+                  <h6 class="fs-26" style="color: #001e00;">Owner of Wordpress Lab Agency, USA. Certified Wordpress
+                    expert who built his own
+                    agency
+                    on
                     Upwork.
-                  </h6>
-                  <div class="d-flex mr-5">
-                    <button type=" button" class="btn  rounded-pill border border-1 mt-3"
-                      style="background-color:white;">$55/hr</button>
-                    <div class="d-flex align-items-center ml-5">
-                      <img class="text-center text-success mx-1" src="{{url('/public/assets/findJob/emblem.png')}}"
-                        alt="Image" style="width:15px;
+                    </>
+                    <div class=" d-flex mr-5">
+                      <button type=" button" class="btn  rounded-pill border border-1 mt-3"
+                        style="background-color:white;">$55/hr</button>
+                      <div class="d-flex align-items-center ml-5">
+                        <img class="text-center text-success mx-1" src="{{url('/public/assets/findJob/emblem.png')}}"
+                          alt="Image" style="width:15px;
                     " />
-                      <p class="m-0">TOP RATED PLUS</p>
+                        <p class="m-0">TOP RATED PLUS</p>
 
+                      </div>
                     </div>
-                  </div>
 
-                  <h6 class="lead my-3">"Scholarships Australia is more than a platform. It is a lifestyle. It has
-                    helped
-                    me
-                    grow my agency
-                    by
-                    three digits and generates more leads than any other channel."</h6>
+                    <h6 class="lead my-3">"Scholarships Australia is more than a platform. It is a lifestyle. It has
+                      helped
+                      me
+                      grow my agency
+                      by
+                      three digits and generates more leads than any other channel."</h6>
                 </div>
               </div>
 
@@ -511,8 +519,9 @@
               <div class=" col-md-7 d-flex align-items-center justify-content-center ">
 
                 <div>
-                  <h5>Ambika M.</h5>
-                  <h6>Market Researcher, USA. Masters Degree and expert on Market Research Online Communities.
+                  <h5 class="fs-26" style="color: #001e00;">Ambika M.</h5>
+                  <h6 class="fs-26" style="color: #001e00;">Market Researcher, USA. Masters Degree and expert on Market
+                    Research Online Communities.
                   </h6>
                   <div class=" d-flex mr-5">
                     <button type=" button" class="btn  rounded-pill border border-1 mt-3"
@@ -542,10 +551,11 @@
               <div class="col-md-7 d-flex align-items-center justify-content-center ">
 
                 <div>
-                  <h5>Alexander N.</h5>
-                  <h6>Expert Software Engineer, Cyprus. Over $1M earned on Upwork to date.
+                  <h5 class="fs-26" style="color: #001e00;">Alexander N.</h5>
+                  <h6 class="fs-26" style="color: #001e00;">Expert Software Engineer, Cyprus. Over $1M earned on Upwork
+                    to date.
                   </h6>
-                  <div class="d-flex mr-5">
+                  <div class=" d-flex mr-5">
                     <button type=" button" class="btn  rounded-pill border border-1 mt-3"
                       style="background-color:white;">$50/hr</button>
                     <div class="d-flex align-items-center ml-5">
@@ -570,11 +580,11 @@
 
 
         <!-- Left and right controls -->
-        <a class=" carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon rounded-2" style="background-color:#337204; "></span>
+        <a class=" carousel-control-prev " style="margin-right:100px;" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon rounded-circle" style="background-color:#337204; width:20px;"></span>
         </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon rounded-2 " style="background-color:#337204;  "></span>
+        <a class="carousel-control-next" style="margin-left:100px;" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon rounded-circle " style="background-color:#337204;  "></span>
         </a>
 
       </div>
