@@ -336,7 +336,6 @@
       </div>
     </div>
 
-
     <!-- section-2 -->
 
     <div class=" container mt-5 ">
@@ -449,9 +448,7 @@
           </div>
         </div>
       </div>
-
     </div>
-
 
     <div class="container marketing  " style="margin-top:100px;">
       <h2 class="fs-25 fw-600 fw-sans-serif muted">Like-minded professionals</h2>
