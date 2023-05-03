@@ -68,7 +68,7 @@
                         <h5 class="review-they-say-topic">Legal</h5>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 " style="overflow:hidden">
+                <div class="col-lg-8 col-md-8 col-sm-12 " >
                     <div class="review-say-customer">
                         <div class="border border border-white rounded-2 p-3 my-2">
                             <p class="fw-600 fs-30 ">Stephen <span class="text-muted fw-600 ">and</span> Amiya <span class="text-muted">worked together through</span> Talent Marketplace</p>

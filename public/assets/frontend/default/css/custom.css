@@ -13,113 +13,112 @@
 }
 /* why scholarship - review */
 
-.review-banner-title{
-    letter-spacing: -.035em;
+.review-banner-title {
+    letter-spacing: -0.035em;
     margin-top: 0;
     margin-bottom: 15px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 1em;
 }
-.review-banner-text{
+.review-banner-text {
     padding-bottom: 35px;
     font-size: 18px;
     line-height: 22px;
     color: #5e6d55;
 }
-.review-per-week-title{
+.review-per-week-title {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
     margin-bottom: 0px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
     width: 50%;
 }
-.review-clients{
+.review-clients {
     color: #001e00;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
 }
-.review-they-say-topic{
+.review-they-say-topic {
     color: #001e00;
     font-size: 20px;
-    padding: 5px 0 ;
+    padding: 5px 0;
     font-weight: 500;
-    cursor:pointer
+    cursor: pointer;
 }
-.tye-review-saying-topic{
+.tye-review-saying-topic {
     background-color: #f2f7f2;
     border-radius: 15px;
     padding: 8.5px 15px;
     font-size: 12px;
     line-height: 13px;
 }
-.review-they-say-topic:hover{
+.review-they-say-topic:hover {
     color: #1f57c3;
 }
 
-.review-say-customer{
-    height:450px;
-
+.review-say-customer {
+    height: 450px;
+    overflow: hidden;
     overflow-y: scroll;
 }
-.review-details{
+.review-details {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.review-details h5{
+.review-details h5 {
     color: #001e00;
     font-size: 30px;
     font-weight: 700;
 }
-.review-details p{
+.review-details p {
     color: #5e6d55;
     font-size: 30px;
     font-weight: 700;
 }
-.review-work-done{
+.review-work-done {
     width: 84%;
     margin: 50px 8% 0 8%;
 }
-.review-work-done h3{
+.review-work-done h3 {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
     margin-bottom: 25px;
     padding-bottom: 20px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
 }
-.review-work-done-card h4{
+.review-work-done-card h4 {
     color: #001e00;
-    letter-spacing: -.004em;
+    letter-spacing: -0.004em;
     margin-bottom: 40px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 1.1em;
 }
-.review-work-done-read{
+.review-work-done-read {
     color: #1f57c3;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-weight: 700;
     text-decoration: underline;
     font-size: 16px;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
 }
-.review-work-done-card img{
+.review-work-done-card img {
     z-index: 2;
     width: 13px;
     height: 15px;
@@ -128,18 +127,17 @@
     font-size: 20px;
     font-weight: 500;
 }
-.review-explore-worldwide-title{
+.review-explore-worldwide-title {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
     margin-bottom: 25px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
-
 }
-.review-explore-worldwide-topic h5{
+.review-explore-worldwide-topic h5 {
     display: inline-block;
     width: 220px;
     white-space: nowrap;
@@ -148,40 +146,40 @@
     cursor: pointer;
     font-size: 16px;
 }
-.review-explore-worldwide-topic h5:hover{
+.review-explore-worldwide-topic h5:hover {
     color: #1f57c3;
 }
-.review-say-other-way-title{
+.review-say-other-way-title {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
     margin-bottom: 15px;
     padding-bottom: 20px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
 }
-.review-say-other-way-card-text{
+.review-say-other-way-card-text {
     color: #001e00;
-    letter-spacing: -.004em;
+    letter-spacing: -0.004em;
     margin-bottom: 40px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 1.1em;
 }
-.review-get-started-title{
+.review-get-started-title {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
     margin-bottom: 25px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
 }
-.nav-link{
+.nav-link {
     transition: all 0.2s;
     /* border: none !important; */
     margin-right: 5px !important;
@@ -190,11 +188,9 @@
     border-left: none !important;
     border-bottom: gray !important;
     position: relative;
-
-
 }
-.nav-link::after{
-    content: ' ';
+.nav-link::after {
+    content: " ";
     opacity: 0;
     transition: all 0.2s;
     height: 2px;
@@ -203,13 +199,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
-
 }
 .nav-link:hover::after {
     opacity: 1;
 }
-.nav-link::active{
-    content: ' ';
+.nav-link::active {
+    content: " ";
     opacity: 0;
     transition: all 0.2s;
     height: 2px;
@@ -219,43 +214,43 @@
     bottom: 0;
     left: 0;
 }
-.review-hf-card-title{
+.review-hf-card-title {
     color: #222;
     margin-bottom: 5px;
     font-weight: 500;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 18px;
     line-height: 22px;
 }
-.review-say-customer-review{
+.review-say-customer-review {
     width: 100%;
     color: #001e00;
-    letter-spacing: -.6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: -0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 18px;
     line-height: 21px;
     margin-bottom: 20px;
     font-weight: 500;
 }
-.review-hf-card-text{
+.review-hf-card-text {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
 }
-.join-scholarship-btn{
+.join-scholarship-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
-.join-scholarship-btn:hover{
+.join-scholarship-btn:hover {
     background: #1c51af;
 }
-.container-main-powerful{
+.container-main-powerful {
     width: 84%;
     margin: 100px 8% 80px 8%;
 }
@@ -309,9 +304,9 @@ p {
     width: 600px;
 }
 .approvalHead {
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
@@ -336,94 +331,91 @@ p {
     margin-right: 30px;
 }
 /* How to hire */
-.how-to-hire-banner-title{
-    letter-spacing: -.035em;
+.how-to-hire-banner-title {
+    letter-spacing: -0.035em;
     margin-top: 0;
     padding-bottom: 15px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 1em;
 }
-.how-to-hire-banner-text{
+.how-to-hire-banner-text {
     padding-bottom: 35px;
     font-size: 18px;
     line-height: 22px;
     color: #001e00;
 }
-.hth-lets-work-title{
+.hth-lets-work-title {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
     margin-bottom: 25px;
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
 }
-.hth-lets-work-text{
+.hth-lets-work-text {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
     width: 700px;
 }
-.get-work-child-title{
+.get-work-child-title {
     color: #001e00;
-    letter-spacing: -.032em;
-    font-family: Upworkrza,sans-serif;
+    letter-spacing: -0.032em;
+    font-family: Upworkrza, sans-serif;
     font-weight: 400;
     margin-bottom: 5px;
 }
-.get-work-child-text{
+.get-work-child-text {
     color: #5e6d55;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
 }
-.get-work-child-details{
+.get-work-child-details {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
-
 }
-.hth-safe-us{
+.hth-safe-us {
     color: #001e00;
     margin-bottom: 5px;
-    letter-spacing: -.032em;
-    font-family: Upworkrza,sans-serif;
+    letter-spacing: -0.032em;
+    font-family: Upworkrza, sans-serif;
     font-weight: 400;
 }
-.hth-safe-text{
-    letter-spacing: -.004em;
+.hth-safe-text {
+    letter-spacing: -0.004em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 26px;
     font-weight: 400;
     line-height: 1.1em;
     max-width: 300px;
     margin-bottom: 15px;
     color: #5e6d55;
-
 }
-.hth-safe-text{
-    letter-spacing: -.004em;
+.hth-safe-text {
+    letter-spacing: -0.004em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 26px;
     font-weight: 400;
     line-height: 1.1em;
     margin-bottom: 15px;
     color: #5e6d55;
-
 }
 
 /* how-to-find-job */
@@ -523,109 +515,108 @@ p {
     font-weight: 400;
     line-height: 1em;
 }
-.explore-find-oppor{
+.explore-find-oppor {
     margin-top: 120px;
 }
-.explore-find-oppor-title{
+.explore-find-oppor-title {
     color: #001e00;
-    letter-spacing: -.03em;
+    letter-spacing: -0.03em;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: 500;
     line-height: 1em;
 }
-.explore-find-oppor-details{
-         color: #5e6d55;
-        letter-spacing: .6px;
-        font-family: Neuemontreal,sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22px;
-}
-
-/* How payments work */
-.payment-work-main-title{
-    color: #001e00;
-    letter-spacing: -.032em;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-family: Upworkrza,sans-serif;
-    font-size: 38px;
-    font-weight: 400;
-    line-height: 1em;
-}
-.payment-work-main-details{
+.explore-find-oppor-details {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
 }
-.payment-work-child-title{
+
+/* How payments work */
+.payment-work-main-title {
     color: #001e00;
-    letter-spacing: -.02em;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.payment-work-main-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.payment-work-child-title {
+    color: #001e00;
+    letter-spacing: -0.02em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
 }
-.payment-work-child-details{
+.payment-work-child-details {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
 }
 .payment-work-child-details-percent {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
     margin: 10px 0;
 }
-.learn-service{
+.learn-service {
     color: #1f57c3;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-weight: 500;
     font-size: 20px;
 }
 
 /* Frequently asked questions */
-.frequently-qsn-main-title{
+.frequently-qsn-main-title {
     color: #001e00;
-    letter-spacing: -.032em;
-    font-family: Upworkrza,sans-serif;
+    letter-spacing: -0.032em;
+    font-family: Upworkrza, sans-serif;
     font-weight: 400;
     font-size: 38px;
-
 }
-.frequently-qsn-title{
+.frequently-qsn-title {
     color: #001e00;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     margin-bottom: 10px;
-    font-family: Neuemontreal,sans-serif;
+    font-family: Neuemontreal, sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
 }
-.frequently-qsn-details{
+.frequently-qsn-details {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
 }
-.content{
+.content {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
@@ -645,8 +636,8 @@ p {
 #badges:checked ~ .content {
     display: block;
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;

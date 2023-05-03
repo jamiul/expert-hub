@@ -2,6 +2,108 @@
     .dropdown:hover .dropdown-menu {
         display: block;
     }
+
+    .mega-menu-head {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: space-between !important;
+        flex-direction: row;
+    }
+
+    .mega_menu {
+        position: static;
+    }
+
+    .mega_area {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .mega-menu-item a {
+        font-weight: 600;
+        font-size: 16px;
+        color: black;
+        margin: 0;
+
+    }
+
+    .mega-menu-item {
+        padding: 10px 0;
+        margin-left: 10px;
+    }
+
+    .mega-menu-item p {
+        font-weight: normal;
+        font-size: 14px;
+        color: gray;
+        padding-left: 22px;
+        margin: 0;
+
+
+    }
+
+    .mega-menu-item:hover,
+    .about-mega-menu-right:hover,.mega-menu-fj-item:hover {
+        background-color: #F2F7F2;
+        border-radius: 10px;
+
+    }
+
+    .about-mega-menu-right {
+        width: 60%;
+        height: auto;
+        color: #222;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 10px 0 10px 0;
+        padding: 10px 20px 15px;
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+
+    .about-mega-menu-right p {
+        color: #a0a0a0;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .about-mega-menu-right h3 {
+        color: #000;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    .mega-menu-fj-item{
+        padding: 10px 0;
+        margin-bottom: 30px;
+    }
+    .mega-menu-fj-item a {
+        color: #001e00;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .mega-menu-fj-item p {
+        color: #5e6d55;
+        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 21px;
+        padding-left: 22px;
+    }
+
+    .about-mega-menu-sm {
+        color: #1f57c3;
+        font-family: Neuemontreal, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.6px;
+    }
 </style>
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
     <div class="aiz-navbar me-auto ps-lg-0 py-0px fs-15 position-relative" style="padding-left: 0.15rem">
@@ -259,179 +361,142 @@
         </div>
 
         @if (!Auth::check())
-        <div class="container-fluid bg-dark px-lg-5">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="logo">
-                    <a href="{{ route('home') }}" class="d-inline-block">
-                        <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
-                    </a>
-                </div>
-                <div class="aiz-navbar py-17px  fs-15 position-relative ">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between">
-
-                            <nav class="navbar navbar-expand-lg ">
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
-                                        <li class="nav-item ">
-                                            <a class="nav-link text-white" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <div class="dropdown">
-                                                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    {{ translate('Find Jobs') }}
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">{{ translate('Ways to earn') }}</a>
-                                                    <a class="dropdown-item pe-2" href="#">{{ translate('Find ways to promote yourself') }}</a>
-                                                    <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a class=" dropdown-toggle nav-link text-white " type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                {{ translate('About Us') }}
-                                            </a>
-                                            <ul class="dropdown-menu " aria-labelledby="navbarDropdown" style="width:400px;">
-                                                <a class="dropdown-item" href="{{route('success-stories')}}">{{ translate('Success Stories') }}</a>
-                                                <a class="dropdown-item pe-2" href="{{route('review')}}">{{translate('Reviews')}}</a>
-                                                <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
-                                                <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown dropdown-hover position-static">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                                                {{ translate('About Us') }}
-                                            </a>
-                                            <!-- Dropdown menu -->
-                                            <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0;
-                            border-top-right-radius: 0;
-                          ">
-
-                                                <div class="container">
-                                                    <div class="row my-4">
-                                                        <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
-                                                            <div class="list-group list-group-flush">
-                                                                <a class="dropdown-item" href="{{route('success-stories')}}">{{ translate('Success Stories') }}</a>
-                                                                <a class="dropdown-item pe-2" href="{{route('review')}}">{{translate('Reviews')}}</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
-                                                            <div class="list-group list-group-flush">
-                                                                <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
-                                                                <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
-                                                            </div>
-                                                        </div>
 
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
 
-                            <li class="dropdown ml-3 d-block d-sm-none">
-                                <button class="btn p-0 dropdown-toggle no-arrow" type="button" data-toggle="dropdown">
-                                    <span class="las la-bars text-white fs-24">
-
-                                    </span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="{{ url('#') }}">
-                                        <i class="las la-graduation-cap"></i>
-                                        {{ translate('Find Scholarships') }}
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url('/search?keyword=&type=freelancer') }}">
-                                        <i class="las la-user-check"></i>
-                                        {{ translate('Find Consultants') }}
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url('/search?keyword=&type=project') }}">
-                                        <i class="las la-briefcase"></i>
-                                        {{ translate('Find Jobs') }}
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url('/search?keyword=&type=service') }}">
-                                        <i class="las la-clipboard-list"></i>
-                                        {{ translate('Find Services') }}
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('blog') }}">
-                                        <i class="las la-rss"></i>
-                                        {{ translate('Resources') }}
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="las la-university"></i>
-                                        {{ translate('About us') }}
-                                    </a>
-                                </div>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg  bg-dark w-100">
             <!-- Container wrapper -->
-            <div class="container-fluid">
+            <div class="container-fluid  ">
                 <!-- Toggle button -->
                 <button class="navbar-toggler px-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExampleOnHover" aria-controls="navbarExampleOnHover" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
 
                 <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse" id="navbarExampleOnHover">
+                <div class="collapse navbar-collapse mega-menu-head" id="navbarExampleOnHover">
+                    <div class="logo">
+                        <a href="{{ route('home') }}" class="d-inline-block">
+                            <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
+                        </a>
+                    </div>
                     <!-- Left links -->
-                    <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
+                    <ul class="navbar-nav me-auto ps-lg-0 " style="padding-left: 0.15rem">
 
                         <!-- Navbar dropdown -->
-                        <li class="nav-item dropdown dropdown-hover position-static">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                                Mega menu
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+                        </li>
+                        <li class="nav-item">
+
+                        <li class="dropdown mega_menu ">
+                            <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ translate('Find Jobs') }}
                             </a>
-                            <!-- Dropdown menu -->
-                            <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0;
-                            border-top-right-radius: 0;
-                          ">
-
-                                <div class="container">
-                                    <div class="row my-4">
-                                        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                            <div class="list-group list-group-flush">
-                                                <a href="" class="list-group-item list-group-item-action">Lorem ipsum</a>
-                                                <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
-                                                <a href="" class="list-group-item list-group-item-action">Amet consectetur</a>
-                                                <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
-                                                <a href="" class="list-group-item list-group-item-action">Adipisicing elit</a>
-                                            </div>
+                            <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-6 ">
+                                        <div class="w-75 mega-menu-fj-item">
+                                            <a class="dropdown-item" href="#">{{ translate('Ways to earn') }}</a>
+                                            <p>
+                                            {{translate('Learn why Scholarship australia has the right opportunities for you.')}}</p>
                                         </div>
-                                        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                            <div class="list-group list-group-flush">
-                                                <a href="" class="list-group-item list-group-item-action">Explicabo voluptas</a>
-                                                <a href="" class="list-group-item list-group-item-action">Perspiciatis quo</a>
-                                                <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
-                                                <a href="" class="list-group-item list-group-item-action">Laudantium maiores</a>
-                                                <a href="" class="list-group-item list-group-item-action">Provident dolor</a>
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="w-75 mega-menu-fj-item">
+                                            <a class="dropdown-item pe-2" href="#">{{ translate('Find ways to promote yourself') }}</a>
+                                            <p>{{translate('Explore the kind of work available in your field.')}}</p>
                                         </div>
-
-
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="w-75  mega-menu-fj-item" >
+                                            <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                                            <p>{{translate('Show clients you’re the one they want.')}}</p>
+                                        </div>
                                     </div>
                                 </div>
+
+
+
                             </div>
                         </li>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
+                        </li>
+                        <li class="dropdown mega_menu">
+                            <a class=" dropdown-toggle nav-link text-white " type="button" id="mega_about" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ translate('About Us') }}
+                            </a>
+                            <div class="dropdown-menu mega_area" aria-labelledby="mega_about">
+
+                                <div class="row ">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="row ">
+                                            <div class="col-6">
+                                                <div class="w-75 mega-menu-item" action="{{route('success-stories')}}">
+                                                    <a class="dropdown-item " href="">{{ translate('Success Stories') }}
+                                                    </a>
+                                                    <p>Discover how to team work strategically and grow together</p>
+                                                </div>
+                                                <div class="w-75 mega-menu-item">
+                                                    <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
+                                                    <p>Learn about the different ways to get work done.</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="w-75 mega-menu-item">
+                                                    <a class="dropdown-item " href="{{route('review')}}">{{translate('Reviews')}}</a>
+                                                    <p>See what it's like to collaborate on scholarship australia</p>
+                                                </div>
+
+                                                <div class="mt-2 w-75 mega-menu-item">
+                                                    <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
+                                                    <p>Learn about how to grow your independent career.</p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6 col-sm-6 py-3">
+                                        <h5>Where work gets done</h5>
+                                        <div class="mt-1">
+
+                                            <div class="about-mega-menu-right">
+                                                <p>
+                                                    Guides
+                                                </p>
+                                                <h3> Getting Started as a Consultant</h3>
+                                            </div>
+                                            <div class="about-mega-menu-right">
+                                                <p>
+                                                    Guides
+                                                </p>
+                                                <h3>Growing Your consultant Career</h3>
+                                            </div>
+                                            <div class="about-mega-menu-right">
+                                                <p>
+                                                    Guides
+                                                </p>
+                                                <h3> Hiring & Working with Independent Talent</h3>
+                                            </div>
+                                            <a href="" class="about-mega-menu-sm">See more</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </li>
+
                     </ul>
                     <!-- Left links -->
                 </div>
@@ -439,6 +504,8 @@
             </div>
             <!-- Container wrapper -->
         </nav>
+
+
         @endif
     </div>
 </header>
