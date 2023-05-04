@@ -2,20 +2,11 @@
 
 @section('content')
 @if (get_setting('slider_section_show') == 'on')
-<section class="position-relative overflow-hidden  pb-7 d-flex flex-column justify-content-center"
-  style="min-height: 600px;">
-  <!-- <div class="absolute-full">
-    <div class="aiz-carousel aiz-carousel-full h-100" data-fade='true' data-infinite='true' data-autoplay='true'>
-      @if (get_setting('sliders') != null)
-      @foreach (explode(',', get_setting('sliders')) as $key => $value)
-      <img class="img-fit" src="{{ custom_asset($value) }}">
-      @endforeach
-      @endif
-    </div>
-  </div> -->
+<section class="position-relative overflow-hidden  pb-5 d-flex flex-column justify-content-center"
+  style="min-height: 300px;">
   <div class="container">
     <div class="">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-around  align-items-center">
         <div class="row justify-content-between px-4  p-3" style="width:40%;">
           <div>
             <h2 class=" fw-400" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">Do
@@ -25,9 +16,9 @@
             </p>
             <div>
               <a href="{{ route('register') }}?type=2"
-                class="btn btn-primary fw-700 py-3 px-4 mb-3 rounded-1">{{ translate('I want to Hire') }}</a>
+                class="btn btn-primary fw-700 py-3 px-3 mb-3 rounded-1">{{ translate('I want to Hire') }}</a>
               <a href="{{ route('register') }}?type=1"
-                class="btn btn-outline-primary py-3 px-4 ml-lg-3 mb-3 rounded-1">{{ translate('I want to Work') }}</a>
+                class="btn btn-outline-primary py-3 px-3 ml-lg-3 mb-3 rounded-1">{{ translate('I want to Work') }}</a>
             </div>
           </div>
 
@@ -35,7 +26,7 @@
         </div>
         <div class=" " style="width:60%;">
           <img src=" {{url('/public/assets/findJob/home-banner.png')}}" alt="Image" "
-              class=" w-100" style=" height:400px;" />
+              class=" w-100" style=" height:500px; " />
         </div>
       </div>
     </div>
@@ -45,14 +36,14 @@
 
 
 @if (get_setting('client_logo_show') == 'on')
-<section class=" bg-white py-4">
+<section class=" bg-white">
   <div class="container">
     <div class="text-center ">
-      <h5 class="my-3 fw-600">
+      <p class="mb-3 fw-600">
         Trusted by the world best
-      </h5>
+      </p>
     </div>
-    <div class="row align-items-center mt-4">
+    <div class="row align-items-center mb-4">
       <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
         data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
         @if (get_setting('client_logos') != null)
@@ -61,19 +52,19 @@
 
 
         <div class=""><img class=" " src=" {{url('/public/assets/home/amazon-pay.png')}}" alt="Image"
-            style="width:90px;" />
+            style="width:80px;" />
         </div>
 
 
 
         <div class="">
 
-          <img class=" " src=" {{url('/public/assets/home/cisco.png')}}" alt="Image" style="width:70px;" />
+          <img class=" " src=" {{url('/public/assets/home/cisco.png')}}" alt="Image" style="width:60px;" />
 
         </div>
         <div class="">
 
-          <img class=" " src=" {{url('/public/assets/home/amd.png')}}" alt="Image" style="width:70px;" />
+          <img class=" " src=" {{url('/public/assets/home/amd.png')}}" alt="Image" style="width:60px;" />
         </div>
 
 
@@ -81,10 +72,10 @@
 
 
         <div class=""><img class=" " src=" {{url('/public/assets/home/logitech.png')}}" alt=s"Image"
-            style="width:70px;" />
+            style="width:60px;" />
         </div>
         <div class="">
-          <img class=" " src=" {{url('/public/assets/home/spotify.png')}}" alt="Image" style="width:80px;" />
+          <img class=" " src=" {{url('/public/assets/home/spotify.png')}}" alt="Image" style="width:60px;" />
         </div>
 
 
@@ -96,23 +87,23 @@
 </section>
 @endif
 
+<!-- explore services  -->
+
 @if (get_setting('how_it_works_show') == 'on')
-
-
-<section class="py-4">
+<section class="pt-4 border-top">
   <div class="container">
     <div class="py-3 rounded-2 ">
       <div class="w-xl-50 w-lg-75 mx-auto my-5 text-center">
 
 
-        <h4 class="fw-700 fs-40">Need something done?</h4>
-        <p class="fs-17 text-secondary">Most viewed and all time selling services</p>
+        <h4 class="fw-700 fs-32">Need something done?</h4>
+        <small class="fs-12">Most viewed and all time selling services</small>
       </div>
       <div class="row justify-content-center">
         <div class="col-xl-3 col-md-6">
-          <div class="px-xl-5 px-md-3 mb-4 text-center">
-            <div class=""><img class=" " src=" {{url('/public/assets/home/businessman.png')}}" alt="Image"
-                style="width:50px;" />
+          <div class="px-xl-10 px-md-3 mb-4 text-center  ">
+            <div class=" ">
+              <img class=" " src=" {{url('/public/assets/home/businessman.png')}}" alt="Image" style="width:50px;" />
             </div>
             <div class="mt-3">
               <h6> Post a job</h6>
@@ -122,7 +113,7 @@
           </div>
         </div>
         <div class="col-xl-3 col-md-6">
-          <div class="px-xl-5 px-md-3 mb-4 text-center">
+          <div class="px-xl-10 px-md-3 mb-4 text-center">
             <div class=""><img class=" " src=" {{url('/public/assets/home/web.png')}}" alt="Image"
                 style="width:50px;" />
             </div>
@@ -135,7 +126,7 @@
           </div>
         </div>
         <div class="col-xl-3 col-md-6">
-          <div class="px-xl-5 px-md-3 mb-4 text-center">
+          <div class="px-xl-10 px-md-3 mb-4 text-center">
             <div class="">
               <img class=" " src=" {{url('/public/assets/home/helmet.png')}}" alt="Image" style="width:50px;" />
             </div>
@@ -148,7 +139,7 @@
           </div>
         </div>
         <div class="col-xl-3 col-md-6">
-          <div class="px-xl-5 px-md-3 mb-4 text-center">
+          <div class="px-xl-10 px-md-3 mb-4 text-center">
             <div class="">
               <img class=" " src=" {{url('/public/assets/home/support.png')}}" alt="Image" style="width:50px;" />
             </div>
@@ -167,32 +158,35 @@
 @endif
 
 
+<!-- category -->
+
 @if (get_setting('latest_project_show') == 'on')
-<section class=" bg-white py-7">
+<section class=" bg-white pt-4   " style="margin-bottom:70px;">
   <div class="container">
     <div class="d-flex justify-content-between">
       <div class="w-lg-75 w-xl-50 lh-1-8">
-        <h5 class="fw-700 fs-30">Browse talent by category</h5>
-        <h6 class="fs-17 text-secondary">Get some inspirations from 1800+ skills</h6>
+        <h5 class="fw-700 fs-32">Browse talent by category</h5>
+        <small class="fs-13 ">Get some inspirations from 1800+ skills</small>
       </div>
       <div>
-        <span>All categories</span>
+        <small class="fw-700 fs-13">All categories</small>
         <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
       </div>
     </div>
 
-    <div class="my-4">
+    <div class="" style="margin-top:40px;">
       <div class="row ">
         <div class="col-lg-3">
           <div class=" card rounded-1 ">
             <div class=" card-body">
 
-              <div class=""><img class="" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px; 
+              <div class="">
+                <img class="" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px; 
                   " />
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-18">Development and IT</p>
-              <p class="card-text fs-16">Software engineer web / mobile developer & more</p>
+              <p class=" fs-12">1853 skills</p>
+              <p class="fs-16">Development and IT</p>
+              <p class=" fs-16">Software engineer web / mobile developer & more</p>
 
             </div>
           </div>
@@ -293,13 +287,15 @@
 @endif
 
 
+<!-- Trending services  -->
+
 @if (get_setting('latest_project_show') == 'on')
-<section class=" jumbotron  py-7" style="background-color:#FBF7ED;">
-  <div class="container">
+<section class=" jumbotron" style="background-color:#FBF7ED;">
+  <div class="container mt-3">
     <div class="d-flex justify-content-between">
       <div class="w-lg-75 w-xl-50 lh-1-8">
-        <h5 class="fw-700 fs-30">Trending services</h5>
-        <h6 class="fs-17 text-secondary">Most viewed and all-time top-selling services</h6>
+        <h5 class="fw-700 fs-32 ">Trending services</h5>
+        <p class="fs-12">Most viewed and all-time top-selling services</p>
       </div>
       <div>
 
@@ -314,17 +310,17 @@
       <div class="row ">
 
         <div class="col-lg-3 ">
-          <div class="card  rounded-1" style="height:400px">
+          <div class="card  rounded-1" style="height:370px">
             <div class="">
               <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:120px; 
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-3 fs-12">Web app design&</p>
-                  <p class="card-title mt-3 fs-18">I will design modern website in figma or adobe xd</p>
+                  <p class="card-title mt-3 fs-16 fw-700">I will design modern website in figma or adobe xd</p>
                   <span>
-                    <img src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:15px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
                   " />
                   </span>
                   <span> 4896</span>
@@ -334,7 +330,7 @@
                 <div class="d-flex justify-content-between">
                   <div>
                     <span>
-                      <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:15px;
+                      <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;
                   " />
                     </span>
                     <span> World runo</span>
@@ -351,17 +347,17 @@
           </div>
         </div>
         <div class="col-lg-3 ">
-          <div class="card  rounded-1" style="height:400px">
+          <div class="card  rounded-1" style="height:370px">
             <div class="">
               <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:120px; 
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-3 fs-12">Art & illustrations</p>
-                  <p class="card-title mt-1 fs-18">I will create modern flat design illustrations</p>
+                  <p class="card-title mt-1 fs-16 fw-700">I will create modern flat design illustrations</p>
                   <span>
-                    <img src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:15px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
                   " />
                   </span>
                   <span> 4896</span>
@@ -371,7 +367,7 @@
                 <div class="d-flex justify-content-between">
                   <div>
                     <span>
-                      <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:15px;
+                      <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;
                   " />
                     </span>
                     <span> World runo</span>
@@ -388,19 +384,19 @@
           </div>
         </div>
         <div class="col-lg-3 ">
-          <div class="card  rounded-1" style="height:400px">
+          <div class="card  rounded-1" style="height:370px">
             <div class="">
               <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:120px; 
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-1 fs-12">Design & creative</p>
-                  <p class="card-title mt-1 fs-16">I will design fully responsive website website with HTML, CSS,
+                  <p class="card-title mt-1 fs-16 fw-700">I will design fully responsive website website with HTML, CSS,
                     boootstrap..
                   </p>
                   <span>
-                    <img src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:15px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
                   " />
                   </span>
                   <span> 4896 reviews</span>
@@ -410,7 +406,7 @@
                 <div class="d-flex justify-content-between">
                   <div>
                     <span>
-                      <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:15px;
+                      <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;
                   " />
                     </span>
                     <span> Brono</span>
@@ -427,17 +423,17 @@
           </div>
         </div>
         <div class="col-lg-3 ">
-          <div class="card  rounded-1" style="height:400px">
+          <div class="card  rounded-1" style="height:370px">
             <div class="">
               <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:120px; 
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-3 fs-12">Web & app design </p>
-                  <p class="card-title mt-1 fs-18">I will do mobile and web development</p>
+                  <p class="card-title mt-1 fs-16 fw-700">I will do mobile and web development</p>
                   <span>
-                    <img src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:15px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
                   " />
                   </span>
                   <span> 4896</span>
@@ -464,7 +460,7 @@
           </div>
         </div>
       </div>
-      <div class="pt-4 text-center">
+      <div class="pt-2 text-center">
         <a href="#"><span>All services</span></a>
         <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
 
@@ -473,168 +469,297 @@
 </section>
 @endif
 
+<!-- Latest job  -->
 
 @if (get_setting('latest_project_show') == 'on')
 <section class="">
-  <div class=" container">
-    <h3 class="mt-3 fs-38">Work that’s waiting for you</h3>
-    <div class="my-4">
+  <div class=" container" style="margin-top:50px;">
+    <div class="d-flex justify-content-between mb-4">
+      <div class="w-lg-75 w-xl-50 lh-1-8">
+        <h5 class="fw-700 fs-32">Our Latest Jobs</h5>
+        <small class="fs-13 ">Know your worth and find the jobs that quality your life</small>
+      </div>
+      <div>
+        <small class="fw-700 fs-13">All categories</small>
+        <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
+      </div>
+    </div>
+    <div class="my-2">
       <div class="row">
         <div class="col-sm-6">
-          <div class="card rounded bg-light">
-            <div class="card-body d-flex items-center">
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
                   style="width:70px;  align-items:center;" />
               </div>
               <div>
-                <h5 class="card-title">Development & IT </h5>
-                <h6 class="card-text">
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
 
-                  20K+ jobs posted weekly</h6>
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Sales Icon
-                  Sales & Marketing
-                </h5>
-                <h6 class="card-text">10K+ jobs posted weekly</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Sales Icon
-                  Sales & Marketing
-                </h5>
-                <h6 class="card-text">10K+ jobs posted weekly</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Sales Icon
-                  Sales & Marketing
-                </h5>
-                <h6 class="card-text">10K+ jobs posted weekly</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Sales Icon
-                  Sales & Marketing
-                </h5>
-                <h6 class="card-text">10K+ jobs posted weekly</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Sales Icon
-                  Sales & Marketing
-                </h5>
-                <h6 class="card-text">10K+ jobs posted weekly</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/03.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Writing Icon
-                  Writing & Translation
-                </h5>
-                <h6 class="card-text">10K+ jobs posted weeklySpecial title treatment</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
+
+
             </div>
+
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card bg-light">
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/05.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
+          <div class="card rounded ">
+            <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <h5 class="card-title">Customer Service Icon
-                  Admin & Customer Support
-                </h5>
-                <h6 class="card-text"> 5K+ jobs posted weekly</h6>
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
+              </div>
+              <div>
+                <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                <p class="text-primary">
+                  Mailchimp
+                </p>
+                <div class="">
+                  <span>$125k hourly</span>
+                  <span>|</span>
+                  <span>1.5 days</span>
+                  <span>|</span>
+                  <span>Expensive</span>
+                  <span>|</span>
+                  <span>Remote</span>
+                </div>
+
+              </div>
+              <div>
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                  style="width:20px;  align-items:center;" />
               </div>
 
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card bg-light">
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/04.png')}}" alt="Image"
-                style="width:80px; align-items:center; " />
-              <div>
-                <h5 class="card-title">Customer Service Icon
-                  Admin & Customer Support
-                </h5>
-                <h6 class="card-text"> 5K+ jobs posted weekly</h6>
-              </div>
+
 
             </div>
+
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="card bg-light">
-            <div class="card-body d-flex">
-              <img class="" src=" {{url('/public/assets/findJob/06.png')}}" alt="Image"
-                style="width:80px; align-items:center;" />
-              <div>
-                <h5 class="card-title"> Finance & Accounting
-                </h5>
-                <h6 class="card-text">2K+ jobs posted weekly
-              </div>
-            </div>
-          </div>
-        </div>
+
+
       </div>
     </div>
 
@@ -643,80 +768,139 @@
 </section>
 @endif
 
+<!-- learn with scholarship australia -->
+
 @if (get_setting('latest_project_show') == 'on')
-<section class="jumbotron ">
+<section class="jumbotron " style="margin-top:80px;">
   <div class=" container">
     <div class="">
       <div class="w-lg-75 w-xl-50 lh-1-8">
         <h5 class="fw-700 fs-30">People love to learn with scholarships Australia </h5>
-
       </div>
-
     </div>
 
-    <div class="my-4">
+    <div class="mt-5">
       <div class="row ">
         <div class="col-lg-4">
           <div class=" card rounded-1 ">
             <div class=" card-body">
-
-              <div class=""><img class="" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px; 
+              <p class="text-primary mt-2 fs-12">Great work</p>
+              <p class=" mt-3 fs-16">"I found the course material to be highly engaging and the instructors to
+                be helpful communicative"
+              </p>
+              <hr>
+              <div class="d-flex  ">
+                <div>
+                  <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
                   " />
+                </div>
+                <div>
+                  <small class="fw-700"> Curtney Henry</small>
+                  <p style="Line height:10px;"> Web designer</p>
+                </div>
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-18">Development and IT</p>
-              <p class="card-text fs-16">Software engineer web / mobile developer & more</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class=" card rounded-1 ">
+            <div class=" card-body">
+              <p class="text-primary mt-2 fs-12">Great work</p>
+              <p class=" mt-3 fs-16">"I found the course material to be highly engaging and the instructors to
+                be helpful communicative"
+              </p>
+              <hr>
+              <div class="d-flex  ">
+                <div>
+                  <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
+                  " />
+                </div>
+                <div>
+                  <small class="fw-700"> Curtney Henry</small>
+                  <p style="Line height:10px;"> Web designer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class=" card rounded-1 ">
+            <div class=" card-body">
+              <p class="text-primary mt-2 fs-12">Great work</p>
+              <p class=" mt-3 fs-16">"I found the course material to be highly engaging and the instructors to
+                be helpful communicative"
+              </p>
+              <hr>
+              <div class="d-flex  ">
+                <div>
+                  <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
+                  " />
+                </div>
+                <div>
+                  <small class="fw-700"> Curtney Henry</small>
+                  <p style="Line height:10px;"> Web designer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-lg-4">
+          <div class=" ">
+            <div class=" ">
+              <p class="text-primary mt-2 fs-12">4.9/5</p>
+              <p class=" mt-3 fs-16">Clients rate professional scholarships austrralia"
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="">
+            <div class=" ">
+              <p class="text-primary mt-2 fs-12">95%</p>
+              <p class=" mt-3 fs-16">95% customers are satisfied through to see their consultant
+              </p>
 
             </div>
           </div>
         </div>
-        <div class="col-lg-4" ">
-          <div class=" card rounded-1">
-          <div class=" card-body">
-            <div class=""><img src=" {{url('/public/assets/findJob/jobs-2.png')}}" alt="Image" style="width:50px;
-                  " /></div>
-            <p class="card-title mt-3 fs-12">1853 skills</p>
-            <p class="card-title mt-3 fs-18">Design creative</p>
-            <p class="card-text fs-16">Software engineer web / mobile developer & more</p>
-
-
+        <div class="col-lg-4">
+          <div class="  ">
+            <div class="">
+              <p class="text-primary mt-2 fs-12">Award winner</p>
+              <p class=" mt-3 fs-16">G2s best software awards
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 ">
-        <div class="card  rounded-1">
-          <div class="card-body">
-            <div class=""><img src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px;
-                  " /></div>
-            <p class="card-title mt-3 fs-12">1853 skills</p>
-            <p class="card-title mt-3 fs-18">Digital marketing </p>
-            <p class="card-text fs-16">Software engineer web / mobile developer & more</p>
-
-          </div>
-        </div>
-      </div>
-
 
     </div>
-  </div>
 </section>
 
 @endif
 @if (get_setting('latest_project_show') == 'on')
 <section class="">
   <div class=" container mt-5 ">
-    <div class="row g-5 d-fle justify-content-around mt-4 mb-5">
+    <div class="row g-5 d-fle justify-content-around mt-4">
       <div>
-        <img class="mr-2" src="{{url('/public/assets/findJob/home-banner.png')}}" alt="Image" style="" />
+        <img class="mr-2" src="{{url('/public/assets/findJob/home-banner.png')}}" alt="Image" style="height:300px;" />
       </div>
       <div class="col-lg-5 col-sm-12 ">
+        <h3>Join world best marketplace for consultant</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus odio amet aperiam
+          voluptatum doloremque, sint ratione sit beatae ullam quisquam maiores similique consequatur deleniti nisi
+          assumenda? Error?</p>
         <div class="">
           <div class="d-flex ">
             <div>
               <img class="mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
             </div>
             <div>
-              <p class="fs-16 "><span class="fw-700"> Take control. </span> Find work that hits your financial goals
+              <p class="fs-16 "> Find work that hits your financial
+                goals
                 faster
                 with
                 ambitious startups
@@ -725,10 +909,10 @@
             <div>
             </div>
           </div>
-          <div class="d-flex align-items-center my-2">
+          <div class="d-flex align-items-center">
             <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
             <p class="h6 m-2">
-              <span class="fw-700 mt-2">Create lasting relationships.</span>
+
               Build a predictable pipeline of projects, big and small, through strong
               connections.
             </p>
@@ -738,22 +922,12 @@
           </div>
           <div class="d-flex align-items-center mb-2">
             <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-            <p class="h6 m-2 "> <span class="fw-700">Work and earn your way.</span> Search for jobs or have clients
+            <p class="h6 m-2 "> Search for jobs or have
+              clients
               come to you. The
               opportunities
               are endless.</p>
           </div>
-          <div class="d-flex align-items-center ">
-            <img class="" src=" {{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-            <p class="h6 m-2 "><span class="fw-700">Connect & engage.</span> Learn, share information, and build
-              your
-              community
-              with
-              like-minded
-              professionals.</p>
-          </div>
-
-
         </div>
         <button type="button" class=" rounded-1 mt-3 text-white p-2 btn fs-16 px-4"
           style=" background-color:#337204;">Find talent</button>
@@ -766,6 +940,248 @@
 
 </section>
 @endif
+
+
+
+<!-- Blog  -->
+@if (get_setting('latest_project_show') == 'on')
+<section class="">
+  <div class="container" style="margin-top:70px;">
+    <div class="d-flex justify-content-between mb-4">
+      <div class="w-lg-75 w-xl-50 lh-1-8">
+        <h5 class="fw-700 fs-32">Our Blog</h5>
+        <small class="fs-13 ">See how you can up your career status</small>
+      </div>
+      <div>
+        <small class="fw-700 fs-13">All categories</small>
+        <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <div class="row ">
+
+        <div class="col-lg-3 ">
+          <div class="card  rounded-1" style="height:320px;">
+            <div class="">
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+                  " /></div>
+              <div class="card-body">
+                <div>
+                  <small class=" mt-3 fs-12">December 2, 2023 </small>
+                  <p class="fw-700 fs-16">Start an online business and work from home</p>
+                  <small class=" fs-12">A complete guide to starting a small business</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 ">
+          <div class="card  rounded-1" style="height:320px;">
+            <div class="">
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+                  " /></div>
+              <div class="card-body">
+                <div>
+                  <small class=" mt-3 fs-12">December 2, 2023 </small>
+                  <p class="fw-700 fs-16">Start an online business and work from home</p>
+                  <small class=" fs-12">A complete guide to starting a small business</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 ">
+          <div class="card  rounded-1" style="height:320px;">
+            <div class="">
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+                  " /></div>
+              <div class="card-body">
+                <div>
+                  <small class=" mt-3 fs-12">December 2, 2023 </small>
+                  <p class="fw-700 fs-16">Start an online business and work from home</p>
+                  <small class=" fs-12">A complete guide to starting a small business</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 ">
+          <div class="card  rounded-1" style="height:320px;">
+            <div class="">
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
+                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+                  " /></div>
+              <div class="card-body">
+                <div>
+                  <small class=" mt-3 fs-12">December 2, 2023 </small>
+                  <p class="fw-700 fs-16">Start an online business and work from home</p>
+                  <small class=" fs-12">A complete guide to starting a small business</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+@endif
+
+@if (get_setting('latest_project_show') == 'on')
+<section class=" bg-white">
+  <div class="container ">
+    <ul class="nav my-5">
+      <li class="nav-item">
+        <a class="nav-link active  fw-700" aria-current="page" href="#">
+          <h6 class="fs-28" style="color:black; font-weight:700;">Top skills</h6>
+        </a>
+      </li>
+      <li class=" nav-item">
+        <a class="nav-link text-muted fs-28" href="#">
+          <h6 class="fs-28"> Trending skills </h6>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-muted" href="#">
+          <h6 class="fs-28">Top skills in Australia</h6>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">
+          <h6 class="fs-28 text-muted">Project
+            catalog</h6>
+
+        </a>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
+        <div class="col">
+
+          <p class="skills">
+            Book Designer</p>
+          <p class="skills">
+            Branding Freelancer</p>
+          <p class="skills">Blockchain Developer</p>
+          <p class="skills">
+            Bot Developer</p>
+          <p class="skills">Business Process Modeling Specialist</p>
+          <p class="skills">Bahasa Indonesia Freelancer</p>
+        </div>
+        <div class="col">
+          <p class="skills">
+            Book Designer</p>
+          <p class="skills">
+            Branding Freelancer</p>
+          <p class="skills">Blockchain Developer</p>
+          <p class="skills">
+            Bot Developer</p>
+          <p class="skills">Business Process Modeling Specialist</p>
+          <p class="skills">Bahasa Indonesia Freelancer</p>
+        </div>
+        <div class="col">
+          <p class="skills">
+            Book Designer</p>
+          <p class="skills">
+            Branding Freelancer</p>
+          <p class="skills">Blockchain Developer</p>
+          <p class="skills">
+            Bot Developer</p>
+          <p class="skills">Business Process Modeling Specialist</p>
+          <p class="skills">Bahasa Indonesia Freelancer</p>
+        </div>
+        <div class="col">
+          <p class="skills">
+            Book Designer</p>
+          <p class="skills">
+            Branding Freelancer</p>
+          <p class="skills">Blockchain Developer</p>
+          <p class="skills">
+            Bot Developer</p>
+          <p class="skills">Business Process Modeling Specialist</p>
+          <p class="skills">Bahasa Indonesia Freelancer</p>
+        </div>
+        <div class="col">
+          <p class="skills">
+            Book Designer</p>
+          <p class="skills">
+            Branding Freelancer</p>
+          <p class="skills">Blockchain Developer</p>
+          <p class="skills">
+            Bot Developer</p>
+          <p class="skills">Business Process Modeling Specialist</p>
+          <p class="skills">Bahasa Indonesia Freelancer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+@endif
+
+
+
+@if (get_setting('slider_section_show') == 'on')
+<section class="position-relative jumbotron overflow-hidden d-flex flex-column justify-content-center"
+  style="min-height:300px; background-color:#FBF7ED;">
+
+  <div class="container">
+    <div class="">
+      <div class="d-flex justify-content-between  align-items-center">
+        <div class="row justify-content-between px-4  p-3" style="width:40%;">
+          <div>
+            <button class="btn rounded-2 bg-white">Start today</button>
+            <h5 class=" fw-700 fs-32 my-4" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+              Download
+              the
+              App
+            </h5>
+            <small class=" my-3">To classes on the go with scholarship Australia app. Stream or download to the
+              watch on the plane, the subway or wherever you learn best
+            </small>
+            <div class="mt-3">
+              <a href="{{ route('register') }}?type=2" style="background-color:#204B3F;" class="btn  mb-3 rounded-1">
+                <img class="" src="{{url('/public/assets/home/apple.png')}}" alt="Image" style="height:20px;" />
+                <span>|</span>
+                <span class="text-white">Download on the <br> apple store</span>
+
+              </a>
+
+
+              <a href="{{ route('register') }}?type=2" style="background-color:#204B3F;" class="btn  mb-3 rounded-1">
+                <img class="" src="{{url('/public/assets/home/playstore.png')}}" alt="Image" style="height:20px;" />
+                <span>|</span>
+                <span class="text-white">Go to on google <br> play store</span>
+
+              </a>
+
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class=" " style="width:50%;">
+          <img src=" {{url('/public/assets/findJob/home-banner.png')}}" alt="Image" "
+              class=" w-100" style=" height:370px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+@endif
+
+
+
+
+
+
+
+
 
 
 
@@ -810,7 +1226,7 @@
 </section>
 @endif -->
 
-@if (get_setting('service_section_show') == 'on')
+<!-- @if (get_setting('service_section_show') == 'on')
 <section class="pt-8 pb-2 bg-white">
   <div class="container">
     <div class="row mb-5">
@@ -884,9 +1300,9 @@
     </div>
   </div>
 </section>
-@endif
+@endif -->
 
-
+<!-- 
 @if (get_setting('cta_section_show') == 'on')
 <section class="cta_section py-8 bg-white">
   <div class="container">
@@ -941,9 +1357,9 @@
     </div>
   </div>
 </section>
-@endif
+@endif -->
 
-@if (get_setting('blog_section_show') == 'on')
+<!-- @if (get_setting('blog_section_show') == 'on')
 <section class="bg-white pt-4 pb-7 text-white">
   <div class="container">
     <div class="row">
@@ -992,11 +1408,11 @@
   </div>
 </section>
 @endif
-@endsection
+@endsection -->
 
 
 
-
+<!-- 
 @section('modal')
 @if ((Session::has('new_user') && Session::get('new_user') == true) || (auth()->check() && auth()->user()->user_type ==
 null))
@@ -1028,10 +1444,11 @@ null))
   </div>
 </div>
 @endif
-@endsection
+@endsection -->
 
 @section('script')
-@if ((Session::has('new_user') && Session::get('new_user') == true) || (auth()->check() && auth()->user()->user_type ==
+@if ((Session::has('new_user') && Session::get('new_user') == true) || (auth()->check() &&
+auth()->user()->user_type ==
 null))
 <script>
 $('#show_new_user_modal').modal({

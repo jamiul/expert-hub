@@ -65,6 +65,7 @@
   <div class="  container">
 
     <!-- navbar -->
+
     <div class="container">
       <h2 class="my-5 fs-25 fw-600">Explore the different ways to earn</h2>
       <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
@@ -335,6 +336,18 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- section-2 -->
 
