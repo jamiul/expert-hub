@@ -17,7 +17,7 @@
                     <h3 class="how-to-hire-banner-title text-success">Choose your way to get work done</h3>
                     <p class="how-to-hire-banner-text">Find freelancers and run projects your way at the world’s work marketplace.</p>
 
-                    <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2">Find talent</button>
+                    <button class="border-0 rounded-2 text-white fs-16  bg-success px-3 py-2">Find talent</button>
 
 
                     <p class='find-job-banner-rating-section fs-20'>Looking to get hired? <u class="text-success"><a class="text-decoration-underline" href="#">Sign up here</a></u></p>
@@ -45,7 +45,7 @@
                     <h3 class="get-work-child-text">Connect with talent that gets you with Talent Marketplace</h3>
                     <p class="get-work-child-details mb-3">Post your job on the world’s work marketplace and wait for the proposals to flood in from talented people around the world.</p>
                     <p class="get-work-child-details">Our advanced algorithms help you shortlist candidates who are the best fit. And you can check profiles, portfolios, and reviews before you give someone the green light.</p>
-                    <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find talent</button>
+                    <button class="border-0 rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find talent</button>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
                     <h3 class="get-work-child-text">Start critical work right away with Project Catalog</h3>
                     <p class="get-work-child-details">Rather skip the guesswork? Shop projects already planned for you by the talent who know them best.</p>
                     <p class="get-work-child-details">No need to create a job post or sift through a shortlist. Just browse, buy, and get going right away, with clear expectations from the start.</p>
-                    <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Browse Projects</button>
+                    <button class="border-0 rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Browse Projects</button>
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6 col-sm-12 ">
@@ -118,7 +118,7 @@
                     <h1 class="get-work-child-title  ">Take the fastlane to the right talent</h1>
                     <h3 class="get-work-child-text">Let us pinpoint the talent to reach your goals with Talent Scout</h3>
                     <p class="get-work-child-detailsmt-2">Talk us through your budget and goals and we’ll do the recruitment for you. You’ll get a shortlist of our very best talent, all perfectly suited to the task.</p>
-                    <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find Out More</button>
+                    <button class="border-0 rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find Out More</button>
                 </div>
             </div>
 
@@ -166,13 +166,31 @@
                         </div>
                     </div>
                     <!-- Trusted By -->
-                    <div class=" border-bottom   trusted-main">
-                        <p class="text-muted trusted mr-4">Trusted By </p>
-                        <img class=" py-3 px-5 mr-4" src="{{my_asset('Microsoft.svg')}}" alt="">
-                        <img class=" py-3 px-5 mr-4" src="{{my_asset('Airbnb.svg')}}" alt="">
-                        <img class=" py-3 px-5 mr-4" src="{{my_asset('automatic.svg')}}" alt="">
-                        <img class=" py-3 px-5 mr-4" src="{{my_asset('Bissell.svg')}}" alt="">
-                        <img class=" py-3 px-5 mx-4" src="{{my_asset('NASDAQ.svg')}}" alt="">
+                    <div class=" border-bottom row  trusted-main">
+                        <div class="col-lg-2 ">
+                        <p class="text-muted trusted ">Trusted By </p>
+                        </div>
+                        <div class="col-lg-2">
+                        <img class=" py-3 px-5 " src="{{my_asset('Microsoft.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-2 ">
+                        <img class=" py-3 px-5 " src="{{my_asset('Airbnb.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-2 ">
+                        <img class=" py-3 px-5 " src="{{my_asset('automatic.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-2 ">
+                        <img class=" py-3 px-5 " src="{{my_asset('Bissell.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-2">
+                        <img class=" py-3 px-5 " src="{{my_asset('NASDAQ.svg')}}" alt="">
+                        </div>
+
+
+
+
+
+
                     </div>
 
                 </div>
@@ -229,12 +247,8 @@
                     <div class="  my-2">
                         <h4 class="frequently-qsn-title">What’s the Top Rated program?</h4>
                         <p class="frequently-qsn-details">
-                            It’s a badge of honor for talent who consistently do great work.
+                            {{translate('It’s a badge of honor for talent who consistently do great work.')}}
                         </p>
-
-
-
-
                     </div>
                 </div>
             </div>

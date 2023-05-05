@@ -318,8 +318,7 @@ p {
     color: #5e6d60;
 }
 .trusted-main {
-    display: flex;
-    align-items: center;
+   
     margin-top: 110px;
     height: 70px;
 }

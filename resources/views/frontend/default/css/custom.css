@@ -1,0 +1,11 @@
+.skills{
+  cursor: pointer;
+  
+}
+.skills:hover{
+text-decoration: underline;
+}
+
+.header{
+  background-color:red;
+}

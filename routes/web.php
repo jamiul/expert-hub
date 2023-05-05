@@ -61,6 +61,45 @@ Route::post('/cities/get_city_by_country', 'CityController@get_city_by_country')
 
 Route::post('/user-account-type', 'UserController@set_account_type')->name('user.account.type');
 
+
+
+// find job section
+
+
+Route::get('/carusel', function(){
+
+	return view('carusel');
+})->name('carusel');
+
+Route::get('/waysToEarn', function(){
+
+	return view('frontend.default.find-job.waysToEarn');
+})->name('waysToEarn');
+
+// promote content 
+
+Route::get('/promote', function(){
+
+	return view('frontend.default.find-job.promote');
+})->name('promote');
+Route::get('/sendProposal', function(){
+
+	return view('frontend.default.find-job.sendProposal');
+})->name('sendProposal');
+
+Route::get('/badge', function(){
+
+	return view('frontend.default.find-job.badge');
+})->name('badge');
+Route::get('/proposal', function(){
+
+	return view('frontend.default.find-job.proposal');
+})->name('proposal');
+Route::get('/skills', function(){
+
+	return view('frontend.default.find-job.skills');
+})->name('skills');
+
 //Blog Section
 Route::get('/blog', 'BlogController@all_blog')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
