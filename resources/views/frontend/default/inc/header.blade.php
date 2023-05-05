@@ -433,21 +433,22 @@
                 <div class="row">
                   <div class="col-lg-3 col-sm-6 ">
                     <div class="w-75 mega-menu-fj-item">
-                      <a class="dropdown-item" href="#">{{ translate('Ways to earn') }}</a>
+                      <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
                       <p>
                         {{translate('Learn why Scholarship australia has the right opportunities for you.')}}</p>
                     </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="w-75 mega-menu-fj-item">
-                      <a class="dropdown-item pe-2" href="#">{{ translate('Find ways to promote yourself') }}</a>
+                      <a class="dropdown-item pe-2"
+                        href="{{route('promote')}}">{{ translate('Find ways to promote yourself') }}</a>
                       <p>{{translate('Explore the kind of work available in your field.')}}</p>
                     </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                     <div class="w-75  mega-menu-fj-item">
                       <a class="dropdown-item"
-                        href="{{ route('search') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                        href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
                       <p>{{translate('Show clients you’re the one they want.')}}</p>
                     </div>
                   </div>
