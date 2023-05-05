@@ -1,1 +1,13 @@
 /*your custom css goes here*/
+
+.dropdown-menu {
+    max-width: unset;
+}
+
+.aiz-navbar .menu a {
+    font-size: 15px;
+}
+
+.aiz-main-wrapper {
+    overflow-x: unset;
+  }

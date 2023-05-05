@@ -1,6 +1,6 @@
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
-    <div class="aiz-navbar py-0px fs-14 position-relative">
-        <div class="container-fluid py-18px px-lg-5 d-none d-md-block">
+    <div class="aiz-navbar py-0px fs-15 position-relative">
+        <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
             <div class="d-flex align-items-center justify-content-between">
             
             @if (!Auth::check())
@@ -72,8 +72,8 @@
                                     <li class="nav-item ml-xl-3">
                                         <a class="nav-link" href="{{ route('register') }}">{{ translate('Sign Up') }}</a>
                                     </li>
-                                    <li class="nav-item ml-xl-3">
-                                        <a class="btn btn-primary rounded-1" href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
+                                    <li class="nav-item ml-xl-3 mr-xl-2">
+                                        <a class="btn btn-primary" href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                                     </li>
                                 @elseif (isAdmin())
                                     <li class="nav-item d-none d-lg-block">
@@ -275,7 +275,7 @@
                         <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
                     </a>
                 </div>
-                <div class="aiz-navbar py-17px  fs-14 position-relative ">
+                <div class="aiz-navbar py-17px  fs-15 position-relative ">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between">
                             
@@ -306,7 +306,17 @@
                                             <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-white " href="#">{{ translate('Why Scholarships Australia') }}</a>
+                                            <div class="dropdown">
+                                                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                {{ translate('About Us') }}
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">{{ translate('Success Stories') }}</a>
+                                                    <a class="dropdown-item pe-2" href="#">{{ translate('Reviews') }}</a>
+                                                    <a class="dropdown-item" href="#">{{ translate('How to hire') }}</a>
+                                                    <a class="dropdown-item" href="#">{{ translate('How to find work') }}</a>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
