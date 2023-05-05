@@ -391,7 +391,7 @@
                         </li>
                         <li class="nav-item">
 
-                        <li class="dropdown mega_menu ">
+                        <div class="dropdown mega_menu ">
                             <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ translate('Find Jobs') }}
                             </a>
@@ -421,7 +421,7 @@
 
 
                             </div>
-                        </li>
+                        </div>
 
                         </li>
                         <li class="nav-item">
