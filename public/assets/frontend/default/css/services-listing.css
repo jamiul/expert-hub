@@ -1,0 +1,27 @@
+.container-main {
+    
+}
+.service-head-toggle {
+    width: 95%;
+    margin: 0 2% 10px 2%;
+}
+.service-toggle-child {
+    margin-bottom: 8px;
+}
+.service-toggle-child p{
+    color: #222222;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+.service-toggle-list{
+    color: #222222;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+}
+.service-toggle-option {
+    border-bottom: 2px solid #ccc;
+}

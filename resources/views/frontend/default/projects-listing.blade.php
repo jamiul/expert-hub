@@ -29,8 +29,8 @@
                                             <span class="bg-white pr-3">{{ translate('Categories') }}</span>
                                         </h6>
                                         <div class="">
-                                            <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">  
-                                                <option value="">{{ translate('All Categories') }}</option> 
+                                            <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                                <option value="">{{ translate('All Categories') }}</option>
                                                 @foreach(\App\Models\ProjectCategory::all() as $category)
                                                     <option value="{{ $category->slug }}" @if (isset($_GET['category_id'])&& $_GET['category_id'] == $category->slug ) selected @endif>
                                                         {{$category->name}}
@@ -53,7 +53,7 @@
                                                 <span class="float-right text-secondary fs-12"></span>
                                             </label>
                                             <label class="aiz-checkbox">
-                                                <input type="checkbox"  name="projectType[]" value="Long Term" @if (in_array('Long Term', $projectType)) checked @endif 
+                                                <input type="checkbox"  name="projectType[]" value="Long Term" @if (in_array('Long Term', $projectType)) checked @endif
                                                     onchange="applyFilter()"> {{ translate('Long Term') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-12"></span>
@@ -70,7 +70,7 @@
                                                 <input type="radio" name="bids" value="" onchange="applyFilter()" @if ($bids == "")
                                                     checked
                                                 @endif> {{ translate('Any Number of bids') }}
-                                                <span class="aiz-rounded-check"></span>
+                                                <span                        class="aiz-rounded-check"></span>
                                                 <span class="float-right text-secondary fs-12"></span>
                                             </label>
                                             <label class="aiz-radio">
@@ -182,7 +182,7 @@
                             <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                         </div>
                     </div>
-                    
+
                     <!-- Project List -->
                     <div class="col-xl-9 col-lg-8">
                         <div class="card mb-lg-0 rounded-2 border-gray-light">
