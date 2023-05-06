@@ -177,8 +177,7 @@
                   <a class="nav-link" href="{{ route('register') }}">{{ translate('Sign Up') }}</a>
                 </li>
                 <li class="nav-item ml-xl-3">
-                  <a class="btn btn-primary rounded-1"
-                    href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
+                  <a class="btn btn-primary" href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                 </li>
                 @elseif (isAdmin())
                 <li class="nav-item d-none d-lg-block">
@@ -454,8 +453,6 @@
                   </div>
                 </div>
 
-
-
               </div>
             </li>
 
@@ -497,13 +494,9 @@
                           <p>Learn about how to grow your independent career.</p>
                         </div>
 
-
                       </div>
                     </div>
                   </div>
-
-
-
                   <div class="col-lg-6 col-sm-6 py-3">
                     <h5>Where work gets done</h5>
                     <div class="mt-1">
@@ -531,8 +524,6 @@
                     </div>
                   </div>
                 </div>
-
-
               </div>
             </li>
 
@@ -543,8 +534,6 @@
       </div>
       <!-- Container wrapper -->
     </nav>
-
-
     @endif
   </div>
 </header>

@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
 <style>
 .jumbotron {
   height: 100%;
@@ -337,22 +331,9 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- section-2 -->
 
     <div class=" container mt-5 ">
-
       <h2 class="my-3 fs-25 fw-600">Our award-winning platform</h2>
       <div class="row g-5 mt-4 mb-5">
         <div class="col-lg-5 col-sm-12 ">
@@ -465,7 +446,6 @@
 
     <div class="container marketing  " style="margin-top:100px;">
       <h2 class="fs-25 fw-600 fw-sans-serif muted">Like-minded professionals</h2>
-
       <div id="demo" class="rounded-1 carousel slide jumbotron my-4" data-ride="carousel">
 
 
@@ -486,10 +466,8 @@
               class=" h-100 img-fluid rounded-1" />
               </div>
               <div class="col-md-7 d-flex align-items-center justify-content-center ">
-
                 <div>
-                  <h4 class="fs-26" style="color: #001e00;
-">Kolya T.</h4>
+                  <h4 class="fs-26" style="color: #001e00;">Kolya T.</h4>
                   <h6 class="fs-26" style="color: #001e00;">Owner of Wordpress Lab Agency, USA. Certified Wordpress
                     expert who built his own
                     agency

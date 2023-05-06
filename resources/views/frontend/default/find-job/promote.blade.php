@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-
-
 <body class="bg-white">
   @extends('frontend.default.layouts.app')
 
@@ -45,8 +37,6 @@
         <div class="">
           <div class="" style=" width:60%;">
             <h1 style=" color:#50A907;"> Use Connects to give you the edge when you need it</h1>
-
-
             <h6>
               Spend Connects like points on Upwork to show potential clients that you’re serious about your business and
               invested in building a working relationship with them. Connects are an investment toward your freelance
@@ -58,7 +48,6 @@
                   more</a> </span></button>
           </div>
         </div>
-
         <div>
           <img src="{{url('/public/assets/findJob/consultant-2.jpg')}}" alt="Image" "
               class=" w-100 h-100 img-fluid" />
