@@ -103,7 +103,7 @@
         </div>
     </div>
 
-    <div class="row mt-5 mb-5">
+    <div class="row container-main mb-5">
         <div class="col-lg-6 col-sm-12 ">
             <div class="row">
                 <div class="col-6 ">
@@ -143,7 +143,7 @@
         </div>
     </div>
 
-    <div class="row my-5">
+    <div class="row container-main">
         <div class="col-lg-6 col-sm-12 my-auto">
             <h1 class="get-work-child-title  ">4 Ways to Use Scholarship australia to Achieve Your Goals</h1>
             <p class="get-work-child-details">As the world’s work marketplace, there’s more than one way to use Scholarship australia—and at least one that works for you. From quick project turnarounds to major strategic transformations, businesses of all sizes and ambitions can develop the trusted relationships they need to thrive and grow.</p>
@@ -155,7 +155,7 @@
         </div>
     </div>
 
-    <div class="mt-5">
+    <div class="container-main">
         <h1 class="hth-lets-work-title">The seal of approval</h1>
         <div class=" border-bottom mt-3"></div>
         <div class="row mt-3">
@@ -188,7 +188,7 @@
             </div>
         </div>
     </div>
-    </div>
+    
     <!-- Trusted By -->
     <div class="container-main">
         <div class="row ">
