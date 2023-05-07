@@ -1031,8 +1031,11 @@
   </section>
   @endif
 
+
+  <!-- skills -->
+
   @if (get_setting('latest_project_show') == 'on')
-  <section class=" bg-white">
+  <section class=" bg-white" style="margin-bottom:80px;">
     <div class="container ">
       <ul class="nav my-5">
         <li class="nav-item">
