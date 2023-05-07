@@ -35,13 +35,13 @@
             want.
           </p>
 
-          <button class="btn btn rounded-pill bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1"
-              href="{{route('home')}}">Sign
+          <button class="btn btn  bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1" href="{{route('home')}}">Sign
               Up</a>
           </button>
+          <div class="border-bottom mt-5"></div>
         </div>
 
-        <h6 class="border-top " style="margin-top:80px;">Trusted By</h6>
+        <h6 class=" " style="">Trusted By</h6>
         <div ">
           <img src=" {{url('/public/assets/findJob/companies.png')}}" alt="Image" />
       </div>
@@ -382,8 +382,7 @@
 
 
           </div>
-          <button type="button" class=" rounded-pill mt-3 text-white p-2 btn fs-16 px-4"
-            style=" background-color:#337204;">Create
+          <button type="button" class=" mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
             your
             profile</button>
         </div>
@@ -745,8 +744,7 @@
           more</span>
         <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
       </p>
-      <button type="button" class=" rounded-pill mt-3 text-white p-2 btn fs-16 px-4"
-        style=" background-color:#337204;">Create
+      <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
         your
         profile</button>
 
@@ -854,7 +852,7 @@
     </div>
     <div>
       <p class="d-flex   justify-content-end ">
-        <span class="border-rounded btn text-white rounded-pill my-2 px-4">Create your profile</span>
+        <span class="border btn text-white  my-2 px-4">Create your profile</span>
       </p>
     </div>
 

@@ -430,6 +430,13 @@
               </a>
               <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
                 <div class="row">
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="w-75  mega-menu-fj-item">
+                      <a class="dropdown-item"
+                        href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                      <p>{{translate('Show clients you’re the one they want.')}}</p>
+                    </div>
+                  </div>
                   <div class="col-lg-3 col-sm-6 ">
                     <div class="w-75 mega-menu-fj-item">
                       <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
@@ -444,13 +451,7 @@
                       <p>{{translate('Explore the kind of work available in your field.')}}</p>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-sm-6">
-                    <div class="w-75  mega-menu-fj-item">
-                      <a class="dropdown-item"
-                        href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
-                      <p>{{translate('Show clients you’re the one they want.')}}</p>
-                    </div>
-                  </div>
+
                 </div>
 
               </div>
