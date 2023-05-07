@@ -480,12 +480,30 @@ p {
     align-items: center;
     margin: auto;
 }
-.blog-img {
+/* .blog-img {
     height: 225px;
     margin-bottom: 0;
-}
-.Explore-blog-card {
+} */
+/* .Explore-blog-card {
     border-radius: 0 0 10px 10px;
+} */
+.htfj-learn-work-title{
+    color: #001e00;
+    letter-spacing: -.032em;
+    margin-top: 0;
+
+    font-family: Upworkrza,sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.htfj-learn-work-child-title{
+    color: #001e00;
+    letter-spacing: -.006em;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1em;
 }
 .payments-img {
     border-radius: 0px 10px 10px 0;
