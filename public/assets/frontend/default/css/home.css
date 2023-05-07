@@ -1,0 +1,15 @@
+body{
+  font-family: 'DM Sans', sans-serif;
+}
+ .category-title{
+font-weight: 700;
+ }
+
+ .category{
+  height: 210px;
+  color: black;
+ }
+ .category-list{
+  
+  color: black !important;
+ }

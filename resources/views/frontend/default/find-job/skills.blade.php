@@ -34,6 +34,7 @@
           </div>
         </div>
       </div>
+      <!-- Find Freelance Jobs  -->
       <div class=" my-5 fs-16">Find Freelance Jobs / </div>
       <div class="row mt-5">
         <div class="col-lg-3">
@@ -117,6 +118,7 @@
           </div>
         </div>
 
+        <!-- Explore remote jobs -->
 
         <div class="col-lg-9">
           <h3 class="mb-4">Explore remote jobs</h3>
