@@ -67,9 +67,12 @@
 }
 
 .review-say-customer {
-    height: 450px;
-    overflow: hidden;
+    height: 80vh !important;
+    overflow: hidden ;
     overflow-y: scroll;
+
+}
+.review-say-customer-topic {
 }
 .review-details {
     display: flex;
@@ -188,6 +191,7 @@
     border-left: none !important;
     border-bottom: gray !important;
     position: relative;
+
 }
 .nav-link::after {
     content: " ";
@@ -195,7 +199,7 @@
     transition: all 0.2s;
     height: 2px;
     width: 100%;
-    background-color: greenyellow;
+    background-color: #58B38D;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -246,6 +250,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 10px 20px;
 }
 .join-scholarship-btn:hover {
     background: #1c51af;
@@ -318,17 +323,17 @@ p {
     color: #5e6d60;
 }
 .trusted-main {
-    display: flex;
-    align-items: center;
-    margin-top: 110px;
+    margin: 110px 0 0px 0;
     height: 70px;
 }
 .trusted {
-    margin-bottom: 0 !important;
-    text-align: center;
-    font-size: 20px;
-    align-items: center;
-    margin-right: 30px;
+    color: #5e6d55;
+    letter-spacing: .6px;
+    font-family: Neuemontreal,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-top: 10px;
 }
 /* How to hire */
 .how-to-hire-banner-title {
@@ -363,7 +368,7 @@ p {
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
-    width: 700px;
+    width: 60%;
 }
 .get-work-child-title {
     color: #001e00;
@@ -417,6 +422,10 @@ p {
     margin-bottom: 15px;
     color: #5e6d55;
 }
+.hth-profile-active{
+    bottom: -10 !important;
+    margin: 10px 0 0 10px ;
+}
 
 /* how-to-find-job */
 .find-job-banner p {
@@ -431,10 +440,10 @@ p {
     font-weight: 700;
 }
 .find-job-banner-rating-section {
-    position: absolute;
+
     bottom: 0px;
-    width: 95%;
-    margin: 0 10px 0 10px;
+    width: 94%;
+    margin: 0 2 0 2;
 }
 .find-job-banner-rating-section p {
     color: #5e6d55;
@@ -589,6 +598,10 @@ p {
 }
 
 /* Frequently asked questions */
+.container-main-freQus{
+    width: 84%;
+    margin: 100px 8% 95px 8%;
+}
 .frequently-qsn-main-title {
     color: #001e00;
     letter-spacing: -0.032em;
@@ -604,6 +617,7 @@ p {
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
+
 }
 .frequently-qsn-details {
     color: #5e6d55;
@@ -612,6 +626,7 @@ p {
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
+    margin-bottom: 10px;
 }
 .content {
     color: #5e6d55;
