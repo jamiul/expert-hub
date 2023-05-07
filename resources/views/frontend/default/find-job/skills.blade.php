@@ -22,12 +22,12 @@
           you love to do.
         </h6>
         <div class="d-flex align-items-center">
-          <div> <button class="btn btn rounded-pill px-4 fs-16" style="background-color:#50A907; color:white;">Find work
+          <div> <button class="btn btn  px-4 fs-16" style="background-color:#58B38E; color:white;">Find work
             </button>
           </div>
           <div class="d-flex ml-5">
             <div><img src="{{url('/public/assets/findJob/video.png')}}" alt="Image" "
-              class=" mr-3 rounded-2" style=" width:15px; height:15px; color:#4FA808; background-color:#4FA808;">
+              class=" mr-3 rounded-2" style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
             </div>
             <div><span class="fs-16" style="color:#4FA808;"> Watch a demo</span></div>
 
@@ -126,7 +126,7 @@
             <input id="search-input" type="search" class="form-control rounded-pill"
               placeholder="Try skill like PHP  JAVASCRIPT,">
             <p id="search-button" type="button" class="btn position-absolute rounded-2 "
-              style="right:0; background-color:#50A907; width:5px; px-2 ">
+              style="right:0; background-color:#58B38E; width:5px; px-2 ">
               <img src=" {{url('/public/assets/findJob/00.png')}}" alt="Image" class="d-flex align-items-center"
                 style="width:18px; justify:center; align-items:center;  " />
             </p>

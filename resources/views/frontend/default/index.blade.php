@@ -22,7 +22,7 @@
                 Do
                 Hire the best consultations for any job, online
               </h2>
-              <p class="fs-15 my-3 banner ">Millions of people use scholarships Australia to turn their ideas into
+              <p class="fs-15 my-1 banner ">Millions of people use scholarships Australia to turn their ideas into
                 reality.
               </p>
               <div>
@@ -307,10 +307,7 @@
           <p class="fs-12">Most viewed and all-time top-selling services</p>
         </div>
         <div>
-
-
           <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
-
           <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
         </div>
       </div>
@@ -319,28 +316,32 @@
         <div class="row ">
 
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:370px">
+            <div class="card  rounded-1" style="height:400px">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
-                <div class="card-body">
+                <div class="bg-secondary ">
+                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                </div>
+                <div class="card-body" style=" height:110px;">
                   <div>
-                    <p class="card-title mt-3 fs-12">Web app design&</p>
-                    <p class="card-title mt-3 fs-16 fw-700">I will design modern website in figma or adobe xd</p>
-                    <span>
-                      <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
+                    <p class="card-title mt-1 fs-12">Web app design&</p>
+                    <p class="card-title mt-1 fs-14 fw-700">I will design modern website in figma or adobe xd</p>
+                    <div class="mt-2">
+                      <span>
+                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
                   " />
-                    </span>
-                    <span> 4896</span>
-                    <span> reviews</span>
+                      </span>
+                      <span> 4896</span>
+                      <span> reviews</span>
+                    </div>
                   </div>
-                  <hr>
-                  <div class="d-flex justify-content-between">
+                </div>
+                <div class="card-body">
+                  <div class="border border-top my-1"></div>
+                  <div class="d-flex justify-content-between mt-1">
                     <div>
                       <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;
-                  " />
+                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
+                          style="width:12px;" />
                       </span>
                       <span> World runo</span>
                     </div>
@@ -349,59 +350,62 @@
                     </div>
 
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
+
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:370px">
+            <div class="card  rounded-1" style="height:400px">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
-                <div class="card-body">
+                <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
+                    alt="Image" /></div>
+                <div class="card-body" style="height:110px;">
                   <div>
-                    <p class="card-title mt-3 fs-12">Art & illustrations</p>
-                    <p class="card-title mt-1 fs-16 fw-700">I will create modern flat design illustrations</p>
-                    <span>
-                      <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
+                    <p class="card-title mt-1 fs-12">Art & illustrations</p>
+                    <a href="#" class="card-title  mt-1 fs-14 fw-700"><u>I will create modern flat design
+                        illustrations</u>
+                    </a>
+                    <div class="mt-2">
+                      <span>
+                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
                   " />
-                    </span>
-                    <span> 4896</span>
-                    <span> reviews</span>
+                      </span>
+                      <span> 4896</span>
+                      <span> reviews</span>
+                    </div>
                   </div>
-                  <hr>
+                </div>
+                <div class="card-body">
+                  <div class="border border-top my-1"></div>
                   <div class="d-flex justify-content-between">
                     <div>
                       <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;
-                  " />
+                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
+                          style="width:12px; " />
                       </span>
                       <span> World runo</span>
                     </div>
                     <div>
                       <span> starting at $990</span>
                     </div>
-
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
-          <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:370px">
+
+
+          <div class=" col-lg-3 ">
+            <div class=" card rounded-1" style="height:400px">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
-                <div class="card-body">
+                <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
+                    alt="Image" /></div>
+                <div class="card-body" style="height:110px;">
                   <div>
                     <p class="card-title mt-1 fs-12">Design & creative</p>
-                    <p class="card-title mt-1 fs-16 fw-700">I will design fully responsive website website with HTML,
+                    <p class="card-title mt-1 fs-14 fw-700">I will design fully responsive website website with
+                      HTML,
                       CSS,
                       boootstrap..
                     </p>
@@ -412,12 +416,14 @@
                     <span> 4896 reviews</span>
 
                   </div>
-                  <hr>
+                </div>
+                <div class="card-body">
+                  <div class="border border-top my-1"></div>
                   <div class="d-flex justify-content-between">
                     <div>
                       <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;
-                  " />
+                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
+                          style="width:12px; " />
                       </span>
                       <span> Brono</span>
                     </div>
@@ -426,44 +432,43 @@
                     </div>
 
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:370px">
+            <div class="card  rounded-1" style="height:400px">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
-                <div class="card-body">
+                <div class="bg-secondary ">
+                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                </div>
+                <div class=" card-body" style="height:110px;">
                   <div>
-                    <p class="card-title mt-3 fs-12">Web & app design </p>
-                    <p class="card-title mt-1 fs-16 fw-700">I will do mobile and web development</p>
-                    <span>
-                      <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
-                  " />
-                    </span>
-                    <span> 4896</span>
-                    <span> reviews</span>
+                    <p class="card-title mt-1 fs-12">Web & app design </p>
+                    <p class="card-title mt-1 fs-14 fw-700">I will do mobile and web development</p>
+                    <div class="mt-2">
+                      <span>
+                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                          style="width:12px;" />
+                      </span>
+                      <span> 4896</span>
+                      <span> reviews</span>
+                    </div>
                   </div>
-                  <hr>
+                </div>
+                <div class="card-body">
+                  <div class="border border-top my-1"></div>
                   <div class="d-flex justify-content-between">
                     <div>
-                      <span>
-                        <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:15px;
-                  " />
+                      <span class="mr-2">
+                        <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;" />
                       </span>
                       <span> World runo</span>
                     </div>
                     <div>
                       <span> starting at $990</span>
                     </div>
-
                   </div>
-
                 </div>
 
               </div>
@@ -471,8 +476,9 @@
           </div>
         </div>
         <div class="pt-2 text-center">
-          <a href="#"><span>All services</span></a>
-          <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
+          <a href="#" class="category-list "><span>All services</span></a>
+          <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+            style="width:16px;" />
 
         </div>
       </div>
@@ -490,8 +496,10 @@
           <small class="fs-13 ">Know your worth and find the jobs that quality your life</small>
         </div>
         <div>
-          <small class="fw-700 fs-13">All categories</small>
-          <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
+          <a class=" " href="#">
+            <small class="fw-700 fs-12 category-list">All categories</small>
+            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
+          </a>
         </div>
       </div>
       <div class="my-2">
@@ -500,14 +508,14 @@
             <div class="card rounded ">
               <div class="card-body d-flex items-center justify-content-between">
                 <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-1.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
                 </div>
                 <div>
                   <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
+                  <h6 class="text-primary fs-12">
                     Mailchimp
-                  </p>
+                  </h6>
                   <div class="">
                     <span>$125k hourly</span>
                     <span>|</span>
@@ -521,7 +529,7 @@
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
+                    style="width:15px;  align-items:center;" />
                 </div>
 
 
@@ -534,12 +542,12 @@
             <div class="card rounded ">
               <div class="card-body d-flex items-center justify-content-between">
                 <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-2.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
                 </div>
                 <div>
                   <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
+                  <p class="text-primary fs-12">
                     Mailchimp
                   </p>
                   <div class="">
@@ -555,7 +563,7 @@
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
+                    style="width:15px;  align-items:center;" />
                 </div>
 
 
@@ -568,12 +576,12 @@
             <div class="card rounded ">
               <div class="card-body d-flex items-center justify-content-between">
                 <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-3.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
                 </div>
                 <div>
                   <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
+                  <p class="text-primary fs-12">
                     Mailchimp
                   </p>
                   <div class="">
@@ -589,11 +597,8 @@
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
+                    style="width:15px;  align-items:center;" />
                 </div>
-
-
-
               </div>
 
             </div>
@@ -602,12 +607,12 @@
             <div class="card rounded ">
               <div class="card-body d-flex items-center justify-content-between">
                 <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-4.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
                 </div>
                 <div>
                   <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
+                  <p class="text-primary fs-12">
                     Mailchimp
                   </p>
                   <div class="">
@@ -623,11 +628,8 @@
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
+                    style="width:15px;  align-items:center;" />
                 </div>
-
-
-
               </div>
 
             </div>
@@ -636,12 +638,12 @@
             <div class="card rounded ">
               <div class="card-body d-flex items-center justify-content-between">
                 <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-5.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
                 </div>
                 <div>
                   <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
+                  <p class="text-primary fs-12">
                     Mailchimp
                   </p>
                   <div class="">
@@ -657,11 +659,68 @@
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
+                    style="width:15px;  align-items:center;" />
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card rounded ">
+              <div class="card-body d-flex items-center justify-content-between">
+                <div>
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-6.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
+                </div>
+                <div>
+                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-12">
+                    Mailchimp
+                  </p>
+                  <div class="">
+                    <span>$125k hourly</span>
+                    <span>|</span>
+                    <span>1.5 days</span>
+                    <span>|</span>
+                    <span>Expensive</span>
+                    <span>|</span>
+                    <span>Remote</span>
+                  </div>
 
+                </div>
+                <div>
+                  <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                    style="width:15px;  align-items:center;" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card rounded ">
+              <div class="card-body d-flex items-center justify-content-between">
+                <div>
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-7.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
+                </div>
+                <div>
+                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-12">
+                    Mailchimp
+                  </p>
+                  <div class="">
+                    <span>$125k hourly</span>
+                    <span>|</span>
+                    <span>1.5 days</span>
+                    <span>|</span>
+                    <span>Expensive</span>
+                    <span>|</span>
+                    <span>Remote</span>
+                  </div>
 
-
+                </div>
+                <div>
+                  <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                    style="width:15px;  align-items:center;" />
+                </div>
               </div>
 
             </div>
@@ -670,12 +729,12 @@
             <div class="card rounded ">
               <div class="card-body d-flex items-center justify-content-between">
                 <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
+                  <img class=" rounded-circle" src=" {{url('/public/assets/home/job-8.png')}}" alt="Image"
+                    style="width:50px;  align-items:center;" />
                 </div>
                 <div>
                   <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
+                  <p class="text-primary fs-12">
                     Mailchimp
                   </p>
                   <div class="">
@@ -691,84 +750,12 @@
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
+                    style="width:15px;  align-items:center;" />
                 </div>
-
-
-
               </div>
 
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card rounded ">
-              <div class="card-body d-flex items-center justify-content-between">
-                <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
-                </div>
-                <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
-                    Mailchimp
-                  </p>
-                  <div class="">
-                    <span>$125k hourly</span>
-                    <span>|</span>
-                    <span>1.5 days</span>
-                    <span>|</span>
-                    <span>Expensive</span>
-                    <span>|</span>
-                    <span>Remote</span>
-                  </div>
-
-                </div>
-                <div>
-                  <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
-                </div>
-
-
-
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card rounded ">
-              <div class="card-body d-flex items-center justify-content-between">
-                <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
-                </div>
-                <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary">
-                    Mailchimp
-                  </p>
-                  <div class="">
-                    <span>$125k hourly</span>
-                    <span>|</span>
-                    <span>1.5 days</span>
-                    <span>|</span>
-                    <span>Expensive</span>
-                    <span>|</span>
-                    <span>Remote</span>
-                  </div>
-
-                </div>
-                <div>
-                  <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                    style="width:20px;  align-items:center;" />
-                </div>
-
-
-
-              </div>
-
-            </div>
-          </div>
-
 
         </div>
       </div>
@@ -785,7 +772,7 @@
     <div class=" container">
       <div class="">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h5 class="fw-700 fs-30">People love to learn with scholarships Australia </h5>
+          <h5 class="fw-700 fs-20 text-black">People Love To Learn With <br> Scholarships Australia </h5>
         </div>
       </div>
 
@@ -794,8 +781,8 @@
           <div class="col-lg-4">
             <div class=" card rounded-1 ">
               <div class=" card-body">
-                <p class="text-primary mt-2 fs-12">Great work</p>
-                <p class=" mt-3 fs-16">"I found the course material to be highly engaging and the instructors to
+                <p class="text-primary mt-2 fs-13">Great Work</p>
+                <p class=" mt-3 fs-13">"I found the course material to be highly engaging and the instructors to
                   be helpful communicative"
                 </p>
                 <hr>
@@ -805,8 +792,8 @@
                   " />
                   </div>
                   <div>
-                    <small class="fw-700"> Curtney Henry</small>
-                    <p style="Line height:10px;"> Web designer</p>
+                    <small class="fw-700 text-black"> Curtney Henry</small>
+                    <h6 class="fs-10 text-muted" style="Line height:10px;"> Web designer</h6>
                   </div>
                 </div>
               </div>
@@ -815,8 +802,8 @@
           <div class="col-lg-4">
             <div class=" card rounded-1 ">
               <div class=" card-body">
-                <p class="text-primary mt-2 fs-12">Great work</p>
-                <p class=" mt-3 fs-16">"I found the course material to be highly engaging and the instructors to
+                <p class="text-primary mt-2 fs-13">Great Work</p>
+                <p class=" mt-3 fs-13">"I found the course material to be highly engaging and the instructors to
                   be helpful communicative"
                 </p>
                 <hr>
@@ -826,8 +813,8 @@
                   " />
                   </div>
                   <div>
-                    <small class="fw-700"> Curtney Henry</small>
-                    <p style="Line height:10px;"> Web designer</p>
+                    <small class="fw-700 text-black"> Curtney Henry</small>
+                    <h6 class="fs-10 text-muted" style="Line height:10px;"> Web designer</h6>
                   </div>
                 </div>
               </div>
@@ -836,19 +823,19 @@
           <div class="col-lg-4">
             <div class=" card rounded-1 ">
               <div class=" card-body">
-                <p class="text-primary mt-2 fs-12">Great work</p>
-                <p class=" mt-3 fs-16">"I found the course material to be highly engaging and the instructors to
+                <p class="text-primary mt-2 fs-13">Great work</p>
+                <p class=" mt-3 fs-13">"I found the course material to be highly engaging and the instructors to
                   be helpful communicative"
                 </p>
                 <hr>
                 <div class="d-flex  ">
                   <div>
-                    <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
+                    <img class="mr-2  " src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
                   " />
                   </div>
                   <div>
-                    <small class="fw-700"> Curtney Henry</small>
-                    <p style="Line height:10px;"> Web designer</p>
+                    <small class="fw-700 text-black"> Curtney Henry</small>
+                    <h6 class="fs-10 text-muted" style="Line height:10px;"> Web designer</h6>
                   </div>
                 </div>
               </div>
@@ -860,8 +847,8 @@
           <div class="col-lg-4">
             <div class=" ">
               <div class=" ">
-                <p class="text-primary mt-2 fs-12">4.9/5</p>
-                <p class=" mt-3 fs-16">Clients rate professional scholarships austrralia"
+                <p class=" mt-2 fs-16 text-black fw-700">4.9/5</p>
+                <p class=" mt-3 fs-12">Clients rate professional on <br> Scholarships Australia"
                 </p>
               </div>
             </div>
@@ -869,8 +856,8 @@
           <div class="col-lg-4">
             <div class="">
               <div class=" ">
-                <p class="text-primary mt-2 fs-12">95%</p>
-                <p class=" mt-3 fs-16">95% customers are satisfied through to see their consultant
+                <p class=" mt-2 fs-16 text-black fw-700">95%</p>
+                <p class=" mt-3 fs-12">95% customers are satisfied <br> through to see their consultant
                 </p>
 
               </div>
@@ -879,8 +866,8 @@
           <div class="col-lg-4">
             <div class="  ">
               <div class="">
-                <p class="text-primary mt-2 fs-12">Award winner</p>
-                <p class=" mt-3 fs-16">G2s best software awards
+                <p class=" mt-2 fs-16 text-black fw-700">Award winner</p>
+                <p class=" mt-3 fs-12">G2s best software awards
                 </p>
               </div>
             </div>
@@ -895,48 +882,49 @@
   <section class="">
     <div class=" container mt-5 ">
       <div class="row g-5 d-fle justify-content-around mt-4">
-        <div>
-          <img class="mr-2" src="{{url('/public/assets/findJob/home-banner.png')}}" alt="Image" style="height:300px;" />
+        <div class="">
+          <img class="mr-2" src="{{url('/public/assets/home/001.png')}}" alt="Image" style="width:500px;" />
         </div>
-        <div class="col-lg-5 col-sm-12 ">
-          <h3>Join world best marketplace for consultant</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus odio amet aperiam
-            voluptatum doloremque, sint ratione sit beatae ullam quisquam maiores similique consequatur deleniti nisi
-            assumenda? Error?</p>
+        <div class=" col-lg-5 col-sm-12 ">
+          <h4 class="fs-32 fw-700">Join world best marketplace <br> for consultant</h4>
+          <h6 class="fs-12 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus odio
+            amet
+            aperiam
+            voluptatum doloremq ue, sint ratione sit beatae </h6>
           <div class="">
-            <div class="d-flex ">
+            <div class=" d-flex ">
               <div>
-                <img class="mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <img class=" mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
               </div>
               <div>
-                <p class="fs-16 "> Find work that hits your financial
+                <h6 class="fs-12 "> Find work that hits your financial
                   goals
                   faster
                   with
                   ambitious startups
-                  and well-known brands.</p>
+                  and well-known brands.</h6>
               </div>
               <div>
               </div>
             </div>
             <div class="d-flex align-items-center">
               <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-              <p class="h6 m-2">
+              <h6 class="fs-12 m-2">
 
                 Build a predictable pipeline of projects, big and small, through strong
                 connections.
-              </p>
+              </h6>
 
 
 
             </div>
             <div class="d-flex align-items-center mb-2">
               <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-              <p class="h6 m-2 "> Search for jobs or have
+              <h6 class="fs-12 m-2 "> Search for jobs or have
                 clients
                 come to you. The
                 opportunities
-                are endless.</p>
+                are endless.</h6>
             </div>
           </div>
           <button type="button" class="btn btn-primary mt-3 text-white p-2 btn fs-16 px-4" style=" ">
@@ -964,20 +952,37 @@
           <small class="fs-13 ">See how you can up your career status</small>
         </div>
         <div>
-          <small class="fw-700 fs-13">All categories</small>
-          <img class=" " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:30px;" />
+          <a class=" " href="#">
+            <small class="fw-700 fs-12 category-list">All categories</small>
+            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
+          </a>
         </div>
       </div>
 
       <div class="mt-4">
         <div class="row ">
-
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:320px;">
+            <div class="card  rounded-1" style="height:340px;">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
+                <div class="bg-secondary ">
+                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                </div>
+                <div class="card-body">
+                  <div>
+                    <small class=" mt-3 fs-12">December 2, 2023 </small>
+                    <h6 class="fw-700 fs-16">Start an online business and work from home</h6>
+                    <small class=" fs-12">A complete guide to starting a small business</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="card  rounded-1" style="height:340px;">
+              <div class="">
+                <div class="bg-secondary ">
+                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                </div>
                 <div class="card-body">
                   <div>
                     <small class=" mt-3 fs-12">December 2, 2023 </small>
@@ -989,11 +994,11 @@
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:320px;">
+            <div class="card  rounded-1" style="height:340px;">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
+                <div class="bg-secondary ">
+                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                </div>
                 <div class="card-body">
                   <div>
                     <small class=" mt-3 fs-12">December 2, 2023 </small>
@@ -1005,27 +1010,11 @@
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:320px;">
+            <div class="card  rounded-1" style="height:340px;">
               <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
-                <div class="card-body">
-                  <div>
-                    <small class=" mt-3 fs-12">December 2, 2023 </small>
-                    <p class="fw-700 fs-16">Start an online business and work from home</p>
-                    <small class=" fs-12">A complete guide to starting a small business</small>
-                  </div>
+                <div class="bg-secondary ">
+                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:320px;">
-              <div class="">
-                <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
-                  " /></div>
                 <div class="card-body">
                   <div>
                     <small class=" mt-3 fs-12">December 2, 2023 </small>
@@ -1042,8 +1031,11 @@
   </section>
   @endif
 
+
+  <!-- skills -->
+
   @if (get_setting('latest_project_show') == 'on')
-  <section class=" bg-white">
+  <section class=" bg-white" style="margin-bottom:80px;">
     <div class="container ">
       <ul class="nav my-5">
         <li class="nav-item">
@@ -1149,7 +1141,7 @@
                 the
                 App
               </h5>
-              <small class=" my-3">To classes on the go with scholarship Australia app. Stream or download to the
+              <small class=" my-1">To classes on the go with scholarship Australia app. Stream or download to the
                 watch on the plane, the subway or wherever you learn best
               </small>
               <div class="mt-3">
@@ -1176,21 +1168,13 @@
           </div>
           <div class=" " style="width:50%;">
             <img src=" {{url('/public/assets/findJob/home-banner.png')}}" alt="Image" "
-              class=" w-100" style=" height:370px;" />
+              class=" w-100" style=" height:400px;" />
           </div>
         </div>
       </div>
     </div>
   </section>
   @endif
-
-
-
-
-
-
-
-
 
 
 
