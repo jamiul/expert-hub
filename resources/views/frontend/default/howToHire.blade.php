@@ -188,7 +188,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Trusted By -->
     <div class="container-main">
         <div class="row ">
@@ -227,7 +227,7 @@
     <div class="mt-5">
         <div class="row mt-5 mb-5">
             <div class="col-lg-5 col-sm-12 mr-5">
-                <img class="img-fluid rounded-2 h-650px" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="">
+                <img class="img-fluid rounded-right-2 h-650px" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="">
             </div>
 
             <div class="col-lg-5 col-sm-12 mt-5 ml-lg-5 mx-sm-auto">

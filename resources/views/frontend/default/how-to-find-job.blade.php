@@ -17,10 +17,10 @@
                     <h3 class=" text-success find-job-banner-title">Work the way you want</h3>
                     <p class="">Find the right work for you, with great clients, at the world’s work marketplace.</p>
 
-                    <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2">Create Your Profile</button>
+                    <button class=" text-white fs-16 btn btn-primary px-3 py-2">Create Your Profile</button>
 
 
-                    <div class="d-flex justify-content-between align-content-center border-top find-job-banner-rating-section">
+                    <div class="d-flex justify-content-between align-content-center border-top find-job-banner-rating-section position-absolute">
                         <p class="">Professionals rate clients</p>
                         <div class="find-job-banner-rating">
                             <div class=" find-job-banner-star ">
@@ -47,8 +47,8 @@
             <div class="mt-5 mb-5">
                 <div class="row ">
                     <div class="col-lg-3 col-sm-12 ">
-                        <div class="my-2 rounded-1 h-170px w-240px" style="background: #91E6B3;">
-                            <img class=" img-works my-auto h-120px" src="{{my_asset('Post-A-Job.png')}}" alt="">
+                        <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
+                            <img class="mx-auto d-block w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
@@ -58,39 +58,67 @@
                 </div>
                 <div class="row mt-4 ">
                     <div class="col-lg-3 col-sm-12 ">
-                        <div class="my-2 rounded-1 h-170px w-240px" style="background: #91E6B3;">
-                            <img class=" img-works my-auto h-120px" src="{{my_asset('How_it_Works.png')}}" alt="">
+                        <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
+                            <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works.png')}}" alt="">
                         </div>
+
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
                         <h1 class="how-work-title">Explore ways to earn</h1>
                         <p class="how-work-details mt-2">Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network</p>
+                        <a class="text-primary fs-16 pt-2 c-pointer">
+                            <img src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/down-arrow.png')}}" alt="">
+                            <u class="pt-3">See ways to earn</u></a>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-lg-3 col-sm-12 ">
-                        <div class="my-2 rounded-1 h-170px w-240px" style="background: #91E6B3;">
-                            <img class=" img-works my-auto h-120px" src="{{my_asset('How_it_Works_2.png')}}" alt="">
+                        <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
+                            <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works_2.png')}}" alt="">
                         </div>
+
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
                         <h1 class="how-work-title">Get paid securely</h1>
                         <p class="how-work-details  mt-2">Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.</p>
                     </div>
                 </div>
-                <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-4">Create Your Profile</button>
-
-                <!-- Trusted By -->
-                <div class=" border-bottom  trusted-main">
-                    <p class="text-muted trusted mr-4">Trusted By </p>
-                    <img class=" py-3 px-5 mr-4" src="{{my_asset('Microsoft.svg')}}" alt="">
-                    <img class=" py-3 px-5 mr-4" src="{{my_asset('Airbnb.svg')}}" alt="">
-                    <img class=" py-3 px-5 mr-4" src="{{my_asset('automatic.svg')}}" alt="">
-                    <img class=" py-3 px-5 mr-4" src="{{my_asset('Bissell.svg')}}" alt="">
-                    <img class=" py-3 px-5 mx-4" src="{{my_asset('NASDAQ.svg')}}" alt="">
-                </div>
+                <button class=" text-white fs-16  btn btn-primary px-3 py-2 mt-4">Create Your Profile</button>
             </div>
 
+        </div>
+        <!-- Trusted By -->
+        <div class="container-main">
+            <div class="row ">
+                <div class="col-6">
+                    <div class="row ">
+                        <div class="col-lg-4 col-sm-12">
+                            <h4 class="trusted ">Trusted By </h4>
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr>
         </div>
 
         <!-- Explore ways to earn -->
@@ -105,7 +133,7 @@
                     <div class="col-lg-7 col-sm-12 ">
                         <h1 class="explore-find-oppor-title ">Find your next opportunity</h1>
                         <p class="explore-find-oppor-details">Search on Talent Marketplace™ for the hourly or fixed-price work you’re looking for. Submit a proposal, set your rate, and show how great you’ll be. Give a little extra by sharing your unique approach and offering a rapport-building interview</p>
-                        <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Find Jobs</button>
+                        <button class=" text-white fs-16  btn btn-primary px-3 py-2 mt-3">Find Jobs</button>
                     </div>
                     <div class="col-lg-1"></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -115,55 +143,79 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container-main">
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-6 col-sm-12 ">
 
-            <div class=" mt-5">
-                <div class="row mt-5 mb-5">
-                    <div class="col-lg-6 col-sm-12 ">
-                        <div class="row">
-                            <div class="col-6 ">
-                                <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}" alt="Card image cap">
-                                <div class="Explore-blog-card" style="background: #F2F7F2;">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6 ">
+                            <div class="card h-90 position-relative">
+                                <img class="card-img-top rounded-1" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}" alt="Card image cap">
+                                <div class="" style="background: #F2F7F2; ">
 
-                                    <div class="">
-                                        <p class="pl-2 pt-2 text-muted fs-16">WordPress website</p>
+                                    <div class="card-body">
+                                        <p class="text-muted fs-16">WordPress website</p>
                                     </div>
-                                    <p class="pl-2 pb-3 fw-bold text-black mt-3">From $300</p>
+                                    <p class="pl-4 fw-bold text-black  ">From $300</p>
+                                </div>
+                                <div class="bg-white rounded-2 hth-profile-active position-absolute">
+                                    <div class="px-3 py-1 d-flex">
+                                        <img class="rounded-circle pr-1 position-relative" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}" alt="">
+                                        <p class="fs-14 ">Stefan M.</p>
+                                        <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
+
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-6  ">
-                                <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/blog.jpg')}}" alt="Card image cap">
-                                <div class="Explore-blog-card" style="background: #F2F7F2;">
+                        </div>
 
-                                    <div class="">
-                                        <p class="pl-2 pt-2 text-muted fs-16">Blog Posts</p>
+                        <div class="col-lg-6 col-sm-6 ">
+                            <div class="card  h-90 position-relative">
+                                <img class="card-img-top" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/blog.jpg')}}" alt="Card image cap" style="height:200px;">
+
+                                <div class="" style="background: #F2F7F2;">
+
+                                    <div class="card-body">
+                                        <p class="text-muted fs-16">Blog Posts</p>
                                     </div>
-                                    <p class="pl-2 pb-3 fw-bold text-black mt-3">From $250</p>
+                                    <p class="pl-4 fw-bold text-black  ">From $250</p>
+                                </div>
+
+                                <div class="bg-white rounded-2 hth-profile-active position-absolute">
+                                    <div class="px-3 py-1 d-flex">
+                                        <img class="rounded-circle pr-1 position-relative" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}" alt="">
+                                        <p class="fs-14 ">Md. Mojahidul I.</p>
+
+                                        <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-5 col-sm-12 my-auto">
-                        <h1 class="explore-find-oppor-title">Sell what you do best</h1>
 
-                        <p class="explore-find-oppor-details">Create easy-to-buy projects with Project Catalog™. Match your projects to what clients need. Be clear upfront by defining your scope, timing, price, and terms. Once we’ve approved your project, clients can start to buy.</p>
-                        <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">See Other Projects</button>
-                    </div>
                 </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5 col-sm-12 my-auto">
+                    <h1 class="explore-find-oppor-title">Sell what you do best</h1>
 
+                    <p class="explore-find-oppor-details">Create easy-to-buy projects with Project Catalog™. Match your projects to what clients need. Be clear upfront by defining your scope, timing, price, and terms. Once we’ve approved your project, clients can start to buy.</p>
+                    <button class=" text-white fs-16 btn btn-primary  px-3 py-2 mt-3">See Other Projects</button>
+                </div>
             </div>
-            <div class="mt-5">
-                <div class="row my-5">
-                    <div class="col-lg-5 col-sm-12 my-auto">
-                        <h1 class="explore-find-oppor-title">Let the work find you</h1>
-                        <p class="explore-find-oppor-details">Does your work stand out? Are your skills in demand? If you’re in development, design, or marketing, you can apply to our fast lane. Our recruiters will assess your hard-earned experience and match you to exclusive opportunities with trusted clients.</p>
-                        <button class="border-none rounded-2 text-white fs-16  bg-success px-3 py-2 mt-3">Apply to Join</button>
-                    </div>
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-4 col-sm-12 ">
-                        <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/message.svg')}}" alt="Card image cap">
 
-                    </div>
+        </div>
+        <div class="container-main">
+            <div class="row ">
+                <div class="col-lg-5 col-sm-12 my-auto">
+                    <h1 class="explore-find-oppor-title">Let the work find you</h1>
+                    <p class="explore-find-oppor-details">Does your work stand out? Are your skills in demand? If you’re in development, design, or marketing, you can apply to our fast lane. Our recruiters will assess your hard-earned experience and match you to exclusive opportunities with trusted clients.</p>
+                    <button class=" text-white fs-16 btn btn-primary px-3 py-2 mt-3">Apply to Join</button>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4 col-sm-12 ">
+                    <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/message.svg')}}" alt="Card image cap">
+
                 </div>
             </div>
         </div>
@@ -317,6 +369,63 @@
                 </div>
             </div>
 
+        </div>
+        <div class="container-main">
+            <h3 class="htfj-learn-work-title">Learn as you work</h3>
+            <div class="row mt-4">
+                <div class="col-lg-4 col-12">
+                    <div class="card h-90 ">
+                        <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-1.jpg')}}" alt="Card image cap">
+                        <div class="" style="background: #F2F7F2; ">
+
+                            <div class="card-body">
+                                <p class="htfj-learn-work-child-title">Getting started</p>
+
+                                <button class="btn btn-primary mt-3">
+                                    Learn More
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card h-90 ">
+                        <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-2.jpg')}}" alt="Card image cap">
+                        <div class="" style="background: #F2F7F2; ">
+
+                            <div class="card-body">
+                                <p class="htfj-learn-work-child-title">Growing your career</p>
+
+                                <button class="btn btn-primary mt-3">
+                                    Learn More
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card h-90 ">
+                        <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-3.jpg')}}" alt="Card image cap">
+                        <div class="" style="background: #F2F7F2; ">
+
+                            <div class="card-body">
+                                <p class="htfj-learn-work-child-title">Finding support</p>
+
+                                <button class="btn btn-primary mt-3">
+
+                                    Visit Help Center
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

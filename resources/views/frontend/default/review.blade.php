@@ -208,7 +208,7 @@
             </div>
         </div>
 
-        <div class="bg-white">
+        <div class="bg-white container-main">
             <div class="">
                 <h3 class="review-explore-worldwide-title">Explore worldwide reviews</h3>
                 <div class="row mt-5 mx-sm-auto">
@@ -279,10 +279,10 @@
                 <div class="tab-pane fade show active" id="hiring" role="tabpanel" aria-labelledby="hiring-talent-tab">
                     <div class=" row mt-3">
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm " style="background: #F2F7F2; height:290px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3; ">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
                                         <img class="mx-auto d-block w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Post a job (it’s free)</h5>
@@ -292,10 +292,10 @@
 
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm h-400px" style="background: #F2F7F2; height:290px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3; ">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
                                         <img class="mx-auto  d-block w-50" src="{{my_asset('How_it_Works.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Talent comes to you</h5>
@@ -305,10 +305,10 @@
 
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm " style="background: #F2F7F2; height:290px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3;">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
                                         <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works_1.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Collaborate easily</h5>
@@ -318,10 +318,10 @@
 
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm " style="background: #F2F7F2; height:290px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3;">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
                                         <img class="mx-auto d-flex w-50 " src="{{my_asset('How_it_Works_2.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Payment simplified</h5>
@@ -341,10 +341,10 @@
                 <div class="tab-pane fade" id="finding" role="tabpanel" aria-labelledby="finding-work-tab">
                     <div class=" row mt-3">
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm " style="background: #F2F7F2; height:400px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3;">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
                                         <img class="mx-auto d-block  w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Create your profile (it’s free)</h5>
@@ -355,10 +355,10 @@
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm " style="background: #F2F7F2; height:400px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3; ">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
                                         <img class="mx-auto d-block  w-50" src="{{my_asset('How_it_Works_1.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Explore ways to earn</h5>
@@ -368,10 +368,10 @@
 
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class=" shadow-sm " style="background: #F2F7F2;">
+                            <div class=" shadow-sm  h-300px" style="background: #F2F7F2; height:400px;">
                                 <div class="px-3 py-2">
 
-                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 height-lg-120px" style="background: #91E6B3;">
+                                    <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
                                         <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works_2.png')}}" alt="">
                                     </div>
                                     <h5 class="review-hf-card-title">Get paid securely</h5>
