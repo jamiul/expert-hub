@@ -2,8 +2,7 @@
 
 @section('content')
 @if (get_setting('slider_section_show') == 'on')
-<section class="position-relative overflow-hidden  pb-5 d-flex flex-column justify-content-center"
-  style="min-height: 300px;">
+<section class="position-relative overflow-hidden  pb-5 d-flex flex-column justify-content-center" style="min-height: 300px;">
   <div class="container">
     <div class="">
       <div class="d-flex justify-content-around  align-items-center">
@@ -15,10 +14,8 @@
             <p class="fs-18 my-3">Millions of people use scholarships Australia to turn their ideas into reality.
             </p>
             <div>
-              <a href="{{ route('register') }}?type=2"
-                class="btn btn-primary fw-700 py-3 px-3 mb-3 rounded-1">{{ translate('I want to Hire') }}</a>
-              <a href="{{ route('register') }}?type=1"
-                class="btn btn-outline-primary py-3 px-3 ml-lg-3 mb-3 rounded-1">{{ translate('I want to Work') }}</a>
+              <a href="{{ route('register') }}?type=2" class="btn btn-primary fw-700 py-3 px-3 mb-3 rounded-1">{{ translate('I want to Hire') }}</a>
+              <a href="{{ route('register') }}?type=1" class="btn btn-outline-primary py-3 px-3 ml-lg-3 mb-3 rounded-1">{{ translate('I want to Work') }}</a>
             </div>
           </div>
 
@@ -40,19 +37,17 @@
   <div class="container">
     <div class="text-center ">
       <p class="mb-3 fw-600">
-        Trusted by the world best
+        Used by the world best
       </p>
     </div>
     <div class="row align-items-center mb-4">
-      <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
-        data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
+      <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5" data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
         @if (get_setting('client_logos') != null)
         @foreach (explode(',', get_setting('client_logos')) as $key => $value)
 
 
 
-        <div class=""><img class=" " src=" {{url('/public/assets/home/amazon-pay.png')}}" alt="Image"
-            style="width:80px;" />
+        <div class=""><img class=" " src=" {{url('/public/assets/home/amazon-pay.png')}}" alt="Image" style="width:80px;" />
         </div>
 
 
@@ -71,8 +66,7 @@
 
 
 
-        <div class=""><img class=" " src=" {{url('/public/assets/home/logitech.png')}}" alt=s"Image"
-            style="width:60px;" />
+        <div class=""><img class=" " src=" {{url('/public/assets/home/logitech.png')}}" alt=s"Image" style="width:60px;" />
         </div>
         <div class="">
           <img class=" " src=" {{url('/public/assets/home/spotify.png')}}" alt="Image" style="width:60px;" />
@@ -114,8 +108,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
           <div class="px-xl-10 px-md-3 mb-4 text-center">
-            <div class=""><img class=" " src=" {{url('/public/assets/home/web.png')}}" alt="Image"
-                style="width:50px;" />
+            <div class=""><img class=" " src=" {{url('/public/assets/home/web.png')}}" alt="Image" style="width:50px;" />
             </div>
             <div class="mt-3">
               <h6>Choose consultants </h6>
@@ -181,7 +174,7 @@
             <div class=" card-body">
 
               <div class="">
-                <img class="" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px; 
+                <img class="" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px;
                   " />
               </div>
               <p class=" fs-12">1853 skills</p>
@@ -258,7 +251,7 @@
       <div class="col-lg-3 ">
         <div class="card  rounded-1">
           <div class="card-body">
-            <div class=" "><img src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px; 
+            <div class=" "><img src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:50px;
                   " /></div>
             <p class="card-title mt-3 fs-12">1853 skills</p>
             <p class="card-title mt-3 fs-18">Engineering & Architecture</p>
@@ -312,15 +305,14 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:370px">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-3 fs-12">Web app design&</p>
                   <p class="card-title mt-3 fs-16 fw-700">I will design modern website in figma or adobe xd</p>
                   <span>
-                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
                   </span>
                   <span> 4896</span>
@@ -349,15 +341,14 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:370px">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-3 fs-12">Art & illustrations</p>
                   <p class="card-title mt-1 fs-16 fw-700">I will create modern flat design illustrations</p>
                   <span>
-                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
                   </span>
                   <span> 4896</span>
@@ -386,8 +377,7 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:370px">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
@@ -396,7 +386,7 @@
                     boootstrap..
                   </p>
                   <span>
-                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
                   </span>
                   <span> 4896 reviews</span>
@@ -425,15 +415,14 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:370px">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
                   <p class="card-title mt-3 fs-12">Web & app design </p>
                   <p class="card-title mt-1 fs-16 fw-700">I will do mobile and web development</p>
                   <span>
-                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
                   </span>
                   <span> 4896</span>
@@ -490,8 +479,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -510,8 +498,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -524,8 +511,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -544,8 +530,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -558,8 +543,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -578,8 +562,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -592,8 +575,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -612,8 +594,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -626,8 +607,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -646,8 +626,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -660,8 +639,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -680,8 +658,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -694,8 +671,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -714,8 +690,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -728,8 +703,7 @@
           <div class="card rounded ">
             <div class="card-body d-flex items-center justify-content-between">
               <div>
-                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                  style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
@@ -748,8 +722,7 @@
 
               </div>
               <div>
-                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                  style="width:20px;  align-items:center;" />
+                <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image" style="width:20px;  align-items:center;" />
               </div>
 
 
@@ -929,8 +902,7 @@
               are endless.</p>
           </div>
         </div>
-        <button type="button" class=" rounded-1 mt-3 text-white p-2 btn fs-16 px-4"
-          style=" background-color:#337204;">Find talent</button>
+        <button type="button" class=" rounded-1 mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#337204;">Find talent</button>
       </div>
 
 
@@ -964,8 +936,7 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:320px;">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
@@ -980,8 +951,7 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:320px;">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
@@ -996,8 +966,7 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:320px;">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
@@ -1012,8 +981,7 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1" style="height:320px;">
             <div class="">
-              <div class="bg-secondary "><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px; 
+              <div class="bg-secondary "><img class="mx-auto d-block rounded-2" src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; height:140px;
                   " /></div>
               <div class="card-body">
                 <div>
@@ -1126,8 +1094,7 @@
 
 
 @if (get_setting('slider_section_show') == 'on')
-<section class="position-relative jumbotron overflow-hidden d-flex flex-column justify-content-center"
-  style="min-height:300px; background-color:#FBF7ED;">
+<section class="position-relative jumbotron overflow-hidden d-flex flex-column justify-content-center" style="min-height:300px; background-color:#FBF7ED;">
 
   <div class="container">
     <div class="">
@@ -1302,7 +1269,7 @@
 </section>
 @endif -->
 
-<!-- 
+<!--
 @if (get_setting('cta_section_show') == 'on')
 <section class="cta_section py-8 bg-white">
   <div class="container">
@@ -1412,7 +1379,7 @@
 
 
 
-<!-- 
+<!--
 @section('modal')
 @if ((Session::has('new_user') && Session::get('new_user') == true) || (auth()->check() && auth()->user()->user_type ==
 null))
@@ -1451,9 +1418,9 @@ null))
 auth()->user()->user_type ==
 null))
 <script>
-$('#show_new_user_modal').modal({
-  show: true
-});
+  $('#show_new_user_modal').modal({
+    show: true
+  });
 </script>
 @endif
 @endsection
