@@ -21,7 +21,7 @@
   @extends('frontend.default.layouts.app')
 
   @section('content')
-  <div class="   mx-5 my-5 rounded-1" style="background-color:#50A907; ">
+  <div class="   mx-5 my-5 rounded-1" style="background-color:#055846; ">
     <div class="d-flex justify-content-between p-2">
       <div class="row justify-content-between px-4 text-white p-3" style="width:32%;">
         <div>
@@ -652,7 +652,7 @@
           <div class="card rounded bg-light">
             <div class="card-body d-flex items-center">
               <div>
-                <img class="" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
                   style="width:70px;  align-items:center;" />
               </div>
               <div>
@@ -839,8 +839,8 @@
 
 
   <!-- Last section -->
-  <div class="container  rounded-1" style="background-color:#2E58C3; margin-top:100px; ">
-    <div class=" d-flex p-2">
+  <div class="container mb-5 rounded-1" style="background-color:#055846; margin-top:100px; padding-bottom:50px; ">
+    <div class=" d-flex p-3">
       <div class=" bg-light  rounded-1">
         <img src="{{url('/public/assets/findJob/image-7.png')}}" alt="Image" "
               class=" w-full" />
@@ -857,18 +857,6 @@
     </div>
 
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
   @endsection
 </body>
 

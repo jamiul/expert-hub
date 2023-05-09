@@ -5,7 +5,7 @@
   @extends('frontend.default.layouts.app')
 
   @section('content')
-  <div class="   mx-5 my-5 rounded-1" style="background-color:#50A907;">
+  <div class="   mx-5 my-5 rounded-1" style="background-color:#055846;">
     <div class="d-flex justify-content-between p-2">
       <div class="row justify-content-between px-4 text-white" style="width:40%;">
         <div>
@@ -62,9 +62,9 @@
 
   <!-- Suitable work -->
 
-  <div class="jumbotron mb-5" style="margin-top:100px;">
+  <div class="jumbotron " style="margin-top:100px; padding-bottom-50px;">
     <div class="container">
-      <h2 class="my-3" style="color:#50A907;">Explore ways to take more control and win more work</h2>
+      <h2 class="" style="color:#50A907;">Explore ways to take more control and win more work</h2>
       <div class="row  ">
 
         <div class="col-lg-6 col-sm-12">
@@ -96,7 +96,7 @@
                 boost your proposal. If your bid wins, you’ll land in the client’s top three slots with an
                 eye-catching
                 blue lightning bolt</p>
-              <p class="btn btn  mt-2" style="background-color:#58B38E"><a class="text-dark"
+              <p class="btn btn  mt-2 " style="background-color:#58B38E"><a class="button-color text-dark"
                   href="{{route('proposal')}}">Learn
                   more</a> </p>
             </div>
@@ -109,7 +109,7 @@
 
 
   <!-- Last section -->
-  <div class="container p-2 rounded-2 my-5" style="background-color:#2E58C3;  margin-top:100px;">
+  <div class="container p-2 rounded-2 my-5" style="background-color:#055846;  margin-top:120px;">
     <div class=" d-flex justify-content-between p-2">
 
       <div class=" text-white" style="width:30%">

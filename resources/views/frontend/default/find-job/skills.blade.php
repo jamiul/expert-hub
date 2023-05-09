@@ -132,6 +132,21 @@
             </p>
           </div>
 
+
+          <!-- <div class="container-fluid position-relative">
+            <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+
+              <div class="col-md-8">
+                <div class="d-flex form-inputs">
+                  <input class="form-control" type="text" placeholder="Search any product...">
+                  <img src=" {{url('/public/assets/findJob/00.png')}}" alt="Image"
+                    class=" position-absolute bottom-0 start-0 d-flex align-items-center"
+                    style="width:14px; justify:center; align-items:center;  " />
+                </div>
+              </div>
+            </div>
+          </div> -->
+
           <div class=" mt-5 mb-3 fs-20"> 0-9
           </div>
 

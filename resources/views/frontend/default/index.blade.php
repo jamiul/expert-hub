@@ -3,6 +3,9 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+    integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -41,6 +44,45 @@
           </div>
         </div>
       </div>
+      <!-- <div id="myCarousel" class="carousel slide" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video controls autoplay loop muted class="myvid" id="player">
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+
+          <div class="carousel-item">
+            <video controls autoplay class="myvid" id="player2">
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+
+          <div class="carousel-item">
+            <video controls autoplay class="myvid" id="player2">
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Vorige</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Volgende</span>
+        </a>
+      </div> -->
     </div>
   </section>
   @endif
@@ -50,8 +92,8 @@
   <section class=" bg-white">
     <div class="container">
       <div class="text-center ">
-        <p class="mb-3 fs-15 ">
-          Trusted by the world best
+        <p class="mb-3 fs-30 fw-700 text-black ">
+          Our top universities
         </p>
       </div>
       <div class="row align-items-center mb-4">
@@ -62,27 +104,38 @@
 
 
 
-          <div class=""><img class=" " src=" {{url('/public/assets/home/amazon-pay.png')}}" alt="Image"
-              style="width:60px;" />
+          <div class="">
+            <img class=" " src=" {{url('/public/assets/Top-universities/victoria.png')}}" alt="Image"
+              style="width:100px;" />
           </div>
-
-
 
           <div class="">
 
-            <img class=" " src=" {{url('/public/assets/home/cisco.png')}}" alt="Image" style="width:40px;" />
+            <img class=" " src=" {{url('/public/assets/Top-universities/melbourn-removebg-preview.png')}}" alt="Image"
+              style="width:100px;" />
 
           </div>
           <div class="">
 
-            <img class=" " src=" {{url('/public/assets/home/amd.png')}}" alt="Image" style="width:40px;" />
+            <img class=" " src=" {{url('/public/assets/Top-universities/sydney.png')}}" alt="Image"
+              style="width:100px;" />
           </div>
 
-          <div class=""><img class=" " src=" {{url('/public/assets/home/logitech.png')}}" alt=s"Image"
-              style="width:40px;" />
+          <div class="">
+            <img class=" " src=" {{url('/public/assets/Top-universities/adilade.png')}}" alt="Image"
+              style="width:150px;" />
           </div>
           <div class="">
-            <img class=" " src=" {{url('/public/assets/home/spotify.png')}}" alt="Image" style="width:40px;" />
+            <img class=" " src=" {{url('/public/assets/Top-universities/macquarie.jpg')}}" alt="Image"
+              style="width:80px;" />
+          </div>
+          <div class="">
+            <img class=" " src=" {{url('/public/assets/Top-universities/national university.jpg')}}" alt="Image"
+              style="width:120px;" />
+          </div>
+          <div class="">
+            <img class=" " src=" {{url('/public/assets/Top-universities/monas.jpg')}}" alt="Image"
+              style="width:120px;" />
           </div>
           @endforeach
           @endif
@@ -95,14 +148,12 @@
   <!-- explore services  -->
 
   @if (get_setting('how_it_works_show') == 'on')
-  <section class="pt-4 border-top">
+  <section class=" border-top">
     <div class="container">
       <div class="py-3 rounded-2 ">
         <div class="w-xl-50 w-lg-75 mx-auto my-5 text-center">
-
-
-          <h4 class="fw-700 fs-32">Need something done?</h4>
-          <small class="fs-12">Most viewed and all time selling services</small>
+          <h4 class="fw-700 fs-30 text-black">Need something done?</h4>
+          <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6>
         </div>
         <div class="row justify-content-center">
           <div class="col-xl-3 col-md-6">
@@ -111,9 +162,9 @@
                 <img class=" " src=" {{url('/public/assets/home/businessman.png')}}" alt="Image" style="width:40px;" />
               </div>
               <div class="mt-3">
-                <p class="fs-16"> Post a job</p>
-                <small class="mt-3">
-                  Its free and easy to post a job. Simply fill in a title descriptions</small>
+                <p class="fs-22 fw-700"> Post a job</p>
+                <h6 class="fs-16 mt-3">
+                  Its free and easy to post a job. Simply fill in a title descriptions</h6>
               </div>
             </div>
           </div>
@@ -123,23 +174,23 @@
                   style="width:40px;" />
               </div>
               <div class="mt-3">
-                <h6>Choose consultants </h6>
-                <small class="mt-3">
+                <p class="fs-22 fw-700">Choose consultants </p>
+                <h6 class="fs-16 mt-3">
 
-                  its free and easy to post a job. Simply fill in a title descriptions</small>
+                  its free and easy to post a job. Simply fill in a title descriptions</h6>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6">
+          <div class="col-xl-3 col-md-6 ">
             <div class="px-xl-10 px-md-3 mb-4 text-center">
               <div class="">
                 <img class=" " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:40px;" />
               </div>
               <div class="mt-3">
-                <h6> Pay safely </h6>
-                <small class="mt-3">
+                <p class="fs-22 fw-700"> Pay safely </p>
+                <p class="fs-16 mt-3">
 
-                  its free and easy to post a job. Simply fill in a title descriptions</small>
+                  its free and easy to post a job. Simply fill in a title descriptions</p>
               </div>
             </div>
           </div>
@@ -149,10 +200,10 @@
                 <img class=" " src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:40px;" />
               </div>
               <div class="mt-3">
-                <h6> We're here to help you </h6>
-                <small class="mt-3">
+                <p class="fs-22 fw-700"> We're here to help you </p>
+                <h6 class="fs-16 mt-3">
 
-                  its free and easy to post a job. Simply fill in a title descriptions </sma>
+                  its free and easy to post a job. Simply fill in a title descriptions </h6>
               </div>
             </div>
           </div>
@@ -162,26 +213,23 @@
   </section>
   @endif
 
-
   <!-- category -->
-
   @if (get_setting('latest_project_show') == 'on')
-  <section class=" bg-white pt-4   " style="margin-bottom:70px;">
-    <div class="container">
+  <section class=" bg-white border-top" style="margin-bottom:70px;  margin-top:50px;">
+    <div class="container " style="margin-top:70px;">
       <div class="d-flex justify-content-between">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h5 class="fw-700 fs-32">Browse talent by category</h5>
-          <small class="fs-12 ">Get some inspirations from 1800+ skills</small>
+          <h4 class="fw-700 fs-30 text-black">Browse talent by category</h4>
+          <h6 class="fs-18 fw-400">Get some inspirations from 1800+ skills</h6>
         </div>
         <div>
           <a class=" " href="#">
-            <small class="fw-700 fs-12 category-list">All categories</small>
-            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
+            <small class="fs-18 fw-400 category-list">All categories</small>
+            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
           </a>
         </div>
       </div>
-
-      <div class="" style="margin-top:40px;">
+      <div class="" style="margin-top:30px;">
         <div class="row  ">
           <div class="col-lg-3">
             <div class=" card rounded-1 category">
@@ -190,9 +238,9 @@
                   <img class="" src=" {{url('/public/assets/home/img-1.png')}}" alt="Image" style="width:50px; 
                   " />
                 </div>
-                <p class="card-title mt-3 fs-12">1853 skills</p>
-                <p class=" card-title mt-3 fs-16 category-title">Development and IT</p>
-                <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more
+                <p class="card-title fs-18 mt-3">1853 skills</p>
+                <p class=" card-title fs-18  category-title">Development and IT</p>
+                <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more
 
                 </small>
               </div>
@@ -204,9 +252,9 @@
             <div class=" card-body">
               <div class=""><img src=" {{url('/public/assets/home/img-2.png')}}" alt="Image" style="width:40px;
                   " /></div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Design creative</p>
-              <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</small>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Design creative</p>
+              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
 
 
             </div>
@@ -218,9 +266,9 @@
             <div class="card-body">
               <div class=""><img src=" {{url('/public/assets/home/img-3.png')}}" alt="Image" style="width:50px;
                   " /></div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Digital marketing </p>
-              <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</small>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Digital marketing </p>
+              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
 
 
             </div>
@@ -229,11 +277,12 @@
         <div class="col-lg-3 ">
           <div class="card  rounded-1 category">
             <div class=" card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-4.png')}}" alt="Image" style="width:40px;" />
+              <div class="">
+                <img src=" {{url('/public/assets/home/img-4.png')}}" alt="Image" style="width:40px;" />
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Writings and translation</p>
-              <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</small>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Writings and translation</p>
+              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
 
             </div>
           </div>
@@ -243,9 +292,9 @@
             <div class="card-body">
               <div class=""><img src=" {{url('/public/assets/home/img-5.png')}}" alt="Image" style="width:40px;" />
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Music and audio</p>
-              <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</small>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Music and audio</p>
+              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
 
 
             </div>
@@ -256,9 +305,9 @@
             <div class="card-body">
               <div class=""><img src=" {{url('/public/assets/home/img-6.png')}}" alt="Image" style="width:40px;" />
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Video and animation</p>
-              <p class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</p>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Video and animation</p>
+              <p class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</p>
 
 
             </div>
@@ -269,9 +318,9 @@
             <div class="card-body">
               <div class=""><img src=" {{url('/public/assets/home/img-7.png')}}" alt="Image" style="width:40px;" />
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Engineering & Architecture</p>
-              <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</small>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Engineering & Architecture</p>
+              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
 
 
             </div>
@@ -282,9 +331,9 @@
             <div class="card-body">
               <div class=""><img src=" {{url('/public/assets/home/img-8.png')}}" alt="Image" style="width:40px;" />
               </div>
-              <p class="card-title mt-3 fs-12">1853 skills</p>
-              <p class="card-title mt-3 fs-16 category-title">Finance & Accounting</p>
-              <small class="card-text fs-13 mt-2">Software engineer web / mobile developer & more</small>
+              <p class="card-title fs-18 mt-3">1853 skills</p>
+              <p class=" card-title fs-18  category-title">Finance & Accounting</p>
+              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
 
 
             </div>
@@ -295,16 +344,14 @@
   </section>
   @endif
 
-
   <!-- Trending services  -->
-
   @if (get_setting('latest_project_show') == 'on')
-  <section class=" jumbotron" style="background-color:#FBF7ED;">
-    <div class="container mt-3">
+  <section class=" jumbotron border-top" style="background-color:#FBF7ED;">
+    <div class="container pb-2 " style=" ">
       <div class="d-flex justify-content-between">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h5 class="fw-700 fs-32 ">Trending services</h5>
-          <p class="fs-12">Most viewed and all-time top-selling services</p>
+          <h4 class="fw-700 fs-30 text-black">Trending services</h4>
+          <h6 class="fs-18 fw-400">Most viewed and all-time top-selling services</h6>
         </div>
         <div>
           <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
@@ -316,15 +363,15 @@
         <div class="row ">
 
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:400px">
+            <div class="card  rounded-1" style="height:430px">
               <div class="">
                 <div class="bg-secondary ">
                   <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
-                <div class="card-body" style=" height:110px;">
+                <div class="p-2" style=" height:110px;">
                   <div>
-                    <p class="card-title mt-1 fs-12">Web app design&</p>
-                    <p class="card-title mt-1 fs-14 fw-700">I will design modern website in figma or adobe xd</p>
+                    <p class="card-title mt-1 fs-18">Web & app design</p>
+                    <p class="card-title mt-1 fs-18 fw-700">I will design modern website in figma or adobe xd</p>
                     <div class="mt-2">
                       <span>
                         <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
@@ -335,8 +382,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <div class="border border-top my-1"></div>
+                <div class="p-2">
+                  <div class="border border-top mt-5"></div>
                   <div class="d-flex justify-content-between mt-1">
                     <div>
                       <span>
@@ -356,14 +403,14 @@
           </div>
 
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:400px">
+            <div class="card  rounded-1" style="height:430px">
               <div class="">
                 <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
                     alt="Image" /></div>
-                <div class="card-body" style="height:110px;">
+                <div class="p-2" style="height:110px;">
                   <div>
-                    <p class="card-title mt-1 fs-12">Art & illustrations</p>
-                    <a href="#" class="card-title  mt-1 fs-14 fw-700"><u>I will create modern flat design
+                    <p class="card-title mt-1 fs-18">Art & illustrations</p>
+                    <a href="#" class="card-title  mt-1 fs-18 fw-700"><u>I will create modern flat design
                         illustrations</u>
                     </a>
                     <div class="mt-2">
@@ -376,8 +423,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <div class="border border-top my-1"></div>
+                <div class="p-2">
+                  <div class="border border-top mt-5"></div>
                   <div class="d-flex justify-content-between">
                     <div>
                       <span>
@@ -397,14 +444,14 @@
 
 
           <div class=" col-lg-3 ">
-            <div class=" card rounded-1" style="height:400px">
+            <div class=" card rounded-1" style="height:430px">
               <div class="">
                 <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
                     alt="Image" /></div>
-                <div class="card-body" style="height:110px;">
+                <div class="p-2" style="height:150px;">
                   <div>
-                    <p class="card-title mt-1 fs-12">Design & creative</p>
-                    <p class="card-title mt-1 fs-14 fw-700">I will design fully responsive website website with
+                    <p class="card-title mt-1 fs-18">Design & creative</p>
+                    <p class="card-title mt-1 fs-18 fw-700">I will design fully responsive website website with
                       HTML,
                       CSS,
                       boootstrap..
@@ -417,8 +464,8 @@
 
                   </div>
                 </div>
-                <div class="card-body">
-                  <div class="border border-top my-1"></div>
+                <div class="p-2">
+                  <div class="border border-top mt-1"></div>
                   <div class="d-flex justify-content-between">
                     <div>
                       <span>
@@ -437,15 +484,15 @@
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:400px">
+            <div class="card  rounded-1" style="height:430px">
               <div class="">
                 <div class="bg-secondary ">
                   <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
-                <div class=" card-body" style="height:110px;">
+                <div class="p-2" style="height:110px;">
                   <div>
-                    <p class="card-title mt-1 fs-12">Web & app design </p>
-                    <p class="card-title mt-1 fs-14 fw-700">I will do mobile and web development</p>
+                    <p class="card-title mt-1 fs-18">Web & app design </p>
+                    <p class="card-title mt-1 fs-18 w-100 fw-700">I will do mobile and web development</p>
                     <div class="mt-2">
                       <span>
                         <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
@@ -456,8 +503,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <div class="border border-top my-1"></div>
+                <div class="p-2">
+                  <div class="border border-top mt-5"></div>
                   <div class="d-flex justify-content-between">
                     <div>
                       <span class="mr-2">
@@ -476,29 +523,27 @@
           </div>
         </div>
         <div class="pt-2 text-center">
-          <a href="#" class="category-list "><span>All services</span></a>
+          <a href="#" class="category-list fs-18 fw-400 "><span>All services</span></a>
           <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
-            style="width:16px;" />
+            style="width:18px;" />
 
         </div>
       </div>
   </section>
   @endif
-
   <!-- Latest job  -->
-
   @if (get_setting('latest_project_show') == 'on')
   <section class="">
     <div class=" container" style="margin-top:50px;">
       <div class="d-flex justify-content-between mb-4">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h5 class="fw-700 fs-32">Our Latest Jobs</h5>
-          <small class="fs-13 ">Know your worth and find the jobs that quality your life</small>
+          <h5 class="fw-700 fs-30 text-black">Our Latest Jobs</h5>
+          <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
         </div>
         <div>
-          <a class=" " href="#">
-            <small class="fw-700 fs-12 category-list">All categories</small>
-            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
+          <a class=" " href=" #">
+            <small class=" fs-18 fw-400 category-list">All categories</small>
+            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
           </a>
         </div>
       </div>
@@ -512,8 +557,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <h6 class="text-primary fs-12">
+                  <p class="fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <h6 class="text-primary fs-16">
                     Mailchimp
                   </h6>
                   <div class="">
@@ -525,17 +570,12 @@
                     <span>|</span>
                     <span>Remote</span>
                   </div>
-
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
                     style="width:15px;  align-items:center;" />
                 </div>
-
-
-
               </div>
-
             </div>
           </div>
           <div class="col-sm-6">
@@ -546,8 +586,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class=" fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -559,17 +599,12 @@
                     <span>|</span>
                     <span>Remote</span>
                   </div>
-
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
                     style="width:15px;  align-items:center;" />
                 </div>
-
-
-
               </div>
-
             </div>
           </div>
           <div class="col-sm-6">
@@ -580,8 +615,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class="fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -611,8 +646,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class=" fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -642,8 +677,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class=" fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -672,8 +707,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class=" fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -702,8 +737,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class=" fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -733,8 +768,8 @@
                     style="width:50px;  align-items:center;" />
                 </div>
                 <div>
-                  <p class=" fs-16 fw-700">Website Resigner Required for Directory heamT</p>
-                  <p class="text-primary fs-12">
+                  <p class=" fs-18 fw-400">Website Resigner Required for Directory heamT</p>
+                  <p class="text-primary fs-16">
                     Mailchimp
                   </p>
                   <div class="">
@@ -746,43 +781,36 @@
                     <span>|</span>
                     <span>Remote</span>
                   </div>
-
                 </div>
                 <div>
                   <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
                     style="width:15px;  align-items:center;" />
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
-
-
     </div>
   </section>
   @endif
 
   <!-- learn with scholarship australia -->
-
   @if (get_setting('latest_project_show') == 'on')
-  <section class="jumbotron " style="margin-top:80px;">
-    <div class=" container">
+  <section class="jumbotron border-top " style="margin-top:80px;  ">
+    <div class=" container pb-3">
       <div class="">
-        <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h5 class="fw-700 fs-20 text-black">People Love To Learn With <br> Scholarships Australia </h5>
-        </div>
+        <h6 class="fw-700 fs-30 text-black">People Love To Learn With Scholarships Australia</h6>
       </div>
 
-      <div class="mt-5">
+      <div class=" mt-5">
         <div class="row ">
           <div class="col-lg-4">
             <div class=" card rounded-1 ">
               <div class=" card-body">
-                <p class="text-primary mt-2 fs-13">Great Work</p>
-                <p class=" mt-3 fs-13">"I found the course material to be highly engaging and the instructors to
+                <p class="text-primary mt-2 fs-18">Great Work</p>
+                <p class=" mt-3 fs-18 text-justify">"I found the course material to be highly engaging and the
+                  instructors to
                   be helpful communicative"
                 </p>
                 <hr>
@@ -792,8 +820,8 @@
                   " />
                   </div>
                   <div>
-                    <small class="fw-700 text-black"> Curtney Henry</small>
-                    <h6 class="fs-10 text-muted" style="Line height:10px;"> Web designer</h6>
+                    <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
+                    <h6 class="fs-14 text-muted" style="Line height:10px;"> Web designer</h6>
                   </div>
                 </div>
               </div>
@@ -802,8 +830,9 @@
           <div class="col-lg-4">
             <div class=" card rounded-1 ">
               <div class=" card-body">
-                <p class="text-primary mt-2 fs-13">Great Work</p>
-                <p class=" mt-3 fs-13">"I found the course material to be highly engaging and the instructors to
+                <p class="text-primary mt-2 fs-18">Great Work</p>
+                <p class=" mt-3 fs-18 text-justify">"I found the course material to be highly engaging and the
+                  instructors to
                   be helpful communicative"
                 </p>
                 <hr>
@@ -813,8 +842,8 @@
                   " />
                   </div>
                   <div>
-                    <small class="fw-700 text-black"> Curtney Henry</small>
-                    <h6 class="fs-10 text-muted" style="Line height:10px;"> Web designer</h6>
+                    <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
+                    <h6 class="fs-14 text-muted" style="Line height:10px;"> Web designer</h6>
                   </div>
                 </div>
               </div>
@@ -823,8 +852,10 @@
           <div class="col-lg-4">
             <div class=" card rounded-1 ">
               <div class=" card-body">
-                <p class="text-primary mt-2 fs-13">Great work</p>
-                <p class=" mt-3 fs-13">"I found the course material to be highly engaging and the instructors to
+                <p class="text-primary mt-2 fs-14">Great work</p>
+                <p class=" mt-3 fs-18 text-justify">"I found the course material to be highly engaging and the
+                  instructors
+                  to
                   be helpful communicative"
                 </p>
                 <hr>
@@ -834,8 +865,8 @@
                   " />
                   </div>
                   <div>
-                    <small class="fw-700 text-black"> Curtney Henry</small>
-                    <h6 class="fs-10 text-muted" style="Line height:10px;"> Web designer</h6>
+                    <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
+                    <h6 class="fs-14 text-muted" style="Line height:10px;"> Web designer</h6>
                   </div>
                 </div>
               </div>
@@ -847,8 +878,8 @@
           <div class="col-lg-4">
             <div class=" ">
               <div class=" ">
-                <p class=" mt-2 fs-16 text-black fw-700">4.9/5</p>
-                <p class=" mt-3 fs-12">Clients rate professional on <br> Scholarships Australia"
+                <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
+                <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
                 </p>
               </div>
             </div>
@@ -856,8 +887,8 @@
           <div class="col-lg-4">
             <div class="">
               <div class=" ">
-                <p class=" mt-2 fs-16 text-black fw-700">95%</p>
-                <p class=" mt-3 fs-12">95% customers are satisfied <br> through to see their consultant
+                <p class=" mt-2 fs-18 text-black fw-700">95%</p>
+                <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
                 </p>
 
               </div>
@@ -866,8 +897,8 @@
           <div class="col-lg-4">
             <div class="  ">
               <div class="">
-                <p class=" mt-2 fs-16 text-black fw-700">Award winner</p>
-                <p class=" mt-3 fs-12">G2s best software awards
+                <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
+                <p class=" mt-3 fs-18">G2s best software awards
                 </p>
               </div>
             </div>
@@ -880,14 +911,14 @@
   @endif
   @if (get_setting('latest_project_show') == 'on')
   <section class="">
-    <div class=" container mt-5 ">
-      <div class="row g-5 d-fle justify-content-around mt-4">
+    <div class=" container" style="padding-top:35px; padding-bottom:35px;">
+      <div class="row g-5 d-fle justify-content-around ">
         <div class="">
           <img class="mr-2" src="{{url('/public/assets/home/001.png')}}" alt="Image" style="width:500px;" />
         </div>
         <div class=" col-lg-5 col-sm-12 ">
-          <h4 class="fs-32 fw-700">Join world best marketplace <br> for consultant</h4>
-          <h6 class="fs-12 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus odio
+          <h4 class="fs-24 fw-700">Join world best marketplace for consultant</h4>
+          <h6 class="fs-18 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus odio
             amet
             aperiam
             voluptatum doloremq ue, sint ratione sit beatae </h6>
@@ -897,7 +928,7 @@
                 <img class=" mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
               </div>
               <div>
-                <h6 class="fs-12 "> Find work that hits your financial
+                <h6 class="fs-16 "> Find work that hits your financial
                   goals
                   faster
                   with
@@ -909,7 +940,7 @@
             </div>
             <div class="d-flex align-items-center">
               <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-              <h6 class="fs-12 m-2">
+              <h6 class="fs-16 m-2">
 
                 Build a predictable pipeline of projects, big and small, through strong
                 connections.
@@ -920,7 +951,7 @@
             </div>
             <div class="d-flex align-items-center mb-2">
               <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-              <h6 class="fs-12 m-2 "> Search for jobs or have
+              <h6 class="fs-16 m-2 "> Search for jobs or have
                 clients
                 come to you. The
                 opportunities
@@ -944,16 +975,16 @@
 
   <!-- Blog  -->
   @if (get_setting('latest_project_show') == 'on')
-  <section class="">
-    <div class="container" style="margin-top:70px;">
+  <section class="border-top ">
+    <div class="container" style="padding-top:65px; padding-bottom:60px;">
       <div class="d-flex justify-content-between mb-4">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h5 class="fw-700 fs-32">Our Blog</h5>
-          <small class="fs-13 ">See how you can up your career status</small>
+          <h5 class="fw-700 fs-30 text-black">Our Blog</h5>
+          <small class="fs-18 fw-400">See how you can up your career status</small>
         </div>
         <div>
           <a class=" " href="#">
-            <small class="fw-700 fs-12 category-list">All categories</small>
+            <small class="fs-18 fw-40 category-list">All categories</small>
             <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
           </a>
         </div>
@@ -962,64 +993,64 @@
       <div class="mt-4">
         <div class="row ">
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:340px;">
+            <div class="card  rounded-1" style="height:380px;">
               <div class="">
                 <div class="bg-secondary ">
                   <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
                 <div class="card-body">
                   <div>
-                    <small class=" mt-3 fs-12">December 2, 2023 </small>
-                    <h6 class="fw-700 fs-16">Start an online business and work from home</h6>
-                    <small class=" fs-12">A complete guide to starting a small business</small>
+                    <small class=" mt-3 fs-14">December 2, 2023 </small>
+                    <h6 class="fw-700 fs-18 text-justify mt-1">Start an online business and work from home</h6>
+                    <small class=" fs-16">A complete guide to starting a small business</small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:340px;">
+            <div class="card  rounded-1" style="height:380px;">
               <div class="">
                 <div class="bg-secondary ">
                   <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
                 <div class="card-body">
                   <div>
-                    <small class=" mt-3 fs-12">December 2, 2023 </small>
-                    <p class="fw-700 fs-16">Start an online business and work from home</p>
-                    <small class=" fs-12">A complete guide to starting a small business</small>
+                    <small class=" mt-3 fs-14">December 2, 2023 </small>
+                    <p class="fw-700 fs-18 text-justify ">Start an online business and work from home</p>
+                    <small class=" fs-16">A complete guide to starting a small business</small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:340px;">
+            <div class="card  rounded-1" style="height:380px;">
               <div class="">
                 <div class="bg-secondary ">
                   <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
                 <div class="card-body">
                   <div>
-                    <small class=" mt-3 fs-12">December 2, 2023 </small>
-                    <p class="fw-700 fs-16">Start an online business and work from home</p>
-                    <small class=" fs-12">A complete guide to starting a small business</small>
+                    <small class=" mt-3 fs-16">December 2, 2023 </small>
+                    <p class="fw-700 fs-18 text-justify">Start an online business and work from home</p>
+                    <small class=" fs-16">A complete guide to starting a small business</small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:340px;">
+            <div class="card  rounded-1" style="height:380px;">
               <div class="">
                 <div class="bg-secondary ">
                   <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
                 </div>
                 <div class="card-body">
                   <div>
-                    <small class=" mt-3 fs-12">December 2, 2023 </small>
-                    <p class="fw-700 fs-16">Start an online business and work from home</p>
-                    <small class=" fs-12">A complete guide to starting a small business</small>
+                    <small class=" mt-3 fs-16">December 2, 2023 </small>
+                    <p class="fw-700 fs-18 text-justify">Start an online business and work from home</p>
+                    <small class=" fs-16">A complete guide to starting a small business</small>
                   </div>
                 </div>
               </div>
@@ -1035,28 +1066,28 @@
   <!-- skills -->
 
   @if (get_setting('latest_project_show') == 'on')
-  <section class=" bg-white" style="margin-bottom:80px;">
-    <div class="container ">
-      <ul class="nav my-5">
+  <section class=" bg-white border-top" style="margin-bottom:80px;  padding-top:20px; ">
+    <div class=" container ">
+      <ul class=" nav my-5">
         <li class="nav-item">
           <a class="nav-link active  fw-700" aria-current="page" href="#">
-            <h6 class="fs-28" style="color:black; font-weight:700;">Top skills</h6>
+            <h5 class="fs-28" style="color:black; font-weight:700;">Top skills</h5>
           </a>
         </li>
         <li class=" nav-item">
           <a class="nav-link text-muted fs-28" href="#">
-            <h6 class="fs-28"> Trending skills </h6>
+            <h5 class="fs-28"> Trending skills </h5>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-muted" href="#">
-            <h6 class="fs-28">Top skills in Australia</h6>
+            <h5 class="fs-28">Top skills in Australia</h5>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">
-            <h6 class="fs-28 text-muted">Project
-              catalog</h6>
+            <h5 class="fs-28 text-muted">Project
+              catalog</h5>
 
           </a>
         </li>
@@ -1066,59 +1097,59 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
           <div class="col">
 
-            <p>
-              Book Designer</p>
-            <p>
-              Branding Freelancer</p>
-            <p>Blockchain Developer</p>
-            <p>
-              Bot Developer</p>
-            <p>Business Process Modeling Specialist</p>
-            <p>Bahasa Indonesia Freelancer</p>
+            <h6 class="fs-15">
+              Book Designer</h6>
+            <h6 class="fs-15">
+              Branding Freelancer</h6>
+            <h6 class="fs-15">Blockchain Developer</h6>
+            <h6 class="fs-15">
+              Bot Developer</h6>
+            <h6 class="fs-15">Business Process Modeling Specialist</h6>
+            <h6 class="fs-15">Bahasa Indonesia Freelancer</h6>
           </div>
           <div class="col">
-            <p>
-              Book Designer</p>
-            <p>
-              Branding Freelancer</p>
-            <p>Blockchain Developer</p>
-            <p>
-              Bot Developer</p>
-            <p>Business Process Modeling Specialist</p>
-            <p>Bahasa Indonesia Freelancer</p>
+            <h6 class="fs-15">
+              Book Designer</h6>
+            <h6 class="fs-15">
+              Branding Freelancer</h6>
+            <h6 class="fs-15">Blockchain Developer</h6>
+            <h6 class="fs-15">
+              Bot Developer</h6>
+            <h6 class="fs-15">Business Process Modeling Specialist</h6>
+            <h6 class="fs-15">Bahasa Indonesia Freelancer</h6>
           </div>
           <div class="col">
-            <p>
-              Book Designer</p>
-            <p>
-              Branding Freelancer</p>
-            <p>Blockchain Developer</p>
-            <p>
-              Bot Developer</p>
-            <p>Business Process Modeling Specialist</p>
-            <p>Bahasa Indonesia Freelancer</p>
+            <h6 class="fs-15">
+              Book Designer</h6>
+            <h6 class="fs-15">
+              Branding Freelancer</h6>
+            <h6 class="fs-15">Blockchain Developer</h6>
+            <h6 class="fs-15">
+              Bot Developer</h6>
+            <h6 class="fs-15">Business Process Modeling Specialist</h6>
+            <h6 class="fs-15">Bahasa Indonesia Freelancer</h6>
           </div>
           <div class="col">
-            <p>
-              Book Designer</p>
-            <p>
-              Branding Freelancer</p>
-            <p>Blockchain Developer</p>
-            <p>
-              Bot Developer</p>
-            <p>Business Process Modeling Specialist</p>
-            <p>Bahasa Indonesia Freelancer</p>
+            <h6 class="fs-15">
+              Book Designer</h6>
+            <h6 class="fs-15">
+              Branding Freelancer</h6>
+            <h6 class="fs-15">Blockchain Developer</h6>
+            <h6 class="fs-15">
+              Bot Developer</h6>
+            <h6 class="fs-15">Business Process Modeling Specialist</h6>
+            <h6 class="fs-15">Bahasa Indonesia Freelancer</h6>
           </div>
           <div class="col">
-            <p>
-              Book Designer</p>
-            <p>
-              Branding Freelancer</p>
-            <p>Blockchain Developer</p>
-            <p>
-              Bot Developer</p>
-            <p>Business Process Modeling Specialist</p>
-            <p>Bahasa Indonesia Freelancer</p>
+            <h6 class="fs-15">
+              Book Designer</h6>
+            <h6 class="fs-15">
+              Branding Freelancer</h6>
+            <h6 class="fs-15">Blockchain Developer</h6>
+            <h6 class="fs-15">
+              Bot Developer</h6>
+            <h6 class="fs-15">Business Process Modeling Specialist</h6>
+            <h6 class="fs-15">Bahasa Indonesia Freelancer</h6>
           </div>
         </div>
       </div>
@@ -1135,13 +1166,13 @@
         <div class="d-flex justify-content-between  align-items-center">
           <div class="row justify-content-between px-4  p-3" style="width:40%;">
             <div>
-              <button class="btn rounded-2 bg-white">Start today</button>
-              <h5 class=" fw-700 fs-32 my-4" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+              <button class="btn  bg-white fs-14">Start today</button>
+              <h5 class=" fw-700 fs-40 my-4" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
                 Download
                 the
                 App
               </h5>
-              <small class=" my-1">To classes on the go with scholarship Australia app. Stream or download to the
+              <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to the
                 watch on the plane, the subway or wherever you learn best
               </small>
               <div class="mt-3">
@@ -1168,7 +1199,7 @@
           </div>
           <div class=" " style="width:50%;">
             <img src=" {{url('/public/assets/findJob/home-banner.png')}}" alt="Image" "
-              class=" w-100" style=" height:400px;" />
+              class=" w-100" style=" height:430px;" />
           </div>
         </div>
       </div>
@@ -1183,7 +1214,7 @@
   <div class="container">
     <div class="bg-primary py-7 px-6 rounded-2">
       <div class="lh-1-8 mx-auto mb-5">
-        <h2 class="fw-700 fs-40 text-white">{{ get_setting('featured_category_title') }}</h2>
+        <h2 class="fw-700 fs-30 text-white">{{ get_setting('featured_category_title') }}</h2>
         <p class="fs-17 text-white">{{ get_setting('featured_category_subtitle') }}</p>
       </div>
       <div class="row gutters-10">
@@ -1225,7 +1256,7 @@
     <div class="row mb-5">
       <div class="col-xl-6 col-md-8 mx-auto">
         <div class="text-center">
-          <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2>
+          <h2 class="fw-700 fs-30">{{ get_setting('service_section_title') }}</h2>
           <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
         </div>
       </div>
@@ -1317,7 +1348,7 @@
             <div class="tab-content">
               <div class="tab-pane fade show active " id="nav-client">
                 <div class="lh-1-8 mx-auto mb-5">
-                  <h2 class="fw-700 fs-40 text-white">{{ get_setting('cta_section_title_client') }}</h2>
+                  <h2 class="fw-700 fs-30 text-white">{{ get_setting('cta_section_title_client') }}</h2>
                   <p class="fs-16 text-white mt-3">{!! get_setting('cta_section_subtitle_client') !!}</p>
                 </div>
                 <div>
@@ -1331,7 +1362,7 @@
               </div>
               <div class="tab-pane fade " id="nav-freelancer">
                 <div class="lh-1-8 mx-auto mb-5">
-                  <h2 class="fw-700 fs-40 text-white">{{ get_setting('cta_section_title_freelancer') }}</h2>
+                  <h2 class="fw-700 fs-30 text-white">{{ get_setting('cta_section_title_freelancer') }}</h2>
                   <p class="fs-16 text-white mt-3">{!! get_setting('cta_section_subtitle_freelancer') !!}</p>
                 </div>
                 <div>
@@ -1358,7 +1389,7 @@
     <div class="row">
       <div class="col-lg-10 col-xl-8 col-xxl-6 mx-auto">
         <div class="section-title mb-5 text-center">
-          <h2 class="fw-700 fs-40 text-dark">{{ get_setting('blog_section_title') }}</h2>
+          <h2 class="fw-700 fs-30 text-dark">{{ get_setting('blog_section_title') }}</h2>
           <p class="fs-17 text-secondary">{{ get_setting('blog_section_subtitle') }}</p>
         </div>
       </div>
@@ -1450,6 +1481,16 @@ null))
   </script>
   @endif
   @endsection
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
