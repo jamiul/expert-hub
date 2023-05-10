@@ -382,7 +382,7 @@
 
 
           </div>
-          <button type="button" class=" mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
+          <button type="button" class=" mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
             your
             profile</button>
         </div>
@@ -744,7 +744,7 @@
           more</span>
         <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
       </p>
-      <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
+      <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
         your
         profile</button>
 

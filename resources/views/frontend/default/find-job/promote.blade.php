@@ -16,9 +16,9 @@
             you want.
           </p>
 
-          <button class="btn btn  mt-3 lg-mb-5 fs-16 " style="background-color:#58B38E;"><a class="text-dark px-1"
-              href="{{route('home')}}">Find
-              work</a>
+          <button class="btn btn border bg-white  mt-3 lg-mb-5 fs-16 " "><a class=" text-dark px-1"
+            href="{{route('home')}}">Find
+            work</a>
           </button>
         </div>
 
@@ -44,7 +44,7 @@
               career. Win more work, increase your earning power and build longer-lasting relationships with clients who
               know you best.
             </h6>
-            <button class=" btn btn mt-5 " style=" background-color:#58B38E;"><span class="text-white"><a
+            <button class=" btn btn mt-5 " style=" background-color:white;"><span class="text-white"><a
                   class="text-white fs-16" href="{{route('sendProposal')}}">Learn
                   more</a> </span></button>
           </div>
@@ -78,7 +78,7 @@
               <p class="card-text fs-16">Let clients know you’re ready to work and available now with a bold, blue badge
                 on
                 your profile, and in search results. Help clients find you faster.</p>
-              <p class="btn btn  mt-2" style="background-color:#58B38E"><a class="text-dark"
+              <p class="btn btn  mt-2" style="background-color:#275846;"><a class="text-dark"
                   href="{{route('badge')}}">Learn
                   more</a> </p>
             </div>
@@ -96,7 +96,7 @@
                 boost your proposal. If your bid wins, you’ll land in the client’s top three slots with an
                 eye-catching
                 blue lightning bolt</p>
-              <p class="btn btn  mt-2 " style="background-color:#58B38E"><a class="button-color text-dark"
+              <p class="btn btn  mt-2 " style="background-color:#275846;"><a class="button-color text-dark"
                   href="{{route('proposal')}}">Learn
                   more</a> </p>
             </div>
@@ -119,13 +119,13 @@
           improve
           with
           the right tools and information.</h5>
-        <p class="mt-2  btn text-white  p-2 px-3" style="background-color:#58B38E">
+        <p class="mt-2  btn text-white border  p-2 px-3">
           Check out My stats
         </p>
 
       </div>
       <div class=" ">
-        <img src="{{url('/public/assets/findJob/stats.png')}}" alt="Image" "
+        <img src=" {{url('/public/assets/findJob/stats.png')}}" alt="Image" "
               class=" rounded-2 "/>
         </div>
 

@@ -16,20 +16,20 @@
   <section class="position-relative overflow-hidden  pb-5 d-flex flex-column justify-content-center"
     style="min-height: 300px;">
     <div class="container">
+
       <div class="">
         <div class="d-lg-flex d-md-flex justify-content-around  align-items-center">
           <div class="row justify-content-between px-4 p-3 " style="width:50%;">
             <div class="">
-              <h2 class="banner sm-mx-auto fs-45 fw-700 "
-                style="color:#57786F; font-style:normal; letter-spacing: -.032em; ">
+              <h2 class="banner sm-mx-auto fs-45 fw-700 " style=" font-style:normal; letter-spacing: -.032em; ">
                 Do Hire the best consultations for any job, online</h2>
               <p class="fs-15 my-1 banner ">Millions of people use scholarships Australia to turn their ideas into
                 reality.</p>
               <div>
-                <a href="{{route('register') }}?type=2"
-                  class="btn btn-primary fw-700 py-3 px-3 mb-3">{{ translate('I want to Hire') }}</a>
-                <a href="{{route('register') }}?type=1"
-                  class="btn btn-outline-primary py-3 px-3 ml-lg-3 mb-3">{{ translate('I want to Work') }}</a>
+                <a href="{{route('register') }}?type=2" class="btn text-white fw-700 py-3 px-3 mb-3"
+                  style="background-color:#275846;">{{ translate('I want to Hire') }}</a>
+                <a href="{{route('register') }}?type=1" class="btn text-white py-3 px-3 ml-lg-3 mb-3"
+                  style="background-color:#275846;">{{ translate('I want to Work') }}</a>
               </div>
             </div>
 
@@ -85,38 +85,11 @@
   @endif
 
   <!-- main carousel  -->
-
-  @if (get_setting('client_logo_show') == 'on')
-  <section class="bg-white py-4">
-    <div class="container">
-      <div class="text-center ">
-        <p class="mb-3 fs-30 fw-700 text-black ">
-          Our top universities
-        </p>
-      </div>
-      <div class="row align-items-center">
-        <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
-          data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
-          @if (get_setting('client_logos') != null)
-          @foreach (explode(',', get_setting('client_logos')) as $key => $value)
-          <div class="caorusel-box">
-            <img class="img-fluid" src="{{ custom_asset($value) }}">
-          </div>
-          @endforeach
-          @endif
-        </div>
-      </div>
-    </div>
-  </section>
-  @endif
-
-
-
   @if (get_setting('client_logo_show') == 'on')
   <section class=" bg-white">
     <div class="container">
       <div class="text-center ">
-        <h2 class="mb-3 fw-700 fs-40 text-black ">
+        <h2 class="mb-3 fw-700 fs-36 text-black ">
           Our top universities
         </h2>
       </div>
@@ -125,7 +98,6 @@
           data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
           @if (get_setting('client_logos') != null)
           @foreach (explode(',', get_setting('client_logos')) as $key => $value)
-
 
 
           <div class="">
@@ -170,86 +142,6 @@
   @endif
 
 
-  @if (get_setting('service_section_show') == 'on')
-  <section class="pt-8 pb-2 bg-white">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-xl-6 col-md-8 mx-auto">
-          <div class="text-center">
-            <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2>
-            <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
-          </div>
-        </div>
-      </div>
-      @php
-      $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
-      ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
-      ->pluck('user_id');
-
-      $services = \App\Models\Service::inRandomOrder()
-      ->whereIn('user_id', $user_ids)
-      ->take(get_setting('max_service_show_homepage'))
-      ->get();
-      @endphp
-      <div class="row">
-        <div class="aiz-carousel gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
-          data-arrows='true'>
-          @foreach ($services as $service)
-          <div class="caorusel-box">
-            <div class="card bg-transparent rounded-2 border-gray-light hov-box overflow-hidden">
-              <a href="{{ route('service.show', $service->slug) }}">
-                @if($service->image != null)
-                <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
-                @else
-                <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top"
-                  alt="{{ translate('Service Image') }}" height="212">
-                @endif
-              </a>
-              <div class="card-body hov-box-body">
-                <div class="d-flex mb-2">
-                  <span class="mr-2">
-                    @if ($service->user->photo != null)
-                    <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35"
-                      width="35" class="rounded-circle">
-                    @else
-                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                      alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
-                    @endif
-                  </span>
-                  <span class="d-flex flex-column justify-content-center">
-                    <a href="{{ route('freelancer.details', $service->user->user_name) }}"
-                      class="text-secondary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
-                  </span>
-                </div>
-
-                <a href="{{ route('service.show', $service->slug) }}" class="text-dark" title="{{ $service->title }}">
-                  <h5 class="card-title fs-16 fw-700 h-40px">
-                    {{ \Illuminate\Support\Str::limit($service->title, 45, $end = '...') }}</h5>
-                </a>
-                <div class="text-warning">
-                  <span class="rating rating-lg rating-mr-1">
-                    {{ renderStarRating(getAverageRating($service->user->id)) }}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          @endforeach
-        </div>
-
-      </div>
-      <div class="pt-5 text-center">
-        <a href="{{ route('search') }}?keyword=&type=service"
-          class="btn btn-primary rounded-1">{{ translate('Explore More Services') }}</a>
-      </div>
-    </div>
-  </section>
-  @endif
-
-
-
-
-
   <!-- explore services  -->
 
   @if (get_setting('how_it_works_show') == 'on')
@@ -257,7 +149,7 @@
     <div class="container">
       <div class="py-3 rounded-2 ">
         <div class="w-xl-50 w-lg-75 mx-auto my-5 text-center">
-          <h2 class="fw-700 fs-40 text-black">Need something done?</h2>
+          <h2 class="fw-700 fs-36 text-black">Need something done?</h2>
           <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6>
         </div>
         <div class="row justify-content-center">
@@ -282,7 +174,7 @@
                 <p class="fs-22 fw-700">Choose consultants </p>
                 <h6 class="fs-16 mt-3">
 
-                  its free and easy to post a job. Simply fill in a title descriptions</h6>
+                  Its free and easy to post a job. Simply fill in a title descriptions</h6>
               </div>
             </div>
           </div>
@@ -295,7 +187,7 @@
                 <p class="fs-22 fw-700"> Pay safely </p>
                 <p class="fs-16 mt-3">
 
-                  its free and easy to post a job. Simply fill in a title descriptions</p>
+                  Its free and easy to post a job. Simply fill in a title descriptions</p>
               </div>
             </div>
           </div>
@@ -318,12 +210,14 @@
   </section>
   @endif
 
+  <!-- Service Category -->
+
   @if (get_setting('featured_category_show') == 'on')
   <section class="bg-white pt-5 pb-4 border-top" style="margin-bottom:70px;  margin-top:50px;">
     <div class=" container">
       <div class="d-flex justify-content-between mb-5">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h2 class="fw-700 fs-40 ">{{ get_setting('featured_category_title') }}</h2>
+          <h2 class="fw-700 fs-36 ">{{ get_setting('featured_category_title') }}</h2>
           <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p>
         </div>
         <div>
@@ -372,10 +266,6 @@
     </div>
   </section>
   @endif
-
-
-
-
   <!-- category -->
   @if (get_setting('latest_project_show') == 'on')
   <!-- <section class=" bg-white border-top" style="margin-bottom:70px;  margin-top:50px;">
@@ -513,7 +403,7 @@
     <div class="container pb-2 " style=" ">
       <div class="d-flex justify-content-between">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h2 class="fw-700 fs-40 text-black">Trending services</h2>
+          <h2 class="fw-700 fs-36 text-black">Trending services</h2>
           <h6 class="fs-18 fw-400">Most viewed and all-time top-selling services</h6>
         </div>
         <div>
@@ -700,7 +590,7 @@
     <div class=" container" style="margin-top:50px;">
       <div class="d-flex justify-content-between mb-4">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h2 class="fw-700 fs-40 text-black">Our Latest Jobs</h2>
+          <h2 class="fw-700 fs-36 text-black">Our Latest Jobs</h2>
           <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
         </div>
         <div>
@@ -963,7 +853,7 @@
   <section class="jumbotron border-top " style="margin-top:80px;  ">
     <div class=" container pb-3">
       <div class="">
-        <h2 class="fw-700 fs-40 text-black">People Love To Learn With Scholarships Australia</h2>
+        <h2 class="fw-700 fs-36 text-black">People Love To Learn With Scholarships Australia</h2>
       </div>
 
       <div class=" mt-5">
@@ -1121,7 +1011,7 @@
                 are endless.</h6>
             </div>
           </div>
-          <button type="button" class="btn btn-primary mt-3 text-white p-2 btn fs-16 px-4" style=" ">
+          <button type="button" class="btn mt-3 text-white p-2 btn fs-16 px-4" style="background-color:#275846; ">
             <span>Find talent</span>
             <span><img class="px-1" src="{{url('/public/assets/home/arrows.png')}}" alt="Image"
                 style="width:18px; " /></span>
@@ -1142,7 +1032,7 @@
     <div class="container" style="padding-top:65px; padding-bottom:60px;">
       <div class="d-flex justify-content-between mb-4">
         <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h2 class="fw-700 fs-40 text-black">Our Blog</h2>
+          <h2 class="fw-700 fs-36 text-black">Our Blog</h2>
           <small class="fs-18 fw-400">See how you can up your career status</small>
         </div>
         <div>
@@ -1329,28 +1219,28 @@
         <div class="d-flex justify-content-between  align-items-center">
           <div class="row justify-content-between px-4  p-3" style="width:40%;">
             <div>
-              <button class="btn  bg-white fs-14">Start today</button>
-              <h5 class=" fw-700 fs-40 my-4" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+              <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
+              <h2 class=" fw-700 fs-36 my-4" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
                 Download
                 the
                 App
-              </h5>
+              </h2>
               <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to the
                 watch on the plane, the subway or wherever you learn best
               </small>
               <div class="mt-3">
-                <a href="{{ route('register') }}?type=2" class="btn  mb-3 btn-primary">
-                  <img class="" src="{{url('/public/assets/home/apple.png')}}" alt="Image" style="height:20px;" />
+                <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
+                  <img class="" src=" {{url('/public/assets/home/apple.png')}}" alt="Image" style="height:20px; " />
                   <span>|</span>
-                  <span class="text-white">Download on the <br> apple store</span>
+                  <span class="text-white"> Apple store</span>
 
                 </a>
 
 
-                <a href="{{ route('register') }}?type=2" style="" class="btn  mb-3 btn-primary">
-                  <img class="" src="{{url('/public/assets/home/playstore.png')}}" alt="Image" style="height:20px;" />
+                <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
+                  <img class="" src="{{url('/public/assets/home/playstore.png')}}" alt="Image" style="height:20px; " />
                   <span>|</span>
-                  <span class="text-white">Go to on google <br> play store</span>
+                  <span class="text-white">Google play store</span>
 
                 </a>
 
