@@ -451,11 +451,11 @@
                                     <div class="d-flex justify-content-between  align-content-center"">
                                                 <div>
                                                     <img class=" mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
-                                        <span>Jerome Bell</span>
-                                    </div>
-                                    <div>
-                                      <span>Starting at $983</span>
-                                   </div>
+                                    <span>Jerome Bell</span>
+                                </div>
+                                <div>
+                                    <span>Starting at $983</span>
+                                </div>
 
                             </div>
 
