@@ -320,7 +320,7 @@
 
                             </div>
                         </div>
-                        <!-- <div class="mb-lg-0">
+                        <div class="mb-lg-0">
                             <input type="hidden" name="type" value="service">
                             <div class="row gutters-15">
                                 @foreach($services as $service)
@@ -366,7 +366,7 @@
                                     {{ $services->links() }}
                                 </ul>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="row mt-5">
                             <div class="col-lg-4 col-sm-6 ">
                                 <div class="card  rounded-1" style="height:430px">

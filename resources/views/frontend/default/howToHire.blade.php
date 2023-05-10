@@ -14,7 +14,7 @@
         <div class="mx-2 rounded-2 my-3 position-relative" style="background: #F2F7F2;">
             <div class="row py-3">
                 <div class="col-lg-6 py-2 px-5 mt-3 wrap  ">
-                    <h3 class="how-to-hire-banner-title text-success">Choose your way to get work done</h3>
+                    <h3 class="how-to-hire-banner-title text-success">{{translate('Choose your way to get work done')}}</h3>
                     <p class="how-to-hire-banner-text">Find freelancers and run projects your way at the world’s work marketplace.</p>
 
                     <button class="btn btn-primary text-white fs-16  px-3 py-2">Find talent</button>
