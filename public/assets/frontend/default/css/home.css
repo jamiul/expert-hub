@@ -13,3 +13,43 @@ font-weight: 700;
   
   color: black !important;
  }
+ .button-color{
+   color: white !important;
+ }
+
+ .search-box{
+  bottom:0;
+right:0;
+  width:50%;
+ }
+.jobs{
+  height:200px;
+}
+
+ /* #myCarousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 9% !important;
+}
+
+.carousel-inner {
+  background: #111;
+}
+
+.carousel-indicators {
+  bottom: -13px !important;
+}
+
+.carousel-item {
+  padding-bottom: 25px;
+   
+
+}
+
+video {
+  width: 100%;
+} */

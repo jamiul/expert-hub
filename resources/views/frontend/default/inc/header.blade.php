@@ -413,20 +413,11 @@
           <ul class="navbar-nav me-auto ps-lg-0 " style="padding-left: 0.15rem">
 
             <!-- Navbar dropdown -->
-            <li class="nav-item ">
-              <a class="nav-link text-white"
-                href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link text-white"
-                href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
-            </li>
-            <li class="nav-item">
-
             <li class="dropdown mega_menu ">
               <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ translate('Find Jobs') }}
+                {{ translate('Find Academic Jobs') }}
               </a>
               <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
                 <div class="row">
@@ -437,7 +428,7 @@
                       <p>{{translate('Show clients you’re the one they want.')}}</p>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-sm-6 ">
+                  <div class="col-lg-3 col-sm-6  ">
                     <div class="w-75 mega-menu-fj-item">
                       <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
                       <p>
@@ -456,8 +447,17 @@
 
               </div>
             </li>
-
             </li>
+
+            <li class="nav-item ">
+              <a class="nav-link text-white"
+                href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white"
+                href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
             </li>
