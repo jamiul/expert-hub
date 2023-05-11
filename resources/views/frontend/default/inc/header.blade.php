@@ -1,7 +1,5 @@
 <style type="text/css">
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+.dropdown:hover .dropdown-menu {}
 
 .mega-menu-head {
   display: flex !important;
@@ -388,11 +386,7 @@
 
       </div>
     </div>
-
     @if (!Auth::check())
-
-
-
     <nav class="navbar navbar-expand-lg  bg-dark w-100">
       <!-- Container wrapper -->
       <div class="container-fluid  ">

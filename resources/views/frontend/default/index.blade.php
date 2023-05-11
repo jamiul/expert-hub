@@ -3,8 +3,6 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('assets/frontend/default/css/home.css')}}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
-    integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
 
 </head>
 
@@ -15,10 +13,10 @@
   @if (get_setting('slider_section_show') == 'on')
   <section class="position-relative overflow-hidden  pb-5 d-flex flex-column justify-content-center"
     style="min-height: 300px;">
-    <div class="container">
+    <div class="">
 
-      <div class="">
-        <div class="d-lg-flex d-md-flex justify-content-around  align-items-center">
+      <div class="container">
+        <div class=" d-lg-flex d-md-flex justify-content-around align-items-center">
           <div class="row justify-content-between px-4 p-3 " style="width:50%;">
             <div class="">
               <h2 class="banner sm-mx-auto fs-45 fw-700 " style=" font-style:normal; letter-spacing: -.032em; ">
@@ -41,45 +39,89 @@
           </div>
         </div>
       </div>
-      <!-- <div id="myCarousel" class="carousel slide" data-interval="false">
+
+      <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+        <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+          <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+          <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
         </ol>
 
+        <!-- Inner -->
         <div class="carousel-inner">
+          <!-- Single item -->
           <div class="carousel-item active">
-            <video controls autoplay loop muted class="myvid" id="player">
-              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                type="video/mp4">
+            <video style="min-width: 100%; min-height: 100%" playsinline autoplay muted loop>
+              <source class="h-100" src=" {{url('/public/assets/home/1.mp4')}}" type="video/mp4" />
             </video>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                  <h1 class="mb-3">Learn Bootstrap 5 with MDB</h1>
+                  <h5 class="mb-4">
+                    Best & free guide of responsive web design
+                  </h5>
+                  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+                    role="button" rel="nofollow" target="_blank">Start tutorial</a>
+                  <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
+                    target="_blank" role="button">Download MDB UI KIT</a>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- Single item -->
           <div class="carousel-item">
-            <video controls autoplay class="myvid" id="player2">
-              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-                type="video/mp4">
+            <video style="min-width: 100%; min-height: 100%" playsinline autoplay muted loop>
+              <source class="h-100" src=" {{url('/public/assets/home/2.mp4')}}" type="video/mp4" />
             </video>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                  <h2>You can place here any content</h2>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- Single item -->
           <div class="carousel-item">
-            <video controls autoplay class="myvid" id="player2">
-              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-                type="video/mp4">
+            <video style="min-width: 100%; min-height: 100%" playsinline autoplay muted loop>
+              <source class="h-100" src=" {{url('/public/assets/home/3.mp4')}}" type="video/mp4" />
             </video>
+            <div class="mask" style="
+                    background: linear-gradient(
+                    45deg,
+                    rgba(29, 236, 197, 0.7),
+                    rgba(91, 14, 214, 0.7) 100%
+                    );
+                    ">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                  <h2>And cover it with any mask</h2>
+                  <a class="btn btn-outline-light btn-lg m-2"
+                    href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank"
+                    role="button">Learn
+                    about masks</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- Inner -->
 
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Vorige</span>
+          <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Volgende</span>
+          <span class="sr-only">Next</span>
         </a>
-      </div> -->
+      </div>
+
     </div>
   </section>
   @endif
@@ -90,7 +132,7 @@
     <div class="container">
       <div class="text-center ">
         <h2 class="mb-3 fw-700 fs-36 text-black ">
-          Our top universities
+          Used By
         </h2>
       </div>
       <div class="row align-items-center mb-4">
@@ -98,8 +140,6 @@
           data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
           @if (get_setting('client_logos') != null)
           @foreach (explode(',', get_setting('client_logos')) as $key => $value)
-
-
           <div class="">
             <img class=" " src=" {{url('/public/assets/Top-universities/victoria.png')}}" alt="Image"
               style="width:100px;" />
@@ -148,7 +188,7 @@
   <section class=" border-top">
     <div class="container">
       <div class="py-3 rounded-2 ">
-        <div class="w-xl-50 w-lg-75 mx-auto my-5 text-center">
+        <div class="w-xl-50 w-lg-75  my-5 ">
           <h2 class="fw-700 fs-36 text-black">Need something done?</h2>
           <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6>
         </div>
@@ -1303,81 +1343,81 @@
 </section>
 @endif -->
 
-  <!-- @if (get_setting('service_section_show') == 'on')
-<section class="pt-8 pb-2 bg-white">
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-xl-6 col-md-8 mx-auto">
-        <div class="text-center">
-          <h2 class="fw-700 fs-30">{{ get_setting('service_section_title') }}</h2>
-          <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
+  @if (get_setting('service_section_show') !== 'on')
+  <section class="pt-8 pb-2 bg-white">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-xl-6 col-md-8 mx-auto">
+          <div class="text-center">
+            <h2 class="fw-700 fs-30">{{ get_setting('service_section_title') }}</h2>
+            <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
+          </div>
         </div>
       </div>
-    </div>
-    @php
-    $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
-    ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
-    ->pluck('user_id');
+      @php
+      $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
+      ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
+      ->pluck('user_id');
 
-    $services = \App\Models\Service::inRandomOrder()
-    ->whereIn('user_id', $user_ids)
-    ->take(get_setting('max_service_show_homepage'))
-    ->get();
-    @endphp
-    <div class="row">
-      <div class="aiz-carousel gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
-        data-arrows='true'>
-        @foreach ($services as $service)
-        <div class="caorusel-box">
-          <div class="card bg-transparent rounded-2 border-gray-light hov-box overflow-hidden">
-            <a href="{{ route('service.show', $service->slug) }}">
-              @if($service->image != null)
-              <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
-              @else
-              <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top"
-                alt="{{ translate('Service Image') }}" height="212">
-              @endif
-            </a>
-            <div class="card-body hov-box-body">
-              <div class="d-flex mb-2">
-                <span class="mr-2">
-                  @if ($service->user->photo != null)
-                  <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35"
-                    width="35" class="rounded-circle">
-                  @else
-                  <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                    alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
-                  @endif
-                </span>
-                <span class="d-flex flex-column justify-content-center">
-                  <a href="{{ route('freelancer.details', $service->user->user_name) }}"
-                    class="text-secondary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
-                </span>
-              </div>
-
-              <a href="{{ route('service.show', $service->slug) }}" class="text-dark" title="{{ $service->title }}">
-                <h5 class="card-title fs-16 fw-700 h-40px">
-                  {{ \Illuminate\Support\Str::limit($service->title, 45, $end = '...') }}</h5>
+      $services = \App\Models\Service::inRandomOrder()
+      ->whereIn('user_id', $user_ids)
+      ->take(get_setting('max_service_show_homepage'))
+      ->get();
+      @endphp
+      <div class="row">
+        <div class="aiz-carousel gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
+          data-arrows='true'>
+          @foreach ($services as $service)
+          <div class="caorusel-box">
+            <div class="card bg-transparent rounded-2 border-gray-light hov-box overflow-hidden">
+              <a href="{{ route('service.show', $service->slug) }}">
+                @if($service->image != null)
+                <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
+                @else
+                <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top"
+                  alt="{{ translate('Service Image') }}" height="212">
+                @endif
               </a>
-              <div class="text-warning">
-                <span class="rating rating-lg rating-mr-1">
-                  {{ renderStarRating(getAverageRating($service->user->id)) }}
-                </span>
+              <div class="card-body hov-box-body">
+                <div class="d-flex mb-2">
+                  <span class="mr-2">
+                    @if ($service->user->photo != null)
+                    <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35"
+                      width="35" class="rounded-circle">
+                    @else
+                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                      alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                    @endif
+                  </span>
+                  <span class="d-flex flex-column justify-content-center">
+                    <a href="{{ route('freelancer.details', $service->user->user_name) }}"
+                      class="text-secondary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
+                  </span>
+                </div>
+
+                <a href="{{ route('service.show', $service->slug) }}" class="text-dark" title="{{ $service->title }}">
+                  <h5 class="card-title fs-16 fw-700 h-40px">
+                    {{ \Illuminate\Support\Str::limit($service->title, 45, $end = '...') }}</h5>
+                </a>
+                <div class="text-warning">
+                  <span class="rating rating-lg rating-mr-1">
+                    {{ renderStarRating(getAverageRating($service->user->id)) }}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
+          @endforeach
         </div>
-        @endforeach
-      </div>
 
+      </div>
+      <div class="pt-5 text-center">
+        <a href="{{ route('search') }}?keyword=&type=service"
+          class="btn btn-primary rounded-1">{{ translate('Explore More Services') }}</a>
+      </div>
     </div>
-    <div class="pt-5 text-center">
-      <a href="{{ route('search') }}?keyword=&type=service"
-        class="btn btn-primary rounded-1">{{ translate('Explore More Services') }}</a>
-    </div>
-  </div>
-</section>
-@endif -->
+  </section>
+  @endif
 
   <!-- 
 @if (get_setting('cta_section_show') == 'on')
@@ -1436,56 +1476,56 @@
 </section>
 @endif -->
 
-  <!-- @if (get_setting('blog_section_show') == 'on')
-<section class="bg-white pt-4 pb-7 text-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 col-xl-8 col-xxl-6 mx-auto">
-        <div class="section-title mb-5 text-center">
-          <h2 class="fw-700 fs-30 text-dark">{{ get_setting('blog_section_title') }}</h2>
-          <p class="fs-17 text-secondary">{{ get_setting('blog_section_subtitle') }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="aiz-carousel gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
-        data-arrows='true'>
-        @php
-        $blogs = \App\Models\Blog::where('status', 1)->latest()
-        ->limit(get_setting('max_blog_show_homepage'))
-        ->get();
-        @endphp
-        @foreach ($blogs as $key => $blog)
-        <div class="caorusel-box">
-          <div class="card text-dark mb-3 overflow-hidden rounded-2 border-gray-light hov-box">
-            <a href="{{ route('blog.details', $blog->slug) }}" class="text-reset d-block">
-              <img src="{{ custom_asset($blog->banner) }}" alt="{{ $blog->title }}" class="card-img-top" height="212">
-            </a>
-            <div class="p-4">
-              <h2 class="fs-16 fw-600 mb-1 h-45px">
-                <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
-                  title="{{ $blog->title }}">
-                  {{ \Illuminate\Support\Str::limit($blog->title, 45, $end = '...') }}
-                </a>
-              </h2>
-              @if ($blog->category != null)
-              <p class="mt-3 mb-0 text-primary fs-14 fw-700">{{ $blog->category->category_name }}</p>
-              @endif
-              <p class="mb-4 fs-14 text-secondary opacity-70">
-                {{ $blog->created_at ? date('d.m.Y',strtotime($blog->created_at)) : '' }}</p>
-            </div>
+  @if (get_setting('blog_section_show') !== 'on')
+  <section class="bg-white pt-4 pb-7 text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-8 col-xxl-6 mx-auto">
+          <div class="section-title mb-5 text-center">
+            <h2 class="fw-700 fs-30 text-dark">{{ get_setting('blog_section_title') }}</h2>
+            <p class="fs-17 text-secondary">{{ get_setting('blog_section_subtitle') }}</p>
           </div>
         </div>
-        @endforeach
+      </div>
+      <div class="row">
+        <div class="aiz-carousel gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
+          data-arrows='true'>
+          @php
+          $blogs = \App\Models\Blog::where('status', 1)->latest()
+          ->limit(get_setting('max_blog_show_homepage'))
+          ->get();
+          @endphp
+          @foreach ($blogs as $key => $blog)
+          <div class="caorusel-box">
+            <div class="card text-dark mb-3 overflow-hidden rounded-2 border-gray-light hov-box">
+              <a href="{{ route('blog.details', $blog->slug) }}" class="text-reset d-block">
+                <img src="{{ custom_asset($blog->banner) }}" alt="{{ $blog->title }}" class="card-img-top" height="212">
+              </a>
+              <div class="p-4">
+                <h2 class="fs-16 fw-600 mb-1 h-45px">
+                  <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
+                    title="{{ $blog->title }}">
+                    {{ \Illuminate\Support\Str::limit($blog->title, 45, $end = '...') }}
+                  </a>
+                </h2>
+                @if ($blog->category != null)
+                <p class="mt-3 mb-0 text-primary fs-14 fw-700">{{ $blog->category->category_name }}</p>
+                @endif
+                <p class="mb-4 fs-14 text-secondary opacity-70">
+                  {{ $blog->created_at ? date('d.m.Y',strtotime($blog->created_at)) : '' }}</p>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+      <div class="mt-4 text-center">
+        <a href="{{ route('blog') }}" class="btn btn-primary rounded-1">{{ translate('View More') }}</a>
       </div>
     </div>
-    <div class="mt-4 text-center">
-      <a href="{{ route('blog') }}" class="btn btn-primary rounded-1">{{ translate('View More') }}</a>
-    </div>
-  </div>
-</section>
-@endif
-@endsection -->
+  </section>
+  @endif
+  @endsection
 
 
 
@@ -1535,15 +1575,6 @@ null))
   @endif
   @endsection
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
-    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous">
-  </script>
 </body>
 
 </html>
