@@ -18,6 +18,7 @@ class CreateProjectCategoriesTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('parent_id')->default(0);
             $table->string('photo')->nullable();
+            $table->string('description');
             $table->timestamps();
         });
     }
