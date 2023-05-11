@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
 <style>
   .jumbotron {
     height: 100%;
@@ -27,7 +21,7 @@
   @extends('frontend.default.layouts.app')
 
   @section('content')
-  <div class="   mx-5 my-5 rounded-1" style="background-color:#50A907; ">
+  <div class="   mx-5 my-5 rounded-1" style="background-color:#055846; ">
     <div class="d-flex justify-content-between p-2">
       <div class="row justify-content-between px-4 text-white p-3" style="width:32%;">
         <div>
@@ -41,12 +35,13 @@
             want.
           </p>
 
-          <button class="btn btn rounded-pill bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1" href="{{route('home')}}">Sign
+          <button class="btn btn  bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1" href="{{route('home')}}">Sign
               Up</a>
           </button>
+          <div class="border-bottom mt-5"></div>
         </div>
 
-        <h6 class="border-top " style="margin-top:80px;"> Used by</h6>
+        <h6 class=" " style="">Trusted By</h6>
         <div ">
           <img src=" {{url('/public/assets/findJob/companies.png')}}" alt="Image" />
       </div>
@@ -317,22 +312,9 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- section-2 -->
 
     <div class=" container mt-5 ">
-
       <h2 class="my-3 fs-25 fw-600">Our award-winning platform</h2>
       <div class="row g-5 mt-4 mb-5">
         <div class="col-lg-5 col-sm-12 ">
@@ -381,7 +363,7 @@
 
 
           </div>
-          <button type="button" class=" rounded-pill mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#337204;">Create
+          <button type="button" class=" mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
             your
             profile</button>
         </div>
@@ -440,7 +422,6 @@
 
     <div class="container marketing  " style="margin-top:100px;">
       <h2 class="fs-25 fw-600 fw-sans-serif muted">Like-minded professionals</h2>
-
       <div id="demo" class="rounded-1 carousel slide jumbotron my-4" data-ride="carousel">
 
 
@@ -461,10 +442,8 @@
               class=" h-100 img-fluid rounded-1" />
               </div>
               <div class="col-md-7 d-flex align-items-center justify-content-center ">
-
                 <div>
-                  <h4 class="fs-26" style="color: #001e00;
-">Kolya T.</h4>
+                  <h4 class="fs-26" style="color: #001e00;">Kolya T.</h4>
                   <h6 class="fs-26" style="color: #001e00;">Owner of Wordpress Lab Agency, USA. Certified Wordpress
                     expert who built his own
                     agency
@@ -641,7 +620,8 @@
           <div class="card rounded bg-light">
             <div class="card-body d-flex items-center">
               <div>
-                <img class="" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image" style="width:70px;  align-items:center;" />
+                <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                  style="width:70px;  align-items:center;" />
               </div>
               <div>
                 <h5 class="card-title">Development & IT </h5>
@@ -727,7 +707,7 @@
           more</span>
         <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
       </p>
-      <button type="button" class=" rounded-pill mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#337204;">Create
+      <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
         your
         profile</button>
 
@@ -822,8 +802,8 @@
 
 
   <!-- Last section -->
-  <div class="container  rounded-1" style="background-color:#2E58C3; margin-top:100px; ">
-    <div class=" d-flex p-2">
+  <div class="container mb-5 rounded-1" style="background-color:#055846; margin-top:100px; padding-bottom:50px; ">
+    <div class=" d-flex p-3">
       <div class=" bg-light  rounded-1">
         <img src="{{url('/public/assets/findJob/image-7.png')}}" alt="Image" "
               class=" w-full" />
@@ -835,23 +815,11 @@
     </div>
     <div>
       <p class="d-flex   justify-content-end ">
-        <span class="border-rounded btn text-white rounded-pill my-2 px-4">Create your profile</span>
+        <span class="border btn text-white  my-2 px-4">Create your profile</span>
       </p>
     </div>
 
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
   @endsection
 </body>
 

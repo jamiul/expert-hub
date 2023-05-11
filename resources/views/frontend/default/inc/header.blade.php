@@ -8,7 +8,7 @@
 <body>
     <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
         <div class="aiz-navbar me-auto ps-lg-0 py-0px fs-15 position-relative">
-            <div class="container-fluid py-5px  d-none d-md-block">
+            <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
                 <div class="d-flex align-items-center justify-content-between">
 
                     @if (!Auth::check())
@@ -73,7 +73,7 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ translate('Sign Up') }}</a>
                                     </li>
                                     <li class="nav-item ml-xl-3">
-                                        <a class="btn btn-primary rounded-1" href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
+                                        <a class="btn btn-primary" href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                                     </li>
                                     @elseif (isAdmin())
                                     <li class="nav-item d-none d-lg-block">
@@ -274,7 +274,8 @@
             @if (!Auth::check())
 
 
-            <nav class="navbar navbar-expand-lg  bg-dark">
+
+             <!-- <nav class="navbar navbar-expand-lg  bg-dark">
 
                 <div class="logo">
                     <a href="{{ route('home') }}" class="d-inline-block">
@@ -401,10 +402,8 @@
 
                 </div>
 
-            </nav>
-
-
-            <!-- <nav class="navbar navbar-expand-lg  bg-dark w-100 position-relative">
+            </nav> -->
+            <nav class="navbar navbar-expand-lg  bg-dark w-100 position-relative">
 
                 <div class="logo">
                     <a href="{{ route('home') }}" class="d-inline-block">
@@ -539,7 +538,7 @@
                             </li>
                         </ul>
                 </div>
-            </nav> -->
+            </nav>
             @endif
         </div>
     </header>

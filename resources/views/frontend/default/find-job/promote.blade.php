@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-
-
 <body class="bg-white">
   @extends('frontend.default.layouts.app')
 
   @section('content')
-  <div class="   mx-5 my-5 rounded-1" style="background-color:#50A907;">
+  <div class="   mx-5 my-5 rounded-1" style="background-color:#055846;">
     <div class="d-flex justify-content-between p-2">
       <div class="row justify-content-between px-4 text-white" style="width:40%;">
         <div>
@@ -24,8 +16,9 @@
             you want.
           </p>
 
-          <button class="btn btn rounded-pill bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1"
-              href="{{route('home')}}">Find work</a>
+          <button class="btn btn  mt-3 lg-mb-5 fs-16 " style="background-color:#58B38E;"><a class="text-dark px-1"
+              href="{{route('home')}}">Find
+              work</a>
           </button>
         </div>
 
@@ -45,20 +38,17 @@
         <div class="">
           <div class="" style=" width:60%;">
             <h1 style=" color:#50A907;"> Use Connects to give you the edge when you need it</h1>
-
-
             <h6>
               Spend Connects like points on Upwork to show potential clients that you’re serious about your business and
               invested in building a working relationship with them. Connects are an investment toward your freelance
               career. Win more work, increase your earning power and build longer-lasting relationships with clients who
               know you best.
             </h6>
-            <button class=" btn btn rounded-pill mt-5 " style=" background-color:#50A907;"><span class="text-white"><a
+            <button class=" btn btn mt-5 " style=" background-color:#58B38E;"><span class="text-white"><a
                   class="text-white fs-16" href="{{route('sendProposal')}}">Learn
                   more</a> </span></button>
           </div>
         </div>
-
         <div>
           <img src="{{url('/public/assets/findJob/consultant-2.jpg')}}" alt="Image" "
               class=" w-100 h-100 img-fluid" />
@@ -72,9 +62,9 @@
 
   <!-- Suitable work -->
 
-  <div class="jumbotron mb-5" style="margin-top:100px;">
+  <div class="jumbotron " style="margin-top:100px; padding-bottom-50px;">
     <div class="container">
-      <h2 class="my-3" style="color:#50A907;">Explore ways to take more control and win more work</h2>
+      <h2 class="" style="color:#50A907;">Explore ways to take more control and win more work</h2>
       <div class="row  ">
 
         <div class="col-lg-6 col-sm-12">
@@ -88,7 +78,7 @@
               <p class="card-text fs-16">Let clients know you’re ready to work and available now with a bold, blue badge
                 on
                 your profile, and in search results. Help clients find you faster.</p>
-              <p class="btn btn rounded-pill border border-secondary mt-2"><a class="text-dark"
+              <p class="btn btn  mt-2" style="background-color:#58B38E"><a class="text-dark"
                   href="{{route('badge')}}">Learn
                   more</a> </p>
             </div>
@@ -106,7 +96,7 @@
                 boost your proposal. If your bid wins, you’ll land in the client’s top three slots with an
                 eye-catching
                 blue lightning bolt</p>
-              <p class="btn btn rounded-pill border border-secondary mt-2"><a class="text-dark"
+              <p class="btn btn  mt-2 " style="background-color:#58B38E"><a class="button-color text-dark"
                   href="{{route('proposal')}}">Learn
                   more</a> </p>
             </div>
@@ -119,7 +109,7 @@
 
 
   <!-- Last section -->
-  <div class="container p-2 rounded-2 my-5" style="background-color:#2E58C3;  margin-top:100px;">
+  <div class="container p-2 rounded-2 my-5" style="background-color:#055846;  margin-top:120px;">
     <div class=" d-flex justify-content-between p-2">
 
       <div class=" text-white" style="width:30%">
@@ -129,7 +119,7 @@
           improve
           with
           the right tools and information.</h5>
-        <p class="mt-2 border-rounded btn text-white rounded-pill p-2 px-3">
+        <p class="mt-2  btn text-white  p-2 px-3" style="background-color:#58B38E">
           Check out My stats
         </p>
 
