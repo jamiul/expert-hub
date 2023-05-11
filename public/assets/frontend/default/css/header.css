@@ -1,11 +1,11 @@
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover .dropdown-menu {
     display: block;
 
   }
 
   .dropdown>.dropdown-toggle:active {
     /* Without this, clicking will make it sticky */
-      pointer-events: none;
+      /* pointer-events: none; */
   }
 
 .navbar .nav-item .nav-link{
@@ -40,6 +40,7 @@
     margin: 0;
 
 }
+
 
 .mega-menu-item {
     padding: 10px 0;
