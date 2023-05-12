@@ -107,7 +107,7 @@
 }
 </style>
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
-  <div class="aiz-navbar  me-auto ps-lg-0 py-0px fs-15 position-relative" style="margin-bottom:-1px;">
+  <div class="aiz-navbar  mx-auto ps-lg-0 py-0 fs-15 position-relative" style="margin-bottom:-1px;">
     <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
       <div class="d-flex align-items-center justify-content-between">
 
