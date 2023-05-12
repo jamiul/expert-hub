@@ -14,6 +14,7 @@
                             <th>{{ translate('ID') }}</th>
                             <th>{{ translate('Name') }}</th>
                             <th>{{ translate('Parent') }}</th>
+                            <th>{{ translate('Description') }}</th>
                             <th>{{ translate('Icon') }}</th>
                             <th class="text-right">{{ translate('Action') }}</th>
                         </tr>
@@ -32,6 +33,9 @@
                                 @else
                                 {{ translate('No Parent') }}
                                 @endif
+                            </td>
+                            <td>
+                               {{$project_category->description}}
                             </td>
                             <td>
                                 <div class="p-2 bg-secondary" style="width: fit-content;">

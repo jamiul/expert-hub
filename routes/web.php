@@ -76,7 +76,7 @@ Route::get('/waysToEarn', function(){
 	return view('frontend.default.find-job.waysToEarn');
 })->name('waysToEarn');
 
-// promote content 
+// promote content
 
 Route::get('/promote', function(){
 
@@ -223,6 +223,8 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 	Route::get('/profile-settings/work-experience-edit/{id}', 'WorkExperienceController@edit')->name('user_profile.work_experience_edit');
 	Route::post('/profile-settings/work-experience-update/{id}', 'WorkExperienceController@update')->name('user_profile.work_experience_update');
     Route::get('/profile-settings/work-experience-delete/{id}', 'WorkExperienceController@destroy')->name('user_profile.work_experience_destroy');
+
+
 
 	Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
 	Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');

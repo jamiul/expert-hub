@@ -14,7 +14,7 @@ class AddDescriptionToProjectCategories extends Migration
     public function up()
     {
         Schema::table('project_categories', function (Blueprint $table) {
-            //
+            $table->string('description');
         });
     }
 
@@ -26,7 +26,7 @@ class AddDescriptionToProjectCategories extends Migration
     public function down()
     {
         Schema::table('project_categories', function (Blueprint $table) {
-            //
+            $table->dropColumn('description');
         });
     }
 }

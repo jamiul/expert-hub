@@ -21,7 +21,7 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        $project_categories = ProjectCategory::orderBy('created_at', 'desc')->paginate(10);
+        $project_categories =ProjectCategory::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.default.project.project_categories.index', compact('project_categories'));
     }
 

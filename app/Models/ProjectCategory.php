@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Service;
 
-class ProjectCattegory extends Model
+class ProjectCategory extends Model
 {
     use SoftDeletes;
     public function projects()

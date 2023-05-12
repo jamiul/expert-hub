@@ -213,10 +213,13 @@ $lang = \App\Models\Language::where('code', $locale)->first();
     <div class="aiz-main-wrapper d-flex flex-column">
 
         @include('frontend/default.inc.header')
+        <!-- @include('frontend/default.inc.videoSlide') -->
+
 
         <!-- ========== MAIN CONTENT ========== -->
 
         <div class="p-0 m-0 bg-white">
+      
             @yield('content')
         </div>
 
