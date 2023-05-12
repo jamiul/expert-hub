@@ -19,7 +19,6 @@
 
 <body class="bg-white">
   @extends('frontend.default.layouts.app')
-
   @section('content')
   <div class="   mx-5 my-5 rounded-1" style="background-color:#055846; ">
     <div class="d-flex justify-content-between p-2">
@@ -43,7 +42,10 @@
 
         <h6 class=" " style="">Trusted By</h6>
         <div ">
-          <img src=" {{url('/public/assets/findJob/companies.png')}}" alt="Image" />
+         
+        <img src=" {{url('/public/assets/findJob/companies.png')}}" alt="Image" style=" height:40px; " />
+
+
       </div>
     </div>
     <div class=" rounded-1" style="width:50%; ">
@@ -57,9 +59,7 @@
 
 
   <div class="  container">
-
     <!-- navbar -->
-
     <div class="container">
       <h2 class="my-5 fs-25 fw-600">Explore the different ways to earn</h2>
       <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
@@ -382,7 +382,7 @@
 
 
           </div>
-          <button type="button" class=" mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
+          <button type="button" class=" mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
             your
             profile</button>
         </div>
@@ -744,7 +744,7 @@
           more</span>
         <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
       </p>
-      <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#58B38E;">Create
+      <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
         your
         profile</button>
 

@@ -1,7 +1,5 @@
 <style type="text/css">
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+.dropdown:hover .dropdown-menu {}
 
 .mega-menu-head {
   display: flex !important;
@@ -177,7 +175,8 @@
                   <a class="nav-link" href="{{ route('register') }}">{{ translate('Sign Up') }}</a>
                 </li>
                 <li class="nav-item ml-xl-3">
-                  <a class="btn btn-primary" href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
+                  <a class="btn text-white " style="background-color:#275846;"
+                    href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                 </li>
                 @elseif (isAdmin())
                 <li class="nav-item d-none d-lg-block">
@@ -387,11 +386,7 @@
 
       </div>
     </div>
-
     @if (!Auth::check())
-
-
-
     <nav class="navbar navbar-expand-lg  bg-dark w-100">
       <!-- Container wrapper -->
       <div class="container-fluid  ">
@@ -402,7 +397,7 @@
           <i class="fas fa-bars"></i>
         </button>
 
-        <!-- Collapsible wrapper -->
+        </button> <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse mega-menu-head" id="navbarExampleOnHover">
           <div class="logo">
             <a href="{{ route('home') }}" class="d-inline-block">
@@ -448,15 +443,16 @@
               </div>
             </li>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-white"
+                href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+            </li>
 
             <li class="nav-item ">
               <a class="nav-link text-white"
                 href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-white"
-                href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
-            </li>
+
 
             <li class="nav-item">
               <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
