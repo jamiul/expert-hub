@@ -26,15 +26,15 @@
             </div>
             <div class="carousel-caption">
               <div class="row">
-                <div class="col-lg-8 col-sm-12">
+                <div class="col-lg-7 col-sm-12">
                   <h2 class=" sm-mx-auto fw-700 " style="font-size:42px;">
-                    Do Hire the best consultations for any job, online</h2>
-                  <p class="fs-18 my-2 ">Millions of people use scholarships Australia to turn their ideas into
+                    Hire the best consultations for any job, online</h2>
+                  <p class="fs-20 my-4 ">Millions of people use scholarships Australia to turn their ideas into
                     reality.</p>
                   <div class="my-3">
-                    <a href="{{route('register') }}?type=2" class="btn text-white fw-700 py-3 px-3 mb-3"
+                    <a href="{{route('register') }}?type=2" class="btn text-white fw-700 fs-18 py-3 px-5 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Hire') }}</a>
-                    <a href="{{route('register') }}?type=1" class="btn text-white py-3 px-3  mb-3"
+                    <a href="{{route('register') }}?type=1" class="btn text-white fw-700 ml-4 fs-18 py-3 px-5 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Work') }}</a>
 
                   </div>
