@@ -385,7 +385,7 @@
                                                 <span class="text-muted">94 reviews</span>
                                             </div>
                                             <hr>
-                                            <div class="d-flex justify-content-between h-110px align-content-center">
+                                            <div class="d-flex justify-content-between align-content-center">
                                                 <div>
                                                     <span>
                                                         <img class="mr-2 rounded-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
@@ -416,7 +416,7 @@
                                                 <span class="text-muted">94 reviews</span>
                                             </div>
                                             <hr>
-                                            <div class="d-flex justify-content-between h-110px align-content-center"">
+                                            <div class="d-flex justify-content-between align-content-center"">
                                                 <div>
                                                     <img class=" mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
                                             <span>Eleanor Pena</span>
@@ -432,39 +432,35 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-sm-6 ">
                         <div class="card  rounded-1" style="height:430px">
                             <div class="">
-                                <img class="card-img" src="{{my_asset('assets/frontend/default/img/servicesList/Surface.svg')}}" alt="Image" />
-                                <div class="card-body">
-                                    <p class="card-title mt-1 fs-12">Web & App Design</p>
-                                    <p class="card-title mt-1 fs-16 fw-700 h-50px ">I will do mobile app development for ios and...
-
-                                    </p>
-                                    <span>
-                                        <img class="mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/star.svg')}}" alt="Image" style="width:12px;" />
-                                    </span>
-                                    <span class="fw-700 text-black mr-1">4.82</span>
-                                    <span class="text-muted">94 reviews</span>
-
-                                </div>
-                                <hr>
-                                <div class="d-flex justify-content-between align-content-center">
+                                <div class="bg-secondary "><img class="card-img" src=" {{my_asset('assets/frontend/default/img/servicesList/Surface.svg')}}" alt="Image" /></div>
+                                <div class="card-body" style="height: 150px;">
                                     <div>
+                                        <p class="card-title mt-1 fs-12">Web & App Design</p>
+                                        <p class="card-title mt-1 fs-16 fw-700 h-50px">I will do mobile app development for ios and...</p>
                                         <span>
-                                            <img class="mr-2 rounded-2" src=" {{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
+                                            <img class="mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/star.svg')}}" alt="Image" style="width:12px;" />
                                         </span>
+                                        <span class="fw-700 text-black mr-1"> 4.82 </span>
+                                        <span class="text-muted">94 reviews</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between  align-content-center"">
+                                                <div>
+                                                    <img class=" mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
                                         <span>Jerome Bell</span>
                                     </div>
                                     <div>
-                                        <span> Starting at $983</span>
-                                    </div>
-
-                                </div>
+                                      <span>Starting at $983</span>
+                                   </div>
 
                             </div>
 
                         </div>
+
                     </div>
                 </div>
 
