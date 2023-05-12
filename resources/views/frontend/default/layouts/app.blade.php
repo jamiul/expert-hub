@@ -14,11 +14,9 @@
 <html lang="en">
 @endif
 <head>
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-	<meta name="app-url" content="{{ getBaseURL() }}">
-	<meta name="file-base-url" content="{{ getFileBaseURL() }}">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+	<meta name="app-url" content="{{ getBaseURL() }}"/>
+	<meta name="file-base-url" content="{{ getFileBaseURL() }}"/>
     <!-- Title -->
     <title>@yield('meta_title', get_setting('website_name').' | '.get_setting('site_motto'))</title>
 
@@ -40,9 +38,9 @@
     <meta name="twitter:card" content="product">
     <meta name="twitter:site" content="@publisher_handle">
     <meta name="twitter:title" content="{{ config('app.name', env('APP_NAME')) }}">
-    <meta name="twitter:description" content="{{ get_setting('meta_description') }}">
-    <meta name="twitter:creator" content="@author_handle">
-    <meta name="twitter:image" content="{{ custom_asset( get_setting('meta_image')) }}">
+    <meta name="twitter:description" content="{{ get_setting('meta_description') }}" />
+    <meta name="twitter:creator" content="@author_handle" />
+    <meta name="twitter:image" content="{{ custom_asset( get_setting('meta_image')) }}" />
 
     <!-- Open Graph data -->
     <meta property="og:title" content="{{ config('app.name', env('APP_NAME')) }}" />
@@ -96,7 +94,7 @@
 	</script>
     <style type="text/css">
         body{
-            /* font-family: 'Montserrat', sans-serif; */
+             /* font-family: 'Montserrat', sans-serif; */
             font-family: 'Public Sans', sans-serif;
             font-weight: 500;
         }
@@ -159,7 +157,7 @@
 
     </div>
 
-    
+
     @if (get_setting('show_website_popup') == 'on')
         <div class="modal website-popup removable-session d-none" data-key="website-popup" data-value="removed">
             <div class="absolute-full bg-black opacity-60"></div>
@@ -190,7 +188,7 @@
     @endif
 
     @yield('modal')
-    
+
 
     @if (get_setting('facebook_chat_activation_checkbox') == 1)
         <script type="text/javascript">
