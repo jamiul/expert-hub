@@ -22,7 +22,7 @@
           you love to do.
         </h6>
         <div class="d-flex align-items-center">
-          <div> <button class="btn btn  px-4 fs-16" style="background-color:#58B38E; color:white;">Find work
+          <div> <button class="btn btn  px-4 fs-16" style="background-color:#275846; color:white;">Find work
             </button>
           </div>
           <div class="d-flex ml-5">
@@ -124,7 +124,7 @@
           <h3 class="mb-4">Explore remote jobs</h3>
           <div class=" input-group position-relative">
             <input id="search-input" type="search" class="form-control " placeholder="Try skill like PHP  JAVASCRIPT,">
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn text-white " style="background-color:#275846;">
               Search
             </button>
           </div>
