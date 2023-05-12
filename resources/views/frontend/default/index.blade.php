@@ -53,12 +53,12 @@
     @if (get_setting('client_logo_show') == 'on')
     <section class=" bg-white container">
       <div class=" align-items-center d-flex row">
-        <div class="col-lg-2">
+        <div class="col-lg-3">
           <h2 class="mb-3 fw-700 fs-36 text-black ">
-            Used By:
+            Top Universities
           </h2>
         </div>
-        <div class="col-lg-10  mb-4">
+        <div class="col-lg-9  mb-4">
           <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
             data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
             @if (get_setting('client_logos') != null)
