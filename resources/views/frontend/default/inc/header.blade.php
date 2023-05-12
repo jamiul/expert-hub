@@ -107,8 +107,8 @@
 }
 </style>
 <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
-  <div class="aiz-navbar  me-auto ps-lg-0 py-0px fs-15 position-relative" style="padding-left: 0.15rem">
-    <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
+  <div class="aiz-navbar  me-auto ps-lg-0 py-0px fs-15 position-relative">
+    <div class=" container-fluid py-5px px-lg-5 d-none d-md-block">
       <div class="d-flex align-items-center justify-content-between">
 
         @if (!Auth::check())
