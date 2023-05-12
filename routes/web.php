@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/testing', function() {
 // 	dd(Auth::user()->userRoles->first()->role->id);
 // });
-
+Route::get('slider', function () {
+    return view('frontend/default.inc.videoSlide');
+});
 Route::get('/demo/cron_1', 'DemoController@cron_1');
 Route::get('/demo/cron_2', 'DemoController@cron_2');
 

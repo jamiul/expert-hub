@@ -123,13 +123,10 @@
         <div class="col-lg-9">
           <h3 class="mb-4">Explore remote jobs</h3>
           <div class=" input-group position-relative">
-            <input id="search-input" type="search" class="form-control rounded-pill"
-              placeholder="Try skill like PHP  JAVASCRIPT,">
-            <p id="search-button" type="button" class="btn position-absolute rounded-2 "
-              style="right:0; background-color:#58B38E; width:5px; px-2 ">
-              <img src=" {{url('/public/assets/findJob/00.png')}}" alt="Image" class="d-flex align-items-center"
-                style="width:18px; justify:center; align-items:center;  " />
-            </p>
+            <input id="search-input" type="search" class="form-control " placeholder="Try skill like PHP  JAVASCRIPT,">
+            <button type="button" class="btn btn-primary">
+              Search
+            </button>
           </div>
 
 

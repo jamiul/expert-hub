@@ -397,7 +397,7 @@
           <i class="fas fa-bars"></i>
         </button>
 
-        <!-- Collapsible wrapper -->
+        </button> <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse mega-menu-head" id="navbarExampleOnHover">
           <div class="logo">
             <a href="{{ route('home') }}" class="d-inline-block">
