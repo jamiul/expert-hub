@@ -275,7 +275,7 @@
 
 
 
-             <!-- <nav class="navbar navbar-expand-lg  bg-dark">
+            <nav class="navbar navbar-expand-lg  bg-dark">
 
                 <div class="logo">
                     <a href="{{ route('home') }}" class="d-inline-block">
@@ -402,8 +402,8 @@
 
                 </div>
 
-            </nav> -->
-            <nav class="navbar navbar-expand-lg  bg-dark w-100 position-relative">
+            </nav>
+            <!-- <nav class="navbar navbar-expand-lg  bg-dark w-100 position-relative">
 
                 <div class="logo">
                     <a href="{{ route('home') }}" class="d-inline-block">
@@ -420,130 +420,130 @@
 
                 <div class="collapse navbar-collapse  " id="navbarTogglerDemo02">
 
-                        <ul class="navbar-nav ml-auto  " >
+                    <ul class="navbar-nav ml-auto  ">
 
 
-                            <li class="nav-item ">
-                                <a class="nav-link text-white" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
-                            </li>
-                            <li class="nav-item">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+                        </li>
+                        <li class="nav-item">
 
-                            <li class="dropdown mega_menu ">
-                                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ translate('Find Jobs') }}
-                                </a>
-                                <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-sm-6 ">
-                                            <div class="w-75 mega-menu-item mega-menu-fj-item">
-                                                <a class="dropdown-item" href="#">{{ translate('Ways to earn') }}</a>
+                        <li class="dropdown mega_menu ">
+                            <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ translate('Find Jobs') }}
+                            </a>
+                            <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-6 ">
+                                        <div class="w-75 mega-menu-item mega-menu-fj-item">
+                                            <a class="dropdown-item" href="#">{{ translate('Ways to earn') }}</a>
+                                            <p>
+                                                {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="w-90 mega-menu-item mega-menu-fj-item mt-1">
+                                            <a class="dropdown-item pe-2 " href="#">{{ translate('Find ways to promote yourself') }}</a>
+                                            <p>{{translate('Explore the kind of work available in your field.')}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="w-75 mega-menu-item mega-menu-fj-item">
+                                            <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                                            <p>{{translate('Show clients you’re the one they want.')}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
+                        </li>
+                        <li class="dropdown mega_menu">
+                            <a class=" dropdown-toggle nav-link text-white " type="button" id="mega_about" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ translate('About Us') }}
+                            </a>
+                            <div class="dropdown-menu mega_area" aria-labelledby="mega_about">
+
+                                <div class="row ">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="row ">
+                                            <div class="col-6">
+                                                <div class="mt-2 w-75 mega-menu-item">
+                                                    <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
+                                                    <p>Learn about how to grow your independent career.</p>
+                                                </div>
+
+                                                <div class="w-75 mega-menu-item">
+                                                    <a class="dropdown-item " href="{{route('review')}}">{{translate('Reviews')}}</a>
+                                                    <p>See what it's like to collaborate on scholarship australia</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="w-75 mt-2 mega-menu-item">
+                                                    <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
+                                                    <p>Learn about the different ways to get work done.</p>
+                                                </div>
+
+
+                                                <div class="w-75 mega-menu-item" action="{{route('success-stories')}}">
+
+                                                    <a class="dropdown-item " href="{{route('success-stories')}}">{{ translate('Success Stories') }}
+                                                    </a>
+                                                    <p>Discover how to team work strategically and grow together</p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6 col-sm-6 py-3">
+                                        <h5>Where work gets done</h5>
+                                        <div class="mt-1">
+
+                                            <div class="about-mega-menu-right">
                                                 <p>
-                                                    {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
+                                                    Guides
                                                 </p>
+                                                <h3> Getting Started as a Consultant</h3>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="w-90 mega-menu-item mega-menu-fj-item mt-1">
-                                                <a class="dropdown-item pe-2 " href="#">{{ translate('Find ways to promote yourself') }}</a>
-                                                <p>{{translate('Explore the kind of work available in your field.')}}</p>
+                                            <div class="about-mega-menu-right">
+                                                <p>
+                                                    Guides
+                                                </p>
+                                                <h3>Growing Your consultant Career</h3>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="w-75 mega-menu-item mega-menu-fj-item">
-                                                <a class="dropdown-item" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
-                                                <p>{{translate('Show clients you’re the one they want.')}}</p>
+                                            <div class="about-mega-menu-right">
+                                                <p>
+                                                    Guides
+                                                </p>
+                                                <h3> Hiring & Working with Independent Talent</h3>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
-                            </li>
-                            <li class="dropdown mega_menu">
-                                <a class=" dropdown-toggle nav-link text-white " type="button" id="mega_about" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ translate('About Us') }}
-                                </a>
-                                <div class="dropdown-menu mega_area" aria-labelledby="mega_about">
-
-                                    <div class="row ">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="row ">
-                                                <div class="col-6">
-                                                    <div class="mt-2 w-75 mega-menu-item">
-                                                        <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
-                                                        <p>Learn about how to grow your independent career.</p>
-                                                    </div>
-
-                                                    <div class="w-75 mega-menu-item">
-                                                        <a class="dropdown-item " href="{{route('review')}}">{{translate('Reviews')}}</a>
-                                                        <p>See what it's like to collaborate on scholarship australia</p>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="w-75 mt-2 mega-menu-item">
-                                                        <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
-                                                        <p>Learn about the different ways to get work done.</p>
-                                                    </div>
-
-
-                                                    <div class="w-75 mega-menu-item" action="{{route('success-stories')}}">
-
-                                                        <a class="dropdown-item " href="{{route('success-stories')}}">{{ translate('Success Stories') }}
-                                                        </a>
-                                                        <p>Discover how to team work strategically and grow together</p>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="col-lg-6 col-sm-6 py-3">
-                                            <h5>Where work gets done</h5>
-                                            <div class="mt-1">
-
-                                                <div class="about-mega-menu-right">
-                                                    <p>
-                                                        Guides
-                                                    </p>
-                                                    <h3> Getting Started as a Consultant</h3>
-                                                </div>
-                                                <div class="about-mega-menu-right">
-                                                    <p>
-                                                        Guides
-                                                    </p>
-                                                    <h3>Growing Your consultant Career</h3>
-                                                </div>
-                                                <div class="about-mega-menu-right">
-                                                    <p>
-                                                        Guides
-                                                    </p>
-                                                    <h3> Hiring & Working with Independent Talent</h3>
-                                                </div>
-                                                <a href="" class="about-mega-menu-sm">See more</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
-                                            </div>
+                                            <a href="" class="about-mega-menu-sm">See more</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </nav> -->
             @endif
         </div>
     </header>
 
-   
+
 </body>
 
 </html>

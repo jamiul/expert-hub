@@ -213,13 +213,8 @@ $lang = \App\Models\Language::where('code', $locale)->first();
     <div class="aiz-main-wrapper d-flex flex-column">
 
         @include('frontend/default.inc.header')
-        <!-- @include('frontend/default.inc.videoSlide') -->
-
-
         <!-- ========== MAIN CONTENT ========== -->
-
         <div class="p-0 m-0 bg-white">
-      
             @yield('content')
         </div>
 
@@ -228,8 +223,6 @@ $lang = \App\Models\Language::where('code', $locale)->first();
         @include('frontend/default.inc.footer')
 
     </div>
-
-
     @if (get_setting('show_website_popup') == 'on')
     <div class="modal website-popup removable-session d-none" data-key="website-popup" data-value="removed">
         <div class="absolute-full bg-black opacity-60"></div>

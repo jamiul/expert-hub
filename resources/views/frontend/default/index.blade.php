@@ -9,16 +9,11 @@
 
 <body>
     @extends('frontend.default.layouts.app')
-    <!-- @include('frontend/default.inc.videoSlide') -->
-
 
     @section('content')
     @if (get_setting('slider_section_show') == 'on')
     <section class="position-relative overflow-hidden  pb-5 d-flex flex-column justify-content-center" style="min-height: 300px;">
-
-
             <section class="hero-section" id="frontHomeTab">
-
                 <div id="carouselExampleDark" class="carousel carousel-container carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
