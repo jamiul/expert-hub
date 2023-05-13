@@ -50,7 +50,7 @@ class ProjectCategoryController extends Controller
         }
         $project_category->photo = $request->photo;
         $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
-        $project_category->description = Str::random(500);
+        $project_category->description = $request->description;
         if($project_category->save()){
             flash(translate('New Category has been added successfully!'))->success();
             return redirect()->route('project-categories.index');
