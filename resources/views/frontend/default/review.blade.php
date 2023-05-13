@@ -177,7 +177,7 @@
                     <div class="col-6">
                         <div class="row ">
                             <div class="col-lg-4 col-sm-12">
-                                <h4 class="trusted ">Trusted By </h4>
+                                <h4 class="trusted "> Used by </h4>
                             </div>
                             <div class="col-lg-4 col-sm-12">
                                 <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
@@ -269,10 +269,10 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active fs-16  " id="hiring-talent-tab" data-toggle="tab" href="#hiring" role="tab" aria-controls="hiring" aria-selected="true">Hiring talent</a>
+                    <a class="nav-link rv-find-work-bar active fs-16  " id="hiring-talent-tab" data-toggle="tab" href="#hiring" role="tab" aria-controls="hiring" aria-selected="true">Hiring talent</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-16" id="finding-work-tab" data-toggle="tab" href="#finding" role="tab" aria-controls="finding" aria-selected="false">Finding work</a>
+                    <a class="nav-link rv-find-work-bar fs-16" id="finding-work-tab" data-toggle="tab" href="#finding" role="tab" aria-controls="finding" aria-selected="false">Finding work</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">

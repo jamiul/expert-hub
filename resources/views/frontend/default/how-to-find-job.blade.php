@@ -14,20 +14,20 @@
         <div class="mx-2 rounded-2 my-3" style="background: #F2F7F2;">
             <div class="row py-3 position-relative">
                 <div class="col-lg-6 pt-2 px-5 mt-3 wrap find-job-banner ">
-                    <h3 class=" text-success find-job-banner-title">Work the way you want</h3>
-                    <p class="">Find the right work for you, with great clients, at the world’s work marketplace.</p>
+                    <h3 class=" text-success find-job-banner-title">{{translate('Work the way you want')}}</h3>
+                    <p class="">{{translate("Find the right work for you, with great clients, at the world’s work marketplace.")}}</p>
 
-                    <button class=" text-white fs-16 btn btn-primary px-3 py-2">Create Your Profile</button>
+                    <button class=" text-white fs-16 btn btn-primary px-3 py-2">{{translate('Create Your Profile')}}</button>
 
 
                     <div class="d-flex justify-content-between align-content-center border-top find-job-banner-rating-section position-absolute">
-                        <p class="">Professionals rate clients</p>
+                        <p class="">{{translate('Professionals rate clients')}}</p>
                         <div class="find-job-banner-rating">
                             <div class=" find-job-banner-star ">
                                 <img class="" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/rating.svg')}}" alt="">
-                                <p>4.9/5</p>
+                                <p>{{translate('4.9/5')}}</p>
                             </div>
-                            <p class="find-job-banner-total-review">based on 2.4M+ reviews</p>
+                            <p class="find-job-banner-total-review">{{translate('based on 2.4M+ reviews')}}</p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
         <!-- How it works -->
         <div class="container-main">
             <div class="">
-                <h1 class="text-black fw-700 ">How it works</h1>
+                <h1 class="text-black fw-700 ">{{translate('How it works')}}</h1>
                 <div class="border-bottom border-gray mt-3"></div>
             </div>
 
@@ -52,8 +52,8 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
-                        <h1 class=" how-work-title ">Create your profile (it’s free)</h1>
-                        <p class="how-work-details  mt-2">An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.</p>
+                        <h1 class=" how-work-title ">{{translate('Create your profile (it’s free)')}}</h1>
+                        <p class="how-work-details  mt-2">{{translate('An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.')}}</p>
                     </div>
                 </div>
                 <div class="row mt-4 ">
@@ -64,11 +64,11 @@
 
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
-                        <h1 class="how-work-title">Explore ways to earn</h1>
-                        <p class="how-work-details mt-2">Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network</p>
+                        <h1 class="how-work-title">{{translate('Explore ways to earn')}}</h1>
+                        <p class="how-work-details mt-2">{{translate('Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network')}}</p>
                         <a class="text-primary fs-16 pt-2 c-pointer">
                             <img src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/down-arrow.png')}}" alt="">
-                            <u class="pt-3">See ways to earn</u></a>
+                            <u class="pt-3">{{translate('See ways to earn')}}</u></a>
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -79,21 +79,21 @@
 
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
-                        <h1 class="how-work-title">Get paid securely</h1>
-                        <p class="how-work-details  mt-2">Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.</p>
+                        <h1 class="how-work-title">{{translate('Get paid securely')}}</h1>
+                        <p class="how-work-details  mt-2">{{translate('Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.')}}</p>
                     </div>
                 </div>
-                <button class=" text-white fs-16  btn btn-primary px-3 py-2 mt-4">Create Your Profile</button>
+                <button class=" text-white fs-16  btn btn-primary px-3 py-2 mt-4">{{translate('Create Your Profile')}}</button>
             </div>
 
         </div>
-        <!-- Trusted By -->
+        <!--  Used by -->
         <div class="container-main">
             <div class="row ">
                 <div class="col-6">
                     <div class="row ">
                         <div class="col-lg-4 col-sm-12">
-                            <h4 class="trusted ">Trusted By </h4>
+                            <h4 class="trusted "> Used by </h4>
                         </div>
                         <div class="col-lg-4 col-sm-12">
                             <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
@@ -125,15 +125,15 @@
         <div class="container-main ">
             <div class="mt-5">
                 <div class="">
-                    <h1 class="explore-title ">Explore ways to earn
+                    <h1 class="explore-title ">{{translate('Explore ways to earn')}}
                     </h1>
                     <div class="border-bottom border-gray mt-3"></div>
                 </div>
                 <div class="row explore-find-oppor">
                     <div class="col-lg-7 col-sm-12 ">
-                        <h1 class="explore-find-oppor-title ">Find your next opportunity</h1>
-                        <p class="explore-find-oppor-details">Search on Talent Marketplace™ for the hourly or fixed-price work you’re looking for. Submit a proposal, set your rate, and show how great you’ll be. Give a little extra by sharing your unique approach and offering a rapport-building interview</p>
-                        <button class=" text-white fs-16  btn btn-primary px-3 py-2 mt-3">Find Jobs</button>
+                        <h1 class="explore-find-oppor-title ">{{translate('Find your next opportunity')}}</h1>
+                        <p class="explore-find-oppor-details">{{translate('Search on Talent Marketplace™ for the hourly or fixed-price work you’re looking for. Submit a proposal, set your rate, and show how great you’ll be. Give a little extra by sharing your unique approach and offering a rapport-building interview')}}</p>
+                        <button class=" text-white fs-16  btn btn-primary px-3 py-2 mt-3">{{translate('Find Jobs')}}</button>
                     </div>
                     <div class="col-lg-1"></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -155,14 +155,14 @@
                                 <div class="" style="background: #F2F7F2; ">
 
                                     <div class="card-body">
-                                        <p class="text-muted fs-16">WordPress website</p>
+                                        <p class="text-muted fs-16">{{translate('WordPress website')}}</p>
                                     </div>
-                                    <p class="pl-4 fw-bold text-black  ">From $300</p>
+                                    <p class="pl-4 fw-bold text-black  ">{{translate('From $300')}}</p>
                                 </div>
                                 <div class="bg-white rounded-2 hth-profile-active position-absolute">
                                     <div class="px-3 py-1 d-flex">
                                         <img class="rounded-circle pr-1 position-relative" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}" alt="">
-                                        <p class="fs-14 ">Stefan M.</p>
+                                        <p class="fs-14 ">{{translate('Stefan M.')}}</p>
                                         <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
 
                                     </div>
@@ -177,15 +177,15 @@
                                 <div class="" style="background: #F2F7F2;">
 
                                     <div class="card-body">
-                                        <p class="text-muted fs-16">Blog Posts</p>
+                                        <p class="text-muted fs-16">{{translate('Blog Posts')}}</p>
                                     </div>
-                                    <p class="pl-4 fw-bold text-black  ">From $250</p>
+                                    <p class="pl-4 fw-bold text-black  ">{{translate('From $250')}}</p>
                                 </div>
 
                                 <div class="bg-white rounded-2 hth-profile-active position-absolute">
                                     <div class="px-3 py-1 d-flex">
                                         <img class="rounded-circle pr-1 position-relative" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}" alt="">
-                                        <p class="fs-14 ">Md. Mojahidul I.</p>
+                                        <p class="fs-14 ">{{translate("Md. Mojahidul I.")}}</p>
 
                                         <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
                                     </div>
@@ -197,23 +197,23 @@
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-sm-12 my-auto">
-                    <h1 class="explore-find-oppor-title">Sell what you do best</h1>
+                    <h1 class="explore-find-oppor-title">{{translate('Sell what you do best')}}</h1>
 
-                    <p class="explore-find-oppor-details">Create easy-to-buy projects with Project Catalog™. Match your projects to what clients need. Be clear upfront by defining your scope, timing, price, and terms. Once we’ve approved your project, clients can start to buy.</p>
-                    <button class=" text-white fs-16 btn btn-primary  px-3 py-2 mt-3">See Other Projects</button>
+                    <p class="explore-find-oppor-details">{{translate("Create easy-to-buy projects with Project Catalog™. Match your projects to what clients need. Be clear upfront by defining your scope, timing, price, and terms. Once we’ve approved your project, clients can start to buy.")}}</p>
+                    <button class=" text-white fs-16 btn btn-primary  px-3 py-2 mt-3">{{translate('See Other Projects')}}</button>
                 </div>
             </div>
 
         </div>
         <div class="container-main">
             <div class="row ">
-                <div class="col-lg-5 col-sm-12 my-auto">
-                    <h1 class="explore-find-oppor-title">Let the work find you</h1>
-                    <p class="explore-find-oppor-details">Does your work stand out? Are your skills in demand? If you’re in development, design, or marketing, you can apply to our fast lane. Our recruiters will assess your hard-earned experience and match you to exclusive opportunities with trusted clients.</p>
-                    <button class=" text-white fs-16 btn btn-primary px-3 py-2 mt-3">Apply to Join</button>
+                <div class="col-lg-5 col-sm-12 ">
+                    <h1 class="explore-find-oppor-title">{{translate('Let the work find you')}}</h1>
+                    <p class="explore-find-oppor-details">{{translate('Does your work stand out? Are your skills in demand? If you’re in development, design, or marketing, you can apply to our fast lane. Our recruiters will assess your hard-earned experience and match you to exclusive opportunities with trusted clients.')}}</p>
+                    <button class=" text-white fs-16 btn btn-primary px-3 py-2 mt-4">{{translate('Apply to Join')}}</button>
                 </div>
                 <div class="col-lg-2"></div>
-                <div class="col-lg-4 col-sm-12 ">
+                <div class="col-lg-4 col-sm-12 my-auto ">
                     <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/message.svg')}}" alt="Card image cap">
 
                 </div>
@@ -221,7 +221,7 @@
         </div>
 
         <!-- How payments work -->
-        <div class="mt-5">
+        <div class="" style="margin-top: 100px;">
             <div class="row mt-5 mb-5">
                 <div class="col-lg-5 col-sm-12 mr-5">
                     <img class="w-100 payments-img " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg')}}" alt="">
@@ -229,24 +229,24 @@
 
                 <div class="col-lg-5 col-sm-12 mt-5 ml-5">
                     <div>
-                        <h1 class="payment-work-main-title">How payments work</h1>
-                        <p class="payment-work-main-details">Whether you’re paid hourly or on a fixed-price contract, all the work you complete comes with payment protection.</p>
+                        <h1 class="payment-work-main-title">{{translate('How payments work')}}</h1>
+                        <p class="payment-work-main-details">{{translate('Whether you’re paid hourly or on a fixed-price contract, all the work you complete comes with payment protection.')}}</p>
                         <div class="mt-4">
-                            <p class="payment-work-child-title ">All in one place</p>
-                            <p class="payment-work-child-details">Invoice clients and track your earnings on Upwork for a simple and streamlined process.</p>
+                            <p class="payment-work-child-title ">{{translate('All in one place')}}</p>
+                            <p class="payment-work-child-details">{{translate('Invoice clients and track your earnings on Upwork for a simple and streamlined process.')}}</p>
                         </div>
                         <div class="mt-4">
-                            <p class="payment-work-child-title ">Choose how you get paid</p>
-                            <p class="payment-work-child-details">Use what works best for you—including direct deposit, PayPal, Payoneer, wire transfer, and more..</p>
+                            <p class="payment-work-child-title ">{{translate('Choose how you get paid')}}</p>
+                            <p class="payment-work-child-details">{{translate('Use what works best for you—including direct deposit, PayPal, Payoneer, wire transfer, and more..')}}</p>
                         </div>
                         <div class="mt-4">
-                            <p class="payment-work-child-title ">No fees until you complete your work</p>
-                            <p class="payment-work-child-details">Our service fees are taken as a percentage of your earnings. We charge you based on lifetime earnings with each client:</p>
+                            <p class="payment-work-child-title ">{{translate('No fees until you complete your work')}}</p>
+                            <p class="payment-work-child-details">{{translate("Our service fees are taken as a percentage of your earnings. We charge you based on lifetime earnings with each client:")}}</p>
 
                             <ul class="payment-work-child-details">
-                                <li class="payment-work-child-details-percent ">20% for the first $500 you bill your client</li>
-                                <li class="payment-work-child-details-percent ">10% for total billings between $500.01 and $10,000</li>
-                                <li class="payment-work-child-details-percent ">5% for total billings over $10,000</li>
+                                <li class="payment-work-child-details-percent ">{{translate('20% for the first $500 you bill your client')}}</li>
+                                <li class="payment-work-child-details-percent ">{{translate("10% for total billings between $500.01 and $10,000")}}</li>
+                                <li class="payment-work-child-details-percent ">{{translate("5% for total billings over $10,000")}}</li>
                             </ul>
 
 
@@ -254,7 +254,7 @@
 
 
                     </div>
-                    <a class="learn-service" style="color:#554C9C" href="">Learn more about service fees.</a>
+                    <a class="learn-service" style="color:#554C9C" href="">{{translate("Learn more about service fees.")}}</a>
 
                 </div>
             </div>
@@ -377,10 +377,8 @@
                     <div class="card h-90 ">
                         <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-1.jpg')}}" alt="Card image cap">
                         <div class="" style="background: #F2F7F2; ">
-
                             <div class="card-body">
                                 <p class="htfj-learn-work-child-title">Getting started</p>
-
                                 <button class="btn btn-primary mt-3">
                                     Learn More
                                 </button>
