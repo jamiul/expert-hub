@@ -38,9 +38,7 @@
                     <a href="{{route('register') }}?type=1"
                       class="btn text-white fw-700 ml-4 fs-lg-18 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Work') }}</a>
-
                   </div>
-
                 </div>
                 <div class="col-lg-4"></div>
               </div>
@@ -48,10 +46,8 @@
           </div>
         </div>
       </div>
-            
     </section>
     @endif
-
     <!-- main carousel  -->
     @if (get_setting('client_logo_show') == 'on')
     <section class=" bg-white container">
@@ -64,46 +60,42 @@
         <div class="col-lg-9  mb-4">
           <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
             data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
-            @if (get_setting('client_logos') != null)
-            @foreach (explode(',', get_setting('client_logos')) as $key => $value)
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/victoria.png')}}" alt="Image"
-                style="width:100px;" />
+            <div class="caorusel-box d-flex ">
+
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/victoria.png') }}" alt="Image"
+                  style="width:100px;" />
+              </div>
+
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/sydney.png') }}" alt="Image"
+                  style="width:100px;" />
+              </div>
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/adilade.png') }}" alt="Image"
+                  style="width:150px;" />
+              </div>
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/national university.jpg') }}"
+                  alt="Image" style="width:130px;" />
+              </div>
+
+
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/monas.jpg') }}" alt="Image"
+                  style="width:160px;" />
+              </div>
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/western sydney.jpg') }}" alt="Image"
+                  style="width:130px;" />
+              </div>
             </div>
 
-            <div class="">
-
-              <img class=" " src=" {{url('/public/assets/Top-universities/melbourn-removebg-preview.png')}}" alt="Image"
-                style="width:100px;" />
-
-            </div>
-            <div class="">
-
-              <img class=" " src=" {{url('/public/assets/Top-universities/sydney.png')}}" alt="Image"
-                style="width:100px;" />
-            </div>
-
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/adilade.png')}}" alt="Image"
-                style="width:150px;" />
-            </div>
-
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/national university.jpg')}}" alt="Image"
-                style="width:120px;" />
-            </div>
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/monas.jpg')}}" alt="Image"
-                style="width:120px;" />
-            </div>
-            @endforeach
-            @endif
           </div>
         </div>
       </div>
     </section>
     @endif
-
 
     <!-- explore services  -->
 
@@ -198,7 +190,7 @@
             <div class=" card  category">
               <div class=" card-body">
                 <div class="">
-                  <img class="" src=" {{url('/public/assets/home/img-1.png')}}" alt="Image" style="width:50px; 
+                  <img class="" src=" {{ custom_asset($category->photo) }}" alt="Image" style="width:50px; 
                   " />
                 </div>
                 <p class="card-title fs-18 mt-3">1853 skills</p>
@@ -1084,101 +1076,6 @@
     </section>>
     @endif
 
-
-
-    <!-- @if (get_setting('featured_category_show') == 'on')
-<section class="bg-white pt-5 pb-4">
-  <div class="container">
-    <div class="bg-primary py-7 px-6 rounded-2">
-      <div class="lh-1-8 mx-auto mb-5">
-        <h2 class="fw-700 fs-30 text-white">{{ get_setting('featured_category_title') }}</h2>
-        <p class="fs-17 text-white">{{ get_setting('featured_category_subtitle') }}</p>
-      </div>
-      <div class="row gutters-10">
-        @if (get_setting('featured_category_list') != null)
-        @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
-        @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-          <a class="featured_category d-block card bg-transparent py-5 px-2 text-center text-inherit shadow-none rounded-2 bg-transparent"
-            href="{{ route('projects.category', $category->slug) }}" style="height: 176px;border: 1px solid #ced2d9;">
-            <img src="{{ custom_asset($category->photo) }}" class="mw-100 h-50px mb-2">
-            <p class="fs-16 fw-600 text-white mb-0">{{ $category->name }}</p>
-          </a>
-        </div>
-        @endif
-        @endforeach
-        @endif
-      </div>
-      {{-- <div class="row gutters-10 mt-5">
-                        <div class="col-lg-6">
-                            <img src="{{ custom_asset(get_setting('featured_category_left_banner')) }}"
-      class="img-fluid">
-    </div>
-    <div class="col-lg-6">
-      <img src="{{ custom_asset(get_setting('featured_category_right_banner')) }}" class="img-fluid">
-    </div>
-  </div> --}}
-  <div class="mt-5">
-    <a href="{{ route('search') }}?category="
-      class="btn bg-white text-primary rounded-1">{{ translate('Browse More Categories') }}</a>
-  </div>
-  </div>
-  </div>
-</section>
-@endif -->
-
-
-
-    <!-- @if (get_setting('blog_section_show') !== 'on')
-    <section class="bg-white pt-4 pb-7 text-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-xl-8 col-xxl-6 mx-auto">
-            <div class="section-title mb-5 text-center">
-              <h2 class="fw-700 fs-30 text-dark">{{ get_setting('blog_section_title') }}</h2>
-              <p class="fs-17 text-secondary">{{ get_setting('blog_section_subtitle') }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="aiz-carousel gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2"
-            data-sm-items="1" data-arrows='true'>
-            @php
-            $blogs = \App\Models\Blog::where('status', 1)->latest()
-            ->limit(get_setting('max_blog_show_homepage'))
-            ->get();
-            @endphp
-            @foreach ($blogs as $key => $blog)
-            <div class="caorusel-box">
-              <div class="card text-dark mb-3 overflow-hidden rounded-2 border-gray-light hov-box">
-                <a href="{{ route('blog.details', $blog->slug) }}" class="text-reset d-block">
-                  <img src="{{ custom_asset($blog->banner) }}" alt="{{ $blog->title }}" class="card-img-top"
-                    height="212">
-                </a>
-                <div class="p-4">
-                  <h2 class="fs-16 fw-600 mb-1 h-45px">
-                    <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
-                      title="{{ $blog->title }}">
-                      {{ \Illuminate\Support\Str::limit($blog->title, 45, $end = '...') }}
-                    </a>
-                  </h2>
-                  @if ($blog->category != null)
-                  <p class="mt-3 mb-0 text-primary fs-14 fw-700">{{ $blog->category->category_name }}</p>
-                  @endif
-                  <p class="mb-4 fs-14 text-secondary opacity-70">
-                    {{ $blog->created_at ? date('d.m.Y',strtotime($blog->created_at)) : '' }}</p>
-                </div>
-              </div>
-            </div>
-            @endforeach
-          </div>
-        </div>
-        <div class="mt-4 text-center">
-          <a href="{{ route('blog') }}" class="btn btn-primary rounded-1">{{ translate('View More') }}</a>
-        </div>
-      </div>
-    </section>
-    @endif -->
     @endsection
 
 
