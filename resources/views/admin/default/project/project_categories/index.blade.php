@@ -14,45 +14,49 @@
                             <th>{{ translate('ID') }}</th>
                             <th>{{ translate('Name') }}</th>
                             <th>{{ translate('Parent') }}</th>
+                            <th>{{ translate('Description') }}</th>
                             <th>{{ translate('Icon') }}</th>
                             <th class="text-right">{{ translate('Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($project_categories as $key => $project_category)
-                            <tr>
-                                <td>{{ ($key+1) + ($project_categories->currentPage() - 1)*$project_categories->perPage() }}</td>
-                                <td>{{$project_category->name}}</td>
-                                @php
-                                    $parent = \App\Models\ProjectCategory::where('id', $project_category->parent_id)->first();
-                                @endphp
-                                <td>
-                                    @if ($parent != null)
-                                        {{ $parent->name }}
-                                    @else
-                                        {{ translate('No Parent') }}
-                                    @endif
-                                </td>
-                                <td>
-                                    <div class="p-2 bg-secondary" style="width: fit-content;">
-                                        <span class="avatar avatar-square avatar-xs">
-                                            <img src="{{ custom_asset($project_category->photo) }}">
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    @can('project cat edit')
-                                        <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('project-categories.edit', encrypt($project_category->id)) }}" title="{{ translate('Edit') }}">
-                                            <i class="las la-edit"></i>
-                                        </a>
-                                    @endcan
-                                    @can('project cat delete')
-                                        <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('project-categories.destroy', encrypt($project_category->id))}}"title="{{ translate('Delete') }}">
-                                            <i class="las la-trash"></i>
-                                        </a>
-                                    @endcan
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>{{ ($key+1) + ($project_categories->currentPage() - 1)*$project_categories->perPage() }}</td>
+                            <td>{{$project_category->name}}</td>
+                            @php
+                            $parent = \App\Models\ProjectCategory::where('id', $project_category->parent_id)->first();
+                            @endphp
+                            <td>
+                                @if ($parent != null)
+                                {{ $parent->name }}
+                                @else
+                                {{ translate('No Parent') }}
+                                @endif
+                            </td>
+                            <td>
+                               {{$project_category->description}}
+                            </td>
+                            <td>
+                                <div class="p-2 bg-secondary" style="width: fit-content;">
+                                    <span class="avatar avatar-square avatar-xs">
+                                        <img src="{{ custom_asset($project_category->photo) }}">
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-right">
+                                @can('project cat edit')
+                                <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('project-categories.edit', encrypt($project_category->id)) }}" title="{{ translate('Edit') }}">
+                                    <i class="las la-edit"></i>
+                                </a>
+                                @endcan
+                                @can('project cat delete')
+                                <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('project-categories.destroy', encrypt($project_category->id))}}" title="{{ translate('Delete') }}">
+                                    <i class="las la-trash"></i>
+                                </a>
+                                @endcan
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                     {{ $project_categories->links() }}
@@ -77,9 +81,13 @@
                         <select class="select2 form-control aiz-selectpicker" name="parent_id" data-toggle="select2" data-placeholder="Choose ..." data-live-search="true">
                             <option value="0">{{ translate('No Parent') }}</option>
                             @foreach(\App\Models\ProjectCategory::all() as $project_cat)
-                                <option value="{{$project_cat->id}}">{{$project_cat->name}}</option>
+                            <option value="{{$project_cat->id}}">{{$project_cat->name}}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="name">{{translate('Description')}}</label>
+                        <textarea type="text" rows="3" id="name" name="name" placeholder="{{ translate('Write your text....') }}" class="form-control" required></textarea>
                     </div>
                     <div class="form-group mb-3">
                         <label for="image">{{translate('Icon')}}</label>
@@ -95,9 +103,9 @@
                         <small class="form-text text-muted">.svg {{ translate('file recommended') }}</small>
                     </div>
                     @can('project cat create')
-                        <div class="form-group mb-3 text-right">
-                            <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
-                        </div>
+                    <div class="form-group mb-3 text-right">
+                        <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
+                    </div>
                     @endcan
                 </form>
             </div>
@@ -107,5 +115,5 @@
 
 @endsection
 @section('modal')
-    @include('admin.default.partials.delete_modal')
+@include('admin.default.partials.delete_modal')
 @endsection
