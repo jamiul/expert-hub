@@ -14,8 +14,7 @@
   @section('content')
   @if (get_setting('slider_section_show') == 'on')
   <section>
-    <section class="hero-section" id="frontHomeTab">
-
+    <section class="hero-section " id="frontHomeTab">
       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" style="">
           <div class="carousel-item active">
@@ -26,15 +25,18 @@
             </div>
             <div class="carousel-caption">
               <div class="row">
-                <div class="col-lg-7 col-sm-12">
-                  <h2 class=" sm-mx-auto fw-700 " style="font-size:42px;">
+                <div class="col-lg-7 col-sm-12 home-cacap-head">
+                  <h2 class=" sm-mx-auto fw-700 fs-lg-40 fs-sm-36px" style="">
                     Hire the best consultations for any job, online</h2>
-                  <p class="fs-20 my-4 ">Millions of people use scholarships Australia to turn their ideas into
+                  <p class="fs-lg-20 fs-sm-14 my-4 ">Millions of people use scholarships Australia to turn their ideas
+                    into
                     reality.</p>
-                  <div class="my-3">
-                    <a href="{{route('register') }}?type=2" class="btn text-white fw-700 fs-18 py-3 px-5 mb-3"
+                  <div class="lg-my-3 my-sm-0 home-banner-button ">
+                    <a href="{{route('register') }}?type=2"
+                      class="btn text-white fw-700  fs-lg-18 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Hire') }}</a>
-                    <a href="{{route('register') }}?type=1" class="btn text-white fw-700 ml-4 fs-18 py-3 px-5 mb-3"
+                    <a href="{{route('register') }}?type=1"
+                      class="btn text-white fw-700 ml-4 fs-lg-18 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Work') }}</a>
 
                   </div>
@@ -46,6 +48,7 @@
           </div>
         </div>
       </div>
+            
     </section>
     @endif
 
@@ -122,7 +125,8 @@
                 <div class="mt-3">
                   <p class="fs-22 fw-700"> Post a job</p>
                   <h6 class="fs-16 mt-3">
-                    Its free and easy to post a job. Simply fill in a title descriptions</h6>
+                    Its free and easy to post a job. Simply fill in a title descriptions and other additional
+                    requirments</h6>
                 </div>
               </div>
             </div>
@@ -134,8 +138,8 @@
                 <div class="mt-3">
                   <p class="fs-22 fw-700">Choose consultants </p>
                   <h6 class="fs-16 mt-3">
-
-                    Its free and easy to post a job. Simply fill in a title descriptions</h6>
+                    Here you can find most experience and skilful desire consultant, Who can help you project.
+                  </h6>
                 </div>
               </div>
             </div>
@@ -147,8 +151,8 @@
                 <div class="mt-3">
                   <p class="fs-22 fw-700"> Pay safely </p>
                   <p class="fs-16 mt-3">
-
-                    Its free and easy to post a job. Simply fill in a title descriptions</p>
+                    You can make payment securely. We have integrity system where your money will be safe.
+                  </p>
                 </div>
               </div>
             </div>
@@ -160,8 +164,7 @@
                 <div class="mt-3">
                   <p class="fs-22 fw-700"> We're here to help you </p>
                   <h6 class="fs-16 mt-3">
-
-                    its free and easy to post a job. Simply fill in a title descriptions </h6>
+                    We have 24/7 online customer service so easily you can reach us.</h6>
                 </div>
               </div>
             </div>
@@ -172,13 +175,12 @@
     @endif
 
     <!-- Service Category -->
-
     @if (get_setting('featured_category_show') == 'on')
     <section class="bg-white pb-4 border-top" style="margin-bottom:60px;  margin-top:50px; ">
       <div class=" container">
         <div class="d-flex justify-content-between mb-5 " style="margin-top:60px;">
           <div class="w-lg-75 w-xl-50 lh-1-8">
-            <h2 class="fw-700 fs-36 ">{{ get_setting('featured_category_title') }}</h2>
+            <h2 class="fw-700 fs-36">{{ get_setting('featured_category_title') }}</h2>
             <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p>
           </div>
           <div>
@@ -227,138 +229,6 @@
       </div>
     </section>
     @endif
-
-    <!-- category -->
-    @if (get_setting('latest_project_show') == 'on')
-    <!-- <section class=" bg-white border-top" style="margin-bottom:70px;  margin-top:50px;">
-    <div class="container " style="margin-top:70px;">
-      <div class="d-flex justify-content-between">
-        <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h4 class="fw-700 fs-30 text-black">Browse talent by category</h4>
-          <h6 class="fs-18 fw-400">Get some inspirations from 1800+ skills</h6>
-        </div>
-        <div>
-          <a class=" " href="#">
-            <small class="fs-18 fw-400 category-list">All categories</small>
-            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
-          </a>
-        </div>
-      </div>
-      <div class="" style="margin-top:30px;">
-        <div class="row  ">
-          <div class="col-lg-3">
-            <div class=" card rounded-1 category">
-              <div class=" card-body">
-                <div class="">
-                  <img class="" src=" {{url('/public/assets/home/img-1.png')}}" alt="Image" style="width:50px; 
-                  " />
-                </div>
-                <p class="card-title fs-18 mt-3">1853 skills</p>
-                <p class=" card-title fs-18  category-title">Development and IT</p>
-                <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more
-
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3" ">
-            <div class=" card rounded-1 category">
-            <div class=" card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-2.png')}}" alt="Image" style="width:40px;
-                  " /></div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Design creative</p>
-              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-3.png')}}" alt="Image" style="width:50px;
-                  " /></div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Digital marketing </p>
-              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class=" card-body">
-              <div class="">
-                <img src=" {{url('/public/assets/home/img-4.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Writings and translation</p>
-              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-5.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Music and audio</p>
-              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-6.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Video and animation</p>
-              <p class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</p>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-7.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Engineering & Architecture</p>
-              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-8.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Finance & Accounting</p>
-              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-    @endif
-
 
     <!-- Trending services  -->
     @if (get_setting('latest_project_show') == 'on')
@@ -823,12 +693,11 @@
         <div class=" mt-5">
           <div class="row ">
             <div class="col-lg-4">
-              <div class=" card rounded-1 ">
+              <div class=" card rounded-1 " style="height:280px;">
                 <div class=" card-body">
                   <p class="text-primary mt-2 fs-18">Great Work</p>
-                  <p class=" mt-3 fs-18 text-justify">"I found the course material to be highly engaging and the
-                    instructors to
-                    be helpful communicative"
+                  <p class=" mt-3 fs-18 ">"I am very satisfied with his work; so far, he has consistently
+                    delivered his job on time. We will work together in the future."
                   </p>
                   <hr>
                   <div class="d-flex  ">
@@ -838,19 +707,18 @@
                     </div>
                     <div>
                       <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
-                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Web designer</h6>
+                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Academic advisor</h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-4">
-              <div class=" card rounded-1 ">
+              <div class=" card rounded-1 " style="height:280px;">
                 <div class=" card-body">
                   <p class="text-primary mt-2 fs-18">Great Work</p>
-                  <p class=" mt-3 fs-18 text-justify">"I found the course material to be highly engaging and the
-                    instructors to
-                    be helpful communicative"
+                  <p class=" mt-3 fs-18 ">"I am happy with his responsiveness throughout the entire project
+                    duration; he was very experienced and provided quality work."
                   </p>
                   <hr>
                   <div class="d-flex  ">
@@ -859,73 +727,70 @@
                   " />
                     </div>
                     <div>
-                      <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
-                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Web designer</h6>
+                      <small class="fw-700 fs-14 text-black"> Mr. jack</small>
+                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Information technology expert</h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class=" card rounded-1 ">
+            <div class="col-lg-4 ">
+              <div class=" card rounded-1 " style="height:280px;">
                 <div class=" card-body">
-                  <p class="text-primary mt-2 fs-14">Great work</p>
-                  <p class=" mt-3 fs-18 text-justify">"I found the course material to be highly engaging and the
-                    instructors
-                    to
-                    be helpful communicative"
+                  <p class="text-primary mt-2 fs-18">Great work</p>
+                  <p class=" mt-3 fs-18 ">
+                    " I am happy for my work and recommend him. He is a very potential and committed person."
                   </p>
-                  <hr>
-                  <div class="d-flex  ">
+                  <div class="border-top mt-5"></div>
+                  <div class="d-flex  mt-3">
                     <div>
                       <img class="mr-2  " src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
                   " />
                     </div>
                     <div>
-                      <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
-                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Web designer</h6>
+                      <small class="fw-700 fs-14 text-black"> Mitchel Joe </small>
+                      <h6 class="fs-14 text-muted" style="Line height:10px;">Thesis writing helper</h6>
                     </div>
+                  </div>
+                  </>
+                </div>
+              </div>
+            </div>
+
+            <div class="row lg-mx-2">
+              <div class="col-lg-4">
+                <div class=" ">
+                  <div class=" ">
+                    <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
+                    <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="">
+                  <div class=" ">
+                    <p class=" mt-2 fs-18 text-black fw-700">95%</p>
+                    <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="  ">
+                  <div class="">
+                    <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
+                    <p class=" mt-3 fs-18">G2s best software awards
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
-
-          <div class="row ">
-            <div class="col-lg-4">
-              <div class=" ">
-                <div class=" ">
-                  <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
-                  <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="">
-                <div class=" ">
-                  <p class=" mt-2 fs-18 text-black fw-700">95%</p>
-                  <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
-                  </p>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="  ">
-                <div class="">
-                  <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
-                  <p class=" mt-3 fs-18">G2s best software awards
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
     </section>
     @endif
-
 
     <!-- Join us -->
 
@@ -963,13 +828,9 @@
               <div class="d-flex align-items-center">
                 <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
                 <h6 class="fs-16 m-2">
-
                   Build a predictable pipeline of projects, big and small, through strong
                   connections.
                 </h6>
-
-
-
               </div>
               <div class="d-flex align-items-center mb-2">
                 <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
@@ -986,12 +847,8 @@
                   style="width:18px; " /></span>
             </button>
           </div>
-
-
         </div>
-
       </div>
-
     </section>
     @endif
 
@@ -1022,9 +879,9 @@
                   </div>
                   <div class="card-body">
                     <div>
-                      <small class=" mt-3 fs-14">December 2, 2023 </small>
-                      <h6 class="fw-700 fs-18 text-justify mt-1">Start an online business and work from home</h6>
-                      <small class=" fs-16">A complete guide to starting a small business</small>
+                      <small class=" mt-3 fs-14">April 2, 2023 </small>
+                      <h6 class="fw-700 fs-18 mt-1">How to write a proper academic writing?</h6>
+                      <small class=" fs-16">A complete guide to write a proper academic writing</small>
                     </div>
                   </div>
                 </div>
@@ -1038,9 +895,9 @@
                   </div>
                   <div class="card-body">
                     <div>
-                      <small class=" mt-3 fs-14">December 2, 2023 </small>
-                      <p class="fw-700 fs-18 text-justify ">Start an online business and work from home</p>
-                      <small class=" fs-16">A complete guide to starting a small business</small>
+                      <small class=" mt-3 fs-14">May 7, 2023 </small>
+                      <p class="fw-700 fs-18  ">How can you prepare yourself for scholarships?</p>
+                      <small class=" fs-16">There are few important steps you can follow for your preparations</small>
                     </div>
                   </div>
                 </div>
@@ -1054,9 +911,10 @@
                   </div>
                   <div class="card-body">
                     <div>
-                      <small class=" mt-3 fs-16">December 2, 2023 </small>
-                      <p class="fw-700 fs-18 text-justify">Start an online business and work from home</p>
-                      <small class=" fs-16">A complete guide to starting a small business</small>
+                      <small class=" mt-3 fs-16">September 01, 2022 </small>
+                      <p class="fw-700 fs-18 ">The journey of international study</p>
+                      <small class=" fs-16">The complete guide of study in international recognized universities
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -1070,8 +928,8 @@
                   </div>
                   <div class="card-body">
                     <div>
-                      <small class=" mt-3 fs-16">December 2, 2023 </small>
-                      <p class="fw-700 fs-18 text-justify">Start an online business and work from home</p>
+                      <small class=" mt-3 fs-16">May 12, 2023 </small>
+                      <p class="fw-700 fs-18 ">Start an online business and work from home</p>
                       <small class=" fs-16">A complete guide to starting a small business</small>
                     </div>
                   </div>
@@ -1083,6 +941,7 @@
         </div>
     </section>
     @endif
+
 
     <!-- skills -->
 
@@ -1181,12 +1040,11 @@
     <!-- Last section -->
 
     @if (get_setting('slider_section_show') == 'on')
-    <section class="position-relative jumbotron overflow-hidden d-flex flex-column justify-content-center "
-      style="min-height:300px; background-color:#FBF7ED;">
+    <section class=" " style="min-height:300px; background-color:#FBF7ED;">
       <div class="container pt-3">
         <div class="">
-          <div class="d-flex justify-content-between  align-items-center">
-            <div class="row justify-content-between px-4  p-3" style="width:40%;">
+          <div class="row ">
+            <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
               <div>
                 <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
                 <h2 class=" fw-700 fs-36 my-4"
@@ -1215,14 +1073,15 @@
                 </div>
               </div>
             </div>
-            <div class=" " style="width:50%;">
+            <div class="col-lg-6 col-sm-12 " style="">
               <img src=" {{url('/public/assets/findJob/home-banner.png')}}" alt="Image" "
-              class=" w-100" style=" height:430px;" />
+              class=" w-100" style=" " />
             </div>
           </div>
         </div>
       </div>
-    </section>
+            
+    </section>>
     @endif
 
 
