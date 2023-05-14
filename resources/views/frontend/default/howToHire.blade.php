@@ -14,7 +14,7 @@
         <div class="mx-2 rounded-2 my-3 position-relative" style="background: #F2F7F2;">
             <div class="row py-3">
                 <div class="col-lg-6 py-2 px-5 mt-3 wrap  ">
-                    <h3 class="how-to-hire-banner-title text-success">Choose your way to get work done</h3>
+                    <h3 class="how-to-hire-banner-title text-success">{{translate('Choose your way to get work done')}}</h3>
                     <p class="how-to-hire-banner-text">Find freelancers and run projects your way at the world’s work marketplace.</p>
 
                     <button class="btn btn-primary text-white fs-16  px-3 py-2">Find talent</button>
@@ -42,7 +42,7 @@
                     <img class="img-fluid rounded-2" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/postJob.jpg')}}" alt="">
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5 col-sm-12 my-auto">
+                <div class="col-lg-5 col-sm-12 mt-2">
                     <h1 class="get-work-child-title ">Post a job and hire a pro</h1>
                     <h3 class="get-work-child-text">Connect with talent that gets you with Talent Marketplace</h3>
                     <p class="get-work-child-details mb-3">Post your job on the world’s work marketplace and wait for the proposals to flood in from talented people around the world.</p>
@@ -51,8 +51,8 @@
                 </div>
             </div>
 
-            <div class="row my-5">
-                <div class="col-lg-5 col-sm-12 my-auto">
+            <div class="row " style="margin-top: 100px;">
+                <div class="col-lg-5 col-sm-12 ">
                     <h1 class="get-work-child-title ">Browse and buy projects</h1>
                     <h3 class="get-work-child-text">Start critical work right away with Project Catalog</h3>
                     <p class="get-work-child-details">Rather skip the guesswork? Shop projects already planned for you by the talent who know them best.</p>
@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-5 col-sm-12 my-auto">
+        <div class="col-lg-5 col-sm-12">
             <h1 class="get-work-child-title  ">Take the fastlane to the right talent</h1>
             <h3 class="get-work-child-text">Let us pinpoint the talent to reach your goals with Talent Scout</h3>
             <p class="get-work-child-detailsmt-2">Talk us through your budget and goals and we’ll do the recruitment for you. You’ll get a shortlist of our very best talent, all perfectly suited to the task.</p>
@@ -189,13 +189,13 @@
         </div>
     </div>
 
-    <!-- Trusted By -->
+    <!--  Used by -->
     <div class="container-main">
         <div class="row ">
             <div class="col-6">
                 <div class="row ">
                     <div class="col-lg-4 col-sm-12">
-                        <h4 class="trusted ">Trusted By </h4>
+                        <h4 class="trusted "> Used by </h4>
                     </div>
                     <div class="col-lg-4 col-sm-12">
                         <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
@@ -227,7 +227,7 @@
     <div class="mt-5">
         <div class="row mt-5 mb-5">
             <div class="col-lg-5 col-sm-12 mr-5">
-                <img class="img-fluid rounded-right-2 h-650px" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="">
+                <img class="img-fluid rounded-right h-650px" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="">
             </div>
 
             <div class="col-lg-5 col-sm-12 mt-5 ml-lg-5 mx-sm-auto">

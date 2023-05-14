@@ -320,17 +320,18 @@
 
                             </div>
                         </div>
-                        <!-- <div class="mb-lg-0">
+                        <!-- services -->
+                        <div class="mb-lg-0 mt-4">
                             <input type="hidden" name="type" value="service">
                             <div class="row gutters-15">
                                 @foreach($services as $service)
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="card bg-transparent rounded-2 border-gray-light overflow-hidden hov-box">
+                                    <div class="card bg-transparent  border-gray-light overflow-hidden hov-box">
                                         <a href="{{ route('service.show', $service->slug) }}">
                                             @if($service->image != null)
-                                            <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212" style="border-radius: 16px 16px 0px 0px;">
+                                            <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
                                             @else
-                                            <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212" style="border-radius: 16px 16px 0px 0px;">
+                                            <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                             @endif
                                         </a>
                                         <div class="card-body hov-box-body">
@@ -344,7 +345,7 @@
                                                 </span>
                                                 <span class="d-flex flex-column justify-content-center">
                                                     <a href="{{ route('freelancer.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
-                                                    mmmmmm
+
                                                 </span>
                                             </div>
 
@@ -366,9 +367,13 @@
                                     {{ $services->links() }}
                                 </ul>
                             </div>
-                        </div> -->
+                        </div>
+
+
                         <div class="row mt-5">
+                            @foreach($services as $service)
                             <div class="col-lg-4 col-sm-6 ">
+
                                 <div class="card  rounded-1" style="height:430px">
                                     <div class="">
                                         <div class=" ">
@@ -385,83 +390,28 @@
                                                 <span class="text-muted">94 reviews</span>
                                             </div>
                                             <hr>
-                                            <div class="d-flex justify-content-between align-content-center">
-                                                <div>
-                                                    <span>
-                                                        <img class="mr-2 rounded-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
-                                                    </span>
-                                                    <span>Ali Tufan</span>
-                                                </div>
-                                                <div>
-                                                    <span>Starting at $983</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 ">
-                                <div class="card  rounded-1" style="height:430px">
-                                    <div class="">
-                                        <div class="bg-secondary "><img class="card-img" src=" {{my_asset('assets/frontend/default/img/servicesList/Surface.svg')}}" alt="Image" /></div>
-                                        <div class="card-body" style="height: 150px;">
-                                            <div>
-                                                <p class="card-title mt-1 fs-12">Design & Creative</p>
-                                                <p class="card-title mt-1 fs-16 fw-700 h-50px">I will build a fully responsive design in HTML,CSS...</p>
-                                                <span>
-                                                    <img class="mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/star.svg')}}" alt="Image" style="width:12px;" />
+                                            <div class="d-flex mb-2">
+                                                <span class="mr-2">
+                                                    @if ($service->user->photo != null)
+                                                    <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                    @else
+                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                    @endif
                                                 </span>
-                                                <span class="fw-700 text-black mr-1"> 4.82 </span>
-                                                <span class="text-muted">94 reviews</span>
+                                                <span class="d-flex flex-column justify-content-center">
+                                                    <a href="{{ route('freelancer.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
+                                                </span>
                                             </div>
-                                            <hr>
-                                            <div class="d-flex justify-content-between align-content-center"">
-                                                <div>
-                                                    <img class=" mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
-                                            <span>Eleanor Pena</span>
-                                        </div>
-                                        <div>
-                                            <span>Starting at $983</span>
                                         </div>
 
                                     </div>
-
                                 </div>
-
                             </div>
+                            @endforeach
+
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-sm-6 ">
-                        <div class="card  rounded-1" style="height:430px">
-                            <div class="">
-                                <div class="bg-secondary "><img class="card-img" src=" {{my_asset('assets/frontend/default/img/servicesList/Surface.svg')}}" alt="Image" /></div>
-                                <div class="card-body" style="height: 150px;">
-                                    <div>
-                                        <p class="card-title mt-1 fs-12">Web & App Design</p>
-                                        <p class="card-title mt-1 fs-16 fw-700 h-50px">I will do mobile app development for ios and...</p>
-                                        <span>
-                                            <img class="mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/star.svg')}}" alt="Image" style="width:12px;" />
-                                        </span>
-                                        <span class="fw-700 text-black mr-1"> 4.82 </span>
-                                        <span class="text-muted">94 reviews</span>
-                                    </div>
-                                    <hr>
-                                    <div class="d-flex justify-content-between  align-content-center"">
-                                                <div>
-                                                    <img class=" mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/Surface-2.svg')}}" alt="Image" />
-                                        <span>Jerome Bell</span>
-                                    </div>
-                                    <div>
-                                      <span>Starting at $983</span>
-                                   </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
                 </div>
 
                       
