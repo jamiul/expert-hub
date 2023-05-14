@@ -60,46 +60,42 @@
         <div class="col-lg-9  mb-4">
           <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
             data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
-            @if (get_setting('client_logos') != null)
-            @foreach (explode(',', get_setting('client_logos')) as $key => $value)
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/victoria.png')}}" alt="Image"
-                style="width:100px;" />
+            <div class="caorusel-box d-flex ">
+
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/victoria.png') }}" alt="Image"
+                  style="width:100px;" />
+              </div>
+
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/sydney.png') }}" alt="Image"
+                  style="width:100px;" />
+              </div>
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/adilade.png') }}" alt="Image"
+                  style="width:150px;" />
+              </div>
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/national university.jpg') }}"
+                  alt="Image" style="width:130px;" />
+              </div>
+
+
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/monas.jpg') }}" alt="Image"
+                  style="width:160px;" />
+              </div>
+              <div class="col-2">
+                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/western sydney.jpg') }}" alt="Image"
+                  style="width:130px;" />
+              </div>
             </div>
 
-            <div class="">
-
-              <img class=" " src=" {{url('/public/assets/Top-universities/melbourn-removebg-preview.png')}}" alt="Image"
-                style="width:100px;" />
-
-            </div>
-            <div class="">
-
-              <img class=" " src=" {{url('/public/assets/Top-universities/sydney.png')}}" alt="Image"
-                style="width:100px;" />
-            </div>
-
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/adilade.png')}}" alt="Image"
-                style="width:150px;" />
-            </div>
-
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/national university.jpg')}}" alt="Image"
-                style="width:120px;" />
-            </div>
-            <div class="">
-              <img class=" " src=" {{url('/public/assets/Top-universities/monas.jpg')}}" alt="Image"
-                style="width:120px;" />
-            </div>
-            @endforeach
-            @endif
           </div>
         </div>
       </div>
     </section>
     @endif
-
 
     <!-- explore services  -->
 
