@@ -162,329 +162,398 @@
         @endif
 
         <!-- category -->
-        @if (get_setting('latest_project_show') == 'on')
+        @if (get_setting('featured_category_show') == 'on')
+        <section class="bg-white pb-4 border-top" style="margin-bottom:60px;  margin-top:50px; ">
+            <div class=" container">
+                <div class="d-flex justify-content-between mb-5 " style="margin-top:60px;">
+                    <div class="w-lg-75 w-xl-50 lh-1-8">
+                        <h2 class="fw-700 fs-36 ">{{ get_setting('featured_category_title') }}</h2>
+                        <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p>
+                    </div>
+                    <div>
+                        <a href="{{ route('search') }}?category=" class="btn bg-white text-black fs-17 rounded-1">{{ translate('Browse More Categories') }}
+                            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row gutters-10">
+                    @if (get_setting('featured_category_list') != null)
+                    @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
+                    @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
+                    <div class="col-lg-3">
+                        <div class=" card  category">
+                            <div class=" card-body">
+                                <div class="">
+                                    <img class="" src=" {{url('/public/assets/home/img-1.png')}}" alt="Image" style="width:50px;
+                  " />
+                                </div>
+                                <p class="card-title fs-18 mt-3">20 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more
 
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+                    @endif
+                </div>
+                {{-- <div class="row gutters-10 mt-5">
+                        <div class="col-lg-6">
+                            <img src="{{ custom_asset(get_setting('featured_category_left_banner')) }}"
+                class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ custom_asset(get_setting('featured_category_right_banner')) }}" class="img-fluid">
+            </div>
+            </div> --}}
+
+            </div>
+            </div>
+        </section>
         @endif
 
-        <!-- category -->
         @if (get_setting('latest_project_show') == 'on')
-        <!-- <section class=" bg-white border-top" style="margin-bottom:70px;  margin-top:50px;">
-    <div class="container " style="margin-top:70px;">
-      <div class="d-flex justify-content-between">
-        <div class="w-lg-75 w-xl-50 lh-1-8">
-          <h4 class="fw-700 fs-30 text-black">Browse talent by category</h4>
-          <h6 class="fs-18 fw-400">Get some inspirations from 1800+ skills</h6>
-        </div>
-        <div>
-          <a class=" " href="#">
-            <small class="fs-18 fw-400 category-list">All categories</small>
-            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
-          </a>
-        </div>
-      </div>
-      <div class="" style="margin-top:30px;">
-        <div class="row  ">
-          <div class="col-lg-3">
-            <div class=" card rounded-1 category">
-              <div class=" card-body">
-                <div class="">
-                  <img class="" src=" {{url('/public/assets/home/img-1.png')}}" alt="Image" style="width:50px;
-                  " />
+        <section class=" bg-white border-top" style="margin-bottom:60px;  margin-top:50px; ">
+            <div class="container ">
+                <div class="d-flex justify-content-between mb-5" style="margin-top:60px;">
+                    <div class="w-lg-75 w-xl-50 lh-1-8">
+                        <h4 class="fw-700 fs-30 text-black">Browse talent by category</h4>
+                        <h6 class="fs-18 fw-400">Get some inspirations from 1800+ skills</h6>
+                    </div>
+                    <div>
+                        <a class=" " href="#">
+                            <small class="fs-18 fw-400 category-list">All categories</small>
+                            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
+                        </a>
+                    </div>
                 </div>
-                <p class="card-title fs-18 mt-3">1853 skills</p>
-                <p class=" card-title fs-18  category-title">Development and IT</p>
-                <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more
+                <div class="" style="margin-top:30px;">
+                    <div class="row  ">
+                        <div class="col-lg-3">
+                            <div class=" card rounded-1 category">
+                                <div class=" card-body">
+                                    <div class="">
+                                        <img class="" src=" {{url('/public/assets/home/img-1.png')}}" alt="Image" style="width:50px;
+                  " />
+                                    </div>
+                                    <p class="card-title fs-18 mt-3">15 skills</p>
+                                    <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                        <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                    </a>
+                                    <small class="card-text fs-14 mt-2">Here I am, ready to serve your service. Are you looking for
+                                        linguistics help?
 
-                </small>
-              </div>
-            </div>
-          </div>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
 
-          <div class="col-lg-3" ">
+                        <div class="col-lg-3" ">
             <div class=" card rounded-1 category">
-            <div class=" card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-2.png')}}" alt="Image" style="width:40px;
+                            <div class=" card-body">
+                                <div class=""><img src=" {{url('/public/assets/home/img-2.png')}}" alt="Image" style="width:40px;
                   " /></div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Design creative</p>
-              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
+                                <p class="card-title fs-18 mt-3">20 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-14 mt-2">You will get help from me anything related with architecture.
+                                </small>
 
 
-            </div>
-          </div>
-        </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-3.png')}}" alt="Image" style="width:50px;
+                    <div class="col-lg-3 ">
+                        <div class="card  rounded-1 category">
+                            <div class="card-body">
+                                <div class=""><img src=" {{url('/public/assets/home/img-3.png')}}" alt="Image" style="width:50px;
                   " /></div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Digital marketing </p>
-              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
+                                <p class="card-title fs-18 mt-3">30 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-14 mt-2">I am ready to serve you as I have experience in the Information
+                                    Technology related field.</small>
 
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="card  rounded-1 category">
+                            <div class=" card-body">
+                                <div class="">
+                                    <img src=" {{url('/public/assets/home/img-4.png')}}" alt="Image" style="width:40px;" />
+                                </div>
+                                <p class="card-title fs-18 mt-3">18 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-14 mt-2">As an expert, I can help you fulfill your desire for agriculture
+                                    scholarships at any level.
+                                </small>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="card  rounded-1 category">
+                            <div class="card-body">
+                                <div class=""><img src=" {{url('/public/assets/home/img-5.png')}}" alt="Image" style="width:40px;" />
+                                </div>
+                                <p class="card-title fs-18 mt-3">40 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-15 mt-2">I'm ready to serve you in obtaining environmental scholarships and
+                                    others.</small>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="card rounded-1 category">
+                            <div class="card-body">
+                                <div class=""><img src=" {{url('/public/assets/home/img-6.png')}}" alt="Image" style="width:40px;" />
+                                </div>
+                                <p class="card-title fs-18 mt-3"> 25 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <p class="card-text fs-15 mt-2">
+                                    I am an expert and I am ready to help you to give any law-related
+                                    service.
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="card  rounded-1 category">
+                            <div class="card-body">
+                                <div class=""><img src=" {{url('/public/assets/home/img-7.png')}}" alt="Image" style="width:40px;" />
+                                </div>
+                                <p class="card-title fs-18 mt-3">35 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-15 mt-2">I'm ready to help you, don't forget to reach out to me with what
+                                    you.
+                                    want
+                                    .
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="card  rounded-1 category">
+                            <div class="card-body">
+                                <div class=""><img src=" {{url('/public/assets/home/img-8.png')}}" alt="Image" style="width:40px;" />
+                                </div>
+                                <p class="card-title fs-18 mt-3">13 skills</p>
+                                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                                    <p class="fs-16 fw-600 mb-0">{{ $category->name }}</p>
+                                </a>
+                                <small class="card-text fs-15 mt-2">
+                                    Here I am, ready to help you with any types of business-related assistance you may need.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class=" card-body">
-              <div class="">
-                <img src=" {{url('/public/assets/home/img-4.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Writings and translation</p>
-              <small class="card-text fs-14 mt-2">Software engineer web / mobile developer & more</small>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-5.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Music and audio</p>
-              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-6.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Video and animation</p>
-              <p class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</p>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-7.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Engineering & Architecture</p>
-              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 ">
-          <div class="card  rounded-1 category">
-            <div class="card-body">
-              <div class=""><img src=" {{url('/public/assets/home/img-8.png')}}" alt="Image" style="width:40px;" />
-              </div>
-              <p class="card-title fs-18 mt-3">1853 skills</p>
-              <p class=" card-title fs-18  category-title">Finance & Accounting</p>
-              <small class="card-text fs-15 mt-2">Software engineer web / mobile developer & more</small>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
+        </section>
         @endif
 
 
-       <!-- Trending services  -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class=" jumbotron border-top" style="background-color:#FBF7ED;">
-      <div class="container pb-2 " style=" ">
-        <div class="d-flex justify-content-between ">
-          <div class="w-lg-75 w-xl-50 lh-1-8">
-            <h2 class="fw-700 fs-36 text-black">Trending services</h2>
-            <h6 class="fs-18 fw-400">Most viewed and all-time top-selling services</h6>
-          </div>
-          <div>
-            <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
-            <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
-          </div>
-        </div>
-
-        <div class="mt-5">
-          <div class="row ">
-
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:430px">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="p-2" style=" height:110px;">
+        <!-- Trending services  -->
+        @if (get_setting('latest_project_show') == 'on')
+        <section class=" jumbotron border-top" style="background-color:#FBF7ED;">
+            <div class="container pb-2 " style=" ">
+                <div class="d-flex justify-content-between ">
+                    <div class="w-lg-75 w-xl-50 lh-1-8">
+                        <h2 class="fw-700 fs-36 text-black">Trending services</h2>
+                        <h6 class="fs-18 fw-400">Most viewed and all-time top-selling services</h6>
+                    </div>
                     <div>
-                      <p class="card-title mt-1 fs-18">Web & app design</p>
-                      <p class="card-title mt-1 fs-18 fw-700">I will design modern website in figma or adobe xd</p>
-                      <div class="mt-2">
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
+                        <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
+                        <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <div class="row ">
+
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:430px">
+                                <div class="">
+                                    <div class="bg-secondary ">
+                                        <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                                    </div>
+                                    <div class="p-2" style=" height:110px;">
+                                        <div>
+                                            <p class="card-title mt-1 fs-18">Web & app design</p>
+                                            <p class="card-title mt-1 fs-18 fw-700">I will design modern website in figma or adobe xd</p>
+                                            <div class="mt-2">
+                                                <span>
+                                                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
-                        </span>
-                        <span> 4896</span>
-                        <span> reviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-2">
-                    <div class="border border-top mt-5"></div>
-                    <div class="d-flex justify-content-between mt-1">
-                      <div>
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
-                            style="width:12px;" />
-                        </span>
-                        <span> World runo</span>
-                      </div>
-                      <div>
-                        <span> starting at $990</span>
-                      </div>
+                                                </span>
+                                                <span> 4896</span>
+                                                <span> reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="border border-top mt-5"></div>
+                                        <div class="d-flex justify-content-between mt-1">
+                                            <div>
+                                                <span>
+                                                    <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;" />
+                                                </span>
+                                                <span> World runo</span>
+                                            </div>
+                                            <div>
+                                                <span> starting at $990</span>
+                                            </div>
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:430px">
-                <div class="">
-                  <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
-                      alt="Image" /></div>
-                  <div class="p-2" style="height:110px;">
-                    <div>
-                      <p class="card-title mt-1 fs-18">Art & illustrations</p>
-                      <a href="#" class="card-title  mt-1 fs-18 fw-700"><u>I will create modern flat design
-                          illustrations</u>
-                      </a>
-                      <div class="mt-2">
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:430px">
+                                <div class="">
+                                    <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" /></div>
+                                    <div class="p-2" style="height:110px;">
+                                        <div>
+                                            <p class="card-title mt-1 fs-18">Art & illustrations</p>
+                                            <a href="#" class="card-title  mt-1 fs-18 fw-700"><u>I will create modern flat design
+                                                    illustrations</u>
+                                            </a>
+                                            <div class="mt-2">
+                                                <span>
+                                                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
-                        </span>
-                        <span> 4896</span>
-                        <span> reviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-2">
-                    <div class="border border-top mt-5"></div>
-                    <div class="d-flex justify-content-between">
-                      <div>
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
-                            style="width:12px; " />
-                        </span>
-                        <span> World runo</span>
-                      </div>
-                      <div>
-                        <span> starting at $990</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                                                </span>
+                                                <span> 4896</span>
+                                                <span> reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="border border-top mt-5"></div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <span>
+                                                    <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px; " />
+                                                </span>
+                                                <span> World runo</span>
+                                            </div>
+                                            <div>
+                                                <span> starting at $990</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
-            <div class=" col-lg-3 ">
-              <div class=" card rounded-1" style="height:430px">
-                <div class="">
-                  <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
-                      alt="Image" /></div>
-                  <div class="p-2" style="height:150px;">
-                    <div>
-                      <p class="card-title mt-1 fs-18">Design & creative</p>
-                      <p class="card-title mt-1 fs-18 fw-700">I will design fully responsive website website with
-                        HTML,
-                        CSS,
-                        boootstrap..
-                      </p>
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
+                        <div class=" col-lg-3 ">
+                            <div class=" card rounded-1" style="height:430px">
+                                <div class="">
+                                    <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" /></div>
+                                    <div class="p-2" style="height:150px;">
+                                        <div>
+                                            <p class="card-title mt-1 fs-18">Design & creative</p>
+                                            <p class="card-title mt-1 fs-18 fw-700">I will design fully responsive website website with
+                                                HTML,
+                                                CSS,
+                                                boootstrap..
+                                            </p>
+                                            <span>
+                                                <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;
                   " />
-                      </span>
-                      <span> 4896 reviews</span>
+                                            </span>
+                                            <span> 4896 reviews</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="border border-top mt-1"></div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <span>
+                                                    <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px; " />
+                                                </span>
+                                                <span> Brono</span>
+                                            </div>
+                                            <div>
+                                                <span> starting at $990</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:430px">
+                                <div class="">
+                                    <div class="bg-secondary ">
+                                        <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                                    </div>
+                                    <div class="p-2" style="height:110px;">
+                                        <div>
+                                            <p class="card-title mt-1 fs-18">Web & app design </p>
+                                            <p class="card-title mt-1 fs-18 w-100 fw-700">I will do mobile and web development</p>
+                                            <div class="mt-2">
+                                                <span>
+                                                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px;" />
+                                                </span>
+                                                <span> 4896</span>
+                                                <span> reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="border border-top mt-5"></div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <span class="mr-2">
+                                                    <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;" />
+                                                </span>
+                                                <span> World runo</span>
+                                            </div>
+                                            <div>
+                                                <span> starting at $990</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-2 text-center">
+                        <a href="#" class="category-list fs-18 fw-400 "><span>All services</span></a>
+                        <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
 
                     </div>
-                  </div>
-                  <div class="p-2">
-                    <div class="border border-top mt-1"></div>
-                    <div class="d-flex justify-content-between">
-                      <div>
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
-                            style="width:12px; " />
-                        </span>
-                        <span> Brono</span>
-                      </div>
-                      <div>
-                        <span> starting at $990</span>
-                      </div>
-
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:430px">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="p-2" style="height:110px;">
-                    <div>
-                      <p class="card-title mt-1 fs-18">Web & app design </p>
-                      <p class="card-title mt-1 fs-18 w-100 fw-700">I will do mobile and web development</p>
-                      <div class="mt-2">
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
-                            style="width:12px;" />
-                        </span>
-                        <span> 4896</span>
-                        <span> reviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-2">
-                    <div class="border border-top mt-5"></div>
-                    <div class="d-flex justify-content-between">
-                      <div>
-                        <span class="mr-2">
-                          <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;" />
-                        </span>
-                        <span> World runo</span>
-                      </div>
-                      <div>
-                        <span> starting at $990</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pt-2 text-center">
-            <a href="#" class="category-list fs-18 fw-400 "><span>All services</span></a>
-            <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
-              style="width:18px;" />
-
-          </div>
-        </div>
-    </section>
-@endif
+        </section>
+        @endif
 
         <!-- Latest job  -->
         @if (get_setting('latest_project_show') == 'on')
@@ -734,115 +803,115 @@
         </section>
         @endif
 
-      <!-- learn with scholarship australia -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class="jumbotron border-top border-bottom" style="margin-top:80px;  ">
-      <div class=" container pb-3">
-        <div class="">
-          <h2 class="fw-700 fs-36 text-black">People Love To Learn With Scholarships Australia</h2>
-        </div>
-
-        <div class=" mt-5">
-          <div class="row ">
-            <div class="col-lg-4">
-              <div class=" card rounded-1 " style="height:280px;">
-                <div class=" card-body">
-                  <p class="text-primary mt-2 fs-18">Great Work</p>
-                  <p class=" mt-3 fs-18 ">"I am very satisfied with his work; so far, he has consistently
-                    delivered his job on time. We will work together in the future."
-                  </p>
-                  <hr>
-                  <div class="d-flex  ">
-                    <div>
-                      <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
-                  " />
-                    </div>
-                    <div>
-                      <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
-                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Academic advisor</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class=" card rounded-1 " style="height:280px;">
-                <div class=" card-body">
-                  <p class="text-primary mt-2 fs-18">Great Work</p>
-                  <p class=" mt-3 fs-18 ">"I am happy with his responsiveness throughout the entire project
-                    duration; he was very experienced and provided quality work."
-                  </p>
-                  <hr>
-                  <div class="d-flex  ">
-                    <div>
-                      <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
-                  " />
-                    </div>
-                    <div>
-                      <small class="fw-700 fs-14 text-black"> Mr. jack</small>
-                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Information technology expert</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 ">
-              <div class=" card rounded-1 " style="height:280px;">
-                <div class=" card-body">
-                  <p class="text-primary mt-2 fs-18">Great work</p>
-                  <p class=" mt-3 fs-18 ">
-                    " I am happy for my work and recommend him. He is a very potential and committed person."
-                  </p>
-                  <div class="border-top mt-5"></div>
-                  <div class="d-flex  mt-3">
-                    <div>
-                      <img class="mr-2  " src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
-                  " />
-                    </div>
-                    <div>
-                      <small class="fw-700 fs-14 text-black"> Mitchel Joe </small>
-                      <h6 class="fs-14 text-muted" style="Line height:10px;">Thesis writing helper</h6>
-                    </div>
-                  </div>
-                  </>
-                </div>
-              </div>
-            </div>
-
-            <div class="row lg-mx-2">
-              <div class="col-lg-4">
-                <div class=" ">
-                  <div class=" ">
-                    <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
-                    <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
+        <!-- learn with scholarship australia -->
+        @if (get_setting('latest_project_show') == 'on')
+        <section class="jumbotron border-top border-bottom" style="margin-top:80px;  ">
+            <div class=" container pb-3">
                 <div class="">
-                  <div class=" ">
-                    <p class=" mt-2 fs-18 text-black fw-700">95%</p>
-                    <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
-                    </p>
-
-                  </div>
+                    <h2 class="fw-700 fs-36 text-black">People Love To Learn With Scholarships Australia</h2>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="  ">
-                  <div class="">
-                    <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
-                    <p class=" mt-3 fs-18">G2s best software awards
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-          </div>
-    </section>
-@endif
+                <div class=" mt-5">
+                    <div class="row ">
+                        <div class="col-lg-4">
+                            <div class=" card rounded-1 " style="height:280px;">
+                                <div class=" card-body">
+                                    <p class="text-primary mt-2 fs-18">Great Work</p>
+                                    <p class=" mt-3 fs-18 ">"I am very satisfied with his work; so far, he has consistently
+                                        delivered his job on time. We will work together in the future."
+                                    </p>
+                                    <hr>
+                                    <div class="d-flex  ">
+                                        <div>
+                                            <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
+                  " />
+                                        </div>
+                                        <div>
+                                            <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
+                                            <h6 class="fs-14 text-muted" style="Line height:10px;"> Academic advisor</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class=" card rounded-1 " style="height:280px;">
+                                <div class=" card-body">
+                                    <p class="text-primary mt-2 fs-18">Great Work</p>
+                                    <p class=" mt-3 fs-18 ">"I am happy with his responsiveness throughout the entire project
+                                        duration; he was very experienced and provided quality work."
+                                    </p>
+                                    <hr>
+                                    <div class="d-flex  ">
+                                        <div>
+                                            <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
+                  " />
+                                        </div>
+                                        <div>
+                                            <small class="fw-700 fs-14 text-black"> Mr. jack</small>
+                                            <h6 class="fs-14 text-muted" style="Line height:10px;"> Information technology expert</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 ">
+                            <div class=" card rounded-1 " style="height:280px;">
+                                <div class=" card-body">
+                                    <p class="text-primary mt-2 fs-18">Great work</p>
+                                    <p class=" mt-3 fs-18 ">
+                                        " I am happy for my work and recommend him. He is a very potential and committed person."
+                                    </p>
+                                    <div class="border-top mt-5"></div>
+                                    <div class="d-flex  mt-3">
+                                        <div>
+                                            <img class="mr-2  " src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
+                  " />
+                                        </div>
+                                        <div>
+                                            <small class="fw-700 fs-14 text-black"> Mitchel Joe </small>
+                                            <h6 class="fs-14 text-muted" style="Line height:10px;">Thesis writing helper</h6>
+                                        </div>
+                                    </div>
+                                    </>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row lg-mx-2">
+                            <div class="col-lg-4">
+                                <div class=" ">
+                                    <div class=" ">
+                                        <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
+                                        <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="">
+                                    <div class=" ">
+                                        <p class=" mt-2 fs-18 text-black fw-700">95%</p>
+                                        <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="  ">
+                                    <div class="">
+                                        <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
+                                        <p class=" mt-3 fs-18">G2s best software awards
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        </section>
+        @endif
 
 
         <!-- Join us -->
@@ -911,95 +980,95 @@
         </section>
         @endif
 
-      <!-- Blog  -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top ">
-      <div class="container" style="padding-top:65px; padding-bottom:65px;">
-        <div class="d-flex justify-content-between mb-5">
-          <div class="w-lg-75 w-xl-50 lh-1-8">
-            <h2 class="fw-700 fs-36 text-black">Our Blog</h2>
-            <small class="fs-18 fw-400">See how you can up your career status</small>
-          </div>
-          <div>
-            <a class=" " href="#">
-              <small class="fs-18 fw-40 category-list">All categories</small>
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
-            </a>
-          </div>
-        </div>
+        <!-- Blog  -->
+        @if (get_setting('latest_project_show') == 'on')
+        <section class="border-top ">
+            <div class="container" style="padding-top:65px; padding-bottom:65px;">
+                <div class="d-flex justify-content-between mb-5">
+                    <div class="w-lg-75 w-xl-50 lh-1-8">
+                        <h2 class="fw-700 fs-36 text-black">Our Blog</h2>
+                        <small class="fs-18 fw-400">See how you can up your career status</small>
+                    </div>
+                    <div>
+                        <a class=" " href="#">
+                            <small class="fs-18 fw-40 category-list">All categories</small>
+                            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
+                        </a>
+                    </div>
+                </div>
 
-        <div class="mt-4">
-          <div class="row ">
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:380px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-14">April 2, 2023 </small>
-                      <h6 class="fw-700 fs-18 mt-1">How to write a proper academic writing?</h6>
-                      <small class=" fs-16">A complete guide to write a proper academic writing</small>
+                <div class="mt-4">
+                    <div class="row ">
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:380px;">
+                                <div class="">
+                                    <div class="bg-secondary ">
+                                        <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <small class=" mt-3 fs-14">April 2, 2023 </small>
+                                            <h6 class="fw-700 fs-18 mt-1">How to write a proper academic writing?</h6>
+                                            <small class=" fs-16">A complete guide to write a proper academic writing</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:380px;">
+                                <div class="">
+                                    <div class="bg-secondary ">
+                                        <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <small class=" mt-3 fs-14">May 7, 2023 </small>
+                                            <p class="fw-700 fs-18  ">How can you prepare yourself for scholarships?</p>
+                                            <small class=" fs-16">There are few important steps you can follow for your preparations</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:380px;">
+                                <div class="">
+                                    <div class="bg-secondary ">
+                                        <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <small class=" mt-3 fs-16">September 01, 2022 </small>
+                                            <p class="fw-700 fs-18 ">The journey of international study</p>
+                                            <small class=" fs-16">The complete guide of study in international recognized universities
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 ">
+                            <div class="card  rounded-1" style="height:380px;">
+                                <div class="">
+                                    <div class="bg-secondary ">
+                                        <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <small class=" mt-3 fs-16">May 12, 2023 </small>
+                                            <p class="fw-700 fs-18 ">Start an online business and work from home</p>
+                                            <small class=" fs-16">A complete guide to starting a small business</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:380px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-14">May 7, 2023 </small>
-                      <p class="fw-700 fs-18  ">How can you prepare yourself for scholarships?</p>
-                      <small class=" fs-16">There are few important steps you can follow for your preparations</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:380px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-16">September 01, 2022 </small>
-                      <p class="fw-700 fs-18 ">The journey of international study</p>
-                      <small class=" fs-16">The complete guide of study in international recognized universities
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:380px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-16">May 12, 2023 </small>
-                      <p class="fw-700 fs-18 ">Start an online business and work from home</p>
-                      <small class=" fs-16">A complete guide to starting a small business</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-        </div>
-    </section>
-    @endif
+                </div>
+        </section>
+            @endif
 
         <!-- skills -->
 
