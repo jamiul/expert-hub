@@ -56,42 +56,7 @@ right:0;
 .jobs {
     height: 200px;
 }
-/* #introCarousel,
-    .carousel-inner,
-    .carousel-item,
-    .carousel-item.active {
-      height: 100vh;
-    }
 
-    .carousel-item:nth-child(1) {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    }
-
-    .carousel-item:nth-child(2) {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    }
-
-    .carousel-item:nth-child(3) {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    } */
-
-/* Height for devices larger than 576px */
-/* @media (min-width: 992px) {
-      #introCarousel {
-        margin-top: -58.59px;
-      }
-    } */
-
-#myCarousel {
-    /* max-width: 1200px; */
-    /* margin: 0 auto; */
-}
 .carousel-container {
     position: relative;
 }
@@ -187,16 +152,9 @@ right:0;
         top: 16px !important;
         padding-top: 10px !important;
     }
-    /* .services-card{
-        height: 610px !important;
-       } */
-}
-@media only screen and (min-width: 600px) {
 
-   /* .services-card{
-    height: 610px !important;
-   } */
 }
+
 @media only screen and (max-width: 600px) {
     .home-cacap-head h2{
         font-size: 25px !important;
@@ -252,10 +210,5 @@ right:0;
         margin-bottom: 2%;
         margin-top: -18%;
     }
-    /* .category{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
 }
 
