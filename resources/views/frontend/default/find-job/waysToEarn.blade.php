@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <!-- <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}"> -->
 
 </head>
 <style>
@@ -23,45 +23,13 @@
 <body class="bg-white">
   @extends('frontend.default.layouts.app')
   @section('content')
-  <!-- <div class="mx-5 my-5 container-home rounded-1" style="background-color:#055846;">
-    <div class="d-flex justify-content-between p-2">
-      <div class="row justify-content-between px-4 text-white p-3" style="width:32%;">
-        <div>
-          <h1 class="display-4 fw-400" style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">Do the
-            work you love,
-            your
-            way
-          </h1>
-          <p class="fs-18 my-3">Build rewarding relationships in the world’s Work Marketplace. Your home for the work
-            you
-            want.
-          </p>
-          <button class="btn btn  bg-white mt-3 lg-mb-5 fs-16 "><a class="text-dark px-1" href="{{route('home')}}">Sign
-              Up</a>
-          </button>
-          <div class="border-bottom mt-5"></div>
-        </div>
-        <h6 class=" " style="">Trusted By</h6>
-        <div>
-          <img src=" {{url('/public/assets/findJob/companies.png')}}" alt="Image" style=" height:40px; " />
-        </div>
-      </div>
-      <div class=" rounded-1" style="width:50%; ">
-        <img src=" {{url('/public/assets/findJob/waystoEarn.png')}}" alt="Image" class=" w-100 p-2"
-          style=" height:500px; " />
-      </div>
-    </div>
-  </div> -->
-
   <div class="mx-3 rounded-md my-2 " style="background: #F2F7F2;">
     <div class="row py-2">
       <div class="col-lg-6 mt-4 px-5 review-banner-main">
         <h3 class=" text-success review-banner-title">Do the work you love, your way</h3>
         <p class="review-banner-text">Build rewarding relationships in the world’s Work Marketplace. Your home for the
           work you want.
-
         </p>
-
         <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Sign up</button>
         <div class="border-bottom mt-5"></div>
         <h6 class="my-3 " style="">Trusted By</h6>
@@ -74,6 +42,8 @@
       </div>
     </div>
   </div>
+
+
 
   <div class="  container">
     <!-- navbar -->
