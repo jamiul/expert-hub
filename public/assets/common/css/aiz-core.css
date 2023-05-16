@@ -3872,7 +3872,7 @@ input[type="number"] {
 .dropdown-item.active,
 .dropdown-item:hover,
 .dropdown-item:active {
-    color: #fff !important;
+    /* color: #fff !important; */
     background-color: var(--primary);
 }
 @media (min-width: 992px) {
