@@ -1,3 +1,3 @@
 @php
-	echo $array['content'];
+echo $array['content'];
 @endphp

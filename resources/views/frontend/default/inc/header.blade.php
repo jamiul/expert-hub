@@ -430,7 +430,7 @@
         });
     </script>
     <script>
-        document.getElementById('how-to-hire').addEventListener('click', function() {
+        document.getElementById('howToHire').addEventListener('click', function() {
             window.location.href = "{{ route('how-to-hire')}}";
         });
     </script>

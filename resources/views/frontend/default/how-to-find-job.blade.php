@@ -276,7 +276,7 @@
                         <p class="frequently-qsn-details">
                             Yes, it’s free to join Upwork, complete your profile, search for work and create your own projects. Our service fee is based on your earnings with each client and the sliding scale rewards long-term relationships.
                         </p>
-                        <div class="content">
+                        <div class="fre-content">
                             <p>
                                 You can upgrade to Freelancer Plus to more effectively market your services, submit proposals and stand out from the crowd.
                             </p>
@@ -291,7 +291,7 @@
                         <p class="frequently-qsn-details">
                             Yes, some of our most successful professionals have brought their strong background and employment track record to Upwork. We know you may be new to freelancing but highly experienced in your field. Our
                         </p>
-                        <div class="content">
+                        <div class="fre-content">
                             <p>
                                 complete guide shares our step-by-step tips for building your freelance career.
                             </p>
@@ -301,7 +301,7 @@
                         <label for="contest">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom ">
-                        <input type="checkbox" id="freelancing">
+                        <input type="checkbox" id="fre-freelancing">
                         <h4 class="frequently-qsn-details ">What can I gain from freelancing with Upwork?</h4>
                         <p class="frequently-qsn-details">
                             work with great clients and well-known brands. Many choose Upwork because we help them do it well. How to Succeed as a Freelancer gives you a taste of the support we offer to boost your success.
@@ -310,24 +310,24 @@
                             <p>
                                 work with great clients and well-known brands. Many choose Upwork because we help them do it well. How to Succeed as a Freelancer gives you a taste of the support we offer to boost your success.
                             </p>
-                            <label for="freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label for="freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
-                        <input type="checkbox" id="buildingBusiness">
+                        <input type="checkbox" id="fre-buildingBusiness">
                         <h4 class="frequently-qsn-title">Is Upwork good for building a business? </h4>
                         <p class="frequently-qsn-details">
                             Yes, and creating an agency can be a great way to grow. Using our agency structure, freelancers can collaborate as a single organization, delivering more to their clients. Moving from solo freelancer to agency
                         </p>
-                        <div class="content">
+                        <div class="fre-content">
                             <p>
                                 owner is a big transition, but it might be the right one for you.
                             </p>
-                            <label for="buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <h4 class="frequently-qsn-title">What projects can I find on Upwork?</h4>
@@ -336,34 +336,34 @@
                         </p>
                     </div>
                     <div class=" border-bottom">
-                        <input type="checkbox" id="Connects">
+                        <input type="checkbox" id="fre-Connects">
                         <h4 class="frequently-qsn-title">What are Connects? </h4>
                         <p class="frequently-qsn-details">
                             Connects are Upwork’s virtual currency. Freelancers and agencies use them to show their genuine interest as they submit proposals. Different jobs require different amounts of Connects, some none at all.
                         </p>
-                        <div class="content">
+                        <div class="fre-content">
                             <p>
                                 Freelancer accounts receive free Connects every month. You can buy bundles of them. And freelancers and agencies earn Connects by winning client interviews, getting great reviews, and demonstrating their skills.
                             </p>
-                            <label for="Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
-                        <input type="checkbox" id="badges">
+                        <input type="checkbox" id="fre-badges">
                         <h4 class="frequently-qsn-title">What do the different badges mean? </h4>
                         <p class="frequently-qsn-details">
                             Our badges help you stand out. With a strong background in your field and early success with clients, you’ll soon be invited to meet our Rising Talent criteria. Keep building your reputation to earn our Top Rated
                         </p>
-                        <div class="content">
+                        <div class="fre-content">
                             <p>
                                 badge. Top Rated Plus shows you have a proven history of success on large and long-term contracts. And Expert Vetted means you’ve gone through our rigorous pre-screening to match your high-demand skills with the right clients. Get the feedback, wear the badge , hit your goals.
                             </p>
-                            <label for="badges">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="badges">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
 
                 </div>

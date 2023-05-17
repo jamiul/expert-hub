@@ -86,8 +86,8 @@
                         </select>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="name">{{translate('Description')}}</label>
-                        <textarea type="text" rows="3" id="name" name="name" placeholder="{{ translate('Write your text....') }}" class="form-control" required></textarea>
+                        <label for="description">{{translate('Description')}}</label>
+                        <textarea type="text" rows="3" id="description" name="description" placeholder="{{ translate('Write your text....') }}" class="form-control" required></textarea>
                     </div>
                     <div class="form-group mb-3">
                         <label for="image">{{translate('Icon')}}</label>

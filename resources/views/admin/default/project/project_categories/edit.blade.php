@@ -27,6 +27,10 @@
                         </select>
                     </div>
                     <div class="form-group mb-3">
+                    <label for="description">{{translate('Description')}}</label>
+                        <input type="text" id="description" name="description" placeholder="{{ translate('description') }}" value="{{ $project_category->description}}" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="image">{{translate('Icon')}}</label>
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
                             <div class="input-group-prepend">
