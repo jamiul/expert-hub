@@ -283,7 +283,7 @@
     @endif
 
     <!-- Trending services  -->
-    @if (get_setting('latest_project_show') == 'on')
+    <!-- @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED;">
       <div class="container-home" style=" ">
         <div class="d-flex justify-content-between ">
@@ -466,7 +466,107 @@
         </div>
 
     </section>
+    @endif -->
+
+
+    <!-- Trending services new -->
+    @if (get_setting('latest_project_show') == 'on')
+    <section class="border-top" style="background-color:#FBF7ED;">
+      <div class="container-home" style=" ">
+        <div class="d-flex justify-content-between ">
+          <div class="w-lg-75 w-xl-50 lh-1-8 pb-4 ">
+            <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2>
+            <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
+          </div>
+          <div>
+            <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
+            <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
+          </div>
+        </div>
+
+
+        <div class="row ">
+          @php
+          $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
+          ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
+          ->pluck('user_id');
+
+          $services = \App\Models\Service::inRandomOrder()
+          ->whereIn('user_id', $user_ids)
+          ->take(get_setting('max_service_show_homepage'))
+          ->get();
+          @endphp
+          @foreach ($services as $service)
+          <div class="col-lg-3 ">
+            <div class="caorusel-box">
+              <div class="card  rounded-1" style="height:400px">
+                <div class="">
+                  <div class="bg-secondary ">
+                    <a href="{{ route('service.show', $service->slug) }}">
+                      @if($service->image != null)
+                      <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image"
+                        height="212">
+                      @else
+                      <img src="{{ my_asset('assets/frontend/default/img/placeholder-blog.jpg') }}" class="card-img-top"
+                        alt="{{ translate('Service Image') }}" height="212">
+                      @endif
+                    </a>
+                  </div>
+                  <div class="p-2">
+                    <div>
+                      <p class="card-title mt-1 fs-18">Web & app design</p>
+                      <p class="card-title mt-1 fs-18 fw-700">
+                        {{ \Illuminate\Support\Str::limit($service->title, 45, $end = '...') }}</p>
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 4896</span>
+                        <span> reviews</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-2">
+                    <div class="border border-top mt-1"></div>
+                    <div class="d-flex justify-content-between align-items-center mt-1">
+                      <div class="d-flex">
+                        <span class="pr-2">
+                          @if ($service->user->photo != null)
+                          <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}"
+                            height="35" width="35" class="rounded-circle">
+                          @else
+                          <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                            alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                          @endif
+                        </span>
+                        <span class="d-flex flex-column justify-content-center">
+                          <a href="{{ route('freelancer.details', $service->user->user_name) }}"
+                            class="text-secondary fs-12"><span class=" ">{{ $service->user->name }}</span></a>
+                        </span>
+                      </div>
+                      <div>
+                        <span> starting at $990</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        <div class="pt-2 text-center">
+          <a href="{{ route('search') }}?keyword=&type=service" class="category-list fs-18 fw-400 "><span>All
+              services</span></a>
+          <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+            style="width:18px;" />
+        </div>
+
+    </section>
     @endif
+
+
 
     <!-- Latest job  -->
     @if (get_setting('latest_project_show') == 'on')
@@ -984,12 +1084,12 @@
     <!-- Blog 2 -->
 
     @if (get_setting('blog_section_show') == 'on')
-    <section class="bg-white pb-7 text-white ">
+    <section class="bg-white pb-7 text-white  -pt-3">
       <div class="container-main">
         <div class="d-flex justify-content-between mb-3">
           <div class="">
             <div class="section-title ">
-              <h2 class="fw-700 fs-40 text-dark">{{ get_setting('blog_section_title') }}</h2>
+              <h2 class="fw-700 fs-36 text-dark">{{ get_setting('blog_section_title') }}</h2>
               <p class="fs-17 text-dark">{{ get_setting('blog_section_subtitle') }}</p>
             </div>
           </div>
