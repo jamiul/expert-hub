@@ -135,6 +135,13 @@ right:0;
     width:84%;
     margin:70px 8%;    
 }
+.img-slider{
+    width:84%;
+    margin:30px 8% 0 8%;    
+}
+.blog-cat-name{
+    color:red !important;
+}
 
 /* responsive */
 @media only screen and (max-width: 1210px) {

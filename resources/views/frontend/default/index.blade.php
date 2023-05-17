@@ -50,14 +50,14 @@
     @endif
     <!-- main carousel  -->
     @if (get_setting('client_logo_show') == 'on')
-    <section class=" bg-white mx-5 mt-lg-3">
+    <section class="img-slider bg-white">
       <div class=" align-items-center d-flex row">
         <div class="col-lg-2">
-          <h2 class="mb-3 fw-700 fs-36 text-black ">
+          <h2 class=" fw-700 fs-36 text-black ">
             Use by
           </h2>
         </div>
-        <div class="col-lg-10  mb-4">
+        <div class="col-lg-10">
           <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
             data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
             <div class="caorusel-box d-flex ">
@@ -827,6 +827,11 @@
                   </div>
                 </div>
               </div>
+              <div class=" ">
+                <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
+                <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
+                </p>
+              </div>
             </div>
             <div class="col-lg-4">
               <div class=" card rounded-1 " style="height:280px;">
@@ -847,6 +852,12 @@
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class=" ">
+                <p class=" mt-2 fs-18 text-black fw-700">95%</p>
+                <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
+                </p>
+
               </div>
             </div>
             <div class="col-lg-4 ">
@@ -870,45 +881,18 @@
                   </>
                 </div>
               </div>
-            </div>
-
-            <div class="row lg-mx-2">
-              <div class="col-lg-4">
-                <div class=" ">
-                  <div class=" ">
-                    <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
-                    <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="">
-                  <div class=" ">
-                    <p class=" mt-2 fs-18 text-black fw-700">95%</p>
-                    <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="  ">
-                  <div class="">
-                    <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
-                    <p class=" mt-3 fs-18">G2s best software awards
-                    </p>
-                  </div>
-                </div>
+              <div class="">
+                <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
+                <p class=" mt-3 fs-18">G2s best software awards
+                </p>
               </div>
             </div>
-
           </div>
     </section>
     @endif
 
     <!-- Blog  -->
-    @if (get_setting('latest_project_show') == 'on')
+    <!-- @if (get_setting('latest_project_show') == 'on')
     <section class="">
       <div class="container-home">
         <div class="d-flex justify-content-between mb-5">
@@ -995,79 +979,231 @@
 
         </div>
     </section>
-    @endif
+    @endif -->
 
+    <!-- Blog 2 -->
 
-    <!-- skills -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class=" bg-white border-top">
-      <div class=" container-home ">
-        <ul class=" nav mt-5 pb-4 ">
-          <li class="nav-item">
-            <a class="nav-link active  fw-700" aria-current="page" href="#">
-              <h5 class="fs-28" style="color:black; font-weight:700;">Top skills</h5>
-            </a>
-          </li>
-          <li class=" nav-item">
-            <a class="nav-link text-muted fs-28" href="#">
-              <h5 class="fs-28"> Trending skills </h5>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-muted" href="#">
-              <h5 class="fs-28">Top skills in Australia</h5>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">
-              <h5 class="fs-28 text-muted">Project
-                catalog</h5>
-
-            </a>
-          </li>
-        </ul>
-
-        <div class="mx-lg-3">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-            <div class="col">
-              <h6 class="fs-15">
-                Research writing</h6>
-              <h6 class="fs-15">
-                Proofreading and editing</h6>
-              <h6 class="fs-15">Data analysis and interpretation</h6>
-              <h6 class="fs-15">Translation services</h6>
+    @if (get_setting('blog_section_show') == 'on')
+    <section class="bg-white pb-7 text-white ">
+      <div class="container-main">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="">
+            <div class="section-title ">
+              <h2 class="fw-700 fs-40 text-dark">{{ get_setting('blog_section_title') }}</h2>
+              <p class="fs-17 text-dark">{{ get_setting('blog_section_subtitle') }}</p>
             </div>
-
-            <div class="col">
-              <h6 class="fs-15">
-                Research proposal writing</h6>
-              <h6 class="fs-15">
-                Statistical analysis </h6>
-              <h6 class="fs-15">
-                Curriculum development</h6>
-            </div>
-            <div class="col">
-              <h6 class="fs-15">
-                <h6 class="fs-15">
-                  Research proposal writing</h6>
-              </h6>
-              <h6 class="fs-15">
-                Scholarship applications</h6>
-              <h6 class="fs-15">Academic mentoring </h6>
-            </div>
-            <div class="col">
-              <h6 class="fs-15">
-                Copywriting</h6>
-              <h6 class="fs-15">
-                Tutoring and Instruction</h6>
-              <h6 class="fs-15">Transcribing audio or video recordings</h6>
-            </div>
-
           </div>
+          <div class="mt-4 text-center">
+            <a href="{{ route('blog') }}" class=""></a>
+            <a class=" " href="{{ route('blog') }}">
+              <small class="fs-18 fw-40 category-list">{{ translate('All blogs') }} </small>
+              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+
+          @php
+          $blogs = \App\Models\Blog::where('status', 1)->latest()
+          ->limit(get_setting('max_blog_show_homepage'))
+          ->get();
+          @endphp
+          @foreach ($blogs as $key => $blog)
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <div class=" gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
+              data-arrows='true'>
+              <div class="caorusel-box">
+                <div class="card  rounded-1" style="height:410px;">
+                  <div class="">
+                    <div class=" ">
+                      <a href="{{ route('blog.details', $blog->slug) }}" class="text-reset d-block">
+                        <img src="{{ custom_asset($blog->banner) }}" alt="{{ $blog->title }}" class="card-img-top "
+                          height="212">
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <div>
+                        <p class="mb-2 fs-14 text-dark">
+                          {{ $blog->created_at ? date('d.m.Y',strtotime($blog->created_at)) : '' }}</p>
+                        <!-- <h2 class="fs-18 fw-600 mb-1  ">
+                          @if ($blog->category != null)
+                          <p class=" mb-0 s-14 fw-700 blog-cat-name text-dark ">{{ $blog->category->category_name }}</p>
+                          @endif
+                        </h2> -->
+                        <h2 class="fs-18 fw-600 mb-1 h-45px">
+                          <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
+                            title="{{ $blog->title }}">
+                            {{ \Illuminate\Support\Str::limit($blog->title, 45, $end = '...') }}
+                          </a>
+                        </h2>
+                        <h2 class="fs-18 mb-1 h-45px">
+                          <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 "
+                            title="{{ $blog->title }}">
+                            {{ \Illuminate\Support\Str::limit($blog->short_description, 60, $end = '...') }}
+                          </a>
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          @endforeach
         </div>
       </div>
     </section>
     @endif
+
+
+    <!-- skills -->
+    <!-- @if (get_setting('latest_project_show') == 'on')
+    <section class=" bg-white border-top">
+      <div>
+        <div class=" container-home ">
+          <ul class=" nav mt-5 pb-4 ">
+            <li class="nav-item">
+              <a class="nav-link active  fw-700" aria-current="page" href="#">
+                <h5 class="fs-28" style="color:black; font-weight:700;">Top skills</h5>
+              </a>
+            </li>
+            <li class=" nav-item">
+              <a class="nav-link text-muted fs-28" href="#">
+                <h5 class="fs-28"> Trending skills </h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">
+                <h5 class="fs-28">Top skills in Australia</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">
+                <h5 class="fs-28 text-muted">Project
+                  catalog</h5>
+
+              </a>
+            </li>
+          </ul>
+
+          <div class="">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+              <div class="col">
+                <h6 class="fs-15">
+                  Research writing</h6>
+                <h6 class="fs-15">
+                  Proofreading and editing</h6>
+                <h6 class="fs-15">Data analysis and interpretation</h6>
+                <h6 class="fs-15">Translation services</h6>
+              </div>
+
+              <div class="col">
+                <h6 class="fs-15">
+                  Research proposal writing</h6>
+                <h6 class="fs-15">
+                  Statistical analysis </h6>
+                <h6 class="fs-15">
+                  Curriculum development</h6>
+              </div>
+              <div class="col">
+                <h6 class="fs-15">
+                  <h6 class="fs-15">
+                    Research proposal writing</h6>
+                </h6>
+                <h6 class="fs-15">
+                  Scholarship applications</h6>
+                <h6 class="fs-15">Academic mentoring </h6>
+              </div>
+              <div class="col">
+                <h6 class="fs-15">
+                  Copywriting</h6>
+                <h6 class="fs-15">
+                  Tutoring and Instruction</h6>
+                <h6 class="fs-15">Transcribing audio or video recordings</h6>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    @endif -->
+
+    @if (get_setting('latest_project_show') == 'on')
+    <section class=" bg-white border-top">
+      <div class="container-home">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+              data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
+          </li>
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+              aria-controls="profile" aria-selected="false">Trending skills</h5>
+          </li>
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Top skills in Australia</h5>
+          </li>
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Project catalog</h5>
+          </li>
+        </ul>
+
+        <div class="tab-content mt-5" id="myTabContent">
+          <div class="tab-pane tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="">
+              <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+                <div class="col">
+                  <h6 class="fs-15">
+                    Research writing</h6>
+                  <h6 class="fs-15">
+                    Proofreading and editing</h6>
+                  <h6 class="fs-15">Data analysis and interpretation</h6>
+                  <h6 class="fs-15">Translation services</h6>
+                </div>
+
+                <div class="col">
+                  <h6 class="fs-15">
+                    Research proposal writing</h6>
+                  <h6 class="fs-15">
+                    Statistical analysis </h6>
+                  <h6 class="fs-15">
+                    Curriculum development</h6>
+                </div>
+                <div class="col">
+                  <h6 class="fs-15">
+                    <h6 class="fs-15">
+                      Research proposal writing</h6>
+                  </h6>
+                  <h6 class="fs-15">
+                    Scholarship applications</h6>
+                  <h6 class="fs-15">Academic mentoring </h6>
+                </div>
+                <div class="col">
+                  <h6 class="fs-15">
+                    Copywriting</h6>
+                  <h6 class="fs-15">
+                    Tutoring and Instruction</h6>
+                  <h6 class="fs-15">Transcribing audio or video recordings</h6>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    @endif
+
+
 
     <!-- Last section -->
     @if (get_setting('slider_section_show') == 'on')
