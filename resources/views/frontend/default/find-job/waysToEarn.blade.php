@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}"> -->
+  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
 
 </head>
 <style>

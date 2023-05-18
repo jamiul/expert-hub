@@ -241,7 +241,9 @@
                                 <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
                                     <p class="fs-18 fw-600 my-3">{{ $category->name }}</p>
                                 </a>
-                                <small class="card-text fs-16 mt-2">Software engineer web mobile developer & more
+                                <small class="card-text fs-16 mt-2">
+
+                                {{ \Illuminate\Support\Str::limit($category->description, 45, $end = '...') }}
 
                                 </small>
                             </div>

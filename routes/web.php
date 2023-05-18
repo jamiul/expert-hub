@@ -274,8 +274,10 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 });
 
 Route::get('/search', 'SearchController@index')->name('search');
+Route::get('/scholarship', 'ScholarshipController@index')->name('scholarship');
 Route::get('/search?category={slug}', 'SearchController@index')->name('projects.category');
 Route::get('/skills/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
+Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
 Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
 
 Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');

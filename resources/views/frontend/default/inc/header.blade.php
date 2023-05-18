@@ -331,7 +331,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('search') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                                <a class="nav-link text-white" href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
                             </li>
 
                             <li class="nav-item dropdown mega_menu text-white">
@@ -361,7 +361,7 @@
                                                     </div>
 
 
-                                                    <div id="successStories" class="w-75 mega-menu-item" action="{{route('success-stories')}}">
+                                                    <div id="successStories" class="w-75 mega-menu-item" >
 
                                                         <a class="dropdown-item " href="{{route('success-stories')}}">{{ translate('Success Stories') }}
                                                         </a>
