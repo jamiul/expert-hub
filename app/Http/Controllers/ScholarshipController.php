@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use \App\Models\ProjectCategory;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
+use \App\Models\Scholarship;
 
 class ScholarshipController extends Controller
 {
@@ -142,9 +143,9 @@ class ScholarshipController extends Controller
 
             $project_approval = SystemConfiguration::where('type','project_approval')->first()->value;
             if($project_approval == 1){
-                $projects = Project::biddable()->notcancel()->open()->where('private', '0')->where('project_approval',1);
+                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0')->where('project_approval',1);
             }else{
-                $projects = Project::biddable()->notcancel()->open()->where('private', '0');
+                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0');
             }
 
             if($category_id != null){
@@ -200,7 +201,7 @@ class ScholarshipController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price'));
+            return view('frontend.default.scholarships-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price'));
         }
     }
 
@@ -215,15 +216,15 @@ class ScholarshipController extends Controller
         if($type == 'projects'){
             $project_approval = SystemConfiguration::where('type','project_approval')->first()->value;
             if($project_approval == 1){
-                $projects = Project::biddable()->notcancel()->open()->where('private', '0')->where('project_approval',1);
+                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0')->where('project_approval',1);
             }else{
-                $projects = Project::biddable()->notcancel()->open()->where('private', '0');
+                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0');
             }
 
             $projects = $projects->where('skills', 'like', '%'.'"'.$id.'"'.'%')->latest();
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
+            return view('frontend.default.scholarship-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
         }
     }
 }
