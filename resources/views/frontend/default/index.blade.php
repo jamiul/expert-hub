@@ -26,17 +26,17 @@
             <div class="carousel-caption">
               <div class="row">
                 <div class="col-lg-7 col-sm-12 home-cacap-head">
-                  <h2 class=" sm-mx-auto fw-700 fs-lg-40 fs-sm-36px" style="">
+                  <h2 class=" sm-mx-auto fw-700 fs-40 fs-sm-36px" style="">
                     Hire the best consultations for any job, online</h2>
-                  <p class="fs-lg-20 fs-sm-14 my-4 ">Millions of people use scholarships Australia to turn their ideas
+                  <p class="fs-20 fs-sm-14 my-4 ">Millions of people use scholarships Australia to turn their ideas
                     into
                     reality.</p>
                   <div class="lg-my-3 my-sm-0 home-banner-button ">
                     <a href="{{route('register') }}?type=2"
-                      class="btn text-white fw-700  fs-lg-18 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
+                      class="btn text-white fw-700  fs-20 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Hire') }}</a>
                     <a href="{{route('register') }}?type=1"
-                      class="btn text-white fw-700 ml-4 fs-lg-18 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
+                      class="btn text-white fw-700 ml-4 fs-20 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Work') }}</a>
                   </div>
                 </div>
@@ -257,9 +257,7 @@
                 <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
                   <p class="fs-18 fw-600 my-3">{{ $category->name }}</p>
                 </a>
-                <small class="card-text fs-16 mt-2">Software engineer web / mobile developer & more
-
-                </small>
+                <p class="fs-16  mt-2">{{ $category->description }}</p>
               </div>
             </div>
           </div>
