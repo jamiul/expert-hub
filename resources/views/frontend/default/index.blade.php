@@ -48,59 +48,44 @@
       </div>
     </section>
     @endif
-    <!-- main carousel  -->
-    @if (get_setting('client_logo_show') == 'on')
-    <section class="img-slider bg-white">
-      <div class=" align-items-center d-flex row">
-        <div class="col-lg-2">
-          <h2 class=" fw-700 fs-36 text-black ">
-            Use by
-          </h2>
-        </div>
-        <div class="col-lg-10">
-          <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="6" data-lg-items="5"
-            data-md-items="4" data-sm-items="3" data-xs-items="2" data-infinite='true'>
-            <div class="caorusel-box d-flex ">
-
-              <div class="col-2">
-                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/victoria.png') }}" alt="Image"
-                  style="width:100px;" />
-              </div>
-
-              <div class="col-2">
-                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/sydney.png') }}" alt="Image"
-                  style="width:100px;" />
-              </div>
-              <div class="col-2">
-                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/adilade.png') }}" alt="Image"
-                  style="width:150px;" />
-              </div>
-              <div class="col-2">
-                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/national university.jpg') }}"
-                  alt="Image" style="width:130px;" />
-              </div>
-
-
-              <div class="col-2">
-                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/monas.jpg') }}" alt="Image"
-                  style="width:160px;" />
-              </div>
-              <div class="col-2">
-                <img class="img-fluid" src="{{ url('/public/assets/Top-universities/western sydney.jpg') }}" alt="Image"
-                  style="width:130px;" />
-              </div>
+    <!--  Used by -->
+    <div class="home-slider">
+      <div class="row ">
+        <div class="col-6">
+          <div class="row ">
+            <div class="col-lg-4 col-sm-12">
+              <h4 class="trusted "> Used by </h4>
             </div>
-
+            <div class="col-lg-4 col-sm-12">
+              <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+            </div>
           </div>
         </div>
+        <div class="col-6 ">
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+            </div>
+          </div>
+
+        </div>
       </div>
-    </section>
-    @endif
+      <hr>
+    </div>
 
     <!-- explore services  -->
 
     @if (get_setting('how_it_works_show') == 'on')
-    <section class=" border-top">
+    <section class="">
       <div class="container-home">
         <div class="">
           <div class="w-xl-50 w-lg-75 pb-3">
@@ -110,54 +95,58 @@
           <div class="row">
             <div class="col-xl-3 col-md-6">
               <div class=" ">
-                <div class=" ">
-                  <img class=" " src=" {{url('/public/assets/home/businessman.png')}}" alt="Image"
-                    style="width:40px;" />
+                <div class=" d-flex h-60px">
+                  <img class=" mr-2" src=" {{url('/public/assets/home/businessman.png')}}" alt="Image"
+                    style="width:45px;" />
+                  <p class="fs-24 fw-700"> Post a job (it’s free) </p>
                 </div>
-                <div class="mt-3">
-                  <p class="fs-18 fw-700"> Post a job (it’s free) </p>
-                  <h6 class="fs-16 mt-3">
-                    Its free and easy to post a job. Simply fill in a title descriptions and other additional
-                    requirments</h6>
-                </div>
+
+
+                <h6 class="fs-18 mt-5">
+                  Its free and easy to post a job. Simply fill in a title descriptions and other additional
+                  requirments</h6>
               </div>
+
             </div>
             <div class="col-xl-3 col-md-6">
               <div class=" ">
-                <div class=""><img class=" " src=" {{url('/public/assets/home/service-2.png')}}" alt="Image"
-                    style="width:40px;" />
+                <div class="d-flex h-60px">
+
+                  <img class=" mr-2" src=" {{url('/public/assets/home/service-2.png')}}" alt="Image"
+                    style="width:45px;" />
+                  <p class="fs-24 fw-700">Academic consultants connect with you</p>
                 </div>
-                <div class="mt-3">
-                  <p class="fs-18 fw-700">Academic consultants connect with you</p>
-                  <h6 class="fs-16 mt-3">
-                    Here you can find most experience and skilful desire consultant, Who can help you project.
-                  </h6>
-                </div>
+
+                <h6 class="fs-18 mt-5">
+                  Here you can find most experience and skilful desire consultant, Who can help you project.
+                </h6>
               </div>
+
             </div>
             <div class="col-xl-3 col-md-6">
               <div class="  ">
-                <div class="">
-                  <img class=" " src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:40px;" />
+                <div class="d-flex h-60px">
+                  <img class="mr-2 " src=" {{url('/public/assets/home/service-4.png')}}" alt="Image"
+                    style="width:45px;" />
+                  <p class="fs-24 fw-700"> Collaborate easily </p>
                 </div>
-                <div class="mt-3">
-                  <p class="fs-18 fw-700"> Collaborate easily </p>
-                  <h6 class="fs-16 mt-3">
-                    We have 24/7 online customer service so easily you can reach us.</h6>
-                </div>
+
+
+                <h6 class="fs-18 mt-lg-5">
+                  We have 24/7 online customer service so easily you can reach us.</h6>
               </div>
+
             </div>
             <div class="col-xl-3 col-md-6 ">
               <div class="">
-                <div class="">
-                  <img class=" " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:40px;" />
+                <div class="d-flex h-60px">
+                  <img class="mr-2 " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image"
+                    style="width:40px;" />
+                  <p class="fs-24 fw-700"> Payment securely </p>
                 </div>
-                <div class="mt-3">
-                  <p class="fs-18 fw-700"> Payment securely </p>
-                  <p class="fs-16 mt-3">
-                    You can make payment securely. We have integrity system where your money will be safe.
-                  </p>
-                </div>
+                <p class="fs-18 mt-lg-5">
+                  You can make payment securely. We have integrity system where your money will be safe.
+                </p>
               </div>
             </div>
           </div>
@@ -178,23 +167,23 @@
           <div class="row">
             <div class="col-xl-3 col-md-6">
               <div class=" ">
-                <div class="d-flex ">
-                  <img class=" " src=" {{url('/public/assets/home/businessman.png')}}" alt="Image"
-                    style="width:33px;" />
-                  <p class="fs-18 ml-3 fw-700 ml-lg-3">Accessible academic experts </p>
+                <div class="d-flex h-60px">
+                  <img class=" " src=" {{url('/public/assets/home/expert.png
+                  ')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 ml-3 fw-700 ml-lg-3">Accessible academic experts </p>
                 </div>
-                <h6 class="fs-16 mt-3">
+                <h6 class="fs-18 mt-5">
                   Its free and easy to post a job. Simply fill in a title descriptions and other additional
                   requirments</h6>
               </div>
             </div>
             <div class="col-xl-3 col-md-6">
               <div class="">
-                <div class="d-flex">
-                  <img class=" " src=" {{url('/public/assets/home/service-2.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-18 fw-700 ml-lg-3">Fast responses</p>
+                <div class="d-flex h-60px">
+                  <img class=" " src=" {{url('/public/assets/home/response.png')}}" alt="Image" style="width:55px;" />
+                  <p class="fs-24 fw-700 ml-lg-3">Fast responses</p>
                 </div>
-                <h6 class="fs-16 mt-3">
+                <h6 class="fs-18 mt-5">
                   Here you can find most experience and skilful desire consultant, Who can help you project.
                 </h6>
 
@@ -202,21 +191,22 @@
             </div>
             <div class="col-xl-3 col-md-6">
               <div class="">
-                <div class="d-flex">
-                  <img class=" " src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-18 fw-700 ml-lg-3"> High-quality work</p>
+                <div class="d-flex h-60px">
+                  <img class=" " src=" {{url('/public/assets/home/high-quality.png')}}" alt="Image"
+                    style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3"> High-quality work</p>
                 </div>
-                <h6 class="fs-16 mt-3">
+                <h6 class="fs-18 mt-5">
                   We have 24/7 online customer service so easily you can reach us.</h6>
               </div>
             </div>
             <div class="col-xl-3 col-md-6 ">
               <div class="">
-                <div class="d-flex">
-                  <img class=" " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:35px;" />
-                  <p class="fs-18 fw-700 ml-lg-3"> We're here to help you</p>
+                <div class="d-flex h-60px">
+                  <img class=" " src=" {{url('/public/assets/home/help.png')}}" alt="Image" style="width:35px;" />
+                  <p class="fs-24 fw-700 ml-lg-3"> We're here to help you</p>
                 </div>
-                <p class="fs-16 mt-3">
+                <p class="fs-18 text-dark mt-5">
                   You can make payment securely. We have integrity system where your money will be safe.
                 </p>
               </div>
@@ -248,16 +238,16 @@
           @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
           @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
           <div class="col-lg-3">
-            <div class=" card  category">
+            <div class=" card  category h-100">
               <div class=" card-body">
                 <div class="">
-                  <img class="" src=" {{ custom_asset($category->photo) }}" alt="Image" style="width:50px; 
+                  <img class="" src=" {{ custom_asset($category->photo) }}" alt="Image" style="width:60px; 
                   " />
                 </div>
                 <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
-                  <p class="fs-18 fw-600 my-3">{{ $category->name }}</p>
+                  <p class="fs-22 fw-600 my-3">{{ $category->name }}</p>
                 </a>
-                <p class="fs-16  mt-2">{{ $category->description }}</p>
+                <p class="fs-18  mt-2">{{ $category->description }}</p>
               </div>
             </div>
           </div>
@@ -280,6 +270,430 @@
     </section>
     @endif
 
+    <!-- Latest job  -->
+    @if (get_setting('latest_project_show') == 'on')
+    <section class="">
+      <div class=" container-home">
+        <div class="d-flex justify-content-between">
+          <div class="w-lg-75 w-xl-50 lh-1-8 pb-4">
+            <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
+            <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
+          </div>
+          <div>
+            <a class=" " href=" #">
+              <small class="fs-18 fw-400 category-list">All categories</small>
+              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
+            </a>
+          </div>
+        </div>
+        <div class="">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card rounded card-body">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-lg-3">
+
+                      <img class=" rounded-circle" src=" {{url('/public/assets/home/job-1.png')}}" alt="Image"
+                        style="width:50px;  align-items:center;" />
+                    </div>
+                    <div class="col-lg-9 d-flex justify-content-between">
+                      <div>
+                        <p class="fs-22 fw-400"> Writing and Editing </p>
+                        <h6 class="text-primary fs-16">
+                          David
+                        </h6>
+                        <div class="">
+                          <span>$50 hourly</span>
+                          <span>|</span>
+                          <span>1.5 days</span>
+                          <span>|</span>
+                          <span>Expensive</span>
+                          <span>|</span>
+                          <span>Remote</span>
+                        </div>
+                      </div>
+                      <div>
+                        <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                          style="width:15px;  align-items:center;" />
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card rounded card-body ">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-2.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="col-lg-9 d-flex justify-content-between">
+                    <div>
+                      <p class=" fs-22 fw-400">Research and Analysis</p>
+                      <p class="text-primary fs-16">
+                        Mailchimp
+                      </p>
+                      <div class="">
+                        <span>$60 hourly</span>
+                        <span>|</span>
+                        <span>1 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card rounded card-body  ">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-3.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="col-lg-9 d-flex justify-content-between">
+                    <div>
+                      <p class="fs-22 fw-400">Course curriculum Development</p>
+                      <p class="text-primary fs-16">
+                        Mailchimp
+                      </p>
+                      <div class="">
+                        <span>$40 hourly</span>
+                        <span>|</span>
+                        <span>2 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card rounded card-body">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-4.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="d-flex col-lg-9 justify-content-between">
+                    <div>
+                      <p class=" fs-22 fw-400">Course material development</p>
+                      <p class="text-primary fs-16">
+                        Malha
+                      </p>
+                      <div class="">
+                        <span>$46 hourly</span>
+                        <span>|</span>
+                        <span>1 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card rounded card-body">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-5.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="col-lg-9 d-flex justify-content-between">
+
+                    <div>
+                      <p class=" fs-22 fw-400">Transcription and Translation</p>
+                      <p class="text-primary fs-16">
+                        Ikram
+                      </p>
+                      <div class="">
+                        <span>$25 hourly</span>
+                        <span>|</span>
+                        <span>1.5 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card rounded card-body">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-6.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="col-lg-9 d-flex justify-content-between">
+                    <div>
+                      <p class=" fs-22 fw-400">Scholarship Applications </p>
+                      <p class="text-primary fs-16">
+                        Hamid
+                      </p>
+                      <div class="">
+                        <span>$45 hourly</span>
+                        <span>|</span>
+                        <span>1.5 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card rounded card-body ">
+                <div class=" row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-7.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="col-lg-9 d-flex justify-content-between">
+                    <div>
+                      <p class=" fs-22 fw-400">Academic mentoring </p>
+                      <p class="text-primary fs-16">
+                        Abdullah
+                      </p>
+                      <div class="">
+                        <span>$35 hourly</span>
+                        <span>|</span>
+                        <span>1.5 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card rounded card-body">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-8.png')}}" alt="Image"
+                      style="width:50px;  align-items:center;" />
+                  </div>
+                  <div class="col-lg-9 d-flex justify-content-between">
+                    <div>
+                      <p class=" fs-22 fw-400">Tutoring and Instruction</p>
+                      <p class="text-primary fs-16">
+                        Nabid
+                      </p>
+                      <div class="">
+                        <span>$30 hourly</span>
+                        <span>|</span>
+                        <span>1.5 days</span>
+                        <span>|</span>
+                        <span>Expensive</span>
+                        <span>|</span>
+                        <span>Remote</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
+                        style="width:15px;  align-items:center;" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    @endif
+
+    <!-- Join us -->
+
+    @if (get_setting('latest_project_show') == 'on')
+    <section class="border-top">
+      <div class="container-home">
+        <div class="row ">
+          <div class="col-lg-6 col-sm-6">
+            <img class="mr-2  img-fluid" src="{{url('/public/assets/home/001.png')}}" alt="Image"
+              style="width:500px;" />
+          </div>
+          <div class=" col-lg-6 col-sm-12">
+            <h4 class="fs-24 fw-700">Join world best marketplace for consultant</h4>
+            <h6 class="fs-18 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus
+              odio
+              amet
+              aperiam
+              voluptatum doloremq ue, sint ratione sit beatae </h6>
+            <div class="">
+              <div class=" d-flex ">
+                <div>
+                  <img class=" mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
+                    style="width:15px;" />
+                </div>
+                <div>
+                  <h6 class="fs-16 "> Find work that hits your financial
+                    goals
+                    faster
+                    with
+                    ambitious startups
+                    and well-known brands.</h6>
+                </div>
+                <div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <h6 class="fs-16 m-2">
+
+                  Build a predictable pipeline of projects, big and small, through strong
+                  connections.
+                </h6>
+
+
+
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <h6 class="fs-16 m-2 "> Search for jobs or have
+                  clients
+                  come to you. The
+                  opportunities
+                  are endless.</h6>
+              </div>
+            </div>
+            <button type="button" class="btn mt-3 text-white p-2 btn fs-16 px-4" style="background-color:#275846; ">
+              <span>Find talent</span>
+              <span><img class="px-1 " src="{{url('/public/assets/home/arrows.png')}}" alt="Image"
+                  style="width:18px; " /></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    @endif
+
+
+
+    @if (get_setting('latest_project_show') == 'on')
+    <section class=" bg-white border-top">
+      <div class="container-home">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+              data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
+          </li>
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+              aria-controls="profile" aria-selected="false">Trending skills</h5>
+          </li>
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Top skills in Australia</h5>
+          </li>
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Project catalog</h5>
+          </li>
+        </ul>
+
+        <div class="tab-content mt-5" id="myTabContent">
+          <div class="tab-pane tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="">
+              <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+                <div class="col">
+                  <h6 class="fs-15">
+                    Research writing</h6>
+                  <h6 class="fs-15">
+                    Proofreading and editing</h6>
+                  <h6 class="fs-15">Data analysis and interpretation</h6>
+                  <h6 class="fs-15">Translation services</h6>
+                </div>
+
+                <div class="col">
+                  <h6 class="fs-15">
+                    Research proposal writing</h6>
+                  <h6 class="fs-15">
+                    Statistical analysis </h6>
+                  <h6 class="fs-15">
+                    Curriculum development</h6>
+                </div>
+                <div class="col">
+                  <h6 class="fs-15">
+                    <h6 class="fs-15">
+                      Research proposal writing</h6>
+                  </h6>
+                  <h6 class="fs-15">
+                    Scholarship applications</h6>
+                  <h6 class="fs-15">Academic mentoring </h6>
+                </div>
+                <div class="col">
+                  <h6 class="fs-15">
+                    Copywriting</h6>
+                  <h6 class="fs-15">
+                    Tutoring and Instruction</h6>
+                  <h6 class="fs-15">Transcribing audio or video recordings</h6>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    @endif
     <!-- Trending services  -->
     <!-- @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED;">
@@ -565,337 +979,6 @@
     @endif
 
 
-
-    <!-- Latest job  -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class="">
-      <div class=" container-home">
-        <div class="d-flex justify-content-between">
-          <div class="w-lg-75 w-xl-50 lh-1-8 pb-4">
-            <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
-            <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
-          </div>
-          <div>
-            <a class=" " href=" #">
-              <small class="fs-18 fw-400 category-list">All categories</small>
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
-            </a>
-          </div>
-        </div>
-        <div class="">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-1.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class="fs-18 fw-400"> Writing and Editing </p>
-                    <h6 class="text-primary fs-16">
-                      Mailchimp
-                    </h6>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-2.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class=" fs-18 fw-400">Research and Analysis</p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-3.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class="fs-18 fw-400">Course curriculum Development</p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-4.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class=" fs-18 fw-400">Course material development</p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-5.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class=" fs-18 fw-400">Transcription and Translation</p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-6.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class=" fs-18 fw-400">Scholarship Applications </p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-7.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class=" fs-18 fw-400">Academic mentoring </p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card rounded ">
-                <div class="card-body d-flex items-center justify-content-between">
-                  <div>
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-8.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div>
-                    <p class=" fs-18 fw-400">Tutoring and Instruction</p>
-                    <p class="text-primary fs-16">
-                      Mailchimp
-                    </p>
-                    <div class="">
-                      <span>$125k hourly</span>
-                      <span>|</span>
-                      <span>1.5 days</span>
-                      <span>|</span>
-                      <span>Expensive</span>
-                      <span>|</span>
-                      <span>Remote</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                      style="width:15px;  align-items:center;" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    @endif
-
-    <!-- Join us -->
-
-    @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top">
-      <div class="container-home">
-        <div class="row ">
-          <div class="col-lg-6 col-sm-6">
-            <img class="mr-2  img-fluid" src="{{url('/public/assets/home/001.png')}}" alt="Image"
-              style="width:500px;" />
-          </div>
-          <div class=" col-lg-6 col-sm-12">
-            <h4 class="fs-24 fw-700">Join world best marketplace for consultant</h4>
-            <h6 class="fs-18 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus
-              odio
-              amet
-              aperiam
-              voluptatum doloremq ue, sint ratione sit beatae </h6>
-            <div class="">
-              <div class=" d-flex ">
-                <div>
-                  <img class=" mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
-                    style="width:15px;" />
-                </div>
-                <div>
-                  <h6 class="fs-16 "> Find work that hits your financial
-                    goals
-                    faster
-                    with
-                    ambitious startups
-                    and well-known brands.</h6>
-                </div>
-                <div>
-                </div>
-              </div>
-              <div class="d-flex align-items-center">
-                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-                <h6 class="fs-16 m-2">
-
-                  Build a predictable pipeline of projects, big and small, through strong
-                  connections.
-                </h6>
-
-
-
-              </div>
-              <div class="d-flex align-items-center mb-2">
-                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-                <h6 class="fs-16 m-2 "> Search for jobs or have
-                  clients
-                  come to you. The
-                  opportunities
-                  are endless.</h6>
-              </div>
-            </div>
-            <button type="button" class="btn mt-3 text-white p-2 btn fs-16 px-4" style="background-color:#275846; ">
-              <span>Find talent</span>
-              <span><img class="px-1 " src="{{url('/public/assets/home/arrows.png')}}" alt="Image"
-                  style="width:18px; " /></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    @endif
-
-
     <!-- learn with scholarship australia -->
     @if (get_setting('latest_project_show') == 'on')
     <section class=" border-top border-bottom">
@@ -989,96 +1072,6 @@
     </section>
     @endif
 
-    <!-- Blog  -->
-    <!-- @if (get_setting('latest_project_show') == 'on')
-    <section class="">
-      <div class="container-home">
-        <div class="d-flex justify-content-between mb-5">
-          <div class="w-lg-75 w-xl-50 lh-1-8">
-            <h2 class="fw-700 fs-36 text-black">Our Blog</h2>
-            <small class="fs-18 fw-400">See how you can up your career status</small>
-          </div>
-          <div>
-            <a class=" " href="#">
-              <small class="fs-18 fw-40 category-list">All categories</small>
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
-            </a>
-          </div>
-        </div>
-
-        <div class="mt-4">
-          <div class="row ">
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:410px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-14">April 2, 2023 </small>
-                      <h6 class="fw-700 fs-18 mt-1">How to write a proper academic writing?</h6>
-                      <small class=" fs-16">A complete guide to write a proper academic writing</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:410px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-14">May 7, 2023 </small>
-                      <p class="fw-700 fs-18  ">How can you prepare yourself for scholarships?</p>
-                      <small class=" fs-16">There are few important steps you can follow for your preparations</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:410px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-16">September 01, 2022 </small>
-                      <p class="fw-700 fs-18 ">The journey of international study</p>
-                      <small class=" fs-16">The complete guide of study in international recognized universities
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class="card  rounded-1" style="height:410px;">
-                <div class="">
-                  <div class="bg-secondary ">
-                    <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <small class=" mt-3 fs-16">May 12, 2023 </small>
-                      <p class="fw-700 fs-18 ">Start an online business and work from home</p>
-                      <small class=" fs-16">A complete guide to starting a small business</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-    </section>
-    @endif -->
-
     <!-- Blog 2 -->
 
     @if (get_setting('blog_section_show') == 'on')
@@ -1156,150 +1149,6 @@
     @endif
 
 
-    <!-- skills -->
-    <!-- @if (get_setting('latest_project_show') == 'on')
-    <section class=" bg-white border-top">
-      <div>
-        <div class=" container-home ">
-          <ul class=" nav mt-5 pb-4 ">
-            <li class="nav-item">
-              <a class="nav-link active  fw-700" aria-current="page" href="#">
-                <h5 class="fs-28" style="color:black; font-weight:700;">Top skills</h5>
-              </a>
-            </li>
-            <li class=" nav-item">
-              <a class="nav-link text-muted fs-28" href="#">
-                <h5 class="fs-28"> Trending skills </h5>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">
-                <h5 class="fs-28">Top skills in Australia</h5>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">
-                <h5 class="fs-28 text-muted">Project
-                  catalog</h5>
-
-              </a>
-            </li>
-          </ul>
-
-          <div class="">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-              <div class="col">
-                <h6 class="fs-15">
-                  Research writing</h6>
-                <h6 class="fs-15">
-                  Proofreading and editing</h6>
-                <h6 class="fs-15">Data analysis and interpretation</h6>
-                <h6 class="fs-15">Translation services</h6>
-              </div>
-
-              <div class="col">
-                <h6 class="fs-15">
-                  Research proposal writing</h6>
-                <h6 class="fs-15">
-                  Statistical analysis </h6>
-                <h6 class="fs-15">
-                  Curriculum development</h6>
-              </div>
-              <div class="col">
-                <h6 class="fs-15">
-                  <h6 class="fs-15">
-                    Research proposal writing</h6>
-                </h6>
-                <h6 class="fs-15">
-                  Scholarship applications</h6>
-                <h6 class="fs-15">Academic mentoring </h6>
-              </div>
-              <div class="col">
-                <h6 class="fs-15">
-                  Copywriting</h6>
-                <h6 class="fs-15">
-                  Tutoring and Instruction</h6>
-                <h6 class="fs-15">Transcribing audio or video recordings</h6>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    @endif -->
-
-    @if (get_setting('latest_project_show') == 'on')
-    <section class=" bg-white border-top">
-      <div class="container-home">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
-              data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
-          </li>
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
-              aria-controls="profile" aria-selected="false">Trending skills</h5>
-          </li>
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Top skills in Australia</h5>
-          </li>
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Project catalog</h5>
-          </li>
-        </ul>
-
-        <div class="tab-content mt-5" id="myTabContent">
-          <div class="tab-pane tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="">
-              <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-                <div class="col">
-                  <h6 class="fs-15">
-                    Research writing</h6>
-                  <h6 class="fs-15">
-                    Proofreading and editing</h6>
-                  <h6 class="fs-15">Data analysis and interpretation</h6>
-                  <h6 class="fs-15">Translation services</h6>
-                </div>
-
-                <div class="col">
-                  <h6 class="fs-15">
-                    Research proposal writing</h6>
-                  <h6 class="fs-15">
-                    Statistical analysis </h6>
-                  <h6 class="fs-15">
-                    Curriculum development</h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-15">
-                    <h6 class="fs-15">
-                      Research proposal writing</h6>
-                  </h6>
-                  <h6 class="fs-15">
-                    Scholarship applications</h6>
-                  <h6 class="fs-15">Academic mentoring </h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-15">
-                    Copywriting</h6>
-                  <h6 class="fs-15">
-                    Tutoring and Instruction</h6>
-                  <h6 class="fs-15">Transcribing audio or video recordings</h6>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </section>
-
-    @endif
 
 
 
