@@ -1,4 +1,4 @@
-<footer class=" fs-13 mt-auto p-1 p-sm-2 p-lg-4" style="background-color:#055846;">
+<footer class=" fs-13 mt-auto p-1 p-sm-2 p-lg-4" style="background-color:#275846;">
   <div class="footer-content">
     <div class="aiz-footer-widget">
       <div class="container">

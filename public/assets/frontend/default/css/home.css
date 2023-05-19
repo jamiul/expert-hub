@@ -131,6 +131,21 @@ right:0;
 .services-card{
     height: 430px !important;
    }
+.container-home{
+    width:84%;
+    margin:70px 8%;    
+}
+.home-slider{
+    width:84%;
+    margin:30px 8%  !important;    
+}
+.img-slider{
+    width:84%;
+    margin:30px 8% 0 8%;    
+}
+.blog-cat-name{
+    color:red !important;
+}
 
 /* responsive */
 @media only screen and (max-width: 1210px) {
