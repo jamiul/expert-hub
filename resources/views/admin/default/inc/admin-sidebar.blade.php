@@ -171,7 +171,7 @@
                         </ul>
                     </li>
                 @endif
-                
+
                 @if(auth()->user()->can('show all clients') || auth()->user()->can('show client packages') || auth()->user()->can('show client badges'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -296,7 +296,7 @@
                         </li>
                     @endif
                 @endif
-                        
+
                 @if(auth()->user()->can('show project payments')
                     || auth()->user()->can('show package payments')
                         || auth()->user()->can('show service payments')
@@ -360,7 +360,7 @@
                         </ul>
                     </li>
                 @endif
-                
+
                 @if(auth()->user()->can('show all blogs') || auth()->user()->can('show blog category'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -380,6 +380,38 @@
                             <li class="aiz-side-nav-item">
                                 <a href="{{ route('blog-category.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit'])}}">
                                     <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                </a>
+                            </li>
+                        @endcan
+                        </ul>
+                    </li>
+                @endif
+                @if(auth()->user()->can('show all blogs') || auth()->user()->can('show blog category'))
+                    <li class="aiz-side-nav-item">
+                        <a href="#" class="aiz-side-nav-link">
+                            <i class="las la-blog aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Scholarships') }}</span>
+                            <span class="aiz-side-nav-arrow"></span>
+                        </a>
+                        <ul class="aiz-side-nav-list level-2">
+                        @can('show all blogs')
+                            <li class="aiz-side-nav-item">
+                                <a href="{{ route('scholarship.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['scholarship.create', 'scholarship.edit'])}}">
+                                    <span class="aiz-side-nav-text">{{ translate('All Scholarships') }}</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show blog category')
+                            <li class="aiz-side-nav-item">
+                                <a href="{{ route('scholarship-category.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit'])}}">
+                                    <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show blog category')
+                            <li class="aiz-side-nav-item">
+                                <a href="{{ route('scholarship-category.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit'])}}">
+                                    <span class="aiz-side-nav-text">{{ translate('Study Level') }}</span>
                                 </a>
                             </li>
                         @endcan
@@ -412,7 +444,7 @@
                         </ul>
                     </li>
                 @endif
-                
+
                 @if(auth()->user()->can('show header') || auth()->user()->can('show footer') || auth()->user()->can('show pages') || auth()->user()->can('show apperance'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -481,7 +513,7 @@
                         </ul>
                     </li>
                 @endif
-                @if(auth()->user()->can('show general setting') 
+                @if(auth()->user()->can('show general setting')
                         || auth()->user()->can('show activation setting')
                             || auth()->user()->can('show system languages setting')
                                 || auth()->user()->can('show system currency setting')
@@ -593,7 +625,7 @@
 
                 <!-- Offline Payment Addon-->
                 @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
-                    @if(auth()->user()->can('show manual payment methods') 
+                    @if(auth()->user()->can('show manual payment methods')
                         || auth()->user()->can('show offline project payments')
                             || auth()->user()->can('show offline package payments')
                                 || auth()->user()->can('show offline service payments'))
@@ -649,7 +681,7 @@
                 </li>
                 @endcan
 
-                @if(auth()->user()->can('system update') 
+                @if(auth()->user()->can('system update')
                         || auth()->user()->can('show server status'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">

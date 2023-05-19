@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Scholarship extends Model
+class ScholarshipCategory extends Model
 {
     use SoftDeletes;
 
-    public function category() {
-        return $this->belongsTo(ScholarshipCategory::class, 'category_id');
+    public function posts()
+    {
+        return $this->hasMany(Blog::class);
     }
-
 }
