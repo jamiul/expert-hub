@@ -299,8 +299,8 @@
                     </div>
                     <div class="col-lg-9 d-flex justify-content-between">
                       <div>
-                        <p class="fs-22 fw-400"> Writing and Editing </p>
-                        <h6 class="text-primary fs-16">
+                        <p class="fs-24 fw-700"> Writing and Editing </p>
+                        <h6 class="fs-18 text-dark ">
                           David
                         </h6>
                         <div class="">
@@ -333,8 +333,8 @@
                   </div>
                   <div class="col-lg-9 d-flex justify-content-between">
                     <div>
-                      <p class=" fs-22 fw-400">Research and Analysis</p>
-                      <p class="text-primary fs-16">
+                      <p class=" fs-24 fw-700">Research and Analysis</p>
+                      <p class="fs-18 text-dark ">
                         Mailchimp
                       </p>
                       <div class="">
@@ -364,8 +364,8 @@
                   </div>
                   <div class="col-lg-9 d-flex justify-content-between">
                     <div>
-                      <p class="fs-22 fw-400">Course curriculum Development</p>
-                      <p class="text-primary fs-16">
+                      <p class="fs-24 fw-700">Course curriculum Development</p>
+                      <p class="fs-18 text-dark ">
                         Mailchimp
                       </p>
                       <div class="">
@@ -397,8 +397,8 @@
                   </div>
                   <div class="d-flex col-lg-9 justify-content-between">
                     <div>
-                      <p class=" fs-22 fw-400">Course material development</p>
-                      <p class="text-primary fs-16">
+                      <p class=" fs-24 fw-700">Course material development</p>
+                      <p class="fs-18 text-dark ">
                         Malha
                       </p>
                       <div class="">
@@ -431,8 +431,8 @@
                   <div class="col-lg-9 d-flex justify-content-between">
 
                     <div>
-                      <p class=" fs-22 fw-400">Transcription and Translation</p>
-                      <p class="text-primary fs-16">
+                      <p class=" fs-24 fw-700">Transcription and Translation</p>
+                      <p class="fs-18 text-dark ">
                         Ikram
                       </p>
                       <div class="">
@@ -463,8 +463,8 @@
                   </div>
                   <div class="col-lg-9 d-flex justify-content-between">
                     <div>
-                      <p class=" fs-22 fw-400">Scholarship Applications </p>
-                      <p class="text-primary fs-16">
+                      <p class=" fs-24 fw-700">Scholarship Applications </p>
+                      <p class="fs-18 text-dark ">
                         Hamid
                       </p>
                       <div class="">
@@ -495,8 +495,8 @@
                   </div>
                   <div class="col-lg-9 d-flex justify-content-between">
                     <div>
-                      <p class=" fs-22 fw-400">Academic mentoring </p>
-                      <p class="text-primary fs-16">
+                      <p class=" fs-24 fw-700">Academic mentoring </p>
+                      <p class="fs-18 text-dark ">
                         Abdullah
                       </p>
                       <div class="">
@@ -528,8 +528,8 @@
                   </div>
                   <div class="col-lg-9 d-flex justify-content-between">
                     <div>
-                      <p class=" fs-22 fw-400">Tutoring and Instruction</p>
-                      <p class="text-primary fs-16">
+                      <p class=" fs-24 fw-700">Tutoring and Instruction</p>
+                      <p class="fs-18 text-dark ">
                         Nabid
                       </p>
                       <div class="">
@@ -567,7 +567,7 @@
               style="width:500px;" />
           </div>
           <div class=" col-lg-6 col-sm-12">
-            <h4 class="fs-24 fw-700">Join world best marketplace for consultant</h4>
+            <p class="fs-24 fw-700">Join world best marketplace for consultant</p>
             <h6 class="fs-18 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus
               odio
               amet
