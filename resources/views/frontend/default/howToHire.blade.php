@@ -19,7 +19,7 @@
 
                     <button class="btn btn-primary text-white fs-16  px-3 py-2">Find talent</button>
 
-                    <div class="position-absolute find-job-banner-rating-section ">
+                    <div class="position-absolute how-to-hire-banner-rating-section ">
                         <p class=' fs-20'>Looking to get hired? <u class="text-success"><a class="text-decoration-underline " href="#">Sign up here</a></u></p>
                     </div>
 

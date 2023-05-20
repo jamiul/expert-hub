@@ -24,10 +24,32 @@
                         <label class="col-md-3 col-from-label">
                             {{translate('Category')}}
                             <span class="text-danger">*</span>
+
                         </label>
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select category') }}" >
+                            @foreach ($blog_categories as $category)
+                                <option value="{{ $category->id }}">
+                                    {{ $category->category_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="level">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Study Level')}}
+                            <span class="text-danger">*</span>
 
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select Level') }}" >
+                               
+                            @foreach ($blog_levels as $level)
+                                <option value="{{ $level->id }}">
+                                    {{$level->level_name }}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

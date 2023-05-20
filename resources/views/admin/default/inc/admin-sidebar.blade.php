@@ -410,7 +410,7 @@
                         @endcan
                         @can('show blog category')
                             <li class="aiz-side-nav-item">
-                                <a href="{{ route('scholarship-category.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit'])}}">
+                                <a href="{{ route('scholarship-level.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit'])}}">
                                     <span class="aiz-side-nav-text">{{ translate('Study Level') }}</span>
                                 </a>
                             </li>

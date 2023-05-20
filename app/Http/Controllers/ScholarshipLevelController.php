@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ScholarshipCategory;
+use App\Models\ScholarshipLevel;
 
-class ScholarshipCategoryController extends Controller
+class ScholarshipLevelController extends Controller
 {
     public function __construct()
     {
@@ -20,15 +20,17 @@ class ScholarshipCategoryController extends Controller
     public function index(Request $request)
     {
         $sort_search =null;
-        $categories = ScholarshipCategory::orderBy('category_name', 'asc');
+        $categories = ScholarshipLevel::orderBy('level_name', 'asc');
+
 
         if ($request->has('search')){
             $sort_search = $request->search;
-            $categories = $categories->where('category_name', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('level_name', 'like', '%'.$sort_search.'%');
         }
 
         $categories = $categories->paginate(15);
-        return view('admin.default.scholarship_module.category.index', compact('categories', 'sort_search'));
+        // dd($categories);
+        return view('admin.default.scholarship_module.study_level.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -49,21 +51,21 @@ class ScholarshipCategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request);
         $request->validate([
-            'category_name' => 'required|max:255',
+            'level_name' => 'required|max:255',
         ]);
 
-        $category = new ScholarshipCategory;
-
-        $category->category_name = $request->category_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->category_name));
+        $category = new ScholarshipLevel;
+        // dd($category);
+        $category->level_name = $request->level_name;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->level_name));
 
         $category->save();
 
 
         flash(translate('Blog category has been created successfully'))->success();
-        return redirect()->route('scholarship-category.index');
+        return redirect()->route('scholarship-level.index');
     }
 
     /**
@@ -85,10 +87,10 @@ class ScholarshipCategoryController extends Controller
      */
     public function edit($id)
     {
-        $cateogry = ScholarshipCategory::find($id);
-        $all_categories = ScholarshipCategory::all();
+        $cateogry = ScholarshipLevel::find($id);
+        $all_categories = ScholarshipLevel::all();
 
-        return view('admin.default.blog_system.category.edit',  compact('cateogry','all_categories'));
+        return view('admin.default.blog_system.study_level.edit',  compact('cateogry','all_categories'));
     }
 
     /**
@@ -101,19 +103,19 @@ class ScholarshipCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'category_name' => 'required|max:255',
+            'level_name' => 'required|max:255',
         ]);
 
-        $category = ScholarshipCategory::find($id);
+        $category = ScholarshipLevel::find($id);
 
-        $category->category_name = $request->category_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->category_name));
+        $category->level_name = $request->level_name;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->level_name));
 
         $category->save();
 
 
         flash(translate('Blog category has been updated successfully'))->success();
-        return redirect()->route('blog-category.index');
+        return redirect()->route('scholarship-level.index');
     }
 
     /**
@@ -124,8 +126,8 @@ class ScholarshipCategoryController extends Controller
      */
     public function destroy($id)
     {
-        ScholarshipCategory::find($id)->delete();
+        ScholarshipLevel::find($id)->delete();
 
-        return redirect('admin/blog-category');
+        return redirect('admin/scholarship-level');
     }
 }

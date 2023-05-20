@@ -271,7 +271,7 @@
                 <div class="col-lg-6 col-sm-12 py-3">
 
                     <div class=" border-bottom my-2">
-                        <input type="checkbox" id="leave">
+                        <input type="checkbox" id="fre-leave">
                         <h4 class="frequently-qsn-title">Is Upwork free to join as a freelancer?</h4>
                         <p class="frequently-qsn-details">
                             Yes, it’s free to join Upwork, complete your profile, search for work and create your own projects. Our service fee is based on your earnings with each client and the sliding scale rewards long-term relationships.
@@ -280,13 +280,13 @@
                             <p>
                                 You can upgrade to Freelancer Plus to more effectively market your services, submit proposals and stand out from the crowd.
                             </p>
-                            <label for="leave">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label for="leave">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""> </label>
+                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""> </label>
 
                     </div>
                     <div class=" border-bottom">
-                        <input type="checkbox" id="contest">
+                        <input type="checkbox" id="fre-contest">
                         <h4 class="frequently-qsn-title">Can I grow my career on Upwork?</h4>
                         <p class="frequently-qsn-details">
                             Yes, some of our most successful professionals have brought their strong background and employment track record to Upwork. We know you may be new to freelancing but highly experienced in your field. Our
@@ -295,10 +295,10 @@
                             <p>
                                 complete guide shares our step-by-step tips for building your freelance career.
                             </p>
-                            <label for="contest">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="contest">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom ">
                         <input type="checkbox" id="fre-freelancing">
@@ -306,13 +306,13 @@
                         <p class="frequently-qsn-details">
                             work with great clients and well-known brands. Many choose Upwork because we help them do it well. How to Succeed as a Freelancer gives you a taste of the support we offer to boost your success.
                         </p>
-                        <div class="content ">
+                        <div class="fre-content ">
                             <p>
                                 work with great clients and well-known brands. Many choose Upwork because we help them do it well. How to Succeed as a Freelancer gives you a taste of the support we offer to boost your success.
                             </p>
-                            <label for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-buildingBusiness">
@@ -324,10 +324,10 @@
                             <p>
                                 owner is a big transition, but it might be the right one for you.
                             </p>
-                            <label for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <h4 class="frequently-qsn-title">What projects can I find on Upwork?</h4>
@@ -345,10 +345,10 @@
                             <p>
                                 Freelancer accounts receive free Connects every month. You can buy bundles of them. And freelancers and agencies earn Connects by winning client interviews, getting great reviews, and demonstrating their skills.
                             </p>
-                            <label for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-badges">
@@ -360,10 +360,10 @@
                             <p>
                                 badge. Top Rated Plus shows you have a proven history of success on large and long-term contracts. And Expert Vetted means you’ve gone through our rigorous pre-screening to match your high-demand skills with the right clients. Get the feedback, wear the badge , hit your goals.
                             </p>
-                            <label for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
                     </div>
 
                 </div>
