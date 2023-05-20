@@ -126,7 +126,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	Route::get('/client-info/{user_name}', 'UserController@client_details')->name('client_info_show');
 
 	Route::get('user/ban/{id}', 'UserController@destroy')->name('user.ban');
-    
+
     Route::get('/user/login/{id}', 'UserController@login')->name('freelancers_clients.login');
 
 	Route::get('/verification-requests', 'VerificationController@index')->name('verification_requests');
@@ -141,6 +141,13 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
   Route::resource('blog', 'BlogController');
   Route::get('/blog/destroy/{id}', 'BlogController@destroy')->name('blog.destroy');
   Route::post('/blog/change-status', 'BlogController@change_status')->name('blog.change-status');
+
+  //scholarships
+  Route::resource('scholarship-category', 'ScholarshipCategoryController');
+  Route::get('/scholarship-category/destroy/{id}', 'ScholarshipCategoryController@destroy')->name('scholarship-category.destroy');
+  Route::resource('scholarship', 'ScholarshipController');
+  Route::get('/scholarship/destroy/{id}', 'ScholarshipController@destroy')->name('scholarship.destroy');
+  Route::post('/scholarship/change-status', 'ScholarshipController@change_status')->name('scholarship.change-status');
 
   //Subscribers
   Route::controller('SubscriberController')->group(function () {

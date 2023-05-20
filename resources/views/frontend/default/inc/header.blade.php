@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{my_asset('assets/frontend/default/css/header.css')}}">
-
+  <link rel="stylesheet" href="{{ my_asset('assets/frontend/default/css/header.css') }}">
 </head>
 
 <body>
@@ -41,11 +40,14 @@
                     </div>
                     <select class="form-control aiz-selectpicker  rounded-left-0" name="type">
                       <option value="freelancer" @isset($type) @if ($type=='freelancer' ) selected @endif @endisset>
-                        {{ translate('Freelancers') }}</option>
+                        {{ translate('Freelancers') }}
+                      </option>
                       <option value="project" @isset($type) @if ($type=='project' ) selected @endif @endisset>
-                        {{ translate('Projects') }}</option>
+                        {{ translate('Projects') }}
+                      </option>
                       <option value="service" @isset($type) @if ($type=='service' ) selected @endif @endisset>
-                        {{ translate('Services') }}</option>
+                        {{ translate('Services') }}
+                      </option>
                     </select>
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-icon btn-primary"
@@ -56,6 +58,7 @@
                   </div>
                 </form>
                 @endif
+
               </div>
             </div>
             <div class="menu pr-2">
@@ -227,7 +230,8 @@
                             </div>
                             <div class="ml-2 text-right">
                               <div class="opacity-60 fs-10 mb-1">
-                                {{ Carbon\Carbon::parse($chat->created_at)->diffForHumans() }}</div>
+                                {{ Carbon\Carbon::parse($chat->created_at)->diffForHumans() }}
+                              </div>
                             </div>
                           </div>
                         </a>
@@ -283,12 +287,14 @@
               </nav>
             </div>
           </div>
+
+
         </div>
       </div>
-
       @if (!Auth::check())
       <nav class="navbar navbar-expand-lg  bg-dark w-100">
         <!-- Container wrapper -->
+
         <div class="container-fluid">
           <div class="logo">
             <a href="{{ route('home') }}" class="d-inline-block">
@@ -303,37 +309,38 @@
             </span>
           </button>
           </button> <!-- Collapsible wrapper -->
-
           <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
+
             <!-- Left links -->
             <ul class="navbar-nav ml-auto ps-lg-0 " style="padding-left: 0.15rem">
 
               <!-- Navbar dropdown -->
               <li class="nav-item ml-lg-2">
-              <li class="dropdown mega_menu ">
+              <li class="dropdown mega_menu nav-item">
                 <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ translate('Find Academic Jobs') }}
+                  {{ translate('Find Academic Talent') }}
                 </a>
                 <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
-                  <div class="row">
+                  <div class="row mx-2">
                     <div class="col-lg-3 col-sm-6">
-                      <div class="w-75  mega-menu-fj-item">
+                      <div id="findSkills" class="w-75  mega-menu-fj-item">
                         <a class="dropdown-item"
                           href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
                         <p>{{translate('Show clients you’re the one they want.')}}</p>
                       </div>
                     </div>
                     <div class="col-lg-3 col-sm-6  ">
-                      <div class="w-75 mega-menu-fj-item">
+                      <div id="wayToEarn" class="w-75 mega-menu-fj-item">
                         <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
                         <p>
-                          {{translate('Learn why Scholarship australia has the right opportunities for you.')}}</p>
+                          {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
+                        </p>
                       </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                      <div class="w-75 mega-menu-fj-item">
-                        <a class="dropdown-item pe-2"
+                      <div id='promoteYourself' class="w-78 mega-menu-fj-item">
+                        <a class="dropdown-item "
                           href="{{route('promote')}}">{{ translate('Find ways to promote yourself') }}</a>
                         <p>{{translate('Explore the kind of work available in your field.')}}</p>
                       </div>
@@ -346,56 +353,56 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Academic Work') }}</a>
               </li>
 
-              <li class="nav-item ">
+              <li class="nav-item">
                 <a class="nav-link text-white"
                   href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
               </li>
 
-
-              <li class="nav-item">
-                <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
-              </li>
-              <li class="dropdown mega_menu">
-                <a class=" dropdown-toggle nav-link text-white " type="button" id="mega_about" data-toggle="dropdown"
+              <li class="nav-item dropdown mega_menu text-white">
+                <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
-                  {{ translate('About Us') }}
+                  Why FreelancerEdu
                 </a>
-                <div class="dropdown-menu mega_area" aria-labelledby="mega_about">
-
-                  <div class="row ">
-                    <div class="col-lg-6 col-sm-6">
+                <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
+                  <div class="row">
+                    <div class="col-lg-6 col-sm-12">
                       <div class="row ">
                         <div class="col-6">
-                          <div class="w-75 mega-menu-item" action="{{route('success-stories')}}">
-                            <a class="dropdown-item " href="">{{ translate('Success Stories') }}
-                            </a>
-                            <p>Discover how to team work strategically and grow together</p>
+                          <div id="howToFindJob" class="mt-2 w-75 mega-menu-item">
+                            <a class="dropdown-item"
+                              href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
+                            <p>{{translate('Learn about how to grow your independent career.')}}</p>
                           </div>
-                          <div class="w-75 mega-menu-item">
-                            <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
-                            <p>Learn about the different ways to get work done.</p>
+
+                          <div id="review" class="w-75 mega-menu-item">
+                            <a class="dropdown-item drpd-item" href="{{route('review')}}">{{translate('Reviews')}}</a>
+                            <p>{{translate("See what it's like to collaborate on scholarship australia")}}</p>
                           </div>
 
                         </div>
                         <div class="col-6">
-                          <div class="w-75 mega-menu-item">
-                            <a class="dropdown-item " href="{{route('review')}}">{{translate('Reviews')}}</a>
-                            <p>See what it's like to collaborate on scholarship australia</p>
+                          <div id="howToHire" class="w-75 mt-2 mega-menu-item">
+                            <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
+                            <p>{{('Learn about the different ways to get work done.')}}</p>
                           </div>
 
-                          <div class="mt-2 w-75 mega-menu-item">
-                            <a class="dropdown-item"
-                              href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
-                            <p>Learn about how to grow your independent career.</p>
+
+                          <div id="successStories" class="w-75 mega-menu-item">
+
+                            <a class="dropdown-item "
+                              href="{{route('success-stories')}}">{{ translate('Success Stories') }}
+                            </a>
+                            <p>{{translate('Discover how to team work strategically and grow together')}}</p>
                           </div>
+
 
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6 py-3">
+                    <div class="col-lg-6 col-sm-12">
                       <h5>Where work gets done</h5>
                       <div class="mt-1">
 
@@ -424,11 +431,16 @@
                   </div>
                 </div>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
+              </li>
 
             </ul>
             <!-- Left links -->
           </div>
         </div>
+
+
         <!-- Collapsible wrapper -->
 
         <!-- Container wrapper -->
@@ -436,6 +448,39 @@
       @endif
     </div>
   </header>
+
+
+  <script>
+  document.getElementById('review').addEventListener('click', function() {
+    window.location.href = "{{ route('review')}}";
+  });
+  </script>
+  <script>
+  document.getElementById('howToFindJob').addEventListener('click', function() {
+    window.location.href = "{{ route('how-to-find-job')}}";
+  });
+  </script>
+  <script>
+  document.getElementById('howToHire').addEventListener('click', function() {
+    window.location.href = "{{ route('how-to-hire')}}";
+  });
+  </script>
+  <script>
+  document.getElementById('successStories').addEventListener('click', function() {
+    window.location.href = "{{ route('success-stories')}}";
+  });
+  </script>
+  <script>
+  document.getElementById('findSkills').addEventListener('click', function() {
+    window.location.href = "{{ route('skills') }}?keyword=&type=project";
+  });
+  </script>
+  <script>
+  document.getElementById('promoteYourself').addEventListener('click', function() {
+    window.location.href = "{{ route('promote')}}";
+  });
+  </script>
+
 </body>
 
 </html>

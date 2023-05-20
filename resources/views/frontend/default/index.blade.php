@@ -14,12 +14,12 @@
   @section('content')
   @if (get_setting('slider_section_show') == 'on')
   <section>
-    <section class="hero-section " id="frontHomeTab">
+    <section class=" hero-section " id="frontHomeTab">
       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" style="">
           <div class="carousel-item active">
-            <video style="min-width:100%; min-height:100%" playsinline autoplay muted loop>
-              <source class="h-100 opacity-100" src=" {{url('/public/assets/home/01.mp4')}}" type="video/mp4" />
+            <video style="min-width:100%;" playsinline autoplay muted loop>
+              <source class=" opacity-100" src=" {{url('/public/assets/home/01.mp4')}}" type="video/mp4" />
             </video>
             <div class="carousel-caption carousel-caption-background">
             </div>
@@ -49,56 +49,57 @@
     </section>
     @endif
     <!--  Used by -->
-    <div class="home-slider">
-      <div class="row ">
-        <div class="col-6">
-          <div class="row ">
-            <div class="col-lg-4 col-sm-12">
-              <h4 class="trusted "> Used by </h4>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-              <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
-            </div>
-            <div class="col-lg-4 col-sm-12">
-              <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 ">
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
-            </div>
-            <div class="col-lg-4 col-sm-12">
-              <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
-            </div>
-            <div class="col-lg-4 col-sm-12">
-              <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+    <section class="">
+      <div class=" home-slider">
+        <div class="row ">
+          <div class="col-6">
+            <div class="row ">
+              <div class="col-lg-4 col-sm-12">
+                <h4 class="trusted" style="font-size:24px;"> Used by </h4>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+              </div>
             </div>
           </div>
+          <div class="col-6 ">
+            <div class="row">
+              <div class="col-lg-4 col-sm-12">
+                <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+              </div>
+            </div>
 
+          </div>
         </div>
+
       </div>
-      <hr>
-    </div>
+    </section>
 
     <!-- explore services  -->
 
     @if (get_setting('how_it_works_show') == 'on')
-    <section class="">
+    <section class="border-top">
       <div class="container-home">
         <div class="">
-          <div class="w-xl-50 w-lg-75 pb-3">
+          <div class="w-xl-50 w-lg-75 content-title ">
             <h2 class="fw-700 fs-36 text-black ">Need academic help?</h2>
             <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6>
           </div>
           <div class="row">
             <div class="col-xl-3 col-md-6">
               <div class=" ">
-                <div class=" d-flex h-60px">
-                  <img class=" mr-2" src=" {{url('/public/assets/home/businessman.png')}}" alt="Image"
-                    style="width:45px;" />
-                  <p class="fs-24 fw-700"> Post a job (it’s free) </p>
+                <div class=" d-flex h-60px align-items-center">
+                  <img class=" " src=" {{url('/public/assets/home/job.png')}}" alt="Image" style="width:35px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2"> Post a job (it’s free) </p>
                 </div>
 
 
@@ -110,11 +111,10 @@
             </div>
             <div class="col-xl-3 col-md-6">
               <div class=" ">
-                <div class="d-flex h-60px">
+                <div class="d-flex h-60px align-items-center">
 
-                  <img class=" mr-2" src=" {{url('/public/assets/home/service-2.png')}}" alt="Image"
-                    style="width:45px;" />
-                  <p class="fs-24 fw-700">Academic consultants connect with you</p>
+                  <img class="" src=" {{url('/public/assets/home/service-2.png')}}" alt="Image" style="width:55px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2">Academic consultants connect with you</p>
                 </div>
 
                 <h6 class="fs-18 mt-5">
@@ -125,10 +125,9 @@
             </div>
             <div class="col-xl-3 col-md-6">
               <div class="  ">
-                <div class="d-flex h-60px">
-                  <img class="mr-2 " src=" {{url('/public/assets/home/service-4.png')}}" alt="Image"
-                    style="width:45px;" />
-                  <p class="fs-24 fw-700"> Collaborate easily </p>
+                <div class="d-flex h-60px align-items-center">
+                  <img class="" src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:45px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2"> Collaborate easily </p>
                 </div>
 
 
@@ -139,10 +138,9 @@
             </div>
             <div class="col-xl-3 col-md-6 ">
               <div class="">
-                <div class="d-flex h-60px">
-                  <img class="mr-2 " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image"
-                    style="width:40px;" />
-                  <p class="fs-24 fw-700"> Payment securely </p>
+                <div class="d-flex h-60px align-items-center">
+                  <img class="  " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:45px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2"> Payment securely </p>
                 </div>
                 <p class="fs-18 mt-lg-5">
                   You can make payment securely. We have integrity system where your money will be safe.
@@ -160,16 +158,16 @@
     <section class=" border-top">
       <div class="container-home">
         <div class="">
-          <div class="w-xl-50 w-lg-75 pb-3">
+          <div class="w-xl-50 w-lg-75 content-title">
             <h2 class="fw-700 fs-36 text-black">What makes it impressive?</h2>
             <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6>
           </div>
           <div class="row">
             <div class="col-xl-3 col-md-6">
               <div class=" ">
-                <div class="d-flex h-60px">
-                  <img class=" " src=" {{url('/public/assets/home/expert.png
-                  ')}}" alt="Image" style="width:40px;" />
+                <div class="d-flex h-60px align-items-center">
+                  <img class=" w-50px" src=" {{url('/public/assets/home/expert.png
+                  ')}}" alt="Image" />
                   <p class="fs-24 ml-3 fw-700 ml-lg-3">Accessible academic experts </p>
                 </div>
                 <h6 class="fs-18 mt-5">
@@ -179,8 +177,8 @@
             </div>
             <div class="col-xl-3 col-md-6">
               <div class="">
-                <div class="d-flex h-60px">
-                  <img class=" " src=" {{url('/public/assets/home/response.png')}}" alt="Image" style="width:55px;" />
+                <div class="d-flex h-60px align-items-center">
+                  <img class=" w-50px" src=" {{url('/public/assets/home/response.png')}}" alt="Image" />
                   <p class="fs-24 fw-700 ml-lg-3">Fast responses</p>
                 </div>
                 <h6 class="fs-18 mt-5">
@@ -191,9 +189,8 @@
             </div>
             <div class="col-xl-3 col-md-6">
               <div class="">
-                <div class="d-flex h-60px">
-                  <img class=" " src=" {{url('/public/assets/home/high-quality.png')}}" alt="Image"
-                    style="width:40px;" />
+                <div class="d-flex h-60px align-items-center">
+                  <img class="w-50px " src=" {{url('/public/assets/home/quality.png')}}" alt="Image" />
                   <p class="fs-24 fw-700 ml-lg-3"> High-quality work</p>
                 </div>
                 <h6 class="fs-18 mt-5">
@@ -203,7 +200,7 @@
             <div class="col-xl-3 col-md-6 ">
               <div class="">
                 <div class="d-flex h-60px">
-                  <img class=" " src=" {{url('/public/assets/home/help.png')}}" alt="Image" style="width:35px;" />
+                  <img class="w-40px " src=" {{url('/public/assets/home/help.png')}}" alt="Image" />
                   <p class="fs-24 fw-700 ml-lg-3"> We're here to help you</p>
                 </div>
                 <p class="fs-18 text-dark mt-5">
@@ -222,7 +219,7 @@
     <section class="bg-white border-top">
       <div class=" container-home">
         <div class="d-flex justify-content-between ">
-          <div class="w-lg-75 lh-1-8 pb-4">
+          <div class="w-lg-75 lh-1-8 content-title">
             <h2 class="fw-700 fs-36">{{ get_setting('featured_category_title') }}</h2>
             <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p>
           </div>
@@ -237,7 +234,7 @@
           @if (get_setting('featured_category_list') != null)
           @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
           @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
-          <div class="col-lg-3">
+          <div class="col-lg-3 mb-3">
             <div class=" card  category h-100">
               <div class=" card-body">
                 <div class="">
@@ -275,7 +272,7 @@
     <section class="">
       <div class=" container-home">
         <div class="d-flex justify-content-between">
-          <div class="w-lg-75 w-xl-50 lh-1-8 pb-4">
+          <div class="w-lg-75 w-xl-50 lh-1-8 content-title">
             <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
             <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
           </div>
@@ -355,7 +352,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="card rounded card-body  ">
                 <div class="row">
                   <div class="col-lg-3">
@@ -388,7 +385,7 @@
 
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="card rounded card-body">
                 <div class="row">
                   <div class="col-lg-3">
@@ -421,7 +418,7 @@
 
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="card rounded card-body">
                 <div class="row">
                   <div class="col-lg-3">
@@ -436,7 +433,7 @@
                         Ikram
                       </p>
                       <div class="">
-                        <span>$25 hourly</span>
+                        <span>$32 hourly</span>
                         <span>|</span>
                         <span>1.5 days</span>
                         <span>|</span>
@@ -454,7 +451,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="card rounded card-body">
                 <div class="row">
                   <div class="col-lg-3">
@@ -486,7 +483,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="card rounded card-body ">
                 <div class=" row">
                   <div class="col-lg-3">
@@ -519,7 +516,7 @@
 
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="card rounded card-body">
                 <div class="row">
                   <div class="col-lg-3">
@@ -562,7 +559,7 @@
     <section class="border-top">
       <div class="container-home">
         <div class="row ">
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-6 col-lg-6">
             <img class="mr-2  img-fluid" src="{{url('/public/assets/home/001.png')}}" alt="Image"
               style="width:500px;" />
           </div>
@@ -650,37 +647,37 @@
             <div class="">
               <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
                 <div class="col">
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Research writing</h6>
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Proofreading and editing</h6>
-                  <h6 class="fs-15">Data analysis and interpretation</h6>
-                  <h6 class="fs-15">Translation services</h6>
+                  <h6 class="fs-18">Data analysis and interpretation</h6>
+                  <h6 class="fs-18">Translation services</h6>
                 </div>
 
                 <div class="col">
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Research proposal writing</h6>
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Statistical analysis </h6>
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Curriculum development</h6>
                 </div>
                 <div class="col">
-                  <h6 class="fs-15">
-                    <h6 class="fs-15">
+                  <h6 class="fs-18">
+                    <h6 class="fs-18">
                       Research proposal writing</h6>
                   </h6>
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Scholarship applications</h6>
-                  <h6 class="fs-15">Academic mentoring </h6>
+                  <h6 class="fs-18">Academic mentoring </h6>
                 </div>
                 <div class="col">
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Copywriting</h6>
-                  <h6 class="fs-15">
+                  <h6 class="fs-18">
                     Tutoring and Instruction</h6>
-                  <h6 class="fs-15">Transcribing audio or video recordings</h6>
+                  <h6 class="fs-18">Transcribing audio or video recordings</h6>
                 </div>
 
               </div>
@@ -886,7 +883,7 @@
     <section class="border-top" style="background-color:#FBF7ED;">
       <div class="container-home" style=" ">
         <div class="d-flex justify-content-between ">
-          <div class="w-lg-75 w-xl-50 lh-1-8 pb-4 ">
+          <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2>
             <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
           </div>
@@ -983,10 +980,10 @@
     @if (get_setting('latest_project_show') == 'on')
     <section class=" border-top border-bottom">
       <div class=" container-home">
-        <div class="">
+        <div class="content-title">
           <h2 class="fw-700 fs-36 text-black">People Love To Learn With Scholarships Australia</h2>
         </div>
-        <div class="mt-4">
+        <div class="">
           <div class="row ">
             <div class="col-lg-4">
               <div class=" card rounded-1 " style="height:280px;">
@@ -1077,7 +1074,7 @@
     @if (get_setting('blog_section_show') == 'on')
     <section class="bg-white pb-7 text-white  -pt-3">
       <div class="container-main">
-        <div class="d-flex justify-content-between mb-3">
+        <div class="d-flex justify-content-between content-title">
           <div class="">
             <div class="section-title ">
               <h2 class="fw-700 fs-36 text-dark">{{ get_setting('blog_section_title') }}</h2>
@@ -1193,7 +1190,7 @@
           </div>
         </div>
       </div>
-            
+
     </section>>
     @endif
 

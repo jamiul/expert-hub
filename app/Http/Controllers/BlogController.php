@@ -66,12 +66,10 @@ class BlogController extends Controller
         $blog->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
         $blog->short_description = $request->short_description;
         $blog->description = $request->description;
-
         $blog->meta_title = $request->meta_title;
         $blog->meta_img = $request->meta_img;
         $blog->meta_description = $request->meta_description;
         $blog->meta_keywords = $request->meta_keywords;
-
         $blog->save();
 
         flash(translate('Blog post has been created successfully'))->success();

@@ -13,7 +13,7 @@
 }
 /* why scholarship - review */
 
-.review-banner-title {
+.fre-review-banner-title {
     letter-spacing: -0.035em;
     margin-top: 0;
     margin-bottom: 15px;
@@ -22,13 +22,13 @@
     font-weight: 400;
     line-height: 1em;
 }
-.review-banner-text {
+.fre-review-banner-text {
     padding-bottom: 35px;
     font-size: 18px;
     line-height: 22px;
     color: #5e6d55;
 }
-.review-per-week-title {
+.fre-review-per-week-title {
     color: #001e00;
     letter-spacing: -0.032em;
     margin-top: 0;
@@ -39,7 +39,7 @@
     line-height: 1em;
     width: 50%;
 }
-.review-clients {
+.fre-review-clients {
     color: #001e00;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
@@ -48,52 +48,51 @@
     font-weight: 500;
     line-height: 1.1em;
 }
-.review-they-say-topic {
+.fre-review-they-say-topic {
     color: #001e00;
     font-size: 20px;
     padding: 5px 0;
     font-weight: 500;
     cursor: pointer;
 }
-.tye-review-saying-topic {
+.fre-tye-review-saying-topic {
     background-color: #f2f7f2;
     border-radius: 15px;
     padding: 8.5px 15px;
     font-size: 12px;
     line-height: 13px;
 }
-.review-they-say-topic:hover {
+.fre-review-they-say-topic:hover {
     color: #1f57c3;
 }
 
-.review-say-customer {
+.fre-review-say-customer {
     height: 80vh !important;
-    overflow: hidden ;
+    overflow: hidden;
     overflow-y: scroll;
-
 }
-.review-say-customer-topic {
+.fre-review-say-customer-topic {
 }
-.review-details {
+.fre-review-details {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.review-details h5 {
+.fre-review-details h5 {
     color: #001e00;
     font-size: 30px;
     font-weight: 700;
 }
-.review-details p {
+.fre-review-details p {
     color: #5e6d55;
     font-size: 30px;
     font-weight: 700;
 }
-.review-work-done {
+.fre-review-work-done {
     width: 84%;
     margin: 50px 8% 0 8%;
 }
-.review-work-done h3 {
+.fre-review-work-done h3 {
     color: #001e00;
     letter-spacing: -0.032em;
     margin-top: 0;
@@ -104,7 +103,7 @@
     font-weight: 400;
     line-height: 1em;
 }
-.review-work-done-card h4 {
+.fre-review-work-done-card h4 {
     color: #001e00;
     letter-spacing: -0.004em;
     margin-bottom: 40px;
@@ -113,7 +112,7 @@
     font-weight: 500;
     line-height: 1.1em;
 }
-.review-work-done-read {
+.fre-review-work-done-read {
     color: #1f57c3;
     font-family: Neuemontreal, sans-serif;
     font-weight: 700;
@@ -121,7 +120,7 @@
     font-size: 16px;
     letter-spacing: 0.6px;
 }
-.review-work-done-card img {
+.fre-review-work-done-card img {
     z-index: 2;
     width: 13px;
     height: 15px;
@@ -130,7 +129,7 @@
     font-size: 20px;
     font-weight: 500;
 }
-.review-explore-worldwide-title {
+.fre-review-explore-worldwide-title {
     color: #001e00;
     letter-spacing: -0.032em;
     margin-top: 0;
@@ -140,7 +139,7 @@
     font-weight: 400;
     line-height: 1em;
 }
-.review-explore-worldwide-topic h5 {
+.fre-review-explore-worldwide-topic h5 {
     display: inline-block;
     width: 220px;
     white-space: nowrap;
@@ -149,10 +148,10 @@
     cursor: pointer;
     font-size: 16px;
 }
-.review-explore-worldwide-topic h5:hover {
+.fre-review-explore-worldwide-topic h5:hover {
     color: #1f57c3;
 }
-.review-say-other-way-title {
+.fre-review-say-other-way-title {
     color: #001e00;
     letter-spacing: -0.032em;
     margin-top: 0;
@@ -163,7 +162,7 @@
     font-weight: 400;
     line-height: 1em;
 }
-.review-say-other-way-card-text {
+.fre-review-say-other-way-card-text {
     color: #001e00;
     letter-spacing: -0.004em;
     margin-bottom: 40px;
@@ -172,7 +171,7 @@
     font-weight: 500;
     line-height: 1.1em;
 }
-.review-get-started-title {
+.fre-review-get-started-title {
     color: #001e00;
     letter-spacing: -0.032em;
     margin-top: 0;
@@ -182,7 +181,7 @@
     font-weight: 400;
     line-height: 1em;
 }
-.rv-find-work-bar {
+.fre-rv-find-work-bar {
     transition: all 0.2s;
     /* border: none !important; */
     margin-right: 5px !important;
@@ -191,23 +190,22 @@
     border-left: none !important;
     border-bottom: gray !important;
     position: relative;
-
 }
-.rv-find-work-bar::after {
+.fre-rv-find-work-bar::after {
     content: " ";
     opacity: 0;
     transition: all 0.2s;
     height: 2px;
     width: 100%;
-    background-color: #58B38D;
+    background-color: #58b38d;
     position: absolute;
     bottom: 0;
     left: 0;
 }
-.rv-find-work-bar:hover::after {
+.fre-rv-find-work-bar:hover::after {
     opacity: 1;
 }
-.rv-find-work-bar::active {
+.fre-rv-find-work-bar::active {
     content: " ";
     opacity: 0;
     transition: all 0.2s;
@@ -218,7 +216,7 @@
     bottom: 0;
     left: 0;
 }
-.review-hf-card-title {
+.fre-review-hf-card-title {
     color: #222;
     margin-bottom: 5px;
     font-weight: 500;
@@ -227,7 +225,7 @@
     font-size: 18px;
     line-height: 22px;
 }
-.review-say-customer-review {
+.fre-review-say-customer-review {
     width: 100%;
     color: #001e00;
     letter-spacing: -0.6px;
@@ -237,7 +235,7 @@
     margin-bottom: 20px;
     font-weight: 500;
 }
-.review-hf-card-text {
+.fre-review-hf-card-text {
     color: #5e6d55;
     letter-spacing: 0.6px;
     font-family: Neuemontreal, sans-serif;
@@ -245,62 +243,58 @@
     font-weight: 500;
     line-height: 22px;
 }
-.join-scholarship-btn {
+.fre-join-scholarship-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     padding: 10px 20px;
 }
-.join-scholarship-btn:hover {
+.fre-join-scholarship-btn:hover {
     background: #1c51af;
 }
-.container-main-powerful {
+.fre-container-main-powerful {
     width: 84%;
     margin: 100px 8% 80px 8%;
 }
 
-#ch {
+#fre-ch {
     display: none;
 }
-#leave {
+#fre-leave {
     display: none;
 }
-#contest {
+#fre-contest {
     display: none;
 }
-#ch:checked ~ label {
+#fre-ch:checked ~ label {
     display: none;
 }
-#ch:checked ~ .content {
+#fre-ch:checked ~ .fre-content {
     display: block;
 }
-#leave:checked ~ label {
+#fre-leave:checked ~ label {
     display: none;
 }
-#leave:checked ~ .content {
+#fre-leave:checked ~ .fre-content {
     display: block;
 }
-#contest:checked ~ label {
+#fre-contest:checked ~ label {
     display: none;
 }
-#contest:checked ~ .content {
+#fre-contest:checked ~ .fre-content {
     display: block;
 }
-.content {
+.fre-content {
     display: none;
 }
-label {
+.fre-expand-icon {
     display: inline-block;
     cursor: pointer;
     margin: 0;
     color: rgb(77, 95, 230);
     font-size: 15px;
     margin-bottom: 10px;
-}
-p {
-    margin: 0 !important;
-    font-size: 16px;
 }
 
 .get-work-title {
@@ -328,8 +322,8 @@ p {
 }
 .trusted {
     color: #5e6d55;
-    letter-spacing: .6px;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
@@ -422,9 +416,9 @@ p {
     margin-bottom: 15px;
     color: #5e6d55;
 }
-.hth-profile-active{
+.hth-profile-active {
     bottom: -10 !important;
-    margin: 10px 0 0 10px ;
+    margin: 10px 0 0 10px;
 }
 
 /* how-to-find-job */
@@ -440,7 +434,6 @@ p {
     font-weight: 700;
 }
 .find-job-banner-rating-section {
-
     bottom: 0px;
     width: 94%;
     margin: 0 2 0 2;
@@ -487,20 +480,20 @@ p {
 /* .Explore-blog-card {
     border-radius: 0 0 10px 10px;
 } */
-.htfj-learn-work-title{
+.htfj-learn-work-title {
     color: #001e00;
-    letter-spacing: -.032em;
+    letter-spacing: -0.032em;
     margin-top: 0;
 
-    font-family: Upworkrza,sans-serif;
+    font-family: Upworkrza, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1em;
 }
-.htfj-learn-work-child-title{
+.htfj-learn-work-child-title {
     color: #001e00;
-    letter-spacing: -.006em;
-    font-family: Neuemontreal,sans-serif;
+    letter-spacing: -0.006em;
+    font-family: Neuemontreal, sans-serif;
     font-size: 30px;
     font-weight: 500;
     line-height: 1em;
@@ -617,7 +610,7 @@ p {
 }
 
 /* Frequently asked questions */
-.container-main-freQus{
+.container-main-freQus {
     width: 84%;
     margin: 100px 8% 95px 8%;
 }
@@ -636,7 +629,6 @@ p {
     font-size: 22px;
     font-weight: 500;
     line-height: 1.1em;
-
 }
 .frequently-qsn-details {
     color: #5e6d55;
@@ -647,7 +639,7 @@ p {
     line-height: 22px;
     margin-bottom: 10px;
 }
-.content {
+.fre-content {
     color: #5e6d55;
     letter-spacing: 0.6px;
     font-family: Neuemontreal, sans-serif;
@@ -656,19 +648,19 @@ p {
     line-height: 22px;
 }
 
-#buildingBusiness {
+#fre-buildingBusiness {
     display: none;
 }
-#buildingBusiness:checked ~ .content {
+#fre-buildingBusiness:checked ~ .fre-content {
     display: block;
 }
-#buildingBusiness:checked ~ label {
+#fre-buildingBusiness:checked ~ label {
     display: none;
 }
-#badges {
+fre-badges {
     display: none;
 }
-#badges:checked ~ .content {
+fre-badges:checked ~ .fre-content {
     display: block;
     color: #5e6d55;
     letter-spacing: 0.6px;
@@ -677,24 +669,24 @@ p {
     font-weight: 500;
     line-height: 22px;
 }
-#badges:checked ~ label {
+fre-badges:checked ~ label {
     display: none;
 }
-#Connects {
+#fre-Connects {
     display: none;
 }
-#Connects:checked ~ .content {
+#fre-Connects:checked ~ .fre-content {
     display: block;
 }
-#Connects:checked ~ label {
+#fre-Connects:checked ~ label {
     display: none;
 }
-#freelancing {
+#fre-freelancing {
     display: none;
 }
-#freelancing:checked ~ .content {
+#fre-freelancing:checked ~ .fre-content {
     display: block;
 }
-#freelancing:checked ~ label {
+#fre-freelancing:checked ~ label {
     display: none;
 }

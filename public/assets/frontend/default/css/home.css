@@ -37,6 +37,20 @@ right:0;
     font-weight: 700;
 }
 
+/* .trusted-home {
+    margin: 110px 0 0px 0;
+    height: 70px;
+}
+.trusted {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-top: 10px;
+} */
+
 .category {
     height: 210px;
     color: black;
@@ -104,7 +118,7 @@ right:0;
 }
 
 .carousel-caption{
-    top: 225px !important;
+    top: 175px !important;
     text-align: start !important;
     padding-top: 100px !important;
 
@@ -126,22 +140,25 @@ right:0;
 }
 
 .hero-section {
-    margin-top: -11%;
+    margin-top:0;
 }
 .services-card{
     height: 430px !important;
    }
 .container-home{
     width:84%;
-    margin:70px 8%;    
+    margin:70px 8%;
 }
 .home-slider{
     width:84%;
-    margin:30px 8%  !important;    
+    margin:10px 8% 30px !important;    
+}
+.content-title{
+    padding-bottom: 50px;
 }
 .img-slider{
     width:84%;
-    margin:30px 8% 0 8%;    
+    margin:30px 8% 0 8%;
 }
 .blog-cat-name{
     color:red !important;
@@ -226,3 +243,4 @@ right:0;
         margin-top:-18%;
     }
 }
+
