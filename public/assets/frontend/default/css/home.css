@@ -51,9 +51,20 @@ right:0;
     margin-top: 10px;
 } */
 
+.consultant-category{
+    line-height: 23px !important;
+    margin-bottom: 0 !important;
+}
+.talent-button{
+    background: #ffffff;
+    color:#275846;
+    border:1px solid #275846 !important;
+    border-radius: 5px !important;
+}
 .category {
-    height: 210px;
+    height: 275px !important;
     color: black;
+     line-height: 23px !important;
 }
 .category-list {
     color: black !important;

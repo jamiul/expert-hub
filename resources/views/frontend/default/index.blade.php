@@ -85,7 +85,6 @@
     </section>
 
     <!-- explore services  -->
-
     @if (get_setting('how_it_works_show') == 'on')
     <section class="border-top">
       <div class="container-home">
@@ -98,8 +97,8 @@
             <div class="col-xl-3 col-md-6">
               <div class=" ">
                 <div class=" d-flex h-60px align-items-center">
-                  <img class=" " src=" {{url('/public/assets/home/job.png')}}" alt="Image" style="width:35px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2"> Post a job (it’s free) </p>
+                  <img class=" " src=" {{url('/public/assets/home/vacancy.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category"> Post a job (it’s free) </p>
                 </div>
 
 
@@ -113,8 +112,8 @@
               <div class=" ">
                 <div class="d-flex h-60px align-items-center">
 
-                  <img class="" src=" {{url('/public/assets/home/service-2.png')}}" alt="Image" style="width:55px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2">Academic consultants connect with you</p>
+                  <img class="" src=" {{url('/public/assets/home/consulting.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category">Academic consultants connect with you</p>
                 </div>
 
                 <h6 class="fs-18 mt-5">
@@ -126,8 +125,8 @@
             <div class="col-xl-3 col-md-6">
               <div class="  ">
                 <div class="d-flex h-60px align-items-center">
-                  <img class="" src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:45px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2"> Collaborate easily </p>
+                  <img class="" src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category"> Collaborate easily </p>
                 </div>
 
 
@@ -139,8 +138,8 @@
             <div class="col-xl-3 col-md-6 ">
               <div class="">
                 <div class="d-flex h-60px align-items-center">
-                  <img class="  " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:45px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2"> Payment securely </p>
+                  <img class="  " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category"> Payment securely </p>
                 </div>
                 <p class="fs-18 mt-lg-5">
                   You can make payment securely. We have integrity system where your money will be safe.
@@ -166,9 +165,9 @@
             <div class="col-xl-3 col-md-6">
               <div class=" ">
                 <div class="d-flex h-60px align-items-center">
-                  <img class=" w-50px" src=" {{url('/public/assets/home/expert.png
-                  ')}}" alt="Image" />
-                  <p class="fs-24 ml-3 fw-700 ml-lg-3">Accessible academic experts </p>
+                  <img src=" {{url('/public/assets/home/expert.png
+                  ')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 ml-3 fw-700 ml-lg-3 consultant-category">Accessible academic experts </p>
                 </div>
                 <h6 class="fs-18 mt-5">
                   Its free and easy to post a job. Simply fill in a title descriptions and other additional
@@ -178,8 +177,8 @@
             <div class="col-xl-3 col-md-6">
               <div class="">
                 <div class="d-flex h-60px align-items-center">
-                  <img class=" w-50px" src=" {{url('/public/assets/home/response.png')}}" alt="Image" />
-                  <p class="fs-24 fw-700 ml-lg-3">Fast responses</p>
+                  <img src=" {{url('/public/assets/home/response.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 consultant-category">Fast responses</p>
                 </div>
                 <h6 class="fs-18 mt-5">
                   Here you can find most experience and skilful desire consultant, Who can help you project.
@@ -190,8 +189,8 @@
             <div class="col-xl-3 col-md-6">
               <div class="">
                 <div class="d-flex h-60px align-items-center">
-                  <img class="w-50px " src=" {{url('/public/assets/home/quality.png')}}" alt="Image" />
-                  <p class="fs-24 fw-700 ml-lg-3"> High-quality work</p>
+                  <img src=" {{url('/public/assets/home/quality.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 consultant-category"> High-quality work</p>
                 </div>
                 <h6 class="fs-18 mt-5">
                   We have 24/7 online customer service so easily you can reach us.</h6>
@@ -200,8 +199,8 @@
             <div class="col-xl-3 col-md-6 ">
               <div class="">
                 <div class="d-flex h-60px">
-                  <img class="w-40px " src=" {{url('/public/assets/home/help.png')}}" alt="Image" />
-                  <p class="fs-24 fw-700 ml-lg-3"> We're here to help you</p>
+                  <img src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image" style="width:40px;" />
+                  <p class="fs-24 fw-700 ml-lg-3 consultant-category"> We're here to help you</p>
                 </div>
                 <p class="fs-18 text-dark mt-5">
                   You can make payment securely. We have integrity system where your money will be safe.
@@ -235,14 +234,14 @@
           @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
           @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
           <div class="col-lg-3 mb-3">
-            <div class=" card  category h-100">
+            <div class=" card category">
               <div class=" card-body">
                 <div class="">
                   <img class="" src=" {{ custom_asset($category->photo) }}" alt="Image" style="width:60px; 
                   " />
                 </div>
                 <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
-                  <p class="fs-22 fw-600 my-3">{{ $category->name }}</p>
+                  <p class="fs-22 fw-600 my-3" style="height:50px;">{{ $category->name }}</p>
                 </a>
                 <p class="fs-18  mt-2">{{ $category->description }}</p>
               </div>
@@ -268,295 +267,91 @@
     @endif
 
     <!-- Latest job  -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class="">
+    @if (get_setting('featured_category_show') == 'on')
+    <section class="bg-white border-top">
       <div class=" container-home">
-        <div class="d-flex justify-content-between">
-          <div class="w-lg-75 w-xl-50 lh-1-8 content-title">
-            <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
-            <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
+        <div class="d-flex justify-content-between ">
+          <div class="w-lg-75 lh-1-8 content-title">
+            < <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
+              <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
           </div>
           <div>
-            <a class=" " href=" #">
-              <small class="fs-18 fw-400 category-list">All categories</small>
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:18px;" />
+            <a href="{{ route('search') }}?category="
+              class="btn bg-white text-black fs-17 d-lg-none  rounded-1">{{ translate('Browse More Categories') }}
+              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
             </a>
           </div>
         </div>
-        <div class="">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="card rounded card-body">
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-lg-3">
+        <div class="row gutters-10">
 
-                      <img class=" rounded-circle" src=" {{url('/public/assets/home/job-1.png')}}" alt="Image"
-                        style="width:50px;  align-items:center;" />
-                    </div>
-                    <div class="col-lg-9 d-flex justify-content-between">
-                      <div>
-                        <p class="fs-24 fw-700"> Writing and Editing </p>
-                        <h6 class="fs-18 text-dark ">
-                          David
-                        </h6>
-                        <div class="">
-                          <span>$50 hourly</span>
-                          <span>|</span>
-                          <span>1.5 days</span>
-                          <span>|</span>
-                          <span>Expensive</span>
-                          <span>|</span>
-                          <span>Remote</span>
-                        </div>
-                      </div>
-                      <div>
-                        <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                          style="width:15px;  align-items:center;" />
-                      </div>
-                    </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card" style="height:140px;">
+              <div class=" card-body ">
 
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body ">
-                <div class="row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-2.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="col-lg-9 d-flex justify-content-between">
-                    <div>
-                      <p class=" fs-24 fw-700">Research and Analysis</p>
-                      <p class="fs-18 text-dark ">
-                        Mailchimp
-                      </p>
-                      <div class="">
-                        <span>$60 hourly</span>
-                        <span>|</span>
-                        <span>1 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body  ">
-                <div class="row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-3.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="col-lg-9 d-flex justify-content-between">
-                    <div>
-                      <p class="fs-24 fw-700">Course curriculum Development</p>
-                      <p class="fs-18 text-dark ">
-                        Mailchimp
-                      </p>
-                      <div class="">
-                        <span>$40 hourly</span>
-                        <span>|</span>
-                        <span>2 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body">
-                <div class="row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-4.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="d-flex col-lg-9 justify-content-between">
-                    <div>
-                      <p class=" fs-24 fw-700">Course material development</p>
-                      <p class="fs-18 text-dark ">
-                        Malha
-                      </p>
-                      <div class="">
-                        <span>$46 hourly</span>
-                        <span>|</span>
-                        <span>1 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body">
-                <div class="row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-5.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="col-lg-9 d-flex justify-content-between">
-
-                    <div>
-                      <p class=" fs-24 fw-700">Transcription and Translation</p>
-                      <p class="fs-18 text-dark ">
-                        Ikram
-                      </p>
-                      <div class="">
-                        <span>$32 hourly</span>
-                        <span>|</span>
-                        <span>1.5 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body">
-                <div class="row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-6.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="col-lg-9 d-flex justify-content-between">
-                    <div>
-                      <p class=" fs-24 fw-700">Scholarship Applications </p>
-                      <p class="fs-18 text-dark ">
-                        Hamid
-                      </p>
-                      <div class="">
-                        <span>$45 hourly</span>
-                        <span>|</span>
-                        <span>1.5 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body ">
-                <div class=" row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-7.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="col-lg-9 d-flex justify-content-between">
-                    <div>
-                      <p class=" fs-24 fw-700">Academic mentoring </p>
-                      <p class="fs-18 text-dark ">
-                        Abdullah
-                      </p>
-                      <div class="">
-                        <span>$35 hourly</span>
-                        <span>|</span>
-                        <span>1.5 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card rounded card-body">
-                <div class="row">
-                  <div class="col-lg-3">
-                    <img class=" rounded-circle" src=" {{url('/public/assets/home/job-8.png')}}" alt="Image"
-                      style="width:50px;  align-items:center;" />
-                  </div>
-                  <div class="col-lg-9 d-flex justify-content-between">
-                    <div>
-                      <p class=" fs-24 fw-700">Tutoring and Instruction</p>
-                      <p class="fs-18 text-dark ">
-                        Nabid
-                      </p>
-                      <div class="">
-                        <span>$30 hourly</span>
-                        <span>|</span>
-                        <span>1.5 days</span>
-                        <span>|</span>
-                        <span>Expensive</span>
-                        <span>|</span>
-                        <span>Remote</span>
-                      </div>
-                    </div>
-                    <div>
-                      <img class="ml-2" src=" {{url('/public/assets/home/favorites.png')}}" alt="Image"
-                        style="width:15px;  align-items:center;" />
-                    </div>
-                  </div>
-                </div>
+                <p class="fs-22 fw-600  py-3 m-auto " style="">Writing and Editing</p>
               </div>
             </div>
           </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card  " style="height:140px;">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Research and Analysis</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card  ">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Course curriculum Development</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card  ">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Course material development</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card  ">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Transcription and Translation</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card  " style="height:140px;">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Scholarship Applications</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card  " style="height:140px;">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Academic mentoring</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mb-3">
+            <div class=" card " style="height:140px;">
+              <div class=" card-body">
+                <p class="fs-22 fw-600 my-3">Tutoring and Instruction</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+      </div>
       </div>
     </section>
     @endif
-
     <!-- Join us -->
 
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top">
+    <section class="border-top bg-white">
       <div class="container-home">
         <div class="row ">
           <div class="col-lg-6 col-lg-6">
@@ -607,9 +402,9 @@
                   are endless.</h6>
               </div>
             </div>
-            <button type="button" class="btn mt-3 text-white p-2 btn fs-16 px-4" style="background-color:#275846; ">
+            <button type="button" class="talent-button mt-3 p-2 fs-16 px-4">
               <span>Find talent</span>
-              <span><img class="px-1 " src="{{url('/public/assets/home/arrows.png')}}" alt="Image"
+              <span><img class=" px-1 " src=" {{url('/public/assets/home/arrows.png')}}" alt="Image"
                   style="width:18px; " /></span>
             </button>
           </div>
@@ -617,8 +412,6 @@
       </div>
     </section>
     @endif
-
-
 
     @if (get_setting('latest_project_show') == 'on')
     <section class=" bg-white border-top">
@@ -691,192 +484,6 @@
     </section>
 
     @endif
-    <!-- Trending services  -->
-    <!-- @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top" style="background-color:#FBF7ED;">
-      <div class="container-home" style=" ">
-        <div class="d-flex justify-content-between ">
-          <div class="w-lg-75 w-xl-50 lh-1-8 pb-4 ">
-            <h2 class="fw-700 fs-36 text-black">Trending services</h2>
-            <h6 class="fs-18 fw-400">Most viewed and all-time top-selling services</h6>
-          </div>
-          <div>
-            <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
-            <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
-          </div>
-        </div>
-
-
-        <div class="row ">
-          <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:430px">
-              <div class="">
-                <div class="bg-secondary ">
-                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                </div>
-                <div class="p-2" style=" height:110px;">
-                  <div>
-                    <p class="card-title mt-1 fs-18">Web & app design</p>
-                    <p class="card-title mt-1 fs-18 fw-700">I will design modern website in figma or adobe xd</p>
-                    <div class="mt-2">
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
-                  " />
-                      </span>
-                      <span> 4896</span>
-                      <span> reviews</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-2">
-                  <div class="border border-top mt-5"></div>
-                  <div class="d-flex justify-content-between mt-1">
-                    <div>
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
-                          style="width:12px;" />
-                      </span>
-                      <span> World runo</span>
-                    </div>
-                    <div>
-                      <span> starting at $990</span>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:430px">
-              <div class="">
-                <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
-                    alt="Image" /></div>
-                <div class="p-2" style="height:110px;">
-                  <div>
-                    <p class="card-title mt-1 fs-18">Art & illustrations</p>
-                    <a href="#" class="card-title  mt-1 fs-18 fw-700"><u>I will create modern flat design
-                        illustrations</u>
-                    </a>
-                    <div class="mt-2">
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
-                  " />
-                      </span>
-                      <span> 4896</span>
-                      <span> reviews</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-2">
-                  <div class="border border-top mt-5"></div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
-                          style="width:12px; " />
-                      </span>
-                      <span> World runo</span>
-                    </div>
-                    <div>
-                      <span> starting at $990</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class=" col-lg-3 ">
-            <div class=" card rounded-1" style="height:430px">
-              <div class="">
-                <div class="bg-secondary "><img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}"
-                    alt="Image" /></div>
-                <div class="p-2" style="height:150px;">
-                  <div>
-                    <p class="card-title mt-1 fs-18">Design & creative</p>
-                    <p class="card-title mt-1 fs-18 fw-700">I will design fully responsive website website with
-                      HTML,
-                      CSS,
-                      boootstrap..
-                    </p>
-                    <span>
-                      <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:12px; 
-                  " />
-                    </span>
-                    <span> 4896 reviews</span>
-
-                  </div>
-                </div>
-                <div class="p-2">
-                  <div class="border border-top mt-1"></div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image"
-                          style="width:12px; " />
-                      </span>
-                      <span> Brono</span>
-                    </div>
-                    <div>
-                      <span> starting at $990</span>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 ">
-            <div class="card  rounded-1" style="height:430px">
-              <div class="">
-                <div class="bg-secondary ">
-                  <img class="w-100" src=" {{url('/public/assets/home/Trend.png')}}" alt="Image" />
-                </div>
-                <div class="p-2" style="height:110px;">
-                  <div>
-                    <p class="card-title mt-1 fs-18">Web & app design </p>
-                    <p class="card-title mt-1 fs-18 w-100 fw-700">I will do mobile and web development</p>
-                    <div class="mt-2">
-                      <span>
-                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
-                          style="width:12px;" />
-                      </span>
-                      <span> 4896</span>
-                      <span> reviews</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-2">
-                  <div class="border border-top mt-5"></div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <span class="mr-2">
-                        <img src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:12px;" />
-                      </span>
-                      <span> World runo</span>
-                    </div>
-                    <div>
-                      <span> starting at $990</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pt-2 text-center">
-          <a href="#" class="category-list fs-18 fw-400 "><span>All services</span></a>
-          <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
-            style="width:18px;" />
-        </div>
-
-    </section>
-    @endif -->
-
 
     <!-- Trending services new -->
     @if (get_setting('latest_project_show') == 'on')
@@ -892,8 +499,6 @@
             <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
           </div>
         </div>
-
-
         <div class="row ">
           @php
           $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
@@ -906,9 +511,9 @@
           ->get();
           @endphp
           @foreach ($services as $service)
-          <div class="col-lg-3 ">
+          <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card  rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:420px">
                 <div class="">
                   <div class="bg-secondary ">
                     <a href="{{ route('service.show', $service->slug) }}">
@@ -925,7 +530,7 @@
                     <div>
                       <p class="card-title mt-1 fs-18">Web & app design</p>
                       <p class="card-title mt-1 fs-18 fw-700">
-                        {{ \Illuminate\Support\Str::limit($service->title, 45, $end = '...') }}</p>
+                        {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
                       <div class="mt-2">
                         <span>
                           <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
@@ -974,11 +579,9 @@
 
     </section>
     @endif
-
-
     <!-- learn with scholarship australia -->
     @if (get_setting('latest_project_show') == 'on')
-    <section class=" border-top border-bottom">
+    <section class="border-bottom">
       <div class=" container-home">
         <div class="content-title">
           <h2 class="fw-700 fs-36 text-black">People Love To Learn With Scholarships Australia</h2>
@@ -1070,7 +673,6 @@
     @endif
 
     <!-- Blog 2 -->
-
     @if (get_setting('blog_section_show') == 'on')
     <section class="bg-white pb-7 text-white  -pt-3">
       <div class="container-main">
@@ -1119,13 +721,13 @@
                           <p class=" mb-0 s-14 fw-700 blog-cat-name text-dark ">{{ $blog->category->category_name }}</p>
                           @endif
                         </h2> -->
-                        <h2 class="fs-18 fw-600 mb-1 h-45px">
+                        <h2 class="fs-18 fw-600 mb-1 h-40px">
                           <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
                             title="{{ $blog->title }}">
-                            {{ \Illuminate\Support\Str::limit($blog->title, 45, $end = '...') }}
+                            {{ \Illuminate\Support\Str::limit($blog->title, 40, $end = '...') }}
                           </a>
                         </h2>
-                        <h2 class="fs-18 mb-1 h-45px">
+                        <h2 class="fs-18 mb-1 h-40px">
                           <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 "
                             title="{{ $blog->title }}">
                             {{ \Illuminate\Support\Str::limit($blog->short_description, 60, $end = '...') }}
@@ -1145,12 +747,8 @@
     </section>
     @endif
 
-
-
-
-
     <!-- Last section -->
-    @if (get_setting('slider_section_show') == 'on')
+    <!-- @if (get_setting('slider_section_show') == 'on')
     <section class=" " style="min-height:350px; background-color:#FBF7ED;">
       <div class="container-main">
         <div class="pb-5">
@@ -1192,7 +790,7 @@
       </div>
 
     </section>>
-    @endif
+    @endif -->
 
     @endsection
 
