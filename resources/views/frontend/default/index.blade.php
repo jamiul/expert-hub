@@ -284,7 +284,7 @@
         </div>
         <div class="row gutters-10">
 
-          <div class="col-lg-3 mb-3">
+          <div class="col-lg-3 mb-3 ">
             <div class=" card" style="height:140px;">
               <div class=" card-body ">
 
@@ -403,6 +403,7 @@
               </div>
             </div>
             <button type="button" class="talent-button mt-3 p-2 fs-16 px-4">
+
               <span>Find talent</span>
               <span><img class=" px-1 " src=" {{url('/public/assets/home/arrows.png')}}" alt="Image"
                   style="width:18px; " /></span>
@@ -517,7 +518,7 @@
           @foreach ($services as $service)
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:420px">
+              <div class="card rounded-1" style="height:450px">
                 <div class="">
                   <div class="bg-secondary ">
                     <a href="{{ route('service.show', $service->slug) }}">
@@ -530,9 +531,9 @@
                       @endif
                     </a>
                   </div>
-                  <div class="p-2">
+                  <div class="card-body">
                     <div>
-                      <p class="card-title mt-1 fs-18">Web & app design</p>
+                      <p class="card-title  fs-18">Web & app design</p>
                       <p class="card-title mt-1 fs-18 fw-700">
                         {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
                       <div class="mt-2">
@@ -545,7 +546,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="p-2">
+                  <div class="card-body">
                     <div class="border border-top mt-1"></div>
                     <div class="d-flex justify-content-between align-items-center mt-1">
                       <div class="d-flex">
@@ -608,7 +609,7 @@
                   </div>
                 </div>
               </div>
-              <div class=" ">
+              <div class=" mx-1 ">
                 <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
                 <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
                 </p>
@@ -617,7 +618,7 @@
             <div class="col-lg-4">
               <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
-                  <p class="text-primary mt-2 fs-18">Great Work</p>
+                  <p class="text-primary mt-2 fs-18">Good Job</p>
                   <p class=" mt-3 fs-18 " style="height:120px;">"I am happy with his responsiveness throughout the
                     entire
                     project
@@ -629,14 +630,14 @@
                       <img class="mr-2" src=" {{url('/public/assets/home/worldwide.png')}}" alt="Image" style="width:30px;
                   " />
                     </div>
-                    <div>
+                    <div class="">
                       <small class="fw-700 fs-14 text-black"> Mr. jack</small>
                       <h6 class="fs-14 text-muted" style="Line height:10px;"> Information technology expert</h6>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class=" ">
+              <div class="mx-1 ">
                 <p class=" mt-2 fs-18 text-black fw-700">95%</p>
                 <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
                 </p>
@@ -646,7 +647,7 @@
             <div class="col-lg-4 ">
               <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
-                  <p class="text-primary mt-2 fs-18">Great work</p>
+                  <p class="text-primary mt-2 fs-18">Fantastic</p>
                   <p class=" fs-18 " style="height:88px;">
                     " I am happy for my work and recommend him. He is a very potential and committed person."
                   </p>
@@ -664,7 +665,7 @@
                   </>
                 </div>
               </div>
-              <div class="">
+              <div class="mx-1">
                 <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
                 <p class=" mt-3 fs-18">G2s best software awards
                 </p>
