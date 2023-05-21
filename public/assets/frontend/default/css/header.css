@@ -1,5 +1,5 @@
 .dropdown:hover  {
-    display: block;
+    /* display: block; */
 
   }
 
@@ -48,6 +48,7 @@
 .mega-menu-item {
     padding: 10px 0;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .mega-menu-item p {
@@ -56,15 +57,28 @@
     color: gray;
     padding-left: 22px;
     margin: 0;
+    padding-right: 5px;
 
 
 }
-
-.mega-menu-item:hover,
+ .mega-menu-item:hover,
 .about-mega-menu-right:hover,
-.mega-menu-fj-item:hover {
-    background-color: #F2F7F2;
+.mega-menu-fj-item:hover
+ {
+    background-color: #057a61;
     border-radius: 10px;
+
+
+}
+ .mega-menu-item:hover a ,
+ .mega-menu-item:hover p,
+ .mega-menu-fj-item:hover a,
+ .mega-menu-fj-item:hover p,
+ .about-mega-menu-right:hover p,
+ .about-mega-menu-right:hover h3 {
+
+    border-radius: 10px;
+    color: #fff!important;
 
 }
 
@@ -100,12 +114,14 @@
 .mega-menu-fj-item {
     padding: 10px 0;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .mega-menu-fj-item a {
     color: #001e00;
     margin-bottom: 5px;
     font-size: 16px;
+    padding-right:5px ;
 }
 
 .mega-menu-fj-item p {

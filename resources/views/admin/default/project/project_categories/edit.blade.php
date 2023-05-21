@@ -32,9 +32,9 @@
             </select>
           </div>
           <div class="form-group mb-3">
-            <label for="description">{{translate('description')}}</label>
-            <input type="text" id="description" name="description" placeholder="{{ translate('Add your description') }}"
-              value="{{ $project_category->description }}" class="form-control" required>
+            <label for="description">{{translate('Description')}}</label>
+            <input type="text" id="description" name="description" placeholder="{{ translate('description') }}"
+              value="{{ $project_category->description}}" class="form-control" required>
           </div>
           <div class="form-group mb-3">
             <label for="image">{{translate('Icon')}}</label>

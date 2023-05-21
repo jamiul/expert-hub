@@ -2,229 +2,179 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use \App\Models\User;
-use \App\Models\Skill;
-use App\Models\Address;
-use \App\Models\Project;
-use \App\Models\Service;
-use App\Models\ProjectUser;
-use App\Models\UserPackage;
-use Illuminate\Support\Arr;
-use \App\Models\UserProfile;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use \App\Models\ProjectCategory;
-use App\Utility\CategoryUtility;
-use \App\Models\SystemConfiguration;
-use \App\Models\Scholarship;
+use App\Models\ScholarshipCategory;
+use App\Models\Scholarship;
+use App\Models\ScholarshipLevel;
 
 class ScholarshipController extends Controller
 {
-    public function index(Request $request){
-        if($request->type == 'freelancer'){
-            $type = 'freelancer';
-            $keyword = $request->keyword;
-            $rating = $request->rating;
-            $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-            $category_ids = CategoryUtility::children_ids($category_id);
-            $category_ids[] = $category_id;
-            $country_id = $request->country_id;
-            $min_price = $request->min_price;
-            $max_price = $request->max_price;
-            $skill_ids = $request->skill_ids ?? [];
-            $freelancers = UserProfile::query();
+    public function __construct()
+    {
+        $this->middleware(['permission:show all blogs'])->only('index');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $sort_search = null;
+        $blogs = Scholarship::orderBy('created_at', 'desc');
 
-            if($request->keyword != null){
-                $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%'.$keyword.'%')->pluck('id');
-                $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
-                        ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
-                        ->whereIn('user_id', $user_ids)
-                        ->pluck('user_id');
 
-                $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
-            } else {
-                $user_ids = User::where('user_type', 'freelancer')->pluck('id');
-                $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
-                        ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
-                        ->whereIn('user_id', $user_ids)
-                        ->pluck('user_id');
-                $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
-            }
-
-            if($category_id != null){
-                $freelancers = $freelancers->whereIn('specialist', $category_ids);
-            }
-            
-            if($country_id != null){
-                $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
-                $freelancers = $freelancers->whereIn('user_id', $user_ids);
-                
-            }
-
-            if($min_price != null){
-                $freelancers = $freelancers->where('hourly_rate', '>=', $min_price);
-                
-            }
-            
-            if($max_price != null){
-                $freelancers = $freelancers->where('hourly_rate', '<=', $max_price);
-            }
-
-            if($request->rating != null){
-                if ($rating == "4+") {
-                    $freelancers = $freelancers->where('rating', '>', 4);
-                }
-                else {
-                    $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
-                }
-            }
-
-            if(count($skill_ids) > 0){
-                $filtered_freelancers = [];
-                foreach ($freelancers->get() as $key => $freelancer) {
-                    
-                    $skills_of_this_freelancer = json_decode($freelancer->skills); 
-                    
-                    if(!is_null($skills_of_this_freelancer)){
-                        foreach ($skills_of_this_freelancer as $key => $freelancer_slill_id) {
-                        if(in_array($freelancer_slill_id, $skill_ids)){
-                            array_push($filtered_freelancers,$freelancer);
-                            break;
-                        }
-                    }
-                    }
-                } 
-                $total = count($filtered_freelancers);
-                $freelancers = $filtered_freelancers;
-            }else{
-                $total = $freelancers->count();
-                $freelancers = $freelancers->paginate(8)->appends($request->query());
-            } 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price'));
-        } else if($request->type == 'service'){
-            $type = 'service';
-            $keyword = $request->keyword;
-            $rating = $request->rating;
-
-            $user_ids = UserPackage::where('package_invalid_at', '!=', null)
-                        ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
-                        ->pluck('user_id');
-
-            $services = Service::whereIn('user_id', $user_ids); 
-
-            if($request->keyword != null){
-                $service_ids = Service::where('title', 'like', '%'.$keyword.'%')->pluck('id');
-                $services = $services->whereIn('id', $service_ids);
-            }
-
-            $category_id = (ProjectCategory::where('slug', $request->category)->first() != null) ? ProjectCategory::where('slug', $request->category)->first()->id : null;
-            
-            $category_ids = CategoryUtility::children_ids($category_id);
-            $category_ids[] = $category_id;
-            if($category_id != null){
-                $projects = $services->whereIn('project_cat_id', $category_ids);
-            }
-
-            $total = $services->count();
-            $services = $services->paginate(9)->appends($request->query());
-            return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
+        if ($request->search != null){
+            $blogs = $blogs->where('title', 'like', '%'.$request->search.'%');
+            $sort_search = $request->search;
         }
-        else {
-            $type = 'project';
-            $keyword = $request->keyword;
-            $projectType = array('Fixed', 'Long Term');
-            $bids = $request->bids;
-            $sort = $request->sort;
-            $category_id = (ProjectCategory::where('slug', $request->category)->first() != null) ? ProjectCategory::where('slug', $request->category)->first()->id : null;
-            $category_ids = CategoryUtility::children_ids($category_id);
-            $category_ids[] = $category_id;
-            $min_price = $request->min_price;
-            $max_price = $request->max_price;
 
-            $project_approval = SystemConfiguration::where('type','project_approval')->first()->value;
-            if($project_approval == 1){
-                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0')->where('project_approval',1);
-            }else{
-                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0');
-            }
+        $blogs = $blogs->paginate(15);
+        // dd($blogs);
 
-            if($category_id != null){
-                $projects = $projects->whereIn('project_category_id', $category_ids);
-            }
-            $projects = $projects->where('name', 'like', '%'.$keyword.'%');
-
-            if($request->projectType != null){
-                $projectType = $request->projectType;
-                $projects = $projects->whereIn('type', $projectType);
-            }
-
-            if($request->bids != null){
-                if ($bids == "30+") {
-                    $projects = $projects->where('bids', '>', 30);
-                }
-                else {
-                    $projects = $projects->whereIn('bids', explode('-', $bids));
-                }
-            }
-
-            if($min_price != null){
-                $projects = $projects->where('price', '>=', $min_price);
-                
-            }
-            
-            if($max_price != null){
-                $projects = $projects->where('price', '<=', $max_price);
-            }
-
-            switch ($sort) {
-                case '1':
-                    $projects = $projects->orderBy('created_at', 'desc');
-                    break;
-                case '2':
-                    $projects = $projects->orderBy('price', 'asc');
-                    break;
-                case '3':
-                    $projects = $projects->orderBy('price', 'desc');
-                    break;
-                case '4':
-                    $projects = $projects->orderBy('bids', 'asc');
-                    break;
-                case '5':
-                    $projects = $projects->orderBy('bids', 'desc');
-                    break;
-                default:
-                    $projects = $projects->latest();
-                    break;
-            }
-
-
-
-            $total = $projects->count();
-            $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.scholarships-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price'));
-        }
+        return view('admin.default.scholarship_module.scholarship.index', compact('blogs','sort_search'));
     }
 
-    public function searchBySkill(Request $request, $id, $type){
-        $skill = Skill::findOrFail($id);
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $blog_categories = ScholarshipCategory::all();
+        $blog_levels = ScholarshipLevel::all();
 
-        $keyword = $request->keyword;
-        $projectType = array('Fixed', 'Long Term');
-        $bids = $request->bids;
-        $sort = $request->sort;
+        return view('admin.default.scholarship_module.scholarship.create', compact('blog_categories',"blog_levels"));
 
-        if($type == 'projects'){
-            $project_approval = SystemConfiguration::where('type','project_approval')->first()->value;
-            if($project_approval == 1){
-                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0')->where('project_approval',1);
-            }else{
-                $projects = scholarship::biddable()->notcancel()->open()->where('private', '0');
-            }
-
-            $projects = $projects->where('skills', 'like', '%'.'"'.$id.'"'.'%')->latest();
-            $total = count($projects->get());
-            $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.scholarship-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
-        }
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'category_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'level_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+
+        $blog = new Scholarship;
+
+        $blog->category_id = $request->category_id;
+        $blog->level_id = $request->level_id;
+        $blog->title = $request->title;
+        $blog->short_description = $request->short_description;
+        $blog->banner = $request->banner;
+        $blog->meta_title = $request->meta_title;
+        $blog->description = $request->description;
+        $blog->meta_img = $request->meta_img;
+        $blog->meta_description = $request->meta_description;
+        $blog->meta_keywords = $request->meta_keywords;
+        $blog->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+        $blog->save();
+
+        flash(translate('Blog post has been created successfully'))->success();
+        return redirect()->route('scholarship.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $blog = Scholarship::find($id);
+        $blog_categories = ScholarshipCategory::all();
+
+        return view('admin.default.scholarship_module.scholarship.edit', compact('blog','blog_categories'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'category_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+
+        $blog = Scholarship::find($id);
+
+        $blog->category_id = $request->category_id;
+        $blog->title = $request->title;
+        $blog->banner = $request->banner;
+        $blog->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+        $blog->short_description = $request->short_description;
+        $blog->description = $request->description;
+
+        $blog->meta_title = $request->meta_title;
+        $blog->meta_img = $request->meta_img;
+        $blog->meta_description = $request->meta_description;
+        $blog->meta_keywords = $request->meta_keywords;
+
+        $blog->save();
+
+        flash(translate('Blog post has been updated successfully'))->success();
+        return redirect()->route('scholarship.index');
+    }
+
+    public function change_status(Request $request) {
+        $blog = Scholarship::find($request->id);
+        $blog->status = $request->status;
+
+        $blog->save();
+        return 1;
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        Scholarship::find($id)->delete();
+
+        return redirect('admin/blogs');
+    }
+
+
+    public function all_blog() {
+        $blogs = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
+        return view("frontend.default.scholarship.listing", compact('blogs'));
+    }
+
+    public function blog_details($slug) {
+        $blog = Scholarship::where('slug', $slug)->first();
+        return view("frontend.default.scholarship.details", compact('blog'));
+}
 }

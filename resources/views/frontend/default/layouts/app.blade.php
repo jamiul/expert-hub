@@ -73,7 +73,7 @@ $lang = \App\Models\Language::where('code', $locale)->first();
             nothing_selected: '{{translate('
             Nothing selected ')}}',
             nothing_found: '{{translate('
-            Nothing found ') }}',
+            Nothing found ')}}',
             choose_file: '{{translate('
             Choose file ')}}',
             file_selected: '{{translate('
@@ -83,14 +83,14 @@ $lang = \App\Models\Language::where('code', $locale)->first();
             items_selected: '{{translate('
             Items selected ')}}',
             add_more_files: '{{translate('
-            Add more files ') }}',
+            Add more files ')}}',
             adding_more_files: '{{translate('
             Adding more files ')}}',
             drop_files_here_paste_or: '{{translate('
             Drop files here,
-            paste or')}}',
-            browse:'{{translate('
-            Browse')}}',
+            paste or ')}}',
+            browse: '{{translate('
+            Browse ')}}',
             upload_complete: '{{translate('
             Upload complete ')}}',
             upload_paused: '{{translate('
@@ -279,14 +279,14 @@ $lang = \App\Models\Language::where('code', $locale)->first();
     </div>
     @endif
 
-    <script src="{{ my_asset('assets/common/js/vendors.js') }}"></script>
-    <script src="{{ my_asset('assets/common/js/jssocials.min.js') }}"></script>
-    <script src="{{ my_asset('assets/common/js/aiz-core.js') }}"></script>
+    <script src="{{my_asset('assets/common/js/vendors.js')}}"></script>
+    <script src="{{my_asset('assets/common/js/jssocials.min.js')}}"></script>
+    <script src="{{my_asset('assets/common/js/aiz-core.js')}}"></script>
 
     <script type="text/javascript">
         @foreach(session('flash_notification', collect()) -> toArray() as $message)
         AIZ.plugins.notify('{{$message['
-            level']}}', '{{$message['
+            level']}}','{{$message['
             message']}}');
         @endforeach
     </script>
