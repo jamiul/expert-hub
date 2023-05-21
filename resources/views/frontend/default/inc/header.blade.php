@@ -316,14 +316,14 @@
 
               <!-- Navbar dropdown -->
               <li class="nav-item ml-lg-2">
-              <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a class="nav-link text-white"
                   href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Post Academic Jobs') }}</a>
-              </li>
+              </li> -->
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Academic Jobs') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Jobs ') }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
@@ -332,7 +332,7 @@
               <li class="dropdown mega_menu nav-item">
                 <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ translate('Find Academic Consultants') }}
+                  {{ translate('Find Consultants') }}
                 </a>
                 <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
                   <div class="row mx-2">
@@ -364,8 +364,10 @@
                 </div>
               </li>
 
-
-
+              <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{route('blog')}}">{{ translate(' Find Workshops & Training ') }}</a>
+              </li>
               <li class="nav-item dropdown mega_menu text-white">
                 <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
@@ -436,13 +438,7 @@
                   </div>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{route('blog')}}">{{ translate(' Find Workshops& Training ') }}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white">{{ translate(' FreelancerEdu Benefits') }}</a>
-              </li>
+
               </li>
             </ul>
             <!-- Left links -->
