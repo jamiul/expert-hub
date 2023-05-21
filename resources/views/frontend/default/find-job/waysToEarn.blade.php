@@ -34,8 +34,27 @@
         <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Sign up</button>
         <div class="border-bottom mt-5"></div>
         <h6 class="my-3 " style="">Trusted By</h6>
-        <div>
-          <img src=" {{url('/public/assets/findJob/companies.png')}}" alt="Image" style=" height:40px; " />
+        <div class="col-12">
+          <div class="row">
+
+            <div class="mr-5">
+              <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+            </div>
+            <div class="mr-5">
+              <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+            </div>
+            <div class="mr-5">
+              <img class="" src="{{my_asset('automatic.svg')}}" alt="">
+            </div>
+            <div class="mr-5">
+              <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+            </div>
+            <div class="">
+              <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+            </div>
+
+          </div>
+
         </div>
       </div>
       <div class="col-lg-6  py-2  px-5">
