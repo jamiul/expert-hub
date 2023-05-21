@@ -36,6 +36,7 @@
                         <th>#</th>
                         <th>{{translate('Title')}}</th>
                         <th data-breakpoints="lg">{{translate('Category')}}</th>
+                        <th data-breakpoints="lg">{{translate('level')}}</th>
                         <th data-breakpoints="lg">{{translate('Short Description')}}</th>
                         <th data-breakpoints="lg">{{translate('Status')}}</th>
                         <th class="text-right">{{translate('Options')}}</th>
@@ -53,6 +54,13 @@
                         <td>
                             @if($blog->category != null)
                                 {{ $blog->category->category_name }}
+                            @else
+                                --
+                            @endif
+                        </td>
+                        <td>
+                            @if($blog->level != null)
+                                {{ $blog->level->level_name }}
                             @else
                                 --
                             @endif

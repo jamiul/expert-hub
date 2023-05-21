@@ -272,8 +272,8 @@
       <div class=" container-home">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 lh-1-8 content-title">
-            < <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
-              <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
+            <h2 class="fw-700 fs-36 text-black ">Browse Academic Jobs by Category</h2>
+            <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
           </div>
           <div>
             <a href="{{ route('search') }}?category="
@@ -348,8 +348,8 @@
       </div>
     </section>
     @endif
-    <!-- Join us -->
 
+    <!-- Join us -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top bg-white">
       <div class="container-home">
@@ -487,7 +487,7 @@
 
     <!-- Trending services new -->
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top" style="background-color:#FBF7ED;">
+    <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
       <div class="container-home" style=" ">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
@@ -495,8 +495,12 @@
             <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
           </div>
           <div>
-            <img class=" " src=" {{url('/public/assets/home/back.png')}}" alt="Image" style="width:20px;" />
-            <img class=" " src=" {{url('/public/assets/home/next.png')}}" alt="Image" style="width:20px;" />
+            <div class="pt-2 text-center">
+              <a href="{{ route('search') }}?keyword=&type=service" class="category-list fs-18 fw-400 "><span>All
+                  services</span></a>
+              <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+                style="width:18px;" />
+            </div>
           </div>
         </div>
         <div class="row ">
@@ -570,12 +574,7 @@
           </div>
           @endforeach
         </div>
-        <div class="pt-2 text-center">
-          <a href="{{ route('search') }}?keyword=&type=service" class="category-list fs-18 fw-400 "><span>All
-              services</span></a>
-          <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
-            style="width:18px;" />
-        </div>
+
 
     </section>
     @endif

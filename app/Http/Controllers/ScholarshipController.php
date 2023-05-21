@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ScholarshipCategory;
 use App\Models\Scholarship;
+use App\Models\ScholarshipLevel;
 
 class ScholarshipController extends Controller
 {
@@ -23,12 +24,14 @@ class ScholarshipController extends Controller
         $sort_search = null;
         $blogs = Scholarship::orderBy('created_at', 'desc');
 
+
         if ($request->search != null){
             $blogs = $blogs->where('title', 'like', '%'.$request->search.'%');
             $sort_search = $request->search;
         }
 
         $blogs = $blogs->paginate(15);
+        // dd($blogs);
 
         return view('admin.default.scholarship_module.scholarship.index', compact('blogs','sort_search'));
     }
@@ -41,7 +44,10 @@ class ScholarshipController extends Controller
     public function create()
     {
         $blog_categories = ScholarshipCategory::all();
-        return view('admin.default.scholarship_module.scholarship.create', compact('blog_categories'));
+        $blog_levels = ScholarshipLevel::all();
+
+        return view('admin.default.scholarship_module.scholarship.create', compact('blog_categories',"blog_levels"));
+
     }
 
     /**
@@ -57,10 +63,15 @@ class ScholarshipController extends Controller
             'category_id' => 'required',
             'title' => 'required|max:255',
         ]);
+        $request->validate([
+            'level_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
 
         $blog = new Scholarship;
 
         $blog->category_id = $request->category_id;
+        $blog->level_id = $request->level_id;
         $blog->title = $request->title;
         $blog->short_description = $request->short_description;
         $blog->banner = $request->banner;

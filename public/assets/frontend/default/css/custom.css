@@ -420,7 +420,11 @@
     bottom: -10 !important;
     margin: 10px 0 0 10px;
 }
+.how-to-hire-banner-rating-section {
+    bottom: -18px !important;
+    width: 94%;
 
+}
 /* how-to-find-job */
 .find-job-banner p {
     color: black;
@@ -434,9 +438,9 @@
     font-weight: 700;
 }
 .find-job-banner-rating-section {
-    bottom: 0px;
+    bottom: -38px !important;
     width: 94%;
-    margin: 0 2 0 2;
+
 }
 .find-job-banner-rating-section p {
     color: #5e6d55;
@@ -657,10 +661,10 @@
 #fre-buildingBusiness:checked ~ label {
     display: none;
 }
-fre-badges {
+#fre-badges {
     display: none;
 }
-fre-badges:checked ~ .fre-content {
+#fre-badges:checked ~ .fre-content {
     display: block;
     color: #5e6d55;
     letter-spacing: 0.6px;
@@ -669,7 +673,7 @@ fre-badges:checked ~ .fre-content {
     font-weight: 500;
     line-height: 22px;
 }
-fre-badges:checked ~ label {
+#fre-badges:checked ~ label {
     display: none;
 }
 #fre-Connects {

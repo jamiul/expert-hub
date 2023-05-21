@@ -316,10 +316,23 @@
 
               <!-- Navbar dropdown -->
               <li class="nav-item ml-lg-2">
+              <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Post Academic Jobs') }}</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Academic Jobs') }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+              </li>
               <li class="dropdown mega_menu nav-item">
                 <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ translate('Find Academic Talent') }}
+                  {{ translate('Find Academic Consultants') }}
                 </a>
                 <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
                   <div class="row mx-2">
@@ -350,16 +363,8 @@
 
                 </div>
               </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Academic Work') }}</a>
-              </li>
 
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
-              </li>
+
 
               <li class="nav-item dropdown mega_menu text-white">
                 <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown"
@@ -392,7 +397,7 @@
 
                           <div id="successStories" class="w-75 mega-menu-item">
 
-                            <a class="dropdown-item "
+                            <a class="dropdown-item succes-dmenu"
                               href="{{route('success-stories')}}">{{ translate('Success Stories') }}
                             </a>
                             <p>{{translate('Discover how to team work strategically and grow together')}}</p>
@@ -406,7 +411,7 @@
                       <h5>Where work gets done</h5>
                       <div class="mt-1">
 
-                        <div class="about-mega-menu-right">
+                        <div class="about-mega-menu-right c-pointer">
                           <p>
                             Guides
                           </p>
@@ -432,9 +437,13 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="{{route('blog')}}">{{ translate('Resources') }}</a>
+                <a class="nav-link text-white"
+                  href="{{route('blog')}}">{{ translate(' Find Workshops& Training ') }}</a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link text-white">{{ translate(' FreelancerEdu Benefits') }}</a>
+              </li>
+              </li>
             </ul>
             <!-- Left links -->
           </div>
@@ -452,7 +461,7 @@
 
   <script>
   document.getElementById('review').addEventListener('click', function() {
-    window.location.href = "{{ route('review')}}";
+    window.location.href = " {{ route('review')}}";
   });
   </script>
   <script>

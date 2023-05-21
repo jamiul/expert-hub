@@ -63,7 +63,8 @@
 }
  .mega-menu-item:hover,
 .about-mega-menu-right:hover,
-.mega-menu-fj-item:hover {
+.mega-menu-fj-item:hover
+ {
     background-color: #057a61;
     border-radius: 10px;
 
@@ -72,14 +73,14 @@
  .mega-menu-item:hover a ,
  .mega-menu-item:hover p,
  .mega-menu-fj-item:hover a,
- .mega-menu-fj-item:hover p {
+ .mega-menu-fj-item:hover p,
+ .about-mega-menu-right:hover p,
+ .about-mega-menu-right:hover h3 {
 
     border-radius: 10px;
-    color: #fff !important;
-
+    color: #fff!important;
 
 }
-
 
 .about-mega-menu-right {
     width: 60%;

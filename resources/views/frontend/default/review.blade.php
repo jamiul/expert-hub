@@ -415,7 +415,7 @@
                         <p class="frequently-qsn-details">
                             During the 14-day feedback period at the end of a contract, the client will be asked to leave a review while ending the contract. As the talent, you can also leave a review for the client by looking at your ended
                         </p>
-                        <div class="content ">
+                        <div class="fre-content ">
                             <p>
                                 contracts within that same 14-day feedback period. The review will be public once both of you leave one for each other or the 14-day period ends.
                             </p>
@@ -430,7 +430,7 @@
                         <p class="frequently-qsn-details">
                             There’s a few ways to change how your review appears on scholarship australia starting with responding to a review. Within 28 days of the end of the contract, you can post a follow-up comment to a review about you that
                         </p>
-                        <div class="content ">
+                        <div class="fre-content ">
                             <p>
                                 will show up on your public profile. You can also work directly with your client or talent to enable feedback changes and revise the review. If you feel the review violates scholarship australia’s terms of service and you would like to dispute a review, scholarship australia’s customer service team is there to help.
                             </p>
@@ -447,7 +447,7 @@
                         <p class="frequently-qsn-details">
                             Seeing your reviews is easy on scholarship australia, simply visit your profile and all your public reviews will be there. If your contract just ended, it can take up to 14 days for your review to become public. You can also find your feedback for specific contracts in your contracts dashboard.
                         </p>
-                        <div class="content ">
+                        <div class="fre-content ">
                             <label class="fre-expand-icon" for="fre-ch">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
                         <label class="fre-expand-icon" for="fre-ch">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
@@ -473,7 +473,7 @@
 
                             <h5 class="col-lg-8 text-white fs-16 bottom-0">Join the world’s work marketplace and get work done, your way. </h5>
                             <div class=" col-lg-4  border border-white rounded-1 fre-join-scholarship-btn ">
-                                <p class="text-white fs-14 ">Join scholarship australia</p>
+                                <p class="text-white fs-14 m-0">Join scholarship australia</p>
                             </div>
                         </div>
                     </div>

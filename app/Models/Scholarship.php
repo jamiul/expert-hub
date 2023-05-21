@@ -9,8 +9,11 @@ class Scholarship extends Model
 {
     use SoftDeletes;
 
-    public function posts()
-    {
-        return $this->hasMany(Scholarship::class);
-}
+    public function category() {
+        return $this->belongsTo(ScholarshipCategory::class, 'category_id');
+    }
+    public function level() {
+        return $this->belongsTo(ScholarshipLevel::class, 'level_id');
+    }
+
 }
