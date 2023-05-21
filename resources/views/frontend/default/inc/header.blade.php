@@ -363,7 +363,7 @@
 
                                                     <div id="successStories" class="w-75 mega-menu-item" >
 
-                                                        <a class="dropdown-item " href="{{route('success-stories')}}">{{ translate('Success Stories') }}
+                                                        <a class="dropdown-item succes-dmenu" href="{{route('success-stories')}}">{{ translate('Success Stories') }}
                                                         </a>
                                                         <p>{{translate('Discover how to team work strategically and grow together')}}</p>
                                                     </div>
@@ -376,7 +376,7 @@
                                             <h5>Where work gets done</h5>
                                             <div class="mt-1">
 
-                                                <div class="about-mega-menu-right">
+                                                <div class="about-mega-menu-right c-pointer">
                                                     <p>
                                                         Guides
                                                     </p>
