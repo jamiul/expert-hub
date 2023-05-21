@@ -14,9 +14,10 @@
   <div class="mx-3 rounded-md my-lg-2 " style="background: #F2F7F2;">
     <div class="row py-2">
       <div class="col-lg-6 mt-4 px-5 review-banner-main">
-        <h3 class="fs-sm-20 text-success review-banner-title">Learn how to promote yourself</h3>
-        <p class="review-banner-text">Stand out from the competition and get more control over your chances of winning
-          the work you want.</p>
+        <h1 class="fs-sm-20 text-success review-banner-title">Learn how to promote yourself</h1>
+        <h5 class="review-banner-text my-3">Stand out from the competition and get more control over your chances of
+          winning
+          the work you want.</h5>
         <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Find work</button>
       </div>
       <div class="col-lg-6  py-2 px-5">
@@ -34,12 +35,12 @@
         <div class="review-banner-main">
           <h1 class=" text-success fs-30px"> Use Connects to give you the edge when you need it
           </h1>
-          <p class="text-justify review-banner-text">
+          <h5 class="text-justify review-banner-text">
             Spend Connects like points on Upwork to show potential clients that you’re serious about your business and
             invested in building a working relationship with them. Connects are an investment toward your freelance
             career. Win more work, increase your earning power and build longer-lasting relationships with clients who
             know you best.
-          </p>
+          </h5>
         </div>
       </div>
       <div class="col-lg-6 px-5">
@@ -52,7 +53,7 @@
 
   <div class="jumbotron " style="">
     <div class="container">
-      <h1 class="text-success fs-30px mb-3">Explore ways to take more control and win more work</h1>
+      <h1 class="text-success fs-30px mb-4">Explore ways to take more control and win more work</h1>
       <div class=" row  pb-3">
         <div class=" col-lg-6 col-sm-12">
           <div class="card rounded-2 bg-white h-100">
