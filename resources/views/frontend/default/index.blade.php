@@ -170,8 +170,7 @@
                   <p class="fs-24 ml-3 fw-700 ml-lg-3 consultant-category">Accessible academic experts </p>
                 </div>
                 <h6 class="fs-18 mt-5">
-                  Its free and easy to post a job. Simply fill in a title descriptions and other additional
-                  requirments</h6>
+                  You can find skillful consultant in your desire field project</h6>
               </div>
             </div>
             <div class="col-xl-3 col-md-6">
@@ -181,7 +180,7 @@
                   <p class="fs-24 fw-700 ml-lg-3 consultant-category">Fast responses</p>
                 </div>
                 <h6 class="fs-18 mt-5">
-                  Here you can find most experience and skilful desire consultant, Who can help you project.
+                  We have 24/7 online customer service so easily you can reach us and get the responses.
                 </h6>
 
               </div>
@@ -193,7 +192,8 @@
                   <p class="fs-24 fw-700 ml-lg-3 consultant-category"> High-quality work</p>
                 </div>
                 <h6 class="fs-18 mt-5">
-                  We have 24/7 online customer service so easily you can reach us.</h6>
+                  The service will be accurate, neat, attentive to detail, consistent, high standards.
+                </h6>
               </div>
             </div>
             <div class="col-xl-3 col-md-6 ">
@@ -203,7 +203,7 @@
                   <p class="fs-24 fw-700 ml-lg-3 consultant-category"> We're here to help you</p>
                 </div>
                 <p class="fs-18 text-dark mt-5">
-                  You can make payment securely. We have integrity system where your money will be safe.
+                  Our community will assist you anyways, we are ready to serve you any time.
                 </p>
               </div>
             </div>
@@ -359,12 +359,12 @@
               style="width:500px;" />
           </div>
           <div class=" col-lg-6 col-sm-12">
-            <p class="fs-24 fw-700">Join world best marketplace for consultant</p>
-            <h6 class="fs-18 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus
+            <h2 class="fs-24 fw-700">Join world best marketplace for consultant</h2>
+            <h2 class="fs-18 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad cumque doloribus
               odio
               amet
               aperiam
-              voluptatum doloremq ue, sint ratione sit beatae </h6>
+              voluptatum doloremq ue, sint ratione sit beatae </h2>
             <div class="">
               <div class=" d-flex ">
                 <div>
@@ -485,14 +485,14 @@
 
     @endif
 
-    <!-- Trending services new -->
+    <!-- Trending services -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
       <div class="container-home" style=" ">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2>
-            <p class="fs-17 text-secondary">{{ get_setting('service_section_subtitle') }}</p>
+            <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p>
           </div>
           <div>
             <div class="pt-2 text-center">
@@ -588,10 +588,11 @@
         <div class="">
           <div class="row ">
             <div class="col-lg-4">
-              <div class=" card rounded-1 " style="height:280px;">
+              <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
                   <p class="text-primary mt-2 fs-18">Great Work</p>
-                  <p class=" mt-3 fs-18 ">"I am very satisfied with his work; so far, he has consistently
+                  <p class=" mt-3 fs-18 " style="height:120px;">"I am very satisfied with his work; so far, he has
+                    consistently
                     delivered his job on time. We will work together in the future."
                   </p>
                   <hr>
@@ -614,10 +615,12 @@
               </div>
             </div>
             <div class="col-lg-4">
-              <div class=" card rounded-1 " style="height:280px;">
+              <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
                   <p class="text-primary mt-2 fs-18">Great Work</p>
-                  <p class=" mt-3 fs-18 ">"I am happy with his responsiveness throughout the entire project
+                  <p class=" mt-3 fs-18 " style="height:120px;">"I am happy with his responsiveness throughout the
+                    entire
+                    project
                     duration; he was very experienced and provided quality work."
                   </p>
                   <hr>
@@ -641,10 +644,10 @@
               </div>
             </div>
             <div class="col-lg-4 ">
-              <div class=" card rounded-1 " style="height:280px;">
+              <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
                   <p class="text-primary mt-2 fs-18">Great work</p>
-                  <p class=" mt-3 fs-18 ">
+                  <p class=" fs-18 " style="height:88px;">
                     " I am happy for my work and recommend him. He is a very potential and committed person."
                   </p>
                   <div class="border-top mt-5"></div>
@@ -671,10 +674,10 @@
     </section>
     @endif
 
-    <!-- Blog 2 -->
+    <!-- Blog -->
     @if (get_setting('blog_section_show') == 'on')
-    <section class="bg-white pb-7 text-white  -pt-3">
-      <div class="container-main">
+    <section class="bg-white  text-white  -pt-3">
+      <div class="container-home">
         <div class="d-flex justify-content-between content-title">
           <div class="">
             <div class="section-title ">
@@ -715,12 +718,7 @@
                       <div>
                         <p class="mb-2 fs-14 text-dark">
                           {{ $blog->created_at ? date('d.m.Y',strtotime($blog->created_at)) : '' }}</p>
-                        <!-- <h2 class="fs-18 fw-600 mb-1  ">
-                          @if ($blog->category != null)
-                          <p class=" mb-0 s-14 fw-700 blog-cat-name text-dark ">{{ $blog->category->category_name }}</p>
-                          @endif
-                        </h2> -->
-                        <h2 class="fs-18 fw-600 mb-1 h-40px">
+                        <h2 class="fs-18 fw-600 mb-3 h-40px" style="line-height:23px;">
                           <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
                             title="{{ $blog->title }}">
                             {{ \Illuminate\Support\Str::limit($blog->title, 40, $end = '...') }}
