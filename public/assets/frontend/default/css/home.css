@@ -165,7 +165,10 @@ right:0;
     margin:10px 8% 30px !important;    
 }
 .content-title{
-    padding-bottom: 50px;
+    padding-bottom: 30px;
+}
+.heading-title{
+    color:#5ABC76;
 }
 .img-slider{
     width:84%;

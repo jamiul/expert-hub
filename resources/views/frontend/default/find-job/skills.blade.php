@@ -16,7 +16,7 @@
   <section class="py-4 py-lg-5">
     <div class="container">
       <div>
-        <h1 class="mt-5  " style="color:#50A907;">Find the best freelance jobs</h1>
+        <h1 class="mt-5  " style="color:#5ABC76;">Find the best freelance jobs</h1>
         <h6 class="my-4 header">Browse jobs posted on Upwork, or jump right in and create a free profile to find the
           work that
           you love to do.
@@ -26,10 +26,10 @@
             </button>
           </div>
           <div class="d-flex ml-5">
-            <div><img src="{{url('/public/assets/findJob/video.png')}}" alt="Image" "
-              class=" mr-3 rounded-2" style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
+            <div><img src="{{url('/public/assets/findJob/video.png')}}" alt="Image" class=" mr-3 rounded-2"
+                style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
             </div>
-            <div><span class="fs-16" style="color:#4FA808;"> Watch a demo</span></div>
+            <div><span class="fs-16" style="color:#5ABC76;"> Watch a demo</span></div>
 
           </div>
         </div>
