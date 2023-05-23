@@ -176,5 +176,5 @@ class ScholarshipController extends Controller
     public function blog_details($slug) {
         $blog = Scholarship::where('slug', $slug)->first();
         return view("frontend.default.scholarship.details", compact('blog'));
-    }
+}
 }

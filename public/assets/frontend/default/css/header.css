@@ -13,7 +13,7 @@
 }
 .navbar .nav-item .nav-link{
     color:#fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     margin-left: 15px;
     transition: all 0.5s ease-in-out;
@@ -78,11 +78,9 @@
  .about-mega-menu-right:hover h3 {
 
     border-radius: 10px;
-    color: #fff !important;
-
+    color: #fff!important;
 
 }
-
 
 .about-mega-menu-right {
     width: 60%;
@@ -95,7 +93,7 @@
     align-items: flex-start;
     margin: 10px 0 10px 0;
     padding: 10px 20px 15px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5em;
 }
 

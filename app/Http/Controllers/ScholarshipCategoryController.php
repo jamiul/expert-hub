@@ -127,5 +127,5 @@ class ScholarshipCategoryController extends Controller
         ScholarshipCategory::find($id)->delete();
 
         return redirect('admin/blog-category');
-    }
+}
 }
