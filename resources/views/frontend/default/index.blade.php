@@ -384,7 +384,7 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-            <h2 class="fw-700 fs-36 heading-title">Services</h2>
+            <h2 class="fw-700 fs-36 heading-title">Featured trending services</h2>
             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
           </div>
           <div>
