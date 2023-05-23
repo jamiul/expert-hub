@@ -6,7 +6,19 @@
 
 </head>
 <style>
+.text-overlay {
+  position: relative;
+}
 
+.text-overlay h2,
+.text-overlay p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
 </style>
 
 <body>
@@ -210,6 +222,127 @@
     @endif
 
 
+    <!-- Trending jobs -->
+    @if (get_setting('latest_project_show') == 'on')
+    <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
+      <div class="container-home" style=" ">
+        <div class="d-flex justify-content-between ">
+          <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
+            <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+            <h2 class="fw-700 fs-36 heading-title">Find academic jobs by category</h2>
+            <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
+          </div>
+          <div>
+            <div class="pt-2 text-center">
+              <a href="{{ route('search') }}?keyword=&type=service" class="category-list fs-18 fw-400 "><span>All
+                  services</span></a>
+              <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+                style="width:18px;" />
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+                <div class="position-relative">
+                  <img class="img-fluid w-100" style="height:328px;" src=" {{url('/public/assets/home/service/service-1.png')}}"
+                    alt="Image">
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Course curriculum
+                  Development</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Course material development
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Research and Analysis</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Writing and Editing</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Scholarship Applications</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Transcription and
+                  Translation</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Academic mentoring</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:330px">
+
+                <div class="position-relative">
+                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
+                    style="width:40px;" />
+                </div>
+                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Tutoring and Instruction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    @endif
     <!-- Trending services -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
@@ -217,7 +350,7 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-            <h2 class="fw-700 fs-40 heading-title">Find academic jobs by category</h2>
+            <h2 class="fw-700 fs-36 heading-title">Find academic jobs by category</h2>
             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
           </div>
           <div>
@@ -245,7 +378,7 @@
             <div class="caorusel-box">
               <div class="card rounded-1" style="height:450px">
                 <div class="">
-                  <div class="bg-secondary ">
+                  <div class=" ">
                     <a href="{{ route('service.show', $service->slug) }}">
                       @if($service->image != null)
                       <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image"
@@ -622,6 +755,7 @@
 
 
     @if (get_setting('latest_project_show') == 'on')
+
     <section class=" bg-white border-top">
       <div class="container-home">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -644,7 +778,6 @@
               aria-controls="contact" aria-selected="false">Project catalog</h5>
           </li>
         </ul>
-
         <div class="tab-content mt-5" id="myTabContent">
           <div class="tab-pane tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="">
@@ -657,7 +790,6 @@
                   <h6 class="fs-18">Data analysis and interpretation</h6>
                   <h6 class="fs-18">Translation services</h6>
                 </div>
-
                 <div class="col">
                   <h6 class="fs-18">
                     Research proposal writing</h6>
@@ -682,19 +814,13 @@
                     Tutoring and Instruction</h6>
                   <h6 class="fs-18">Transcribing audio or video recordings</h6>
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
-
     </section>
-
     @endif
-
 
     <!-- Blog -->
     <!-- @if (get_setting('blog_section_show') == 'on')
@@ -812,8 +938,6 @@
     @endif -->
 
     @endsection
-
-
     @section('script')
     @if ((Session::has('new_user') && Session::get('new_user') == true) || (auth()->check() &&
     auth()->user()->user_type ==
@@ -821,6 +945,27 @@
     <script>
     $('#show_new_user_modal').modal({
       show: true
+    });
+    </script>
+
+    <script>
+    $('#carouselExample').on('slide.bs.carousel', function(e) {
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 7;
+      var totalItems = $('.carousel-item').length;
+
+      if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+          // append slides to end
+          if (e.direction == "left") {
+            $('.carousel-item').eq(i).appendTo('.carousel-inner');
+          } else {
+            $('.carousel-item').eq(0).appendTo('.carousel-inner');
+          }
+        }
+      }
     });
     </script>
     @endif

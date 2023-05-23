@@ -5,10 +5,10 @@ body {
 font-weight: 700;
  }
 
- /* .category{
+ .category{
   height: 310px !important;
   color: black;
- } */
+ }
  .category-list{
 
   color: black !important;
@@ -176,6 +176,11 @@ right:0;
 }
 .blog-cat-name{
     color:red !important;
+}
+.service-card-caption{
+     top: 300px !important;
+    text-align: start !important;
+    /* padding-top: 100px !important; */
 }
 
 /* responsive */

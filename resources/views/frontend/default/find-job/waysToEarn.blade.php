@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
 
 </head>
-<style>
+<!-- <style>
 .jumbotron {
   height: 100%;
   width: 100%;
@@ -18,21 +18,21 @@
 .jumbotron .container {
   max-width: 100%;
 }
-</style>
+</style> -->
 
 <body class="bg-white">
   @extends('frontend.default.layouts.app')
   @section('content')
-  <div class="mx-3 rounded-md my-2 " style="background: #F2F7F2;">
+  <div class="mx-3 rounded-md  " style="background: #F2F7F2;">
     <div class="row py-2">
-      <div class="col-lg-6 mt-4 px-5 review-banner-main">
+      <div class="col-lg-6 mt-lg-4 px-5 review-banner-main" style="height:400px;">
         <h3 class=" text-success fre-review-banner-title">Do the work you love, your way</h3>
         <h6 class="fre-review-banner-text">Build rewarding relationships in the world’s Work Marketplace. Your home for
           the
           work you want.
         </h6>
-        <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Sign up</button>
-        <div class="border-bottom mt-5"></div>
+        <button class="  text-white fs-16 btn btn-primary  px-3 ">Sign up</button>
+        <div class="border-bottom mt-4"></div>
         <h6 class="my-3 " style="">Trusted By</h6>
         <div class="col-12">
           <div class="row">
@@ -57,15 +57,15 @@
 
         </div>
       </div>
-      <div class="col-lg-6  py-2  px-5">
-        <img src=" {{url('/public/assets/findJob/waystoEarn .png')}}" alt="Image" class=" w-100 rounded-2 h-75" />
+      <div class="col-lg-6  pt-lg-2  px-5" style="height:400px;">
+        <img src=" {{url('/public/assets/findJob/waystoEarn .png')}}" alt="Image" class=" w-100 rounded-2 h-100" />
       </div>
     </div>
   </div>
 
 
 
-  <div class="  container">
+  <div class="container">
     <!-- navbar -->
     <div class="container">
       <h2 class="my-5 fs-25 fw-600">Explore the different ways to earn</h2>
@@ -332,8 +332,7 @@
     </div>
 
     <!-- section-2 -->
-
-    <div class=" container mt-5 ">
+    <div class=" container mt-5 border-top">
       <h2 class="mt-5 mb-3 fs-25 fw-600">Our award-winning platform</h2>
       <div class="row g-5 mt-4 mb-5">
         <div class="col-lg-5 col-sm-12 ">
@@ -443,247 +442,251 @@
       </div>
     </div>
 
-
-
-
     <!-- Suitable work -->
 
-    <div class="container" style="margin-top:100px;">
-      <h2 class="mt-3 mb-5 fs-38 fw-700" style="font-family:sans-serif;">The work you want, all in one place</h2>
-      <div class="row ">
 
-        <div class="col-sm-4">
-          <div class=" card rounded-1 bg-light" style="height:320px;">
-            <div class=" card-body">
+    <section class="container border-top mt-5">
+      <div class="mt-5">
+        <h2 class="mt-3 mb-5 fs-38 fw-700" style="font-family:sans-serif;">The work you want, all in one place</h2>
+        <div class="row ">
 
-              <div class="card-body  " style="background-color:#91E6B3;"><img class="mx-auto d-block rounded-2"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
+          <div class="col-sm-4">
+            <div class=" card rounded-1 bg-light" style="height:320px;">
+              <div class=" card-body">
+
+                <div class="card-body  " style="background-color:#91E6B3;"><img class="mx-auto d-block rounded-2"
+                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
                   " /></div>
-              <p class="card-title fw-600 text-dark mt-3 fs-20">Create your free profile</p>
-              <p class="card-text fs-16">Highlight your skills and experience, show your portfolio, and set your ideal
-                pay
-                rate.</p>
+                <p class="card-title fw-600 text-dark mt-3 fs-20">Create your free profile</p>
+                <p class="card-text fs-16">Highlight your skills and experience, show your portfolio, and set your ideal
+                  pay
+                  rate.</p>
 
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class=" card bg-light rounded-1" style="height:320px;">
+              <div class=" card-body">
+                <div class="card-body  " style="background-color:#91E6B3;"><img class="mx-auto rounded-2 d-block"
+                    src=" {{url('/public/assets/findJob/jobs-2.png')}}" alt="Image" style="width:80px; align-items:center;
+                  " /></div>
+                <h5 class="card-title fw-600 text-dark mt-3 fs-20">Work the way you want</h5>
+                <p class="card-text fs-16">Apply for jobs, create easy-to-buy projects, or access exclusive
+                  opportunities
+                  that
+                  come to you.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 ">
+            <div class="card bg-light rounded-1" style="height:320px;">
+              <div class="card-body">
+                <div class="card-body " style="background-color:#91E6B3;"><img class="mx-auto rounded-1 d-block"
+                    src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
+                  " /></div>
+                <h5 class="card-title fw-600 text-dark mt-3 fs-20">Get paid securely</h5>
+                <p class="card-text fs-16">From contract to payment, we help you work safely and get paid securely.</p>
+
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class=" card bg-light rounded-1" style="height:320px;">
-            <div class=" card-body">
-              <div class="card-body  " style="background-color:#91E6B3;"><img class="mx-auto rounded-2 d-block"
-                  src=" {{url('/public/assets/findJob/jobs-2.png')}}" alt="Image" style="width:80px; align-items:center;
-                  " /></div>
-              <h5 class="card-title fw-600 text-dark mt-3 fs-20">Work the way you want</h5>
-              <p class="card-text fs-16">Apply for jobs, create easy-to-buy projects, or access exclusive
-                opportunities
-                that
-                come to you.</p>
 
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 ">
-          <div class="card bg-light rounded-1" style="height:320px;">
-            <div class="card-body">
-              <div class="card-body " style="background-color:#91E6B3;"><img class="mx-auto rounded-1 d-block"
-                  src=" {{url('/public/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
-                  " /></div>
-              <h5 class="card-title fw-600 text-dark mt-3 fs-20">Get paid securely</h5>
-              <p class="card-text fs-16">From contract to payment, we help you work safely and get paid securely.</p>
-
-            </div>
-          </div>
-        </div>
+        <p class="mt-3 fs-16">Want to know more?
+          <span class="fs-16 fw-700" style="color:#534D9D;">
+            Here’s how it works
+            <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
+          </span>
+        </p>
       </div>
-
-      <p class="mt-3 fs-16">Want to know more?
-        <span class="fs-16 fw-700" style="color:#534D9D;">
-          Here’s how it works
-          <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
-        </span>
-      </p>
-    </div>
+    </section>
 
     <!-- Category types   -->
 
-    <div class=" container" style="margin-top:100px;">
-      <h3 class=" fw-700 mb-5 fs-38">Work that’s waiting for you</h3>
-      <div class="my-4">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card rounded bg-light">
-              <div class="card-body d-flex items-center">
-                <div>
-                  <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
-                    style="width:70px;  align-items:center;" />
-                </div>
-                <div>
-                  <h5 class="card-title">Development & IT </h5>
-                  <h6 class="card-text">
+    <section class="container border-top mt-5">
+      <div class="mt-5 ">
+        <h3 class=" fw-700 mb-5 fs-38">Work that’s waiting for you</h3>
+        <div class="my-4">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card rounded bg-light">
+                <div class="card-body d-flex items-center">
+                  <div>
+                    <img class="mr-2" src=" {{url('/public/assets/findJob/01.png')}}" alt="Image"
+                      style="width:70px;  align-items:center;" />
+                  </div>
+                  <div>
+                    <h5 class="card-title">Development & IT </h5>
+                    <h6 class="card-text">
 
-                    20K+ jobs posted weekly</h6>
-                </div>
+                      20K+ jobs posted weekly</h6>
+                  </div>
 
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card bg-light">
-
-              <div class="card-body d-flex">
-                <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
-                  style="width:80px; align-items:center; " />
-                <div>
-                  <h5 class="card-title">Sales Icon
-                    Sales & Marketing
-                  </h5>
-                  <h6 class="card-text">10K+ jobs posted weekly</h6>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card bg-light">
-              <div class="card-body d-flex">
-                <img class="" src=" {{url('/public/assets/findJob/03.png')}}" alt="Image"
-                  style="width:80px; align-items:center; " />
-                <div>
-                  <h5 class="card-title">Writing Icon
-                    Writing & Translation
-                  </h5>
-                  <h6 class="card-text">10K+ jobs posted weeklySpecial title treatment</h6>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card bg-light">
-              <div class="card-body d-flex">
-                <img class="" src=" {{url('/public/assets/findJob/05.png')}}" alt="Image"
-                  style="width:80px; align-items:center; " />
-                <div>
-                  <h5 class="card-title">Customer Service Icon
-                    Admin & Customer Support
-                  </h5>
-                  <h6 class="card-text"> 5K+ jobs posted weekly</h6>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card bg-light">
-              <div class="card-body d-flex">
-                <img class="" src=" {{url('/public/assets/findJob/04.png')}}" alt="Image"
-                  style="width:80px; align-items:center; " />
-                <div>
-                  <h5 class="card-title">Customer Service Icon
-                    Admin & Customer Support
-                  </h5>
-                  <h6 class="card-text"> 5K+ jobs posted weekly</h6>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card bg-light">
-              <div class="card-body d-flex">
-                <img class="" src=" {{url('/public/assets/findJob/06.png')}}" alt="Image"
-                  style="width:80px; align-items:center;" />
-                <div>
-                  <h5 class="card-title"> Finance & Accounting
-                  </h5>
-                  <h6 class="card-text">2K+ jobs posted weekly
                 </div>
               </div>
             </div>
+            <div class="col-sm-6">
+              <div class="card bg-light">
+
+                <div class="card-body d-flex">
+                  <img class="" src=" {{url('/public/assets/findJob/02.png')}}" alt="Image"
+                    style="width:80px; align-items:center; " />
+                  <div>
+                    <h5 class="card-title">Sales Icon
+                      Sales & Marketing
+                    </h5>
+                    <h6 class="card-text">10K+ jobs posted weekly</h6>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                <div class="card-body d-flex">
+                  <img class="" src=" {{url('/public/assets/findJob/03.png')}}" alt="Image"
+                    style="width:80px; align-items:center; " />
+                  <div>
+                    <h5 class="card-title">Writing Icon
+                      Writing & Translation
+                    </h5>
+                    <h6 class="card-text">10K+ jobs posted weeklySpecial title treatment</h6>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                <div class="card-body d-flex">
+                  <img class="mr-2" src=" {{url('/public/assets/findJob/05.png')}}" alt="Image"
+                    style="width:80px; align-items:center; " />
+                  <div>
+                    <h5 class="card-title">Customer Service Icon
+                      Admin & Customer Support
+                    </h5>
+                    <h6 class="card-text"> 5K+ jobs posted weekly</h6>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                <div class="card-body d-flex">
+                  <img class="" src=" {{url('/public/assets/findJob/04.png')}}" alt="Image"
+                    style="width:80px; align-items:center; " />
+                  <div>
+                    <h5 class="card-title">Customer Service Icon
+                      Admin & Customer Support
+                    </h5>
+                    <h6 class="card-text"> 5K+ jobs posted weekly</h6>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                <div class="card-body d-flex">
+                  <img class="" src=" {{url('/public/assets/findJob/06.png')}}" alt="Image"
+                    style="width:80px; align-items:center;" />
+                  <div>
+                    <h5 class="card-title"> Finance & Accounting
+                    </h5>
+                    <h6 class="card-text">2K+ jobs posted weekly
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <p class=" text-primary" style="text-decoration:underline;"><span class="fs-16" style="color:#534D9D;">Browse
+              more</span>
+            <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
+          </p>
+          <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
+            your
+            profile</button>
         </div>
-        <p class=" text-primary" style="text-decoration:underline;"><span class="fs-16" style="color:#534D9D;">Browse
-            more</span>
-          <img class="" src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
-        </p>
-        <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
-          your
-          profile</button>
       </div>
-    </div>
+    </section>
     <!-- support  -->
-    <div class="row container mx-2" style=" margin-top:100px;">
 
-      <div class="row">
-        <div class="col-sm-4 container">
-          <div class="">
-            <div class="d-flex align-items-center mb-2 g-2">
+    <section class="container border-top mt-5">
+      <div class="row mx-2 mt-5">
+        <div class="row">
+          <div class="col-sm-4 container">
+            <div class="">
+              <div class="d-flex align-items-center mb-2 g-2">
 
-              <h2 class="fw-700 text-dark fs-38">Our support</h2>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-8 ">
-          <div class="container ">
-            <div class="row">
-              <div class="col-lg-6">
-
-                <div class=" border-bottom border-secondary">
-                  <h5 class="m-0 h4 mb-2">Client reviews
-                  </h5>
-                </div>
-
-                <p class="h6 my-2 ">Read client details and feedback from professionals like
-                  you.</p>
-
-
-                <div class="  text-lg mt-5">
-
-                  <div class="d-flex align-items-center gap-5 mt-2 border-bottom border-secondary">
-
-                    <h5 class="text-center m-0 h4 mb-2 ">Protected payments</h5>
-                  </div>
-
-                  <h6 class="h6 my-2">Get paid the way you want, secure and fully protected.</h6>
-
-                </div>
-                <div class="text-lg mt-5">
-
-                  <div class="d-flex align-items-center gap-5 mt-2 border-bottom border-secondary">
-
-                    <h5 class="text-center m-0 h4 mb-2 ">Answers to questions</h5>
-                  </div>
-
-                  <p class="h6 my-2">Everything you need in our help center, resources, and community.</p>
-
-                </div>
+                <h2 class="fw-700 text-dark fs-38">Our support</h2>
 
               </div>
-              <div class="col-lg-6">
-                <div class="  text-lg">
+            </div>
+          </div>
+          <div class="col-sm-8 ">
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-6">
 
-                  <div class="d-flex align-items-center gap-5 border-bottom border-secondary">
-
-                    <h5 class="text-center m-0 h4 mb-2  ">Trusted jobs</h5>
-                  </div>
-
-                  <p class="h6 my-2">We use various tools to detect and reduce fraud with a dedicated team
-                    24/7.</p>
-                </div>
-                <div class="  text-lg mt-5">
-                  <div class="d-flex align-items-center gap-5 mt-2 border-bottom border-secondary">
-                    <h5 class="text-center m-0 h4 mb-2 ">Help with disputes
+                  <div class=" border-bottom border-secondary">
+                    <h5 class="m-0 h4 mb-2">Client reviews
                     </h5>
                   </div>
-                  <p class="h6 my-2">We’ll step in and help you resolve a tricky situation.</p>
+
+                  <p class="h6 my-2 ">Read client details and feedback from professionals like
+                    you.</p>
+
+
+                  <div class="  text-lg mt-5">
+
+                    <div class="d-flex align-items-center gap-5 mt-2 border-bottom border-secondary">
+
+                      <h5 class="text-center m-0 h4 mb-2 ">Protected payments</h5>
+                    </div>
+
+                    <h6 class="h6 my-2">Get paid the way you want, secure and fully protected.</h6>
+
+                  </div>
+                  <div class="text-lg mt-5">
+
+                    <div class="d-flex align-items-center gap-5 mt-2 border-bottom border-secondary">
+
+                      <h5 class="text-center m-0 h4 mb-2 ">Answers to questions</h5>
+                    </div>
+
+                    <p class="h6 my-2">Everything you need in our help center, resources, and community.</p>
+
+                  </div>
+
+                </div>
+                <div class="col-lg-6">
+                  <div class="  text-lg">
+
+                    <div class="d-flex align-items-center gap-5 border-bottom border-secondary">
+
+                      <h5 class="text-center m-0 h4 mb-2  ">Trusted jobs</h5>
+                    </div>
+
+                    <p class="h6 my-2">We use various tools to detect and reduce fraud with a dedicated team
+                      24/7.</p>
+                  </div>
+                  <div class="  text-lg mt-5">
+                    <div class="d-flex align-items-center gap-5 mt-2 border-bottom border-secondary">
+                      <h5 class="text-center m-0 h4 mb-2 ">Help with disputes
+                      </h5>
+                    </div>
+                    <p class="h6 my-2">We’ll step in and help you resolve a tricky situation.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Last section -->
     <div class="container mb-5 rounded-1" style="background-color:#055846; margin-top:100px; padding-bottom:50px; ">
       <div class=" d-flex p-3">
