@@ -75,7 +75,7 @@
  .mega-menu-fj-item:hover a,
  .mega-menu-fj-item:hover p,
  .about-mega-menu-right:hover p,
- .about-mega-menu-right h3 {
+ .about-mega-menu-right:hover h3 {
 
     border-radius: 10px;
     color: #fff !important;
