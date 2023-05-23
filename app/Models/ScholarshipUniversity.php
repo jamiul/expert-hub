@@ -9,8 +9,8 @@ class ScholarshipUniversity extends Model
 {
     use SoftDeletes;
 
-    // public function posts()
-    // {
-    //     return $this->hasMany(Scholarship::class);
-    // }
+    public function posts()
+    {
+        return $this->hasMany(Scholarship::class);
+    }
 }

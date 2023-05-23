@@ -50,6 +50,21 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row" id="university">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('University')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="university_id" id="university_id" data-live-search="true" title="{{ translate('select university') }}" required data-selected="{{ optional($scholarship->category)->id }}">
+                                @foreach ($scholarship_universities as $university)
+                                <option value="{{ $university->id }}">
+                                    {{$university->university_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
 
                     <div class="form-group row">

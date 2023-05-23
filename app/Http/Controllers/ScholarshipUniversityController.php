@@ -26,7 +26,7 @@ class ScholarshipUniversityController extends Controller
 
         if ($request->has('search')){
             $sort_search = $request->search;
-            $categories = $categories->where('level_name', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('university_name', 'like', '%'.$sort_search.'%');
         }
 
         $categories = $categories->paginate(15);
@@ -58,14 +58,14 @@ class ScholarshipUniversityController extends Controller
         ]);
 
         $category = new ScholarshipUniversity;
-     
+
         $category->university_name = $request->university_name;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->university_name));
 
         $category->save();
 
 
-        flash(translate('Scholarship study level has been created successfully'))->success();
+        flash(translate('Scholarship university has been created successfully'))->success();
         return redirect()->route('scholarship-university.index');
     }
 
@@ -91,7 +91,7 @@ class ScholarshipUniversityController extends Controller
         $level = ScholarshipUniversity::find($id);
         // $all_categories = ScholarshipUniversity::all();
 
-        return view('admin.default.scholarship_module.study_level.edit',  compact('level'));
+        return view('admin.default.scholarship_module.university.edit',  compact('level'));
     }
 
     /**
@@ -104,19 +104,19 @@ class ScholarshipUniversityController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'level_name' => 'required|max:255',
+            'university_name' => 'required|max:255',
         ]);
 
         $category = ScholarshipUniversity::find($id);
 
-        $category->level_name = $request->level_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->level_name));
+        $category->university_name = $request->university_name;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->university_name));
 
         $category->save();
 
 
-        flash(translate('Scholarship study level has been updated successfully'))->success();
-        return redirect()->route('scholarship-level.index');
+        flash(translate('Scholarship university has been updated successfully'))->success();
+        return redirect()->route('scholarship-university.index');
     }
 
     /**
@@ -129,6 +129,6 @@ class ScholarshipUniversityController extends Controller
     {
         ScholarshipUniversity::find($id)->delete();
 
-        return redirect('admin/scholarship-level');
+        return redirect('admin/scholarship-university');
     }
 }
