@@ -23,7 +23,7 @@
 <body class="bg-white">
   @extends('frontend.default.layouts.app')
   @section('content')
-  <div class="mx-3 rounded-md  " style="background: #F2F7F2;">
+  <div class="mx-3 rounded-md my-2 rounded-1 " style="background: #F2F7F2;">
     <div class="row py-2">
       <div class="col-lg-6 mt-lg-4 px-5 review-banner-main" style="height:400px;">
         <h3 class=" text-success fre-review-banner-title">Do the work you love, your way</h3>

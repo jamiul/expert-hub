@@ -11,7 +11,7 @@
   @section('content')
 
   <!-- review banner -->
-  <div class="mx-3 rounded-md my-lg-2 " style="background: #F2F7F2;">
+  <div class="mx-3 rounded-1  my-2 " style="background: #F2F7F2;">
     <div class="row py-2">
       <div class="col-lg-6 mt-4 px-5 review-banner-main">
         <h3 class=" text-success fre-review-banner-title">Learn how to promote yourself</h3>
@@ -32,14 +32,15 @@
 
   <div class=" mt-5 container">
     <div class="row pt-5">
-      <div class="col-lg-6 pr-lg-30px">
-        <img src="{{url('/public/assets/findJob/consultant-2.jpg')}}" alt="Image" class="h-75 w-lg-100 img-fluid" />
+      <div class="col-lg-5 pr-lg-30px ">
+        <img src="{{url('/public/assets/home/service/mentoring.jpeg')}}" alt=""
+          class="rounded-1 h-75 w-lg-100 img-fluid" />
       </div>
-      <div class="col-lg-6 pb-sm-3" style="height:300px;">
+      <div class="col-lg-7 pb-sm-3" style="height:300px;">
         <div class="">
           <h1 class=" text-dark fs-30px"> Use Connects to give you the edge when you need it
           </h1>
-          <h5 class="text-justify text-dark ">
+          <h5 class="text-justify text-dark mt-3">
             Spend Connects like points on Upwork to show potential clients that you’re serious about your business and
             invested in building a working relationship with them. Connects are an investment toward your freelance
             career. Win more work, increase your earning power and build longer-lasting relationships with clients who

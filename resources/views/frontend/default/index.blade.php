@@ -222,7 +222,7 @@
     @endif
 
 
-    <!-- Trending jobs -->
+    <!-- Find academic jobs by category-->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
       <div class="container-home" style=" ">
@@ -235,7 +235,7 @@
           <div>
             <div class="pt-2 text-center">
               <a href="{{ route('search') }}?keyword=&type=service" class="category-list fs-18 fw-400 "><span>All
-                  services</span></a>
+                  Jobs</span></a>
               <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
                 style="width:18px;" />
             </div>
@@ -244,99 +244,133 @@
         <div class="row mb-3">
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
                 <div class="position-relative">
-                  <img class="img-fluid w-100" style="height:328px;" src=" {{url('/public/assets/home/service/service-1.png')}}"
-                    alt="Image">
+                  <a href="">
+                    <img class="img-fluid w-100 rounded-1" style="height:280px;"
+                      src=" {{url('/public/assets/home/service/service-1.png')}}" alt="Image">
+                  </a>
+
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Course curriculum
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Course
+                  curriculum
                   Development</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+                    <img class="w-100 img-fluid rounded-1 opacity-50"
+                      src=" {{url('/public/assets/home/service/01.jpeg')}}" alt="Image" style="height:280px;" /></a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Course material development
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Course
+                  material
+                  development
                 </p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+                    <img class="w-100 img-fluid rounded-1 opacity-50"
+                      src=" {{url('/public/assets/home/service/research.jpeg')}}" alt="Image"
+                      style="height:280px;" /></a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Research and Analysis</p>
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Research
+                  and
+                  Analysis</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+
+                    <img class="w-100 img-fluid rounded-1 opacity-50 rounded-1 "
+                      src=" {{url('/public/assets/home/service/writing.jpg')}}" alt="Image" style="height:280px;" /></a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Writing and Editing</p>
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px; fw-700">
+                  Writing
+                  and
+                  Editing</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+                    <img class="w-100 img-fluid rounded-1 opacity-50"
+                      src=" {{url('/public/assets/home/service/scholarship.jpeg')}}" alt="Image"
+                      style="height:280px;" />
+                  </a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Scholarship Applications</p>
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">
+                  Scholarship
+                  Applications</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+
+                    <img class="w-100 img-fluid rounded-1 opacity-50"
+                      src=" {{url('/public/assets/home/service/translator.jpeg')}}" alt="Image" style="height:280px;" />
+                  </a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Transcription and
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">
+                  Transcription
+                  and
                   Translation</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+                    <img class="w-100 img-fluid rounded-1 opacity-50 opacity-50"
+                      src=" {{url('/public/assets/home/service/mentoring.jpeg')}}" alt="Image" style="height:280px;" />
+                  </a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Academic mentoring</p>
+                <p class="card-title text-dark fw-700  position-absolute fs-20" style="top:120px; left:50px;">Academic
+                  mentoring</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:330px">
+              <div class="card rounded-1" style="height:280px">
 
                 <div class="position-relative">
-                  <img class="w-100 h-100" src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image"
-                    style="width:40px;" />
+                  <a href="">
+                    <img class="w-100 img-fluid rounded-1 opacity-50"
+                      src=" {{url('/public/assets/home/service/tutoring.jpeg')}}" alt="Image" style="height:280px;" />
+
+                  </a>
                 </div>
-                <p class="card-title position-absolute fs-18" style="top:120px; left:80px;">Tutoring and Instruction</p>
+                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Tutoring
+                  and
+                  Instruction</p>
               </div>
             </div>
           </div>
@@ -350,7 +384,7 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-            <h2 class="fw-700 fs-36 heading-title">Find academic jobs by category</h2>
+            <h2 class="fw-700 fs-36 heading-title">Services</h2>
             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
           </div>
           <div>
@@ -434,154 +468,8 @@
           @endforeach
         </div>
 
-
     </section>
     @endif
-
-    <!-- Impressive new section  -->
-    <!-- @if (get_setting('how_it_works_show') == 'on')
-    <section class=" border-top">
-      <div class="container-home">
-        <div class="">
-          <div class="w-xl-50 w-lg-75 content-title">
-            <h2 class="fw-700 fs-36 text-black">What makes it impressive?</h2>
-            <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6>
-          </div>
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class=" ">
-                <div class="d-flex h-60px align-items-center">
-                  <img src=" {{url('/public/assets/home/expert.png
-                  ')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 ml-3 fw-700 ml-lg-3 consultant-category">Accessible academic experts </p>
-                </div>
-                <h6 class="fs-18 mt-5">
-                  You can find skillful consultant in your desire field project</h6>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="">
-                <div class="d-flex h-60px align-items-center">
-                  <img src=" {{url('/public/assets/home/response.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 consultant-category">Fast responses</p>
-                </div>
-                <h6 class="fs-18 mt-5">
-                  We have 24/7 online customer service so easily you can reach us and get the responses.
-                </h6>
-
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="">
-                <div class="d-flex h-60px align-items-center">
-                  <img src=" {{url('/public/assets/home/quality.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 consultant-category"> High-quality work</p>
-                </div>
-                <h6 class="fs-18 mt-5">
-                  The service will be accurate, neat, attentive to detail, consistent, high standards.
-                </h6>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 ">
-              <div class="">
-                <div class="d-flex h-60px">
-                  <img src=" {{url('/public/assets/home/customer-support.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 consultant-category"> We're here to help you</p>
-                </div>
-                <p class="fs-18 text-dark mt-5">
-                  Our community will assist you anyways, we are ready to serve you any time.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    @endif -->
-
-
-    <!-- Latest job  -->
-    <!-- @if (get_setting('featured_category_show') == 'on')
-    <section class="bg-white border-top">
-      <div class=" container-home">
-        <div class="d-flex justify-content-between ">
-          <div class="w-lg-75 lh-1-8 content-title">
-            <h2 class="fw-700 fs-36 text-black ">Browse academic jobs by category</h2>
-            <h6 class=" fs-18 fw-400">Know your worth and find the jobs that quality your life</h6>
-          </div>
-          <div>
-            <a href="{{ route('search') }}?category="
-              class="btn bg-white text-black fs-17 d-lg-none  rounded-1">{{ translate('Browse More Categories') }}
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
-            </a>
-          </div>
-        </div>
-        <div class="row gutters-10">
-
-          <div class="col-lg-3 mb-3 ">
-            <div class=" card" style="height:140px;">
-              <div class=" card-body ">
-
-                <p class="fs-22 fw-600  py-3 m-auto " style="">Writing and Editing</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card  " style="height:140px;">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Research and Analysis</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card  ">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Course curriculum Development</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card  ">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Course material development</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card  ">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Transcription and Translation</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card  " style="height:140px;">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Scholarship Applications</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card  " style="height:140px;">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Academic mentoring</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-3">
-            <div class=" card " style="height:140px;">
-              <div class=" card-body">
-                <p class="fs-22 fw-600 my-3">Tutoring and Instruction</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      </div>
-    </section>
-    @endif -->
 
     <!-- Join us -->
     @if (get_setting('latest_project_show') == 'on')
