@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\ScholarshipUniversity;
 use Illuminate\Http\Request;
-use App\Models\ScholarshipLevel;
 
-class ScholarshipLevelController extends Controller
+class ScholarshipUniversityController extends Controller
 {
     public function __construct()
     {
@@ -19,8 +19,9 @@ class ScholarshipLevelController extends Controller
      */
     public function index(Request $request)
     {
+
         $sort_search =null;
-        $categories = ScholarshipLevel::orderBy('level_name', 'asc');
+        $categories = ScholarshipUniversity::orderBy('university_name', 'asc');
 
 
         if ($request->has('search')){
@@ -30,7 +31,7 @@ class ScholarshipLevelController extends Controller
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.study_level.index', compact('categories', 'sort_search'));
+        return view('admin.default.scholarship_module.university.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -51,21 +52,21 @@ class ScholarshipLevelController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+
         $request->validate([
-            'level_name' => 'required|max:255',
+            'university_name' => 'required|max:255',
         ]);
 
-        $category = new ScholarshipLevel;
-        // dd($category);
-        $category->level_name = $request->level_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->level_name));
+        $category = new ScholarshipUniversity;
+     
+        $category->university_name = $request->university_name;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->university_name));
 
         $category->save();
 
 
         flash(translate('Scholarship study level has been created successfully'))->success();
-        return redirect()->route('scholarship-level.index');
+        return redirect()->route('scholarship-university.index');
     }
 
     /**
@@ -87,8 +88,8 @@ class ScholarshipLevelController extends Controller
      */
     public function edit($id)
     {
-        $level = ScholarshipLevel::find($id);
-        // $all_categories = ScholarshipLevel::all();
+        $level = ScholarshipUniversity::find($id);
+        // $all_categories = ScholarshipUniversity::all();
 
         return view('admin.default.scholarship_module.study_level.edit',  compact('level'));
     }
@@ -106,7 +107,7 @@ class ScholarshipLevelController extends Controller
             'level_name' => 'required|max:255',
         ]);
 
-        $category = ScholarshipLevel::find($id);
+        $category = ScholarshipUniversity::find($id);
 
         $category->level_name = $request->level_name;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->level_name));
@@ -126,7 +127,7 @@ class ScholarshipLevelController extends Controller
      */
     public function destroy($id)
     {
-        ScholarshipLevel::find($id)->delete();
+        ScholarshipUniversity::find($id)->delete();
 
         return redirect('admin/scholarship-level');
     }

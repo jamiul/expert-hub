@@ -106,61 +106,20 @@
               <div class="form-control file-amount">{{ translate('Choose File') }}</div>
               <input type="hidden" name="photo" class="selected-files">
             </div>
-            <div class="card-body">
-              <form class="form-horizontal" action="{{ route('project-categories.store') }}" method="POST"
-                enctype="multipart/form-data">
-                @csrf
-                <div class="form-group mb-3">
-                  <label for="name">{{translate('Name')}}</label>
-                  <input type="text" id="name" name="name" placeholder="{{ translate('Category Name') }}"
-                    class="form-control" required>
-                </div>
-                <div class="form-group mb-3">
-                  <label for="parent_id">{{translate('Parent')}}</label>
-                  <select class="select2 form-control aiz-selectpicker" name="parent_id" data-toggle="select2"
-                    data-placeholder="Choose ..." data-live-search="true">
-                    <option value="0">{{ translate('No Parent') }}</option>
-                    @foreach(\App\Models\ProjectCategory::all() as $project_cat)
-                    <option value="{{$project_cat->id}}">{{$project_cat->name}}</option>
-                    @endforeach
-                  </select>
-                </div>
-                <div class="form-group mb-3">
-                  <label for="description">{{translate('Description')}}</label>
-                  <textarea type="text" rows="3" id="description" name="description"
-                    placeholder="{{ translate('Write your text....') }}" class="form-control" required></textarea>
-                </div>
-                <div class="form-group mb-3">
-                  <label for="image">{{translate('Icon')}}</label>
-                  <div class="input-group" data-toggle="aizuploader" data-type="image">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse')}}</div>
-                    </div>
-                    <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                    <input type="hidden" name="photo" class="selected-files">
-                  </div>
-                  <div class="file-preview box sm">
-                  </div>
-                  <small class="form-text text-muted">.svg {{ translate('file recommended') }}</small>
-                </div>
-                @can('project cat create')
-                <div class="form-group mb-3 text-right">
-                  <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
-                </div>
-                @endcan
-              </form>
+
+
+            @can('project cat create')
+            <div class="form-group mb-3 text-right">
+              <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
             </div>
-            <small class="form-text text-muted">.svg {{ translate('file recommended') }}</small>
-          </div>
-          @can('project cat create')
-          <div class="form-group mb-3 text-right">
-            <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
-          </div>
-          @endcan
+            @endcan
         </form>
       </div>
     </div>
+
   </div>
+</div>
+</div>
 </div>
 
 @endsection

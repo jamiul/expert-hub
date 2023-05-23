@@ -440,6 +440,14 @@
               </a>
             </li>
             @endcan
+            @can('show blog category')
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-university.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-university.create', 'scholarship-university.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('University') }}</span>
+              </a>
+            </li>
+            @endcan
           </ul>
         </li>
         @endif

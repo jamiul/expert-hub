@@ -16,7 +16,7 @@
   <section class="py-4 py-lg-5">
     <div class="container">
       <div>
-        <h1 class="mt-5  " style="color:#50A907;">Find the best freelance jobs</h1>
+        <h1 class="mt-5  " style="color:#5ABC76;">Find the best freelance jobs</h1>
         <h6 class="my-4 header">Browse jobs posted on Upwork, or jump right in and create a free profile to find the
           work that
           you love to do.
@@ -26,10 +26,10 @@
             </button>
           </div>
           <div class="d-flex ml-5">
-            <div><img src="{{url('/public/assets/findJob/video.png')}}" alt="Image" "
-              class=" mr-3 rounded-2" style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
+            <div><img src="{{url('/public/assets/findJob/video.png')}}" alt="Image" class=" mr-3 rounded-2"
+                style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
             </div>
-            <div><span class="fs-16" style="color:#4FA808;"> Watch a demo</span></div>
+            <div><span class="fs-16" style="color:#5ABC76;"> Watch a demo</span></div>
 
           </div>
         </div>
@@ -51,14 +51,14 @@
             </label>
             <label class="aiz-radio">
               <input type="radio" name="rating" value="4+">
-              <span class="fs-16 " style="color:#5E6D55;"> Development & IT</span>
+              <span class="fs-16 " style="color:#5E6D55;"> Academic mentoring</span>
 
               <span class="aiz-rounded-check"></span>
               <span class="float-right text-secondary fs-12"></span>
             </label>
             <label class="aiz-radio">
               <input type="radio" name="rating" value="3-4">
-              <span class=" fs-16 " style=" color:#5E6D55;"> Design & Creative</span>
+              <span class=" fs-16 " style=" color:#5E6D55;">Course curriculum Development</span>
 
               <span class="aiz-rounded-check"></span>
               <span class="float-right text-secondary fs-12"></span>
@@ -66,7 +66,7 @@
             <label class="aiz-radio">
               <input type="radio" name="rating" value="2-3">
 
-              <span class=" fs-16 " style=" color:#5E6D55;"> Finance & Accounting</span>
+              <span class=" fs-16 " style=" color:#5E6D55;"> Course material development</span>
 
               <span class="aiz-rounded-check"></span>
               <span class="float-right text-secondary fs-12"></span>
@@ -74,42 +74,29 @@
             <label class="aiz-radio">
               <input type="radio" name="rating" value="1-2">
 
-              <span class=" fs-16 " style=" color:#5E6D55;"> Admin & Customer Support</span>
+              <span class=" fs-16 " style=" color:#5E6D55;"> Research and Analysis</span>
+
+              <span class="aiz-rounded-check"></span>
+              <span class="float-right text-secondary fs-12"></span>
+            </label>
+            <label class="aiz-radio">
+              <input type="radio" name="rating" value="1-2">
+
+              <span class=" fs-16 " style=" color:#5E6D55;"> Scholarship Applications</span>
 
               <span class="aiz-rounded-check"></span>
               <span class="float-right text-secondary fs-12"></span>
             </label>
             <label class="aiz-radio">
               <input type="radio" name="rating" value="0-1">
-              <span class=" fs-16 " style=" color:#5E6D55;"> Engineering & Architecture</span>
+              <span class=" fs-16 " style=" color:#5E6D55;">Tutoring and Instruction</span>
 
               <span class="aiz-rounded-check"></span>
               <span class="float-right text-secondary fs-12"></span>
             </label>
             <label class="aiz-radio">
               <input type="radio" name="rating" value="0-1">
-              <span class=" fs-16 " style=" color:#5E6D55;"> Legal</span>
-
-              <span class="aiz-rounded-check"></span>
-              <span class="float-right text-secondary fs-12"></span>
-            </label>
-            <label class="aiz-radio">
-              <input type="radio" name="rating" value="0-1">
-              <span class=" fs-16 " style=" color:#5E6D55;"> Sales & Marketing</span>
-
-              <span class="aiz-rounded-check"></span>
-              <span class="float-right text-secondary fs-12"></span>
-            </label>
-            <label class="aiz-radio">
-              <input type="radio" name="rating" value="0-1">
-              <span class=" fs-16 " style=" color:#5E6D55;"> Writing & Translation</span>
-
-              <span class="aiz-rounded-check"></span>
-              <span class="float-right text-secondary fs-12"></span>
-            </label>
-            <label class="aiz-radio">
-              <input type="radio" name="rating" value="0-1">
-              <span class=" fs-16 " style=" color:#5E6D55;"> Apply Filter</span>
+              <span class=" fs-16 " style=" color:#5E6D55;"> Transcription and Translation</span>
 
               <span class="aiz-rounded-check"></span>
               <span class="float-right text-secondary fs-12"></span>
@@ -123,7 +110,7 @@
         <div class="col-lg-9">
           <h3 class="mb-4">Explore remote jobs</h3>
           <div class=" input-group position-relative">
-            <input id="search-input" type="search" class="form-control " placeholder="Try skill like PHP  JAVASCRIPT,">
+            <input id="search-input" type="search" class="form-control " placeholder="Find your  skills">
             <button type="button" class="btn text-white " style="background-color:#275846;">
               Search
             </button>
@@ -144,138 +131,58 @@
             </div>
           </div> -->
 
-          <div class=" mt-5 mb-3 fs-20"> 0-9
-          </div>
+          <div class=" row mt-lg-5">
 
-          <div class=" row">
-            <div class=" col-lg-4  fs-16  " style=" color:#5E6D55; ">
-              <p class="skills cursor-pointer">
-                3D Visualizations Freelancer</p>
-              <p class="skills">3D Printing Expert</p>
+            <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
 
-            </div>
-            <div class=" col-lg-4 fs-16 " style=" color:#5E6D55;">
-              <p class="skills hover-underline style=" text-decoration:underline;">
-                2D Game Art Freelancer</p>
               <p class="skills">
-                3D Rendering Artist</p>
+                Academic mentoring</p>
+              <p class="skills">
+                Copywriting</p>
 
 
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
+              <p class="skills">
+                Curriculum development</p>
+              <p class="skills">Data analysis and interpretation</p>
 
-              <p class="skills">
-                3D Modeler
-              </p>
-              <p class="skills">
-                3D Designers & Artist</p>
+            </div>
+            <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
+              <p class="skills">Content creation</p>
+
+              <p class="skills">Research writing</p>
 
             </div>
 
           </div>
-          <div class="mt-5 mb-3 fs-20"> A</div>
+
           <div class=" row">
 
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
 
-              <p class="skills">
-                Amazon FBA Specialist</p>
-              <p class="skills">
-                Arts Freelancer</p>
-              <p class="skills">Anime Freelancer</p>
-              <p class="skills">
-                Album Cover Designer</p>
-              <p class="skills">Adobe Acrobat Expert</p>
-              <p class="skills">Audio Production Specialist</p>
-              <p class="skills">Ad Creative Freelancer</p>
-              <p class="skills">Android Studio Freelancer</p>
-              <p class="skills">ASP.NET Developer</p>
-              <p class="skills">ArcGIS Developer</p>
-              <p class="skills">App Store Specialist</p>
+              <p class="skills">Statistical analysis</p>
+              <p class="skills">Tutoring and Instruction</p>
+              <p class="skills">Research proposal writing</p>
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
+              <p class="skills">Proofreading and editing</p>
 
               <p class="skills">
-                Amazon Seller Central Consultant</p>
-              <p class="skills">
-                Adobe After Effects Specialist</p>
-              <p class="skills">Adobe Premiere Pro Specialist</p>
-              <p class="skills">
-                Actor</p>
-              <p class="skills">Adobe Photoshop Expert</p>
-              <p class="skills">
-                Acrylic Painter</p>
-              <p class="skills">
-                Audio Mixer</p>
-              <p class="skills">Apple Xcode Specialist</p>
-              <p class="skills">Apache Spark Specialist</p>
-              <p class="skills">AWS Developer</p>
-              <p class="skills">AutoCAD Civil 3D Freelancer</p>
-            </div>
-            <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
-
-              <p class="skills">Administrative Assistant</p>
-              <p class="skills">Adobe InDesign Expert</p>
-              <p class="skills">Animator</p>
-              <p class="skills">Adobe Illustrator Expert</p>
-              <p class="skills">Adobe Photoshop Lightroom Speciali</p>
-              <p class="skills">Audio Editor</p>
-              <p class="skills">Android App Developer</p>
-              <p class="skills">Amazon EC2 Specialist</p>
-              <p class="skills">API Developer</p>
-              <p class="skills">Alexa Skill Kit Specialist</p>
-              <p class="skills">Artificial Intelligence Engineer</p>
-
-            </div>
-
-          </div>
-          <div class="mt-5 mb-3 fs-20"> B</div>
-          <div class=" row">
-
-            <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
-
-              <p class="skills">
-                Book Designer</p>
-              <p class="skills">
-                Branding Freelancer</p>
-              <p class="skills">Blockchain Developer</p>
-              <p class="skills">
-                Bot Developer</p>
-              <p class="skills">Business Process Modeling Specialist</p>
-              <p class="skills">Bahasa Indonesia Freelancer</p>
+                Transcribing audio or video recordings</p>
 
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
 
-              <p class="skills">
-
-                Business Presentation Freelancer</p>
-              <p class="skills">
-                Blender3D Specialist</p>
-              <p class="skills">Babylon.js Freelancer</p>
-              <p class="skills">
-                Bookkeeper</p>
-              <p class="skills">Business Law Freelancer</p>
-              <p class="skills">
-                Bulgarian Translators & Writer
-              </p>
-              <p class="skills">
-
-            </div>
-            <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
-
-              <p class="skills">Brochure Designer</p>
+              <p class="skills">Transcribing audio or video recordings</p>
               <p class="skills">
                 Book Cover Designer</p>
-              <p class="skills">BigQuery Developer</p>
-              <p class="skills">Business Coache</p>
-              <p class="skills">Buying Freelancer</p>
-              <p class="skills">Blog Writer</p>
+
 
             </div>
 
           </div>
-          <div class="mt-5 mb-3 fs-20"> C</div>
+          <!-- <div class="mt-5 mb-3 fs-20"> C</div>
           <div class=" row">
 
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
@@ -1127,7 +1034,7 @@
             </div>
 
 
-          </div>
+          </div> -->
         </div>
 
 

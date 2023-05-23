@@ -11,13 +11,14 @@
   @section('content')
 
   <!-- review banner -->
-  <div class="mx-3 rounded-md my-lg-2 " style="background: #F2F7F2;">
+  <div class="mx-3 rounded-1  my-2 " style="background: #F2F7F2;">
     <div class="row py-2">
       <div class="col-lg-6 mt-4 px-5 review-banner-main">
-        <h1 class="fs-sm-20 text-success review-banner-title">Learn how to promote yourself</h1>
-        <h5 class="review-banner-text my-3">Stand out from the competition and get more control over your chances of
+        <h3 class=" text-success fre-review-banner-title">Learn how to promote yourself</h3>
+        <h6 class="fre-review-banner-text">Stand out from the competition and get more control over your chances of
           winning
-          the work you want.</h5>
+          the work you want.
+        </h6>
         <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Find work</button>
       </div>
       <div class="col-lg-6  py-2 px-5">
@@ -30,12 +31,16 @@
   <!--review second section -->
 
   <div class=" mt-5 container">
-    <div class="row pt-5  d-flex justify-content-between">
-      <div class="col-lg-6 pb-sm-3">
-        <div class="review-banner-main">
-          <h1 class=" text-success fs-30px"> Use Connects to give you the edge when you need it
+    <div class="row pt-5">
+      <div class="col-lg-5 pr-lg-30px ">
+        <img src="{{url('/public/assets/home/service/mentoring.jpeg')}}" alt=""
+          class="rounded-1 h-75 w-lg-100 img-fluid" />
+      </div>
+      <div class="col-lg-7 pb-sm-3" style="height:300px;">
+        <div class="">
+          <h1 class=" text-dark fs-30px"> Use Connects to give you the edge when you need it
           </h1>
-          <h5 class="text-justify review-banner-text">
+          <h5 class="text-justify text-dark mt-3">
             Spend Connects like points on Upwork to show potential clients that you’re serious about your business and
             invested in building a working relationship with them. Connects are an investment toward your freelance
             career. Win more work, increase your earning power and build longer-lasting relationships with clients who
@@ -43,9 +48,7 @@
           </h5>
         </div>
       </div>
-      <div class="col-lg-6 px-5">
-        <img src="{{url('/public/assets/findJob/consultant-2.jpg')}}" alt="Image" class=" w-100 h-75  img-fluid" />
-      </div>
+
     </div>
   </div>
 
@@ -53,7 +56,7 @@
 
   <div class="jumbotron " style="">
     <div class="container">
-      <h1 class="text-success fs-30px mb-4">Explore ways to take more control and win more work</h1>
+      <h1 class="text-dark fs-30px mb-4">Explore ways to take more control and win more work</h1>
       <div class=" row  pb-3">
         <div class=" col-lg-6 col-sm-12">
           <div class="card rounded-2 bg-white h-100">

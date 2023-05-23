@@ -79,7 +79,7 @@
                   </li>
                   <li class="nav-item ml-xl-3">
                     <a class="btn text-white " style="background-color:#275846;"
-                      href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
+                      href="{{ route('register') }}">{{ translate('Post a Job') }}</a>
                   </li>
                   @elseif (isAdmin())
                   <li class="nav-item d-none d-lg-block">
@@ -323,16 +323,12 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Jobs ') }}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants ') }}</a>
               </li>
               <li class="dropdown mega_menu nav-item">
                 <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ translate('Find Consultants') }}
+                  {{ translate('Find Jobs') }}
                 </a>
                 <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
                   <div class="row mx-2">
@@ -363,6 +359,12 @@
 
                 </div>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+              </li>
+
 
               <li class="nav-item">
                 <a class="nav-link text-white"

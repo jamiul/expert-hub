@@ -5,10 +5,10 @@
     <div class="col-lg-8 mx-auto">
         <div class="card">
             <div class="card-header">
-                <h5 class="mb-0 h6">{{translate('Blog Category Information')}}</h5>
+                <h5 class="mb-0 h6">{{translate('Scholarship Category Information')}}</h5>
             </div>
             <div class="card-body">
-                <form id="add_form" class="form-horizontal" action="{{ route('blog-category.update', $cateogry->id) }}" method="POST">
+                <form id="add_form" class="form-horizontal" action="{{ route('scholarship-category.update', $cateogry->id) }}" method="POST">
                     @csrf
                     @method('PATCH')
 

@@ -6,7 +6,7 @@ font-weight: 700;
  }
 
  .category{
-  height: 210px;
+  height: 310px !important;
   color: black;
  }
  .category-list{
@@ -165,7 +165,10 @@ right:0;
     margin:10px 8% 30px !important;    
 }
 .content-title{
-    padding-bottom: 50px;
+    padding-bottom: 30px;
+}
+.heading-title{
+    color:#5ABC76;
 }
 .img-slider{
     width:84%;
@@ -173,6 +176,11 @@ right:0;
 }
 .blog-cat-name{
     color:red !important;
+}
+.service-card-caption{
+     top: 300px !important;
+    text-align: start !important;
+    /* padding-top: 100px !important; */
 }
 
 /* responsive */
