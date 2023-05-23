@@ -13,9 +13,9 @@
     <div>
         <div class="mx-2 rounded-2 my-3 position-relative" style="background: #F2F7F2;">
             <div class="row py-3">
-                <div class="col-lg-6 py-2 px-5 mt-3 wrap  ">
+                <div class="col-lg-6 py-2 px-5  wrap ">
                     <h3 class="how-to-hire-banner-title text-success">{{translate('Choose your way to get work done')}}</h3>
-                    <p class="how-to-hire-banner-text">Find freelancers and run projects your way at the world’s work marketplace.</p>
+                    <p class="how-to-hire-banner-text">{{translate('Find freelancers and run projects your way at the world’s work marketplace.')}}</p>
 
                     <button class="btn btn-primary text-white fs-16  px-3 py-2">Find talent</button>
 
@@ -25,7 +25,7 @@
 
                 </div>
                 <div class="col-lg-6 py-2 px-5 ">
-                    <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 img-fluid" alt="">
+                    <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 " alt="" style="height:272px; width:590px">
                 </div>
             </div>
         </div>
@@ -165,23 +165,23 @@
             <div class="col-lg-6 col-12">
                 <div class="approvalCheckMark">
                     <div class="d-flex mb-2 approvalCheckMark">
-                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}" alt="">
                         <p>Browse similar projects they’ve worked on</p>
                     </div>
                     <div class="d-flex mb-2 approvalCheckMark">
-                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}" alt="">
                         <p>Directly access proven talent without unnecessary layers</p>
                     </div>
                     <div class="d-flex mb-2 approvalCheckMark">
-                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}" alt="">
                         <p>Check their portfolio</p>
                     </div>
                     <div class="d-flex mb-2 approvalCheckMark">
-                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}" alt="">
                         <p>Check qualifications</p>
                     </div>
                     <div class="d-flex  approvalCheckMark">
-                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check-mark.png')}}" alt="">
+                        <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}" alt="">
                         <p>Run a chat or video interview</p>
                     </div>
                 </div>
@@ -227,10 +227,10 @@
     <div class="mt-5">
         <div class="row mt-5 mb-5">
             <div class="col-lg-5 col-sm-12 mr-5">
-                <img class="img-fluid rounded-right h-650px" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="">
+                <img class="img-fluid rounded-right " src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt="" style="height:500px;">
             </div>
 
-            <div class="col-lg-5 col-sm-12 mt-5 ml-lg-5 mx-sm-auto">
+            <div class="col-lg-5 col-sm-12  ml-lg-5 mx-sm-auto">
                 <div>
                     <h1 class="hth-safe-us ">You’re safe with us</h1>
                     <h3 class="hth-safe-text">You get what you pay for. And we can prove it.</h3>

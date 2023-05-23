@@ -311,7 +311,7 @@
     line-height: 1.1em;
     color: #5e6d55;
 }
-.approvalCheckMark {
+.approvalCheckMark p {
     font-size: 18px;
     font-weight: bold;
     color: #5e6d60;
@@ -333,14 +333,14 @@
 .how-to-hire-banner-title {
     letter-spacing: -0.035em;
     margin-top: 0;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     font-family: Upworkrza, sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 1em;
 }
 .how-to-hire-banner-text {
-    padding-bottom: 35px;
+
     font-size: 18px;
     line-height: 22px;
     color: #001e00;
@@ -429,27 +429,23 @@
 .find-job-banner p {
     color: black;
     font-size: 18px;
-
-    padding-bottom: 30px;
     padding-top: 10px;
 }
 .find-job-banner-title {
-    font-size: 56px;
+    font-size: 45px;
     font-weight: 700;
+    margin-bottom:  0 !important;
 }
 .find-job-banner-rating-section {
-    bottom: -38px !important;
+    margin-top: 10px;
     width: 94%;
 
 }
 .find-job-banner-rating-section p {
     color: #5e6d55;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
     font-family: Neuemontreal, sans-serif;
     font-size: 22px;
     font-weight: 500;
-    line-height: 1.1em;
 }
 .find-job-banner-rating {
     margin-top: 9px;
@@ -460,16 +456,18 @@
     align-items: center;
 }
 .find-job-banner-star p {
-    padding: 0 !important;
+    padding: 0 0 0 2px !important;
     font-family: Neuemontreal, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
+    margin-bottom: 0 !important;
 }
 .find-job-banner-total-review {
     color: #65735b !important;
     font-weight: bold !important;
     font-size: 18px !important;
     font-weight: 500 !important;
+    padding:  0 !important;
 }
 .img-works {
     display: flex;

@@ -42,7 +42,7 @@
                   <div class="col-md-9">
                     <select class="form-control aiz-selectpicker" name="category_id" id="category_id"
                       data-live-search="true" title="{{ translate('Select category') }}">
-                      @foreach ($blog_categories as $category)
+                      @foreach ($scholarship_categories as $category)
                       <option value="{{ $category->id }}">
                         {{ $category->category_name }}
                       </option>
@@ -60,7 +60,7 @@
                     <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true"
                       title="{{ translate('Select Level') }}">
 
-                      @foreach ($blog_levels as $level)
+                      @foreach ($scholarship_levels as $level)
                       <option value="{{ $level->id }}">
                         {{$level->level_name }}
                       </option>
@@ -73,7 +73,7 @@
                 <div class="col-md-9">
                   <select class="form-control aiz-selectpicker" name="category_id" id="category_id"
                     data-live-search="true" title="{{ translate('Select category') }}">
-                    @foreach ($blog_categories as $category)
+                    @foreach ($scholarship_categories as $category)
                     <option value="{{ $category->id }}">
                       {{ $category->category_name }}
                     </option>

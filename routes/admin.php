@@ -151,6 +151,8 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 
   Route::resource('scholarship-level', 'ScholarshipLevelController');
   Route::get('/scholarship-level/destroy/{id}', 'ScholarshipLevelController@destroy')->name('scholarship-level.destroy');
+  Route::resource('scholarship-university', 'ScholarshipUniversityController');
+  Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.destroy');
 
   //Subscribers
   Route::controller('SubscriberController')->group(function () {

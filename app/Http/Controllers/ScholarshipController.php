@@ -22,18 +22,18 @@ class ScholarshipController extends Controller
     public function index(Request $request)
     {
         $sort_search = null;
-        $blogs = Scholarship::orderBy('created_at', 'desc');
+        $scholarships = Scholarship::orderBy('created_at', 'desc');
 
 
         if ($request->search != null){
-            $blogs = $blogs->where('title', 'like', '%'.$request->search.'%');
+            $scholarships = $scholarships->where('title', 'like', '%'.$request->search.'%');
             $sort_search = $request->search;
         }
 
-        $blogs = $blogs->paginate(15);
-        // dd($blogs);
+        $scholarships = $scholarships->paginate(15);
+        // dd($scholarships);
 
-        return view('admin.default.scholarship_module.scholarship.index', compact('blogs','sort_search'));
+        return view('admin.default.scholarship_module.scholarship.index', compact('scholarships','sort_search'));
     }
 
     /**
@@ -43,10 +43,10 @@ class ScholarshipController extends Controller
      */
     public function create()
     {
-        $blog_categories = ScholarshipCategory::all();
-        $blog_levels = ScholarshipLevel::all();
+        $scholarship_categories = ScholarshipCategory::all();
+        $scholarship_levels = ScholarshipLevel::all();
 
-        return view('admin.default.scholarship_module.scholarship.create', compact('blog_categories',"blog_levels"));
+        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories',"scholarship_levels"));
 
     }
 
@@ -68,22 +68,22 @@ class ScholarshipController extends Controller
             'title' => 'required|max:255',
         ]);
 
-        $blog = new Scholarship;
+        $scholarship = new Scholarship;
 
-        $blog->category_id = $request->category_id;
-        $blog->level_id = $request->level_id;
-        $blog->title = $request->title;
-        $blog->short_description = $request->short_description;
-        $blog->banner = $request->banner;
-        $blog->meta_title = $request->meta_title;
-        $blog->description = $request->description;
-        $blog->meta_img = $request->meta_img;
-        $blog->meta_description = $request->meta_description;
-        $blog->meta_keywords = $request->meta_keywords;
-        $blog->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
-        $blog->save();
+        $scholarship->category_id = $request->category_id;
+        $scholarship->level_id = $request->level_id;
+        $scholarship->title = $request->title;
+        $scholarship->short_description = $request->short_description;
+        $scholarship->banner = $request->banner;
+        $scholarship->meta_title = $request->meta_title;
+        $scholarship->description = $request->description;
+        $scholarship->meta_img = $request->meta_img;
+        $scholarship->meta_description = $request->meta_description;
+        $scholarship->meta_keywords = $request->meta_keywords;
+        $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+        $scholarship->save();
 
-        flash(translate('Blog post has been created successfully'))->success();
+        flash(translate('Scholarship post has been created successfully'))->success();
         return redirect()->route('scholarship.index');
     }
 
@@ -106,10 +106,11 @@ class ScholarshipController extends Controller
      */
     public function edit($id)
     {
-        $blog = Scholarship::find($id);
-        $blog_categories = ScholarshipCategory::all();
+        $scholarship = Scholarship::find($id);
+        $scholarship_categories = ScholarshipCategory::all();
+        $scholarship_levels = ScholarshipLevel::all();
 
-        return view('admin.default.scholarship_module.scholarship.edit', compact('blog','blog_categories'));
+        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship','scholarship_categories','scholarship_levels'));
     }
 
     /**
@@ -126,31 +127,32 @@ class ScholarshipController extends Controller
             'title' => 'required|max:255',
         ]);
 
-        $blog = Scholarship::find($id);
+        $scholarship = Scholarship::find($id);
 
-        $blog->category_id = $request->category_id;
-        $blog->title = $request->title;
-        $blog->banner = $request->banner;
-        $blog->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
-        $blog->short_description = $request->short_description;
-        $blog->description = $request->description;
+        $scholarship->category_id = $request->category_id;
+        $scholarship->level_id = $request->level_id;
+        $scholarship->title = $request->title;
+        $scholarship->banner = $request->banner;
+        $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+        $scholarship->short_description = $request->short_description;
+        $scholarship->description = $request->description;
 
-        $blog->meta_title = $request->meta_title;
-        $blog->meta_img = $request->meta_img;
-        $blog->meta_description = $request->meta_description;
-        $blog->meta_keywords = $request->meta_keywords;
+        $scholarship->meta_title = $request->meta_title;
+        $scholarship->meta_img = $request->meta_img;
+        $scholarship->meta_description = $request->meta_description;
+        $scholarship->meta_keywords = $request->meta_keywords;
 
-        $blog->save();
+        $scholarship->save();
 
-        flash(translate('Blog post has been updated successfully'))->success();
+        flash(translate( 'Scholarship post has been updated successfully'))->success();
         return redirect()->route('scholarship.index');
     }
 
     public function change_status(Request $request) {
-        $blog = Scholarship::find($request->id);
-        $blog->status = $request->status;
+        $scholarship = Scholarship::find($request->id);
+        $scholarship->status = $request->status;
 
-        $blog->save();
+        $scholarship->save();
         return 1;
     }
 
@@ -164,17 +166,17 @@ class ScholarshipController extends Controller
     {
         Scholarship::find($id)->delete();
 
-        return redirect('admin/blogs');
+        return redirect('admin/scholarship');
     }
 
 
     public function all_blog() {
-        $blogs = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
-        return view("frontend.default.scholarship.listing", compact('blogs'));
+        $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
+        return view("frontend.default.scholarship.listing", compact('scholarships'));
     }
 
     public function blog_details($slug) {
-        $blog = Scholarship::where('slug', $slug)->first();
-        return view("frontend.default.scholarship.details", compact('blog'));
+        $scholarship = Scholarship::where('slug', $slug)->first();
+        return view("frontend.default.scholarship.details", compact('scholarship'));
 }
 }

@@ -5,19 +5,19 @@
     <div class="col-lg-8 mx-auto">
         <div class="card">
             <div class="card-header">
-                <h5 class="mb-0 h6">{{translate('Blog Information')}}</h5>
+                <h5 class="mb-0 h6">{{translate('Scholarship Information')}}</h5>
             </div>
             <div class="card-body">
-                <form id="add_form" class="form-horizontal" action="{{ route('blog.update',$blog->id) }}" method="POST">
+                <form id="add_form" class="form-horizontal" action="{{ route('scholarship.update',$scholarship->id) }}" method="POST">
                     @csrf
                     @method('PATCH')
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
-                            {{translate('Blog Title')}}
+                            {{translate('Scholarship Title')}}
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Blog Title')}}" onkeyup="makeSlug(this.value)" id="title" name="title" value="{{ $blog->title }}" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Scholarship  Title')}}" onkeyup="makeSlug(this.value)" id="title" name="title" value="{{ $scholarship->title }}" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row" id="category">
@@ -26,18 +26,25 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <select
-                                class="form-control aiz-selectpicker"
-                                name="category_id"
-                                id="category_id"
-                                data-live-search="true"
-                                title="{{ translate('Select category') }}"
-                                required
-                                data-selected="{{ optional($blog->category)->id }}"
-                            >
-                                @foreach ($blog_categories as $category)
+                            <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select category') }}" required data-selected="{{ optional($scholarship->category)->id }}">
+                                @foreach ($scholarship_categories as $category)
                                 <option value="{{ $category->id }}">
                                     {{ $category->category_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="category">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Study Level')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select study level') }}" required data-selected="{{ optional($scholarship->category)->id }}">
+                                @foreach ($scholarship_levels as $level)
+                                <option value="{{ $level->id }}">
+                                    {{$level->level_name }}
                                 </option>
                                 @endforeach
                             </select>
@@ -48,7 +55,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Slug')}}</label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Slug')}}" name="slug" id="slug" value="{{ $blog->slug }}" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Slug')}}" name="slug" id="slug" value="{{ $scholarship->slug }}" class="form-control" required>
                         </div>
                     </div>
 
@@ -65,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                <input type="hidden" name="banner" class="selected-files" value="{{ $blog->banner }}">
+                                <input type="hidden" name="banner" class="selected-files" value="{{ $scholarship->banner }}">
                             </div>
                             <div class="file-preview box sm">
                             </div>
@@ -78,7 +85,7 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <textarea name="short_description" rows="5" class="form-control">{{ $blog->short_description }}</textarea>
+                            <textarea name="short_description" rows="5" class="form-control">{{ $scholarship->short_description }}</textarea>
                         </div>
                     </div>
 
@@ -87,14 +94,14 @@
                             {{translate('Description')}}
                         </label>
                         <div class="col-md-9">
-                            <textarea class="aiz-text-editor" name="description">{{ $blog->description }}</textarea>
+                            <textarea class="aiz-text-editor" name="description">{{ $scholarship->description }}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Meta Title')}}</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="meta_title" value="{{ $blog->meta_title }}" placeholder="{{translate('Meta Title')}}">
+                            <input type="text" class="form-control" name="meta_title" value="{{ $scholarship->meta_title }}" placeholder="{{translate('Meta Title')}}">
                         </div>
                     </div>
 
@@ -111,7 +118,7 @@
                                     </div>
                                 </div>
                                 <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                <input type="hidden" name="meta_img" class="selected-files" value="{{ $blog->meta_img }}">
+                                <input type="hidden" name="meta_img" class="selected-files" value="{{ $scholarship->meta_img }}">
                             </div>
                             <div class="file-preview box sm">
                             </div>
@@ -121,7 +128,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Meta Description')}}</label>
                         <div class="col-md-9">
-                            <textarea name="meta_description" rows="5" class="form-control">{{ $blog->meta_description }}</textarea>
+                            <textarea name="meta_description" rows="5" class="form-control">{{ $scholarship->meta_description }}</textarea>
                         </div>
                     </div>
 
@@ -130,7 +137,7 @@
                             {{translate('Meta Keywords')}}
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="{{ $blog->meta_keywords }}" placeholder="{{translate('Meta Keywords')}}">
+                            <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="{{ $scholarship->meta_keywords }}" placeholder="{{translate('Meta Keywords')}}">
                         </div>
                     </div>
 

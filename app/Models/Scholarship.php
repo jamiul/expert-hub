@@ -15,5 +15,8 @@ class Scholarship extends Model
     public function level() {
         return $this->belongsTo(ScholarshipLevel::class, 'level_id');
     }
+    public function university() {
+        return $this->belongsTo(ScholarshipUniversity::class, 'university_id');
+    }
 
 }
