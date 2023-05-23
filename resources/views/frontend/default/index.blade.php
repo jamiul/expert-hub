@@ -176,16 +176,17 @@
           @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
           @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
           <div class="col-lg-3 mb-3">
-            <div class=" card category">
-              <div class=" card-body">
+            <div class=" card" style="height:350px;">
+              <div class="">
                 <div class="">
-                  <img class="" src=" {{ custom_asset($category->photo) }}" alt="Image" style="width:60px; 
-                  " />
+                  <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
                 </div>
-                <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
-                  <p class="fs-22 fw-600 my-3" style="height:50px;">{{ $category->name }}</p>
-                </a>
-                <p class="fs-18  mt-2">{{ $category->description }}</p>
+                <div class=" card-body">
+                  <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
+                    <p class="fs-22 fw-600 " style="height:50px; line-height:23px;">{{ $category->name }}</p>
+                  </a>
+                  <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
+                </div>
               </div>
             </div>
           </div>

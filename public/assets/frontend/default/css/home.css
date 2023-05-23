@@ -5,10 +5,10 @@ body {
 font-weight: 700;
  }
 
- .category{
-  height: 210px;
+ /* .category{
+  height: 310px !important;
   color: black;
- }
+ } */
  .category-list{
 
   color: black !important;
