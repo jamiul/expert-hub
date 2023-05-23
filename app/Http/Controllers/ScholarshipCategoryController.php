@@ -62,7 +62,7 @@ class ScholarshipCategoryController extends Controller
         $category->save();
 
 
-        flash(translate('Blog category has been created successfully'))->success();
+        flash(translate('Scholarship category has been created successfully'))->success();
         return redirect()->route('scholarship-category.index');
     }
 
@@ -88,7 +88,7 @@ class ScholarshipCategoryController extends Controller
         $cateogry = ScholarshipCategory::find($id);
         $all_categories = ScholarshipCategory::all();
 
-        return view('admin.default.blog_system.category.edit',  compact('cateogry','all_categories'));
+        return view('admin.default.scholarship_module.category.edit',  compact('cateogry','all_categories'));
     }
 
     /**
@@ -105,15 +105,12 @@ class ScholarshipCategoryController extends Controller
         ]);
 
         $category = ScholarshipCategory::find($id);
-
         $category->category_name = $request->category_name;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->category_name));
-
         $category->save();
 
-
-        flash(translate('Blog category has been updated successfully'))->success();
-        return redirect()->route('blog-category.index');
+        flash(translate('Scholarship category has been updated successfully'))->success();
+        return redirect()->route('scholarship-category.index');
     }
 
     /**
@@ -126,6 +123,6 @@ class ScholarshipCategoryController extends Controller
     {
         ScholarshipCategory::find($id)->delete();
 
-        return redirect('admin/blog-category');
+        return redirect('admin/scholarship-category');
 }
 }

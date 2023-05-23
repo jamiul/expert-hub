@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 py-2 px-5 ">
-                    <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 img-fluid" alt="" >
+                    <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 img-fluid" alt="" style="height: 272px; width:590px">
                 </div>
             </div>
         </div>

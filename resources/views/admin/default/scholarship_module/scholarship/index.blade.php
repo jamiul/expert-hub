@@ -43,43 +43,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($blogs as $key => $blog)
+                    @foreach($scholarships as $key => $scholarship)
                     <tr>
                         <td>
-                            {{ ($key+1) + ($blogs->currentPage() - 1) * $blogs->perPage() }}
+                            {{ ($key+1) + ($scholarships->currentPage() - 1) * $scholarships->perPage() }}
                         </td>
                         <td>
-                            {{ $blog->title }}
+                            {{ $scholarship->title }}
                         </td>
                         <td>
-                            @if($blog->category != null)
-                                {{ $blog->category->category_name }}
+                            @if($scholarship->category != null)
+                                {{ $scholarship->category->category_name }}
                             @else
                                 --
                             @endif
                         </td>
                         <td>
-                            @if($blog->level != null)
-                                {{ $blog->level->level_name }}
+                            @if($scholarship->level != null)
+                                {{ $scholarship->level->level_name }}
                             @else
                                 --
                             @endif
                         </td>
                         <td>
-                            {{ $blog->short_description }}
+                            {{ $scholarship->short_description }}
                         </td>
                         <td>
                             <label class="aiz-switch aiz-switch-success mb-0">
-                                <input type="checkbox" onchange="change_status(this)" value="{{ $blog->id }}" <?php if($blog->status == 1) echo "checked";?>>
+                                <input type="checkbox" onchange="change_status(this)" value="{{ $scholarship->id }}" <?php if($scholarship->status == 1) echo "checked";?>>
                                 <span></span>
                             </label>
                         </td>
                         <td class="text-right">
-                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('blog.edit',$blog->id)}}" title="{{ translate('Edit') }}">
+                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('scholarship.edit',$scholarship->id)}}" title="{{ translate('Edit') }}">
                                 <i class="las la-pen"></i>
                             </a>
 
-                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('blog.destroy', $blog->id)}}" title="{{ translate('Delete') }}">
+                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('scholarship.destroy', $scholarship->id)}}" title="{{ translate('Delete') }}">
                                 <i class="las la-trash"></i>
                             </a>
                         </td>
@@ -88,7 +88,7 @@
                 </tbody>
             </table>
             <div class="aiz-pagination">
-                {{ $blogs->links() }}
+                {{ $scholarships->links() }}
             </div>
         </div>
 </div>
