@@ -327,7 +327,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                  href="{{route('scholarship')}}">{{ translate('Find Scholarships') }}</a>
               </li>
               <li class="dropdown mega_menu nav-item">
                 <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"

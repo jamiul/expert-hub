@@ -179,13 +179,13 @@ class ScholarshipController extends Controller
     }
 
 
-    public function all_blog() {
+    public function all_scholarship() {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
-        return view("frontend.default.scholarship.listing", compact('scholarships'));
+        return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 
-    public function blog_details($slug) {
+    public function scholarship_details($slug) {
         $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.default.scholarship.details", compact('scholarship'));
+        return view("frontend.default.find-scholarship.details", compact('scholarship'));
 }
 }
