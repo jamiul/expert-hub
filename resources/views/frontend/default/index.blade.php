@@ -166,7 +166,7 @@
 
 
 
-    <!-- Service Category -->
+    <!-- Consultant Service Category -->
     @if (get_setting('featured_category_show') == 'on')
     <section class="bg-white border-top">
       <div class=" container-home">
@@ -178,7 +178,7 @@
           </div>
           <div>
             <a href="{{ route('search') }}?category="
-              class="btn bg-white text-black fs-17 d-lg-none  rounded-1">{{ translate('Browse More Categories') }}
+              class=" btn bg-white text-black fs-17 d-lg-none rounded-1">{{ translate('Browse More Categories') }}
               <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
             </a>
           </div>
