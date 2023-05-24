@@ -448,6 +448,30 @@
               </a>
             </li>
             @endcan
+            @can('show blog category')
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-country.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-country.create', 'scholarship-country.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('country') }}</span>
+              </a>
+            </li>
+            @endcan
+            @can('show blog category')
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-city.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-city.create', 'scholarship-city.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('Sub location') }}</span>
+              </a>
+            </li>
+            @endcan
+            @can('show blog category')
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-qualification.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-qualification.create', 'scholarship-qualification.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('Qualification') }}</span>
+              </a>
+            </li>
+            @endcan
           </ul>
         </li>
         @endif

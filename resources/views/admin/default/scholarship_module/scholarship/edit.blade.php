@@ -65,7 +65,71 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row" id="country">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Country')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('select Country') }}" required data-selected="{{ optional($scholarship->category)->id }}">
+                                @foreach ($scholarship_country as $country)
+                                <option value="{{ $country->id }}">
+                                    {{$country->country_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group row" id="country">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Country')}}
+                            <span class="text-danger">*</span>
 
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Select Country') }}" data-selected="{{ optional($scholarship->category)->id }} " required>
+
+                                @foreach ($scholarship_country as $country)
+                                <option value="{{ $level->id }}">
+                                    {{$country->country_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="form-group row" id="city">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('City')}}
+                            <span class="text-danger">*</span>
+
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true" title="{{ translate('Select City') }}" data-selected="{{ optional($scholarship->category)->id }}" required>
+
+                                @foreach ($scholarship_city as $city)
+                                <option value="{{ $level->id }}">
+                                    {{$city->city_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="qualification">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Qualification')}}
+                            <span class="text-danger">*</span>
+
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select qualification') }}" data-selected="{{ optional($scholarship->category)->id }}" required>
+                                @foreach ($scholarship_qualification as $qualification)
+                                <option value="{{ $level->id }}">
+                                    {{$qualification->qualification_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Slug')}}</label>

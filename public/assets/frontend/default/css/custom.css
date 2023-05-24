@@ -692,3 +692,25 @@
 #fre-freelancing:checked ~ label {
     display: none;
 }
+
+/* scholarship list */
+.modal.right .modal-dialog {
+    position: fixed;
+    right: 0;
+    margin-right: 0;
+    width: 600px; /* Adjust the width as needed */
+    height:100%;
+    transform: translateX(100%);
+  }
+
+  .modal.right.fade .modal-dialog {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+
+  @media (max-width: 767px) {
+    .modal.right .modal-dialog {
+      width: 100%;
+      transform: translateX(100%);
+    }
+  }
