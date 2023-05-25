@@ -102,7 +102,7 @@
       <div class="container-home">
         <div class="">
           <div class="w-xl-50 w-lg-75 content-title ">
-            <h2 class="fw-700 fs-36 text-black mb-0 heading-title">Need academic help?</h2>
+            <h2 class="fw-700 fs-36 text-black mb-0">Need academic help?</h2>
             <!-- <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6> -->
           </div>
           <div class="row">
@@ -166,19 +166,19 @@
 
 
 
-    <!-- Service Category -->
+    <!-- Consultant Service Category -->
     @if (get_setting('featured_category_show') == 'on')
     <section class="bg-white border-top">
       <div class=" container-home">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 lh-1-8 content-title">
             <!-- <h2 class="fw-700 fs-36 heading-title">{{ get_setting('featured_category_title') }}</h2> -->
-            <h2 class="fw-700 fs-36 heading-title">Hire academic consultants by category</h2>
+            <h2 class="fw-700 fs-36">Hire academic consultants by category</h2>
             <!-- <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p> -->
           </div>
           <div>
             <a href="{{ route('search') }}?category="
-              class="btn bg-white text-black fs-17 d-lg-none  rounded-1">{{ translate('Browse More Categories') }}
+              class=" btn bg-white text-black fs-17 d-lg-none rounded-1">{{ translate('Browse More Categories') }}
               <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
             </a>
           </div>
@@ -229,7 +229,7 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-            <h2 class="fw-700 fs-36 heading-title">Find academic jobs by category</h2>
+            <h2 class="fw-700 fs-36">Find academic jobs by category</h2>
             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
           </div>
           <div>
@@ -248,13 +248,18 @@
                 <div class="position-relative">
                   <a href="">
                     <img class="img-fluid w-100 rounded-1" style="height:280px;"
-                      src=" {{url('/public/assets/home/service/service-1.png')}}" alt="Image">
+                      src=" {{url('/public/assets/home/job-cat-1.jpg')}}" alt="Image">
                   </a>
+                </div>
+                <div class="fre-job-catagory rounded-1"></div>
+                <div style=" background-color:#275846;">
+                  <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
+                    Course
+                    curriculum
+                    Development</p>
+
 
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Course
-                  curriculum
-                  Development</p>
               </div>
             </div>
           </div>
@@ -264,10 +269,13 @@
 
                 <div class="position-relative">
                   <a href="">
-                    <img class="w-100 img-fluid rounded-1 opacity-50"
-                      src=" {{url('/public/assets/home/service/01.jpeg')}}" alt="Image" style="height:280px;" /></a>
+                    <img class="w-100 img-fluid rounded-1 "
+                      src=" {{url('/public/assets/home/service/material-development.jpg')}}" alt="Image"
+                      style="height:280px; " /></a>
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Course
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title fw-700 text-white   position-absolute fs-18" style="top:17px; left:9px; ">
+                  Course
                   material
                   development
                 </p>
@@ -280,11 +288,11 @@
 
                 <div class="position-relative">
                   <a href="">
-                    <img class="w-100 img-fluid rounded-1 opacity-50"
-                      src=" {{url('/public/assets/home/service/research.jpeg')}}" alt="Image"
-                      style="height:280px;" /></a>
+                    <img class="w-100 img-fluid rounded-1 " src=" {{url('/public/assets/home/service/research.jpeg')}}"
+                      alt="Image" style="height:280px;" /></a>
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Research
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title text-white fw-500 position-absolute fs-18" style="top:17px; left:9px;">Research
                   and
                   Analysis</p>
               </div>
@@ -297,10 +305,11 @@
                 <div class="position-relative">
                   <a href="">
 
-                    <img class="w-100 img-fluid rounded-1 opacity-50 rounded-1 "
+                    <img class="w-100 img-fluid rounded-1  rounded-1 "
                       src=" {{url('/public/assets/home/service/writing.jpg')}}" alt="Image" style="height:280px;" /></a>
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px; fw-700">
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title text-white fw-500  position-absolute fs-18" style="top:17px; left:9px; fw-700">
                   Writing
                   and
                   Editing</p>
@@ -313,12 +322,12 @@
 
                 <div class="position-relative">
                   <a href="">
-                    <img class="w-100 img-fluid rounded-1 opacity-50"
-                      src=" {{url('/public/assets/home/service/scholarship.jpeg')}}" alt="Image"
-                      style="height:280px;" />
+                    <img class="w-100 img-fluid rounded-1 "
+                      src=" {{url('/public/assets/home/service/application.jpg')}}" alt="Image" style="height:280px;" />
                   </a>
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
                   Scholarship
                   Applications</p>
               </div>
@@ -331,11 +340,13 @@
                 <div class="position-relative">
                   <a href="">
 
-                    <img class="w-100 img-fluid rounded-1 opacity-50"
-                      src=" {{url('/public/assets/home/service/translator.jpeg')}}" alt="Image" style="height:280px;" />
+                    <img class="w-100 img-fluid rounded-1 "
+                      src=" {{url('/public/assets/home/service/translation.jpeg')}}" alt="Image"
+                      style="height:280px;" />
                   </a>
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title text-white fw-500 position-absolute fs-18" style="top:17px; left:9px;">
                   Transcription
                   and
                   Translation</p>
@@ -348,11 +359,12 @@
 
                 <div class="position-relative">
                   <a href="">
-                    <img class="w-100 img-fluid rounded-1 opacity-50 opacity-50"
+                    <img class="w-100 img-fluid rounded-1  "
                       src=" {{url('/public/assets/home/service/mentoring.jpeg')}}" alt="Image" style="height:280px;" />
                   </a>
                 </div>
-                <p class="card-title text-dark fw-700  position-absolute fs-20" style="top:120px; left:50px;">Academic
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title text-white fw-500  position-absolute fs-18" style="top:17px; left:9px;">Academic
                   mentoring</p>
               </div>
             </div>
@@ -363,12 +375,13 @@
 
                 <div class="position-relative">
                   <a href="">
-                    <img class="w-100 img-fluid rounded-1 opacity-50"
-                      src=" {{url('/public/assets/home/service/tutoring.jpeg')}}" alt="Image" style="height:280px;" />
+                    <img class="w-100 img-fluid rounded-1 " src=" {{url('/public/assets/home/service/tutoring.jpeg')}}"
+                      alt="Image" style="height:280px;" />
 
                   </a>
                 </div>
-                <p class="card-title text-dark fw-700   position-absolute fs-20" style="top:120px; left:50px;">Tutoring
+                <div class="fre-job-catagory rounded-1"></div>
+                <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">Tutoring
                   and
                   Instruction</p>
               </div>
@@ -377,6 +390,8 @@
         </div>
     </section>
     @endif
+
+
     <!-- Trending services -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
@@ -384,7 +399,7 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-            <h2 class="fw-700 fs-36 heading-title">Featured trending services</h2>
+            <h2 class="fw-700 fs-36">Featured trending services</h2>
             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
           </div>
           <div>
@@ -532,10 +547,10 @@
               </div>
             </div>
             <button type="button" class="btn mt-3 p-2 fs-16 px-4 text-white" style="background-color:#275846;">
-
               <span>Find talent</span>
               <span><img class=" px-1 " src=" {{url('/public/assets/home/arrows.png')}}" alt="Image"
-                  style="width:18px; " /></span>
+                  style="width:18px; " />
+              </span>
             </button>
           </div>
         </div>
@@ -549,7 +564,7 @@
     <section class="border-bottom">
       <div class=" container-home">
         <div class="content-title">
-          <h2 class="fw-700 fs-36 heading-title">Hear what recent FreelancerEdu clients have to say</h2>
+          <h2 class="fw-700 fs-36 ">Hear what recent FreelancerEdu clients have to say</h2>
         </div>
         <div class="">
           <div class="row ">
@@ -648,21 +663,21 @@
       <div class="container-home">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <h5 class=" heading-title nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
-              data-target="#home" role="tab" aria-controls="home" aria-selected="true"><span class="heading-title">Top
+            <h5 class="fw-700 nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+              data-target="#home" role="tab" aria-controls="home" aria-selected="true"><span class="">Top
                 skills</span>
             </h5>
           </li>
           <li class=" nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+            <h5 class="nav-link fs-22 text-muted" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
               aria-controls="profile" aria-selected="false">Trending skills</h5>
           </li>
           <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+            <h5 class="nav-link fs-22 text-muted" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
               aria-controls="contact" aria-selected="false">Top skills in Australia</h5>
           </li>
           <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+            <h5 class="nav-link fs-22 text-muted" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
               aria-controls="contact" aria-selected="false">Project catalog</h5>
           </li>
         </ul>
@@ -836,7 +851,7 @@
     });
     </script>
 
-    <script>
+    <!-- <script>
     $('#carouselExample').on('slide.bs.carousel', function(e) {
       var $e = $(e.relatedTarget);
       var idx = $e.index();
@@ -855,7 +870,8 @@
         }
       }
     });
-    </script>
+    </script> -->
+
     @endif
     @endsection
 

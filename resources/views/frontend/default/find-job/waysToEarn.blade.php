@@ -33,7 +33,7 @@
         </h6>
         <button class="  text-white fs-16 btn btn-primary  px-3 ">Sign up</button>
         <div class="border-bottom mt-4"></div>
-        <h6 class="my-3 " style="">Trusted By</h6>
+        <h6 class="my-3 " style="">Used By</h6>
         <div class="col-12">
           <div class="row">
 
