@@ -698,7 +698,7 @@
     position: fixed;
     right: 0;
     margin-right: 0;
-    width: 600px; /* Adjust the width as needed */
+    width: 750vw; /* Adjust the width as needed */
     height:100%;
     transform: translateX(100%);
   }
@@ -706,6 +706,17 @@
   .modal.right.fade .modal-dialog {
     transform: translateX(0);
     transition: transform 0.3s ease-out;
+  }
+  .fre-modal-main-section{
+    margin: 0;
+
+     /* Adjust the height as needed */
+  }
+  .fre-modal-content-section{
+    height: 100vh !important;
+  }
+  .fre-modal-content-section .fre-modal-body-section{
+    max-height: 75vh !important;
   }
 
   @media (max-width: 767px) {

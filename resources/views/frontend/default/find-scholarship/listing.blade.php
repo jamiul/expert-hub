@@ -8,10 +8,10 @@
             <div class="col-lg-6 text-center text-lg-left">
                 <h1 class="fw-600 h4">{{ translate('All Scholarship')}}</h1>
 
-                <button type="button" class=" w-25 shadow-lg bg-white  c-pointer border-0" data-toggle="modal" data-target="#drawerModal">
+                <button type="button" class=" w-25 shadow-lg bg-white  c-pointer border-0" id="openModalButton">
                     <div class="d-flex justify-content-center align-items-center px-5 py-2 ">
                         <img class="mx-2" src="{{my_asset('assets/frontend/default/img/scholarship/filter.png')}}" alt="">
-                        <p class=" text-black fs-20 text-center m-0">FIlters</p>
+                        <p class=" text-black fs-20 text-center m-0">Filters</p>
                     </div>
                 </button>
 
@@ -19,55 +19,18 @@
 
         </div>
 
-        <!-- Drawer Modal -->
-        <div class="modal right fade" id="drawerModal" tabindex="-1" role="dialog" aria-labelledby="drawerModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="drawerModalLabel">Scholarship Find</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Content for the drawer goes here -->
-                        <div class="d-flex justify-content-between">
-                            <h2>Specific subject area</h2>
-                            <p>Any</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="exampleCheckbox">
-                                    <label class="form-check-label" for="exampleCheckbox">
-                                        Checkbox Label
-                                    </label>
-                                </div>
 
-                            </div>
-                            <div class="col-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="exampleCheckbox">
-                                    <label class="form-check-label" for="exampleCheckbox">
-                                        Checkbox Label
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 
 <div class="container-main">
     <div class="row ">
-        <div class="col-lg-8 col-sm-12">
+        <div class="col-lg-12 col-sm-12">
             <div class="row">
                 @foreach($scholarships as $scholarship)
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-4 col-12">
                     <div class="card mb-3 overflow-hidden rounded-2 border-gray-light hov-box">
                         <a href="{{ route('scholarship.details', $scholarship->slug) }}" class="text-reset d-block position-relative">
                             <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload  w-100" style="height: 260px;">
@@ -127,9 +90,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-12">
-
-        </div>
     </div>
+
+  
 </div>
+@endsection
+
+@section('modal')
+@include("frontend/default/find-scholarship/filters-modal")
 @endsection
