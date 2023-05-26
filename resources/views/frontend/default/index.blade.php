@@ -589,12 +589,8 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class=" mx-1 ">
-                <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
-                <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
-                </p>
-              </div> -->
             </div>
+
             <div class="col-lg-4">
               <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
@@ -617,12 +613,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="mx-1 ">
-                <p class=" mt-2 fs-18 text-black fw-700">95%</p>
-                <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
-                </p>
-
-              </div> -->
             </div>
             <div class="col-lg-4 ">
               <div class=" card rounded-1 " style="height:300px;">
@@ -645,11 +635,6 @@
                   </>
                 </div>
               </div>
-              <!-- <div class="mx-1">
-                <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
-                <p class=" mt-3 fs-18">G2s best software awards
-                </p>
-              </div> -->
             </div>
           </div>
     </section>
@@ -660,65 +645,84 @@
     @if (get_setting('latest_project_show') == 'on')
 
     <section class=" bg-white border-top">
-      <div class="container-home">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <div class="container-home mt-5">
+        <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <h5 class="fw-700 nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
-              data-target="#home" role="tab" aria-controls="home" aria-selected="true"><span class="">Top
-                skills</span>
-            </h5>
+            <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+              data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
           </li>
-          <li class=" nav-item" role="presentation">
-            <h5 class="nav-link fs-22 text-muted" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
               aria-controls="profile" aria-selected="false">Trending skills</h5>
           </li>
           <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22 text-muted" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Top skills in Australia</h5>
+            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Top skills in Australia
+            </h5>
           </li>
           <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22 text-muted" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Project catalog</h5>
+            <h5 class="nav-link fs-22" id="project-tab" data-toggle="tab" data-target="#project" role="tab"
+              aria-controls="project" aria-selected="false">Project catalog
+            </h5>
           </li>
         </ul>
-        <div class="tab-content mt-5" id="myTabContent">
-          <div class="tab-pane tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="">
-              <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-                <div class="col">
-                  <h6 class="fs-18">
-                    Research writing</h6>
-                  <h6 class="fs-18">
-                    Proofreading and editing</h6>
-                  <h6 class="fs-18">Data analysis and interpretation</h6>
-                  <h6 class="fs-18">Translation services</h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-18">
-                    Research proposal writing</h6>
-                  <h6 class="fs-18">
-                    Statistical analysis </h6>
-                  <h6 class="fs-18">
-                    Curriculum development</h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-18">
-                    <h6 class="fs-18">
-                      Research proposal writing</h6>
-                  </h6>
-                  <h6 class="fs-18">
-                    Scholarship applications</h6>
-                  <h6 class="fs-18">Academic mentoring </h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-18">
-                    Copywriting</h6>
-                  <h6 class="fs-18">
-                    Tutoring and Instruction</h6>
-                  <h6 class="fs-18">Transcribing audio or video recordings</h6>
-                </div>
+      </div>
+      <div class="tab-content container-home" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row ">
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Research writing</h6>
+                <h6 class="fs-18">
+                  Proofreading and editing</h6>
+                <h6 class="fs-18">Data analysis and interpretation</h6>
+                <h6 class="fs-18">Translation services</h6>
               </div>
             </div>
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Research proposal writing</h6>
+                <h6 class="fs-18">
+                  Statistical analysis </h6>
+                <h6 class="fs-18">
+                  Curriculum development</h6>
+              </div>
+            </div>
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Research proposal writing</h6>
+                <h6 class="fs-18">
+                  Scholarship applications</h6>
+                <h6 class="fs-18">Academic mentoring </h6>
+              </div>
+            </div>
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Copywriting</h6>
+                <h6 class="fs-18">
+                  Tutoring and Instruction</h6>
+                <h6 class="fs-18">Transcribing audio or video recordings</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+            <p>1</p>
+          </div>
+        </div>
+        <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+            <p>Will update soons </p>
+          </div>
+        </div>
+        <div class="tab-pane" id="project" role="tabpanel" aria-labelledby="project-tab">
+          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+            <p>Will update soon</p>
           </div>
         </div>
       </div>
