@@ -694,6 +694,50 @@
 }
 
 /* scholarship list */
+
+.fre-scsh-uni-name{
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color:  #304F40;
+}
+.fre-scsh-uni-name:hover{
+    text-decoration: underline;
+}
+.fre-scsh-details-main{
+    width: 100%;
+    display: flex;
+}
+.fre-scsh-left-side-title{
+    color: #275846;
+    font-weight:700;
+    font-size: 15px;
+}
+.fre-scsh-right-side-details{
+    font-size: 15px;
+    color: #000000;
+    font-weight:600;
+}
+.fre-scsh-find-more-btn{
+    font-size: 15px;
+    color: #275846;
+    font-weight:700;
+    text-decoration: underline !important;
+    cursor: pointer;
+
+}
+.accordion .card-header::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    float: right;
+    margin-left: auto;
+}
+
+.accordion .card-header.collapsed::after {
+    content: "\f106";
+}
+
 .modal.right .modal-dialog {
     position: fixed;
     right: 0;
@@ -725,3 +769,5 @@
       transform: translateX(100%);
     }
   }
+
+

@@ -170,13 +170,97 @@
                 <h5 class="modal-title fw-600" id="drawerModalLabel" style="color:#275846">Select subject area</h5>
 
             </div>
-            <div class="modal-body  fre-modal-body-section">
+            <div class="modal-body  fre-modal-body-section mt-5">
                 <!-- Content for the drawer goes here -->
+                    <div>
+                        <h4 style="color:#275846">A</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Agriculture Sciences</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">All Accounting</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">All Geography</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">All Human Welfare Studies And Services</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">All Pharmacy</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Art and Design</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">B</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Biological and life Sciences</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Building and Architecture</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Business</p>
 
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">C</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Chemistry</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Computing and IT</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">E</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Engineering</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Environmental Science</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">F</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Finance</p>
+
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">H</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Health and Medicine</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">History</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Hospitality and Tourism</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">I</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Information Science and Librarianship</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">L</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Language and Culture</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Law and Legal Studies</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">M</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Marketing, Media and Communication</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Mechanic and Repair Technologies</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Military</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Multidisciplinary Studies</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">P</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Performing Arts and Music</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Physics</p>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Political and Social Sciences</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color:#275846">T</h4>
+                        <div>
+                            <p class="pb-4 border-bottom fs-16 c-pointer ">Teaching and Education</p>
+                        </div>
+                    </div>
             </div>
 
             <div class="border"></div>
-           
+
         </div>
     </div>
 </div>

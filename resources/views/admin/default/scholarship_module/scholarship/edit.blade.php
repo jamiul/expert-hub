@@ -41,7 +41,7 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select study level') }}" required data-selected="{{ optional($scholarship->category)->id }}">
+                            <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select study level') }}" required data-selected="{{ optional($scholarship->level)->id }}">
                                 @foreach ($scholarship_levels as $level)
                                 <option value="{{ $level->id }}">
                                     {{$level->level_name }}
@@ -56,13 +56,22 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="university_id" id="university_id" data-live-search="true" title="{{ translate('select university') }}" required data-selected="{{ optional($scholarship->category)->id }}">
+                            <select class="form-control aiz-selectpicker" name="university_id" id="university_id" data-live-search="true" title="{{ translate('select university') }}" required data-selected="{{ optional($scholarship->university)->id }}">
                                 @foreach ($scholarship_universities as $university)
                                 <option value="{{ $university->id }}">
                                     {{$university->university_name }}
                                 </option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">
+                            {{translate('Website Link')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" placeholder="{{translate('website link')}}"  id="website_link" name="website_link" value="{{ $scholarship->website_link }}" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row" id="country">
@@ -97,6 +106,7 @@
                             </select>
                         </div>
                     </div> -->
+
                     <div class="form-group row" id="city">
                         <label class="col-md-3 col-from-label">
                             {{translate('City')}}
@@ -104,11 +114,27 @@
 
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true" title="{{ translate('Select City') }}" data-selected="{{ optional($scholarship->category)->id }}" required>
+                            <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true" title="{{ translate('Select City') }}" data-selected="{{ optional($scholarship->city)->id }}" required>
 
                                 @foreach ($scholarship_city as $city)
-                                <option value="{{ $level->id }}">
+                                <option value="{{ $city->id }}">
                                     {{$city->city_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="city">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Who can apply')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="who_can_apply_id" id="who_can_apply_id" data-live-search="true" title="{{ translate('Who can apply') }} " data-selected="{{ optional($scholarship->who_can_apply)->id }}"  required>
+
+                                @foreach ($scholarship_who_can_apply as $title)
+                                <option value="{{$title->id}}">
+                                    {{$title->who_can_apply_title }}
                                 </option>
                                 @endforeach
                             </select>
@@ -121,9 +147,9 @@
 
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select qualification') }}" data-selected="{{ optional($scholarship->category)->id }}" required>
+                            <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select qualification') }}" data-selected="{{ optional($scholarship->qualification)->id }}" required>
                                 @foreach ($scholarship_qualification as $qualification)
-                                <option value="{{ $level->id }}">
+                                <option value="{{ $qualification->id }}">
                                     {{$qualification->qualification_name }}
                                 </option>
                                 @endforeach

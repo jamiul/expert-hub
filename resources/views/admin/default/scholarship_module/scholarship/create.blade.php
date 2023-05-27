@@ -70,6 +70,15 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">
+                            {{translate('website link')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" placeholder="{{translate('website link')}}"  id="website_link" name="website_link" class="form-control" required>
+                        </div>
+                    </div>
                     <div class="form-group row" id="country">
                         <label class="col-md-3 col-from-label">
                             {{translate('Country')}}
@@ -104,6 +113,23 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row" id="city">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Who can apply')}}
+                            <span class="text-danger">*</span>
+
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="who_can_apply_id" id="who_can_apply_id" data-live-search="true" title="{{ translate('Who can apply') }}" required>
+
+                                @foreach ($scholarship_who_can_apply as $title)
+                                <option value="{{ $level->id }}">
+                                    {{$title->who_can_apply_title }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group row" id="qualification">
                         <label class="col-md-3 col-from-label">
                             {{translate('Qualification')}}
@@ -121,6 +147,7 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Slug')}}
                             <span class="text-danger">*</span></label>

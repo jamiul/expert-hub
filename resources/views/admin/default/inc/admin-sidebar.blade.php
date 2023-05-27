@@ -472,6 +472,22 @@
               </a>
             </li>
             @endcan
+            @can('show blog category')
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-who-can-apply.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-who-can-apply.create', 'scholarship-who-can-apply.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('Who can apply') }}</span>
+              </a>
+            </li>
+            @endcan
+            @can('show blog category')
+            <!-- <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-website-link.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-website-link.create', 'scholarship-website-link.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('website') }}</span>
+              </a>
+            </li> -->
+            @endcan
           </ul>
         </li>
         @endif
