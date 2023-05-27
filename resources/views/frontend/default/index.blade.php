@@ -242,151 +242,37 @@
           </div>
         </div>
         <div class="row mb-3">
+          @php
+          $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
+          ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
+          ->pluck('user_id');
+
+          $services = \App\Models\ProjectCategory::inRandomOrder()
+          ->get();
+          @endphp
+
+          @foreach ($services as $category)
           <div class="col-lg-3">
             <div class="caorusel-box">
               <div class="card rounded-1" style="height:280px">
                 <div class="position-relative">
                   <a href="">
                     <img class="img-fluid w-100 rounded-1" style="height:280px;"
-                      src=" {{url('/public/assets/home/job-cat-1.jpg')}}" alt="Image">
+                      src=" {{ custom_asset($category->photo) }}" alt="Image">
                   </a>
                 </div>
                 <div class="fre-job-catagory rounded-1"></div>
                 <div style=" background-color:#275846;">
                   <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
-                    Course
-                    curriculum
-                    Development</p>
+                    {{$category->name}} </p>
 
 
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
+          @endforeach
 
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 "
-                      src=" {{url('/public/assets/home/service/material-development.jpg')}}" alt="Image"
-                      style="height:280px; " /></a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title fw-700 text-white   position-absolute fs-18" style="top:17px; left:9px; ">
-                  Course
-                  material
-                  development
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 " src=" {{url('/public/assets/home/service/research.jpeg')}}"
-                      alt="Image" style="height:280px;" /></a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500 position-absolute fs-18" style="top:17px; left:9px;">Research
-                  and
-                  Analysis</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-
-                    <img class="w-100 img-fluid rounded-1  rounded-1 "
-                      src=" {{url('/public/assets/home/service/writing.jpg')}}" alt="Image" style="height:280px;" /></a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500  position-absolute fs-18" style="top:17px; left:9px; fw-700">
-                  Writing
-                  and
-                  Editing</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 "
-                      src=" {{url('/public/assets/home/service/application.jpg')}}" alt="Image" style="height:280px;" />
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
-                  Scholarship
-                  Applications</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-
-                    <img class="w-100 img-fluid rounded-1 "
-                      src=" {{url('/public/assets/home/service/translation.jpeg')}}" alt="Image"
-                      style="height:280px;" />
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500 position-absolute fs-18" style="top:17px; left:9px;">
-                  Transcription
-                  and
-                  Translation</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1  "
-                      src=" {{url('/public/assets/home/service/mentoring.jpeg')}}" alt="Image" style="height:280px;" />
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500  position-absolute fs-18" style="top:17px; left:9px;">Academic
-                  mentoring</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 " src=" {{url('/public/assets/home/service/tutoring.jpeg')}}"
-                      alt="Image" style="height:280px;" />
-
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">Tutoring
-                  and
-                  Instruction</p>
-              </div>
-            </div>
-          </div>
         </div>
     </section>
     @endif
@@ -440,7 +326,9 @@
                   </div>
                   <div class="card-body">
                     <div>
-                      <p class="card-title  fs-18">Web & app design</p>
+                      @if($service->category != null)
+                      <p class="card-title  fs-18">{{$service->category->name}}</p>
+                      @endif
                       <p class="card-title mt-1 fs-18 fw-700">
                         {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
                       <div class="mt-2">
@@ -710,19 +598,20 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane " id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-            <p>1</p>
+            <p>Trending skills</p>
           </div>
         </div>
         <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-            <p>Will update soons </p>
+            <p>
+              Top skills in Australia </p>
           </div>
         </div>
         <div class="tab-pane" id="project" role="tabpanel" aria-labelledby="project-tab">
           <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-            <p>Will update soon</p>
+            <p>Project catalog</p>
           </div>
         </div>
       </div>
