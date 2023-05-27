@@ -102,14 +102,14 @@
             <div class="col-lg-3 ">
                 <div class="accordion c-pointer mt-3 border-bottom" id="accordionExample">
                     <div class="">
-                        <div class=" d-flex justify-content-between" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class=" d-flex justify-content-between" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             <h5 class="mb-0 pb-2">
                                 Scholarship type
                             </h5>
                             <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body py-3 px-0">
                                 <div class="form-check mb-2">
                                     <input class="form-check-input" type="checkbox" value="" id="checkbox1">
@@ -148,7 +148,7 @@
                             <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample2">
                             <div class="card-body py-3 px-0">
                                 <div class="form-check  mb-2">
                                     <input class="form-check-input" type="checkbox" value="" id="ausCap1">
@@ -175,7 +175,7 @@
                             <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample3">
+                        <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample3">
                             <div class="card-body py-3 px-0">
                                 <div class="form-check  mb-2">
                                     <input class="form-check-input" type="checkbox" value="" id="suppType1">
@@ -208,7 +208,7 @@
                             <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample4">
+                        <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample4">
                             <div class="card-body py-3 px-0">
                                 <div class="form-check  mb-2">
                                     <input class="form-check-input" type="checkbox" value="" id="location1">
@@ -240,12 +240,13 @@
                     <div class="row">
                         <div class="col-lg-2 ">
                             <div class="d-flex justify-content-center w-100">
-                                <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload ">
+
+                                <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-3">
                             </div>
 
-                            <p class=" ml-[32px] w-[120px] min-w-[150px] rounded-2 text-white text-center c-pointer px-3 mt-2" style="background: #304F40;">
+                            <a href="{{$scholarship->website_link}}" class="rounded-2 d-flex justify-content-center text-white  c-pointer px-4  py-1" style="background: #304F40;" target="_blank">
                                 Website
-                            </p>
+                            </a>
                         </div>
                         <div class="col-lg-10 border-gray-400">
                             <h2 class="fs-18 fw-700 mb-1 bg-white mx-1">
@@ -305,10 +306,9 @@
                                     </p>
                                 </div>
                                 <div class="col-8 pl-0">
-                                    <p class="fre-scsh-right-side-details">
-                                        Domestic and international applicants
-
-                                    </p>
+                                @if($scholarship->who_can_apply != null)
+                                    <p class="fre-scsh-right-side-details">{{ $scholarship->who_can_apply_id->who_can_apply_id_title }}</p>
+                                    @endif
                                 </div>
 
                             </div>
