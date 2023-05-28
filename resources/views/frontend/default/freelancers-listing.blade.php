@@ -186,9 +186,9 @@
               @foreach ($freelancers as $key => $freelancer)
               @if ($freelancer->user != null)
               <div class="col-lg-4">
-                <div class="">
-                  <div class="card m-lg-2">
-                    <div class="card-body ">
+                <div class="card-body">
+                  <div class="card  ">
+                    <div class="">
                       <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
                         class="  text-inherit px-3 py-4">
                         <span class="d-block avatar">
