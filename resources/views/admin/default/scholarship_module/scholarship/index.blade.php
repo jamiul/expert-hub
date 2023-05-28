@@ -37,6 +37,7 @@
                         <th>{{translate('Title')}}</th>
                         <th data-breakpoints="lg">{{translate('Category')}}</th>
                         <th data-breakpoints="lg">{{translate('level')}}</th>
+                        <th data-breakpoints="lg">{{translate('university')}}</th>
                         <th data-breakpoints="lg">{{translate('Short Description')}}</th>
                         <th data-breakpoints="lg">{{translate('Status')}}</th>
                         <th class="text-right">{{translate('Options')}}</th>
@@ -61,6 +62,13 @@
                         <td>
                             @if($scholarship->level != null)
                                 {{ $scholarship->level->level_name }}
+                            @else
+                                --
+                            @endif
+                        </td>
+                        <td>
+                            @if($scholarship->university != null)
+                                {{ $scholarship->university->university_name }}
                             @else
                                 --
                             @endif

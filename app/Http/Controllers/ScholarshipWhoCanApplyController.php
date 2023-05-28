@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\ScholarshipUniversity;
+use App\Models\ScholarshipWhoCanApply;
 use Illuminate\Http\Request;
 
-class ScholarshipUniversityController extends Controller
+class ScholarshipWhoCanApplyController extends Controller
 {
     public function __construct()
     {
@@ -18,20 +18,21 @@ class ScholarshipUniversityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
+
     {
 
         $sort_search =null;
-        $categories = ScholarshipUniversity::orderBy('university_name', 'asc');
+        $categories = ScholarshipWhoCanApply::orderBy('who_can_apply_title', 'asc');
 
 
         if ($request->has('search')){
             $sort_search = $request->search;
-            $categories = $categories->where('university_name', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('who_can_apply_title', 'like', '%'.$sort_search.'%');
         }
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.university.index', compact('categories', 'sort_search'));
+        return view('admin.default.scholarship_module.who_can_apply.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -52,21 +53,21 @@ class ScholarshipUniversityController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request);
         $request->validate([
-            'university_name' => 'required|max:255',
+            'who_can_apply_title' => 'required|max:255',
         ]);
 
-        $category = new ScholarshipUniversity;
-
-        $category->university_name = $request->university_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->university_name));
+        $category = new ScholarshipWhoCanApply;
+        // dd($category);
+        $category->who_can_apply_title = $request->who_can_apply_title;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->who_can_apply_title));
 
         $category->save();
 
 
-        flash(translate('Scholarship university has been created successfully'))->success();
-        return redirect()->route('scholarship-university.index');
+        flash(translate('Scholarship who-can-apply Name has been created successfully'))->success();
+        return redirect()->route('scholarship-who-can-apply.index');
     }
 
     /**
@@ -88,10 +89,10 @@ class ScholarshipUniversityController extends Controller
      */
     public function edit($id)
     {
-        $level = ScholarshipUniversity::find($id);
-        // $all_categories = ScholarshipUniversity::all();
+        $level = ScholarshipWhoCanApply::find($id);
+        // $all_categories = ScholarshipWhoCanApply::all();
 
-        return view('admin.default.scholarship_module.university.edit',  compact('level'));
+        return view('admin.default.scholarship_module.who_can_apply.edit',  compact('level'));
     }
 
     /**
@@ -104,19 +105,19 @@ class ScholarshipUniversityController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'university_name' => 'required|max:255',
+            'who_can_apply_title' => 'required|max:255',
         ]);
 
-        $category = ScholarshipUniversity::find($id);
+        $category = ScholarshipWhoCanApply::find($id);
 
-        $category->university_name = $request->university_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->university_name));
+        $category->who_can_apply_title = $request->who_can_apply_title;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->who_can_apply_title));
 
         $category->save();
 
 
-        flash(translate('Scholarship university has been updated successfully'))->success();
-        return redirect()->route('scholarship-university.index');
+        flash(translate('Scholarship city has been updated successfully'))->success();
+        return redirect()->route('scholarship-who-can-apply.index');
     }
 
     /**
@@ -125,10 +126,10 @@ class ScholarshipUniversityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
-        ScholarshipUniversity::find($id)->delete();
-
-        return redirect('admin/scholarship-university');
+        ScholarshipWhoCanApply::find($id)->delete();
+        return redirect('admin/scholarship-who-can-apply');
     }
 }
