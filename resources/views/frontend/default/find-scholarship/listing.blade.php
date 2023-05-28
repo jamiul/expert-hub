@@ -8,14 +8,15 @@
   <div class="container-main mt-5">
     <div class="row">
       <div class="col-lg-3 ">
-        <div class="accordion c-pointer mt-3 border-bottom" id="accordionExample">
+        <div class="accordion c-pointer mt-3 border-bottom " id="accordionExample">
           <div class="">
             <div class=" d-flex justify-content-between" id="headingOne" data-toggle="collapse"
               data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              <h5 class="mb-0 pb-2">
+              <h6 class="mb-0 pb-2 fw-700">
                 Scholarship type
-              </h5>
-              <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+              </h6>
+              <img class="" style="width:20px; height:20px;"
+                src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
             </div>
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -47,10 +48,11 @@
           <div class="">
             <div class="d-flex justify-content-between" id="headingOne" data-toggle="collapse"
               data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              <h5 class="mb-0 pb-2">
+              <h6 class="mb-0 pb-2 fw-700">
                 Level of Study
-              </h5>
-              <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+              </h6>
+              <img class="" style="width:20px; height:20px;"
+                src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
             </div>
 
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample2">
@@ -81,10 +83,11 @@
           <div class="">
             <div class="d-flex justify-content-between" id="headingOne" data-toggle="collapse"
               data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-              <h5 class="mb-0 pb-2">
+              <h6 class="mb-0 pb-2 fw-700">
                 Field of Study
-              </h5>
-              <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+              </h6>
+              <img class="" style="width:20px; height:20px;"
+                src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
             </div>
 
             <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample3">
@@ -157,10 +160,11 @@
           <div class="">
             <div class=" d-flex justify-content-between" id="headingOne" data-toggle="collapse"
               data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-              <h5 class="mb-0 pb-2">
+              <h6 class="mb-0 pb-2 fw-700">
                 Location
-              </h5>
-              <img class="" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+              </h6>
+              <img class="" style="width:20px; height:20px;"
+                src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
             </div>
 
             <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample4">
@@ -248,6 +252,7 @@
           </div>
         </div>
       </div>
+      <!-- <div class="col-lg-1"></div> -->
 
       <div class="col-lg-9 ">
         @foreach($scholarships as $scholarship)
