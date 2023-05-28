@@ -242,151 +242,37 @@
           </div>
         </div>
         <div class="row mb-3">
+          @php
+          $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
+          ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
+          ->pluck('user_id');
+
+          $services = \App\Models\ProjectCategory::inRandomOrder()
+          ->get();
+          @endphp
+
+          @foreach ($services as $category)
           <div class="col-lg-3">
             <div class="caorusel-box">
               <div class="card rounded-1" style="height:280px">
                 <div class="position-relative">
                   <a href="">
                     <img class="img-fluid w-100 rounded-1" style="height:280px;"
-                      src=" {{url('/public/assets/home/job-cat-1.jpg')}}" alt="Image">
+                      src=" {{ custom_asset($category->photo) }}" alt="Image">
                   </a>
                 </div>
                 <div class="fre-job-catagory rounded-1"></div>
                 <div style=" background-color:#275846;">
                   <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
-                    Course
-                    curriculum
-                    Development</p>
+                    {{$category->name}} </p>
 
 
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
+          @endforeach
 
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 "
-                      src=" {{url('/public/assets/home/service/material-development.jpg')}}" alt="Image"
-                      style="height:280px; " /></a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title fw-700 text-white   position-absolute fs-18" style="top:17px; left:9px; ">
-                  Course
-                  material
-                  development
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 " src=" {{url('/public/assets/home/service/research.jpeg')}}"
-                      alt="Image" style="height:280px;" /></a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500 position-absolute fs-18" style="top:17px; left:9px;">Research
-                  and
-                  Analysis</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-
-                    <img class="w-100 img-fluid rounded-1  rounded-1 "
-                      src=" {{url('/public/assets/home/service/writing.jpg')}}" alt="Image" style="height:280px;" /></a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500  position-absolute fs-18" style="top:17px; left:9px; fw-700">
-                  Writing
-                  and
-                  Editing</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 "
-                      src=" {{url('/public/assets/home/service/application.jpg')}}" alt="Image" style="height:280px;" />
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
-                  Scholarship
-                  Applications</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-
-                    <img class="w-100 img-fluid rounded-1 "
-                      src=" {{url('/public/assets/home/service/translation.jpeg')}}" alt="Image"
-                      style="height:280px;" />
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500 position-absolute fs-18" style="top:17px; left:9px;">
-                  Transcription
-                  and
-                  Translation</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1  "
-                      src=" {{url('/public/assets/home/service/mentoring.jpeg')}}" alt="Image" style="height:280px;" />
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500  position-absolute fs-18" style="top:17px; left:9px;">Academic
-                  mentoring</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
-
-                <div class="position-relative">
-                  <a href="">
-                    <img class="w-100 img-fluid rounded-1 " src=" {{url('/public/assets/home/service/tutoring.jpeg')}}"
-                      alt="Image" style="height:280px;" />
-
-                  </a>
-                </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">Tutoring
-                  and
-                  Instruction</p>
-              </div>
-            </div>
-          </div>
         </div>
     </section>
     @endif
@@ -440,7 +326,9 @@
                   </div>
                   <div class="card-body">
                     <div>
-                      <p class="card-title  fs-18">Web & app design</p>
+                      @if($service->category != null)
+                      <p class="card-title  fs-18">{{$service->category->name}}</p>
+                      @endif
                       <p class="card-title mt-1 fs-18 fw-700">
                         {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
                       <div class="mt-2">
@@ -589,12 +477,8 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class=" mx-1 ">
-                <p class=" mt-2 fs-18 text-black fw-700">4.9/5</p>
-                <p class=" mt-3 fs-18">"Clients rate professional on Scholarships Australia"
-                </p>
-              </div> -->
             </div>
+
             <div class="col-lg-4">
               <div class=" card rounded-1 " style="height:300px;">
                 <div class=" card-body">
@@ -617,12 +501,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="mx-1 ">
-                <p class=" mt-2 fs-18 text-black fw-700">95%</p>
-                <p class=" mt-3 fs-18">95% customers are satisfied through to see their consultant
-                </p>
-
-              </div> -->
             </div>
             <div class="col-lg-4 ">
               <div class=" card rounded-1 " style="height:300px;">
@@ -645,11 +523,6 @@
                   </>
                 </div>
               </div>
-              <!-- <div class="mx-1">
-                <p class=" mt-2 fs-18 text-black fw-700">Award winner</p>
-                <p class=" mt-3 fs-18">G2s best software awards
-                </p>
-              </div> -->
             </div>
           </div>
     </section>
@@ -660,65 +533,85 @@
     @if (get_setting('latest_project_show') == 'on')
 
     <section class=" bg-white border-top">
-      <div class="container-home">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <div class="container-home mt-5">
+        <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <h5 class="fw-700 nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
-              data-target="#home" role="tab" aria-controls="home" aria-selected="true"><span class="">Top
-                skills</span>
-            </h5>
+            <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+              data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
           </li>
-          <li class=" nav-item" role="presentation">
-            <h5 class="nav-link fs-22 text-muted" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+          <li class="nav-item" role="presentation">
+            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
               aria-controls="profile" aria-selected="false">Trending skills</h5>
           </li>
           <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22 text-muted" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Top skills in Australia</h5>
+            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Top skills in Australia
+            </h5>
           </li>
           <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22 text-muted" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Project catalog</h5>
+            <h5 class="nav-link fs-22" id="project-tab" data-toggle="tab" data-target="#project" role="tab"
+              aria-controls="project" aria-selected="false">Project catalog
+            </h5>
           </li>
         </ul>
-        <div class="tab-content mt-5" id="myTabContent">
-          <div class="tab-pane tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="">
-              <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-                <div class="col">
-                  <h6 class="fs-18">
-                    Research writing</h6>
-                  <h6 class="fs-18">
-                    Proofreading and editing</h6>
-                  <h6 class="fs-18">Data analysis and interpretation</h6>
-                  <h6 class="fs-18">Translation services</h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-18">
-                    Research proposal writing</h6>
-                  <h6 class="fs-18">
-                    Statistical analysis </h6>
-                  <h6 class="fs-18">
-                    Curriculum development</h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-18">
-                    <h6 class="fs-18">
-                      Research proposal writing</h6>
-                  </h6>
-                  <h6 class="fs-18">
-                    Scholarship applications</h6>
-                  <h6 class="fs-18">Academic mentoring </h6>
-                </div>
-                <div class="col">
-                  <h6 class="fs-18">
-                    Copywriting</h6>
-                  <h6 class="fs-18">
-                    Tutoring and Instruction</h6>
-                  <h6 class="fs-18">Transcribing audio or video recordings</h6>
-                </div>
+      </div>
+      <div class="tab-content container-home" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row ">
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Research writing</h6>
+                <h6 class="fs-18">
+                  Proofreading and editing</h6>
+                <h6 class="fs-18">Data analysis and interpretation</h6>
+                <h6 class="fs-18">Translation services</h6>
               </div>
             </div>
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Research proposal writing</h6>
+                <h6 class="fs-18">
+                  Statistical analysis </h6>
+                <h6 class="fs-18">
+                  Curriculum development</h6>
+              </div>
+            </div>
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Research proposal writing</h6>
+                <h6 class="fs-18">
+                  Scholarship applications</h6>
+                <h6 class="fs-18">Academic mentoring </h6>
+              </div>
+            </div>
+            <div class="col-lg-3 ">
+              <div class=" ">
+                <h6 class="fs-18">
+                  Copywriting</h6>
+                <h6 class="fs-18">
+                  Tutoring and Instruction</h6>
+                <h6 class="fs-18">Transcribing audio or video recordings</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+            <p>Trending skills</p>
+          </div>
+        </div>
+        <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+            <p>
+              Top skills in Australia </p>
+          </div>
+        </div>
+        <div class="tab-pane" id="project" role="tabpanel" aria-labelledby="project-tab">
+          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+            <p>Project catalog</p>
           </div>
         </div>
       </div>

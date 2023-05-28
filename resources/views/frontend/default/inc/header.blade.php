@@ -323,8 +323,9 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants ') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
               </li>
+
               <li class="dropdown mega_menu nav-item">
                 <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

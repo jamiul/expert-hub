@@ -6,7 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ScholarshipCategory;
 use App\Models\Scholarship;
+use App\Models\ScholarshipCity;
+use App\Models\ScholarshipCountry;
 use App\Models\ScholarshipLevel;
+use App\Models\ScholarshipQualification;
+use App\Models\ScholarshipUniversity;
+use App\Models\ScholarshipWhoCanApply;
 
 class ScholarshipController extends Controller
 {
@@ -45,8 +50,13 @@ class ScholarshipController extends Controller
     {
         $scholarship_categories = ScholarshipCategory::all();
         $scholarship_levels = ScholarshipLevel::all();
+        $scholarship_universities = ScholarshipUniversity::all();
+        $scholarship_country = ScholarshipCountry::all();
+        $scholarship_city = ScholarshipCity::all();
+        $scholarship_qualification = ScholarshipQualification::all();
+        $scholarship_who_can_apply = ScholarshipWhoCanApply::all();
 
-        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories',"scholarship_levels"));
+        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories',"scholarship_levels",'scholarship_universities','scholarship_country','scholarship_city','scholarship_qualification','scholarship_who_can_apply'));
 
     }
 
@@ -67,11 +77,29 @@ class ScholarshipController extends Controller
             'level_id' => 'required',
             'title' => 'required|max:255',
         ]);
+        $request->validate([
+            'country_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'city_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'qualification_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
 
         $scholarship = new Scholarship;
 
         $scholarship->category_id = $request->category_id;
         $scholarship->level_id = $request->level_id;
+        $scholarship->university_id = $request->university_id;
+        $scholarship->website_link = $request->website_link;
+        $scholarship->country_id = $request->country_id;
+        $scholarship->city_id = $request->city_id;
+        $scholarship->who_can_apply_id = $request->who_can_apply_id;
+        $scholarship->qualification_id = $request->qualification_id;
         $scholarship->title = $request->title;
         $scholarship->short_description = $request->short_description;
         $scholarship->banner = $request->banner;
@@ -109,8 +137,13 @@ class ScholarshipController extends Controller
         $scholarship = Scholarship::find($id);
         $scholarship_categories = ScholarshipCategory::all();
         $scholarship_levels = ScholarshipLevel::all();
+        $scholarship_universities = ScholarshipUniversity::all();
+        $scholarship_country = ScholarshipCountry::all();
+        $scholarship_city = ScholarshipCity::all();
+        $scholarship_qualification = ScholarshipQualification::all();
+        $scholarship_who_can_apply = ScholarshipWhoCanApply::all();
 
-        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship','scholarship_categories','scholarship_levels'));
+        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship','scholarship_categories','scholarship_levels','scholarship_universities','scholarship_country','scholarship_city','scholarship_qualification','scholarship_who_can_apply'));
     }
 
     /**
@@ -131,6 +164,12 @@ class ScholarshipController extends Controller
 
         $scholarship->category_id = $request->category_id;
         $scholarship->level_id = $request->level_id;
+        $scholarship->university_id = $request->university_id;
+        $scholarship->website_link = $request->website_link;
+        $scholarship->country_id = $request->country_id;
+        $scholarship->city_id = $request->city_id;
+        $scholarship->who_can_apply_id = $request->who_can_apply_id;
+        $scholarship->qualification_id = $request->qualification_id;
         $scholarship->title = $request->title;
         $scholarship->banner = $request->banner;
         $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
@@ -170,13 +209,14 @@ class ScholarshipController extends Controller
     }
 
 
-    public function all_blog() {
+    public function all_scholarship() {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
-        return view("frontend.default.scholarship.listing", compact('scholarships'));
+
+        return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 
-    public function blog_details($slug) {
+    public function scholarship_details($slug) {
         $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.default.scholarship.details", compact('scholarship'));
+        return view("frontend.default.find-scholarship.details", compact('scholarship'));
 }
 }

@@ -692,3 +692,82 @@
 #fre-freelancing:checked ~ label {
     display: none;
 }
+
+/* scholarship list */
+
+.fre-scsh-uni-name{
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color:  #304F40;
+}
+.fre-scsh-uni-name:hover{
+    text-decoration: underline;
+}
+.fre-scsh-details-main{
+    width: 100%;
+    display: flex;
+}
+.fre-scsh-left-side-title{
+    color: #275846;
+    font-weight:700;
+    font-size: 15px;
+}
+.fre-scsh-right-side-details{
+    font-size: 15px;
+    color: #000000;
+    font-weight:600;
+}
+.fre-scsh-find-more-btn{
+    font-size: 15px;
+    color: #275846;
+    font-weight:700;
+    text-decoration: underline !important;
+    cursor: pointer;
+
+}
+.accordion .card-header::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    float: right;
+    margin-left: auto;
+}
+
+.accordion .card-header.collapsed::after {
+    content: "\f106";
+}
+
+.modal.right .modal-dialog {
+    position: fixed;
+    right: 0;
+    margin-right: 0;
+    width: 750vw; /* Adjust the width as needed */
+    height:100%;
+    transform: translateX(100%);
+  }
+
+  .modal.right.fade .modal-dialog {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+  .fre-modal-main-section{
+    margin: 0;
+
+     /* Adjust the height as needed */
+  }
+  .fre-modal-content-section{
+    height: 100vh !important;
+  }
+  .fre-modal-content-section .fre-modal-body-section{
+    max-height: 75vh !important;
+  }
+
+  @media (max-width: 767px) {
+    .modal.right .modal-dialog {
+      width: 100%;
+      transform: translateX(100%);
+    }
+  }
+
+
