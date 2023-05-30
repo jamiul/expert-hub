@@ -20,7 +20,7 @@
           <div class="logo ml-4">
             <a href="{{ route('home') }}" class="d-inline-block">
               <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}"
-                height="" class="mh-40px w-100">
+                height="" class=" w-100" style="max-height:30px;">
             </a>
           </div>
           @endif
