@@ -18,5 +18,11 @@ class Scholarship extends Model
     public function university() {
         return $this->belongsTo(ScholarshipUniversity::class, 'university_id');
     }
+    public function country() {
+        return $this->belongsTo(ScholarshipCountry::class, 'country_id');
+    }
+    public function whoCanApply() {
+        return $this->belongsTo(ScholarshipWhoCanApply::class, 'whoCanApply_id');
+    }
 
 }

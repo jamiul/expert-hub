@@ -250,11 +250,14 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-3">
+                <button class="border-0  text-white fs-16  btn btn-primary px-3 py-2 mt-3">Submit</button>
+                </div>
             </div>
             <div class="col-lg-1"></div>
 
             <div class="col-lg-9 col-xl-8">
-
                 @foreach($scholarships as $scholarship )
 
                 <div class="">
@@ -270,17 +273,18 @@
                             </a>
                         </div>
                         <div class="col-lg-10 border-gray-400">
-                            <h2 class="fs-18 fw-700 mb-1 bg-white ">
+                            <h2 class="fs-18 fw-700 mb-1 bg-white d-flex justify-content-between">
                                 <a href="{{ route('scholarship.details', $scholarship->slug) }}" class=" fs-16 fw-700 pb-1 " title="{{ $scholarship->title }}" style="border-bottom: 2px solid  #000003; color: #000003">
                                     {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}
                                 </a>
+                                <!-- <img src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt=""> -->
                             </h2>
                             <div>
                                 @if($scholarship->university != null)
                                 <div class="  ">
                                     <p class=" fre-scsh-uni-name"> {{ $scholarship->university->university_name }} |
                                         @if($scholarship->country !=null)
-                                    <p>{{ $scholarship->country->	country_name }}</p>
+                                    {{ $scholarship->country->	country_name }}
                                     @endif
                                     </p>
                                 </div>
@@ -371,10 +375,11 @@
                                         get connected with consultants who are previous
                                         scholarship recipients in your field to ensure you
                                         submit a competitive application.
-                                        <a class="fre-scsh-find-more-btn m-0">
+                                        <!-- <a class="fre-scsh-find-more-btn m-0">
                                             Find a consultant
-                                        </a>
+                                        </a> -->
                                     </p>
+                                    <button class="border-0  text-white fs-16  btn btn-primary px-3 py-2 m-0">Find a consultant</button>
                                 </div>
                             </div>
 
