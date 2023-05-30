@@ -45,10 +45,10 @@
                     reality.</p>
                   <div class="lg-my-3 my-sm-0 home-banner-button ">
                     <a href="{{route('register') }}?type=2"
-                      class="btn text-white fw-700  fs-20 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
+                      class="btn text-white fw-700  fs-20 fs-sm-12 mr-2 mb-3"
                       style="background-color:#275846;">{{ translate('I want to Hire') }}</a>
                     <a href="{{route('register') }}?type=1"
-                      class="btn text-white fw-700 ml-4 fs-20 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
+                      class="btn text-white fw-700  fs-20 fs-sm-12  mb-3"
                       style="background-color:#275846;">{{ translate('I want to Work') }}</a>
                   </div>
                 </div>

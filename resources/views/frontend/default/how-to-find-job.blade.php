@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 py-2 px-5 ">
-                    <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 img-fluid" alt="" style="height: 272px; width:590px">
+                    <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 img-fluid" alt="" style="height:41vh; width:42vw">
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <div class="row mt-4 ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
-                            <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works.png')}}" alt="">
+                            <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works.png')}}" alt="" >
                         </div>
 
                     </div>

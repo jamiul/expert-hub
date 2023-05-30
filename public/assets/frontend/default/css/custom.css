@@ -425,6 +425,19 @@
     width: 94%;
 
 }
+/* @media (min-width: 768px) {
+    .fre-how-to-hire-banner-img{
+        height:272vw;
+        width:590vh;
+        background:red
+    }
+}
+@media (max-width: 1350px) {
+    .fre-how-to-hire-banner-img{
+        height:330px;
+        width:690px
+    }
+} */
 /* how-to-find-job */
 .find-job-banner p {
     color: black;
@@ -699,8 +712,8 @@
     margin-top: 10px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
-    color:  #304F40;
+    font-weight: 700;
+    color:#000003;
 }
 .fre-scsh-uni-name:hover{
     text-decoration: underline;
@@ -710,14 +723,14 @@
     display: flex;
 }
 .fre-scsh-left-side-title{
-    color: #275846;
+    color: #000003;
     font-weight:700;
     font-size: 15px;
 }
 .fre-scsh-right-side-details{
     font-size: 15px;
-    color: #000000;
-    font-weight:600;
+    color: #000003;
+    font-weight:500;
 }
 .fre-scsh-find-more-btn{
     font-size: 15px;
@@ -768,6 +781,7 @@
       width: 100%;
       transform: translateX(100%);
     }
+
   }
 
 
