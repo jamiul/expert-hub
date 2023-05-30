@@ -27,89 +27,91 @@
 
         </div>
         <div class="col-lg-6 py-2 px-5 ">
-          <img src="{{my_asset('how-tohire-banar.jpg')}}" class="rounded-2 " alt="" style="height:41vh; width:42vw">
+          <img src="{{my_asset('how-tohire-banar.png')}}" class="rounded-2 " alt="" style="">
         </div>
       </div>
     </div>
 
-    <div class="container-main  ">
-      <div class="">
-        <h1 class="hth-lets-work-title ">Let’s get to work</h1>
-        <p class="hth-lets-work-text w-sm-90">Build relationships and create your own Virtual Talent Bench™ for quick
-          project turnarounds or big transformations.</p>
-        <div class="border-bottom border-gray mt-3"></div>
+  </div>
+  </div>
+
+  <div class="container-main  " style="">
+    <div class="">
+      <h1 class="hth-lets-work-title ">Let’s get to work</h1>
+      <p class="hth-lets-work-text w-sm-90">Build relationships and create your own Virtual Talent Bench™ for quick
+        project turnarounds or big transformations.</p>
+      <div class="border-bottom border-gray mt-3"></div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+      <div class="col-lg-6 col-sm-12 ">
+        <img class="img-fluid rounded-2"
+          src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/postJob.jpg')}}" alt="">
       </div>
-
-      <div class="row mt-5 mb-5">
-        <div class="col-lg-6 col-sm-12 ">
-          <img class="img-fluid rounded-2"
-            src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/postJob.jpg')}}" alt="">
-        </div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-5 col-sm-12 mt-2">
-          <h1 class="get-work-child-title ">Post a job and hire a pro</h1>
-          <h3 class="get-work-child-text">Connect with talent that gets you with Talent Marketplace</h3>
-          <p class="get-work-child-details mb-3">Post your job on the world’s work marketplace and wait for the
-            proposals to flood in from talented people around the world.</p>
-          <p class="get-work-child-details">Our advanced algorithms help you shortlist candidates who are the best fit.
-            And you can check profiles, portfolios, and reviews before you give someone the green light.</p>
-          <button class="border-0  text-white fs-16  btn btn-primary px-3 py-2 mt-3">Find talent</button>
-        </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-5 col-sm-12 mt-2">
+        <h1 class="get-work-child-title ">Post a job and hire a pro</h1>
+        <h3 class="get-work-child-text">Connect with talent that gets you with Talent Marketplace</h3>
+        <p class="get-work-child-details mb-3">Post your job on the world’s work marketplace and wait for the
+          proposals to flood in from talented people around the world.</p>
+        <p class="get-work-child-details">Our advanced algorithms help you shortlist candidates who are the best fit.
+          And you can check profiles, portfolios, and reviews before you give someone the green light.</p>
+        <button class="border-0  text-white fs-16  btn btn-primary px-3 py-2 mt-3">Find talent</button>
       </div>
+    </div>
 
-      <div class="row " style="margin-top: 100px;">
-        <div class="col-lg-5 col-sm-12 ">
-          <h1 class="get-work-child-title ">Browse and buy projects</h1>
-          <h3 class="get-work-child-text">Start critical work right away with Project Catalog</h3>
-          <p class="get-work-child-details">Rather skip the guesswork? Shop projects already planned for you by the
-            talent who know them best.</p>
-          <p class="get-work-child-details">No need to create a job post or sift through a shortlist. Just browse, buy,
-            and get going right away, with clear expectations from the start.</p>
-          <button class="border-0 text-white fs-16 btn btn-primary px-3 py-2 mt-3">Browse Projects</button>
-        </div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-6 col-sm-12 ">
-          <div class="row">
-            <div class="col-lg-6 col-sm-6 ">
-              <div class="card h-100 position-relative">
-                <img class="card-img-top rounded-1"
-                  src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-1.jpg')}}"
-                  alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">You will get a perfect logo designed for your business</p>
-                </div>
-                <p class="pl-4 fw-700 text-black">From $100</p>
-                <div class="bg-white rounded-2 hth-profile-active position-absolute">
-                  <div class="px-3 py-1 d-flex">
-                    <img class="rounded-circle pr-1 position-relative"
-                      src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}"
-                      alt="">
-                    <p class="fs-14 ">Stefan M.</p>
-                    <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
+    <div class="row  " style="margin-top: 100px; ">
+      <div class="col-lg-5 col-sm-12 ">
+        <h1 class="get-work-child-title ">Browse and buy projects</h1>
+        <h3 class="get-work-child-text">Start critical work right away with Project Catalog</h3>
+        <p class="get-work-child-details">Rather skip the guesswork? Shop projects already planned for you by the
+          talent who know them best.</p>
+        <p class="get-work-child-details">No need to create a job post or sift through a shortlist. Just browse, buy,
+          and get going right away, with clear expectations from the start.</p>
+        <button class="border-0 text-white fs-16 btn btn-primary px-3 py-2 mt-3">Browse Projects</button>
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-6 col-sm-12 ">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 ">
+            <div class="card h-100 position-relative">
+              <img class="card-img-top rounded-1"
+                src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-1.jpg')}}"
+                alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">You will get a perfect logo designed for your business</p>
+              </div>
+              <p class="pl-4 fw-700 text-black">From $100</p>
+              <div class="bg-white rounded-2 hth-profile-active position-absolute">
+                <div class="px-3 py-1 d-flex">
+                  <img class="rounded-circle pr-1 position-relative"
+                    src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}"
+                    alt="">
+                  <p class="fs-14 ">Stefan M.</p>
+                  <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
 
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6 col-sm-6 ">
-              <div class="card  h-100 position-relative">
-                <img class="card-img-top"
-                  src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}"
-                  alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">You will get a fully customizable WordPress website. No code needed.</p>
-                </div>
-                <p class="pl-4 fw-700 text-black ">From $300</p>
-                <div class="bg-white rounded-2 hth-profile-active position-absolute">
-                  <div class="px-3 py-1 d-flex">
-                    <img class="rounded-circle pr-1 position-relative"
-                      src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}"
-                      alt="">
-                    <p class="fs-14 ">Md. Mojahidul I.</p>
+          <div class="col-lg-6 col-sm-6 ">
+            <div class="card  h-100 position-relative">
+              <img class="card-img-top"
+                src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}"
+                alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">You will get a fully customizable WordPress website. No code needed.</p>
+              </div>
+              <p class="pl-4 fw-700 text-black ">From $300</p>
+              <div class="bg-white rounded-2 hth-profile-active position-absolute">
+                <div class="px-3 py-1 d-flex">
+                  <img class="rounded-circle pr-1 position-relative"
+                    src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}"
+                    alt="">
+                  <p class="fs-14 ">Md. Mojahidul I.</p>
 
-                    <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
-                  </div>
+                  <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
                 </div>
               </div>
             </div>
@@ -117,6 +119,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <div class="row container-main mb-5">
