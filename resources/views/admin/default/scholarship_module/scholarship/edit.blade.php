@@ -130,11 +130,11 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="who_can_apply_id" id="who_can_apply_id" data-live-search="true" title="{{ translate('Who can apply') }} " data-selected="{{ optional($scholarship->who_can_apply)->id }}"  required>
+                            <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id" data-live-search="true" title="{{ translate('Who can apply') }} " data-selected="{{ optional($scholarship->whoCanApply)->id }}"  required>
 
-                                @foreach ($scholarship_who_can_apply as $title)
+                                @foreach ($scholarship_whoCanApply as $title)
                                 <option value="{{$title->id}}">
-                                    {{$title->who_can_apply_title }}
+                                    {{$title->whoCanApply_title }}
                                 </option>
                                 @endforeach
                             </select>
