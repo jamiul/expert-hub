@@ -46,10 +46,10 @@
                   <div class="lg-my-3 my-sm-0 home-banner-button ">
                     <a href="{{route('register') }}?type=2"
                       class="btn text-white fw-700  fs-20 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
-                      style="background-color:#275846;">{{ translate('I want to Hire') }}</a>
+                      style="background-color:#1d4335;">{{ translate('I want to Hire') }}</a>
                     <a href="{{route('register') }}?type=1"
                       class="btn text-white fw-700 ml-4 fs-20 fs-sm-12 py-lg-3 py-sm-1 px-lg-5 px-sm-1 mb-3"
-                      style="background-color:#275846;">{{ translate('I want to Work') }}</a>
+                      style="background-color:#1d4335;">{{ translate('I want to Work') }}</a>
                   </div>
                 </div>
                 <div class="col-lg-4"></div>
@@ -97,13 +97,12 @@
     </section>
 
     <!-- explore services  -->
-    @if (get_setting('how_it_works_show') == 'on')
+    <!-- @if (get_setting('how_it_works_show') == 'on')
     <section class="border-top">
       <div class="container-home">
         <div class="">
           <div class="w-xl-50 w-lg-75 content-title ">
             <h2 class="fw-700 fs-36 text-black mb-0">Need academic help?</h2>
-            <!-- <h6 class="fs-18 fw-400">Most viewed and all time selling services</h6> -->
           </div>
           <div class="row">
             <div class="col-xl-3 col-md-6">
@@ -162,9 +161,89 @@
         </div>
       </div>
     </section>
+    @endif -->
+    <!-- explore services -->
+    @if (get_setting('how_it_works_show') == 'on')
+    <section class="border-top pb-2 " style="background-color:#275846;">
+      <div class="container-home">
+        <div class="">
+          <div class=" content-title  text-center mb-4">
+            <h2 class="fw-700 fs-36 text-white mb-0">Need academic help?</h2>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-md-6">
+              <div class=" ">
+                <div class=" h-136px align-items-center">
+                  <img class=" mb-4 mx-auto d-block border border-white  p-3"
+                    src=" {{url('/public/assets/home/post.png')}}" alt="Image" style="width:70px; border-radius:50%;" />
+                  <p class="fs-24 fw-700 mb-lg-2 consultant-category text-center text-white"> Post a job
+
+                  </p>
+                </div>
+
+                <h6 class="fs-18 mt-4 text-white text-center">
+                  Thousands of degrees, subjects and short courses from leading Australian unis in one place.
+                </h6>
+              </div>
+
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class=" ">
+                <div class=" h-136px align-items-center">
+                  <img class=" mb-4 mx-auto d-block border border-white  p-3"
+                    src=" {{url('/public/assets/home/quiz.png')}}" alt="Image" style="width:70px; border-radius:50%;" />
+                  <p class="fs-24 fw-700 mb-lg-2 consultant-category text-center text-white"> Receive proposal
+                  </p>
+                </div>
+                <h6 class="fs-18 mt-4 text-white text-center">
+                  Guidance to find your best option, based on what's important to you.
+                </h6>
+              </div>
+
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class=" ">
+                <div class=" h-136px align-items-center">
+                  <img class=" mb-4 mx-auto d-block border border-white  p-3"
+                    src=" {{url('/public/assets/home/enroll.png')}}" alt="Image"
+                    style="width:70px; border-radius:50%;" />
+                  <p class="fs-24 fw-700 mb-lg-2 consultant-category text-center text-white"> Make Selection
+
+                  </p>
+                </div>
+                <h6 class="fs-18 mt-4 text-white text-center">
+                  Simplified online enrolment to give you easy access to uni study.
+                </h6>
+              </div>
+
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class=" ">
+                <div class=" h-136px align-items-center">
+                  <img class=" mb-4 mx-auto d-block border border-white  p-3"
+                    src=" {{url('/public/assets/home/check.png')}}" alt="Image"
+                    style="width:70px; border-radius:50%;" />
+                  <p class="fs-24 fw-700 mb-lg-2 consultant-category text-center text-white"> Payment Securely
+                  </p>
+                </div>
+                <h6 class="fs-18 mt-4 text-white text-center">
+                  Get started on your study journey today.
+                </h6>
+              </div>
+
+            </div>
+
+          </div>
+          <div class=" mt-3 text-center">
+            <h5 class="btn rounded-1 text-white border">
+              Let's get started
+            </h5>
+
+          </div>
+        </div>
+      </div>
+    </section>
     @endif
-
-
 
     <!-- Consultant Service Category -->
     @if (get_setting('featured_category_show') == 'on')
@@ -195,7 +274,7 @@
                 </div>
                 <div class=" card-body">
                   <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
-                    <p class="fs-22 fw-600 " style="height:50px; line-height:23px;">{{ $category->name }}</p>
+                    <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}</p>
                   </a>
                   <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
                 </div>
@@ -220,7 +299,6 @@
       </div>
     </section>
     @endif
-
 
     <!-- Find academic jobs by category-->
     @if (get_setting('latest_project_show') == 'on')
@@ -254,19 +332,18 @@
           @foreach ($services as $category)
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:280px">
+              <div class="card rounded-1 fre-job-catagory" style="height:280px">
                 <div class="position-relative">
                   <a href="">
-                    <img class="img-fluid w-100 rounded-1" style="height:280px;"
+                    <img class="img-fluid w-100 rounded-1 opacity-75 " style="height:280px;"
                       src=" {{ custom_asset($category->photo) }}" alt="Image">
                   </a>
                 </div>
-                <div class="fre-job-catagory rounded-1"></div>
-                <div style=" background-color:#275846;">
-                  <p class="card-title text-white fw-500   position-absolute fs-18" style="top:17px; left:9px;">
+                <!-- <div class="fre-job-catagory rounded-1"></div> -->
+                <div class="position-absolute w-100 ">
+                  <p class="card-title text-white fw-700 p-1 fre-job-catagory fs-19"
+                    style="top:17px; left:9px; background-color:#275846; ">
                     {{$category->name}} </p>
-
-
                 </div>
               </div>
             </div>
@@ -276,11 +353,338 @@
         </div>
     </section>
     @endif
+    <!-- Join us -->
+    @if (get_setting('latest_project_show') == 'on')
+    <section class="border-top bg-white">
+      <div class="container-home">
+        <div class="row ">
+          <div class="col-lg-6 col-lg-6">
+            <img class="mr-2  img-fluid" src="{{url('/public/assets/home/001.png')}}" alt="Image"
+              style="width:500px;" />
+          </div>
+          <div class=" col-lg-6 col-sm-12">
+            <h2 class="fw-700 mb-3 heading-title">What makes FreelancerEdu impressive</h2>
+            <div class="">
+              <div class=" d-flex ">
+                <div>
+                  <img class=" mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
+                    style="width:15px;" />
+                </div>
+                <div>
+                  <h6 class="fs-16 "><span class="fw-700 heading-title">Accessible academic experts:</span> Find work
+                    that hits your
+                    financial
+                    goals
+                    faster
+                    with
+                    ambitious startups
+                    and well-known brands.</h6>
+                </div>
+                <div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <h6 class="fs-16 m-2"><span class="fw-700 heading-title">Fast responses:</span>
+
+                  Build a predictable pipeline of projects, big and small, through strong
+                  connections.
+                </h6>
 
 
-    <!-- Trending services -->
+
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <h6 class="fs-16 m-2 "> <span class="fw-700 heading-title">High-quality work:</span>
+                  Search for jobs or have
+                  clients
+                  come to you. The
+                  opportunities
+                  are endless.</h6>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <h6 class="fs-16 m-2 "><span class="fw-700 heading-title">We're here to help you:</span>
+                  Search for jobs or have
+                  clients
+                  come to you. The
+                  opportunities
+                  are endless.</h6>
+              </div>
+            </div>
+            <button type="button" class="btn mt-3 p-2 fs-16 px-4 text-white" style="background-color:#275846;">
+              <span>Find talent</span>
+              <span><img class=" px-1 " src=" {{url('/public/assets/home/arrows.png')}}" alt="Image"
+                  style="width:18px; " />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    @endif
+
+    <!--Find scholarship by category -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
+      <div class="container-home" style=" ">
+        <div class="d-flex justify-content-between ">
+          <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
+            <h2 class="fw-700 fs-36"> Find scholarship by category</h2>
+
+          </div>
+          <div>
+            <div class="pt-2 text-center">
+              <a href="" class="category-list fs-18 fw-400 "><span>All Scholarships
+                </span></a>
+              <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+                style="width:18px;" />
+            </div>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1 " style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/social-science.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18">Social science scholarships</p>
+                      <p class="fs-18 fw-700">Scholarship open for all international students</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 8</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/university.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18">University Scholarships</p>
+                      <p class="fs-18 fw-700">Post-graduate university scholarships available</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 5</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/medical.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18">Medical Scholarships</p>
+                      <p class="fs-18 fw-700"> Full funded scholarship is open now</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 12</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/humnaties.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18"> Humanities Scholarships</p>
+                      <p class="fs-18 fw-700">Humanities scholarship for domestic student</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 10</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/education.jpeg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18">Education Scholarships</p>
+                      <p class="fs-18 fw-700"> Undergraduate education scholarships is available</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 12</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/arts.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18">Arts Scholarships</p>
+                      <p class="fs-18 fw-700 ">Post-graduate fellowship scholarship is available now</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 20</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/engeneering.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18"> Engineering Scholarships</p>
+                      <p class="fs-18 fw-700">50% scholarship for all international students</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 15</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="caorusel-box">
+              <div class="card rounded-1" style="height:400px">
+                <div class="">
+                  <div class=" ">
+                    <img src=" {{url('/public/assets/home/Find-scholarship/IT.jpg')}}" class="card-img-top"
+                      alt="service_image" height="212">
+                  </div>
+                  <div class="card-body">
+                    <div>
+
+                      <p class="card-title  fs-18">Information Technology Scholarships</p>
+                      <p class="fs-18 fw-700">IT scholarships for masters students, open for all</p>
+
+                      <div class="mt-2">
+                        <span>
+                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                            style="width:12px;" />
+                        </span>
+                        <span> 10</span>
+                        <span> Open</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+    </section>
+    @endif
+    <!-- Trending services -->
+    @if (get_setting('latest_project_show') == 'on')
+    <section class="border-top bg-white" style=" padding-bottom:10px;">
       <div class="container-home" style=" ">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
@@ -374,79 +778,6 @@
     </section>
     @endif
 
-    <!-- Join us -->
-    @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top bg-white">
-      <div class="container-home">
-        <div class="row ">
-          <div class="col-lg-6 col-lg-6">
-            <img class="mr-2  img-fluid" src="{{url('/public/assets/home/001.png')}}" alt="Image"
-              style="width:500px;" />
-          </div>
-          <div class=" col-lg-6 col-sm-12">
-            <h2 class="fw-700 mb-3 heading-title">What makes FreelancerEdu impressive</h2>
-            <div class="">
-              <div class=" d-flex ">
-                <div>
-                  <img class=" mr-2" src="{{url('/public/assets/findJob/check.png')}}" alt="Image"
-                    style="width:15px;" />
-                </div>
-                <div>
-                  <h6 class="fs-16 "><span class="fw-700 heading-title">Accessible academic experts:</span> Find work
-                    that hits your
-                    financial
-                    goals
-                    faster
-                    with
-                    ambitious startups
-                    and well-known brands.</h6>
-                </div>
-                <div>
-                </div>
-              </div>
-              <div class="d-flex align-items-center">
-                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-                <h6 class="fs-16 m-2"><span class="fw-700 heading-title">Fast responses:</span>
-
-                  Build a predictable pipeline of projects, big and small, through strong
-                  connections.
-                </h6>
-
-
-
-              </div>
-              <div class="d-flex align-items-center mb-2">
-                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-                <h6 class="fs-16 m-2 "> <span class="fw-700 heading-title">High-quality work:</span>
-                  Search for jobs or have
-                  clients
-                  come to you. The
-                  opportunities
-                  are endless.</h6>
-              </div>
-              <div class="d-flex align-items-center mb-2">
-                <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
-                <h6 class="fs-16 m-2 "><span class="fw-700 heading-title">We're here to help you:</span>
-                  Search for jobs or have
-                  clients
-                  come to you. The
-                  opportunities
-                  are endless.</h6>
-              </div>
-            </div>
-            <button type="button" class="btn mt-3 p-2 fs-16 px-4 text-white" style="background-color:#275846;">
-              <span>Find talent</span>
-              <span><img class=" px-1 " src=" {{url('/public/assets/home/arrows.png')}}" alt="Image"
-                  style="width:18px; " />
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    @endif
-
-
     <!-- learn with scholarship australia -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-bottom">
@@ -528,10 +859,7 @@
     </section>
     @endif
 
-
-
     @if (get_setting('latest_project_show') == 'on')
-
     <section class=" bg-white border-top">
       <div class="container-home mt-5">
         <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">

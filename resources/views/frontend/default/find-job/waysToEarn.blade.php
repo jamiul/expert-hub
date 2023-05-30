@@ -32,25 +32,24 @@
           work you want.
         </h6>
         <button class="  text-white fs-16 btn btn-primary  px-3 ">Sign up</button>
-        <div class="border-bottom mt-4"></div>
-        <h6 class="my-3 " style="">Used By</h6>
-        <div class="col-12">
-          <div class="row">
+        <div class="border-bottom mt-5"></div>
+        <div class="d-flex mt-lg-4 align-items-center justify-content-center">
+          <div class="col-2">
+            <h6>Used By</h6>
+          </div>
+          <div class="col-10">
+            <div class="row">
+              <div class="mr-5">
+                <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+              </div>
+              <div class="mr-5">
+                <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+              </div>
+              <div class="mr-5">
+                <img class="" src="{{my_asset('automatic.svg')}}" alt="">
+              </div>
 
-            <div class="mr-5">
-              <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
-            </div>
-            <div class="mr-5">
-              <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
-            </div>
-            <div class="mr-5">
-              <img class="" src="{{my_asset('automatic.svg')}}" alt="">
-            </div>
-            <div class="mr-5">
-              <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
-            </div>
-            <div class="">
-              <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+
             </div>
 
           </div>

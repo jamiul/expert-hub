@@ -106,16 +106,7 @@
               <div class="form-control file-amount">{{ translate('Choose File') }}</div>
               <input type="hidden" name="photo" class="selected-files">
             </div>
-<<<<<<< HEAD
 
-
-            @can('project cat create')
-            <div class="form-group mb-3 text-right">
-              <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
-            </div>
-            @endcan
-=======
-           
             <small class="form-text text-muted">.svg {{ translate('file recommended') }}</small>
           </div>
           @can('project cat create')
@@ -123,7 +114,7 @@
             <button type="submit" class="btn btn-primary">{{translate('Save New Category')}}</button>
           </div>
           @endcan
->>>>>>> 51f62f1252907e4a0f960ba6263c7e392b3ec87a
+
         </form>
       </div>
     </div>

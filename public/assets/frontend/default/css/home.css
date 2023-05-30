@@ -267,24 +267,28 @@ right:0;
 /* Job Category part */
 
 .fre-job-catagory{
-    background-color: black;
+    /* background-color: black;
     opacity: 0.5;
     height: 101vh !important;
     width: 100% !important;
-    /* margin-left: -15% !important; */
      margin-bottom: -1%; 
-    margin-top: -91%;
+    margin-top: -91%; */
     
 
 }
 
 .fre-job-catagory:hover{
-    background-color: #817b7b;
-    opacity: 0.5;
+    opacity: 0.75;
+   
+
     /* height: 101vh !important;
     width: 100% !important; */
     /* margin-left: -15% !important; */
     /* margin-bottom: -3%; */
     /* margin-top: -91%; */
 
+}
+.fre-job-catagory p:hover{
+   
+    color:red;
 }
