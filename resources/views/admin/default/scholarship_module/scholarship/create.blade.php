@@ -123,8 +123,9 @@
                             <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id" data-live-search="true" title="{{ translate('Who can apply') }}" required>
 
                                 @foreach ($scholarship_whoCanApply as $title)
+
                                 <option value="{{ $level->id }}">
-                                    {{$title->whoCanApply_title }}
+                                    {{$title->title }}
                                 </option>
                                 @endforeach
                             </select>
