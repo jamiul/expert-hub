@@ -15,7 +15,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Name')}}</label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Name')}}" id="who_can_apply_title" name="who_can_apply_title" value="{{ $level->who_can_apply_title }}" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Name')}}" id="title" name="title" value="{{ $level->title }}" class="form-control" required>
                         </div>
                     </div>
 

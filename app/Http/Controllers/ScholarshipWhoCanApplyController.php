@@ -22,17 +22,17 @@ class ScholarshipWhoCanApplyController extends Controller
     {
 
         $sort_search =null;
-        $categories = ScholarshipWhoCanApply::orderBy('whoCanApply_title', 'asc');
+        $categories = ScholarshipWhoCanApply::orderBy('title', 'asc');
 
 
         if ($request->has('search')){
             $sort_search = $request->search;
-            $categories = $categories->where('whoCanApply_title', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('title', 'like', '%'.$sort_search.'%');
         }
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.whoCanApply.index', compact('categories', 'sort_search'));
+        return view('admin.default.scholarship_module.who_can_apply.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -55,13 +55,13 @@ class ScholarshipWhoCanApplyController extends Controller
     {
         // dd($request);
         $request->validate([
-            'whoCanApply_title' => 'required|max:255',
+            'title' => 'required|max:255',
         ]);
 
         $category = new ScholarshipWhoCanApply;
         // dd($category);
-        $category->whoCanApply_title = $request->whoCanApply_title;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->whoCanApply_title));
+        $category->title = $request->title;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->title));
 
         $category->save();
 
@@ -92,7 +92,7 @@ class ScholarshipWhoCanApplyController extends Controller
         $level = ScholarshipWhoCanApply::find($id);
         // $all_categories = ScholarshipWhoCanApply::all();
 
-        return view('admin.default.scholarship_module.whoCanApply.edit',  compact('level'));
+        return view('admin.default.scholarship_module.who_can_apply.edit',  compact('level'));
     }
 
     /**
@@ -104,14 +104,15 @@ class ScholarshipWhoCanApplyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         $request->validate([
-            'whoCanApply_title' => 'required|max:255',
+            'title' => 'required|max:255',
         ]);
 
         $category = ScholarshipWhoCanApply::find($id);
 
-        $category->whoCanApply_title = $request->whoCanApply_title;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->whoCanApply_title));
+        $category->title = $request->title;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->title));
 
         $category->save();
 
