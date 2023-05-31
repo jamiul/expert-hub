@@ -340,7 +340,7 @@
                 <!-- <div class="fre-job-catagory rounded-1"></div> -->
                 <div class="position-absolute w-100 ">
                   <p class="card-title text-white fw-700 p-1 fre-job-catagory fs-19"
-                    style="top:17px; left:9px; background-color:#275846; ">
+                    style=" background-color:#275846; ">
                     {{$category->name}} </p>
                 </div>
               </div>
@@ -429,7 +429,7 @@
       <div class="container-home" style=" ">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
-            <h2 class="fw-700 fs-36"> Find scholarship by category</h2>
+            <h2 class="fw-700 fs-36"> Find scholarship by filed of study</h2>
 
           </div>
           <div>
@@ -444,7 +444,7 @@
         <div class="row ">
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1 " style="height:400px">
+              <div class="card rounded-1 " style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/social-science.jpg')}}" class="card-img-top"
@@ -453,7 +453,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18">Social science scholarships</p>
+                      <p class="card-title  fs-18">Social Sciences</p>
                       <p class="fs-18 fw-700">Scholarship open for all international students</p>
 
                       <div class="mt-2">
@@ -462,7 +462,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 8</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -473,7 +473,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/university.jpg')}}" class="card-img-top"
@@ -482,7 +482,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18">University Scholarships</p>
+                      <p class="card-title  fs-18">Business and Economics</p>
                       <p class="fs-18 fw-700">Post-graduate university scholarships available</p>
 
                       <div class="mt-2">
@@ -491,7 +491,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 5</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -502,7 +502,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/medical.jpg')}}" class="card-img-top"
@@ -511,7 +511,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18">Medical Scholarships</p>
+                      <p class="card-title  fs-18">Health and Medicine</p>
                       <p class="fs-18 fw-700"> Full funded scholarship is open now</p>
 
                       <div class="mt-2">
@@ -520,7 +520,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 12</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -531,7 +531,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/humnaties.jpg')}}" class="card-img-top"
@@ -540,7 +540,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18"> Humanities Scholarships</p>
+                      <p class="card-title  fs-18"> Business and Economics</p>
                       <p class="fs-18 fw-700">Humanities scholarship for domestic student</p>
 
                       <div class="mt-2">
@@ -549,7 +549,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 10</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -560,7 +560,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/education.jpeg')}}" class="card-img-top"
@@ -569,7 +569,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18">Education Scholarships</p>
+                      <p class="card-title  fs-18">Education</p>
                       <p class="fs-18 fw-700"> Undergraduate education scholarships is available</p>
 
                       <div class="mt-2">
@@ -578,7 +578,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 12</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -589,7 +589,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/arts.jpg')}}" class="card-img-top"
@@ -598,7 +598,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18">Arts Scholarships</p>
+                      <p class="card-title  fs-18">Arts and Humanities</p>
                       <p class="fs-18 fw-700 ">Post-graduate fellowship scholarship is available now</p>
 
                       <div class="mt-2">
@@ -607,7 +607,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 20</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -618,7 +618,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/engeneering.jpg')}}" class="card-img-top"
@@ -627,7 +627,7 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18"> Engineering Scholarships</p>
+                      <p class="card-title  fs-18"> Science and Engineering</p>
                       <p class="fs-18 fw-700">50% scholarship for all international students</p>
 
                       <div class="mt-2">
@@ -636,7 +636,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 15</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -647,7 +647,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <div class="card rounded-1" style="height:400px">
+              <div class="card rounded-1" style="height:410px">
                 <div class="">
                   <div class=" ">
                     <img src=" {{url('/public/assets/home/Find-scholarship/IT.jpg')}}" class="card-img-top"
@@ -656,8 +656,9 @@
                   <div class="card-body">
                     <div>
 
-                      <p class="card-title  fs-18">Information Technology Scholarships</p>
-                      <p class="fs-18 fw-700">IT scholarships for masters students, open for all</p>
+                      <p class="card-title  fs-18">Mathematics and Statistics
+                      </p>
+                      <p class="fs-18 fw-700">Mathematics scholarships for masters students, open now</p>
 
                       <div class="mt-2">
                         <span>
@@ -665,7 +666,7 @@
                             style="width:12px;" />
                         </span>
                         <span> 10</span>
-                        <span> Open</span>
+                        <span> Available</span>
                       </div>
                     </div>
                   </div>
@@ -778,7 +779,7 @@
 
     <!-- learn with scholarship australia -->
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-bottom">
+    <section class="border-bottom" style="background-color:#FBF7ED;">
       <div class=" container-home">
         <div class="content-title">
           <h2 class="fw-700 fs-36 ">Hear what recent FreelancerEdu clients have to say</h2>
@@ -858,7 +859,7 @@
     @endif
 
     @if (get_setting('latest_project_show') == 'on')
-    <section class=" bg-white border-top">
+    <section class=" bg-white">
       <div class="container-home mt-5">
         <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
