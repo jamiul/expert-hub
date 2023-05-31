@@ -33,7 +33,7 @@
                     @foreach($categories as $key => $category)
                     <tr>
                         <td>{{ ($key+1) + ($categories->currentPage() - 1)*$categories->perPage() }}</td>
-                        <td>{{ $category->who_can_apply_title }}</td>
+                        <td>{{ $category->title }}</td>
                         <td class="text-right">
                             <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{url('admin/scholarship-who-can-apply/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
                                 <i class="las la-edit"></i>

@@ -7,7 +7,7 @@
 <div>
     <div class="container-main mt-5">
         <div class="row">
-            <div class="col-lg-3  col-xl-3">
+            <div class="col-lg-3  col-xl-3 mr-5">
                 <div class="accordion c-pointer mt-3 border-bottom " id="accordionExample">
                     <div class="">
                         <div class=" d-flex justify-content-between" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -28,7 +28,7 @@
                                 <div class="form-check  mb-2">
                                     <input class="form-check-input" type="checkbox" value="" id="checkbox2">
                                     <label class="form-check-label fs-15" for="checkbox2">
-                                        Government-funded Scholarships
+                                        Government Scholarships
                                     </label>
                                 </div>
                                 <div class="form-check  mb-2">
@@ -255,9 +255,9 @@
                 <button class="border-0  text-white fs-16  btn btn-primary px-3 py-2 mt-3">Submit</button>
                 </div>
             </div>
-            <div class="col-lg-1"></div>
 
-            <div class="col-lg-9 col-xl-8">
+
+            <div class="col-lg-9 col-xl-8 ">
                 @foreach($scholarships as $scholarship )
 
                 <div class="">
@@ -268,7 +268,7 @@
                                 <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-3">
                             </div>
 
-                            <a href="{{$scholarship->website_link}}" class="rounded-2 d-flex justify-content-center text-white  c-pointer px-4  py-1" style="background: #304F40;" target="_blank">
+                            <a href="{{$scholarship->website_link}}" class="d-flex justify-content-center text-white btn c-pointer px-4  py-1" style="background: #275846;" target="_blank">
                                 Website
                             </a>
                         </div>
@@ -277,7 +277,7 @@
                                 <a href="{{ route('scholarship.details', $scholarship->slug) }}" class=" fs-16 fw-700 pb-1 " title="{{ $scholarship->title }}" style="border-bottom: 2px solid  #000003; color: #000003">
                                     {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}
                                 </a>
-                                <!-- <img src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt=""> -->
+                                <img src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
                             </h2>
                             <div>
                                 @if($scholarship->university != null)
@@ -315,7 +315,7 @@
                             <div class="row">
                                 <div class="col-4 ">
                                     <p class="fre-scsh-left-side-title mb-1">
-                                        Level of study:
+                                        Level of Study:
                                     </p>
                                 </div>
                                 <div class="col-8  pl-0">
@@ -346,7 +346,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <p class="fre-scsh-left-side-title">
-                                        Who can apply:
+                                        Who can Apply:
                                     </p>
                                 </div>
                                 <div class="col-8 pl-0">
@@ -379,7 +379,7 @@
                                             Find a consultant
                                         </a> -->
                                     </p>
-                                    <button class="border-0  text-white fs-16  btn btn-primary px-3 py-2 m-0">Find a consultant</button>
+                                    <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button>
                                 </div>
                             </div>
 
