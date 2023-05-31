@@ -134,7 +134,7 @@
 
                                 @foreach ($scholarship_whoCanApply as $title)
                                 <option value="{{$title->id}}">
-                                    {{$title->whoCanApply_title }}
+                                    {{$title->title }}
                                 </option>
                                 @endforeach
                             </select>
