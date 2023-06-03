@@ -274,8 +274,8 @@
                   <div class="">
                     <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
                   </div>
-                  <div class=" card-body">
-                    <a class="featured_category" onclick="applyFilter()"
+                  <div class="" style=" padding:20px;">
+                    <a class=" featured_category" onclick="applyFilter()"
                       href="{{ route('freelancer.category', $category->slug)}}">
                       <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}</p>
 
@@ -682,7 +682,6 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -957,75 +956,7 @@
     </section>
     @endif
 
-    <!-- Blog -->
-    <!-- @if (get_setting('blog_section_show') == 'on')
-    <section class="bg-white  text-white  -pt-3">
-      <div class="container-home">
-        <div class="d-flex justify-content-between content-title">
-          <div class="">
-            <div class="section-title ">
-              <h2 class="fw-700 fs-36 text-dark">{{ get_setting('blog_section_title') }}</h2>
-              <p class="fs-17 text-dark">{{ get_setting('blog_section_subtitle') }}</p>
-            </div>
-          </div>
-          <div class="mt-4 text-center">
-            <a href="{{ route('blog') }}" class=""></a>
-            <a class=" " href="{{ route('blog') }}">
-              <small class="fs-18 fw-40 category-list">{{ translate('All blogs') }} </small>
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:15px;" />
-            </a>
-          </div>
-        </div>
 
-        <div class="row">
-
-          @php
-          $blogs = \App\Models\Blog::where('status', 1)->latest()
-          ->limit(get_setting('max_blog_show_homepage'))
-          ->get();
-          @endphp
-          @foreach ($blogs as $key => $blog)
-          <div class="col-lg-3 col-md-4 col-sm-12">
-            <div class=" gutters-15 w-100" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1"
-              data-arrows='true'>
-              <div class="caorusel-box">
-                <div class="card  rounded-1" style="height:410px;">
-                  <div class="">
-                    <div class=" ">
-                      <a href="{{ route('blog.details', $blog->slug) }}" class="text-reset d-block">
-                        <img src="{{ custom_asset($blog->banner) }}" alt="{{ $blog->title }}" class="card-img-top "
-                          height="212">
-                      </a>
-                    </div>
-                    <div class="card-body">
-                      <div>
-                        <p class="mb-2 fs-14 text-dark">
-                          {{ $blog->created_at ? date('d.m.Y',strtotime($blog->created_at)) : '' }}</p>
-                        <h2 class="fs-18 fw-600 mb-3 h-40px" style="line-height:23px;">
-                          <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 fw-700"
-                            title="{{ $blog->title }}">
-                            {{ \Illuminate\Support\Str::limit($blog->title, 40, $end = '...') }}
-                          </a>
-                        </h2>
-                        <h2 class="fs-18 mb-1 h-40px">
-                          <a href="{{ route('blog.details', $blog->slug) }}" class="text-dark fs-16 "
-                            title="{{ $blog->title }}">
-                            {{ \Illuminate\Support\Str::limit($blog->short_description, 60, $end = '...') }}
-                          </a>
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          @endforeach
-        </div>
-      </div>
-    </section>
-    @endif -->
 
     <!-- Last section -->
     <!-- @if (get_setting('slider_section_show') == 'on')
