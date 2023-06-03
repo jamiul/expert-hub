@@ -197,6 +197,7 @@ Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']]
 
     Route::get('/service/{id}/cancel', 'ServiceController@cancel_service')->name('services.cancel');
 	Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
+	
 
 	Route::get('/client/cancel-requests-services', 'ServiceController@client_cancel_requested_services')->name('client.services.cancel.requests');
 	Route::get('/client/cancelled-services', 'ServiceController@client_cancelled_services')->name('client.services.cancelled');
@@ -274,10 +275,10 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 });
 
 Route::get('/search', 'SearchController@index')->name('search');
-Route::get('/search?category={slug}', 'SearchController@index')->name('projects.category');
+Route::get('/search?category_id={slug}&type=project', 'SearchController@index')->name('projects.category');
 Route::get('/skills/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
 Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
-Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
+Route::get('/search?category_id={category_slug}&type=freelancer', 'SearchController@index')->name('freelancer.category');
 
 //scholarship list
 Route::get('/scholarship', 'ScholarshipController@all_scholarship')->name('scholarship');

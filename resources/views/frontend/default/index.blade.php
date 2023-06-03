@@ -245,57 +245,67 @@
 
     <!-- Consultant Service Category -->
     @if (get_setting('featured_category_show') == 'on')
-    <section class="bg-white border-top">
-      <div class=" container-home">
-        <div class="d-flex justify-content-between ">
-          <div class="w-lg-75 lh-1-8 content-title">
-            <!-- <h2 class="fw-700 fs-36 heading-title">{{ get_setting('featured_category_title') }}</h2> -->
-            <h2 class="fw-700 fs-36">Hire academic consultants by category</h2>
-            <!-- <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p> -->
+    <form id="consultant-filter-form" action="" method="GET">
+      <section class="bg-white border-top">
+        <div class=" container-home">
+          <div class="d-flex justify-content-between ">
+            <div class="w-lg-75 lh-1-8 content-title">
+              <!-- <h2 class="fw-700 fs-36 heading-title">{{ get_setting('featured_category_title') }}</h2> -->
+              <h2 class="fw-700 fs-36">Hire academic consultants by category</h2>
+              <!-- <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p> -->
+            </div>
+            <div>
+              <a href="{{ route('search') }}?category="
+                class=" btn bg-white text-black fs-17 d-lg-none rounded-1">{{ translate('Browse More Categories') }}
+                <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
+              </a>
+            </div>
           </div>
-          <div>
-            <a href="{{ route('search') }}?category="
-              class=" btn bg-white text-black fs-17 d-lg-none rounded-1">{{ translate('Browse More Categories') }}
-              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
-            </a>
-          </div>
-        </div>
-        <div class="row gutters-10">
-          @if (get_setting('featured_category_list') != null)
-          @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
-          @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
-          <div class="col-lg-3 mb-3">
-            <div class=" card" style="height:350px;">
-              <div class="">
+          <div class="row gutters-10">
+
+            @if (get_setting('featured_category_list') != null)
+            @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
+            @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
+            <div class="col-lg-3 mb-3">
+              <!-- <input type="hidden" name="type" value="service">
+              <input type="hidden" name="category_id" value="$category->id"> -->
+              <div class=" card" style="height:350px;">
                 <div class="">
-                  <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
-                </div>
-                <div class=" card-body">
-                  <a class="featured_category " href="{{ route('projects.category', $category->slug) }}">
-                    <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}</p>
-                  </a>
-                  <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
+                  <div class="">
+                    <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
+                  </div>
+                  <div class=" card-body">
+                    <a class="featured_category" onclick="applyFilter()"
+                      href="{{ route('freelancer.category', $category->slug)}}">
+                      <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}</p>
+
+                    </a>
+
+
+                    <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
+                  </div>
                 </div>
               </div>
             </div>
+            @endif
+            @endforeach
+            @endif
           </div>
-          @endif
-          @endforeach
-          @endif
-        </div>
-        {{-- <div class="row gutters-10 mt-5">
+          {{-- <div class="row gutters-10 mt-5">
                         <div class="col-lg-6">
                             <img src="{{ custom_asset(get_setting('featured_category_left_banner')) }}"
-        class="img-fluid">
-      </div>
-      <div class="col-lg-6">
-        <img src="{{ custom_asset(get_setting('featured_category_right_banner')) }}" class="img-fluid">
-      </div>
-      </div> --}}
+          class="img-fluid">
+        </div>
+        <div class="col-lg-6">
+          <img src="{{ custom_asset(get_setting('featured_category_right_banner')) }}" class="img-fluid">
+        </div>
+        </div> --}}
 
-      </div>
-      </div>
-    </section>
+        </div>
+        </div>
+      </section>
+
+    </form>
     @endif
 
     <!-- Find academic jobs by category-->
@@ -338,10 +348,12 @@
                   </a>
                 </div>
                 <!-- <div class="fre-job-catagory rounded-1"></div> -->
-                <div class="position-absolute w-100 ">
-                  <p class="card-title text-white fw-700 p-1 fre-job-catagory fs-19"
-                    style=" background-color:#275846; ">
-                    {{$category->name}} </p>
+                <div class="position-absolute  ">
+                  <a href="{{ route('projects.category', $category->slug)}}">
+                    <p class="card-title text-black fw-700 p-1 fre-job-catagory fs-19"
+                      style=" background-color:#DDDBD9; margin-top:244px; ">
+                      {{$category->name}} </p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -885,8 +897,8 @@
       <div class="tab-content container-home" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="row ">
-            <div class="col-lg-3 ">
-              <div class=" ">
+            <div class="col-lg-3  ">
+              <div class=" skills">
                 <h6 class="fs-18">
                   Research writing</h6>
                 <h6 class="fs-18">
@@ -896,7 +908,7 @@
               </div>
             </div>
             <div class="col-lg-3 ">
-              <div class=" ">
+              <div class=" skills">
                 <h6 class="fs-18">
                   Research proposal writing</h6>
                 <h6 class="fs-18">
@@ -906,7 +918,7 @@
               </div>
             </div>
             <div class="col-lg-3 ">
-              <div class=" ">
+              <div class=" skills">
                 <h6 class="fs-18">
                   Research proposal writing</h6>
                 <h6 class="fs-18">
@@ -915,7 +927,7 @@
               </div>
             </div>
             <div class="col-lg-3 ">
-              <div class=" ">
+              <div class=" skills">
                 <h6 class="fs-18">
                   Copywriting</h6>
                 <h6 class="fs-18">
@@ -1069,6 +1081,12 @@
     $('#show_new_user_modal').modal({
       show: true
     });
+    </script>
+
+    <script type="text/javascript">
+    function applyFilter() {
+      $('#consultant-filter-form').submit();
+    }
     </script>
 
     <!-- <script>
