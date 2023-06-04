@@ -116,7 +116,7 @@ class SearchController extends Controller
                 $services = $services->whereIn('id', $service_ids);
             }
 
-            $category_id = (ProjectCategory::where('slug', $request->category)->first() != null) ? ProjectCategory::where('slug', $request->category)->first()->id : null;
+            $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             
             $category_ids = CategoryUtility::children_ids($category_id);
             $category_ids[] = $category_id;
@@ -134,7 +134,7 @@ class SearchController extends Controller
             $projectType = array('Fixed', 'Long Term');
             $bids = $request->bids;
             $sort = $request->sort;
-            $category_id = (ProjectCategory::where('slug', $request->category)->first() != null) ? ProjectCategory::where('slug', $request->category)->first()->id : null;
+            $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             $category_ids = CategoryUtility::children_ids($category_id);
             $category_ids[] = $category_id;
             $min_price = $request->min_price;

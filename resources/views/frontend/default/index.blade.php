@@ -363,6 +363,7 @@
         </div>
     </section>
     @endif
+
     <!-- Join us -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top bg-white">
