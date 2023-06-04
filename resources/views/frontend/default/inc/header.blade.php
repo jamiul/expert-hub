@@ -363,7 +363,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                  href="{{ route('scholarshipSearch') }}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
               </li>
 
 

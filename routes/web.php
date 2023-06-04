@@ -280,8 +280,12 @@ Route::get('/search?category={category_slug}&type=service', 'SearchController@in
 Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
 
 //scholarship list
-Route::get('/scholarship', 'ScholarshipController@all_scholarship')->name('scholarship');
-Route::get('/scholarship{slug}', 'ScholarshipController@scholarship_details')->name('scholarship.details');
+Route::get('/scholarshipSearch', 'SearchScholarshipController@index')->name('scholarshipSearch');
+Route::get('/scholarshipSearch?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
+Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarshipSearch.skill');
+Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+
 
 
 
