@@ -287,8 +287,8 @@
                                             <!-- <a class="fre-scsh-find-more-btn m-0">
                             Find a consultant
                         </a> -->
+                        <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button>
                                         </p>
-                                        <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button>
                                     </div>
                                 </div>
 
