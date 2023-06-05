@@ -17,7 +17,7 @@
             <a href="{{ route('register') }}?type=1" class="py-3 px-1 text-dark">{{ translate('I want to Work') }}</a>
           </div>
           @else
-          <div class="logo ml-4">
+          <div class="logo ml-4 card">
             <a href="{{ route('home') }}" class="d-inline-block">
               <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}"
                 height="" class=" w-100" style="max-height:30px;">
@@ -363,7 +363,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarship') }}?keyword=&type=project">{{ translate('Find Scholarships') }}</a>
+                  href="{{ route('scholarshipSearch') }}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
               </li>
 
 
