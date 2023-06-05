@@ -148,6 +148,23 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row" id="qualification">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Field Of Study')}}
+                            <span class="text-danger">*</span>
+
+                        </label>
+                        <div class="col-md-9">
+                            <select class="form-control aiz-selectpicker" name="fieldStudy_id" id="fieldStudy_id" data-live-search="true" title="{{ translate('Select Field Of study') }}" required>
+
+                                @foreach ($scholarship_fieldStudy as $fieldStudy)
+                                <option value="{{ $fieldStudy->id }}">
+                                    {{$fieldStudy->name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Slug')}}
