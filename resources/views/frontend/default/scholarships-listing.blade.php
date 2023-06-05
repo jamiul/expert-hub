@@ -90,12 +90,12 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="bg-white pr-3">{{ translate('  Scholarship Type') }}</span>
                                     </h6>
-                                    <div class="aiz-radio-list">
+                                    <div class="aiz-checkbox-list">
 
                                         @foreach(\App\Models\ScholarshipCategory::All() as $category)
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="category_id" value="{{$category->id}}" onchange="applyFilter()" @if ($category_id=='{{$category->id}}' ) checked @endif> {{ $category->category_name }}
-                                            <span class="aiz-rounded-check"></span>
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="category_id" value="{{$category->id}}" onchange="applyFilter()" @if ($category_id=='{{$category->id}}' ) checked @endif> {{ $category->category_name }}
+                                            <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                         @endforeach
@@ -104,12 +104,12 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="bg-white pr-3">{{ translate('    Level of Study') }}</span>
                                     </h6>
-                                    <div class="aiz-radio-list">
+                                    <div class="aiz-checkbox-list">
 
                                         @foreach(\App\Models\ScholarshipLevel::All() as $Level)
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="level_id" value="{{$Level->id}}" onchange="applyFilter()" @if ($level_id=='{{$Level->id}}' ) checked @endif> {{ $Level->level_name }}
-                                            <span class="aiz-rounded-check"></span>
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="level_id" value="{{$Level->id}}" onchange="applyFilter()" @if ($level_id=='{{$Level->id}}' ) checked @endif> {{ $Level->level_name }}
+                                            <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                         @endforeach
@@ -118,12 +118,12 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="bg-white pr-3">{{ translate('   Field of Study') }}</span>
                                     </h6>
-                                    <div class="aiz-radio-list">
+                                    <div class="aiz-checkbox-list">
 
                                         @foreach(\App\Models\ScholarshipFieldStudy::All() as $FieldStudy)
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="fieldStudy_id" value="{{$FieldStudy->id}}" onchange="applyFilter()" @if ($fieldStudy_id=='{{$FieldStudy->id}}' ) checked @endif> {{ $FieldStudy->name }}
-                                            <span class="aiz-rounded-check"></span>
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="fieldStudy_id" value="{{$FieldStudy->id}}" onchange="applyFilter()" @if ($fieldStudy_id=='{{$FieldStudy->id}}' ) checked @endif> {{ $FieldStudy->name }}
+                                            <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                         @endforeach
@@ -132,12 +132,12 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="bg-white pr-3">{{ translate('    Location') }}</span>
                                     </h6>
-                                    <div class="aiz-radio-list">
+                                    <div class="aiz-checkbox-list">
 
                                         @foreach(\App\Models\ScholarshipCountry::All() as $Country)
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="country_id" value="{{$Country->id}}" onchange="applyFilter()" @if ($country_id=='{{$Country->id}}' ) checked @endif> {{ $Country->country_name }}
-                                            <span class="aiz-rounded-check"></span>
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="country_id" value="{{$Country->id}}" onchange="applyFilter()" @if ($country_id=='{{$Country->id}}' ) checked @endif> {{ $Country->country_name }}
+                                            <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                         @endforeach
@@ -166,7 +166,7 @@
 
                 <!-- scholarships List -->
                 <div class="col-xl-9 col-lg-8">
-                <input type="hidden" name="type" value="scholarships">
+                    <input type="hidden" name="type" value="scholarships">
                     @foreach($scholarships as $scholarship )
 
                     <div class="">
@@ -287,7 +287,7 @@
                                             <!-- <a class="fre-scsh-find-more-btn m-0">
                             Find a consultant
                         </a> -->
-                        <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button>
+                                            <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button>
                                         </p>
                                     </div>
                                 </div>
