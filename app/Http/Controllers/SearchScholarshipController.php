@@ -141,7 +141,7 @@ class SearchScholarshipController extends Controller
             $level_id = $request->level_id;
             $fieldStudy_id = $request->fieldStudy_id;
             $country_id = $request->country_id;
-            $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
+            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             $category_ids = CategoryUtility::children_ids($category_id);
             $category_ids[] = $category_id;
 
@@ -169,9 +169,9 @@ class SearchScholarshipController extends Controller
                 $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
             }
 
-            // if($category_id != null){
-            //     $freelancers = $freelancers->whereIn('specialist', $category_ids);
-            // }
+            if($category_id != null){
+                $scholarships = $scholarships->where('category_id', $category_ids);
+            }
 
             if($country_id != null){
                 // $user_ids =  ScholarshipCountry::where('id', $country_id);

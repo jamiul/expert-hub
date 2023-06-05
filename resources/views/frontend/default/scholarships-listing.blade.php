@@ -132,8 +132,15 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="bg-white pr-3">{{ translate('    Location') }}</span>
                                     </h6>
-                                    <div class="aiz-checkbox-list">
 
+                                    <div class="aiz-checkbox-list">
+                                        <!-- search box -->
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                            <div class="input-group-append">
+                                                <!-- here button -->
+                                            </div>
+                                        </div>
                                         @foreach(\App\Models\ScholarshipCountry::All() as $Country)
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="country_id" value="{{$Country->id}}" onchange="applyFilter()" @if ($country_id=='{{$Country->id}}' ) checked @endif> {{ $Country->country_name }}
@@ -157,6 +164,10 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                </div>
+
+                                <div class="mt-3">
+                                    <button type="submit" class="border-0  text-white fs-16  btn btn-primary px-3 py-2 mt-3">Submit</button>
                                 </div>
                             </div>
                         </div>
