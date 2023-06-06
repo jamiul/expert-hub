@@ -286,7 +286,7 @@
                 <!-- <div class="fre-job-catagory rounded-1"></div> -->
                 <div class="position-absolute  ">
                   <a href="{{ route('projects.category', $category->slug)}}">
-                    <p class="card-title text-black fw-700 p-1 fre-job-catagory fs-19"
+                    <p class="card-title  fw-700 p-1 fre-job-catagory fs-19"
                       style=" background-color:#DDDBD9; margin-top:244px; ">
                       {{$category->name}} </p>
                   </a>
