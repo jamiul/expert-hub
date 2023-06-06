@@ -481,12 +481,12 @@
             </li>
             @endcan
             @can('show blog category')
-            <!-- <li class="aiz-side-nav-item">
-              <a href="{{ route('scholarship-website-link.index') }}"
-                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-website-link.create', 'scholarship-website-link.edit'])}}">
-                <span class="aiz-side-nav-text">{{ translate('website') }}</span>
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('scholarship-field-study.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-field-study.create', 'scholarship-field-study.edit'])}}">
+                <span class="aiz-side-nav-text">{{ translate('Field of study') }}</span>
               </a>
-            </li> -->
+            </li>
             @endcan
           </ul>
         </li>
