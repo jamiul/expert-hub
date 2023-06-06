@@ -279,3 +279,28 @@ right:0;
 .skills h6{
     line-height: 1.8;
 }
+
+
+/* responsive */
+@media only screen and (max-width: 1210px) {
+    .find-job{
+      height:280px;
+    }
+    .find-job img{
+   
+    }
+  
+}
+
+@media only screen and (max-width: 600px) {
+    .find-job{
+         height:420px;
+    }
+   
+}
+@media only screen and (max-width: 425px) {
+    .find-job{
+        height:320px;
+    }
+    
+}

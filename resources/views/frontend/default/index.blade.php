@@ -94,72 +94,6 @@
       </div>
     </section>
 
-    <!-- explore services  -->
-    <!-- @if (get_setting('how_it_works_show') == 'on')
-    <section class="border-top">
-      <div class="container-home">
-        <div class="">
-          <div class="w-xl-50 w-lg-75 content-title ">
-            <h2 class="fw-700 fs-36 text-black mb-0">Need academic help?</h2>
-          </div>
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class=" ">
-                <div class=" d-flex h-60px align-items-center">
-                  <img class=" " src=" {{url('/public/assets/home/vacancy.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category"> Post a job (it’s free) </p>
-                </div>
-
-
-                <h6 class="fs-18 mt-4">
-                  Its free and easy to post a job. Simply fill in a title descriptions and other additional
-                  requirments</h6>
-              </div>
-
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class=" ">
-                <div class="d-flex h-60px align-items-center">
-
-                  <img class="" src=" {{url('/public/assets/home/consulting.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category">Academic experts connect with you</p>
-                </div>
-
-                <h6 class="fs-18 mt-4">
-                  Here you can find most experience and skilful desire consultant, Who can help you project.
-                </h6>
-              </div>
-
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="  ">
-                <div class="d-flex h-60px align-items-center">
-                  <img class="" src=" {{url('/public/assets/home/service-4.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category"> Collaborate easily </p>
-                </div>
-
-
-                <h6 class="fs-18 mt-4">
-                  We have 24/7 online customer service so easily you can reach us.</h6>
-              </div>
-
-            </div>
-            <div class="col-xl-3 col-md-6 ">
-              <div class="">
-                <div class="d-flex h-60px align-items-center">
-                  <img class="  " src=" {{url('/public/assets/home/service-3.png')}}" alt="Image" style="width:40px;" />
-                  <p class="fs-24 fw-700 ml-lg-3 ml-2 consultant-category"> Payment securely </p>
-                </div>
-                <p class="fs-18 mt-4">
-                  You can make payment securely. We have integrity system where your money will be safe.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    @endif -->
     <!-- explore services -->
     @if (get_setting('how_it_works_show') == 'on')
     <section class="border-top pb-2 " style="background-color:#275846;">
@@ -234,7 +168,7 @@
           </div>
           <div class=" mt-3 text-center">
             <h5 class="btn rounded-1 text-white border">
-              Let's get started
+              <a href="{{route('register') }}">Let's get started</a>
             </h5>
 
           </div>
@@ -245,7 +179,7 @@
 
     <!-- Consultant Service Category -->
     @if (get_setting('featured_category_show') == 'on')
-    <form id="consultant-filter-form" action="" method="GET">
+    <form id=" consultant-filter-form" action="" method="GET">
       <section class="bg-white border-top">
         <div class=" container-home">
           <div class="d-flex justify-content-between ">
@@ -277,7 +211,8 @@
                   <div class="" style=" padding:20px;">
                     <a class=" featured_category" onclick="applyFilter()"
                       href="{{ route('freelancer.category', $category->slug)}}">
-                      <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}</p>
+                      <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}
+                      </p>
 
                     </a>
 
@@ -308,6 +243,7 @@
     </form>
     @endif
 
+
     <!-- Find academic jobs by category-->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
@@ -327,7 +263,7 @@
             </div>
           </div>
         </div>
-        <div class="row mb-3">
+        <div class="row ">
           @php
           $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
           ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
@@ -338,9 +274,9 @@
           @endphp
 
           @foreach ($services as $category)
-          <div class="col-lg-3">
+          <div class="col-lg-3 mb-lg-3 mb-xl-3 mb-md-3">
             <div class="caorusel-box">
-              <div class="card rounded-1 fre-job-catagory" style="height:280px">
+              <div class="card rounded-1 fre-job-catagory find-job">
                 <div class="position-relative">
                   <a href="">
                     <img class="img-fluid w-100 rounded-1 opacity-75 " style="height:280px;"
