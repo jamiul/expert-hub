@@ -783,6 +783,16 @@
     }
 
   }
-  
+  .scholarship-list-page{
+    background: #F0F0F0;
+  }
+  .all-scholarship-list:hover{
+    background: #F7F7F7 !important;
+  }
+  .container-main-scholarship{
+    width: 84%;
+    margin: 20px 8% 95px 8%;
+  }
+
 
 
