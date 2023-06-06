@@ -161,8 +161,8 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
   Route::get('/scholarship-qualification/destroy/{id}', 'ScholarshipQualificationController@destroy')->name('scholarship-qualification.destroy');
   Route::resource('scholarship-who-can-apply', 'ScholarshipWhoCanApplyController');
   Route::get('/scholarship-who-can-apply/destroy/{id}', 'ScholarshipWhoCanApplyController@destroy')->name('scholarship-who-can-apply.destroy');
-  Route::resource('scholarship-website-link', 'ScholarshipWebsiteLinkController');
-  Route::get('/scholarship-website-link/destroy/{id}', 'ScholarshipWebsiteLinkController@destroy')->name('scholarship-website-link.destroy');
+  Route::resource('scholarship-field-study', 'ScholarshipFieldStudyController');
+  Route::get('/scholarship-field-study/destroy/{id}', 'ScholarshipFieldStudyController@destroy')->name('scholarship-field-study.destroy');
 
   //Subscribers
   Route::controller('SubscriberController')->group(function () {

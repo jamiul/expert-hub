@@ -35,10 +35,10 @@
                         <td>{{ ($key+1) + ($categories->currentPage() - 1)*$categories->perPage() }}</td>
                         <td>{{ $category->name }}</td>
                         <td class="text-right">
-                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{url('admin/scholarship_study_field/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
+                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{url('admin/scholarship-field-study/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
                                 <i class="las la-edit"></i>
                             </a>
-                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('scholarship_study_field.destroy', $category->id)}}" title="{{ translate('Delete') }}">
+                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('scholarship-field-study.destroy', $category->id)}}" title="{{ translate('Delete') }}">
                                 <i class="las la-trash"></i>
                             </a>
                         </td>
@@ -58,7 +58,7 @@
             <h5 class="mb-0 h6">{{ translate('Add New Study Level') }}</h5>
         </div>
         <div class="card-body">
-            <form class="form-horizontal" method="POST" action="{{ route('scholarship_study_field.store') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('scholarship-field-study.store') }}">
               @csrf
                 <div class="form-group mb-3">
                     <label for="name">{{translate('Name')}}</label>
