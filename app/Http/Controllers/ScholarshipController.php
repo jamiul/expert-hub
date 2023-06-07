@@ -102,7 +102,7 @@ class ScholarshipController extends Controller
         $scholarship->city_id = $request->city_id;
         $scholarship->whoCanApply_id = $request->whoCanApply_id;
         $scholarship->qualification_id = $request->qualification_id;
-        $scholarship->fieldStudy_id = $request->fieldStudy_id;
+        $scholarship->fieldStudy_id = json_encode($request->fieldStudy_id);
         $scholarship->title = $request->title;
         $scholarship->short_description = $request->short_description;
         $scholarship->banner = $request->banner;
@@ -174,7 +174,7 @@ class ScholarshipController extends Controller
         $scholarship->city_id = $request->city_id;
         $scholarship->whoCanApply_id = $request->whoCanApply_id;
         $scholarship->qualification_id = $request->qualification_id;
-        $scholarship->fieldStudy_id = $request->fieldStudy_id;
+        $scholarship->fieldStudy_id =json_encode($request->fieldStudy_id);
         $scholarship->title = $request->title;
         $scholarship->banner = $request->banner;
         $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));

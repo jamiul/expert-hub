@@ -109,9 +109,9 @@
                                     </h6>
                                     <div class="aiz-checkbox-list">
 
-                                        @foreach(\App\Models\ScholarshipCategory::All() as $category)
+                                        @foreach(\App\Models\ScholarshipCategory:: all() as $category)
                                         <label class="aiz-checkbox">
-                                            <input type="checkbox" name="category_id" value="{{$category->id}}" onchange="applyFilter()" @if ($category_id=='{{$category->id}}' ) checked @endif> {{ $category->category_name }}
+                                            <input type="checkbox" name="category_id" value="{{$category->id}}"  @if ($category_id=='{{$category->id}}' ) checked @endif onchange="applyFilter()"> {{ $category->category_name }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
@@ -123,7 +123,7 @@
                                     </h6>
                                     <div class="aiz-checkbox-list">
 
-                                        @foreach(\App\Models\ScholarshipLevel::All() as $Level)
+                                        @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="level_id" value="{{$Level->id}}" onchange="applyFilter()" @if ($level_id=='{{$Level->id}}' ) checked @endif> {{ $Level->level_name }}
                                             <span class="aiz-square-check"></span>
@@ -137,7 +137,7 @@
                                     </h6>
                                     <div class="aiz-checkbox-list">
 
-                                        @foreach(\App\Models\ScholarshipFieldStudy::All() as $FieldStudy)
+                                        @foreach(\App\Models\ScholarshipFieldStudy:: all() as $FieldStudy)
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="fieldStudy_id" value="{{$FieldStudy->id}}" onchange="applyFilter()" @if ($fieldStudy_id=='{{$FieldStudy->id}}' ) checked @endif> {{ $FieldStudy->name }}
                                             <span class="aiz-square-check"></span>
@@ -158,7 +158,7 @@
                                                 <!-- here button -->
                                             </div>
                                         </div>
-                                        @foreach(\App\Models\ScholarshipCountry::All() as $Country)
+                                        @foreach(\App\Models\ScholarshipCountry:: all() as $Country)
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="country_id" value="{{$Country->id}}" onchange="applyFilter()" @if ($country_id=='{{$Country->id}}' ) checked @endif> {{ $Country->country_name }}
                                             <span class="aiz-square-check"></span>
@@ -174,7 +174,7 @@
                                     </h6>
                                     <div class="">
                                         <select class="select2 form-control aiz-selectpicker" multiple="multiple" name="skill_ids[]" onchange="applyFilter()" data-toggle="select2" data-placeholder="Choose ..." data-live-search="true">
-                                            @foreach(\App\Models\Skill::all() as $skill)
+                                            @foreach(\App\Models\Skill:: all() as $skill)
                                             <option value="{{$skill->id}}" @if (in_array($skill->id, $skill_ids)) selected @endif>
                                                 {{$skill->name}}
                                             </option>
@@ -199,9 +199,9 @@
                     @foreach($scholarships as $scholarship )
                     <div class="row py-4 px-5 shadow-lg bg-white c-pointer all-scholarship-list">
                         <div class="col-lg-2 ">
-                            <div class="d-flex justify-content-center w-100">
+                            <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid black">
 
-                                <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-1">
+                                <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-1 p-1">
                             </div>
 
                             <a href="{{$scholarship->website_link}}" class="d-flex justify-content-center text-white btn c-pointer px-4  py-1" style="background: #275846;" target="_blank">
@@ -311,7 +311,7 @@
                                         get connected with consultants who are previous
                                         scholarship recipients in your field to ensure you
                                         submit a competitive application.
-                                        <a class="fre-scsh-find-more-btn text-success m-0">
+                                        <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
                                             Find a consultant
                                         </a>
                                         <!-- <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button> -->
