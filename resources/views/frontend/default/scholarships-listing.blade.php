@@ -6,7 +6,7 @@
     <div class="border-top pb-2 " style="background-color:#275846;">
         <div class="">
             <div class="">
-                <div class=" content-title  text-center py-2">
+                <div class=" content-title  text-center py-5">
                     <h2 class="fw-700 fs-24 text-white mb-0">Need Scholarship help?</h2>
                 </div>
                 <div class="row container-fluid">
@@ -67,7 +67,7 @@
                     </div>
 
                 </div>
-                <div class=" text-center">
+                <div class=" text-center py-5">
                     <h5 class="btn rounded-1 text-white border">
                         Let's get started
                     </h5>
@@ -199,7 +199,7 @@
                     @foreach($scholarships as $scholarship )
                     <div class="row py-4 px-5 shadow-lg bg-white c-pointer all-scholarship-list">
                         <div class="col-lg-2 ">
-                            <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid black">
+                            <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid #ddd">
 
                                 <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-1 p-1">
                             </div>
@@ -209,7 +209,7 @@
                             </a>
                         </div>
                         <div class="col-lg-10 border-gray-400">
-                            <h2 class="fs-18 fw-700 mb-1 bg-white d-flex justify-content-between">
+                            <h2 class="fs-18 fw-700 mb-1 d-flex justify-content-between">
                                 <a href="#" class=" fs-16 fw-700 pb-1 " title="{{ $scholarship->title }}" style="border-bottom: 2px solid  #000003; color: #000003">
                                     {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}
                                 </a>

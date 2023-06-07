@@ -323,7 +323,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Find Consultants') }}</a>
               </li>
 
               <li class="dropdown mega_menu nav-item">
@@ -336,7 +336,7 @@
                     <div class="col-lg-3 col-sm-6">
                       <div id="findSkills" class="w-75  mega-menu-fj-item">
                         <a class="dropdown-item"
-                          href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                          href="{{ route('skills')}}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
                         <p>{{translate('Show clients you’re the one they want.')}}</p>
                       </div>
                     </div>
@@ -363,7 +363,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch') }}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
+                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
               </li>
 
 
