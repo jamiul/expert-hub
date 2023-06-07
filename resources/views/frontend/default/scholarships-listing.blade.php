@@ -13,7 +13,10 @@
                     <div class="col-xl-3 col-md-6">
                         <div class=" ">
                             <div class=" h-136px align-items-center">
-                                <img class=" mb-2 mx-auto d-block border border-white  p-3" src=" {{url('/public/assets/home/post.png')}}" alt="Image" style="width:55px; border-radius:50%;" />
+                               <div class="d-flex">
+                               <img class=" mb-2 mx-auto d-block border border-white  p-3" src=" {{url('/public/assets/home/post.png')}}" alt="Image" style="width:55px; border-radius:50%;" />
+                               <div class="need-help-progress-bar" ></div>
+                               </div>
                                 <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-white"> Post a job
 
                                 </p>
@@ -28,7 +31,10 @@
                     <div class="col-xl-3 col-md-6">
                         <div class=" ">
                             <div class=" h-136px align-items-center">
-                                <img class=" mb-2 mx-auto d-block border border-white  p-3" src=" {{url('/public/assets/home/quiz.png')}}" alt="Image" style="width:55px; border-radius:50%;" />
+                               <div class="d-flex">
+                               <img class=" mb-2 mx-auto d-block border border-white  p-3" src=" {{url('/public/assets/home/quiz.png')}}" alt="Image" style="width:55px; border-radius:50%;" />
+                               <div class="need-help-progress-bar" ></div>
+                               </div>
                                 <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-white"> Receive proposal
                                 </p>
                             </div>
@@ -41,7 +47,10 @@
                     <div class="col-xl-3 col-md-6">
                         <div class=" ">
                             <div class=" h-136px align-items-center">
-                                <img class=" mb-2 mx-auto d-block border border-white  p-3" src=" {{url('/public/assets/home/enroll.png')}}" alt="Image" style="width:55px; border-radius:50%;" />
+                                <div class="d-flex">
+                                    <img class=" mb-2 mx-auto d-block border border-white  p-3" src=" {{url('/public/assets/home/enroll.png')}}" alt="Image" style="width:55px; border-radius:50%;" />
+                                    <div class="need-help-progress-bar" ></div>
+                                </div>
                                 <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-white"> Make Selection
 
                                 </p>
