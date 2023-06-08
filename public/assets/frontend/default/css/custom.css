@@ -784,19 +784,19 @@
 
   }
   .scholarship-list-page{
-    background: #F0F0F0;
+    background: white;
   }
   .all-scholarship-list:hover{
     background: #F7F7F7 !important;
   }
   .container-main-scholarship{
-    width: 84%;
-    margin: 20px 8% 95px 8%;
+    width: 94%;
+    margin: 0 3% 10px 3%;
   }
 .need-help-progress-bar{
     height: 2px;
-    width: 274px;
-    background: #fff;
+    width: 20vw;
+    background: black;
     bottom: 124px;
     right: -136px;
     position: absolute;

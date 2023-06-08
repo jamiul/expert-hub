@@ -232,7 +232,7 @@ class SearchScholarshipController extends Controller
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
                 $ScholarshipTotal = $scholarships->count();
-                $scholarships = $scholarships->paginate(8)->appends($request->query());
+                $scholarships = $scholarships->paginate(5)->appends($request->query());
             }
             return view('frontend.default.scholarships-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','scholarships','category_id','level_id','country_id','fieldStudy_id','ScholarshipTotal',));
         }
