@@ -301,7 +301,11 @@ right:0;
         top: 16px !important;
         padding-top: 10px !important;
     }
-
+     .fre-small-font{
+        font-size: 36px;
+    }
+   
+  
 }
 
 @media only screen and (max-width: 600px) {
@@ -338,6 +342,9 @@ right:0;
    .service-category-head-right img{
     font-size: 12px !important;
    }
+    .fre-small-font{
+        font-size: 20px;
+    }
 }
 @media only screen and (max-width: 425px) {
     .carousel-inner {
@@ -359,4 +366,27 @@ right:0;
         margin-bottom: 2%;
         margin-top:-18%;
     }
+    .fre-small-font{
+        font-size: 17px;
+    }
+    .fre-consultant-category{
+display: inline;
+
+    }
+    .fre-consultant-category .btn{
+        display: block;
+    }
+
+}
+
+@media (min-width:1200px){
+   .need-help-home-content{
+        height: 2px;
+        width: 269px;
+        background: white;
+        bottom: 177px;
+        right: -134px;
+        position: absolute;
+        content:'';
+}
 }
