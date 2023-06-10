@@ -405,7 +405,7 @@
         <div class="row ">
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=15&type=scholarships') }} " class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=15&type=scholarships') }} " class="text-dark">
                 <div class="card rounded-1 " style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -433,7 +433,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=8&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=8&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -464,7 +464,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=10&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=10&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -495,7 +495,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=11&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=11&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -525,7 +525,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=9&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=9&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -556,7 +556,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=7&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=7&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -587,7 +587,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=14&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=14&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
@@ -618,7 +618,7 @@
           </div>
           <div class="col-lg-3">
             <div class="caorusel-box">
-              <a href="{{url('scholarshipSearch?fieldStudy_id=12&type=scholarships') }}" class="text-dark">
+              <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=12&type=scholarships') }}" class="text-dark">
                 <div class="card rounded-1" style="height:330px">
                   <div class="">
                     <div class=" ">
