@@ -27,91 +27,30 @@
               </div>
               <div class="card-body pl-lg-0">
                 <div class="">
-                  <!-- Categories -->
-                  <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class="bg-white pr-3">{{ translate('Categories') }}</span>
-                                    </h6>
-                                    <div class="mb-5">
-                                        <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                            <option value="">{{ translate('All Categories') }}</option>
-                                            @foreach(\App\Models\ScholarshipCategory::all() as $category)
-                                            <option value="{{ $category->slug }}" @if (isset($_GET['category_id']) && $_GET['category_id']==$category->slug ) selected @endif>
-                                                {{$category->name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div> -->
-                  <!-- Countries -->
-                  <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class="bg-white pr-3">{{ translate('Countries') }}</span>
-                                    </h6>
-                                    <div class="mb-5">
-                                        <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                            <option value="">{{ translate('All Countries') }}</option>
-                                            @foreach (\App\Models\Country::all() as $key => $country)
-                                            <option value="{{ $country->id }}" @if (isset($country_id) && $country_id==$country->id ) selected
-                                                @endif>{{ $country->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div> -->
-                  <!-- Hourly Rate -->
-                  <!-- <input type="hidden" name="min_price" value="">
-                                    <input type="hidden" name="max_price" value="">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class="bg-white pr-3">{{ translate('Hourly Rate') }}</span>
-                                    </h6>
-                                    <div class="aiz-range-slider mb-5 px-3">
-                                        <div id="input-slider-range" data-range-value-min="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::min('hourly_rate') }} @endif" data-range-value-max="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::max('hourly_rate') }} @endif">
-                                        </div>
-
-                                        <div class="row mt-2">
-                                            <div class="col-6">
-                                                <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price)) data-range-value-low="{{ $min_price }}" @elseif(count($freelancers)> 1 &&
-                                                    $freelancers->min('hourly_rate') > 0)
-                                                    data-range-value-low="{{ $freelancers->min('hourly_rate') }}"
-                                                    @else
-                                                    data-range-value-low="0"
-                                                    @endif
-                                                    id="input-slider-range-value-low"
-                                                    ></span>
-                                            </div>
-                                            <div class="col-6 text-right">
-                                                <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price)) data-range-value-high="{{ $max_price }}" @elseif(count($freelancers)> 1 &&
-                                                    $freelancers->max('hourly_rate') > 0)
-                                                    data-range-value-high="{{ $freelancers->max('hourly_rate') }}"
-                                                    @else
-                                                    data-range-value-high="0"
-                                                    @endif
-                                                    id="input-slider-range-value-high"
-                                                    ></span>
-                                            </div>
-                                        </div>
-                                    </div> -->
                   <!--   Scholarship Type-->
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class="bg-white pr-3">{{ translate('  Scholarship Type') }}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-
                     @foreach(\App\Models\ScholarshipCategory::All() as $category)
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="category_id" value="{{$category->id}}" onchange="applyFilter()" @if
-                        ($category_id=='{{$category->id}}' ) checked @endif> {{ $category->category_name }}
+                      <input type="checkbox" name="category_id" value="{{$category->id}}" onchange="applyFilter()"
+                        @if($category_id=='{{$category->id}}' ) checked @endif> {{ $category->category_name }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
                     @endforeach
                   </div>
-                  <!-- Level of Study -->
+                  <!--
+                     Level of Study -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class="bg-white pr-3">{{ translate('    Level of Study') }}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-
                     @foreach(\App\Models\ScholarshipLevel::All() as $Level)
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="level_id" value="{{$Level->id}}" onchange="applyFilter()" @if
-                        ($level_id=='{{$Level->id}}' ) checked @endif> {{ $Level->level_name }}
+                      <input type="checkbox" name="level_id" value="{{$Level->id}}" onchange="applyFilter()"
+                        @if($level_id=='{{$Level->id}}' ) checked @endif> {{ $Level->level_name }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
@@ -122,7 +61,6 @@
                     <span class="bg-white pr-3">{{ translate('   Field of Study') }}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-
                     @foreach(\App\Models\ScholarshipFieldStudy::All() as $FieldStudy)
                     <label class="aiz-checkbox">
                       <input type="checkbox" name="fieldStudy_id" value="{{$FieldStudy->id}}" onchange="applyFilter()"
@@ -147,8 +85,8 @@
                     </div>
                     @foreach(\App\Models\ScholarshipCountry::All() as $Country)
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="country_id" value="{{$Country->id}}" onchange="applyFilter()" @if
-                        ($country_id=='{{$Country->id}}' ) checked @endif> {{ $Country->country_name }}
+                      <input type="checkbox" name="country_id" value="{{$Country->id}}" onchange="applyFilter()"
+                        @if($country_id=='{{$Country->id}}' ) checked @endif> {{ $Country->country_name }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>

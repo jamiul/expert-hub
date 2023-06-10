@@ -185,15 +185,14 @@
     <form id=" consultant-filter-form" action="" method="GET">
       <section class="bg-white border-top">
         <div class=" container-home">
-          <div class="d-flex justify-content-between  ">
+          <div class="d-flex justify-content-between ">
             <div class="w-lg-75 lh-1-8 content-title">
               <!-- <h2 class="fw-700 fs-36 heading-title">{{ get_setting('featured_category_title') }}</h2> -->
               <h2 class="fw-700 fre-small-font ">Hire academic consultants by category</h2>
               <!-- <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p> -->
             </div>
             <div>
-
-              <h5 class="btn rounded-1  border ">
+              <h5 class="btn rounded-1  border fre-consultant-category">
                 <a href="{{ route('search') }}?category="
                   class="fs-16 text-dark ">{{ translate('Browse More Categories') }}
                   <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image"
@@ -203,7 +202,6 @@
             </div>
           </div>
           <div class="row gutters-10">
-
             @if (get_setting('featured_category_list') != null)
             @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
             @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
@@ -231,24 +229,19 @@
             @endforeach
             @endif
           </div>
-          {{-- <div class="row gutters-10 mt-5">
-                        <div class="col-lg-6">
-                            <img src="{{ custom_asset(get_setting('featured_category_left_banner')) }}"
-          class="img-fluid">
+          <h5 class="fre-button-show">
+            <a href="{{ route('search') }}?category=" class="fs-16 text-dark ">{{ translate('Browse More Categories') }}
+              <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
+            </a>
+          </h5>
         </div>
-        <div class="col-lg-6">
-          <img src="{{ custom_asset(get_setting('featured_category_right_banner')) }}" class="img-fluid">
-        </div>
-        </div> --}}
 
         </div>
-        </div>
+
       </section>
 
     </form>
     @endif
-
-
     <!-- Find academic jobs by category-->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top" style="background-color:#FBF7ED; ">
@@ -261,7 +254,7 @@
           </div>
           <div>
             <div class="pt-2 text-center">
-              <h5 class="btn rounded-1 border ">
+              <h5 class="btn rounded-1 border fre-consultant-category">
                 <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
                   <span>All
                     Jobs</span>
@@ -284,27 +277,37 @@
           @endphp
 
           @foreach ($services as $category)
-          <div class="col-lg-3 mb-lg-3 mb-xl-3 mb-md-3">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3  mb-lg-3 mb-xl-3 mb-md-3">
             <div class="caorusel-box">
               <a href="{{ route('projects.category', $category->slug)}}" class="text-dark fw-700">
-                <div class="card rounded-1 fre-job-catagory find-job">
+                <div class="card rounded-1  find-job" style="height:260px;">
                   <div class="position-relative">
                     <img class="img-fluid w-100 rounded-1 opacity-75 " style="height:280px;"
                       src=" {{ custom_asset($category->photo) }}" alt="Image">
                   </div>
                   <!-- <div class="fre-job-catagory rounded-1"></div> -->
-                  <div class="position-absolute  ">
-                    <p class="card-title  fw-700 p-1 fre-job-catagory fs-19"
-                      style=" background-color:white; margin-top:244px; ">
-                      {{$category->name}} </p>
-
+                  <div class="position-absolute flex  w-100">
+                    <p class="card-title fw-700 p-1 fre-job-catagory"
+                      style=" background-color:white; margin-top:253px; ">
+                      {{$category->name}}
+                      <img class=" category-list " src=" {{url('/public/assets/home/jobs.png')}}" alt="Image"
+                        style="width:15px;" />
+                    </p>
                   </div>
                 </div>
               </a>
             </div>
           </div>
           @endforeach
-
+          <h5 class="mx-3 fre-button-show">
+            <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+              <span>All
+                Jobs</span>
+            </a>
+            <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+              style="width:18px;" />
+            </a>
+          </h5>
         </div>
     </section>
     @endif
@@ -391,7 +394,7 @@
 
           </div>
           <div>
-            <h5 class="pt-2 text-center btn rounded-1 border">
+            <h5 class="pt-2 text-center btn rounded-1 border fre-consultant-category">
               <a href="" class="fs-16 text-dark  "><span>All Scholarships
                 </span></a>
               <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
@@ -644,9 +647,15 @@
 
 
         </div>
-
+        <h5 class=" fre-button-show">
+          <a href="" class="fs-16 text-dark  "><span>All Scholarships
+            </span></a>
+          <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+            style="width:18px;" />
+        </h5>
     </section>
     @endif
+
     <!-- Trending services -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top bg-white" style=" padding-bottom:10px;">
@@ -658,7 +667,7 @@
             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
           </div>
           <div>
-            <h5 class="pt-2 text-center btn rounded-1 border">
+            <h5 class="pt-2 text-center btn rounded-1 border fre-consultant-category">
               <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
                   services</span></a>
               <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
@@ -696,11 +705,11 @@
                   <div class="card-body">
                     <div>
                       @if($service->category != null)
-                      <p class="card-title  fs-18">{{$service->category->name}}</p>
+                      <p class="card-title text-justify-lg fw-700  fs-18">{{$service->category->name}}</p>
                       @endif
-                      <p class="card-title mt-1 fs-18 fw-700">
+                      <p class="card-title mt-1 fs-16 ">
                         {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
-                      <div class="mt-2">
+                      <div class="">
                         <span>
                           <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
                             style="width:12px;" />
@@ -711,7 +720,7 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="border border-top mt-1"></div>
+                    <div class="border border-top "></div>
                     <div class="d-flex justify-content-between align-items-center mt-1">
                       <div class="d-flex">
                         <span class="pr-2">
@@ -739,7 +748,12 @@
           </div>
           @endforeach
         </div>
-
+        <h5 class="fre-button-show">
+          <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
+              services</span></a>
+          <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
+            style="width:18px;" />
+        </h5>
     </section>
     @endif
 

@@ -1,6 +1,22 @@
 @extends('frontend.default.layouts.app')
 
 @section('content')
+<div class="mx-3 rounded-md my-2 rounded-1 " style="background: #F2F7F2;">
+  <div class="row py-2 d-flex align-items-center">
+    <div class="col-lg-6 mt-lg-4 px-5 container-fluid
+     ">
+      <h3 class=" text-success ">Consultant List</h3>
+      <h6 class="fre-review-banner-text">Build rewarding relationships in the world’s Work Marketplace. Your home for
+        the
+        work you want.
+      </h6>
+    </div>
+    <div class="col-lg-4  pt-lg-2  px-5">
+      <img src=" {{url('/public/assets/find-consultant/Background.svg')}}" alt="Image" class=" w-100 rounded-2 " />
+    </div>
+  </div>
+</div>
+
 <section class="py-4 py-lg-5">
   <div class="container">
     @if ($keyword != null)
@@ -38,6 +54,23 @@
                       <option value="{{ $category->slug }}" @if (isset($_GET['category_id']) &&
                         $_GET['category_id']==$category->slug ) selected @endif>
                         {{$category->name}}
+                      </option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <!-- skills -->
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="bg-white pr-3">{{ translate('Skills') }}</span>
+                  </h6>
+                  <div class="mb-5">
+                    <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
+                      onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                      <option value="">{{ translate('All skills') }}</option>
+                      @foreach(\App\Models\skill::all() as $skill)
+                      <option value="{{ $skill->id }}" @if (isset($_GET['skill_id']) && $_GET['skill_id']==$skill->
+                        slug
+                        ) selected @endif>
+                        {{$skill->name}}
                       </option>
                       @endforeach
                     </select>
@@ -243,12 +276,14 @@
                     @if ($skill != null)
                     <span
                       class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</span>
+
                     @endif
                     @endforeach
 
                   </div>
                   @endif
                 </div>
+
                 <div
                   class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 d-flex flex-row flex-xl-column justify-content-between align-items-center">
                   <div class="text-right">
@@ -256,12 +291,17 @@
                       <span>{{ translate('Hourly Rate') }}</span>
                     </div>
                     <h4 class="mb-0 fs-24 fw-700">{{ single_price($freelancer->hourly_rate) }}</h4>
+
                   </div>
                   <div>
                     <span class="btn btn-primary btn-sm rounded-2 fw-700">{{ translate('Hire Me') }}</span>
                   </div>
+                  <a href="">
+                    <h4 class="mb-0 fs-14 fw-700">{{ translate('Zoom meeting start from') }}</h4>
+                  </a>
                 </div>
               </a>
+
               @endif
               @endforeach
             </div>

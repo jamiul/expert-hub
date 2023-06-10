@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\ChatThread;
 use App\Models\UserProfile;
+use App\Models\FreelancerAccount;
 use Carbon;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
@@ -144,6 +145,15 @@ class HomeController extends Controller
     {
         $freelancer = User::where('user_name', $username)->first();
         return view('frontend.default.freelancer-single', compact('freelancer'));
+    }
+    // Freelancer meeting arrange
+ 
+    public function freelancer_meeting($user_name)
+    {
+        $user = User::where('user_name', $user_name)->first();
+        $user_profile = UserProfile::where('user_id', $user->id)->first();
+        $user_account = FreelancerAccount::where('user_id', $user->id)->first();
+        return view('frontend.default.freelancer-details', compact('user', 'user_profile', 'user_account'));
     }
 
     //check if username exists

@@ -183,6 +183,7 @@ right:0;
     /* padding-top: 100px !important; */
 }
 
+
 /* responsive */
 @media only screen and (max-width: 1210px) {
     .home-banner-button{
@@ -203,6 +204,7 @@ right:0;
         top: 16px !important;
         padding-top: 10px !important;
     }
+  
 
 }
 
@@ -240,6 +242,7 @@ right:0;
    .service-category-head-right img{
     font-size: 12px !important;
    }
+   
 }
 @media only screen and (max-width: 425px) {
     .carousel-inner {
@@ -261,15 +264,18 @@ right:0;
         margin-bottom: 2%;
         margin-top:-18%;
     }
+   
 }
 
 
 /* Job Category part */
 
 .fre-job-catagory{
+   
 }
 
 .fre-job-catagory:hover{
+    
     opacity: 0.75;
 }
 .fre-job-catagory p:hover{
@@ -304,7 +310,13 @@ right:0;
      .fre-small-font{
         font-size: 36px;
     }
-   
+   .fre-consultant-category {
+    display: flex;
+
+   }
+   .fre-job-catagory{
+    
+   }
   
 }
 
@@ -368,14 +380,14 @@ right:0;
     }
     .fre-small-font{
         font-size: 17px;
+        
     }
     .fre-consultant-category{
-display: inline;
+     display:none !important;
+     background-color: #5ABC76 !important;
 
     }
-    .fre-consultant-category .btn{
-        display: block;
-    }
+   
 
 }
 
@@ -388,5 +400,11 @@ display: inline;
         right: -134px;
         position: absolute;
         content:'';
+}
+}
+
+@media (min-width:425px){
+   .fre-button-show{
+        display: none !important;
 }
 }
