@@ -102,7 +102,7 @@ class ScholarshipController extends Controller
         $scholarship->city_id = $request->city_id;
         $scholarship->whoCanApply_id = $request->whoCanApply_id;
         $scholarship->qualification_id = $request->qualification_id;
-        $scholarship->fieldStudy_id = $request->fieldStudy_id;
+        $scholarship->fieldStudy_id = json_encode($request->fieldStudy_id);
         $scholarship->title = $request->title;
         $scholarship->short_description = $request->short_description;
         $scholarship->banner = $request->banner;
@@ -112,6 +112,7 @@ class ScholarshipController extends Controller
         $scholarship->meta_description = $request->meta_description;
         $scholarship->meta_keywords = $request->meta_keywords;
         $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+
         $scholarship->save();
 
         flash(translate('Scholarship post has been created successfully'))->success();
@@ -174,7 +175,7 @@ class ScholarshipController extends Controller
         $scholarship->city_id = $request->city_id;
         $scholarship->whoCanApply_id = $request->whoCanApply_id;
         $scholarship->qualification_id = $request->qualification_id;
-        $scholarship->fieldStudy_id = $request->fieldStudy_id;
+        $scholarship->fieldStudy_id =json_encode($request->fieldStudy_id);
         $scholarship->title = $request->title;
         $scholarship->banner = $request->banner;
         $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
@@ -185,7 +186,7 @@ class ScholarshipController extends Controller
         $scholarship->meta_img = $request->meta_img;
         $scholarship->meta_description = $request->meta_description;
         $scholarship->meta_keywords = $request->meta_keywords;
-
+        // dd($scholarship->fieldStudy_id);
         $scholarship->save();
 
         flash(translate( 'Scholarship post has been updated successfully'))->success();
@@ -216,7 +217,7 @@ class ScholarshipController extends Controller
 
     public function all_scholarship() {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
-        // dd($scholarships);
+        dd($scholarships);
         return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 

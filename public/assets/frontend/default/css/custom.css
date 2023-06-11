@@ -717,6 +717,7 @@
 }
 .fre-scsh-uni-name:hover{
     text-decoration: underline;
+    color: red;
 }
 .fre-scsh-details-main{
     width: 100%;
@@ -725,19 +726,21 @@
 .fre-scsh-left-side-title{
     color: #000003;
     font-weight:700;
-    font-size: 15px;
+    font-size: 14px;
 }
 .fre-scsh-right-side-details{
-    font-size: 15px;
+    font-size: 14px;
     color: #000003;
     font-weight:500;
 }
 .fre-scsh-find-more-btn{
-    font-size: 15px;
+    font-size: 14px;
     color: #275846;
     font-weight:700;
-    text-decoration: underline !important;
+    /* text-decoration: underline !important; */
     cursor: pointer;
+    line-height: 0;
+
 
 }
 .accordion .card-header::after {
@@ -784,15 +787,36 @@
 
   }
   .scholarship-list-page{
-    background: #F0F0F0;
+    background: white;
   }
   .all-scholarship-list:hover{
     background: #F7F7F7 !important;
   }
   .container-main-scholarship{
-    width: 84%;
-    margin: 20px 8% 95px 8%;
+    width: 94%;
+    margin: 0 3% 10px 3%;
   }
-
+@media (min-width:1200px){
+    .need-help-progress-bar{
+        height: 2px;
+        width: 20vw;
+        background: black;
+        bottom: 124px;
+        right: -136px;
+        position: absolute;
+        content: '';
+    }
+}
+/* @media (min-width:1280px){
+    .need-help-progress-bar{
+        height: 2px;
+        width: 20vw;
+        background: rgb(134, 33, 33);
+        bottom: 8rem;
+        right: -8rem;
+        position: absolute;
+        content: '';
+    }
+} */
 
 

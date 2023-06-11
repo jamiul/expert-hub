@@ -1,6 +1,22 @@
 @extends('frontend.default.layouts.app')
 
 @section('content')
+<div class="mx-3 rounded-md my-2 rounded-1 " style="background: #F2F7F2;">
+  <div class="row py-2 d-flex align-items-center">
+    <div class="col-lg-6 mt-lg-4 px-5 container-fluid
+     ">
+      <h3 class=" text-success ">Consultant List</h3>
+      <h6 class="fre-review-banner-text">Build rewarding relationships in the world’s Work Marketplace. Your home for
+        the
+        work you want.
+      </h6>
+    </div>
+    <div class="col-lg-4  pt-lg-2  px-5">
+      <img src=" {{url('/public/assets/find-consultant/Background.svg')}}" alt="Image" class=" w-100 rounded-2 " />
+    </div>
+  </div>
+</div>
+
 <section class="py-4 py-lg-5">
   <div class="container">
     @if ($keyword != null)
@@ -38,6 +54,23 @@
                       <option value="{{ $category->slug }}" @if (isset($_GET['category_id']) &&
                         $_GET['category_id']==$category->slug ) selected @endif>
                         {{$category->name}}
+                      </option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <!-- skills -->
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="bg-white pr-3">{{ translate('Skills') }}</span>
+                  </h6>
+                  <div class="mb-5">
+                    <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
+                      onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                      <option value="">{{ translate('All skills') }}</option>
+                      @foreach(\App\Models\skill::all() as $skill)
+                      <option value="{{ $skill->id }}" @if (isset($_GET['skill_id']) && $_GET['skill_id']==$skill->
+                        slug
+                        ) selected @endif>
+                        {{$skill->name}}
                       </option>
                       @endforeach
                     </select>
@@ -182,96 +215,93 @@
                 </div>
               </div>
             </div>
-            <div class="row p-0">
+            <div class="card-body p-0">
               @foreach ($freelancers as $key => $freelancer)
               @if ($freelancer->user != null)
-              <div class="col-lg-4">
-                <div class="card-body">
-                  <div class="card p-2 ">
-                    <div class="">
-                      <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
-                        class="  text-inherit px-3 py-4">
-                        <span class="d-block avatar">
-                          @if ($freelancer->user->photo != null)
-                          <img src="{{ custom_asset($freelancer->user->photo) }}" alt="{{ $freelancer->user->name }}">
-                          @else
-                          <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                            alt="{{ $freelancer->user->name }}">
-                          @endif
-                          @if(Cache::has('user-is-online-' . $freelancer->user->id))
-                          <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
-                          @else
-                          <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
-                          @endif
-                        </span>
-                        <div class="">
-                          <h5 class=" fs-14 fw-700 mb-1 my-2">{{ $freelancer->user->name }}</h5>
-                          @if ($freelancer->specialistAt != null)
-                          <p class="fs-12 opacity-50">{{ $freelancer->specialistAt->name }}</p>
-                          @endif
-                          <div class="text-muted lh-1-8">
-                            <p class="text-truncate-3">{{ $freelancer->bio }}</p>
-                          </div>
-                          <div class=" text-secondary fs-12 mb-3">
-                            <div class="mr-2">
-                              <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                {{ formatRating(getAverageRating($freelancer->user->id)) }}
-                              </span>
-                              <span class="rating rating-sm rating-mr-1">
-                                {{ renderStarRating(getAverageRating($freelancer->user->id)) }}
-                              </span>
-                              <span>
-                                ({{ count($freelancer->user->reviews) }} {{ translate('Reviews') }})
-                              </span>
-                            </div>
-                            @if ($freelancer->user->address != null && $freelancer->user->address->city_id != null &&
-                            $freelancer->user->address->country_id != null)
-                            <div class="my-1">
-                              {{-- <i class="las la-map-marker"></i> --}}
-                              <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
-                                <path id="Path_25847" data-name="Path 25847"
-                                  d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z"
-                                  transform="translate(-4 -2)" fill="#989ea8" />
-                              </svg>
-                              <span class="ml-1">{{ $freelancer->user->address->city->name }},
-                                {{ $freelancer->user->address->country->name }}</span>
-                            </div>
-                            @endif
-                          </div>
-                          @if($freelancer->skills != null)
-                          <div>
-                            @foreach (json_decode($freelancer->skills) as $key => $skill_id)
-                            @php
-                            $skill = \App\Models\Skill::find($skill_id);
-                            @endphp
-                            @if ($skill != null)
-                            <span
-                              class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</span>
-                            @endif
-                            @endforeach
-
-                          </div>
-                          @endif
-                        </div>
-                        <div class="">
-                          <div class="d-flex align-items-center">
-                            <div class="mt-xl-2 mt-lg-1 small text-secondary">
-                              <span>{{ translate('Hourly Rate') }}</span>
-                            </div>
-                            <h4 class="mb-0 fs-18 fw-700">{{ single_price($freelancer->hourly_rate) }}</h4>
-                          </div>
-                          <div>
-                            <span
-                              class="btn btn-primary w-100 btn-sm rounded-2 mt-2 fw-700">{{ translate('Hire Me') }}</span>
-                          </div>
-                        </div>
-                      </a>
+              <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
+                class="d-block d-xl-flex card-project text-inherit px-3 py-4">
+                <span class="avatar flex-shrink-0 mr-4">
+                  @if ($freelancer->user->photo != null)
+                  <img src="{{ custom_asset($freelancer->user->photo) }}" alt="{{ $freelancer->user->name }}">
+                  @else
+                  <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                    alt="{{ $freelancer->user->name }}">
+                  @endif
+                  @if(Cache::has('user-is-online-' . $freelancer->user->id))
+                  <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
+                  @else
+                  <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
+                  @endif
+                </span>
+                <div class="flex-grow-1">
+                  <h5 class="fs-14 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+                  @if ($freelancer->specialistAt != null)
+                  <p class="fs-12 opacity-50">{{ $freelancer->specialistAt->name }}</p>
+                  @endif
+                  <div class="text-muted lh-1-8">
+                    <p class="text-truncate-3">{{ $freelancer->bio }}</p>
+                  </div>
+                  <div class="d-flex text-secondary fs-12 mb-3">
+                    <div class="mr-2">
+                      <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
+                        {{ formatRating(getAverageRating($freelancer->user->id)) }}
+                      </span>
+                      <span class="rating rating-sm rating-mr-1">
+                        {{ renderStarRating(getAverageRating($freelancer->user->id)) }}
+                      </span>
+                      <span>
+                        ({{ count($freelancer->user->reviews) }} {{ translate('Reviews') }})
+                      </span>
                     </div>
+                    @if ($freelancer->user->address != null && $freelancer->user->address->city_id != null &&
+                    $freelancer->user->address->country_id != null)
+                    <div>
+                      {{-- <i class="las la-map-marker"></i> --}}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
+                        <path id="Path_25847" data-name="Path 25847"
+                          d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z"
+                          transform="translate(-4 -2)" fill="#989ea8" />
+                      </svg>
+                      <span class="ml-1">{{ $freelancer->user->address->city->name }},
+                        {{ $freelancer->user->address->country->name }}</span>
+                    </div>
+                    @endif
+                  </div>
+                  @if($freelancer->skills != null)
+                  <div>
+                    @foreach (json_decode($freelancer->skills) as $key => $skill_id)
+                    @php
+                    $skill = \App\Models\Skill::find($skill_id);
+                    @endphp
+                    @if ($skill != null)
+                    <span
+                      class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</span>
+
+                    @endif
+                    @endforeach
 
                   </div>
+                  @endif
                 </div>
 
-              </div>
+                <div
+                  class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 d-flex flex-row flex-xl-column justify-content-between align-items-center">
+                  <div class="text-right">
+                    <div class="mt-xl-2 small text-secondary">
+                      <span>{{ translate('Hourly Rate') }}</span>
+                    </div>
+                    <h4 class="mb-0 fs-24 fw-700">{{ single_price($freelancer->hourly_rate) }}</h4>
+
+                  </div>
+                  <div>
+                    <span class="btn btn-primary btn-sm rounded-2 fw-700">{{ translate('Hire Me') }}</span>
+                  </div>
+                  <a href="">
+                    <h4 class="mb-0 fs-14 fw-700">{{ translate('Zoom meeting start from') }}</h4>
+                  </a>
+                </div>
+              </a>
+
               @endif
               @endforeach
             </div>

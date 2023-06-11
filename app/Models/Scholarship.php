@@ -24,5 +24,8 @@ class Scholarship extends Model
     public function whoCanApply() {
         return $this->belongsTo(ScholarshipWhoCanApply::class, 'whoCanApply_id');
     }
+    public function fieldStudy() {
+        return $this->belongsTo(ScholarshipFieldStudy::class, 'fieldStudy_id');
+    }
 
 }

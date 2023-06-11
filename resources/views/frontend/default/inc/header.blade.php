@@ -17,7 +17,7 @@
             <a href="{{ route('register') }}?type=1" class="py-3 px-1 text-dark">{{ translate('I want to Work') }}</a>
           </div>
           @else
-          <div class="logo ml-4 " style="border:1px solid #ffff ">
+          <div class="logo ml-4 ">
             <a href="{{ route('home') }}" class="d-inline-block">
               <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}"
                 height="" class=" w-100" style="max-height:30px;">
@@ -296,7 +296,7 @@
         <!-- Container wrapper -->
 
         <div class="container-fluid">
-          <div class="logo" style="border:1px solid #ffff ">
+          <div class="logo" >
             <a href="{{ route('home') }}" class="d-inline-block p-1" >
               <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
             </a>
@@ -323,7 +323,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Find Consultants') }}</a>
               </li>
 
               <li class="dropdown mega_menu nav-item">
@@ -336,7 +336,7 @@
                     <div class="col-lg-3 col-sm-6">
                       <div id="findSkills" class="w-75  mega-menu-fj-item">
                         <a class="dropdown-item"
-                          href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                          href="{{ route('skills')}}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
                         <p>{{translate('Show clients you’re the one they want.')}}</p>
                       </div>
                     </div>
@@ -363,7 +363,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch') }}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
+                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
               </li>
 
 
