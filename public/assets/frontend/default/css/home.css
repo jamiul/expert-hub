@@ -154,7 +154,7 @@ body {
     height: 430px !important;
 }
 .container-home {
-    width: 84%;
+    width: 86%;
     margin: 70px 8%;
 }
 .home-slider {
@@ -301,7 +301,9 @@ body {
     .fre-consultant-category {
         display: flex;
     }
-    .fre-job-catagory {
+    .fre-job-catagory p {
+        font-size: 15px !important;
+        margin-top: 250px !important;
     }
 }
 
@@ -370,8 +372,8 @@ body {
         display: none !important;
         background-color: #5abc76 !important;
     }
-    .logo{
-        width:50px;
+    .logo {
+        width: 50px;
     }
 }
 
@@ -385,10 +387,28 @@ body {
         position: absolute;
         content: "";
     }
+
+    .fre-job-catagory p {
+        font-size: 18px !important;
+        margin-top: 245px !important;
+    }
+}
+@media (max-width: 1500px) {
+    .fre-job-catagory p {
+        font-size: 15px !important;
+        margin-top: 250px !important;
+    }
 }
 
 @media (min-width: 425px) {
     .fre-button-show {
         display: none !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    .fjob-category p {
+        font-size: 14px !important;
+        margin-top: 253px !important;
     }
 }
