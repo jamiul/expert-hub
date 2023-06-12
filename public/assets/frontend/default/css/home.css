@@ -370,6 +370,9 @@ body {
         display: none !important;
         background-color: #5abc76 !important;
     }
+    .logo{
+        width:50px;
+    }
 }
 
 @media (min-width: 1200px) {

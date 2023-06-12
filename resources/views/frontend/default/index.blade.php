@@ -62,9 +62,9 @@
     <section class="">
       <div class=" home-slider">
         <div class="row ">
-          <div class="col-6">
-            <div class="row ">
-              <div class="col-lg-4 col-sm-12">
+          <div class="col-lg-6 col-sm-12">
+            <div class=" row ">
+              <div class=" col-lg-4 col-sm-12">
                 <h4 class="trusted heading-title fw-700" style="font-size:19px; color:#5ABC76;"> Used by </h4>
               </div>
               <div class="col-lg-4 col-sm-12">
@@ -75,7 +75,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 ">
+          <div class="col-lg-6 col-sm-12 ">
             <div class="row">
               <div class="col-lg-4 col-sm-12">
                 <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
@@ -277,7 +277,7 @@
           @endphp
 
           @foreach ($services as $category)
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3  mb-lg-3 mb-xl-3 mb-md-3">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3 mb-3  mb-lg-3 mb-xl-3 mb-md-3">
             <div class="caorusel-box">
               <a href="{{ route('projects.category', $category->slug)}}" class="text-dark fw-700">
                 <div class="card rounded-1 fre-job-catagory  find-job" style="height:260px;">
