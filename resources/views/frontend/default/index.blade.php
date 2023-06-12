@@ -280,9 +280,9 @@
           <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3  mb-lg-3 mb-xl-3 mb-md-3">
             <div class="caorusel-box">
               <a href="{{ route('projects.category', $category->slug)}}" class="text-dark fw-700">
-                <div class="card rounded-1  find-job" style="height:260px;">
+                <div class="card rounded-1 fre-job-catagory  find-job" style="height:260px;">
                   <div class="position-relative">
-                    <img class="img-fluid w-100 rounded-1 opacity-75 " style="height:280px;"
+                    <img class="img-fluid rounded-1 opacity-75 " style="height:280px;"
                       src=" {{ custom_asset($category->photo) }}" alt="Image">
                   </div>
                   <!-- <div class="fre-job-catagory rounded-1"></div> -->
