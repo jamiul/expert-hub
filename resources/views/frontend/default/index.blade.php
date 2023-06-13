@@ -62,9 +62,9 @@
     <section class="">
       <div class=" home-slider">
         <div class="row ">
-          <div class="col-6">
-            <div class="row ">
-              <div class="col-lg-4 col-sm-12">
+          <div class="col-lg-6 col-sm-12">
+            <div class=" row ">
+              <div class=" col-lg-4 col-sm-12">
                 <h4 class="trusted heading-title fw-700" style="font-size:19px; color:#5ABC76;"> Used by </h4>
               </div>
               <div class="col-lg-4 col-sm-12">
@@ -75,7 +75,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 ">
+          <div class="col-lg-6 col-sm-12 ">
             <div class="row">
               <div class="col-lg-4 col-sm-12">
                 <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
@@ -275,20 +275,17 @@
           $services = \App\Models\ProjectCategory::inRandomOrder()
           ->get();
           @endphp
-
           @foreach ($services as $category)
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3  mb-lg-3 mb-xl-3 mb-md-3">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3  mb-lg-3 mb-xl-3 mb-md-3 mb-3">
             <div class="caorusel-box">
               <a href="{{ route('projects.category', $category->slug)}}" class="text-dark fw-700">
-                <div class="card rounded-1  find-job" style="height:260px;">
+                <div class="card rounded-1 fre-job-catagory mb-3 find-job" style="height:260px;">
                   <div class="position-relative">
-                    <img class="img-fluid w-100 rounded-1 opacity-75 " style="height:280px;"
+                    <img class="img-fluid rounded-1 opacity-75 " style="height:280px;"
                       src=" {{ custom_asset($category->photo) }}" alt="Image">
                   </div>
-                  <!-- <div class="fre-job-catagory rounded-1"></div> -->
-                  <div class="position-absolute flex  w-100">
-                    <p class="card-title fw-700 p-1 fre-job-catagory"
-                      style=" background-color:white; margin-top:253px; ">
+                  <div class="position-absolute flex ">
+                    <p class="card-title fw-700 p-1 fre-job-catagory " style=" background-color:white;  ">
                       {{$category->name}}
                       <img class=" category-list " src=" {{url('/public/assets/home/jobs.png')}}" alt="Image"
                         style="width:15px;" />
