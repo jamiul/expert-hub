@@ -24,7 +24,7 @@
 <body>
   @extends('frontend.default.layouts.app')
   @section('content')
-  @if (get_setting('slider_section_show') == 'on')
+  @if (get_setting('slider_section_show') == 'off')
   <section>
     <section class=" hero-section " id="frontHomeTab">
       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
