@@ -281,8 +281,12 @@
                     @endforeach
 
                   </div>
+                  <!-- <a href=" " class="text-center ">
+                    <h4 class="mb-0 fs-14 fw-700">{{ translate('Zoom meeting start from') }}</h4>
+                  </a> -->
                   @endif
                 </div>
+
 
                 <div
                   class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 d-flex flex-row flex-xl-column justify-content-between align-items-center">
@@ -296,11 +300,10 @@
                   <div>
                     <span class="btn btn-primary btn-sm rounded-2 fw-700">{{ translate('Hire Me') }}</span>
                   </div>
-                  <!-- <a href="">
-                    <h4 class="mb-0 fs-14 fw-700">{{ translate('Zoom meeting start from') }}</h4>
-                  </a> -->
+
                 </div>
               </a>
+
 
               @endif
               @endforeach
