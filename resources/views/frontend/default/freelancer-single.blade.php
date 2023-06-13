@@ -95,7 +95,7 @@
         <div class="col-xxl-9 col-lg-8 order-1 order-lg-0">
           <div class="card rounded ">
             <div class="card-header">
-              <h4 class="h6 fw-700 mb-0">{{ $freelancer->name }}'s {{ translate('Bio') }}</h4>
+              <h4 class="h6 fw-700 mb-0"> {{ translate('Description') }}</h4>
             </div>
             <div class="card-body">
               <div class="opacity-70 lh-1-8 fs-15">{{ $freelancer->profile->bio }}</div>
@@ -103,7 +103,7 @@
           </div>
           <div class="card rounded">
             <div class="card-header">
-              <h4 class="h6 fw-700 mb-0">{{ $freelancer->name }}'s {{ translate('Education') }}</h4>
+              <h4 class="h6 fw-700 mb-0"> {{ translate('Education') }}</h4>
             </div>
             <div class="card-body">
               <ul class="list-group list-group-flush">
@@ -120,7 +120,7 @@
 
           <div class="card rounded">
             <div class="card-header">
-              <h4 class="h6 fw-700 mb-0">{{ $freelancer->name }}'s {{ translate('Experiences') }}</h4>
+              <h4 class="h6 fw-700 mb-0"> {{ translate('Experiences') }}</h4>
             </div>
             <div class="card-body">
               <ul class="list-group list-group-flush">
@@ -148,10 +148,9 @@
 
           <div class="card rounded ">
             <div class="card-header">
-              <h4 class="h6 fw-700 mb-0">{{ $freelancer->name }}'s {{ translate('Portfolio') }}</h4>
+              <h4 class="h6 fw-700 mb-0"> {{ translate('Portfolio') }}</h4>
             </div>
             <div class="card-body">
-              islam
               <div class="row gutters-10">
                 @foreach ($freelancer->userPortfolios as $key => $portfolio)
                 <div class="col-xxl-3 col-xl-4 col-sm-6">
@@ -201,7 +200,7 @@
 
           <div class="card rounded ">
             <div class="card-header">
-              <h4 class="h6 fw-700 mb-0">{{ $freelancer->name }}'s {{ translate('Services') }}</h4>
+              <h4 class="h6 fw-700 mb-0"> {{ translate('Services') }}</h4>
             </div>
             <div class="card-body">
               <div class="row gutters-15">
@@ -300,10 +299,7 @@
                     <span class="text-black">{{ translate('Per hour') }}</span>
                   </h4>
                 </div>
-
               </div>
-              @if ($freelancer->badges != null)
-
               <div class="border-bottom mb-2">
                 {{-- <i class="las la-map-marker opacity-50"></i> --}}
                 <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
@@ -322,6 +318,7 @@
                 @endif
               </div>
 
+              @if ($freelancer->badges != null)
               <div class="mb-5">
                 <h6 class="text-left mb-4 h6 fw-700"><span class="bg-white pr-3">{{ translate('Badges') }}</span></h6>
                 <div class="">
@@ -413,6 +410,10 @@
                   href="{{ route('bookmarked-freelancers.store', encrypt($freelancer->id)) }}">
                   <i class="las la-bookmark"></i>
                   <span>{{ translate('Bookmark Freelancer') }}</span>
+                </a>
+                <a class="btn btn-block btn-outline-primary rounded-1" href="">
+                  <i class="las la-bookmark"></i>
+                  <span>{{ translate('Zoom meeting start from $') }}</span>
                 </a>
                 @endif
               </div>

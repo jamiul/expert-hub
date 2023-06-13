@@ -296,11 +296,7 @@
                   <div>
                     <span class="btn btn-primary btn-sm rounded-2 fw-700">{{ translate('Hire Me') }}</span>
                   </div>
-                  <div>
-                    <span class="btn btn-primary mt-1 btn-sm rounded-2 fw-700">{{ translate('zoom meet from') }}
 
-                    </span>
-                  </div>
 
                 </div>
               </a>
