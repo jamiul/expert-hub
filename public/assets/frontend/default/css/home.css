@@ -380,10 +380,10 @@ body {
 @media (min-width: 1200px) {
     .need-help-home-content {
         height: 2px;
-        width: 269px;
+        width: 278px;
         background: white;
         bottom: 177px;
-        right: -134px;
+        right: -139px;
         position: absolute;
         content: "";
     }
@@ -398,6 +398,7 @@ body {
         font-size: 15px !important;
         margin-top: 250px !important;
     }
+    
 }
 
 @media (min-width: 425px) {
@@ -411,4 +412,6 @@ body {
         font-size: 14px !important;
         margin-top: 253px !important;
     }
+
 }
+
