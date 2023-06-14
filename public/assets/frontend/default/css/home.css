@@ -180,6 +180,9 @@ body {
     /* padding-top: 100px !important; */
 }
 
+.fre-profile{
+    margin-top: -9rem!important;
+}
 /* responsive */
 @media only screen and (max-width: 1210px) {
     .home-banner-button {

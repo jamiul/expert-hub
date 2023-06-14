@@ -219,7 +219,7 @@
               @foreach ($freelancers as $key => $freelancer)
               @if ($freelancer->user != null)
               <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
-                class="d-block d-xl-flex card-project text-inherit px-3 py-4">
+                class="d-block d-xl-flex  text-inherit px-3 py-4 border-bottom">
                 <span class="avatar flex-shrink-0 mr-4">
                   @if ($freelancer->user->photo != null)
                   <img src="{{ custom_asset($freelancer->user->photo) }}" alt="{{ $freelancer->user->name }}">
@@ -276,16 +276,16 @@
                     @if ($skill != null)
                     <span
                       class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</span>
-
                     @endif
                     @endforeach
-
                   </div>
                   @endif
+
                 </div>
 
                 <div
                   class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 d-flex flex-row flex-xl-column justify-content-between align-items-center">
+
                   <div class="text-right">
                     <div class="mt-xl-2 small text-secondary">
                       <span>{{ translate('Hourly Rate') }}</span>
@@ -296,11 +296,11 @@
                   <div>
                     <span class="btn btn-primary btn-sm rounded-2 fw-700">{{ translate('Hire Me') }}</span>
                   </div>
-                  <!-- <a href="">
-                    <h4 class="mb-0 fs-14 fw-700">{{ translate('Zoom meeting start from') }}</h4>
-                  </a> -->
+
+
                 </div>
               </a>
+
 
               @endif
               @endforeach
