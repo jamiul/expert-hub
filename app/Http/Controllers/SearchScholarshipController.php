@@ -132,7 +132,7 @@ class SearchScholarshipController extends Controller
             $services = $services->paginate(9)->appends($request->query());
             return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
         } else if ($request->type == 'scholarships') {
-            // dd($request);
+
             $type = 'scholarships';
             $keyword = $request->keyword;
             $rating = $request->rating;
@@ -155,8 +155,8 @@ class SearchScholarshipController extends Controller
             $country_name ='';
             $countries =[];
             $fieldStudies =[];
+            // dd($fieldStudy_id);
 
-            
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
@@ -198,15 +198,13 @@ class SearchScholarshipController extends Controller
                 $scholarships = $scholarships->whereIn('level_id', $level_id);
             }
             if ($request->fieldStudy_id != null) {
+
                 $fieldStudy_ids = $request->fieldStudy_id;
                 $fieldStudies = ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
                 // dd($fieldStudies);
                 $fieldStudy =$request->fieldStudy_id;
-                $scholarships = $scholarships->whereIn('fieldStudy_id', $fieldStudy_id);
-                // $user_ids =  ScholarshipCountry::where('id', $country_id);
-                $scholarships = $scholarships->where('fieldStudy_id', $fieldStudy_id);
+                $scholarships = $scholarships->whereIn('fieldStudy_id', $fieldStudy_ids);
             }
-            // dd($scholarships);
 
             if (count($skill_ids) > 0) {
                 $filtered_freelancers = [];
@@ -229,7 +227,7 @@ class SearchScholarshipController extends Controller
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
                 $ScholarshipTotal = $scholarships->count();
-                $scholarships = $scholarships->paginate(5)->appends($request->query());
+                $scholarships = $scholarships->paginate(10)->appends($request->query());
             }
             // dd($category_id);
             return view('frontend.default.scholarships-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'category_id', 'level_id', 'country_id', 'fieldStudy_id', 'ScholarshipTotal','category_names' ,'categories','levels','country_name','countries','fieldStudies'));

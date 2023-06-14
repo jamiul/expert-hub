@@ -341,7 +341,6 @@
     line-height: 1em;
 }
 .how-to-hire-banner-text {
-
     font-size: 18px;
     line-height: 22px;
     color: #001e00;
@@ -424,18 +423,17 @@
 .how-to-hire-banner-rating-section {
     bottom: -18px !important;
     width: 94%;
-
 }
 @media (min-width: 768px) {
-    .fre-how-to-hire-banner-img{
-        height:272vw;
-        width:590vh;
+    .fre-how-to-hire-banner-img {
+        height: 272vw;
+        width: 590vh;
     }
 }
 @media (min-width: 1350px) {
-    .fre-how-to-hire-banner-img{
-        height:330px;
-        width:690px
+    .fre-how-to-hire-banner-img {
+        height: 330px;
+        width: 690px;
     }
 }
 /* how-to-find-job */
@@ -447,12 +445,11 @@
 .find-job-banner-title {
     font-size: 45px;
     font-weight: 700;
-    margin-bottom:  0 !important;
+    margin-bottom: 0 !important;
 }
 .find-job-banner-rating-section {
     margin-top: 10px;
     width: 94%;
-
 }
 .find-job-banner-rating-section p {
     color: #5e6d55;
@@ -480,7 +477,7 @@
     font-weight: bold !important;
     font-size: 18px !important;
     font-weight: 500 !important;
-    padding:  0 !important;
+    padding: 0 !important;
 }
 .img-works {
     display: flex;
@@ -708,40 +705,38 @@
 
 /* scholarship list */
 
-.fre-scsh-uni-name{
+.fre-scsh-uni-name {
     margin-top: 10px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 700;
-    color:#000003;
+    color: #000003;
 }
-.fre-scsh-uni-name:hover{
+.fre-scsh-uni-name:hover {
     text-decoration: underline;
     color: red;
 }
-.fre-scsh-details-main{
+.fre-scsh-details-main {
     width: 100%;
     display: flex;
 }
-.fre-scsh-left-side-title{
+.fre-scsh-left-side-title {
     color: #000003;
-    font-weight:700;
+    font-weight: 700;
     font-size: 14px;
 }
-.fre-scsh-right-side-details{
+.fre-scsh-right-side-details {
     font-size: 14px;
     color: #000003;
-    font-weight:500;
+    font-weight: 500;
 }
-.fre-scsh-find-more-btn{
+.fre-scsh-find-more-btn {
     font-size: 14px;
     color: #275846;
-    font-weight:700;
+    font-weight: 700;
     /* text-decoration: underline !important; */
     cursor: pointer;
     line-height: 0;
-
-
 }
 .accordion .card-header::after {
     font-family: "Font Awesome 5 Free";
@@ -759,52 +754,51 @@
     right: 0;
     margin-right: 0;
     width: 750vw; /* Adjust the width as needed */
-    height:100%;
+    height: 100%;
     transform: translateX(100%);
-  }
+}
 
-  .modal.right.fade .modal-dialog {
+.modal.right.fade .modal-dialog {
     transform: translateX(0);
     transition: transform 0.3s ease-out;
-  }
-  .fre-modal-main-section{
+}
+.fre-modal-main-section {
     margin: 0;
 
-     /* Adjust the height as needed */
-  }
-  .fre-modal-content-section{
+    /* Adjust the height as needed */
+}
+.fre-modal-content-section {
     height: 100vh !important;
-  }
-  .fre-modal-content-section .fre-modal-body-section{
+}
+.fre-modal-content-section .fre-modal-body-section {
     max-height: 75vh !important;
-  }
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
     .modal.right .modal-dialog {
-      width: 100%;
-      transform: translateX(100%);
+        width: 100%;
+        transform: translateX(100%);
     }
-
-  }
-  .scholarship-list-page{
+}
+.scholarship-list-page {
     background: white;
-  }
-  .all-scholarship-list:hover{
-    background: #F7F7F7 !important;
-  }
-  .container-main-scholarship{
+}
+.all-scholarship-list:hover {
+    background: #f7f7f7 !important;
+}
+.container-main-scholarship {
     width: 94%;
     margin: 0 3% 10px 3%;
-  }
-@media (min-width:1200px){
-    .need-help-progress-bar{
+}
+@media (min-width: 1200px) {
+    .need-help-progress-bar {
         height: 2px;
         width: 20vw;
         background: black;
         bottom: 124px;
         right: -136px;
         position: absolute;
-        content: '';
+        content: "";
     }
 }
 /* @media (min-width:1280px){
@@ -819,4 +813,19 @@
     }
 } */
 
+/* style for pagination */
+.pagination {
+    /* border: 1px solid gray !important; */
+}
+.pagination .page-item {
+    margin: 0 !important;
+}
+.pagination .page-link,
+.page-item.disabled .page-link {
+    border-radius: none !important;
+    border: 1px solid #BEC0C2 !important;
+}
+.page-link{
+    /* background: #F7F7F7 !important; */
+}
 
