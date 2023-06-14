@@ -126,7 +126,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	Route::get('/client-info/{user_name}', 'UserController@client_details')->name('client_info_show');
 
 	Route::get('user/ban/{id}', 'UserController@destroy')->name('user.ban');
-    
+
     Route::get('/user/login/{id}', 'UserController@login')->name('freelancers_clients.login');
 
 	Route::get('/verification-requests', 'VerificationController@index')->name('verification_requests');
@@ -141,6 +141,28 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
   Route::resource('blog', 'BlogController');
   Route::get('/blog/destroy/{id}', 'BlogController@destroy')->name('blog.destroy');
   Route::post('/blog/change-status', 'BlogController@change_status')->name('blog.change-status');
+
+  //scholarships
+  Route::resource('scholarship-category', 'ScholarshipCategoryController');
+  Route::get('/scholarship-category/destroy/{id}', 'ScholarshipCategoryController@destroy')->name('scholarship-category.destroy');
+  Route::resource('scholarship', 'ScholarshipController');
+  Route::get('/scholarship/destroy/{id}', 'ScholarshipController@destroy')->name('scholarship.destroy');
+  Route::post('/scholarship/change-status', 'ScholarshipController@change_status')->name('scholarship.change-status');
+
+  Route::resource('scholarship-level', 'ScholarshipLevelController');
+  Route::get('/scholarship-level/destroy/{id}', 'ScholarshipLevelController@destroy')->name('scholarship-level.destroy');
+  Route::resource('scholarship-university', 'ScholarshipUniversityController');
+  Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.destroy');
+  Route::resource('scholarship-country', 'ScholarshipCountryController');
+  Route::get('/scholarship-country/destroy/{id}', 'ScholarshipCountryController@destroy')->name('scholarship-country.destroy');
+  Route::resource('scholarship-city', 'ScholarshipCityController');
+  Route::get('/scholarship-city/destroy/{id}', 'ScholarshipCityController@destroy')->name('scholarship-city.destroy');
+  Route::resource('scholarship-qualification', 'ScholarshipQualificationController');
+  Route::get('/scholarship-qualification/destroy/{id}', 'ScholarshipQualificationController@destroy')->name('scholarship-qualification.destroy');
+  Route::resource('scholarship-who-can-apply', 'ScholarshipWhoCanApplyController');
+  Route::get('/scholarship-who-can-apply/destroy/{id}', 'ScholarshipWhoCanApplyController@destroy')->name('scholarship-who-can-apply.destroy');
+  Route::resource('scholarship-field-study', 'ScholarshipFieldStudyController');
+  Route::get('/scholarship-field-study/destroy/{id}', 'ScholarshipFieldStudyController@destroy')->name('scholarship-field-study.destroy');
 
   //Subscribers
   Route::controller('SubscriberController')->group(function () {

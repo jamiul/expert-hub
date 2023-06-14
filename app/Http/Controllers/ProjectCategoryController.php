@@ -21,7 +21,7 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        $project_categories = ProjectCategory::orderBy('created_at', 'desc')->paginate(10);
+        $project_categories =ProjectCategory::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.default.project.project_categories.index', compact('project_categories'));
     }
 
@@ -50,6 +50,7 @@ class ProjectCategoryController extends Controller
         }
         $project_category->photo = $request->photo;
         $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
+        $project_category->description = $request->description;
         if($project_category->save()){
             flash(translate('New Category has been added successfully!'))->success();
             return redirect()->route('project-categories.index');
@@ -101,6 +102,7 @@ class ProjectCategoryController extends Controller
         }
         $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
         $project_category->photo = $request->photo;
+        $project_category->description = $request->description;
         if($project_category->save()){
             flash(translate('New Category has been updated successfully!'))->success();
             return redirect()->route('project-categories.index');

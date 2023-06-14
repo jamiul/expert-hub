@@ -1,1 +1,831 @@
 /*your custom css goes here*/
+
+.dropdown-menu {
+    max-width: unset;
+}
+
+.aiz-navbar .menu a {
+    font-size: 15px;
+}
+
+.aiz-main-wrapper {
+    overflow-x: unset;
+    background-color: white !important;
+}
+/* why scholarship - review */
+
+.fre-review-banner-title {
+    letter-spacing: -0.035em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.fre-review-banner-text {
+    padding-bottom: 35px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #5e6d55;
+}
+.fre-review-per-week-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+    width: 50%;
+}
+.fre-review-clients {
+    color: #001e00;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.fre-review-they-say-topic {
+    color: #001e00;
+    font-size: 20px;
+    padding: 5px 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+.fre-tye-review-saying-topic {
+    background-color: #f2f7f2;
+    border-radius: 15px;
+    padding: 8.5px 15px;
+    font-size: 12px;
+    line-height: 13px;
+}
+.fre-review-they-say-topic:hover {
+    color: #1f57c3;
+}
+
+.fre-review-say-customer {
+    height: 80vh !important;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.fre-review-say-customer-topic {
+}
+.fre-review-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fre-review-details h5 {
+    color: #001e00;
+    font-size: 30px;
+    font-weight: 700;
+}
+.fre-review-details p {
+    color: #5e6d55;
+    font-size: 30px;
+    font-weight: 700;
+}
+.fre-review-work-done {
+    width: 84%;
+    margin: 50px 8% 0 8%;
+}
+.fre-review-work-done h3 {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.fre-review-work-done-card h4 {
+    color: #001e00;
+    letter-spacing: -0.004em;
+    margin-bottom: 40px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.fre-review-work-done-read {
+    color: #1f57c3;
+    font-family: Neuemontreal, sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+}
+.fre-review-work-done-card img {
+    z-index: 2;
+    width: 13px;
+    height: 15px;
+    margin-left: 2px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+}
+.fre-review-explore-worldwide-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.fre-review-explore-worldwide-topic h5 {
+    display: inline-block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    font-size: 16px;
+}
+.fre-review-explore-worldwide-topic h5:hover {
+    color: #1f57c3;
+}
+.fre-review-say-other-way-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.fre-review-say-other-way-card-text {
+    color: #001e00;
+    letter-spacing: -0.004em;
+    margin-bottom: 40px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.fre-review-get-started-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.fre-rv-find-work-bar {
+    transition: all 0.2s;
+    /* border: none !important; */
+    margin-right: 5px !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: gray !important;
+    position: relative;
+}
+.fre-rv-find-work-bar::after {
+    content: " ";
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: #58b38d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.fre-rv-find-work-bar:hover::after {
+    opacity: 1;
+}
+.fre-rv-find-work-bar::active {
+    content: " ";
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.fre-review-hf-card-title {
+    color: #222;
+    margin-bottom: 5px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+}
+.fre-review-say-customer-review {
+    width: 100%;
+    color: #001e00;
+    letter-spacing: -0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.fre-review-hf-card-text {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.fre-join-scholarship-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.fre-join-scholarship-btn:hover {
+    background: #1c51af;
+}
+.fre-container-main-powerful {
+    width: 84%;
+    margin: 100px 8% 80px 8%;
+}
+
+#fre-ch {
+    display: none;
+}
+#fre-leave {
+    display: none;
+}
+#fre-contest {
+    display: none;
+}
+#fre-ch:checked ~ label {
+    display: none;
+}
+#fre-ch:checked ~ .fre-content {
+    display: block;
+}
+#fre-leave:checked ~ label {
+    display: none;
+}
+#fre-leave:checked ~ .fre-content {
+    display: block;
+}
+#fre-contest:checked ~ label {
+    display: none;
+}
+#fre-contest:checked ~ .fre-content {
+    display: block;
+}
+.fre-content {
+    display: none;
+}
+.fre-expand-icon {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0;
+    color: rgb(77, 95, 230);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.get-work-title {
+    margin-bottom: 25px;
+    color: black;
+    width: 600px;
+}
+.approvalHead {
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+    color: #5e6d55;
+}
+.approvalCheckMark p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5e6d60;
+}
+.trusted-main {
+    margin: 110px 0 0px 0;
+    height: 70px;
+}
+.trusted {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-top: 10px;
+}
+/* How to hire */
+.how-to-hire-banner-title {
+    letter-spacing: -0.035em;
+    margin-top: 0;
+    padding-bottom: 5px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.how-to-hire-banner-text {
+    font-size: 18px;
+    line-height: 22px;
+    color: #001e00;
+}
+.hth-lets-work-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.hth-lets-work-text {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    width: 60%;
+}
+.get-work-child-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    font-family: Upworkrza, sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.get-work-child-text {
+    color: #5e6d55;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.get-work-child-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.hth-safe-us {
+    color: #001e00;
+    margin-bottom: 5px;
+    letter-spacing: -0.032em;
+    font-family: Upworkrza, sans-serif;
+    font-weight: 400;
+}
+.hth-safe-text {
+    letter-spacing: -0.004em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.1em;
+    max-width: 300px;
+    margin-bottom: 15px;
+    color: #5e6d55;
+}
+.hth-safe-text {
+    letter-spacing: -0.004em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.1em;
+    margin-bottom: 15px;
+    color: #5e6d55;
+}
+.hth-profile-active {
+    bottom: -10 !important;
+    margin: 10px 0 0 10px;
+}
+.how-to-hire-banner-rating-section {
+    bottom: -18px !important;
+    width: 94%;
+}
+@media (min-width: 768px) {
+    .fre-how-to-hire-banner-img {
+        height: 272vw;
+        width: 590vh;
+    }
+}
+@media (min-width: 1350px) {
+    .fre-how-to-hire-banner-img {
+        height: 330px;
+        width: 690px;
+    }
+}
+/* how-to-find-job */
+.find-job-banner p {
+    color: black;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.find-job-banner-title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 0 !important;
+}
+.find-job-banner-rating-section {
+    margin-top: 10px;
+    width: 94%;
+}
+.find-job-banner-rating-section p {
+    color: #5e6d55;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+.find-job-banner-rating {
+    margin-top: 9px;
+}
+.find-job-banner-star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.find-job-banner-star p {
+    padding: 0 0 0 2px !important;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 0 !important;
+}
+.find-job-banner-total-review {
+    color: #65735b !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+}
+.img-works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+/* .blog-img {
+    height: 225px;
+    margin-bottom: 0;
+} */
+/* .Explore-blog-card {
+    border-radius: 0 0 10px 10px;
+} */
+.htfj-learn-work-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.htfj-learn-work-child-title {
+    color: #001e00;
+    letter-spacing: -0.006em;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1em;
+}
+.payments-img {
+    border-radius: 0px 10px 10px 0;
+}
+/* How it works */
+.container-main {
+    width: 84%;
+    margin: 100px 8% 0 8%;
+}
+.how-work-title {
+    color: #001e00;
+    letter-spacing: -0.03em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1em;
+}
+.how-work-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+/* Explore ways to earn */
+.explore-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.explore-find-oppor {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.explore-find-oppor-title {
+    color: #001e00;
+    letter-spacing: -0.03em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1em;
+}
+.explore-find-oppor-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+/* How payments work */
+.payment-work-main-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: Upworkrza, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1em;
+}
+.payment-work-main-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.payment-work-child-title {
+    color: #001e00;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.payment-work-child-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.payment-work-child-details-percent {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 10px 0;
+}
+.learn-service {
+    color: #1f57c3;
+    font-family: Neuemontreal, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Frequently asked questions */
+.container-main-freQus {
+    width: 84%;
+    margin: 100px 8% 95px 8%;
+}
+.frequently-qsn-main-title {
+    color: #001e00;
+    letter-spacing: -0.032em;
+    font-family: Upworkrza, sans-serif;
+    font-weight: 400;
+    font-size: 38px;
+}
+.frequently-qsn-title {
+    color: #001e00;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.frequently-qsn-details {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.fre-content {
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+#fre-buildingBusiness {
+    display: none;
+}
+#fre-buildingBusiness:checked ~ .fre-content {
+    display: block;
+}
+#fre-buildingBusiness:checked ~ label {
+    display: none;
+}
+#fre-badges {
+    display: none;
+}
+#fre-badges:checked ~ .fre-content {
+    display: block;
+    color: #5e6d55;
+    letter-spacing: 0.6px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+#fre-badges:checked ~ label {
+    display: none;
+}
+#fre-Connects {
+    display: none;
+}
+#fre-Connects:checked ~ .fre-content {
+    display: block;
+}
+#fre-Connects:checked ~ label {
+    display: none;
+}
+#fre-freelancing {
+    display: none;
+}
+#fre-freelancing:checked ~ .fre-content {
+    display: block;
+}
+#fre-freelancing:checked ~ label {
+    display: none;
+}
+
+/* scholarship list */
+
+.fre-scsh-uni-name {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000003;
+}
+.fre-scsh-uni-name:hover {
+    text-decoration: underline;
+    color: red;
+}
+.fre-scsh-details-main {
+    width: 100%;
+    display: flex;
+}
+.fre-scsh-left-side-title {
+    color: #000003;
+    font-weight: 700;
+    font-size: 14px;
+}
+.fre-scsh-right-side-details {
+    font-size: 14px;
+    color: #000003;
+    font-weight: 500;
+}
+.fre-scsh-find-more-btn {
+    font-size: 14px;
+    color: #275846;
+    font-weight: 700;
+    /* text-decoration: underline !important; */
+    cursor: pointer;
+    line-height: 0;
+}
+.accordion .card-header::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    float: right;
+    margin-left: auto;
+}
+
+.accordion .card-header.collapsed::after {
+    content: "\f106";
+}
+
+.modal.right .modal-dialog {
+    position: fixed;
+    right: 0;
+    margin-right: 0;
+    width: 750vw; /* Adjust the width as needed */
+    height: 100%;
+    transform: translateX(100%);
+}
+
+.modal.right.fade .modal-dialog {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+.fre-modal-main-section {
+    margin: 0;
+
+    /* Adjust the height as needed */
+}
+.fre-modal-content-section {
+    height: 100vh !important;
+}
+.fre-modal-content-section .fre-modal-body-section {
+    max-height: 75vh !important;
+}
+
+@media (max-width: 767px) {
+    .modal.right .modal-dialog {
+        width: 100%;
+        transform: translateX(100%);
+    }
+}
+.scholarship-list-page {
+    background: white;
+}
+.all-scholarship-list:hover {
+    background: #f7f7f7 !important;
+}
+.container-main-scholarship {
+    width: 94%;
+    margin: 0 3% 10px 3%;
+}
+@media (min-width: 1200px) {
+    .need-help-progress-bar {
+        height: 2px;
+        width: 20vw;
+        background: black;
+        bottom: 124px;
+        right: -136px;
+        position: absolute;
+        content: "";
+    }
+}
+/* @media (min-width:1280px){
+    .need-help-progress-bar{
+        height: 2px;
+        width: 20vw;
+        background: rgb(134, 33, 33);
+        bottom: 8rem;
+        right: -8rem;
+        position: absolute;
+        content: '';
+    }
+} */
+
+/* style for pagination */
+.pagination {
+    /* border: 1px solid gray !important; */
+}
+.pagination .page-item {
+    margin: 0 !important;
+}
+.pagination .page-link,
+.page-item.disabled .page-link {
+    border-radius: none !important;
+    border: 1px solid #BEC0C2 !important;
+}
+.page-link{
+    /* background: #F7F7F7 !important; */
+}
+

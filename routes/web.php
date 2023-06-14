@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WhyScholarshipController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/testing', function() {
 // 	dd(Auth::user()->userRoles->first()->role->id);
 // });
-
+Route::get('slider', function () {
+    return view('frontend/default.inc.videoSlide');
+});
 Route::get('/demo/cron_1', 'DemoController@cron_1');
 Route::get('/demo/cron_2', 'DemoController@cron_2');
 
@@ -60,9 +63,56 @@ Route::post('/cities/get_city_by_country', 'CityController@get_city_by_country')
 
 Route::post('/user-account-type', 'UserController@set_account_type')->name('user.account.type');
 
+
+
+// find job section
+
+
+Route::get('/carusel', function(){
+
+	return view('carusel');
+})->name('carusel');
+
+Route::get('/waysToEarn', function(){
+
+	return view('frontend.default.find-job.waysToEarn');
+})->name('waysToEarn');
+
+// promote content
+
+Route::get('/promote', function(){
+
+	return view('frontend.default.find-job.promote');
+})->name('promote');
+Route::get('/sendProposal', function(){
+
+	return view('frontend.default.find-job.sendProposal');
+})->name('sendProposal');
+
+Route::get('/badge', function(){
+
+	return view('frontend.default.find-job.badge');
+})->name('badge');
+Route::get('/proposal', function(){
+
+	return view('frontend.default.find-job.proposal');
+})->name('proposal');
+Route::get('/skills', function(){
+
+	return view('frontend.default.find-job.skills');
+})->name('skills');
+
 //Blog Section
 Route::get('/blog', 'BlogController@all_blog')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
+
+//why scholarships
+Route::get('/success-stories', function (){
+    return view('frontend.default.success-stories');
+})->name('success-stories');
+Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
+Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
+Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
 Route::group(['middleware' => ['user']], function(){
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');
@@ -147,6 +197,7 @@ Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']]
 
     Route::get('/service/{id}/cancel', 'ServiceController@cancel_service')->name('services.cancel');
 	Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
+	
 
 	Route::get('/client/cancel-requests-services', 'ServiceController@client_cancel_requested_services')->name('client.services.cancel.requests');
 	Route::get('/client/cancelled-services', 'ServiceController@client_cancelled_services')->name('client.services.cancelled');
@@ -175,6 +226,8 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 	Route::get('/profile-settings/work-experience-edit/{id}', 'WorkExperienceController@edit')->name('user_profile.work_experience_edit');
 	Route::post('/profile-settings/work-experience-update/{id}', 'WorkExperienceController@update')->name('user_profile.work_experience_update');
     Route::get('/profile-settings/work-experience-delete/{id}', 'WorkExperienceController@destroy')->name('user_profile.work_experience_destroy');
+
+
 
 	Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
 	Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');
@@ -222,9 +275,20 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 });
 
 Route::get('/search', 'SearchController@index')->name('search');
-Route::get('/search?category={slug}', 'SearchController@index')->name('projects.category');
+Route::get('/search?category_id={slug}&type=project', 'SearchController@index')->name('projects.category');
 Route::get('/skills/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
 Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
+Route::get('/search?category_id={category_slug}&type=freelancer', 'SearchController@index')->name('freelancer.category');
+
+//scholarship list
+Route::get('/scholarshipSearch', 'SearchScholarshipController@index')->name('scholarshipSearch');
+Route::get('/scholarshipSearch?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
+Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarshipSearch.skill');
+Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+
+
+
 
 Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');
 Route::get('/private-project-details/{slug}', 'HomeController@private_project_details')->name('private_project.details');
@@ -236,6 +300,8 @@ Route::get('/client-lists', 'HomeController@client_list')->name('client.lists');
 
 Route::get('/freelancer-lists', 'HomeController@freelancer_list')->name('freelancer.lists');
 Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name('freelancer.details');
+// Route::get('/freelancer/{user_name}', 'HomeController@freelancer_meeting')->name('freelancer.meeting');
+
 
 Route::get('/get_freelancer_skills','SkillController@freelancer_skills')->name('get_freelancer_skills');
 
