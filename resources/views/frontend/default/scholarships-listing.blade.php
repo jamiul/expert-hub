@@ -34,6 +34,9 @@
 
                                     <!-- Level-show -->
                                     @foreach($levels as $level)
+                                    <?php
+
+                                    ?>
                                     <span id="level_{{$level->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
 
                                         {{$level ->level_name}} |<p onclick="removeLevel({{$level->id}})" class="m-0  d-inline fw-700">
@@ -42,9 +45,10 @@
                                     @endforeach
                                     <!-- field name  -->
                                     @foreach($fieldStudies as $fieldStudy)
-                                    <span id="fieldStudy_{{$fieldStudy->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
 
-                                        {{$fieldStudy ->name}} | <p onclick="removeFieldStudy(fieldStudy->id}})" class="m-0  d-inline fw-700">
+
+                                    <span id="fieldStudy_{{$fieldStudy->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                        {{$fieldStudy ->name}} | <p onclick="removeFieldStudy({{$fieldStudy->id}})" class="m-0  d-inline fw-700">
                                             X</p>
                                     </span>
                                     @endforeach
@@ -52,7 +56,7 @@
                                     @foreach($countries as $country)
                                     <span id="country_{{$country->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
 
-                                        {{$country ->country_name}} | <p onclick="removeCountry(country->id}})" class="m-0  d-inline fw-700">
+                                        {{$country ->country_name}} | <p onclick="removeCountry({{$country->id}})" class="m-0  d-inline fw-700">
                                             X</p>
                                     </span>
                                     @endforeach
@@ -70,8 +74,13 @@
                                         <span class=" pr-3">{{ translate('Scholarships by Category') }}</span>
                                     </h6>
                                     <div class="aiz-checkbox-list">
-
+                                    <?php
+                                        // print_r($Level->id);
+                                        // print_r($level_id);
+                                        // dd($level_id);
+                                        ?>
                                         @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
+
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()" @if (in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
                                             <span class="aiz-square-check"></span>
@@ -83,8 +92,22 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class=" pr-3">{{ translate('Scholarships by Field of Study')}}</span>
                                     </h6>
-
                                     <div class="aiz-checkbox-list">
+
+                                        <?php
+                                        // print_r($fieldStudy->id);
+                                        // dd($fieldStudy_id)
+                                        ?>
+                                        @foreach(\App\Models\ScholarshipFieldStudy:: all() as $fieldStudy)
+
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="fieldStudy_id[]" value="{{$fieldStudy->id}}" onchange="applyFilter()" @if (in_array($fieldStudy->id,$fieldStudy_ids)) checked @endif > {{ $fieldStudy->name }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        @endforeach
+                                    </div>
+                                    <!-- <div class="aiz-checkbox-list">
                                         @foreach(\App\Models\ScholarshipFieldStudy:: all() as $fieldStudy)
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="fieldStudy_id[]" value="{{$fieldStudy->id}}" onchange="applyFilter()" @if (in_array($fieldStudy->id, $fieldStudy_id)) checked @endif > {{ $fieldStudy->name }}
@@ -92,7 +115,7 @@
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                         @endforeach
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="mb-3">
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="fieldStudy_id[]" onchange="applyFilter()" data-toggle="select3" data-live-search="true">
                                             <option value="">{{ translate('Field of Study') }}</option>
@@ -102,13 +125,16 @@
                                             @endforeach
                                         </select>
                                     </div> -->
-                                    <!--  Location -->
+                                    <!-- Country -->
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class=" pr-3">{{ translate('Scholarships by Country') }}</span>
                                     </h6>
                                     <div class="mb-5">
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                            <option value="">{{ translate('All Countries') }}</option>
+                                            <option value="0" @if ($country_id[0]) selected @endif>{{ translate('All Countries') }}</option>
+                                            <?php
+                                                print_r($country_id);
+                                            ?>
                                             @foreach(\App\Models\ScholarshipCountry:: all() as $country)
                                             <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
                                                 @endif>{{ $country->country_name }}</option>
@@ -212,7 +238,6 @@
                                 </div>
                                 <div class="col-9 pl-0">
                                     @if($scholarship->WhoCanApply != null)
-
                                     <p class="fre-scsh-right-side-details pb-0 mb-0">{{ $scholarship->WhoCanApply->title}}
                                     </p>
                                     @endif
@@ -393,6 +418,7 @@
 <script>
     function removeLevel(levelId) {
         var levelElement = document.getElementById('level_' + levelId);
+        console.log(fieldStudyElement);
         if (levelElement) {
             levelElement.parentNode.removeChild(levelElement);
 
@@ -404,11 +430,11 @@
         }
         $('#scholarship-filter-form').submit();
     }
-
 </script>
 <script>
     function removeFieldStudy(fieldStudyId) {
         var fieldStudyElement = document.getElementById('fieldStudy_' + fieldStudyId);
+        console.log(fieldStudyElement);
         if (fieldStudyElement) {
             fieldStudyElement.parentNode.removeChild(fieldStudyElement);
 
@@ -429,11 +455,12 @@
             countryElement.parentNode.removeChild(countryElement);
 
             // Uncheck the corresponding checkbox
-            // var checkbox = document.querySelector('input[name="country_id[]"][value="' + countryId + '"]');
-            // if (checkbox) {
-            //     checkbox.checked = false;
-            // }
+            var checkbox = document.querySelector('input[name="country_id[]"][value="' + countryId + '"]');
+            if (checkbox) {
+                select.select = false;
+            }
         }
+        $('#scholarship-filter-form').submit();
     }
 </script>
 

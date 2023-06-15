@@ -132,7 +132,7 @@ class SearchScholarshipController extends Controller
             $services = $services->paginate(9)->appends($request->query());
             return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
         } else if ($request->type == 'scholarships') {
-            
+
             $type = 'scholarships';
             $keyword = $request->keyword;
             $rating = $request->rating;
@@ -155,6 +155,7 @@ class SearchScholarshipController extends Controller
             $country_name ='';
             $countries =[];
             $fieldStudies =[];
+            $fieldStudy_ids=[];
             // dd($fieldStudy_id);
 
             if ($request->keyword != null) {
@@ -182,19 +183,34 @@ class SearchScholarshipController extends Controller
             //     $scholarships = $scholarships->whereIn('category_id', $category_id);
             // }
             if ($request->country_id != null) {
+
                 $country_ids = $request->country_id;
                 $countries = ScholarshipCountry::whereIn('id', $country_ids)->get();
                 // dd($countries);
+
                 $country_id =$request->country_id;
-                $scholarships = $scholarships->whereIn('category_id', $country_id);
+                if ($country_ids[0] == "0"){
+                    $allCountry ="0";
+                    // dd($country_id);
+                    $scholarships = $scholarships->where('country_id', '!=', $allCountry);
+                    // dd($scholarships);
+                
+                }else{
+
+                    $scholarships = $scholarships->whereIn('country_id', $country_ids);
+                }
+
+                // dd($scholarships);
+
 
             }
+
             if ($request->level_id != null) {
                 $level_ids = $request->level_id;
                 $levels = ScholarshipLevel::whereIn('id', $level_ids)->get();
                 $level_id =$request->level_id;
                 // dd($levels);
-                $scholarships = $scholarships->whereIn('level_id', $level_id);
+                $scholarships = $scholarships->whereIn('level_id', $level_ids);
             }
             if ($request->fieldStudy_id != null) {
                 $fieldStudy_ids = $request->fieldStudy_id;
@@ -202,6 +218,7 @@ class SearchScholarshipController extends Controller
                 // dd($fieldStudies);
                 $fieldStudy =$request->fieldStudy_id;
                 $scholarships = $scholarships->whereIn('fieldStudy_id', $fieldStudy_ids);
+                // dd($fieldStudy_ids);
             }
 
             if (count($skill_ids) > 0) {
@@ -228,7 +245,7 @@ class SearchScholarshipController extends Controller
                 $scholarships = $scholarships->paginate(10)->appends($request->query());
             }
             // dd($category_id);
-            return view('frontend.default.scholarships-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'ScholarshipTotal','levels','country_name','countries','fieldStudies'));
+            return view('frontend.default.scholarships-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id','fieldStudy_ids', 'ScholarshipTotal','levels','country_name','countries','fieldStudies'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
