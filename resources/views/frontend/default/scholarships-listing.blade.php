@@ -20,7 +20,7 @@
       <div class="row  ">
         <!-- Sidebar -->
         <div class="col-xl-3 col-lg-4 ">
-          <div class="aiz-filter-sidebar collapse-sidebar-wrap  z-1035 shadow-md p-10px" style="background: #F2F7F2;">
+          <div class="aiz-filter-sidebar collapse-sidebar-wrap  z-1035 shadow-md " style="background: #F2F7F2;">
             <div class="rounded-0 border-0 collapse-sidebar c-scrollbar-light ">
               <div class=" border-0 pl-lg-0">
                 <h5 class="mb-0 fs-21 fw-700">
