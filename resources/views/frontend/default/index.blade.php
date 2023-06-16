@@ -236,11 +236,9 @@
     </form>
     @endif
 
-
     <!-- Find academic jobs by category-->
-
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top" style="background-color:#FBF7ED; ">
+    <section class="border-top" style="background-color:#FBF7ED; padding-bottom:6px;">
       <div class="container-home">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
@@ -380,7 +378,6 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <h2 class="fw-700 fre-small-font"> Find scholarship by category</h2>
-
           </div>
           <div>
             <h5 class="pt-2 text-center btn rounded-1 border fre-consultant-category">
@@ -395,7 +392,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=15&type=scholarships') }} " class="text-dark">
-                <div class="card rounded-1 " style="height:330px">
+                <div class="card rounded " style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/social-science.jpg')}}"
@@ -423,7 +420,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=8&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/university.jpg')}}" class="card-img-top"
@@ -434,7 +431,6 @@
 
                         <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Business and
                           Economics</p>
-
 
                         <div class="mt-2">
                           <span>
@@ -455,7 +451,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=10&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/medical.jpg')}}" class="card-img-top"
@@ -486,7 +482,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=11&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/humnaties.jpg')}}" class="card-img-top"
@@ -516,7 +512,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=9&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/education.jpeg')}}" class="card-img-top"
@@ -547,7 +543,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=7&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/arts.jpg')}}" class="card-img-top"
@@ -578,7 +574,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=14&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/engeneering.jpg')}}" class="card-img-top"
@@ -609,7 +605,7 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=12&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/IT.jpg')}}" class="card-img-top"
@@ -646,15 +642,10 @@
     </section>
     @endif
 
-
-
-
-
-
     <!-- Trending services -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top bg-white" style=" padding-bottom:10px;">
-      <div class="container-home" style=" ">
+      <div class="container-home">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
@@ -670,7 +661,7 @@
             </h5>
           </div>
         </div>
-        <div class="row ">
+        <div class="row">
           @php
           $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
           ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
@@ -682,66 +673,57 @@
           ->get();
           @endphp
           @foreach ($services as $service)
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:450px">
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
+            <div class="card">
+              <a href="{{ route('service.show', $service->slug) }}">
+                @if($service->image != null)
+                <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
+                @else
+                <img src="{{ my_asset('assets/frontend/default/img/placeholder-blog.jpg') }}" class="card-img-top"
+                  alt="{{ translate('Service Image') }}" height="212">
+                @endif
+              </a>
+              <div class="card-body">
+                @if($service->category != null)
+                <p class="card-title  fw-700  fs-18">{{$service->category->name}}</p>
+                @endif
+                <p class="card-text fs-16 ">
+                  {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
                 <div class="">
-                  <div class=" ">
-                    <a href="{{ route('service.show', $service->slug) }}">
-                      @if($service->image != null)
-                      <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image"
-                        height="212">
+                  <span>
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                      style="width:12px;" />
+                  </span>
+                  <span> 4896</span>
+                  <span> reviews</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center mt-1">
+                  <div class="d-flex">
+                    <span class="pr-2">
+                      @if ($service->user->photo != null)
+                      <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35"
+                        width="35" class="rounded-circle">
                       @else
-                      <img src="{{ my_asset('assets/frontend/default/img/placeholder-blog.jpg') }}" class="card-img-top"
-                        alt="{{ translate('Service Image') }}" height="212">
+                      <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                        alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                       @endif
-                    </a>
+                    </span>
+                    <span class="d-flex flex-column justify-content-center">
+                      <a href="{{ route('freelancer.details', $service->user->user_name) }}"
+                        class="text-secondary fs-12"><span class=" ">{{ $service->user->name }}</span></a>
+                    </span>
                   </div>
-                  <div class="card-body">
-                    <div>
-                      @if($service->category != null)
-                      <p class="card-title text-justify-lg fw-700  fs-18">{{$service->category->name}}</p>
-                      @endif
-                      <p class="card-title mt-1 fs-16 ">
-                        {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
-                      <div class="">
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
-                            style="width:12px;" />
-                        </span>
-                        <span> 4896</span>
-                        <span> reviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="border border-top "></div>
-                    <div class="d-flex justify-content-between align-items-center mt-1">
-                      <div class="d-flex">
-                        <span class="pr-2">
-                          @if ($service->user->photo != null)
-                          <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}"
-                            height="35" width="35" class="rounded-circle">
-                          @else
-                          <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                            alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
-                          @endif
-                        </span>
-                        <span class="d-flex flex-column justify-content-center">
-                          <a href="{{ route('freelancer.details', $service->user->user_name) }}"
-                            class="text-secondary fs-12"><span class=" ">{{ $service->user->name }}</span></a>
-                        </span>
-                      </div>
-                      <div>
-                        <span> starting at $990</span>
-                      </div>
-                    </div>
+                  <div>
+                    <span> from $50</span>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
           @endforeach
+
         </div>
         <h5 class="fre-button-show">
           <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
@@ -749,12 +731,13 @@
           <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
             style="width:18px;" />
         </h5>
+      </div>
     </section>
     @endif
 
     <!-- learn with scholarship australia -->
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-bottom" style="background-color:#FBF7ED;">
+    <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
       <div class=" container-home">
         <div class="content-title">
           <h2 class="fw-700 fre-small-font">Hear what recent FreelancerEdu clients have to say</h2>
@@ -836,7 +819,8 @@
     @if (get_setting('latest_project_show') == 'on')
     <section class=" bg-white">
       <div class="container-home mt-5">
-        <ul class="nav skill border-bottom-2 mt-3 " id="myTab" role="tablist" style="margin-bottom: -8px;">
+        <ul class="nav skill border-bottom-2 mt-3 " id="myTab" role="tablist"
+          style="margin-bottom: -8px; background-color:#fafafa;">
           <li class="" role="presentation">
             <a href="" class="text-dark">
               <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
