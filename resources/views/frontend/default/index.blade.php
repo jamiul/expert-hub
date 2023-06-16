@@ -103,6 +103,7 @@
           <div class="">
             <div class=" content-title  text-center pb-5 pt-2">
               <h2 class="fw-700 fs-36 text-white mb-0">Need scholarship help?</h2>
+              <h5></h5>
             </div>
             <div class="row need-help-full-body">
               <div class="col-xl-3 col-md-6">
