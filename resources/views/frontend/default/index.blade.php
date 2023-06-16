@@ -823,7 +823,7 @@
         <ul class="nav skill border-bottom-2 mt-3 " id="myTab" role="tablist"
           style="margin-bottom: -8px; background-color:#fafafa;">
           <li class="" role="presentation">
-            <a href="" class="text-dark">
+            <a href="" class="text-dark active">
               <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
                 data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
             </a>

@@ -34,9 +34,7 @@
 
                   <!-- Level-show -->
                   @foreach($levels as $level)
-                  <?php
 
-                                    ?>
                   <span id="level_{{$level->id}}"
                     class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
 
@@ -46,8 +44,6 @@
                   @endforeach
                   <!-- field name  -->
                   @foreach($fieldStudies as $fieldStudy)
-
-
                   <span id="fieldStudy_{{$fieldStudy->id}}"
                     class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                     {{$fieldStudy ->name}} | <p onclick="removeFieldStudy({{$fieldStudy->id}})"
@@ -58,14 +54,11 @@
                   <!-- country name -->
                   @foreach($countries as $country)
                   <span id="country_{{$country->id}}"
-                    class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-
-                    {{$country ->country_name}} | <p onclick="removeCountry({{$country->id}})"
-                      class="m-0  d-inline fw-700">
-                      X</p>
+                    class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                    {{$country->country_name}} |
+                    <p onclick="removeCountry({{$country->id}})" class="m-0 d-inline fw-700">X</p>
                   </span>
                   @endforeach
-
                 </div>
                 <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb" data-toggle="class-toggle"
                   data-target=".aiz-filter-sidebar" type="button">
@@ -74,15 +67,12 @@
               </div>
               <div class="card-body pt-2 pl-lg-0">
                 <div class="">
-
                   <!-- Level of Study -->
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('Scholarships by Category') }}</span>
+                  <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
+                    <span class=" pr-3">{{ translate('Level of Study') }}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
-
                     <label class="aiz-checkbox">
                       <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()"
                         @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
@@ -92,15 +82,10 @@
                     @endforeach
                   </div>
 
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('Scholarships by Field of Study')}}</span>
+                  <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
+                    <span class=" pr-3">{{ translate('Field of Study')}}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-
-                    <?php
-                                        // print_r($fieldStudy->id);
-                                        // dd($fieldStudy_id)
-                                        ?>
                     @foreach(\App\Models\ScholarshipFieldStudy:: all() as $fieldStudy)
 
                     <label class="aiz-checkbox">
@@ -111,35 +96,16 @@
                     </label>
                     @endforeach
                   </div>
-                  <!-- <div class="aiz-checkbox-list">
-                                        @foreach(\App\Models\ScholarshipFieldStudy:: all() as $fieldStudy)
-                                        <label class="aiz-checkbox">
-                                            <input type="checkbox" name="fieldStudy_id[]" value="{{$fieldStudy->id}}" onchange="applyFilter()" @if (in_array($fieldStudy->id, $fieldStudy_id)) checked @endif > {{ $fieldStudy->name }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        @endforeach
-                                    </div> -->
-                  <!-- <div class="mb-3">
-                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="fieldStudy_id[]" onchange="applyFilter()" data-toggle="select3" data-live-search="true">
-                                            <option value="">{{ translate('Field of Study') }}</option>
-                                            @foreach(\App\Models\ScholarshipFieldStudy:: all() as $FieldStudy)
-                                            <option value="{{$FieldStudy->id}}" @if (isset($fieldStudy_id) && $fieldStudy_id==$FieldStudy->id ) selected
-                                                @endif>{{ $FieldStudy->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div> -->
                   <!-- Country -->
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('Scholarships by Country') }}</span>
+                  <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
+                    <span class=" pr-3">{{ translate('Country') }}</span>
                   </h6>
                   <div class="mb-5">
+
                     <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]"
                       onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                      <option value="0" @if ($country_id[0]) selected @endif>{{ translate('All Countries') }}</option>
-                      <?php
-                                                print_r($country_id);
-                                            ?>
+                      <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' ) selected @endif>
+                        {{ translate('All Countries') }}</option>
                       @foreach(\App\Models\ScholarshipCountry:: all() as $country)
                       <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
                         @endif>{{ $country->country_name }}</option>
@@ -164,11 +130,6 @@
                       @endforeach
                     </select>
                   </div>
-                </div>
-
-                <div class="">
-                  <button type="submit"
-                    class="border-0  text-white fs-16  btn btn-primary px-3 py-2 mt-3">Submit</button>
                 </div>
               </div>
             </div>
@@ -338,7 +299,7 @@
         <div class=" content-title  text-center py-5">
           <h2 class="fw-700 fs-24 text-black mb-0">Need Scholarship help?</h2>
         </div>
-        <div class="row container-fluid">
+        <div class="row need-help-full-body">
           <div class="col-xl-3 col-md-6">
             <div class=" ">
               <div class=" h-136px align-items-center">
@@ -361,9 +322,13 @@
           <div class="col-xl-3 col-md-6">
             <div class=" ">
               <div class=" h-136px align-items-center">
+                <!-- <div class="d-flex">
+                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{url('/public/assets/home/quiz1.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                    <div class="need-help-progress-bar"></div>
+                                </div> -->
                 <div class="d-flex">
-                  <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{url('/public/assets/home/quiz1.png')}}"
-                    alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                  <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz1.png')}}"
+                    alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000;" />
                   <div class="need-help-progress-bar"></div>
                 </div>
                 <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Receive proposal
@@ -411,7 +376,7 @@
 
         </div>
         <div class=" text-center py-5">
-          <h5 class="btn rounded-1 text-black" style="border:1px solid #dddd">
+          <h5 class="btn rounded-0 text-white" style="background-color:#275846;">
             Let's get started
           </h5>
 
@@ -475,16 +440,18 @@ function removeCountry(countryId) {
   if (countryElement) {
     countryElement.parentNode.removeChild(countryElement);
 
-    // Uncheck the corresponding checkbox
-    var checkbox = document.querySelector('input[name="country_id[]"][value="' + countryId + '"]');
-    if (checkbox) {
-      select.select = false;
+    // Unselect the corresponding option
+    var selectElement = document.querySelector('select[name="country_id"]');
+    if (selectElement) {
+      var optionElement = selectElement.querySelector('option[value="' + countryId + '"]');
+      if (optionElement) {
+        optionElement.selected = false;
+      }
     }
   }
   $('#scholarship-filter-form').submit();
 }
 </script>
-
 @endsection
 
 @section('script')

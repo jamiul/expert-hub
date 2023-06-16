@@ -55,7 +55,7 @@
   <div class="col-lg-5">
     <div class="card">
         <div class="card-header">
-            <h5 class="mb-0 h6">{{ translate('Add New Study Level') }}</h5>
+            <h5 class="mb-0 h6">{{ translate('Add New University') }}</h5>
         </div>
         <div class="card-body">
             <form class="form-horizontal" method="POST" action="{{ route('scholarship-university.store') }}">
@@ -65,7 +65,7 @@
                     <input type="text" id="university_name" name="university_name" placeholder="{{ translate('University Name') }}" class="form-control" required>
                 </div>
                 <div class="form-group mb-3 text-right">
-                    <button type="submit" class="btn btn-primary">{{translate('Save New Study Level')}}</button>
+                    <button type="submit" class="btn btn-primary">{{translate('Save New University')}}</button>
                 </div>
             </form>
             {{ $categories->links() }}

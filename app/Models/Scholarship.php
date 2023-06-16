@@ -27,5 +27,11 @@ class Scholarship extends Model
     public function fieldStudy() {
         return $this->belongsTo(ScholarshipFieldStudy::class, 'fieldStudy_id');
     }
+    public function qualification() {
+        return $this->belongsTo(ScholarshipQualification::class, 'qualification_id');
+    }
+    public function city() {
+        return $this->belongsTo(ScholarshipCity::class, 'city_id');
+    }
 
 }
