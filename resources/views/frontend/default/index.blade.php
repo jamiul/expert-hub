@@ -194,8 +194,7 @@
             </div>
             <div>
               <h5 class="btn rounded-1  border fre-consultant-category">
-                <a href=" search?keyword=&type=freelancer"
-                  class=" fs-16 text-dark ">{{ translate('Browse More Categories') }}
+                <a href=" search?keyword=&type=freelancer" class=" fs-16 text-dark ">{{ translate('All Consultants') }}
                   <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image"
                     style="width:20px;" />
                 </a>
@@ -304,12 +303,14 @@
     <section class="border-top bg-white">
       <div class="container-home">
         <div class="row ">
-          <div class="col-lg-6 col-lg-6">
+          <div class="col-lg-5">
             <img class="mr-2  img-fluid" src="{{url('/public/assets/home/001.png')}}" alt="Image"
               style="width:500px;" />
           </div>
-          <div class=" col-lg-6 col-sm-12">
-            <h2 class="fw-700 mb-3 heading-title fre-small-font">What makes FreelancerEdu impressive</h2>
+          <div class=" col-lg-7 col-sm-12">
+            <h2 class="fw-700 mb-3 heading-title fre-small-font" style="padding-top:36px;">What makes FreelancerEdu
+              impressive
+            </h2>
             <div class="">
               <div class=" d-flex ">
                 <div>
@@ -585,7 +586,6 @@
 
                         <p class="card-title  fs-19 fs-700" style=" line-height:17px;"> Science and Engineering</p>
 
-
                         <div class="mt-2">
                           <span>
                             <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
@@ -613,8 +613,8 @@
                     </div>
                     <div class="p-3">
                       <div>
-                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Mathematics and Statistics
-                        </p>
+                        <a class="card-title  fs-19 fs-700" style=" line-height:17px;">Mathematics and Statistics
+                        </a>
                         <div class="mt-2">
                           <span>
                             <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
@@ -685,18 +685,19 @@
               </a>
               <div class="card-body">
                 @if($service->category != null)
-                <p class="card-title  fw-700  fs-18">{{$service->category->name}}</p>
+                <a href="{{ route('service.show', $service->slug) }} "
+                  class="card-title text-dark  fw-700  fs-18">{{$service->category->name}}</a>
                 @endif
-                <p class="card-text fs-16 ">
+                <p class="card-text fs-16 mt-2 " style="height:48px;">
                   {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
-                <div class="">
+                <!-- <div class="">
                   <span>
                     <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
                       style="width:12px;" />
                   </span>
                   <span> 4896</span>
                   <span> reviews</span>
-                </div>
+                </div> -->
                 <hr>
                 <div class="d-flex justify-content-between align-items-center mt-1">
                   <div class="d-flex">
@@ -852,7 +853,7 @@
       <div class="tab-content container-home" id="myTabContent" style="margin-top: -38px;">
         <div class=" tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="row ">
-            <div class="col-lg-3  ">
+            <div class="col-lg-3  " style="padding-left:45px;">
               <div class=" skills">
                 <h6 class="fs-18">
                   Research writing</h6>
@@ -978,26 +979,6 @@
     }
     </script>
 
-    <!-- <script>
-    $('#carouselExample').on('slide.bs.carousel', function(e) {
-      var $e = $(e.relatedTarget);
-      var idx = $e.index();
-      var itemsPerSlide = 7;
-      var totalItems = $('.carousel-item').length;
-
-      if (idx >= totalItems - (itemsPerSlide - 1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i = 0; i < it; i++) {
-          // append slides to end
-          if (e.direction == "left") {
-            $('.carousel-item').eq(i).appendTo('.carousel-inner');
-          } else {
-            $('.carousel-item').eq(0).appendTo('.carousel-inner');
-          }
-        }
-      }
-    });
-    </script> -->
 
     @endif
     @endsection
