@@ -102,7 +102,7 @@
         <div class="">
           <div class="">
             <div class=" content-title  text-center py-5">
-              <h2 class="fw-700 fs-24 text-white mb-0">Need Scholarship help?</h2>
+              <h2 class="fw-700 fs-24 text-white mb-0">Need scholarship help?</h2>
             </div>
             <div class="row need-help-full-body">
               <div class="col-xl-3 col-md-6">
@@ -110,7 +110,7 @@
                   <div class=" h-136px align-items-center">
                     <div class="d-flex">
                       <img class=" mb-2 mx-auto d-block   p-3" src=" {{url('/public/assets/home/blog.png')}}"
-                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000" />
+                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #ffffff" />
                       <div class="need-help-progress-bar"></div>
                     </div>
                     <p class="fs-22 fw-700 mb-lg-2 mt-14 consultant-category text-center text-white"
@@ -134,7 +134,7 @@
                                 </div> -->
                     <div class="d-flex">
                       <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz1.png')}}"
-                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000;" />
+                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #ffffff;" />
                       <div class="need-help-progress-bar"></div>
                     </div>
                     <p class="fs-22 fw-700 mb-lg-2 mt-14 consultant-category text-center text-white"
@@ -153,7 +153,7 @@
                     <div class="d-flex">
                       <img class=" mb-2 mx-auto d-block
                                      p-3" src=" {{url('/public/assets/home/certificate.png')}}" alt="Image"
-                        style="width:55px; border-radius:50%; border:1px solid #000000" />
+                        style="width:55px; border-radius:50%; border:1px solid #ffffff" />
                       <div class="need-help-progress-bar"></div>
                     </div>
                     <p class="fs-22 fw-700 mb-lg-2 consultant-category mt-14 text-center text-white"
@@ -171,7 +171,7 @@
                 <div class=" ">
                   <div class=" h-136px align-items-center">
                     <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/checked.png')}}" alt="Image"
-                      style="width:55px; border-radius:50%; border:1px solid #000000" />
+                      style="width:55px; border-radius:50%; border:1px solid #fff" />
                     <p class="fs-22 fw-700 mb-lg-2  consultant-category text-center text-white"
                       style="margin-top:14px;">
                       Payment Securely

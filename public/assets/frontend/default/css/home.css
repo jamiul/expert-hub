@@ -299,7 +299,7 @@ body {
     .need-help-progress-bar {
         height: 2px;
         width: 91%;
-        background: black;
+        background: white !important;
         position: absolute;
         bottom: 50%;
         transform: translateY(50%);
