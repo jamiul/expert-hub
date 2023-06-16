@@ -194,7 +194,7 @@ class SearchScholarshipController extends Controller
                     // dd($country_id);
                     $scholarships = $scholarships->where('country_id', '!=', $allCountry);
                     // dd($scholarships);
-                
+
                 }else{
 
                     $scholarships = $scholarships->whereIn('country_id', $country_ids);
@@ -215,10 +215,10 @@ class SearchScholarshipController extends Controller
             if ($request->fieldStudy_id != null) {
                 $fieldStudy_ids = $request->fieldStudy_id;
                 $fieldStudies = ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
-                // dd($fieldStudies);
+                // dd($fieldStudy_ids);
                 $fieldStudy =$request->fieldStudy_id;
                 $scholarships = $scholarships->whereIn('fieldStudy_id', $fieldStudy_ids);
-                // dd($fieldStudy_ids);
+                // dd($scholarships);
             }
 
             if (count($skill_ids) > 0) {

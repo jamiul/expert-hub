@@ -71,7 +71,7 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('website link')}}"  id="website_link" name="website_link" value="{{ $scholarship->website_link }}" class="form-control" required>
+                            <input type="text" placeholder="{{translate('website link')}}" id="website_link" name="website_link" value="{{ $scholarship->website_link }}" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row" id="country">
@@ -117,7 +117,7 @@
                             <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true" title="{{ translate('Select City') }}" data-selected="{{ optional($scholarship->city)->id }}" required>
 
                                 @foreach ($scholarship_city as $city)
-                                <option value="{{ $city->id }}">
+                                <option value="{{$city->id}}">
                                     {{$city->city_name }}
                                 </option>
                                 @endforeach
@@ -130,8 +130,7 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id" data-live-search="true" title="{{ translate('Who can apply') }} " data-selected="{{ optional($scholarship->whoCanApply)->id }}"  required>
-
+                            <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id" data-live-search="true" title="{{ translate('Who can apply') }} " data-selected="{{ optional($scholarship->whoCanApply)->id }}" required>
                                 @foreach ($scholarship_whoCanApply as $title)
                                 <option value="{{$title->id}}">
                                     {{$title->title }}
@@ -147,25 +146,27 @@
 
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select qualification') }}" data-selected="{{ optional($scholarship->qualification)->id }}" required>
+                            <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select qualification') }}" data-selected="{{optional($scholarship->qualification)->id}}" required>
                                 @foreach ($scholarship_qualification as $qualification)
-                                <option value="{{ $qualification->id }}">
+                                <option value="{{$qualification->id}}">
                                     {{$qualification->qualification_name }}
                                 </option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
+
                     <div class="form-group row" id="fieldOfStudy">
                         <label class="col-md-3 col-from-label">
                             {{translate('Field of study')}}
                             <span class="text-danger">*</span>
                         </label>
+
                         <div class="col-md-9">
-                            <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id[]" id="fieldStudy_id" data-live-search="true" title="{{ translate('Select qualification') }}" data-selected="{{ optional($scholarship->qualification)->id }} " data-placeholder="Select Field Of study" data-selected-text-format="count"" required>
+                            <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id" id="fieldStudy_id" data-live-search="true" title="{{ translate('Select qualification')}}" data-selected="{{optional($scholarship->fieldStudy)->id }}" required>
                                 @foreach ($scholarship_fieldStudy as $fieldStudy)
-                                <option value="{{ $fieldStudy->id }}">
-                                    {{$fieldStudy->name }}
+                                <option value=" {{$fieldStudy->id}}">
+                                {{$fieldStudy->name }}
                                 </option>
                                 @endforeach
                             </select>
