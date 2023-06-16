@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/card.css')}}">
 
 </head>
 <style>
@@ -184,7 +185,7 @@
     @if (get_setting('featured_category_show') == 'on')
     <form id=" consultant-filter-form" action="" method="GET">
       <section class="bg-white border-top">
-        <div class=" container-home">
+        <div class="container-home">
           <div class="d-flex justify-content-between ">
             <div class="w-lg-75 lh-1-8 content-title">
               <!-- <h2 class="fw-700 fs-36 heading-title">{{ get_setting('featured_category_title') }}</h2> -->
@@ -193,8 +194,8 @@
             </div>
             <div>
               <h5 class="btn rounded-1  border fre-consultant-category">
-                <a href="{{ route('search') }}?category="
-                  class="fs-16 text-dark ">{{ translate('Browse More Categories') }}
+                <a href=" search?keyword=&type=freelancer"
+                  class=" fs-16 text-dark ">{{ translate('Browse More Categories') }}
                   <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image"
                     style="width:20px;" />
                 </a>
@@ -205,25 +206,19 @@
             @if (get_setting('featured_category_list') != null)
             @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
             @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
-            <div class="col-lg-3 mb-3">
-              <!-- <input type="hidden" name="type" value="service">
-              <input type="hidden" name="category_id" value="$category->id"> -->
-              <a href="{{ route('freelancer.category', $category->slug)}}" class="text-dark ">
-                <div class=" card" style="height:350px;">
-                  <div class="">
-                    <div class="">
-                      <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
-                    </div>
-                    <div class="" style=" padding:20px;">
-                      <a class=" featured_category text-dark" onclick="applyFilter()"
-                        href="{{ route('freelancer.category', $category->slug)}}">
-                        <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}
-                        </p>
-                        <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
-                    </div>
-                  </div>
+            <div class="col-md-3">
+              <div class="card" style="height:350px;">
+                <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
+                <div class="card-body" style=" padding:13px;">
+
+                  <a class=" featured_category text-dark" onclick="applyFilter()"
+                    href="{{ route('freelancer.category', $category->slug)}}">
+                    <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}
+                    </p>
+                    <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
+
                 </div>
-              </a>
+              </div>
             </div>
             @endif
             @endforeach
@@ -236,16 +231,15 @@
           </h5>
         </div>
 
-        </div>
-
       </section>
 
     </form>
     @endif
+
     <!-- Find academic jobs by category-->
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-top" style="background-color:#FBF7ED; ">
-      <div class="container-home" style=" ">
+    <section class="border-top" style="background-color:#FBF7ED; padding-bottom:6px;">
+      <div class="container-home">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
@@ -255,7 +249,8 @@
           <div>
             <div class="pt-2 text-center">
               <h5 class="btn rounded-1 border fre-consultant-category">
-                <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+                <a href="{{ route('search') }}?category=" class=" fs-16 text-dark ">
+
                   <span>All
                     Jobs</span>
                 </a>
@@ -266,7 +261,7 @@
             </div>
           </div>
         </div>
-        <div class="row ">
+        <div class="row">
           @php
           $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
           ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
@@ -276,24 +271,18 @@
           ->get();
           @endphp
           @foreach ($services as $category)
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xl-3  mb-lg-3 mb-xl-3 mb-md-3 mb-3">
-            <div class="caorusel-box">
-              <a href="{{ route('projects.category', $category->slug)}}" class="text-dark fw-700">
-                <div class="card rounded-1 fre-job-catagory mb-3 find-job" style="height:260px;">
-                  <div class="position-relative">
-                    <img class="img-fluid rounded-1 opacity-75 " style="height:280px;"
-                      src=" {{ custom_asset($category->photo) }}" alt="Image">
-                  </div>
-                  <div class="position-absolute flex ">
-                    <p class="card-title fw-700 p-1 fre-job-catagory " style=" background-color:white;  ">
-                      {{$category->name}}
-                      <img class=" category-list " src=" {{url('/public/assets/home/jobs.png')}}" alt="Image"
-                        style="width:15px;" />
-                    </p>
-                  </div>
+          <div class="col-md-3">
+            <a href="{{ route('projects.category', $category->slug)}}">
+              <div class="card" style="height:280px;">
+                <img class="img-fluid rounded opacity-75 job-cat" style="height:233px;"
+                  src=" {{ custom_asset($category->photo) }}" alt="Image">
+                <div class="job-title d-flex align-items-center">
+                  <span class=" fre-job-catagory fs-18 fw-700"> {{$category->name}}</span>
+                  <img class=" category-list mt-1" src=" {{url('/public/assets/home/jobs.png')}}" alt="Image"
+                    style="width:15px; height:15px;" />
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
           @endforeach
           <h5 class="mx-3 fre-button-show">
@@ -306,6 +295,7 @@
             </a>
           </h5>
         </div>
+      </div>
     </section>
     @endif
 
@@ -388,7 +378,6 @@
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <h2 class="fw-700 fre-small-font"> Find scholarship by category</h2>
-
           </div>
           <div>
             <h5 class="pt-2 text-center btn rounded-1 border fre-consultant-category">
@@ -403,15 +392,15 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=15&type=scholarships') }} " class="text-dark">
-                <div class="card rounded-1 " style="height:330px">
+                <div class="card rounded " style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/social-science.jpg')}}"
                         class="card-img-top" alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
-                        <p class="card-title  fs-19 fs-700">Social Sciences</p>
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Social Sciences</p>
                         <div class="mt-2">
                           <span>
                             <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
@@ -431,17 +420,17 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=8&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/university.jpg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
 
-                        <p class="card-title  fs-19 fs-700">Business and Economics</p>
-
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Business and
+                          Economics</p>
 
                         <div class="mt-2">
                           <span>
@@ -462,16 +451,16 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=10&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/medical.jpg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
 
-                        <p class="card-title  fs-19 fs-700">Health and Medicine</p>
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Health and Medicine</p>
 
 
                         <div class="mt-2">
@@ -493,16 +482,16 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=11&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/humnaties.jpg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
 
-                        <p class="card-title  fs-19 fs-700"> Law</p>
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;"> Law</p>
 
                         <div class="mt-2">
                           <span>
@@ -523,16 +512,16 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=9&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/education.jpeg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
 
-                        <p class="card-title  fs-19 fs-700">Education</p>
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Education</p>
 
 
                         <div class="mt-2">
@@ -554,16 +543,16 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=7&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/arts.jpg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
 
-                        <p class="card-title  fs-19 fs-700">Arts and Humanities</p>
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Arts and Humanities</p>
 
 
                         <div class="mt-2">
@@ -585,16 +574,16 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=14&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/engeneering.jpg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
 
-                        <p class="card-title  fs-19 fs-700"> Science and Engineering</p>
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;"> Science and Engineering</p>
 
 
                         <div class="mt-2">
@@ -616,15 +605,15 @@
           <div class="col-lg-3">
             <div class="caorusel-box">
               <a href="{{url('scholarshipSearch?fieldStudy_id%5B%5D=12&type=scholarships') }}" class="text-dark">
-                <div class="card rounded-1" style="height:330px">
+                <div class="card rounded" style="height:330px">
                   <div class="">
                     <div class=" ">
                       <img src=" {{url('/public/assets/home/Find-scholarship/IT.jpg')}}" class="card-img-top"
                         alt="service_image" height="212">
                     </div>
-                    <div class="card-body">
+                    <div class="p-3">
                       <div>
-                        <p class="card-title  fs-19 fs-700">Mathematics and Statistics
+                        <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Mathematics and Statistics
                         </p>
                         <div class="mt-2">
                           <span>
@@ -656,7 +645,7 @@
     <!-- Trending services -->
     @if (get_setting('latest_project_show') == 'on')
     <section class="border-top bg-white" style=" padding-bottom:10px;">
-      <div class="container-home" style=" ">
+      <div class="container-home">
         <div class="d-flex justify-content-between ">
           <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
@@ -672,7 +661,7 @@
             </h5>
           </div>
         </div>
-        <div class="row ">
+        <div class="row">
           @php
           $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
           ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
@@ -684,66 +673,57 @@
           ->get();
           @endphp
           @foreach ($services as $service)
-          <div class="col-lg-3">
-            <div class="caorusel-box">
-              <div class="card rounded-1" style="height:450px">
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
+            <div class="card">
+              <a href="{{ route('service.show', $service->slug) }}">
+                @if($service->image != null)
+                <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
+                @else
+                <img src="{{ my_asset('assets/frontend/default/img/placeholder-blog.jpg') }}" class="card-img-top"
+                  alt="{{ translate('Service Image') }}" height="212">
+                @endif
+              </a>
+              <div class="card-body">
+                @if($service->category != null)
+                <p class="card-title  fw-700  fs-18">{{$service->category->name}}</p>
+                @endif
+                <p class="card-text fs-16 ">
+                  {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
                 <div class="">
-                  <div class=" ">
-                    <a href="{{ route('service.show', $service->slug) }}">
-                      @if($service->image != null)
-                      <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image"
-                        height="212">
+                  <span>
+                    <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
+                      style="width:12px;" />
+                  </span>
+                  <span> 4896</span>
+                  <span> reviews</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center mt-1">
+                  <div class="d-flex">
+                    <span class="pr-2">
+                      @if ($service->user->photo != null)
+                      <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35"
+                        width="35" class="rounded-circle">
                       @else
-                      <img src="{{ my_asset('assets/frontend/default/img/placeholder-blog.jpg') }}" class="card-img-top"
-                        alt="{{ translate('Service Image') }}" height="212">
+                      <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                        alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                       @endif
-                    </a>
+                    </span>
+                    <span class="d-flex flex-column justify-content-center">
+                      <a href="{{ route('freelancer.details', $service->user->user_name) }}"
+                        class="text-secondary fs-12"><span class=" ">{{ $service->user->name }}</span></a>
+                    </span>
                   </div>
-                  <div class="card-body">
-                    <div>
-                      @if($service->category != null)
-                      <p class="card-title text-justify-lg fw-700  fs-18">{{$service->category->name}}</p>
-                      @endif
-                      <p class="card-title mt-1 fs-16 ">
-                        {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}</p>
-                      <div class="">
-                        <span>
-                          <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image"
-                            style="width:12px;" />
-                        </span>
-                        <span> 4896</span>
-                        <span> reviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="border border-top "></div>
-                    <div class="d-flex justify-content-between align-items-center mt-1">
-                      <div class="d-flex">
-                        <span class="pr-2">
-                          @if ($service->user->photo != null)
-                          <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}"
-                            height="35" width="35" class="rounded-circle">
-                          @else
-                          <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                            alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
-                          @endif
-                        </span>
-                        <span class="d-flex flex-column justify-content-center">
-                          <a href="{{ route('freelancer.details', $service->user->user_name) }}"
-                            class="text-secondary fs-12"><span class=" ">{{ $service->user->name }}</span></a>
-                        </span>
-                      </div>
-                      <div>
-                        <span> starting at $990</span>
-                      </div>
-                    </div>
+                  <div>
+                    <span> from $50</span>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
           @endforeach
+
         </div>
         <h5 class="fre-button-show">
           <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
@@ -751,12 +731,13 @@
           <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image"
             style="width:18px;" />
         </h5>
+      </div>
     </section>
     @endif
 
     <!-- learn with scholarship australia -->
     @if (get_setting('latest_project_show') == 'on')
-    <section class="border-bottom" style="background-color:#FBF7ED;">
+    <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
       <div class=" container-home">
         <div class="content-title">
           <h2 class="fw-700 fre-small-font">Hear what recent FreelancerEdu clients have to say</h2>
@@ -838,29 +819,38 @@
     @if (get_setting('latest_project_show') == 'on')
     <section class=" bg-white">
       <div class="container-home mt-5">
-        <ul class="nav nav-tabs mt-3 " id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
-              data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
+        <ul class="nav skill border-bottom-2 mt-3 " id="myTab" role="tablist"
+          style="margin-bottom: -8px; background-color:#fafafa;">
+          <li class="" role="presentation">
+            <a href="" class="text-dark">
+              <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
+                data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
+            </a>
           </li>
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
-              aria-controls="profile" aria-selected="false">Trending skills</h5>
+          <li class="" role="presentation">
+            <a href="" class="text-dark">
+              <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
+                aria-controls="profile" aria-selected="false">Trending skills</h5>
+            </a>
           </li>
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-              aria-controls="contact" aria-selected="false">Top skills in Australia
-            </h5>
+          <li class="" role="presentation">
+            <a href="" class="text-dark">
+              <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
+                aria-controls="contact" aria-selected="false">Top skills in Australia
+              </h5>
+            </a>
           </li>
-          <li class="nav-item" role="presentation">
-            <h5 class="nav-link fs-22" id="project-tab" data-toggle="tab" data-target="#project" role="tab"
-              aria-controls="project" aria-selected="false">Project catalog
-            </h5>
+          <li class="" role="presentation">
+            <a href="" class="text-dark">
+              <h5 class="nav-link fs-22" id="project-tab" data-toggle="tab" data-target="#project" role="tab"
+                aria-controls="project" aria-selected="false">Project catalog
+              </h5>
+            </a>
           </li>
         </ul>
       </div>
-      <div class="tab-content container-home" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-content container-home" id="myTabContent" style="margin-top: -38px;">
+        <div class=" tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="row ">
             <div class="col-lg-3  ">
               <div class=" skills">
@@ -880,6 +870,7 @@
                   Statistical analysis </h6>
                 <h6 class="fs-18">
                   Curriculum development</h6>
+                <h6 class="fs-18">Academic mentoring </h6>
               </div>
             </div>
             <div class="col-lg-3 ">
@@ -888,16 +879,17 @@
                   Research proposal writing</h6>
                 <h6 class="fs-18">
                   Scholarship applications</h6>
-                <h6 class="fs-18">Academic mentoring </h6>
+                <h6 class="fs-18">
+                  Copywriting</h6>
+
               </div>
             </div>
             <div class="col-lg-3 ">
               <div class=" skills">
-                <h6 class="fs-18">
-                  Copywriting</h6>
+
                 <h6 class="fs-18">
                   Tutoring and Instruction</h6>
-                <h6 class="fs-18">Transcribing audio or video recordings</h6>
+                <h6 class="fs-18 text-normal">Transcribing audio or video recordings</h6>
               </div>
             </div>
           </div>

@@ -1,0 +1,52 @@
+  .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .card .job-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      color: black;
+      background-color:white;
+      margin-bottom: 0;
+    }
+    .job-cat:hover{
+         opacity: 0.75;
+    }
+    .job-title .fre-job-catagory:hover {
+    
+          color: red !important;
+    }
+
+   .skill {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+
+ .skill li  {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #333;
+}
+ .skill li :hover {
+  background-color: #275846;
+  color: #fff;
+  
+}
+ .skill li :hover-pointer {
+  cursor: pointer;
+  
+}
+
+
+
+
+
