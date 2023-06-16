@@ -26,8 +26,8 @@
     </div>
   </div>
 
-  <section class="py-4 py-lg-5">
-    <div class="container">
+  <section class="">
+    <div class="container-main-scholarship">
       @if ($keyword != null)
       <div class="row">
         <div class="col-xl-8 offset-xl-2 text-center">
@@ -39,7 +39,7 @@
       <form id="freelancer-filter-form" action="" method="GET">
         <div class="row gutters-10">
           <!-- Sidebar -->
-          <div class="col-xl-3 col-lg-4">
+          <div class="col-xl-3 col-lg-4 mb-5">
             <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
               <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px" style="background: #F2F7F2;">
                 <div class=" border-0 pl-lg-0">
@@ -50,8 +50,8 @@
                   </button>
                 </div>
 
-                <h6 class="text-left mb-3 fs-14 fw-700">
-                  <span class="bg-white pr-3">{{ translate('Categories') }}</span>
+                <h6 class="text-left mb-3 mt-2 fs-14 fw-700">
+                  <span class=" pr-3">{{ translate('Categories') }}</span>
                 </h6>
                 @foreach(\App\Models\ProjectCategory::all() as $category)
 
@@ -63,12 +63,12 @@
                   <span class="float-right text-secondary fs-12"></span>
                 </label>
                 @endforeach
-
+                <!-- Categories -->
                 <div class="card-body pl-lg-0">
                   <div class="">
-                    <!-- Categories -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Categories') }}</span>
+
+                    <!-- <h6 class="text-left mb-3 fs-14 fw-700">
+                      <span class=" pr-3">{{ translate('Categories') }}</span>
                     </h6>
                     <div class="mb-5">
                       <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
@@ -81,7 +81,7 @@
                         </option>
                         @endforeach
                       </select>
-                    </div>
+                    </div> -->
                     <!-- skills -->
                     <!-- <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class="bg-white pr-3">{{ translate('Skills') }}</span>
@@ -101,7 +101,7 @@
                   </div> -->
                     <!-- Countries -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Countries') }}</span>
+                      <span class="pr-3">{{ translate('Countries') }}</span>
                     </h6>
                     <div class="mb-5">
                       <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id"
@@ -118,7 +118,7 @@
                     <input type="hidden" name="min_price" value="">
                     <input type="hidden" name="max_price" value="">
                     <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Hourly Rate') }}</span>
+                      <span class=" pr-3">{{ translate('Hourly Rate') }}</span>
                     </h6>
                     <div class="aiz-range-slider mb-5 px-3">
                       <div id="input-slider-range"
@@ -153,7 +153,7 @@
                     </div>
                     <!-- Rating -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Rating') }}</span>
+                      <span class=" pr-3">{{ translate('Rating') }}</span>
                     </h6>
                     <div class="aiz-radio-list">
                       <label class="aiz-radio">
@@ -195,7 +195,7 @@
                     </div>
                   </div>
                   <!-- Skills -->
-                  <div class="pt-3 d-none">
+                  <!-- <div class="pt-3 d-none">
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class="bg-white pr-3">{{ translate('Skills') }}</span>
                     </h6>
@@ -210,7 +210,7 @@
                         @endforeach
                       </select>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
@@ -219,7 +219,7 @@
           </div>
 
           <!-- Freelancer List -->
-          <div class="col-xl-9 col-lg-8">
+          <div class="col-xl-9 col-lg-7">
             <div class="card mb-lg-0 rounded border-gray-light" style="background: #F2F7F2;">
               <input type="hidden" name="type" value="freelancer">
               <div class="card-header">
