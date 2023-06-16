@@ -27,45 +27,42 @@
                   @if($country_name !=null)
                   Scholarship for in {{$country_name}}
                   @else
-                  {{ translate('Filter By') }}
+                  {{ translate('Scholarship search filter') }}
                 </h5>
                 @endif
                 <div class="mt-2">
-                  @foreach($categories as $category)
-                  <span id="category_{{$category->id}}"
-                    class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                    <p onclick="removeCategory({{$category->id}})  " class="m-0  d-inline fw-700">
-                      X</p>
-                    |
-                    {{$category ->category_name}}
-                  </span>
-                  @endforeach
+
                   <!-- Level-show -->
                   @foreach($levels as $level)
+                  <?php
+
+                                    ?>
                   <span id="level_{{$level->id}}"
                     class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                    <p onclick="removeLevel({{$level->id}})" class="m-0  d-inline fw-700">
-                      <input type="hidden" name="category_id[]" value="{{$level->id}}">X
-                    </p> |
-                    {{$level ->level_name}}
+
+                    {{$level ->level_name}} |<p onclick="removeLevel({{$level->id}})" class="m-0  d-inline fw-700">
+                      X</p>
                   </span>
                   @endforeach
                   <!-- field name  -->
                   @foreach($fieldStudies as $fieldStudy)
+
+
                   <span id="fieldStudy_{{$fieldStudy->id}}"
                     class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                    <p onclick="removefieldStudy(fieldStudy->id}})" class="m-0  d-inline fw-700">
-                      X</p> |
-                    {{$fieldStudy ->name}}
+                    {{$fieldStudy ->name}} | <p onclick="removeFieldStudy({{$fieldStudy->id}})"
+                      class="m-0  d-inline fw-700">
+                      X</p>
                   </span>
                   @endforeach
                   <!-- country name -->
                   @foreach($countries as $country)
                   <span id="country_{{$country->id}}"
                     class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                    <p onclick="removeCountry(country->id}})" class="m-0  d-inline fw-700">
-                      X</p> |
-                    {{$country ->country_name}}
+
+                    {{$country ->country_name}} | <p onclick="removeCountry({{$country->id}})"
+                      class="m-0  d-inline fw-700">
+                      X</p>
                   </span>
                   @endforeach
 
@@ -78,28 +75,18 @@
               <div class="card-body pt-2 pl-lg-0">
                 <div class="">
 
-                  <!--   Scholarship Type-->
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('  Scholarship Type') }}</span>
-                  </h6>
-                  <div class="aiz-checkbox-list">
-
-                    @foreach(\App\Models\ScholarshipCategory:: all() as $category)
-                    <label class="aiz-checkbox">
-                      <input type="checkbox" name="category_id[]" value="{{$category->id}}" @if (in_array($category->id,
-                      $category_id)) checked @endif onchange="applyFilter()"> {{ $category->category_name }}
-                      <span class="aiz-square-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
-                    @endforeach
-                  </div>
                   <!-- Level of Study -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('    Level of Study') }}</span>
+                    <span class=" pr-3">{{ translate('Scholarships by Category') }}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-
+                    <?php
+                                        // print_r($Level->id);
+                                        // print_r($level_id);
+                                        // dd($level_id);
+                                        ?>
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
+
                     <label class="aiz-checkbox">
                       <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()"
                         @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
@@ -108,31 +95,57 @@
                     </label>
                     @endforeach
                   </div>
-                  <!-- Field of Study -->
+
                   <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('Field of Study') }}</span>
+                    <span class=" pr-3">{{ translate('Scholarships by Field of Study')}}</span>
                   </h6>
-                  <div class="mb-3">
-                    <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="fieldStudy_id[]"
-                      onchange="applyFilter()" data-toggle="select3" data-live-search="true">
-                      <option value="">{{ translate('Field of Study') }}</option>
-                      @foreach(\App\Models\ScholarshipFieldStudy:: all() as $FieldStudy)
-                      <option value="{{$FieldStudy->id}}" @if (isset($fieldStudy_id) && $fieldStudy_id==$FieldStudy->id
-                        ) selected
-                        @endif>{{ $FieldStudy->name }}</option>
-                      @endforeach
-                    </select>
+                  <div class="aiz-checkbox-list">
+
+                    <?php
+                                        // print_r($fieldStudy->id);
+                                        // dd($fieldStudy_id)
+                                        ?>
+                    @foreach(\App\Models\ScholarshipFieldStudy:: all() as $fieldStudy)
+
+                    <label class="aiz-checkbox">
+                      <input type="checkbox" name="fieldStudy_id[]" value="{{$fieldStudy->id}}" onchange="applyFilter()"
+                        @if (in_array($fieldStudy->id,$fieldStudy_ids)) checked @endif > {{ $fieldStudy->name }}
+                      <span class="aiz-square-check"></span>
+                      <span class="float-right text-secondary fs-12"></span>
+                    </label>
+                    @endforeach
                   </div>
-                  <!--  Location -->
+                  <!-- <div class="aiz-checkbox-list">
+                                        @foreach(\App\Models\ScholarshipFieldStudy:: all() as $fieldStudy)
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="fieldStudy_id[]" value="{{$fieldStudy->id}}" onchange="applyFilter()" @if (in_array($fieldStudy->id, $fieldStudy_id)) checked @endif > {{ $fieldStudy->name }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        @endforeach
+                                    </div> -->
+                  <!-- <div class="mb-3">
+                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="fieldStudy_id[]" onchange="applyFilter()" data-toggle="select3" data-live-search="true">
+                                            <option value="">{{ translate('Field of Study') }}</option>
+                                            @foreach(\App\Models\ScholarshipFieldStudy:: all() as $FieldStudy)
+                                            <option value="{{$FieldStudy->id}}" @if (isset($fieldStudy_id) && $fieldStudy_id==$FieldStudy->id ) selected
+                                                @endif>{{ $FieldStudy->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div> -->
+                  <!-- Country -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class=" pr-3">{{ translate('Location') }}</span>
+                    <span class=" pr-3">{{ translate('Scholarships by Country') }}</span>
                   </h6>
                   <div class="mb-5">
                     <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]"
                       onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                      <option value="">{{ translate('All Countries') }}</option>
+                      <option value="0" @if ($country_id[0]) selected @endif>{{ translate('All Countries') }}</option>
+                      <?php
+                                                print_r($country_id);
+                                            ?>
                       @foreach(\App\Models\ScholarshipCountry:: all() as $country)
-                      <option value="{{ $country->id }}" @if (isset($country_id) && $country_id==$country->id ) selected
+                      <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
                         @endif>{{ $country->country_name }}</option>
                       @endforeach
                     </select>
@@ -191,43 +204,62 @@
               <h2 class="fs-18 fw-700 mb-1 d-flex justify-content-between">
                 <a href="#" class=" fs-16 fw-700 pb-1 " title="{{ $scholarship->title }}"
                   style="border-bottom: 2px solid  #000003; color: #000003">
-                  {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}
+                  {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }} |
+
+                  @if($scholarship->university != null)
+                  {{ $scholarship->university->university_name }} |
+                  @if($scholarship->country !=null)
+                  {{ $scholarship->country->	country_name }}
+                  @endif
+                  @endif
                 </a>
                 <img src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
               </h2>
               <div>
-                @if($scholarship->university != null)
-                <div class="  ">
-                  <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
-                    @if($scholarship->country !=null)
-                    {{ $scholarship->country->	country_name }}
-                    @endif
-                  </p>
-                </div>
-                @endif
+                <!-- @if($scholarship->university != null)
+                                <div class="  ">
+                                    <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
+                                        @if($scholarship->country !=null)
+                                        {{ $scholarship->country->	country_name }}
+                                        @endif
+                                    </p>
+                                </div>
+                                @endif -->
               </div>
+              <!-- <div class="row">
+                                <div class="col-3 pr-0">
+                                    <p class="fre-scsh-left-side-title">
+                                        Scholarships Overview:
+                                    </p>
+                                </div>
+                                <div class="col-9 pl-0">
+
+
+                                    <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
+                                        The Western Sydney University provides a wide range of research scholarships to support
+                                        domestic and international research candidates. Scholarships are awarded based on a
+                                        competitive process and are open to both new and current candidates
+                                        <a class="fre-scsh-find-more-btn pt-0 text-success ">
+                                            Read more
+                                        </a>
+                                    </p>
+
+                                </div>
+
+                            </div> -->
               <div class="row">
-                <div class="col-3 pr-0">
-                  <p class="fre-scsh-left-side-title">
-                    Scholarships Overview:
+                <div class="col-3">
+                  <p class="fre-scsh-left-side-title mb-0">
+                    Who can Apply:
                   </p>
                 </div>
                 <div class="col-9 pl-0">
-
-
-                  <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
-                    The Western Sydney University provides a wide range of research scholarships to support
-                    domestic and international research candidates. Scholarships are awarded based on a
-                    competitive process and are open to both new and current candidates
-                    <a class="fre-scsh-find-more-btn pt-0 text-success ">
-                      Read more
-                    </a>
+                  @if($scholarship->WhoCanApply != null)
+                  <p class="fre-scsh-right-side-details pb-0 mb-0">{{ $scholarship->WhoCanApply->title}}
                   </p>
-
+                  @endif
                 </div>
-
               </div>
-
               <div class="row">
                 <div class="col-3 ">
                   <p class="fre-scsh-left-side-title mb-1">
@@ -256,24 +288,17 @@
                     Health and Medicine | Law | Mathematics and Statistics | Physical Education and Sports Science |
                     Science and Engineering | Social Sciences
                   </p>
+                  <!-- @if($scholarship->fieldStudy !== null)
+                                    @foreach($scholarship->fieldStudy as $fieldStudy)
+                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                        {{ $fieldStudy['name'] }}
+                                    </p>
+                                    @endforeach
+                                    @endif -->
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-3">
-                  <p class="fre-scsh-left-side-title pb-1">
-                    Who can Apply:
-                  </p>
-                </div>
-                <div class="col-9 pl-0">
-                  @if($scholarship->WhoCanApply != null)
 
-                  <p class="fre-scsh-right-side-details pb-0 mb-1">{{ $scholarship->WhoCanApply->title}}
-                  </p>
-                  @endif
-                </div>
-
-              </div>
 
               <div class="row">
                 <div class="col-lg-3  pr-0">
@@ -298,7 +323,7 @@
 
             </div>
           </div>
-          <div class="lg:mx-10 lg:mb-20 border-1"></div>
+          <div class="lg:mx-10 lg:mb-20 " style="border:1px solid #ddd "></div>
 
           @endforeach
           <div class="mt-3">
@@ -401,6 +426,7 @@
 </section>
 <script>
 function removeCategory(categoryId) {
+
   var categoryElement = document.getElementById('category_' + categoryId);
   if (categoryElement) {
     categoryElement.parentNode.removeChild(categoryElement);
@@ -411,11 +437,13 @@ function removeCategory(categoryId) {
       checkbox.checked = false;
     }
   }
+  $('#scholarship-filter-form').submit();
 }
 </script>
 <script>
 function removeLevel(levelId) {
   var levelElement = document.getElementById('level_' + levelId);
+  console.log(fieldStudyElement);
   if (levelElement) {
     levelElement.parentNode.removeChild(levelElement);
 
@@ -424,6 +452,24 @@ function removeLevel(levelId) {
     if (checkbox) {
       checkbox.checked = false;
     }
+  }
+  $('#scholarship-filter-form').submit();
+}
+</script>
+<script>
+function removeFieldStudy(fieldStudyId) {
+  var fieldStudyElement = document.getElementById('fieldStudy_' + fieldStudyId);
+  console.log(fieldStudyElement);
+  if (fieldStudyElement) {
+    fieldStudyElement.parentNode.removeChild(fieldStudyElement);
+
+    // Uncheck the corresponding checkbox
+    var checkbox = document.querySelector('input[name="fieldStudy_id[]"][value="' + fieldStudyId + '"]');
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+    $('#scholarship-filter-form').submit();
+
   }
 }
 </script>
@@ -434,33 +480,15 @@ function removeCountry(countryId) {
     countryElement.parentNode.removeChild(countryElement);
 
     // Uncheck the corresponding checkbox
-    // var checkbox = document.querySelector('input[name="country_id[]"][value="' + countryId + '"]');
-    // if (checkbox) {
-    //     checkbox.checked = false;
-    // }
-  }
-}
-</script>
-<script>
-function removeFieldStudy(fieldStudyId) {
-  var fieldStudyElement = document.getElementById('fieldStudy_' + fieldStudyId);
-  if (fieldStudyElement) {
-    fieldStudyElement.parentNode.removeChild(fieldStudyElement);
-
-    // Uncheck the corresponding checkbox
-    var checkbox = document.querySelector('input[name="fieldStudy_id[]"][value="' + fieldStudyId + '"]');
+    var checkbox = document.querySelector('input[name="country_id[]"][value="' + countryId + '"]');
     if (checkbox) {
-      checkbox.checked = false;
-      $('#scholarship-filter-form').submit();
-    }
-    // Remove the click event from the <p> tag
-    var pTag = document.getElementById('fieldStudy_' + fieldStudyId).querySelector('p');
-    if (pTag) {
-      pTag.onclick = null;
+      select.select = false;
     }
   }
+  $('#scholarship-filter-form').submit();
 }
 </script>
+
 @endsection
 
 @section('script')

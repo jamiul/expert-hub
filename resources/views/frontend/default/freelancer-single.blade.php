@@ -332,7 +332,6 @@
               </div>
               @endif
 
-
               <div class="">
                 <h6 class="text-left mb-4 h6 fw-700"><span class="bg-white pr-3">{{ translate('Verifications') }}</span>
                 </h6>
