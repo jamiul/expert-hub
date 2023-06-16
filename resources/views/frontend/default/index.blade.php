@@ -101,16 +101,16 @@
       <div class="mt-5 pb-2 container-home">
         <div class="">
           <div class="">
-            <div class=" content-title  text-center py-5">
-              <h2 class="fw-700 fs-24 text-white mb-0">Need scholarship help?</h2>
+            <div class=" content-title  text-center pb-5 pt-2">
+              <h2 class="fw-700 fs-36 text-white mb-0">Need scholarship help?</h2>
             </div>
             <div class="row need-help-full-body">
               <div class="col-xl-3 col-md-6">
                 <div class=" ">
                   <div class=" h-136px align-items-center">
                     <div class="d-flex">
-                      <img class=" mb-2 mx-auto d-block   p-3" src=" {{url('/public/assets/home/blog.png')}}"
-                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #ffffff" />
+                      <img class=" mb-2 mx-auto d-block   p-3" src=" {{url('/public/assets/home/post.png')}}"
+                        alt="Image" style="width:77px; border-radius:50%; border:1px solid #ffffff" />
                       <div class="need-help-progress-bar"></div>
                     </div>
                     <p class="fs-22 fw-700 mb-lg-2 mt-14 consultant-category text-center text-white"
@@ -133,8 +133,8 @@
                                     <div class="need-help-progress-bar"></div>
                                 </div> -->
                     <div class="d-flex">
-                      <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz1.png')}}"
-                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #ffffff;" />
+                      <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz.png')}}"
+                        alt="Image" style="width:77px; border-radius:50%; border:1px solid #ffffff;" />
                       <div class="need-help-progress-bar"></div>
                     </div>
                     <p class="fs-22 fw-700 mb-lg-2 mt-14 consultant-category text-center text-white"
@@ -152,8 +152,8 @@
                   <div class=" h-136px align-items-center">
                     <div class="d-flex">
                       <img class=" mb-2 mx-auto d-block
-                                     p-3" src=" {{url('/public/assets/home/certificate.png')}}" alt="Image"
-                        style="width:55px; border-radius:50%; border:1px solid #ffffff" />
+                                     p-3" src=" {{url('/public/assets/home/enroll.png')}}" alt="Image"
+                        style="width:77px; border-radius:50%; border:1px solid #ffffff" />
                       <div class="need-help-progress-bar"></div>
                     </div>
                     <p class="fs-22 fw-700 mb-lg-2 consultant-category mt-14 text-center text-white"
@@ -170,8 +170,8 @@
               <div class="col-xl-3 col-md-6">
                 <div class=" ">
                   <div class=" h-136px align-items-center">
-                    <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/checked.png')}}" alt="Image"
-                      style="width:55px; border-radius:50%; border:1px solid #fff" />
+                    <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/check.png')}}" alt="Image"
+                      style="width:77px; border-radius:50%; border:1px solid #fff" />
                     <p class="fs-22 fw-700 mb-lg-2  consultant-category text-center text-white"
                       style="margin-top:14px;">
                       Payment Securely
@@ -185,7 +185,7 @@
               </div>
 
             </div>
-            <div class=" text-center  py-5">
+            <div class=" text-center pt-5">
               <h5 class="btn rounded border text-white" style="background-color:#275846;">
                 Let's get started
               </h5>

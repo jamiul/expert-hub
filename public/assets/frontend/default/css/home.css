@@ -298,12 +298,12 @@ body {
 
     .need-help-progress-bar {
         height: 2px;
-        width: 91%;
+        width: 83% !important;
         background: white !important;
         position: absolute;
         bottom: 50%;
         transform: translateY(50%);
-        left: 161px;
+        left: 173px !important;
         right:0;
 }
 }
