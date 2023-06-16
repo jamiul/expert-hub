@@ -66,39 +66,6 @@
                 <!-- Categories -->
                 <div class="card-body pl-lg-0">
                   <div class="">
-
-                    <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class=" pr-3">{{ translate('Categories') }}</span>
-                    </h6>
-                    <div class="mb-5">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('All Categories') }}</option>
-                        @foreach(\App\Models\ProjectCategory::all() as $category)
-                        <option value="{{ $category->slug }}" @if (isset($_GET['category_id']) &&
-                          $_GET['category_id']==$category->slug ) selected @endif>
-                          {{$category->name}}
-                        </option>
-                        @endforeach
-                      </select>
-                    </div> -->
-                    <!-- skills -->
-                    <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="bg-white pr-3">{{ translate('Skills') }}</span>
-                  </h6> -->
-                    <!-- <div class="mb-5">
-                    <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
-                      onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                      <option value="">{{ translate('All skills') }}</option>
-                      @foreach(\App\Models\skill::all() as $skill)
-                      <option value="{{ $skill->id }}" @if (isset($_GET['skill_id']) && $_GET['skill_id']==$skill->
-                        slug
-                        ) selected @endif>
-                        {{$skill->name}}
-                      </option>
-                      @endforeach
-                    </select>
-                  </div> -->
                     <!-- Countries -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class="pr-3">{{ translate('Countries') }}</span>
@@ -194,23 +161,6 @@
                       </label>
                     </div>
                   </div>
-                  <!-- Skills -->
-                  <!-- <div class="pt-3 d-none">
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Skills') }}</span>
-                    </h6>
-                    <div class="">
-                      <select class="select2 form-control aiz-selectpicker" multiple="multiple" name="skill_ids[]"
-                        onchange="applyFilter()" data-toggle="select2" data-placeholder="Choose ..."
-                        data-live-search="true">
-                        @foreach(\App\Models\Skill::all() as $skill)
-                        <option value="{{$skill->id}}" @if (in_array($skill->id, $skill_ids)) selected @endif>
-                          {{$skill->name}}
-                        </option>
-                        @endforeach
-                      </select>
-                    </div>
-                  </div> -->
                 </div>
               </div>
               <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
