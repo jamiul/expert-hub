@@ -278,16 +278,15 @@ body {
     line-height: 1.8;
 }
 
-
-.need-help-full-body {
+.need-help-section {
     max-width: 1200px !important; /* Set your desired max-width value */
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
    
   }
 
   @media (min-width: 1200px) {
-    .need-help-full-body {
+    .need-help-section {
       max-width: 100%; /* Override the max-width for extra-large devices */
     }
   }
@@ -296,18 +295,17 @@ body {
         position: relative;
     }
 
-    .need-help-progress-bar {
+    .need-help-section-bar {
         height: 2px;
-        width: 83% !important;
-        background: white !important;
+        width: 91%;
+        background: white;
         position: absolute;
         bottom: 50%;
         transform: translateY(50%);
-        left: 173px !important;
+        left: 161px;
         right:0;
 }
 }
-
 
 /* responsive */
 @media only screen and (max-width: 1210px) {

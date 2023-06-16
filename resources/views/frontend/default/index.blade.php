@@ -97,25 +97,23 @@
 
     <!-- explore services -->
     @if (get_setting('how_it_works_show') == 'on')
-    <section class="border-top pb-2 " style="background-color:#275846;">
-      <div class="mt-5 pb-2 container-home">
+    <div class="border-top pb-2 " style="background-color:#275846;">
+      <div class="mt-5 pb-2">
         <div class="">
           <div class="">
-            <div class=" content-title  text-center pb-5 pt-2">
-              <h2 class="fw-700 fs-36 text-white mb-0">Need scholarship help?</h2>
-              <h5></h5>
+            <div class=" content-title  text-center pb-5 pt-3">
+              <h2 class="fw-700 fs-36 text-white mb-0">Need Scholarship help?</h2>
             </div>
-            <div class="row need-help-full-body">
+            <div class="row need-help-section">
               <div class="col-xl-3 col-md-6">
                 <div class=" ">
                   <div class=" h-136px align-items-center">
                     <div class="d-flex">
                       <img class=" mb-2 mx-auto d-block   p-3" src=" {{url('/public/assets/home/post.png')}}"
-                        alt="Image" style="width:77px; border-radius:50%; border:1px solid #ffffff" />
-                      <div class="need-help-progress-bar"></div>
+                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #fff" />
+                      <div class="need-help-section-bar"></div>
                     </div>
-                    <p class="fs-22 fw-700 mb-lg-2 mt-14 consultant-category text-center text-white"
-                      style="margin-top:14px;"> Post a job
+                    <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white"> Post a job
 
                     </p>
                   </div>
@@ -135,11 +133,10 @@
                                 </div> -->
                     <div class="d-flex">
                       <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz.png')}}"
-                        alt="Image" style="width:77px; border-radius:50%; border:1px solid #ffffff;" />
-                      <div class="need-help-progress-bar"></div>
+                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #fff;" />
+                      <div class="need-help-section-bar"></div>
                     </div>
-                    <p class="fs-22 fw-700 mb-lg-2 mt-14 consultant-category text-center text-white"
-                      style="margin-top:14px;"> Receive proposal
+                    <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white"> Receive proposal
                     </p>
                   </div>
                   <h6 class="fs-18 mt-3  text-white text-center">
@@ -154,11 +151,10 @@
                     <div class="d-flex">
                       <img class=" mb-2 mx-auto d-block
                                      p-3" src=" {{url('/public/assets/home/enroll.png')}}" alt="Image"
-                        style="width:77px; border-radius:50%; border:1px solid #ffffff" />
-                      <div class="need-help-progress-bar"></div>
+                        style="width:55px; border-radius:50%; border:1px solid #fff" />
+                      <div class="need-help-section-bar"></div>
                     </div>
-                    <p class="fs-22 fw-700 mb-lg-2 consultant-category mt-14 text-center text-white"
-                      style="margin-top:14px;"> Make Selection
+                    <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white"> Make Selection
 
                     </p>
                   </div>
@@ -172,13 +168,11 @@
                 <div class=" ">
                   <div class=" h-136px align-items-center">
                     <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/check.png')}}" alt="Image"
-                      style="width:77px; border-radius:50%; border:1px solid #fff" />
-                    <p class="fs-22 fw-700 mb-lg-2  consultant-category text-center text-white"
-                      style="margin-top:14px;">
-                      Payment Securely
+                      style="width:55px; border-radius:50%; border:1px solid #fff" />
+                    <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white"> Payment Securely
                     </p>
                   </div>
-                  <h6 class="fs-18 mt-3  text-white text-center">
+                  <h6 class="fs-18 mt-3 text-white text-center">
                     Get started on your study journey today.
                   </h6>
                 </div>
@@ -186,16 +180,17 @@
               </div>
 
             </div>
-            <div class=" text-center pt-5">
-              <h5 class="btn rounded border text-white" style="background-color:#275846;">
+            <div class=" text-center py-5">
+              <a href="{{ url('projects/create')}}" class=" btn rounded border text-white fs-18"
+                style="background-color:#275846;">
                 Let's get started
-              </h5>
+              </a>
 
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     @endif
 
     <!-- Consultant Service Category -->

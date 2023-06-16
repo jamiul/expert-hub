@@ -50,7 +50,7 @@
                   </button>
                 </div>
 
-                <h6 class="text-left mb-3 mt-2 fs-14 fw-700">
+                <h6 class="text-left mb-3 mt-lg-5 fs-14 fw-700">
                   <span class=" pr-3">{{ translate('Categories') }}</span>
                 </h6>
                 @foreach(\App\Models\ProjectCategory::all() as $category)
@@ -211,12 +211,12 @@
                   <div class="flex-grow-1">
                     <h5 class="fs-14 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
                     @if ($freelancer->specialistAt != null)
-                    <p class="fs-12 opacity-50">{{ $freelancer->specialistAt->name }}</p>
+                    <p class="fs-12 ">{{ $freelancer->specialistAt->name }}</p>
                     @endif
                     <!-- <div class="text-muted lh-1-8">
                     <p class="text-truncate-3">{{ $freelancer->bio }}</p>
                   </div> -->
-                    <div class="d-flex text-secondary fs-12 mb-3">
+                    <div class="d-flex text-dark fs-12 mb-3">
                       <div class="mr-2">
                         <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
                           {{ formatRating(getAverageRating($freelancer->user->id)) }}
@@ -249,7 +249,7 @@
                   <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5  flex-xl-column ">
                     <div class="">
                       <div class="d-flex ">
-                        <div class="mt-xl-2 small text-secondary">
+                        <div class="mt-xl-2 small text-dark">
                           <p>{{ translate('Location') }}</p>
                           @if ($freelancer->user->address != null && $freelancer->user->address->city_id != null &&
                           $freelancer->user->address->country_id != null)
@@ -266,12 +266,12 @@
                           @endif
                         </div>
 
-                        <div class="mt-xl-2 small text-secondary ml-lg-2">
+                        <div class="mt-xl-2 small text-dark ml-lg-2">
                           <p>{{ translate('Hourly Rate') }}</p>
                           <p class="mb-0  fw-700">{{ single_price($freelancer->hourly_rate) }}</p>
 
                         </div>
-                        <div class="mt-xl-2 small text-secondary ml-lg-2">
+                        <div class="mt-xl-2 small text-dark ml-lg-2">
                           <p>{{ translate('Job success') }}</p>
                           <p class="mb-0  fw-700">{{ single_price($freelancer->hourly_rate) }}</p>
                         </div>
