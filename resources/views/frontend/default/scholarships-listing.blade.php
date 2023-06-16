@@ -80,11 +80,7 @@
                     <span class=" pr-3">{{ translate('Scholarships by Category') }}</span>
                   </h6>
                   <div class="aiz-checkbox-list">
-                    <?php
-                                        // print_r($Level->id);
-                                        // print_r($level_id);
-                                        // dd($level_id);
-                                        ?>
+
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
 
                     <label class="aiz-checkbox">
