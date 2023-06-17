@@ -103,6 +103,11 @@
           <div class="">
             <div class=" content-title  text-center pb-5 pt-3">
               <h2 class="fw-700 fs-36 text-white mb-0">Need Scholarship help?</h2>
+              <h5 class="text-center">It can be hard to know where to start. That's why we're here to guide you. We
+                clear
+                the
+                confusion, so
+                you can find and enrol in the right course for you.</h5>
             </div>
             <div class="row need-help-section">
               <div class="col-xl-3 col-md-6">
@@ -422,6 +427,12 @@
                           <span class="fs-18"> 8</span>
                           <span class="fs-18"> Available</span>
                         </div>
+                        @foreach ($subjectCounts as $subject => $count)
+                        <li class="list-group-item">
+                          <span class="badge bg-primary">{{ $count }}</span>
+                          {{ $subject }}
+                        </li>
+                        @endforeach
                       </div>
                     </div>
 
@@ -830,102 +841,613 @@
     @endif
 
     @if (get_setting('latest_project_show') == 'on')
-    <section class=" bg-white">
-      <div class="container-home mt-5">
-        <ul class="nav skill border-bottom-2 mt-3 " id="myTab" role="tablist"
-          style="margin-bottom: -8px; background-color:#fafafa;">
-          <li class="" role="presentation">
-            <a href="" class="text-dark active">
-              <h5 class="nav-link fs-22 active text-decoration-underline" id="home-tab" data-toggle="tab"
-                data-target="#home" role="tab" aria-controls="home" aria-selected="true">Top skills</h5>
-            </a>
-          </li>
-          <li class="" role="presentation">
-            <a href="" class="text-dark">
-              <h5 class="nav-link fs-22" id="profile-tab" data-toggle="tab" data-target="#profile" role="tab"
-                aria-controls="profile" aria-selected="false">Trending skills</h5>
-            </a>
-          </li>
-          <li class="" role="presentation">
-            <a href="" class="text-dark">
-              <h5 class="nav-link fs-22" id="contact-tab" data-toggle="tab" data-target="#contact" role="tab"
-                aria-controls="contact" aria-selected="false">Top skills in Australia
-              </h5>
-            </a>
-          </li>
-          <li class="" role="presentation">
-            <a href="" class="text-dark">
-              <h5 class="nav-link fs-22" id="project-tab" data-toggle="tab" data-target="#project" role="tab"
-                aria-controls="project" aria-selected="false">Project catalog
-              </h5>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-content container-home" id="myTabContent" style="margin-top: -38px;">
-        <div class=" tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="row ">
-            <div class="col-lg-3  " style="padding-left:45px;">
-              <div class=" skills">
-                <h6 class="fs-18">
-                  Research writing</h6>
-                <h6 class="fs-18">
-                  Proofreading and editing</h6>
-                <h6 class="fs-18">Data analysis and interpretation</h6>
-                <h6 class="fs-18">Translation services</h6>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class=" skills">
-                <h6 class="fs-18">
-                  Research proposal writing</h6>
-                <h6 class="fs-18">
-                  Statistical analysis </h6>
-                <h6 class="fs-18">
-                  Curriculum development</h6>
-                <h6 class="fs-18">Academic mentoring </h6>
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class=" skills">
-                <h6 class="fs-18">
-                  Research proposal writing</h6>
-                <h6 class="fs-18">
-                  Scholarship applications</h6>
-                <h6 class="fs-18">
-                  Copywriting</h6>
 
-              </div>
-            </div>
-            <div class="col-lg-3 ">
-              <div class=" skills">
+    <div class="container-home ">
 
-                <h6 class="fs-18">
-                  Tutoring and Instruction</h6>
-                <h6 class="fs-18 text-normal">Transcribing audio or video recordings</h6>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar  active fs-22  " id="hiring-talent-tab" data-toggle="tab"
+            href="#education" role="tab" aria-controls="hiring" aria-selected="true">Education Course Accreditations</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#curriculum"
+            role="tab" aria-controls="finding" aria-selected="false">Course Curriculum Development</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#learning"
+            role="tab" aria-controls="finding" aria-selected="false">Learning Management Systems</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#writing"
+            role="tab" aria-controls="finding" aria-selected="false">Writing and Editing</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#research"
+            role="tab" aria-controls="finding" aria-selected="false">Research and Analysis</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#transcription"
+            role="tab" aria-controls="finding" aria-selected="false">Transcription and Translation</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#scholarship"
+            role="tab" aria-controls="finding" aria-selected="false">Scholarship Applications</a>
+        </li>
+        <li class="nav-item border">
+          <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#mentoring"
+            role="tab" aria-controls="finding" aria-selected="false">Mentoring and Tutoring</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="hiring-talent-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Instructional Designer</h6>
+                  <h6 class="fs-18">
+                    Curriculum Developer</h6>
+                  <h6 class="fs-18">Subject Matter Expert</h6>
+                  <h6 class="fs-18">Accreditation Specialist</h6>
+                  <h6 class="fs-18">Education Consultant</h6>
+                </div>
               </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Learning Designer</h6>
+                  <h6 class="fs-18">
+                    Assessment Coordinator</h6>
+                  <h6 class="fs-18">
+                    Quality Assurance Analyst</h6>
+                  <h6 class="fs-18">Content Writer </h6>
+                  <h6 class="fs-18">Researcher </h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Project Manager</h6>
+                  <h6 class="fs-18">
+                    E-Learning Developer</h6>
+                  <h6 class="fs-18">
+                    Instructional Technologist</h6>
+                  <h6 class="fs-18">
+                    Educational Psychologist</h6>
+                  <h6 class="fs-18">
+                    Assessment Specialist</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18 text-normal">Multimedia Specialist</h6>
+                  <h6 class="fs-18 text-normal">Graphic Designer</h6>
+                  <h6 class="fs-18 text-normal">Data Analyst</h6>
+                  <h6 class="fs-18 text-normal">Evaluation and Assessment Coordinator</h6>
+                  <h6 class="fs-18 text-normal">Online Learning Coordinator</h6>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Curriculum Developer</h6>
+                  <h6 class="fs-18">
+                    Instructional Designer</h6>
+                  <h6 class="fs-18">Subject Matter Expert (SME)</h6>
+                  <h6 class="fs-18">Education Consultant</h6>
+                  <h6 class="fs-18">Content Developer</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+                  <h6 class="fs-18">
+                    Learning Experience Designer</h6>
+                  <h6 class="fs-18">
+                    Curriculum Coordinator</h6>
+                  <h6 class="fs-18">
+                    Curriculum Writer</h6>
+                  <h6 class="fs-18">Instructional Technologist</h6>
+                  <h6 class="fs-18">Educational Specialist </h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    E-Learning Developer</h6>
+                  <h6 class="fs-18">
+                    Assessment Specialist</h6>
+                  <h6 class="fs-18">
+                    Learning Designer</h6>
+                  <h6 class="fs-18">
+                    Curriculum Project Manager</h6>
+                  <h6 class="fs-18">
+                    Curriculum Editor</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Curriculum Consultant</h6>
+                  <h6 class="fs-18">Curriculum Coordinator</h6>
+                  <h6 class="fs-18">Instructional Materials Developer</h6>
+                  <h6 class="fs-18">Curriculum Integration Specialist</h6>
+                  <h6 class="fs-18">Curriculum Assessment Analyst</h6>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-        <div class="tab-pane " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-            <p>Trending skills</p>
+        <div class="tab-pane fade" id="learning" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    LMS Developer</h6>
+                  <h6 class="fs-18">
+                    Instructional Designer</h6>
+                  <h6 class="fs-18">UX/UI Designer</h6>
+                  <h6 class="fs-18">Front-end Developer</h6>
+                  <h6 class="fs-18">Back-end Developer</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Full-stack Developer</h6>
+                  <h6 class="fs-18">
+                    Software Engineer </h6>
+                  <h6 class="fs-18">
+                    System Administrator</h6>
+                  <h6 class="fs-18">Database Administrator </h6>
+                  <h6 class="fs-18">Project Manager </h6>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">Quality Assurance Analyst </h6>
+                  <h6 class="fs-18">
+                    Content Developer</h6>
+                  <h6 class="fs-18">
+                    Graphic Designer</h6>
+                  <h6 class="fs-18">
+                    Mobile App Developer</h6>
+                  <h6 class="fs-18">
+                    Integration Specialist</h6>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Technical Writer</h6>
+                  <h6 class="fs-18">User Support Specialist</h6>
+                  <h6 class="fs-18">Data Analyst</h6>
+                  <h6 class="fs-18">Training Coordinator</h6>
+                  <h6 class="fs-18">LMS Administrator</h6>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-            <p>
-              Top skills in Australia </p>
+        <div class="tab-pane fade" id="writing" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Academic Writer</h6>
+                  <h6 class="fs-18">
+                    Content Writer</h6>
+                  <h6 class="fs-18">Copywriter</h6>
+                  <h6 class="fs-18">Editor</h6>
+                  <h6 class="fs-18">Proofreader</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+                  <h6 class="fs-18">
+                    Researcher</h6>
+                  <h6 class="fs-18">
+                    Subject Matter Expert </h6>
+                  <h6 class="fs-18">
+                    Curriculum Developer</h6>
+                  <h6 class="fs-18">Instructional Designer </h6>
+                  <h6 class="fs-18">Copy Editor</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Publishing Assistant</h6>
+                  <h6 class="fs-18">
+                    Editorial Assistant</h6>
+                  <h6 class="fs-18">
+                    Technical Writer</h6>
+                  <h6 class="fs-18">
+                    Grant Writer</h6>
+                  <h6 class="fs-18">
+                    Manuscript Editor</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Citation Specialist</h6>
+                  <h6 class="fs-18">Academic Policy Writer</h6>
+                  <h6 class="fs-18">Legal Writer</h6>
+                  <h6 class="fs-18">Language Editor</h6>
+                  <h6 class="fs-18">Freelance Writer/Editor</h6>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div class="tab-pane" id="project" role="tabpanel" aria-labelledby="project-tab">
-          <div class=" row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
-            <p>Project catalog</p>
+        <div class="tab-pane fade" id="research" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Confirmatory Factor Analysis(CFA)</h6>
+                  <h6 class="fs-18">
+                    Cross-Lagged Panel Models</h6>
+                  <h6 class="fs-18">Demographic Methods</h6>
+                  <h6 class="fs-18">Discourse analysis</h6>
+                  <h6 class="fs-18">Dynamic Panel Data Modeling</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+                  <h6 class="fs-18">
+                    Dynamic SEM (DSEM)</h6>
+                  <h6 class="fs-18">
+                    Ecological Momentary Assessment(EMA) </h6>
+                  <h6 class="fs-18">
+                    Empirical Dynamic Modeling(EDM)</h6>
+                  <h6 class="fs-18">Experience Sampling Methods(ESM)</h6>
+                  <h6 class="fs-18">Intensive Longitudinal Data Analysis </h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Longitudinal Analysis</h6>
+                  <h6 class="fs-18">
+                    Longitudinal SEM</h6>
+                  <h6 class="fs-18">
+                    Measurement Invariance Testing</h6>
+                  <h6 class="fs-18">
+                    Multilevel Modeling(MLM)</h6>
+                  <h6 class="fs-18">
+                    Multilevel Structural Equation Modeling(MSEM)</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">Panel Data Modeling</h6>
+                  <h6 class="fs-18">Path Analysis</h6>
+                  <h6 class="fs-18">Qualitative data analysis</h6>
+                  <h6 class="fs-18">Quantitative data analysis</h6>
+                  <h6 class="fs-18">Structural Equation Modeling(SEM)</h6>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="transcription" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">Academic Transcriber</h6>
+                  <h6 class="fs-18">Academic Translator</h6>
+                  <h6 class="fs-18">Language Specialist</h6>
+                  <h6 class="fs-18">Transcriptionist</h6>
+                  <h6 class="fs-18">Language Services Coordinator</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+                  <h6 class="fs-18">Translation Project Manager</h6>
+                  <h6 class="fs-18">Language Quality Assurance Specialist </h6>
+                  <h6 class="fs-18">Linguistics Researcher</h6>
+                  <h6 class="fs-18">Bilingual Research Assistant </h6>
+                  <h6 class="fs-18">Language Analyst </h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Transcription Editor</h6>
+                  <h6 class="fs-18">
+                    Multilingual Content Writer</h6>
+                  <h6 class="fs-18">
+                    Academic Proofreader</h6>
+                  <h6 class="fs-18">
+                    Language Instructor</h6>
+                  <h6 class="fs-18">
+                    Language Technology Specialist</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Interpreting Services Coordinator</h6>
+                  <h6 class="fs-18 text-normal">Localization Specialist</h6>
+                  <h6 class="fs-18 text-normal">Language Data Analyst</h6>
+                  <h6 class="fs-18 text-normal">Academic Language Consultant</h6>
+                  <h6 class="fs-18 text-normal">Language Services Administrator</h6>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="scholarship" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Academic Consultant</h6>
+                  <h6 class="fs-18">
+                    Scholarship Application Advisor</h6>
+                  <h6 class="fs-18">Research Grant Consultant</h6>
+                  <h6 class="fs-18">Scholarship Specialist</h6>
+                  <h6 class="fs-18">Grant Proposal Writer</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+                  <h6 class="fs-18">Research Funding Consultant</h6>
+                  <h6 class="fs-18">Scholarship Application Reviewer </h6>
+                  <h6 class="fs-18">Research Project Manager</h6>
+                  <h6 class="fs-18">Funding Strategy Consultant</h6>
+                  <h6 class="fs-18">Grant Development Coordinator</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Research Scholarship Coach</h6>
+                  <h6 class="fs-18">
+                    Scholarship Application Coordinator</h6>
+                  <h6 class="fs-18">
+                    Grant Writing Specialist</h6>
+                  <h6 class="fs-18">
+                    Research Funding Analyst</h6>
+                  <h6 class="fs-18">
+                    Scholarship Program Manager</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">
+                    Research Grant Administrator</h6>
+                  <h6 class="fs-18 text-normal">Funding Opportunities Researcher</h6>
+                  <h6 class="fs-18 text-normal">Scholarship Application Assessor</h6>
+                  <h6 class="fs-18 text-normal">Academic Writing Consultant</h6>
+                  <h6 class="fs-18 text-normal">Supervisors Communications Specialist</h6>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="mentoring" role="tabpanel" aria-labelledby="finding-work-tab">
+          <div class=" row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+                  <h6 class="fs-18">Uni Maths Tutor</h6>
+                  <h6 class="fs-18">Uni Statistics Tutor</h6>
+                  <h6 class="fs-18">Uni Science Tutor</h6>
+                  <h6 class="fs-18">Uni English Language Tutor</h6>
+                  <h6 class="fs-18">Uni English Tutor</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  h-400px">
+                <div class=" px-3 py-2">
+
+                  <h6 class="fs-18">
+                    Uni Biology Tutor</h6>
+                  <h6 class="fs-18">
+                    Uni Chemistry Tutor </h6>
+                  <h6 class="fs-18">
+                    Uni Physics Tutor</h6>
+                  <h6 class="fs-18">Uni Computer Science Tutor</h6>
+                  <h6 class="fs-18">Uni Business Tutor</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    High School Maths Tutor</h6>
+                  <h6 class="fs-18">
+                    High School Statistics Tutor</h6>
+                  <h6 class="fs-18">
+                    High School Science Tutor</h6>
+                  <h6 class="fs-18">
+                    High School English Tutor</h6>
+                  <h6 class="fs-18">
+                    High School Biology Tutor</h6>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="  ">
+                <div class="px-3 py-2">
+
+                  <h6 class="fs-18">
+                    High School Chemistry Tutor</h6>
+                  <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                  <h6 class="fs-18 text-normal">Academic Coach</h6>
+                  <h6 class="fs-18 text-normal">Career Coach</h6>
+                  <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     @endif
+
+    <!-- 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Column one</h1>
+              <div class="px-3 py-2">
+                <h6 class="fs-18">
+                  High School Chemistry Tutor</h6>
+                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                <h6 class="fs-18 text-normal">Career Coach</h6>
+                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="px-3 py-2">
+
+                <h6 class="fs-18">
+                  High School Chemistry Tutor</h6>
+                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                <h6 class="fs-18 text-normal">Career Coach</h6>
+                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="vertical-line"></div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="px-3 py-2">
+
+                <h6 class="fs-18">
+                  High School Chemistry Tutor</h6>
+                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                <h6 class="fs-18 text-normal">Career Coach</h6>
+                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="px-3 py-2">
+
+                <h6 class="fs-18">
+                  High School Chemistry Tutor</h6>
+                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                <h6 class="fs-18 text-normal">Career Coach</h6>
+                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
 
 

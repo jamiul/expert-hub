@@ -10,23 +10,7 @@
   @extends('frontend.default.layouts.app')
 
   @section('content')
-  <div class="mx-3 rounded-md my-2 rounded-1 " style="background: #F2F7F2;">
-    <div class="row py-2 d-flex align-items-center">
-      <div class="col-lg-6 mt-lg-4 px-5 container-fluid
-     ">
-        <h3 class=" text-success ">Consultant List</h3>
-        <h6 class="fre-review-banner-text">Build rewarding relationships in the world’s Work Marketplace. Your home for
-          the
-          work you want.
-        </h6>
-      </div>
-      <div class="col-lg-4  pt-lg-2  px-5">
-        <img src=" {{url('/public/assets/find-consultant/Background.svg')}}" alt="Image" class=" w-100 rounded-2 " />
-      </div>
-    </div>
-  </div>
-
-  <section class="">
+  <section class="mt-5">
     <div class="container-main-scholarship">
       @if ($keyword != null)
       <div class="row">
@@ -43,12 +27,35 @@
             <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
               <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px" style="background: #F2F7F2;">
                 <div class=" border-0 pl-lg-0">
-                  <h5 class="mb-0 fs-21 fw-700">{{ translate('Consultant Search Filter') }}</h5>
+                  <h5 class="my-3 fs-21 fw-700">{{ translate('Consultant for hire') }}</h5>
                   <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb" data-toggle="class-toggle"
                     data-target=".aiz-filter-sidebar" type="button">
                     <i class="las la-times la-2x"></i>
                   </button>
                 </div>
+
+
+                <!-- search bar  -->
+                <input type="hidden" name="type" value="freelancer">
+                <div class="">
+                  <div class="d-flex align-items-center w-100">
+                    <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
+                      data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                      <i class="las la-filter"></i>
+                    </button>
+                    <div class="input-group rounded-2">
+                      <input type="text" class="form-control rounded  "
+                        placeholder="{{ translate('Search for consultants') }}" name="keyword" value="{{ $keyword }}">
+                      <div class="input-group-prepend rounded">
+                        <span class="input-group-text text-white border-left-0 rounded-right" :
+                          style="background:#275846;">
+                          <i class="las la-search"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
 
                 <h6 class="text-left mb-3 mt-lg-5 fs-14 fw-700">
                   <span class=" pr-3">{{ translate('Categories') }}</span>
@@ -171,30 +178,12 @@
           <!-- Freelancer List -->
           <div class="col-xl-9 col-lg-7">
             <div class="card mb-lg-0 rounded border-gray-light" style="background: #F2F7F2;">
-              <input type="hidden" name="type" value="freelancer">
-              <div class="card-header">
-                <div class="d-flex align-items-center w-100">
-                  <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
-                    data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                    <i class="las la-filter"></i>
-                  </button>
-                  <div class="input-group rounded-2">
-                    <input type="text" class="form-control rounded-2 rounded-right-0 border-right-0"
-                      placeholder="{{ translate('Search Keyword') }}" name="keyword" value="{{ $keyword }}">
-                    <div class="input-group-prepend rounded-2">
-                      <span class="input-group-text bg-transparent border-left-0 rounded-right"
-                        style="border-bottom-right-radius: 1rem !important; border-top-right-radius: 1rem !important;">
-                        <i class="las la-search"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <div class="card-body p-0">
                 @foreach ($freelancers as $key => $freelancer)
                 @if ($freelancer->user != null)
                 <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
-                  class="d-block d-xl-flex  text-inherit px-3 py-4 border-bottom">
+                  class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
                   <span class="avatar flex-shrink-0 mr-4">
                     @if ($freelancer->user->photo != null)
                     <img src="{{ custom_asset($freelancer->user->photo) }}" alt="{{ $freelancer->user->name }}">
@@ -208,27 +197,53 @@
                     <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                     @endif
                   </span>
-                  <div class="flex-grow-1">
-                    <h5 class="fs-14 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+                  <div class="flex-grow-1 ">
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+
+                      @if ($freelancer->user->address->country->photo ==null)
+                      @php
+                      $flag_url="/public/assets/frontend/default/img/avatar-place.png";
+                      @endphp
+                      @else
+
+                      @php
+                      $flag_url=$freelancer->user->address->country->photo;
+                      @endphp
+                      @endif
+                      <span>
+
+                        <img class=" px-1 " src="{{url($flag_url)}}"
+                          alt="{{ $freelancer->user->address->country->name }}" style="width:30px; " />
+                      </span>
+                    </div>
+
                     @if ($freelancer->specialistAt != null)
-                    <p class="fs-12 ">{{ $freelancer->specialistAt->name }}</p>
+                    <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
                     @endif
-                    <!-- <div class="text-muted lh-1-8">
-                    <p class="text-truncate-3">{{ $freelancer->bio }}</p>
-                  </div> -->
+
                     <div class="d-flex text-dark fs-12 mb-3">
                       <div class="mr-2">
-                        <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
+                        <span class="bg-rating p-1 text-white px-1 mr-1 fs-10" style="background:#95DF00;">
                           {{ formatRating(getAverageRating($freelancer->user->id)) }}
                         </span>
-                        <span class="rating rating-sm rating-mr-1">
+                        <span class="rating rating-md rating-mr-1">
                           {{ renderStarRating(getAverageRating($freelancer->user->id)) }}
                         </span>
-                        <span>
-                          ({{ count($freelancer->user->reviews) }} {{ translate('Reviews') }})
+                        <span>(0 Jobs)</span>
+                        <span class="mx-2">
+                          {{ count($freelancer->user->reviews) }} {{ translate('Reviews') }}
                         </span>
+
+                        <span>
+                          {{ single_price($freelancer->hourly_rate) }} USD per hour
+                        </span>
+
                       </div>
 
+                    </div>
+                    <div class="text-muted lh-1-8">
+                      <p class="text-truncate-3">{{ $freelancer->bio }}</p>
                     </div>
                     @if($freelancer->skills != null)
                     <div>
@@ -238,59 +253,25 @@
                       @endphp
                       @if ($skill != null)
                       <span
-                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</span>
+                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0">{{ $skill->name }}</span>
                       @endif
                       @endforeach
                     </div>
                     @endif
-
                   </div>
+                  <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
 
-                  <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5  flex-xl-column ">
-                    <div class="">
-                      <div class="d-flex ">
-                        <div class="mt-xl-2 small text-dark">
-                          <p>{{ translate('Location') }}</p>
-                          @if ($freelancer->user->address != null && $freelancer->user->address->city_id != null &&
-                          $freelancer->user->address->country_id != null)
-                          <div>
-                            {{-- <i class="las la-map-marker"></i> --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
-                              <path id="Path_25847" data-name="Path 25847"
-                                d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z"
-                                transform="translate(-4 -2)" fill="#989ea8" />
-                            </svg>
-                            <span class="ml-1">{{ $freelancer->user->address->city->name }},
-                              {{ $freelancer->user->address->country->name }}</span>
-                          </div>
-                          @endif
-                        </div>
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
 
-                        <div class="mt-xl-2 small text-dark ml-lg-2">
-                          <p>{{ translate('Hourly Rate') }}</p>
-                          <p class="mb-0  fw-700">{{ single_price($freelancer->hourly_rate) }}</p>
+                        <img class=" px-1 " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
+                          style="width:36px; " />
+                        {{ translate('Hire me') }}
 
-                        </div>
-                        <div class="mt-xl-2 small text-dark ml-lg-2">
-                          <p>{{ translate('Job success') }}</p>
-                          <p class="mb-0  fw-700">{{ single_price($freelancer->hourly_rate) }}</p>
-                        </div>
-                      </div>
+                      </p>
                     </div>
-                    <div>
-                      <h4 class="btn btn-primary btn-sm mt-2 w-100 fw-700">
-                        {{ translate('View profile') }}</h4>
-                      <span>
-                        <img class=" px-1 " src=" {{url('/public/assets/home/arrow.png')}}" alt="Image"
-                          style="width:18px; " />
-                      </span>
-                    </div>
-
-
                   </div>
                 </a>
-
-
                 @endif
                 @endforeach
               </div>
