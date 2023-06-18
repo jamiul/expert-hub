@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\ChatThread;
 use App\Models\UserProfile;
 use App\Models\FreelancerAccount;
+use App\Models\Scholarship;
 use Carbon;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
@@ -32,8 +33,25 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+    
     {
-        return view('frontend.default.index');
+        $scholarships = Scholarship::all();
+      
+        $subjectCounts = [];
+
+        foreach ($scholarships as $scholarship) {
+         $subject = $scholarship->fieldStudy_id;
+ 
+         if (!isset($subjectCounts[$subject])) {
+        $subjectCounts[$subject] = 0;
+    }
+
+    $subjectCounts[$subject] += $scholarship->available_slots;
+
+}
+
+        return view('frontend.default.index',compact('subjectCounts'));
+        
     }
 
     //Admin login
