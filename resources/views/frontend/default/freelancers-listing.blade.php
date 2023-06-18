@@ -213,8 +213,8 @@
                       @endif
                       <span>
 
-                        <img class=" px-1 " src="{{url($flag_url)}}"
-                          alt="{{ $freelancer->user->address->country->name }}" style="width:30px; " />
+                        <img class=" mx-2 " src="{{url($flag_url)}}"
+                          alt="{{ $freelancer->user->address->country->name }}" style="width:21px; height:14px; " />
                       </span>
                     </div>
 
@@ -222,7 +222,7 @@
                     <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
                     @endif
 
-                    <div class="d-flex text-dark fs-12 mb-3">
+                    <div class="d-flex text-dark fs-14 mb-3">
                       <div class="mr-2">
                         <span class="bg-rating p-1 text-white px-1 mr-1 fs-10" style="background:#95DF00;">
                           {{ formatRating(getAverageRating($freelancer->user->id)) }}
@@ -242,8 +242,8 @@
                       </div>
 
                     </div>
-                    <div class="text-muted lh-1-8">
-                      <p class="text-truncate-3">{{ $freelancer->bio }}</p>
+                    <div class="text-dark lh-1-8">
+                      <p class="text-truncate-3 fs-14">{{ $freelancer->bio }}</p>
                     </div>
                     @if($freelancer->skills != null)
                     <div>
@@ -253,7 +253,7 @@
                       @endphp
                       @if ($skill != null)
                       <span
-                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0">{{ $skill->name }}</span>
+                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">{{ $skill->name }}</span>
                       @endif
                       @endforeach
                     </div>
@@ -264,7 +264,7 @@
                     <div class="d-flex w-100 mx-0">
                       <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
 
-                        <img class=" px-1 " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
                           style="width:36px; " />
                         {{ translate('Hire me') }}
 
