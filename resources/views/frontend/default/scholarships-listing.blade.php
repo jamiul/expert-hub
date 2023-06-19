@@ -74,8 +74,8 @@
                   <div class="aiz-checkbox-list">
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()"
-                        @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
+                      <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()" @if
+                        (in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
@@ -239,19 +239,16 @@
                   </p>
                 </div>
                 <div class="col-lg-9  pl-0">
-                  <p class=" fre-scsh-right-side-details text-justify  mb-1 pr-4 ">
+                  @php
+                  $fieldStudys = json_decode($scholarship->fieldStudy_id);
+                  $studyNames = \App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode('
+                  | ');
+                  @endphp
 
-                    Agriculture and Environmental Sciences | Arts and Humanities | Business and Economics |Education |
-                    Health and Medicine | Law | Mathematics and Statistics | Physical Education and Sports Science |
-                    Science and Engineering | Social Sciences
+                  <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                    {{ $studyNames }}
                   </p>
-                  <!-- @if($scholarship->fieldStudy !== null)
-                                    @foreach($scholarship->fieldStudy as $fieldStudy)
-                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                        {{ $fieldStudy['name'] }}
-                                    </p>
-                                    @endforeach
-                                    @endif -->
+
                 </div>
               </div>
 
@@ -265,11 +262,11 @@
                   </p>
                 </div>
                 <div class="col-lg-9  pl-0">
-
                   <p class=" fre-scsh-right-side-details text-justify  mb-1 pr-4">
                     FreelancerEdu can connect you with experienced consultants who have received scholarships in your
                     field. They can review your application and provide valuable feedback to to ensure you submit a
                     competitive application.
+
                     <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
                       Find a consultant
                     </a>

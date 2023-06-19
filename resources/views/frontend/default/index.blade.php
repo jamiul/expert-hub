@@ -102,12 +102,10 @@
         <div class="">
           <div class="">
             <div class=" content-title  text-center pb-5 pt-3">
-              <h2 class="fw-700 fs-36 text-white mb-0">Need Scholarship help?</h2>
-              <h5 class="text-center">It can be hard to know where to start. That's why we're here to guide you. We
-                clear
-                the
-                confusion, so
-                you can find and enrol in the right course for you.</h5>
+              <h2 class="fw-700 fs-36 text-white mb-3">Need Scholarship help?</h2>
+              <h5 class="text-center text-white">It can be hard to know where to start. That's why we're here to guide
+                you.
+              </h5>
             </div>
             <div class="row need-help-section">
               <div class="col-xl-3 col-md-6">
@@ -427,12 +425,12 @@
                           <span class="fs-18"> 8</span>
                           <span class="fs-18"> Available</span>
                         </div>
-                        @foreach ($subjectCounts as $subject => $count)
+                        <!-- @foreach ($subjectCounts as $subject => $count)
                         <li class="list-group-item">
                           <span class="badge bg-primary">{{ $count }}</span>
                           {{ $subject }}
                         </li>
-                        @endforeach
+                        @endforeach -->
                       </div>
                     </div>
 
