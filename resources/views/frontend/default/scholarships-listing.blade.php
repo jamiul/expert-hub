@@ -27,10 +27,11 @@
                                     @if($country_name !=null)
                                     Scholarship for in {{$country_name}}
                                     @else
-                                    {{ translate('Scholarship search filter') }}
+                                    {{ translate('Scholarships search filter') }}
                                 </h5>
                                 @endif
                                 <div class="mt-2">
+
                                     <!-- Level-show -->
                                     @foreach($levels as $level)
 
@@ -377,7 +378,7 @@
 <script>
     function removeLevel(levelId) {
         var levelElement = document.getElementById('level_' + levelId);
-        console.log(fieldStudyElement);
+
         if (levelElement) {
             levelElement.parentNode.removeChild(levelElement);
 
@@ -442,3 +443,4 @@
 </script>
 
 @endsection
+

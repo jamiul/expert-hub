@@ -48,12 +48,8 @@
               <div class="mr-5">
                 <img class="" src="{{my_asset('automatic.svg')}}" alt="">
               </div>
-
-
             </div>
-
           </div>
-
         </div>
       </div>
       <div class="col-lg-6  pt-lg-2  px-5" style="height:400px;">
@@ -61,8 +57,6 @@
       </div>
     </div>
   </div>
-
-
 
   <div class="container">
     <!-- navbar -->
