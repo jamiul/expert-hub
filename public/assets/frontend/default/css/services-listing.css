@@ -30,7 +30,7 @@
     margin: 0 3% 10px 3%;
 }
 .price-input{
-    width: 80%;
+    width: 100%;
     display: flex;
     margin: 20px 0 25px;
 }
@@ -41,6 +41,7 @@
     text-align: center;
     font-size: 15px;
     border-radius: 5px;
+ 
     border:1px solid #999;
     -moz-appearance: textfield;
 }

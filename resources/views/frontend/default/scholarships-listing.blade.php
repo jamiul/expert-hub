@@ -225,13 +225,11 @@
                                 <div class="col-lg-9  pl-0">
                                     @php
                                     $fieldStudys = json_decode($scholarship->fieldStudy_id);
-                                    $studyNames = \App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode(' | ');
+                                    $studyNames =\App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode(' | ');
                                     @endphp
-
                                     <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                        {{ $studyNames }}
+                                        {{$studyNames}}
                                     </p>
-
                                 </div>
                             </div>
 

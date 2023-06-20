@@ -163,7 +163,7 @@
                         </label>
 
                         <div class="col-md-9">
-                            <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id" id="fieldStudy_id" data-live-search="true" title="{{ translate('Select qualification')}}" data-selected="{{optional($scholarship->fieldStudy)->id }}" required>
+                            <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id[]" id="fieldStudy_id" data-live-search="true" title="{{ translate('Select qualification')}}" data-selected="{{optional($scholarship->fieldStudy)->id }}" required>
                                 @foreach ($scholarship_fieldStudy as $fieldStudy)
                                 <option value=" {{$fieldStudy->id}}">
                                 {{$fieldStudy->name }}

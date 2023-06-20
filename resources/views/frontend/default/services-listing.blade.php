@@ -72,7 +72,7 @@
                             <span class=" pr-3">{{ translate('Budget') }}</span>
                         </h6>
                         <div class="price-input">
-                            <div class="price-input-field">
+                            <div class="price-input-field mr-2">
                                 <span>Min</span>
                                 <input type="number" class="input-min" value="2500" step="50">
                             </div>
@@ -82,6 +82,7 @@
                                 <input type="number" class="input-max" value="7500" step="50">
                             </div>
                         </div>
+
                         <div class="slider">
                             <div class="progress"></div>
                         </div>
