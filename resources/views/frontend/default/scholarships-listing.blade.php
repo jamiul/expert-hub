@@ -31,7 +31,6 @@
                                 </h5>
                                 @endif
                                 <div class="mt-2">
-
                                     <!-- Level-show -->
                                     @foreach($levels as $level)
 
