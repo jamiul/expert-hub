@@ -74,9 +74,8 @@
                   <div class="aiz-checkbox-list">
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
                     <label class="aiz-checkbox">
-                      <input type="checkbox" onchange="applyFilter()" name="level_id[]" value="{{$Level->id}}"
-                        @if(in_array($Level->id,
-                      $level_id)) checked @endif > {{ $Level->level_name }}
+                      <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()"
+                        @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
@@ -144,8 +143,6 @@
           <input type="hidden" name="type" value="scholarships">
 
           @foreach($scholarships as $scholarship )
-          @php
-          @endphp
           <div class="row py-4  all-scholarship-list">
             <div class="col-lg-2 ">
               <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid #ddd">
@@ -236,6 +233,7 @@
               </div>
               <div class="row">
                 <div class="col-lg-3  pr-0">
+
                   <p class=" fre-scsh-left-side-title ">
                     Field of Study:
                   </p>
@@ -243,14 +241,17 @@
                 <div class="col-lg-9  pl-0">
                   @php
                   $fieldStudys = json_decode($scholarship->fieldStudy_id);
-                  $studyNames = \App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode('
+                  $studyNames =\App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode('
                   | ');
                   @endphp
                   <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                    {{ $studyNames }}
+                    {{$studyNames}}
                   </p>
                 </div>
               </div>
+
+
+
               <div class="row">
                 <div class="col-lg-3  pr-0">
 
@@ -267,16 +268,21 @@
                     <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
                       Find a consultant
                     </a>
+                    <!-- <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button> -->
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
           <div class="lg:mx-10 lg:mb-20 " style="border:1px solid #ddd "></div>
+
           @endforeach
           <div class="mt-3">
             {{ $scholarships->links() }}
           </div>
+
+
         </div>
       </div>
     </form>
@@ -311,7 +317,10 @@
           <div class="col-xl-3 col-md-6">
             <div class=" ">
               <div class=" h-136px align-items-center">
-
+                <!-- <div class="d-flex">
+                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{url('/public/assets/home/quiz1.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                    <div class="need-help-progress-bar"></div>
+                                </div> -->
                 <div class="d-flex">
                   <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz1.png')}}"
                     alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000;" />
