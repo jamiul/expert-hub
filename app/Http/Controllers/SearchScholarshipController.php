@@ -346,6 +346,6 @@ class SearchScholarshipController extends Controller
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
             return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
-        }
-    }
+ }
+}
 }
