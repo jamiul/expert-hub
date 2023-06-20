@@ -71,43 +71,18 @@
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
                             <span class=" pr-3">{{ translate('Budget') }}</span>
                         </h6>
-                        <!-- <div class="price-input">
-                            <div class="price-input-field">
-                                <span>Min</span>
-                                <input type="number" class="price-input-min-field" value="2500">
-                            </div>
-                            <div class="price-input-field-separator"> - </div>
-                            <div class="price-input-field">
-                                <span>Max</span>
-                                <input type="number" class="price-input-max-field" value="7500">
-                            </div>
-                        </div> -->
-                        <!-- <div class="slider">
-                            <div class="progress">
-                            </div>
-                        </div>
-                        <div class="range-input">
-                            <input type="range" class="range-min" min="0" max="10000" value="10">
-                            <input type="range" class="range-max" min="0" max="10000" value="1000">
-                        </div> -->
-                        <!-- <div class="slider">
-                            <div class="progress"></div>
-                        </div>
-                        <div class="range-input">
-                            <input type="range" class="range-min" min="0" max="10000" value="2500">
-                            <input type="range" class="range-max" min="0" max="10000" value="7500">
-                        </div> -->
                         <div class="price-input">
-                            <div class="price-input-field">
+                            <div class="price-input-field mr-2">
                                 <span>Min</span>
-                                <input type="number" class="price-input-min-field" value="2500">
+                                <input type="number" class="input-min" value="2500" step="50">
                             </div>
-                            <div class="price-input-field-separator"> - </div>
+
                             <div class="price-input-field">
                                 <span>Max</span>
-                                <input type="number" class="price-input-max-field" value="7500">
+                                <input type="number" class="input-max" value="7500" step="50">
                             </div>
                         </div>
+
                         <div class="slider">
                             <div class="progress"></div>
                         </div>
@@ -115,7 +90,6 @@
                             <input type="range" class="range-min" min="0" max="10000" value="2500" step="50">
                             <input type="range" class="range-max" min="0" max="10000" value="7500" step="50">
                         </div>
-
 
                         <!-- design tools -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
@@ -334,7 +308,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row mt-5">
+                            <!-- <div class="row mt-5">
                                 @foreach($services as $service)
                                 <div class="col-lg-4 col-sm-6 ">
 
@@ -373,7 +347,7 @@
                                 </div>
                                 @endforeach
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -387,84 +361,62 @@
     @section('modal')
     @include('admin.default.partials.delete_modal')
 
-    <!-- <script>
+    <script>
         const rangeInput = document.querySelectorAll(".range-input input");
-        const progress = document.querySelectorAll(" .slider .progress");
+        const priceInput = document.querySelectorAll(".price-input input");
+        const progress = document.querySelector(" .slider .progress");
+
+        let priceGap = 1000
+
+        priceInput.forEach(input => {
+            input.addEventListener("input", e => {
+                let minVal = parseInt(priceInput[0].value);
+                let maxVal = parseInt(priceInput[1].value);
+
+                if ((maxVal - minVal >= priceGap) && maxVal <=10000) {
+                    if (e.target.className === "input-min") {
+                        rangeInput[0].value = minVal;
+                        progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                    } else {
+                        rangeInput[1].value = maxVal;
+                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                    }
+                }
+
+
+            });
+        });
         rangeInput.forEach(input => {
-            input.addEventListener("input", () => {
+            input.addEventListener("input", e => {
                 let minVal = parseInt(rangeInput[0].value);
                 let maxVal = parseInt(rangeInput[1].value);
 
-                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%"
-            });
-        });
-    </script> -->
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const rangeInput = document.querySelectorAll(".range-input input");
-            const priceInput = document.querySelector(".price-input input");
-            const progress = document.querySelector(".slider .progress");
-
-            let priceGap = 1000
-
-            rangeInput.forEach(input => {
-                input.addEventListener("input", e => {
-                    let minVal = parseInt(rangeInput[0].value);
-                    let maxVal = parseInt(rangeInput[1].value);
-                    if (maxVal - minVal < priceGap) {
-                        if (e.target.className === "range-min") {
-                            rangeInput[0].value = maxVal - priceGap;
-                        } else {
-                            rangeInput[1].value = minVal + priceGap;
-                        }
+                if (maxVal - minVal < priceGap) {
+                    if (e.target.className === "range-min") {
+                        rangeInput[0].value = maxVal - priceGap;
                     } else {
-                        priceInput[0].value= minVal;
-                        priceInput[1].value= maxVal;
-                        progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                        rangeInput[1].value = minVal + priceGap;
                     }
+                } else {
+
+                    priceInput[0].value =minVal;
+                    priceInput[1].value =maxVal;
+                    progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
 
 
-                });
-            });
-        });
-    </script> -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const rangeInput = document.querySelectorAll(".range-input input");
-            // const priceInputs = document.querySelectorAll(".price-input input");
-            const progress = document.querySelector(".slider .progress");
-            let priceGap = 1000;
-            rangeInput.forEach(input => {
-                input.addEventListener("input", e => {
-                    let minVal = parseInt(rangeInput[0].value);
-                    let maxVal = parseInt(rangeInput[1].value);
-                    if ((maxVal - minVal >= priceGap && maxVal <= 10000)) {
-                        if (e.target.className === "price-input-min-field") {
-                            rangeInput[0].value = maxVal - priceGap;
-                        } else {
-                            rangeInput[1].value = minVal + priceGap;
-                        }
-                    } else {
-                        priceInputs[0].value = minVal;
-                        priceInputs[1].value = maxVal;
-                        progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-                    }
-                });
             });
         });
     </script>
     @endsection
 
-    @section('script')
-    <script type="text/javascript">
+    @section('script') < script type="text/javascript">
         function applyFilter() {
-            $('#service-filter-form').submit();
+        $('#service-filter-form').submit();
         }
-    </script>
-    @endsection
+        </script>
+        @endsection
 </body>
 
 </html>

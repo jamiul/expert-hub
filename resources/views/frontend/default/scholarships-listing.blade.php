@@ -74,6 +74,8 @@
                   <div class="aiz-checkbox-list">
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
                     <label class="aiz-checkbox">
+                      <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()"
+                        @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
                       <input type="checkbox" onchange="applyFilter()" name="level_id[]" value="{{$Level->id}}"
                         @if(in_array($Level->id,
                       $level_id)) checked @endif > {{ $Level->level_name }}
@@ -242,14 +244,12 @@
                 <div class="col-lg-9  pl-0">
                   @php
                   $fieldStudys = json_decode($scholarship->fieldStudy_id);
-                  $studyNames = \App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode('
+                  $studyNames =\App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode('
                   | ');
                   @endphp
-
                   <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                    {{ $studyNames }}
+                    {{$studyNames}}
                   </p>
-
                 </div>
               </div>
 
