@@ -27,7 +27,7 @@
                   @if($country_name !=null)
                   Scholarship for in {{$country_name}}
                   @else
-                  {{ translate('Scholarship search filter') }}
+                  {{ translate('Scholarships search filter') }}
                 </h5>
                 @endif
                 <div class="mt-2">
@@ -74,8 +74,9 @@
                   <div class="aiz-checkbox-list">
                     @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()" @if
-                        (in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
+                      <input type="checkbox" onchange="applyFilter()" name="level_id[]" value="{{$Level->id}}"
+                        @if(in_array($Level->id,
+                      $level_id)) checked @endif > {{ $Level->level_name }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
@@ -270,7 +271,6 @@
                     <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
                       Find a consultant
                     </a>
-                    <!-- <button class="border-0  text-white fs-16  btn  px-3 py-2 m-0" style="background: #275846;">Find a consultant</button> -->
                   </p>
                 </div>
               </div>
@@ -319,10 +319,7 @@
           <div class="col-xl-3 col-md-6">
             <div class=" ">
               <div class=" h-136px align-items-center">
-                <!-- <div class="d-flex">
-                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{url('/public/assets/home/quiz1.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                    <div class="need-help-progress-bar"></div>
-                                </div> -->
+
                 <div class="d-flex">
                   <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz1.png')}}"
                     alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000;" />
@@ -401,7 +398,7 @@ function removeCategory(categoryId) {
 <script>
 function removeLevel(levelId) {
   var levelElement = document.getElementById('level_' + levelId);
-  console.log(fieldStudyElement);
+
   if (levelElement) {
     levelElement.parentNode.removeChild(levelElement);
 
