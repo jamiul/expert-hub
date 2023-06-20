@@ -216,7 +216,7 @@ class ScholarshipController extends Controller
 
 
     public function all_scholarship() {
-        $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
+        $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
         return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }

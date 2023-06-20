@@ -144,6 +144,8 @@
           <input type="hidden" name="type" value="scholarships">
 
           @foreach($scholarships as $scholarship )
+          @php
+          @endphp
           <div class="row py-4  all-scholarship-list">
             <div class="col-lg-2 ">
               <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid #ddd">
@@ -234,7 +236,6 @@
               </div>
               <div class="row">
                 <div class="col-lg-3  pr-0">
-
                   <p class=" fre-scsh-left-side-title ">
                     Field of Study:
                   </p>
@@ -245,16 +246,11 @@
                   $studyNames = \App\Models\ScholarshipFieldStudy::whereIn("id", $fieldStudys)->pluck('name')->implode('
                   | ');
                   @endphp
-
                   <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
                     {{ $studyNames }}
                   </p>
-
                 </div>
               </div>
-
-
-
               <div class="row">
                 <div class="col-lg-3  pr-0">
 
@@ -274,17 +270,13 @@
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="lg:mx-10 lg:mb-20 " style="border:1px solid #ddd "></div>
-
           @endforeach
           <div class="mt-3">
             {{ $scholarships->links() }}
           </div>
-
-
         </div>
       </div>
     </form>

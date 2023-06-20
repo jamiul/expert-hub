@@ -270,6 +270,13 @@
 
                       </p>
                     </div>
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+
+                        {{ translate('Join me at zoom') }}
+
+                      </p>
+                    </div>
                   </div>
                 </a>
                 @endif
