@@ -422,7 +422,6 @@
                             <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
                         </div>
                         <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""> </label>
-
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-contest">

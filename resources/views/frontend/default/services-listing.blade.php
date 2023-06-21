@@ -30,7 +30,7 @@
                         </h6>
                         <div class="aiz-radio-list">
                             <label class="aiz-radio">
-                                <input type="radio" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="radio" name="delivery_time" value="Express 24H" onchange="applyFilter()" @if ($delivery_time=="Express 24H" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Express 24H') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -39,7 +39,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="radio" name="delivery_time" value="Up to 3 days" onchange="applyFilter()" @if ($delivery_time=="Up to 3 days" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Up to 3 days') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -48,7 +48,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="radio" name="delivery_time" value="Up to 7 days" onchange="applyFilter()" @if($delivery_time=="Up to 7 days" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Up to 7 days') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -57,7 +57,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="radio" name="delivery_time" value="Anytime" onchange="applyFilter()" @if ($delivery_time=="Anytime" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Anytime') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -154,8 +154,9 @@
                             <span class=" pr-3">{{ translate('Speaks') }}</span>
                         </h6>
                         <div class="aiz-checkbox-list">
+                            <input type="checkbox" id="fre-speaks-more-opt">
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="speaks[]" value="Turkish" onchange="applyFilter()" @if(in_array("Turkish",$speaks)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Turkish') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -164,7 +165,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="speaks[]" value="English" onchange="applyFilter()" @if(in_array("English",$speaks)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('English') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -173,7 +174,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="speaks[]" value="Italian" onchange="applyFilter()" @if(in_array("Italian",$speaks)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Italian') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -182,7 +183,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="speaks[]" value="Spanish" onchange="applyFilter()" @if(in_array("Spanish",$speaks)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Spanish') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -190,7 +191,24 @@
                                 <span class="aiz-square-check"></span>
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
-                            <p class="text-primary fs-15 fw-500 mb-2 c-pointer">+20 more </p>
+
+                            <div class="fre-speaks-more-value">
+                                <label class="aiz-checkbox">
+                                    <input type="checkbox" name="speaks[]" value="Russian" onchange="applyFilter()" @if(in_array("Russian",$speaks)) checked @endif>
+                                    <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
+                                        <span>{{ translate('Russian') }}</span>
+                                        <span class="text-muted">(1000)</span>
+                                    </div>
+                                    <span class="aiz-square-check"></span>
+                                    <span class="float-right text-secondary fs-12"></span>
+                                </label>
+
+
+                                <label class="text-primary fs-15 fw-500 mb-2 c-pointer" for="fre-speaks-more-opt">Show less </label>
+                            </div>
+                            <label class="fre-more-option-off text-primary fs-15 fw-500 mb-2 c-pointer  " for="fre-speaks-more-opt">
+                                +20 more
+                            </label>
                         </div>
 
                         <!-- Level -->
@@ -199,7 +217,7 @@
                         </h6>
                         <div class="aiz-checkbox-list">
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="level[]" value="Top Rated Seller" onchange="applyFilter()" @if(in_array("Top Rated Seller",$level)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Top Rated Seller') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -208,7 +226,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="level[]" value="Level Two" onchange="applyFilter()" @if(in_array("Level Two",$level)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Level Two') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -217,7 +235,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="level[]" value="Level One" onchange="applyFilter()" @if(in_array("Level One",$level)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Level One') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -226,7 +244,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
+                                <input type="checkbox" name="level[]" value="New Seller" onchange="applyFilter()" @if(in_array("New Seller",$level)) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('New Seller') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -248,9 +266,11 @@
                                 <div class="col-lg-6 col-sm-12 my-auto">
                                     <h3 class="text-black fw-700 fs-30  ">Design & Creative</h3>
                                     <p class="fw-400 text-black fs-15 mb-2">Give your visitor a smooth online experience with a solid UX design</p>
-                                    <div class="d-flex align-content-center ">
-                                        <img class="bg-white rounded-circle p-2 mr-2 center d-block" src="{{my_asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="">
-                                        <p class="fw-400 text-black fs-15">How Scholarship Australia Works</p>
+                                    <div class="d-flex align-items-center ">
+                                        <div class="bg-white rounded-circle">
+                                            <img class=" px-2 py-2 center d-block" src="{{my_asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="" style="height:30px">
+                                        </div>
+                                        <p class="fw-400 text-black fs-15 ml-2 mb-0">How Scholarship Australia Works</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
@@ -259,14 +279,99 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- services -->
+                        <!-- best services -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="fs-20 fw-700 text-black mb-0">Best Services</h3>
+                                    <p class="fs-15 fw-400 mb-0">Most viewed and all-time top-selling services</p>
+                                </div>
+                                <div class="d-flex">
+                                    <!-- <img class="text-black c-pointer preBtn" src=" {{url('/public/assets/findJob/left-arrow.png')}}" alt="Image" style="width:18px;" />
+                                    <img class=" text-black c-pointer nexBtn" src=" {{url('/public/assets/findJob/right-arrows.png')}}" alt="Image" style="width:18px;" /> -->
+
+                                </div>
+
+                            </div>
+                            <section class="bg-white py-4">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="aiz-carousel gutters-10" data-autoplay='true' data-items="6" data-xl-items="3" data-lg-items="3" data-md-items="3" data-sm-items="2" data-xs-items="2" data-infinite='true'>
+                                            @foreach($services as $service)
+                                            <div class="caorusel-box position-relative">
+                                                <div class="card bg-transparent  border-gray-light  overflow-hidden hov-box ">
+                                                    <a href="{{ route('service.show', $service->slug) }}">
+                                                        @if($service->image != null)
+                                                        <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
+                                                        @else
+                                                        <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
+                                                        @endif
+                                                    </a>
+                                                    <div class="card-body hov-box-body">
+                                                        <div class="d-flex mb-2">
+                                                            <span class="mr-2">
+                                                                @if ($service->user->photo != null)
+                                                                <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                                @else
+                                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                                @endif
+                                                            </span>
+                                                            <span class="d-flex flex-column justify-content-center">
+                                                                <a href="{{ route('freelancer.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
+
+                                                            </span>
+                                                        </div>
+
+                                                        <a href="{{ route('service.show', $service->slug) }}" class="text-dark" title="{{ $service->title }}">
+                                                            <h5 class="card-title fs-16 fw-700 h-40px">{{ \Illuminate\Support\Str::limit($service->title, 45, $end='...') }}</h5>
+                                                        </a>
+                                                        <div class="text-warning">
+                                                            <span class="rating rating-lg rating-mr-1">
+                                                                {{ renderStarRating(getAverageRating($service->user->id)) }}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
+                                                    <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                                </div>
+                                            </div>
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- all services -->
                         <div class="mt-3">
                             <div class="mb-lg-0 pt-3 px-1">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <p class="fw-500 fs-15 text-black"> <span class="text-black fw-600 fs-15">{{ $services->count()}}</span> services available</p>
+                                    </div>
+                                    <div class="d-flex  ">
+                                        <div class="" style="width:80px; ">
+                                            <p class="fw-500 fs-15 text-black mb-0 mr-2 mt-2">Sort by</p>
+                                        </div>
+                                        <select class="select2 form-control aiz-selectpicker border-0" name="category_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                            <option value="">{{ translate('All Categories') }}</option>
+                                            <option value="">
+                                                Best Selling
+                                            </option>
+                                            <option value="">
+                                                High Rated
+                                            </option>
+
+                                        </select>
+                                    </div>
+                                </div>
                                 <input type="hidden" name="type" value="service">
                                 <div class="row gutters-15">
                                     @foreach($services as $service)
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="card bg-transparent  border-gray-light overflow-hidden hov-box">
+                                    <div class="col-lg-4 col-md-6 ">
+                                        <div class="card bg-transparent position-relative border-gray-light overflow-hidden hov-box">
                                             <a href="{{ route('service.show', $service->slug) }}">
                                                 @if($service->image != null)
                                                 <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
@@ -299,13 +404,21 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
+                                            <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                        </div>
                                     </div>
+
                                     @endforeach
+
                                 </div>
                                 <div class="aiz-pagination aiz-pagination-center flex-grow-1">
                                     <ul class="pagination">
                                         {{ $services->links() }}
                                     </ul>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-center mx-0">
+                                    <h5 class="fs-15 fw-500 text-black"> {{$services->count()}} of {{$services->total()}} services available</h5>
                                 </div>
                             </div>
                             <!-- <div class="row mt-5">
@@ -373,7 +486,7 @@
                 let minVal = parseInt(priceInput[0].value);
                 let maxVal = parseInt(priceInput[1].value);
 
-                if ((maxVal - minVal >= priceGap) && maxVal <=10000) {
+                if ((maxVal - minVal >= priceGap) && maxVal <= 10000) {
                     if (e.target.className === "input-min") {
                         rangeInput[0].value = minVal;
                         progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
@@ -399,8 +512,8 @@
                     }
                 } else {
 
-                    priceInput[0].value =minVal;
-                    priceInput[1].value =maxVal;
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
                     progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
                     progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
                 }
@@ -409,14 +522,34 @@
             });
         });
     </script>
+    <!-- for carousel_item -->
+    <script>
+        const serviceControllers = [...document.querySelectorAll('.aiz-carousel')];
+        nexBtn = [...document.querySelectorAll('.nex-btn')];
+        preBtn = [...document.querySelectorAll('.pre-btn')];
+
+        serviceControllers.forEach((item, i) => {
+            let containerDimension = item.getBoundingClientRect();
+            let containerWidth = containerDimension.width;
+            nexBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth
+            })
+            preBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth
+            })
+
+        })
+    </script>
+
     @endsection
 
-    @section('script') < script type="text/javascript">
+    @section('script')
+    <script type="text/javascript">
         function applyFilter() {
-        $('#service-filter-form').submit();
+            $('#service-filter-form').submit();
         }
-        </script>
-        @endsection
+    </script>
+    @endsection
 </body>
 
 </html>
