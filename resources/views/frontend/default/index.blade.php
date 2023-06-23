@@ -194,23 +194,22 @@
         <form id=" consultant-filter-form" action="" method="GET">
             <section class="bg-white border-top">
                 <div class="container-home">
+
                     <div class="d-flex justify-content-between ">
-                        <div class="w-lg-75 lh-1-8 content-title">
-                            <!-- <h2 class="fw-700 fs-36 heading-title">{{ get_setting('featured_category_title') }}</h2> -->
-                            <h2 class="fw-700 fre-small-font ">Hire academic consultants by category</h2>
-                            <!-- <p class="fs-17 ">{{ get_setting('featured_category_subtitle') }}</p> -->
+                        <div class="w-lg-75w-lg-75 lh-1-8 content-title ">
+                            <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+                            <h2 class="fw-700 fre-small-font">Hire academic consultants by category</h2>
+                            <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
-                        <!-- <a href=" search?keyword=&type=freelancer" class=" fs-16 text-dark btn border border-1 rounded-1  fre-consultant-category">{{ translate('All Consultants') }}
-                            <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
-                        </a> -->
                         <div>
-                            <h5 class="btn rounded-1  border fre-consultant-category">
-                                <a href=" search?keyword=&type=freelancer" class=" fs-16 text-dark ">{{ translate('All Consultants') }}
-                                    <img class=" " src=" {{url('/public/assets/home/arrow-right.png')}}" alt="Image" style="width:20px;" />
-                                </a>
-                            </h5>
+                            <a href="search?keyword=&type=freelancer" class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
+                                <span>All
+                                    Consultant</span>
+                                <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
+                            </a>
                         </div>
                     </div>
+
                     <div class="row gutters-10">
                         @if (get_setting('featured_category_list') != null)
                         @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
@@ -244,64 +243,78 @@
         </form>
         @endif
 
-        <!-- Find academic jobs by category-->
-        @if (get_setting('latest_project_show') == 'on')
-        <section class="border-top" style="background-color:#FBF7ED; padding-bottom:6px;">
-            <div class="container-home">
-                <div class="d-flex justify-content-between ">
-                    <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
-                        <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                        <h2 class="fw-700 fre-small-font">Find academic jobs by category</h2>
-                        <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
-                    </div>
-                    <div>
-                        <div class="pt-2 text-center">
-                            <h5 class="btn rounded-1 border fre-consultant-category">
-                                <a href="{{ route('search') }}?category=" class=" fs-16 text-dark ">
 
-                                    <span>All
-                                        Jobs</span>
-                                </a>
+
+        <!-- Find academic jobs Category -->
+        @if (get_setting('featured_category_show') == 'on')
+        <form id=" consultant-filter-form" action="" method="GET">
+            <section class="bg-white border-top">
+                <div class="container-home">
+                    <div class="d-flex justify-content-between ">
+                        <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
+                            <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+                            <h2 class="fw-700 fre-small-font">Find academic jobs by category</h2>
+                            <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
+                        </div>
+                        <div>
+                            <a href="{{ route('search') }}?category=" class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
+                                <span>All
+                                    Jobs</span>
                                 <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
-                                </a>
-                            </h5>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    @php
-                    $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
-                    ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
-                    ->pluck('user_id');
+                    <div class="row gutters-10">
+                        @php
+                        $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
+                        ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
+                        ->pluck('user_id');
 
-                    $services = \App\Models\ProjectCategory::inRandomOrder()
-                    ->get();
-                    @endphp
-                    @foreach ($services as $category)
-                    <div class="col-md-3">
-                        <a href="{{ route('projects.category', $category->slug)}}">
-                            <div class="card" style="height:280px;">
-                                <img class="img-fluid rounded opacity-75 job-cat" style="height:233px;" src=" {{ custom_asset($category->photo) }}" alt="Image">
-                                <div class="job-title d-flex align-items-center">
-                                    <span class=" fre-job-catagory fs-18 fw-700"> {{$category->name}}</span>
-                                    <img class=" category-list mt-1" src=" {{url('/public/assets/home/jobs.png')}}" alt="Image" style="width:15px; height:15px;" />
+                        $services = \App\Models\ProjectCategory::inRandomOrder()
+                        ->get();
+                        @endphp
+                        @foreach ($services as $category)
+                        <div class="col-md-3">
+                            <a href="{{ route('projects.category', $category->slug)}} " class="text-dark">
+                                <div class=" card" style="height:283px;">
+                                    <img class="w-100 h-200px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
+                                    <div class="card-body" style=" padding:13px;">
+
+
+                                        <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}
+                                        </p>
+
+
+                                    </div>
                                 </div>
-                            </div>
+
+                        </div>
                         </a>
+
+                        @endforeach
+
                     </div>
-                    @endforeach
-                    <h5 class="mx-3 fre-button-show">
+
+                    <a href="{{ route('search') }}?category=" class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
+                        <span>All
+                            Jobs</span>
+                        <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
+                    </a>
+                    <!-- <h5 class="mx-3 fre-button-show">
                         <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
                             <span>All
                                 Jobs</span>
                         </a>
                         <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
                         </a>
-                    </h5>
+                    </h5> -->
                 </div>
-            </div>
-        </section>
+
+            </section>
+
+        </form>
         @endif
+
 
         <!-- Join us -->
         @if (get_setting('latest_project_show') == 'on')
@@ -353,7 +366,7 @@
                                     opportunities
                                     are endless.</h6>
                             </div>
-                            <div class="d-flex align-items-center mb-1">
+                            <div class="d-flex align-items-center ">
                                 <img class="" src="{{url('/public/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
                                 <h6 class="fs-16 m-2 "><span class="fw-700 heading-title">We're here to help you:</span>
                                     Search for jobs or have
@@ -363,7 +376,7 @@
                                     are endless.</h6>
                             </div>
                         </div>
-                        <button type="button" class="btn mt-2 p-2 fs-16 px-4 text-white" style="background-color:#275846; margin-left:20px;">
+                        <button type="button" class="btn mt-2 p-2 fs-16 px-4 text-white" style="background-color:#275846; margin-left:20px">
                             <span><a href="{{ url('/search?keyword=&type=freelancer')}}" class="text-white"> Find talent</a></span>
                             <span><img class=" px-1 " src=" {{url('/public/assets/home/arrow.png')}}" alt="Image" style="width:18px; " />
                             </span>
@@ -378,16 +391,18 @@
         @if (get_setting('latest_project_show') == 'on')
         <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
             <div class="container-home" style=" ">
+
                 <div class="d-flex justify-content-between ">
                     <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
-                        <h2 class="fw-700 fre-small-font"> Find scholarship by category</h2>
+
+                        <h2 class="fw-700 fre-small-font">{{translate('Find scholarship by category')}}</h2>
+
                     </div>
                     <div>
-                        <h5 class="pt-2 text-center btn rounded-1 border fre-consultant-category">
-                            <a href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships" class="fs-16 text-dark  "><span>All Scholarships
-                                </span></a>
+                        <a href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships" class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
+                            <span>All Scholarships</span>
                             <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
-                        </h5>
+                        </a>
                     </div>
                 </div>
                 <div class="row ">
@@ -404,17 +419,15 @@
                                                 <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Social Sciences</p>
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 8</span>
+                                                    @php
+                                                    $fieldStudyId = 15;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }} </span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
-                                                <!-- @foreach ($subjectCounts as $subject => $count)
-                        <li class="list-group-item">
-                          <span class="badge bg-primary">{{ $count }}</span>
-                          {{ $subject }}
-                        </li>
-                        @endforeach -->
                                             </div>
                                         </div>
 
@@ -439,9 +452,13 @@
 
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;  margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 5</span>
+                                                    @php
+                                                    $fieldStudyId = 8;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }}</span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -468,9 +485,13 @@
 
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 12</span>
+                                                    @php
+                                                    $fieldStudyId = 10;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }}</span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -496,9 +517,13 @@
 
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 10</span>
+                                                    @php
+                                                    $fieldStudyId = 11;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }}</span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -525,9 +550,13 @@
 
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 12</span>
+                                                    @php
+                                                    $fieldStudyId = 9;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }}</span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -554,9 +583,13 @@
 
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 20</span>
+                                                    @php
+                                                    $fieldStudyId = 7;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18">{{$count }} </span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -582,9 +615,13 @@
 
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
                                                     </span>
-                                                    <span class="fs-18"> 15</span>
+                                                    @php
+                                                    $fieldStudyId = 14;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }}</span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -609,9 +646,12 @@
                                                 </a>
                                                 <div class="mt-2">
                                                     <span>
-                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px;" />
-                                                    </span>
-                                                    <span class="fs-18"> 10</span>
+                                                        <img class="mr-2" src=" {{url('/public/assets/home/star (2).png')}}" alt="Image" style="width:14px; margin-bottom:5px;" />
+                                                    </span>@php
+                                                    $fieldStudyId = 12;
+                                                    $count = \App\Models\Scholarship::where('fieldStudy_id', 'LIKE', '%"'.$fieldStudyId.'"%')->count();
+                                                    @endphp
+                                                    <span class="fs-18"> {{$count }}</span>
                                                     <span class="fs-18"> Available</span>
                                                 </div>
                                             </div>
@@ -643,13 +683,13 @@
                         <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                     </div>
                     <div>
-                        <h5 class="pt-2 text-center btn rounded-1 border fre-consultant-category">
-                            <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
-                                    services</span></a>
+                        <a href="{{ route('search') }}?keyword=&type=service" class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
+                            <span>All services</span>
                             <img class=" category-list " src=" {{url('/public/assets/findJob/right.png')}}" alt="Image" style="width:18px;" />
-                        </h5>
+                        </a>
                     </div>
                 </div>
+
                 <div class="row">
                     @php
                     $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
@@ -804,544 +844,261 @@
         @if (get_setting('latest_project_show') == 'on')
 
         <div class="container-home ">
-
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar  active fs-22  " id="hiring-talent-tab" data-toggle="tab" href="#education" role="tab" aria-controls="hiring" aria-selected="true">Education Course Accreditations</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="finding" aria-selected="false">Course Curriculum Development</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#learning" role="tab" aria-controls="finding" aria-selected="false">Learning Management Systems</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#writing" role="tab" aria-controls="finding" aria-selected="false">Writing and Editing</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#research" role="tab" aria-controls="finding" aria-selected="false">Research and Analysis</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#transcription" role="tab" aria-controls="finding" aria-selected="false">Transcription and Translation</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#scholarship" role="tab" aria-controls="finding" aria-selected="false">Scholarship Applications</a>
-                </li>
-                <li class="nav-item border">
-                    <a class="nav-link fre-rv-find-work-bar fs-22" id="finding-work-tab" data-toggle="tab" href="#mentoring" role="tab" aria-controls="finding" aria-selected="false">Mentoring and Tutoring</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="hiring-talent-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Instructional Designer</h6>
-                                    <h6 class="fs-18">
-                                        Curriculum Developer</h6>
-                                    <h6 class="fs-18">Subject Matter Expert</h6>
-                                    <h6 class="fs-18">Accreditation Specialist</h6>
-                                    <h6 class="fs-18">Education Consultant</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Learning Designer</h6>
-                                    <h6 class="fs-18">
-                                        Assessment Coordinator</h6>
-                                    <h6 class="fs-18">
-                                        Quality Assurance Analyst</h6>
-                                    <h6 class="fs-18">Content Writer </h6>
-                                    <h6 class="fs-18">Researcher </h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Project Manager</h6>
-                                    <h6 class="fs-18">
-                                        E-Learning Developer</h6>
-                                    <h6 class="fs-18">
-                                        Instructional Technologist</h6>
-                                    <h6 class="fs-18">
-                                        Educational Psychologist</h6>
-                                    <h6 class="fs-18">
-                                        Assessment Specialist</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18 text-normal">Multimedia Specialist</h6>
-                                    <h6 class="fs-18 text-normal">Graphic Designer</h6>
-                                    <h6 class="fs-18 text-normal">Data Analyst</h6>
-                                    <h6 class="fs-18 text-normal">Evaluation and Assessment Coordinator</h6>
-                                    <h6 class="fs-18 text-normal">Online Learning Coordinator</h6>
-                                </div>
-                            </div>
-
-                        </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Education Course Accreditations</h6>
                     </div>
-
-                </div>
-                <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Curriculum Developer</h6>
-                                    <h6 class="fs-18">
-                                        Instructional Designer</h6>
-                                    <h6 class="fs-18">Subject Matter Expert (SME)</h6>
-                                    <h6 class="fs-18">Education Consultant</h6>
-                                    <h6 class="fs-18">Content Developer</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Learning Experience Designer</h6>
-                                    <h6 class="fs-18">
-                                        Curriculum Coordinator</h6>
-                                    <h6 class="fs-18">
-                                        Curriculum Writer</h6>
-                                    <h6 class="fs-18">Instructional Technologist</h6>
-                                    <h6 class="fs-18">Educational Specialist </h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        E-Learning Developer</h6>
-                                    <h6 class="fs-18">
-                                        Assessment Specialist</h6>
-                                    <h6 class="fs-18">
-                                        Learning Designer</h6>
-                                    <h6 class="fs-18">
-                                        Curriculum Project Manager</h6>
-                                    <h6 class="fs-18">
-                                        Curriculum Editor</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Curriculum Consultant</h6>
-                                    <h6 class="fs-18">Curriculum Coordinator</h6>
-                                    <h6 class="fs-18">Instructional Materials Developer</h6>
-                                    <h6 class="fs-18">Curriculum Integration Specialist</h6>
-                                    <h6 class="fs-18">Curriculum Assessment Analyst</h6>
-                                </div>
-                            </div>
-
+                    <div class="content">
+                        <div class="px-3 py-2">
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">
+                                    Instructional Designer</a></h6>
+                            <h6> <a href="" class=" fs-14" style="color:#439ad2;">
+                                    Curriculum Developer</a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">Subject Matter Expert</a></h6>
+                            <h6> <a href="" class="fs-14" style="color:#439ad2;">Accreditation Specialist</a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">Education Consultant</a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">
+                                    Learning Designer</a></h6>
+                            <h6> <a href="" class="fs-14" style="color:#439ad2;">
+                                    Assessment Coordinator</a></h6>
+                            <h6> <a href="" class="fs-14" style="color:#439ad2;">
+                                    Quality Assurance Analyst</a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">Content Writer </a></h6>
+                            <h6> <a href="" class="fs-14" style="color:#439ad2;">Researcher </a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">
+                                    Project Manager</a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;">E-Learning Developer</a></h6>
+                            <h6> <a href="" class="fs-14" style="color:#439ad2;"> Instructional Technologist</a></h6>
+                            <h6> <a href="" class="fs-14" style="color:#439ad2;">Educational Psychologist</a></h6>
+                            <h6><a href="" class="fs-14" style="color:#439ad2;"> Assessment Specialist</a></h6>
+                            <h6> <a href="" class="fs-14" style=" color:#439ad2;">Multimedia Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style=" color:#439ad2;">Graphic Designer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Data Analyst</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Evaluation and Assessment Coordinator</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Online Learning Coordinator</a></h6>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="learning" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        LMS Developer</h6>
-                                    <h6 class="fs-18">
-                                        Instructional Designer</h6>
-                                    <h6 class="fs-18">UX/UI Designer</h6>
-                                    <h6 class="fs-18">Front-end Developer</h6>
-                                    <h6 class="fs-18">Back-end Developer</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Full-stack Developer</h6>
-                                    <h6 class="fs-18">
-                                        Software Engineer </h6>
-                                    <h6 class="fs-18">
-                                        System Administrator</h6>
-                                    <h6 class="fs-18">Database Administrator </h6>
-                                    <h6 class="fs-18">Project Manager </h6>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">Quality Assurance Analyst </h6>
-                                    <h6 class="fs-18">
-                                        Content Developer</h6>
-                                    <h6 class="fs-18">
-                                        Graphic Designer</h6>
-                                    <h6 class="fs-18">
-                                        Mobile App Developer</h6>
-                                    <h6 class="fs-18">
-                                        Integration Specialist</h6>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Technical Writer</h6>
-                                    <h6 class="fs-18">User Support Specialist</h6>
-                                    <h6 class="fs-18">Data Analyst</h6>
-                                    <h6 class="fs-18">Training Coordinator</h6>
-                                    <h6 class="fs-18">LMS Administrator</h6>
-                                </div>
-                            </div>
-
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 px-0 mb-0 py-1">Course Curriculum Development</h6>
+                    </div>
+                    <div class="content">
+                        <div class="px-3 py-2">
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Developer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Instructional Designer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Subject Matter Expert (SME)</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Education Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Content Developer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Learning Experience Designer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Curriculum Coordinator</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Writer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Instructional Technologist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Educational Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">E-Learning Developer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Assessment Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Learning Designer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Project Manager</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Editor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Coordinator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Instructional Materials Developer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Integration Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Assessment Analyst</a></h6>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="writing" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Academic Writer</h6>
-                                    <h6 class="fs-18">
-                                        Content Writer</h6>
-                                    <h6 class="fs-18">Copywriter</h6>
-                                    <h6 class="fs-18">Editor</h6>
-                                    <h6 class="fs-18">Proofreader</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Researcher</h6>
-                                    <h6 class="fs-18">
-                                        Subject Matter Expert </h6>
-                                    <h6 class="fs-18">
-                                        Curriculum Developer</h6>
-                                    <h6 class="fs-18">Instructional Designer </h6>
-                                    <h6 class="fs-18">Copy Editor</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Publishing Assistant</h6>
-                                    <h6 class="fs-18">
-                                        Editorial Assistant</h6>
-                                    <h6 class="fs-18">
-                                        Technical Writer</h6>
-                                    <h6 class="fs-18">
-                                        Grant Writer</h6>
-                                    <h6 class="fs-18">
-                                        Manuscript Editor</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Citation Specialist</h6>
-                                    <h6 class="fs-18">Academic Policy Writer</h6>
-                                    <h6 class="fs-18">Legal Writer</h6>
-                                    <h6 class="fs-18">Language Editor</h6>
-                                    <h6 class="fs-18">Freelance Writer/Editor</h6>
-                                </div>
-                            </div>
-
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Learning Management Systems</h6>
+                    </div>
+                    <div class="content">
+                        <div class="px-3 py-2">
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> LMS Developer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Instructional Designer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> UX/UI Designer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Front-end Developer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Back-end Developer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> Full-stack Developer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Software Engineer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> System Administrator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Database Administrator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Project Manager</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Quality Assurance Analyst</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Content Developer </a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Graphic Designer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> Mobile App Developer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Integration Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> Technical Writer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> User Support Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;"> Data Analyst</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;"> Training Coordinator</< /h6>a>
+                                    <h6> <a href="" class="fs-14 " style="color:#439ad2;"> LMS Administrator</a></h6>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="research" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Confirmatory Factor Analysis(CFA)</h6>
-                                    <h6 class="fs-18">
-                                        Cross-Lagged Panel Models</h6>
-                                    <h6 class="fs-18">Demographic Methods</h6>
-                                    <h6 class="fs-18">Discourse analysis</h6>
-                                    <h6 class="fs-18">Dynamic Panel Data Modeling</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Dynamic SEM (DSEM)</h6>
-                                    <h6 class="fs-18">
-                                        Ecological Momentary Assessment(EMA) </h6>
-                                    <h6 class="fs-18">
-                                        Empirical Dynamic Modeling(EDM)</h6>
-                                    <h6 class="fs-18">Experience Sampling Methods(ESM)</h6>
-                                    <h6 class="fs-18">Intensive Longitudinal Data Analysis </h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Longitudinal Analysis</h6>
-                                    <h6 class="fs-18">
-                                        Longitudinal SEM</h6>
-                                    <h6 class="fs-18">
-                                        Measurement Invariance Testing</h6>
-                                    <h6 class="fs-18">
-                                        Multilevel Modeling(MLM)</h6>
-                                    <h6 class="fs-18">
-                                        Multilevel Structural Equation Modeling(MSEM)</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">Panel Data Modeling</h6>
-                                    <h6 class="fs-18">Path Analysis</h6>
-                                    <h6 class="fs-18">Qualitative data analysis</h6>
-                                    <h6 class="fs-18">Quantitative data analysis</h6>
-                                    <h6 class="fs-18">Structural Equation Modeling(SEM)</h6>
-                                </div>
-                            </div>
-
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Writing and Editing</h6>
+                    </div>
+                    <div class="content">
+                        <div class="px-3 py-2 ">
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Academic Writer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Content Writer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Copywriter</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Editor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Proofreader</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Researcher</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Subject Matter Expert</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Curriculum Developer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Instructional Designer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Copy Editor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Publishing Assistant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Editorial Assistant</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Technical Writer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Grant Writer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Manuscript Editor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Citation Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Academic Policy Writer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Legal Writer</a></h6>
+                            <h6>
+                                <a href="" class="fs-14 " style="color:#439ad2;">Language Editor</a>
+                            </h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Freelance Writer/Editor</a></h6>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="transcription" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">Academic Transcriber</h6>
-                                    <h6 class="fs-18">Academic Translator</h6>
-                                    <h6 class="fs-18">Language Specialist</h6>
-                                    <h6 class="fs-18">Transcriptionist</h6>
-                                    <h6 class="fs-18">Language Services Coordinator</h6>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-                                    <h6 class="fs-18">Translation Project Manager</h6>
-                                    <h6 class="fs-18">Language Quality Assurance Specialist </h6>
-                                    <h6 class="fs-18">Linguistics Researcher</h6>
-                                    <h6 class="fs-18">Bilingual Research Assistant </h6>
-                                    <h6 class="fs-18">Language Analyst </h6>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Transcription Editor</h6>
-                                    <h6 class="fs-18">
-                                        Multilingual Content Writer</h6>
-                                    <h6 class="fs-18">
-                                        Academic Proofreader</h6>
-                                    <h6 class="fs-18">
-                                        Language Instructor</h6>
-                                    <h6 class="fs-18">
-                                        Language Technology Specialist</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Interpreting Services Coordinator</h6>
-                                    <h6 class="fs-18 text-normal">Localization Specialist</h6>
-                                    <h6 class="fs-18 text-normal">Language Data Analyst</h6>
-                                    <h6 class="fs-18 text-normal">Academic Language Consultant</h6>
-                                    <h6 class="fs-18 text-normal">Language Services Administrator</h6>
-                                </div>
-                            </div>
-
+            </div>
+            <div class="row my-lg-3">
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Research and Analysis</h6>
+                    </div>
+                    <div class="content mt-2">
+                        <div class="px-3 py-2">
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Confirmatory Factor Analysis(CFA)</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Cross-Lagged Panel Models</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Demographic Methods</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Discourse analysis</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Dynamic Panel Data Modeling</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Dynamic SEM (DSEM)</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Ecological Momentary Assessment(EMA)</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Empirical Dynamic Modeling(EDM)</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Experience Sampling Methods(ESM)</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Intensive Longitudinal Data Analysis</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Longitudinal Analysis</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Longitudinal SEM</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Measurement Invariance Testing</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Multilevel Modeling(MLM)</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Multilevel Structural Equation Modeling(MSEM)</a>
+                            </h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Panel Data Modeling</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Path Analysis</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Qualitative data analysis</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Quantitative data analysis</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Structural Equation Modeling(SEM)</a></h6>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="scholarship" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Academic Consultant</h6>
-                                    <h6 class="fs-18">
-                                        Scholarship Application Advisor</h6>
-                                    <h6 class="fs-18">Research Grant Consultant</h6>
-                                    <h6 class="fs-18">Scholarship Specialist</h6>
-                                    <h6 class="fs-18">Grant Proposal Writer</h6>
-                                </div>
-                            </div>
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Transcription and Translation</h6>
+                    </div>
+                    <div class="content">
+                        <div class="px-3 py-2">
 
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-                                    <h6 class="fs-18">Research Funding Consultant</h6>
-                                    <h6 class="fs-18">Scholarship Application Reviewer </h6>
-                                    <h6 class="fs-18">Research Project Manager</h6>
-                                    <h6 class="fs-18">Funding Strategy Consultant</h6>
-                                    <h6 class="fs-18">Grant Development Coordinator</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Research Scholarship Coach</h6>
-                                    <h6 class="fs-18">
-                                        Scholarship Application Coordinator</h6>
-                                    <h6 class="fs-18">
-                                        Grant Writing Specialist</h6>
-                                    <h6 class="fs-18">
-                                        Research Funding Analyst</h6>
-                                    <h6 class="fs-18">
-                                        Scholarship Program Manager</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">
-                                        Research Grant Administrator</h6>
-                                    <h6 class="fs-18 text-normal">Funding Opportunities Researcher</h6>
-                                    <h6 class="fs-18 text-normal">Scholarship Application Assessor</h6>
-                                    <h6 class="fs-18 text-normal">Academic Writing Consultant</h6>
-                                    <h6 class="fs-18 text-normal">Supervisors Communications Specialist</h6>
-                                </div>
-                            </div>
-
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Academic Transcriber</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Academic Translator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Language Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Transcriptionist</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Language Services Coordinator</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Translation Project Manager</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Language Quality Assurance Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Linguistics Researcher</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Bilingual Research Assistant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Language Analyst</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Transcription Editor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Multilingual Content Writer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Academic Proofreader</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Language Instructor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Language Technology Specialist</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Interpreting Services Coordinator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Localization Specialist</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Language Data Analyst</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Academic Language Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Language Services Administrator</a></h6>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="mentoring" role="tabpanel" aria-labelledby="finding-work-tab">
-                    <div class=" row mt-3">
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-                                    <h6 class="fs-18">Uni Maths Tutor</h6>
-                                    <h6 class="fs-18">Uni Statistics Tutor</h6>
-                                    <h6 class="fs-18">Uni Science Tutor</h6>
-                                    <h6 class="fs-18">Uni English Language Tutor</h6>
-                                    <h6 class="fs-18">Uni English Tutor</h6>
-                                </div>
-                            </div>
-
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Scholarship Applications
+                        </h6>
+                    </div>
+                    <div class="content">
+                        <div class="px-3 py-2">
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Academic Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Scholarship Application Advisor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Research Grant Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Scholarship Specialist</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Grant Proposal Writer</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Research Funding Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Scholarship Application Reviewer</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Research Project Manager</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Funding Strategy Consultant</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Grant Development Coordinator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Research Scholarship Coach</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Scholarship Application Coordinator</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Grant Writing Specialist</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Research Funding Analyst</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Scholarship Program Manager</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Research Grant Administrator</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Funding Opportunities Researcher</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Scholarship Application Assessor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Academic Writing Consultant</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Supervisors Communications Specialist</a></h6>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  h-400px">
-                                <div class=" px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        Uni Biology Tutor</h6>
-                                    <h6 class="fs-18">
-                                        Uni Chemistry Tutor </h6>
-                                    <h6 class="fs-18">
-                                        Uni Physics Tutor</h6>
-                                    <h6 class="fs-18">Uni Computer Science Tutor</h6>
-                                    <h6 class="fs-18">Uni Business Tutor</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        High School Maths Tutor</h6>
-                                    <h6 class="fs-18">
-                                        High School Statistics Tutor</h6>
-                                    <h6 class="fs-18">
-                                        High School Science Tutor</h6>
-                                    <h6 class="fs-18">
-                                        High School English Tutor</h6>
-                                    <h6 class="fs-18">
-                                        High School Biology Tutor</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="  ">
-                                <div class="px-3 py-2">
-
-                                    <h6 class="fs-18">
-                                        High School Chemistry Tutor</h6>
-                                    <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                    <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                    <h6 class="fs-18 text-normal">Career Coach</h6>
-                                    <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                </div>
-                            </div>
-
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class=" text-light py-2 cat-list border-right border-gray-500" style="background-color:#439ad2;">
+                        <h6 class="fs-14 fw-700 mb-0 py-1">Mentoring and Tutoring</h6>
+                    </div>
+                    <div class="content">
+                        <div class="px-3 py-2 fs-14">
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni Maths Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Uni Statistics Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Uni Science Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni English Language Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni English Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Uni Biology Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni Chemistry Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni Physics Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni Computer Science Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Uni Business Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">High School Maths Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">High School Statistics Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">High School Science Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">High School English Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">High School Biology Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">High School Chemistry Tutor</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">High School Physics Tutor</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Academic Coach</a></h6>
+                            <h6> <a href="" class="fs-14 " style="color:#439ad2;">Career Coach</a></h6>
+                            <h6><a href="" class="fs-14 " style="color:#439ad2;">Peer Academic Advisor</a></h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         @endif
+
+
+
+
 
         <!--
     <div class="container">

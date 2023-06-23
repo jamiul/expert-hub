@@ -318,6 +318,19 @@ body {
    
   }
 
+ .row .col-md-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row .col-md-3 > .cat-list {
+    margin-left: 6px;
+    margin-right: -6px;
+    padding-left: 8px;
+    
+}
+
+
   @media (min-width: 1200px) {
     .need-help-section {
       max-width: 100%; /* Override the max-width for extra-large devices */
@@ -369,6 +382,7 @@ body {
     .fre-job-catagory p {
         font-size: 15px !important;
         margin-top: 250px !important;
+        
     }
 }
 

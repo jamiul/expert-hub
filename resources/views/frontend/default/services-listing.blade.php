@@ -270,7 +270,7 @@
                                         <div class="bg-white rounded-circle">
                                             <img class=" px-2 py-2 center d-block" src="{{my_asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="" style="height:30px">
                                         </div>
-                                        <p class="fw-400 text-black fs-15 ml-2 mt-2 mb-0">How FreelancerEdu Works</p>
+                                        <p class="fw-400 text-black fs-15 ml-2 mb-0">How FreelancerEduWorks</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
