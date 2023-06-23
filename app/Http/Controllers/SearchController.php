@@ -107,8 +107,8 @@ class SearchController extends Controller
             $delivery_time = $request->delivery_time;
             $budget = $request->budget;
             $country_id = $request->country_id;
-            $speaks = $request->speaks;
-            $level = $request->level;
+            $speaks = array('');;
+            $level =  array('');;
 
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                         ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))

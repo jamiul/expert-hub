@@ -262,7 +262,7 @@
                     <div class="col-xl-9 col-lg-8">
 
                         <div style="background:#FCEBE5">
-                            <div class="row rounded-0 px-2">
+                            <div class="row rounded-0 px-2 mx-4">
                                 <div class="col-lg-6 col-sm-12 my-auto">
                                     <h3 class="text-black fw-700 fs-30  ">Design & Creative</h3>
                                     <p class="fw-400 text-black fs-15 mb-2">Give your visitor a smooth online experience with a solid UX design</p>
@@ -270,11 +270,11 @@
                                         <div class="bg-white rounded-circle">
                                             <img class=" px-2 py-2 center d-block" src="{{my_asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="" style="height:30px">
                                         </div>
-                                        <p class="fw-400 text-black fs-15 ml-2 mb-0">How Scholarship Australia Works</p>
+                                        <p class="fw-400 text-black fs-15 ml-2 mt-2 mb-0">How FreelancerEdu Works</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
-                                    <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.svg')}}" alt="">
+                                    <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
 
                                 </div>
                             </div>
