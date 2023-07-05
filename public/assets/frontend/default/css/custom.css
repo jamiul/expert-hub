@@ -836,3 +836,13 @@
 .page-link {
     /* background: #F7F7F7 !important; */
 }
+
+/* project-listing page */
+.container-main-projects-banner{
+    width: 98%;
+    margin: 0 1% 10px 1%;
+}
+.container-main-projects{
+    width: 94%;
+    margin: 0 3% 10px 3%;
+}

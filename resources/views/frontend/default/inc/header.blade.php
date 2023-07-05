@@ -295,7 +295,7 @@
       <nav class="navbar navbar-expand-lg  bg-dark w-100">
         <!-- Container wrapper -->
 
-        <div class="container-fluid">
+        <div class="container-fluid ml-3">
           <div class="logo" >
             <a href="{{ route('home') }}" class="d-inline-block p-1" >
               <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
@@ -309,7 +309,7 @@
             </span>
           </button>
           </button> <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse px-4" id="navbarSupportedContent">
 
             <!-- Left links -->
             <ul class="navbar-nav ml-auto ps-lg-0 " style="padding-left: 0.15rem">

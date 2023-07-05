@@ -53,18 +53,18 @@ class SearchController extends Controller
             if($category_id != null){
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
-            
+
             if($country_id != null){
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $freelancers = $freelancers->whereIn('user_id', $user_ids);
-                
+
             }
 
             if($min_price != null){
                 $freelancers = $freelancers->where('hourly_rate', '>=', $min_price);
-                
+
             }
-            
+
             if($max_price != null){
                 $freelancers = $freelancers->where('hourly_rate', '<=', $max_price);
             }
@@ -81,9 +81,9 @@ class SearchController extends Controller
             if(count($skill_ids) > 0){
                 $filtered_freelancers = [];
                 foreach ($freelancers->get() as $key => $freelancer) {
-                    
-                    $skills_of_this_freelancer = json_decode($freelancer->skills); 
-                    
+
+                    $skills_of_this_freelancer = json_decode($freelancer->skills);
+
                     if(!is_null($skills_of_this_freelancer)){
                         foreach ($skills_of_this_freelancer as $key => $freelancer_slill_id) {
                         if(in_array($freelancer_slill_id, $skill_ids)){
@@ -92,24 +92,29 @@ class SearchController extends Controller
                         }
                     }
                     }
-                } 
+                }
                 $total = count($filtered_freelancers);
                 $freelancers = $filtered_freelancers;
             }else{
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
-            } 
+            }
             return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price'));
         } else if($request->type == 'service'){
             $type = 'service';
             $keyword = $request->keyword;
             $rating = $request->rating;
+            $delivery_time = $request->delivery_time;
+            $budget = $request->budget;
+            $country_id = $request->country_id;
+            $speaks = array('');;
+            $level =  array('');;
 
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                         ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                         ->pluck('user_id');
 
-            $services = Service::whereIn('user_id', $user_ids); 
+            $services = Service::whereIn('user_id', $user_ids);
 
             if($request->keyword != null){
                 $service_ids = Service::where('title', 'like', '%'.$keyword.'%')->pluck('id');
@@ -117,7 +122,7 @@ class SearchController extends Controller
             }
 
             $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-            
+
             $category_ids = CategoryUtility::children_ids($category_id);
             $category_ids[] = $category_id;
             if($category_id != null){
@@ -126,7 +131,7 @@ class SearchController extends Controller
 
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
-            return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
+            return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating','delivery_time','budget','country_id','speaks','level'));
         }
         else {
             $type = 'project';
@@ -168,9 +173,9 @@ class SearchController extends Controller
 
             if($min_price != null){
                 $projects = $projects->where('price', '>=', $min_price);
-                
+
             }
-            
+
             if($max_price != null){
                 $projects = $projects->where('price', '<=', $max_price);
             }

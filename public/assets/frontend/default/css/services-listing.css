@@ -10,14 +10,14 @@
 }
 .service-toggle-child p{
     color: #222222;
-    font-family: "DM Sans";
+    /* font-family: "DM Sans"; */
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
 }
 .service-toggle-list{
     color: #222222;
-    font-family: "DM Sans";
+    /* font-family: "DM Sans"; */
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -32,7 +32,7 @@
 .price-input{
     width: 100%;
     display: flex;
-    margin: 20px 0 25px;
+    margin: 20px 0 35px;
 }
 .price-input-field input{
     width: 100%;
@@ -41,7 +41,7 @@
     text-align: center;
     font-size: 15px;
     border-radius: 5px;
- 
+
     border:1px solid #999;
     -moz-appearance: textfield;
 }
@@ -96,4 +96,16 @@ input[type="range"]::-moz-range-thumb{
     -moz-appearance: none;
     background: #17A2B8;
     pointer-events:auto ;
+}
+#fre-speaks-more-opt{
+    display: none;
+}
+#fre-speaks-more-opt:checked ~ .fre-more-option-off {
+    display: none;
+}
+#fre-speaks-more-opt:checked ~ .fre-speaks-more-value  {
+    display: block;
+}
+.fre-speaks-more-value {
+    display: none;
 }
