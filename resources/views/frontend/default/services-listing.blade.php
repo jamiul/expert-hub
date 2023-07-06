@@ -16,15 +16,13 @@
     <section class="">
         <div class="container-main-service">
             <form id="service-filter-form" action="" method="GET">
-
-
                 <div class="row  mt-3">
                     <div class="col-xl-3 col-lg-4 " style="background: #F2F7F2;">
                         <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
                             <h5 class="mb-0 fs-21 fw-700 mb-3 mt-2">{{ translate('Filter By') }}</h5>
                             <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                         </div>
-
+                        <!-- delivery time -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
                             <span class=" pr-3">{{ translate('Delivery Time') }}</span>
                         </h6>
@@ -39,7 +37,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="Up to 3 days" onchange="applyFilter()" @if ($delivery_time=="Up to 3 days" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="3" onchange="applyFilter()" @if ($delivery_time=="3" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Up to 3 days') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -48,7 +46,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="Up to 7 days" onchange="applyFilter()" @if($delivery_time=="Up to 7 days" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="7" onchange="applyFilter()" @if($delivery_time=="7" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Up to 7 days') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -143,12 +141,28 @@
                             <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
                                 <option value="0">{{ translate('All Countries') }}</option>
                                 @foreach(\App\Models\ScholarshipCountry:: all() as $country)
-                                <option value="{{ $country->id }}">{{ $country->country_name }}
+                                <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
+                                    @endif >{{ $country->country_name }}
                                     <span class="text-muted">(1000)</span>
                                 </option>
                                 @endforeach
                             </select>
                         </div>
+
+                        <!-- <h6 class="text-left mb-3 fs-14 fw-700">
+                            <span class=" pr-3">{{ translate('Country') }}</span>
+                        </h6>
+                        <div class="">
+                            <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                <option value="">{{ translate('All Countries') }}</option>
+                                @foreach(\App\Models\ScholarshipCountry:: all() as $country)
+                                <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
+                                    @endif>{{ $country->country_name }}
+                                    <span class="text-muted">(1000)</span>
+                                </option>
+                                @endforeach
+                            </select>
+                        </div> -->
                         <!-- Speaks -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
                             <span class=" pr-3">{{ translate('Speaks') }}</span>
@@ -212,6 +226,8 @@
                         </div>
 
                         <!-- Level -->
+                        <input type="hidden" name="min_price" value="">
+                        <input type="hidden" name="max_price" value="">
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
                             <span class=" pr-3">{{ translate(' Level') }}</span>
                         </h6>
