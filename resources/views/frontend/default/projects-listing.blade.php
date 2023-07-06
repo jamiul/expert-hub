@@ -3,19 +3,26 @@
 @section('content')
 <section class="py-4 py-lg-5">
     <div class="container-main-projects-banner">
-    <div class="mb-4" style="background:#FCEBE5">
+        <div class="mb-4" style="background:#FCEBE5">
             <div class="row rounded-0 px-2 mx-4">
                 <div class="col-lg-6 col-sm-12 my-auto">
                     <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
                     <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
                     <div class="input-group mb-3 mt-5">
-                        <input type="text " class="form-control position-relative z-0" placeholder="Search" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
+                        <input type="text " class="form-control position-relative z-0" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
                         <div class="input-group-append position-absolute " style="position:absolute;top: 5px;right: 9px;padding: 3px 0; ">
-                            <button class="btn btn-primary" type="button" id="searchButton">
+                            <button class="btn btn-primary" type="button" id="searchButton" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                                 Search
                             </button>
                         </div>
                     </div>
+
+                    <!-- <div class="d-flex align-items-center">
+                        <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                            <i class="las la-filter text-black-50">SS</i>
+                        </button>
+                        <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
+                    </div> -->
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
@@ -244,8 +251,6 @@
                         <div class="card-body p-0 border-0 ">
 
                             @foreach ($projects as $key => $project)
-
-
                             <a href="{{ route('project.details', $project->slug) }}" class="row card-project text-inherit px-3 py-4 all-scholarship-list" style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                                 <div class="col-lg-1">
                                     <span class="avatar avatar-xs mb-lg-2">
