@@ -262,7 +262,7 @@
                   <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
 
                     <div class="d-flex w-100 mx-0">
-                      <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
 
                         <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
                           style="width:36px; " />
