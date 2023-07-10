@@ -57,17 +57,17 @@
                 </div>
 
 
-                <h6 class="text-left mb-3 mt-lg-5 fs-14 fw-700">
+                <h6 class="text-left mb-3 mt-lg-5  fs-14 fw-700">
                   <span class=" pr-3">{{ translate('Categories') }}</span>
                 </h6>
                 @foreach(\App\Models\ProjectCategory::all() as $category)
 
-                <label class="aiz-checkbox">
+                <label class="aiz-checkbox w-100">
                   <input type="checkbox" name="category_id" value="{{$category->slug}}" onchange="applyFilter()"
                     @if(isset($_GET['category_id']) && $_GET['category_id']==$category->slug ) checked @endif>
                   {{$category->name}}
                   <span class="aiz-square-check"></span>
-                  <span class="float-right text-secondary fs-12"></span>
+                  <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                 </label>
                 @endforeach
                 <!-- Categories -->
@@ -262,7 +262,7 @@
                   <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
 
                     <div class="d-flex w-100 mx-0">
-                      <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
 
                         <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
                           style="width:36px; " />
@@ -271,9 +271,11 @@
                       </p>
                     </div>
                     <div class="d-flex w-100 mx-0">
-                      <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
 
-                        {{ translate('Join me at zoom') }}
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/zoom.png')}}" alt="Image"
+                          style="width:28px; " />
+                        {{ translate('Zoom me') }}
 
                       </p>
                     </div>
