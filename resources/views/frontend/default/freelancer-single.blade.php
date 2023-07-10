@@ -20,7 +20,7 @@
 </div> -->
   <div class="">
     <div class="mt-lg-5">
-      <div class="card rounded border-gray-light container-home">
+      <div class=" container-home  rounded-1" style="background:#F2F7F2;">
         <div class="card-body">
           <div class="media align-items-center d-block d-md-flex container">
             <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
@@ -93,16 +93,17 @@
     <div class="container mt-5">
       <div class="row gutters-10">
         <div class="col-xxl-9 col-lg-8 order-1 order-lg-0">
-          <div class="card rounded ">
-            <div class="card-header">
+          <div class="border-b">
+            <div class="">
               <h4 class="h6 fw-700 mb-0"> {{ translate('Description') }}</h4>
             </div>
-            <div class="card-body">
+            <div class="">
               <div class="opacity-70 lh-1-8 fs-15">{{ $freelancer->profile->bio }}</div>
             </div>
           </div>
-          <div class="card rounded">
-            <div class="card-header">
+          <hr>
+          <div class="my-2">
+            <div class="">
               <h4 class="h6 fw-700 mb-0"> {{ translate('Education') }}</h4>
             </div>
             <div class="card-body">
@@ -117,9 +118,9 @@
               </ul>
             </div>
           </div>
-
-          <div class="card rounded">
-            <div class="card-header">
+          <hr>
+          <div class="">
+            <div class="">
               <h4 class="h6 fw-700 mb-0"> {{ translate('Experiences') }}</h4>
             </div>
             <div class="card-body">
@@ -145,9 +146,10 @@
               </ul>
             </div>
           </div>
+          <hr>
 
-          <div class="card rounded ">
-            <div class="card-header">
+          <div class="">
+            <div class="">
               <h4 class="h6 fw-700 mb-0"> {{ translate('Portfolio') }}</h4>
             </div>
             <div class="card-body">
@@ -179,7 +181,7 @@
                       <div class="modal-body">
                         <div class="row">
                           <div class="col-md-7">
-                            <img class="img-fluid mb-3" src="{{ custom_asset($portfolio->photo) }}"
+                            <img class="img-fluid mb-3 h-300px" src="{{ custom_asset($portfolio->photo) }}"
                               alt="{{ $portfolio->name }}">
                           </div>
                           <div class="col-md-5">
@@ -197,9 +199,9 @@
               </div>
             </div>
           </div>
-
-          <div class="card rounded ">
-            <div class="card-header">
+          <hr>
+          <div class="">
+            <div class="">
               <h4 class="h6 fw-700 mb-0"> {{ translate('Services') }}</h4>
             </div>
             <div class="card-body">
