@@ -297,7 +297,9 @@
             <div class="card-body">
               <div class="">
                 <div class="mb-lg-1">
-                  <h4 class="mb-2  text-black">{{ single_price($freelancer->profile->hourly_rate) }} /
+                  <a class="btn  btn-outline-primary rounded-1"
+                    href="{{ route('invition_for_hire_freelancer', $freelancer->user_name) }}">{{ translate('Hire Me') }}</a>
+                  <h4 class="mb-2 mt-3  text-black">{{ single_price($freelancer->profile->hourly_rate) }} /
                     <span class="text-black">{{ translate('Per hour') }}</span>
                   </h4>
                 </div>
