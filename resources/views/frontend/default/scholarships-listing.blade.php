@@ -30,13 +30,12 @@
                                     {{ translate('Scholarships search filter') }}
                                 </h5>
                                 @endif
+
                                 <div class="mt-2">
 
                                     <!-- Level-show -->
                                     @foreach($levels as $level)
-
                                     <span id="level_{{$level->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-
                                         {{$level ->level_name}} |<p onclick="removeLevel({{$level->id}})" class="m-0  d-inline fw-700">
                                             X</p>
                                     </span>
@@ -52,9 +51,10 @@
                                     @foreach($countries as $country)
                                     <span id="country_{{$country->id}}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
                                         {{$country->country_name}} |
-                                        <p onclick="removeCountry({{$country->id}})" class="m-0 d-inline fw-700">X</p>
+                                        <p onclick="removeCountry({{$country->id}})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
                                     </span>
                                     @endforeach
+
                                 </div>
                                 <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                                     <i class="las la-times la-2x"></i>
@@ -70,7 +70,6 @@
                                         @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
                                         <label class="aiz-checkbox">
                                             <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()" @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
-
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
@@ -97,7 +96,7 @@
                                     <div class="mb-5">
 
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                            <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' ) selected @endif>
+                                            <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' && $country_id=='' ) selected @endif>
                                                 {{ translate('All Countries') }}
                                             </option>
                                             @foreach(\App\Models\ScholarshipCountry:: all() as $country)
@@ -256,20 +255,22 @@
                                     <div>
                                         <!-- <img src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt=""> -->
 
-                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 tex-black">
-                                            <i class="las la-heart fs-16 fw-700 mr-1"></i>
-                                            <span>{{ translate('Add Favorite') }}</span>
+                                        @if (Auth::check() && ($bookmarked_scholarship = \App\Models\BookmarkedScholarship::where('user_id', auth()->user()->id)->where('scholarship_id', $scholarship->id)->first()) != null)
+                                        <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-scholarships.destroy', $bookmarked_scholarship->id) }}" data-target="#bookmark-remove-modal">
+                                            <i class="las la-bookmark fs-16 fw-700"></i>
+                                            <span>{{ translate('Remove Bookmark') }}</span>
                                         </a>
-                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 tex-black mb-1">
+                                        @else
+                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{route('bookmarked-scholarships.store', encrypt($scholarship->id))}}">
+                                            <i class="las la-bookmark fs-16 fw-700"></i>
+                                            <span class="ml-2">{{ translate('Bookmark') }}</span>
+                                        </a>
+                                        @endif
+                                        <a href="{{ url('/search?keyword=&type=freelancer')}}" class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 tex-black mb-1">
                                             <i class="las la-user-tie fs-16 fw-700 mr-1"></i>
                                             <span>{{ translate('Hire Consultant') }}</span>
                                         </a>
-                                        <!-- <div class="">
-                                        <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                            <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image" style="width:36px; " />
-                                            {{ translate(' Find a consultant') }}
-                                        </p>
-                                    </div> -->
+
                                     </div>
                                 </div>
                             </div>
@@ -451,6 +452,7 @@
         $('#scholarship-filter-form').submit();
     }
 </script>
+
 @endsection
 
 @section('script')
@@ -466,5 +468,5 @@
         applyFilter();
     };
 </script>
-
+@include('frontend.default.partials.bookmark_remove_modal')
 @endsection

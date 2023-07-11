@@ -28,7 +28,7 @@
                         </h6>
                         <div class="aiz-radio-list">
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="Express 24H" onchange="applyFilter()" @if ($delivery_time=="Express 24H" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="1" onchange="applyFilter()" @if ($delivery_time=="Express 24H" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Express 24H') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -72,12 +72,11 @@
                         <div class="price-input">
                             <div class="price-input-field mr-2">
                                 <span>Min</span>
-                                <input type="number" class="input-min" value="2500" step="50">
+                                <input onchange=" applyFilter()" name="min-value" type="number" class="input-min" value="2500" step="50">
                             </div>
-
                             <div class="price-input-field">
                                 <span>Max</span>
-                                <input type="number" class="input-max" value="7500" step="50">
+                                <input onchange=" applyFilter()" name="max-value" type="number" class="input-max" value="7500" step="50">
                             </div>
                         </div>
 
@@ -85,84 +84,44 @@
                             <div class="progress"></div>
                         </div>
                         <div class="range-input">
-                            <input type="range" class="range-min" min="0" max="10000" value="2500" step="50">
-                            <input type="range" class="range-max" min="0" max="10000" value="7500" step="50">
+                            <input onchange="applyFilter()" type="range" class="range-min" min="0" max="10000" value="2500" step="50">
+                            <input onchange="applyFilter()" type="range" class="range-max" min="0" max="10000" value="7500" step="50">
                         </div>
 
-                        <!-- design tools -->
-                        <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                            <span class=" pr-3">{{ translate('Design Tools') }}</span>
-                        </h6>
-                        <div class="aiz-checkbox-list">
-                            <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
-                                <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
-                                    <span>{{ translate('Adobe Photoshop') }}</span>
-                                    <span class="text-muted">(1000)</span>
-                                </div>
-                                <span class="aiz-square-check"></span>
-                                <span class="float-right text-secondary fs-12"></span>
-                            </label>
-                            <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
-                                <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
-                                    <span>{{ translate('Sketch') }}</span>
-                                    <span class="text-muted">(1000)</span>
-                                </div>
-                                <span class="aiz-square-check"></span>
-                                <span class="float-right text-secondary fs-12"></span>
-                            </label>
-                            <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
-                                <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
-                                    <span>{{ translate('Adobe XD') }}</span>
-                                    <span class="text-muted">(1000)</span>
-                                </div>
-                                <span class="aiz-square-check"></span>
-                                <span class="float-right text-secondary fs-12"></span>
-                            </label>
-                            <label class="aiz-checkbox">
-                                <input type="checkbox" name="level_id[]" value="" onchange="applyFilter()">
-                                <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
-                                    <span>{{ translate('Balsamiq') }}</span>
-                                    <span class="text-muted">(1000)</span>
-                                </div>
-                                <span class="aiz-square-check"></span>
-                                <span class="float-right text-secondary fs-12"></span>
-                            </label>
-                            <p class="text-primary fs-15 fw-500 mb-2 c-pointer">+20 more </p>
+
+                        <!-- Categories -->
+                        <div class="mb-5 mt-4">
+                            <h6 class="text-left mb-3 fs-14 fw-700">
+                                <span class=" pr-3">{{ translate('Categories') }}</span>
+                            </h6>
+                            <div class="aiz-checkbox-list">
+                                @foreach(\App\Models\ProjectCategory::all() as $category)
+
+                                <label class="aiz-checkbox">
+                                    <input type="checkbox" name="category_id[]" value="{{ $category->id }}"" onchange=" applyFilter()" @if(in_array($category->id, $category_id)) checked @endif > {{$category->name}}
+                                    <span class="aiz-square-check"></span>
+                                    <span class="float-right text-secondary fs-12"></span>
+                                </label>
+                                @endforeach
+                            </div>
+
                         </div>
                         <!-- Country -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                            <span class=" pr-3">{{ translate('Country') }}</span>
-                        </h6>
-                        <div class="mb-5">
+                                        <span class=" pr-3">{{ translate('Country') }}</span>
+                                    </h6>
+                                    <div class="mb-5">
 
-                            <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                <option value="0">{{ translate('All Countries') }}</option>
-                                @foreach(\App\Models\ScholarshipCountry:: all() as $country)
-                                <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
-                                    @endif >{{ $country->country_name }}
-                                    <span class="text-muted">(1000)</span>
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                            <span class=" pr-3">{{ translate('Country') }}</span>
-                        </h6>
-                        <div class="">
-                            <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                <option value="">{{ translate('All Countries') }}</option>
-                                @foreach(\App\Models\ScholarshipCountry:: all() as $country)
-                                <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
-                                    @endif>{{ $country->country_name }}
-                                    <span class="text-muted">(1000)</span>
-                                </option>
-                                @endforeach
-                            </select>
-                        </div> -->
+                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                            <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' ) selected @endif>
+                                                {{ translate('All Countries') }}
+                                            </option>
+                                            @foreach(\App\Models\ScholarshipCountry:: all() as $country)
+                                            <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
+                                                @endif>{{ $country->country_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                         <!-- Speaks -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
                             <span class=" pr-3">{{ translate('Speaks') }}</span>

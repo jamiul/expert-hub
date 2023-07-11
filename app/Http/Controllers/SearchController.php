@@ -108,11 +108,11 @@ class SearchController extends Controller
             $country_id = array('');
             $speaks = array('');
             $level =  array('');
-
+            $category_id = array('');
+            // dd($delivery_time);
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                 ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                 ->pluck('user_id');
-
             $services = Service::whereIn('user_id', $user_ids);
 
             if ($request->keyword != null) {
@@ -124,23 +124,21 @@ class SearchController extends Controller
                 // $services = $services->whereIn('id', $service_ids);
 
                 $service_delivery_time_ids = ServicePackage::where('delivery_time', $request->delivery_time)->pluck('id');
-
+                // dd($service_delivery_time_ids);
                 $services = $services->whereIn('id', $service_delivery_time_ids);
-                // dd($services);
-
             }
 
-            $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
+            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
 
-            $category_ids = CategoryUtility::children_ids($category_id);
-            $category_ids[] = $category_id;
-            if ($category_id != null) {
-                $projects = $services->whereIn('project_cat_id', $category_ids);
-            }
+            // $category_ids = CategoryUtility::children_ids($category_id);
+            // $category_ids[] = $category_id;
+            // if ($category_id != null) {
+            //     $projects = $services->whereIn('project_cat_id', $category_ids);
+            // }
 
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
-            return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level'));
+            return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level', 'category_id'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
