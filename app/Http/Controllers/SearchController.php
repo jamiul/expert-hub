@@ -51,6 +51,7 @@ class SearchController extends Controller
             }
 
             if($category_id != null){
+                
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
 
