@@ -52,7 +52,8 @@ class SearchController extends Controller
                 $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
             }
 
-            if ($category_id != null) {
+
+            if($category_id != null){
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
 
