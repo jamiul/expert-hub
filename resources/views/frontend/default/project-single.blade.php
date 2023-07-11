@@ -57,7 +57,7 @@
                                         $skill = \App\Models\Skill::find($skill_id);
                                     @endphp
                                     @if ($skill != null)
-                                        <a href="{{ route('search.skill', ['skill' => $skill_id, 'type' => 'projects']) }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</a>
+                                        <a href="{{route('search.skill', ['skill' => $skill_id, 'type' => 'projects'])}}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</a>
                                     @endif
                                 @endforeach
 							</div>
