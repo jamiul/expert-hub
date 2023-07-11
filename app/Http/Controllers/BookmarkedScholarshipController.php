@@ -48,13 +48,18 @@ class BookmarkedScholarshipController extends Controller
         //     $userPackage->bookmark_scholarship_limit--;
         //     $userPackage->save();
         // }
-        // $userPackage = Auth::user()->userPackage;
 
+        $user = Auth::user();
+        // dd($users);
+        if($user !=null){
             $bookmarked_scholarship = new BookmarkedScholarship();
             $bookmarked_scholarship->user_id = Auth::user()->id;
             $bookmarked_scholarship->scholarship_id = decrypt($id);
             $bookmarked_scholarship->save();
-
+        }
+        else{
+            return redirect()->route('login');
+        }
         return back();
     }
 
@@ -101,9 +106,9 @@ class BookmarkedScholarshipController extends Controller
     public function destroy($id)
     {
         BookmarkedScholarship::destroy($id);
-        // $userPackage = Auth::user()->userPackage;
-        // $userPackage->bookmark_scholarship_limit++;
-        // $userPackage->save();
+        $userPackage = Auth::user()->userPackage;
+        $userPackage->bookmark_scholarship_limit++;
+        $userPackage->save();
         return back();
     }
 }
