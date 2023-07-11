@@ -282,7 +282,7 @@
                                                     <path id="Subtraction_3" data-name="Subtraction 3" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(500 1967)" fill="#989ea8" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1">{{ translate('Project Category') }}</span>
+                                            <span class="ml-1">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-handshake"></i> --}}

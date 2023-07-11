@@ -195,6 +195,8 @@ Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']]
 	Route::get('/client/purchased-services', 'ServiceController@client_purchased_services')->name('client.purchased.services');
 
 
+
+
     Route::get('/service/{id}/cancel', 'ServiceController@cancel_service')->name('services.cancel');
 	Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
 
@@ -203,6 +205,10 @@ Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']]
 	Route::get('/client/cancelled-services', 'ServiceController@client_cancelled_services')->name('client.services.cancelled');
 
 });
+
+Route::resource('bookmarked-scholarships', 'BookmarkedScholarshipController');
+Route::get('/bookmarked-scholarships/store/{id}', 'BookmarkedScholarshipController@store')->name('bookmarked-scholarships.store');
+Route::get('/bookmarked-scholarships/destroy/{id}', 'BookmarkedScholarshipController@destroy')->name('bookmarked-scholarships.destroy');
 
 
 Route::get('service/show/{slug}', 'ServiceController@show')->name('service.show');

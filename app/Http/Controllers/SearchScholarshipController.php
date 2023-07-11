@@ -136,14 +136,9 @@ class SearchScholarshipController extends Controller
             $type = 'scholarships';
             $keyword = $request->keyword;
             $rating = $request->rating;
-            // $category_id =array('');
             $level_id = array('');
             $fieldStudy_id = array('');
             $country_id = array('');
-            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-            // $category_ids = CategoryUtility::children_ids($category_id);
-            // $category_ids[] = $category_id;
-
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
@@ -156,7 +151,7 @@ class SearchScholarshipController extends Controller
             $countries = [];
             $fieldStudies = [];
             $fieldStudy_ids = [];
-            // dd($fieldStudy_id);
+            // dd($fieldStudies);
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -196,7 +191,6 @@ class SearchScholarshipController extends Controller
                     // dd($scholarships);
 
                 } else {
-
                     $scholarships = $scholarships->whereIn('country_id', $country_ids);
                 }
                 // dd($scholarships);
@@ -210,6 +204,7 @@ class SearchScholarshipController extends Controller
             }
             if ($request->fieldStudy_id != null) {
                 $fieldStudy_ids = $request->fieldStudy_id;
+                $fieldStudies =ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
                 $scholarships = $scholarships->where(function ($query) use ($fieldStudy_ids) {
                     foreach ($fieldStudy_ids as $field_id) {
                         $query->orWhere('fieldStudy_id', 'like', '%' . $field_id . '%');
