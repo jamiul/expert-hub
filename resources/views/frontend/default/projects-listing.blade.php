@@ -1,7 +1,7 @@
 @extends('frontend.default.layouts.app')
 
 @section('content')
-<section class="py-4 py-lg-5">
+<section class="py-4 py-lg-3">
     <div class="container-main-projects-banner">
         <div class="mb-4" style="background:#FCEBE5">
             <div class="row rounded-0 px-2 mx-4">
@@ -73,14 +73,14 @@
                                         <span class=" pr-3">{{ translate('Categories') }}</span>
                                     </h6>
                                     <div class="">
-                                        <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                            <option value="">{{ translate('All Categories') }}</option>
-                                            @foreach(\App\Models\ProjectCategory::all() as $category)
-                                            <option value="{{ $category->slug }}" @if (isset($_GET['category_id'])&& $_GET['category_id']==$category->slug ) selected @endif>
-                                                {{$category->name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
+                                        @foreach(\App\Models\ProjectCategory::all() as $category)
+                                        <label class="aiz-checkbox w-100">
+                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()"  value="{{ $category->slug }}" @if (isset($_GET['category_id'])&& $_GET['category_id']==$category->slug ) selected @endif >
+                                            {{$category->name}}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                        </label>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <!-- Project Type -->
@@ -268,34 +268,34 @@
                                             {{-- <i class="las la-clock opacity-40"></i> --}}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
                                                 <g id="Group_22132" data-name="Group 22132" transform="translate(-365 -1963)">
-                                                    <path id="Subtraction_5" data-name="Subtraction 5" d="M-13,12a6.007,6.007,0,0,1-6-6,6.007,6.007,0,0,1,6-6A6.007,6.007,0,0,1-7,6,6.006,6.006,0,0,1-13,12Zm-.5-9V7h.013l2.109,2.109.707-.706L-12.5,6.572V3Z" transform="translate(384 1963)" fill="#989ea8" />
+                                                    <path id="Subtraction_5" data-name="Subtraction 5" d="M-13,12a6.007,6.007,0,0,1-6-6,6.007,6.007,0,0,1,6-6A6.007,6.007,0,0,1-7,6,6.006,6.006,0,0,1-13,12Zm-.5-9V7h.013l2.109,2.109.707-.706L-12.5,6.572V3Z" transform="translate(384 1963)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
+                                            <span class="ml-1 fw-700" style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-stream opacity-40"></i> --}}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11">
                                                 <g id="Group_23" data-name="Group 23" transform="translate(-498 -1963)">
-                                                    <path id="Subtraction_2" data-name="Subtraction 2" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(498 1963)" fill="#989ea8" />
-                                                    <path id="Subtraction_4" data-name="Subtraction 4" d="M1.5,0h5a1.5,1.5,0,0,1,0,3h-5a1.5,1.5,0,0,1,0-3Z" transform="translate(498 1971)" fill="#989ea8" />
-                                                    <path id="Subtraction_3" data-name="Subtraction 3" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(500 1967)" fill="#989ea8" />
+                                                    <path id="Subtraction_2" data-name="Subtraction 2" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(498 1963)" fill="#055846" />
+                                                    <path id="Subtraction_4" data-name="Subtraction 4" d="M1.5,0h5a1.5,1.5,0,0,1,0,3h-5a1.5,1.5,0,0,1,0-3Z" transform="translate(498 1971)" fill="#055846" />
+                                                    <path id="Subtraction_3" data-name="Subtraction 3" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(500 1967)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
+                                            <span class="ml-1 fw-700" style="color:black;">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-handshake"></i> --}}
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.7426 15.1109H3.73374C3.23373 15.1073 2.75506 14.9078 2.40041 14.5554C2.22467 14.3806 2.08514 14.1728 1.98981 13.944C1.89448 13.7152 1.84522 13.4699 1.84485 13.222V4.12424C1.84234 3.93665 1.8772 3.75044 1.9474 3.57646C2.01761 3.40248 2.12174 3.24422 2.25374 3.11091L4.06708 1.30646C4.19913 1.17339 4.35634 1.06793 4.52954 0.996202C4.70275 0.924477 4.8885 0.887928 5.07596 0.888683H12.7426C13.1198 0.888683 13.4816 1.03852 13.7483 1.30524C14.015 1.57196 14.1649 1.93371 14.1649 2.31091V13.6887C14.1649 14.0659 14.015 14.4276 13.7483 14.6943C13.4816 14.9611 13.1198 15.1109 12.7426 15.1109ZM5.07596 1.83535C4.95107 1.83572 4.83134 1.88521 4.74263 1.97313L2.92485 3.79091C2.83734 3.87988 2.78792 3.99944 2.78708 4.12424V13.2131C2.78696 13.338 2.81166 13.4616 2.85972 13.5768C2.90779 13.692 2.97827 13.7965 3.06708 13.8842C3.24586 14.0607 3.48696 14.1597 3.73819 14.1598H12.7426C12.8051 14.1598 12.8669 14.1475 12.9246 14.1236C12.9823 14.0997 13.0347 14.0647 13.0789 14.0205C13.1231 13.9763 13.1581 13.9239 13.182 13.8662C13.2059 13.8085 13.2182 13.7467 13.2182 13.6842V2.31091C13.2182 2.18478 13.1681 2.06382 13.0789 1.97464C12.9897 1.88545 12.8688 1.83535 12.7426 1.83535H5.07596Z" fill="#1F4B3F" />
-                                                <path d="M4.67969 4.67969H11.3152V5.62635H4.67969V4.67969Z" fill="#1F4B3F" />
-                                                <path d="M4.67969 6.57812H11.3152V7.52479H4.67969V6.57812Z" fill="#1F4B3F" />
-                                                <path d="M4.67969 8.47559H7.99969V9.42225H4.67969V8.47559Z" fill="#1F4B3F" />
-                                                <path d="M4.67969 11.3203H9.42191V12.267H4.67969V11.3203Z" fill="#1F4B3F" />
-                                                <path d="M10.3691 11.3203H11.3158V12.267H10.3691V11.3203Z" fill="#1F4B3F" />
+                                                <path d="M12.7426 15.1109H3.73374C3.23373 15.1073 2.75506 14.9078 2.40041 14.5554C2.22467 14.3806 2.08514 14.1728 1.98981 13.944C1.89448 13.7152 1.84522 13.4699 1.84485 13.222V4.12424C1.84234 3.93665 1.8772 3.75044 1.9474 3.57646C2.01761 3.40248 2.12174 3.24422 2.25374 3.11091L4.06708 1.30646C4.19913 1.17339 4.35634 1.06793 4.52954 0.996202C4.70275 0.924477 4.8885 0.887928 5.07596 0.888683H12.7426C13.1198 0.888683 13.4816 1.03852 13.7483 1.30524C14.015 1.57196 14.1649 1.93371 14.1649 2.31091V13.6887C14.1649 14.0659 14.015 14.4276 13.7483 14.6943C13.4816 14.9611 13.1198 15.1109 12.7426 15.1109ZM5.07596 1.83535C4.95107 1.83572 4.83134 1.88521 4.74263 1.97313L2.92485 3.79091C2.83734 3.87988 2.78792 3.99944 2.78708 4.12424V13.2131C2.78696 13.338 2.81166 13.4616 2.85972 13.5768C2.90779 13.692 2.97827 13.7965 3.06708 13.8842C3.24586 14.0607 3.48696 14.1597 3.73819 14.1598H12.7426C12.8051 14.1598 12.8669 14.1475 12.9246 14.1236C12.9823 14.0997 13.0347 14.0647 13.0789 14.0205C13.1231 13.9763 13.1581 13.9239 13.182 13.8662C13.2059 13.8085 13.2182 13.7467 13.2182 13.6842V2.31091C13.2182 2.18478 13.1681 2.06382 13.0789 1.97464C12.9897 1.88545 12.8688 1.83535 12.7426 1.83535H5.07596Z" fill="#055846" />
+                                                <path d="M4.67969 4.67969H11.3152V5.62635H4.67969V4.67969Z" fill="#055846" />
+                                                <path d="M4.67969 6.57812H11.3152V7.52479H4.67969V6.57812Z" fill="#055846" />
+                                                <path d="M4.67969 8.47559H7.99969V9.42225H4.67969V8.47559Z" fill="#055846" />
+                                                <path d="M4.67969 11.3203H9.42191V12.267H4.67969V11.3203Z" fill="#055846" />
+                                                <path d="M10.3691 11.3203H11.3158V12.267H10.3691V11.3203Z" fill="#055846" />
                                             </svg>
 
-                                            <span class="ml-1">
+                                            <span class="ml-1  fw-700" style="color:black;">
                                                 @if ($project->bids > 0)
                                                 {{ $project->bids }}+
                                                 @else
@@ -319,11 +319,11 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-start minw-130px" style="border-left:1px solid #ddd">
-                                    <div class="text-right text-lg-left mb-lg-3">
+                                <div class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-start minw-130px">
+                                    <!-- <div class="text-right text-lg-left mb-lg-3">
                                         <span class="small text-secondary">{{ translate('Budget') }}</span>
-                                        <h4 class="mb-0 fw-700">{{ single_price($project->price) }}</h4>
-                                        <!-- <div class="mt-xl-2 small text-secondary">
+                                        <h4 class="mb-0 fw-700">{{ single_price($project->price) }}</h4> -->
+                                    <!-- <div class="mt-xl-2 small text-secondary">
                                             @if ($project->bids > 0)
                                             <span class="text-body mr-1">{{ $project->bids }}+</span>
                                             @else
@@ -331,9 +331,15 @@
                                             @endif
                                             <span>Bids</span>
                                         </div> -->
+                                    <!-- </div> -->
+
+                                    <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white" style="background-color:#275846; width:165px;">{{ translate('Budget') }} {{ single_price($project->price) }}
+
                                     </div>
 
-                                    <button type="button" class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white" style="background-color:#275846; "> Send Proposal
+                                    <button type="button" class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white" style="background-color:#275846; ">
+                                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image" style="width:36px; " />
+                                        Send Proposal
                                         <img class=" px-1 " src=" {{url('/public/assets/home/arrow.png')}}" alt="Image" style="width:18px; " />
                                     </button>
 
