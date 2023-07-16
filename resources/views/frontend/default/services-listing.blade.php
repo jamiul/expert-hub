@@ -108,20 +108,20 @@
                         </div>
                         <!-- Country -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                        <span class=" pr-3">{{ translate('Country') }}</span>
-                                    </h6>
-                                    <div class="mb-5">
+                            <span class=" pr-3">{{ translate('Country') }}</span>
+                        </h6>
+                        <div class="mb-5">
 
-                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                            <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' ) selected @endif>
-                                                {{ translate('All Countries') }}
-                                            </option>
-                                            @foreach(\App\Models\ScholarshipCountry:: all() as $country)
-                                            <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
-                                                @endif>{{ $country->country_name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                            <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' ) selected @endif>
+                                    {{ translate('All Countries') }}
+                                </option>
+                                @foreach(\App\Models\ScholarshipCountry:: all() as $country)
+                                <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
+                                    @endif>{{ $country->country_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <!-- Speaks -->
                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
                             <span class=" pr-3">{{ translate('Speaks') }}</span>
@@ -372,6 +372,7 @@
                                                 <a href="{{ route('service.show', $service->slug) }}" class="text-dark" title="{{ $service->title }}">
                                                     <h5 class="card-title fs-16 fw-700 h-40px">{{ \Illuminate\Support\Str::limit($service->title, 45, $end='...') }}</h5>
                                                 </a>
+
                                                 <div class="text-warning">
                                                     <span class="rating rating-lg rating-mr-1">
                                                         {{ renderStarRating(getAverageRating($service->user->id)) }}
@@ -380,7 +381,18 @@
                                             </div>
                                         </div>
                                         <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
-                                            <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                            @if (Auth::check() && ($bookmarked_service = \App\Models\BookmarkedService::where('user_id', auth()->user()->id)->where('service_id', $service->id)->first()) != null)
+                                           
+                                            <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.destroy', $bookmarked_service->id) }}" data-target="#bookmark-remove-modal">
+                                                <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/fillupheart.png')}}" alt="">
+                                            </a>
+                                            @else
+                                            <a class="" href="{{route('bookmarked-services.store', encrypt($service->id))}}">
+                                                <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                            </a>
+                                            @endif
+
+                                            <!-- <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt=""> -->
                                         </div>
                                     </div>
 
@@ -443,11 +455,12 @@
             </form>
         </div>
     </section>
-
+    @include('frontend.default.partials.bookmark_remove_modal')
     @endsection
 
     @section('modal')
     @include('admin.default.partials.delete_modal')
+
 
     <script>
         const rangeInput = document.querySelectorAll(".range-input input");
@@ -524,7 +537,10 @@
             $('#service-filter-form').submit();
         }
     </script>
+
+
     @endsection
+
 </body>
 
 </html>
