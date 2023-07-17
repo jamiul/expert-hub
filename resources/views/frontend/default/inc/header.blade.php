@@ -291,34 +291,7 @@
 
                         <!-- Left links -->
                         <ul class="navbar-nav ml-auto ps-lg-0 " style="padding-left: 0.15rem">
-        </div>
-      </div>
-      @if (!Auth::check())
-      <nav class="navbar navbar-expand-lg  bg-dark w-100">
-        <!-- Container wrapper -->
 
-        <div class="container-fluid ml-3">
-          <div class="logo">
-            <a href="{{ route('home') }}" class="d-inline-block p-1">
-              <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
-            </a>
-          </div>
-          <!-- Toggle button -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">
-              <img class=" " src="{{url('/public/assets/frontend/default/img/menu.png')}}" alt="Image" />
-            </span>
-          </button>
-          </button> <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse px-4" id="navbarSupportedContent">
-
-            <!-- Left links -->
-            <ul class="navbar-nav ml-auto ps-lg-0 " style="padding-left: 0.15rem">
-
-              <!-- Navbar dropdown -->
-              <li class="nav-item ml-lg-2">
-                <!-- <li class="nav-item">
                             <!-- Navbar dropdown -->
                             <li class="nav-item ml-lg-2">
                                 <!-- <li class="nav-item">
@@ -371,7 +344,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{route('blog')}}">{{ translate(' Find Workshops & Training ') }}</a>
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
                             </li>
                             <li class="nav-item dropdown mega_menu text-white">
                                 <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -392,11 +365,11 @@
                                                         <p>{{translate("See what it's like to collaborate on scholarship australia")}}</p>
                                                     </div>
                                                     <div id="wayToEarn" class="w-75 mega-menu-fj-item">
-                                                <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
-                                                <p>
-                                                    {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
-                                                </p>
-                                            </div>
+                                                        <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
+                                                        <p>
+                                                            {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
+                                                        </p>
+                                                    </div>
 
                                                 </div>
                                                 <div class="col-6">
@@ -455,48 +428,7 @@
                         <!-- Left links -->
                     </div>
                 </div>
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
-              </li>
 
-
-              <li class="nav-item">
-                <!-- <a class="nav-link text-white"
-                  href="{{route('blog')}}">{{ translate(' Find Workshops & Training ') }}</a> -->
-                <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
-              </li>
-              <li class="nav-item dropdown mega_menu text-white">
-                <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Why FreelancerEdu
-                </a>
-                <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
-                  <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                      <div class="row ">
-                        <div class="col-6">
-                          <div id="howToFindJob" class="mt-2 w-75 mega-menu-item">
-                            <a class="dropdown-item"
-                              href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
-                            <p>{{translate('Learn about how to grow your independent career.')}}</p>
-                          </div>
-
-                          <div id="review" class="w-75 mega-menu-item">
-                            <a class="dropdown-item drpd-item" href="{{route('review')}}">{{translate('Reviews')}}</a>
-                            <p>{{translate("See what it's like to collaborate on scholarship australia")}}</p>
-                          </div>
-
-                        </div>
-                        <div class="col-6">
-                          <div id="howToHire" class="w-75 mt-2 mega-menu-item">
-                            <a class="dropdown-item" href="{{route('how-to-hire')}}">{{ translate('How to Hire') }}</a>
-                            <p>{{('Learn about the different ways to get work done.')}}</p>
-                          </div>
-
-
-                          <div id="successStories" class="w-75 mega-menu-item">
 
                 <!-- Collapsible wrapper -->
 
