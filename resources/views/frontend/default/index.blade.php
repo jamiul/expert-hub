@@ -229,7 +229,7 @@
                 <div class="card-body" style=" padding:13px;">
 
                   <a class=" featured_category text-dark" onclick="applyFilter()"
-                    href="{{ route('freelancer.category', $category->slug)}}">
+                    href="{{ route('freelancer.category', $category->id)}}">
                     <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}
                     </p>
                     <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>

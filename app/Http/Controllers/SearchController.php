@@ -56,10 +56,9 @@ class SearchController extends Controller
 
           if($request->category_id != null){
                 $category_ids = $request->category_id;
-                $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+                $categories = ProjectCategory::where('id', $category_ids)->get();
                 $freelancers = $freelancers->where('category_id', $category_ids);
-                // dd($freelancers);
-}
+          }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $freelancers = $freelancers->whereIn('user_id', $user_ids);
@@ -104,7 +103,7 @@ class SearchController extends Controller
             }
             return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
         }
-        
+
           else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
@@ -187,8 +186,8 @@ class SearchController extends Controller
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
             }
             return view('frontend.default.seminar-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
-        } 
-                
+        }
+
         else if ($request->type == 'service') {
             return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
         } else if ($request->type == 'service') {
