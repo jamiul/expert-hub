@@ -325,41 +325,42 @@
                 <a class="nav-link text-white"
                   href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Find Consultants') }}</a>
               </li>
-
-              <li class="dropdown mega_menu nav-item">
-                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ translate('Find Jobs') }}
-                </a>
-                <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
-                  <div class="row mx-2">
-                    <div class="col-lg-3 col-sm-6">
-                      <div id="findSkills" class="w-75  mega-menu-fj-item">
-                        <a class="dropdown-item"
-                          href="{{ route('skills')}}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
-                        <p>{{translate('Show clients you’re the one they want.')}}</p>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6  ">
-                      <div id="wayToEarn" class="w-75 mega-menu-fj-item">
-                        <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
-                        <p>
-                          {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                      <div id='promoteYourself' class="w-78 mega-menu-fj-item">
-                        <a class="dropdown-item "
-                          href="{{route('promote')}}">{{ translate('Find ways to promote yourself') }}</a>
-                        <p>{{translate('Explore the kind of work available in your field.')}}</p>
-                      </div>
-                    </div>
-
-                  </div>
-
-                </div>
+              <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Find Job') }}</a>
               </li>
+
+              <!-- <li class="dropdown mega_menu nav-item">
+                                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ translate('Find Jobs') }}
+                                </a>
+                                <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
+                                    <div class="row mx-2">
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div id="findSkills" class="w-75  mega-menu-fj-item">
+                                                <a class="dropdown-item" href="{{ route('skills')}}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
+                                                <p>{{translate('Show clients you’re the one they want.')}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6  ">
+                                            <div id="wayToEarn" class="w-75 mega-menu-fj-item">
+                                                <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
+                                                <p>
+                                                    {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div id='promoteYourself' class="w-78 mega-menu-fj-item">
+                                                <a class="dropdown-item " href="{{route('promote')}}">{{ translate('Find ways to promote yourself') }}</a>
+                                                <p>{{translate('Explore the kind of work available in your field.')}}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </li> -->
 
               <li class="nav-item">
                 <a class="nav-link text-white"
@@ -368,8 +369,6 @@
 
 
               <li class="nav-item">
-                <!-- <a class="nav-link text-white"
-                  href="{{route('blog')}}">{{ translate(' Find Workshops & Training ') }}</a> -->
                 <a class="nav-link text-white"
                   href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
               </li>
@@ -393,6 +392,12 @@
                             <a class="dropdown-item drpd-item" href="{{route('review')}}">{{translate('Reviews')}}</a>
                             <p>{{translate("See what it's like to collaborate on scholarship australia")}}</p>
                           </div>
+                          <div id="wayToEarn" class="w-75 mega-menu-fj-item">
+                            <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
+                            <p>
+                              {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
+                            </p>
+                          </div>
 
                         </div>
                         <div class="col-6">
@@ -408,6 +413,11 @@
                               href="{{route('success-stories')}}">{{ translate('Success Stories') }}
                             </a>
                             <p>{{translate('Discover how to team work strategically and grow together')}}</p>
+                          </div>
+                          <div id='promoteYourself' class="w-78 mega-menu-fj-item">
+                            <a class="dropdown-item "
+                              href="{{route('promote')}}">{{ translate('Find ways to promote yourself') }}</a>
+                            <p>{{translate('Explore the kind of work available in your field.')}}</p>
                           </div>
 
 

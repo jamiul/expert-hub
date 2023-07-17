@@ -51,7 +51,7 @@
                     </button>
                     <div class="input-group rounded-2">
                       <input type="text" class="form-control rounded  "
-                        placeholder="{{ translate('Search for consultants') }}" name="keyword" value="{{ $keyword }}">
+                        placeholder="{{ translate('Search for seminars\\') }}" name="keyword" value="{{ $keyword }}">
                       <div class="input-group-prepend rounded">
                         <span class="input-group-text text-white border-left-0 rounded-right" :
                           style="background:#275846;">
@@ -85,7 +85,7 @@
                     <div class="mb-5">
                       <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id"
                         onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('Skills') }}</option>
+                        <option value="">{{ translate('Seminar topic') }}</option>
                         @foreach (\App\Models\Skill::all() as $key => $skill)
                         <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id==$skill->id )
                           selected
