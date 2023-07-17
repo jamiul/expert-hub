@@ -140,7 +140,7 @@ class SearchController extends Controller
           if($request->category_id != null){
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
-                $freelancers = $freelancers->where('category_id', $category_ids);
+                $freelancers = $freelancers->where('project_cat_id', $category_ids);
                 // dd($freelancers);
 }
             if ($country_id != null) {
