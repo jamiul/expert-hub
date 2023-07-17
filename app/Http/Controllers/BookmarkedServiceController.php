@@ -8,7 +8,7 @@ use App\Models\BookmarkedScholarship;
 use App\Models\BookmarkedService;
 use Auth;
 
-class BookmarkedScholarshipController extends Controller
+class BookmarkedServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -53,10 +53,10 @@ class BookmarkedScholarshipController extends Controller
         $user = Auth::user();
         // dd($users);
         if($user !=null){
-            $bookmarked_scholarship = new BookmarkedScholarship();
-            $bookmarked_scholarship->user_id = Auth::user()->id;
-            $bookmarked_scholarship->scholarship_id = decrypt($id);
-            $bookmarked_scholarship->save();
+            $bookmarked_service = new BookmarkedService();
+            $bookmarked_service->user_id = Auth::user()->id;
+            $bookmarked_service->service_id = decrypt($id);
+            $bookmarked_service->save();
         }
         else{
             return redirect()->route('login');
@@ -106,7 +106,7 @@ class BookmarkedScholarshipController extends Controller
      */
     public function destroy($id)
     {
-        BookmarkedService::destroy($id);
+        BookmarkedScholarship::destroy($id);
         // $userPackage = Auth::user()->userPackage;
         // $userPackage->bookmark_scholarship_limit++;
         // $userPackage->save();
