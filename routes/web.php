@@ -210,6 +210,10 @@ Route::resource('bookmarked-scholarships', 'BookmarkedScholarshipController');
 Route::get('/bookmarked-scholarships/store/{id}', 'BookmarkedScholarshipController@store')->name('bookmarked-scholarships.store');
 Route::get('/bookmarked-scholarships/destroy/{id}', 'BookmarkedScholarshipController@destroy')->name('bookmarked-scholarships.destroy');
 
+Route::resource('bookmarked-services', 'BookmarkedServiceController');
+Route::get('/bookmarked-services/store/{id}', 'BookmarkedServiceController@store')->name('bookmarked-services.store');
+Route::get('/bookmarked-services/destroy/{id}', 'BookmarkedServiceController@destroy')->name('bookmarked-services.destroy');
+
 
 Route::get('service/show/{slug}', 'ServiceController@show')->name('service.show');
 Route::post('/service/package', 'ServiceController@get_service_package_purchase_modal')->name('get_package_service_modal');

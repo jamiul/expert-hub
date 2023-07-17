@@ -29,13 +29,13 @@ class SearchController extends Controller
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             // $category_ids = CategoryUtility::children_ids($category_id);
             // $category_ids[] = $category_id;
-            $categories=[];
             $category_id=array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
+            $categories=[];
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -53,7 +53,6 @@ class SearchController extends Controller
                     ->pluck('user_id');
                 $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
             }
-
 
           if($request->category_id != null){
                 $category_ids = $request->category_id;
@@ -189,9 +188,11 @@ class SearchController extends Controller
             }
             return view('frontend.default.seminar-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
         } 
-        
-        
+                
         else if ($request->type == 'service') {
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
+        } else if ($request->type == 'service') {
+
             $type = 'service';
             $keyword = $request->keyword;
             $rating = $request->rating;
@@ -214,10 +215,12 @@ class SearchController extends Controller
             if ($request->delivery_time != null) {
                 // $service_delivery_time_ids = ServicePackage::where('delivery_time');
                 // $services = $services->whereIn('id', $service_ids);
-
-                $service_delivery_time_ids = ServicePackage::where('delivery_time', $request->delivery_time)->pluck('id');
+                $delivery_times =  9;
+                // dd($delivery_time);
+                $service_delivery_time_ids = ServicePackage::where('delivery_time', '<', $delivery_times)->pluck('service_id');
                 // dd($service_delivery_time_ids);
                 $services = $services->whereIn('id', $service_delivery_time_ids);
+
             }
 
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
