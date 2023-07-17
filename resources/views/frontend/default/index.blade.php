@@ -282,8 +282,7 @@
             ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
             ->pluck('user_id');
 
-            $services = \App\Models\ProjectCategory::inRandomOrder()
-            ->get();
+            $services = \App\Models\ProjectCategory::all();
             @endphp
             @foreach ($services as $category)
             <div class="col-md-3">
