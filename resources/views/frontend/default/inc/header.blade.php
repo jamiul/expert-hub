@@ -296,8 +296,8 @@
         <!-- Container wrapper -->
 
         <div class="container-fluid ml-3">
-          <div class="logo" >
-            <a href="{{ route('home') }}" class="d-inline-block p-1" >
+          <div class="logo">
+            <a href="{{ route('home') }}" class="d-inline-block p-1">
               <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
             </a>
           </div>
@@ -368,8 +368,10 @@
 
 
               <li class="nav-item">
+                <!-- <a class="nav-link text-white"
+                  href="{{route('blog')}}">{{ translate(' Find Workshops & Training ') }}</a> -->
                 <a class="nav-link text-white"
-                  href="{{route('blog')}}">{{ translate(' Find Workshops & Training ') }}</a>
+                  href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
               </li>
               <li class="nav-item dropdown mega_menu text-white">
                 <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown"

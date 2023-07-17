@@ -27,7 +27,7 @@
             <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
               <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px" style="background: #F2F7F2;">
                 <div class=" border-0 pl-lg-0">
-                  <h5 class="my-3 fs-21 fw-700">{{ translate('Consultant for hire') }}</h5>
+                  <h5 class="my-3 fs-21 fw-700">{{ translate('Search Seminars') }}</h5>
                   <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb" data-toggle="class-toggle"
                     data-target=".aiz-filter-sidebar" type="button">
                     <i class="las la-times la-2x"></i>
@@ -63,7 +63,7 @@
                 </div>
 
                 <h6 class="text-left mb-3 mt-lg-5  fs-14 fw-700">
-                  <span class=" pr-3">{{ translate('Categories') }}</span>
+                  <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                 </h6>
                 @foreach(\App\Models\ProjectCategory::all() as $category)
 
@@ -80,7 +80,7 @@
                   <div class="">
                     <!-- Countries -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="pr-3">{{ translate('Skills') }}</span>
+                      <span class="pr-3">{{ translate('Seminar Topics') }}</span>
                     </h6>
                     <div class="mb-5">
                       <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id"
@@ -116,87 +116,18 @@
                         @endforeach
                       </select>
                     </div>
-
                     <!-- Hourly Rate -->
-                    <input type="hidden" name="min_price" value="">
-                    <input type="hidden" name="max_price" value="">
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class=" pr-3">{{ translate('Hourly Rate') }}</span>
-                    </h6>
-                    <div class="aiz-range-slider mb-5 px-3">
-                      <div id="input-slider-range"
-                        data-range-value-min="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::min('hourly_rate') }} @endif"
-                        data-range-value-max="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::max('hourly_rate') }} @endif">
-                      </div>
 
-                      <div class="row mt-2">
-                        <div class="col-6">
-                          <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price))
-                            data-range-value-low="{{ $min_price }}" @elseif(count($freelancers)> 1 &&
-                            $freelancers->min('hourly_rate') > 0)
-                            data-range-value-low="{{ $freelancers->min('hourly_rate') }}"
-                            @else
-                            data-range-value-low="0"
-                            @endif
-                            id="input-slider-range-value-low"
-                            ></span>
-                        </div>
-                        <div class="col-6 text-right">
-                          <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price))
-                            data-range-value-high="{{ $max_price }}" @elseif(count($freelancers)> 1 &&
-                            $freelancers->max('hourly_rate') > 0)
-                            data-range-value-high="{{ $freelancers->max('hourly_rate') }}"
-                            @else
-                            data-range-value-high="0"
-                            @endif
-                            id="input-slider-range-value-high"
-                            ></span>
-                        </div>
-                      </div>
-                    </div>
+                    <h6 class="text-left mb-3 fs-14 fw-700">
+                      <span class=" pr-3">{{ translate('Seminar date') }}</span>
+                    </h6>
+
 
                     <!-- Rating -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class=" pr-3">{{ translate('Rating') }}</span>
+                      <span class=" pr-3">{{ translate('Languages') }}</span>
                     </h6>
-                    <div class="aiz-radio-list">
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="" onchange="applyFilter()" @if ($rating=='' ) checked
-                          @endif> {{ translate('Any rating') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="4+" onchange="applyFilter()" @if ($rating=='4+' )
-                          checked @endif> {{ translate('4 star +') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="3-4" onchange="applyFilter()" @if ($rating=='3-4' )
-                          checked @endif> {{ translate('3 to 4 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="2-3" onchange="applyFilter()" @if ($rating=='2-3' )
-                          checked @endif> {{ translate('2 to 3 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="1-2" onchange="applyFilter()" @if ($rating=='1-2' )
-                          checked @endif> {{ translate('1 to 2 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="0-1" onchange="applyFilter()" @if ($rating=='0-1' )
-                          checked @endif> {{ translate('0 to 1 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                    </div>
+
                   </div>
                 </div>
               </div>
