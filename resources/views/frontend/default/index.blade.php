@@ -172,7 +172,7 @@
                   <div class=" h-136px align-items-center">
                     <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/check.png')}}" alt="Image"
                       style="width:55px; border-radius:50%; border:1px solid #fff" />
-                    <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white"> Payment Securely
+                    <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white"> Payment Securely
                     </p>
                   </div>
                   <h6 class="fs-18 mt-3 text-white text-center">
@@ -184,7 +184,7 @@
 
             </div>
             <div class=" text-center py-5">
-              <a href="{{ url('projects/create')}}" class=" btn rounded border text-white fs-18"
+              <a href="{{ url('/register')}}" class=" btn rounded border text-white fs-18"
                 style="background-color:#275846;">
                 Let's get started
               </a>
