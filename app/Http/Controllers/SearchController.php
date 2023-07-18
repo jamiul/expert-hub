@@ -186,10 +186,6 @@ class SearchController extends Controller
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
             }
             return view('frontend.default.seminar-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
-        }
-
-        else if ($request->type == 'service') {
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price','categories','category_id'));
         } else if ($request->type == 'service') {
 
             $type = 'service';

@@ -420,6 +420,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                <p class="d-flex justify-content-center" style="color:red">This page’s contents is not ours, it is for inspiration only - to be modified shortly.</p>
                                 </div>
                             </li>
 

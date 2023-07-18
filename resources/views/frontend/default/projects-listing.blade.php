@@ -68,14 +68,14 @@
                                     </select>
                                 </div> -->
                                 <!-- Categories -->
-                                <div class="mb-5">
+                                <div class="mb-4">
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class=" pr-3">{{ translate('Categories') }}</span>
                                     </h6>
                                     <div class="">
                                         @foreach(\App\Models\ProjectCategory::all() as $category)
                                         <label class="aiz-checkbox w-100">
-                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()"  value="{{ $category->slug }}" @if (isset($_GET['category_id'])&& $_GET['category_id']==$category->slug ) selected @endif >
+                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->slug }}" @if (isset($_GET['category_id'])&& $_GET['category_id']==$category->slug ) selected @endif >
                                             {{$category->name}}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -83,6 +83,62 @@
                                         @endforeach
                                     </div>
                                 </div>
+                                <!-- Budget -->
+                                <div class="mb-4">
+                                    <h6 class="text-left mb-3 fs-14 fw-700">
+                                        <span class=" pr-3">{{ translate('Project Type') }}</span>
+                                    </h6>
+                                    <!-- Fixed Price Projects -->
+                                    <div class="aiz-checkbox-list">
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Fixed Price Projects') }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div>
+                                            <input class="p-2" placeholder="Min" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
+                                        <div>
+
+                                            <input class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                    </div>
+                                    <!-- Hourly Projects -->
+                                    <div class="aiz-checkbox-list mt-2">
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Hourly Projects') }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div>
+                                            <input class="p-2" placeholder="Min" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center ">to</p>
+                                        <div>
+
+                                            <input class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="mb-2 mt-3">
+                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1"  data-toggle="select2" data-live-search="true">
+                                            <option selected>
+                                                {{ translate('All Durations') }}
+                                            </option>
+                                            <option>Less than 1 week</option>
+                                            <option>1 week to 4 weeks</option>
+                                            <option>1 month to 3 months</option>
+                                            <option>3 months to 6 months</option>
+                                            <option>Over 6 months/Ongoing</option>
+                                            <option>unspecified</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <!-- Project Type -->
                                 <div class="mb-5">
                                     <h6 class="text-left mb-3 fs-14 fw-700">
@@ -319,21 +375,10 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-start minw-130px">
-                                    <!-- <div class="text-right text-lg-left mb-lg-3">
-                                        <span class="small text-secondary">{{ translate('Budget') }}</span>
-                                        <h4 class="mb-0 fw-700">{{ single_price($project->price) }}</h4> -->
-                                    <!-- <div class="mt-xl-2 small text-secondary">
-                                            @if ($project->bids > 0)
-                                            <span class="text-body mr-1">{{ $project->bids }}+</span>
-                                            @else
-                                            <span class="text-body mr-1">{{ $project->bids }}</span>
-                                            @endif
-                                            <span>Bids</span>
-                                        </div> -->
-                                    <!-- </div> -->
+                                <div class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px">
 
-                                    <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white" style="background-color:#275846; width:165px;">{{ translate('Budget') }} {{ single_price($project->price) }}
+                                    <div class="btn d-flex justify-content-start align-items-center mt-2 py-2 fs-14 px-2 text-white" style="background-color:#275846; width:165px;">
+                                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/budget.png')}}" alt="Image" style="width:36px; " /> {{ translate('Budget') }} {{ single_price($project->price) }}
 
                                     </div>
 
