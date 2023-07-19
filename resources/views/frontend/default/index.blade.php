@@ -43,7 +43,7 @@
                     Hire the best consultations for any job, online</h2>
                   <p class="fs-20 fs-sm-14 my-4 ">Millions of people use scholarships Australia to turn their ideas
                     into
-                    reality.</p>
+                    their reality.</p>
                   <div class="lg-my-3 my-sm-0 home-banner-button ">
                     <a href="{{route('register') }}?type=2" class="btn text-white fw-700  fs-20 fs-sm-12 mr-2 mb-3"
                       style="background-color:#1d4335;">{{ translate('I want to Hire') }}</a>
