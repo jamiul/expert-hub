@@ -9,12 +9,14 @@
                     <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
                     <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
                     <div class="input-group mb-3 mt-5">
-                        <input type="text " class="form-control position-relative z-0" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
-                        <div class="input-group-append position-absolute " style="position:absolute;top: 5px;right: 9px;padding: 3px 0; ">
-                            <button class="btn btn-primary" type="button" id="searchButton" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                Search
-                            </button>
-                        </div>
+                        <form  action="" method="GET" class="w-100">
+                            <input type="text" class="form-control position-relative z-0" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
+                            <div class="input-group-append position-absolute" style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
+                                <button class="btn btn-primary" type="submit" id="searchButton" data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
                     <!-- <div class="d-flex align-items-center">
@@ -55,6 +57,14 @@
                                     <i class="las la-times la-2x"></i>
                                 </button>
                             </div>
+
+                            @foreach($categories as $category)
+
+                                    <span id="category_{{$category->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                        {{$category ->name}} |<p onclick="removeLevel({{$category->id}})" class="m-0  d-inline fw-700">
+                                            X</p>
+                                    </span>
+                                    @endforeach
                             <div class="card-body pl-lg-0">
 
 
@@ -73,9 +83,10 @@
                                         <span class=" pr-3">{{ translate('Categories') }}</span>
                                     </h6>
                                     <div class="">
+
                                         @foreach(\App\Models\ProjectCategory::all() as $category)
                                         <label class="aiz-checkbox w-100">
-                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->slug }}" @if (isset($_GET['category_id'])&& $_GET['category_id']==$category->slug ) selected @endif >
+                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->slug }}" @if (in_array($category->slug,$category_ids)) checked @endif >
                                             {{$category->name}}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -125,7 +136,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-2 mt-3">
-                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1"  data-toggle="select2" data-live-search="true">
+                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2" data-live-search="true">
                                             <option selected>
                                                 {{ translate('All Durations') }}
                                             </option>

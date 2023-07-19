@@ -292,7 +292,7 @@ Route::get('/search?category_id={category_id}&type=freelancer', 'SearchControlle
 
 //scholarship list
 Route::get('/scholarshipSearch', 'SearchScholarshipController@index')->name('scholarshipSearch');
-Route::get('/scholarshipSearch?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
+// Route::get('/scholarshipSearch?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
 Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarshipSearch.skill');
 Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
 Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
