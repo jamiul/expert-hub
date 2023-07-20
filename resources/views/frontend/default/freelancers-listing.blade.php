@@ -101,6 +101,7 @@
                   </div> -->
                     <!-- Countries -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
+
                       <span class="bg-white pr-3">{{ translate('Countries') }}</span>
                     </h6>
                     <div class="mb-5">
