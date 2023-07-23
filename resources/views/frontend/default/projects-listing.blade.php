@@ -9,7 +9,7 @@
                     <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
                     <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
                     <div class="input-group mb-3 mt-5">
-                        <form  action="" method="GET" class="w-100">
+                        <form action="" method="GET" class="w-100">
                             <input type="text" class="form-control position-relative z-0" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
                             <div class="input-group-append position-absolute" style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
                                 <button class="btn btn-primary" type="submit" id="searchButton" data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
@@ -58,13 +58,18 @@
                                 </button>
                             </div>
 
+                            <!-- @foreach($categories as $category)
+                            <span id="category_{{$category->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                {{$category ->name}} |<p onclick="removeCategory({{$category->id}})" class="m-0  d-inline fw-700">
+                                    X</p>
+                            </span>
+                            @endforeach -->
                             @foreach($categories as $category)
-
-                                    <span id="category_{{$category->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                        {{$category ->name}} |<p onclick="removeLevel({{$category->id}})" class="m-0  d-inline fw-700">
-                                            X</p>
-                                    </span>
-                                    @endforeach
+                            <span id="category_{{$category->id}}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                                {{$category->name}} |
+                                <p onclick="removeCategory({{$category->id}})" class="m-0 d-inline fw-700">X</p>
+                            </span>
+                            @endforeach
                             <div class="card-body pl-lg-0">
 
 
@@ -86,7 +91,7 @@
 
                                         @foreach(\App\Models\ProjectCategory::all() as $category)
                                         <label class="aiz-checkbox w-100">
-                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->slug }}" @if (in_array($category->slug,$category_ids)) checked @endif >
+                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
                                             {{$category->name}}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -102,7 +107,7 @@
                                     <!-- Fixed Price Projects -->
                                     <div class="aiz-checkbox-list">
                                         <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Fixed Price Projects') }}
+                                            <input type="checkbox" name="projectPrice[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
@@ -120,7 +125,7 @@
                                     <!-- Hourly Projects -->
                                     <div class="aiz-checkbox-list mt-2">
                                         <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Hourly Projects') }}
+                                            <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Hourly ') }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
@@ -135,22 +140,22 @@
                                             <input class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
                                     </div>
-                                    <div class="mb-2 mt-3">
+                                    <div class="mb-2 mt-3" style="width: 245px;">
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2" data-live-search="true">
                                             <option selected>
                                                 {{ translate('All Durations') }}
                                             </option>
-                                            <option>Less than 1 week</option>
-                                            <option>1 week to 4 weeks</option>
-                                            <option>1 month to 3 months</option>
-                                            <option>3 months to 6 months</option>
-                                            <option>Over 6 months/Ongoing</option>
-                                            <option>unspecified</option>
+                                            <option name="durations[]" onchange="applyFilter()" value="{{'1 week'}}">Less than 1 week</option>
+                                            <option name="durations[]" onchange="applyFilter()" value="{{'1 week - 4 week'}}">1 week to 4 weeks</option>
+                                            <option name="durations[]" onchange="applyFilter()" value="{{'1 month - 3 month'}}">1 month to 3 months</option>
+                                            <option name="durations[]" onchange="applyFilter()" value="{{'3 month - 6 month'}}">3 months to 6 months</option>
+                                            <option name="durations[]" onchange="applyFilter()" value="{{'6 month'}}">Over 6 months/Ongoing</option>
+                                            <option name="durations[]" onchange="applyFilter()" value="">unspecified</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <!-- Project Type -->
+                                <!-- <!- - Project Type - ->
                                 <div class="mb-5">
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class=" pr-3">{{ translate('Project Type') }}</span>
@@ -168,7 +173,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <!-- Numbers of Bids -->
+                                <!- - Numbers of Bids - ->
                                 <div class="mb-5">
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="pr-3">{{ translate('Numbers of Bids') }}</span>
@@ -206,7 +211,29 @@
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                     </div>
+                                </div> -->
+
+                                <!-- Skills -->
+
+                                <div class="mb-4">
+                                    <!-- Countries -->
+                                    <h6 class="text-left mb-3 fs-14 fw-700">
+                                        <span class="pr-3">{{ translate('Skills') }}</span>
+                                    </h6>
+                                    <div class="mb-5" style="width: 245px;">
+                                        <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                            <option value="">{{ translate('Skills') }}</option>
+                                            @foreach (\App\Models\Skill::all() as $key => $skill)
+                                            <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id==$skill->id )
+                                                selected
+                                                @endif>{{ $skill->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+
                                 </div>
+
                                 <!-- Price -->
                                 <input type="hidden" name="min_price" value="">
                                 <input type="hidden" name="max_price" value="">
@@ -319,8 +346,8 @@
 
                             @foreach ($projects as $key => $project)
                             <a href="{{ route('project.details', $project->slug) }}" class="row card-project text-inherit px-3 py-4 all-scholarship-list" style="background: #F2F7F2; border-bottom:1px solid #ddd;">
-                                <div class="col-lg-1">
-                                    <span class="avatar avatar-xs mb-lg-2">
+                                <div class="col-lg-1 p-0">
+                                    <span class="avatar avatar-xs mb-lg-2" style="width:70px; height: 70px;">
                                         @if($project->image != null)
                                         <img src="{{ custom_asset($project->client->photo) }}">
                                         @else
@@ -329,7 +356,7 @@
                                     </span>
                                 </div>
                                 <div class="col-lg-8  px-lg-3">
-                                    <h5 class="h6 fw-600 lh-1-5"> {{$project->name}}</h5>
+                                    <h5 class="h6 fw-700 lh-1-5"> {{$project->name}}</h5>
                                     <ul class="list-inline opacity-70 fs-12">
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-clock opacity-40"></i> --}}
@@ -338,7 +365,7 @@
                                                     <path id="Subtraction_5" data-name="Subtraction 5" d="M-13,12a6.007,6.007,0,0,1-6-6,6.007,6.007,0,0,1,6-6A6.007,6.007,0,0,1-7,6,6.006,6.006,0,0,1-13,12Zm-.5-9V7h.013l2.109,2.109.707-.706L-12.5,6.572V3Z" transform="translate(384 1963)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1 fw-700" style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
+                                            <span class="ml-1 fw-700 fs-14" style="color:black;"></span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-stream opacity-40"></i> --}}
@@ -349,7 +376,7 @@
                                                     <path id="Subtraction_3" data-name="Subtraction 3" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(500 1967)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1 fw-700" style="color:black;">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
+                                            <span class="ml-1 fw-700 fs-14" style="color:black;">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-handshake"></i> --}}
@@ -362,7 +389,7 @@
                                                 <path d="M10.3691 11.3203H11.3158V12.267H10.3691V11.3203Z" fill="#055846" />
                                             </svg>
 
-                                            <span class="ml-1  fw-700" style="color:black;">
+                                            <span class="ml-1  fw-700 fs-14" style="color:black;">
                                                 @if ($project->bids > 0)
                                                 {{ $project->bids }}+
                                                 @else
@@ -371,7 +398,7 @@
                                                 Received</span>
                                         </li>
                                     </ul>
-                                    <div class="text-muted lh-1-8">
+                                    <div class="text-muted lh-1-4 fs-14">
                                         <p> {{ \Illuminate\Support\Str::limit($project->excerpt, 260, $end = '...') }}
                                         </p>
                                     </div>
@@ -389,7 +416,7 @@
                                 <div class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px">
 
                                     <div class="btn d-flex justify-content-start align-items-center mt-2 py-2 fs-14 px-2 text-white" style="background-color:#275846; width:165px;">
-                                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/budget.png')}}" alt="Image" style="width:36px; " /> {{ translate('Budget') }} {{ single_price($project->price) }}
+                                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/budget.png')}}" alt="Image" style="width:30px; " /> {{ translate('Budget') }} {{ single_price($project->price) }}
 
                                     </div>
 
@@ -420,7 +447,42 @@
         </form>
     </div>
 </section>
+<!-- <script>
+    function removeCategory(categoryId) {
+        var categoryElement = document.getElementById('category_' + categoryId);
+
+        if (categoryElement) {
+            categoryElement.parentNode.removeChild(categoryElement);
+
+            // Uncheck the corresponding checkbox
+            var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+        }
+        $('#project-filter-form').submit();
+    }
+</script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function removeCategory(categoryId) {
+        var categoryElement = document.getElementById('category_' + categoryId);
+
+        if (categoryElement) {
+            categoryElement.parentNode.removeChild(categoryElement);
+
+            // Uncheck the corresponding checkbox
+            var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+        }
+        $('#project-filter-form').submit();
+    }
+</script>
+
 @endsection
+
 
 @section('script')
 <script type="text/javascript">

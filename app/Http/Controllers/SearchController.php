@@ -26,6 +26,7 @@ class SearchController extends Controller
             $type = 'freelancer';
             $keyword = $request->keyword;
             $rating = $request->rating;
+            $rate = $request->rate;
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             // $category_ids = CategoryUtility::children_ids($category_id);
             // $category_ids[] = $category_id;
@@ -79,6 +80,13 @@ class SearchController extends Controller
                     $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
                 }
             }
+            if ($request->rate != null) {
+                if ($rate == "5") {
+                    $freelancers = $freelancers->where('rating', '>', 4);
+                } else {
+                    $freelancers = $freelancers->whereIn('rating', explode('-', $rate));
+                }
+            }
 
             if (count($skill_ids) > 0) {
                 $filtered_freelancers = [];
@@ -101,7 +109,7 @@ class SearchController extends Controller
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
             }
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'rate', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
@@ -232,6 +240,7 @@ class SearchController extends Controller
             $projectType = array('Fixed', 'Long Term');
             $bids = $request->bids;
             $sort = $request->sort;
+            $skills = $request->skills;
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             // $category_ids = CategoryUtility::children_ids($category_id);
             // $category_ids[] = $category_id;
@@ -251,25 +260,19 @@ class SearchController extends Controller
             } else {
                 $projects = Project::biddable()->notcancel()->open()->where('private', '0');
             }
+            // dd($projects);
 
             // if ($category_id != null) {
             //     $projects = $projects->whereIn('project_category_id', $category_ids);
             // }
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
-                $categories = ProjectCategory::whereIn('slug', $category_ids)->toArray();
-                $categoryIds=$categories->pluck('id');
+                $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+                // $categoryIds=$categories->pluck('id');
                 $category_id = $request->category_id;
-                dd($categories );
-                $projects = $projects->whereIn('project_category_id', $categoryIds);
+                // dd($categories );
+                $projects = $projects->whereIn('project_category_id', $category_ids);
             }
-            // if ($request->category_id != null) {
-            //     $category_ids = $request->category_id;
-            //     $categories = ProjectCategory::whereIn('slug', $category_ids)->get();
-            //     $categoryIds = $categories->pluck('id');
-            //     $projects = Project::whereIn('project_category_id', $categoryIds)->get();
-            // }
-
 
             if ($request->projectType != null) {
                 $projectType = $request->projectType;

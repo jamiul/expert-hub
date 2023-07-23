@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 </head>
 
@@ -151,7 +153,7 @@
                                         <h6 class="text-left mb-3 fs-14 fw-700">
                                             <span class=" pr-3">{{ translate('Rating') }}</span>
                                         </h6>
-                                        <div class="aiz-radio-list">
+                                        <!-- <div class="aiz-radio-list">
                                             <label class="aiz-radio">
                                                 <input type="radio" name="rating" value="" onchange="applyFilter()" @if ($rating=='' ) checked @endif> {{ translate('Any rating') }}
                                                 <span class="aiz-rounded-check"></span>
@@ -182,7 +184,28 @@
                                                 <span class="aiz-rounded-check"></span>
                                                 <span class="float-right text-secondary fs-12"></span>
                                             </label>
+                                        </div> -->
+
+                                        <div class="d-flex">
+                                            <div class="star-widget">
+                                                <input type="radio" name="rate" id="rate-5" value="5" @if ($rate=='5' ) checked @endif onchange="applyFilter()">
+                                                <label for="rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-4" value="4" @if ($rate=='4' ) checked @endif onchange="applyFilter()">
+                                                <label for="rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-3" value="3" @if ($rate=='3' ) checked @endif onchange="applyFilter()">
+                                                <label for="rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-2" value="2" @if ($rate=='2' ) checked @endif onchange="applyFilter()">
+                                                <label for="rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-1" value="1" @if ($rate=='1' ) checked @endif onchange="applyFilter()">
+                                                <label for="rate-1" class="fas fa-star"></label>
+                                                @if($rate)
+                                                <input type="radio" name="rate" id="rate-0" value="" onchange="applyFilter()" @if ($rate=='' ) checked @endif">
+                                                <label for="rate-0" class="fas fa-minus" style=" color:red !important; cursor:pointer;"></label>
+                                                @endif
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -326,6 +349,10 @@
         }
     </script>
 
+
+
+
+
     @endsection
 
     @section('script')
@@ -339,6 +366,13 @@
             $('input[name=max_price]').val(arg[1]);
             applyFilter();
         };
+    </script>
+    <script>
+        function setRating(rating) {
+            $('input[name="rate"]').prop('checked', false); // Uncheck all stars
+            $('input[name="rate"][value="' + rating + '"]').prop('checked', true); // Check the selected star
+            applyFilter(); // Submit the form on rating change
+        }
     </script>
     @endsection
 </body>

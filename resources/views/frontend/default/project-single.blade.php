@@ -141,7 +141,12 @@
                                 <div class="mb-4">
                                     @if (!Auth::check())
                                         <div class="alert alert-info rounded-1" role="alert">
-                                            {{ translate('You need to login as a freelancer to bid the project.') }}
+                                            {{ translate('You need to ') }}
+                                            <u>
+                                                <a href="{{ route('login') }}"  class="c-pointer fs-12 fw-700 fs-14" style="color:#275846;" >{{ translate('Log in') }}</a></u>
+                                            {{ translate("as a freelancer to bid the project. Don't have an account with us?") }}
+                                            <u>
+                                                <a href="{{ route('register') }}"  class="c-pointer fs-12 fw-700 fs-14" style="color:#275846;" >{{ translate('Create an account now') }}</a></u>
                                         </div>
                                     @elseif (Auth::check() && auth()->user()->user_type == 'admin')
                                         <div class="alert alert-info rounded-1" role="alert">
