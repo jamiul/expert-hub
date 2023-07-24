@@ -274,7 +274,7 @@
                         @endphp
                         @foreach ($services as $category)
                         <div class="col-md-3">
-                            <a href="{{ route('projects.category', $category->slug)}} " class="text-dark">
+                            <a href="{{ route('projects.category', $category->id)}} " class="text-dark">
                                 <div class=" card" style="height:283px;">
                                     <img class="w-100 h-200px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
                                     <div class="card-body" style=" padding:13px;">

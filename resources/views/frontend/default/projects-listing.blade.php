@@ -90,6 +90,7 @@
                                     <div class="">
 
                                         @foreach(\App\Models\ProjectCategory::all() as $category)
+
                                         <label class="aiz-checkbox w-100">
                                             <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
                                             {{$category->name}}
@@ -345,7 +346,7 @@
                         <div class="card-body p-0 border-0 ">
 
                             @foreach ($projects as $key => $project)
-                            <a href="{{ route('project.details', $project->slug) }}" class="row card-project text-inherit px-3 py-4 all-scholarship-list" style="background: #F2F7F2; border-bottom:1px solid #ddd;">
+                            <div href="{{ route('project.details', $project->slug) }}" class="row card-project text-inherit px-3 py-4 all-scholarship-list" style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                                 <div class="col-lg-1 p-0">
                                     <span class="avatar avatar-xs mb-lg-2" style="width:70px; height: 70px;">
                                         @if($project->image != null)
@@ -365,7 +366,7 @@
                                                     <path id="Subtraction_5" data-name="Subtraction 5" d="M-13,12a6.007,6.007,0,0,1-6-6,6.007,6.007,0,0,1,6-6A6.007,6.007,0,0,1-7,6,6.006,6.006,0,0,1-13,12Zm-.5-9V7h.013l2.109,2.109.707-.706L-12.5,6.572V3Z" transform="translate(384 1963)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1 fw-700 fs-14" style="color:black;"></span>
+                                            <span class="ml-1 fw-700" style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans()}}</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-stream opacity-40"></i> --}}
@@ -427,7 +428,7 @@
                                     </button>
 
                                 </div>
-                            </a>
+                            </div>
                             @endforeach
 
                         </div>

@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Skill extends Model
+class ParentSkill extends Model
 {
     use SoftDeletes;
-    public function parent()
+    public function posts()
     {
-        return $this->belongsTo(ParentSkill::class, 'parent_skill_id');
+        return $this->hasMany(Skill::class);
     }
 
 }

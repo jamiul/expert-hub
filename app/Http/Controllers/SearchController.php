@@ -265,12 +265,13 @@ class SearchController extends Controller
             // if ($category_id != null) {
             //     $projects = $projects->whereIn('project_category_id', $category_ids);
             // }
+            // $categoriesProject = ProjectCategory::all();
+            // dd($categoriesProject);
+
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
-                // $categoryIds=$categories->pluck('id');
-                $category_id = $request->category_id;
-                // dd($categories );
+                // $categoryIds=$categories->pluck('id')
                 $projects = $projects->whereIn('project_category_id', $category_ids);
             }
 
