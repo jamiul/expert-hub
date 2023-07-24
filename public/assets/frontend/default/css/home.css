@@ -510,23 +510,20 @@ body {
     color: #ffa707;
 }
 input:checked ~ label{
-    color: #ffa707;
+    color:#ffa707;
 }
 
-.category {
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.plus-icon {
-    margin-left: 5px;
-}
-
-.subcategories {
-    display: none;
-    margin-top: 10px;
-}
-
-.subcategory {
-    margin-left: 20px;
-}
+div.scroll {
+                margin:4px, 4px;
+                padding:4px;
+                width: 320px;
+                height: 110px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+                
+            }
+div.scroll h6 a {
+                color:black;
+                
+            }

@@ -5,6 +5,9 @@
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+
+
+
 </head>
 
 <body>
@@ -66,16 +69,18 @@
                 <h6 class="text-left mb-3 mt-lg-5  fs-14 fw-700">
                   <span class=" pr-3">{{ translate('Categories') }}</span>
                 </h6>
-                @foreach(\App\Models\ProjectCategory::all() as $category)
+                <div class="  border-bottom ">
+                  @foreach(\App\Models\ProjectCategory::all() as $category)
 
-                <label class="aiz-checkbox w-100">
-                  <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
-                    @if(in_array($category->id, $category_id)) checked @endif >
-                  {{$category->name}}
-                  <span class="aiz-square-check"></span>
-                  <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                </label>
-                @endforeach
+                  <label class=" aiz-checkbox w-100">
+                    <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
+                      @if(in_array($category->id, $category_id)) checked @endif >
+                    {{$category->name}}
+                    <span class="aiz-square-check"></span>
+                    <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                  </label>
+                  @endforeach
+                </div>
 
                 <!-- Skills -->
                 <div class="card-body pl-lg-0">
@@ -93,7 +98,291 @@
                           @endif>{{ $skill->name }}</option>
                         @endforeach
                       </select>
-                      <p class="my-2">Browse skills</p>
+                      <p class="pt-3">
+                        <a class="text-dark" data-toggle="collapse" href="#collapseExample" role="button"
+                          aria-expanded="false" aria-controls="collapseExample">
+                          Browse skills
+                        </a>
+
+
+                      </p>
+                      <div class="collapse" id="collapseExample">
+                        <div class="">
+                          <nav id="navbar-example2" class="navbar navbar-light bg-light">
+                          </nav>
+
+                          <a class="text-dark" data-toggle="collapse" href="#Education" role="button"
+                            aria-expanded="false" aria-controls="Education"> <label class="fas fa-plus border-round">
+                              Education
+                              Course Accreditations</label>
+                          </a>
+
+                          <div class="scroll collapse" id="Education">
+                            <div class="">
+                              <div class=" ">
+                                <h6><a href="" class="fs-14">
+                                    Instructional Designer</a></h6>
+                                <h6> <a href="" class=" fs-14 ">
+                                    Curriculum Developer</a></h6>
+                                <h6><a href="" class="fs-14 ">Subject Matter Expert</a></h6>
+                                <h6> <a href="" class="fs-14">Accreditation Specialist</a></h6>
+                                <h6><a href="" class="fs-14  ">Education Consultant</a></h6>
+                                <h6><a href="" class="fs-14  ">
+                                    Learning Designer</a></h6>
+                                <h6> <a href="" class="fs-14 ">
+                                    Assessment Coordinator</a></h6>
+                                <h6> <a href="" class="fs-14">
+                                    Quality Assurance Analyst</a></h6>
+                                <h6><a href="" class="fs-14  ">Content Writer </a></h6>
+                                <h6> <a href="" class="fs-14  ">Researcher </a></h6>
+                                <h6><a href="" class="fs-14">
+                                    Project Manager</a></h6>
+                                <h6><a href="" class="fs-14 ">E-Learning Developer</a></h6>
+                                <h6> <a href="" class="fs-14  "> Instructional Technologist</a>
+                                </h6>
+                                <h6> <a href="" class="fs-14">Educational Psychologist</a></h6>
+                                <h6><a href="" class="fs-14 "> Assessment Specialist</a></h6>
+                                <h6> <a href="" class="fs-14 ">Multimedia Specialist</a></h6>
+                                <h6> <a href="" class="fs-14 ">Graphic Designer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Data Analyst</a></h6>
+                                <h6> <a href="" class="fs-14 ">Evaluation and Assessment
+                                    Coordinator</a>
+                                </h6>
+                                <h6> <a href="" class="fs-14">Online Learning Coordinator</a>
+                                </h6>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div>
+                            <a class="text-dark" data-toggle="collapse" href="#Development" role="button"
+                              aria-expanded="false" aria-controls="Development"><label class="fas fa-plus"> Course
+                                Curriculum Development</label>
+                            </a>
+                            <div class="scroll collapse" id="Development">
+                              <div class=" py-2">
+                                <h6> <a href="" class="fs-14  ">Curriculum Developer</a></h6>
+                                <h6><a href="" class="fs-14  ">Instructional Designer</a></h6>
+                                <h6><a href="" class="fs-14  ">Subject Matter Expert (SME)</a></h6>
+                                <h6><a href="" class="fs-14  ">Education Consultant</a></h6>
+                                <h6> <a href="" class="fs-14  ">Content Developer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Learning Experience Designer</a></h6>
+                                <h6><a href="" class="fs-14  ">Curriculum Coordinator</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Writer</a></h6>
+                                <h6><a href="" class="fs-14  ">Instructional Technologist</a></h6>
+                                <h6> <a href="" class="fs-14  ">Educational Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  ">E-Learning Developer</a></h6>
+                                <h6><a href="" class="fs-14  ">Assessment Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  ">Learning Designer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Project Manager</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Editor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Consultant</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Coordinator</a></h6>
+                                <h6><a href="" class="fs-14  ">Instructional Materials Developer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Integration Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Assessment Analyst</a></h6>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div>
+                            <a class="text-dark" data-toggle="collapse" href="#Management" role="button"
+                              aria-expanded="false" aria-controls="Management">
+                              <label class="fas fa-plus"> Learning Management Systems</label>
+                            </a>
+                            <div class="scroll collapse" id="Management">
+                              <div class=" py-2">
+                                <h6> <a href="" class="fs-14  "> LMS Developer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Instructional Designer</a></h6>
+                                <h6><a href="" class="fs-14  "> UX/UI Designer</a></h6>
+                                <h6><a href="" class="fs-14  "> Front-end Developer</a></h6>
+                                <h6><a href="" class="fs-14  "> Back-end Developer</a></h6>
+                                <h6> <a href="" class="fs-14  "> Full-stack Developer</a></h6>
+                                <h6><a href="" class="fs-14  "> Software Engineer</a></h6>
+                                <h6> <a href="" class="fs-14  "> System Administrator</a></h6>
+                                <h6><a href="" class="fs-14  "> Database Administrator</a></h6>
+                                <h6><a href="" class="fs-14  "> Project Manager</a></h6>
+                                <h6><a href="" class="fs-14  "> Quality Assurance Analyst</a></h6>
+                                <h6><a href="" class="fs-14  "> Content Developer </a></h6>
+                                <h6><a href="" class="fs-14  "> Graphic Designer</a></h6>
+                                <h6> <a href="" class="fs-14  "> Mobile App Developer</a></h6>
+                                <h6><a href="" class="fs-14  "> Integration Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  "> Technical Writer</a></h6>
+                                <h6> <a href="" class="fs-14  "> User Support Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  "> Data Analyst</a></h6>
+                                <h6><a href="" class="fs-14  "> Training Coordinator</a></h6>
+                                <h6> <a href="" class="fs-14  "> LMS Administrator</a></h6>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div>
+                            <a class="text-dark" data-toggle="collapse" href="#Writing" role="button"
+                              aria-expanded="false" aria-controls="Writing"> <label class="fas fa-plus"> Writing and
+                                Editing</label>
+                            </a>
+                            <div class="scroll collapse" id="Writing">
+                              <div class=" py-2 ">
+                                <h6><a href="" class="fs-14  ">Academic Writer</a></h6>
+                                <h6><a href="" class="fs-14  ">Content Writer</a></h6>
+                                <h6><a href="" class="fs-14  ">Copywriter</a></h6>
+                                <h6><a href="" class="fs-14  ">Editor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Proofreader</a></h6>
+                                <h6> <a href="" class="fs-14  ">Researcher</a></h6>
+                                <h6> <a href="" class="fs-14  ">Subject Matter Expert</a></h6>
+                                <h6> <a href="" class="fs-14  ">Curriculum Developer</a></h6>
+                                <h6><a href="" class="fs-14  ">Instructional Designer</a></h6>
+                                <h6><a href="" class="fs-14  ">Copy Editor</a></h6>
+                                <h6><a href="" class="fs-14  ">Publishing Assistant</a></h6>
+                                <h6> <a href="" class="fs-14  ">Editorial Assistant</a></h6>
+                                <h6><a href="" class="fs-14  ">Technical Writer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Grant Writer</a></h6>
+                                <h6><a href="" class="fs-14  ">Manuscript Editor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Citation Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  ">Academic Policy Writer</a></h6>
+                                <h6><a href="" class="fs-14  ">Legal Writer</a></h6>
+                                <h6>
+                                  <a href="" class="fs-14  ">Language Editor</a>
+                                </h6>
+                                <h6> <a href="" class="fs-14  ">Freelance Writer/Editor</a></h6>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div>
+
+                            <a class="text-dark" data-toggle="collapse" href="#Research" role="button"
+                              aria-expanded="false" aria-controls="Research"> <label class="fas fa-plus"> Research and
+                                Analysis</label> </a>
+                            <div class="scroll collapse" id="Research">
+                              <div class=" py-2">
+                                <h6> <a href="" class="fs-14  ">Confirmatory Factor Analysis(CFA)</a></h6>
+                                <h6> <a href="" class="fs-14  ">Cross-Lagged Panel Models</a></h6>
+                                <h6><a href="" class="fs-14  ">Demographic Methods</a></h6>
+                                <h6> <a href="" class="fs-14  ">Discourse analysis</a></h6>
+                                <h6><a href="" class="fs-14  ">Dynamic Panel Data Modeling</a></h6>
+                                <h6> <a href="" class="fs-14  ">Dynamic SEM (DSEM)</a></h6>
+                                <h6><a href="" class="fs-14  ">Ecological Momentary Assessment(EMA)</a>
+                                </h6>
+                                <h6><a href="" class="fs-14  ">Empirical Dynamic Modeling(EDM)</a></h6>
+                                <h6> <a href="" class="fs-14  ">Experience Sampling Methods(ESM)</a></h6>
+                                <h6><a href="" class="fs-14  ">Intensive Longitudinal Data Analysis</a>
+                                </h6>
+                                <h6><a href="" class="fs-14  ">Longitudinal Analysis</a></h6>
+                                <h6><a href="" class="fs-14  ">Longitudinal SEM</a></h6>
+                                <h6> <a href="" class="fs-14  ">Measurement Invariance Testing</a></h6>
+                                <h6> <a href="" class="fs-14  ">Multilevel Modeling(MLM)</a></h6>
+                                <h6> <a href="" class="fs-14  ">Multilevel Structural Equation
+                                    Modeling(MSEM)</a>
+                                </h6>
+                                <h6> <a href="" class="fs-14  ">Panel Data Modeling</a></h6>
+                                <h6><a href="" class="fs-14  ">Path Analysis</a></h6>
+                                <h6> <a href="" class="fs-14  ">Qualitative data analysis</a></h6>
+                                <h6> <a href="" class="fs-14  ">Quantitative data analysis</a></h6>
+                                <h6><a href="" class="fs-14  ">Structural Equation Modeling(SEM)</a></h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+
+                            <a class="text-dark" data-toggle="collapse" href="#Transcription" role="button"
+                              aria-expanded="false" aria-controls="Transcription"><label class="fas fa-plus">
+                                Transcription and
+                                Translation</label></a>
+                            <div class="scroll collapse" id="Transcription">
+                              <div class="py-2">
+                                <h6><a href="" class="fs-14  ">Academic Transcriber</a></h6>
+                                <h6><a href="" class="fs-14  ">Academic Translator</a></h6>
+                                <h6><a href="" class="fs-14  ">Language Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  ">Transcriptionist</a></h6>
+                                <h6><a href="" class="fs-14  ">Language Services Coordinator</a></h6>
+                                <h6> <a href="" class="fs-14  ">Translation Project Manager</a></h6>
+                                <h6> <a href="" class="fs-14  ">Language Quality Assurance Specialist</a>
+                                </h6>
+                                <h6> <a href="" class="fs-14  ">Linguistics Researcher</a></h6>
+                                <h6> <a href="" class="fs-14  ">Bilingual Research Assistant</a></h6>
+                                <h6> <a href="" class="fs-14  ">Language Analyst</a></h6>
+                                <h6><a href="" class="fs-14  ">Transcription Editor</a></h6>
+                                <h6><a href="" class="fs-14  ">Multilingual Content Writer</a></h6>
+                                <h6> <a href="" class="fs-14  ">Academic Proofreader</a></h6>
+                                <h6> <a href="" class="fs-14  ">Language Instructor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Language Technology Specialist</a></h6>
+                                <h6> <a href="" class="fs-14  ">Interpreting Services Coordinator</a></h6>
+                                <h6><a href="" class="fs-14  ">Localization Specialist</a></h6>
+                                <h6><a href="" class="fs-14  ">Language Data Analyst</a></h6>
+                                <h6><a href="" class="fs-14  ">Academic Language Consultant</a></h6>
+                                <h6> <a href="" class="fs-14  ">Language Services Administrator</a></h6>
+                              </div>
+                            </div>
+                          </div>
+                          <a class="text-dark" data-toggle="collapse" href="#Scholarship" role="button"
+                            aria-expanded="false" aria-controls="Scholarship"> <label class="fas fa-plus"> Scholarship
+                              Applications</label>
+                          </a>
+                          <div class="scroll collapse" id="Scholarship">
+                            <div class=" py-2">
+                              <h6> <a href="" class="fs-14  ">Academic Consultant</a></h6>
+                              <h6> <a href="" class="fs-14  ">Scholarship Application Advisor</a></h6>
+                              <h6><a href="" class="fs-14  ">Research Grant Consultant</a></h6>
+                              <h6> <a href="" class="fs-14  ">Scholarship Specialist</a></h6>
+                              <h6><a href="" class="fs-14  ">Grant Proposal Writer</a></h6>
+                              <h6> <a href="" class="fs-14  ">Research Funding Consultant</a></h6>
+                              <h6> <a href="" class="fs-14  ">Scholarship Application Reviewer</a></h6>
+                              <h6><a href="" class="fs-14  ">Research Project Manager</a></h6>
+                              <h6><a href="" class="fs-14  ">Funding Strategy Consultant</a></h6>
+                              <h6> <a href="" class="fs-14  ">Grant Development Coordinator</a></h6>
+                              <h6><a href="" class="fs-14  ">Research Scholarship Coach</a></h6>
+                              <h6> <a href="" class="fs-14  ">Scholarship Application Coordinator</a>
+                              </h6>
+                              <h6> <a href="" class="fs-14  ">Grant Writing Specialist</a></h6>
+                              <h6><a href="" class="fs-14  ">Research Funding Analyst</a></h6>
+                              <h6><a href="" class="fs-14  ">Scholarship Program Manager</a></h6>
+                              <h6><a href="" class="fs-14  ">Research Grant Administrator</a></h6>
+                              <h6><a href="" class="fs-14  ">Funding Opportunities Researcher</a></h6>
+                              <h6> <a href="" class="fs-14  ">Scholarship Application Assessor</a></h6>
+                              <h6><a href="" class="fs-14  ">Academic Writing Consultant</a></h6>
+                              <h6><a href="" class="fs-14  ">Supervisors Communications Specialist</a>
+                              </h6>
+                            </div>
+                          </div>
+                          <div>
+                            <a class="text-dark fs-14" data-toggle="collapse" href="#Tutoring" role="button"
+                              aria-expanded="false" aria-controls="Tutoring"> <label class="fas fa-plus"> Mentoring
+                                and Tutoring</label></a>
+
+                            <div class="scroll collapse" id="Tutoring">
+                              <div class=" py-2 fs-14">
+                                <h6> <a href="" class="fs-14  ">Uni Maths Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">Uni Statistics Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">Uni Science Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Uni English Language Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Uni English Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">Uni Biology Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Uni Chemistry Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Uni Physics Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Uni Computer Science Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Uni Business Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">High School Maths Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">High School Statistics Tutor</a>
+                                </h6>
+                                <h6><a href="" class="fs-14  ">High School Science Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">High School English Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">High School Biology Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">High School Chemistry Tutor</a></h6>
+                                <h6><a href="" class="fs-14  ">High School Physics Tutor</a></h6>
+                                <h6> <a href="" class="fs-14  ">Academic Coach</a></h6>
+                                <h6> <a href="" class="fs-14  ">Career Coach</a></h6>
+                                <h6><a href="" class="fs-14  ">Peer Academic Advisor</a></h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="text-dark hide-all-btn" role="button">
+                        Hide All
+                      </a>
                     </div>
 
                   </div>
@@ -103,8 +392,8 @@
                     <span class="pr-3">{{ translate('Countries') }}</span>
                   </h6>
 
-                  <div class=" mb-5 border-bottom ">
-                    <div>
+                  <div class=" mb-5 ">
+                    <div class=" py-2 border-bottom ">
                       <select class=" select2 form-control aiz-selectpicker rounded-1" name="country_id"
                         onchange="applyFilter()" data-toggle="select2" data-live-search="true">
                         <option value="">{{ translate('Search countries') }}</option>
@@ -309,6 +598,32 @@
     </div>
   </section>
 
+
+
+  <!--  this script to handle the "Hide All" button click -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const hideAllBtn = document.querySelector(".hide-all-btn");
+    const categoryLinks = document.querySelectorAll(".category-link");
+    const collapseExample = document.querySelector("#collapseExample");
+
+    // Add click event listener to "Hide All" button
+    hideAllBtn.addEventListener("click", function() {
+      // If the category container is already collapsed, don't do anything
+      if (!collapseExample.classList.contains("show")) {
+        return;
+      }
+
+      // Toggle the collapse state of each category
+      categoryLinks.forEach(function(link) {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target.classList.contains("show")) {
+          link.click(); // This will collapse the category
+        }
+      });
+    });
+  });
+  </script>
 
   <script>
   function removeCategory(categoryId) {
