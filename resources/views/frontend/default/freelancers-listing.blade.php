@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 
@@ -43,8 +44,8 @@
                 @endforeach
                 <!-- search bar  -->
                 <input type="hidden" name="type" value="freelancer">
-                <div class="">
-                  <div class="d-flex align-items-center w-100">
+                <form class="" method="GET">
+                  <div class=" d-flex align-items-center w-100">
                     <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
                       data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                       <i class="las la-filter"></i>
@@ -52,15 +53,15 @@
                     <div class="input-group rounded-2">
                       <input type="text" class="form-control rounded  "
                         placeholder="{{ translate('Search for consultants') }}" name="keyword" value="{{ $keyword }}">
-                      <div class="input-group-prepend rounded">
-                        <span class="input-group-text text-white border-left-0 rounded-right" :
-                          style="background:#275846;">
+                      <button class="input-group-prepend rounded" type="submit">
+                        <span class="input-group-text text-white border-left-0 rounded-right" : style="">
                           <i class="las la-search"></i>
                         </span>
-                      </div>
+                      </button>
                     </div>
                   </div>
-                </div>
+                </form>
+                <!-- categories  -->
 
                 <h6 class="text-left mb-3 mt-lg-5  fs-14 fw-700">
                   <span class=" pr-3">{{ translate('Categories') }}</span>
@@ -76,129 +77,107 @@
                 </label>
                 @endforeach
 
+                <!-- Skills -->
                 <div class="card-body pl-lg-0">
                   <div class="">
-                    <!-- Countries -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class="pr-3">{{ translate('Skills') }}</span>
                     </h6>
-                    <div class="mb-5">
+                    <div class="mb-5 border-bottom">
                       <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id"
                         onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('Skills') }}</option>
+                        <option value="">{{ translate('Search skills') }}</option>
                         @foreach (\App\Models\Skill::all() as $key => $skill)
                         <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id==$skill->id )
                           selected
                           @endif>{{ $skill->name }}</option>
                         @endforeach
                       </select>
+                      <p class="my-2">Browse skills</p>
                     </div>
 
-
                   </div>
-                </div>
 
-                <!-- Categories -->
-                <div class="card-body pl-lg-0">
-                  <div class="">
-                    <!-- Countries -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="pr-3">{{ translate('Countries') }}</span>
-                    </h6>
-                    <div class="mb-5">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id"
+                  <!-- countries  -->
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Countries') }}</span>
+                  </h6>
+
+                  <div class=" mb-5 border-bottom ">
+                    <div>
+                      <select class=" select2 form-control aiz-selectpicker rounded-1" name="country_id"
                         onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('All Countries') }}</option>
+                        <option value="">{{ translate('Search countries') }}</option>
                         @foreach (\App\Models\Country::all() as $key => $country)
                         <option value="{{ $country->id }}" @if (isset($country_id) && $country_id==$country->id )
                           selected
                           @endif>{{ $country->name }}</option>
                         @endforeach
                       </select>
+
                     </div>
+                  </div>
 
-                    <!-- Hourly Rate -->
-                    <input type="hidden" name="min_price" value="">
-                    <input type="hidden" name="max_price" value="">
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class=" pr-3">{{ translate('Hourly Rate') }}</span>
-                    </h6>
-                    <div class="aiz-range-slider mb-5 px-3">
-                      <div id="input-slider-range"
-                        data-range-value-min="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::min('hourly_rate') }} @endif"
-                        data-range-value-max="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::max('hourly_rate') }} @endif">
-                      </div>
+                  <!-- Hourly rates -->
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
+                  </h6>
+                  <div class="mb-5 border-bottom">
+                    <div class="mb-2 mt-3" style="width: 245px;">
+                      <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
+                        data-live-search="true">
+                        <option selected>
+                          {{ translate('Any hourly rate') }}
+                        </option>
+                        <option>
+                          < $10/hour </option>
+                        </option>
+                        $10-20/hour </option>
+                        <option>
+                          $20-30/hour </option>
+                        </option>
+                        <option>
+                          $30-40/hour </option>
+                        <option>
+                          > $40/hour </option>
 
-                      <div class="row mt-2">
-                        <div class="col-6">
-                          <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price))
-                            data-range-value-low="{{ $min_price }}" @elseif(count($freelancers)> 1 &&
-                            $freelancers->min('hourly_rate') > 0)
-                            data-range-value-low="{{ $freelancers->min('hourly_rate') }}"
-                            @else
-                            data-range-value-low="0"
-                            @endif
-                            id="input-slider-range-value-low"
-                            ></span>
-                        </div>
-                        <div class="col-6 text-right">
-                          <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price))
-                            data-range-value-high="{{ $max_price }}" @elseif(count($freelancers)> 1 &&
-                            $freelancers->max('hourly_rate') > 0)
-                            data-range-value-high="{{ $freelancers->max('hourly_rate') }}"
-                            @else
-                            data-range-value-high="0"
-                            @endif
-                            id="input-slider-range-value-high"
-                            ></span>
-                        </div>
-                      </div>
+                      </select>
+
                     </div>
+                  </div>
 
-                    <!-- Rating -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class=" pr-3">{{ translate('Rating') }}</span>
-                    </h6>
-                    <div class="aiz-radio-list">
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="" onchange="applyFilter()" @if ($rating=='' ) checked
-                          @endif> {{ translate('Any rating') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="4+" onchange="applyFilter()" @if ($rating=='4+' )
-                          checked @endif> {{ translate('4 star +') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="3-4" onchange="applyFilter()" @if ($rating=='3-4' )
-                          checked @endif> {{ translate('3 to 4 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="2-3" onchange="applyFilter()" @if ($rating=='2-3' )
-                          checked @endif> {{ translate('2 to 3 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="1-2" onchange="applyFilter()" @if ($rating=='1-2' )
-                          checked @endif> {{ translate('1 to 2 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
-                      <label class="aiz-radio">
-                        <input type="radio" name="rating" value="0-1" onchange="applyFilter()" @if ($rating=='0-1' )
-                          checked @endif> {{ translate('0 to 1 star') }}
-                        <span class="aiz-rounded-check"></span>
-                        <span class="float-right text-secondary fs-12"></span>
-                      </label>
+
+
+                  <!-- Rating -->
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class=" pr-3">{{ translate('Rating') }}</span>
+                  </h6>
+                  <div class="d-flex border-bottom">
+                    <div class="star-widget">
+                      <input type="radio" name="rate" id="rate-5" value="5" @if ($rate=='5' ) checked @endif
+                        onchange="applyFilter()">
+                      <label for="rate-5" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-4" value="4" @if ($rate=='4' ) checked @endif
+                        onchange="applyFilter()">
+                      <label for="rate-4" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-3" value="3" @if ($rate=='3' ) checked @endif
+                        onchange="applyFilter()">
+                      <label for="rate-3" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-2" value="2" @if ($rate=='2' ) checked @endif
+                        onchange="applyFilter()">
+                      <label for="rate-2" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-1" value="1" @if ($rate=='1' ) checked @endif
+                        onchange="applyFilter()">
+                      <label for="rate-1" class="fas fa-star"></label>
+                      @if($rate)
+                      <input type="radio" name="rate" id="rate-0" value="" onchange="applyFilter()" @if ($rate=='' )
+                        checked @endif">
+                      <label for="rate-0" class="fas fa-minus" style=" color:red !important; cursor:pointer;"></label>
+                      @endif
                     </div>
                   </div>
                 </div>
+
               </div>
               <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                 data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>

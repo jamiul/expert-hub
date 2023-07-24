@@ -229,7 +229,7 @@
                 <div class="card-body" style=" padding:13px;">
 
                   <a class=" featured_category text-dark" onclick="applyFilter()"
-                    href="{{ route('freelancer.category', $category->slug)}}">
+                    href="{{ route('freelancer.category', $category->id)}}">
                     <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">{{ $category->name }}
                     </p>
                     <p class="fs-18 " style=" line-height:23px;">{{ $category->description }}</p>
@@ -282,8 +282,7 @@
             ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
             ->pluck('user_id');
 
-            $services = \App\Models\ProjectCategory::inRandomOrder()
-            ->get();
+            $services = \App\Models\ProjectCategory::all();
             @endphp
             @foreach ($services as $category)
             <div class="col-md-3">

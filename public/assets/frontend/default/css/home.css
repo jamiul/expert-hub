@@ -494,3 +494,39 @@ body {
 
 }
 
+/* all consultant page */
+.star-widget input{
+    display: none;;
+}
+.star-widget label{
+    font-size: 15px;
+    color: #444;
+    padding: 5px;
+    float: right;
+    translate: all 0.2 ease;
+}
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
+    color: #ffa707;
+}
+input:checked ~ label{
+    color: #ffa707;
+}
+
+.category {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.plus-icon {
+    margin-left: 5px;
+}
+
+.subcategories {
+    display: none;
+    margin-top: 10px;
+}
+
+.subcategory {
+    margin-left: 20px;
+}
