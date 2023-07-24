@@ -1,0 +1,13 @@
+.profile-identity {
+    display: flex;
+    align-items: flex-start;
+}
+.single-profile {
+    padding: 30px;
+}
+.profile-photo {
+    margin-right: 40px;
+}
+.identity-badges {
+    padding-left: 140px;
+}
