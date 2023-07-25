@@ -19,7 +19,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        $skills = Skill::latest()->paginate(10);
+        $skills = Skill::latest()->paginate(15);
         return view('admin.default.freelancer.skills.index', compact('skills'));
 
     }

@@ -1,4 +1,5 @@
 @extends('frontend.default.layouts.app')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 @section('content')
 <section class="py-4 py-lg-3">
@@ -218,10 +219,10 @@
 
                                 <div class="mb-4">
                                     <!-- Countries -->
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
+                                    <!-- <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="pr-3">{{ translate('Skills') }}</span>
-                                    </h6>
-                                    <div class="mb-5" style="width: 245px;">
+                                    </h6> -->
+                                    <!-- <div class="mb-5" style="width: 245px;">
                                         <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
                                             <option value="">{{ translate('Skills') }}</option>
                                             @foreach (\App\Models\Skill::all() as $key => $skill)
@@ -230,6 +231,42 @@
                                                 @endif>{{ $skill->name }}</option>
                                             @endforeach
                                         </select>
+                                    </div> -->
+                                    <div class="">
+                                        <h6 class="text-left mb-3 fs-14 fw-700">
+                                            <span class="pr-3">{{ translate('Skills') }}</span>
+                                        </h6>
+                                        <div class="mb-5 border-bottom">
+                                            <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+
+                                                <option value="">{{ translate('Search skills') }}</option>
+                                                @foreach (\App\Models\Skill::all() as $key => $skill)
+                                                <option value="{{ $skill->id }}" @if (in_array($skill->id, (array)$skill_ids ))
+                                                    selected
+                                                    @endif>{{ $skill->name }}</option>
+                                                @endforeach
+                                            </select>
+
+                                           <div class="mt-3">
+                                           @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                                            <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
+                                                <label class="fas fa-plus " style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
+                                            </a>
+                                            <div class="overflow-auto h-130px collapse " id="skill_{{$parentSkill->id}}">
+                                                @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
+                                                <div class=" w-200px child-skill-project-filtering" >
+                                                    <div class="mb-1 ">
+                                                    <input type="checkbox"  name="childSkill_id[]" id="{{$subSkill->id}}" value="{{$subSkill->id}}" class=" d-none" onchange="applyFilter()" >
+                                                    <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="{{$subSkill->id}}"> {{ $subSkill->name }}</label>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                            @endforeach
+                                           </div>
+
+                                        </div>
                                     </div>
 
 
@@ -312,16 +349,6 @@
                                 </button>
                                 <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
                             </div>
-
-                            <div class="w-200px">
-                                <select class="form-control form-control-sm aiz-selectpicker rounded-1" name="sort" onchange="applyFilter()">
-                                    <option value="1" @if($sort=='1' ) selected @endif>{{ translate('Newest first') }}</option>
-                                    <option value="2" @if($sort=='2' ) selected @endif>{{ translate('Lowest budget first') }}</option>
-                                    <option value="3" @if($sort=='3' ) selected @endif>{{ translate('Highest budget first') }}</option>
-                                    <option value="4" @if($sort=='4' ) selected @endif>{{ translate('Lowest bids first') }}</option>
-                                    <option value="5" @if($sort=='5' ) selected @endif>{{ translate('Highest bids first') }}</option>
-                                </select>
-                            </div>
                         </div> -->
 
                         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -340,7 +367,6 @@
                                     <option value="4" @if($sort=='4' ) selected @endif>{{ translate('Lowest bids first') }}</option>
                                     <option value="5" @if($sort=='5' ) selected @endif>{{ translate('Highest bids first') }}</option>
                                 </select>
-
                             </div>
                         </div>
                         <div class="card-body p-0 border-0 ">
@@ -486,6 +512,13 @@
 
 
 @section('script')
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     function applyFilter() {
         $('#project-filter-form').submit();

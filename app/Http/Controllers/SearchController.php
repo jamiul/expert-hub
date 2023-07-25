@@ -203,7 +203,7 @@ class SearchController extends Controller
             $speaks = array('');
             $level =  array('');
             $category_id = array('');
-            dd($keyword);
+            // dd($keyword);
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                 ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                 ->pluck('user_id');
@@ -240,7 +240,10 @@ class SearchController extends Controller
             $projectType = array('Fixed', 'Long Term');
             $bids = $request->bids;
             $sort = $request->sort;
-            $skills = $request->skills;
+            $skill_id = array('');
+            $childSkill_id = array('');
+
+
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             // $category_ids = CategoryUtility::children_ids($category_id);
             // $category_ids[] = $category_id;
@@ -251,7 +254,10 @@ class SearchController extends Controller
             $categories=[];
             $categoryIds=[];
             $category_ids=[];
-
+            $skills = [];
+            $skill_ids = [];
+            // dd($skills);
+            // dd($skill_ids);
 
 
             $project_approval = SystemConfiguration::where('type', 'project_approval')->first()->value;
@@ -278,6 +284,27 @@ class SearchController extends Controller
             if ($request->projectType != null) {
                 $projectType = $request->projectType;
                 $projects = $projects->whereIn('type', $projectType);
+            }
+
+            if ($request->skill_id != null) {
+                $skill_ids = $request->skill_id;
+                $skills =Skill::whereIn('id', $skill_ids)->get();
+                $projects = $projects->where(function ($query) use ($skill_ids) {
+                    foreach ($skill_ids as $skill_id) {
+                        $query->orWhere('skills', 'like', '%' . $skill_id . '%');
+                    }
+                });
+
+            }
+            if ($request->childSkill_id != null) {
+                $childSkill_ids = $request->childSkill_id;
+                $childSkills =Skill::whereIn('id', $childSkill_ids)->get();
+                $projects = $projects->where(function ($query) use ($childSkill_ids) {
+                    foreach ($childSkill_ids as $childSkill_id) {
+                        $query->orWhere('skills', 'like', '%' . $childSkill_id . '%');
+                    }
+                });
+
             }
 
             if ($request->bids != null) {
@@ -326,7 +353,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price','categories','categoryIds','category_ids'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price','categories','categoryIds','category_ids','skills','skill_ids'));
         }
     }
 
