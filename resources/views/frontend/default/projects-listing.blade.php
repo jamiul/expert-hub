@@ -272,8 +272,7 @@
             <div class="card-body p-0 border-0 ">
 
               @foreach ($projects as $key => $project)
-
-              <a href="{{ route('client.details',$project->client->user_name) }}"
+              <a href="{{ route('project.details', $project->slug) }}"
                 class="row card-project text-inherit px-3 py-4 all-scholarship-list"
                 style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                 <div class="col-lg-1">
@@ -285,10 +284,6 @@
                     @endif
                   </span>
                 </div>
-              </a>
-              <a href="{{route('project.details', $project->slug)}}"
-                class="row card-project text-inherit px-3 py-4 all-scholarship-list"
-                style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                 <div class="col-lg-8  px-lg-3">
                   <h5 class="h6 fw-600 lh-1-5"> {{$project->name}}</h5>
                   <ul class="list-inline opacity-70 fs-12">
