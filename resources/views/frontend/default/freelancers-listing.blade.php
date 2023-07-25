@@ -4,15 +4,10 @@
 <head>
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
-
-
 </head>
 
 <body>
   @extends('frontend.default.layouts.app')
-
   @section('content')
   <section class="mt-5">
     <div class="container-main-scholarship">
@@ -74,7 +69,7 @@
 
                   <label class=" aiz-checkbox w-100">
                     <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
-                      @if(in_array($category->id, $category_id)) checked @endif >
+                      @if(in_array($category->id, $category_ids)) checked @endif >
                     {{$category->name}}
                     <span class="aiz-square-check"></span>
                     <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -106,21 +101,21 @@
 
 
                       </p>
-                      <div class="collapse" id="collapseExample">
-                        <div class="">
+                      <div class="collapse " id="collapseExample">
+                        <div class="fre-expand-icon">
                           <nav id="navbar-example2" class="navbar navbar-light bg-light">
                           </nav>
 
                           <a class="text-dark" data-toggle="collapse" href="#Education" role="button"
                             aria-expanded="false" aria-controls="Education"> <label class="fas fa-plus border-round">
-                              Education
+
                               Course Accreditations</label>
                           </a>
 
                           <div class="scroll collapse" id="Education">
                             <div class="">
                               <div class=" ">
-                                <h6><a href="" class="fs-14">
+                                <h6><a href="" class="fs-12">
                                     Instructional Designer</a></h6>
                                 <h6> <a href="" class=" fs-14 ">
                                     Curriculum Developer</a></h6>
@@ -156,7 +151,7 @@
                           </div>
                           <div>
                             <a class="text-dark" data-toggle="collapse" href="#Development" role="button"
-                              aria-expanded="false" aria-controls="Development"><label class="fas fa-plus"> Course
+                              aria-expanded="false" aria-controls="Development"><label class="fas fa-plus">
                                 Curriculum Development</label>
                             </a>
                             <div class="scroll collapse" id="Development">
@@ -380,9 +375,7 @@
                           </div>
                         </div>
                       </div>
-                      <a class="text-dark hide-all-btn" role="button">
-                        Hide All
-                      </a>
+
                     </div>
 
                   </div>
@@ -418,16 +411,16 @@
                         <option selected>
                           {{ translate('Any hourly rate') }}
                         </option>
-                        <option>
+                        <option value="10">
                           < $10/hour </option>
-                        </option>
+                        </option value="20">
                         $10-20/hour </option>
-                        <option>
+                        <option value="30">
                           $20-30/hour </option>
                         </option>
-                        <option>
+                        <option value="40">
                           $30-40/hour </option>
-                        <option>
+                        <option value="50">
                           > $40/hour </option>
 
                       </select>
@@ -435,7 +428,42 @@
                     </div>
                   </div>
 
+                  <input type=" hidden" name="min_price" value="">
+                  <input type="hidden" name="max_price" value="">
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="bg-white pr-3">{{ translate('Hourly Rate') }}</span>
+                  </h6>
+                  <div class="aiz-range-slider mb-5 px-3">
+                    <div id="input-slider-range"
+                      data-range-value-min="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::min('hourly_rate') }} @endif"
+                      data-range-value-max="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::max('hourly_rate') }} @endif">
+                    </div>
 
+                    <div class="row mt-2">
+                      <div class="col-6">
+                        <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price))
+                          data-range-value-low="{{ $min_price }}" @elseif(count($freelancers)> 1 &&
+                          $freelancers->min('hourly_rate') > 0)
+                          data-range-value-low="{{ $freelancers->min('hourly_rate') }}"
+                          @else
+                          data-range-value-low="0"
+                          @endif
+                          id="input-slider-range-value-low"
+                          ></span>
+                      </div>
+                      <div class="col-6 text-right">
+                        <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price))
+                          data-range-value-high="{{ $max_price }}" @elseif(count($freelancers)> 1 &&
+                          $freelancers->max('hourly_rate') > 0)
+                          data-range-value-high="{{ $freelancers->max('hourly_rate') }}"
+                          @else
+                          data-range-value-high="0"
+                          @endif
+                          id="input-slider-range-value-high"
+                          ></span>
+                      </div>
+                    </div>
+                  </div>
 
                   <!-- Rating -->
                   <h6 class="text-left mb-3 fs-14 fw-700">

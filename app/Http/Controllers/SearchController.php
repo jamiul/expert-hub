@@ -27,6 +27,7 @@ class SearchController extends Controller
             $keyword = $request->keyword;
             $rating = $request->rating;
             $rate = $request->rate;
+            // dd($rate);
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             // $category_ids = CategoryUtility::children_ids($category_id);
             // $category_ids[] = $category_id;
@@ -37,6 +38,7 @@ class SearchController extends Controller
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
             $categories = [];
+            $category_ids = [];
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -57,8 +59,9 @@ class SearchController extends Controller
 
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
-                $categories = ProjectCategory::where('id', $category_ids)->get();
-                $freelancers = $freelancers->where('specialist', $category_ids);
+                $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+                // dd($categories);
+                $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
@@ -109,7 +112,7 @@ class SearchController extends Controller
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
             }
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating','rate', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating','rate', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id','category_ids'));
         }
         else if ($request->type == 'seminar') {
             $type = 'seminar';
@@ -205,7 +208,7 @@ class SearchController extends Controller
             $speaks = array('');
             $level =  array('');
             $category_id = array('');
-            dd($keyword);
+            // dd($keyword);
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                 ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                 ->pluck('user_id');

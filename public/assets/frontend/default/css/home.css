@@ -527,3 +527,7 @@ div.scroll h6 a {
                 color:black;
                 
             }
+#contentDiv {
+    display: block; /* or "none" if you want it to be initially hidden */
+    /* Add any other styles you want */
+  }
