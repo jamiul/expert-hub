@@ -85,6 +85,34 @@
               </div>
             </div>
           </div>
+
+          <div class="single-profile-boder"></div>
+
+          <div class="profile-type">
+            <div class="row">
+              <div class="col-4">
+                <div class="left-aside">
+                  <div class="mb-20">
+                    <h4 class="view-profile">View Profile</h4>
+                  </div>
+                  <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    Full Stack Development
+                  </div>
+                  <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                    All work
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <div class="media align-items-center d-block d-md-flex container">

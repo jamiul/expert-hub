@@ -5,9 +5,29 @@
 .single-profile {
     padding: 30px;
 }
+.single-profile-boder {
+    border-top: 1px solid rgba(0,0,0,.125);
+}
 .profile-photo {
     margin-right: 40px;
 }
 .identity-badges {
     padding-left: 140px;
+}
+.list-group-item {
+    border: none !important;
+}
+.left-aside {
+    border-right: 1px solid rgba(0,0,0,.125);
+}
+h4.view-profile {
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+}
+#list-tab .list-group-item {
+    padding-left: 35px !important;
+}
+.list-group-item.active {
+    background-color: #055846 !important;
 }
