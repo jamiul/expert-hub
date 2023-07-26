@@ -65,12 +65,7 @@
                 </button>
               </div>
 
-              <!-- @foreach($categories as $category)
-                            <span id="category_{{$category->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                {{$category ->name}} |<p onclick="removeCategory({{$category->id}})" class="m-0  d-inline fw-700">
-                                    X</p>
-                            </span>
-                            @endforeach -->
+
               @foreach($categories as $category)
               <span id="category_{{$category->id}}"
                 class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">

@@ -51,8 +51,8 @@
                     <div class="input-group rounded-2">
                       <input type="text" class="form-control rounded  "
                         placeholder="{{ translate('Search for consultants') }}" name="keyword" value="{{ $keyword }}">
-                      <button class="input-group-prepend rounded" type="submit">
-                        <span class="input-group-text text-white border-left-0 rounded-right" : style="">
+                      <button class="input-group-prepend rounded " style="background-color:#275846;" type="submit">
+                        <span class="input-group-text text-white border-0" : style="background-color:#275846;">
                           <i class="las la-search"></i>
                         </span>
                       </button>
@@ -136,7 +136,7 @@
                     <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
                   </h6>
                   <div class="mb-5 border-bottom">
-                    <div class="mb-2 mt-3" style="width: 245px;">
+                    <div class="mb-2 mt-3">
                       <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
                         data-live-search="true">
                         <option selected>

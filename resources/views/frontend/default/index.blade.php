@@ -225,7 +225,7 @@
             @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
             <div class="col-md-3">
               <div class="card" style="height:350px;">
-                <img class="w-100 h-150px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
+                <img class="w-100 h-170px" src=" {{ custom_asset($category->photo) }}" alt="Image" />
                 <div class="card-body" style=" padding:13px;">
 
                   <a class=" featured_category text-dark" onclick="applyFilter()"
