@@ -48,14 +48,24 @@
                                     @endif
                                     @if ($client_package->long_term_limit > 0)
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="projectTypeLong" name="projectType" class="custom-control-input" value="Long Term">
-                                            <label class="custom-control-label" for="projectTypeLong">{{ translate('Long term') }}</label>
+                                            <input type="radio" id="projectTypeLong" name="projectType" class="custom-control-input" value="hourly">
+                                            <label class="custom-control-label" for="projectTypeLong">{{ translate('Hourly') }}</label>
                                         </div>
                                     @else
                                         <div class="alert alert-info custom-control-inline mb-0" role="alert">
                                             {{ translate('Your long term project post limit is over.') }}
                                         </div>
                                     @endif
+                                    <!-- @if ($client_package->hourly_limit > 0)
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="projectTypeLong" name="projectType" class="custom-control-input" value="hourly">
+                                            <label class="custom-control-label" for="projectTypeLong">{{ translate('Hourly') }}</label>
+                                        </div>
+                                    @else
+                                        <div class="alert alert-info custom-control-inline mb-0" role="alert">
+                                            {{ translate('Your Hourly limit project post limit is over.') }}
+                                        </div>
+                                    @endif -->
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">

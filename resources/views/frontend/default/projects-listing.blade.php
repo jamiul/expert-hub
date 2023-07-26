@@ -106,42 +106,80 @@
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class=" pr-3">{{ translate('Project Type') }}</span>
                                     </h6>
-                                    <!-- Fixed Price Projects -->
+                                    <!-- <!- - Fixed Price Projects - ->
                                     <div class="aiz-checkbox-list">
                                         <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectPrice[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
+                                            <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                     </div>
                                     <div class="d-flex">
                                         <div>
-                                            <input class="p-2" placeholder="Min" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+
+                                            <input onchange="applyFilter()" class="p-2" name="fixed_min" placeholder="Min" value="{{ $fixed_min ? $fixed_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+
                                         </div>
                                         <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
                                         <div>
 
-                                            <input class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input onchange="applyFilter()" class="p-2" name="fixed_max" placeholder="Max" value="{{ $fixed_max ? $fixed_max : '' }}" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                    </div>
+                                    <!- - Hourly Projects - ->
+                                    <div class="aiz-checkbox-list mt-2">
+                                        <label class="aiz-checkbox">
+                                            <input onchange="applyFilter()" type="checkbox" name="projectType[]" value="Hourly" @if (in_array('Hourly', $projectType)) checked @endif> {{ translate('Hourly ') }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div>
+                                            <input onchange="applyFilter()" name="hourly_min" class="p-2" placeholder="Min" value="{{ $hourly_min ? $hourly_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center ">to</p>
+                                        <div>
+
+                                            <input onchange="applyFilter()" name="hourly_max" value="{{ $hourly_max ? $hourly_max : '' }}" class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                    </div> -->
+
+                                    <!-- Fixed Price Projects -->
+                                    <div class="aiz-checkbox-list">
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div>
+                                            <input onchange="applyFilter()" class="p-2"  placeholder="Min" @if (in_array('Fixed', $projectType))name="fixed_min" value="{{ $fixed_min ? $fixed_min : '' }}" @endif style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                        </div>
+                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
+                                        <div>
+                                            <input onchange="applyFilter()" class="p-2"  placeholder="Max" @if (in_array('Fixed', $projectType))name="fixed_max" value="{{ $fixed_max ? $fixed_max : '' }}" @endif style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
                                     </div>
                                     <!-- Hourly Projects -->
                                     <div class="aiz-checkbox-list mt-2">
                                         <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Hourly ') }}
+                                            <input onchange="applyFilter()" type="checkbox" name="projectType[]" value="Hourly" @if (in_array('Hourly', $projectType)) checked @endif> {{ translate('Hourly') }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>
                                     </div>
                                     <div class="d-flex">
                                         <div>
-                                            <input class="p-2" placeholder="Min" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input onchange="applyFilter()"  class="p-2" placeholder="Min" @if (in_array('Hourly', $projectType)) name="hourly_min" value="{{ $hourly_min ? $hourly_min : '' }}" @endif style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
-                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center ">to</p>
+                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
                                         <div>
-
-                                            <input class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input onchange="applyFilter()"  @if (in_array('Hourly', $projectType)) name="hourly_max" value="{{ $hourly_max ? $hourly_max : '' }}" @endif class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
                                     </div>
+
                                     <div class="mb-2 mt-3" style="width: 245px;">
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2" data-live-search="true">
                                             <option selected>
@@ -247,24 +285,24 @@
                                                 @endforeach
                                             </select>
 
-                                           <div class="mt-3">
-                                           @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
-                                            <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
-                                                <label class="fas fa-plus " style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
-                                            </a>
-                                            <div class="overflow-auto h-130px collapse " id="skill_{{$parentSkill->id}}">
-                                                @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
-                                                <div class=" w-200px child-skill-project-filtering" >
-                                                    <div class="mb-1 ">
-                                                    <input type="checkbox"  name="childSkill_id[]" id="{{$subSkill->id}}" value="{{$subSkill->id}}" class=" d-none" onchange="applyFilter()" >
-                                                    <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="{{$subSkill->id}}"> {{ $subSkill->name }}</label>
+                                            <div class="mt-3">
+                                                @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                                                <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
+                                                    <label class="fas fa-plus " style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                    <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
+                                                </a>
+                                                <div class="overflow-auto h-130px collapse " id="skill_{{$parentSkill->id}}">
+                                                    @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
+                                                    <div class=" w-200px child-skill-project-filtering">
+                                                        <div class="mb-1 ">
+                                                            <input type="checkbox" name="childSkill_id[]" id="{{$subSkill->id}}" value="{{$subSkill->id}}" class=" d-none" onchange="applyFilter()">
+                                                            <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="{{$subSkill->id}}"> {{ $subSkill->name }}</label>
+                                                        </div>
                                                     </div>
+                                                    @endforeach
                                                 </div>
                                                 @endforeach
                                             </div>
-                                            @endforeach
-                                           </div>
 
                                         </div>
                                     </div>
@@ -273,7 +311,7 @@
                                 </div>
 
                                 <!-- Price -->
-                                <input type="hidden" name="min_price" value="">
+                                <!-- <input type="hidden" name="min_price" value="">
                                 <input type="hidden" name="max_price" value="">
                                 <h6 class="text-left mb-3 fs-14 fw-700">
                                     <span class=" pr-3">{{ translate('Price') }}</span>
@@ -304,7 +342,7 @@
                                                 ></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 {{-- <div class="">
                                         <h6 class="separator text-left mb-3 fs-12 text-uppercase text-secondary">
                                             <span class=" pr-3">Client History</span>

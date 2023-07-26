@@ -70,7 +70,7 @@
                                 @foreach(\App\Models\ProjectCategory::all() as $category)
 
                                 <label class="aiz-checkbox w-100">
-                                    <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()" @if(in_array($category->id, $category_id)) checked @endif >
+                                    <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()" @if(in_array($category->id, $category_ids)) checked @endif >
                                     {{$category->name}}
                                     <span class="aiz-square-check"></span>
                                     <span class="float-right text-secondary fs-lg-16 fs-14"></span>

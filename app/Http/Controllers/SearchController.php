@@ -22,6 +22,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
+        // dd($request->all());
         if ($request->type == 'freelancer') {
             $type = 'freelancer';
             $keyword = $request->keyword;
@@ -37,6 +38,7 @@ class SearchController extends Controller
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
             $categories = [];
+            $category_ids = [];
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -57,8 +59,8 @@ class SearchController extends Controller
 
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
-                $categories = ProjectCategory::where('id', $category_ids)->get();
-                $freelancers = $freelancers->where('specialist', $category_ids);
+                $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+                $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
@@ -109,7 +111,7 @@ class SearchController extends Controller
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
             }
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'rate', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'rate', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', 'category_ids'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
@@ -237,27 +239,35 @@ class SearchController extends Controller
         } else {
             $type = 'project';
             $keyword = $request->keyword;
-            $projectType = array('Fixed', 'Long Term');
+            $projectType = array('');
             $bids = $request->bids;
             $sort = $request->sort;
             $skill_id = array('');
             $childSkill_id = array('');
 
+            $fixed_min = $request->fixed_min;
+            $fixed_max = $request->fixed_max;
+            $hourly_min = $request->hourly_min;
+            $hourly_max = $request->hourly_max;
+            // dd($projectType);
+
+
+
+
 
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
             // $category_ids = CategoryUtility::children_ids($category_id);
             // $category_ids[] = $category_id;
-            $category_id =array('');
+            $category_id = array('');
             // $category_ids=$category_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
-            $categories=[];
-            $categoryIds=[];
-            $category_ids=[];
+            $categories = [];
+            $categoryIds = [];
+            $category_ids = [];
             $skills = [];
             $skill_ids = [];
-            // dd($skills);
-            // dd($skill_ids);
+
 
 
             $project_approval = SystemConfiguration::where('type', 'project_approval')->first()->value;
@@ -274,6 +284,13 @@ class SearchController extends Controller
             // $categoriesProject = ProjectCategory::all();
             // dd($categoriesProject);
 
+
+            // if ($request->projectType != null) {
+            //     $category_ids = $request->category_id;
+            //     $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+            //     // $categoryIds=$categories->pluck('id')
+            //     $projects = $projects->whereIn('project_category_id', $category_ids);
+            // }
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
@@ -281,30 +298,100 @@ class SearchController extends Controller
                 $projects = $projects->whereIn('project_category_id', $category_ids);
             }
 
+            // if ($request->projectType != null) {
+
+            //     if (($request->projectType == 'Fixed' && $request->projectType == 'Hourly')) {
+            //         $projectType = $request->projectType;
+            //         dd($projectType);
+            //         $projects = $projects->whereIn('type', $projectType)->whereBetween('price', [$fixed_min, $fixed_max], [$hourly_min, $hourly_max]);
+            //     } elseif ($request->projectType == 'Fixed') {
+            //         //  Only Fixed project type selected
+            //         dd($projectType);
+            //         $projects = $projects->where('type', 'Fixed')
+            //             ->whereBetween('price', [$fixed_min, $fixed_max]);
+            //     } elseif ($request->projectType == 'Hourly') {
+            //         dd($projectType);
+            //         // Only Hourly project type selected
+            //         $projects = $projects->where('type', 'Hourly')
+            //             ->whereBetween('price', [$fixed_min, $fixed_max]);
+            //     }
+            // }
+
+                // fixed
+            //  if ($request->projectType != null) {
+            //     // dd($request->projectType);
+            //     $projectType = $request->projectType;
+            //     $projects = $projects->whereIn('type', $projectType);
+            //     // dd($projects);
+            //     if($fixed_min || $fixed_max && $fixed_min || $fixed_max) {
+            //         $projects = $projects->whereIn('type', $projectType)->whereBetween('price',[$fixed_min, $fixed_max])->whereBetween('price',[$hourly_min, $hourly_max]);
+            //     }
+            //     elseif($fixed_min || $fixed_max) {
+            //         $projects = $projects->whereIn('type', 'Fixed')->whereBetween('price',[$fixed_min, $fixed_max]);
+            //     }
+            //     elseif($hourly_min || $hourly_max) {
+            //         $projects = $projects->whereIn('type', 'hourly')->whereBetween('price',[$hourly_min, $hourly_max]);
+            //     }
+            // }
+
+            // new
             if ($request->projectType != null) {
                 $projectType = $request->projectType;
                 $projects = $projects->whereIn('type', $projectType);
+
+                if ($fixed_min && $fixed_max) {
+                    $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
+                        $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
+                    });
+                }
+
+                if ($hourly_min && $hourly_max) {
+                    $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
+                        $query->where('type', 'Hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
+                    });
+                }
+
+                $projects = $projects->whereIn('type', $projectType);
             }
+
+
+
+            // if ($request->projectType != null) {
+            //     // Check if both Fixed and Hourly project types are selected
+            //     if (in_array('Fixed', $request->projectType) && in_array('Hourly', $request->projectType)) {
+            //         // Both project types selected
+            //         $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
+            //             $query->whereIn('type', ['Fixed', 'Hourly'])
+            //                   ->whereBetween('price', [$fixed_min, $fixed_max]);
+            //         });
+            //     } elseif (in_array('Fixed', $request->projectType)) {
+            //         // Only Fixed project type selected
+            //         $projects = $projects->where('type', 'Fixed')
+            //                              ->whereBetween('price', [$fixed_min, $fixed_max]);
+            //     } elseif (in_array('Hourly', $request->projectType)) {
+            //         // Only Hourly project type selected
+            //         $projects = $projects->where('type', 'Hourly')
+            //                              ->whereBetween('price', [$fixed_min, $fixed_max]);
+            //     }
+            // }
 
             if ($request->skill_id != null) {
                 $skill_ids = $request->skill_id;
-                $skills =Skill::whereIn('id', $skill_ids)->get();
+                $skills = Skill::whereIn('id', $skill_ids)->get();
                 $projects = $projects->where(function ($query) use ($skill_ids) {
                     foreach ($skill_ids as $skill_id) {
                         $query->orWhere('skills', 'like', '%' . $skill_id . '%');
                     }
                 });
-
             }
             if ($request->childSkill_id != null) {
                 $childSkill_ids = $request->childSkill_id;
-                $childSkills =Skill::whereIn('id', $childSkill_ids)->get();
+                $childSkills = Skill::whereIn('id', $childSkill_ids)->get();
                 $projects = $projects->where(function ($query) use ($childSkill_ids) {
                     foreach ($childSkill_ids as $childSkill_id) {
                         $query->orWhere('skills', 'like', '%' . $childSkill_id . '%');
                     }
                 });
-
             }
 
             if ($request->bids != null) {
@@ -353,7 +440,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price','categories','categoryIds','category_ids','skills','skill_ids'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max','hourly_min','hourly_max'));
         }
     }
 
