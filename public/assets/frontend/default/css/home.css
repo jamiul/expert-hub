@@ -494,3 +494,40 @@ body {
 
 }
 
+/* all consultant page */
+.star-widget input{
+    display: none;;
+}
+.star-widget label{
+    font-size: 15px;
+    color: #444;
+    padding: 5px;
+    float: right;
+    translate: all 0.2 ease;
+}
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
+    color: #ffa707;
+}
+input:checked ~ label{
+    color:#ffa707;
+}
+
+div.scroll {
+                margin:4px, 4px;
+                padding:4px;
+                width: 320px;
+                height: 110px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+                
+            }
+div.scroll h6 a {
+                color:black;
+                
+            }
+#contentDiv {
+    display: block; /* or "none" if you want it to be initially hidden */
+    /* Add any other styles you want */
+  }

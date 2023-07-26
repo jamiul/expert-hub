@@ -43,7 +43,7 @@
                     Hire the best consultations for any job, online</h2>
                   <p class="fs-20 fs-sm-14 my-4 ">Millions of people use scholarships Australia to turn their ideas
                     into
-                    reality.</p>
+                    their reality.</p>
                   <div class="lg-my-3 my-sm-0 home-banner-button ">
                     <a href="{{route('register') }}?type=2" class="btn text-white fw-700  fs-20 fs-sm-12 mr-2 mb-3"
                       style="background-color:#1d4335;">{{ translate('I want to Hire') }}</a>
@@ -172,7 +172,7 @@
                   <div class=" h-136px align-items-center">
                     <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/check.png')}}" alt="Image"
                       style="width:55px; border-radius:50%; border:1px solid #fff" />
-                    <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white"> Payment Securely
+                    <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white"> Payment Securely
                     </p>
                   </div>
                   <h6 class="fs-18 mt-3 text-white text-center">
@@ -184,7 +184,7 @@
 
             </div>
             <div class=" text-center py-5">
-              <a href="{{ url('projects/create')}}" class=" btn rounded border text-white fs-18"
+              <a href="{{ url('/register')}}" class=" btn rounded border text-white fs-18"
                 style="background-color:#275846;">
                 Let's get started
               </a>
