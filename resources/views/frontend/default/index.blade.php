@@ -905,7 +905,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class=" text-dark py-2 cat-list" style="">
-            <h6 class="fs-18 fw-700 mb-0 py-1">Education Course Accreditations</h6>
+            <h6 class="fs-18 fw-700 mb-0 py-1"> Course Accreditations</h6>
           </div>
           <div class="content">
             <div class="px-3 py-2">
@@ -941,7 +941,7 @@
         </div>
         <div class="col-md-3">
           <div class=" text-dark py-2 cat-list " style="">
-            <h6 class="fs-18 fw-700 px-0 mb-0 py-1">Course Curriculum Development</h6>
+            <h6 class="fs-18 fw-700 px-0 mb-0 py-1"> Curriculum Development</h6>
           </div>
           <div class="content">
             <div class="px-3 py-2">

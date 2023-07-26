@@ -20,6 +20,9 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	Route::resource('skills','SkillController');
 	Route::get('/skills/destroy/{id}', 'SkillController@destroy')->name('skills.destroy');
 
+	Route::resource('parent_skills','ParentSkillController');
+	Route::get('/parent_skills/destroy/{id}', 'ParentSkillController@destroy')->name('parent_skills.destroy');
+
 	Route::resource('badges','BadgeController');
 	Route::get('/badges/destroy/{id}', 'BadgeController@destroy')->name('badges.destroy');
 	Route::get('/client-badge', 'BadgeController@client_badges_create')->name('client_badges_create');

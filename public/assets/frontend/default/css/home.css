@@ -315,7 +315,7 @@ body {
     max-width: 1200px !important; /* Set your desired max-width value */
     margin-left: auto !important;
     margin-right: auto !important;
-   
+
   }
 
  .row .col-md-3 {
@@ -327,7 +327,7 @@ body {
     margin-left: 6px;
     margin-right: -6px;
     padding-left: 8px;
-    
+
 }
 
 
@@ -382,7 +382,7 @@ body {
     .fre-job-catagory p {
         font-size: 15px !important;
         margin-top: 250px !important;
-        
+
     }
 }
 
@@ -477,7 +477,7 @@ body {
         font-size: 15px !important;
         margin-top: 250px !important;
     }
-    
+
 }
 
 @media (min-width: 425px) {
@@ -493,6 +493,26 @@ body {
     }
 
 }
+/* all consultant page */
+.star-widget input{
+    display: none;;
+}
+.star-widget label{
+    font-size: 15px;
+    color: #444;
+    padding: 5px;
+    float: right;
+    translate: all 0.2 ease;
+}
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
+    color: #ffa707;
+}
+input:checked ~ label{
+    color: #ffa707;
+}
+
+
 
 /* all consultant page */
 .star-widget input{

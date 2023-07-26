@@ -133,6 +133,7 @@
         @if(auth()->user()->can('show all freelancers')
         || auth()->user()->can('show freelancer packages')
         || auth()->user()->can('show freelancer skills')
+        || auth()->user()->can('show freelancer parent skills')
         || auth()->user()->can('show freelancer badges'))
         <li class="aiz-side-nav-item">
           <a href="#" class="aiz-side-nav-link">
@@ -164,6 +165,14 @@
               <a href="{{ route('skills.index') }}"
                 class="aiz-side-nav-link {{ areActiveRoutes(['skills.index', 'skills.edit'])}}">
                 <span class="aiz-side-nav-text">{{translate('Freelancer Skills')}}</span>
+              </a>
+            </li>
+            @endcan
+            @can('show freelancer skills')
+            <li class="aiz-side-nav-item">
+              <a href="{{ route('parent_skills.index') }}"
+                class="aiz-side-nav-link {{ areActiveRoutes(['parent_skills.index', 'parent_skills.edit'])}}">
+                <span class="aiz-side-nav-text">{{translate('Consultant Parent Skills')}}</span>
               </a>
             </li>
             @endcan

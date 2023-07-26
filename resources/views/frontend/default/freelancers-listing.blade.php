@@ -61,13 +61,13 @@
                 </form>
                 <!-- categories  -->
 
-                <h6 class="text-left mb-3 mt-lg-5  fs-14 fw-700">
-                  <span class=" pr-3">{{ translate('Categories') }}</span>
-                </h6>
-                <div class="  border-bottom ">
+                <div class="mt-3">
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Categories') }}</span>
+                  </h6>
                   @foreach(\App\Models\ProjectCategory::all() as $category)
 
-                  <label class=" aiz-checkbox w-100">
+                  <label class="aiz-checkbox w-100">
                     <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
                       @if(in_array($category->id, $category_ids)) checked @endif >
                     {{$category->name}}
@@ -83,302 +83,81 @@
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class="pr-3">{{ translate('Skills') }}</span>
                     </h6>
-                    <div class="mb-5 border-bottom">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('Search skills') }}</option>
-                        @foreach (\App\Models\Skill::all() as $key => $skill)
-                        <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id==$skill->id )
-                          selected
-                          @endif>{{ $skill->name }}</option>
-                        @endforeach
-                      </select>
-                      <p class="pt-3">
-                        <a class="text-dark" data-toggle="collapse" href="#collapseExample" role="button"
-                          aria-expanded="false" aria-controls="collapseExample">
-                          Browse skills
-                        </a>
+                    <div class="mb-4">
+                      <div class="">
+                        <div class="mb-5 border-bottom">
+                          <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id[]"
+                            onchange="applyFilter()" data-toggle="select2" data-live-search="true">
 
+                            <option value="">{{ translate('Search skills') }}</option>
+                            @foreach (\App\Models\Skill::all() as $key => $skill)
+                            <option value="{{ $skill->id }}" @if (in_array($skill->id, (array)$skill_ids ))
+                              selected
+                              @endif>{{ $skill->name }}</option>
+                            @endforeach
+                          </select>
 
-                      </p>
-                      <div class="collapse " id="collapseExample">
-                        <div class="fre-expand-icon">
-                          <nav id="navbar-example2" class="navbar navbar-light bg-light">
-                          </nav>
-
-                          <a class="text-dark" data-toggle="collapse" href="#Education" role="button"
-                            aria-expanded="false" aria-controls="Education"> <label class="fas fa-plus border-round">
-
-                              Course Accreditations</label>
-                          </a>
-
-                          <div class="scroll collapse" id="Education">
-                            <div class="">
-                              <div class=" ">
-                                <h6><a href="" class="fs-12">
-                                    Instructional Designer</a></h6>
-                                <h6> <a href="" class=" fs-14 ">
-                                    Curriculum Developer</a></h6>
-                                <h6><a href="" class="fs-14 ">Subject Matter Expert</a></h6>
-                                <h6> <a href="" class="fs-14">Accreditation Specialist</a></h6>
-                                <h6><a href="" class="fs-14  ">Education Consultant</a></h6>
-                                <h6><a href="" class="fs-14  ">
-                                    Learning Designer</a></h6>
-                                <h6> <a href="" class="fs-14 ">
-                                    Assessment Coordinator</a></h6>
-                                <h6> <a href="" class="fs-14">
-                                    Quality Assurance Analyst</a></h6>
-                                <h6><a href="" class="fs-14  ">Content Writer </a></h6>
-                                <h6> <a href="" class="fs-14  ">Researcher </a></h6>
-                                <h6><a href="" class="fs-14">
-                                    Project Manager</a></h6>
-                                <h6><a href="" class="fs-14 ">E-Learning Developer</a></h6>
-                                <h6> <a href="" class="fs-14  "> Instructional Technologist</a>
-                                </h6>
-                                <h6> <a href="" class="fs-14">Educational Psychologist</a></h6>
-                                <h6><a href="" class="fs-14 "> Assessment Specialist</a></h6>
-                                <h6> <a href="" class="fs-14 ">Multimedia Specialist</a></h6>
-                                <h6> <a href="" class="fs-14 ">Graphic Designer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Data Analyst</a></h6>
-                                <h6> <a href="" class="fs-14 ">Evaluation and Assessment
-                                    Coordinator</a>
-                                </h6>
-                                <h6> <a href="" class="fs-14">Online Learning Coordinator</a>
-                                </h6>
-                              </div>
-                            </div>
-
-                          </div>
-                          <div>
-                            <a class="text-dark" data-toggle="collapse" href="#Development" role="button"
-                              aria-expanded="false" aria-controls="Development"><label class="fas fa-plus">
-                                Curriculum Development</label>
+                          <div class="mt-3">
+                            @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                            <a class="text-dark d-flex justify-content-start align-items-center mb-1"
+                              data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button"
+                              aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
+                              <label class="fas fa-plus "
+                                style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                              <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
                             </a>
-                            <div class="scroll collapse" id="Development">
-                              <div class=" py-2">
-                                <h6> <a href="" class="fs-14  ">Curriculum Developer</a></h6>
-                                <h6><a href="" class="fs-14  ">Instructional Designer</a></h6>
-                                <h6><a href="" class="fs-14  ">Subject Matter Expert (SME)</a></h6>
-                                <h6><a href="" class="fs-14  ">Education Consultant</a></h6>
-                                <h6> <a href="" class="fs-14  ">Content Developer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Learning Experience Designer</a></h6>
-                                <h6><a href="" class="fs-14  ">Curriculum Coordinator</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Writer</a></h6>
-                                <h6><a href="" class="fs-14  ">Instructional Technologist</a></h6>
-                                <h6> <a href="" class="fs-14  ">Educational Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  ">E-Learning Developer</a></h6>
-                                <h6><a href="" class="fs-14  ">Assessment Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  ">Learning Designer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Project Manager</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Editor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Consultant</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Coordinator</a></h6>
-                                <h6><a href="" class="fs-14  ">Instructional Materials Developer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Integration Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Assessment Analyst</a></h6>
+                            <div class="overflow-auto h-130px collapse " id="skill_{{$parentSkill->id}}">
+                              @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as
+                              $subSkill)
+                              <div class=" w-200px child-skill-project-filtering">
+                                <div class="mb-1 ">
+                                  <input type="checkbox" name="childSkill_id[]" id="{{$subSkill->id}}"
+                                    value="{{$subSkill->id}}" class=" d-none" onchange="applyFilter()">
+                                  <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="{{$subSkill->id}}">
+                                    {{ $subSkill->name }}</label>
+                                </div>
                               </div>
+                              @endforeach
                             </div>
+                            @endforeach
                           </div>
 
-
-                          <div>
-                            <a class="text-dark" data-toggle="collapse" href="#Management" role="button"
-                              aria-expanded="false" aria-controls="Management">
-                              <label class="fas fa-plus"> Learning Management Systems</label>
-                            </a>
-                            <div class="scroll collapse" id="Management">
-                              <div class=" py-2">
-                                <h6> <a href="" class="fs-14  "> LMS Developer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Instructional Designer</a></h6>
-                                <h6><a href="" class="fs-14  "> UX/UI Designer</a></h6>
-                                <h6><a href="" class="fs-14  "> Front-end Developer</a></h6>
-                                <h6><a href="" class="fs-14  "> Back-end Developer</a></h6>
-                                <h6> <a href="" class="fs-14  "> Full-stack Developer</a></h6>
-                                <h6><a href="" class="fs-14  "> Software Engineer</a></h6>
-                                <h6> <a href="" class="fs-14  "> System Administrator</a></h6>
-                                <h6><a href="" class="fs-14  "> Database Administrator</a></h6>
-                                <h6><a href="" class="fs-14  "> Project Manager</a></h6>
-                                <h6><a href="" class="fs-14  "> Quality Assurance Analyst</a></h6>
-                                <h6><a href="" class="fs-14  "> Content Developer </a></h6>
-                                <h6><a href="" class="fs-14  "> Graphic Designer</a></h6>
-                                <h6> <a href="" class="fs-14  "> Mobile App Developer</a></h6>
-                                <h6><a href="" class="fs-14  "> Integration Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  "> Technical Writer</a></h6>
-                                <h6> <a href="" class="fs-14  "> User Support Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  "> Data Analyst</a></h6>
-                                <h6><a href="" class="fs-14  "> Training Coordinator</a></h6>
-                                <h6> <a href="" class="fs-14  "> LMS Administrator</a></h6>
-                              </div>
-                            </div>
-                          </div>
-
-
-                          <div>
-                            <a class="text-dark" data-toggle="collapse" href="#Writing" role="button"
-                              aria-expanded="false" aria-controls="Writing"> <label class="fas fa-plus"> Writing and
-                                Editing</label>
-                            </a>
-                            <div class="scroll collapse" id="Writing">
-                              <div class=" py-2 ">
-                                <h6><a href="" class="fs-14  ">Academic Writer</a></h6>
-                                <h6><a href="" class="fs-14  ">Content Writer</a></h6>
-                                <h6><a href="" class="fs-14  ">Copywriter</a></h6>
-                                <h6><a href="" class="fs-14  ">Editor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Proofreader</a></h6>
-                                <h6> <a href="" class="fs-14  ">Researcher</a></h6>
-                                <h6> <a href="" class="fs-14  ">Subject Matter Expert</a></h6>
-                                <h6> <a href="" class="fs-14  ">Curriculum Developer</a></h6>
-                                <h6><a href="" class="fs-14  ">Instructional Designer</a></h6>
-                                <h6><a href="" class="fs-14  ">Copy Editor</a></h6>
-                                <h6><a href="" class="fs-14  ">Publishing Assistant</a></h6>
-                                <h6> <a href="" class="fs-14  ">Editorial Assistant</a></h6>
-                                <h6><a href="" class="fs-14  ">Technical Writer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Grant Writer</a></h6>
-                                <h6><a href="" class="fs-14  ">Manuscript Editor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Citation Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  ">Academic Policy Writer</a></h6>
-                                <h6><a href="" class="fs-14  ">Legal Writer</a></h6>
-                                <h6>
-                                  <a href="" class="fs-14  ">Language Editor</a>
-                                </h6>
-                                <h6> <a href="" class="fs-14  ">Freelance Writer/Editor</a></h6>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div>
-
-                            <a class="text-dark" data-toggle="collapse" href="#Research" role="button"
-                              aria-expanded="false" aria-controls="Research"> <label class="fas fa-plus"> Research and
-                                Analysis</label> </a>
-                            <div class="scroll collapse" id="Research">
-                              <div class=" py-2">
-                                <h6> <a href="" class="fs-14  ">Confirmatory Factor Analysis(CFA)</a></h6>
-                                <h6> <a href="" class="fs-14  ">Cross-Lagged Panel Models</a></h6>
-                                <h6><a href="" class="fs-14  ">Demographic Methods</a></h6>
-                                <h6> <a href="" class="fs-14  ">Discourse analysis</a></h6>
-                                <h6><a href="" class="fs-14  ">Dynamic Panel Data Modeling</a></h6>
-                                <h6> <a href="" class="fs-14  ">Dynamic SEM (DSEM)</a></h6>
-                                <h6><a href="" class="fs-14  ">Ecological Momentary Assessment(EMA)</a>
-                                </h6>
-                                <h6><a href="" class="fs-14  ">Empirical Dynamic Modeling(EDM)</a></h6>
-                                <h6> <a href="" class="fs-14  ">Experience Sampling Methods(ESM)</a></h6>
-                                <h6><a href="" class="fs-14  ">Intensive Longitudinal Data Analysis</a>
-                                </h6>
-                                <h6><a href="" class="fs-14  ">Longitudinal Analysis</a></h6>
-                                <h6><a href="" class="fs-14  ">Longitudinal SEM</a></h6>
-                                <h6> <a href="" class="fs-14  ">Measurement Invariance Testing</a></h6>
-                                <h6> <a href="" class="fs-14  ">Multilevel Modeling(MLM)</a></h6>
-                                <h6> <a href="" class="fs-14  ">Multilevel Structural Equation
-                                    Modeling(MSEM)</a>
-                                </h6>
-                                <h6> <a href="" class="fs-14  ">Panel Data Modeling</a></h6>
-                                <h6><a href="" class="fs-14  ">Path Analysis</a></h6>
-                                <h6> <a href="" class="fs-14  ">Qualitative data analysis</a></h6>
-                                <h6> <a href="" class="fs-14  ">Quantitative data analysis</a></h6>
-                                <h6><a href="" class="fs-14  ">Structural Equation Modeling(SEM)</a></h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-
-                            <a class="text-dark" data-toggle="collapse" href="#Transcription" role="button"
-                              aria-expanded="false" aria-controls="Transcription"><label class="fas fa-plus">
-                                Transcription and
-                                Translation</label></a>
-                            <div class="scroll collapse" id="Transcription">
-                              <div class="py-2">
-                                <h6><a href="" class="fs-14  ">Academic Transcriber</a></h6>
-                                <h6><a href="" class="fs-14  ">Academic Translator</a></h6>
-                                <h6><a href="" class="fs-14  ">Language Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  ">Transcriptionist</a></h6>
-                                <h6><a href="" class="fs-14  ">Language Services Coordinator</a></h6>
-                                <h6> <a href="" class="fs-14  ">Translation Project Manager</a></h6>
-                                <h6> <a href="" class="fs-14  ">Language Quality Assurance Specialist</a>
-                                </h6>
-                                <h6> <a href="" class="fs-14  ">Linguistics Researcher</a></h6>
-                                <h6> <a href="" class="fs-14  ">Bilingual Research Assistant</a></h6>
-                                <h6> <a href="" class="fs-14  ">Language Analyst</a></h6>
-                                <h6><a href="" class="fs-14  ">Transcription Editor</a></h6>
-                                <h6><a href="" class="fs-14  ">Multilingual Content Writer</a></h6>
-                                <h6> <a href="" class="fs-14  ">Academic Proofreader</a></h6>
-                                <h6> <a href="" class="fs-14  ">Language Instructor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Language Technology Specialist</a></h6>
-                                <h6> <a href="" class="fs-14  ">Interpreting Services Coordinator</a></h6>
-                                <h6><a href="" class="fs-14  ">Localization Specialist</a></h6>
-                                <h6><a href="" class="fs-14  ">Language Data Analyst</a></h6>
-                                <h6><a href="" class="fs-14  ">Academic Language Consultant</a></h6>
-                                <h6> <a href="" class="fs-14  ">Language Services Administrator</a></h6>
-                              </div>
-                            </div>
-                          </div>
-                          <a class="text-dark" data-toggle="collapse" href="#Scholarship" role="button"
-                            aria-expanded="false" aria-controls="Scholarship"> <label class="fas fa-plus"> Scholarship
-                              Applications</label>
-                          </a>
-                          <div class="scroll collapse" id="Scholarship">
-                            <div class=" py-2">
-                              <h6> <a href="" class="fs-14  ">Academic Consultant</a></h6>
-                              <h6> <a href="" class="fs-14  ">Scholarship Application Advisor</a></h6>
-                              <h6><a href="" class="fs-14  ">Research Grant Consultant</a></h6>
-                              <h6> <a href="" class="fs-14  ">Scholarship Specialist</a></h6>
-                              <h6><a href="" class="fs-14  ">Grant Proposal Writer</a></h6>
-                              <h6> <a href="" class="fs-14  ">Research Funding Consultant</a></h6>
-                              <h6> <a href="" class="fs-14  ">Scholarship Application Reviewer</a></h6>
-                              <h6><a href="" class="fs-14  ">Research Project Manager</a></h6>
-                              <h6><a href="" class="fs-14  ">Funding Strategy Consultant</a></h6>
-                              <h6> <a href="" class="fs-14  ">Grant Development Coordinator</a></h6>
-                              <h6><a href="" class="fs-14  ">Research Scholarship Coach</a></h6>
-                              <h6> <a href="" class="fs-14  ">Scholarship Application Coordinator</a>
-                              </h6>
-                              <h6> <a href="" class="fs-14  ">Grant Writing Specialist</a></h6>
-                              <h6><a href="" class="fs-14  ">Research Funding Analyst</a></h6>
-                              <h6><a href="" class="fs-14  ">Scholarship Program Manager</a></h6>
-                              <h6><a href="" class="fs-14  ">Research Grant Administrator</a></h6>
-                              <h6><a href="" class="fs-14  ">Funding Opportunities Researcher</a></h6>
-                              <h6> <a href="" class="fs-14  ">Scholarship Application Assessor</a></h6>
-                              <h6><a href="" class="fs-14  ">Academic Writing Consultant</a></h6>
-                              <h6><a href="" class="fs-14  ">Supervisors Communications Specialist</a>
-                              </h6>
-                            </div>
-                          </div>
-                          <div>
-                            <a class="text-dark fs-14" data-toggle="collapse" href="#Tutoring" role="button"
-                              aria-expanded="false" aria-controls="Tutoring"> <label class="fas fa-plus"> Mentoring
-                                and Tutoring</label></a>
-
-                            <div class="scroll collapse" id="Tutoring">
-                              <div class=" py-2 fs-14">
-                                <h6> <a href="" class="fs-14  ">Uni Maths Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">Uni Statistics Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">Uni Science Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Uni English Language Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Uni English Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">Uni Biology Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Uni Chemistry Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Uni Physics Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Uni Computer Science Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Uni Business Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">High School Maths Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">High School Statistics Tutor</a>
-                                </h6>
-                                <h6><a href="" class="fs-14  ">High School Science Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">High School English Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">High School Biology Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">High School Chemistry Tutor</a></h6>
-                                <h6><a href="" class="fs-14  ">High School Physics Tutor</a></h6>
-                                <h6> <a href="" class="fs-14  ">Academic Coach</a></h6>
-                                <h6> <a href="" class="fs-14  ">Career Coach</a></h6>
-                                <h6><a href="" class="fs-14  ">Peer Academic Advisor</a></h6>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
+
 
                     </div>
 
                   </div>
+
+
+                  <!-- Hourly rates -->
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
+                  </h6>
+                  <div class="mb-5 border-bottom">
+                    <div class="mb-2 mt-3" style="width: 245px;">
+                      <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
+                        data-live-search="true">
+                        <option selected>
+                          {{ translate('Any hourly rate') }}
+                        </option>
+                        <option name="rate1" onchange="applyFilter()" value="10">
+                          < $10/hour </option>
+                        </option name="rate1" onchange="applyFilter()" value="20">
+                        $10-20/hour </option>
+                        <option name="rate1" onchange="applyFilter()" value="30">
+                          $20-30/hour </option>
+                        </option>
+                        <option name="rate1" onchange="applyFilter()" value="40">
+                          $30-40/hour </option>
+                        <option name="rate1" onchange="applyFilter()" value="50">
+                          > $40/hour </option>
+                      </select>
+
+                    </div>
+                  </div>
+
 
                   <!-- countries  -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
@@ -399,72 +178,6 @@
 
                     </div>
                   </div>
-
-                  <!-- Hourly rates -->
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
-                  </h6>
-                  <div class="mb-5 border-bottom">
-                    <div class="mb-2 mt-3" style="width: 245px;">
-                      <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
-                        data-live-search="true">
-                        <option selected>
-                          {{ translate('Any hourly rate') }}
-                        </option>
-                        <option value="10">
-                          < $10/hour </option>
-                        </option value="20">
-                        $10-20/hour </option>
-                        <option value="30">
-                          $20-30/hour </option>
-                        </option>
-                        <option value="40">
-                          $30-40/hour </option>
-                        <option value="50">
-                          > $40/hour </option>
-
-                      </select>
-
-                    </div>
-                  </div>
-
-                  <input type=" hidden" name="min_price" value="">
-                  <input type="hidden" name="max_price" value="">
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="bg-white pr-3">{{ translate('Hourly Rate') }}</span>
-                  </h6>
-                  <div class="aiz-range-slider mb-5 px-3">
-                    <div id="input-slider-range"
-                      data-range-value-min="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::min('hourly_rate') }} @endif"
-                      data-range-value-max="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::max('hourly_rate') }} @endif">
-                    </div>
-
-                    <div class="row mt-2">
-                      <div class="col-6">
-                        <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price))
-                          data-range-value-low="{{ $min_price }}" @elseif(count($freelancers)> 1 &&
-                          $freelancers->min('hourly_rate') > 0)
-                          data-range-value-low="{{ $freelancers->min('hourly_rate') }}"
-                          @else
-                          data-range-value-low="0"
-                          @endif
-                          id="input-slider-range-value-low"
-                          ></span>
-                      </div>
-                      <div class="col-6 text-right">
-                        <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price))
-                          data-range-value-high="{{ $max_price }}" @elseif(count($freelancers)> 1 &&
-                          $freelancers->max('hourly_rate') > 0)
-                          data-range-value-high="{{ $freelancers->max('hourly_rate') }}"
-                          @else
-                          data-range-value-high="0"
-                          @endif
-                          id="input-slider-range-value-high"
-                          ></span>
-                      </div>
-                    </div>
-                  </div>
-
                   <!-- Rating -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class=" pr-3">{{ translate('Rating') }}</span>
