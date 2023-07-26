@@ -1,4 +1,5 @@
 @extends('frontend.default.layouts.app')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 @section('content')
 <section class="py-4 py-lg-3">
@@ -9,16 +10,18 @@
           <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
           <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
           <div class="input-group mb-3 mt-5">
-            <input type="text " class="form-control position-relative z-0"
-              placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search"
-              aria-describedby="searchButton" style="height: 60px;">
-            <div class="input-group-append position-absolute "
-              style="position:absolute;top: 5px;right: 9px;padding: 3px 0; ">
-              <button class="btn btn-primary" type="button" id="searchButton" data-toggle="class-toggle"
-                data-target=".aiz-filter-sidebar" type="button">
-                Search
-              </button>
-            </div>
+            <form action="" method="GET" class="w-100">
+              <input type="text" class="form-control position-relative z-0"
+                placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword"
+                aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
+              <div class="input-group-append position-absolute"
+                style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
+                <button class="btn btn-primary" type="submit" id="searchButton" data-toggle="class-toggle"
+                  data-target=".aiz-filter-sidebar">
+                  Search
+                </button>
+              </div>
+            </form>
           </div>
 
           <!-- <div class="d-flex align-items-center">
@@ -61,6 +64,20 @@
                   <i class="las la-times la-2x"></i>
                 </button>
               </div>
+
+              <!-- @foreach($categories as $category)
+                            <span id="category_{{$category->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                {{$category ->name}} |<p onclick="removeCategory({{$category->id}})" class="m-0  d-inline fw-700">
+                                    X</p>
+                            </span>
+                            @endforeach -->
+              @foreach($categories as $category)
+              <span id="category_{{$category->id}}"
+                class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                {{$category->name}} |
+                <p onclick="removeCategory({{$category->id}})" class="m-0 d-inline fw-700">X</p>
+              </span>
+              @endforeach
               <div class="card-body pl-lg-0">
 
 
@@ -74,15 +91,17 @@
                                     </select>
                                 </div> -->
                 <!-- Categories -->
-                <div class="mb-5">
+                <div class="mb-4">
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class=" pr-3">{{ translate('Categories') }}</span>
                   </h6>
                   <div class="">
+
                     @foreach(\App\Models\ProjectCategory::all() as $category)
+
                     <label class="aiz-checkbox w-100">
-                      <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->slug }}"
-                        @if (isset($_GET['category_id'])&& $_GET['category_id']==$category->slug ) selected @endif >
+                      <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}"
+                        @if (in_array($category->id,$category_ids)) checked @endif >
                       {{$category->name}}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -90,70 +109,194 @@
                     @endforeach
                   </div>
                 </div>
-                <!-- Project Type -->
-                <div class="mb-5">
+
+                <!-- Budget -->
+                <div class="mb-4">
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class=" pr-3">{{ translate('Project Type') }}</span>
                   </h6>
+                  <!-- Fixed Price Projects -->
                   <div class="aiz-checkbox-list">
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType))
+                      <input type="checkbox" name="projectPrice[]" value="Fixed" @if (in_array('Fixed', $projectType))
                         checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
+                  </div>
+                  <div class="d-flex">
+                    <div>
+                      <input class="p-2" placeholder="Min"
+                        style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                    </div>
+                    <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
+                    <div>
+
+                      <input class="p-2" placeholder="Max"
+                        style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                    </div>
+                  </div>
+                  <!-- Hourly Projects -->
+                  <div class="aiz-checkbox-list mt-2">
                     <label class="aiz-checkbox">
-                      <input type="checkbox" name="projectType[]" value="Long Term" @if (in_array('Long Term',
-                        $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Long Term') }}
+                      <input type="checkbox" name="projectType[]" value="Fixed"> {{ translate('Hourly ') }}
                       <span class="aiz-square-check"></span>
                       <span class="float-right text-secondary fs-12"></span>
                     </label>
                   </div>
-                </div>
-                <!-- Numbers of Bids -->
-                <div class="mb-5">
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="pr-3">{{ translate('Numbers of Bids') }}</span>
-                  </h6>
-                  <div class="aiz-radio-list">
-                    <label class="aiz-radio">
-                      <input type="radio" name="bids" value="" onchange="applyFilter()" @if ($bids=="" ) checked @endif>
-                      {{ translate('Any Number of bids') }}
-                      <span class="aiz-rounded-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
-                    <label class="aiz-radio">
-                      <input type="radio" name="bids" value="0-5" onchange="applyFilter()" @if ($bids=="0-5" ) checked
-                        @endif> {{ translate('0 to 5') }}
-                      <span class="aiz-rounded-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
-                    <label class="aiz-radio">
-                      <input type="radio" name="bids" value="5-10" onchange="applyFilter()" @if ($bids=="5-10" ) checked
-                        @endif> {{ translate('5 to 10') }}
-                      <span class="aiz-rounded-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
-                    <label class="aiz-radio">
-                      <input type="radio" name="bids" value="10-20" onchange="applyFilter()" @if ($bids=="10-20" )
-                        checked @endif> {{ translate('10 to 20') }}
-                      <span class="aiz-rounded-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
-                    <label class="aiz-radio">
-                      <input type="radio" name="bids" value="20-30" onchange="applyFilter()" @if ($bids=="20-30" )
-                        checked @endif> {{ translate('20 to 30') }}
-                      <span class="aiz-rounded-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
-                    <label class="aiz-radio">
-                      <input type="radio" name="bids" value="30+" onchange="applyFilter()" @if ($bids=="30+" ) checked
-                        @endif> {{ translate('30+') }}
-                      <span class="aiz-rounded-check"></span>
-                      <span class="float-right text-secondary fs-12"></span>
-                    </label>
+                  <div class="d-flex">
+                    <div>
+                      <input class="p-2" placeholder="Min"
+                        style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                    </div>
+                    <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center ">to</p>
+                    <div>
+
+                      <input class="p-2" placeholder="Max"
+                        style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                    </div>
+                  </div>
+                  <div class="mb-2 mt-3" style="width: 245px;">
+                    <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
+                      data-live-search="true">
+                      <option selected>
+                        {{ translate('All Durations') }}
+                      </option>
+                      <option name="durations[]" onchange="applyFilter()" value="{{'1 week'}}">Less than 1 week</option>
+                      <option name="durations[]" onchange="applyFilter()" value="{{'1 week - 4 week'}}">1 week to 4
+                        weeks</option>
+                      <option name="durations[]" onchange="applyFilter()" value="{{'1 month - 3 month'}}">1 month to 3
+                        months</option>
+                      <option name="durations[]" onchange="applyFilter()" value="{{'3 month - 6 month'}}">3 months to 6
+                        months</option>
+                      <option name="durations[]" onchange="applyFilter()" value="{{'6 month'}}">Over 6 months/Ongoing
+                      </option>
+                      <option name="durations[]" onchange="applyFilter()" value="">unspecified</option>
+                    </select>
                   </div>
                 </div>
+
+                <!-- <!- - Project Type - ->
+                                <div class="mb-5">
+                                    <h6 class="text-left mb-3 fs-14 fw-700">
+                                        <span class=" pr-3">{{ translate('Project Type') }}</span>
+                                    </h6>
+                                    <div class="aiz-checkbox-list">
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        <label class="aiz-checkbox">
+                                            <input type="checkbox" name="projectType[]" value="Long Term" @if (in_array('Long Term', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Long Term') }}
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!- - Numbers of Bids - ->
+                                <div class="mb-5">
+                                    <h6 class="text-left mb-3 fs-14 fw-700">
+                                        <span class="pr-3">{{ translate('Numbers of Bids') }}</span>
+                                    </h6>
+                                    <div class="aiz-radio-list">
+                                        <label class="aiz-radio">
+                                            <input type="radio" name="bids" value="" onchange="applyFilter()" @if ($bids=="" ) checked @endif>
+                                            {{ translate('Any Number of bids') }}
+                                            <span class="aiz-rounded-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        <label class="aiz-radio">
+                                            <input type="radio" name="bids" value="0-5" onchange="applyFilter()" @if ($bids=="0-5" ) checked @endif> {{ translate('0 to 5') }}
+                                            <span class="aiz-rounded-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        <label class="aiz-radio">
+                                            <input type="radio" name="bids" value="5-10" onchange="applyFilter()" @if ($bids=="5-10" ) checked @endif> {{ translate('5 to 10') }}
+                                            <span class="aiz-rounded-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        <label class="aiz-radio">
+                                            <input type="radio" name="bids" value="10-20" onchange="applyFilter()" @if ($bids=="10-20" ) checked @endif> {{ translate('10 to 20') }}
+                                            <span class="aiz-rounded-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        <label class="aiz-radio">
+                                            <input type="radio" name="bids" value="20-30" onchange="applyFilter()" @if ($bids=="20-30" ) checked @endif> {{ translate('20 to 30') }}
+                                            <span class="aiz-rounded-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                        <label class="aiz-radio">
+                                            <input type="radio" name="bids" value="30+" onchange="applyFilter()" @if ($bids=="30+" ) checked @endif> {{ translate('30+') }}
+                                            <span class="aiz-rounded-check"></span>
+                                            <span class="float-right text-secondary fs-12"></span>
+                                        </label>
+                                    </div>
+                                </div> -->
+
+                <!-- Skills -->
+
+                <div class="mb-4">
+                  <!-- Countries -->
+                  <!-- <h6 class="text-left mb-3 fs-14 fw-700">
+                                        <span class="pr-3">{{ translate('Skills') }}</span>
+                                    </h6> -->
+                  <!-- <div class="mb-5" style="width: 245px;">
+                                        <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                            <option value="">{{ translate('Skills') }}</option>
+                                            @foreach (\App\Models\Skill::all() as $key => $skill)
+                                            <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id==$skill->id )
+                                                selected
+                                                @endif>{{ $skill->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div> -->
+                  <div class="">
+                    <h6 class="text-left mb-3 fs-14 fw-700">
+                      <span class="pr-3">{{ translate('Skills') }}</span>
+                    </h6>
+                    <div class="mb-5 border-bottom">
+                      <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id[]"
+                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+
+                        <option value="">{{ translate('Search skills') }}</option>
+                        @foreach (\App\Models\Skill::all() as $key => $skill)
+                        <option value="{{ $skill->id }}" @if (in_array($skill->id, (array)$skill_ids ))
+                          selected
+                          @endif>{{ $skill->name }}</option>
+                        @endforeach
+                      </select>
+
+                      <div class="mt-3">
+                        @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                        <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse"
+                          href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true"
+                          aria-controls="skill_{{ $parentSkill->id}}">
+                          <label class="fas fa-plus "
+                            style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                          <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
+                        </a>
+                        <div class="overflow-auto h-130px collapse " id="skill_{{$parentSkill->id}}">
+                          @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
+                          <div class=" w-200px child-skill-project-filtering">
+                            <div class="mb-1 ">
+                              <input type="checkbox" name="childSkill_id[]" id="{{$subSkill->id}}"
+                                value="{{$subSkill->id}}" class=" d-none" onchange="applyFilter()">
+                              <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="{{$subSkill->id}}">
+                                {{ $subSkill->name }}</label>
+                            </div>
+                          </div>
+                          @endforeach
+                        </div>
+                        @endforeach
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </div>
+
                 <!-- Price -->
                 <input type="hidden" name="min_price" value="">
                 <input type="hidden" name="max_price" value="">
@@ -229,24 +372,6 @@
         <div class="col-xl-9 col-lg-8 ">
           <div class="card mb-lg-0 border-0">
             <input type="hidden" name="type" value="project">
-            <!-- <div class="card-header">
-                            <div class="d-flex align-items-center">
-                                <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                    <i class="las la-filter"></i>
-                                </button>
-                                <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                            </div>
-
-                            <div class="w-200px">
-                                <select class="form-control form-control-sm aiz-selectpicker rounded-1" name="sort" onchange="applyFilter()">
-                                    <option value="1" @if($sort=='1' ) selected @endif>{{ translate('Newest first') }}</option>
-                                    <option value="2" @if($sort=='2' ) selected @endif>{{ translate('Lowest budget first') }}</option>
-                                    <option value="3" @if($sort=='3' ) selected @endif>{{ translate('Highest budget first') }}</option>
-                                    <option value="4" @if($sort=='4' ) selected @endif>{{ translate('Lowest bids first') }}</option>
-                                    <option value="5" @if($sort=='5' ) selected @endif>{{ translate('Highest bids first') }}</option>
-                                </select>
-                            </div>
-                        </div> -->
 
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div>
@@ -266,17 +391,16 @@
                   <option value="4" @if($sort=='4' ) selected @endif>{{ translate('Lowest bids first') }}</option>
                   <option value="5" @if($sort=='5' ) selected @endif>{{ translate('Highest bids first') }}</option>
                 </select>
-
               </div>
             </div>
             <div class="card-body p-0 border-0 ">
 
               @foreach ($projects as $key => $project)
-              <a href="{{ route('project.details', $project->slug) }}"
+              <div href="{{ route('project.details', $project->slug) }}"
                 class="row card-project text-inherit px-3 py-4 all-scholarship-list"
                 style="background: #F2F7F2; border-bottom:1px solid #ddd;">
-                <div class="col-lg-1">
-                  <span class="avatar avatar-xs mb-lg-2">
+                <div class="col-lg-1 p-0">
+                  <span class="avatar avatar-xs mb-lg-2" style="width:70px; height: 70px;">
                     @if($project->image != null)
                     <img src="{{ custom_asset($project->client->photo) }}">
                     @else
@@ -285,7 +409,7 @@
                   </span>
                 </div>
                 <div class="col-lg-8  px-lg-3">
-                  <h5 class="h6 fw-600 lh-1-5"> {{$project->name}}</h5>
+                  <h5 class="h6 fw-700 lh-1-5"> {{$project->name}}</h5>
                   <ul class="list-inline opacity-70 fs-12">
                     <li class="list-inline-item">
                       {{-- <i class="las la-clock opacity-40"></i> --}}
@@ -297,7 +421,7 @@
                         </g>
                       </svg>
                       <span class="ml-1 fw-700"
-                        style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
+                        style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans()}}</span>
                     </li>
                     <li class="list-inline-item">
                       {{-- <i class="las la-stream opacity-40"></i> --}}
@@ -314,7 +438,7 @@
                             fill="#055846" />
                         </g>
                       </svg>
-                      <span class="ml-1 fw-700" style="color:black;">@if ($project->project_category != null)
+                      <span class="ml-1 fw-700 fs-14" style="color:black;">@if ($project->project_category != null)
                         {{ $project->project_category->name }} @endif</span>
                     </li>
                     <li class="list-inline-item">
@@ -330,7 +454,7 @@
                         <path d="M10.3691 11.3203H11.3158V12.267H10.3691V11.3203Z" fill="#055846" />
                       </svg>
 
-                      <span class="ml-1  fw-700" style="color:black;">
+                      <span class="ml-1  fw-700 fs-14" style="color:black;">
                         @if ($project->bids > 0)
                         {{ $project->bids }}+
                         @else
@@ -339,7 +463,7 @@
                         Received</span>
                     </li>
                   </ul>
-                  <div class="text-muted lh-1-8">
+                  <div class="text-muted lh-1-4 fs-14">
                     <p> {{ \Illuminate\Support\Str::limit($project->excerpt, 260, $end = '...') }}
                     </p>
                   </div>
@@ -355,23 +479,12 @@
                   </div>
                 </div>
                 <div
-                  class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-start minw-130px">
-                  <!-- <div class="text-right text-lg-left mb-lg-3">
-                                        <span class="small text-secondary">{{ translate('Budget') }}</span>
-                                        <h4 class="mb-0 fw-700">{{ single_price($project->price) }}</h4> -->
-                  <!-- <div class="mt-xl-2 small text-secondary">
-                                            @if ($project->bids > 0)
-                                            <span class="text-body mr-1">{{ $project->bids }}+</span>
-                                            @else
-                                            <span class="text-body mr-1">{{ $project->bids }}</span>
-                                            @endif
-                                            <span>Bids</span>
-                                        </div> -->
-                  <!-- </div> -->
+                  class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px">
 
-                  <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white"
-                    style="background-color:#275846; width:165px;">{{ translate('Budget') }}
-                    {{ single_price($project->price) }}
+                  <div class="btn d-flex justify-content-start align-items-center mt-2 py-2 fs-14 px-2 text-white"
+                    style="background-color:#275846; width:165px;">
+                    <img class=" px-1  " src=" {{url('/public/assets/find-consultant/budget.png')}}" alt="Image"
+                      style="width:30px; " /> {{ translate('Budget') }} {{ single_price($project->price) }}
 
                   </div>
 
@@ -386,7 +499,7 @@
                   </button>
 
                 </div>
-              </a>
+              </div>
               @endforeach
 
             </div>
@@ -407,9 +520,51 @@
     </form>
   </div>
 </section>
+<!-- <script>
+    function removeCategory(categoryId) {
+        var categoryElement = document.getElementById('category_' + categoryId);
+
+        if (categoryElement) {
+            categoryElement.parentNode.removeChild(categoryElement);
+
+            // Uncheck the corresponding checkbox
+            var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+        }
+        $('#project-filter-form').submit();
+    }
+</script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function removeCategory(categoryId) {
+  var categoryElement = document.getElementById('category_' + categoryId);
+
+  if (categoryElement) {
+    categoryElement.parentNode.removeChild(categoryElement);
+
+    // Uncheck the corresponding checkbox
+    var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+  }
+  $('#project-filter-form').submit();
+}
+</script>
+
 @endsection
 
+
 @section('script')
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 function applyFilter() {
   $('#project-filter-form').submit();

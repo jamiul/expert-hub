@@ -67,9 +67,9 @@
                                         <span class=" pr-3">{{ translate('Level of Study') }}</span>
                                     </h6>
                                     <div class="aiz-checkbox-list">
-                                        @foreach(\App\Models\ScholarshipLevel:: all() as $Level)
+                                        @foreach(\App\Models\ScholarshipLevel:: all() as $level)
                                         <label class="aiz-checkbox">
-                                            <input type="checkbox" name="level_id[]" value="{{$Level->id}}" onchange="applyFilter()" @if(in_array($Level->id, $level_id)) checked @endif > {{ $Level->level_name }}
+                                            <input type="checkbox" name="level_id[]" value="{{$level->id}}" onchange="applyFilter()" @if(in_array($level->id, $level_id)) checked @endif > {{ $level->level_name }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
                                         </label>

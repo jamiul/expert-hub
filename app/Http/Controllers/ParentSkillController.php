@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ParentSkill;
 use Illuminate\Http\Request;
-use App\Models\Skill;
 
-class SkillController extends Controller
+
+class ParentSkillController extends Controller
 {
 
     public function __construct()
@@ -18,9 +19,11 @@ class SkillController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        $skills = Skill::latest()->paginate(15);
-        return view('admin.default.freelancer.skills.index', compact('skills'));
+       
+        $skills = ParentSkill::latest()->paginate(10);
+        return view('admin.default.freelancer.ParentSkills.index', compact('skills'));
 
     }
 
@@ -42,12 +45,11 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        $skill = new Skill;
+        $skill = new ParentSkill;
         $skill->name = $request->name;
-        $skill->parent_skill_id = $request->parent_skill_id;
         if ($skill->save()) {
             flash(translate('New Skill has been inserted successfully'))->success();
-            return redirect()->route('skills.index');
+            return redirect()->route('parent_skills.index');
         }
         else {
             flash(translate('Sorry! Something went wrong.'))->error();
@@ -74,8 +76,8 @@ class SkillController extends Controller
      */
     public function edit($id)
     {
-        $skill = Skill::findOrFail(decrypt($id));
-        return view('admin.default.freelancer.skills.edit', compact('skill'));
+        $skill = ParentSkill::findOrFail(decrypt($id));
+        return view('admin.default.freelancer.ParentSkills.edit', compact('skill'));
     }
 
     /**
@@ -87,12 +89,11 @@ class SkillController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $skill = Skill::findOrFail($id);
+        $skill = ParentSkill::findOrFail($id);
         $skill->name = $request->name;
-        $skill->parent_skill_id = $request->parent_skill_id;
         if ($skill->save()) {
             flash(translate('Skill has been Updated successfully'))->success();
-            return redirect()->route('skills.index');
+            return redirect()->route('parent_skills.index');
         }
         else {
             flash(translate('Sorry! Something went wrong.'))->error();
@@ -108,10 +109,10 @@ class SkillController extends Controller
      */
     public function destroy($id)
     {
-        $skill = Skill::findOrFail($id);
-        if(Skill::destroy($id)){
+        $skill = ParentSkill::findOrFail($id);
+        if(ParentSkill::destroy($id)){
             flash(translate('Skill Info has been deleted successfully'))->success();
-            return redirect()->route('skills.index');
+            return redirect()->route('parent_skills.index');
         }
         else {
             flash(translate('Sorry! Something went wrong.'))->error();
