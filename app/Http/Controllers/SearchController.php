@@ -249,7 +249,8 @@ class SearchController extends Controller
             $fixed_max = $request->fixed_max;
             $hourly_min = $request->hourly_min;
             $hourly_max = $request->hourly_max;
-            // dd($projectType);
+            $durations = array('');
+            dd($durations);
 
 
 
@@ -297,83 +298,64 @@ class SearchController extends Controller
                 // $categoryIds=$categories->pluck('id')
                 $projects = $projects->whereIn('project_category_id', $category_ids);
             }
-
-            // if ($request->projectType != null) {
-
-            //     if (($request->projectType == 'Fixed' && $request->projectType == 'Hourly')) {
-            //         $projectType = $request->projectType;
-            //         dd($projectType);
-            //         $projects = $projects->whereIn('type', $projectType)->whereBetween('price', [$fixed_min, $fixed_max], [$hourly_min, $hourly_max]);
-            //     } elseif ($request->projectType == 'Fixed') {
-            //         //  Only Fixed project type selected
-            //         dd($projectType);
-            //         $projects = $projects->where('type', 'Fixed')
-            //             ->whereBetween('price', [$fixed_min, $fixed_max]);
-            //     } elseif ($request->projectType == 'Hourly') {
-            //         dd($projectType);
-            //         // Only Hourly project type selected
-            //         $projects = $projects->where('type', 'Hourly')
-            //             ->whereBetween('price', [$fixed_min, $fixed_max]);
-            //     }
-            // }
-
-                // fixed
-            //  if ($request->projectType != null) {
-            //     // dd($request->projectType);
-            //     $projectType = $request->projectType;
-            //     $projects = $projects->whereIn('type', $projectType);
-            //     // dd($projects);
-            //     if($fixed_min || $fixed_max && $fixed_min || $fixed_max) {
-            //         $projects = $projects->whereIn('type', $projectType)->whereBetween('price',[$fixed_min, $fixed_max])->whereBetween('price',[$hourly_min, $hourly_max]);
-            //     }
-            //     elseif($fixed_min || $fixed_max) {
-            //         $projects = $projects->whereIn('type', 'Fixed')->whereBetween('price',[$fixed_min, $fixed_max]);
-            //     }
-            //     elseif($hourly_min || $hourly_max) {
-            //         $projects = $projects->whereIn('type', 'hourly')->whereBetween('price',[$hourly_min, $hourly_max]);
-            //     }
-            // }
-
-            // new
-            if ($request->projectType != null) {
-                $projectType = $request->projectType;
-                $projects = $projects->whereIn('type', $projectType);
-
-                if ($fixed_min && $fixed_max) {
-                    $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
-                        $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
-                    });
-                }
-
-                if ($hourly_min && $hourly_max) {
-                    $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
-                        $query->where('type', 'Hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
-                    });
-                }
-
-                $projects = $projects->whereIn('type', $projectType);
+            if ($request->durations != null) {
+                // dd($durations);
+                $projects = $projects->where(function ($query) use ($durations) {
+                    // dd($durations);
+                    foreach ($durations as $duration) {
+                        if ($duration === '1 week') {
+                            $query->orWhereBetween('created_at', '=>', [now()->subWeek(), now()]);
+                        } elseif ($duration === '1 week - 4 week') {
+                            $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
+                        } elseif ($duration === '1 month - 3 month') {
+                            $query->orWhereBetween('created_at', [now()->subMonths(1)->startOfMonth(), now()->subMonths(3)->endOfMonth()]);
+                        } elseif ($duration === '3 month - 6 month') {
+                            $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
+                        } elseif ($duration === '6 month') {
+                            $query->orWhere('created_at', '<=', now()->subMonths(6));
+                        }
+                    }
+                });
             }
 
 
 
+
+
+
+            // new projectTypes
             // if ($request->projectType != null) {
-            //     // Check if both Fixed and Hourly project types are selected
-            //     if (in_array('Fixed', $request->projectType) && in_array('Hourly', $request->projectType)) {
-            //         // Both project types selected
-            //         $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
-            //             $query->whereIn('type', ['Fixed', 'Hourly'])
-            //                   ->whereBetween('price', [$fixed_min, $fixed_max]);
-            //         });
-            //     } elseif (in_array('Fixed', $request->projectType)) {
-            //         // Only Fixed project type selected
-            //         $projects = $projects->where('type', 'Fixed')
-            //                              ->whereBetween('price', [$fixed_min, $fixed_max]);
-            //     } elseif (in_array('Hourly', $request->projectType)) {
-            //         // Only Hourly project type selected
-            //         $projects = $projects->where('type', 'Hourly')
-            //                              ->whereBetween('price', [$fixed_min, $fixed_max]);
-            //     }
+            //     $projectType = $request->projectType;
+            //     $projects = $projects->whereIn('type', $projectType);
             // }
+            // if ($fixed_min && $fixed_max) {
+            //     $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
+            //         $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
+            //     });
+            // }
+            // if ($hourly_min && $hourly_max) {
+            //     $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
+            //         $query->where('type', 'hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
+            //     });
+
+            // }
+                // update projects type
+            if ($request->projectType != null) {
+                $projectType = $request->projectType;
+                $projects = $projects->whereIn('type', $projectType);
+            }
+
+            if ($fixed_min !== null && $fixed_max !== null) {
+                $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
+                    $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
+                });
+            }
+
+            if ($hourly_min !== null && $hourly_max !== null) {
+                $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
+                    $query->where('type', 'Hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
+                });
+            }
 
             if ($request->skill_id != null) {
                 $skill_ids = $request->skill_id;
