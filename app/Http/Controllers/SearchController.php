@@ -250,7 +250,7 @@ class SearchController extends Controller
             $hourly_min = $request->hourly_min;
             $hourly_max = $request->hourly_max;
             $durations = array('');
-            dd($durations);
+            // dd($durations);
 
 
 

@@ -348,7 +348,7 @@
                             </li>
                             <li class="nav-item dropdown mega_menu text-white">
                                 <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Why FreelancerEdu
+                                    Why ConsultantEdu
                                 </a>
                                 <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
                                     <div class="row">

@@ -245,7 +245,7 @@
                                         <div class="bg-white rounded-circle">
                                             <img class=" px-2 py-2 center d-block" src="{{my_asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="" style="height:30px">
                                         </div>
-                                        <p class="fw-400 text-black fs-15 ml-2 mb-0">How FreelancerEduWorks</p>
+                                        <p class="fw-400 text-black fs-15 ml-2 mb-0">How ConsultantEdu Works</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
@@ -382,7 +382,7 @@
                                         </div>
                                         <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
                                             @if (Auth::check() && ($bookmarked_service = \App\Models\BookmarkedService::where('user_id', auth()->user()->id)->where('service_id', $service->id)->first()) != null)
-                                           
+
                                             <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.destroy', $bookmarked_service->id) }}" data-target="#bookmark-remove-modal">
                                                 <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/fillupheart.png')}}" alt="">
                                             </a>
