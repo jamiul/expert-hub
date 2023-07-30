@@ -90,7 +90,7 @@
                                     </h6>
                                     <div class="">
 
-                                        @foreach(\App\Models\ProjectCategory::all() as $category)
+                                        @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
 
                                         <label class="aiz-checkbox w-100">
                                             <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
@@ -180,17 +180,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="mb-2 mt-3" style="width: 245px;">
-                                        <select onchange="applyFilter()" name="durations[]" multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2" data-live-search="true">
-                                            <option value="">{{ translate('All Durations') }}</option>
-                                            <option value='1 week'>Less than 1 week</option>
-                                            <option value='1 week - 4 week'>1 week to 4 weeks</option>
-                                            <option value='1 month - 3 month'>1 month to 3 months</option>
-                                            <option value='3 month - 6 month'>3 months to 6 months</option>
-                                            <option value='6 month'>Over 6 months/Ongoing</option>
-                                            <option value="unspecified">unspecified</option>
-                                        </select>
-                                    </div>
+
 
                                 </div>
 

@@ -270,7 +270,8 @@
                         ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
                         ->pluck('user_id');
 
-                        $services = \App\Models\ProjectCategory::all();
+                        $services = \App\Models\ProjectCategory::all()->reverse();
+
                         @endphp
                         @foreach ($services as $category)
                         <div class="col-md-3">

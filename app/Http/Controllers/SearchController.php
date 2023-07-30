@@ -75,18 +75,18 @@ class SearchController extends Controller
                 $freelancers = $freelancers->where('hourly_rate', '<=', $max_price);
             }
 
-            if ($request->rating != null) {
-                if ($rating == "4+") {
-                    $freelancers = $freelancers->where('rating', '>', 4);
-                } else {
-                    $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
-                }
-            }
+            // if ($request->rating != null) {
+            //     if ($rating == "4+") {
+            //         $freelancers = $freelancers->where('rating', '>', 4);
+            //     } else {
+            //         $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
+            //     }
+            // }
             if ($request->rate != null) {
                 if ($rate == "5") {
                     $freelancers = $freelancers->where('rating', '>', 4);
                 } else {
-                    $freelancers = $freelancers->whereIn('rating', explode('-', $rate));
+                    $freelancers = $freelancers->where('rating', explode('-', $rate));
                 }
             }
 
@@ -249,8 +249,9 @@ class SearchController extends Controller
             $fixed_max = $request->fixed_max;
             $hourly_min = $request->hourly_min;
             $hourly_max = $request->hourly_max;
-            $durations = array('');
+            // $durations = array('');
             // dd($durations);
+            $selectedDurations = $request->input('durations');
 
 
 
@@ -298,17 +299,36 @@ class SearchController extends Controller
                 // $categoryIds=$categories->pluck('id')
                 $projects = $projects->whereIn('project_category_id', $category_ids);
             }
-            if ($request->durations != null) {
-                // dd($durations);
-                $projects = $projects->where(function ($query) use ($durations) {
-                    // dd($durations);
-                    foreach ($durations as $duration) {
+            // if ($request->durations != null) {
+            //     // dd($durations);
+            //     $projects = $projects->where(function ($query) use ($durations) {
+            //         // dd($durations);
+            //         foreach ($durations as $duration) {
+            //             if ($duration === '1 week') {
+            //                 $query->orWhereBetween('created_at', '=>', [now()->subWeek(), now()]);
+            //             } elseif ($duration === '1 week - 4 week') {
+            //                 $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
+            //             } elseif ($duration === '1 month - 3 month') {
+            //                 $query->orWhereBetween('created_at', [now()->subMonths(1)->startOfMonth(), now()->subMonths(3)->endOfMonth()]);
+            //             } elseif ($duration === '3 month - 6 month') {
+            //                 $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
+            //             } elseif ($duration === '6 month') {
+            //                 $query->orWhere('created_at', '<=', now()->subMonths(6));
+            //             }
+            //         }
+            //     });
+            // }
+
+
+            if (!empty($selectedDurations)) {
+                $projects = $projects->where(function ($query) use ($selectedDurations) {
+                    foreach ($selectedDurations as $duration) {
                         if ($duration === '1 week') {
-                            $query->orWhereBetween('created_at', '=>', [now()->subWeek(), now()]);
+                            $query->orWhereBetween('created_at', [now()->subWeek(), now()]);
                         } elseif ($duration === '1 week - 4 week') {
                             $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
                         } elseif ($duration === '1 month - 3 month') {
-                            $query->orWhereBetween('created_at', [now()->subMonths(1)->startOfMonth(), now()->subMonths(3)->endOfMonth()]);
+                            $query->orWhereBetween('created_at', [now()->subMonths(3), now()]);
                         } elseif ($duration === '3 month - 6 month') {
                             $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
                         } elseif ($duration === '6 month') {
@@ -319,26 +339,6 @@ class SearchController extends Controller
             }
 
 
-
-
-
-
-            // new projectTypes
-            // if ($request->projectType != null) {
-            //     $projectType = $request->projectType;
-            //     $projects = $projects->whereIn('type', $projectType);
-            // }
-            // if ($fixed_min && $fixed_max) {
-            //     $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
-            //         $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
-            //     });
-            // }
-            // if ($hourly_min && $hourly_max) {
-            //     $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
-            //         $query->where('type', 'hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
-            //     });
-
-            // }
                 // update projects type
             if ($request->projectType != null) {
                 $projectType = $request->projectType;
