@@ -41,7 +41,7 @@
                 <div class="col-lg-7 col-sm-12 home-cacap-head">
                   <h2 class=" sm-mx-auto fw-700 fs-40 fs-sm-36px" style="">
                     Hire the best consultations for any job, online</h2>
-                  <p class="fs-20 fs-sm-14 my-4 ">Millions of people use scholarships Australia to turn their ideas
+                  <p class="fs-20 fs-sm-14 my-4 ">Millions of people use ConsultantEdu to turn their ideas
                     into
                     their reality.</p>
                   <div class="lg-my-3 my-sm-0 home-banner-button ">
@@ -102,7 +102,7 @@
         <div class="">
           <div class="">
             <div class=" content-title  text-center pb-5 pt-3">
-              <h2 class="fw-700 fs-36 text-white mb-3">Need Scholarship help?</h2>
+              <h2 class="fw-700 fs-36 text-white mb-3">Need Academic help?</h2>
               <h5 class="text-center text-white">It can be hard to know where to start. That's why we're here to guide
                 you.
               </h5>
@@ -339,7 +339,7 @@
               style="width:500px;" />
           </div>
           <div class=" col-lg-7 col-sm-12">
-            <h2 class="fw-700 mb-3 heading-title fre-small-font" style="padding-top:36px;">What makes FreelancerEdu
+            <h2 class="fw-700 mb-3 heading-title fre-small-font" style="padding-top:36px;">What makes ConsultantEdu
               impressive
             </h2>
             <div class="">
@@ -817,7 +817,7 @@
     <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
       <div class=" container-home">
         <div class="content-title">
-          <h2 class="fw-700 fre-small-font">Hear what recent FreelancerEdu clients have to say</h2>
+          <h2 class="fw-700 fre-small-font">Hear what recent ConsultantEdu clients have to say</h2>
         </div>
         <div class="">
           <div class="row ">

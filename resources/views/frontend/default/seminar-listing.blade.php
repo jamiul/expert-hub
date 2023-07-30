@@ -3,6 +3,8 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 
 </head>
 
@@ -51,7 +53,7 @@
                     </button>
                     <div class="input-group rounded-2">
                       <input type="text" class="form-control rounded  "
-                        placeholder="{{ translate('Search for consultants') }}" name="keyword" value="{{ $keyword }}">
+                        placeholder="{{ translate('Search for seminar') }}" name="keyword" value="{{ $keyword }}">
                       <div class="input-group-prepend rounded">
                         <span class="input-group-text text-white border-left-0 rounded-right" :
                           style="background:#275846;">
@@ -61,24 +63,87 @@
                     </div>
                   </div>
                 </div>
-
-                <h6 class="text-left mb-3 mt-lg-5  fs-14 fw-700">
+                <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
                   <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                 </h6>
-                @foreach(\App\Models\ProjectCategory::all() as $category)
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for="flexCheckDisabled">
+                    On demand seminar
+                  </label>
 
-                <label class="aiz-checkbox w-100">
-                  <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
-                    @if(in_array($category->id, $category_id)) checked @endif >
-                  {{$category->name}}
-                  <span class="aiz-square-check"></span>
-                  <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                </label>
-                @endforeach
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for="flexCheckDisabled">
+                    Live seminar
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for="flexCheckDisabled">
+                    Structured courses
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for="flexCheckDisabled">
+                    Free seminars
+                  </label>
+                </div>
+                <h6 class="text-left mt-3 fs-14 fw-700">
+                  <span class="pr-3">{{ translate('Seminar Topics') }}</span>
+                </h6>
+                <div class="form-check">
+                  <input class="form-check-input " type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" class="" for="flexCheckDisabled">
+                    On demand seminar
+                  </label>
 
-                <div class="card-body pl-lg-0">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for="flexCheckDisabled">
+                    Live seminar
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for="flexCheckDisabled">
+                    Structured courses
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                  <label class="form-check-label fs-14" for=" flexCheckDisabled">
+                    Free seminars
+                  </label>
+                </div>
+                <div class="mt-3">
+
+                  <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse"
+                    href="" role="button" aria-expanded="true" aria-controls="">
+                    <label class="fas fa-plus "
+                      style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                    <p class="mb-0 fs-14 fw-500">1</p>
+                  </a>
+                  <div class="overflow-auto h-130px collapse " id="">
+
+                    <div class=" w-200px child-skill-project-filtering">
+                      <div class="mb-1 ">
+                        <input type="checkbox" name="" id="}" value="" class=" d-none" onchange="applyFilter()">
+                        <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="">
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <!-- <div class="card-body pl-lg-0">
                   <div class="">
-                    <!-- Countries -->
+
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class="pr-3">{{ translate('Seminar Topics') }}</span>
                     </h6>
@@ -93,40 +158,111 @@
                         @endforeach
                       </select>
                     </div>
+                  </div> -->
 
 
-                  </div>
-                </div>
-
-                <!-- Categories -->
                 <div class="card-body pl-lg-0">
                   <div class="">
-                    <!-- Countries -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="pr-3">{{ translate('Countries') }}</span>
-                    </h6>
-                    <div class="mb-5">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('All Countries') }}</option>
-                        @foreach (\App\Models\Country::all() as $key => $country)
-                        <option value="{{ $country->id }}" @if (isset($country_id) && $country_id==$country->id )
-                          selected
-                          @endif>{{ $country->name }}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                    <!-- Hourly Rate -->
-
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class=" pr-3">{{ translate('Seminar date') }}</span>
                     </h6>
+                    <div class="container">
+                      <div class="calendar">
+                        <div class="row calendar-header">
+                          <div class="col text-center">Sun</div>
+                          <div class="col text-center">Mon</div>
+                          <div class="col text-center">Tue</div>
+                          <div class="col text-center">Wed</div>
+                          <div class="col text-center">Thur</div>
+                          <div class="col text-center">Fri</div>
+                          <div class="col text-center">Sat</div>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center calendar-cell"> </div>
+                          <div class="col text-center calendar-cell"> </div>
+                          <div class="col text-center calendar-cell">1</div>
+                          <div class="col text-center calendar-cell">2</div>
+                          <div class="col text-center calendar-cell">3</div>
+                          <div class="col text-center calendar-cell">4</div>
+                          <div class="col text-center calendar-cell">5</div>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center calendar-cell">6</div>
+                          <div class="col text-center calendar-cell">7</div>
+                          <div class="col text-center calendar-cell">8</div>
+                          <div class="col text-center calendar-cell">9</div>
+                          <div class="col text-center calendar-cell">10</div>
+                          <div class="col text-center calendar-cell">11</div>
+                          <div class="col text-center calendar-cell">12</div>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center calendar-cell">12</div>
+                          <div class="col text-center calendar-cell">13</div>
+                          <div class="col text-center calendar-cell">14</div>
+                          <div class="col text-center calendar-cell">15</div>
+                          <div class="col text-center calendar-cell">16</div>
+                          <div class="col text-center calendar-cell">17</div>
+                          <div class="col text-center calendar-cell">18</div>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center calendar-cell">19</div>
+                          <div class="col text-center calendar-cell">20</div>
+                          <div class="col text-center calendar-cell">21</div>
+                          <div class="col text-center calendar-cell">22</div>
+                          <div class="col text-center calendar-cell">23</div>
+                          <div class="col text-center calendar-cell">24</div>
+                          <div class="col text-center calendar-cell">25</div>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center calendar-cell">26</div>
+                          <div class="col text-center calendar-cell">27</div>
+                          <div class="col text-center calendar-cell">28</div>
+                          <div class="col text-center calendar-cell">29</div>
+                          <div class="col text-center calendar-cell">30</div>
+                          <div class="col text-center calendar-cell"></div>
+                          <div class="col text-center calendar-cell"></div>
+
+                        </div>
+                        <!-- Continue adding rows for the rest of the days in the month -->
+                        <!-- You can use PHP or JavaScript to dynamically generate the calendar -->
+                      </div>
+                    </div>
 
 
-                    <!-- Rating -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
+                    <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
                       <span class=" pr-3">{{ translate('Languages') }}</span>
                     </h6>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        English
+                      </label>
+
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        French
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        Hindi
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        Malay
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        Bangla
+                      </label>
+                    </div>
 
                   </div>
                 </div>
@@ -260,8 +396,48 @@
       </form>
     </div>
   </section>
+  <script>
 
+  </script>
+  <script>
+  function generateCalendar() {
+    var month = document.getElementById("monthSelect").value;
+    var year = document.getElementById("yearInput").value;
+    var daysInMonth = new Date(year, month, 0).getDate();
+    var firstDay = new Date(year, month - 1, 1).getDay();
+    var calendar = document.getElementById("calendar");
 
+    var table = '<table class="table"><thead><tr><th colspan="7" class="text-center">' + year + ' - ' + month +
+      '</th></tr><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead><tbody><tr>';
+
+    var dayCount = 1;
+    // Add blank cells for days before the first day of the month
+    for (var i = 0; i < firstDay; i++) {
+      table += '<td></td>';
+    }
+    // Add cells for each day in the month
+    for (var j = firstDay; j < 7; j++) {
+      if (dayCount <= daysInMonth) {
+        table += '<td>' + dayCount + '</td>';
+        dayCount++;
+      } else {
+        table += '<td></td>';
+      }
+    }
+
+    // Add remaining cells
+    while (dayCount <= daysInMonth) {
+      if (new Date(year, month - 1, dayCount).getDay() === 0) {
+        table += '</tr><tr>';
+      }
+      table += '<td>' + dayCount + '</td>';
+      dayCount++;
+    }
+
+    table += '</tr></tbody></table>';
+    calendar.innerHTML = table;
+  }
+  </script>
   <script>
   function removeCategory(categoryId) {
 

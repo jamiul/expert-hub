@@ -34,16 +34,20 @@ class SearchController extends Controller
             $skill_id = array('');
             $childSkill_id = array('');
             $category_id = array('');
+            $rate1 = $request->rate1;
+            $rate1 =array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
+            // $hourlyRate = $request->input('rate1');
             $categories = [];
             $category_ids=[];
             $skills = [];
             $skill_ids = [];
             $rate = [];
+            
             // dd($request->all());
                 
 
@@ -92,6 +96,40 @@ class SearchController extends Controller
                     }
                 });
             }
+
+//     if (!empty($hourlyRate)) {
+//     $freelancers = $freelancers->where(function ($query) use ($hourlyRate) {
+//         foreach ($hourlyRate as $rate) {
+//             $range = explode('-', $rate);
+//             if (count($range) == 2) {
+//                 $query->orWhereBetween('hourly_rate', [(int)$range[0], (int)$range[1]]);
+//             } elseif ($range[0] == '40+') {
+//                 $query->orWhere('hourly_rate', '>', 40);
+//             }
+//         }
+//     });
+// }
+       if (!empty($rate1)) {
+        $freelancers = UserProfile::query();
+
+        foreach ($rate1 as $rate) {
+            $range = explode('-', $rate);
+            if (count($range) == 2) {
+                $query->orWhereBetween('hourly_rate', [(int)$range[0], (int)$range[1]]);
+            } elseif ($rate === '40+') {
+                $query->orWhere('hourly_rate', '>', 40);
+            }
+        }
+        
+        // Execute the query and get the filtered user profiles
+        $filteredUserProfiles = $freelancers->get();
+
+        // Now you can use $filteredUserProfiles as needed
+    } else {
+        // If $rate1 is empty, no filtering is needed, so you can get all user profiles
+        $filteredUserProfiles = UserProfile::all();
+    }
+
 
             if ($min_price != null) {
                 $freelancers = $freelancers->where('hourly_rate', '>=', $min_price);
@@ -368,7 +406,7 @@ class SearchController extends Controller
 
             switch ($sort) {
                 case '1':
-                    $projects = $projects->orderBy('created_at', 'desc');
+                    $projects = $projects->orderBy('hourly_rate', 'desc');
                     break;
                 case '2':
                     $projects = $projects->orderBy('price', 'asc');
@@ -415,6 +453,7 @@ class SearchController extends Controller
             $projects = $projects->where('skills', 'like', '%' . '"' . $id . '"' . '%')->latest();
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
+            
             return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
  }
 }

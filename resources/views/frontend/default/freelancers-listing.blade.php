@@ -239,86 +239,44 @@
                   <div class="flex-grow-1 ">
                     <div class="d-flex">
                       <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+                      @if($freelancer->user->address->country->photo ==null)
 
-                      @if ($freelancer->user->address->country->photo ==null)
                       @php
                       $flag_url="/public/assets/frontend/default/img/avatar-place.png";
                       @endphp
-                      @else
 
+                      @else
                       @php
                       $flag_url=$freelancer->user->address->country->photo;
                       @endphp
                       @endif
                       <span>
-
                         <img class=" mx-2 " src="{{url($flag_url)}}"
                           alt="{{ $freelancer->user->address->country->name }}" style="width:21px; height:14px; " />
                       </span>
+
                     </div>
+                    <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
 
-                    @if ($freelancer->specialistAt != null)
-                    <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
-                    @endif
+                      <div class="d-flex w-100 mx-0">
+                        <p class="btn btn-primary btn-sm  w-100  fw-700">
 
-                    <div class="d-flex text-dark fs-14 mb-3">
-                      <div class="mr-2">
-                        <span class="bg-rating p-1 text-white px-1 mr-1 fs-10" style="background:#95DF00;">
-                          {{ formatRating(getAverageRating($freelancer->user->id)) }}
-                        </span>
-                        <span class="rating rating-md rating-mr-1">
-                          {{ renderStarRating(getAverageRating($freelancer->user->id)) }}
-                        </span>
-                        <span>(0 Jobs)</span>
-                        <span class="mx-2">
-                          {{ count($freelancer->user->reviews) }} {{ translate('Reviews') }}
-                        </span>
+                          <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
+                            style="width:36px; " />
+                          {{ translate('Hire me') }}
 
-                        <span>
-                          {{ single_price($freelancer->hourly_rate) }} USD per hour
-                        </span>
-
+                        </p>
                       </div>
+                      <div class="d-flex w-100 mx-0">
+                        <p class="btn btn-primary btn-sm  w-100  fw-700">
 
+                          <img class=" px-1  " src=" {{url('/public/assets/find-consultant/zoom.png')}}" alt="Image"
+                            style="width:28px; " />
+                          {{ translate('Zoom me') }}
+
+                        </p>
+                      </div>
                     </div>
-                    <div class="text-dark lh-1-8">
-                      <p class="text-truncate-3 fs-14">{{ $freelancer->bio }}</p>
-                    </div>
-                    @if($freelancer->skills != null)
-                    <div>
-                      @foreach (json_decode($freelancer->skills) as $key => $skill_id)
-                      @php
-                      $skill = \App\Models\Skill::find($skill_id);
-                      @endphp
-                      @if ($skill != null)
-                      <span
-                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">{{ $skill->name }}</span>
-                      @endif
-                      @endforeach
-                    </div>
-                    @endif
-                  </div>
-                  <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
-
-                    <div class="d-flex w-100 mx-0">
-                      <p class="btn btn-primary btn-sm  w-100  fw-700">
-
-                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
-                          style="width:36px; " />
-                        {{ translate('Hire me') }}
-
-                      </p>
-                    </div>
-                    <div class="d-flex w-100 mx-0">
-                      <p class="btn btn-primary btn-sm  w-100  fw-700">
-
-                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/zoom.png')}}" alt="Image"
-                          style="width:28px; " />
-                        {{ translate('Zoom me') }}
-
-                      </p>
-                    </div>
-                  </div>
                 </a>
                 @endif
                 @endforeach

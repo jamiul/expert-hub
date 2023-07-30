@@ -551,3 +551,19 @@ div.scroll h6 a {
     display: block; /* or "none" if you want it to be initially hidden */
     /* Add any other styles you want */
   }
+
+  .calendar {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .calendar-cell {
+            border: 1px solid #dee2e6;
+            padding: 5px;
+            min-height: 50px;
+        }
