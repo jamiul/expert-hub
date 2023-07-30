@@ -529,4 +529,10 @@ function hex2rgba($color, $opacity = false) {
     return $output;
 }
 
+// get hourly rate from constant file
+function getHourlyRate()
+{
+    return config('constants.hourlyRate');
+}
+
 ?>

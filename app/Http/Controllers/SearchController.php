@@ -22,7 +22,6 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        // dd($request->all());
         if ($request->type == 'freelancer') {
             $type = 'freelancer';
             $keyword = $request->keyword;
@@ -44,8 +43,8 @@ class SearchController extends Controller
             $skills = [];
             $skill_ids = [];
             $rate = [];
-            // dd($request->all());
-                
+            $hourly_rate = $request->hourly_rate ?? [];
+
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -92,20 +91,56 @@ class SearchController extends Controller
                     }
                 });
             }
+            if($request->hourly_rate != null) {
+                if (in_array('all', $hourly_rate)) {
+                    $userProfiles = UserProfile::pluck('user_id')->all();
+                }
+                if(in_array('10', $hourly_rate)){
+                    $minHourlyRate = 1;
+                    $maxHourlyRate = 9;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
 
-            if ($min_price != null) {
-                $freelancers = $freelancers->where('hourly_rate', '>=', $min_price);
+                if(in_array('20', $hourly_rate)){
+                    $minHourlyRate = 10;
+                    $maxHourlyRate = 20;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
+
+                if(in_array('30', $hourly_rate)){
+                    $minHourlyRate = 20;
+                    $maxHourlyRate = 30;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
+
+                if(in_array('40', $hourly_rate)){
+                    $minHourlyRate = 30;
+                    $maxHourlyRate = 40;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
+
+                if(in_array('50', $hourly_rate)){
+                    $maxHourlyRate = 40;
+                    $userProfiles = UserProfile::where('hourly_rate', '>' ,$maxHourlyRate)->pluck('user_id')->toArray();
+                }
+
+                $freelancers = $freelancers->whereIn('user_id', $userProfiles);
             }
 
-            if ($max_price != null) {
-                $freelancers = $freelancers->where('hourly_rate', '<=', $max_price);
-            }
 
-             if ($request->rate != null) {
-                $rate = $request->rate;
-                $freelancers = $freelancers->whereIn('hourly_rate', $rate);
-                   
-            }
+            // if ($min_price != null) {
+            //     $freelancers = $freelancers->where('hourly_rate', '>=', $min_price);
+            // }
+
+            // if ($max_price != null) {
+            //     $freelancers = $freelancers->where('hourly_rate', '<=', $max_price);
+            // }
+
+            //  if ($request->rate != null) {
+            //     $rate = $request->rate;
+            //     $freelancers = $freelancers->whereIn('hourly_rate', $rate);
+
+            // }
     //  dd($freelancers->get()->toArray());
 
             if ($request->rating != null) {
@@ -142,14 +177,14 @@ class SearchController extends Controller
             //     $freelancers = $filtered_freelancers;
             // }
             //  else {
-                
+
             // }
 
 
                 $total = $freelancers->count();
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
-            
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'rate',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id',"category_ids"));
+
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'rate',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id',"category_ids", 'hourly_rate'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
