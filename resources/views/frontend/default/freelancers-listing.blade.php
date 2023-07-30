@@ -134,27 +134,29 @@
                   <!-- Hourly rates -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
+                    {{-- @foreach (getHourlyRate() as $key => $rate)
+                    <span id="{{ $key }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                      {{ $rate }}
+                        <p onclick="removeHourlyRate({{ $key}})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
+                    </span>
+                    @endforeach --}}
                   </h6>
+                  {{-- @dd($hourlyRate); --}}
                   <div class="mb-5 border-bottom">
                     <div class="mb-2 mt-3" style="width: 245px;">
-                      <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
-                        data-live-search="true">
-                        <option selected>
-                          {{ translate('Any hourly rate') }}
-                        </option>
-                        <option name="rate1" onchange="applyFilter()" value="10">
-                          < $10/hour </option>
-                        </option name="rate1" onchange="applyFilter()" value="20">
-                        $10-20/hour </option>
-                        <option name="rate1" onchange="applyFilter()" value="30">
-                          $20-30/hour </option>
-                        </option>
-                        <option name="rate1" onchange="applyFilter()" value="40">
-                          $30-40/hour </option>
-                        <option name="rate1" onchange="applyFilter()" value="50">
-                          > $40/hour </option>
-                      </select>
+                      <select
+                        class="select2 form-control aiz-selectpicker rounded-1"
+                        onchange="applyFilter()"
+                        multiple
+                        data-live-search="true"
+                        name="hourly_rate[]"
+                        >
+                        <option value="all">{{ translate('Any hourly rate') }}</option>
 
+                        @foreach (getHourlyRate() as $key => $rate)
+                        <option value="{{ $key }}" @if (in_array($key, $hourly_rate)) selected @endif> {{ $rate }} </option>
+                        @endforeach
+                      </select>
                     </div>
                   </div>
 
@@ -386,6 +388,12 @@
 
   @section('script')
   <script type="text/javascript">
+  let e = document.getElementById("hourlyRateSelect");
+
+  var value = e.value;
+  var text = e.options[e.selectedIndex].text;
+
+  console.log(value);
   function applyFilter() {
     $('#freelancer-filter-form').submit();
   }
