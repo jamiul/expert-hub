@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/single-profile.css')}}">
 
 </head>
 
@@ -18,9 +19,101 @@
     class="img-fit h-250px" style="background-color:#275846;">
   @endif
 </div> -->
+
   <div class="">
     <div class="mt-lg-5">
       <div class=" container-home  rounded-1" style="background:#F2F7F2;">
+        <div class="card">
+          <div class="card-body">
+            <div class="single-profile">
+              <div class="row">
+                <div class="col">
+                  <div class="profile-identity">
+                    <div class="profile-photo">
+                      <img src="https://www.upwork.com/profile-portraits/c1n7wVyn7wGbaEGtElezn3wBhL8wagt70OUsGsGKVWX8U8qs0Ry88F1sw7eI0ViL7I" alt={{ $freelancer->name }}
+                    class="rounded-circle profile-avatar">
+                    </div>
+                    <div class="identity-container">
+                      <div class="name">
+                        <div class="d-flex align-items-center">
+                          <h1>{{ $freelancer->name }}</h1>
+                        </div>
+                      </div>
+                      <div class="location-status">
+                        <div class="location">
+                          <div>
+                            {{-- <i class="las la-map-marker opacity-50"></i> --}}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
+                              <path id="Path_25847" data-name="Path 25847"
+                                d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z"
+                                transform="translate(-4 -2)" fill="#989ea8" />
+                            </svg>
+                            @if ($freelancer->address != null && $freelancer->address->city != null &&
+                            $freelancer->address->country != null)
+                            @if ($freelancer->address != null && $freelancer->address->city != null &&
+                            $freelancer->address->country != null)
+                            <span class="ml-1">{{ $freelancer->address->city->name }},
+                              {{ $freelancer->address->country->name }}</span>
+                            @endif
+                            @endif
+                          </div>
+                        </div>
+                        <div class="time"></div>
+                      </div>
+                      <div class="availability"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="identity-badges">
+                @if( !empty(getAverageRating($freelancer->id)) )
+                <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
+                  {{ formatRating(getAverageRating($freelancer->id)) }}
+                </span>
+                @else
+                <span class="bg-secondary rounded text-white px-1 mr-1 fs-10">
+                  {{ formatRating(getAverageRating($freelancer->id)) }}
+                </span>
+                @endif
+                <span class="rating rating-sm">
+                  {{ renderStarRating(getAverageRating($freelancer->id)) }}
+                </span>
+                <span>
+                  ({{ getNumberOfReview($freelancer->id) }} {{ translate('Reviews') }})
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-profile-boder"></div>
+
+          <div class="profile-type">
+            <div class="row">
+              <div class="col-4">
+                <div class="left-aside">
+                  <div class="mb-20">
+                    <h4 class="view-profile">View Profile</h4>
+                  </div>
+                  <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    Full Stack Development
+                  </div>
+                  <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                    All work
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="card-body">
           <div class="media align-items-center d-block d-md-flex container">
             <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
