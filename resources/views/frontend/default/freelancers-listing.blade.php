@@ -242,13 +242,11 @@
                                             $flag_url="/public/assets/frontend/default/img/avatar-place.png";
                                             @endphp
                                             @else
-
                                             @php
                                             $flag_url=$freelancer->user->address->country->photo;
                                             @endphp
                                             @endif
                                             <span>
-
                                                 <img class=" mx-2 " src="{{url($flag_url)}}" alt="{{ $freelancer->user->address->country->name }}" style="width:21px; height:14px; " />
                                             </span>
                                         </div>
@@ -297,10 +295,8 @@
 
                                         <div class="d-flex w-100 mx-0">
                                             <p class="btn btn-primary btn-sm  w-100  fw-700">
-
                                                 <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image" style="width:36px; " />
                                                 {{ translate('Hire me') }}
-
                                             </p>
                                         </div>
                                         <div class="d-flex w-100 mx-0">

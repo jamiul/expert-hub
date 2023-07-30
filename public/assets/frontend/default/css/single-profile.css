@@ -31,3 +31,19 @@ h4.view-profile {
 .list-group-item.active {
     background-color: #055846 !important;
 }
+.hire-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #055846;
+    border-radius: 20px; /* Rounded border */
+}
+
+.hire-link {
+    color: #000; /* Button text color */
+    text-decoration: none;
+    font-size: 14px;
+}
+.view-profile-main-single{
+    border-bottom: 1px solid #c0c0c0 !important;
+    padding-bottom: 15px;
+}
