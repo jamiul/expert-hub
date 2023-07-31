@@ -20,114 +20,81 @@
   @endif
 </div> -->
 
-    <div class="">
-        <div class="mt-lg-5">
-            <div class=" container-home  rounded-1" style="background:#F2F7F2;">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="single-profile">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="profile-identity">
-                                        <div class="profile-photo">
-                                            <img src="https://www.upwork.com/profile-portraits/c1n7wVyn7wGbaEGtElezn3wBhL8wagt70OUsGsGKVWX8U8qs0Ry88F1sw7eI0ViL7I" alt={{ $freelancer->name }} class="rounded-circle profile-avatar">
-                                        </div>
-                                        <div class="identity-container">
-                                            <div class="name">
-                                                <div class="d-flex align-items-center">
-                                                    <h1>{{ $freelancer->name }}</h1>
-                                                </div>
-                                            </div>
-                                            <div class="location-status">
-                                                <div class="location d-flex">
-                                                    <div class="mr-2">
-                                                        {{-- <i class="las la-map-marker opacity-50"></i> --}}
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
-                                                            <path id="Path_25847" data-name="Path 25847" d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z" transform="translate(-4 -2)" fill="#989ea8" />
-                                                        </svg>
-                                                        @if ($freelancer->address != null && $freelancer->address->city != null &&
-                                                        $freelancer->address->country != null)
-                                                        @if ($freelancer->address != null && $freelancer->address->city != null &&
-                                                        $freelancer->address->country != null)
-                                                        <span class="ml-1">{{ $freelancer->address->city->name }},
-                                                            {{ $freelancer->address->country->name }}</span>
-                                                        @endif
-                                                        @endif
-                                                    </div>
-                                                    <div id="local-time"></div>
-                                                </div>
-
-                                            </div>
-                                            <div class="availability"></div>
-                                        </div>
+    <div class="profile mt-lg-5">
+        <div class="container-home rounded-1">
+            <div class="card">
+                <div class="card-body border-bottom">
+                    <div class="single-profile">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="profile-identity">
+                                    <div class="profile-photo">
+                                        <img src="https://www.upwork.com/profile-portraits/c1n7wVyn7wGbaEGtElezn3wBhL8wagt70OUsGsGKVWX8U8qs0Ry88F1sw7eI0ViL7I" alt="{{ $freelancer->name }}" class="rounded-circle profile-avatar">
                                     </div>
-                                    <div class="mt-4 " style="margin-left: 140px;">
-                                        <div class="d-flex ">
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/success.png')}}" alt="">
-                                                <p class=" ml-1 mb-0 fs-15 text-black fw-600" style="margin-right: 70px;">100% Job Success</p>
+                                    <div class="identity-container">
+                                        <div class="name">
+                                            <div class="d-flex align-items-center">
+                                                <h1>{{ $freelancer->name }}</h1>
                                             </div>
-                                            <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
                                         </div>
+                                        <div class="location-status">
+                                            <div class="location d-flex">
+                                                <div class="mr-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
+                                                        <path id="Path_25847" data-name="Path 25847" d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z" transform="translate(-4 -2)" fill="#989ea8" />
+                                                    </svg>
+                                                    @if ($freelancer->address != null && $freelancer->address->city != null &&
+                                                    $freelancer->address->country != null)
+                                                    <span class="ml-1">{{ $freelancer->address->city->name }},
+                                                        {{ $freelancer->address->country->name }}</span>
+                                                    @endif
+                                                </div>
+                                                <div id="local-time"></div>
+                                            </div>
+                                        </div>
+                                        <div class="availability"></div>
                                     </div>
-
-
                                 </div>
-                                <div class="col-4">
-                                    <div class="d-flex align-items-center justify-content-around ">
-                                        <div class="hire-button">
-                                            <a href="#" class="hire-link">Hire Me</a>
+                                <div class="mt-4" style="margin-left: 140px;">
+                                    <div class="d-flex">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/success.png')}}" alt="">
+                                            <p class="ml-1 mb-0 fs-15 text-black fw-600" style="margin-right: 70px;">100% Job Success</p>
                                         </div>
-                                        <div>
-                                            <p class="text-muted mb-0">Invite</p>
-                                        </div>
-                                        <div class=" rounded-circle" style="border:1px solid #ddd;">
-                                            <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
-                                        </div>
+                                        <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
                                     </div>
-
                                 </div>
                             </div>
-                            <!-- <div class="identity-badges">
-                                @if( !empty(getAverageRating($freelancer->id)) )
-                                <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                    {{ formatRating(getAverageRating($freelancer->id)) }}
-                                </span>
-                                @else
-                                <span class="bg-secondary rounded text-white px-1 mr-1 fs-10">
-                                    {{ formatRating(getAverageRating($freelancer->id)) }}
-                                </span>
-                                @endif
-                                <span class="rating rating-sm">
-                                    {{ renderStarRating(getAverageRating($freelancer->id)) }}
-                                </span>
-                                <span>
-                                    ({{ getNumberOfReview($freelancer->id) }} {{ translate('Reviews') }})
-                                </span>
-                            </div> -->
-
+                            <div class="col-4">
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <div class="hire-button">
+                                        <a href="#" class="hire-link">Hire Me</a>
+                                    </div>
+                                    <div>
+                                        <button  class="text-muted btn mb-0">Invite</button>
+                                    </div>
+                                    <div class="rounded-circle" style="border:1px solid #ddd;">
+                                        <img class="p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="single-profile-boder"></div>
-
-                    <div class="row">
-                        <!-- left side -->
-                        <div class="col-4  left-aside pr-0"">
-                            <div class="">
-                                <div class=" view-profile-main-single">
-                            <div class="mb-20">
-                                <h4 class="view-profile">View Profile</h4>
-                            </div>
-                            <div class="list-group " id="list-tab" role="tablist">
-                                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
-                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
-                            </div>
+                <div class="row">
+                    <!-- left side -->
+                    <div class="col-4 left-aside pr-0">
+                        <!-- <div class="view-profile-main-single"></div> -->
+                        <div class="mb-20">
+                            <h4 class="view-profile">View Profile</h4>
                         </div>
-
-                        <!-- earning part -->
+                        <div class="list-group border-bottom pb-3" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
+                            <a class="list-group-item list-group-item-action " id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
+                        </div>
                         <div class="border-bottom">
-                            <div class="d-flex justify-content-between mt-3 mx-4 ">
+                            <div class="d-flex justify-content-between mt-3 mx-4">
                                 <div>
                                     <h4 class="fs-16 fw-700 text-black mb-1">$9K+</h4>
                                     <p class="fs-14 text-black">Total Earnings</p>
@@ -142,9 +109,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- hourly rate per week -->
-                        <div class="border-bottom mt-5">
+                        <div class=" mt-5">
                             <div class="mx-4">
                                 <div>
                                     <h4 class="fs-18 fw-600 mb-2">Hours per week</h4>
@@ -155,128 +120,268 @@
                                     <p class="fs-14">English: Native or Bilingual</p>
                                 </div>
                                 <div class="mt-4">
-                                    <h4 class="fs-18 fw-600 mb-2">Languages</h4>
-                                    <p class="fs-14">English: Native or Bilingual</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- details side or right side -->
-                <div class="col-8">
-                    <div class="border-bottom">
-                        <div class="tab-content mx-4" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                <div class="d-flex justify-content-between mt-3 ">
-                                    <h4 class="fw-700 fs-18 text-black">Design Engineer</h4>
-                                    <h4 class="fw-700 fs-18 text-black">$30.00/hr</h4>
-                                </div>
-                                <div>
-                                    <p>I have always focused on getting better at the skills that have more practical insight and that are most relevant in a career as a product developer. Being a mechanical engineer I am much inclined towards structural behavior of dynamic real world systems. For that working on skills like finite element analysis, CAD/CAM became my thing. I got to work on many prestigious design and fabrication projects like formula student car and UAV launcher. I started working as a freelancer during my second year of graduation from a local market and this has helped me develop a good reputation in the market. I have been involved in many voluntary activities to help Facebook communities like "MATLAB" and "Ansys Workbench" where I get to socialize with multicultural people from around the world, listen to their problems in these software domains and helping them in a healthy collaborative environment.
-                                        After my graduation I got a job in a CAD/CAM consultancy as a "Graduate Engineer". My responsibilities there were to work on CAD/CAM projects for different industrial clients. After that I got a job At Amreli Steels Ltd., which is a steel mill and at that time there was a project going on they were installing a 400k tons per annum re bar rolling mill. I was lucky to get a hands of fabrication and plant erection experience there. I learned a lot about hydraulics, tri-bological measures for different machine elements, sheet metal fabrication, work force management and SAP handling. this experience gave me an insight into the product development and helped me to understand the importance of Design to Manufacture.
-                                        After getting a hand full experience At Amreli Steels I got an offer from Pakistan Aeronautical Complex to develop a UAV launcher for them, on the basis of my work of Similar UAV Launcher during my graduation Final year project. This is my current status I am along with my two team members are developing a complete solution for pneumatically powered UAV Launcher.
-                                        I am always excited to work on projects that involve engineering design and that have certain practical impact on our society.
-
-                                        more</p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                                <div class="d-flex justify-content-between mt-3 ">
-                                    <h4 class="fw-700 fs-18 text-black">Design Engineer</h4>
-                                    <h4 class="fw-700 fs-18 text-black">$30.00/hr</h4>
-                                </div>
-                                <div>
-                                    <p>I have always focused on getting better at the skills that have more practical insight and that are most relevant in a career as a product developer. Being a mechanical engineer I am much inclined towards structural behavior of dynamic real world systems. For that working on skills like finite element analysis, CAD/CAM became my thing. I got to work on many prestigious design and fabrication projects like formula student car and UAV launcher. I started working as a freelancer during my second year of graduation from a local market and this has helped me develop a good reputation in the market. I have been involved in many voluntary activities to help Facebook communities like "MATLAB" and "Ansys Workbench" where I get to socialize with multicultural people from around the world, listen to their problems in these software domains and helping them in a healthy collaborative environment.
-                                        After my graduation I got a job in a CAD/CAM consultancy as a "Graduate Engineer". My responsibilities there were to work on CAD/CAM projects for different industrial clients. After that I got a job At Amreli Steels Ltd., which is a steel mill and at that time there was a project going on they were installing a 400k tons per annum re bar rolling mill. I was lucky to get a hands of fabrication and plant erection experience there. I learned a lot about hydraulics, tri-bological measures for different machine elements, sheet metal fabrication, work force management and SAP handling. this experience gave me an insight into the product development and helped me to understand the importance of Design to Manufacture.
-                                        After getting a hand full experience At Amreli Steels I got an offer from Pakistan Aeronautical Complex to develop a UAV launcher for them, on the basis of my work of Similar UAV Launcher during my graduation Final year project. This is my current status I am along with my two team members are developing a complete solution for pneumatically powered UAV Launcher.
-                                        I am always excited to work on projects that involve engineering design and that have certain practical impact on our society.
-
-                                        more</p>
+                                    <h4 class="fs-18 fw-600 mb-2">Verifications
+                                    </h4>
+                                    <p class="fs-14 mb-0">Phone Number: Verified</p>
+                                    <p class="fs-14">ID: Verified</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="border-bottom mt-4">
-                        <div class="mx-4 d-flex ">
-                            <h4 class="mr-3">Work History</h4>
-                            <div class="d-flex justify-content-center align-items-center" style="border:1px solid #ddd;height:35px; width:35px; border-radius:50%;">
-                                <p class="p-0  mb-1">...</p>
+                    <!-- details side or right side -->
+                    <div class="col-8 pl-0">
+                        <div class="border-bottom">
+                            <div class="tab-content mx-4" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                                    <div class="d-flex justify-content-between mt-3 ">
+                                        <h4 class="fw-700 fs-18 text-black">Design Engineer</h4>
+                                        <h4 class="fw-700 fs-18 text-black">$30.00/hr</h4>
+                                    </div>
+                                    <div>
+                                        <p>I have always focused on getting better at the skills that have more practical insight and that are most relevant in a career as a product developer. Being a mechanical engineer I am much inclined towards structural behavior of dynamic real world systems. For that working on skills like finite element analysis, CAD/CAM became my thing. I got to work on many prestigious design and fabrication projects like formula student car and UAV launcher. I started working as a freelancer during my second year of graduation from a local market and this has helped me develop a good reputation in the market. I have been involved in many voluntary activities to help Facebook communities like "MATLAB" and "Ansys Workbench" where I get to socialize with multicultural people from around the world, listen to their problems in these software domains and helping them in a healthy collaborative environment.
+                                            After my graduation I got a job in a CAD/CAM consultancy as a "Graduate Engineer". My responsibilities there were to work on CAD/CAM projects for different industrial clients. After that I got a job At Amreli Steels Ltd., which is a steel mill and at that time there was a project going on they were installing a 400k tons per annum re bar rolling mill. I was lucky to get a hands of fabrication and plant erection experience there. I learned a lot about hydraulics, tri-bological measures for different machine elements, sheet metal fabrication, work force management and SAP handling. this experience gave me an insight into the product development and helped me to understand the importance of Design to Manufacture.
+                                            After getting a hand full experience At Amreli Steels I got an offer from Pakistan Aeronautical Complex to develop a UAV launcher for them, on the basis of my work of Similar UAV Launcher during my graduation Final year project. This is my current status I am along with my two team members are developing a complete solution for pneumatically powered UAV Launcher.
+                                            I am always excited to work on projects that involve engineering design and that have certain practical impact on our society.
+                                            more</p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                                    <div class="d-flex justify-content-between mt-3 ">
+                                        <h4 class="fw-700 fs-18 text-black">Design Engineer</h4>
+                                        <h4 class="fw-700 fs-18 text-black">$30.00/hr</h4>
+                                    </div>
+                                    <div>
+                                        <p>I have always focused on getting better at the skills that have more practical insight and that are most relevant in a career as a product developer. Being a mechanical engineer I am much inclined towards structural behavior of dynamic real world systems. For that working on skills like finite element analysis, CAD/CAM became my thing. I got to work on many prestigious design and fabrication projects like formula student car and UAV launcher. I started working as a freelancer during my second year of graduation from a local market and this has helped me develop a good reputation in the market. I have been involved in many voluntary activities to help Facebook communities like "MATLAB" and "Ansys Workbench" where I get to socialize with multicultural people from around the world, listen to their problems in these software domains and helping them in a healthy collaborative environment.
+                                            After my graduation I got a job in a CAD/CAM consultancy as a "Graduate Engineer". My responsibilities there were to work on CAD/CAM projects for different industrial clients. After that I got a job At Amreli Steels Ltd., which is a steel mill and at that time there was a project going on they were installing a 400k tons per annum re bar rolling mill. I was lucky to get a hands of fabrication and plant erection experience there. I learned a lot about hydraulics, tri-bological measures for different machine elements, sheet metal fabrication, work force management and SAP handling. this experience gave me an insight into the product development and helped me to understand the importance of Design to Manufacture.
+                                            After getting a hand full experience At Amreli Steels I got an offer from Pakistan Aeronautical Complex to develop a UAV launcher for them, on the basis of my work of Similar UAV Launcher during my graduation Final year project. This is my current status I am along with my two team members are developing a complete solution for pneumatically powered UAV Launcher.
+                                            I am always excited to work on projects that involve engineering design and that have certain practical impact on our society.
+                                            more</p>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <!-- work history -->
+                        <div class="border-bottom mt-4">
+                            <div class="mx-4 d-flex align-items-center mt-2  mb-3">
+                                <h4 class="mr-3">Work History</h4>
+                                <div class="d-flex justify-content-center align-items-center c-pointer" style="border:1px solid #ddd;height:35px; width:35px; border-radius:50%;">
+                                    <p class="p-0 mb-1">...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-4 mt-3 pb-3">
+                            <div class="border-bottom">
+                                <h2 class="fw-600 fs-18" style="color:#275846;">Quick Base App Development</h2>
+                                <div class="d-flex">
+                                    <div class="d-flex">
+                                        <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/rating.svg')}}" alt="">
+                                        <p class="mb-0 ml-1 fw-700">4.9</p>
+                                    </div>
+                                    <div class="date-range ml-1">
+                                        Mar 30, 2021 - Jun 17, 2022
+                                    </div>
+                                </div>
+                                <div class="description fw-500 fs-16">
+                                    "Steph did a wonderful job on our project. We needed a proof of concept for a new app, and she was excellent at helping us identify several different solutions, and walking us through the pros and cons of each, and putting them into action. She took the time to understand what we were trying to do, and even spent her own researching and learning new solutions beyond what Quickbase could offer natively. The POC was successful, and she was a huge help with that."
+                                </div>
+                                <div class="d-flex justify-content-between pt-2 pb-4">
+                                    <div class="fw-600 fs-16">$4,425.00</div>
+                                    <div class="fw-500 fs-16">$90.00 /hr</div>
+                                    <div class="fw-500 fs-16">49 hours</div>
+                                </div>
+                            </div>
+                            <div class="border-bottom mt-3">
+                                <h2 class="fw-600 fs-18" style="color:#275846;">Quick Base App Development</h2>
+                                <div class="d-flex">
+                                    <div class="date-range ml-1">
+                                        Mar 30, 2021 - Jun 17, 2022
+                                    </div>
+                                </div>
+                                <div class="description py-3 fs-16 fw-500">
+                                    No feedback given
+                                </div>
+                                <div class="row pt-2 pb-4">
+                                    <div class="col-4 fw-600 fs-16">
+                                        $4,425.00
+                                    </div>
+                                    <div class="col-4 fw-500 fs-16">
+                                        Fixed Price
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio -->
+                        <div class='border-bottom mt-4 mb-3'>
+                            <div class="mx-4  ">
+                                <h4 class="">{{ translate('Portfolio')}}</h4>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class=" mt-2">
+                                            <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/data.jpeg')}}" class="card-img-top" alt="Image Description" style="height:180px;">
+                                            <div class="y">
+                                                <p class=" fs-14 fw-600" style="color:#275846;">Some description or additional content can go here.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class=" mt-2">
+                                            <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/data.png')}}" class="card-img-top" alt="Image Description" style="height:180px;">
+                                            <div class="y">
+                                                <p class=" fs-14 fw-600" style="color:#275846;">Some description or additional content can go here.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- skills -->
+                        <div class='border-bottom mt-4 mb-3'>
+                            <div class="mx-4  ">
+                                <h4 class="">{{ translate('Skills') }}</h4>
+
+                                <div>
+                                    @if( $freelancer->profile->skills != null)
+                                    @foreach (json_decode($freelancer->profile->skills, true) as $key => $skill_id)
+                                    @php
+                                    $skill = \App\Models\Skill::find($skill_id);
+                                    @endphp
+                                    @if ($skill)
+                                    <span class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">{{ $skill->name }}</span>
+                                    @endif
+                                    @endforeach
+                                    @endif
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <!-- <div class="single-profile-boder"></div> -->
-
-
-        </div>
-        <div class="card-body">
-            <div class="media align-items-center d-block d-md-flex container">
-                <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
-                    <span class="avatar avatar-xxl">
-                        @if ($freelancer->photo != null)
-                        <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }}">
-                        @else
-                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ $freelancer->name }}">
-                        @endif
-                        @if(Cache::has('user-is-online-' . $freelancer->id))
-                        <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
-                        @else
-                        <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
-                        @endif
-                    </span>
-                </div>
-                <div class="media-body d-lg-flex justify-content-between align-items-center">
-                    <div class="mr-3 mb-4 mb-lg-0 text-center text-md-left">
-                        <h1 class="h5 mb-1 fw-700">{{ $freelancer->name }}</h1>
-                        @if ($freelancer->specialistAt != null)
-                        <p class="opacity-60">{{ $freelancer->specialistAt->name }}</p>
-                        @endif
-                        <div class="d-flex justify-content-center justify-content-md-between text-secondary fs-12 mb-3">
-                            <div class="mr-2">
-                                @if( !empty(getAverageRating($freelancer->id)) )
-                                <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                    {{ formatRating(getAverageRating($freelancer->id)) }}
-                                </span>
-                                @else
-                                <span class="bg-secondary rounded text-white px-1 mr-1 fs-10">
-                                    {{ formatRating(getAverageRating($freelancer->id)) }}
-                                </span>
-                                @endif
-                                <span class="rating rating-sm">
-                                    {{ renderStarRating(getAverageRating($freelancer->id)) }}
-                                </span>
-                                <span>
-                                    ({{ getNumberOfReview($freelancer->id) }} {{ translate('Reviews') }})
-                                </span>
-                            </div>
-                            <div>
-                                {{-- <i class="las la-map-marker opacity-50"></i> --}}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
-                                    <path id="Path_25847" data-name="Path 25847" d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z" transform="translate(-4 -2)" fill="#989ea8" />
-                                </svg>
-                                @if ($freelancer->address != null && $freelancer->address->city != null &&
-                                $freelancer->address->country != null)
-                                @if ($freelancer->address != null && $freelancer->address->city != null &&
-                                $freelancer->address->country != null)
-                                <span class="ml-1">{{ $freelancer->address->city->name }},
-                                    {{ $freelancer->address->country->name }}</span>
-                                @endif
-                                @endif
-                            </div>
-                        </div>
+            <div class="border mt-5">
+                <!-- Employment history -->
+                <div class="mx-4 mt-4 border-bottom mb-3">
+                    <div class="">
+                        <h4 class="h6 fw-700 mb-0 fs-18"> {{ translate('Employment history') }}</h4>
                     </div>
+                    <div class="pb-3">
+                        <ul class="list-group list-group-flush">
+                            @foreach ($freelancer->workExperiences as $key => $experience)
 
+                            <li class="list-group-item px-0">
+                                <div class="d-flex align-items-center">
+                                    <h6 class="fw-500 fs-16 mb-0 mr-1">{{ $experience->designation }}</h6> |
+                                    <a class='ml-1 fw-500 fs-16 ' style="color:black;" href="{{ $experience->company_website }}" target="_blank">{{ $experience->company_name }}</a>
+                                </div>
+                                <ul class="list-unstyled text-secondary mb-0">
+                                    <li>
 
+                                    </li>
+                                    @if ($experience->present == '1')
+                                    <li>{{ Carbon\Carbon::parse($experience->start)->toFormattedDateString() }} -
+                                        {{ translate('Present') }}
+                                    </li>
+                                    @else
+                                    <li>{{ Carbon\Carbon::parse($experience->start)->toFormattedDateString() }} -
+                                        {{ Carbon\Carbon::parse($experience->end)->toFormattedDateString() }}
+                                    </li>
+                                    @endif
+                                    <li class="small">{{ $experience->description }}</li>
+                                </ul>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <div class="border mt-5">
+                 <!-- Education -->
+                 <div class="mx-4 mt-4 border-bottom mb-3">
+                    <div class="">
+                        <h4 class="h6 fw-700 mb-0 fs-18 "> {{ translate('Education') }}</h4>
+                    </div>
+                    <div class="">
+                        <ul class="list-group list-group-flush">
+                            @foreach ($freelancer->education_details as $key => $education)
 
+                            <li class="list-group-item px-0">
+                                <h6 class="fw-500 fs-16 mb-1">{{$education->school_name }}</h6>
+                                <p class="mb-0 text-muted">{{ $education->degree }} | {{ $education->passing_year }} </p>
+
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="card-body mt-5">
+        <div class="media align-items-center d-block d-md-flex container">
+            <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
+                <span class="avatar avatar-xxl">
+                    @if ($freelancer->photo != null)
+                    <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }}">
+                    @else
+                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ $freelancer->name }}">
+                    @endif
+                    @if(Cache::has('user-is-online-' . $freelancer->id))
+                    <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
+                    @else
+                    <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
+                    @endif
+                </span>
+            </div>
+            <div class="media-body d-lg-flex justify-content-between align-items-center">
+                <div class="mr-3 mb-4 mb-lg-0 text-center text-md-left">
+                    <h1 class="h5 mb-1 fw-700">{{ $freelancer->name }}</h1>
+                    @if ($freelancer->specialistAt != null)
+                    <p class="opacity-60">{{ $freelancer->specialistAt->name }}</p>
+                    @endif
+                    <div class="d-flex justify-content-center justify-content-md-between text-secondary fs-12 mb-3">
+                        <div class="mr-2">
+                            @if( !empty(getAverageRating($freelancer->id)) )
+                            <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
+                                {{ formatRating(getAverageRating($freelancer->id)) }}
+                            </span>
+                            @else
+                            <span class="bg-secondary rounded text-white px-1 mr-1 fs-10">
+                                {{ formatRating(getAverageRating($freelancer->id)) }}
+                            </span>
+                            @endif
+                            <span class="rating rating-sm">
+                                {{ renderStarRating(getAverageRating($freelancer->id)) }}
+                            </span>
+                            <span>
+                                ({{ getNumberOfReview($freelancer->id) }} {{ translate('Reviews') }})
+                            </span>
+                        </div>
+                        <div>
+                            {{-- <i class="las la-map-marker opacity-50"></i> --}}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.6" height="12" viewBox="0 0 9.6 12">
+                                <path id="Path_25847" data-name="Path 25847" d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z" transform="translate(-4 -2)" fill="#989ea8" />
+                            </svg>
+                            @if ($freelancer->address != null && $freelancer->address->city != null &&
+                            $freelancer->address->country != null)
+                            @if ($freelancer->address != null && $freelancer->address->city != null &&
+                            $freelancer->address->country != null)
+                            <span class="ml-1">{{ $freelancer->address->city->name }},
+                                {{ $freelancer->address->country->name }}</span>
+                            @endif
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    </?div>
     </div>
     </div>
 

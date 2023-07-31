@@ -19,6 +19,7 @@ class WorkExperienceController extends Controller
             $work_exp->company_name = $request->company_name;
             $work_exp->company_website = $request->company_website;
             $work_exp->designation = $request->designation;
+            $work_exp->description = $request->description;
             $work_exp->location = $request->location;
             if ($request->present == 'on') {
                 $work_exp->present = '1';
@@ -57,6 +58,7 @@ class WorkExperienceController extends Controller
         $work_exp->company_name = $request->company_name;
         $work_exp->company_website = $request->company_website;
         $work_exp->designation = $request->designation;
+        $work_exp->description = $request->description;
         $work_exp->location = $request->location;
         if ($request->present == 'on') {
             $work_exp->present = '1';

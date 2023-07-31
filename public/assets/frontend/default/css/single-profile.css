@@ -21,9 +21,11 @@
     border-right: 1px solid rgba(0,0,0,.125);
 }
 h4.view-profile {
-    padding-top: 30px;
-    padding-left: 50px;
+    padding-top: 20px;
+    padding-left: 25px;
     padding-bottom: 20px;
+    font-size: 20px;
+    font-weight:600;
 }
 #list-tab .list-group-item {
     padding-left: 35px !important;
@@ -46,4 +48,38 @@ h4.view-profile {
 .view-profile-main-single{
     border-bottom: 1px solid #c0c0c0 !important;
     padding-bottom: 15px;
+}
+.profile {
+    /* max-width: 500px; */
+    margin: auto;
+    padding: 20px;
+
+}
+
+.rating {
+    color: gold;
+}
+
+.date-range {
+    font-style: italic;
+}
+
+.description {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rate {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hours {
+    font-size: 16px;
+    font-weight: bold;
 }
