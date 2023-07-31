@@ -5,6 +5,7 @@ use App\Models\SystemConfiguration;
 use App\Models\Role;
 use App\Mail\EmailManager;
 use App\Models\ChatThread;
+use App\Models\Country;
 use App\Models\Translation;
 use App\Models\User;
 
@@ -533,6 +534,18 @@ function hex2rgba($color, $opacity = false) {
 function getHourlyRate()
 {
     return config('constants.hourlyRate');
+}
+
+// get hourly rate name
+function getHourlyRateName($key) {
+    if(isset(getHourlyRate()[$key])){
+        return getHourlyRate()[$key];
+    }
+}
+
+// get country name by id
+function getCountryName($countryID) {
+    return Country::where('id', $countryID)->value('name');
 }
 
 ?>

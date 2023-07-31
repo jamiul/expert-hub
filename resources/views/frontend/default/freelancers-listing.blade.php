@@ -32,6 +32,7 @@
                     <i class="las la-times la-2x"></i>
                   </button>
                 </div>
+                {{-- @dd(getCountryName($country_id)); --}}
 
                 @foreach($categories as $category)
                 <span id="category_{{$category->id}}"
@@ -40,6 +41,26 @@
                     X</p>
                 </span>
                 @endforeach
+
+                <!-- hourly rate badge  -->
+                @if(count($hourly_rate) > 0)
+                  @foreach ($hourly_rate as $rate)
+                    @if ($rate != 'all')
+                      <span id="hourlyRate_{{ $rate }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                        {{ getHourlyRateName($rate) }}
+                          <p onclick="removeHourlyRate({{ $rate }})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
+                      </span>
+                    @endif
+                  @endforeach
+                @endif
+
+                <!-- country badge  -->
+                @if(! empty($country_id))
+                  <span id="countryID_{{ $country_id }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                    {{ getCountryName($country_id) }}
+                      <p onclick="removeCountryName({{ $country_id }})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
+                  </span>
+                @endif
                 <!-- search bar  -->
                 <input type="hidden" name="type" value="freelancer">
                 <form class="" method="GET">
@@ -134,24 +155,16 @@
                   <!-- Hourly rates -->
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
-                    {{-- @foreach (getHourlyRate() as $key => $rate)
-                    <span id="{{ $key }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
-                      {{ $rate }}
-                        <p onclick="removeHourlyRate({{ $key}})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
-                    </span>
-                    @endforeach --}}
                   </h6>
-                  {{-- @dd($hourlyRate); --}}
                   <div class="mb-5 border-bottom">
                     <div class="mb-2 mt-3" style="width: 245px;">
                       <select
                         class="select2 form-control aiz-selectpicker rounded-1"
                         onchange="applyFilter()"
-                        multiple
                         data-live-search="true"
                         name="hourly_rate[]"
                         >
-                        <option value="all">{{ translate('Any hourly rate') }}</option>
+                        <option value="all" @if (in_array('all', $hourly_rate)) selected @endif>{{ translate('Any hourly rate') }}</option>
 
                         @foreach (getHourlyRate() as $key => $rate)
                         <option value="{{ $key }}" @if (in_array($key, $hourly_rate)) selected @endif> {{ $rate }} </option>
@@ -168,8 +181,13 @@
 
                   <div class=" mb-5 ">
                     <div class=" py-2 border-bottom ">
-                      <select class=" select2 form-control aiz-selectpicker rounded-1" name="country_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                      <select
+                        class="select2 form-control aiz-selectpicker rounded-1"
+                        name="country_id"
+                        onchange="applyFilter()"
+                        data-toggle="select2"
+                        data-live-search="true"
+                      >
                         <option value="">{{ translate('Search countries') }}</option>
                         @foreach (\App\Models\Country::all() as $key => $country)
                         <option value="{{ $country->id }}" @if (isset($country_id) && $country_id==$country->id )
@@ -186,23 +204,23 @@
                   </h6>
                   <div class="d-flex border-bottom">
                     <div class="star-widget">
-                      <input type="radio" name="rate" id="rate-5" value="5" @if ($rate=='5' ) checked @endif
+                      <input type="radio" name="rating" id="rate-5" value="5" @if ($rating=='5' ) checked @endif
                         onchange="applyFilter()">
                       <label for="rate-5" class="fas fa-star"></label>
-                      <input type="radio" name="rate" id="rate-4" value="4" @if ($rate=='4' ) checked @endif
+                      <input type="radio" name="rating" id="rate-4" value="4" @if ($rating=='4' ) checked @endif
                         onchange="applyFilter()">
                       <label for="rate-4" class="fas fa-star"></label>
-                      <input type="radio" name="rate" id="rate-3" value="3" @if ($rate=='3' ) checked @endif
+                      <input type="radio" name="rating" id="rate-3" value="3" @if ($rating=='3' ) checked @endif
                         onchange="applyFilter()">
                       <label for="rate-3" class="fas fa-star"></label>
-                      <input type="radio" name="rate" id="rate-2" value="2" @if ($rate=='2' ) checked @endif
+                      <input type="radio" name="rating" id="rate-2" value="2" @if ($rating=='2' ) checked @endif
                         onchange="applyFilter()">
                       <label for="rate-2" class="fas fa-star"></label>
-                      <input type="radio" name="rate" id="rate-1" value="1" @if ($rate=='1' ) checked @endif
+                      <input type="radio" name="rating" id="rate-1" value="1" @if ($rating=='1' ) checked @endif
                         onchange="applyFilter()">
                       <label for="rate-1" class="fas fa-star"></label>
-                      @if($rate)
-                      <input type="radio" name="rate" id="rate-0" value="" onchange="applyFilter()" @if ($rate=='' )
+                      @if($rating)
+                      <input type="radio" name="rating" id="rate-0" value="" onchange="applyFilter()" @if ($rating=='' )
                         checked @endif">
                       <label for="rate-0" class="fas fa-minus" style=" color:red !important; cursor:pointer;"></label>
                       @endif
@@ -380,6 +398,44 @@
       if (checkbox) {
         checkbox.checked = false;
       }
+    }
+    $('#freelancer-filter-form').submit();
+  }
+
+  // remove hourly rate by clicking x sign
+  function removeHourlyRate(value) {
+    let getHourlyRateId = document.getElementById('hourlyRate_' + value);
+
+    if (getHourlyRateId) {
+      getHourlyRateId.parentNode.removeChild(getHourlyRateId);
+
+      // Unselect the corresponding option
+      var selectElement = document.querySelector('select[name="hourly_rate[]"]');
+            if (selectElement) {
+                var optionElement = selectElement.querySelector('option[value="' + value + '"]');
+                if (optionElement) {
+                    optionElement.selected = false;
+                }
+            }
+    }
+    $('#freelancer-filter-form').submit();
+  }
+
+  // remove country name from badges
+  function removeCountryName(countryID) {
+    let getCountry = document.getElementById('countryID_' + countryID);
+
+    if (getCountry) {
+      getCountry.parentNode.removeChild(getCountry);
+
+      // Unselect the corresponding option
+      let selectElement = document.querySelector('select[name="country_id"]');
+            if (selectElement) {
+                var optionElement = selectElement.querySelector('option[value="' + countryID + '"]');
+                if (optionElement) {
+                    optionElement.selected = false;
+                }
+            }
     }
     $('#freelancer-filter-form').submit();
   }
