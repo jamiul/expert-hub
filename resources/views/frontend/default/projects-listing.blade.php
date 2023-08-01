@@ -3,78 +3,85 @@
 
 @section('content')
 <section class="py-4 py-lg-3">
-    <div class="container-main-projects-banner">
-        <div class="mb-4" style="background:#FCEBE5">
-            <div class="row rounded-0 px-2 mx-4">
-                <div class="col-lg-6 col-sm-12 my-auto">
-                    <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
-                    <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                    <div class="input-group mb-3 mt-5">
-                        <form action="" method="GET" class="w-100">
-                            <input type="text" class="form-control position-relative z-0" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
-                            <div class="input-group-append position-absolute" style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
-                                <button class="btn btn-primary" type="submit" id="searchButton" data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
-                                    Search
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+  <div class="container-main-projects-banner">
+    <div class="mb-4" style="background:#FCEBE5">
+      <div class="row rounded-0 px-2 mx-4">
+        <div class="col-lg-6 col-sm-12 my-auto">
+          <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
+          <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
+          <div class="input-group mb-3 mt-5">
+            <form action="" method="GET" class="w-100">
+              <input type="text" class="form-control position-relative z-0"
+                placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword"
+                aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
+              <div class="input-group-append position-absolute"
+                style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
+                <button class="btn btn-primary" type="submit" id="searchButton" data-toggle="class-toggle"
+                  data-target=".aiz-filter-sidebar">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
 
-                    <!-- <div class="d-flex align-items-center">
+          <!-- <div class="d-flex align-items-center">
                         <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                             <i class="las la-filter text-black-50">SS</i>
                         </button>
                         <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
                     </div> -->
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
-                </div>
-            </div>
         </div>
+        <div class="col-lg-6 col-sm-12">
+          <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
+        </div>
+      </div>
     </div>
-    <div class="container-main-projects">
-        @if($keyword != null)
-        <div class="row">
-            <div class="col-xl-8 offset-xl-2 text-center">
-                <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span class="fw-600">{{ $total }}</span>
-                    {{ translate('projects found for') }} <span class="fw-600">{{ $keyword }}</span>
-                </h1>
-            </div>
-        </div>
-        @endif
+  </div>
+  <div class="container-main-projects">
+    @if($keyword != null)
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 text-center">
+        <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span class="fw-600">{{ $total }}</span>
+          {{ translate('projects found for') }} <span class="fw-600">{{ $keyword }}</span>
+        </h1>
+      </div>
+    </div>
+    @endif
 
 
-        <!-- project list and filter option start -->
-        <form id="project-filter-form" action="" method="GET">
-            <div class="row gutters-15">
-                <!-- Sidebar -->
-                <div class="col-xl-3 col-lg-4">
-                    <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
-                        <div class="card rounded-0 border-0 collapse-sidebar c-scrollbar-light shadow-none px-3 py-2" style="background: #F2F7F2;">
-                            <div class="card-header border-0 pl-lg-0">
-                                <h5 class="mb-0 fs-21 fw-700">{{ translate('Filter By') }}</h5>
-                                <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                    <i class="las la-times la-2x"></i>
-                                </button>
-                            </div>
+    <!-- project list and filter option start -->
+    <form id="project-filter-form" action="" method="GET">
+      <div class="row gutters-15">
+        <!-- Sidebar -->
+        <div class="col-xl-3 col-lg-4">
+          <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
+            <div class="card rounded-0 border-0 collapse-sidebar c-scrollbar-light shadow-none px-3 py-2"
+              style="background: #F2F7F2;">
+              <div class="card-header border-0 pl-lg-0">
+                <h5 class="mb-0 fs-21 fw-700">{{ translate('Filter By') }}</h5>
+                <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb" data-toggle="class-toggle"
+                  data-target=".aiz-filter-sidebar" type="button">
+                  <i class="las la-times la-2x"></i>
+                </button>
+              </div>
 
-                            <!-- @foreach($categories as $category)
+              <!-- @foreach($categories as $category)
                             <span id="category_{{$category->id}}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                                 {{$category ->name}} |<p onclick="removeCategory({{$category->id}})" class="m-0  d-inline fw-700">
                                     X</p>
                             </span>
                             @endforeach -->
-                            @foreach($categories as $category)
-                            <span id="category_{{$category->id}}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
-                                {{$category->name}} |
-                                <p onclick="removeCategory({{$category->id}})" class="m-0 d-inline fw-700">X</p>
-                            </span>
-                            @endforeach
-                            <div class="card-body pl-lg-0">
+              @foreach($categories as $category)
+              <span id="category_{{$category->id}}"
+                class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                {{$category->name}} |
+                <p onclick="removeCategory({{$category->id}})" class="m-0 d-inline fw-700">X</p>
+              </span>
+              @endforeach
+              <div class="card-body pl-lg-0">
 
 
-                                <!-- <div class="w-200px mb-3">
+                <!-- <div class="w-200px mb-3">
                                     <select class="form-control form-control-sm aiz-selectpicker rounded-1" name="sort" onchange="applyFilter()">
                                         <option value="1" @if($sort=='1' ) selected @endif>{{ translate('Newest first') }}</option>
                                         <option value="2" @if($sort=='2' ) selected @endif>{{ translate('Lowest budget first') }}</option>
@@ -83,12 +90,12 @@
                                         <option value="5" @if($sort=='5' ) selected @endif>{{ translate('Highest bids first') }}</option>
                                     </select>
                                 </div> -->
-                                <!-- Categories -->
-                                <div class="mb-4">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class=" pr-3">{{ translate('Categories') }}</span>
-                                    </h6>
-                                    <div class="">
+                <!-- Categories -->
+                <div class="mb-4">
+                  <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class=" pr-3">{{ translate('Categories') }}</span>
+                  </h6>
+                  <div class="">
 
                                         @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
 
@@ -520,20 +527,20 @@
 </script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    function removeCategory(categoryId) {
-        var categoryElement = document.getElementById('category_' + categoryId);
+function removeCategory(categoryId) {
+  var categoryElement = document.getElementById('category_' + categoryId);
 
-        if (categoryElement) {
-            categoryElement.parentNode.removeChild(categoryElement);
+  if (categoryElement) {
+    categoryElement.parentNode.removeChild(categoryElement);
 
-            // Uncheck the corresponding checkbox
-            var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
-            if (checkbox) {
-                checkbox.checked = false;
-            }
-        }
-        $('#project-filter-form').submit();
+    // Uncheck the corresponding checkbox
+    var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+    if (checkbox) {
+      checkbox.checked = false;
     }
+  }
+  $('#project-filter-form').submit();
+}
 </script>
 
 @endsection
@@ -548,14 +555,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    function applyFilter() {
-        $('#project-filter-form').submit();
-    }
+function applyFilter() {
+  $('#project-filter-form').submit();
+}
 
-    function rangefilter(arg) {
-        $('input[name=min_price]').val(arg[0]);
-        $('input[name=max_price]').val(arg[1]);
-        applyFilter();
-    };
+function rangefilter(arg) {
+  $('input[name=min_price]').val(arg[0]);
+  $('input[name=max_price]').val(arg[1]);
+  applyFilter();
+};
 </script>
 @endsection
