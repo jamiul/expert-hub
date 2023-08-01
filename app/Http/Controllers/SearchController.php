@@ -22,6 +22,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
+        // dd($request->all());
         if ($request->type == 'freelancer') {
             $type = 'freelancer';
             $keyword = $request->keyword;
@@ -262,11 +263,22 @@ class SearchController extends Controller
         } else {
             $type = 'project';
             $keyword = $request->keyword;
-            $projectType = array('Fixed', 'Long Term');
+            $projectType = array('');
             $bids = $request->bids;
             $sort = $request->sort;
             $skill_id = array('');
             $childSkill_id = array('');
+
+            $fixed_min = $request->fixed_min;
+            $fixed_max = $request->fixed_max;
+            $hourly_min = $request->hourly_min;
+            $hourly_max = $request->hourly_max;
+            // $durations = array('');
+            // dd($durations);
+            $selectedDurations = $request->input('durations');
+
+
+
 
 
             // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
@@ -281,8 +293,7 @@ class SearchController extends Controller
             $category_ids = [];
             $skills = [];
             $skill_ids = [];
-            // dd($skills);
-            // dd($skill_ids);
+
 
 
             $project_approval = SystemConfiguration::where('type', 'project_approval')->first()->value;
@@ -299,16 +310,75 @@ class SearchController extends Controller
             // $categoriesProject = ProjectCategory::all();
             // dd($categoriesProject);
 
+
+            // if ($request->projectType != null) {
+            //     $category_ids = $request->category_id;
+            //     $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+            //     // $categoryIds=$categories->pluck('id')
+            //     $projects = $projects->whereIn('project_category_id', $category_ids);
+            // }
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
                 // $categoryIds=$categories->pluck('id')
                 $projects = $projects->whereIn('project_category_id', $category_ids);
             }
+            // if ($request->durations != null) {
+            //     // dd($durations);
+            //     $projects = $projects->where(function ($query) use ($durations) {
+            //         // dd($durations);
+            //         foreach ($durations as $duration) {
+            //             if ($duration === '1 week') {
+            //                 $query->orWhereBetween('created_at', '=>', [now()->subWeek(), now()]);
+            //             } elseif ($duration === '1 week - 4 week') {
+            //                 $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
+            //             } elseif ($duration === '1 month - 3 month') {
+            //                 $query->orWhereBetween('created_at', [now()->subMonths(1)->startOfMonth(), now()->subMonths(3)->endOfMonth()]);
+            //             } elseif ($duration === '3 month - 6 month') {
+            //                 $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
+            //             } elseif ($duration === '6 month') {
+            //                 $query->orWhere('created_at', '<=', now()->subMonths(6));
+            //             }
+            //         }
+            //     });
+            // }
 
+
+            if (!empty($selectedDurations)) {
+                $projects = $projects->where(function ($query) use ($selectedDurations) {
+                    foreach ($selectedDurations as $duration) {
+                        if ($duration === '1 week') {
+                            $query->orWhereBetween('created_at', [now()->subWeek(), now()]);
+                        } elseif ($duration === '1 week - 4 week') {
+                            $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
+                        } elseif ($duration === '1 month - 3 month') {
+                            $query->orWhereBetween('created_at', [now()->subMonths(3), now()]);
+                        } elseif ($duration === '3 month - 6 month') {
+                            $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
+                        } elseif ($duration === '6 month') {
+                            $query->orWhere('created_at', '<=', now()->subMonths(6));
+                        }
+                    }
+                });
+            }
+
+
+                // update projects type
             if ($request->projectType != null) {
                 $projectType = $request->projectType;
                 $projects = $projects->whereIn('type', $projectType);
+            }
+
+            if ($fixed_min !== null && $fixed_max !== null) {
+                $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
+                    $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
+                });
+            }
+
+            if ($hourly_min !== null && $hourly_max !== null) {
+                $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
+                    $query->where('type', 'Hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
+                });
             }
 
             if ($request->skill_id != null) {
@@ -376,7 +446,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max','hourly_min','hourly_max'));
         }
     }
 

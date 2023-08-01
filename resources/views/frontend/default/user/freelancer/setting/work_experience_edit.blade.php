@@ -46,6 +46,10 @@
                                 <input type="text" class="form-control" name="designation" value="{{ $work_exp->designation }}" placeholder="{{ translate('Designation') }}" required>
                             </div>
                             <div class="form-group">
+                                <label id="usernameLabel" class="form-label">{{ translate('Description') }}<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="description" value="{{ $work_exp->description }}" placeholder="{{ translate('Description') }}" required>
+                            </div>
+                            <div class="form-group">
                                 <label id="usernameLabel" class="form-label">{{ translate('Company Location') }}<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="location" value="{{ $work_exp->location }}" placeholder="{{ translate('Company Location') }}" required>
                             </div>

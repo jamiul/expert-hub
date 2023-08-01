@@ -283,7 +283,7 @@
                                 </div>
                                 <div class="col-lg-10  ">
                                     <p class=" fre-scsh-right-side-details text-justify  mb-1 pr-4">
-                                        FreelancerEdu can connect you with experienced consultants who have received scholarships in your
+                                        ConsultantEdu  can connect you with experienced consultants who have received scholarships in your
                                         field. They can review your application and provide valuable feedback to to ensure you submit a
                                         competitive application.
                                         <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
