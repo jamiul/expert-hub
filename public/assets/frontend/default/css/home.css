@@ -567,3 +567,22 @@ div.scroll h6 a {
             padding: 5px;
             min-height: 50px;
         }
+        
+        div.scroll {
+                margin:4px, 4px;
+                padding:4px;
+                width: 320px;
+                height: 110px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+                
+            }
+div.scroll h6 a {
+                color:black;
+                
+            }
+#contentDiv {
+    display: block; /* or "none" if you want it to be initially hidden */
+    /* Add any other styles you want */
+}

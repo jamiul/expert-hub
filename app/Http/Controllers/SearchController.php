@@ -34,7 +34,7 @@ class SearchController extends Controller
             $skill_id = array('');
             $childSkill_id = array('');
             $category_id = array('');
-            $rate1 = $request->rate1;
+            // $rate1 = $request->rate1;
             $rate1 =array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;

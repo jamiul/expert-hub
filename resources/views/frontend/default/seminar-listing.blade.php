@@ -2,9 +2,18 @@
 <html lang="en">
 
 <head>
+
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+  <!-- new  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 </head>
 
@@ -63,104 +72,173 @@
                     </div>
                   </div>
                 </div>
-                <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
-                  <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
-                </h6>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for="flexCheckDisabled">
-                    On demand seminar
-                  </label>
 
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for="flexCheckDisabled">
-                    Live seminar
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for="flexCheckDisabled">
-                    Structured courses
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for="flexCheckDisabled">
-                    Free seminars
-                  </label>
-                </div>
-                <h6 class="text-left mt-3 fs-14 fw-700">
-                  <span class="pr-3">{{ translate('Seminar Topics') }}</span>
-                </h6>
-                <div class="form-check">
-                  <input class="form-check-input " type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" class="" for="flexCheckDisabled">
-                    On demand seminar
-                  </label>
+                <!-- Seminar Mode -->
 
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for="flexCheckDisabled">
-                    Live seminar
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for="flexCheckDisabled">
-                    Structured courses
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                  <label class="form-check-label fs-14" for=" flexCheckDisabled">
-                    Free seminars
-                  </label>
-                </div>
-                <div class="mt-3">
-
-                  <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse"
-                    href="" role="button" aria-expanded="true" aria-controls="">
-                    <label class="fas fa-plus "
-                      style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                    <p class="mb-0 fs-14 fw-500">1</p>
-                  </a>
-                  <div class="overflow-auto h-130px collapse " id="">
-
-                    <div class=" w-200px child-skill-project-filtering">
-                      <div class="mb-1 ">
-                        <input type="checkbox" name="" id="}" value="" class=" d-none" onchange="applyFilter()">
-                        <label class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0" for="">
-                        </label>
-                      </div>
-                    </div>
+                <div>
+                  <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
+                    <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
+                  </h6>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" for="flexCheckDisabled">
+                      Live seminar
+                    </label>
 
                   </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" for="flexCheckDisabled">
+                      On-demand seminar
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" for="flexCheckDisabled">
+                      Free seminars
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" for="flexCheckDisabled">
+                      Experts advice
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Seminar Topics -->
+
+                <div>
+                  <h6 class="text-left mt-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Seminar Topics') }}</span>
+                  </h6>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" class="" for="flexCheckDisabled">
+                      Quantitative Methods
+                    </label>
+
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" for="flexCheckDisabled">
+                      Qualitative Methods
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                    <label class="form-check-label fs-14" for="flexCheckDisabled">
+                      Mixed-Methods
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="mt-3">
+                    <div class="d-flex">
+                      <label class=" fas fa-plus "
+                        style=" border: 1px solid gray; border-radius: 50%; height: 18px; width:17px; align-items:center; margin: 0 5px 0 0; background:gray; color:white; display:flex; justify-content: center; align-content:center; font-size:9px"></label>
+
+                      <p class="text-dark" data-toggle="collapse" href="#qualitative" role=" button"
+                        aria-expanded="false" aria-controls="qualitative">
+                        Qualitative Methods
+                      </p>
+                    </div>
+                    <div class="scroll collapse" id="qualitative">
+                      <div class=" py-2">
+                        <h6> <a href="" class="fs-12  ">AMOS</a></h6>
+                        <h6><a href="" class="fs-12  ">SPSS</a></h6>
+                        <h6><a href="" class="fs-12  ">R</a></h6>
+                        <h6><a href="" class="fs-12  ">Excel</a></h6>
+                        <h6> <a href="" class="fs-12  ">EViews</a></h6>
+                        <h6> <a href="" class="fs-12  ">SmartPLS</a></h6>
+                        <h6><a href="" class="fs-12  ">Stata</a></h6>
+                        <h6><a href="" class="fs-12  ">Python</a></h6>
+                        <h6> <a href="" class="fs-12  ">Minitab</a></h6>
+                        <h6> <a href="" class="fs-12  ">MATLAB</a></h6>
+                        <h6><a href="" class="fs-12  ">JMP</a></h6>
+                        <h6><a href="" class="fs-12  ">IBM SPSS Modeler</a></h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="d-flex">
+                      <label class=" fas fa-plus "
+                        style=" border: 1px solid gray; border-radius: 50%; height: 18px; width:17px; align-items:center; margin: 0 5px 0 0; background:gray; color:white; display:flex; justify-content: center; align-content:center; font-size:9px;"></label>
+
+                      <p class="text-dark" data-toggle="collapse" href="#quantitative" role=" button"
+                        aria-expanded="false" aria-controls="quantitative">
+                        Quantitative Methods
+                      </p>
+                    </div>
+                    <div class="scroll collapse" id="quantitative">
+                      <div class=" py-2">
+                        <h6> <a href="" class="fs-12  ">ATLAS.ti</a></h6>
+                        <h6><a href="" class="fs-12  ">NVivo</a></h6>
+                        <h6><a href="" class="fs-12  ">MAXQDA</a></h6>
+                        <h6><a href="" class="fs-12  ">Dedoose</a></h6>
+                        <h6> <a href="" class="fs-12  ">QDA Miner</a></h6>
+                        <h6> <a href="" class="fs-12  ">HyperRESEARCH</a></h6>
+                        <h6> <a href="" class="fs-12  ">Transana</a></h6>
+                        <h6><a href="" class="fs-12  ">Quirkos</a></h6>
+                        <h6><a href="" class="fs-12  ">Weft QDA</a></h6>
+                        <h6><a href="" class="fs-12  ">AnSWR</a></h6>
+                        <h6> <a href="" class="fs-12  ">CAQDAS</a></h6>
+                        <h6> <a href="" class="fs-12  ">TAMS Analyzer</a></h6>
+                        <h6><a href="" class="fs-12  ">RQDA</a></h6>
+                        <h6><a href="" class="fs-12  ">XSight</a></h6>
+                        <h6> <a href="" class="fs-12  ">f4analyse</a></h6>
+                        <h6> <a href="" class="fs-12  ">Coding Analysis Toolkit (CAT)</a></h6>
+                        <h6><a href="" class="fs-12  ">Qiqqa</a></h6>
+                        <h6> <a href="" class="fs-12  ">Taguette</a></h6>
+                        <h6> <a href="" class="fs-12  ">NUD*IST (N6)</a></h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="d-flex">
+                      <label class=" fas fa-plus "
+                        style=" border: 1px solid gray; border-radius: 50%; height: 18px; width:17px; align-items:center; margin: 0 5px 0 0; background:gray; color:white; display:flex; justify-content: center; align-content:center; font-size:9px"></label>
+
+                      <p class="text-dark" data-toggle="collapse" href="#mixed" role=" button" aria-expanded="false"
+                        aria-controls="mixed">
+                        Mixed Methods
+                      </p>
+                    </div>
+                    <div class="scroll collapse" id="mixed">
+                      <div class=" py-2">
+                        <h6> <a href="" class="fs-12  ">NVivo</a></h6>
+                        <h6><a href="" class="fs-12  ">ATLAS.ti</a></h6>
+                        <h6><a href="" class="fs-12  ">MAXQDA</a></h6>
+                        <h6><a href="" class="fs-12  ">QDA Miner</a></h6>
+                        <h6> <a href="" class="fs-12  ">QDA Miner</a></h6>
+                        <h6> <a href="" class="fs-12  ">DeDoose</a></h6>
+                        <h6> <a href="" class="fs-12  ">R</a></h6>
+                        <h6><a href="" class="fs-12  ">IBM SPSS</a></h6>
+                        <h6><a href="" class="fs-12  ">NVivo f</a></h6>
+                        <h6><a href="" class="fs-12  ">Minitab</a></h6>
+                        <h6> <a href="" class="fs-12  ">Excel</a></h6>
+                        <h6> <a href="" class="fs-12  ">TAMS Analyzer</a></h6>
+                        <h6><a href="" class="fs-12  ">Transana</a></h6>
+                        <h6><a href="" class="fs-12  ">HyperRESEARCH</a></h6>
+                        <h6><a href="" class="fs-12  ">Quirkos</a></h6>
+                        <h6> <a href="" class="fs-12  ">Nvivo 12 Plus</a></h6>
+                        <h6> <a href="" class="fs-12  ">Dedoose</a></h6>
+
+                        <h6> <a href="" class="fs-12  ">ANTHROPAC</a></h6>
+                        <h6><a href="" class="fs-12  ">Weft QDA</a></h6>
+                        <h6><a href="" class="fs-12  ">Qiqqa</a></h6>
+                        <h6><a href="" class="fs-12  ">Raven's Eye</a></h6>
+                        <h6> <a href="" class="fs-12  ">CAQDAS</a></h6>
+
+                      </div>
+                    </div>
+                  </div>
+
 
                 </div>
 
-                <!-- <div class="card-body pl-lg-0">
-                  <div class="">
-
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="pr-3">{{ translate('Seminar Topics') }}</span>
-                    </h6>
-                    <div class="mb-5">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('Skills') }}</option>
-                        @foreach (\App\Models\Skill::all() as $key => $skill)
-                        <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id==$skill->id )
-                          selected
-                          @endif>{{ $skill->name }}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  </div> -->
-
-
+                <!-- Seminar date -->
                 <div class="card-body pl-lg-0">
                   <div class="">
                     <h6 class="text-left mb-3 fs-14 fw-700">
@@ -221,13 +299,13 @@
                           <div class="col text-center calendar-cell">30</div>
                           <div class="col text-center calendar-cell"></div>
                           <div class="col text-center calendar-cell"></div>
-
                         </div>
-                        <!-- Continue adding rows for the rest of the days in the month -->
-                        <!-- You can use PHP or JavaScript to dynamically generate the calendar -->
                       </div>
                     </div>
 
+
+
+                    <!-- Languages -->
 
                     <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
                       <span class=" pr-3">{{ translate('Languages') }}</span>
@@ -237,7 +315,6 @@
                       <label class="form-check-label fs-14" for="flexCheckDisabled">
                         English
                       </label>
-
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
@@ -275,86 +352,69 @@
           <!-- Freelancer List -->
           <div class="col-xl-9 col-lg-7">
             <div class="card mb-lg-0 rounded border-gray-light" style="background: #F2F7F2;">
-
               <div class="card-body p-0">
-                @foreach ($freelancers as $key => $freelancer)
-                @if ($freelancer->user != null)
-                <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
-                  class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
+                <a href="" class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
                   <span class="avatar flex-shrink-0 mr-4">
-                    @if ($freelancer->user->photo != null)
-                    <img src="{{ custom_asset($freelancer->user->photo) }}" alt="{{ $freelancer->user->name }}">
-                    @else
-                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                      alt="{{ $freelancer->user->name }}">
-                    @endif
-                    @if(Cache::has('user-is-online-' . $freelancer->user->id))
+
+                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+
                     <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
-                    @else
-                    <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
-                    @endif
+
                   </span>
                   <div class="flex-grow-1 ">
                     <div class="d-flex">
-                      <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
-
-                      @if ($freelancer->user->address->country->photo ==null)
-                      @php
-                      $flag_url="/public/assets/frontend/default/img/avatar-place.png";
-                      @endphp
-                      @else
-
-                      @php
-                      $flag_url=$freelancer->user->address->country->photo;
-                      @endphp
-                      @endif
-                      <span>
-
-                        <img class=" mx-2 " src="{{url($flag_url)}}"
-                          alt="{{ $freelancer->user->address->country->name }}" style="width:21px; height:14px; " />
-                      </span>
+                      <h5 class=" fs-18 fw-700 mb-1">Longitudinal Research with Mplus: From Design and Analysis to
+                        Publicationihan</h5>
                     </div>
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Islam Mohammad Raihanul</h5>
+                    </div>
+                    <p class="fs-16 ">Department of Management, Mays Business School at Texas A&M University</p>
 
-                    @if ($freelancer->specialistAt != null)
-                    <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
-                    @endif
 
                     <div class="d-flex text-dark fs-14 mb-3">
                       <div class="mr-2">
-                        <span class="bg-rating p-1 text-white px-1 mr-1 fs-10" style="background:#95DF00;">
-                          {{ formatRating(getAverageRating($freelancer->user->id)) }}
-                        </span>
+                        <span class=" p-1  px-1 mr-1 fs-14">
+                          Live Streaming 3-Day Workshop
+                        </span> |
                         <span class="rating rating-md rating-mr-1">
-                          {{ renderStarRating(getAverageRating($freelancer->user->id)) }}
-                        </span>
-                        <span>(0 Jobs)</span>
-                        <span class="mx-2">
-                          {{ count($freelancer->user->reviews) }} {{ translate('Reviews') }}
-                        </span>
-
-                        <span>
-                          {{ single_price($freelancer->hourly_rate) }} USD per hour
-                        </span>
+                          August 15th - 17th
+                        </span> |
+                        <span>English,Mandarin</span>
+                      </div>
+                    </div>
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Transana</span>
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">TAMS</span>
+                        <span class=" p-1 text-white px-1 mr-1 fs-10">
+                          <span
+                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">CAQDAS</span>
+                          <span class=" p-1 text-white px-1 mr-1 fs-10">
+                            <span
+                              class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">IBM
+                              SPSS</span>
+                            <span class=" p-1 text-white px-1 mr-1 fs-10">
+                              <span
+                                class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">XSight</span>
+                              <span class=" p-1 text-white px-1 mr-1 fs-10">
 
                       </div>
 
                     </div>
                     <div class="text-dark lh-1-8">
-                      <p class="text-truncate-3 fs-14">{{ $freelancer->bio }}</p>
+                      <p class="text-truncate-3 fs-14">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
+                        recusandae saepe delectus porro eum amet blanditiis! Minima atque ipsa sit, molestiae quo, enim
+                        odit explicabo sequi ratione similique blanditiis non! ...<u>More</u>
+                      </p>
                     </div>
-                    @if($freelancer->skills != null)
+
                     <div>
-                      @foreach (json_decode($freelancer->skills) as $key => $skill_id)
-                      @php
-                      $skill = \App\Models\Skill::find($skill_id);
-                      @endphp
-                      @if ($skill != null)
-                      <span
-                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">{{ $skill->name }}</span>
-                      @endif
-                      @endforeach
+
                     </div>
-                    @endif
+
                   </div>
                   <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
 
@@ -363,7 +423,7 @@
 
                         <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
                           style="width:36px; " />
-                        {{ translate('Hire me') }}
+                        {{ translate('Register Here') }}
 
                       </p>
                     </div>
@@ -378,18 +438,281 @@
                     </div>
                   </div>
                 </a>
-                @endif
-                @endforeach
+
               </div>
-              @if (!is_array($freelancers))
+              <div class="card-body p-0">
+                <a href="" class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
+                  <span class="avatar flex-shrink-0 mr-4">
+
+                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+
+                    <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
+
+                  </span>
+                  <div class="flex-grow-1 ">
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Single-Case Experimental Design and Analysis</h5>
+                    </div>
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Md jukarburg</h5>
+                    </div>
+                    <p class="fs-16 ">School of Education, University at Albany, and Statistical Solutions Inc.</p>
+
+
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span class=" p-1  px-1 mr-1 fs-14">
+                          Live Streaming 3-Day Workshop
+                        </span> |
+                        <span class="rating rating-md rating-mr-1">
+                          August 15th - 17th
+                        </span> |
+                        <span>English, Japanese,Bangla</span>
+                      </div>
+                    </div>
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">ANTHROPAC</span>
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Dedoose</span>
+                        <span class=" p-1 text-white px-1 mr-1 fs-10">
+                          <span
+                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">WeQ
+                            QDA</span>
+                          <span class=" p-1 text-white px-1 mr-1 fs-10">
+                            <span
+                              class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">SEQuirkosO</span>
+                            <span class=" p-1 text-white px-1 mr-1 fs-10">
+                              <span
+                                class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Qiqqa</span>
+                              <span class=" p-1 text-white px-1 mr-1 fs-10">
+
+                      </div>
+
+                    </div>
+                    <div class="text-dark lh-1-8">
+                      <p class="text-truncate-3 fs-14">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
+                        recusandae saepe delectus porro eum amet blanditiis! Minima atque ipsa sit, molestiae quo, enim
+                        odit explicabo sequi ratione similique blanditiis non! ...<u>More</u>
+                      </p>
+                    </div>
+
+                    <div>
+
+                    </div>
+
+                  </div>
+                  <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
+
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
+                          style="width:36px; " />
+                        {{ translate('Register Here') }}
+
+                      </p>
+                    </div>
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/zoom.png')}}" alt="Image"
+                          style="width:28px; " />
+                        {{ translate('Zoom me') }}
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body p-0">
+                <a href="" class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
+                  <span class="avatar flex-shrink-0 mr-4">
+
+                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+
+                    <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
+
+                  </span>
+                  <div class="flex-grow-1 ">
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Harnessing NVivo for Qualitative and Mixed-Methods Research</h5>
+                    </div>
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Tanvir haider</h5>
+                    </div>
+                    <p class="fs-16 ">IBM SPSS Networking Project, University of british colombia and Qualitative Data
+                      Analysis
+                      Services</p>
+
+
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span class=" p-1  px-1 mr-1 fs-14">
+                          Live Streaming 3-Day Workshop
+                        </span> |
+                        <span class="rating rating-md rating-mr-1">
+                          August 15th - 17th
+                        </span> |
+                        <span>English,German</span>
+                      </div>
+                    </div>
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">SENvivo
+                          12 PlusO</span>
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Qiqqa</span>
+                        <span class=" p-1 text-white px-1 mr-1 fs-10">
+                          <span
+                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Dedoose</span>
+                          <span class=" p-1 text-white px-1 mr-1 fs-10">
+                            <span
+                              class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">NVivo</span>
+                            <span class=" p-1 text-white px-1 mr-1 fs-10">
+                              <span
+                                class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Excel</span>
+                              <span class=" p-1 text-white px-1 mr-1 fs-10">
+
+                      </div>
+
+                    </div>
+                    <div class="text-dark lh-1-8">
+                      <p class="text-truncate-3 fs-14">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
+                        recusandae saepe delectus porro eum amet blanditiis! Minima atque ipsa sit, molestiae quo, enim
+                        odit explicabo sequi ratione similique blanditiis non! ...<u>More</u>
+                      </p>
+                    </div>
+
+                    <div>
+
+                    </div>
+
+                  </div>
+                  <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
+
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
+                          style="width:36px; " />
+                        {{ translate('Register Here') }}
+
+                      </p>
+                    </div>
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/zoom.png')}}" alt="Image"
+                          style="width:28px; " />
+                        {{ translate('Zoom me') }}
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+              <div class="card-body p-0">
+                <a href="" class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
+                  <span class="avatar flex-shrink-0 mr-4">
+
+                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+
+                    <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
+
+                  </span>
+                  <div class="flex-grow-1 ">
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Longitudinal Research with Mplus: From Design and Analysis to
+                        Publicationihan</h5>
+                    </div>
+                    <div class="d-flex">
+                      <h5 class=" fs-18 fw-700 mb-1">Stephen fleming</h5>
+                    </div>
+                    <p class="fs-16 ">Islamic civilization in Aisa and mid-list</p>
+
+
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span class=" p-1  px-1 mr-1 fs-14">
+                          Live Streaming 3-Day Workshop
+                        </span> |
+                        <span class="rating rating-md rating-mr-1">
+                          August 15th - 17th
+                        </span> |
+                        <span>English,Arabic</span>
+                      </div>
+                    </div>
+                    <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">IBM
+                          SPSS</span>
+                        <span
+                          class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">NVivo</span>
+                        <span class=" p-1 text-white px-1 mr-1 fs-10">
+                          <span
+                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">TAMS</span>
+                          <span class=" p-1 text-white px-1 mr-1 fs-10">
+                            <span
+                              class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Transana</span>
+                            <span class=" p-1 text-white px-1 mr-1 fs-10">
+                              <span
+                                class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Excel</span>
+                              <span class=" p-1 text-white px-1 mr-1 fs-10">
+
+                      </div>
+
+                    </div>
+                    <div class="text-dark lh-1-8">
+                      <p class="text-truncate-3 fs-14">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
+                        recusandae saepe delectus porro eum amet blanditiis! Minima atque ipsa sit, molestiae quo, enim
+                        odit explicabo sequi ratione similique blanditiis non! ...<u>More</u>
+                      </p>
+
+                    </div>
+
+                    <div>
+
+                    </div>
+
+                  </div>
+                  <div class=" flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px" style="">
+
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/logo-1.png')}}" alt="Image"
+                          style="width:36px; " />
+                        {{ translate('Register Here') }}
+
+                      </p>
+                    </div>
+                    <div class="d-flex w-100 mx-0">
+                      <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                        <img class=" px-1  " src=" {{url('/public/assets/find-consultant/zoom.png')}}" alt="Image"
+                          style="width:28px; " />
+                        {{ translate('Zoom me') }}
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+
               <div class="card-footer">
                 <div class="aiz-pagination aiz-pagination-center flex-grow-1">
                   <ul class="pagination">
-                    {{ $freelancers->links() }}
+
                   </ul>
                 </div>
               </div>
-              @endif
+
             </div>
           </div>
         </div>
@@ -397,7 +720,31 @@
     </div>
   </section>
   <script>
+  // Get references to the month and year elements
+  const monthSelect = document.getElementById('month');
+  const yearInput = document.getElementById('year');
 
+  // Event listener to handle changes in month or year
+  monthSelect.addEventListener('change', updateCalendar);
+  yearInput.addEventListener('input', updateCalendar);
+
+  // Initial calendar rendering
+  updateCalendar();
+
+  // Function to update the calendar based on selected month and year
+  function updateCalendar() {
+    const month = parseInt(monthSelect.value);
+    const year = parseInt(yearInput.value);
+
+    // Clear the old calendar content
+    document.getElementById('calendar').innerHTML = '';
+
+    // Your logic to generate the calendar for the selected month and year goes here
+    // You can use JavaScript to create the calendar grid and populate it with dates
+
+    // Example: Display the selected month and year in the console
+    console.log(`Selected Month: ${month}, Selected Year: ${year}`);
+  }
   </script>
   <script>
   function generateCalendar() {

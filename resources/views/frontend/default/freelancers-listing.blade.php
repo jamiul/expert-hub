@@ -239,6 +239,7 @@
                   <div class="flex-grow-1 ">
                     <div class="d-flex">
                       <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+
                       @if($freelancer->user->address->country->photo ==null)
 
                       @php
