@@ -239,21 +239,23 @@
                   <div class="flex-grow-1 ">
                     <div class="d-flex">
                       <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+<<<<<<< HEAD
 
                       @if($freelancer->user->address->country->photo ==null)
+=======
+>>>>>>> 50ab65fe708aa6f68f1cb85ecb38a660c7fe9c1b
 
                       @php
-                      $flag_url="/public/assets/frontend/default/img/avatar-place.png";
+                        if ( !empty($freelancer->user->address->country['photo'])) {
+                          $flag_url=$freelancer->user->address->country['photo'];
+                        } else {
+                          $flag_url="/public/assets/frontend/default/img/avatar-place.png";
+                        }
                       @endphp
 
-                      @else
-                      @php
-                      $flag_url=$freelancer->user->address->country->photo;
-                      @endphp
-                      @endif
                       <span>
                         <img class=" mx-2 " src="{{url($flag_url)}}"
-                          alt="{{ $freelancer->user->address->country->name }}" style="width:21px; height:14px; " />
+                          alt="{{ $freelancer->user->address->country['name'] }}" style="width:21px; height:14px; " />
                       </span>
 
                     </div>
