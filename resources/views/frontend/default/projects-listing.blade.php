@@ -72,79 +72,29 @@
                             </span>
                             @endforeach
                             <div class="card-body pl-lg-0">
-
-
-                                <!-- <div class="w-200px mb-3">
-                                    <select class="form-control form-control-sm aiz-selectpicker rounded-1" name="sort" onchange="applyFilter()">
-                                        <option value="1" @if($sort=='1' ) selected @endif>{{ translate('Newest first') }}</option>
-                                        <option value="2" @if($sort=='2' ) selected @endif>{{ translate('Lowest budget first') }}</option>
-                                        <option value="3" @if($sort=='3' ) selected @endif>{{ translate('Highest budget first') }}</option>
-                                        <option value="4" @if($sort=='4' ) selected @endif>{{ translate('Lowest bids first') }}</option>
-                                        <option value="5" @if($sort=='5' ) selected @endif>{{ translate('Highest bids first') }}</option>
-                                    </select>
-                                </div> -->
                                 <!-- Categories -->
-                                <div class="mb-4">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class=" pr-3">{{ translate('Categories') }}</span>
-                                    </h6>
-                                    <div class="">
+                            <div class="mb-4">
+                                <h6 class="text-left mb-3 fs-14 fw-700">
+                                    <span class=" pr-3">{{ translate('Categories') }}</span>
+                                </h6>
+                                <div class="">
 
-                                        @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
+                                    @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
 
-                                        <label class="aiz-checkbox w-100">
-                                            <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
-                                            {{$category->name}}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                        </label>
-                                        @endforeach
-                                    </div>
+                                    <label class="aiz-checkbox w-100">
+                                        <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
+                                        {{$category->name}}
+                                        <span class="aiz-square-check"></span>
+                                        <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                    </label>
+                                    @endforeach
                                 </div>
+                            </div>
                                 <!-- Budget -->
                                 <div class="mb-4">
                                     <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class=" pr-3">{{ translate('Project Type') }}</span>
                                     </h6>
-                                    <!-- <!- - Fixed Price Projects - ->
-                                    <div class="aiz-checkbox-list">
-                                        <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div>
-
-                                            <input onchange="applyFilter()" class="p-2" name="fixed_min" placeholder="Min" value="{{ $fixed_min ? $fixed_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
-
-                                        </div>
-                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
-                                        <div>
-
-                                            <input onchange="applyFilter()" class="p-2" name="fixed_max" placeholder="Max" value="{{ $fixed_max ? $fixed_max : '' }}" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
-                                        </div>
-                                    </div>
-                                    <!- - Hourly Projects - ->
-                                    <div class="aiz-checkbox-list mt-2">
-                                        <label class="aiz-checkbox">
-                                            <input onchange="applyFilter()" type="checkbox" name="projectType[]" value="Hourly" @if (in_array('Hourly', $projectType)) checked @endif> {{ translate('Hourly ') }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div>
-                                            <input onchange="applyFilter()" name="hourly_min" class="p-2" placeholder="Min" value="{{ $hourly_min ? $hourly_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
-                                        </div>
-                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center ">to</p>
-                                        <div>
-
-                                            <input onchange="applyFilter()" name="hourly_max" value="{{ $hourly_max ? $hourly_max : '' }}" class="p-2" placeholder="Max" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
-                                        </div>
-                                    </div> -->
-
                                     <!-- Fixed Price Projects -->
                                     <div class="aiz-checkbox-list">
                                         <label class="aiz-checkbox">
@@ -155,7 +105,7 @@
                                     </div>
                                     <div class="d-flex">
                                         <div>
-                                            <input onchange="applyFilter()" class="p-2" placeholder="Min" name="fixed_min" value="{{ $fixed_min ? $fixed_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input class="p-2" placeholder="Min" name="fixed_min" value="{{ $fixed_min ? $fixed_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
                                         <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
                                         <div>
@@ -172,7 +122,7 @@
                                     </div>
                                     <div class="d-flex">
                                         <div>
-                                            <input onchange="applyFilter()" class="p-2" name="hourly_min" value="{{ $hourly_min ? $hourly_min : '' }}" placeholder="Min" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input class="p-2" name="hourly_min" value="{{ $hourly_min ? $hourly_min : '' }}" placeholder="Min" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
                                         <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
                                         <div>
@@ -180,80 +130,24 @@
                                         </div>
                                     </div>
 
-                                   <div class="mt-3">
-                                   <select onchange="applyFilter()" name="durations[]" multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2" data-live-search="true">
-                                        <option value="">{{ translate('All Durations') }}</option>
-                                        <option value='1 week'>Less than 1 week</option>
-                                        <option value='1 week - 4 week'>1 week to 4 weeks</option>
-                                        <option value='1 month - 3 month'>1 month to 3 months</option>
-                                        <option value='3 month - 6 month'>3 months to 6 months</option>
-                                        <option value='6 month'>Over 6 months/Ongoing</option>
-                                        <option value="unspecified">unspecified</option>
+                                <div class="mt-3">
+                                    <select
+                                        onchange="applyFilter()"
+                                        name="durations[]"
+                                        class="select2 form-control aiz-selectpicker rounded-1"
+                                        data-toggle="select2"
+                                        data-live-search="true"
+                                    >
+                                        <option value="" @if (in_array('', $selectedDurations)) selected @endif>{{ translate('All Durations') }}</option>
+
+                                    @foreach (getDurations() as $key => $duration)
+                                        <option value="{{ $key }}" @if (in_array($key, $selectedDurations)) selected @endif> {{ $duration }} </option>
+                                    @endforeach
                                     </select>
-                                   </div>
                                 </div>
-
-
-                                <!-- <!- - Project Type - ->
-                                <div class="mb-5">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class=" pr-3">{{ translate('Project Type') }}</span>
-                                    </h6>
-                                    <div class="aiz-checkbox-list">
-                                        <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        <label class="aiz-checkbox">
-                                            <input type="checkbox" name="projectType[]" value="Long Term" @if (in_array('Long Term', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Long Term') }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <!- - Numbers of Bids - ->
-                                <div class="mb-5">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class="pr-3">{{ translate('Numbers of Bids') }}</span>
-                                    </h6>
-                                    <div class="aiz-radio-list">
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="bids" value="" onchange="applyFilter()" @if ($bids=="" ) checked @endif>
-                                            {{ translate('Any Number of bids') }}
-                                            <span class="aiz-rounded-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="bids" value="0-5" onchange="applyFilter()" @if ($bids=="0-5" ) checked @endif> {{ translate('0 to 5') }}
-                                            <span class="aiz-rounded-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="bids" value="5-10" onchange="applyFilter()" @if ($bids=="5-10" ) checked @endif> {{ translate('5 to 10') }}
-                                            <span class="aiz-rounded-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="bids" value="10-20" onchange="applyFilter()" @if ($bids=="10-20" ) checked @endif> {{ translate('10 to 20') }}
-                                            <span class="aiz-rounded-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="bids" value="20-30" onchange="applyFilter()" @if ($bids=="20-30" ) checked @endif> {{ translate('20 to 30') }}
-                                            <span class="aiz-rounded-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                        <label class="aiz-radio">
-                                            <input type="radio" name="bids" value="30+" onchange="applyFilter()" @if ($bids=="30+" ) checked @endif> {{ translate('30+') }}
-                                            <span class="aiz-rounded-check"></span>
-                                            <span class="float-right text-secondary fs-12"></span>
-                                        </label>
-                                    </div>
-                                </div> -->
+                            </div>
 
                                 <!-- Skills -->
-
                                 <div class="mb-4">
                                     <!-- Countries -->
                                     <!-- <h6 class="text-left mb-3 fs-14 fw-700">

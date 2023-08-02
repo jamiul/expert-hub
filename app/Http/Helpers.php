@@ -548,4 +548,9 @@ function getCountryName($countryID) {
     return Country::where('id', $countryID)->value('name');
 }
 
+// get all durations
+function getDurations() : array {
+    return config('constants.durations');
+}
+
 ?>
