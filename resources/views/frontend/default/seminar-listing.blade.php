@@ -7,11 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 
-  <!-- new  -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -193,7 +189,7 @@
                     </div>
                   </div>
                   <div class="">
-                    <div class="d-flex">
+                    <div class="d-flex" class="margin-bottom:10px;">
                       <label class=" fas fa-plus "
                         style=" border: 1px solid gray; border-radius: 50%; height: 18px; width:17px; align-items:center; margin: 0 5px 0 0; background:gray; color:white; display:flex; justify-content: center; align-content:center; font-size:9px"></label>
 
@@ -231,10 +227,44 @@
                       </div>
                     </div>
                   </div>
-
-
                 </div>
-
+               
+                  <!-- Languages -->
+                 <div>
+                     <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
+                      <span class=" pr-3">{{ translate('Languages') }}</span>
+                    </h6>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        English
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        French
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        Hindi
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        Malay
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
+                      <label class="form-check-label fs-14" for="flexCheckDisabled">
+                        Bangla
+                      </label>
+                    </div>
+                 </div>
                 <!-- Seminar date -->
                 <div class="card-body pl-lg-0">
                   <div class="">
@@ -299,44 +329,7 @@
                         </div>
                       </div>
                     </div>
-
-
-
-                    <!-- Languages -->
-
-                    <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
-                      <span class=" pr-3">{{ translate('Languages') }}</span>
-                    </h6>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                      <label class="form-check-label fs-14" for="flexCheckDisabled">
-                        English
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                      <label class="form-check-label fs-14" for="flexCheckDisabled">
-                        French
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                      <label class="form-check-label fs-14" for="flexCheckDisabled">
-                        Hindi
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                      <label class="form-check-label fs-14" for="flexCheckDisabled">
-                        Malay
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled">
-                      <label class="form-check-label fs-14" for="flexCheckDisabled">
-                        Bangla
-                      </label>
-                    </div>
+                  
 
                   </div>
                 </div>
@@ -398,6 +391,19 @@
                                 class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">XSight</span>
                               <span class=" p-1 text-white px-1 mr-1 fs-10">
 
+                      </div>
+
+                    </div>
+                     <div class="d-flex text-dark fs-14 mb-3">
+                      <div class="mr-2">
+                        <span
+                          class=" mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">Who can Apply</span>
+                        <span
+                          class=" mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">
+                 Domestic and international applicants</span>
+                        <span class=" p-1 text-white px-1 mr-1 fs-10">
+                        
+                        
                       </div>
 
                     </div>
@@ -467,6 +473,10 @@
                         <span>English, Japanese,Bangla</span>
                       </div>
                     </div>
+                    <div class="text-dark lh-1-8">
+                      <p class="text-truncate-3 fs-14">This seminar will give you a strong working understanding of methods used to design and analyze single-case experimental design studies (i.e., n-of-1 trials, personalized trials, intrasubject, single-subjects, etc.) ...<u>More</u>
+                      </p>
+                    </div>
                     <div class="d-flex text-dark fs-14 mb-3">
                       <div class="mr-2">
                         <span
@@ -488,12 +498,7 @@
                       </div>
 
                     </div>
-                    <div class="text-dark lh-1-8">
-                      <p class="text-truncate-3 fs-14">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
-                        recusandae saepe delectus porro eum amet blanditiis! Minima atque ipsa sit, molestiae quo, enim
-                        odit explicabo sequi ratione similique blanditiis non! ...<u>More</u>
-                      </p>
-                    </div>
+                    
 
                     <div>
 
@@ -795,6 +800,31 @@
     </div>
     </div>
   </section>
+
+  <!--  this script to handle the "Hide All" button click -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const hideAllBtn = document.querySelector(".hide-all-btn");
+    const categoryLinks = document.querySelectorAll(".category-link");
+    const collapseExample = document.querySelector("#collapseExample");
+
+    // Add click event listener to "Hide All" button
+    hideAllBtn.addEventListener("click", function() {
+      // If the category container is already collapsed, don't do anything
+      if (!collapseExample.classList.contains("show")) {
+        return;
+      }
+
+      // Toggle the collapse state of each category
+      categoryLinks.forEach(function(link) {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target.classList.contains("show")) {
+          link.click(); // This will collapse the category
+        }
+      });
+    });
+});
+</script>
   <script>
   // Get references to the month and year elements
   const monthSelect = document.getElementById('month');

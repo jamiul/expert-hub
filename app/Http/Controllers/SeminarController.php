@@ -39,7 +39,7 @@ class SeminarController extends Controller
         $scholarships = $scholarships->paginate(15);
         // dd($scholarships);
 
-        return view('admin.default.scholarship_module.scholarship.index', compact('scholarships','sort_search'));
+        return view('admin.default.seminar_module.seminar.index', compact('scholarships','sort_search'));
     }
 
     /**
@@ -115,7 +115,7 @@ class SeminarController extends Controller
 
         $scholarship->save();
 
-        flash(translate('Seminar post has been created successfully'))->success();
+        flash(translate('Scholarship post has been created successfully'))->success();
         return redirect()->route('scholarship.index');
     }
 
@@ -189,13 +189,14 @@ class SeminarController extends Controller
         // dd($scholarship->fieldStudy_id);
         $scholarship->save();
 
-        flash(translate( 'Seminar post has been updated successfully'))->success();
+        flash(translate( 'Scholarship post has been updated successfully'))->success();
         return redirect()->route('scholarship.index');
     }
 
     public function change_status(Request $request) {
         $scholarship = Scholarship::find($request->id);
         $scholarship->status = $request->status;
+
         $scholarship->save();
         return 1;
     }
@@ -216,7 +217,7 @@ class SeminarController extends Controller
 
     public function all_scholarship() {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
-       
+        dd($scholarships);
         return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 

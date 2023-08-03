@@ -368,25 +368,22 @@
               </li>
 
 
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
-              </li>
-              <li class="nav-item dropdown mega_menu text-white">
-                <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Why FreelancerEdu
-                </a>
-                <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
-                  <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                      <div class="row ">
-                        <div class="col-6">
-                          <div id="howToFindJob" class="mt-2 w-75 mega-menu-item">
-                            <a class="dropdown-item"
-                              href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
-                            <p>{{translate('Learn about how to grow your independent career.')}}</p>
-                          </div>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
+                            </li>
+                            <li class="nav-item dropdown mega_menu text-white">
+                                <a class="nav-link dropdown-toggle" href="#" id="mega_product" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Why ConsultantEdu
+                                </a>
+                                <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-12">
+                                            <div class="row ">
+                                                <div class="col-6">
+                                                    <div id="howToFindJob" class="mt-2 w-75 mega-menu-item">
+                                                        <a class="dropdown-item" href="{{route('how-to-find-job')}}">{{ translate('How to find job') }}</a>
+                                                        <p>{{translate('Learn about how to grow your independent career.')}}</p>
+                                                    </div>
 
                           <div id="review" class="w-75 mega-menu-item">
                             <a class="dropdown-item drpd-item" href="{{route('review')}}">{{translate('Reviews')}}</a>

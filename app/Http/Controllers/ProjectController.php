@@ -126,7 +126,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
         $uploadAble = false;
 
         if($request->projectType == 'Fixed'){

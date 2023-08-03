@@ -26,11 +26,7 @@ class SearchController extends Controller
         if ($request->type == 'freelancer') {
             $type = 'freelancer';
             $keyword = $request->keyword;
-            $rating = $request->rating;
-            $rate = $request->rate;
-            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-            // $category_ids = CategoryUtility::children_ids($category_id);
-            // $category_ids[] = $category_id;
+            $rating = $request->rating ?? [];
             $skill_id = array('');
             $childSkill_id = array('');
             $category_id = array('');
@@ -47,9 +43,8 @@ class SearchController extends Controller
             $skills = [];
             $skill_ids = [];
             $rate = [];
-            
-            // dd($request->all());
-                
+            $hourly_rate = $request->hourly_rate ?? [];
+
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -67,18 +62,17 @@ class SearchController extends Controller
                     ->pluck('user_id');
                 $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
             }
-           if ($request->category_id != null) {
+            if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
-                // dd($freelancers);
-}
+            }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $freelancers = $freelancers->whereIn('user_id', $user_ids);
             }
 
-             if ($request->skill_id != null) {
+            if ($request->skill_id != null) {
                 $skill_ids = $request->skill_id;
                 $skills = Skill::whereIn('id', $skill_ids)->get();
                 $freelancers = $freelancers->where(function ($query) use ($skill_ids) {
@@ -87,6 +81,7 @@ class SearchController extends Controller
                     }
                 });
             }
+
             if ($request->childSkill_id != null) {
                 $childSkill_ids = $request->childSkill_id;
                 $childSkills = Skill::whereIn('id', $childSkill_ids)->get();
@@ -96,98 +91,54 @@ class SearchController extends Controller
                     }
                 });
             }
+            if($request->hourly_rate != null) {
+                if (in_array('all', $hourly_rate)) {
+                    $userProfiles = UserProfile::pluck('user_id')->all();
+                }
+                if(in_array('10', $hourly_rate)){
+                    $minHourlyRate = 1;
+                    $maxHourlyRate = 9;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
 
-//     if (!empty($hourlyRate)) {
-//     $freelancers = $freelancers->where(function ($query) use ($hourlyRate) {
-//         foreach ($hourlyRate as $rate) {
-//             $range = explode('-', $rate);
-//             if (count($range) == 2) {
-//                 $query->orWhereBetween('hourly_rate', [(int)$range[0], (int)$range[1]]);
-//             } elseif ($range[0] == '40+') {
-//                 $query->orWhere('hourly_rate', '>', 40);
-//             }
-//         }
-//     });
-// }
-       if (!empty($rate1)) {
-        $freelancers = UserProfile::query();
+                if(in_array('20', $hourly_rate)){
+                    $minHourlyRate = 10;
+                    $maxHourlyRate = 20;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
 
-        foreach ($rate1 as $rate) {
-            $range = explode('-', $rate);
-            if (count($range) == 2) {
-                $query->orWhereBetween('hourly_rate', [(int)$range[0], (int)$range[1]]);
-            } elseif ($rate === '40+') {
-                $query->orWhere('hourly_rate', '>', 40);
+                if(in_array('30', $hourly_rate)){
+                    $minHourlyRate = 20;
+                    $maxHourlyRate = 30;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
+
+                if(in_array('40', $hourly_rate)){
+                    $minHourlyRate = 30;
+                    $maxHourlyRate = 40;
+                    $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
+                }
+
+                if(in_array('50', $hourly_rate)){
+                    $maxHourlyRate = 40;
+                    $userProfiles = UserProfile::where('hourly_rate', '>' ,$maxHourlyRate)->pluck('user_id')->toArray();
+                }
+
+                $freelancers = $freelancers->whereIn('user_id', $userProfiles);
             }
-        }
-        
-        // Execute the query and get the filtered user profiles
-        $filteredUserProfiles = $freelancers->get();
-
-        // Now you can use $filteredUserProfiles as needed
-    } else {
-        // If $rate1 is empty, no filtering is needed, so you can get all user profiles
-        $filteredUserProfiles = UserProfile::all();
-    }
-
-
-            if ($min_price != null) {
-                $freelancers = $freelancers->where('hourly_rate', '>=', $min_price);
-            }
-
-            if ($max_price != null) {
-                $freelancers = $freelancers->where('hourly_rate', '<=', $max_price);
-            }
-
-             if ($request->rate != null) {
-                $rate = $request->rate;
-                $freelancers = $freelancers->whereIn('hourly_rate', $rate);
-                   
-            }
-    //  dd($freelancers->get()->toArray());
 
             if ($request->rating != null) {
-                if ($rating == "4+") {
+                if ($rating == "5") {
                     $freelancers = $freelancers->where('rating', '>', 4);
                 } else {
                     $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
                 }
             }
-            if ($request->rate != null) {
-                if ($rate == "5") {
-                    $freelancers = $freelancers->where('rating', '>', 4);
-                } else {
-                    $freelancers = $freelancers->whereIn('rating', explode('-', $rate));
-                }
-            }
 
-            // if (count($skill_ids) > 0) {
-            //     $filtered_freelancers = [];
-            //     foreach ($freelancers->get() as $key => $freelancer) {
+            $total = $freelancers->count();
+            $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            //         $skills_of_this_freelancer = json_decode($freelancer->skills);
-
-            //         if (!is_null($skills_of_this_freelancer)) {
-            //             foreach ($skills_of_this_freelancer as $key => $freelancer_slill_id) {
-            //                 if (in_array($freelancer_slill_id, $skill_ids)) {
-            //                     array_push($filtered_freelancers, $freelancer);
-            //                     break;
-            //                 }
-            //             }
-            //         }
-            //     }
-            //     $total = count($filtered_freelancers);
-            //     $freelancers = $filtered_freelancers;
-            // }
-            //  else {
-                
-            // }
-
-
-                $total = $freelancers->count();
-                $freelancers = $freelancers->paginate(8)->appends($request->query());
-            
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'rate',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id',"category_ids"));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id',"category_ids", 'hourly_rate'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
@@ -315,18 +266,19 @@ class SearchController extends Controller
         } else {
             $type = 'project';
             $keyword = $request->keyword;
-            $projectType = array('Fixed', 'Long Term');
+            $projectType = array('');
             $bids = $request->bids;
             $sort = $request->sort;
             $skill_id = array('');
             $childSkill_id = array('');
 
+            $fixed_min = $request->fixed_min;
+            $fixed_max = $request->fixed_max;
+            $hourly_min = $request->hourly_min;
+            $hourly_max = $request->hourly_max;
+            $selectedDurations = $request->input('durations') ?? [];
 
-            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-            // $category_ids = CategoryUtility::children_ids($category_id);
-            // $category_ids[] = $category_id;
             $category_id = array('');
-            // $category_ids=$category_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $categories = [];
@@ -334,8 +286,7 @@ class SearchController extends Controller
             $category_ids = [];
             $skills = [];
             $skill_ids = [];
-            // dd($skills);
-            // dd($skill_ids);
+
 
 
             $project_approval = SystemConfiguration::where('type', 'project_approval')->first()->value;
@@ -344,24 +295,48 @@ class SearchController extends Controller
             } else {
                 $projects = Project::biddable()->notcancel()->open()->where('private', '0');
             }
-            // dd($projects);
-
-            // if ($category_id != null) {
-            //     $projects = $projects->whereIn('project_category_id', $category_ids);
-            // }
-            // $categoriesProject = ProjectCategory::all();
-            // dd($categoriesProject);
 
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
-                // $categoryIds=$categories->pluck('id')
                 $projects = $projects->whereIn('project_category_id', $category_ids);
             }
 
+            if (!empty($selectedDurations)) {
+                $projects = $projects->where(function ($query) use ($selectedDurations) {
+                    foreach ($selectedDurations as $duration) {
+                        if ($duration === '1 week') {
+                            $query->orWhereBetween('created_at', [now()->subWeek(), now()]);
+                        } elseif ($duration === '1 week - 4 week') {
+                            $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
+                        } elseif ($duration === '1 month - 3 month') {
+                            $query->orWhereBetween('created_at', [now()->subMonths(3), now()]);
+                        } elseif ($duration === '3 month - 6 month') {
+                            $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
+                        } elseif ($duration === '6 month') {
+                            $query->orWhere('created_at', '<=', now()->subMonths(6));
+                        }
+                    }
+                });
+            }
+
+
+            // update projects type
             if ($request->projectType != null) {
                 $projectType = $request->projectType;
                 $projects = $projects->whereIn('type', $projectType);
+            }
+
+            if ($fixed_min !== null && $fixed_max !== null) {
+                $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
+                    $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
+                });
+            }
+
+            if ($hourly_min !== null && $hourly_max !== null) {
+                $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
+                    $query->where('type', 'Hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
+                });
             }
 
             if ($request->skill_id != null) {
@@ -429,7 +404,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max','hourly_min','hourly_max','selectedDurations'));
         }
     }
 
