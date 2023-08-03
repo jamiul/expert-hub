@@ -285,7 +285,7 @@
                                             </select>
 
                                             <div class="mt-3">
-                                                @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                                                @foreach (\App\Models\ParentSkill::all()->reverse() as $key => $parentSkill)
                                                 <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
                                                     <label class="fas fa-plus " style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
                                                     <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
