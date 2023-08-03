@@ -12,9 +12,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
 </head>
 
 <body>
@@ -717,6 +714,85 @@
           </div>
         </div>
       </form>
+       <div class="mt-5 pb-2 " style="background-color:#F2F7F2;">
+        <div class="">
+            <div class="">
+                <div class=" content-title  text-center py-5">
+                    <h2 class="fw-700 fs-24 text-black mb-0">Need experts advice help?</h2>
+                </div>
+                <div class="row need-help-full-body">
+                    <div class="col-xl-3 col-md-6">
+                        <div class=" ">
+                            <div class=" h-136px align-items-center">
+                                <div class="d-flex">
+                                    <img class=" mb-2 mx-auto d-block   p-3" src=" {{url('/public/assets/home/blog.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                    <div class="need-help-progress-bar"></div>
+                                </div>
+                                <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Post a job
+                                </p>
+                            </div>
+                            <h6 class="fs-14 mt-2  text-black text-center">
+                                Thousands of degrees, subjects and short courses from leading Australian unis in one place.
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class=" ">
+                            <div class=" h-136px align-items-center">
+                                <div class="d-flex">
+                                    <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz1.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000;" />
+                                    <div class="need-help-progress-bar"></div>
+                                </div>
+                                <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Receive proposal
+                                </p>
+                            </div>
+                            <h6 class="fs-14 mt-2  text-black text-center">
+                                Guidance to find your best option, based on what's important to you.
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class=" ">
+                            <div class=" h-136px align-items-center">
+                                <div class="d-flex">
+                                    <img class=" mb-2 mx-auto d-block
+                                     p-3" src=" {{url('/public/assets/home/certificate.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                    <div class="need-help-progress-bar"></div>
+                                </div>
+                                <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Make Selection
+
+                                </p>
+                            </div>
+                            <h6 class="fs-14 mt-2  text-black text-center">
+                                Simplified online enrolment to give you easy access to uni study.
+                            </h6>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class=" ">
+                            <div class=" h-136px align-items-center">
+                                <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/checked.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Payment Securely
+                                </p>
+                            </div>
+                            <h6 class="fs-14 mt-2  text-black text-center">
+                                Get started on your study journey today.
+                            </h6>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class=" text-center py-5">
+                    <h5 class="btn rounded-0 text-white" style="background-color:#275846;">
+                        Let's get started
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
   </section>
   <script>
