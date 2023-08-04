@@ -263,7 +263,7 @@ class SearchController extends Controller
         } else {
             $type = 'project';
             $keyword = $request->keyword;
-            $projectType = array('');
+            $projectType = $request->projectType ?? [];
             $bids = $request->bids;
             $sort = $request->sort;
             $skill_id = array('');
@@ -309,7 +309,7 @@ class SearchController extends Controller
                         } elseif ($duration === '1 month - 3 month') {
                             $query->orWhereBetween('created_at', [now()->subMonths(3), now()]);
                         } elseif ($duration === '3 month - 6 month') {
-                            $query->orWhereBetween('created_at', [now()->subMonths(6), now()]);
+                            $query->orWhereBetween('created_at', [now()->subMonths(6), now()->subMonths(3)]);
                         } elseif ($duration === '6 month') {
                             $query->orWhere('created_at', '<=', now()->subMonths(6));
                         }
