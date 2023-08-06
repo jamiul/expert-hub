@@ -3,6 +3,20 @@
 
 <head>
   <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+  <style type="text/css">
+    // solution 1:
+    .datepicker {
+        font-size: 0.875em;
+    }
+    /* solution 2: the original datepicker use 20px so replace with the following:*/
+
+    .datepicker td, .datepicker th {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+</style>
 
 </head>
 
@@ -78,7 +92,7 @@
 
                 <div class="card-body pl-lg-0">
                   <div class="">
-                    <!-- Countries -->
+                    <!-- Seminar topics -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class="pr-3">{{ translate('Seminar Topics') }}</span>
                     </h6>
@@ -116,12 +130,21 @@
                         @endforeach
                       </select>
                     </div>
-                    <!-- Hourly Rate -->
+
+                    <!-- Seminar date -->
 
                     <h6 class="text-left mb-3 fs-14 fw-700">
                       <span class=" pr-3">{{ translate('Seminar date') }}</span>
                     </h6>
-
+                    <div class="mb-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="filterDate"
+                        data-date-format="dd/mm/yyyy"
+                        id="datepicker"
+                      >
+                    </div>
 
                     <!-- Rating -->
                     <h6 class="text-left mb-3 fs-14 fw-700">
@@ -281,7 +304,16 @@
   @endsection
 
   @section('script')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript">
+
+$('#datepicker').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
+    });
+    $('#datepicker').datepicker("setDate", new Date());
   function applyFilter() {
     $('#freelancer-filter-form').submit();
   }
