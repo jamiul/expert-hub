@@ -321,16 +321,17 @@ class SearchController extends Controller
                 $projects = $projects->whereIn('type', $projectType);
             }
 
+            // Fixed price filtered data
             if ($fixed_min !== null && $fixed_max !== null) {
                 $projects = $projects->where(function ($query) use ($fixed_min, $fixed_max) {
                     $query->where('type', 'Fixed')->whereBetween('price', [$fixed_min, $fixed_max]);
                 });
             }
 
+            // Hourly filtered data
             if ($hourly_min !== null && $hourly_max !== null) {
-                $projects = $projects->orWhere(function ($query) use ($hourly_min, $hourly_max) {
-                    $query->where('type', 'Hourly')->whereBetween('price', [$hourly_min, $hourly_max]);
-                });
+                $projects = $projects->where('type', 'Hourly')
+                                ->whereBetween('price', [$hourly_min, $hourly_max]);
             }
 
             if ($request->skill_id != null) {
