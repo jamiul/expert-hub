@@ -33,15 +33,15 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    
+
     {
         $scholarships = Scholarship::all();
-      
+
         $subjectCounts = [];
 
         foreach ($scholarships as $scholarship) {
          $subject = $scholarship->fieldStudy_id;
- 
+
          if (!isset($subjectCounts[$subject])) {
         $subjectCounts[$subject] = 0;
     }
@@ -51,7 +51,7 @@ class HomeController extends Controller
 }
 
         return view('frontend.default.index',compact('subjectCounts'));
-        
+
     }
 
     //Admin login
@@ -162,10 +162,11 @@ class HomeController extends Controller
     public function freelancer_details($username)
     {
         $freelancer = User::where('user_name', $username)->first();
+        // dd($freelancer);
         return view('frontend.default.freelancer-single', compact('freelancer'));
     }
     // Freelancer meeting arrange
- 
+
     public function freelancer_meeting($user_name)
     {
         $user = User::where('user_name', $user_name)->first();

@@ -2,11 +2,11 @@
     display: flex;
     align-items: flex-start;
 }
-.single-profile {
+/* .single-profile {
     padding: 30px;
-}
+} */
 .single-profile-boder {
-    border-top: 1px solid rgba(0,0,0,.125);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 .profile-photo {
     margin-right: 40px;
@@ -18,14 +18,14 @@
     border: none !important;
 }
 .left-aside {
-    border-right: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
 }
 h4.view-profile {
     padding-top: 20px;
     padding-left: 25px;
     padding-bottom: 20px;
     font-size: 20px;
-    font-weight:600;
+    font-weight: 600;
 }
 #list-tab .list-group-item {
     padding-left: 35px !important;
@@ -34,18 +34,23 @@ h4.view-profile {
     background-color: #055846 !important;
 }
 .hire-button {
-    display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #055846;
+    /* display: inline-block; */
+    padding: 5px 25px;
+    border: 2px solid #055846;
     border-radius: 20px; /* Rounded border */
 }
 
 .hire-link {
-    color: #000; /* Button text color */
-    text-decoration: none;
+    color: #055846; /* Button text color */
+    text-decoration: none !important;
+    font-weight: 600;
     font-size: 14px;
+    cursor: pointer !important;
 }
-.view-profile-main-single{
+.hire-link:hover {
+    color: #055846;
+}
+.view-profile-main-single {
     border-bottom: 1px solid #c0c0c0 !important;
     padding-bottom: 15px;
 }
@@ -53,7 +58,6 @@ h4.view-profile {
     /* max-width: 500px; */
     margin: auto;
     padding: 20px;
-
 }
 
 .rating {
@@ -83,3 +87,72 @@ h4.view-profile {
     font-size: 16px;
     font-weight: bold;
 }
+@media only screen and (max-width: 768px) {
+    .freelancer-profile-main-section {
+        margin-top: 25px;
+    }
+
+    .freelancer-profile-main-section .container-home {
+        width: 98%;
+        margin: 0 1%;
+    }
+    .frePage-freelancer-name {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .hire-me-button-res-frePage {
+        display: none !important;
+    }
+
+    .freePage-hire-invite-btn-show {
+        width: 80%;
+        margin: 0 10%;
+        bottom: 62px;
+        z-index: 1;
+        position: fixed;
+        height: 50px;
+        background: white;
+    }
+    .freelancer-user-identity-profile-section {
+        margin: 10px 10px !important;
+    }
+    .profile-identity .avatar img {
+        object-fit: cover;
+        max-width: 90%;
+        width: 85%;
+        border-radius: 50%;
+        height: 86%;
+    }
+    .profile-identity .avatar .badge {
+
+        top: calc(23% - 3px);
+        right: calc(25% - 9px);
+    }
+    .frePage-job-rat-part {
+        margin:10px 35px !important;
+    }
+    .frePage-job-rat-part p {
+        margin: 0 15px 0 0 !important;
+    }
+    .freePage-earning-sec-for-responsive{
+        display: none !important;
+    }
+    .freePage-earning-sec-for-sm-responsive{
+        display: block !important;
+    }
+    .freePage-hourlyRate-languages-verifications-responsive{
+        display: block !important;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .freePage-hire-invite-btn-show {
+        display: none !important;
+    }
+    .freePage-earning-sec-for-sm-responsive{
+        display: none !important;
+    }
+    .freePage-hourlyRate-languages-verifications-responsive{
+        display: none !important;
+    }
+}
+
