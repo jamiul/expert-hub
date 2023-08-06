@@ -22,7 +22,6 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        // dd($request->all());
         if ($request->type == 'freelancer') {
             $type = 'freelancer';
             $keyword = $request->keyword;
@@ -173,7 +172,6 @@ class SearchController extends Controller
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
                 $freelancers = $freelancers->where('category_id', $category_ids);
-                // dd($freelancers);
             }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
@@ -229,7 +227,6 @@ class SearchController extends Controller
             $speaks = array('');
             $level =  array('');
             $category_id = array('');
-            // dd($keyword);
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                 ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                 ->pluck('user_id');
@@ -305,9 +302,9 @@ class SearchController extends Controller
                         if ($duration === '1 week') {
                             $query->orWhereBetween('created_at', [now()->subWeek(), now()]);
                         } elseif ($duration === '1 week - 4 week') {
-                            $query->orWhereBetween('created_at', [now()->subWeeks(4), now()]);
+                            $query->orWhereBetween('created_at', [now()->subWeeks(4), now()->subWeek()]);
                         } elseif ($duration === '1 month - 3 month') {
-                            $query->orWhereBetween('created_at', [now()->subMonths(3), now()]);
+                            $query->orWhereBetween('created_at', [now()->subMonths(3), now()->subWeeks(4)]);
                         } elseif ($duration === '3 month - 6 month') {
                             $query->orWhereBetween('created_at', [now()->subMonths(6), now()->subMonths(3)]);
                         } elseif ($duration === '6 month') {
@@ -426,6 +423,6 @@ class SearchController extends Controller
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
             return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
- }
-}
+        }
+    }
 }
