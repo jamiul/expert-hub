@@ -64,7 +64,7 @@
                                         <div class="availability"></div>
                                     </div>
                                 </div>
-                                <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
+                                <!-- <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
                                     <div class="d-flex">
                                         <div class="d-lg-flex justify-content-center align-items-center">
                                             <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/success.png')}}" alt="">
@@ -72,7 +72,7 @@
                                         </div>
                                         <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="col-lg-4 col-2 ">
@@ -87,6 +87,15 @@
                                         <img class="p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
+                            <div class="d-flex">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="{{url('/public/assets/frontend/default/img/freelancer_profile/success.png')}}" alt="">
+                                    <p class="ml-1 mb-0 fs-15 text-black fw-600" style="margin-right: 70px;">100% Job Success</p>
+                                </div>
+                                <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
                             </div>
                         </div>
                     </div>
@@ -109,16 +118,11 @@
 
                 <div class="row">
                     <!-- left side -->
-                    <div class="col-4 left-aside pr-0">
+                    <div class="col-lg-4 col-12 left-aside pr-0">
                         <!-- <div class="view-profile-main-single"></div> -->
-                        <div class="mb-20">
-                            <h4 class="view-profile">View Profile</h4>
-                        </div>
-                        <div class="list-group border-bottom pb-3" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
-                            <a class="list-group-item list-group-item-action " id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
-                        </div>
-                        <div class="border-bottom">
+
+                        <!-- earning-sec-for-responsive-start -->
+                        <div class="border-bottom freePage-earning-sec-for-sm-responsive">
                             <div class="d-flex justify-content-between mt-3 mx-4">
                                 <div>
                                     <h4 class="fs-16 fw-700 text-black mb-1">$9K+</h4>
@@ -134,6 +138,34 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- earning-sec-for-responsive-end -->
+
+                        <!-- <div class="border-bottom">
+                            <div class="mb-20">
+                                <h4 class="view-profile">View Profile</h4>
+                            </div>
+                            <div class="list-group  pb-3" id="list-tab" role="tablist">
+                                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
+                                <a class="list-group-item list-group-item-action " id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
+                            </div>
+                        </div> -->
+                        <div class="border-bottom freePage-earning-sec-for-responsive">
+                            <div class="d-flex justify-content-between mt-3 mx-4">
+                                <div>
+                                    <h4 class="fs-16 fw-700 text-black mb-1">$9K+</h4>
+                                    <p class="fs-14 text-black">Total Earnings</p>
+                                </div>
+                                <div>
+                                    <h4 class="fs-16 fw-700 text-black mb-1">14</h4>
+                                    <p class="fs-14 text-black">Total Jobs</p>
+                                </div>
+                                <div>
+                                    <h4 class="fs-16 fw-700 text-black mb-1">359</h4>
+                                    <p class="fs-14 text-black">Total Hours</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class=" mt-5">
                             <div class="mx-4">
                                 <div>
@@ -152,9 +184,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <!-- details side or right side -->
-                    <div class="col-8 pl-0">
+                    <div class="col-lg-8 col-12 pl-0">
                         <div class="border-bottom">
                             <div class="tab-content mx-4" id="nav-tabContent">
                                 <div class="tab-pane fade show active mt-4" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
@@ -322,8 +355,31 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- responsive after hourly rate,Languages,Verifications start -->
+                <div class="freePage-hourlyRate-languages-verifications-responsive">
+                    <div class=" mt-5">
+                        <div class="mx-4">
+                            <div>
+                                <h4 class="fs-18 fw-600 mb-2">Hours per week</h4>
+                                <p class="fs-14">More than 30 hrs/week</p>
+                            </div>
+                            <div class="mt-4">
+                                <h4 class="fs-18 fw-600 mb-2">Languages</h4>
+                                <p class="fs-14">English: Native or Bilingual</p>
+                            </div>
+                            <div class="mt-4">
+                                <h4 class="fs-18 fw-600 mb-2">Verifications
+                                </h4>
+                                <p class="fs-14 mb-0">Phone Number: Verified</p>
+                                <p class="fs-14">ID: Verified</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- responsive after hourly rate,Languages,Verifications end -->
+
+            </div>
             <div class="border mt-5">
                 <!-- Employment history -->
                 <div class="mx-4 mt-4 border-bottom mb-3">
@@ -381,9 +437,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- <div class="card-body mt-5">
+        <!-- <div class="card-body mt-5">
         <div class="media align-items-center d-block d-md-flex container">
             <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
                 <span class="avatar avatar-xxl">
@@ -802,33 +857,33 @@
         </div>
     </div> -->
 
-    <script>
-        function updateTime() {
-            const localTimeElement = document.getElementById('local-time');
-            const currentDate = new Date();
+        <script>
+            function updateTime() {
+                const localTimeElement = document.getElementById('local-time');
+                const currentDate = new Date();
 
-            const options = {
-                hour: 'numeric',
-                minute: 'numeric',
-                // second: 'numeric'
-            };
-            const localTimeString = currentDate.toLocaleTimeString(undefined, options);
+                const options = {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    // second: 'numeric'
+                };
+                const localTimeString = currentDate.toLocaleTimeString(undefined, options);
 
-            localTimeElement.textContent = localTimeString + ' local Time ';
+                localTimeElement.textContent = localTimeString + ' local Time ';
 
-            // Set the interval to update the time every second
-            setTimeout(updateTime, 1000);
-        }
+                // Set the interval to update the time every second
+                setTimeout(updateTime, 1000);
+            }
 
-        // Call the function to update the time initially
-        updateTime();
-    </script>
-    @endsection
+            // Call the function to update the time initially
+            updateTime();
+        </script>
+        @endsection
 
 
-    @section('modal')
-    @include('frontend.default.partials.bookmark_remove_modal')
-    @endsection
+        @section('modal')
+        @include('frontend.default.partials.bookmark_remove_modal')
+        @endsection
 </body>
 
 </html>

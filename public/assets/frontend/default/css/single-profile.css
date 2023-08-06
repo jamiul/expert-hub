@@ -124,26 +124,35 @@ h4.view-profile {
         height: 86%;
     }
     .profile-identity .avatar .badge {
-        /* position: absolute;
-        width: calc(100% + 6px);
-        height: calc(100% + 6px);
-        border: 3px solid #fff;
-        top: -3px;
-        left: -3px;
-        content: "";
-        border-radius: 50%; */
+
         top: calc(23% - 3px);
         right: calc(25% - 9px);
     }
     .frePage-job-rat-part {
-        margin: 0 10px !important;
+        margin:10px 35px !important;
     }
     .frePage-job-rat-part p {
-        margin: 0 !important;
+        margin: 0 15px 0 0 !important;
+    }
+    .freePage-earning-sec-for-responsive{
+        display: none !important;
+    }
+    .freePage-earning-sec-for-sm-responsive{
+        display: block !important;
+    }
+    .freePage-hourlyRate-languages-verifications-responsive{
+        display: block !important;
     }
 }
 @media only screen and (min-width: 768px) {
     .freePage-hire-invite-btn-show {
         display: none !important;
     }
+    .freePage-earning-sec-for-sm-responsive{
+        display: none !important;
+    }
+    .freePage-hourlyRate-languages-verifications-responsive{
+        display: none !important;
+    }
 }
+
