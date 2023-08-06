@@ -111,6 +111,7 @@ Route::get('/success-stories', function (){
     return view('frontend.default.success-stories');
 })->name('success-stories');
 Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
+Route::get('/whyfreelancerEdu','WhyScholarshipController@whyFreelancerEdu')->name('whyfreelanceredu');
 Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
 Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
