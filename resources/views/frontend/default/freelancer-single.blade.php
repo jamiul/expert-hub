@@ -102,16 +102,18 @@
                 </div>
                 <!-- for responsive hire me and invite button  start-->
                 <div class=" freePage-hire-invite-btn-show">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="hire-button  ">
-                            <a href="{{ route('invition_for_hire_freelancer', $freelancer->user_name) }}" class="hire-link">Hire Me</a>
+                    <div class=" py-2 px-4">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="hire-button  ">
+                                <a href="{{ route('invition_for_hire_freelancer', $freelancer->user_name) }}" class="hire-link">Hire Me</a>
+                            </div>
+                            <div class="freePage-invite-button-for-responsive">
+                                <a class="btn text-white fw-600 fs-14" style=" padding: 6px 35px;" href="#">Invite</a>
+                            </div>
+                            <!-- <div class="rounded-circle" style="border:1px solid #ddd;">
+                                <img class="p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                            </div> -->
                         </div>
-                        <div class="">
-                            <a class="btn text-white fw-600 fs-14" style="background-color:#275846; border-radius:20px; padding: 6px 35px;" href="#">Invite</a>
-                        </div>
-                        <!-- <div class="rounded-circle" style="border:1px solid #ddd;">
-                            <img class="p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
-                        </div> -->
                     </div>
                 </div>
                 <!-- for responsive hire me and invite button end -->
@@ -123,16 +125,16 @@
 
                         <!-- earning-sec-for-responsive-start -->
                         <div class="border-bottom freePage-earning-sec-for-sm-responsive">
-                            <div class="d-flex justify-content-between mt-3 mx-4">
-                                <div>
+                            <div class="row mt-3 mx-4">
+                                <div class="col-4 p-0">
                                     <h4 class="fs-16 fw-700 text-black mb-1">$9K+</h4>
                                     <p class="fs-14 text-black">Total Earnings</p>
                                 </div>
-                                <div>
+                                <div class="col-4 p-0">
                                     <h4 class="fs-16 fw-700 text-black mb-1">14</h4>
                                     <p class="fs-14 text-black">Total Jobs</p>
                                 </div>
-                                <div>
+                                <div class="col-4 p-0">
                                     <h4 class="fs-16 fw-700 text-black mb-1">359</h4>
                                     <p class="fs-14 text-black">Total Hours</p>
                                 </div>
@@ -140,7 +142,7 @@
                         </div>
                         <!-- earning-sec-for-responsive-end -->
 
-                        <!-- <div class="border-bottom">
+                        <div class="border-bottom">
                             <div class="mb-20">
                                 <h4 class="view-profile">View Profile</h4>
                             </div>
@@ -148,39 +150,40 @@
                                 <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Full Stack Development</a>
                                 <a class="list-group-item list-group-item-action " id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
                             </div>
-                        </div> -->
-                        <div class="border-bottom freePage-earning-sec-for-responsive">
-                            <div class="d-flex justify-content-between mt-3 mx-4">
-                                <div>
-                                    <h4 class="fs-16 fw-700 text-black mb-1">$9K+</h4>
-                                    <p class="fs-14 text-black">Total Earnings</p>
-                                </div>
-                                <div>
-                                    <h4 class="fs-16 fw-700 text-black mb-1">14</h4>
-                                    <p class="fs-14 text-black">Total Jobs</p>
-                                </div>
-                                <div>
-                                    <h4 class="fs-16 fw-700 text-black mb-1">359</h4>
-                                    <p class="fs-14 text-black">Total Hours</p>
+                        </div>
+                        <div class="freePage-earning-sec-for-responsive">
+                            <div class="border-bottom ">
+                                <div class="d-flex justify-content-between mt-3 mx-4">
+                                    <div>
+                                        <h4 class="fs-16 fw-700 text-black mb-1">$9K+</h4>
+                                        <p class="fs-14 text-black">Total Earnings</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="fs-16 fw-700 text-black mb-1">14</h4>
+                                        <p class="fs-14 text-black">Total Jobs</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="fs-16 fw-700 text-black mb-1">359</h4>
+                                        <p class="fs-14 text-black">Total Hours</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class=" mt-5">
-                            <div class="mx-4">
-                                <div>
-                                    <h4 class="fs-18 fw-600 mb-2">Hours per week</h4>
-                                    <p class="fs-14">More than 30 hrs/week</p>
-                                </div>
-                                <div class="mt-4">
-                                    <h4 class="fs-18 fw-600 mb-2">Languages</h4>
-                                    <p class="fs-14">English: Native or Bilingual</p>
-                                </div>
-                                <div class="mt-4">
-                                    <h4 class="fs-18 fw-600 mb-2">Verifications
-                                    </h4>
-                                    <p class="fs-14 mb-0">Phone Number: Verified</p>
-                                    <p class="fs-14">ID: Verified</p>
+                            <div class=" mt-5">
+                                <div class="mx-4">
+                                    <div>
+                                        <h4 class="fs-18 fw-600 mb-2">Hours per week</h4>
+                                        <p class="fs-14">More than 30 hrs/week</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="fs-18 fw-600 mb-2">Languages</h4>
+                                        <p class="fs-14">English: Native or Bilingual</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="fs-18 fw-600 mb-2">Verifications
+                                        </h4>
+                                        <p class="fs-14 mb-0">Phone Number: Verified</p>
+                                        <p class="fs-14">ID: Verified</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
