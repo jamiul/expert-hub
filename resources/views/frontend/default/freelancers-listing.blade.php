@@ -157,25 +157,6 @@
                     <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
                   </h6>
                   <div class="mb-5 border-bottom">
-<<<<<<< HEAD
-                    <div class="mb-2 mt-3">
-                      <select multiple class="select2 form-control aiz-selectpicker rounded-1" data-toggle="select2"
-                        data-live-search="true">
-                        <option selected>
-                          {{ translate('Any hourly rate') }}
-                        </option>
-                        <option name="rate1" onchange="applyFilter()" value="10">
-                          < $10/hour </option>
-                        </option name="rate1" onchange="applyFilter()" value="20">
-                        $10-20/hour </option>
-                        <option name="rate1" onchange="applyFilter()" value="30">
-                          $20-30/hour </option>
-                        </option>
-                        <option name="rate1" onchange="applyFilter()" value="40">
-                          $30-40/hour </option>
-                        <option name="rate1" onchange="applyFilter()" value="50">
-                          > $40/hour </option>
-=======
                     <div class="mb-2 mt-3" style="width: 245px;">
                       <select
                         class="select2 form-control aiz-selectpicker rounded-1"
@@ -188,7 +169,6 @@
                         @foreach (getHourlyRate() as $key => $rate)
                         <option value="{{ $key }}" @if (in_array($key, $hourly_rate)) selected @endif> {{ $rate }} </option>
                         @endforeach
->>>>>>> d03ee2a0babaefea8c567f6e4852867bd26632c1
                       </select>
                     </div>
                   </div>

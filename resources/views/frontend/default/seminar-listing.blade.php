@@ -12,7 +12,6 @@
 
 <body>
     @extends('frontend.default.layouts.app')
-
     @section('content')
         <section class="mt-5">
             <div class="container-main-scholarship">
@@ -285,574 +284,602 @@
                         </div>
 
                         <!-- Freelancer List -->
-                    
-                        <div class="col-xl-9 col-lg-9 shadow-md c-pointer " style="background: #F2F7F2;">
-                            <input type="hidden" name="type" value="">
-                            <div class="row py-4  all-scholarship-list">
-                                <div class="col-lg-12 border-gray-400">
-                                    <div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <p class="fs-18 fw-700">
-                                                <u>Foundations of PLS-SEM Using SmartPLS 4</u>
-                                            </p>
-                                        </div>
 
-                                        <div class="col-10">
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class=" fs-16 fw-700 pb-1 "
-                                                    style="border-bottom: 2px solid  #000003; color: #000003">
-
-                                                </a>
+                        <div class="col-xl-9 col-lg-9  c-pointer ">
+                            <div class="row" style="background: #F2F7F2;">
+                                <div class="col-lg-12">
+                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
+                                        <div class="row   ">
+                                            <div class="col-10">
+                                                <p class="fs-18 fw-700"style="color:#5ABC76;">
+                                                    <u>Foundations of PLS-SEM Using SmartPLS 4</u>
+                                                </p>
                                             </div>
-                                            <div class="row mb-2">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar dates:
-                                                    </p>
+                                            <div class="col-10">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#" class=" fs-16 fw-700 pb-1 "
+                                                        style="border-bottom: 2px solid  #000003; color: #000003">
+                                                    </a>
                                                 </div>
-                                                <div class="col-9 pl-0">
+                                                <div class="row mb-2">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar dates:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9 pl-0">
 
-                                                    <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri Sep 8,
-                                                        2023, from 10am – 3pm daily (Australian Eastern Standard Time)
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                            Sep 8,
+                                                            2023, from 10am – 3pm daily (Australian Eastern Standard Time)
+                                                        </p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar Summary:
-                                                    </p>
-                                                </div>
-                                                <div class="col-8 pl-0">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar Summary:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-8 pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
-                                                        seminar will give you a strong working understanding of methods used
-                                                        to design and analyse single-case experimental design studies (i.e.,
-                                                        n-of-1 trials, personalised trials, intrasubject, single-subjects,
-                                                        etc.), including the assumptions underlying these methods and their
-                                                        limitations as well as their benefits. Demonstrations using real
-                                                        datasets will be incorporated together with hand-on exercise so that
-                                                        you will learn both the basic logic of single-case experiments and
-                                                        how to use them in your own research. In-depth interpretation of the
-                                                        obtained results will be made. An official ConsultantEdu,
-                                                        certificate of completion is provided at the conclusion of the
-                                                        seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                        <u>More</u>
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                            seminar will give you a strong working understanding of methods
+                                                            used
+                                                            to design and analyse single-case experimental design studies
+                                                            (i.e.,
+                                                            n-of-1 trials, personalised trials, intrasubject,
+                                                            single-subjects,
+                                                            etc.), including the assumptions underlying these methods and
+                                                            their
+                                                            limitations as well as their benefits. Demonstrations using real
+                                                            datasets will be incorporated together with hand-on exercise so
+                                                            that
+                                                            you will learn both the basic logic of single-case experiments
+                                                            and
+                                                            how to use them in your own research. In-depth interpretation of
+                                                            the
+                                                            obtained results will be made. An official ConsultantEdu,
+                                                            certificate of completion is provided at the conclusion of the
+                                                            seminar. For European PhD students, each seminar offers 2 ECTS..
+                                                            <u><a href="{{ route('seminar-details') }}">More</a></u>
+                                                        </p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row mt-lg-3">
-                                                <div class="col-3 ">
-                                                    <p class="fre-scsh-left-side-title mb-1 ">
-                                                        Instructors:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9  pl-0">
+                                                <div class="row mt-lg-3">
+                                                    <div class="col-3 ">
+                                                        <p class="fre-scsh-left-side-title mb-1 ">
+                                                            Instructors:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Field of Study:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Field of Study:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        raihan
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            raihan
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Seminar Mode:
-                                                    </p>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Seminar Mode:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            Live via Zoom
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Software Package:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        Live via Zoom
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            R
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Software Package:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Language:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        R
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Language:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        English
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div>
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Register Now</span>
-                                                </a>
-
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Zoom Link</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <p class="fs-18 fw-700">
-                                                <u>Foundations of PLS-SEM Using SmartPLS 4</u>
-                                            </p>
-                                        </div>
-
-                                        <div class="col-10">
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class=" fs-16 fw-700 pb-1 "
-                                                    style="border-bottom: 2px solid  #000003; color: #000003">
-
-                                                </a>
-                                            </div>
-                                            <div class="row mb-2">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar dates:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9 pl-0">
-
-                                                    <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri Sep 8,
-                                                        2023, from 10am – 3pm daily (Australian Eastern Standard Time)
-                                                    </p>
-
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            English
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar Summary:
-                                                    </p>
-                                                </div>
-                                                <div class="col-8 pl-0">
+                                            <div class="col-2">
+                                                <div>
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Register Now</span>
+                                                    </a>
 
-                                                    <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
-                                                        seminar will give you a strong working understanding of methods used
-                                                        to design and analyse single-case experimental design studies (i.e.,
-                                                        n-of-1 trials, personalised trials, intrasubject, single-subjects,
-                                                        etc.), including the assumptions underlying these methods and their
-                                                        limitations as well as their benefits. Demonstrations using real
-                                                        datasets will be incorporated together with hand-on exercise so that
-                                                        you will learn both the basic logic of single-case experiments and
-                                                        how to use them in your own research. In-depth interpretation of the
-                                                        obtained results will be made. An official ConsultantEdu,
-                                                        certificate of completion is provided at the conclusion of the
-                                                        seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                        <u>More</u>
-                                                    </p>
-
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Zoom Link</span>
+                                                    </a>
                                                 </div>
-                                            </div>
-                                            <div class="row mt-lg-3">
-                                                <div class="col-3 ">
-                                                    <p class="fre-scsh-left-side-title mb-1 ">
-                                                        Instructors:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Field of Study:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        raihan
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Seminar Mode:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        Live via Zoom
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Software Package:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        R
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Language:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        English
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div>
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Register Now</span>
-                                                </a>
-
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Zoom Link</span>
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row border-bottom border-gray-600">
-                                        <div class="col-10">
-                                            <p class="fs-18 fw-700">
-                                                <u>Foundations of PLS-SEM Using SmartPLS 4</u>
-                                            </p>
-                                        </div>
-
-                                        <div class="col-10">
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class=" fs-16 fw-700 pb-1 "
-                                                    style="border-bottom: 2px solid  #000003; color: #000003">
-
-                                                </a>
+                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4">
+                                        <div class="row   ">
+                                            <div class="col-10">
+                                                <p class="fs-18 fw-700"style="color:#5ABC76;">
+                                                    <u>Foundations of PLS-SEM Using SmartPLS 4</u>
+                                                </p>
                                             </div>
-                                            <div class="row mb-2">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar dates:
-                                                    </p>
+                                            <div class="col-10">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#" class=" fs-16 fw-700 pb-1 "
+                                                        style="border-bottom: 2px solid  #000003; color: #000003">
+                                                    </a>
                                                 </div>
-                                                <div class="col-9 pl-0">
+                                                <div class="row mb-2">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar dates:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9 pl-0">
 
-                                                    <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri Sep 8,
-                                                        2023, from 10am – 3pm daily (Australian Eastern Standard Time)
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                            Sep 8,
+                                                            2023, from 10am – 3pm daily (Australian Eastern Standard Time)
+                                                        </p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar Summary:
-                                                    </p>
-                                                </div>
-                                                <div class="col-8 pl-0">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar Summary:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-8 pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
-                                                        seminar will give you a strong working understanding of methods used
-                                                        to design and analyse single-case experimental design studies (i.e.,
-                                                        n-of-1 trials, personalised trials, intrasubject, single-subjects,
-                                                        etc.), including the assumptions underlying these methods and their
-                                                        limitations as well as their benefits. Demonstrations using real
-                                                        datasets will be incorporated together with hand-on exercise so that
-                                                        you will learn both the basic logic of single-case experiments and
-                                                        how to use them in your own research. In-depth interpretation of the
-                                                        obtained results will be made. An official ConsultantEdu,
-                                                        certificate of completion is provided at the conclusion of the
-                                                        seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                        <u>More</u>
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                            seminar will give you a strong working understanding of methods
+                                                            used
+                                                            to design and analyse single-case experimental design studies
+                                                            (i.e.,
+                                                            n-of-1 trials, personalised trials, intrasubject,
+                                                            single-subjects,
+                                                            etc.), including the assumptions underlying these methods and
+                                                            their
+                                                            limitations as well as their benefits. Demonstrations using real
+                                                            datasets will be incorporated together with hand-on exercise so
+                                                            that
+                                                            you will learn both the basic logic of single-case experiments
+                                                            and
+                                                            how to use them in your own research. In-depth interpretation of
+                                                            the
+                                                            obtained results will be made. An official ConsultantEdu,
+                                                            certificate of completion is provided at the conclusion of the
+                                                            seminar. For European PhD students, each seminar offers 2 ECTS..
+                                                            <u><a href="{{ route('scholarship.create') }}">More</a></u>
+                                                        </p>
 
+                                                    </div>
                                                 </div>
-                                                
-                                            </div>
-                                            <div class="row mt-lg-3">
-                                                <div class="col-3 ">
-                                                    <p class="fre-scsh-left-side-title mb-1 ">
-                                                        Instructors:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9  pl-0">
+                                                <div class="row mt-lg-3">
+                                                    <div class="col-3 ">
+                                                        <p class="fre-scsh-left-side-title mb-1 ">
+                                                            Instructors:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Field of Study:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Field of Study:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        raihan
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            raihan
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Seminar Mode:
-                                                    </p>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Seminar Mode:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            Live via Zoom
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Software Package:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        Live via Zoom
-                                                    </p>
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            R
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Software Package:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Language:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
 
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        R
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Language:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        English
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div>
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Register Now</span>
-                                                </a>
-
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Zoom Link</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <p class="fs-18 fw-700">
-                                                <u>Foundations of PLS-SEM Using SmartPLS 4</u>
-                                            </p>
-                                        </div>
-
-                                        <div class="col-10">
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class=" fs-16 fw-700 pb-1 "
-                                                    style="border-bottom: 2px solid  #000003; color: #000003">
-
-                                                </a>
-                                            </div>
-                                            <div class="row mb-2">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar dates:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9 pl-0">
-
-                                                    <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri Sep 8,
-                                                        2023, from 10am – 3pm daily (Australian Eastern Standard Time)
-                                                    </p>
-
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            English
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <p class="fre-scsh-left-side-title mb-0">
-                                                        Seminar Summary:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9 pl-0">
+                                            <div class="col-2">
+                                                <div>
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Register Now</span>
+                                                    </a>
 
-                                                    <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
-                                                        seminar will give you a strong working understanding of methods used
-                                                        to design and analyse single-case experimental design studies (i.e.,
-                                                        n-of-1 trials, personalised trials, intrasubject, single-subjects,
-                                                        etc.), including the assumptions underlying these methods and their
-                                                        limitations as well as their benefits. Demonstrations using real
-                                                        datasets will be incorporated together with hand-on exercise so that
-                                                        you will learn both the basic logic of single-case experiments and
-                                                        how to use them in your own research. In-depth interpretation of the
-                                                        obtained results will be made. An official ConsultantEdu,
-                                                        certificate of completion is provided at the conclusion of the
-                                                        seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                        <u>More</u>
-                                                    </p>
-
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Zoom Link</span>
+                                                    </a>
                                                 </div>
-                                            </div>
-                                            <div class="row mt-lg-3">
-                                                <div class="col-3 ">
-                                                    <p class="fre-scsh-left-side-title mb-1 ">
-                                                        Instructors:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
-                                                    <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
-                                                        Associate Professor of Statistics and Director | University at
-                                                        Albany</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Field of Study:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        raihan
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Seminar Mode:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        Live via Zoom
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Software Package:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        R
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-3  pr-0">
-                                                    <p class=" fre-scsh-left-side-title ">
-                                                        Language:
-                                                    </p>
-                                                </div>
-                                                <div class="col-lg-9  pl-0">
-
-                                                    <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                        English
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div>
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Register Now</span>
-                                                </a>
-
-                                                <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                    href="" data-target="#bookmark-remove-modal">
-                                                    <i class="las la-bookmark fs-16 fw-700"></i>
-                                                    <span>Zoom Link</span>
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4">
+                                        <div class="row   ">
+                                            <div class="col-10">
+                                                <p class="fs-18 fw-700"style="color:#5ABC76;">
+                                                    <u>Foundations of PLS-SEM Using SmartPLS 4</u>
+                                                </p>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#" class=" fs-16 fw-700 pb-1 "
+                                                        style="border-bottom: 2px solid  #000003; color: #000003">
+                                                    </a>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar dates:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9 pl-0">
+
+                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                            Sep 8,
+                                                            2023, from 10am – 3pm daily (Australian Eastern Standard Time)
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar Summary:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-8 pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                            seminar will give you a strong working understanding of methods
+                                                            used
+                                                            to design and analyse single-case experimental design studies
+                                                            (i.e.,
+                                                            n-of-1 trials, personalised trials, intrasubject,
+                                                            single-subjects,
+                                                            etc.), including the assumptions underlying these methods and
+                                                            their
+                                                            limitations as well as their benefits. Demonstrations using real
+                                                            datasets will be incorporated together with hand-on exercise so
+                                                            that
+                                                            you will learn both the basic logic of single-case experiments
+                                                            and
+                                                            how to use them in your own research. In-depth interpretation of
+                                                            the
+                                                            obtained results will be made. An official ConsultantEdu,
+                                                            certificate of completion is provided at the conclusion of the
+                                                            seminar. For European PhD students, each seminar offers 2 ECTS..
+                                                            <u><a href="{{ route('scholarship.create') }}">More</a></u>
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-lg-3">
+                                                    <div class="col-3 ">
+                                                        <p class="fre-scsh-left-side-title mb-1 ">
+                                                            Instructors:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Field of Study:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            raihan
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Seminar Mode:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            Live via Zoom
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Software Package:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            R
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Language:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            English
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div>
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Register Now</span>
+                                                    </a>
+
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Zoom Link</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="all-scholarship-list  mb-4">
+                                        <div class="row   ">
+                                            <div class="col-10">
+                                                <p class="fs-18 fw-700"style="color:#5ABC76;">
+                                                    <u>Foundations of PLS-SEM Using SmartPLS 4</u>
+                                                </p>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#" class=" fs-16 fw-700 pb-1 "
+                                                        style="border-bottom: 2px solid  #000003; color: #000003">
+                                                    </a>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar dates:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9 pl-0">
+
+                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                            Sep 8,
+                                                            2023, from 10am – 3pm daily (Australian Eastern Standard Time)
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                            Seminar Summary:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-8 pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                            seminar will give you a strong working understanding of methods
+                                                            used
+                                                            to design and analyse single-case experimental design studies
+                                                            (i.e.,
+                                                            n-of-1 trials, personalised trials, intrasubject,
+                                                            single-subjects,
+                                                            etc.), including the assumptions underlying these methods and
+                                                            their
+                                                            limitations as well as their benefits. Demonstrations using real
+                                                            datasets will be incorporated together with hand-on exercise so
+                                                            that
+                                                            you will learn both the basic logic of single-case experiments
+                                                            and
+                                                            how to use them in your own research. In-depth interpretation of
+                                                            the
+                                                            obtained results will be made. An official ConsultantEdu,
+                                                            certificate of completion is provided at the conclusion of the
+                                                            seminar. For European PhD students, each seminar offers 2 ECTS..
+                                                            <u><a href="{{ route('scholarship.create') }}">More</a></u>
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-lg-3">
+                                                    <div class="col-3 ">
+                                                        <p class="fre-scsh-left-side-title mb-1 ">
+                                                            Instructors:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
+                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                            Associate Professor of Statistics and Director | University at
+                                                            Albany</p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Field of Study:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            raihan
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Seminar Mode:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            Live via Zoom
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Software Package:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            R
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3  pr-0">
+                                                        <p class=" fre-scsh-left-side-title ">
+                                                            Language:
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-9  pl-0">
+
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                            English
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div>
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Register Now</span>
+                                                    </a>
+
+                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
+                                                        href="" data-target="#bookmark-remove-modal">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span>Zoom Link</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                 </form>
-
             </div>
             <div class="mt-5 pb-2 " style="background-color:#F2F7F2;">
                 <div class="">
