@@ -33,7 +33,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{translate('Title')}}</th>
+                   Pf     <th>{{translate('Title')}}</th>
                         <th data-breakpoints="lg">{{translate('Department')}}</th>
                         <th data-breakpoints="lg">{{translate('Types')}}</th>
                         <th data-breakpoints="lg">{{translate('Date')}}</th>
