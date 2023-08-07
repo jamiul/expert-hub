@@ -114,6 +114,15 @@ h4.view-profile {
         height: 50px;
         background: white;
     }
+    .freePage-sign-login-btn-show {
+        width: 100%;
+        /* marg?in: 0 10%; */
+        bottom: 60px;
+        z-index: 3;
+        position: fixed;
+        height: 85px;
+        background: white;
+    }
     .freelancer-user-identity-profile-section {
         margin: 10px 10px !important;
     }
@@ -159,6 +168,9 @@ h4.view-profile {
 }
 @media only screen and (min-width: 991px) {
     .freePage-hire-invite-btn-show {
+        display: none !important;
+    }
+    .freePage-sign-login-btn-show {
         display: none !important;
     }
     .freePage-earning-sec-for-sm-responsive{
