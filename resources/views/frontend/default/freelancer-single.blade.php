@@ -91,7 +91,7 @@
                                             $users = \App\Models\User::where('user_type', 'client' )->get();
                                         @endphp
 
-                                        @if(Auth::check() &&  $users->contains(Auth::user()) )
+                                        @if(!Auth::check() || $users->contains(Auth::user()) )
                                         <div class="hire-button hire-me-button-res-frePage ">
                                             <a href="{{ route('invition_for_hire_freelancer', $freelancer->user_name) }}" class="hire-link">Hire Me</a>
                                         </div>
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <!-- for responsive hire me and invite button  start-->
-                    @if(!Auth::check())
+                    {{-- @if(!Auth::check())
                     <div class=" freePage-sign-login-btn-show" >
                         <div class="py-2 px-4">
                             <div class="d-flex flex-column">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                     </div>
-                    @else
+                    @else --}}
                     <div class=" freePage-hire-invite-btn-show">
                         <div class=" py-2 px-4">
                             <div class="d-flex align-items-center justify-content-between">
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    @endif
+                    {{-- @endif --}}
                     <!-- for responsive hire me and invite button end -->
 
                     <div class="row">
@@ -196,7 +196,7 @@
                                     <a class="list-group-item list-group-item-action " id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">All work</a>
                                 </div>
                             </div>
-                            @if(!Auth::check())
+                            {{-- @if(!Auth::check())
                             <div class="freePage-earning-sec-for-responsive bg-gray border-bottom">
                                 <div class="p-4">
                                     <h4 class="text-black fs-18 fw-600 pb-3">Ready to work with {{ $freelancer->name }}?</h4>
@@ -205,7 +205,7 @@
                                     <p class="text-center fs-14 fw-600 text-black pt-3">Already have an account?<a href=href="{{ route('login') }}"> Log in</a></p>
                                 </div>
                             </div>
-                            @endif
+                            @endif --}}
                             <div class="freePage-earning-sec-for-responsive">
                                 <div class="border-bottom ">
                                     <div class="d-flex justify-content-between mt-3 mx-4">
@@ -244,22 +244,59 @@
                             </div>
     <!-- Education -->
                         <div class="mx-4 mt-4 border-bottom mb-3">
-                        <div class="">
+                            <div class="">
                                 <h4 class="h6 fw-700 mb-0 fs-18 "> {{ translate('Education') }}</h4>
+                            </div>
+                                <div class="">
+                                    <ul class="list-group list-group-flush">
+                                    @foreach ($freelancer->education_details as $key => $education)
+
+                                        <li class="list-group-item px-0">
+                                            <h6 class="fw-500 fs-16 mb-1">{{$education->school_name }}</h6>
+                                            <p class="mb-0 text-muted">{{ $education->degree }} | {{ $education->passing_year }} </p>
+
+                                        </li>
+                                    @endforeach
+                                    </ul>
+                                </div>
                         </div>
-                        <div class="">
-                        <ul class="list-group list-group-flush">
-                @foreach ($freelancer->education_details as $key => $education)
 
-                            <li class="list-group-item px-0">
-                                <h6 class="fw-500 fs-16 mb-1">{{$education->school_name }}</h6>
-                                <p class="mb-0 text-muted">{{ $education->degree }} | {{ $education->passing_year }} </p>
+                        <div class=" mt-5">
+                            <!-- Employment history -->
+                            <div class="mx-4 mt-4 border-bottom mb-3">
+                                <div class="">
+                                    <h4 class="h6 fw-700 mb-0 fs-18"> {{ translate('Employment history') }}</h4>
+                                </div>
+                                <div class="pb-3">
+                                    <ul class="list-group list-group-flush">
+                                        @foreach ($freelancer->workExperiences as $key => $experience)
 
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
+                                        <li class="list-group-item px-0">
+                                            <div class="d-flex align-items-center">
+                                                <h6 class="fw-500 fs-16 mb-0 mr-1">{{ $experience->designation }}</h6> |
+                                                <a class='ml-1 fw-500 fs-16 ' style="color:black;" href="{{ $experience->company_website }}" target="_blank">{{ $experience->company_name }}</a>
+                                            </div>
+                                            <ul class="list-unstyled text-secondary mb-0">
+                                                <li>
+
+                                                </li>
+                                                @if ($experience->present == '1')
+                                                <li>{{ Carbon\Carbon::parse($experience->start)->toFormattedDateString() }} -
+                                                    {{ translate('Present') }}
+                                                </li>
+                                                @else
+                                                <li>{{ Carbon\Carbon::parse($experience->start)->toFormattedDateString() }} -
+                                                    {{ Carbon\Carbon::parse($experience->end)->toFormattedDateString() }}
+                                                </li>
+                                                @endif
+                                                <li class="small">{{ $experience->description }}</li>
+                                            </ul>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         <!-- details side or right side -->
                         <div class="col-lg-8 col-12 pl-0">
@@ -311,7 +348,7 @@
                                         as $key => $review)
                                         <div class="border-bottom">
                                             @if ($review->project)
-                                            <h4 class="fw-600 fs-18 mb-1 lh-1-6" style="color:#275846;">{{ $review->project->name }}</h4>
+                                            <h4 class="fw-600 fs-18 mb-1 lh-1-6 text-success" >{{ $review->project->name }}</h4>
                                             @else
                                             <h4 class="fw-600 fs-14 mb-1 lh-1-6">{{ translate('N/A') }}</h4>
                                             @endif
@@ -350,7 +387,7 @@
                                     </ul>
                                 </div>
                                 <div class="border-bottom mt-3">
-                                    <h2 class="fw-600 fs-18" style="color:#275846;">Quick Base App Development</h2>
+                                    <h2 class="fw-600 fs-18 text-success">Quick Base App Development</h2>
                                     <div class="d-flex">
                                         <div class="date-range ml-1">
                                             Mar 30, 2021 - Jun 17, 2022
@@ -474,10 +511,10 @@
         <div class="card-body p-0 mt-3">
             <div class="row gutters-15">
                 @foreach($freelancer->services as $service)
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card rounded-2 border-gray-light overflow-hidden hov-box">
-                        <a href="{{ route('service.show', $service->slug) }}"><img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212"></a>
-                        <div class="card-body">
+                        <a href="{{ route('service.show', $service->slug) }}"><img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="170" width="150"></a>
+                        <div class="card-body pb-1">
                             <div class="d-flex mb-2">
                                 <span class="mr-2"><img src="{{ custom_asset($service->user->photo) }}" alt="{{ $service->user->name }}" height="35" width="35" class="rounded-circle"></span>
                                 <span class="d-flex flex-column justify-content-center">
@@ -501,42 +538,7 @@
             </div>
         </div>
     </div>
-                <div class="border mt-5">
-                    <!-- Employment history -->
-                    <div class="mx-4 mt-4 border-bottom mb-3">
-                        <div class="">
-                            <h4 class="h6 fw-700 mb-0 fs-18"> {{ translate('Employment history') }}</h4>
-                        </div>
-                        <div class="pb-3">
-                            <ul class="list-group list-group-flush">
-                                @foreach ($freelancer->workExperiences as $key => $experience)
 
-                                <li class="list-group-item px-0">
-                                    <div class="d-flex align-items-center">
-                                        <h6 class="fw-500 fs-16 mb-0 mr-1">{{ $experience->designation }}</h6> |
-                                        <a class='ml-1 fw-500 fs-16 ' style="color:black;" href="{{ $experience->company_website }}" target="_blank">{{ $experience->company_name }}</a>
-                                    </div>
-                                    <ul class="list-unstyled text-secondary mb-0">
-                                        <li>
-
-                                        </li>
-                                        @if ($experience->present == '1')
-                                        <li>{{ Carbon\Carbon::parse($experience->start)->toFormattedDateString() }} -
-                                            {{ translate('Present') }}
-                                        </li>
-                                        @else
-                                        <li>{{ Carbon\Carbon::parse($experience->start)->toFormattedDateString() }} -
-                                            {{ Carbon\Carbon::parse($experience->end)->toFormattedDateString() }}
-                                        </li>
-                                        @endif
-                                        <li class="small">{{ $experience->description }}</li>
-                                    </ul>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
