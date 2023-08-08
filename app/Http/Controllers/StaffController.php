@@ -102,11 +102,15 @@ class StaffController extends Controller
         $user = $staff->user;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->user_type = Role::findOrFail($request->role_id)->name;
+
         if($request->password != null && strlen($request->password) > 0){
             $user->password = Hash::make($request->password);
         }
         if($user->save()){
-            $user->assignRole(Role::findOrFail($request->role_id)->name);
+            $role = Role::findOrFail($request->role_id);
+            $user->assignRole($role->name);
+
             $staff->role_id = $request->role_id;
             if($staff->save()){
                 flash(translate('Staff has been updated successfully'))->success();
