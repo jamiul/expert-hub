@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\WhyScholarshipController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\WhyScholarshipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,18 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/testing', function() {
 // 	dd(Auth::user()->userRoles->first()->role->id);
 // });
+Route::get('/clear-cache-all', function () {
+    //phpinfo();
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    //composer dump-autoload
+    //Artisan::call('config:cache');
+    //If you cache the config, you can't use env() in your application (only in config files). Use config() instead and env() only in config files (or don't cache the config).
+    dd("Cache Clear All");
+});
+
 Route::get('slider', function () {
     return view('frontend/default.inc.videoSlide');
 });
