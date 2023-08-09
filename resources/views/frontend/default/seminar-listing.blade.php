@@ -28,8 +28,8 @@
                 <form id="freelancer-filter-form" action="" method="GET">
                     <div class="row gutters-10">
                         <!-- Sidebar -->
-                        <div class="col-xl-3 col-lg-4 mb-5">
-                            <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-lg z-1035">
+                        <div class=" col-xs-3 col-sm-12 col-md-12 col-lg-3 mb-5">
+                            <div class="aiz-filter-sidebar collapse-sidebar-wrap  ">
                                 <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px"
                                     style="background: #F2F7F2;">
                                     <div class=" border-0 pl-lg-0">
@@ -49,7 +49,7 @@
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
-                                    <input type="hidden" name="type" value="freelancer">
+
                                     <div class="">
                                         <div class="d-flex align-items-center w-100">
                                             <button
@@ -170,7 +170,7 @@
                                         </h6>
 
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1"
-                                            onchange="applyFilter()" data-toggle="select2" data-live-search="true"
+                                            data-toggle="select2" data-live-search="true"
                                             placeholder=" Search software ">
 
                                             <option value="0">AMOS </option>
@@ -276,55 +276,54 @@
                                             </label>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                             </div>
                         </div>
 
+
                         <!-- Freelancer List -->
 
-                        <div class="col-xl-9 col-lg-9  c-pointer ">
+                        <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9  c-pointer ">
                             <div class="row" style="background: #F2F7F2;">
                                 <div class="col-lg-12">
                                     <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
-                                        <div class="row   ">
-                                            <div class="col-10">
+                                        <div class="row ">
+                                            <div class="col-lg-10 col-12">
                                                 <p class="fs-18 fw-700"style="color:#5ABC76;">
                                                     <u>Foundations of PLS-SEM Using SmartPLS 4</u>
                                                 </p>
-                                            </div>
-                                            <div class="col-10">
                                                 <div class="d-flex justify-content-between">
                                                     <a href="#" class=" fs-16 fw-700 pb-1 "
                                                         style="border-bottom: 2px solid  #000003; color: #000003">
                                                     </a>
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-3">
+                                                <div class="row mb-2 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                        <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
                                                             2023, from 10am – 3pm daily (Australian Eastern Standard Time)
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                <div class="row mx-1 ">
+                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                        <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-8 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
+                                                            This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -343,135 +342,133 @@
                                                             obtained results will be made. An official ConsultantEdu,
                                                             certificate of completion is provided at the conclusion of the
                                                             seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                            <u><a href="{{ route('seminar-details') }}">More</a></u>
+                                                            <a href="{{ route('seminar-details') }}"><u>More info</u></a>
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row mt-lg-3">
-                                                    <div class="col-3 ">
+                                                <div class="row mt-lg-3 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                        <p class="fre-scsh-right-side-details  mb-1 p-0"><span
+                                                                class="fw-700">Mariola Moeyaert</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                        <p class="fre-scsh-right-side-details  mb-1"><span
+                                                                class="fw-700">Mahammad Riyadh</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
-                                                            Field of Study:
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-lg-9  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                            raihan
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                        <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-lg-2 col-12">
                                                 <div>
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Register Now</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/seminar/register.png') }}"
+                                                                alt="Image" style="width:25px; " />
+                                                            {{ translate('Register now') }}
+
+                                                        </p>
                                                     </a>
 
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Zoom Link</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                alt="Image" style="width:28px; " />
+                                                            {{ translate('Zoom link') }}
+
+                                                        </p>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4">
-                                        <div class="row   ">
-                                            <div class="col-10">
+                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
+                                        <div class="row ">
+                                            <div class="col-lg-10 col-12">
                                                 <p class="fs-18 fw-700"style="color:#5ABC76;">
                                                     <u>Foundations of PLS-SEM Using SmartPLS 4</u>
                                                 </p>
-                                            </div>
-                                            <div class="col-10">
                                                 <div class="d-flex justify-content-between">
                                                     <a href="#" class=" fs-16 fw-700 pb-1 "
                                                         style="border-bottom: 2px solid  #000003; color: #000003">
                                                     </a>
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-3">
+                                                <div class="row mb-2 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                        <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
                                                             2023, from 10am – 3pm daily (Australian Eastern Standard Time)
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                <div class="row mx-1 ">
+                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                        <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-8 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -490,135 +487,133 @@
                                                             obtained results will be made. An official ConsultantEdu,
                                                             certificate of completion is provided at the conclusion of the
                                                             seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                            <u><a href="{{ route('scholarship.create') }}">More</a></u>
+                                                            <a href="{{ route('seminar-details') }}"><u>More info</u></a>
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row mt-lg-3">
-                                                    <div class="col-3 ">
+                                                <div class="row mt-lg-3 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                        <p class="fre-scsh-right-side-details  mb-1 p-0"><span
+                                                                class="fw-700">Mariola Moeyaert</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                        <p class="fre-scsh-right-side-details  mb-1"><span
+                                                                class="fw-700">Mahammad Riyadh</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
-                                                            Field of Study:
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-lg-9  pl-0">
-
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                            raihan
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                        <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-lg-2 col-12">
                                                 <div>
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Register Now</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/seminar/register.png') }}"
+                                                                alt="Image" style="width:25px; " />
+                                                            {{ translate('Register now') }}
+
+                                                        </p>
                                                     </a>
 
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Zoom Link</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                alt="Image" style="width:28px; " />
+                                                            {{ translate('Zoom link') }}
+
+                                                        </p>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4">
-                                        <div class="row   ">
-                                            <div class="col-10">
+                                   <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
+                                        <div class="row ">
+                                            <div class="col-lg-10 col-12">
                                                 <p class="fs-18 fw-700"style="color:#5ABC76;">
                                                     <u>Foundations of PLS-SEM Using SmartPLS 4</u>
                                                 </p>
-                                            </div>
-                                            <div class="col-10">
                                                 <div class="d-flex justify-content-between">
                                                     <a href="#" class=" fs-16 fw-700 pb-1 "
                                                         style="border-bottom: 2px solid  #000003; color: #000003">
                                                     </a>
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-3">
+                                                <div class="row mb-2 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                        <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
                                                             2023, from 10am – 3pm daily (Australian Eastern Standard Time)
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                <div class="row mx-1 ">
+                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                        <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-8 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0 fs-14">This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -637,135 +632,133 @@
                                                             obtained results will be made. An official ConsultantEdu,
                                                             certificate of completion is provided at the conclusion of the
                                                             seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                            <u><a href="{{ route('scholarship.create') }}">More</a></u>
+                                                            <a href="{{ route('seminar-details') }}"><u>More info</u></a>
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row mt-lg-3">
-                                                    <div class="col-3 ">
+                                                <div class="row mt-lg-3 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                        <p class="fre-scsh-right-side-details  mb-1 p-0"><span
+                                                                class="fw-700">Mariola Moeyaert</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                        <p class="fre-scsh-right-side-details  mb-1"><span
+                                                                class="fw-700">Mahammad Riyadh</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
-                                                            Field of Study:
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-lg-9  pl-0">
-
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                            raihan
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                        <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-lg-2 col-12">
                                                 <div>
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Register Now</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/seminar/register.png') }}"
+                                                                alt="Image" style="width:25px; " />
+                                                            {{ translate('Register now') }}
+
+                                                        </p>
                                                     </a>
 
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Zoom Link</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                alt="Image" style="width:28px; " />
+                                                            {{ translate('Zoom link') }}
+
+                                                        </p>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="all-scholarship-list  mb-4">
-                                        <div class="row   ">
-                                            <div class="col-10">
+                                    <div class="all-scholarship-list  mb-4 mt-3">
+                                        <div class="row ">
+                                            <div class="col-lg-10 col-12">
                                                 <p class="fs-18 fw-700"style="color:#5ABC76;">
                                                     <u>Foundations of PLS-SEM Using SmartPLS 4</u>
                                                 </p>
-                                            </div>
-                                            <div class="col-10">
                                                 <div class="d-flex justify-content-between">
                                                     <a href="#" class=" fs-16 fw-700 pb-1 "
                                                         style="border-bottom: 2px solid  #000003; color: #000003">
                                                     </a>
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-3">
+                                                <div class="row mb-2 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Sep 6 – Fri
+                                                        <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
                                                             2023, from 10am – 3pm daily (Australian Eastern Standard Time)
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <p class="fre-scsh-left-side-title mb-0">
+                                                <div class="row mx-1 ">
+                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                        <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-8 pl-0">
+                                                    <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0">This
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -784,93 +777,93 @@
                                                             obtained results will be made. An official ConsultantEdu,
                                                             certificate of completion is provided at the conclusion of the
                                                             seminar. For European PhD students, each seminar offers 2 ECTS..
-                                                            <u><a href="{{ route('scholarship.create') }}">More</a></u>
+                                                            <a href="{{ route('seminar-details') }}"><u>More info</u></a>
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row mt-lg-3">
-                                                    <div class="col-3 ">
+                                                <div class="row mt-lg-3 mx-1">
+                                                    <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mariola Moeyaert |
+                                                        <p class="fre-scsh-right-side-details  mb-1 p-0"><span
+                                                                class="fw-700">Mariola Moeyaert</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
-                                                        <p class="fre-scsh-right-side-details  mb-1">Mahammad Riyadh |
+                                                        <p class="fre-scsh-right-side-details  mb-1"><span
+                                                                class="fw-700">Mahammad Riyadh</span> |
                                                             Associate Professor of Statistics and Director | University at
                                                             Albany</p>
 
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
-                                                            Field of Study:
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-lg-9  pl-0">
-
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
-                                                            raihan
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
-                                                        <p class=" fre-scsh-left-side-title ">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                        <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3  pr-0">
+                                                <div class="row mx-1">
+                                                    <div class="col-lg-3 col-12 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9  pl-0">
+                                                    <div class="col-lg-9 col-12  pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4">
+                                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-lg-2 col-12">
                                                 <div>
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Register Now</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/seminar/register.png') }}"
+                                                                alt="Image" style="width:25px; " />
+                                                            {{ translate('Register now') }}
+
+                                                        </p>
                                                     </a>
 
-                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
-                                                        href="" data-target="#bookmark-remove-modal">
-                                                        <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>Zoom Link</span>
+                                                    <a href="">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            <img class=" px-1  "
+                                                                src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                alt="Image" style="width:28px; " />
+                                                            {{ translate('Zoom link') }}
+
+                                                        </p>
                                                     </a>
                                                 </div>
                                             </div>
