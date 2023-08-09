@@ -93,7 +93,6 @@ class ProjectController extends Controller
         }
         elseif (isFreelancer()) {
             $completed_projects = getCompletedProjectsByFreelancer(Auth::user()->id)->paginate(10);
-            dd($completed_projects);
             return view('frontend.default.user.freelancer.projects.my_completed_project', compact('completed_projects'));
         }
     }
