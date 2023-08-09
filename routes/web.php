@@ -326,6 +326,9 @@ Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name
 
 Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 
+ //seminars
+	
+	 Route::get('/seminar-details', 'SeminarDetailsController@details')->name('seminar-details');
 //Payments
 
 //Paypal

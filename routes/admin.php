@@ -145,7 +145,10 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
   Route::get('/blog/destroy/{id}', 'BlogController@destroy')->name('blog.destroy');
   Route::post('/blog/change-status', 'BlogController@change_status')->name('blog.change-status');
 
-  //scholarships
+  //seminars
+	 Route::resource('seminar', 'SeminarController');
+	 
+	//scholarships
   Route::resource('scholarship-category', 'ScholarshipCategoryController');
   Route::get('/scholarship-category/destroy/{id}', 'ScholarshipCategoryController@destroy')->name('scholarship-category.destroy');
   Route::resource('scholarship', 'ScholarshipController');
