@@ -165,7 +165,7 @@
 
                     <div class="row">
                         <!-- left side -->
-                        <div class="col-lg-4 col-12 left-aside pr-0">
+                        <div class="col-lg-4 col-xl-3 col-12 left-aside pr-0">
                             <!-- <div class="view-profile-main-single"></div> -->
 
                             <!-- earning-sec-for-responsive-start -->
@@ -299,7 +299,7 @@
                         </div>
                         </div>
                         <!-- details side or right side -->
-                        <div class="col-lg-8 col-12 pl-0">
+                        <div class="col-lg-8 col-xl-9 col-12 pl-0">
                             <div class="border-bottom">
                                 <div class="tab-content mx-4" id="nav-tabContent">
                                     <div class="tab-pane fade show active mt-4" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
@@ -340,6 +340,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{-- Completed and runing work part start --}}
+                                <ul class="nav nav-tabs freePage-work-history-com-prog" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link fre-rv-find-work-bar active fs-16  " id="hiring-talent-tab" data-toggle="tab" href="#hiring" role="tab" aria-controls="hiring" aria-selected="true">Completed</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fre-rv-find-work-bar fs-16" id="finding-work-tab" data-toggle="tab" href="#finding" role="tab" aria-controls="finding" aria-selected="false">In progress</a>
+                                    </li>
+                                </ul>
+                                {{-- Completed and runing work part start --}}
+
                             </div>
                             <div class="mx-4 mt-3 pb-3">
                                 <div class="mb-4">
