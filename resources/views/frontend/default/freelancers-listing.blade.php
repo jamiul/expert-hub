@@ -86,7 +86,7 @@
                   <h6 class="text-left mb-3 fs-14 fw-700">
                     <span class="pr-3">{{ translate('Categories') }}</span>
                   </h6>
-                  @foreach(\App\Models\ProjectCategory::all() as $category)
+                  @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
 
                   <label class="aiz-checkbox w-100">
                     <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
@@ -119,7 +119,7 @@
                           </select>
 
                           <div class="mt-3">
-                            @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                            @foreach (\App\Models\ParentSkill::all()->reverse() as $key => $parentSkill)
                             <a class="text-dark d-flex justify-content-start align-items-center mb-1"
                               data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button"
                               aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">

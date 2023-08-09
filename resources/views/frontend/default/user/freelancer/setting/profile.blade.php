@@ -619,8 +619,7 @@
     $("#username").keyup(function() {
         var username = $("#username").val().trim();
         if (username != '') {
-            $.post('{{ route('
-                user_name_check ') }}', {
+            $.post('{{route('user_name_check')}}', {
                     _token: '{{ csrf_token() }}',
                     username: username
                 },
@@ -632,8 +631,7 @@
 
     function get_city_by_country() {
         var country_id = $('#country_id').val();
-        $.post('{{ route('
-            cities.get_city_by_country ') }}', {
+        $.post('{{ route('cities.get_city_by_country')}}', {
                 _token: '{{ csrf_token() }}',
                 country_id: country_id
             },
