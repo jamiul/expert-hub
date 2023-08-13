@@ -118,10 +118,6 @@ class StaffController extends Controller
         return back();
     }
 
-        flash(translate('Something went wrong'))->error();
-        return back();
-    }
-
     /**
      * Remove the specified resource from storage.
      *
