@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-lg-12">
-    <form action="{{ route('staffs.update', $staff->id) }}" method="POST">    
+    <form action="{{ route('staffs.update', $staff->id) }}" method="POST">
         @csrf
         @method('PATCH')
         <input type="hidden" name="added_by" value="admin">
@@ -17,7 +17,7 @@
                     <div class="col-md-8">
                         <input type="text" class="form-control" name="name" placeholder="{{ translate('Employee Name') }}" value="{{ $staff->user->name }}" required>
                     </div>
-                </div>            
+                </div>
 
                 <div class="form-group row">
                     <label class="col-md-3 col-from-label">{{translate('Email')}} </label>
@@ -38,7 +38,7 @@
                     <div class="col-md-8">
                         <select class="form-control aiz-selectpicker" name="role_id" id="role_id" data-live-search="true" required>
                             @foreach ($roles as $role)
-                                <option value="{{ $role->id }}"  @php if($staff->role_id == $role->id) echo "selected"; @endphp >{{ $role->name }}</option>                        
+                                <option value="{{ $role->id }}"  @php if($staff->role_id == $role->id) echo "selected"; @endphp >{{ $role->name }}</option>
                             @endforeach
                         </select>
                     </div>
