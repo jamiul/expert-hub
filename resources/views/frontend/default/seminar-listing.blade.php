@@ -6,7 +6,23 @@
     <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"
+        rel="stylesheet" />
+    <style type="text/css">
+        .datepicker {
+            font-size: 0.875em;
+        }
 
+        .datepicker td,
+        .datepicker th {
+            width: 1.5em;
+            height: 1.5em;
+        }
+        td.day.highlight {
+            color: #DC322F;
+            font-weight: 900;
+        }
+    </style>
 
 </head>
 
@@ -76,68 +92,13 @@
                                             <h6 class="text-left mb-3 fs-14 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
-                                            <div class="container">
-                                                <div class="calendar">
-                                                    <div class="row calendar-header">
-                                                        <div class="col text-center">Sun</div>
-                                                        <div class="col text-center">Mon</div>
-                                                        <div class="col text-center">Tue</div>
-                                                        <div class="col text-center">Wed</div>
-                                                        <div class="col text-center">Thur</div>
-                                                        <div class="col text-center">Fri</div>
-                                                        <div class="col text-center">Sat</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col text-center calendar-cell"> </div>
-                                                        <div class="col text-center calendar-cell"> </div>
-                                                        <div class="col text-center calendar-cell">1</div>
-                                                        <div class="col text-center calendar-cell">2</div>
-                                                        <div class="col text-center calendar-cell">3</div>
-                                                        <div class="col text-center calendar-cell">4</div>
-                                                        <div class="col text-center calendar-cell">5</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col text-center calendar-cell">6</div>
-                                                        <div class="col text-center calendar-cell">7</div>
-                                                        <div class="col text-center calendar-cell">8</div>
-                                                        <div class="col text-center calendar-cell">9</div>
-                                                        <div class="col text-center calendar-cell">10</div>
-                                                        <div class="col text-center calendar-cell">11</div>
-                                                        <div class="col text-center calendar-cell">12</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col text-center calendar-cell">12</div>
-                                                        <div class="col text-center calendar-cell">13</div>
-                                                        <div class="col text-center calendar-cell">14</div>
-                                                        <div class="col text-center calendar-cell">15</div>
-                                                        <div class="col text-center calendar-cell">16</div>
-                                                        <div class="col text-center calendar-cell">17</div>
-                                                        <div class="col text-center calendar-cell">18</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col text-center calendar-cell">19</div>
-                                                        <div class="col text-center calendar-cell">20</div>
-                                                        <div class="col text-center calendar-cell">21</div>
-                                                        <div class="col text-center calendar-cell">22</div>
-                                                        <div class="col text-center calendar-cell">23</div>
-                                                        <div class="col text-center calendar-cell">24</div>
-                                                        <div class="col text-center calendar-cell">25</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col text-center calendar-cell">26</div>
-                                                        <div class="col text-center calendar-cell">27</div>
-                                                        <div class="col text-center calendar-cell">28</div>
-                                                        <div class="col text-center calendar-cell">29</div>
-                                                        <div class="col text-center calendar-cell">30</div>
-                                                        <div class="col text-center calendar-cell"></div>
-                                                        <div class="col text-center calendar-cell"></div>
-                                                    </div>
-                                                </div>
+                                            <div class="mb-5">
+                                                <input type="text" class="form-control" name="filterDate"
+                                                    data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
-
-
                                         </div>
                                     </div>
+
                                     <!-- Seminar Mode -->
 
                                     <div>
@@ -170,8 +131,7 @@
                                         </h6>
 
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1"
-                                            data-toggle="select2" data-live-search="true"
-                                            placeholder=" Search software ">
+                                            data-toggle="select2" data-live-search="true" placeholder=" Search software ">
 
                                             <option value="0">AMOS </option>
                                             <option value="0"> SPSS</option>
@@ -468,7 +428,8 @@
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">This
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
+                                                            This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -511,7 +472,7 @@
 
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row mx-1">
                                                     <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
@@ -579,7 +540,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                   <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
+                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
                                         <div class="row ">
                                             <div class="col-lg-10 col-12">
                                                 <p class="fs-18 fw-700"style="color:#5ABC76;">
@@ -613,7 +574,9 @@
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0 fs-14">This
+                                                        <p
+                                                            class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0 fs-14">
+                                                            This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -656,7 +619,7 @@
 
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row mx-1">
                                                     <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
@@ -758,7 +721,8 @@
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
 
-                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">This
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
+                                                            This
                                                             seminar will give you a strong working understanding of methods
                                                             used
                                                             to design and analyse single-case experimental design studies
@@ -801,7 +765,7 @@
 
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row mx-1">
                                                     <div class="col-lg-3 col-12 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
@@ -922,8 +886,7 @@
                                 <div class=" ">
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
-                                            <img class=" mb-2 mx-auto d-block
-                                     p-3"
+                                            <img class=" mb-2 mx-auto d-block p-3"
                                                 src=" {{ url('/public/assets/home/certificate.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #000000" />
                                             <div class="need-help-progress-bar"></div>
@@ -1077,7 +1040,37 @@
     @endsection
 
     @section('script')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript">
+        $('#datepicker').datepicker({
+            todayHighlight: true,
+            minDate: 0,
+            // weekStart: 1,
+            // daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+            beforeShowDay: function(date) {
+            var hilightedDays = [5, 6, 12, 30];
+
+            // get current month
+            var currentMonth = new Date().getMonth();
+
+            // if date.getMonth() === currentMonth, then highlight the date
+            if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
+                return {
+                classes: 'highlight',
+                tooltip: 'Seminar'
+                }
+            }
+            }
+        }).on('show', function(e, date) {
+    $('td.highlight').tooltip();
+
+});
+
+            $('#datepicker').datepicker("setDate", new Date());
+            // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
+
             function applyFilter() {
                 $('#freelancer-filter-form').submit();
             }

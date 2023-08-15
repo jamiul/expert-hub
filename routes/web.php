@@ -123,9 +123,10 @@ Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
 Route::get('/success-stories', function () {
     return view('frontend.default.success-stories');
 })->name('success-stories');
-Route::get('/review', 'WhyScholarshipController@why_scholarship_review')->name('review');
-Route::get('/how-to-hire', 'WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
-Route::get('/how-to-find-job', 'WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
+Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
+Route::get('/why-freelancer-edu','WhyScholarshipController@whyFreelancerEdu')->name('why-freelancer-edu');
+Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
+Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
 Route::group(['middleware' => ['user']], function () {
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');
@@ -327,7 +328,7 @@ Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name
 Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 
  //seminars
-	
+
 	 Route::get('/seminar-details', 'SeminarDetailsController@details')->name('seminar-details');
 //Payments
 

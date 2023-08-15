@@ -45,7 +45,7 @@
             </div>
 
             <div class="mt-5 mb-5">
-                <div class="row ">
+                <div cass="row ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
                             <img class="mx-auto d-block w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
