@@ -372,7 +372,7 @@
                                 <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
                             </li>
                             <li class="nav-item dropdown  text-white">
-                                <a class="nav-link " href="{{route('whyfreelanceredu')}}" >
+                                <a class="nav-link " href="{{route('why-freelancer-edu')}}" >
                                     Why ConsultantEdu
                                 </a>
                                 <div class="dropdown-menu mega_area" aria-labelledby="mega_product">

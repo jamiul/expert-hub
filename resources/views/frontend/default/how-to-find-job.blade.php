@@ -45,7 +45,7 @@
             </div>
 
             <div class="mt-5 mb-5">
-                <dilv cass="row ">
+                <div cass="row ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
                             <img class="mx-auto d-block w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
@@ -55,7 +55,7 @@
                         <h1 class=" how-work-title ">{{translate('Create your profile (it’s free)')}}</h1>
                         <p class="how-work-details  mt-2">{{translate('An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.')}}</p>
                     </div>
-                </dilv>
+                </div>
                 <div class="row mt-4 ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
