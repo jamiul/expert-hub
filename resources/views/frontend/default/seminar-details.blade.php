@@ -9,9 +9,9 @@
 <body>
     @extends('frontend.default.layouts.app')
     @section('content')
-        <div class="seminar-content mx-auto shadow-lg mb-5">
+        <div class="seminar-content mx-auto shadow-lg my-5">
             <div class="row " style="background: #fff;">
-                <div class="col-lg-12">
+                <div class="col-lg-12 seminar-details">
                     <div class=" mb-4 mt-3">
                         <div class="row   ">
                             <div class="col-10">
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-4">
+                <div class="details-seminar">
                     <div class="">
                         <h5 class="fs-18 fw-700 mx-auto fw-700"style="color:#5ABC76;">Course objectives</h5>
                         <div>
@@ -228,7 +228,7 @@
                                 participants will understand the following topics:
                             </p>
                             <div>
-                                <ul>
+                                
                                     <li>Fundamentals of latent variable modeling and model development</li>
                                     <li>An introduction to PLS-SEM and its characteristics</li>
                                     <li>When (not) to use PLS-SEM
@@ -248,7 +248,7 @@
                                     </li>
                                     <li>Outlook on advanced techniques
                                     </li>
-                                </ul>
+                                
                                 <p class="text-justify">Participants will receive a certificate of attendance, issued by the
                                     ConsultantEdu Hub.
                                 </p>
@@ -354,7 +354,7 @@
                                 Babeș-Bolyai-University Cluj-Napoca for his
                                 research achievements and contributions to international exchange. More information...</p>
                             <h5 class="fs-18 text-dark fw-700">Selected publications</h5>
-                            <ul>
+                            
                                 <li>
                                     Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
                                     Component-based Structural
@@ -401,11 +401,10 @@
                                     Prediction-oriented Model Selection in Partial Least Squares Path
                                     Modeling. Decision Sciences, 52(3), 567-607. </li>
 
-                            </ul>
                         </div>
 
                         <div>
-                            <h5 class="fs-18 text-dark fw-700">Prof. Dr. Christian M. Ringle</h5>
+                            <h5 class="fs-18 text-dark fw-700 mt-2">Prof. Dr. Christian M. Ringle</h5>
                             <p class="text-justify">Christian M. Ringle is a Professor of Management and the Director of the
                                 Institute for Human
                                 Resource Management and Organizations at the
@@ -423,7 +422,7 @@
 
 
                             <h5 class="fs-18 text-dark fw-700">Selected publications</h5>
-                            <ul>
+                            
                                 <li>
                                     Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
                                     Component-based Structural
@@ -470,10 +469,9 @@
                                     Prediction-oriented Model Selection in Partial Least Squares Path
                                     Modeling. Decision Sciences, 52(3), 567-607. </li>
 
-                            </ul>
                         </div>
                         <div>
-                            <h5 class="fs-18 text-dark fw-700">Prof. Dr. Jan-Michael Becker</h5>
+                            <h5 class="fs-18 text-dark fw-700 mt-2">Prof. Dr. Jan-Michael Becker</h5>
                             <p class="text-justify">Jan-Michael Becker is an Associate Professor in the Department of
                                 Marketing at the BI
                                 Norwegian Business School. He received his doctorate
@@ -491,7 +489,7 @@
                                 is a co-founder of the SmartPLS software
                                 application. More information...</p>
                             <h5 class="fs-18 text-dark fw-700">Selected publications</h5>
-                            <ul>
+                           
                                 <li class="text-justify">
                                     Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
                                     Component-based Structural
@@ -538,31 +536,30 @@
                                     Prediction-oriented Model Selection in Partial Least Squares Path
                                     Modeling. Decision Sciences, 52(3), 567-607. </li>
 
-                            </ul>
                         </div>
                     </div>
                     <section>
-                        <h5 class="fs-18 fw-700"style="color:#5ABC76;">Teaching Resources</h5>
+                        <h5 class="fs-18 fw-700 mt-2"style="color:#5ABC76;">Teaching Resources</h5>
                         <div>
 
                             <h6>
                                 Textbooks on PLS-SEM:
                             </h6>
-                            <ul>
+                          
                                 <li>Hair, J.F., Hult, G.T.M., Ringle, C. M., & Sarstedt, M. (2022). A Primer on Partial
                                     Least Squares Structural Equation Modeling (PLS-
                                     SEM) (3rd edition). Thousand Oaks, CA: Sage.</li>
                                 <li>Hair, J. F., Sarstedt, M., Ringle, C. M., & Gudergan, S. P. (2024). Advanced Issues in
                                     Partial Least Squares Structural Equation Modeling
                                     (PLS-SEM) (2nd edition). Thousand Oaks, CA: Sage.</li>
-                            </ul>
+                           
 
 
 
                         </div>
                         <div>
                             <h5 class="fs-14 fw-700 text-dark">Articles:</h5>
-                            <ul>
+                            
                                 <li>Becker, J.-M. and Ismail, I. R. (2016), Accounting for Sampling Weights in PLS Path
                                     Modeling: Simulations and Empirical
                                     Examples, European Management Journal, 34(6), 606-617.</li>
@@ -599,13 +596,13 @@
                                 <li>Shmueli, G., Sarstedt, M., Hair, J. F., Cheah, J.-H., Ting, H., & Ringle, C. M. (2019).
                                     Predictive model assessment in PLS-SEM: Guidelines
                                     for using PLSpredict. European Journal of Marketing, 53(11), 2322-2347.</li>
-                            </ul>
+                            
                         </div>
 
                     </section>
                     <section>
                         <div>
-                            <h6 class="fs-18 fw-700"style="color:#5ABC76;">Software:</h6>
+                            <h6 class="fs-18 fw-700 mt-2"style="color:#5ABC76;">Software:</h6>
                             <p class="text-justify">The course uses the software SmartPLS 4 Professional for all PLS-SEM
                                 applications and
                                 exercises. All participants get a fully functional 90 days

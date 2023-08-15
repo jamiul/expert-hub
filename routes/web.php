@@ -322,8 +322,6 @@ Route::get('/client-lists', 'HomeController@client_list')->name('client.lists');
 Route::get('/freelancer-lists', 'HomeController@freelancer_list')->name('freelancer.lists');
 Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name('freelancer.details');
 // Route::get('/freelancer/{user_name}', 'HomeController@freelancer_meeting')->name('freelancer.meeting');
-
-
 Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 
  //seminars
