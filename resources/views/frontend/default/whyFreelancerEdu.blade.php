@@ -178,7 +178,7 @@
 
 
     <div class="border-top pb-2 mt-3 " style="background-color:#275846; width:80%; margin:0 10%;">
-        <div class="mt-5 pb-2">
+        <div class="mt-4 pb-2">
           <div class="">
             <div class="">
               <div class=" content-title  text-center pb-2 pt-0">
@@ -353,7 +353,7 @@
             </div>
             <div class="row mt-5 mb-5">
                 <div class="col-lg-6 col-sm-12 ">
-                  <img class="rounded-1"
+                  <img class="rounded-1 w-100"
                     src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/postJob.jpg')}}" alt="" height="300" >
                 </div>
                 {{-- <div class="col-lg-1"></div> --}}
@@ -410,30 +410,32 @@
             {{-- You’re safe with us --}}
             <div class="mt-5 border-bottom">
                 <div class="row mt-5 mb-5">
-                <div class="col-lg-5 col-sm-12 mr-5">
-                    <img class=" rounded-right "
-                    src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt=""
-                    height="450">
-                </div>
+                    <div class="col-lg-6 col-sm-12 ">
+                        <div>
+                        <h1 class="whyConsEdu-child-title ">You’re safe with us</h1>
+                        <h3 class="hth-safe-text fs-16">You get what you pay for. And we can prove it.</h3>
+                        <p class="text-black fw-bold mb-4 fs-18">On hourly contracts, <span class="text-muted">we count keystrokes and
+                            take random screenshots of your freelancer’s screen so you can see they’re putting in the time.</span></p>
 
-                <div class="col-lg-5 col-sm-12  ml-lg-5 mx-sm-auto">
-                    <div>
-                    <h1 class="whyConsEdu-child-title ">You’re safe with us</h1>
-                    <h3 class="hth-safe-text fs-16">You get what you pay for. And we can prove it.</h3>
-                    <p class="text-black fw-bold mb-4 fs-18">On hourly contracts, <span class="text-muted">we count keystrokes and
-                        take random screenshots of your freelancer’s screen so you can see they’re putting in the time.</span></p>
+                        <p class="text-black fw-bold mt-4 fs-18">On fixed-price contracts,<span class="text-muted">you agree on
+                            milestones and only pay up when those milestones are hit.</span> </p>
+                        </div>
+                        <div class="mt-4">
+                        <h1 class="whyConsEdu-child-title ">All in one place</h1>
+                        <h3 class="hth-place-text fs-16 ">Once you sign in you’ll get your own online space to manage your project.</h3>
+                        <p class="text-muted fs-18">Use it to securely send and receive files, give real-time feedback and make
+                            payments. And if you’re out and about a lot, you’ll want to download the app too.</p>
+                        </div>
 
-                    <p class="text-black fw-bold mt-4 fs-18">On fixed-price contracts,<span class="text-muted">you agree on
-                        milestones and only pay up when those milestones are hit.</span> </p>
                     </div>
-                    <div class="mt-4">
-                    <h1 class="whyConsEdu-child-title ">All in one place</h1>
-                    <h3 class="hth-place-text fs-16 ">Once you sign in you’ll get your own online space to manage your project.</h3>
-                    <p class="text-muted fs-18">Use it to securely send and receive files, give real-time feedback and make
-                        payments. And if you’re out and about a lot, you’ll want to download the app too.</p>
+                    <div class="col-lg-1 "></div>
+                    <div class="col-lg-5 col-sm-12 ">
+                        <img class=" rounded-right w-100"
+                        src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt=""
+                        height="400" >
                     </div>
 
-                </div>
+
                 </div>
             </div>
         </div>
@@ -478,7 +480,7 @@
     <div class="my-5 mx-5 border-bottom pb-5" id="reviewSection">
         <h1 class="explore-find-oppor-title text-success fw-700">{{translate('Reviews – how reviews work on ConsultantEdu')}}</h1>
        <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-sm-12">
              {{-- Consultants - Getting reviews on ConsultantEdu --}}
             <div class="mt-2">
                 <p class="whyConsEdu-child-title">Consultants - Getting reviews on ConsultantEdu
@@ -501,8 +503,8 @@
             </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-5">
-            <img class="" height="300" src="{{my_asset('assets/frontend/default/img/whyScholarship/review.jpeg')}}" alt="">
+        <div class="col-lg-5 col-sm-12">
+            <img class="w-100" height="300" src="{{my_asset('assets/frontend/default/img/whyScholarship/review.jpeg')}}" alt="">
         </div>
        </div>
 
