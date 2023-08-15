@@ -18,6 +18,7 @@
             width: 1.5em;
             height: 1.5em;
         }
+
         td.day.highlight {
             color: #DC322F;
             font-weight: 900;
@@ -86,156 +87,160 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Seminar date -->
-                                    <div class="card-body pl-lg-0">
-                                        <div class="">
-                                            <h6 class="text-left mb-3 fs-14 fw-700">
+
+                                    <div>
+                                        <!-- Seminar date -->
+
+                                        <div class="mt-2">
+                                            <h6 class="text-left fs-14 py-2 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
-                                            <div class="mb-5">
+                                            <div class="">
                                                 <input type="text" class="form-control" name="filterDate"
                                                     data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
                                         </div>
-                                    </div>
+                                        <!-- Seminar Mode -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
+                                                <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
+                                            </h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Live via Zoom
+                                                </label>
 
-                                    <!-- Seminar Mode -->
-
-                                    <div>
-                                        <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
-                                        </h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Live via Zoom
-                                            </label>
-
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Face-to-Face
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Face-to-Face
-                                            </label>
+                                        <!-- Seminar software -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
+                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
+                                            </h6>
+
+                                            <select multiple class="select2 form-control aiz-selectpicker rounded-1"
+                                                data-toggle="select2" data-live-search="true"
+                                                placeholder=" Search software ">
+
+                                                <option value="0">AMOS </option>
+                                                <option value="0"> SPSS</option>
+                                                <option value="0"> R</option>
+                                                <option value="0">Excel </option>
+                                                <option value="0">EViews </option>
+                                                <option value="0"> SAS</option>
+                                                <option value="0">SmartPLS </option>
+                                                <option value="0">Stata </option>
+                                                <option value="0">Python </option>
+                                                <option value="0">Minitab </option>
+                                                <option value="0"> MATLAB</option>
+                                                <option value="0">JMP </option>
+                                                <option value="0"> IBM SPSS Modeler</option>
+                                                <option value="0">ATLAS.ti </option>
+                                                <option value="0"> NVivo</option>
+                                                <option value="0"> MAXQDA</option>
+                                                <option value="0"> Dedoose</option>
+                                                <option value="0">QDA Miner </option>
+                                                <option value="0">HyperRESEARCH </option>
+                                                <option value="0"> Transana</option>
+                                                <option value="0"> Quirkos</option>
+                                                <option value="0">Weft QDA </option>
+                                                <option value="0"> AnSWR</option>
+                                                <option value="0"> CAQDAS</option>
+                                                <option value="0"> TAMS Analyzer</option>
+                                                <option value="0"> RQDA</option>
+                                                <option value="0"> XSight</option>
+                                                <option value="0">f4analyse </option>
+                                                <option value="0"> Coding Analysis Toolkit (CAT)</option>
+                                                <option value="0"> Qiqqa</option>
+                                                <option value="0"> Taguette</option>
+                                                <option value="0">NUD*IST (N6) </option>
+                                                <option value="0">NVivo </option>
+                                                <option value="0">ATLAS.ti </option>
+                                                <option value="0">MAXQDA </option>
+                                                <option value="0">QDA Miner </option>
+                                                <option value="0">DeDoose</option>
+                                                <option value="0">R</option>
+                                                <option value="0">IBM SPSS</option>
+                                                <option value="0">Minitab</option>
+                                                <option value="0"> Excel</option>
+                                                <option value="0"> TAMS Analyzer</option>
+                                                <option value="0"> Transana</option>
+                                                <option value="0"> HyperRESEARCH</option>
+                                                <option value="0"> Quirkos</option>
+                                                <option value="0"> Nvivo 12 Plus</option>
+                                                <option value="0"> Dedoose</option>
+                                                <option value="0">ANTHROPAC </option>
+                                                <option value="0">Weft QDA </option>
+                                                <option value="0">Qiqqa </option>
+                                                <option value="0">Raven's Eye </option>
+                                                <option value="0">CAQDAS </option>
+                                            </select>
                                         </div>
+
+                                        <!-- Languages -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
+                                                <span class=" pr-3">{{ translate('Languages') }}</span>
+                                            </h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    English
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    French
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Hindi
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Malay
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Bangla
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Chinese
+                                                </label>
+                                            </div>
+                                        </div>
+
 
                                     </div>
 
                                     <!-- Seminar Topics -->
 
-                                    <div class="mb-5">
-                                        <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Seminar Software') }}</span>
-                                        </h6>
 
-                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1"
-                                            data-toggle="select2" data-live-search="true" placeholder=" Search software ">
-
-                                            <option value="0">AMOS </option>
-                                            <option value="0"> SPSS</option>
-                                            <option value="0"> R</option>
-                                            <option value="0">Excel </option>
-                                            <option value="0">EViews </option>
-                                            <option value="0"> SAS</option>
-                                            <option value="0">SmartPLS </option>
-                                            <option value="0">Stata </option>
-                                            <option value="0">Python </option>
-                                            <option value="0">Minitab </option>
-                                            <option value="0"> MATLAB</option>
-                                            <option value="0">JMP </option>
-                                            <option value="0"> IBM SPSS Modeler</option>
-                                            <option value="0">ATLAS.ti </option>
-                                            <option value="0"> NVivo</option>
-                                            <option value="0"> MAXQDA</option>
-                                            <option value="0"> Dedoose</option>
-                                            <option value="0">QDA Miner </option>
-                                            <option value="0">HyperRESEARCH </option>
-                                            <option value="0"> Transana</option>
-                                            <option value="0"> Quirkos</option>
-                                            <option value="0">Weft QDA </option>
-                                            <option value="0"> AnSWR</option>
-                                            <option value="0"> CAQDAS</option>
-                                            <option value="0"> TAMS Analyzer</option>
-                                            <option value="0"> RQDA</option>
-                                            <option value="0"> XSight</option>
-                                            <option value="0">f4analyse </option>
-                                            <option value="0"> Coding Analysis Toolkit (CAT)</option>
-                                            <option value="0"> Qiqqa</option>
-                                            <option value="0"> Taguette</option>
-                                            <option value="0">NUD*IST (N6) </option>
-                                            <option value="0">NVivo </option>
-                                            <option value="0">ATLAS.ti </option>
-                                            <option value="0">MAXQDA </option>
-                                            <option value="0">QDA Miner </option>
-                                            <option value="0">DeDoose</option>
-                                            <option value="0">R</option>
-                                            <option value="0">IBM SPSS</option>
-                                            <option value="0">Minitab</option>
-                                            <option value="0"> Excel</option>
-                                            <option value="0"> TAMS Analyzer</option>
-                                            <option value="0"> Transana</option>
-                                            <option value="0"> HyperRESEARCH</option>
-                                            <option value="0"> Quirkos</option>
-                                            <option value="0"> Nvivo 12 Plus</option>
-                                            <option value="0"> Dedoose</option>
-                                            <option value="0">ANTHROPAC </option>
-                                            <option value="0">Weft QDA </option>
-                                            <option value="0">Qiqqa </option>
-                                            <option value="0">Raven's Eye </option>
-                                            <option value="0">CAQDAS </option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Languages -->
-                                    <div>
-                                        <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
-                                            <span class=" pr-3">{{ translate('Languages') }}</span>
-                                        </h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                English
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                French
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Hindi
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Malay
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Bangla
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Chinese
-                                            </label>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
@@ -806,7 +811,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-2 col-12">
+                                            <div class="col-lg-2 col-12 ">
                                                 <div>
                                                     <a href="">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
@@ -1042,31 +1047,32 @@
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript">
-        $('#datepicker').datepicker({
-            todayHighlight: true,
-            minDate: 0,
-            // weekStart: 1,
-            // daysOfWeekHighlighted: "6,0",
-            autoclose: true,
-            todayHighlight: true,
-            beforeShowDay: function(date) {
-            var hilightedDays = [5, 6, 12, 30];
+            $('#datepicker').datepicker({
+                todayHighlight: true,
+                minDate: 0,
+                // weekStart: 1,
+                // daysOfWeekHighlighted: "6,0",
+                autoclose: true,
+                todayHighlight: true,
+                beforeShowDay: function(date) {
+                    var hilightedDays = [5, 6, 12, 30];
 
-            // get current month
-            var currentMonth = new Date().getMonth();
+                    // get current month
+                    var currentMonth = new Date().getMonth();
 
-            // if date.getMonth() === currentMonth, then highlight the date
-            if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
-                return {
-                classes: 'highlight',
-                tooltip: 'Seminar'
+                    // if date.getMonth() === currentMonth, then highlight the date
+                    if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
+                            hilightedDays)) {
+                        return {
+                            classes: 'highlight',
+                            tooltip: 'Seminar'
+                        }
+                    }
                 }
-            }
-            }
-        }).on('show', function(e, date) {
-    $('td.highlight').tooltip();
+            }).on('show', function(e, date) {
+                $('td.highlight').tooltip();
 
-});
+            });
 
             $('#datepicker').datepicker("setDate", new Date());
             // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])

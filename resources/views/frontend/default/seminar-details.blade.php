@@ -601,7 +601,7 @@
 
                     </section>
                     <section>
-                        <div>
+                        <div class="">
                             <h6 class="fs-18 fw-700 mt-2"style="color:#5ABC76;">Software:</h6>
                             <p class="text-justify">The course uses the software SmartPLS 4 Professional for all PLS-SEM
                                 applications and
@@ -618,7 +618,7 @@
                                 breaks</p>
                         </div>
                     </section>
-                    <section>
+                    <section class="mb-lg-5">
                         <div class="row mx-1">
                             <div class="col-lg-3 col-12 p-0 pr-0">
                                 <p class=" fre-scsh-left-side-title ">
