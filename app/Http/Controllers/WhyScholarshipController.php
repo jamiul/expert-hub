@@ -15,4 +15,7 @@ class WhyScholarshipController extends Controller
     function why_scholarship_howToFindJob(){
         return view('frontend.default.how-to-find-job');
     }
+    function whyFreelancerEdu(){
+        return view('frontend.default.whyFreelancerEdu');
+    }
 }
