@@ -1,0 +1,35 @@
+.whyFreeEdu-container-main{
+    width: 94%;
+    margin: 10px 3% ;
+
+
+}
+.whyConsEdu-child-title {
+    color: #001e00;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+.nav-item .faqs-consultant:active{
+    color: red !important;
+    /* background: ; */
+}
+@media (min-width: 1200px) {
+    .d-flex {
+        position: relative;
+    }
+
+    .need-help-section-bar {
+        height: 2px;
+        width: 89%;
+        background: white;
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        left: 143px;
+        right:0;
+}
+}
