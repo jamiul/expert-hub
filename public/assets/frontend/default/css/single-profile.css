@@ -180,17 +180,19 @@ h4.view-profile {
         display: none !important;
     }
 }
+.freePage-work-history-com-prog .nav-link{
+    border: none !important;
+}
+.freePage-work-history-com-prog .nav-link:hover{
+    border: none !important;
+}
 .freePage-work-history-com-prog .nav-link.active {
     background-color: your-active-color; /* Set your desired background color */
     color: black !important;
+    border: none !important;
     border-bottom:2px solid rgb(5, 1, 1) !important; /* Set your desired text color */
 }
-.freePage-work-history-com-prog .nav-link:hover {
-    background-color: transparent !important; /* Set background color to transparent or adjust as needed */
-    color: your-inactive-text-color !important; /* Set your desired text color */
-    text-decoration: none !important; /* Remove any text decoration on hover */
-    border-bottom: none !important; /* Remove any bottom border on hover */
-}
+
 
 .freePage-work-history-com-prog .nav-link {
     background-color: your-inactive-color; /* Set your desired background color */
