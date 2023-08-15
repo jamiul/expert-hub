@@ -551,3 +551,44 @@ div.scroll h6 a {
     display: block; /* or "none" if you want it to be initially hidden */
     /* Add any other styles you want */
   }
+
+  .calendar {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .calendar-cell {
+            border: 1px solid #dee2e6;
+            padding: 5px;
+            min-height: 50px;
+        }
+        
+        div.scroll {
+                margin:4px, 4px;
+                padding:4px;
+                width: 320px;
+                height: 110px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+                
+            }
+div.scroll h6 a {
+                color:black;
+                
+            }
+#contentDiv {
+    display: block; /* or "none" if you want it to be initially hidden */
+    /* Add any other styles you want */
+}
+ /* seminar page  */
+
+ .seminar-content{
+    width: 70%;
+    margin: 0 15%;
+}

@@ -114,6 +114,15 @@ h4.view-profile {
         height: 50px;
         background: white;
     }
+    .freePage-sign-login-btn-show {
+        width: 100%;
+        /* marg?in: 0 10%; */
+        bottom: 60px;
+        z-index: 3;
+        position: fixed;
+        height: 85px;
+        background: white;
+    }
     .freelancer-user-identity-profile-section {
         margin: 10px 10px !important;
     }
@@ -161,6 +170,9 @@ h4.view-profile {
     .freePage-hire-invite-btn-show {
         display: none !important;
     }
+    .freePage-sign-login-btn-show {
+        display: none !important;
+    }
     .freePage-earning-sec-for-sm-responsive{
         display: none !important;
     }
@@ -168,4 +180,21 @@ h4.view-profile {
         display: none !important;
     }
 }
+.freePage-work-history-com-prog .nav-link.active {
+    background-color: your-active-color; /* Set your desired background color */
+    color: black !important;
+    border-bottom:2px solid rgb(5, 1, 1) !important; /* Set your desired text color */
+}
+.freePage-work-history-com-prog .nav-link:hover {
+    background-color: transparent !important; /* Set background color to transparent or adjust as needed */
+    color: your-inactive-text-color !important; /* Set your desired text color */
+    text-decoration: none !important; /* Remove any text decoration on hover */
+    border-bottom: none !important; /* Remove any bottom border on hover */
+}
+
+.freePage-work-history-com-prog .nav-link {
+    background-color: your-inactive-color; /* Set your desired background color */
+    /* color: yellow; */
+}
+
 

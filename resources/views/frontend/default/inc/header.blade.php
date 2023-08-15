@@ -20,7 +20,7 @@
           <div class="logo ml-4 ">
             <a href="{{ route('home') }}" class="d-inline-block">
               <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}"
-                height="" class=" w-100" style="max-height:30px;">
+                height="" class="  w-100" style="max-height:30px;">
             </a>
           </div>
           @endif
@@ -298,7 +298,7 @@
         <div class="container-fluid ml-3">
           <div class="logo">
             <a href="{{ route('home') }}" class="d-inline-block p-1">
-              <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100">
+              <img src="{{ custom_asset(get_setting('header_logo')) }}" height="" class="mh-40px w-100 logo-for-small-responsive">
             </a>
           </div>
           <!-- Toggle button -->
