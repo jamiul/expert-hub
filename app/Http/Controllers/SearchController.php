@@ -29,11 +29,14 @@ class SearchController extends Controller
             $skill_id = array('');
             $childSkill_id = array('');
             $category_id = array('');
+            // $rate1 = $request->rate1;
+            $rate1 =array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
+            // $hourlyRate = $request->input('rate1');
             $categories = [];
             $category_ids=[];
             $skills = [];
@@ -376,7 +379,7 @@ class SearchController extends Controller
 
             switch ($sort) {
                 case '1':
-                    $projects = $projects->orderBy('created_at', 'desc');
+                    $projects = $projects->orderBy('hourly_rate', 'desc');
                     break;
                 case '2':
                     $projects = $projects->orderBy('price', 'asc');
@@ -423,6 +426,7 @@ class SearchController extends Controller
             $projects = $projects->where('skills', 'like', '%' . '"' . $id . '"' . '%')->latest();
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
+            
             return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
         }
     }

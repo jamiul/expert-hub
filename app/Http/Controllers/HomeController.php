@@ -32,26 +32,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-
-    {
+    public function index() {
         $scholarships = Scholarship::all();
-
         $subjectCounts = [];
 
         foreach ($scholarships as $scholarship) {
-         $subject = $scholarship->fieldStudy_id;
+            $subject = $scholarship->fieldStudy_id;
+            if (!isset($subjectCounts[$subject])) {
+                $subjectCounts[$subject] = 0;
+            }
 
-         if (!isset($subjectCounts[$subject])) {
-        $subjectCounts[$subject] = 0;
-    }
-
-    $subjectCounts[$subject] += $scholarship->available_slots;
-
-}
+            $subjectCounts[$subject] += $scholarship->available_slots;
+        }
 
         return view('frontend.default.index',compact('subjectCounts'));
-
     }
 
     //Admin login
@@ -162,7 +156,7 @@ class HomeController extends Controller
     public function freelancer_details($username)
     {
         $freelancer = User::where('user_name', $username)->first();
-        // dd($freelancer);
+
         return view('frontend.default.freelancer-single', compact('freelancer'));
     }
     // Freelancer meeting arrange

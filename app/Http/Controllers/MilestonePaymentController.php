@@ -80,6 +80,10 @@ class MilestonePaymentController extends Controller
             $stripe = new StripePaymentController;
             return $stripe->index();
         }
+        elseif ($request->payment_option == 'escrow') {
+            $escrow = new EscrowPaymentController;
+            return $escrow->index();
+        }
         elseif ($request->payment_option == 'sslcommerz') {
             $sslcommerz = new PublicSslCommerzPaymentController;
             return $sslcommerz->index($request);
@@ -109,7 +113,7 @@ class MilestonePaymentController extends Controller
             }
             else{
                 flash(translate('You do not have enough wallet balance.'))->error();
-                return back(); 
+                return back();
             }
         }
     }
