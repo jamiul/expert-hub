@@ -22,6 +22,9 @@
             color: #DC322F;
             font-weight: 900;
         }
+        .hidden{
+            display: none !important;
+        }
     </style>
 
 </head>
@@ -93,7 +96,7 @@
                                                 <span class=" pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="mb-5">
-                                                <input type="text" class="form-control" name="filterDate"
+                                                <input type="text" class="form-control" name="filterDate" placeholder="Select Date"
                                                     data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
                                         </div>
@@ -1045,6 +1048,7 @@
         $('#datepicker').datepicker({
             todayHighlight: true,
             minDate: 0,
+            clearBtn: true,
             // weekStart: 1,
             // daysOfWeekHighlighted: "6,0",
             autoclose: true,
@@ -1062,14 +1066,15 @@
                 tooltip: 'Seminar'
                 }
             }
-            }
-        }).on('show', function(e, date) {
-    $('td.highlight').tooltip();
+        }
+    }).on('show', function(e, date) {
+        $('td.highlight').tooltip();
+    }).on('hide', function(e, date) {
+        $('.tooltip-inner').addClass('hidden');
+        $('.arrow').addClass('hidden');
+    });
 
-});
-
-            $('#datepicker').datepicker("setDate", new Date());
-            // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
+    $('#datepicker').datepicker("setDate", new Date());
 
             function applyFilter() {
                 $('#freelancer-filter-form').submit();
