@@ -15,12 +15,12 @@
                     <div class=" mb-4 mt-3">
                         <div class="row   ">
                             <div class="col-10">
-                                <p class="fs-18 fw-700"style="color:#5ABC76;">
+                                <p class="fs-22 fw-700"style="color:#5ABC76;">
                                     <u>Foundations of PLS-SEM Using SmartPLS 4</u>
                                 </p>
                             </div>
                             <div class="col-lg-10 col-12 ">
-                                <p class="fs-18 fw-700"style="color:#5ABC76;">
+                                <p class="fs-22 fw-700"style="color:#5ABC76;">
                                     Seminar overview
                                 </p>
                             </div>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="details-seminar">
                     <div class="">
-                        <h5 class="fs-18 fw-700 mx-auto fw-700"style="color:#5ABC76;">Course objectives</h5>
+                        <h5 class="fs-22 fw-700 mx-auto fw-700"style="color:#5ABC76;">Course objectives</h5>
                         <div>
                             <p class="text-justify"> This two-day online course introduces participants to the
                                 state-of-the-art of partial least
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                     <div>
-                        <h5 class="fs-18 fw-700"style="color:#5ABC76;">Learning outcomes</h5>
+                        <h5 class="fs-22 fw-700"style="color:#5ABC76;">Learning outcomes</h5>
                         <div>
                             <p class="text-justify"> This course has been designed to familiarize participants with the
                                 potential of using the
@@ -257,7 +257,7 @@
                         </div>
                     </div>
                     <div>
-                        <h5 class="fs-18 fw-700"style="color:#5ABC76;">Teaching and learning methods</h5>
+                        <h5 class="fs-22 fw-700"style="color:#5ABC76;">Teaching and learning methods</h5>
                         <div>
                             <p class="text-justify"> The course is based on the PLS-SEM textbook by Hair, J. F., Hult, G. T.
                                 M., Ringle, C. M., &
@@ -281,11 +281,11 @@
                         </div>
                     </div>
                     <div>
-                        <h5 class="fs-18 fw-700 text-justify"style="color:#5ABC76;">Preliminary course schedule (Australian
+                        <h5 class="fs-22 fw-700 text-justify"style="color:#5ABC76;">Preliminary course schedule (Australian
                             Eastern Standard Time)
                         </h5>
                         <div>
-                            <h5 class="fs-18"> November 28, 2023
+                            <h5 class="fs-18 fw-700 text-dark"> November 28, 2023
                             </h5>
                             <p> 09:00-10:30 Foundations of structural equation modeling
                             </p>
@@ -297,7 +297,7 @@
                             </p>
                         </div>
                         <div>
-                            <h5 class="fs-18"> November 29, 2023
+                            <h5 class="fs-18 fw-700 text-dark"> November 29, 2023
                             </h5>
                             <p> 09:00-10:30 Assessing measurement model results (part I) & SmartPLS exercises
                             </p>
@@ -317,7 +317,7 @@
 
                         </div>
                         <div>
-                            <h5 class="fs-18"> December 11, 2023
+                            <h5 class="fs-18 text-dark fw-700"> December 11, 2023
                             </h5>
                             <p class="text-justify"> 09:00-10:00 PLS-SEM Clinic - Our experts will be available to answer
                                 PLS-SEM-related
@@ -328,7 +328,7 @@
                         </div>
                     </div>
                     <div>
-                        <h5 class="fs-18 fw-700"style="color:#5ABC76;">Instructors</h5>
+                        <h5 class="fs-22 fw-700"style="color:#5ABC76;">Instructors</h5>
                         <div>
 
                             <p class="text-justify"> This course will be taught by three leading academics in the PLS-SEM
@@ -338,7 +338,7 @@
 
                         </div>
                         <div>
-                            <h5 class="fs-18 text-dark fw-700">Prof. Dr. Dr. h.c. Marko Sarstedt</h5>
+                            <h5 class="fs-18 text-dark fw-700"><u>Prof. Dr. Dr. h.c. Marko Sarstedt</u></h5>
                             <p class="text-justify">Marko Sarstedt is a chaired professor of marketing at the
                                 Ludwig-Maximilians-University
                                 Munich (Germany) and an adjunct research professor
@@ -404,7 +404,7 @@
                         </div>
 
                         <div>
-                            <h5 class="fs-18 text-dark fw-700 mt-2">Prof. Dr. Christian M. Ringle</h5>
+                            <h5 class="fs-18 text-dark fw-700 mt-2"><u>Prof. Dr. Christian M. Ringle</u></h5>
                             <p class="text-justify">Christian M. Ringle is a Professor of Management and the Director of the
                                 Institute for Human
                                 Resource Management and Organizations at the
@@ -471,7 +471,7 @@
 
                         </div>
                         <div>
-                            <h5 class="fs-18 text-dark fw-700 mt-2">Prof. Dr. Jan-Michael Becker</h5>
+                            <h5 class="fs-18 text-dark fw-700 mt-2"><u>Prof. Dr. Jan-Michael Becker</u></h5>
                             <p class="text-justify">Jan-Michael Becker is an Associate Professor in the Department of
                                 Marketing at the BI
                                 Norwegian Business School. He received his doctorate
@@ -539,12 +539,12 @@
                         </div>
                     </div>
                     <section>
-                        <h5 class="fs-18 fw-700 mt-2"style="color:#5ABC76;">Teaching Resources</h5>
+                        <h5 class="fs-22 fw-700 mt-2"style="color:#5ABC76;">Teaching Resources</h5>
                         <div>
 
-                            <h6>
+                            <h5 class="fs-18 fw-700 mt-2">
                                 Textbooks on PLS-SEM:
-                            </h6>
+                            </h5>
                           
                                 <li>Hair, J.F., Hult, G.T.M., Ringle, C. M., & Sarstedt, M. (2022). A Primer on Partial
                                     Least Squares Structural Equation Modeling (PLS-
@@ -558,7 +558,7 @@
 
                         </div>
                         <div>
-                            <h5 class="fs-14 fw-700 text-dark">Articles:</h5>
+                            <h5 class="fs-18 fw-700 mt-2 text-dark">Articles:</h5>
                             
                                 <li>Becker, J.-M. and Ismail, I. R. (2016), Accounting for Sampling Weights in PLS Path
                                     Modeling: Simulations and Empirical
@@ -602,7 +602,7 @@
                     </section>
                     <section>
                         <div class="">
-                            <h6 class="fs-18 fw-700 mt-2"style="color:#5ABC76;">Software:</h6>
+                            <h6 class="fs-22 fw-700 mt-2"style="color:#5ABC76;">Software</h6>
                             <p class="text-justify">The course uses the software SmartPLS 4 Professional for all PLS-SEM
                                 applications and
                                 exercises. All participants get a fully functional 90 days

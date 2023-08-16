@@ -100,6 +100,29 @@
                                                     data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
                                         </div>
+
+                                        {{-- <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
+                  </h6>
+                  <div class="mb-5 border-bottom">
+                    <div class="mb-2 mt-3" style="width: 245px;">
+                      <select
+                        class="select2 form-control aiz-selectpicker rounded-1"
+                        onchange="applyFilter()"
+                        data-live-search="true"
+                        name="hourly_rate[]"
+                        >
+                        <option value="all" @if (in_array('all', $hourly_rate)) selected @endif>{{ translate('Any hourly rate') }}</option>
+
+                        @foreach (getHourlyRate() as $key => $rate)
+                        <option value="{{ $key }}" @if (in_array($key, $hourly_rate)) selected @endif> {{ $rate }} </option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div> --}}
+
+
+                                        
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
@@ -127,63 +150,64 @@
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
 
-                                            <select multiple class="select2 form-control aiz-selectpicker rounded-1"
-                                                data-toggle="select2" data-live-search="true"
-                                                placeholder=" Search software ">
+                                            <select class="select2 form-control aiz-selectpicker rounded-1" name=""
+                                            data-toggle="select2" data-live-search="true">
 
-                                                <option value="0">AMOS </option>
-                                                <option value="0"> SPSS</option>
-                                                <option value="0"> R</option>
-                                                <option value="0">Excel </option>
-                                                <option value="0">EViews </option>
-                                                <option value="0"> SAS</option>
-                                                <option value="0">SmartPLS </option>
-                                                <option value="0">Stata </option>
-                                                <option value="0">Python </option>
-                                                <option value="0">Minitab </option>
-                                                <option value="0"> MATLAB</option>
-                                                <option value="0">JMP </option>
-                                                <option value="0"> IBM SPSS Modeler</option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0"> NVivo</option>
-                                                <option value="0"> MAXQDA</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">HyperRESEARCH </option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0"> AnSWR</option>
-                                                <option value="0"> CAQDAS</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> RQDA</option>
-                                                <option value="0"> XSight</option>
-                                                <option value="0">f4analyse </option>
-                                                <option value="0"> Coding Analysis Toolkit (CAT)</option>
-                                                <option value="0"> Qiqqa</option>
-                                                <option value="0"> Taguette</option>
-                                                <option value="0">NUD*IST (N6) </option>
-                                                <option value="0">NVivo </option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0">MAXQDA </option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">DeDoose</option>
-                                                <option value="0">R</option>
-                                                <option value="0">IBM SPSS</option>
-                                                <option value="0">Minitab</option>
-                                                <option value="0"> Excel</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> HyperRESEARCH</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0"> Nvivo 12 Plus</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">ANTHROPAC </option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0">Qiqqa </option>
-                                                <option value="0">Raven's Eye </option>
-                                                <option value="0">CAQDAS </option>
-                                            </select>
+                                            <option value="">{{ translate('Search software') }}</option>
+                                            <option value="0">AMOS </option>
+                                            <option value="0"> SPSS</option>
+                                            <option value="0"> R</option>
+                                            <option value="0">Excel </option>
+                                            <option value="0">EViews </option>
+                                            <option value="0"> SAS</option>
+                                            <option value="0">SmartPLS </option>
+                                            <option value="0">Stata </option>
+                                            <option value="0">Python </option>
+                                            <option value="0">Minitab </option>
+                                            <option value="0"> MATLAB</option>
+                                            <option value="0">JMP </option>
+                                            <option value="0"> IBM SPSS Modeler</option>
+                                            <option value="0">ATLAS.ti </option>
+                                            <option value="0"> NVivo</option>
+                                            <option value="0"> MAXQDA</option>
+                                            <option value="0"> Dedoose</option>
+                                            <option value="0">QDA Miner </option>
+                                            <option value="0">HyperRESEARCH </option>
+                                            <option value="0"> Transana</option>
+                                            <option value="0"> Quirkos</option>
+                                            <option value="0">Weft QDA </option>
+                                            <option value="0"> AnSWR</option>
+                                            <option value="0"> CAQDAS</option>
+                                            <option value="0"> TAMS Analyzer</option>
+                                            <option value="0"> RQDA</option>
+                                            <option value="0"> XSight</option>
+                                            <option value="0">f4analyse </option>
+                                            <option value="0"> Coding Analysis Toolkit (CAT)</option>
+                                            <option value="0"> Qiqqa</option>
+                                            <option value="0"> Taguette</option>
+                                            <option value="0">NUD*IST (N6) </option>
+                                            <option value="0">NVivo </option>
+                                            <option value="0">ATLAS.ti </option>
+                                            <option value="0">MAXQDA </option>
+                                            <option value="0">QDA Miner </option>
+                                            <option value="0">DeDoose</option>
+                                            <option value="0">R</option>
+                                            <option value="0">IBM SPSS</option>
+                                            <option value="0">Minitab</option>
+                                            <option value="0"> Excel</option>
+                                            <option value="0"> TAMS Analyzer</option>
+                                            <option value="0"> Transana</option>
+                                            <option value="0"> HyperRESEARCH</option>
+                                            <option value="0"> Quirkos</option>
+                                            <option value="0"> Nvivo 12 Plus</option>
+                                            <option value="0"> Dedoose</option>
+                                            <option value="0">ANTHROPAC </option>
+                                            <option value="0">Weft QDA </option>
+                                            <option value="0">Qiqqa </option>
+                                            <option value="0">Raven's Eye </option>
+                                            <option value="0">CAQDAS </option>
+
+                                        </select>
                                         </div>
 
                                         <!-- Languages -->
