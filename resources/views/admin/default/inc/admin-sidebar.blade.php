@@ -538,6 +538,14 @@
                                     </a>
                                 </li>
                             @endcan
+                             @can('show blog category')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('calender.index') }}"
+                                        class="aiz-side-nav-link">
+                                        <span class="aiz-side-nav-text">{{ translate('Seminar calender') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
                             {{-- @can('show blog category')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('scholarship-level.index') }}"
