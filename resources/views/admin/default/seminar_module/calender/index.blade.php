@@ -3,7 +3,7 @@
 <div class="aiz-titlebar text-left mt-2 mb-3">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h1 class="h3">{{translate('All seminar modes')}}</h1>
+      <h1 class="h3">{{translate('All seminar dates')}}</h1>
     </div>
   </div>
 </div>
@@ -11,7 +11,7 @@
   <div class="col-lg-7">
     <div class="card">
       <div class="card-header d-block d-md-flex">
-        <h5 class="mb-0 h6">{{ translate('Seminar Modes ') }}</h5>
+        <h5 class="mb-0 h6">{{ translate('Available seminar dates ') }}</h5>
         <form class="" id="sort_categories" action="" method="GET">
           <div class="box-inline pad-rgt pull-left">
             <div class="" style="min-width: 200px;">

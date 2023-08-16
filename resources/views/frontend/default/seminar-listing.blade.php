@@ -18,6 +18,7 @@
             width: 1.5em;
             height: 1.5em;
         }
+
         td.day.highlight {
             color: #DC322F;
             font-weight: 900;
@@ -94,49 +95,68 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Seminar date -->
-                                    <div class="card-body pl-lg-0">
-                                        <div class="">
-                                            <h6 class="text-left mb-3 fs-14 fw-700">
+
+                                    <div>
+                                        <!-- Seminar date -->
+
+                                        <div class="mt-2">
+                                            <h6 class="text-left fs-14 py-2 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
-                                            <div class="mb-5">
-                                                <input type="text" class="form-control" name="filterDate" placeholder="Select Date"
+                                            <div class="">
+                                                <input type="text" class="form-control" name="filterDate"
                                                     data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Seminar Mode -->
+                                        {{-- <h6 class="text-left mb-3 fs-14 fw-700">
+                    <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
+                  </h6>
+                  <div class="mb-5 border-bottom">
+                    <div class="mb-2 mt-3" style="width: 245px;">
+                      <select
+                        class="select2 form-control aiz-selectpicker rounded-1"
+                        onchange="applyFilter()"
+                        data-live-search="true"
+                        name="hourly_rate[]"
+                        >
+                        <option value="all" @if (in_array('all', $hourly_rate)) selected @endif>{{ translate('Any hourly rate') }}</option>
 
-                                    <div>
-                                        <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
-                                        </h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Live via Zoom
-                                            </label>
+                        @foreach (getHourlyRate() as $key => $rate)
+                        <option value="{{ $key }}" @if (in_array($key, $hourly_rate)) selected @endif> {{ $rate }} </option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div> --}}
 
+
+                                        
+                                        <!-- Seminar Mode -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
+                                                <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
+                                            </h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Live via Zoom
+                                                </label>
+
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Face-to-Face
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Face-to-Face
-                                            </label>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Seminar Topics -->
-
-                                    <div class="mb-5">
-                                        <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Seminar Software') }}</span>
-                                        </h6>
+                                        <!-- Seminar software -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
+                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
+                                            </h6>
 
                                         <select multiple class="select2 form-control aiz-selectpicker rounded-1"
                                             data-toggle="select2" data-live-search="true" placeholder=" Search software ">
@@ -193,57 +213,65 @@
                                             <option value="0">Qiqqa </option>
                                             <option value="0">Raven's Eye </option>
                                             <option value="0">CAQDAS </option>
+
                                         </select>
+                                        </div>
+
+                                        <!-- Languages -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
+                                                <span class=" pr-3">{{ translate('Languages') }}</span>
+                                            </h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    English
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    French
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Hindi
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Malay
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Bangla
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDisabled">
+                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
+                                                    Chinese
+                                                </label>
+                                            </div>
+                                        </div>
+
+
                                     </div>
 
-                                    <!-- Languages -->
-                                    <div>
-                                        <h6 class="text-left mb-3 fs-14 fw-700 mt-3">
-                                            <span class=" pr-3">{{ translate('Languages') }}</span>
-                                        </h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                English
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                French
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Hindi
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Malay
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Bangla
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDisabled">
-                                            <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                Chinese
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <!-- Seminar Topics -->
+
+
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
@@ -270,7 +298,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -416,7 +444,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -562,7 +590,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -709,7 +737,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -814,7 +842,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-2 col-12">
+                                            <div class="col-lg-2 col-12 ">
                                                 <div>
                                                     <a href="">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
@@ -1053,7 +1081,6 @@
         $('#datepicker').datepicker({
             todayHighlight: true,
             minDate: 0,
-            clearBtn: true,
             // weekStart: 1,
             // daysOfWeekHighlighted: "6,0",
             autoclose: true,
@@ -1061,25 +1088,25 @@
             beforeShowDay: function(date) {
             var hilightedDays = [5, 6, 12, 30];
 
-            // get current month
-            var currentMonth = new Date().getMonth();
+                    // get current month
+                    var currentMonth = new Date().getMonth();
 
-            // if date.getMonth() === currentMonth, then highlight the date
-            if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
-                return {
-                classes: 'highlight',
-                tooltip: 'Seminar'
+                    // if date.getMonth() === currentMonth, then highlight the date
+                    if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
+                            hilightedDays)) {
+                        return {
+                            classes: 'highlight',
+                            tooltip: 'Seminar'
+                        }
+                    }
                 }
-            }
-        }
-    }).on('show', function(e, date) {
-        $('td.highlight').tooltip();
-    }).on('hide', function(e, date) {
-        $('.tooltip-inner').addClass('hidden');
-        $('.arrow').addClass('hidden');
-    });
+            }).on('show', function(e, date) {
+                $('td.highlight').tooltip();
 
-    $('#datepicker').datepicker("setDate", new Date());
+            });
+
+            $('#datepicker').datepicker("setDate", new Date());
+            // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
 
             function applyFilter() {
                 $('#freelancer-filter-form').submit();

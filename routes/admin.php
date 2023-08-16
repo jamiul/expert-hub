@@ -147,6 +147,12 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 
   //seminars
 	 Route::resource('seminar', 'SeminarController');
+	 Route::resource('/seminar-mode', 'SeminarModeController');
+  Route::get('/seminar-mode/destroy/{id}', 'SeminarModeController@destroy')->name('seminar-mode.destroy');
+	 Route::resource('/calender', 'CalenderController');
+  Route::get('/calender/destroy/{id}', 'CalenderController@destroy')->name('calender.destroy');
+	//  Route::resource('/seminar_software', 'SeminarSoftwareController');
+  // Route::get('/seminar_software/destroy/{id}', 'SeminarSoftwareController@destroy')->name('seminar_software.destroy');
 	 
 	//scholarships
   Route::resource('scholarship-category', 'ScholarshipCategoryController');

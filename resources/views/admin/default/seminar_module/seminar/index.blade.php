@@ -7,7 +7,7 @@
             <h1 class="h3">{{translate('All Seminar')}}</h1>
         </div>
         <div class="col text-right">
-            <a href="{{ route('scholarship.create') }}" class="btn btn-circle btn-info">
+            <a href="{{ route('seminar.create') }}" class="btn btn-circle btn-info">
                 <span>{{translate('Add New Seminar')}}</span>
             </a>
         </div>
