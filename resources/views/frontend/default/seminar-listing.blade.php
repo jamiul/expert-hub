@@ -22,6 +22,9 @@
             color: #DC322F;
             font-weight: 900;
         }
+        .datepicker-days {
+            margin-left: 20px !important;
+        }
         .hidden{
             display: none !important;
         }
