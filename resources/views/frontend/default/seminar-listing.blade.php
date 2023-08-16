@@ -21,6 +21,8 @@
         td.day.highlight {
             color: #DC322F;
             font-weight: 900;
+            border-radius: 50%;
+            background-color: lightblue;
         }
         .datepicker-days {
             margin-left: 20px !important;
