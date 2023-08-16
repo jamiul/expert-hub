@@ -22,6 +22,14 @@
         td.day.highlight {
             color: #DC322F;
             font-weight: 900;
+            border-radius: 50%;
+            background-color: lightblue;
+        }
+        .datepicker-days {
+            margin-left: 20px !important;
+        }
+        .hidden{
+            display: none !important;
         }
     </style>
 
@@ -150,10 +158,9 @@
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
 
-                                            <select class="select2 form-control aiz-selectpicker rounded-1" name=""
-                                            data-toggle="select2" data-live-search="true">
+                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1"
+                                            data-toggle="select2" data-live-search="true" placeholder=" Search software ">
 
-                                            <option value="">{{ translate('Search software') }}</option>
                                             <option value="0">AMOS </option>
                                             <option value="0"> SPSS</option>
                                             <option value="0"> R</option>
@@ -291,7 +298,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -437,7 +444,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -583,7 +590,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -730,7 +737,7 @@
                                                 <div class="row mb-2 mx-1">
                                                     <div class="col-lg-3 col-12 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
-                                                            Seminar dates:
+                                                            Seminar Dates:
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-9 col-12 pl-0">
@@ -1071,15 +1078,15 @@
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript">
-            $('#datepicker').datepicker({
-                todayHighlight: true,
-                minDate: 0,
-                // weekStart: 1,
-                // daysOfWeekHighlighted: "6,0",
-                autoclose: true,
-                todayHighlight: true,
-                beforeShowDay: function(date) {
-                    var hilightedDays = [5, 6, 12, 30];
+        $('#datepicker').datepicker({
+            todayHighlight: true,
+            minDate: 0,
+            // weekStart: 1,
+            // daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+            beforeShowDay: function(date) {
+            var hilightedDays = [5, 6, 12, 30];
 
                     // get current month
                     var currentMonth = new Date().getMonth();
