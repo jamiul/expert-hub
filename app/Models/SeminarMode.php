@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SeminarMode extends Model
 {
+    // protected $table = 'seminar_modes';
     use SoftDeletes;
 
     public function posts()

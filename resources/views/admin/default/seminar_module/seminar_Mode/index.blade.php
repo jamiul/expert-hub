@@ -33,14 +33,14 @@
           <tbody>
              {{-- @dd($categories); --}}
             @foreach($categories as $key => $category)
-            
+
             <tr>
               {{-- <td>{{ ($key+1) + ($categories->currentPage() - 1)*$categories->perPage() }}</td> --}}
-              <td>{{ $category->seminarMode_name }}</td>
-              
+              <td>{{ $category->mode_name	 }}</td>
+
               <td class="text-right">
                 <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                  href="{{url('admin/scholarship-category/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
+                  href="{{url('admin/seminar-mode/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
                   <i class="las la-edit"></i>
                 </a>
                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
@@ -69,7 +69,7 @@
           @csrf
           <div class="form-group mb-3">
             <label for="name">{{translate('Name')}}</label>
-            <input type="text" id="seminarMode_name" name="seminarMode_name" placeholder="{{ translate('Seminar Mode Name') }}"
+            <input type="text" id="mode_name_id" name="mode_name" placeholder="{{ translate('Seminar Mode Name') }}"
               class="form-control" required>
           </div>
           <div class="form-group mb-3 text-right">

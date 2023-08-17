@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SeminarSoftware extends Model
 {
+ protected $table = 'seminar_software';
     use SoftDeletes;
 
     public function Seminar()
