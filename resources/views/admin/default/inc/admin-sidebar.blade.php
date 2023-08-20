@@ -555,14 +555,14 @@
                                 </li>
                             @endcan --}}
 
-                             {{-- @can('show blog category')
+                             @can('show blog category')
                                 <li class="aiz-side-nav-item">
-                                    <a href="{{ route('seminar_software.index') }}"
+                                    <a href="{{ route('seminar-software.index') }}"
                                         class="aiz-side-nav-link">
                                         <span class="aiz-side-nav-text">{{ translate('Seminar Software') }}</span>
                                     </a>
                                 </li>
-                            @endcan --}}
+                            @endcan
                             @can('show blog category')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('scholarship-university.index') }}"
