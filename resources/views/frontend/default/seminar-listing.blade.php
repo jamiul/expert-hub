@@ -25,10 +25,12 @@
             border-radius: 50%;
             background-color: lightblue;
         }
+
         .datepicker-days {
             margin-left: 20px !important;
         }
-        .hidden{
+
+        .hidden {
             display: none !important;
         }
     </style>
@@ -109,28 +111,8 @@
                                             </div>
                                         </div>
 
-                                        {{-- <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
-                  </h6>
-                  <div class="mb-5 border-bottom">
-                    <div class="mb-2 mt-3" style="width: 245px;">
-                      <select
-                        class="select2 form-control aiz-selectpicker rounded-1"
-                        onchange="applyFilter()"
-                        data-live-search="true"
-                        name="hourly_rate[]"
-                        >
-                        <option value="all" @if (in_array('all', $hourly_rate)) selected @endif>{{ translate('Any hourly rate') }}</option>
-
-                        @foreach (getHourlyRate() as $key => $rate)
-                        <option value="{{ $key }}" @if (in_array($key, $hourly_rate)) selected @endif> {{ $rate }} </option>
-                        @endforeach
-                      </select>
-                    </div>
-                  </div> --}}
 
 
-                                        
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-14 fw-700">
@@ -158,63 +140,67 @@
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
 
-                                        <select multiple class="select2 form-control aiz-selectpicker rounded-1"
-                                            data-toggle="select2" data-live-search="true" placeholder=" Search software ">
+                                            <select class="select2 form-control aiz-selectpicker rounded-1" name=""
+                                                data-toggle="select2" data-live-search="true">
 
-                                            <option value="0">AMOS </option>
-                                            <option value="0"> SPSS</option>
-                                            <option value="0"> R</option>
-                                            <option value="0">Excel </option>
-                                            <option value="0">EViews </option>
-                                            <option value="0"> SAS</option>
-                                            <option value="0">SmartPLS </option>
-                                            <option value="0">Stata </option>
-                                            <option value="0">Python </option>
-                                            <option value="0">Minitab </option>
-                                            <option value="0"> MATLAB</option>
-                                            <option value="0">JMP </option>
-                                            <option value="0"> IBM SPSS Modeler</option>
-                                            <option value="0">ATLAS.ti </option>
-                                            <option value="0"> NVivo</option>
-                                            <option value="0"> MAXQDA</option>
-                                            <option value="0"> Dedoose</option>
-                                            <option value="0">QDA Miner </option>
-                                            <option value="0">HyperRESEARCH </option>
-                                            <option value="0"> Transana</option>
-                                            <option value="0"> Quirkos</option>
-                                            <option value="0">Weft QDA </option>
-                                            <option value="0"> AnSWR</option>
-                                            <option value="0"> CAQDAS</option>
-                                            <option value="0"> TAMS Analyzer</option>
-                                            <option value="0"> RQDA</option>
-                                            <option value="0"> XSight</option>
-                                            <option value="0">f4analyse </option>
-                                            <option value="0"> Coding Analysis Toolkit (CAT)</option>
-                                            <option value="0"> Qiqqa</option>
-                                            <option value="0"> Taguette</option>
-                                            <option value="0">NUD*IST (N6) </option>
-                                            <option value="0">NVivo </option>
-                                            <option value="0">ATLAS.ti </option>
-                                            <option value="0">MAXQDA </option>
-                                            <option value="0">QDA Miner </option>
-                                            <option value="0">DeDoose</option>
-                                            <option value="0">R</option>
-                                            <option value="0">IBM SPSS</option>
-                                            <option value="0">Minitab</option>
-                                            <option value="0"> Excel</option>
-                                            <option value="0"> TAMS Analyzer</option>
-                                            <option value="0"> Transana</option>
-                                            <option value="0"> HyperRESEARCH</option>
-                                            <option value="0"> Quirkos</option>
-                                            <option value="0"> Nvivo 12 Plus</option>
-                                            <option value="0"> Dedoose</option>
-                                            <option value="0">ANTHROPAC </option>
-                                            <option value="0">Weft QDA </option>
-                                            <option value="0">Qiqqa </option>
-                                            <option value="0">Raven's Eye </option>
-                                            <option value="0">CAQDAS </option>
+                                                <option value="">{{ translate('Search seminar software') }}</option>
 
-                                        </select>
+                                                <option value="0">AMOS </option>
+                                                <option value="0"> SPSS</option>
+                                                <option value="0"> R</option>
+                                                <option value="0">Excel </option>
+                                                <option value="0">EViews </option>
+                                                <option value="0"> SAS</option>
+                                                <option value="0">SmartPLS </option>
+                                                <option value="0">Stata </option>
+                                                <option value="0">Python </option>
+                                                <option value="0">Minitab </option>
+                                                <option value="0"> MATLAB</option>
+                                                <option value="0">JMP </option>
+                                                <option value="0"> IBM SPSS Modeler</option>
+                                                <option value="0">ATLAS.ti </option>
+                                                <option value="0"> NVivo</option>
+                                                <option value="0"> MAXQDA</option>
+                                                <option value="0"> Dedoose</option>
+                                                <option value="0">QDA Miner </option>
+                                                <option value="0">HyperRESEARCH </option>
+                                                <option value="0"> Transana</option>
+                                                <option value="0"> Quirkos</option>
+                                                <option value="0">Weft QDA </option>
+                                                <option value="0"> AnSWR</option>
+                                                <option value="0"> CAQDAS</option>
+                                                <option value="0"> TAMS Analyzer</option>
+                                                <option value="0"> RQDA</option>
+                                                <option value="0"> XSight</option>
+                                                <option value="0">f4analyse </option>
+                                                <option value="0"> Coding Analysis Toolkit (CAT)</option>
+                                                <option value="0"> Qiqqa</option>
+                                                <option value="0"> Taguette</option>
+                                                <option value="0">NUD*IST (N6) </option>
+                                                <option value="0">NVivo </option>
+                                                <option value="0">ATLAS.ti </option>
+                                                <option value="0">MAXQDA </option>
+                                                <option value="0">QDA Miner </option>
+                                                <option value="0">DeDoose</option>
+                                                <option value="0">R</option>
+                                                <option value="0">IBM SPSS</option>
+                                                <option value="0">Minitab</option>
+                                                <option value="0"> Excel</option>
+                                                <option value="0"> TAMS Analyzer</option>
+                                                <option value="0"> Transana</option>
+                                                <option value="0"> HyperRESEARCH</option>
+                                                <option value="0"> Quirkos</option>
+                                                <option value="0"> Nvivo 12 Plus</option>
+                                                <option value="0"> Dedoose</option>
+                                                <option value="0">ANTHROPAC </option>
+                                                <option value="0">Weft QDA </option>
+                                                <option value="0">Qiqqa </option>
+                                                <option value="0">Raven's Eye </option>
+                                                <option value="0">CAQDAS </option>
+
+                                            </select>
+
+
                                         </div>
 
                                         <!-- Languages -->
@@ -296,12 +282,12 @@
                                                     </a>
                                                 </div>
                                                 <div class="row mb-2 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-lg-3 col-4 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar Dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-lg-9 col-8 pl-0">
 
                                                         <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
@@ -311,12 +297,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1 ">
-                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                    <div class="col-4 col-lg-3 p-0 ">
                                                         <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
                                                             This
@@ -344,12 +330,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mt-lg-3 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-4 col-lg-3 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-lg-9 col-8  pl-0">
 
                                                         <p class="fre-scsh-right-side-details  mb-1 p-0"><span
                                                                 class="fw-700">Mariola Moeyaert</span> |
@@ -364,12 +350,12 @@
                                                 </div>
 
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0  pr-0">
+                                                    <div class=" col-4 col-lg-3 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
@@ -377,12 +363,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3  p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
@@ -390,12 +376,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
@@ -442,12 +428,12 @@
                                                     </a>
                                                 </div>
                                                 <div class="row mb-2 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-lg-3 col-4 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar Dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-lg-9 col-8 pl-0">
 
                                                         <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
@@ -457,12 +443,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1 ">
-                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                    <div class="col-4 col-lg-3 p-0 ">
                                                         <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
                                                             This
@@ -490,12 +476,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mt-lg-3 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-4 col-lg-3 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-lg-9 col-8  pl-0">
 
                                                         <p class="fre-scsh-right-side-details  mb-1 p-0"><span
                                                                 class="fw-700">Mariola Moeyaert</span> |
@@ -510,12 +496,12 @@
                                                 </div>
 
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0  pr-0">
+                                                    <div class=" col-4 col-lg-3 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
@@ -523,12 +509,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3  p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
@@ -536,12 +522,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
@@ -588,12 +574,12 @@
                                                     </a>
                                                 </div>
                                                 <div class="row mb-2 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-lg-3 col-4 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar Dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-lg-9 col-8 pl-0">
 
                                                         <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
@@ -603,15 +589,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1 ">
-                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                    <div class="col-4 col-lg-3 p-0 ">
                                                         <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-8 col-lg-9 pl-0">
 
-                                                        <p
-                                                            class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0 fs-14">
+                                                        <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
                                                             This
                                                             seminar will give you a strong working understanding of methods
                                                             used
@@ -637,12 +622,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mt-lg-3 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-4 col-lg-3 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-lg-9 col-8  pl-0">
 
                                                         <p class="fre-scsh-right-side-details  mb-1 p-0"><span
                                                                 class="fw-700">Mariola Moeyaert</span> |
@@ -657,12 +642,12 @@
                                                 </div>
 
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0  pr-0">
+                                                    <div class=" col-4 col-lg-3 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
@@ -670,12 +655,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3  p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
@@ -683,12 +668,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
@@ -723,7 +708,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="all-scholarship-list  mb-4 mt-3">
+                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
                                         <div class="row ">
                                             <div class="col-lg-10 col-12">
                                                 <p class="fs-18 fw-700"style="color:#5ABC76;">
@@ -735,12 +720,12 @@
                                                     </a>
                                                 </div>
                                                 <div class="row mb-2 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-lg-3 col-4 p-0">
                                                         <p class="fre-scsh-left-side-title mb-0">
                                                             Seminar Dates:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-lg-9 col-8 pl-0">
 
                                                         <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 – Fri
                                                             Sep 8,
@@ -750,12 +735,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1 ">
-                                                    <div class="col-lg-3 col-12 p-0 ">
+                                                    <div class="col-4 col-lg-3 p-0 ">
                                                         <p class="fre-scsh-left-side-title mb-0 p-0">
                                                             Seminar Summary:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12 pl-0">
+                                                    <div class="col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
                                                             This
@@ -783,12 +768,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mt-lg-3 mx-1">
-                                                    <div class="col-lg-3 col-12 p-0">
+                                                    <div class="col-4 col-lg-3 p-0">
                                                         <p class="fre-scsh-left-side-title mb-1 ">
                                                             Instructors:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-lg-9 col-8  pl-0">
 
                                                         <p class="fre-scsh-right-side-details  mb-1 p-0"><span
                                                                 class="fw-700">Mariola Moeyaert</span> |
@@ -803,12 +788,12 @@
                                                 </div>
 
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0  pr-0">
+                                                    <div class=" col-4 col-lg-3 p-0  pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Seminar Mode:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class="col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             Live via Zoom
@@ -816,12 +801,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3  p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title">
                                                             Software Package:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9  pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             R
@@ -829,12 +814,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mx-1">
-                                                    <div class="col-lg-3 col-12 p-0 pr-0">
+                                                    <div class="col-4 col-lg-3 p-0 pr-0">
                                                         <p class=" fre-scsh-left-side-title ">
                                                             Language:
                                                         </p>
                                                     </div>
-                                                    <div class="col-lg-9 col-12  pl-0">
+                                                    <div class=" col-8 col-lg-9 pl-0">
 
                                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                             English
@@ -842,7 +827,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-2 col-12 ">
+                                            <div class="col-lg-2 col-12">
                                                 <div>
                                                     <a href="">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
@@ -1078,15 +1063,15 @@
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript">
-        $('#datepicker').datepicker({
-            todayHighlight: true,
-            minDate: 0,
-            // weekStart: 1,
-            // daysOfWeekHighlighted: "6,0",
-            autoclose: true,
-            todayHighlight: true,
-            beforeShowDay: function(date) {
-            var hilightedDays = [5, 6, 12, 30];
+            $('#datepicker').datepicker({
+                todayHighlight: true,
+                minDate: 0,
+                // weekStart: 1,
+                // daysOfWeekHighlighted: "6,0",
+                autoclose: true,
+                todayHighlight: true,
+                beforeShowDay: function(date) {
+                    var hilightedDays = [5, 6, 12, 30];
 
                     // get current month
                     var currentMonth = new Date().getMonth();

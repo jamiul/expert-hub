@@ -4,8 +4,8 @@
 @section('content')
 <div class="whyFreeEdu-container-main">
     <div class=" rounded-md my-2 py-3 " style="background: #F2F7F2;">
-        <div class="row py-2 mx-4">
-            <div class="col-lg-12 mt-4 px-5 review-banner-main">
+        <div class="row py-2 mx-5">
+            <div class="col-lg-12 mt-4 px-5 mx-auto review-banner-main">
                 <h1 class="explore-find-oppor-title text-success fw-700">About ConsultantEdu</h1>
                 <p class="text-black fs-16 fw-500">ConsultantEdu is a dynamic platform to connect passionate academic experts with individuals,
                     institutions, and businesses seeking tailored education solutions. We believe that education has the
@@ -16,10 +16,10 @@
             </div>
         </div>
             {{-- ConsultantEdu services--}}
-            <div class=" " style="width: 80% ;margin:40px 10%; ">
+            
                 <div class="">
 
-                    <h1 class="btn btn-primary explore-find-oppor-title w-50 text-white mx-auto rounded-0 d-flex justify-content-center py-3 px-5 " href="#">ConsultantEdu Services</h1>
+                    {{-- <h1 class="btn btn-primary explore-find-oppor-title w-50 text-white mx-auto rounded-0 d-flex justify-content-center py-3 px-5 " href="#">ConsultantEdu Services</h1>
                     <div class="row mt-3 ">
                         <div class="col-lg-6 col-md-6 col-12 pr-1">
                             <button class="btn btn-primary text-white w-100 rounded-0" style="padding: 15px 30px" href="#"  onclick="scrollToSection('consultantsSection')">
@@ -38,9 +38,9 @@
 
                             </button>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row mt-1 ">
-                        <div class="col-lg-6 col-md-6 col-12 pr-1">
+                        {{-- <div class="col-lg-6 col-md-6 col-12 pr-1">
                             <button class="btn btn-primary text-white w-100 rounded-0" style="padding: 15px 30px" href="#" onclick="scrollToSection('reviewSection')">
                                 <img src="{{my_asset('assets/frontend/default/img/whyScholarship/book.png')}}" alt=""  >
                                 <p class="mb-0 fs-16">
@@ -57,10 +57,10 @@
                                     Writing and Editing
                                 </p>
                             </button>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row mt-1 ">
-                        <div class="col-lg-6 col-md-6 col-12 pr-1">
+                        {{-- <div class="col-lg-6 col-md-6 col-12 pr-1">
                             <button class="btn btn-primary text-white w-100 rounded-0" style="padding: 15px 30px" href="#" onclick="scrollToSection('reviewSection')">
                                 <img src="{{my_asset('assets/frontend/default/img/whyScholarship/book.png')}}" alt=""  >
                                 <p class="mb-0 fs-16">
@@ -77,9 +77,9 @@
                                     Transcription and Translation
                                 </p>
                             </button>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="row mt-1 ">
+                    {{-- <div class="row mt-1 ">
                         <div class="col-lg-6 col-md-6 col-12 pr-1">
                             <button class="btn btn-primary text-white w-100 rounded-0" style="padding: 15px 30px" href="#" onclick="scrollToSection('reviewSection')">
                                 <img src="{{my_asset('assets/frontend/default/img/whyScholarship/book.png')}}" alt=""  >
@@ -98,47 +98,47 @@
                                 </p>
                             </button>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
-            </div>
+           
                 {{-- We offer a range of services to help you with various education needs --}}
-            <div class="my-5 mx-5">
-                {{-- <h1 class="explore-find-oppor-title text-success ">We offer a range of services to help you with various education needs:</h1> --}}
-                <ul class="mt-3">
-                    <li class=" p-0 mt-0" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Course Accreditations
-                            <span class="mb-0 fw-500 fs-16 text-black"> - If you're seeking official       recognition for your courses, our accreditation
+            <div class="">
+                
+                <div class="mx-5">
+                    
+                        <p class="col-12 mb-0 fw-600 fs-20 mx-4 text-black">Course Accreditations
+                            <span class="mb-0 fw-500 fs-16 text-black text-justify"> - If you're seeking official       recognition for your courses, our accreditation
                                 experts will expertly guide you through the process, ensuring your courses meet the highest
                                 standards.
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Curriculum Development
+                   
+                   
+                        <p class="col-12 mb-0 fw-600 mx-4 fs-20 text-black">Curriculum Development
                             <span class="mb-0 fw-500 fs-18 text-black"> - Crafting engaging lessons and plans can be challenging. Our
                                 experts are great at designing plans that not only help you learn but also make learning
                                 exciting.
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Learning Management Systems (LMS)
+                    
+                   
+                        <p class="col-12 mb-0 fw-600 mx-4 fs-20 text-black">Learning Management Systems (LMS)
                             <span class="mb-0 fw-500 fs-18 text-black">- In a world shaped by technology, Learning
                                 Management Systems play a pivotal role in reshaping the way we learn. Our LMS experts can
                                 help you choose and set up these systems to make learning online easier.
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Writing and Editing
+                   
+                  
+                        <p class="col-12 mx-4 mb-0 fw-600 fs-20 text-black">Writing and Editing
                             <span class="mb-0 fw-500 fs-18 text-black"> - Words are powerful in education. Our Writing and Editing experts can
                                 conduct an in-depth editing & review of your article, manuscript, thesis, to ensure your writing
                                 is of the highest academic standards in your field.
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Research and Analysis
+                   
+                    
+                        <p class="col-12 mb-0 fw-600 fs-20 text-black mx-4">Research and Analysis
                             <span class="mb-0 fw-500 fs-18 text-black">- When we make decisions, we want them to be based on good
                                 information. Our experts can help you gather data and analyse it, to achieve better
                                 publications, grants, and research outcomes with ConsultantEdu's interactive seminars and
@@ -146,140 +146,45 @@
 
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Transcription and Translation
+                    
+                    
+                        <p class="col-12 mb-0 fw-600 fs-20 text-black mx-4">Transcription and Translation
                             <span class="mb-0 fw-500 fs-18 text-black">- Sometimes, we need to understand things in different
                                 languages. Our Transcription and Translation services help make educational content available
                                 in many languages, so more people can learn.
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Scholarship Applications
+                    
+                    
+                        <p class="col-12 mb-0 fw-600 fs-20 text-black mx-4">Scholarship Applications
                             <span class="mb-0 fw-500 fs-18 text-black">- Education should be available to everyone, and that's why we're
                                 here to help with Scholarship Applications. Our experts can review your application and
                                 provide valuable feedback to ensure you submit a competitive application.
                             </span>
                         </p>
-                    </li>
-                    <li class=" p-0 mt-2" style="font-size: 18px">
-                        <p class="col-11 mb-0 fw-600 fs-20 text-black">Mentoring and Tutoring
+                  
+                    
+                        <p class="col-12 mb-0 fw-600 fs-20 text-black mx-4">Mentoring and Tutoring
                             <span class="mb-0 fw-500 fs-18 text-black">- Personalised support is really helpful for learning. With our
                                 Mentoring and Tutoring services, you can get one-on-one help that boosts your skills and helps
                                 you do better in your studies and career
                             </span>
                         </p>
-                    </li>
+                    
 
-                </ul>
+                </div>
             </div>
     </div>
 
-
-    <div class="border-top pb-2 mt-3 " style="background-color:#275846; width:80%; margin:0 10%;">
-        <div class="mt-4 pb-2">
-          <div class="">
-            <div class="">
-              <div class=" content-title  text-center pb-2 pt-0">
-                <h2 class="fw-700 fs-36 text-white mb-3 pt-0 mt-0">How consultantEdu works</h2>
-                <h5 class="text-center text-white">It can be hard to know where to start. That's why we're here to guide
-                  you.
-                </h5>
-              </div>
-              <div class="row need-help-section px-1">
-                <div class="col-xl-3 col-md-6">
-                  <div class=" ">
-                    <div class=" h-136px align-items-center">
-                      <div class="d-flex">
-                        <img class=" mb-2 mx-auto d-block   p-3" src=" {{url('/public/assets/home/post.png')}}"
-                          alt="Image" style="width:55px; border-radius:50%; border:1px solid #fff" />
-                        <div class="need-help-section-bar"></div>
-                      </div>
-                      <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white"> Consultants
-
-                      </p>
-                    </div>
-
-                    <h6 class="fs-18 mt-3  text-white text-center">
-                         find the right work for you
-                    </h6>
-                  </div>
-
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class=" ">
-                    <div class=" h-136px align-items-center">
-                      <!-- <div class="d-flex">
-                                      <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{url('/public/assets/home/quiz1.png')}}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                      <div class="need-help-progress-bar"></div>
-                                  </div> -->
-                      <div class="d-flex">
-                        <img class="mb-2 mx-auto d-block text-black p-3" src="{{url('/public/assets/home/quiz.png')}}"
-                          alt="Image" style="width:55px; border-radius:50%; border:1px solid #fff;" />
-                        <div class="need-help-section-bar"></div>
-                      </div>
-                      <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white"> Clients
-                      </p>
-                    </div>
-                    <h6 class="fs-18 mt-3  text-white text-center">
-                        find the best consultant for you
-                    </h6>
-                  </div>
-
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class=" ">
-                    <div class=" h-136px align-items-center">
-                      <div class="d-flex">
-                        <img class=" mb-2 mx-auto d-block
-                                       p-3" src=" {{url('/public/assets/home/enroll.png')}}" alt="Image"
-                          style="width:55px; border-radius:50%; border:1px solid #fff" />
-                        <div class="need-help-section-bar"></div>
-                      </div>
-                      <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">Payment Securely
-
-                      </p>
-                    </div>
-                    <h6 class="fs-18 mt-3  text-white text-center">
-                      Simplified online enrolment to give
-                    </h6>
-                  </div>
-
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class=" ">
-                    <div class=" h-136px align-items-center">
-                      <img class=" mb-2 mx-auto d-block p-3" src=" {{url('/public/assets/home/check.png')}}" alt="Image"
-                        style="width:55px; border-radius:50%; border:1px solid #fff" />
-                      <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">Reviews
-                      </p>
-                    </div>
-                    <h6 class="fs-18 mt-3 text-white text-center">
-                      Get started on your study journey.
-                    </h6>
-                  </div>
-
-                </div>
-
-              </div>
-              <div class=" text-center py-3">
-                <a href="{{ url('/register')}}" class=" btn rounded border text-white fs-18"
-                  style="background-color:#275846;">
-                  Let's get started
-                </a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+ <h1 class="explore-find-oppor-title text-success fw-700">{{translate('Consultants – find the right work for you')}}</h1>
+ 
+    
 
 
 
     {{-- Consultants – find the right work for you --}}
     <div class="mb-5 mx-5" id="consultantsSection" style="margin-top:80px;">
-        <h1 class="explore-find-oppor-title text-success fw-700">{{translate('Consultants – find the right work for you')}}</h1>
+       
 
         <div class="mt-5 mb-5">
 
@@ -326,7 +231,7 @@
 
     <div class="my-5 border-bottom pb-5 mx-5" id="clientSection">
 
-        <div class="row ">
+        {{-- <div class="row ">
             <div class="col-lg-5 col-sm-12 ">
                 <h4 class="whyConsEdu-child-title">{{translate('Let the work find you')}}</h4>
                 <p class="explore-find-oppor-details">{{translate('Does your work stand out? Are your skills in demand? If you’re in development, design, or marketing, you can apply to our fast lane. Our recruiters will assess your hard-earned experience and match you to exclusive opportunities with trusted clients.')}}</p>
@@ -337,7 +242,7 @@
                 <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/message.svg')}}" alt="Card image cap">
 
             </div>
-        </div>
+        </div> --}}
     </div>
 
 
@@ -346,7 +251,7 @@
             <h1 class="explore-find-oppor-title text-success fw-700">Clients – find the best consultant for you
             </h1>
             <div class="">
-                <h1 class="whyConsEdu-child-title ">Let’s get to work</h1>
+                <h1 class="whyConsEdu-child-title ">Find Job</h1>
                 <p class="hth-lets-work-text w-sm-90">Build relationships and create your own Virtual Talent Bench™ for quick
                   project turnarounds or big transformations.</p>
                 <div class="border-bottom border-gray mt-3"></div>
