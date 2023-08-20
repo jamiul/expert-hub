@@ -533,7 +533,7 @@
     font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    line-height: 22px;
+    line-height: 16px;
 }
 
 /* Explore ways to earn */
@@ -593,8 +593,8 @@
     letter-spacing: -0.02em;
     margin-bottom: 10px;
     font-family: Neuemontreal, sans-serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 1.1em;
 }
 .payment-work-child-details {
@@ -615,7 +615,7 @@
     margin: 10px 0;
 }
 .learn-service {
-    color: #1f57c3;
+    /* color: #1f57c3; */
     font-family: Neuemontreal, sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -638,8 +638,8 @@
     letter-spacing: -0.02em;
     margin-bottom: 10px;
     font-family: Neuemontreal, sans-serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 1.1em;
 }
 .frequently-qsn-details {

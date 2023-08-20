@@ -40,6 +40,32 @@
 <body>
     @extends('frontend.default.layouts.app')
     @section('content')
+        <div class="container-main-projects-banner">
+        <div class="my-4" style="background:#FCEBE5">
+            <div class="row rounded-0 px-2 mx-4">
+                <div class="col-lg-3 col-sm-12 my-auto">
+                    <h3 class="text-black fw-700 fs-30  ">Seminar List</h3>
+                    <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
+                    <div class="input-group mb-3 mt-5">
+                        <form action="" method="GET" class="w-100">
+                            <input type="text" class="form-control position-relative z-0" placeholder="{{ translate('Search Seminers') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
+                            <div class="input-group-append position-absolute" style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
+                                <button class="btn btn-primary" type="submit" id="searchButton" data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                   
+                </div>
+                <div class="col-lg-5 col-sm-12 "></div>
+                <div class="col-lg-4 col-sm-12">
+                    <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
         <section class="mt-5">
             <div class="container-main-scholarship">
                 @if ($keyword != null)
@@ -60,7 +86,7 @@
                                 <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px"
                                     style="background: #F2F7F2;">
                                     <div class=" border-0 pl-lg-0">
-                                        <h5 class="my-3 fs-21 fw-700">{{ translate('Search Seminars') }}</h5>
+                                        {{-- <h5 class="my-3 fs-21 fw-700">{{ translate('Search Seminars') }}</h5> --}}
                                         <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
                                             data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                                             <i class="las la-times la-2x"></i>
@@ -77,7 +103,7 @@
                                     @endforeach
                                     <!-- search bar  -->
 
-                                    <div class="">
+                                    {{-- <div class="">
                                         <div class="d-flex align-items-center w-100">
                                             <button
                                                 class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
@@ -96,7 +122,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div>
                                         <!-- Seminar date -->
@@ -858,98 +884,106 @@
                                 </div>
                             </div>
                 </form>
+
             </div>
-            <div class="mt-5 pb-2 " style="background-color:#F2F7F2;">
+
+        </section>
+        <section>
+            <div class="my-5 pb-2 " style="background-color:#F2F7F2;">
+            <div class="">
                 <div class="">
-                    <div class="">
-                        <div class=" content-title  text-center py-5">
-                            <h2 class="fw-700 fs-24 text-black mb-0">Need experts advice help?</h2>
-                        </div>
-                        <div class="row need-help-full-body">
-                            <div class="col-xl-3 col-md-6">
-                                <div class=" ">
-                                    <div class=" h-136px align-items-center">
-                                        <div class="d-flex">
-                                            <img class=" mb-2 mx-auto d-block   p-3"
-                                                src=" {{ url('/public/assets/home/blog.png') }}" alt="Image"
-                                                style="width:55px; border-radius:50%; border:1px solid #000000" />
-                                            <div class="need-help-progress-bar"></div>
-                                        </div>
-                                        <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Post a
-                                            job
-                                        </p>
-                                    </div>
-                                    <h6 class="fs-14 mt-2  text-black text-center">
-                                        Thousands of degrees, subjects and short courses from leading Australian unis in one
-                                        place.
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class=" ">
-                                    <div class=" h-136px align-items-center">
-                                        <div class="d-flex">
-                                            <img class="mb-2 mx-auto d-block text-black p-3"
-                                                src="{{ url('/public/assets/home/quiz1.png') }}" alt="Image"
-                                                style="width:55px; border-radius:50%; border:1px solid #000000;" />
-                                            <div class="need-help-progress-bar"></div>
-                                        </div>
-                                        <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Receive
-                                            proposal
-                                        </p>
-                                    </div>
-                                    <h6 class="fs-14 mt-2  text-black text-center">
-                                        Guidance to find your best option, based on what's important to you.
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class=" ">
-                                    <div class=" h-136px align-items-center">
-                                        <div class="d-flex">
-                                            <img class=" mb-2 mx-auto d-block p-3"
-                                                src=" {{ url('/public/assets/home/certificate.png') }}" alt="Image"
-                                                style="width:55px; border-radius:50%; border:1px solid #000000" />
-                                            <div class="need-help-progress-bar"></div>
-                                        </div>
-                                        <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Make
-                                            Selection
-
-                                        </p>
-                                    </div>
-                                    <h6 class="fs-14 mt-2  text-black text-center">
-                                        Simplified online enrolment to give you easy access to uni study.
-                                    </h6>
-                                </div>
-
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class=" ">
-                                    <div class=" h-136px align-items-center">
-                                        <img class=" mb-2 mx-auto d-block p-3"
-                                            src=" {{ url('/public/assets/home/checked.png') }}" alt="Image"
+                    <div class=" content-title  text-center py-5">
+                        <h2 class="fw-700 fs-24 text-black mb-0">Need experts advice help?</h2>
+                    </div>
+                    <div class="row need-help-full-body">
+                        <div class="col-xl-3 col-md-6">
+                            <div class=" ">
+                                <div class=" h-136px align-items-center">
+                                    <div class="d-flex">
+                                        <img class=" mb-2 mx-auto d-block   p-3"
+                                            src=" {{ url('/public/assets/home/blog.png') }}" alt="Image"
                                             style="width:55px; border-radius:50%; border:1px solid #000000" />
-                                        <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
-                                            Payment Securely
-                                        </p>
+                                        <div class="need-help-progress-bar"></div>
                                     </div>
-                                    <h6 class="fs-14 mt-2  text-black text-center">
-                                        Get started on your study journey today.
-                                    </h6>
+                                    <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
+                                        Post a
+                                        job
+                                    </p>
                                 </div>
+                                <h6 class="fs-14 mt-2  text-black text-center">
+                                    Thousands of degrees, subjects and short courses from leading Australian unis in
+                                    one
+                                    place.
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class=" ">
+                                <div class=" h-136px align-items-center">
+                                    <div class="d-flex">
+                                        <img class="mb-2 mx-auto d-block text-black p-3"
+                                            src="{{ url('/public/assets/home/quiz1.png') }}" alt="Image"
+                                            style="width:55px; border-radius:50%; border:1px solid #000000;" />
+                                        <div class="need-help-progress-bar"></div>
+                                    </div>
+                                    <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
+                                        Receive
+                                        proposal
+                                    </p>
+                                </div>
+                                <h6 class="fs-14 mt-2  text-black text-center">
+                                    Guidance to find your best option, based on what's important to you.
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class=" ">
+                                <div class=" h-136px align-items-center">
+                                    <div class="d-flex">
+                                        <img class=" mb-2 mx-auto d-block p-3"
+                                            src=" {{ url('/public/assets/home/certificate.png') }}" alt="Image"
+                                            style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                        <div class="need-help-progress-bar"></div>
+                                    </div>
+                                    <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
+                                        Make
+                                        Selection
 
+                                    </p>
+                                </div>
+                                <h6 class="fs-14 mt-2  text-black text-center">
+                                    Simplified online enrolment to give you easy access to uni study.
+                                </h6>
                             </div>
 
                         </div>
-                        <div class=" text-center py-5">
-                            <h5 class="btn rounded-0 text-white" style="background-color:#275846;">
-                                Let's get started
-                            </h5>
+                        <div class="col-xl-3 col-md-6">
+                            <div class=" ">
+                                <div class=" h-136px align-items-center">
+                                    <img class=" mb-2 mx-auto d-block p-3"
+                                        src=" {{ url('/public/assets/home/checked.png') }}" alt="Image"
+                                        style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                    <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
+                                        Payment Securely
+                                    </p>
+                                </div>
+                                <h6 class="fs-14 mt-2  text-black text-center">
+                                    Get started on your study journey today.
+                                </h6>
+                            </div>
 
                         </div>
+
+                    </div>
+                    <div class=" text-center py-5">
+                        <h5 class="btn rounded-0 text-white" style="background-color:#275846;">
+                            Let's get started
+                        </h5>
+
                     </div>
                 </div>
             </div>
+        </div>
         </section>
 
         <!--  this script to handle the "Hide All" button click -->
