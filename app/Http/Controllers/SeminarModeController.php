@@ -23,20 +23,15 @@ class SeminarModeController extends Controller
     {
 
         $sort_search =null;
-        $categories = SeminarMode::orderBy('mode_name', 'asc')->get();
-        // $categories = SeminarMode::all();
-
-// dd($categories);
+        $categories = SeminarMode::orderBy('name', 'asc')->get();
 
         if ($request->has('search')){
 
             $sort_search = $request->search;
-            $categories = $categories->where('mode_name', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('name', 'like', '%'.$sort_search.'%');
         }
 
-//    $categories = $categories->paginate(15);
-        // dd($categories);
-        return view('admin.default.seminar_module.seminar_mode.index', compact('categories', 'sort_search'));
+        return view('admin.default.seminar_module.seminar_Mode.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -57,16 +52,18 @@ class SeminarModeController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        $input = $request->all();
         $request->validate([
-            'mode_name	' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
 
-        $category = new SeminarMode;
-        $category->mode_name= $request->mode_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->mode_name));
-        dd($category);
-        $category->save();
+        $lower_case = strtolower($input['name']);
+        $slug = str_replace(' ', '-', $lower_case);
+
+        SeminarMode::create([
+            'name' => $input['name'],
+            'slug' => $slug,
+        ]);
 
         flash(translate('Seminar mode has been created successfully'))->success();
         return redirect()->route('seminar-mode.index');

@@ -69,7 +69,7 @@
           @csrf
           <div class="form-group mb-3">
             <label for="name">{{translate('Name')}}</label>
-            <input type="text" id="mode_name_id" name="mode_name" placeholder="{{ translate('Seminar Mode Name') }}"
+            <input type="text" id="mode_name_id" name="name" placeholder="{{ translate('Seminar Mode Name') }}"
               class="form-control" required>
           </div>
           <div class="form-group mb-3 text-right">
