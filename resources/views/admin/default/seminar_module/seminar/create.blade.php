@@ -6,28 +6,28 @@
     <div class="col-lg-8 mx-auto">
         <div class="card">
             <div class="card-header">
-                <h5 class="mb-0 h6">{{translate('Scholarship Information')}}</h5>
+                <h5 class="mb-0 h6">{{translate('Seminar Information')}}</h5>
             </div>
             <div class="card-body">
-                <form id="add_form" class="form-horizontal" action="{{route('scholarship.store')}}" method="POST">
+                <form id="add_form" class="form-horizontal" action="{{route('seminar.store')}}" method="POST">
                     @csrf
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
-                            {{translate('Scholarship Title')}}
+                            {{translate('Seminar Title')}}
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Scholarship Title')}}" onkeyup="makeSlug(this.value)" id="title" name="title" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Seminar Title')}}" onkeyup="makeSlug(this.value)" id="title" name="title" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row" id="category">
                         <label class="col-md-3 col-from-label">
-                            {{translate('Category')}}
+                            {{translate('Seminar Mode')}}
                             <span class="text-danger">*</span>
 
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select category') }}">
+                            <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
                                 @foreach ($scholarship_categories as $category)
                                 <option value="{{ $category->id }}">
                                     {{ $category->category_name }}
@@ -38,12 +38,12 @@
                     </div>
                     <div class="form-group row" id="level">
                         <label class="col-md-3 col-from-label">
-                            {{translate('Study Level')}}
+                            {{translate('Software Package')}}
                             <span class="text-danger">*</span>
 
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select Level') }}">
+                            <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select Software Package') }}">
 
                                 @foreach ($scholarship_levels as $level)
                                 <option value="{{ $level->id }}">
@@ -53,9 +53,18 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">
+                            {{translate('Software Description')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <textarea name="software_description" rows="5" class="form-control" required=""></textarea>
+                        </div>
+                    </div>
                     <div class="form-group row" id="university">
                         <label class="col-md-3 col-from-label">
-                            {{translate('University')}}
+                            {{translate('Language')}}
                             <span class="text-danger">*</span>
 
                         </label>
@@ -72,21 +81,21 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
-                            {{translate('website link')}}
+                            {{translate('Organiser and certificate')}}
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('website link')}}"  id="website_link" name="website_link" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Organiser and certificate')}}"  id="website_link" name="website_link" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row" id="country">
                         <label class="col-md-3 col-from-label">
-                            {{translate('Country')}}
+                            {{translate('Course Instructor')}}
                             <span class="text-danger">*</span>
 
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Select Country') }}" required>
+                            <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Course Instructor') }}" required>
 
                                 @foreach ($scholarship_country as $country)
                                 <option value="{{ $level->id }}">
@@ -96,72 +105,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row" id="city">
-                        <label class="col-md-3 col-from-label">
-                            {{translate('City')}}
-                            <span class="text-danger">*</span>
 
+                    <div class="form-group row">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Instructor Descriptions')}}
                         </label>
                         <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true" title="{{ translate('Select City') }}" required>
-
-                                @foreach ($scholarship_city as $city)
-                                <option value="{{ $level->id }}">
-                                    {{$city->city_name }}
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row" id="city">
-                        <label class="col-md-3 col-from-label">
-                            {{translate('Who can apply')}}
-                            <span class="text-danger">*</span>
-
-                        </label>
-                        <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id" data-live-search="true" title="{{ translate('Who can apply') }}" required>
-
-                                @foreach ($scholarship_whoCanApply as $title)
-
-                                <option value="{{ $level->id }}">
-                                    {{$title->title }}
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row" id="qualification">
-                        <label class="col-md-3 col-from-label">
-                            {{translate('Qualification')}}
-                            <span class="text-danger">*</span>
-
-                        </label>
-                        <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select Qualification') }}" required>
-
-                                @foreach ($scholarship_qualification as $qualification)
-                                <option value="{{ $level->id }}">
-                                    {{$qualification->qualification_name }}
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row" id="qualification">
-                        <label class="col-md-3 col-from-label">
-                            {{translate('Field Of Study')}}
-                            <span class="text-danger">*</span>
-
-                        </label>
-                        <div class="col-md-9">
-                            <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id[]"data-live-search="true" title="{{ translate('Select Field Of study') }}" data-placeholder="Select Field Of study" data-selected-text-format="count" required>
-                                @foreach ($scholarship_fieldStudy as $fieldStudy)
-                                <option value="{{ $fieldStudy->id }}">
-                                    {{$fieldStudy->name }}
-                                </option>
-                                @endforeach
-                            </select>
+                            <textarea class="aiz-text-editor" name="course_schedule"></textarea>
                         </div>
                     </div>
 
@@ -174,84 +124,58 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="signinSrEmail">
-                            {{translate('Banner')}}
-                            <small>(1300x650)</small>
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Course objectives')}}
                         </label>
                         <div class="col-md-9">
-                            <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-soft-secondary font-weight-medium">
-                                        {{ translate('Browse')}}
-                                    </div>
-                                </div>
-                                <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                <input type="hidden" name="banner" class="selected-files">
-                            </div>
-                            <div class="file-preview box sm">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">
-                            {{translate('Short Description')}}
-                            <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-md-9">
-                            <textarea name="short_description" rows="5" class="form-control" required=""></textarea>
+                            <textarea class="aiz-text-editor" name="course_objectives"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
-                            {{translate('Description')}}
+                            {{translate('Learning outcomes')}}
                         </label>
                         <div class="col-md-9">
-                            <textarea class="aiz-text-editor" name="description"></textarea>
+                            <textarea class="aiz-text-editor" name="learning_outcomes"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label">{{translate('Meta Title')}}</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" name="meta_title" placeholder="{{translate('Meta Title')}}">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="signinSrEmail">
-                            {{translate('Meta Image')}}
-                            <small>(200x200)+</small>
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Teaching and learning methods')}}
                         </label>
                         <div class="col-md-9">
-                            <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-soft-secondary font-weight-medium">
-                                        {{ translate('Browse')}}
-                                    </div>
-                                </div>
-                                <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                <input type="hidden" name="meta_img" class="selected-files">
-                            </div>
-                            <div class="file-preview box sm">
-                            </div>
+                            <textarea class="aiz-text-editor" name="teaching_learning_methods"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label">{{translate('Meta Description')}}</label>
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Teaching Resources')}}
+                        </label>
                         <div class="col-md-9">
-                            <textarea name="meta_description" rows="5" class="form-control"></textarea>
+                            <textarea class="aiz-text-editor" name="teaching_resources"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
-                            {{translate('Meta Keywords')}}
+                            {{translate('Seminar Seat')}}
+                            <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" placeholder="{{translate('Meta Keywords')}}">
+                            <input type="number" placeholder="{{translate('Seat No.')}}" name="seat" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">
+                            {{translate('Seminar Date')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="date" placeholder="{{translate('Seat No.')}}" name="date" class="form-control" required>
                         </div>
                     </div>
 
@@ -268,7 +192,7 @@
         </div>
     </div>
 </div>
-]
+
 @endsection
 
 @section('script')
