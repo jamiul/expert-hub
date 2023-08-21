@@ -21,17 +21,23 @@ class SeminarModeController extends Controller
      */
     public function index(Request $request)
     {
-
-        $sort_search =null;
-        $categories = SeminarMode::orderBy('name', 'asc')->get();
+        $input = $request->all();
+        $search = '';
 
         if ($request->has('search')){
+            $search = $input['search'];
+            $seminar_modes = SeminarMode::where('name', 'like', '%'.$search.'%')->get();
 
-            $sort_search = $request->search;
-            $categories = $categories->where('name', 'like', '%'.$sort_search.'%');
+            if($input['search'] == ''){
+                $seminar_modes = SeminarMode::orderBy('name', 'asc')->get();
+            }
+        } else {
+            $seminar_modes = SeminarMode::orderBy('name', 'asc')->get();
         }
 
-        return view('admin.default.seminar_module.seminar_Mode.index', compact('categories', 'sort_search'));
+        // $seminar_modes = $seminar_modes->paginate(15);
+
+        return view('admin.default.seminar_module.seminar_mode.index', compact('search', 'seminar_modes'));
     }
 
     /**
