@@ -558,5 +558,12 @@ function getCustomEnv($envKey)
     return config($envKey) ?? env($envKey);
 }
 
+function convertSlug($name)
+{
+    $lower_case = strtolower($name);
+    $slug = str_replace(' ', '-', $lower_case);
+
+    return $slug;
+}
 
 ?>

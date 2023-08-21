@@ -63,12 +63,9 @@ class SeminarModeController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $lower_case = strtolower($input['name']);
-        $slug = str_replace(' ', '-', $lower_case);
-
         SeminarMode::create([
             'name' => $input['name'],
-            'slug' => $slug,
+            'slug' => convertSlug($input['name']),
         ]);
 
         flash(translate('Seminar mode has been created successfully'))->success();
@@ -92,12 +89,9 @@ class SeminarModeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SeminarMode $seminar_mode)
     {
-        $level = SeminarMode::find($id);
-        // $all_categories = SeminarMode::all();
-
-        return view('admin.default.scholarship_module.study_level.edit',  compact('level'));
+        return view('admin.default.seminar_module.seminar_mode.edit',  compact('seminar_mode'));
     }
 
     /**
@@ -107,22 +101,20 @@ class SeminarModeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SeminarMode $seminar_mode)
     {
         $request->validate([
-            'mode_name	' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
 
-        $category = SeminarMode::find($id);
+        $seminar_mode->update([
+            'name' => $request->name,
+            'slug' => convertSlug($request->name),
+            ]);
 
-        $category->mode_name	 = $request->mode_name	;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->mode_name	));
+        flash(translate('Seminar Mode has been updated successfully'))->success();
 
-        $category->save();
-
-
-        flash(translate('Scholarship study level has been updated successfully'))->success();
-        return redirect()->route('scholarship-level.index');
+        return redirect()->route('seminar-mode.index');
     }
 
     /**
@@ -131,10 +123,11 @@ class SeminarModeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SeminarMode $seminar_mode)
     {
-        SeminarMode::find($id)->delete();
+        $seminar_mode->delete();
+        flash(translate('Seminar Mode has been removed successfully'))->success();
 
-        return redirect('admin/scholarship-level');
+        return redirect()->route('seminar-mode.index');
     }
 }
