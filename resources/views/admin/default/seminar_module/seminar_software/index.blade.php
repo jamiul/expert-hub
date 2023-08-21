@@ -16,7 +16,7 @@
                         <div class="box-inline pad-rgt pull-left">
                             <div class="" style="min-width: 200px;">
                                 <input type="text" class="form-control" id="search"
-                                    name="search"@isset($sort_search) value="{{ $sort_search }}" @endisset
+                                    name="search"@isset($search) value="{{ $search }}" @endisset
                                     placeholder="{{ translate('Type name & Enter') }}">
                             </div>
                         </div>
@@ -32,20 +32,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($seminars as $key => $seminar)
+                            @foreach ($seminar_softwares as $key => $seminar_software)
                             {{-- @dd($key); --}}
                                 <tr>
-                                    <td>{{ $key + 1 + ($seminars->currentPage() - 1) * $seminars->perPage() }}</td>
-                                    <td>{{ $seminar->software_name }}</td>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $seminar_software->name }}</td>
                                     <td class="text-right">
                                         <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                                            href="{{ url('admin/seminar-software/' . $seminar->id . '/edit') }}"
+                                            href="{{ url('admin/seminar-software/' . $seminar_software->id . '/edit') }}"
                                             title="{{ translate('Edit') }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <a href="#"
                                             class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                                            data-href="{{ route('seminar-software.destroy', $seminar->id) }}"
+                                            data-href="{{ route('seminar-software.destroy', $seminar_software->id) }}"
                                             title="{{ translate('Delete') }}">
                                             <i class="las la-trash"></i>
                                         </a>
@@ -70,7 +70,7 @@
                         @csrf
                         <div class="form-group mb-3">
                             <label for="name">{{ translate('Name') }}</label>
-                            <input type="text" id="software_name" name="software_name"
+                            <input type="text" id="name" name="name"
                                 placeholder="{{ translate('Seminar Software') }}" class="form-control" required>
                         </div>
                         <div class="form-group mb-3 text-right">

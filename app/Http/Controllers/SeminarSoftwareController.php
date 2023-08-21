@@ -20,21 +20,22 @@ class SeminarSoftwareController extends Controller
      */
     public function index(Request $request)
     {
+        $input = $request->all();
+        $search = '';
 
-        $sort_search = null;
+        if ($request->has('search')){
+            $search = $input['search'];
+            $seminar_softwares = SeminarSoftware::where('name', 'like', '%'.$search.'%')->get();
 
-        $query = SeminarSoftware::orderBy('software_name', 'asc'); // Build the initial query
-
-        if ($request->has('search')) {
-            $sort_search = $request->search;
-            $query->where('software_name', 'like', '%' . $sort_search . '%');
+            if($input['search'] == ''){
+                $seminar_softwares = SeminarSoftware::orderBy('name', 'asc')->get();
+            }
+        } else {
+            $seminar_softwares = SeminarSoftware::orderBy('name', 'asc')->get();
         }
 
-        $seminars = $query->paginate(15); // Paginate the results
-
-
-        // dd($seminars);
-        return view('admin.default.seminar_module.seminar_software.index', compact('seminars', 'sort_search'));
+        // $seminar_software = $seminar_software->paginate(15);
+        return view('admin.default.seminar_module.seminar_software.index', compact('seminar_softwares', 'search'));
     }
 
     /**
@@ -54,19 +55,21 @@ class SeminarSoftwareController extends Controller
      */
     public function store(Request $request)
     {
-
+        $input = $request->all();
         $request->validate([
-            'software_name' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
-        $category = new SeminarSoftware;
-        $category->software_name = $request->software_name;
 
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
-        // dd($category->slug);
-        $category->save();
+        $lower_case = strtolower($input['name']);
+        $slug = str_replace(' ', '-', $lower_case);
 
+        SeminarSoftware::create([
+            'name' => $input['name'],
+            'slug' => $slug,
+        ]);
 
         flash(translate('Seminar software has been created successfully'))->success();
+
         return redirect()->route('seminar-software.index');
     }
 

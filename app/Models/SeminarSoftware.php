@@ -4,11 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SeminarSoftware extends Model
 {
- protected $table = 'seminar_software';
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = ['name', 'slug'];
+    protected $dates = ['deleted_at'];
 
     public function Seminar()
     {
