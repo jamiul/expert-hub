@@ -298,6 +298,15 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 
     Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
     Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
+    // seminar
+    Route::get('seminar', 'SeminarConsultantController@seminar_index')->name('seminar.seminar_index');
+    Route::get('seminar/purchased', 'SeminarConsultantController@sold_services')->name('seminar.sold');
+    Route::get('seminar/create', 'SeminarConsultantController@create')->name('seminar.create');
+    Route::post('seminar/store', 'SeminarConsultantController@store')->name('seminar.store');
+
+    Route::get('seminar/edit/{slug}', 'SeminarConsultantController@edit')->name('seminar.edit');
+    Route::post('seminar/update/{slug}', 'SeminarConsultantController@update')->name('seminar.update');
+    Route::get('seminar/destroy/{slug}', 'SeminarConsultantController@destroy')->name('seminar.destroy');
 });
 
 Route::get('/search', 'SearchController@index')->name('search');
