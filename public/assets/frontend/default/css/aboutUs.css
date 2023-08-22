@@ -33,3 +33,8 @@
         right:0;
 }
 }
+
+.nav .nav-item .faq-btn::active{
+    background-color: red !important;
+}
+

@@ -556,7 +556,7 @@
     letter-spacing: -0.03em;
     margin-top: 0;
     margin-bottom: 25px;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 500;
     line-height: 1em;
 }
@@ -587,6 +587,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
+    text-align: justify;
 }
 .payment-work-child-title {
     color: #001e00;
@@ -634,6 +635,16 @@
     font-size: 38px;
 }
 .frequently-qsn-title {
+    color: #001e00;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+.faq-qsn-title {
     color: #001e00;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
@@ -839,8 +850,8 @@
 
 /* project-listing page */
 .container-main-projects-banner{
-    width: 98%;
-    margin: 0 1% 10px 1%;
+    width: 100%;
+    /* margin: 0 1% 10px 1%; */
 }
 .container-main-projects{
     width: 94%;
@@ -869,3 +880,10 @@ display: block; /* or "none" if you want it to be initially hidden */
     background: #c6c5c5;
 
  }
+
+@media (min-width: 425px) {
+    .seminar-banner{
+        max-width: 250px !important;
+        font-size: 18px !important;
+    }
+}
