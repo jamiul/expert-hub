@@ -85,6 +85,33 @@
                         </li>
                     </ul>
                 </li>
+                <!-- Seminars -->
+                <li class="aiz-side-nav-item">
+                    <a href="javascript:void(0);" class="aiz-side-nav-link d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11.998" height="12" viewBox="0 0 11.998 12">
+                            <path id="Subtraction_161" data-name="Subtraction 161" d="M3640.751,9220h-7.5a2.251,2.251,0,0,1-2.249-2.249v-7.5a2.251,2.251,0,0,1,2.249-2.249h7.5a2.25,2.25,0,0,1,2.247,2.249v7.5A2.25,2.25,0,0,1,3640.751,9220Zm-3-3.751a.751.751,0,0,0,0,1.5h3a.751.751,0,0,0,0-1.5Zm1.5-3.748a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,3639.25,9212.5Zm-6-3.6a1.351,1.351,0,0,0-1.351,1.349v.711h10.2v-.711a1.331,1.331,0,0,0-.4-.953,1.352,1.352,0,0,0-.953-.4Z" transform="translate(-3631 -9207.999)" fill="#989ea8"/>
+                        </svg>
+                        <span class="aiz-side-nav-text ml-2">{{ translate('Seminar') }}</span>
+                        <span class="aiz-side-nav-arrow"></span>
+                    </a>
+                    <ul class="aiz-side-nav-list level-2">
+                        <li class="aiz-side-nav-item">
+                            <a href="{{ route('seminar.create') }}" class="aiz-side-nav-link {{ areActiveRoutes(['seminar', 'seminar.create'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Add New Seminar') }}</span>
+                            </a>
+                        </li>
+                        <li class="aiz-side-nav-item">
+                            <a href="{{ route('seminar.seminar_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('All Seminar') }}</span>
+                            </a>
+                        </li>
+                        {{-- <li class="aiz-side-nav-item">
+                            <a href="{{ route('service.sold') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service.sold'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Sold Seminar') }}</span>
+                            </a>
+                        </li> --}}
+                    </ul>
+                </li>
                 <!-- Projects -->
                 <li class="aiz-side-nav-item">
                     <a href="javascript:void(0);" class="aiz-side-nav-link d-flex align-items-center">
