@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class=" w-100">
+                <div class="w-100">
                     <div class="card">
                         <div class="card-header">
                             <h5 class="mb-0 h6">{{translate('Seminar Information')}}</h5>
@@ -32,6 +32,44 @@
                                         <input type="text" placeholder="{{translate('Seminar Title')}}" onkeyup="makeSlug(this.value)" id="title" name="title" class="form-control" required>
                                     </div>
                                 </div>
+
+                                <div class="form-group row mb-0">
+                                    <table class="table table-borderless mb-0" id="seminarDateTable">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label">
+                                                            {{translate('Seminar Date')}}
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-md-9">
+                                                            <input
+                                                                type="text"
+                                                                placeholder="{{translate('Select Date')}}"
+                                                                name="seminar_date[]"
+                                                                class="form-control"
+                                                                onfocus="(this.type='date')"
+                                                                onblur="(this.type='text')"
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="form-group mb-4 text-left">
+                                    <button
+                                        type="button"
+                                        class="btn btn-circle btn-info"
+                                        id="addDate"
+                                    >
+                                        {{translate('Add Date')}}
+                                    </button>
+                                </div>
+
                                 <div class="form-group row" id="category">
                                     <label class="col-md-3 col-from-label">
                                         {{translate('Seminar Mode')}}
@@ -40,11 +78,11 @@
                                     </label>
                                     <div class="col-md-9">
                                         <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
-                                            {{-- @foreach ($scholarship_categories as $category)
-                                            <option value="{{ $category->id }}">
-                                                {{ $category->category_name }}
+                                            @foreach ($seminar_mode as $mode)
+                                            <option value="{{ $mode->id }}">
+                                                {{ $mode->name }}
                                             </option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -56,12 +94,12 @@
                                     </label>
                                     <div class="col-md-9">
                                         <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select Software Package') }}">
-                                        {{--
-                                            @foreach ($scholarship_levels as $level)
-                                            <option value="{{ $level->id }}">
-                                                {{$level->level_name }}
+
+                                            @foreach ($seminar_software as $software)
+                                            <option value="{{ $software->id }}">
+                                                {{$software->name }}
                                             </option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -83,11 +121,11 @@
                                     <div class="col-md-9">
                                         <select class="form-control aiz-selectpicker" name="university_id" id="university_id" data-live-search="true" title="{{ translate('Select university') }}">
 
-                                            {{-- @foreach ($scholarship_universities as $university)
-                                            <option value="{{ $level->id }}">
-                                                {{$university->university_name }}
+                                            @foreach ($languages as $language)
+                                            <option value="{{ $language->id }}">
+                                                {{$language->name }}
                                             </option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -108,12 +146,11 @@
                                     </label>
                                     <div class="col-md-9">
                                         <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Course Instructor') }}" required>
-
-                                            {{-- @foreach ($scholarship_country as $country)
-                                            <option value="{{ $level->id }}">
-                                                {{$country->country_name }}
+                                            @foreach ($users as $user)
+                                            <option value="{{ $user->id }}">
+                                                {{$user->name }}
                                             </option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -178,16 +215,6 @@
                                     </label>
                                     <div class="col-md-9">
                                         <input type="number" placeholder="{{translate('Seat No.')}}" name="seat" class="form-control" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">
-                                        {{translate('Seminar Date')}}
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-md-9">
-                                        <input type="date" placeholder="{{translate('Seat No.')}}" name="date" class="form-control" required>
                                     </div>
                                 </div>
 

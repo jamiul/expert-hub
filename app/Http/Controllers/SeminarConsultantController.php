@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Language;
+use App\Models\SeminarMode;
+use App\Models\SeminarSoftware;
 use App\Models\Service;
 use App\Models\ServicePackage;
 use App\Models\ServicePackagePayment;
+use App\Models\User;
 use App\Models\Wallet;
 use App\Utility\ServicesUtility;
 use App\Utility\ValidationUtility;
@@ -12,12 +16,13 @@ use Illuminate\Http\Request;
 use App\Utility\EmailUtility;
 use App\Utility\NotificationUtility;
 use Auth;
+
 use Validator;
 use Session;
 
 class SeminarConsultantController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -36,9 +41,19 @@ class SeminarConsultantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
+    $seminar_mode=SeminarMode::all();
+    $seminar_software=SeminarSoftware::all();
+    $languages=Language::all();
+    $all_users=User::all();
+    $users = $all_users->where('user_type',"freelancer")->all();
+
+
+
+
         if(ServicesUtility::can_create_service() == 1)
-            return view('frontend.default.user.freelancer.projects.seminars.create');
+            return view('frontend.default.user.freelancer.projects.seminars.create',compact('seminar_mode','seminar_software','languages','users'));
 
         flash(translate('Sorry! Your service creation limit is over.'))->warning();
 
@@ -66,9 +81,13 @@ class SeminarConsultantController extends Controller
      */
     public function edit($slug)
     {
+        $seminar_mode=SeminarMode::all();
+        $seminar_software=SeminarSoftware::all();
+        $languages=Language::all();
+        $all_users=User::all();
+        $users = $all_users->where('user_type',"freelancer")->all();
 
-
-        return view('frontend.default.user.freelancer.projects.seminars.edit');
+        return view('frontend.default.user.freelancer.projects.seminars.edit',compact('seminar_mode','seminar_software','languages','users'));
     }
 
     /**
