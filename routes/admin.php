@@ -149,7 +149,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('seminar', 'SeminarController');
     Route::resource('seminar-mode', 'SeminarModeController');
     Route::resource('seminar-software', 'SeminarSoftwareController');
-    Route::resource('calender', 'CalenderController');
 
     //scholarships
     Route::resource('scholarship-category', 'ScholarshipCategoryController');

@@ -538,24 +538,7 @@
                                     </a>
                                 </li>
                             @endcan
-                             @can('show blog category')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('calender.index') }}"
-                                        class="aiz-side-nav-link">
-                                        <span class="aiz-side-nav-text">{{ translate('Seminar calender') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            {{-- @can('show blog category')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('scholarship-level.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Seminar Topics') }}</span>
-                                    </a>
-                                </li>
-                            @endcan --}}
-
-                             @can('show blog category')
+                            @can('show blog category')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('seminar-software.index') }}"
                                         class="aiz-side-nav-link">
@@ -563,23 +546,6 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('show blog category')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('scholarship-university.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-university.create', 'scholarship-university.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Date') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('show blog category')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('scholarship-country.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-country.create', 'scholarship-country.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Languages') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-
                         </ul>
                     </li>
                 @endif
