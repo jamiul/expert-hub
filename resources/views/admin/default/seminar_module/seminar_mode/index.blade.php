@@ -15,8 +15,8 @@
         <form class="" id="sort_categories" action="" method="GET">
           <div class="box-inline pad-rgt pull-left">
             <div class="" style="min-width: 200px;">
-              <input type="text" class="form-control" id="search" name="search" @isset($sort_search)
-                value="{{ $sort_search }}" @endisset placeholder="{{ translate('Type name & Enter') }}">
+              <input type="text" class="form-control" id="search" name="search" @isset($search)
+                value="{{ $search }}" @endisset placeholder="{{ translate('Type name & Enter') }}">
             </div>
           </div>
         </form>
@@ -31,20 +31,20 @@
             </tr>
           </thead>
           <tbody>
-             {{-- @dd($categories); --}}
-            @foreach($categories as $key => $category)
-            
+            @foreach($seminar_modes as $key => $seminar_mode)
+
             <tr>
-              {{-- <td>{{ ($key+1) + ($categories->currentPage() - 1)*$categories->perPage() }}</td> --}}
-              <td>{{ $category->seminarMode_name }}</td>
-              
+              {{-- <td>{{ ($key+1) + ($seminar_modes->currentPage() - 1)*$seminar_modes->perPage() }}</td> --}}
+              <td>{{ $key+1 }}</td>
+              <td>{{ $seminar_mode->name	 }}</td>
+
               <td class="text-right">
                 <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                  href="{{url('admin/scholarship-category/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
+                  href="{{url('admin/seminar-mode/'.$seminar_mode->id.'/edit')}}" title="{{ translate('Edit') }}">
                   <i class="las la-edit"></i>
                 </a>
                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                  data-href="{{route('seminar-mode.destroy', $category->id)}}"
+                  data-href="{{route('seminar-mode.destroy', $seminar_mode->id)}}"
                   title="{{ translate('Delete') }}">
                   <i class="las la-trash"></i>
                 </a>
@@ -69,7 +69,7 @@
           @csrf
           <div class="form-group mb-3">
             <label for="name">{{translate('Name')}}</label>
-            <input type="text" id="seminarMode_name" name="seminarMode_name" placeholder="{{ translate('Seminar Mode Name') }}"
+            <input type="text" id="mode_name_id" name="name" placeholder="{{ translate('Seminar Mode Name') }}"
               class="form-control" required>
           </div>
           <div class="form-group mb-3 text-right">

@@ -21,22 +21,23 @@ class SeminarModeController extends Controller
      */
     public function index(Request $request)
     {
-        
-        $sort_search =null;
-        $categories = SeminarMode::orderBy('seminarMode_name', 'asc')->get();
-        // $categories = SeminarMode::all();
-
-// dd($categories);
+        $input = $request->all();
+        $search = '';
 
         if ($request->has('search')){
-            
-            $sort_search = $request->search;
-            $categories = $categories->where('seminarMode_name', 'like', '%'.$sort_search.'%');
+            $search = $input['search'];
+            $seminar_modes = SeminarMode::where('name', 'like', '%'.$search.'%')->get();
+
+            if($input['search'] == ''){
+                $seminar_modes = SeminarMode::orderBy('name', 'asc')->get();
+            }
+        } else {
+            $seminar_modes = SeminarMode::orderBy('name', 'asc')->get();
         }
 
-//    $categories = $categories->paginate(15);
-        // dd($categories);
-        return view('admin.default.seminar_module.seminar_mode.index', compact('categories', 'sort_search'));
+        // $seminar_modes = $seminar_modes->paginate(15);
+
+        return view('admin.default.seminar_module.seminar_mode.index', compact('search', 'seminar_modes'));
     }
 
     /**
@@ -57,18 +58,18 @@ class SeminarModeController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        $input = $request->all();
         $request->validate([
-            'seminarMode_name' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
 
-        $category = new SeminarMode;
-        // dd($category);
-        $category->seminarMode_name = $request->seminarMode_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+        $lower_case = strtolower($input['name']);
+        $slug = str_replace(' ', '-', $lower_case);
 
-        $category->save();
-
+        SeminarMode::create([
+            'name' => $input['name'],
+            'slug' => $slug,
+        ]);
 
         flash(translate('Seminar mode has been created successfully'))->success();
         return redirect()->route('seminar-mode.index');
@@ -109,13 +110,13 @@ class SeminarModeController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'seminarMode_name' => 'required|max:255',
+            'mode_name	' => 'required|max:255',
         ]);
 
         $category = SeminarMode::find($id);
 
-        $category->seminarMode_name = $request->seminarMode_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->seminarMode_name));
+        $category->mode_name	 = $request->mode_name	;
+        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->mode_name	));
 
         $category->save();
 

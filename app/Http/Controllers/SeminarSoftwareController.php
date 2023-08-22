@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ScholarshipLevel;
 use App\Models\SeminarSoftware;
+
 
 class SeminarSoftwareController extends Controller
 {
@@ -20,20 +20,22 @@ class SeminarSoftwareController extends Controller
      */
     public function index(Request $request)
     {
-        
-        $sort_search =null;
-        $categories = SeminarSoftware::orderBy('software_name', 'asc');
-
+        $input = $request->all();
+        $search = '';
 
         if ($request->has('search')){
-            
-            $sort_search = $request->search;
-            $categories = $categories->where('software_name', 'like', '%'.$sort_search.'%');
+            $search = $input['search'];
+            $seminar_softwares = SeminarSoftware::where('name', 'like', '%'.$search.'%')->get();
+
+            if($input['search'] == ''){
+                $seminar_softwares = SeminarSoftware::orderBy('name', 'asc')->get();
+            }
+        } else {
+            $seminar_softwares = SeminarSoftware::orderBy('name', 'asc')->get();
         }
 
-  
-        // dd($categories);
-        return view('admin.default.seminar_module.seminar_software.index', compact('categories', 'sort_search'));
+        // $seminar_software = $seminar_software->paginate(15);
+        return view('admin.default.seminar_module.seminar_software.index', compact('seminar_softwares', 'search'));
     }
 
     /**
@@ -43,7 +45,6 @@ class SeminarSoftwareController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -54,22 +55,22 @@ class SeminarSoftwareController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $input = $request->all();
         $request->validate([
-            'software_name' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
-// dd($request->all());
-        $category = new SeminarSoftware ;
-      
-        $category->software_name = $request->software_name;
-// dd($category);
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
-        // dd($category->slug);
-        $category->save();
 
+        $lower_case = strtolower($input['name']);
+        $slug = str_replace(' ', '-', $lower_case);
+
+        SeminarSoftware::create([
+            'name' => $input['name'],
+            'slug' => $slug,
+        ]);
 
         flash(translate('Seminar software has been created successfully'))->success();
-        return redirect()->route('seminar_software.index');
+
+        return redirect()->route('seminar-software.index');
     }
 
     /**
@@ -91,10 +92,10 @@ class SeminarSoftwareController extends Controller
      */
     public function edit($id)
     {
-        $level = ScholarshipLevel::find($id);
-        // $all_categories = ScholarshipLevel::all();
+        $seminar = SeminarSoftware::find($id);
+        // $all_seminars = SeminarSoftware::all();
 
-        return view('admin.default.scholarship_module.seminar_software.edit',  compact('level'));
+        return view('admin.default.seminar_module.seminar_software.edit',  compact('seminar'));
     }
 
     /**
@@ -110,7 +111,7 @@ class SeminarSoftwareController extends Controller
             'software_name' => 'required|max:255',
         ]);
 
-        $category = ScholarshipLevel::find($id);
+        $category = SeminarSoftware::find($id);
 
         $category->software_name = $request->software_name;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->software_name));
@@ -119,7 +120,7 @@ class SeminarSoftwareController extends Controller
 
 
         flash(translate('Scholarship study level has been updated successfully'))->success();
-        return redirect()->route('seminar_software.index');
+        return redirect()->route('seminar-software.index');
     }
 
     /**
@@ -130,8 +131,8 @@ class SeminarSoftwareController extends Controller
      */
     public function destroy($id)
     {
-        ScholarshipLevel::find($id)->delete();
+        SeminarSoftware::find($id)->delete();
 
-        return redirect('admin/scholarship-level');
+        return redirect('admin/seminar-software');
     }
 }

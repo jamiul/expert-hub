@@ -10,11 +10,11 @@
                     <h3 class="text-white fw-700  frequently-qsn-title  ">Welcome to ConsultantEdu </h3>
                     <p class="text-white fs-16">Your one-stop education consulting platform. Accessible academic experts.
                         Fast responses. High-quality work - We're here to help you excel.</p>
-                    <a href="register?type=2" class="btn rounded border fs-20  text-white">Create Profile</a>
+                    <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Create Profile</a>
                 </div>
                 <div class="col-lg-1 col-12 my-auto"></div>
                 <div class="col-lg-4 col-12">
-                    <img class=""
+                    <img class="banner-img"
                         src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                         alt="">
                 </div>
@@ -34,7 +34,7 @@
                             <div class="d-flex justify-content-between ">
                                 <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
                                     <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                    <h2 class="fs-32 mt-5 text-success fw-700 fre-small-font">About ConsultantEdu</h2>
+                                    <p class=" mt-5 text-success fw-700 frequently-qsn-title">About ConsultantEdu</p>
                                     <p class="fs-16 fw-500 text-justify">ConsultantEdu is a dynamic platform to connect
                                         passionate academic experts with individuals, institutions, and businesses seeking
                                         tailored education solutions. We believe that education has the power to shape the
@@ -472,7 +472,7 @@
                 <div class=" rounded-2" style="background: #F2F7F2;">
                     <div class="mx-2 mt-5 row">
                         <div class="col-lg-6 col-sm-12 py-3">
-                            <img src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            <img  class= "banner-img" src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                 alt="">
                         </div>
                         <div class="col-lg-6 col-sm-12 py-3">

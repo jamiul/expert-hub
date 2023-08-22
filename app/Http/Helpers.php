@@ -553,4 +553,10 @@ function getDurations() : array {
     return config('constants.durations');
 }
 
+function getCustomEnv($envKey)
+{
+    return config($envKey) ?? env($envKey);
+}
+
+
 ?>

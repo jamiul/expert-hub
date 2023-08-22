@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\WhyScholarshipController;
 
 /*
@@ -49,6 +50,9 @@ Route::get('/aiz-uploader/download/{id}', 'AizUploadController@attachment_downlo
 
 Route::get('/', 'HomeController@index')->name('home');
 
+// Registration with mail
+Route::get('/register/{code}', [RegisterController::class, 'showRegistrationForm']);
+Route::post('/register-email', [RegisterController::class, 'registerMailStore'])->name('register.mail.store');
 
 // Subscribe
 Route::resource('subscribers', 'SubscriberController');

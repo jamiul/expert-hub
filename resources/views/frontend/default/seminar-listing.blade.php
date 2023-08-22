@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"
         rel="stylesheet" />
     <style type="text/css">
-        .datepicker {
+        /* .datepicker {
             font-size: 0.875em;
         }
 
@@ -17,20 +17,44 @@
         .datepicker th {
             width: 1.5em;
             height: 1.5em;
-        }
+        } */
 
+        .datepicker td, .datepicker th {
+            text-align: center;
+            width: 20px;
+            height: 30px !important;
+        }
+        .dropdown-menu {
+        border-color: #e2e5ec;
+        margin: 0;
+        border-radius: 0;
+        min-width: 327px !important;
+        font-size: inherit;
+        padding: 0;
+        -webkit-box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+        box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+        padding: 20px 20px 15px 20px !important;
+        border-radius: 4px;
+        max-width: 100% !important;
+        }
+        .datepicker table {
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 100%;
+        height: 200px;
+        }
         td.day.highlight {
             color: #DC322F;
             font-weight: 900;
             border-radius: 50%;
             background-color: lightblue;
         }
-
-        .datepicker-days {
-            margin-left: 20px !important;
-        }
-
-        .hidden {
+        .hidden{
             display: none !important;
         }
     </style>
@@ -132,7 +156,7 @@
                                                 <span class=" pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="">
-                                                <input type="text" class="form-control" name="filterDate"
+                                                <input type="text" class="form-control" name="filterDate" placeholder="Select Date"
                                                     data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
                                         </div>
@@ -1097,34 +1121,33 @@
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript">
-            $('#datepicker').datepicker({
-                todayHighlight: true,
-                minDate: 0,
-                // weekStart: 1,
-                // daysOfWeekHighlighted: "6,0",
-                autoclose: true,
-                todayHighlight: true,
-                beforeShowDay: function(date) {
-                    var hilightedDays = [5, 6, 12, 30];
-
-                    // get current month
-                    var currentMonth = new Date().getMonth();
-
-                    // if date.getMonth() === currentMonth, then highlight the date
-                    if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
-                            hilightedDays)) {
-                        return {
-                            classes: 'highlight',
-                            tooltip: 'Seminar'
-                        }
-                    }
+        $('#datepicker').datepicker({
+            todayHighlight: true,
+            minDate: 0,
+            clearBtn: true,
+            // weekStart: 1,
+            // daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+            beforeShowDay: function(date) {
+            var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
+            // get current month
+            var currentMonth = new Date().getMonth();
+            // if date.getMonth() === currentMonth, then highlight the date
+            if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
+                return {
+                    classes: 'highlight',
+                    tooltip: 'Seminar'
                 }
-            }).on('show', function(e, date) {
-                $('td.highlight').tooltip();
+            }
+        }}).on('show', function(e, date) {
+            $('td.highlight').tooltip();
+        }).on('hide', function(e, date) {
+            $('.tooltip-inner').addClass('hidden');
+            $('.arrow').addClass('hidden');
+        });
 
-            });
-
-            $('#datepicker').datepicker("setDate", new Date());
+            // $('#datepicker').datepicker("setDate", new Date());
             // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
 
             function applyFilter() {
