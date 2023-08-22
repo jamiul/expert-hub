@@ -20,6 +20,44 @@
                             <input type="text" placeholder="{{translate('Seminar Title')}}" onkeyup="makeSlug(this.value)" id="title" name="title" class="form-control" required>
                         </div>
                     </div>
+
+                    <div class="form-group row mb-0">
+                        <table class="table table-borderless mb-0" id="seminarDateTable">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">
+                                                {{translate('Seminar Date')}}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input
+                                                    type="text"
+                                                    placeholder="{{translate('Select Date')}}"
+                                                    name="seminar_date[]"
+                                                    class="form-control"
+                                                    onfocus="(this.type='date')"
+                                                    onblur="(this.type='text')"
+                                                >
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-group mb-4 text-left">
+                        <button
+                            type="button"
+                            class="btn btn-circle btn-info"
+                            id="addDate"
+                        >
+                            {{translate('Add Date')}}
+                        </button>
+                    </div>
+
                     <div class="form-group row" id="category">
                         <label class="col-md-3 col-from-label">
                             {{translate('Seminar Mode')}}
@@ -169,16 +207,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">
-                            {{translate('Seminar Date')}}
-                            <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-md-9">
-                            <input type="date" placeholder="{{translate('Seat No.')}}" name="date" class="form-control" required>
-                        </div>
-                    </div>
-
                     <div class="form-group mb-0 text-right">
                         <button type="submit" class="btn btn-primary">
                             {{translate('Save')}}
@@ -202,5 +230,19 @@
         let output = str.replace(/\s+/g, '-').toLowerCase();
         $('#slug').val(output);
     }
+
+    // add date dyanamic
+    let add_date = 0;
+    $('#addDate').click(function () {
+        ++add_date;
+        $('#seminarDateTable').append(
+            '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div></td></tr>'
+            );
+    });
+
+    $(document).on('click', '#removeDate', function() {
+        console.log('remove');
+        $(this).parents('tr').remove();
+    });
 </script>
 @endsection
