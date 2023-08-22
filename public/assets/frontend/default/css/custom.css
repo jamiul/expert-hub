@@ -533,7 +533,7 @@
     font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    line-height: 22px;
+    line-height: 16px;
 }
 
 /* Explore ways to earn */
@@ -556,7 +556,7 @@
     letter-spacing: -0.03em;
     margin-top: 0;
     margin-bottom: 25px;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 500;
     line-height: 1em;
 }
@@ -587,14 +587,15 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
+    text-align: justify;
 }
 .payment-work-child-title {
     color: #001e00;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
     font-family: Neuemontreal, sans-serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 1.1em;
 }
 .payment-work-child-details {
@@ -615,7 +616,7 @@
     margin: 10px 0;
 }
 .learn-service {
-    color: #1f57c3;
+    /* color: #1f57c3; */
     font-family: Neuemontreal, sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -638,8 +639,18 @@
     letter-spacing: -0.02em;
     margin-bottom: 10px;
     font-family: Neuemontreal, sans-serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+.faq-qsn-title {
+    color: #001e00;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 1.1em;
 }
 .frequently-qsn-details {
@@ -795,14 +806,13 @@
     max-width: 1200px !important; /* Set your desired max-width value */
     margin-left: auto;
     margin-right: auto;
+}
 
-  }
-
-  @media (min-width: 1200px) {
+@media (min-width: 1200px) {
     .need-help-full-body {
-      max-width: 100%; /* Override the max-width for extra-large devices */
+        max-width: 100%; /* Override the max-width for extra-large devices */
     }
-  }
+}
 @media (min-width: 1200px) {
     .d-flex {
         position: relative;
@@ -819,7 +829,6 @@
         right: 0;
     }
 }
-
 
 /* style for pagination */
 .pagination {
@@ -838,34 +847,52 @@
 }
 
 /* project-listing page */
-.container-main-projects-banner{
-    width: 98%;
-    margin: 0 1% 10px 1%;
+.container-main-projects-banner {
+    width: 100%;
+    /* margin: 0 1% 10px 1%; */
 }
-.container-main-projects{
+.container-main-projects {
     width: 94%;
     margin: 0 3% 10px 3%;
 }
 div.scroll {
-    margin:4px, 4px;
-    padding:4px;
+    margin: 4px, 4px;
+    padding: 4px;
     width: 320px;
     height: 110px;
     /* overflow-x: hidden; */
     overflow-y: auto;
-    text-align:justify;
-
+    text-align: justify;
 }
 div.scroll h6 a {
-    color:black;
-
+    color: black;
 }
 #contentDiv {
-display: block; /* or "none" if you want it to be initially hidden */
-/* Add any other styles you want */
+    display: block; /* or "none" if you want it to be initially hidden */
+    /* Add any other styles you want */
 }
 
-.child-skill-project-filtering:hover{
+.child-skill-project-filtering:hover {
     background: #c6c5c5;
+}
 
- }
+@media (min-width: 425px) {
+    .seminar-banner {
+        max-width: 250px !important;
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .frequently-qsn-title {
+        font-size: 24px;
+        margin-top: 25px;
+        width: 100%;
+    }
+    .explore-find-oppor-title {
+         font-size: 24px;
+    }
+    .banner-img {
+        width: 300px;
+    }
+}
