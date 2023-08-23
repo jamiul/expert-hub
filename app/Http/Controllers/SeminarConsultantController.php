@@ -70,7 +70,7 @@ class SeminarConsultantController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
         $request->validate([
             'title' => 'required|max:255',
             'seminar_date' => 'required|array',
@@ -98,8 +98,8 @@ class SeminarConsultantController extends Controller
         $seminar->seminar_software_id = $request->seminar_software_id;
         $seminar->software_description = $request->software_description;
         $seminar->language_id = $request->language_id;
-        $seminar->organiser_certificate = $request->organiser_certificate;
-        $seminar->user_id = $request->user_id;
+        $seminar->organiser_certificate= $request->organiser_certificate	;
+        $seminar->user_id= $request->user_id;
         $seminar->instructor_descriptions = $request->instructor_descriptions;
         $seminar->slug = $request->slug;
         $seminar->course_objectives = $request->course_objectives;

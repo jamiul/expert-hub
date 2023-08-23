@@ -96,12 +96,12 @@
                     </a>
                     <ul class="aiz-side-nav-list level-2">
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('seminar.create') }}" class="aiz-side-nav-link {{ areActiveRoutes(['seminar', 'seminar.create'])}}">
+                            <a href="{{ route('seminar-consultant.create') }}" class="aiz-side-nav-link {{ areActiveRoutes(['seminar', 'seminar.create'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Add New Seminar') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('seminar.seminar_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
+                            <a href="{{ route('seminar-consultant.seminar_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('All Seminar') }}</span>
                             </a>
                         </li>

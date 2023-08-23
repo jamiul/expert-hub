@@ -7,7 +7,7 @@
             <h1 class="h3">{{translate('All Seminar')}}</h1>
         </div>
         <div class="col text-right">
-            <a href="{{ route('seminar.create') }}" class="btn btn-circle btn-info">
+            <a href="{{ url('/admin/seminar/create') }}" class="btn btn-circle btn-info">
                 <span>{{translate('Add New Seminar')}}</span>
             </a>
         </div>
@@ -33,7 +33,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                   Pf     <th>{{translate('Title')}}</th>
+                        <th>{{translate('Title')}}</th>
                         <th data-breakpoints="lg">{{translate('Department')}}</th>
                         <th data-breakpoints="lg">{{translate('Types')}}</th>
                         <th data-breakpoints="lg">{{translate('Date')}}</th>
@@ -43,8 +43,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($scholarships as $key => $scholarship)
-                    <tr>
+                    @foreach($seminars as $key => $seminar)
+                    {{-- <tr>
                         <td>
                             {{ ($key+1) + ($scholarships->currentPage() - 1) * $scholarships->perPage() }}
                         </td>
@@ -90,12 +90,12 @@
                                 <i class="las la-trash"></i>
                             </a>
                         </td>
-                    </tr>
+                    </tr> --}}
                     @endforeach
                 </tbody>
             </table>
             <div class="aiz-pagination">
-                {{ $scholarships->links() }}
+                {{-- {{ $scholarships->links() }} --}}
             </div>
         </div>
 </div>

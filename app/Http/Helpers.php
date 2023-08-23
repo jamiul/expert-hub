@@ -566,4 +566,9 @@ function convertSlug($name)
     return $slug;
 }
 
+// get consultant from users table
+function getConsultants() {
+    return User::where('user_type', 'freelancer')->get()->toArray();
+}
+
 ?>
