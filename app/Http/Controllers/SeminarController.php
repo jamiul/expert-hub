@@ -53,6 +53,7 @@ class SeminarController extends Controller
      */
     public function create()
     {
+        dd(getUserRoles());
         $seminar_modes = SeminarMode::all();
         $seminar_softwares = SeminarSoftware::all();
         $languages = Language::all();
@@ -70,7 +71,7 @@ class SeminarController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        dd(getUserRoles());
         $scholarship = new Scholarship;
 
         $scholarship->category_id = $request->category_id;

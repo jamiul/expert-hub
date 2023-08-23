@@ -23,6 +23,11 @@ return [
             'subject' => 'An invitation for registration',
             'body' => 'This email is sent automatically. If you do not recognize this email, please do not access the URL and discard the email. Also, please note that we cannot reply even if you reply.'
         ],
+
+    'Admin' => [
+        'role_id' => 9,
+        'role_name' => 'Admin'
+    ]
     ]
 
 ];

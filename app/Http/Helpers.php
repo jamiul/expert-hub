@@ -571,4 +571,26 @@ function getConsultants() {
     return User::where('user_type', 'freelancer')->get()->toArray();
 }
 
+// get user roles
+function getUserRoles() {
+    if (Auth::check()) {
+        $roles = Auth::user()->roles->pluck('id', 'id');
+        if ($roles) {
+            return $roles->toArray();
+        }
+    }
+    return [];
+}
+function isRoleConsultant() {
+
+}
+
+function isRoleAdmin()
+{
+    if (in_array(config('constants.Admin.role_id'), getUserRoles())) {
+        return true;
+    }
+    return false;
+}
+
 ?>
