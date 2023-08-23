@@ -21,7 +21,7 @@
                             <h5 class="mb-0 h6">{{translate('Seminar Information')}}</h5>
                         </div>
                         <div class="card-body">
-                            <form id="add_form" class="form-horizontal" action="{{route('seminar.store')}}" method="POST">
+                            <form id="add_form" class="form-horizontal"     action="        {{route ('seminar-consultant.store')}}" method="POST">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">
@@ -76,7 +76,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-9">
-                                        <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
+                                        <select class="form-control aiz-selectpicker" name="seminar_mode_id" id="seminar_mode_id" data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
                                             @foreach ($seminar_mode as $mode)
                                             <option value="{{ $mode->id }}">
                                                 {{ $mode->name }}
@@ -108,7 +108,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-9">
-                                        <textarea name="software_description" rows="5" class="form-control" required=""></textarea>
+                                        <textarea name="software_description" rows="20" class="form-control" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row" id="university">
@@ -223,10 +223,10 @@
                                     </button>
                                 </div>
 
-                        </div>
+                                </div>
 
 
-                        </form>
+                            </form>
                     </div>
                 </div>
             </div>

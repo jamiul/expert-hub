@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
+use App\Models\Seminar;
 use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
 use App\Models\Service;
@@ -69,9 +70,50 @@ class SeminarConsultantController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
+        $request->validate([
+            'title' => 'required|max:255',
+            'seminar_date' => 'required|array',
+            'seminar_date.*' => 'required|date',
+            'seminar_mode_id' => 'required',
+            'seminar_software_id' => 'required',
+            'software_description' => 'required',
+            'language_id' => 'required',
+            'organiser_certificate' => 'required|max:255',
+            'user_id' => 'required',
+            'instructor_descriptions' => 'required',
+            'slug' => 'required|max:255',
+            'course_objectives' => 'required',
+            'learning_outcomes' => 'required',
+            'teaching_learning_methods' => 'required',
+            'teaching_resources' => 'required',
+            'seat' => 'required|integer',
+        ]);
 
+        $seminar = new Seminar;
 
+        $seminar->title = $request->title;
+        $seminar->seminar_date = $request->seminar_date;
+        $seminar->seminar_mode_id = $request->seminar_mode_id;
+        $seminar->seminar_software_id = $request->seminar_software_id;
+        $seminar->software_description = $request->software_description;
+        $seminar->language_id = $request->language_id;
+        $seminar->organiser_certificate = $request->organiser_certificate;
+        $seminar->user_id = $request->user_id;
+        $seminar->instructor_descriptions = $request->instructor_descriptions;
+        $seminar->slug = $request->slug;
+        $seminar->course_objectives = $request->course_objectives;
+        $seminar->learning_outcomes = $request->learning_outcomes;
+        $seminar->teaching_learning_methods = $request->teaching_learning_methods;
+        $seminar->teaching_resources = $request->teaching_resources;
+        $seminar->seat = $request->seat;
+
+        $seminar->save();
+
+        flash(translate('Seminar post has been updated successfully'))->success();
+        return redirect()->route('seminar.seminar_index');
     }
+
 
     /**
      * Show the form for editing the specified resource.
