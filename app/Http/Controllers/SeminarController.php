@@ -53,7 +53,6 @@ class SeminarController extends Controller
      */
     public function create()
     {
-        dd(getUserRoles());
         $seminar_modes = SeminarMode::all();
         $seminar_softwares = SeminarSoftware::all();
         $languages = Language::all();
