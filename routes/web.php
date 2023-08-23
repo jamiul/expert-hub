@@ -298,15 +298,16 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 
     Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
     Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
-    // seminar
-    Route::get('seminar', 'SeminarConsultantController@seminar_index')->name('seminar.seminar_index');
-    Route::get('seminar/purchased', 'SeminarConsultantController@sold_services')->name('seminar.sold');
-    Route::get('seminar/create', 'SeminarConsultantController@create')->name('seminar.create');
-    Route::post('seminar/store', 'SeminarConsultantController@store')->name('seminar.store');
 
-    Route::get('seminar/edit/{slug}', 'SeminarConsultantController@edit')->name('seminar.edit');
-    Route::post('seminar/update/{slug}', 'SeminarConsultantController@update')->name('seminar.update');
-    Route::get('seminar/destroy/{slug}', 'SeminarConsultantController@destroy')->name('seminar.destroy');
+    // seminar consultant routes
+    Route::get('/seminar-consultant', 'SeminarConsultantController@seminar_index')->name('seminar-consultant.seminar_index');
+    Route::get('/seminar-consultant/purchased', 'SeminarConsultantController@sold_services')->name('seminar-consultant.sold');
+    Route::get('/seminar-consultant/create', 'SeminarConsultantController@create')->name('seminar-consultant.create');
+    Route::post('/seminar-consultant/store', 'SeminarConsultantController@store')->name('seminar-consultant.store');
+
+    Route::get('/seminar-consultant/edit/{slug}', 'SeminarConsultantController@edit')->name('seminar-consultant.edit');
+    Route::post('/seminar-consultant/update/{slug}', 'SeminarConsultantController@update')->name('seminar-consultant.update');
+    Route::get('/seminar-consultant/destroy/{slug}', 'SeminarConsultantController@destroy')->name('seminar-consultant.destroy');
 });
 
 Route::get('/search', 'SearchController@index')->name('search');

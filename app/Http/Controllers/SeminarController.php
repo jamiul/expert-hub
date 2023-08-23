@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Models\ScholarshipCategory;
 use App\Models\Scholarship;
@@ -13,6 +14,9 @@ use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipQualification;
 use App\Models\ScholarshipUniversity;
 use App\Models\ScholarshipWhoCanApply;
+use App\Models\Seminar;
+use App\Models\SeminarMode;
+use App\Models\SeminarSoftware;
 
 class SeminarController extends Controller
 {
@@ -28,18 +32,18 @@ class SeminarController extends Controller
     public function index(Request $request)
     {
         $sort_search = null;
-        $scholarships = Scholarship::orderBy('created_at', 'desc');
+        $seminars = Seminar::orderBy('created_at', 'desc');
 
 
         if ($request->search != null){
-            $scholarships = $scholarships->where('title', 'like', '%'.$request->search.'%');
+            $seminars = $seminars->where('title', 'like', '%'.$request->search.'%');
             $sort_search = $request->search;
         }
 
-        $scholarships = $scholarships->paginate(15);
-        // dd($scholarships);
+        $seminar = $seminars->paginate(15);
+        // dd($seminar);
 
-        return view('admin.default.seminar_module.seminar.index', compact('scholarships','sort_search'));
+        return view('admin.default.seminar_module.seminar.index', compact('seminars','sort_search'));
     }
 
     /**
@@ -49,16 +53,12 @@ class SeminarController extends Controller
      */
     public function create()
     {
-        $scholarship_categories = ScholarshipCategory::all();
-        $scholarship_levels = ScholarshipLevel::all();
-        $scholarship_universities = ScholarshipUniversity::all();
-        $scholarship_country = ScholarshipCountry::all();
-        $scholarship_city = ScholarshipCity::all();
-        $scholarship_qualification = ScholarshipQualification::all();
-        $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
-        $scholarship_fieldStudy = ScholarshipFieldStudy::all();
+        $seminar_modes = SeminarMode::all();
+        $seminar_softwares = SeminarSoftware::all();
+        $languages = Language::all();
+        $course_instructors = getConsultants();
 
-        return view('admin.default.seminar_module.seminar.create', compact('scholarship_categories',"scholarship_levels",'scholarship_universities','scholarship_country','scholarship_city','scholarship_qualification','scholarship_whoCanApply','scholarship_fieldStudy'));
+        return view('admin.default.seminar_module.seminar.create', compact('seminar_modes','seminar_softwares','languages','course_instructors'));
 
     }
 
@@ -70,28 +70,7 @@ class SeminarController extends Controller
      */
     public function store(Request $request)
     {
-
-        $request->validate([
-            'category_id' => 'required',
-            'title' => 'required|max:255',
-        ]);
-        $request->validate([
-            'level_id' => 'required',
-            'title' => 'required|max:255',
-        ]);
-        $request->validate([
-            'country_id' => 'required',
-            'title' => 'required|max:255',
-        ]);
-        $request->validate([
-            'city_id' => 'required',
-            'title' => 'required|max:255',
-        ]);
-        $request->validate([
-            'qualification_id' => 'required',
-            'title' => 'required|max:255',
-        ]);
-
+        dd($request->all());
         $scholarship = new Scholarship;
 
         $scholarship->category_id = $request->category_id;
