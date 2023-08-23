@@ -30,6 +30,12 @@ class CreateSeminarsTable extends Migration
             $table->longText('teaching_learnig_methods')->nullable();
             $table->longText('teaching_resources')->nullable();
             $table->string('seat')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable()->comment("Created by User/Admin Id");
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
+            $table->unsignedBigInteger('updated_by')->nullable()->comment("Updated by User/Admin Id");
+            $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
+            $table->unsignedBigInteger('deleted_by')->nullable()->comment("Deleted by User/Admin Id");
+            $table->foreign('deleted_by')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();
             $table->softDeletes();
 
