@@ -13,7 +13,7 @@
                             <h1 class="h3">{{translate('All Seminar')}}</h1>
                         </div>
                         <div class="col text-right">
-                            <a href="{{ route('seminar.create') }}" class="btn btn-circle btn-info">
+                            <a href="{{ route('seminar-consultant.create') }}" class="btn btn-circle btn-info">
                                 <span>{{translate('Add New Seminar')}}</span>
                             </a>
                         </div>
@@ -80,7 +80,7 @@
                                             </label>
                                         </td>
                                         <td class="text-right">
-                                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('seminar.edit', 1) }}" title="{{ translate('Edit') }}">
+                                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('seminar-consultant.edit', 1) }}" title="{{ translate('Edit') }}">
                                                 <i class="las la-pen"></i>
                                             </a>
 
