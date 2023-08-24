@@ -6,6 +6,9 @@ use App\Models\Role;
 use App\Mail\EmailManager;
 use App\Models\ChatThread;
 use App\Models\Country;
+use App\Models\Language;
+use App\Models\SeminarMode;
+use App\Models\SeminarSoftware;
 use App\Models\Translation;
 use App\Models\User;
 
@@ -591,6 +594,31 @@ function isRoleAdmin()
         return true;
     }
     return false;
+}
+
+// get seminar mode name
+function getSeminarModeName($id) {
+    $seminar_mode = SeminarMode::where('id', $id)->first();
+    return  $seminar_mode['name'];
+}
+
+function getSoftwarePackageName($id) {
+    $software_package = SeminarSoftware::where('id', $id)->first();
+    return  $software_package['name'];
+}
+
+function getLanguageName($id) {
+    $language = Language::where('id', $id)->first();
+    return  $language['name'];
+}
+
+function getInstructorName($id) {
+    $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
+    return  $instructor['name'];
+}
+
+function getSeminarModes() {
+    return SeminarMode::all()->toArray();
 }
 
 ?>

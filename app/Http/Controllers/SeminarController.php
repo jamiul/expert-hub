@@ -34,19 +34,21 @@ class SeminarController extends Controller
      */
     public function index(Request $request)
     {
-        $sort_search = null;
-        $seminars = Seminar::orderBy('created_at', 'desc');
+        $input = $request->all();
+        $search = '';
 
+        if ($request->has('search')){
+            $search = $input['search'];
+            $seminars = Seminar::where('title', 'like', '%'.$search.'%')->get();
 
-        if ($request->search != null){
-            $seminars = $seminars->where('title', 'like', '%'.$request->search.'%');
-            $sort_search = $request->search;
+            if($input['search'] == ''){
+                $seminars = Seminar::orderBy('created_at', 'asc')->get();
+            }
+        } else {
+            $seminars = Seminar::with('seminar_dates')->orderBy('created_at', 'asc')->get();
         }
 
-        $seminar = $seminars->paginate(15);
-        // dd($seminar);
-
-        return view('admin.default.seminar_module.seminar.index', compact('seminars','sort_search'));
+        return view('admin.default.seminar_module.seminar.index', compact('seminars','search'));
     }
 
     /**
@@ -112,7 +114,6 @@ class SeminarController extends Controller
      */
     public function edit(Seminar $seminar)
     {
-
         return view('admin.default.seminar_module.seminar.edit', compact('seminar'));
     }
 

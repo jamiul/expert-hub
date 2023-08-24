@@ -31,6 +31,81 @@
             </div>
         </div>
 
+        <div class="form-group row mb-0">
+          <table class="table table-borderless mb-0" id="seminarDateTable">
+              <tbody>
+                @if (! $seminar->seminar_dates->isEmpty())
+                  @foreach ( $seminar->seminar_dates as $seminar_date)
+                  {{-- @dd($seminar_date->seminar_date); --}}
+                    <tr>
+                      <td>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label">
+                                  {{translate('Seminar Date')}}
+                                  <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-md-9">
+                                  <input
+                                      type="text"
+                                      value="{{ \Carbon\Carbon::parse($seminar_date->seminar_date)->format('Y/m/d')}}"
+                                      name="seminar_date[]"
+                                      class="form-control"
+                                      onfocus="(this.type='date')"
+                                      onblur="(this.type='text')"
+                                  >
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label">
+                                  {{translate('Seminar Date Description')}}
+                              </label>
+                              <div class="col-md-9">
+                                  <textarea
+                                      name="date_description[]"
+                                      rows="5"
+                                      class="form-control"
+                                  >{{ $seminar_date->descriptions }}</textarea>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  @endforeach
+                @endif
+              </tbody>
+          </table>
+      </div>
+        <div class="form-group mb-4 text-left">
+            <button
+                type="button"
+                class="btn btn-circle btn-info"
+                id="addDate"
+            >
+                {{translate('Add Date')}}
+            </button>
+        </div>
+          <!-- Seminar Mode -->
+            <div class="form-group row" id="seminar_mode">
+              <label class="col-md-3 col-from-label">
+                  {{translate('Seminar Mode')}}
+                  <span class="text-danger">*</span>
+
+              </label>
+              <div class="col-md-9">
+                  <select
+                      class="form-control"
+                      name="seminar_mode_id"
+                      id="seminar_mode_id"
+                      data-live-search="true"
+                  >
+                      @foreach (getSeminarModes() as $seminar_mode)
+                        <option value="{{ $seminar_mode['id'] }}" {{ $seminar_mode['id'] == $seminar->seminar_mode_id ? 'selected' : ''}}>
+                            {{ $seminar_mode['name'] }}
+                        </option>
+                      @endforeach
+                  </select>
+              </div>
+          </div>
+
           <div class="form-group mb-0 text-right">
             <button type="submit" class="btn btn-primary">
               {{translate('Update')}}

@@ -23,7 +23,7 @@
 
             <div class="col-md-2">
                 <div class="form-group mb-0">
-                    <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($sort_search) value="{{ $sort_search }}" @endisset placeholder="{{ translate('Type & Enter') }}">
+                    <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($search) value="{{ $search }}" @endisset placeholder="{{ translate('Type & Enter') }}">
                 </div>
             </div>
         </div>
@@ -34,63 +34,55 @@
                     <tr>
                         <th>#</th>
                         <th>{{translate('Title')}}</th>
-                        <th data-breakpoints="lg">{{translate('Department')}}</th>
-                        <th data-breakpoints="lg">{{translate('Types')}}</th>
-                        <th data-breakpoints="lg">{{translate('Date')}}</th>
-                        <th data-breakpoints="lg">{{translate('Short Description')}}</th>
+                        {{-- <th data-breakpoints="lg">{{translate('Seminar Date')}}</th> --}}
+                        <th data-breakpoints="lg">{{translate('Seminar Mode')}}</th>
+                        <th data-breakpoints="lg">{{translate('Software Package')}}</th>
+                        <th data-breakpoints="lg">{{translate('Language')}}</th>
                         <th data-breakpoints="lg">{{translate('Status')}}</th>
-                        <th class="text-right">{{translate('Options')}}</th>
+                        <th data-breakpoints="lg">{{translate('Instructor')}}</th>
+                        <th class="text-right">{{translate('Action')}}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($seminars as $key => $seminar)
-                    {{-- <tr>
+                    <tr>
                         <td>
-                            {{ ($key+1) + ($scholarships->currentPage() - 1) * $scholarships->perPage() }}
+                            {{ $key+1 }}
                         </td>
                         <td>
-                            {{ $scholarship->title }}
+                            {{ $seminar->title }}
+                        </td>
+                        {{-- <td>
+                            @dd($seminar->seminar_dates);
+                            @php
+                                $seminar->seminar_dates;
+                            @endphp
+                        </td> --}}
+                        <td>
+                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
                         </td>
                         <td>
-                            @if($scholarship->category != null)
-                                {{ $scholarship->category->category_name }}
-                            @else
-                                --
-                            @endif
+                            {{ getSoftwarePackageName($seminar->seminar_software_id) }}
                         </td>
                         <td>
-                            @if($scholarship->level != null)
-                                {{ $scholarship->level->level_name }}
-                            @else
-                                --
-                            @endif
+                            {{ getLanguageName($seminar->language_id) }}
                         </td>
                         <td>
-                            @if($scholarship->university != null)
-                                {{ $scholarship->university->university_name }}
-                            @else
-                                --
-                            @endif
+                            {{ $seminar->status }}
                         </td>
                         <td>
-                            {{ $scholarship->short_description }}
-                        </td>
-                        <td>
-                            <label class="aiz-switch aiz-switch-success mb-0">
-                                <input type="checkbox" onchange="change_status(this)" value="{{ $scholarship->id }}" <?php if($scholarship->status == 1) echo "checked";?>>
-                                <span></span>
-                            </label>
+                            {{ getInstructorName($seminar->user_id) }}
                         </td>
                         <td class="text-right">
-                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('scholarship.edit',$scholarship->id)}}" title="{{ translate('Edit') }}">
+                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('seminar.edit',$seminar->id)}}" title="{{ translate('Edit') }}">
                                 <i class="las la-pen"></i>
                             </a>
 
-                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('scholarship.destroy', $scholarship->id)}}" title="{{ translate('Delete') }}">
+                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('seminar.destroy', $seminar->id)}}" title="{{ translate('Delete') }}">
                                 <i class="las la-trash"></i>
                             </a>
                         </td>
-                    </tr> --}}
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
