@@ -15,7 +15,6 @@ class Seminar extends Model
 
     protected $fillable = [
         'title',
-        'seminar_date',
         'seminar_mode_id',
         'seminar_software_id',
         'software_description',
@@ -29,7 +28,10 @@ class Seminar extends Model
         'teaching_learning_methods',
         'teaching_resources',
         'seat',
-        'active',
+        'status',
+        'created_by',
+        'updated_by',
+        'deleted_by'
     ];
 
     // protected static function boot()
@@ -53,4 +55,10 @@ class Seminar extends Model
     //         $model->deleted_by = Auth::id();
     //     });
     // }
+
+
+    public function seminar_dates()
+    {
+        return $this->hasMany(SeminarDate::class);
+    }
 }

@@ -38,8 +38,20 @@
                                                     name="seminar_date[]"
                                                     class="form-control"
                                                     onfocus="(this.type='date')"
-                                                    onblur="(this.type='text')"
+                                                    {{-- onblur="(this.type='text')" --}}
                                                 >
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">
+                                                {{translate('Seminar Date Description')}}
+                                            </label>
+                                            <div class="col-md-9">
+                                                <textarea
+                                                    name="date_description[]"
+                                                    rows="5"
+                                                    class="form-control"
+                                                ></textarea>
                                             </div>
                                         </div>
                                     </td>
@@ -167,11 +179,11 @@
                                 title="{{ translate('Course Instructor') }}"
                                 required
                             >
-                                @foreach ($course_instructors as $course_instructor)
-                                    <option value="{{ $course_instructor['id'] }}">
-                                        {{ $course_instructor['name'] }}
-                                    </option>
-                                @endforeach
+                            @foreach ($course_instructors as $course_instructor)
+                                <option value="{{ $course_instructor['id'] }}">
+                                    {{ $course_instructor['name'] }}
+                                </option>
+                            @endforeach
                             </select>
                         </div>
                     </div>
@@ -188,13 +200,13 @@
                         </div>
                     </div>
 
-                    {{-- <div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Slug')}}
                             <span class="text-danger">*</span></label>
                         <div class="col-md-9">
                             <input type="text" placeholder="{{translate('Slug')}}" name="slug" id="slug" class="form-control" required>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
@@ -242,6 +254,27 @@
                         </div>
                     </div>
 
+                    <div class="form-group row" id="status">
+                        <label class="col-md-3 col-from-label">
+                            {{translate('Seminar Status')}}
+                            <span class="text-danger">*</span>
+
+                        </label>
+                        <div class="col-md-9">
+                            <select
+                                class="form-control aiz-selectpicker"
+                                name="status"
+                                id="status"
+                                data-live-search="true"
+                                title="{{ translate('Seminar Status') }}"
+                                required
+                            >
+                                <option value="private">Private</option>
+                                <option value="public">Public</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="form-group mb-0 text-right">
                         <button type="submit" class="btn btn-primary">
                             {{translate('Save')}}
@@ -268,7 +301,7 @@
     $('#addDate').click(function () {
         ++add_date;
         $('#seminarDateTable').append(
-            '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div></td></tr>'
+            '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
             );
     });
 

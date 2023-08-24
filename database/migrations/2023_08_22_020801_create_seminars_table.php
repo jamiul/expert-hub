@@ -16,10 +16,9 @@ class CreateSeminarsTable extends Migration
         Schema::create('seminars', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('seminar_date');
             $table->unsignedBigInteger('seminar_mode_id')->nullable();
             $table->unsignedBigInteger('seminar_software_id')->nullable();
-            $table->string('software_description');
+            $table->string('software_description')->nullable();
             $table->unsignedBigInteger('language_id')->nullable();
             $table->string('organiser_certificate')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
@@ -36,14 +35,14 @@ class CreateSeminarsTable extends Migration
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
             $table->unsignedBigInteger('deleted_by')->nullable()->comment("Deleted by User/Admin Id");
             $table->foreign('deleted_by')->references('id')->on('users')->onDelete('set null');
-            $table->boolean('active')->default(false);
+            $table->enum('status', ['draft', 'public', 'private'])->default('public');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('seminar_mode_id')->references('id')->on('seminar_modes');
-            $table->foreign('seminar_software_id')->references('id')->on('seminar_software');
-            $table->foreign('language_id')->references('id')->on('languages');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('seminar_mode_id')->references('id')->on('seminar_modes')->onDelete('set null');
+            $table->foreign('seminar_software_id')->references('id')->on('seminar_software')->onDelete('set null');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 

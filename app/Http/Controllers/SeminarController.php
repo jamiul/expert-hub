@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSeminarRequest;
 use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Models\ScholarshipCategory;
@@ -15,8 +16,10 @@ use App\Models\ScholarshipQualification;
 use App\Models\ScholarshipUniversity;
 use App\Models\ScholarshipWhoCanApply;
 use App\Models\Seminar;
+use App\Models\SeminarDate;
 use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
+use Auth;
 
 class SeminarController extends Controller
 {
@@ -68,34 +71,26 @@ class SeminarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSeminarRequest $request)
     {
-        dd(getUserRoles());
-        $scholarship = new Scholarship;
+        $user = Auth::user();
+        $input = $request->all();
+        $input['created_by'] = $user->id;
 
-        $scholarship->category_id = $request->category_id;
-        $scholarship->level_id = $request->level_id;
-        $scholarship->university_id = $request->university_id;
-        $scholarship->website_link = $request->website_link;
-        $scholarship->country_id = $request->country_id;
-        $scholarship->city_id = $request->city_id;
-        $scholarship->whoCanApply_id = $request->whoCanApply_id;
-        $scholarship->qualification_id = $request->qualification_id;
-        $scholarship->fieldStudy_id = json_encode($request->fieldStudy_id);
-        $scholarship->title = $request->title;
-        $scholarship->short_description = $request->short_description;
-        $scholarship->banner = $request->banner;
-        $scholarship->meta_title = $request->meta_title;
-        $scholarship->description = $request->description;
-        $scholarship->meta_img = $request->meta_img;
-        $scholarship->meta_description = $request->meta_description;
-        $scholarship->meta_keywords = $request->meta_keywords;
-        $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
+        $seminar = Seminar::create($input);
 
-        $scholarship->save();
+        if($request->seminar_date) {
+            foreach ($request->seminar_date as $key => $date) {
+                SeminarDate::create([
+                    'seminar_id' => $seminar->id,
+                    'seminar_date' => $input['seminar_date'][$key] ?? '',
+                    'descriptions' => $input['date_description'][$key] ?? '',
+                ]);
+            }
+        }
 
-        flash(translate('Scholarship post has been created successfully'))->success();
-        return redirect()->route('scholarship.index');
+        flash(translate('Seminar has been created successfully'))->success();
+        return redirect()->route('seminar.index');
     }
 
     /**
@@ -115,19 +110,10 @@ class SeminarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Seminar $seminar)
     {
-        $scholarship = Scholarship::find($id);
-        $scholarship_categories = ScholarshipCategory::all();
-        $scholarship_levels = ScholarshipLevel::all();
-        $scholarship_universities = ScholarshipUniversity::all();
-        $scholarship_country = ScholarshipCountry::all();
-        $scholarship_city = ScholarshipCity::all();
-        $scholarship_qualification = ScholarshipQualification::all();
-        $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
-        $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship','scholarship_categories','scholarship_levels','scholarship_universities','scholarship_country','scholarship_city','scholarship_qualification','scholarship_whoCanApply','scholarship_fieldStudy'));
+        return view('admin.default.seminar_module.seminar.edit', compact('seminar'));
     }
 
     /**

@@ -24,7 +24,28 @@ class StoreSeminarRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'seminar_mode_id' => 'nullable',
+            'seminar_software_id' => 'nullable',
+            'software_description' => 'nullable',
+            'language_id' => 'nullable',
+            'organiser_certificate' => 'nullable',
+            'user_id' => 'nullable',
+            'instructor_descriptions' => 'nullable',
+            'slug' => 'nullable',
+            'course_objectives' => 'nullable',
+            'learning_outcomes' => 'nullable',
+            'teaching_learning_methods' => 'nullable',
+            'teaching_resources' => 'nullable',
+            'seat' => 'nullable',
+            'active' => 'nullable',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'This title field is required'
         ];
     }
 }
