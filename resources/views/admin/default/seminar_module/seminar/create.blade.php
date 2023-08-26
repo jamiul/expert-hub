@@ -69,7 +69,7 @@
                             {{translate('Add Date')}}
                         </button>
                     </div>
-
+                    <!-- Seminar Mode -->
                     <div class="form-group row" id="seminar_mode">
                         <label class="col-md-3 col-from-label">
                             {{translate('Seminar Mode')}}
@@ -92,6 +92,7 @@
                             </select>
                         </div>
                     </div>
+                    <!-- Seminar Software Package-->
                     <div class="form-group row" id="seminar_software">
                         <label class="col-md-3 col-from-label">
                             {{translate('Software Package')}}
@@ -115,6 +116,7 @@
                             </select>
                         </div>
                     </div>
+                    <!-- Seminar Software Description -->
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
                             {{translate('Software Description')}}
@@ -150,6 +152,7 @@
                             </select>
                         </div>
                     </div>
+                    <!--Organiser and Certificate -->
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
                             {{translate('Organiser and Certificate')}}
@@ -164,6 +167,7 @@
                             >
                         </div>
                     </div>
+                    <!--Course Instructor -->
                     <div class="form-group row" id="country">
                         <label class="col-md-3 col-from-label">
                             {{translate('Course Instructor')}}
@@ -187,7 +191,7 @@
                             </select>
                         </div>
                     </div>
-
+                    <!--Course Instructor Descriptions -->
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
                             {{translate('Instructor Descriptions')}}
@@ -199,7 +203,7 @@
                             ></textarea>
                         </div>
                     </div>
-
+                    <!-- Seminar Slug -->
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Slug')}}
                             <span class="text-danger">*</span></label>
@@ -207,7 +211,7 @@
                             <input type="text" placeholder="{{translate('Slug')}}" name="slug" id="slug" class="form-control" required>
                         </div>
                     </div>
-
+                    <!-- Course objectives -->
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
                             {{translate('Course objectives')}}
@@ -216,7 +220,7 @@
                             <textarea class="aiz-text-editor" name="course_objectives"></textarea>
                         </div>
                     </div>
-
+                    <!-- Learning outcomes -->
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
                             {{translate('Learning outcomes')}}
@@ -225,16 +229,16 @@
                             <textarea class="aiz-text-editor" name="learning_outcomes"></textarea>
                         </div>
                     </div>
-
+                    <!-- Teaching and Learning Methods -->
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
-                            {{translate('Teaching and learning methods')}}
+                            {{translate('Teaching and Learning Methods')}}
                         </label>
                         <div class="col-md-9">
                             <textarea class="aiz-text-editor" name="teaching_learning_methods"></textarea>
                         </div>
                     </div>
-
+                    <!-- Teaching Resources -->
                     <div class="form-group row">
                         <label class="col-md-3 col-from-label">
                             {{translate('Teaching Resources')}}
@@ -243,7 +247,7 @@
                             <textarea class="aiz-text-editor" name="teaching_resources"></textarea>
                         </div>
                     </div>
-
+                    <!-- Seminar Seat -->
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">
                             {{translate('Seminar Seat')}}
@@ -253,7 +257,7 @@
                             <input type="number" placeholder="{{translate('Seat No.')}}" name="seat" class="form-control" required>
                         </div>
                     </div>
-
+                    <!-- Seminar Status -->
                     <div class="form-group row" id="status">
                         <label class="col-md-3 col-from-label">
                             {{translate('Seminar Status')}}

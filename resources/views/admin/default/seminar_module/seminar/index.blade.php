@@ -38,8 +38,8 @@
                         <th data-breakpoints="lg">{{translate('Seminar Mode')}}</th>
                         <th data-breakpoints="lg">{{translate('Software Package')}}</th>
                         <th data-breakpoints="lg">{{translate('Language')}}</th>
-                        <th data-breakpoints="lg">{{translate('Status')}}</th>
                         <th data-breakpoints="lg">{{translate('Instructor')}}</th>
+                        <th data-breakpoints="lg">{{translate('Status')}}</th>
                         <th class="text-right">{{translate('Action')}}</th>
                     </tr>
                 </thead>
@@ -47,7 +47,7 @@
                     @foreach($seminars as $key => $seminar)
                     <tr>
                         <td>
-                            {{ $key+1 }}
+                            {{ $loop->iteration }}
                         </td>
                         <td>
                             {{ $seminar->title }}
@@ -68,24 +68,46 @@
                             {{ getLanguageName($seminar->language_id) }}
                         </td>
                         <td>
-                            {{ $seminar->status }}
+                            {{ getInstructorName($seminar->user_id) }}
                         </td>
                         <td>
-                            {{ getInstructorName($seminar->user_id) }}
+                            {{ $seminar->status }}
                         </td>
                         <td class="text-right">
                             <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('seminar.edit',$seminar->id)}}" title="{{ translate('Edit') }}">
                                 <i class="las la-pen"></i>
                             </a>
 
-                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('seminar.destroy', $seminar->id)}}" title="{{ translate('Delete') }}">
+                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-toggle="modal" data-target="#delete-modal_{{$seminar->id}}" data-id={{$seminar->id}}>
                                 <i class="las la-trash"></i>
                             </a>
                         </td>
                     </tr>
+                    <!-- delete Modal -->
+                    <div id="delete-modal_{{$seminar->id}}" class="modal fade">
+                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title h6">{{translate('Delete Confirmation')}}</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <p class="mt-1">{{translate('Are you sure to delete this?')}}</p>
+                                    <form action="{{ route('seminar.destroy', $seminar->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-link mt-2" data-dismiss="modal">{{translate('Cancel')}}</button>
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal -->
                     @endforeach
                 </tbody>
             </table>
+
+            {{-- @dd(route('seminar.destroy', $seminar->id)); --}}
             <div class="aiz-pagination">
                 {{-- {{ $scholarships->links() }} --}}
             </div>
@@ -95,7 +117,7 @@
 @endsection
 
 @section('modal')
-    @include('admin.default.partials.delete_modal')
+    {{-- @include('admin.default.partials.delete_modal') --}}
 @endsection
 
 
@@ -116,6 +138,10 @@
                 }
             });
         }
+        $(document).on('click','.confirm-delete',function(){
+            let id = $(this).attr('data-id');
+            $('#id').val(id);
+        });
     </script>
 
 @endsection

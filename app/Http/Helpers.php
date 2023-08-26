@@ -621,4 +621,15 @@ function getSeminarModes() {
     return SeminarMode::all()->toArray();
 }
 
+function getSeminarSoftwares() {
+    return SeminarSoftware::all()->toArray();
+}
+
+function getLanguages() {
+    return Language::all()->toArray();
+}
+
+function getCourseInstructors() {
+    return User::where('user_type', 'freelancer')->get()->toArray();
+}
 ?>
