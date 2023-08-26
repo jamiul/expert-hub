@@ -60,12 +60,9 @@ class SeminarSoftwareController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $lower_case = strtolower($input['name']);
-        $slug = str_replace(' ', '-', $lower_case);
-
         SeminarSoftware::create([
             'name' => $input['name'],
-            'slug' => $slug,
+            'slug' => convertSlug($input['name']),
         ]);
 
         flash(translate('Seminar software has been created successfully'))->success();
@@ -90,12 +87,9 @@ class SeminarSoftwareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SeminarSoftware $seminar_software)
     {
-        $seminar = SeminarSoftware::find($id);
-        // $all_seminars = SeminarSoftware::all();
-
-        return view('admin.default.seminar_module.seminar_software.edit',  compact('seminar'));
+        return view('admin.default.seminar_module.seminar_software.edit',  compact('seminar_software'));
     }
 
     /**
@@ -105,21 +99,18 @@ class SeminarSoftwareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SeminarSoftware $seminar_software)
     {
         $request->validate([
-            'software_name' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
 
-        $category = SeminarSoftware::find($id);
+        $seminar_software->update([
+            'name' => $request->name,
+            'slug' => convertSlug($request->name),
+        ]);
 
-        $category->software_name = $request->software_name;
-        $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->software_name));
-
-        $category->save();
-
-
-        flash(translate('Scholarship study level has been updated successfully'))->success();
+        flash(translate('Seminar Software has been updated successfully'))->success();
         return redirect()->route('seminar-software.index');
     }
 
@@ -129,10 +120,11 @@ class SeminarSoftwareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SeminarSoftware $seminar_software)
     {
-        SeminarSoftware::find($id)->delete();
+        $seminar_software->delete();
 
-        return redirect('admin/seminar-software');
+        flash(translate('Seminar Software has been Removed successfully'))->success();
+        return redirect()->route('seminar-software.index');
     }
 }

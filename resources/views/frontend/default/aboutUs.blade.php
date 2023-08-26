@@ -4,13 +4,15 @@
 
 @section('content')
     <div class="container-main-projects-banner">
-        <div class="mb-4 mt-1" style="background:#275846">
+        <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
             <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
                 <div class="col-lg-7 col-12  w-100 my-auto">
                     <h3 class="text-white fw-700  frequently-qsn-title  ">Welcome to ConsultantEdu </h3>
-                    <p class="text-white fs-16">Your one-stop education consulting platform. Accessible academic experts.
-                        Fast responses. High-quality work - We're here to help you excel.</p>
-                    <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Create Profile</a>
+                    <p class="text-white fs-16">Your one-stop academic freelancer platform where you can connect with
+                        accessible academic experts, receive quick responses, and enjoy high-quality work to help you excel.
+                    </p>
+                    <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Create
+                        Profile</a>
                 </div>
                 <div class="col-lg-1 col-12 my-auto"></div>
                 <div class="col-lg-4 col-12">
@@ -24,7 +26,7 @@
 
 
 
-    <div class="whyFreeEdu-container-main " style="background-color:#F2F7F2">
+    <div class="whyFreeEdu-container-main mb-5 " style="background-color:#F2F7F2">
         <section>
             @if (get_setting('featured_category_show') == 'on')
                 <form id=" consultant-filter-form" action="" method="GET">
@@ -41,7 +43,9 @@
                                         world, and our goal is to facilitate this transformation by offering a range of
                                         services that elevate learning experiences. So, we've built a unique hub where
                                         academic experts meet people who want high-quality educational services.
-                                        Our comprehensive collection of services is meticulously designed to cater to
+                                    </p>
+                                    <p class="fs-16 fw-500 text-justify">Our comprehensive collection of services is
+                                        meticulously designed to cater to
                                         diverse educational needs: Our Accreditation experts provide adept guidance through
                                         the course accreditation process, ensuring adherence to the highest standards for
                                         official course recognition. Crafting captivating lessons and curricula can be
@@ -50,7 +54,9 @@
                                         technology, Learning Management Systems (LMS) play a pivotal role in reshaping
                                         education. Our LMS experts assist in selecting and configuring these systems to
                                         facilitate seamless online learning experiences.
-                                        Words wield significant influence in education. Our Writing and Editing experts
+                                        Words wield significant influence in education. </p>
+                                    <p class="fs-16 fw-500 text-justify">
+                                        Our Writing and Editing experts
                                         conduct comprehensive reviews to elevate your articles, manuscripts, and theses to
                                         the highest academic standards in your field. Informed decision-making hinges on
                                         accurate information. Our experts specialise in data collection and analysis,
@@ -84,10 +90,11 @@
                                                             </p>
                                                         </a>
 
-                                                        <div class="frequently-qsn-details " style=" line-height:22px;">
+                                                        <div class="frequently-qsn-details text-normal "
+                                                            style=" line-height:22px;">
                                                             {{ $category->description }} <a
                                                                 href="{{ route('freelancer.category', $category->id) }}"
-                                                                class="nav-toggle "style="color:#6560E6;">...Find
+                                                                class="nav-toggle "style="color:#6560E6;">Find
                                                                 Consultants</a>
                                                         </div>
                                                     </div>
@@ -121,7 +128,7 @@
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
                                 {{ translate('
-                                Create your profile (it’s free)') }}</h1>
+                                                                Create your profile (it’s free)') }}</h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
                                 {{ translate('An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.') }}
                             </p>
@@ -158,9 +165,16 @@
                             </p>
                         </div>
                     </div>
-                    <a href="search?keyword=&type=freelancer" class="btn fs-20 mt-3 rounded border text-white mx-5"
-                        style="background-color:#275846;">Find
-                        Consultants</a>
+                    <div class="row mt-2 mx-lg-4 mx-xl-4 mx-2 ">
+                        <div class="col-lg-2 col-sm-12 pr-0">
+                            <a href="search?keyword=&type=project" 
+                                class="btn rounded border fs-20 frequently-qsn-title  text-white text-white mt-2"
+                                style="background-color:#275846;">Find Project</a>
+                        </div>
+
+                    </div>
+
+
                 </div>
                 <hr>
             </div>
@@ -196,7 +210,7 @@
                     <h1 class=" whyConsEdu-child-title  fs-20 fw-700 ">
                         {{ translate('Receive proposal') }}</h1>
                     <p class="how-work-details fw-500 text-justify mt-2">
-                        {{ translate("Guidance to find your best option, based on what's important to") }}
+                        {{ translate("Guidance to find your best option, based on what's important to work with clients from around the world and build lasting partnerships.") }}
                     </p>
                 </div>
             </div>
@@ -231,10 +245,15 @@
                     </p>
                 </div>
             </div>
-            <a href="search?keyword=&type=project" class="btn mt-3  fs-20 rounded border text-white mx-5 px-5"
-                style="background-color:#275846;">Find
-                Work</a>
 
+            <div class="row mt-2 mx-lg-4 mx-2 ">
+                <div class="col-lg-2 col-sm-12 pr-0 ">
+                    <a href="search?keyword=&type=freelancer"
+                        class="btn rounded border fs-20 px-4 frequently-qsn-title  text-white text-white mt-2"
+                        style="background-color:#275846;">Find
+                        Consultant</a>
+                </div>
+            </div>
         </div>
 
         <hr>
@@ -279,8 +298,8 @@
                     </div>
 
                 </div>
-                <div class="col-lg-4 col-sm-12 mr-5">
-                    <img class="w-lg-100 w-75 mx-lg-0 mx-5 payments-img "
+                <div class="col-lg-4 col-sm-12  mt-2">
+                    <img class="w-lg-100 h-lg-100 w-100 mx-lg-0  payments-img "
                         src="{{ my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg') }}"
                         alt="">
                 </div>
@@ -294,7 +313,7 @@
             <h1 class="explore-find-oppor-title text-success fw-700 mx-lg-4">
                 {{ translate('How reviews work ') }}</h1>
             <div class="row mx-lg-3 mx-0 ">
-                <div class="col-lg-12 col-sm-12 p-sm-0">
+                <div class="col-lg-12 col-sm-12 p-sm-0 mx-lg-2">
                     {{-- Consultants - Getting reviews on ConsultantEdu --}}
                     <div class="mt-2">
                         <p class="whyConsEdu-child-title">Consultants
@@ -351,7 +370,7 @@
 
                 </div>
 
-                <div class="col-lg-1"></div>
+
 
             </div>
             <hr>
@@ -449,9 +468,8 @@
             <nav>
                 <ul class="nav" id="myTab" role="tablist">
                     <li class="nav-item ">
-                        <a class="  fs-20 p-1   btn  btn-outline-primary px-4" id="for-consultants"
-                            data-toggle="tab" href="#consultant" role="tab" aria-controls="consultant"
-                            aria-selected="true">For
+                        <a class="  fs-20 p-1   btn  btn-outline-primary px-4" id="for-consultants" data-toggle="tab"
+                            href="#consultant" role="tab" aria-controls="consultant" aria-selected="true">For
                             Consultants </a>
                     </li>
 
@@ -472,7 +490,8 @@
                 <div class=" rounded-2" style="background: #F2F7F2;">
                     <div class="mx-2 mt-5 row">
                         <div class="col-lg-6 col-sm-12 py-3">
-                            <img  class= "banner-img" src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            <img class="banner-img"
+                                src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                 alt="">
                         </div>
                         <div class="col-lg-6 col-sm-12 py-3">

@@ -327,7 +327,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Academic Jobs') }}</a>
+                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Academic Projects') }}</a>
               </li>
 
               <!-- <li class="dropdown mega_menu nav-item">
@@ -364,7 +364,7 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Uni Scholarships') }}</a>
+                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Academic Scholarships') }}</a>
               </li>
 
 b

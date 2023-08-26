@@ -511,7 +511,7 @@
     line-height: 1em;
 }
 .payments-img {
-    border-radius: 0px 10px 10px 0;
+    border-radius: 5px;
 }
 /* How it works */
 .container-main {
@@ -533,7 +533,7 @@
     font-family: Neuemontreal, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    line-height: 16px;
+    line-height: 22px;
 }
 
 /* Explore ways to earn */
@@ -734,12 +734,14 @@
 .fre-scsh-left-side-title {
     color: #000003;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: Neuemontreal, sans-serif;
 }
 .fre-scsh-right-side-details {
-    font-size: 14px;
+    font-size: 16px;
     color: #000003;
     font-weight: 500;
+    font-family: Neuemontreal, sans-serif;
 }
 .fre-scsh-find-more-btn {
     font-size: 14px;
@@ -876,6 +878,23 @@ div.scroll h6 a {
     background: #c6c5c5;
 }
 
+.seminar-more {
+    color: rgb(77, 95, 230);
+}
+.seminar-title {
+    letter-spacing: -0.02em;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 24px;
+}
+.seminar-objective {
+    font-size: 22px;
+}
+.seminar-objective-details {
+    font-size: 16px;
+    font-family: Neuemontreal, sans-serif;
+    text-align: justify;
+}
+
 @media (min-width: 425px) {
     .seminar-banner {
         max-width: 250px !important;
@@ -889,10 +908,29 @@ div.scroll h6 a {
         margin-top: 25px;
         width: 100%;
     }
+    .seminar-details {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .footer-segment {
+        margin-right: 100px !important;
+    }
+
+    .seminar-content {
+        width: 100%;
+        margin: 0 0%;
+    }
+
     .explore-find-oppor-title {
-         font-size: 24px;
+        font-size: 24px;
     }
     .banner-img {
         width: 300px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .footer-segment {
+        margin-left: 30px !important;
     }
 }

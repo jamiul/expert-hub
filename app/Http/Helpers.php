@@ -6,6 +6,9 @@ use App\Models\Role;
 use App\Mail\EmailManager;
 use App\Models\ChatThread;
 use App\Models\Country;
+use App\Models\Language;
+use App\Models\SeminarMode;
+use App\Models\SeminarSoftware;
 use App\Models\Translation;
 use App\Models\User;
 
@@ -558,5 +561,75 @@ function getCustomEnv($envKey)
     return config($envKey) ?? env($envKey);
 }
 
+function convertSlug($name)
+{
+    $lower_case = strtolower($name);
+    $slug = str_replace(' ', '-', $lower_case);
 
+    return $slug;
+}
+
+// get consultant from users table
+function getConsultants() {
+    return User::where('user_type', 'freelancer')->get()->toArray();
+}
+
+// get user roles
+function getUserRoles() {
+    if (Auth::check()) {
+        $roles = Auth::user()->roles->pluck('id', 'id');
+        if ($roles) {
+            return $roles->toArray();
+        }
+    }
+    return [];
+}
+function isRoleConsultant() {
+
+}
+
+function isRoleAdmin()
+{
+    if (in_array(config('constants.Admin.role_id'), getUserRoles())) {
+        return true;
+    }
+    return false;
+}
+
+// get seminar mode name
+function getSeminarModeName($id) {
+    $seminar_mode = SeminarMode::where('id', $id)->first();
+    return  $seminar_mode['name'];
+}
+
+function getSoftwarePackageName($id) {
+    $software_package = SeminarSoftware::where('id', $id)->first();
+    return  $software_package['name'];
+}
+
+function getLanguageName($id) {
+    $language = Language::where('id', $id)->first();
+    return  $language['name'];
+}
+
+function getInstructorName($id) {
+    $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
+    return  $instructor['name'];
+}
+
+function getSeminarModes() {
+    return SeminarMode::all()->toArray();
+}
+
+function getSeminarSoftwares() {
+    return SeminarSoftware::all()->toArray();
+}
+
+function getLanguages() {
+    return Language::all()->toArray();
+}
+
+function getCourseInstructors() {
+    return User::where('user_type', 'freelancer')->get()->toArray();
+}
 ?>
