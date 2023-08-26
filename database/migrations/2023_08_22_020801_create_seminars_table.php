@@ -18,7 +18,7 @@ class CreateSeminarsTable extends Migration
             $table->string('title');
             $table->unsignedBigInteger('seminar_mode_id')->nullable();
             $table->unsignedBigInteger('seminar_software_id')->nullable();
-            $table->string('software_description')->nullable();
+            $table->longText('software_description')->nullable();
             $table->unsignedBigInteger('language_id')->nullable();
             $table->string('organiser_certificate')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();

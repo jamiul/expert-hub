@@ -118,17 +118,17 @@
                     </div>
                     <!-- Seminar Software Description -->
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label">
+                        <label class="col-md-3 col-from-label">
                             {{translate('Software Description')}}
                         </label>
                         <div class="col-md-9">
                             <textarea
+                                class="aiz-text-editor"
                                 name="software_description"
-                                rows="5"
-                                class="form-control"
                             ></textarea>
                         </div>
                     </div>
+                    <!-- Seminar Language -->
                     <div class="form-group row" id="language">
                         <label class="col-md-3 col-from-label">
                             {{translate('Language')}}

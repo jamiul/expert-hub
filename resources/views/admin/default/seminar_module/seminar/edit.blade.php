@@ -127,19 +127,18 @@
               </select>
             </div>
         </div>
-        <!-- Seminar Software Description -->
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">
-                {{translate('Software Description')}}
-            </label>
+          <!-- Seminar Software Description -->
+        <div class="form-group row">
+          <label class="col-md-3 col-from-label">
+              {{translate('Software Description')}}
+          </label>
             <div class="col-md-9">
               <textarea
-                name="software_description"
-                rows="5"
-                class="form-control"
+                  class="aiz-text-editor"
+                  name="software_description"
               >{{ $seminar->software_description }}</textarea>
             </div>
-          </div>
+        </div>
           <!-- Seminar Language -->
           <div class="form-group row" id="language">
             <label class="col-md-3 col-from-label">
