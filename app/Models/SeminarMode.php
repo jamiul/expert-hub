@@ -13,8 +13,4 @@ class SeminarMode extends Model
     protected $fillable = ['name', 'slug'];
     protected $dates = ['deleted_at'];
 
-    public function posts()
-    {
-        return $this->hasMany(Seminar::class);
-    }
 }

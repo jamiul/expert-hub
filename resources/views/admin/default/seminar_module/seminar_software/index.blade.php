@@ -43,11 +43,13 @@
                                             title="{{ translate('Edit') }}">
                                             <i class="las la-edit"></i>
                                         </a>
-                                        <a href="#"
-                                            class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                                            data-href="{{ route('seminar-software.destroy', $seminar_software->id) }}"
-                                            title="{{ translate('Delete') }}">
+                                        <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
+                                        title="{{ translate('Delete') }}" onclick="$(this).find('form').submit();">
                                             <i class="las la-trash"></i>
+                                            <form action="{{ route('seminar-software.destroy', $seminar_software->id) }}" method="POST">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
                                         </a>
                                     </td>
                                 </tr>

@@ -43,19 +43,19 @@
                   href="{{url('admin/seminar-mode/'.$seminar_mode->id.'/edit')}}" title="{{ translate('Edit') }}">
                   <i class="las la-edit"></i>
                 </a>
-                <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                  data-href="{{route('seminar-mode.destroy', $seminar_mode->id)}}"
-                  title="{{ translate('Delete') }}">
+                <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
+                  title="{{ translate('Delete') }}" onclick="$(this).find('form').submit();">
                   <i class="las la-trash"></i>
+                  <form action="{{ route('seminar-mode.destroy', $seminar_mode->id) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                </form>
                 </a>
               </td>
             </tr>
             @endforeach
           </tbody>
         </table>
-        {{-- <div class="aiz-pagination">
-          {{ $categories->links() }}
-        </div> --}}
       </div>
     </div>
   </div>
