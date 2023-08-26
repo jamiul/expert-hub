@@ -323,11 +323,11 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Find Consultants') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Academic Consultants') }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Find Job') }}</a>
+                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Academic Projects') }}</a>
               </li>
 
               <!-- <li class="dropdown mega_menu nav-item">
@@ -364,16 +364,16 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Find Scholarships') }}</a>
+                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Academic Scholarships') }}</a>
               </li>
 
-
+b
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Seminars ') }}</a>
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Research Training ') }}</a>
                             </li>
                             <li class="nav-item dropdown  text-white">
-                                <a class="nav-link " href="{{route('why-freelancer-edu')}}" >
-                                    Why ConsultantEdu
+                                <a class="nav-link " href="{{route('aboutUs')}}" >
+                                    About Us
                                 </a>
                                 <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
                                     <div class="row">
