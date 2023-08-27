@@ -1,10 +1,10 @@
-    <?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeminarModesTable extends Migration
+class CreateLanguagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateSeminarModesTable extends Migration
      */
     public function up()
     {
-        Schema::create('seminar_modes', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');
-            $table->softDeletes();
+            $table->string('code');
+            $table->integer('rtl')->default(0);
+            $table->tinyInteger('enable');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +31,6 @@ class CreateSeminarModesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seminar_modes');
+        Schema::dropIfExists('languages');
     }
 }

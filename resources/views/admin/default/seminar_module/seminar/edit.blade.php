@@ -5,291 +5,298 @@
   <div class="col-lg-8 mx-auto">
     <div class="card">
       <div class="card-header">
-        <h5 class="mb-0 h6">{{translate('Scholarship Information')}}</h5>
+        <h5 class="mb-0 h6">{{translate('Update Seminar Information')}}</h5>
       </div>
       <div class="card-body">
-        <form id="add_form" class="form-horizontal" action="{{ route('scholarship.update',$scholarship->id) }}"
+        <form id="add_form" class="form-horizontal" action="{{ route('seminar.update',$seminar->id) }}"
           method="POST">
           @csrf
           @method('PATCH')
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">
-              {{translate('Scholarship Title')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <input type="text" placeholder="{{translate('Scholarship  Title')}}" onkeyup="makeSlug(this.value)"
-                id="title" name="title" value="{{ $scholarship->title }}" class="form-control" required>
-            </div>
-          </div>
-          <div class="form-group row" id="category">
-            <label class="col-md-3 col-from-label">
-              {{translate('Category')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true"
-                title="{{ translate('Select category') }}" required
-                data-selected="{{ optional($scholarship->category)->id }}">
-                @foreach ($scholarship_categories as $category)
-                <option value="{{ $category->id }}">
-                  {{ $category->category_name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="form-group row" id="category">
-            <label class="col-md-3 col-from-label">
-              {{translate('Study Level')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true"
-                title="{{ translate('Select study level') }}" required
-                data-selected="{{ optional($scholarship->level)->id }}">
-                @foreach ($scholarship_levels as $level)
-                <option value="{{ $level->id }}">
-                  {{$level->level_name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="form-group row" id="university">
-            <label class="col-md-3 col-from-label">
-              {{translate('University')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="university_id" id="university_id"
-                data-live-search="true" title="{{ translate('select university') }}" required
-                data-selected="{{ optional($scholarship->university)->id }}">
-                @foreach ($scholarship_universities as $university)
-                <option value="{{ $university->id }}">
-                  {{$university->university_name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">
-              {{translate('Website Link')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <input type="text" placeholder="{{translate('website link')}}" id="website_link" name="website_link"
-                value="{{ $scholarship->website_link }}" class="form-control" required>
-            </div>
-          </div>
-          <div class="form-group row" id="country">
-            <label class="col-md-3 col-from-label">
-              {{translate('Country')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true"
-                title="{{ translate('select Country') }}" required
-                data-selected="{{ optional($scholarship->category)->id }}">
-                @foreach ($scholarship_country as $country)
-                <option value="{{ $country->id }}">
-                  {{$country->country_name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <!-- <div class="form-group row" id="country">
-                        <label class="col-md-3 col-from-label">
-                            {{translate('Country')}}
-                            <span class="text-danger">*</span>
-
-                        </label>
-                        <div class="col-md-9">
-                            <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Select Country') }}" data-selected="{{ optional($scholarship->category)->id }} " required>
-
-                                @foreach ($scholarship_country as $country)
-                                <option value="{{ $level->id }}">
-                                    {{$country->country_name }}
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div> -->
-
-          <div class="form-group row" id="city">
-            <label class="col-md-3 col-from-label">
-              {{translate('City')}}
-              <span class="text-danger">*</span>
-
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true"
-                title="{{ translate('Select City') }}" data-selected="{{ optional($scholarship->city)->id }}" required>
-
-                @foreach ($scholarship_city as $city)
-                <option value="{{$city->id}}">
-                  {{$city->city_name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="form-group row" id="city">
-            <label class="col-md-3 col-from-label">
-              {{translate('Who can apply')}}
-              <span class="text-danger">*</span>
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id"
-                data-live-search="true" title="{{ translate('Who can apply') }} "
-                data-selected="{{ optional($scholarship->whoCanApply)->id }}" required>
-                @foreach ($scholarship_whoCanApply as $title)
-                <option value="{{$title->id}}">
-                  {{$title->title }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="form-group row" id="qualification">
-            <label class="col-md-3 col-from-label">
-              {{translate('Qualification')}}
-              <span class="text-danger">*</span>
-
-            </label>
-            <div class="col-md-9">
-              <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id"
-                data-live-search="true" title="{{ translate('Select qualification') }}"
-                data-selected="{{optional($scholarship->qualification)->id}}" required>
-                @foreach ($scholarship_qualification as $qualification)
-                <option value="{{$qualification->id}}">
-                  {{$qualification->qualification_name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group row" id="fieldOfStudy">
-            <label class="col-md-3 col-from-label">
-              {{translate('Field of study')}}
-              <span class="text-danger">*</span>
-            </label>
-
-            <div class="col-md-9">
-              <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id[]" id="fieldStudy_id"
-                data-live-search="true" title="{{ translate('Select qualification')}}"
-                data-selected="{{optional($scholarship->fieldStudy)->id }}" required>
-                @foreach ($scholarship_fieldStudy as $fieldStudy)
-                <option value=" {{$fieldStudy->id}}">
-                  {{$fieldStudy->name }}
-                </option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">{{translate('Slug')}}</label>
-            <div class="col-md-9">
-              <input type="text" placeholder="{{translate('Slug')}}" name="slug" id="slug"
-                value="{{ $scholarship->slug }}" class="form-control" required>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="signinSrEmail">
-              {{translate('Banner')}}
-              <small>(1300x650)</small>
-            </label>
-            <div class="col-md-9">
-              <div class="input-group" data-toggle="aizuploader" data-type="image">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-soft-secondary font-weight-medium">
-                    {{ translate('Browse')}}
-                  </div>
-                </div>
-                <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                <input type="hidden" name="banner" class="selected-files" value="{{ $scholarship->banner }}">
-              </div>
-              <div class="file-preview box sm">
-              </div>
-            </div>
-          </div>
 
           <div class="form-group row">
             <label class="col-md-3 col-form-label">
-              {{translate('Short Description')}}
+                {{translate('Seminar Title')}}
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-md-9">
+                <input
+                  type="text"
+                  value="{{ $seminar->title }}"
+                  onkeyup="makeSlug(this.value)"
+                  id="title"
+                  name="title"
+                  class="form-control"
+                  required
+                >
+            </div>
+        </div>
+
+        <div class="form-group row mb-0">
+          <table class="table table-borderless mb-0" id="seminarDateTable">
+              <tbody>
+                @if (! $seminar->seminar_dates->isEmpty())
+                  @foreach ( $seminar->seminar_dates as $seminar_date)
+                  {{-- @dd($seminar_date->seminar_date); --}}
+                    <tr>
+                      <td>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label">
+                                  {{translate('Seminar Date')}}
+                                  <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-md-9">
+                                  <input
+                                      type="text"
+                                      value="{{ \Carbon\Carbon::parse($seminar_date->seminar_date)->format('Y/m/d')}}"
+                                      name="seminar_date[]"
+                                      class="form-control"
+                                      onfocus="(this.type='date')"
+                                      onblur="(this.type='text')"
+                                  >
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label">
+                                  {{translate('Seminar Date Description')}}
+                              </label>
+                              <div class="col-md-9">
+                                  <textarea
+                                      name="date_description[]"
+                                      rows="5"
+                                      class="form-control"
+                                  >{{ $seminar_date->descriptions }}</textarea>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  @endforeach
+                @endif
+              </tbody>
+          </table>
+      </div>
+        <div class="form-group mb-4 text-left">
+            <button
+                type="button"
+                class="btn btn-circle btn-info"
+                id="addDate"
+            >
+                {{translate('Add Date')}}
+            </button>
+        </div>
+          <!-- Seminar Mode -->
+          <div class="form-group row mt-2" id="seminar_mode">
+            <label class="col-md-3 col-from-label mt-2">
+                {{translate('Seminar Mode')}}
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-md-9">
+                <select
+                    class="form-control"
+                    name="seminar_mode_id"
+                    id="seminar_mode_id"
+                    data-live-search="true"
+                >
+                @foreach (getSeminarModes() as $seminar_mode)
+                  <option value="{{ $seminar_mode['id'] }}" {{ $seminar_mode['id'] == $seminar->seminar_mode_id ? 'selected' : ''}}>
+                      {{ $seminar_mode['name'] }}
+                  </option>
+                @endforeach
+                </select>
+            </div>
+        </div>
+        <!-- Seminar Software -->
+        <div class="form-group row" id="seminar_software">
+          <label class="col-md-3 col-from-label">
+              {{translate('Software Package')}}
+              <span class="text-danger">*</span>
+
+          </label>
+          <div class="col-md-9">
+              <select
+                  class="form-control"
+                  name="seminar_software_id"
+                  id="seminar_software_id"
+                  data-live-search="true"
+                  title="{{ translate('Select Software Package') }}"
+              >
+              @foreach (getSeminarSoftwares() as $seminar_software)
+                <option value="{{ $seminar_software['id'] }}" {{ $seminar_software['id'] == $seminar->seminar_software_id ? 'selected' : ''}}>
+                    {{ $seminar_software['name'] }}
+                </option>
+              @endforeach
+              </select>
+            </div>
+        </div>
+          <!-- Seminar Software Description -->
+        <div class="form-group row">
+          <label class="col-md-3 col-from-label">
+              {{translate('Software Description')}}
+          </label>
+            <div class="col-md-9">
+              <textarea
+                  class="aiz-text-editor"
+                  name="software_description"
+              >{{ $seminar->software_description }}</textarea>
+            </div>
+        </div>
+          <!-- Seminar Language -->
+          <div class="form-group row" id="language">
+            <label class="col-md-3 col-from-label">
+              {{translate('Language')}}
               <span class="text-danger">*</span>
             </label>
             <div class="col-md-9">
-              <textarea name="short_description" rows="5"
-                class="form-control">{{ $scholarship->short_description }}</textarea>
+              <select
+                class="form-control"
+                name="language_id"
+                id="language_id"
+                data-live-search="true"
+                title="{{ translate('Select language') }}"
+                >
+                @foreach (getLanguages() as $language)
+                <option value="{{ $language['id'] }}" {{ $language['id'] == $seminar->language_id ? 'selected' : ''}}>
+                    {{ $language['name'] }}
+                </option>
+                @endforeach
+                </select>
             </div>
           </div>
+        <!-- Organiser and Certificate -->
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">
+              {{translate('Organiser and Certificate')}}
+          </label>
+          <div class="col-md-9">
+            <input
+              type="text"
+              placeholder="{{translate('Organiser and Certificate')}}"
+              id="organiser_certificate"
+              name="organiser_certificate"
+              value="{{ $seminar->organiser_certificate }}"
+              class="form-control"
+            >
+          </div>
+      </div>
+        <!--Course Instructor -->
+        <div class="form-group row" id="country">
+          <label class="col-md-3 col-from-label">
+              {{translate('Course Instructor')}}
+              <span class="text-danger">*</span>
 
-          <div class="form-group row">
+          </label>
+          <div class="col-md-9">
+            <select
+                class="form-control"
+                name="user_id"
+                id="user_id"
+                data-live-search="true"
+                title="{{ translate('Course Instructor') }}"
+                required
+            >
+              @foreach (getCourseInstructors() as $instructor)
+              <option value="{{ $instructor['id'] }}" {{ $instructor['id'] == $seminar->user_id ? 'selected' : ''}}>
+                  {{ $instructor['name'] }}
+              </option>
+              @endforeach
+          </select>
+        </div>
+      </div>
+        <!--Course Instructor Descriptions -->
+        <div class="form-group row">
+          <label class="col-md-3 col-from-label">
+              {{translate('Instructor Descriptions')}}
+          </label>
+          <div class="col-md-9">
+              <textarea
+                  class="aiz-text-editor"
+                  name="instructor_descriptions"
+              >{{ $seminar->instructor_descriptions }}</textarea>
+          </div>
+      </div>
+        <!-- Seminar Slug -->
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">{{translate('Slug')}}
+              <span class="text-danger">*</span></label>
+          <div class="col-md-9">
+              <input type="text" value="{{ $seminar->slug }}" id="slug" class="form-control" required>
+          </div>
+      </div>
+      <!-- Course objectives -->
+      <div class="form-group row">
+        <label class="col-md-3 col-from-label">
+            {{translate('Course objectives')}}
+        </label>
+        <div class="col-md-9">
+            <textarea class="aiz-text-editor" name="course_objectives">{{ $seminar->course_objectives }}</textarea>
+        </div>
+      </div>
+
+      <!-- Learning outcomes -->
+      <div class="form-group row">
+        <label class="col-md-3 col-from-label">
+            {{translate('Learning outcomes')}}
+        </label>
+        <div class="col-md-9">
+            <textarea class="aiz-text-editor" name="learning_outcomes">{{ $seminar->learning_outcomes }}</textarea>
+        </div>
+      </div>
+        <!-- Teaching and Learning Methods -->
+        <div class="form-group row">
+          <label class="col-md-3 col-from-label">
+              {{translate('Teaching and Learning Methods')}}
+          </label>
+          <div class="col-md-9">
+              <textarea class="aiz-text-editor" name="teaching_learning_methods">{{ $seminar->teaching_learning_methods }}</textarea>
+          </div>
+        </div>
+        <!-- Teaching Resources -->
+        <div class="form-group row">
+          <label class="col-md-3 col-from-label">
+              {{translate('Teaching Resources')}}
+          </label>
+          <div class="col-md-9">
+              <textarea class="aiz-text-editor" name="teaching_resources">{{ $seminar->teaching_resources }}</textarea>
+          </div>
+        </div>
+        <!-- Seminar Seat -->
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">
+              {{translate('Seminar Seat')}}
+              <span class="text-danger">*</span>
+          </label>
+          <div class="col-md-9">
+              <input type="number" value="{{ $seminar->seat}}" name="seat" class="form-control" required>
+          </div>
+        </div>
+
+          <!-- Seminar Status -->
+          <div class="form-group row" id="status">
             <label class="col-md-3 col-from-label">
-              {{translate('Description')}}
+                {{translate('Seminar Status')}}
+                <span class="text-danger">*</span>
+
             </label>
             <div class="col-md-9">
-              <textarea class="aiz-text-editor" name="description">{{ $scholarship->description }}</textarea>
+                <select
+                    class="form-control"
+                    name="status"
+                    id="status"
+                    data-live-search="true"
+                    title="{{ translate('Seminar Status') }}"
+                    required
+                >
+                    <option value="private" {{ $seminar->status == 'private' ? 'selected' : ''}}>Private</option>
+                    <option value="public" {{ $seminar->status == 'public' ? 'selected' : ''}}>Public</option>
+                </select>
             </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">{{translate('Meta Title')}}</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" name="meta_title" value="{{ $scholarship->meta_title }}"
-                placeholder="{{translate('Meta Title')}}">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="signinSrEmail">
-              {{translate('Meta Image')}}
-              <small>(200x200)+</small>
-            </label>
-            <div class="col-md-9">
-              <div class="input-group" data-toggle="aizuploader" data-type="image">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-soft-secondary font-weight-medium">
-                    {{ translate('Browse')}}
-                  </div>
-                </div>
-                <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                <input type="hidden" name="meta_img" class="selected-files" value="{{ $scholarship->meta_img }}">
-              </div>
-              <div class="file-preview box sm">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">{{translate('Meta Description')}}</label>
-            <div class="col-md-9">
-              <textarea name="meta_description" rows="5"
-                class="form-control">{{ $scholarship->meta_description }}</textarea>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label">
-              {{translate('Meta Keywords')}}
-            </label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="meta_keywords" name="meta_keywords"
-                value="{{ $scholarship->meta_keywords }}" placeholder="{{translate('Meta Keywords')}}">
-            </div>
-          </div>
+        </div>
 
           <div class="form-group mb-0 text-right">
             <button type="submit" class="btn btn-primary">
-              {{translate('Save')}}
+              {{translate('Update')}}
             </button>
           </div>
+
         </form>
       </div>
     </div>
@@ -299,10 +306,23 @@
 
 @section('script')
 <script>
-function makeSlug(val) {
-  let str = val;
-  let output = str.replace(/\s+/g, '-').toLowerCase();
-  $('#slug').val(output);
-}
+  function makeSlug(val) {
+    let str = val;
+    let output = str.replace(/\s+/g, '-').toLowerCase();
+    $('#slug').val(output);
+  }
+    // add date dyanamic
+    let add_date = 0;
+    $('#addDate').click(function () {
+        ++add_date;
+        $('#seminarDateTable').append(
+            '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
+            );
+    });
+
+    $(document).on('click', '#removeDate', function() {
+        console.log('remove');
+        $(this).parents('tr').remove();
+    });
 </script>
 @endsection
