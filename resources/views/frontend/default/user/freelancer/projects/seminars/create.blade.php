@@ -134,7 +134,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-9">
-                                        <input type="text" placeholder="{{translate('Organiser and certificate')}}"  id="website_link" name="website_link" class="form-control" required>
+                                        <input type="text" placeholder="{{translate('Organiser and certificate')}}"  id="organiser_certificate" name="organiser_certificate" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group row" id="country">
@@ -144,7 +144,7 @@
 
                                     </label>
                                     <div class="col-md-9">
-                                        <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Course Instructor') }}" required>
+                                        <select class="form-control aiz-selectpicker" name="user_id	" id="user_id	" data-live-search="true" title="{{ translate('Course Instructor') }}" required>
                                             @foreach ($users as $user)
                                             <option value="{{ $user->id }}">
                                                 {{$user->name }}
@@ -159,7 +159,7 @@
                                         {{translate('Instructor Descriptions')}}
                                     </label>
                                     <div class="col-md-9">
-                                        <textarea class="aiz-text-editor" name="course_schedule"></textarea>
+                                        <textarea class="aiz-text-editor" name="instructor_descriptions"></textarea>
                                     </div>
                                 </div>
 
