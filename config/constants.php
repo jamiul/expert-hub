@@ -16,6 +16,18 @@ return [
         '3 month - 6 month' => '3 months to 6 months',
         '6 month' => 'Over 6 months/Ongoing',
         'unspecified' => 'unspecified'
+    ],
+
+    'email' => [
+        'register' => [
+            'subject' => 'An invitation for registration',
+            'body' => 'This email is sent automatically. If you do not recognize this email, please do not access the URL and discard the email. Also, please note that we cannot reply even if you reply.'
+        ],
+
+    'Admin' => [
+        'role_id' => 9,
+        'role_name' => 'Admin'
+    ]
     ]
 
 ];

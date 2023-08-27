@@ -332,7 +332,7 @@
                                 $projectIds = $completedProjects->pluck('id');
 
                                 // Retrieve project details using the extracted IDs
-                                $projects = \App\models\Project::whereIn('id', $projectIds)->get();
+                                $projects = \App\Models\Project::whereIn('id', $projectIds)->get();
 
                                 @endphp
 
@@ -398,7 +398,7 @@
                                         @endforeach
                                     </div>
                                     <div class="tab-pane fade" id="finding" role="tabpanel" aria-labelledby="finding-work-tab">
-                                       <p class="fw-700 fs-16 text-center text-red my-5">No running project</p>
+                                    <p class="fw-700 fs-16 text-center text-red my-5">No running project</p>
                                     </div>
 
                                 </div>
@@ -558,8 +558,8 @@
 
                 </div>
 
-                  {{-- services part --}}
-                  <div class=" mt-5">
+                {{-- services part --}}
+                <div class=" mt-5">
                     <div class="">
                         <h4 class="h6 fw-700 mb-0"> {{ translate('Services') }}</h4>
                     </div>
@@ -606,27 +606,27 @@
 
 
 
-         <script>
-                function updateTime() {
-                    const localTimeElement = document.getElementById('local-time');
-                    const currentDate = new Date();
+        <script>
+            function updateTime() {
+                const localTimeElement = document.getElementById('local-time');
+                const currentDate = new Date();
 
-                    const options = {
-                        hour: 'numeric',
-                        minute: 'numeric',
-                        // second: 'numeric'
-                    };
-                    const localTimeString = currentDate.toLocaleTimeString(undefined, options);
+                const options = {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    // second: 'numeric'
+                };
+                const localTimeString = currentDate.toLocaleTimeString(undefined, options);
 
-                    localTimeElement.textContent = localTimeString + ' local Time ';
+                localTimeElement.textContent = localTimeString + ' local Time ';
 
-                    // Set the interval to update the time every second
-                    setTimeout(updateTime, 1000);
-                }
+                // Set the interval to update the time every second
+                setTimeout(updateTime, 1000);
+            }
 
-                // Call the function to update the time initially
-                updateTime();
-            </script>
+            // Call the function to update the time initially
+            updateTime();
+    </script>
             @endsection
 
 

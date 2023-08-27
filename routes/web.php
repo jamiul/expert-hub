@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\WhyScholarshipController;
 
 /*
@@ -49,6 +50,9 @@ Route::get('/aiz-uploader/download/{id}', 'AizUploadController@attachment_downlo
 
 Route::get('/', 'HomeController@index')->name('home');
 
+// Registration with mail
+Route::get('/register/{code}', [RegisterController::class, 'showRegistrationForm']);
+Route::post('/register-email', [RegisterController::class, 'registerMailStore'])->name('register.mail.store');
 
 // Subscribe
 Route::resource('subscribers', 'SubscriberController');
@@ -124,7 +128,7 @@ Route::get('/success-stories', function () {
     return view('frontend.default.success-stories');
 })->name('success-stories');
 Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
-Route::get('/why-freelancer-edu','WhyScholarshipController@whyFreelancerEdu')->name('why-freelancer-edu');
+Route::get('/aboutUs','WhyScholarshipController@whyFreelancerEdu')->name('aboutUs');
 Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
 Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
@@ -294,6 +298,14 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 
     Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
     Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
+    // seminar consultant routes
+    Route::get('/seminar-consultant', 'SeminarConsultantController@seminar_index')->name('seminar-consultant.seminar_index');
+    Route::get('/seminar-consultant/purchased', 'SeminarConsultantController@sold_services')->name('seminar-consultant.sold');
+    Route::get('/seminar-consultant/create', 'SeminarConsultantController@create')->name('seminar-consultant.create');
+    Route::post('/seminar-consultant/store', 'SeminarConsultantController@store')->name('seminar-consultant.store');
+    Route::get('/seminar-consultant/edit/{slug}', 'SeminarConsultantController@edit')->name('seminar-consultant.edit');
+    Route::post('/seminar-consultant/update/{slug}', 'SeminarConsultantController@update')->name('seminar-consultant.update');
+    Route::get('/seminar-consultant/destroy/{slug}', 'SeminarConsultantController@destroy')->name('seminar-consultant.destroy');
 });
 
 Route::get('/search', 'SearchController@index')->name('search');
@@ -323,8 +335,6 @@ Route::get('/client-lists', 'HomeController@client_list')->name('client.lists');
 Route::get('/freelancer-lists', 'HomeController@freelancer_list')->name('freelancer.lists');
 Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name('freelancer.details');
 // Route::get('/freelancer/{user_name}', 'HomeController@freelancer_meeting')->name('freelancer.meeting');
-
-
 Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 
  //seminars

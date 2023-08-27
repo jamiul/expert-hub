@@ -180,8 +180,8 @@ body {
     /* padding-top: 100px !important; */
 }
 
-.fre-profile{
-    margin-top: -9rem!important;
+.fre-profile {
+    margin-top: -9rem !important;
 }
 /* responsive */
 @media only screen and (max-width: 1210px) {
@@ -262,38 +262,35 @@ body {
     }
 }
 
-
 /* skill part  */
 .vertical-line {
-  border-left: 1px solid #ccc;
-  height: 100%;
+    border-left: 1px solid #ccc;
+    height: 100%;
 }
 
 /* underline  */
 .hover-underline {
-  position: relative;
-  text-decoration: none;
+    position: relative;
+    text-decoration: none;
 }
 
 .hover-underline::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #f00; /* Replace with your desired underline color */
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #f00; /* Replace with your desired underline color */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
 }
 
 .hover-underline:hover::after {
-  visibility: visible;
-  transform: scaleX(1);
+    visibility: visible;
+    transform: scaleX(1);
 }
-
-
 
 /* Job Category part */
 
@@ -315,10 +312,9 @@ body {
     max-width: 1200px !important; /* Set your desired max-width value */
     margin-left: auto !important;
     margin-right: auto !important;
+}
 
-  }
-
- .row .col-md-3 {
+.row .col-md-3 {
     padding-left: 0;
     padding-right: 0;
 }
@@ -327,15 +323,13 @@ body {
     margin-left: 6px;
     margin-right: -6px;
     padding-left: 8px;
-
 }
 
-
-  @media (min-width: 1200px) {
+@media (min-width: 1200px) {
     .need-help-section {
-      max-width: 100%; /* Override the max-width for extra-large devices */
+        max-width: 100%; /* Override the max-width for extra-large devices */
     }
-  }
+}
 @media (min-width: 1200px) {
     .d-flex {
         position: relative;
@@ -349,8 +343,8 @@ body {
         bottom: 50%;
         transform: translateY(50%);
         left: 161px;
-        right:0;
-}
+        right: 0;
+    }
 }
 
 /* responsive */
@@ -382,7 +376,6 @@ body {
     .fre-job-catagory p {
         font-size: 15px !important;
         margin-top: 250px !important;
-
     }
 }
 
@@ -477,7 +470,6 @@ body {
         font-size: 15px !important;
         margin-top: 250px !important;
     }
-
 }
 
 @media (min-width: 425px) {
@@ -491,13 +483,12 @@ body {
         font-size: 14px !important;
         margin-top: 253px !important;
     }
-
 }
 /* all consultant page */
-.star-widget input{
-    display: none;;
+.star-widget input {
+    display: none;
 }
-.star-widget label{
+.star-widget label {
     font-size: 15px;
     color: #444;
     padding: 5px;
@@ -505,20 +496,18 @@ body {
     translate: all 0.2 ease;
 }
 .star-widget input:not(:checked) ~ label:hover,
-.star-widget input:not(:checked) ~ label:hover ~ label{
+.star-widget input:not(:checked) ~ label:hover ~ label {
     color: #ffa707;
 }
-input:checked ~ label{
+input:checked ~ label {
     color: #ffa707;
 }
-
-
 
 /* all consultant page */
-.star-widget input{
-    display: none;;
+.star-widget input {
+    display: none;
 }
-.star-widget label{
+.star-widget label {
     font-size: 15px;
     color: #444;
     padding: 5px;
@@ -526,69 +515,74 @@ input:checked ~ label{
     translate: all 0.2 ease;
 }
 .star-widget input:not(:checked) ~ label:hover,
-.star-widget input:not(:checked) ~ label:hover ~ label{
+.star-widget input:not(:checked) ~ label:hover ~ label {
     color: #ffa707;
 }
-input:checked ~ label{
-    color:#ffa707;
+input:checked ~ label {
+    color: #ffa707;
 }
 
 div.scroll {
-                margin:4px, 4px;
-                padding:4px;
-                width: 320px;
-                height: 110px;
-                overflow-x: hidden;
-                overflow-y: auto;
-                text-align:justify;
-                
-            }
+    margin: 4px, 4px;
+    padding: 4px;
+    width: 320px;
+    height: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
 div.scroll h6 a {
-                color:black;
-                
-            }
+    color: black;
+}
 #contentDiv {
     display: block; /* or "none" if you want it to be initially hidden */
     /* Add any other styles you want */
-  }
+}
 
-  .calendar {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.calendar {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .calendar-header {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        }
+.calendar-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
 
-        .calendar-cell {
-            border: 1px solid #dee2e6;
-            padding: 5px;
-            min-height: 50px;
-        }
-        
-        div.scroll {
-                margin:4px, 4px;
-                padding:4px;
-                width: 320px;
-                height: 110px;
-                overflow-x: hidden;
-                overflow-y: auto;
-                text-align:justify;
-                
-            }
+.calendar-cell {
+    border: 1px solid #dee2e6;
+    padding: 5px;
+    min-height: 50px;
+}
+
+div.scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    width: 320px;
+    height: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
 div.scroll h6 a {
-                color:black;
-                
-            }
+    color: black;
+}
 #contentDiv {
     display: block; /* or "none" if you want it to be initially hidden */
     /* Add any other styles you want */
 }
- /* seminar page  */
+/* seminar page  */
 
- .seminar-content{
+.seminar-content {
     width: 70%;
     margin: 0 15%;
+}
+
+.seminar-details {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.details-seminar {
+    margin-left: 120px;
+    margin-right: 120px;
 }
