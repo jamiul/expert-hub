@@ -101,7 +101,7 @@
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('seminar-consultant.seminar_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
+                            <a href="{{ route('seminar-consultant.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('All Seminar') }}</span>
                             </a>
                         </li>

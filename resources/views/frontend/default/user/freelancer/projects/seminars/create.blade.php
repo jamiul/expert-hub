@@ -20,8 +20,10 @@
                         <div class="card-header">
                             <h5 class="mb-0 h6">{{translate('Seminar Information')}}</h5>
                         </div>
+                        {{-- @dd(route('seminar-consultant.store')); --}}
                         <div class="card-body">
-                            <form id="add_form" class="form-horizontal"     action="        {{route ('seminar-consultant.store')}}" method="POST">
+                            <form id="add_form" class="form-horizontal" action="{{ route('seminar-consultant.store') }}" method="POST">
+                            {{-- <form class="form-horizontal" action="{{ route('seminar-consultant.store') }}" method="POST"> --}}
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">
@@ -54,6 +56,18 @@
                                                             >
                                                         </div>
                                                     </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label">
+                                                            {{translate('Seminar Date Description')}}
+                                                        </label>
+                                                        <div class="col-md-9">
+                                                            <textarea
+                                                                name="date_description[]"
+                                                                rows="5"
+                                                                class="form-control"
+                                                            ></textarea>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -76,7 +90,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-9">
-                                        <select class="form-control aiz-selectpicker" name="seminar_mode_id" id="seminar_mode_id" data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
+                                        <select class="form-control" name="seminar_mode_id" id="seminar_mode_id" data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
                                             @foreach ($seminar_mode as $mode)
                                             <option value="{{ $mode->id }}">
                                                 {{ $mode->name }}
@@ -92,7 +106,7 @@
 
                                     </label>
                                     <div class="col-md-9">
-                                        <select class="form-control aiz-selectpicker" name="software_id" id="software_id" data-live-search="true" title="{{ translate('Select Software Package') }}">
+                                        <select class="form-control" name="software_id" id="software_id" data-live-search="true" title="{{ translate('Select Software Package') }}">
 
                                             @foreach ($seminar_software as $software)
                                             <option value="{{ $software->id }}">
@@ -108,7 +122,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-9">
-                                        <textarea name="software_description" rows="20" class="form-control" required=""></textarea>
+                                        <textarea name="software_description" rows="20" class="aiz-text-editor"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row" id="university">
@@ -118,7 +132,7 @@
 
                                     </label>
                                     <div class="col-md-9">
-                                        <select class="form-control aiz-selectpicker" name="language_id" id="language_id" data-live-search="true" title="{{ translate('Select Language') }}">
+                                        <select class="form-control" name="language_id" id="language_id" data-live-search="true" title="{{ translate('Select Language') }}">
 
                                             @foreach ($languages as $language)
                                             <option value="{{ $language->id }}">
@@ -134,7 +148,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-9">
-                                        <input type="text" placeholder="{{translate('Organiser and certificate')}}"  id="organiser_certificate" name="organiser_certificate" class="form-control" required>
+                                        <input type="text" placeholder="{{translate('Organiser and certificate')}}"  id="organiser_certificate" name="organiser_certificate" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row" id="country">
@@ -144,7 +158,7 @@
 
                                     </label>
                                     <div class="col-md-9">
-                                        <select class="form-control aiz-selectpicker" name="user_id	" id="user_id	" data-live-search="true" title="{{ translate('Course Instructor') }}" required>
+                                        <select class="form-control" name="user_id	" id="user_id	" data-live-search="true" title="{{ translate('Course Instructor') }}">
                                             @foreach ($users as $user)
                                             <option value="{{ $user->id }}">
                                                 {{$user->name }}
@@ -216,6 +230,27 @@
                                         <input type="number" placeholder="{{translate('Seat No.')}}" name="seat" class="form-control" required>
                                     </div>
                                 </div>
+                                <!-- Seminar Status -->
+                                <div class="form-group row" id="status">
+                                    <label class="col-md-3 col-from-label">
+                                        {{translate('Seminar Status')}}
+                                        <span class="text-danger">*</span>
+
+                                    </label>
+                                    <div class="col-md-9">
+                                        <select
+                                            class="form-control"
+                                            name="status"
+                                            id="status"
+                                            data-live-search="true"
+                                            title="{{ translate('Seminar Status') }}"
+                                        >
+                                        <option value="" selected>Select Seminar Status</option>
+                                        <option value="private">Private</option>
+                                        <option value="public">Public</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="form-group mb-0 text-right">
                                     <button type="submit" class="btn btn-primary">
@@ -248,7 +283,7 @@
     $('#addDate').click(function () {
         ++add_date;
         $('#seminarDateTable').append(
-            '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div></td></tr>'
+            '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
             );
     });
 
