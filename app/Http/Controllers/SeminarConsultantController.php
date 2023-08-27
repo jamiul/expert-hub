@@ -44,7 +44,6 @@ class SeminarConsultantController extends Controller
     public function create()
 
     {
-        dd(getUserRoles());
     $seminar_mode=SeminarMode::all();
     $seminar_software=SeminarSoftware::all();
     $languages=Language::all();
@@ -71,7 +70,7 @@ class SeminarConsultantController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+
         $request->validate([
             'title' => 'required|max:255',
             'seminar_date' => 'required|array',
@@ -92,6 +91,7 @@ class SeminarConsultantController extends Controller
         ]);
 
         $seminar = new Seminar;
+        // dd($seminar);
 
         $seminar->title = $request->title;
         $seminar->seminar_date = $request->seminar_date;
@@ -99,7 +99,7 @@ class SeminarConsultantController extends Controller
         $seminar->seminar_software_id = $request->seminar_software_id;
         $seminar->software_description = $request->software_description;
         $seminar->language_id = $request->language_id;
-        $seminar->organiser_certificate= $request->organiser_certificate	;
+        $seminar->organiser_certificate= $request->organiser_certificate;
         $seminar->user_id= $request->user_id;
         $seminar->instructor_descriptions = $request->instructor_descriptions;
         $seminar->slug = $request->slug;
@@ -107,12 +107,12 @@ class SeminarConsultantController extends Controller
         $seminar->learning_outcomes = $request->learning_outcomes;
         $seminar->teaching_learning_methods = $request->teaching_learning_methods;
         $seminar->teaching_resources = $request->teaching_resources;
-        $seminar->seat = $request->seat;
+        $seminar->seat=$request->seat;
 
         $seminar->save();
 
         flash(translate('Seminar post has been updated successfully'))->success();
-        return redirect()->route('seminar.seminar_index');
+        return redirect()->route('seminar-consultant.seminar_index');
     }
 
 

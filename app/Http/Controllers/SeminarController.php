@@ -35,6 +35,7 @@ class SeminarController extends Controller
      */
     public function index(Request $request)
     {
+
         $input = $request->all();
         $search = '';
 
@@ -48,6 +49,7 @@ class SeminarController extends Controller
         } else {
             $seminars = Seminar::with('seminar_dates')->orderBy('created_at', 'asc')->get();
         }
+
 
         return view('admin.default.seminar_module.seminar.index', compact('seminars','search'));
     }

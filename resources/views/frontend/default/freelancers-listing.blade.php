@@ -449,7 +449,6 @@
   var value = e.value;
   var text = e.options[e.selectedIndex].text;
 
-  console.log(value);
   function applyFilter() {
     $('#freelancer-filter-form').submit();
   }
