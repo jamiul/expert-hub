@@ -367,7 +367,7 @@
                   href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Academic Scholarships') }}</a>
               </li>
 
-b
+
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Research Training ') }}</a>
                             </li>

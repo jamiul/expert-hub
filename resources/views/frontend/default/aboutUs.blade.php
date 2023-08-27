@@ -23,9 +23,6 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="whyFreeEdu-container-main mb-5 " style="background-color:#F2F7F2">
         <section>
             @if (get_setting('featured_category_show') == 'on')
@@ -37,14 +34,14 @@
                                 <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
                                     <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
                                     <p class=" mt-5 text-success fw-700 frequently-qsn-title">About ConsultantEdu</p>
-                                    <p class="fs-16 fw-500 text-justify">ConsultantEdu is a dynamic platform to connect
+                                    <p class=" fw-500 seminar-objective-details">ConsultantEdu is a dynamic platform to connect
                                         passionate academic experts with individuals, institutions, and businesses seeking
                                         tailored education solutions. We believe that education has the power to shape the
                                         world, and our goal is to facilitate this transformation by offering a range of
                                         services that elevate learning experiences. So, we've built a unique hub where
                                         academic experts meet people who want high-quality educational services.
                                     </p>
-                                    <p class="fs-16 fw-500 text-justify">Our comprehensive collection of services is
+                                    <p class=" fw-500 seminar-objective-details">Our comprehensive collection of services is
                                         meticulously designed to cater to
                                         diverse educational needs: Our Accreditation experts provide adept guidance through
                                         the course accreditation process, ensuring adherence to the highest standards for
@@ -55,7 +52,7 @@
                                         education. Our LMS experts assist in selecting and configuring these systems to
                                         facilitate seamless online learning experiences.
                                         Words wield significant influence in education. </p>
-                                    <p class="fs-16 fw-500 text-justify">
+                                    <p class=" fw-500 seminar-objective-details">
                                         Our Writing and Editing experts
                                         conduct comprehensive reviews to elevate your articles, manuscripts, and theses to
                                         the highest academic standards in your field. Informed decision-making hinges on
