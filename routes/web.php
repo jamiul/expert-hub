@@ -298,16 +298,16 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 
     Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
     Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
-    // seminar consultant routes
-    Route::get('/seminar-consultant', 'SeminarConsultantController@seminar_index')->name('seminar-consultant.seminar_index');
-    Route::get('/seminar-consultant/purchased', 'SeminarConsultantController@sold_services')->name('seminar-consultant.sold');
-    Route::get('/seminar-consultant/create', 'SeminarConsultantController@create')->name('seminar-consultant.create');
-    Route::post('/seminar-consultant/store', 'SeminarConsultantController@store')->name('seminar-consultant.store');
-    Route::get('/seminar-consultant/edit/{slug}', 'SeminarConsultantController@edit')->name('seminar-consultant.edit');
-    Route::post('/seminar-consultant/update/{slug}', 'SeminarConsultantController@update')->name('seminar-consultant.update');
-    Route::get('/seminar-consultant/destroy/{slug}', 'SeminarConsultantController@destroy')->name('seminar-consultant.destroy');
-});
 
+});
+ // seminar consultant routes
+ Route::get('/seminar-consultant', 'SeminarConsultantController@seminar_index')->name('seminar-consultant.seminar_index');
+ Route::get('/seminar-consultant/purchased', 'SeminarConsultantController@sold_services')->name('seminar-consultant.sold');
+ Route::get('/seminar-consultant/create', 'SeminarConsultantController@create')->name('seminar-consultant.create');
+ Route::post('/seminar-consultant/store', 'SeminarConsultantController@store')->name('seminar-consultant.store');
+ Route::get('/seminar-consultant/edit/{slug}', 'SeminarConsultantController@edit')->name('seminar-consultant.edit');
+ Route::post('/seminar-consultant/update/{slug}', 'SeminarConsultantController@update')->name('seminar-consultant.update');
+ Route::get('/seminar-consultant/destroy/{slug}', 'SeminarConsultantController@destroy')->name('seminar-consultant.destroy');   
 Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/search?category_id[]={id}&type=project', 'SearchController@index')->name('projects.category');
 Route::get('/skill/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
