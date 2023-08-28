@@ -927,6 +927,9 @@ div.scroll h6 a {
     .banner-img {
         width: 300px;
     }
+    .footer-social{
+        align-items: flex-end;
+    }
 }
 
 @media (max-width: 1600px) {
