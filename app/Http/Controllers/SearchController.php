@@ -66,6 +66,7 @@ class SearchController extends Controller
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
+
             }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
@@ -142,27 +143,53 @@ class SearchController extends Controller
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
-            $seminar_mode= $request->seminar_mode;
-            // dd($seminarMode);
-            $categories = [];
+            $seminarMode_id= array('');
+            $seminarSoftware_id= array('');
+            $language_id=array('');
             $category_id = array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
+            $selected_seminar_mode = [];
+            $selected_seminar_lang = [];
+            $selected_seminar_software = [];
+            $categories = [];
             $seminars = Seminar::query();
+            // dd($request);
 
             if ($keyword != null) {
                 $seminar_ids = Seminar::where('title', 'like', '%' . $keyword . '%')->pluck('id');
                 $seminars = $seminars->whereIn('id', $seminar_ids);
             }
-            // dd($seminars);
 
+
+            if($request->seminarMode_id != null) {
+                $seminar_mode_ids= $request->seminarMode_id;
+
+                $selected_seminar_mode = Seminar::whereIn('seminar_mode_id', $seminar_mode_ids)->get();
+                $seminars = $seminars->whereIn('seminar_mode_id', $seminar_mode_ids);
+
+            }
+            if($request->seminarSoftware_id != null) {
+                $seminar_software_ids= $request->seminarSoftware_id;
+                $selected_seminar_software = Seminar::whereIn('seminar_software_id', $seminar_software_ids)->get();
+                $seminars = $seminars->whereIn('seminar_software_id', $seminar_software_ids);
+
+            }
+            if($request->language_id != null) {
+                $language_ids= $request->language_id;
+                $selected_seminar_lang = Seminar::whereIn('language_id', $language_ids)->get();
+                // dd( $selected_seminar_lang);
+                $seminars = $seminars->whereIn('language_id', $language_ids);
+
+            }
 
                 $total = $seminars->count();
-                $seminars = $seminars->paginate(8)->appends($request->query());;
+                $seminars = $seminars->paginate(8)->appends($request->query());
+                // dd($seminars);
 
-            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id'));
+            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id','seminarSoftware_id','language_id','selected_seminar_mode','selected_seminar_lang','selected_seminar_software'));
         } else if ($request->type == 'service') {
 
             $type = 'service';

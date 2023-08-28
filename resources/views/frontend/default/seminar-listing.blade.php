@@ -159,92 +159,30 @@
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
-                                            @foreach (\App\Models\SeminarMode::all() as $mode)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="{{$mode->id}}" name="seminarMode"
-                                                    id="{{$mode->id}}">
-                                                <label class="form-check-label fs-14" for="{{$mode->id}}">
-                                                    {{$mode->name}}
-                                                </label>
+                                            <div class="aiz-checkbox-list">
+                                                @foreach(\App\Models\SeminarMode:: all() as $mode)
 
-                                            </div>
-                                            @endforeach
-                                            {{-- <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                    Face-to-Face
+                                                <label class="aiz-checkbox">
+                                                    <input type="checkbox" name="seminarMode_id[]" value="{{$mode->id}}" onchange="applyFilter()" @if ($selected_seminar_mode->pluck('seminar_mode_id')->contains($mode->id)) checked @endif >{{$mode->name}}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-12"></span>
                                                 </label>
-                                            </div> --}}
+                                                @endforeach
+                                            </div>
+
                                         </div>
                                         <!-- Seminar software -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-
-                                            <select class="select2  form-control aiz-selectpicker rounded-1" name=""
+                                            <select class="select2  form-control aiz-selectpicker rounded-1" name="seminarSoftware_id[]"  onchange="applyFilter()"
                                                 data-toggle="select2" data-live-search="true">
-
-                                                <option value="" class="fs-16">{{ translate('Search seminar software') }}</option>
+                                                <option value="" class="fs-16" >{{ translate('Search seminar software') }}</option>
                                             @foreach(\App\Models\SeminarSoftware::all() as $software)
-                                                <option value="0">{{$software->name}}</option>
+                                                <option value="{{$software->id}}"  @if ($selected_seminar_software->pluck('seminar_software_id')->contains($software->id)) selected @endif>{{$software->name}}</option>
                                             @endforeach
-                                                {{-- <option value="0"> SPSS</option>
-                                                <option value="0"> R</option>
-                                                <option value="0">Excel </option>
-                                                <option value="0">EViews </option>
-                                                <option value="0"> SAS</option>
-                                                <option value="0">SmartPLS </option>
-                                                <option value="0">Stata </option>
-                                                <option value="0">Python </option>
-                                                <option value="0">Minitab </option>
-                                                <option value="0"> MATLAB</option>
-                                                <option value="0">JMP </option>
-                                                <option value="0"> IBM SPSS Modeler</option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0"> NVivo</option>
-                                                <option value="0"> MAXQDA</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">HyperRESEARCH </option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0"> AnSWR</option>
-                                                <option value="0"> CAQDAS</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> RQDA</option>
-                                                <option value="0"> XSight</option>
-                                                <option value="0">f4analyse </option>
-                                                <option value="0"> Coding Analysis Toolkit (CAT)</option>
-                                                <option value="0"> Qiqqa</option>
-                                                <option value="0"> Taguette</option>
-                                                <option value="0">NUD*IST (N6) </option>
-                                                <option value="0">NVivo </option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0">MAXQDA </option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">DeDoose</option>
-                                                <option value="0">R</option>
-                                                <option value="0">IBM SPSS</option>
-                                                <option value="0">Minitab</option>
-                                                <option value="0"> Excel</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> HyperRESEARCH</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0"> Nvivo 12 Plus</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">ANTHROPAC </option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0">Qiqqa </option>
-                                                <option value="0">Raven's Eye </option>
-                                                <option value="0">CAQDAS </option> --}}
-
-                                            </select>
-
-
+                                             </select>
                                         </div>
 
                                         <!-- Languages -->
@@ -252,50 +190,16 @@
                                             <h6 class="text-left mb-3 fs-16 fw-700 mt-3">
                                                 <span class=" pr-3">{{ translate('Languages') }}</span>
                                             </h6>
-                                            @foreach(\App\Models\Language::all() as $lang)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    {{$lang->name}}
+                                            <div class="aiz-checkbox-list">
+                                                @foreach(\App\Models\Language::all() as $lang)
+                                                <label class="aiz-checkbox">
+                                                    <input type="checkbox" name="language_id[]" value="{{$lang->id}}" onchange="applyFilter()" @if ($selected_seminar_lang->pluck('language_id')->contains($lang->id)) checked @endif >  {{$lang->name}}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-12"></span>
                                                 </label>
+                                                @endforeach
                                             </div>
-                                            @endforeach
-                                            {{-- <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    French
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Hindi
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Malay
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Bangla
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Chinese
-                                                </label>
-                                            </div> --}}
+
                                         </div>
 
 
@@ -314,7 +218,7 @@
                         <!-- Freelancer List -->
 
                         <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9  c-pointer ">
-                            <input type="hidden" name="type" value="seminar">
+                            {{-- <input type="hidden" name="type" value="seminar"> --}}
                             <div class="row" style="background: #F2F7F2;">
                                 <div class="col-lg-12">
                                     <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
