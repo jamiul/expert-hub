@@ -742,6 +742,7 @@
     color: #000003;
     font-weight: 500;
     font-family: Neuemontreal, sans-serif;
+    
 }
 .fre-scsh-find-more-btn {
     font-size: 14px;
@@ -822,13 +823,14 @@
 
     .need-help-progress-bar {
         height: 2px;
-        width: 91%;
-        background: black;
+        width: 93%;
+        background: #275846;
         position: absolute;
         bottom: 50%;
         transform: translateY(50%);
         left: 161px;
         right: 0;
+     
     }
 }
 
@@ -920,16 +922,14 @@ div.scroll h6 a {
         width: 100%;
         margin: 0 0%;
     }
-
     .explore-find-oppor-title {
         font-size: 24px;
     }
     .banner-img {
         width: 300px;
     }
-    .footer-social{
-        align-items: flex-end;
-    }
+
+    
 }
 
 @media (max-width: 1600px) {
