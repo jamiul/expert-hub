@@ -13,10 +13,10 @@
             <div class="row pt-5" style="background: #fff;">
                 <div class="col-lg-12 col-12 seminar-details px-5 px-lg-0 ">
                     <div class=" mb-4 mt-3">
-                        <div class="row   ">
+                        <div class="row ">
                             <div class="col-10">
                                 <p class="fs-24 fw-700"style="color:#5ABC76;">
-                                    <u>Foundations of PLS-SEM Using SmartPLS 4</u>
+                                    {{ $seminar->title }}
                                 </p>
                             </div>
                             <div class="col-lg-10 col-12 ">
@@ -53,7 +53,8 @@
                                     </div>
                                     <div class="col-lg-9 col-12 pl-0 p-0">
 
-                                        <p class="fre-scsh-right-side-details pb-0 mb-0">Wed Live via Zoom, no recordings
+                                        <p class="fre-scsh-right-side-details pb-0 mb-0">
+                                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
                                         </p>
 
                                     </div>
@@ -66,7 +67,8 @@
                                     </div>
                                     <div class="col-lg-9 col-12 pl-0">
 
-                                        <p class="fre-scsh-right-side-details p-0 pb-0 mb-0">R
+                                        <p class="fre-scsh-right-side-details p-0 pb-0 mb-0">
+                                            {{ getSoftwarePackageName($seminar->seminar_software_id) }}
                                         </p>
 
                                     </div>
@@ -80,7 +82,7 @@
                                     </div>
                                     <div class="col-lg-9 col-12  pl-0">
 
-                                        <p class="fre-scsh-right-side-details p-0  mb-1">English</p>
+                                        <p class="fre-scsh-right-side-details p-0  mb-1">{{ getLanguageName($seminar->language_id) }}</p>
 
                                     </div>
                                 </div>
@@ -93,7 +95,7 @@
                                     <div class="col-lg-9 col-12  pl-0">
 
                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                            ConsultantEdu Hub
+                                             {{$seminar->organiser_certificate}}
                                         </p>
                                     </div>
                                 </div>
@@ -107,17 +109,18 @@
                                     <div class="col-lg-9 col-12 pl-0">
 
                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-lg-4 p-0">
+                                            {{-- <span class="fw-500 text-dark"><u class="seminar-more">Mariola
+                                                    Moeyaert</u></span> | Associate Professor of Statistics and Director |
+                                            University at
+                                            Albany --}}
+                                            {{ getInstructorName($seminar->user_id) }}
+                                        </p>
+                                        {{-- <p class="fre-scsh-right-side-details text-justify mb-1 pr-lg-4">
                                             <span class="fw-500 text-dark"><u class="seminar-more">Mariola
                                                     Moeyaert</u></span> | Associate Professor of Statistics and Director |
                                             University at
                                             Albany
-                                        </p>
-                                        <p class="fre-scsh-right-side-details text-justify mb-1 pr-lg-4">
-                                            <span class="fw-500 text-dark"><u class="seminar-more">Mariola
-                                                    Moeyaert</u></span> | Associate Professor of Statistics and Director |
-                                            University at
-                                            Albany
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                                 <div class="row mx-1">
@@ -171,58 +174,10 @@
                 </div>
                 <div class="details-seminar seminar-details px-5 px-lg-0 ">
                     <div class="">
-                        <h5 class="seminar-objective fw-700 mx-auto fw-700"style="color:#5ABC76;"><u>Course objectives</u></h5>
+                        <h5 class="seminar-objective fw-700 mx-auto fw-700"style="color:#5ABC76;"><u>Course objectives</u>
+                        </h5>
                         <div>
-                            <p class="text-justify seminar-objective-details"> This two-day online course introduces
-                                participants to the
-                                state-of-the-art of partial least
-                                squares
-                                structural equation modeling (PLS-SEM) using the
-                                SmartPLS 4 software. PLS is a composite-based approach to SEM. Compared to other SEM
-                                techniques,
-                                PLS-SEM allows researchers to estimate very complex
-                                models with many constructs and indicators. Furthermore, the method allows estimating
-                                reflectively
-                                and formatively specified constructs and generally
-                                offers much flexibility in terms of data requirements.</p>
-                            <p class="text-justify seminar-objective-details"> Several review studies substantiate that
-                                PLS-SEM has become a standard
-                                method in various
-                                research fields, including higher education (Ghasemy et al. 2020
-                                | Higher Education), human resource management (Ringle et al., 2018 | International Journal
-                                of
-                                Human Resource Management), hospitality management
-                                (Ali et al., 2018 | International Journal of Contemporary Hospitality Management),
-                                information
-                                systems research (Hair et al., 2017 | Industrial Management
-                                & Data Systems), Management Accounting (Nitzl, 2016 | Journal of Accounting Literature),
-                                international business (Richter et al., 2016 | International
-                                Marketing Review), tourism (do Valle and Assaker, 2016 | Journal of Travel Research),
-                                psychology
-                                (Willaby et al., 2015 | Personality and Individual
-                                Differences), supply chain management (Kaufmann and Gaeckler, 2015 | Journal of Purchasing
-                                and
-                                Supply Management), family business (Sarstedt et al.,
-                                2014 | Journal of Family Business Strategy), operations management (Peng and Lai, 2012 |
-                                Journal
-                                of Operations Management), strategic management
-                                (Hair et al., 2012 | Long Range Planning), marketing (Sarstedt et al., 2022 | Psychology &
-                                Marketing), management information systems (Ringle et al., 2012
-                                | MIS Quarterly), accounting (Lee et al., 2011 | International Journal of Accounting
-                                Information
-                                Systems), software engineering (Russo & Stol, 2021 | ACM
-                                Computing Surveys), and international marketing (Henseler et al., 2009 | Advances in
-                                International Marketing).</p>
-                            <p class="text-justify seminar-objective-details">The first day of the course provides a
-                                profound introduction to latent
-                                variable models and
-                                PLS-SEM. Participants will learn the foundations of PLS-SEM and
-                                how to apply it by means of the SmartPLS 4 software. The second day will cover the
-                                evaluation of
-                                the measurement and structural models, including recent
-                                developments in model evaluation. The instructors will make use of several examples and
-                                hands-on
-                                exercises using the SmartPLS 4 software.</p>
+                            <p class="text-justify seminar-objective-details">  {{$seminar->course_objectives}}</p>
                         </div>
                         <hr>
                     </div>
@@ -307,8 +262,8 @@
                     </div>
                     <div class="pt-2">
                         <h5 class="fs-22 fw-700 text-justify"style="color:#5ABC76;"><u>Preliminary course schedule
-                            (Australian
-                            Eastern Standard Time)</u>
+                                (Australian
+                                Eastern Standard Time)</u>
                         </h5>
                         <div>
                             <h5 class="fs-20 fw-700 text-dark"> November 28, 2023
@@ -652,26 +607,13 @@
                                 for using PLSpredict. European Journal of Marketing, 53(11), 2322-2347.</li>
 
                         </div>
-<hr>
+                        <hr>
                     </section>
                     <section>
-                        <div  class="pt-2">
+                        <div class="pt-2">
                             <h6 class="fs-22 fw-700 mt-2"style="color:#5ABC76;"><u>Software</u></h6>
-                            <p class="text-justify seminar-objective-details">The course uses the software SmartPLS 4
-                                Professional for all PLS-SEM
-                                applications and
-                                exercises. All participants get a fully functional 90 days
-                                SmartPLS 4 Professional license key. Please visit https://www.smartpls.com/ to download and
-                                install the latest version of the software.The
-                                SmartPLS webpage also provides literature and much useful information on PLS-SEM and hosts a
-                                discussion forum for users.</p>
-                            <p class="seminar-objective-details">This event will be completely online via Zoom with the
-                                registered participants. To
-                                participate online, you need a Zoom installation and a
-                                sufficiently fast Internet connection. Via Zoom, we enable all online participants to
-                                actively participate in the course. For example, you can ask
-                                questions, perform the exercises and case studies and participate in the virtual coffee
-                                breaks</p>
+                            <p class="text-justify seminar-objective-details">{{ $seminar->software_description}}
+                                                        </p>
                         </div>
                     </section>
                     <section class="mb-lg-5">

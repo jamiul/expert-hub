@@ -322,10 +322,10 @@
                                         <div class="row ">
                                             @foreach ($seminars as $seminar)
                                                 <div class="col-lg-10 col-12">
-                                                    <a href="{{ route('seminar-details') }}"
+                                                    <a href="{{ route('seminar.details', $seminar->id) }}"
                                                         class=" fw-700"style="color:#5ABC76;">
                                                         <u class="seminar-title">{{ $seminar->title }}
-                                                            4</u>
+                                                        </u>
                                                     </a>
                                                     <div class="d-flex justify-content-between">
                                                         <a href="#" class=" fs-16 fw-700 pb-1 "
@@ -387,7 +387,7 @@
                                                                 the
                                                                 seminar. For European PhD students, each seminar offers 2
                                                                 ECTS..
-                                                                <a href="{{ route('seminar-details') }}"><u
+                                                                <a href="{{ route('seminar.details', $seminar->id) }}"><u
                                                                         class="seminar-more">Read More</u></a>
                                                             </p>
 
@@ -399,9 +399,9 @@
                                                                 Instructors:
                                                             </p>
                                                         </div>
-                                                        <div class="col-lg-9 col-8  pl-0">
+                                                        <div class="col-lg-9 col-8  pl-0 fre-scsh-right-side-details  mb-1 p-0">
 
-                                                            <p class="fre-scsh-right-side-details  mb-1 p-0"><span
+                                                            {{-- <p class="fre-scsh-right-side-details  mb-1 p-0"><span
                                                                     class="fw-500 seminar-more"><u>Mariola
                                                                         Moeyaert</u></span> |
                                                                 Associate Professor of Statistics and Director | University
@@ -412,7 +412,8 @@
                                                                 </span> |
                                                                 Associate Professor of Statistics and Director | University
                                                                 at
-                                                                Albany</p>
+                                                                Albany</p> --}}
+                                                                 {{ getInstructorName($seminar->user_id) }}
 
                                                         </div>
                                                     </div>
@@ -427,7 +428,7 @@
 
                                                             <p
                                                                 class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                                                Live via Zoom
+                                                                {{ getSeminarModeName($seminar->seminar_mode_id) }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -437,25 +438,12 @@
                                                                 Software Package:
                                                             </p>
                                                         </div>
-                                                        {{-- @if ($seminar->seminar_mode_id != null)
-                                                            <div>
-                                                                @foreach (json_decode($seminar->seminar_mode_id) as $key => $id)
-                                                                    @php
-                                                                        $seminar_mode = \App\Models\SeminarMode::find($id);
-                                                                        dd($seminer_mode);
-                                                                    @endphp
-                                                                    @if ($skill != null)
-                                                                        <span
-                                                                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">{{ $skill->name }}</span>
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        @endif --}}
+
                                                         <div class=" col-8 col-lg-9  pl-0">
 
                                                             <p
                                                                 class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-R
+                                                                {{ getSoftwarePackageName($seminar->seminar_software_id) }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -469,7 +457,7 @@ R
 
                                                             <p
                                                                 class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                                                {{ $seminar->language_id }}
+                                                                {{ getLanguageName($seminar->language_id) }}
                                                             </p>
                                                         </div>
                                                     </div>
