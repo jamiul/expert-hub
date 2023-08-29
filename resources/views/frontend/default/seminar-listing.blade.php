@@ -149,7 +149,7 @@
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="">
-                                                <input type="text" class="form-control fs-14" name="filterDate" placeholder="Select Date"
+                                                <input type="text"  onchange="applyFilter()" class="form-control fs-14" name="filterDate" placeholder="Select Date"
                                                     data-date-format="dd/mm/yyyy" id="datepicker">
                                             </div>
                                         </div>
@@ -160,11 +160,15 @@
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                @foreach(\App\Models\SeminarMode:: all() as $mode)
-
+                                                {{-- @dd($seminar_mode_ids); --}}
+                                                @foreach(getSeminarModes() as $mode)
                                                 <label class="aiz-checkbox">
-                                                    <input type="checkbox" name="seminarMode_id[]" value="{{$mode->id}}" onchange="applyFilter()"
-                                                    @if ($selected_seminar_mode->pluck('seminar_mode_id')->contains($mode->id)) checked @endif >{{$mode->name}}
+                                                    <input
+                                                        type="checkbox"
+                                                        name="seminar_mode_id[]"
+                                                        value="{{$mode['id']}}"
+                                                        onchange="applyFilter()"
+                                                        @if(in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{$mode['name']}}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
                                                 </label>
@@ -177,11 +181,12 @@
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-                                            <select class="select2  form-control aiz-selectpicker rounded-1" name="seminarSoftware_id[]"  onchange="applyFilter()"
+                                            <select class="select2  form-control aiz-selectpicker rounded-1" name="seminar_software_id[]"
+                                             onchange="applyFilter()"
                                                 data-toggle="select2" data-live-search="true">
                                                 <option value="" class="fs-16" >{{ translate('Search seminar software') }}</option>
-                                            @foreach(\App\Models\SeminarSoftware::all() as $software)
-                                                <option value="{{$software->id}}"  @if ($selected_seminar_software->pluck('seminar_software_id')->contains($software->id)) selected @endif>{{$software->name}}</option>
+                                            @foreach(getSeminarSoftwares() as $software)
+                                                <option value="{{$software['id']}}"           @if(in_array($software['id'], $seminar_software_ids)) selected @endif >{{$software['name']}}</option>
                                             @endforeach
                                              </select>
                                         </div>
@@ -192,9 +197,9 @@
                                                 <span class=" pr-3">{{ translate('Languages') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                @foreach(\App\Models\Language::all() as $lang)
+                                                @foreach(getLanguages() as $lang)
                                                 <label class="aiz-checkbox">
-                                                    <input type="checkbox" name="language_id[]" value="{{$lang->id}}" onchange="applyFilter()" @if ($selected_seminar_lang->pluck('language_id')->contains($lang->id)) checked @endif >  {{$lang->name}}
+                                                    <input type="checkbox" name="language_id[]" value="{{$lang['id']}}" onchange="applyFilter()"  @if(in_array($lang['id'], $language_ids)) checked @endif  >  {{$lang['name']}}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
                                                 </label>
