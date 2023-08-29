@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-lg-10 col-12 ">
                                 <p class="fs-22 mx-lg-1 fw-700"style="color:#5ABC76;">
-                                    <u>Seminar overview</u>
+                                    Seminar overview
                                 </p>
                             </div>
                             <div class="col-lg-10 col-12 ">
@@ -175,7 +175,7 @@
                     <div class=" mx-2 mx-lg-0 seminar-details px-lg-0 ">
                         <div class="">
                             <h5 class="seminar-objective  fw-700"style="color:#5ABC76;">
-                                <u>Course objectives</u>
+                                Course objectives
                             </h5>
                             <div>
                                 <p class="text-justify seminar-objective-details">
@@ -184,7 +184,7 @@
                             <hr>
                         </div>
                         <div class="pt-2">
-                            <h5 class="fs-22 fw-700 "style="color:#5ABC76;"><u>Learning outcomes</u></h5>
+                            <h5 class="fs-22 fw-700 "style="color:#5ABC76;">Learning outcomes</h5>
                             <div>
                                 <p class="text-justify seminar-objective-details">
                                     {!! $seminar->learning_outcomes !!}
@@ -193,7 +193,8 @@
                         </div>
                         <hr>
                         <div class="pt-2">
-                            <h5 class="fs-22 fw-700"style="color:#5ABC76;"><u>Teaching and learning methods</u></h5>
+                            <h5 class="fs-22 fw-700"style="color:#5ABC76;">Teaching and learning methods
+                            </h5>
                             <div>
                                 <p class="text-justify seminar-objective-details">
                                     {!! $seminar->teaching_learning_methods !!}
@@ -202,21 +203,21 @@
                             <hr>
                         </div>
                         <div class="pt-2">
-                            <h5 class="fs-22 fw-700"style="color:#5ABC76;"><u>Instructors</u></h5>
+                            <h5 class="fs-22 fw-700"style="color:#5ABC76;">Instructors</h5>
                             <p>
                                 {!! $seminar->instructor_descriptions !!}
                             </p>
                             <hr>
                         </div>
                         <div class="pt-2">
-                            <h5 class="fs-22 fw-700 mt-2"style="color:#5ABC76;"><u>Teaching Resources</u></h5>
+                            <h5 class="fs-22 fw-700 mt-2"style="color:#5ABC76;">Teaching Resources</h5>
                             <p>
                                 {!! $seminar->teaching_resources !!}
                             </p>
                             <hr>
                         </div>
                         <div class="pt-2">
-                            <h6 class="fs-22 fw-700 mt-2"style="color:#5ABC76;"><u>Software</u></h6>
+                            <h6 class="fs-22 fw-700 mt-2"style="color:#5ABC76;">Software</h6>
                             <p class="text-justify seminar-objective-details">
                                 {!! $seminar->software_description !!}
                             </p>
