@@ -29,6 +29,7 @@ class Seminar extends Model
         'teaching_resources',
         'seat',
         'status',
+        'zoom_link',
         'created_by',
         'updated_by',
         'deleted_by'
