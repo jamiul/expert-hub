@@ -76,7 +76,7 @@
                         <h3 class="text-white fw-700  frequently-qsn-title  ">Seminar List </h3>
                         <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
                         <a href="register?type=2"
-                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Register</a>
+                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a seminar</a>
                     </div>
                     <div class="col-lg-1 col-12 my-auto"></div>
                     <div class="col-lg-4 col-12">
@@ -318,7 +318,7 @@
                                     <div class="mb-4 mt-3">
                                         <div class="row ">
                                             @foreach ($seminars as $seminar)
-                                                <div class="d-flex border-bottom my-3 all-scholarship-list ">
+                                                <div class="d-lg-flex border-bottom my-3 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
                                                         <a href="{{ route('seminar.details', $seminar->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
