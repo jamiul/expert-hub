@@ -82,7 +82,7 @@
         </div>
         <div class="aiz-footer-copyright fs-12 pb-xl-4 pb-7">
             <div class="container">
-                <div class="row align-items-center justify-content-center">
+                <div class="row align-items-center justify-content-center gutters-3">
                     <div class="col-xl-3 col-sm-6">
                         @if (get_setting('language_switcher') == 'on')
                             <div class=" col-lg-12 col-12 fs-16 p-0 text-white">
@@ -95,10 +95,12 @@
                         @endif
                     </div>
                     <div class="col-xl-5 col-sm-6 p-0">
-                        <div class="aiz-front-widget d-flex  align-items-center ">
-                            <h5 class="  text-white fs-16 mr-lg-2">{{ get_setting('social_widget_title') }}</h5>
-                            <ul class="list-inline social">
-                                @if (!empty(get_setting('facebook_link')))
+                        <div class="aiz-front-widget d-lg-flex px-3 align-items-center">
+                            <h5 class="text-white fs-16 mr-lg-2">{{ get_setting('social_widget_title') }}</h5>
+                           
+                            <ul class="list-inline apps">
+                               
+                                 @if (!empty(get_setting('facebook_link')))
                                     <li class="list-inline-item">
                                         <a href="{{ get_setting('facebook_link') }}" target="_blank"
                                             class="facebook"><i class="lab la-facebook-f"></i></a>
@@ -133,8 +135,7 @@
                     </div>
                     @if (get_setting('app_link_section_show') == 'on')
                         <div class="col-xl-4 col-sm-12 w-100 ">
-                            <div
-                                class="aiz-front-widget d-flex ml-lg-2  align-items-center footer-segment ">
+                            <div class="aiz-front-widget d-lg-flex ml-lg-2  align-items-center ">
                                 <h5 class="fs-16 text-white mr-lg-2">{{ translate('Mobile Apps') }}</h5>
                                 <ul class="list-inline apps">
                                     @if (!empty(get_setting('app_link_android')))

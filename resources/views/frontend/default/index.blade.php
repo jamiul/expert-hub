@@ -267,7 +267,6 @@
                             </a>
                         </h5>
                     </div>
-
                 </section>
 
             </form>
