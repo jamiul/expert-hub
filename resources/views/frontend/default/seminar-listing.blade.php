@@ -163,7 +163,8 @@
                                                 @foreach(\App\Models\SeminarMode:: all() as $mode)
 
                                                 <label class="aiz-checkbox">
-                                                    <input type="checkbox" name="seminarMode_id[]" value="{{$mode->id}}" onchange="applyFilter()" @if ($selected_seminar_mode->pluck('seminar_mode_id')->contains($mode->id)) checked @endif >{{$mode->name}}
+                                                    <input type="checkbox" name="seminarMode_id[]" value="{{$mode->id}}" onchange="applyFilter()"
+                                                    @if ($selected_seminar_mode->pluck('seminar_mode_id')->contains($mode->id)) checked @endif >{{$mode->name}}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
                                                 </label>
