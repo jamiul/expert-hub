@@ -142,11 +142,12 @@ class SearchController extends Controller
             return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id',"category_ids", 'hourly_rate'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
+            // dd($request->all());
             $keyword = $request->keyword;
-            $seminarMode_id= array('');
-            $seminarSoftware_id= array('');
-            $language_id=array('');
-            $category_id = array('');
+            $seminarMode_id = [];
+            $seminarSoftware_id = [];
+            $language_id = [];
+            $category_id = [];
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
@@ -158,18 +159,27 @@ class SearchController extends Controller
             $seminars = Seminar::query();
             // dd($request);
 
-            if ($keyword != null) {
+            if ($keyword != null && $keyword != '') {
                 $seminar_ids = Seminar::where('title', 'like', '%' . $keyword . '%')->pluck('id');
                 $seminars = $seminars->whereIn('id', $seminar_ids);
             }
 
+            if($request->seminar_mode_id != null) {
+                $seminar_mode_ids = $request->seminar_mode_id;
 
-            if($request->seminarMode_id != null) {
-                $seminar_mode_ids= $request->seminarMode_id;
-
-                $selected_seminar_mode = Seminar::whereIn('seminar_mode_id', $seminar_mode_ids)->get();
+                $selected_seminar_mode = Seminar::whereIn('seminar_mode_id', $seminar_mode_ids)->pluck('seminar_mode_id');
                 $seminars = $seminars->whereIn('seminar_mode_id', $seminar_mode_ids);
 
+            }
+            if($request->start_date) {
+                $seminars = Seminar::with(['seminar_dates' => function ($query) {
+                    $query->orderBy('seminar_date', 'DESC');
+                }])
+                ->whereHas('seminar_dates', function ($query) use ($request) {
+                    $query->where('seminar_date', '>=', $request->start_date);
+                })
+                ->get();
+                // dd($seminars->toArray());
             }
             if($request->seminarSoftware_id != null) {
                 $seminar_software_ids= $request->seminarSoftware_id;
@@ -189,7 +199,7 @@ class SearchController extends Controller
                 $seminars = $seminars->paginate(8)->appends($request->query());
                 // dd($seminars);
 
-            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id','seminarSoftware_id','language_id','selected_seminar_mode','selected_seminar_lang','selected_seminar_software'));
+            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id','seminarSoftware_id','language_id','seminar_mode_ids','selected_seminar_lang','selected_seminar_software'));
         } else if ($request->type == 'service') {
 
             $type = 'service';
