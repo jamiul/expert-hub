@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"
         rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
     <style type="text/css">
         /* .datepicker {
             font-size: 0.875em;
@@ -19,7 +24,7 @@
             height: 1.5em;
         } */
 
-        .datepicker td,
+        /* .datepicker td,
         .datepicker th {
             text-align: center;
             width: 20px;
@@ -50,17 +55,135 @@
             user-select: none;
             width: 100%;
             height: 200px;
-        }
+        } */
 
         td.day.highlight {
             color: #DC322F;
-            font-weight: 900;
+            border-radius: 50% !important;
+            background-image: linear-gradient(#275846, #275846) !important;
+            color: #fff !important;
+            /* font-weight: 900;
             border-radius: 50%;
-            background-color: lightblue;
+            background-color: lightblue; */
         }
 
         .hidden {
             display: none !important;
+        }
+
+        input {
+            padding: 10px 20px 10px 20px;
+            border: 1px solid lightgrey !important;
+            border-radius: 6px !important;
+            box-sizing: border-box;
+            background-color: #fff !important;
+            color: #2C3E50;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        input:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: 1px solid #512DA8;
+            outline-width: 0;
+        }
+
+        ::placeholder {
+            color: #BDBDBD;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: #BDBDBD;
+        }
+
+        ::-ms-input-placeholder {
+            color: #BDBDBD;
+        }
+
+        button:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            outline-width: 0;
+        }
+
+        .datepicker {
+            background-color: #fff;
+            border: none;
+            padding: 15px !important
+        }
+
+        .datepicker-dropdown {
+            top: 0;
+            left: 0;
+            min-width: 325px !important;
+        }
+
+        .datepicker table {
+            margin: auto;
+            width: 100%;
+        }
+
+        .datepicker table tr td.today,
+        span.focused {
+            border-radius: 50% !important;
+        }
+
+        thead tr:nth-child(2) {
+            background-color: #275846 !important;
+        }
+
+        thead tr:nth-child(3) th {
+            color: #275846 !important;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .dow,
+        .old-day,
+        .day,
+        .new-day {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 0px !important;
+        }
+
+        .old-day:hover,
+        .day:hover,
+        .new-day:hover,
+        .month:hover,
+        .year:hover,
+        .decade:hover,
+        .century:hover {
+            border-radius: 50% !important;
+            background-color: #eee;
+        }
+
+        .active {
+            border-radius: 50% !important;
+            background-image: linear-gradient(#90CAF9, #64B5F6) !important;
+            color: #fff !important;
+        }
+
+        .prev,
+        .next,
+        .datepicker-switch {
+            border-radius: 0 !important;
+            padding: 20px 10px !important;
+            text-transform: uppercase;
+            font-size: 20px;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .prev:hover,
+        .next:hover,
+        .datepicker-switch:hover {
+            background-color: inherit !important;
+            opacity: 1;
         }
     </style>
 
@@ -75,8 +198,8 @@
                     <div class="col-lg-7 col-12  w-100 my-auto">
                         <h3 class="text-white fw-700  frequently-qsn-title  ">Seminar List </h3>
                         <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                        <a href="register?type=2"
-                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a seminar</a>
+                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a
+                            seminar</a>
                     </div>
                     <div class="col-lg-1 col-12 my-auto"></div>
                     <div class="col-lg-4 col-12">
@@ -99,7 +222,7 @@
                         </div>
                     </div>
                 @endif
-                <form id="freelancer-filter-form" action="" method="GET">
+                <form id="seminar-filter-form" action="" method="GET">
                     <div class="row gutters-10">
                         <!-- Sidebar -->
                         <div class=" col-xs-3 col-sm-12 col-md-12 col-lg-3 mb-5">
@@ -108,10 +231,10 @@
                                     style="background: #F2F7F2;">
                                     <div class=" border-0 pl-lg-0">
                                         <h5 class="my-3 fs-16 fw-700">{{ translate('Search Seminars') }}</h5>
-                                        <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
-                                            data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                                        {{-- <button type="submit"  class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
+                                            >
                                             <i class="las la-times la-2x"></i>
-                                        </button>
+                                        </button> --}}
                                     </div>
 
                                     @foreach ($categories as $category)
@@ -123,23 +246,26 @@
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
-
+                                    <input type="hidden" name="type" value="seminar">
                                     <div class="">
                                         <div class="d-flex align-items-center w-100">
                                             <button
                                                 class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
                                                 data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                                <i class="las la-filter"></i>
+                                                {{-- <i class="las la-f ilter"></i> --}}
                                             </button>
                                             <div class="input-group rounded-2">
                                                 <input type="text" class="form-control fs-14 rounded  "
                                                     placeholder="{{ translate('Search for seminar') }}" name="keyword"
                                                     value="{{ $keyword }}">
                                                 <div class="input-group-prepend rounded">
-                                                    <span class="input-group-text text-white border-left-0 rounded-right" :
-                                                        style="background:#275846;">
-                                                        <i class="las la-search"></i>
-                                                    </span>
+                                                    <button type="submit" style="border: none;">
+                                                        <span
+                                                            class="input-group-text text-white border-left-0 rounded-right"
+                                                            : style="background:#275846;">
+                                                            <i class="las la-search"></i>
+                                                        </span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,102 +279,46 @@
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="">
-                                                <input type="text" class="form-control fs-14" name="filterDate"
-                                                    placeholder="Select Date" data-date-format="dd/mm/yyyy" id="datepicker">
+                                                <input type="text" id="dp1"
+                                                    class="form-control fs-14 datepicker mr-2" placeholder="Select Date"
+                                                    name="date"><br>
                                             </div>
                                         </div>
-
-
 
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                    Live via Zoom
-                                                </label>
+                                            <div class="aiz-checkbox-list">
+                                                {{-- @dd($seminar_mode_ids); --}}
+                                                @foreach (getSeminarModes() as $mode)
+                                                    <label class="aiz-checkbox">
+                                                        <input type="checkbox" name="seminar_mode_id[]"
+                                                            value="{{ $mode['id'] }}" onchange="applyFilter()"
+                                                            @if (in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{ $mode['name'] }}
+                                                        <span class="aiz-square-check"></span>
+                                                        <span class="float-right text-secondary fs-12"></span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
 
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                    Face-to-Face
-                                                </label>
-                                            </div>
                                         </div>
                                         <!-- Seminar software -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-
-                                            <select class="select2  form-control aiz-selectpicker rounded-1" name=""
-                                                data-toggle="select2" data-live-search="true">
-
+                                            <select class="select2 form-control rounded-1"
+                                                name="seminar_software_id" onchange="applyFilter()" data-toggle="select2"
+                                                data-live-search="true">
                                                 <option value="" class="fs-16">
-                                                    {{ translate('Search seminar software') }}</option>
-
-                                                <option value="0">AMOS </option>
-                                                <option value="0"> SPSS</option>
-                                                <option value="0"> R</option>
-                                                <option value="0">Excel </option>
-                                                <option value="0">EViews </option>
-                                                <option value="0"> SAS</option>
-                                                <option value="0">SmartPLS </option>
-                                                <option value="0">Stata </option>
-                                                <option value="0">Python </option>
-                                                <option value="0">Minitab </option>
-                                                <option value="0"> MATLAB</option>
-                                                <option value="0">JMP </option>
-                                                <option value="0"> IBM SPSS Modeler</option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0"> NVivo</option>
-                                                <option value="0"> MAXQDA</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">HyperRESEARCH </option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0"> AnSWR</option>
-                                                <option value="0"> CAQDAS</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> RQDA</option>
-                                                <option value="0"> XSight</option>
-                                                <option value="0">f4analyse </option>
-                                                <option value="0"> Coding Analysis Toolkit (CAT)</option>
-                                                <option value="0"> Qiqqa</option>
-                                                <option value="0"> Taguette</option>
-                                                <option value="0">NUD*IST (N6) </option>
-                                                <option value="0">NVivo </option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0">MAXQDA </option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">DeDoose</option>
-                                                <option value="0">R</option>
-                                                <option value="0">IBM SPSS</option>
-                                                <option value="0">Minitab</option>
-                                                <option value="0"> Excel</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> HyperRESEARCH</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0"> Nvivo 12 Plus</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">ANTHROPAC </option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0">Qiqqa </option>
-                                                <option value="0">Raven's Eye </option>
-                                                <option value="0">CAQDAS </option>
-
+                                                    {{ translate('Search seminar software') }}
+                                                </option>
+                                                @foreach (getSeminarSoftwares() as $software)
+                                                    <option value="{{ $software['id'] }}" @if (in_array($software['id'], $seminar_software_ids)) selected @endif>{{ $software['name'] }}</option>
+                                                @endforeach
                                             </select>
-
-
                                         </div>
 
                                         <!-- Languages -->
@@ -256,48 +326,19 @@
                                             <h6 class="text-left mb-3 fs-16 fw-700 mt-3">
                                                 <span class=" pr-3">{{ translate('Languages') }}</span>
                                             </h6>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    English
-                                                </label>
+                                            <div class="aiz-checkbox-list">
+                                                @foreach (getLanguages() as $lang)
+                                                    <label class="aiz-checkbox">
+                                                        <input type="checkbox" name="language_id[]"
+                                                            value="{{ $lang['id'] }}" onchange="applyFilter()"
+                                                            @if (in_array($lang['id'], $language_ids)) checked @endif>
+                                                        {{ $lang['name'] }}
+                                                        <span class="aiz-square-check"></span>
+                                                        <span class="float-right text-secondary fs-12"></span>
+                                                    </label>
+                                                @endforeach
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    French
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Hindi
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Malay
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Bangla
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Chinese
-                                                </label>
-                                            </div>
+
                                         </div>
 
 
@@ -318,7 +359,7 @@
                                     <div class="mb-4 mt-3">
                                         <div class="row ">
                                             @foreach ($seminars as $seminar)
-                                                <div class="d-flex border-bottom my-3 all-scholarship-list ">
+                                                <div class="d-lg-flex border-bottom my-3 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
                                                         <a href="{{ route('seminar.details', $seminar->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
@@ -357,7 +398,7 @@
                                                             <div class="col-8 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-normal  pb-0 mb-0 p-0">
+                                                                    class="fre-scsh-right-side-details text-justify  pb-0 mb-0 p-0">
                                                                     This
                                                                     seminar will give you a strong working understanding of
                                                                     methods
@@ -406,23 +447,12 @@
                                                             </div>
                                                             <div
                                                                 class="col-lg-9 col-8  pl-0 fre-scsh-right-side-details  mb-1 p-0">
-
-                                                                {{-- <p class="fre-scsh-right-side-details  mb-1 p-0"><span
-                                                                    class="fw-500 seminar-more"><u>Mariola
-                                                                        Moeyaert</u></span> |
-                                                                Associate Professor of Statistics and Director | University
-                                                                at
-                                                                Albany</p>
-                                                            <p class="fre-scsh-right-side-details  mb-1"><span
-                                                                    class="fw-500 seminar-more"> <u>Mahammad Riyadh</u>
-                                                                </span> |
-                                                                Associate Professor of Statistics and Director | University
-                                                                at
-                                                                Albany</p> --}}
                                                                 <p class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u>
                                                                 </p>
-
+                                                                <p class="fw-500 seminar-more">
+                                                                    <u>{{ getInstructorName(rand(10, 14)) }}</u>
+                                                                </p>
 
                                                             </div>
                                                         </div>
@@ -484,7 +514,7 @@
                                                                 </p>
                                                             </a>
 
-                                                            <a href="">
+                                                            <a href="{{ $seminar->zoom_link }}" target="_blank">
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
                                                                     <img class=" px-1  "
@@ -501,7 +531,6 @@
 
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                 </form>
@@ -711,47 +740,64 @@
                         checkbox.checked = false;
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#seminar-filter-form').submit();
             }
         </script>
     @endsection
 
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
         <script type="text/javascript">
-            $('#datepicker').datepicker({
-                todayHighlight: true,
-                minDate: 0,
-                clearBtn: true,
-                // weekStart: 1,
-                // daysOfWeekHighlighted: "6,0",
-                autoclose: true,
-                todayHighlight: true,
-                beforeShowDay: function(date) {
-                    var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
-                    // get current month
-                    var currentMonth = new Date().getMonth();
-                    // if date.getMonth() === currentMonth, then highlight the date
-                    if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
-                            hilightedDays)) {
-                        return {
-                            classes: 'highlight',
-                            tooltip: 'Seminar'
+            $(document).ready(function() {
+                $('.datepicker').datepicker({
+                    format: 'dd-mm-yyyy',
+                    toggleActive: true,
+                    todayHighlight: true,
+                    minDate: 0,
+                    clearBtn: true,
+                    // weekStart: 1,
+                    // daysOfWeekHighlighted: "6,0",
+                    autoclose: true,
+                    beforeShowDay: function(date) {
+                        var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
+                        // get current month
+                        var currentMonth = new Date().getMonth();
+                        // if date.getMonth() === currentMonth, then highlight the date
+                        if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
+                                hilightedDays)) {
+                            return {
+                                classes: 'highlight',
+                                tooltip: 'Seminar'
+                            }
                         }
                     }
-                }
-            }).on('show', function(e, date) {
-                $('td.highlight').tooltip();
-            }).on('hide', function(e, date) {
-                $('.tooltip-inner').addClass('hidden');
-                $('.arrow').addClass('hidden');
+                }).on('show', function(e, date) {
+                    $('td.highlight').tooltip();
+                }).on('hide', function(e, date) {
+                    $('.tooltip-inner').addClass('hidden');
+                    $('.arrow').addClass('hidden');
+                }).on('changeDate', function(e, date){
+                    applyFilter();
+                });
             });
 
-            // $('#datepicker').datepicker("setDate", new Date());
-            // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
-
             function applyFilter() {
-                $('#freelancer-filter-form').submit();
+                $('#seminar-filter-form').submit();
+            }
+
+            function rangefilter(arg) {
+                $('input[name=min_price]').val(arg[0]);
+                $('input[name=max_price]').val(arg[1]);
+                applyFilter();
+            };
+        </script>
+
+        <script type="text/javascript">
+            function applyFilter() {
+                $('#seminar-filter-form').submit();
             }
 
             function rangefilter(arg) {
