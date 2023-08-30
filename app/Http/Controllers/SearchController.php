@@ -66,6 +66,7 @@ class SearchController extends Controller
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
+
             }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
@@ -142,31 +143,67 @@ class SearchController extends Controller
         } 
         else if ($request->type == 'seminar') {
             $type = 'seminar';
+            // dd($request->all());
             $keyword = $request->keyword;
-            $rating = $request->rating;
-            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-            // $category_ids = CategoryUtility::children_ids($category_id);
-            // $category_ids[] = $category_id;
-            $categories = [];
-            $category_id = array('');
+            $seminarMode_id = [];
+            // $seminar_software_id = [];
+            $language_id = [];
+            $category_id = [];
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
+            $selected_seminar_mode_id = [];
+            $seminar_mode_ids = [];
+            $language_ids = [];
+            $seminar_software_ids = $request->seminar_software_id ?? [];
+            $selected_seminar_lang = [];
+            $selected_seminar_software = [];
+            $categories = [];
             $seminars = Seminar::query();
 
-            if ($keyword != null) {
+
+            if ($keyword != null && $keyword != '') {
                 $seminar_ids = Seminar::where('title', 'like', '%' . $keyword . '%')->pluck('id');
                 $seminars = $seminars->whereIn('id', $seminar_ids);
             }
-            // dd($seminars);
-                $total = $seminars->count();
-                $seminars = $seminars->paginate(8)->appends($request->query());;
 
-            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id'));
-        } 
-        
-        else if ($request->type == 'service') {
+            if($request->seminar_mode_id != null) {
+                $seminar_mode_ids = $request->seminar_mode_id;
+
+                $selected_seminar_mode = Seminar::whereIn('seminar_mode_id', $seminar_mode_ids)->pluck('seminar_mode_id');
+                $seminars = $seminars->whereIn('seminar_mode_id', $seminar_mode_ids);
+
+            }
+            // if($request->start_date) {
+            //     $seminars = Seminar::with(['seminar_dates' => function ($query) {
+            //         $query->orderBy('seminar_date', 'DESC');
+            //     }])
+            //     ->whereHas('seminar_dates', function ($query) use ($request) {
+            //         $query->where('seminar_date', '>=', $request->start_date);
+            //     })
+            //     ->get();
+            //     dd($seminars->toArray());
+            // }
+
+            // if($request->seminar_software_id != null) {
+            //     $seminar_software_ids= $request->seminar_software_id;
+            //     $selected_seminar_software = Seminar::whereIn('seminar_software_id', $seminar_software_ids)->pluck('seminar_software_id');
+            //     $seminars = $seminars->whereIn('seminar_software_id', $seminar_software_ids);
+            // }
+
+            if($request->language_id != null) {
+                $language_ids= $request->language_id;
+                $selected_seminar_lang = Seminar::whereIn('language_id', $language_ids)->pluck('language_id');
+                $seminars = $seminars->whereIn('language_id', $language_ids);
+            }
+
+                $total = $seminars->count();
+                $seminars = $seminars->paginate(8)->appends($request->query());
+               
+
+            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id','language_id','seminar_mode_ids','selected_seminar_lang','selected_seminar_software','language_ids','seminar_software_ids'));
+        } else if ($request->type == 'service') {
 
             $type = 'service';
             $keyword = $request->keyword;
@@ -373,7 +410,7 @@ class SearchController extends Controller
             $projects = $projects->where('skills', 'like', '%' . '"' . $id . '"' . '%')->latest();
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
-            
+
             return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
         }
     }

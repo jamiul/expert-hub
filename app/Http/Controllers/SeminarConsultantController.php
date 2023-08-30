@@ -83,7 +83,6 @@ class SeminarConsultantController extends Controller
      */
     public function store(Request $request)
     {
-        // dd('hi');
         $user = Auth::user();
         $input = $request->all();
         $input['created_by'] = $user->id;

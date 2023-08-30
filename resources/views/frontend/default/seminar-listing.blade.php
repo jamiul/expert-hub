@@ -221,7 +221,7 @@
                         </div>
                     </div>
                 @endif
-                <form id="freelancer-filter-form" action="" method="GET">
+                <form id="seminar-filter-form" action="" method="GET">
                     <div class="row gutters-10">
                         <!-- Sidebar -->
                         <div class=" col-xs-3 col-sm-12 col-md-12 col-lg-3 mb-5">
@@ -230,10 +230,10 @@
                                     style="background: #F2F7F2;">
                                     <div class=" border-0 pl-lg-0">
                                         <h5 class="my-3 fs-16 fw-700">{{ translate('Search Seminars') }}</h5>
-                                        <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
-                                            data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                                        {{-- <button type="submit"  class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
+                                            >
                                             <i class="las la-times la-2x"></i>
-                                        </button>
+                                        </button> --}}
                                     </div>
 
                                     @foreach ($categories as $category)
@@ -245,24 +245,26 @@
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
-
+                                    <input type="hidden" name="type" value="seminar">
                                     <div class="">
                                         <div class="d-flex align-items-center w-100">
                                             <button
                                                 class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
                                                 data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                                <i class="las la-filter"></i>
+                                                {{-- <i class="las la-f ilter"></i> --}}
                                             </button>
                                             <div class="input-group rounded-2">
                                                 <input type="text" class="form-control fs-14 rounded  "
                                                     placeholder="{{ translate('Search for seminar') }}" name="keyword"
                                                     value="{{ $keyword }}">
-                                                <div class="input-group-prepend rounded">
-                                                    <span class="input-group-text text-white border-left-0 rounded-right" :
-                                                        style="background:#275846;">
-                                                        <i class="las la-search"></i>
-                                                    </span>
-                                                </div>
+                                                    <div class="input-group-prepend rounded">
+                                                        <button type="submit" style="border: none;">
+                                                            <span class="input-group-text text-white border-left-0 rounded-right" :
+                                                            style="background:#275846;">
+                                                            <i class="las la-search"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -275,102 +277,46 @@
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="">
-                                                <input type="text" id="dp1" class="form-control fs-14 datepicker mr-2"
+                                               <input type="text" id="dp1" class="form-control fs-14 datepicker mr-2"
                                                     placeholder="Select Date" name="date"><br>
                                             </div>
                                         </div>
-
-
 
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                    Live via Zoom
+                                            <div class="aiz-checkbox-list">
+                                                {{-- @dd($seminar_mode_ids); --}}
+                                                @foreach(getSeminarModes() as $mode)
+                                                <label class="aiz-checkbox">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="seminar_mode_id[]"
+                                                        value="{{$mode['id']}}"
+                                                        onchange="applyFilter()"
+                                                        @if(in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{$mode['name']}}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-12"></span>
                                                 </label>
+                                                @endforeach
+                                            </div>
 
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-14" for="flexCheckDisabled">
-                                                    Face-to-Face
-                                                </label>
-                                            </div>
                                         </div>
                                         <!-- Seminar software -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-
-                                            <select class="select2  form-control aiz-selectpicker rounded-1"
-                                                name="" data-toggle="select2" data-live-search="true">
-
-                                                <option value="" class="fs-16">
-                                                    {{ translate('Search seminar software') }}</option>
-
-                                                <option value="0">AMOS </option>
-                                                <option value="0"> SPSS</option>
-                                                <option value="0"> R</option>
-                                                <option value="0">Excel </option>
-                                                <option value="0">EViews </option>
-                                                <option value="0"> SAS</option>
-                                                <option value="0">SmartPLS </option>
-                                                <option value="0">Stata </option>
-                                                <option value="0">Python </option>
-                                                <option value="0">Minitab </option>
-                                                <option value="0"> MATLAB</option>
-                                                <option value="0">JMP </option>
-                                                <option value="0"> IBM SPSS Modeler</option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0"> NVivo</option>
-                                                <option value="0"> MAXQDA</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">HyperRESEARCH </option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0"> AnSWR</option>
-                                                <option value="0"> CAQDAS</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> RQDA</option>
-                                                <option value="0"> XSight</option>
-                                                <option value="0">f4analyse </option>
-                                                <option value="0"> Coding Analysis Toolkit (CAT)</option>
-                                                <option value="0"> Qiqqa</option>
-                                                <option value="0"> Taguette</option>
-                                                <option value="0">NUD*IST (N6) </option>
-                                                <option value="0">NVivo </option>
-                                                <option value="0">ATLAS.ti </option>
-                                                <option value="0">MAXQDA </option>
-                                                <option value="0">QDA Miner </option>
-                                                <option value="0">DeDoose</option>
-                                                <option value="0">R</option>
-                                                <option value="0">IBM SPSS</option>
-                                                <option value="0">Minitab</option>
-                                                <option value="0"> Excel</option>
-                                                <option value="0"> TAMS Analyzer</option>
-                                                <option value="0"> Transana</option>
-                                                <option value="0"> HyperRESEARCH</option>
-                                                <option value="0"> Quirkos</option>
-                                                <option value="0"> Nvivo 12 Plus</option>
-                                                <option value="0"> Dedoose</option>
-                                                <option value="0">ANTHROPAC </option>
-                                                <option value="0">Weft QDA </option>
-                                                <option value="0">Qiqqa </option>
-                                                <option value="0">Raven's Eye </option>
-                                                <option value="0">CAQDAS </option>
-
-                                            </select>
-
-
+                                            <select class="select2  form-control aiz-selectpicker rounded-1" name="seminar_software_id[]"
+                                             onchange="applyFilter()"
+                                                data-toggle="select2" data-live-search="true">
+                                                <option value="" class="fs-16" >{{ translate('Search seminar software') }}</option>
+                                            @foreach(getSeminarSoftwares() as $software)
+                                                <option value="{{$software['id']}}"           @if(in_array($software['id'], $seminar_software_ids)) selected @endif >{{$software['name']}}</option>
+                                            @endforeach
+                                             </select>
                                         </div>
 
                                         <!-- Languages -->
@@ -378,48 +324,16 @@
                                             <h6 class="text-left mb-3 fs-16 fw-700 mt-3">
                                                 <span class=" pr-3">{{ translate('Languages') }}</span>
                                             </h6>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    English
+                                            <div class="aiz-checkbox-list">
+                                                @foreach(getLanguages() as $lang)
+                                                <label class="aiz-checkbox">
+                                                    <input type="checkbox" name="language_id[]" value="{{$lang['id']}}" onchange="applyFilter()"  @if(in_array($lang['id'], $language_ids)) checked @endif  >  {{$lang['name']}}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-12"></span>
                                                 </label>
+                                                @endforeach
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    French
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Hindi
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Malay
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Bangla
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDisabled">
-                                                <label class="form-check-label fs-16" for="flexCheckDisabled">
-                                                    Chinese
-                                                </label>
-                                            </div>
+
                                         </div>
 
 
@@ -623,7 +537,6 @@
 
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                 </form>
@@ -833,9 +746,10 @@
                         checkbox.checked = false;
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#seminar-filter-form').submit();
             }
         </script>
+
     @endsection
 
     @section('script')
@@ -880,14 +794,9 @@
                     $('.tooltip-inner').addClass('hidden');
                     $('.arrow').addClass('hidden');
                 });
-
-            // $('#datepicker').datepicker("setDate", new Date());
-            // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
-
             });
-
             function applyFilter() {
-                $('#freelancer-filter-form').submit();
+                $('#seminar-filter-form').submit();
             }
 
             function rangefilter(arg) {
@@ -896,6 +805,48 @@
                 applyFilter();
             };
         </script>
+
+        <script type="text/javascript">
+            $('#datepicker').datepicker({
+                todayHighlight: true,
+                minDate: 0,
+                clearBtn: true,
+                // weekStart: 1,
+                // daysOfWeekHighlighted: "6,0",
+                autoclose: true,
+                todayHighlight: true,
+                beforeShowDay: function(date) {
+                var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
+                // get current month
+                var currentMonth = new Date().getMonth();
+                // if date.getMonth() === currentMonth, then highlight the date
+                if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
+                    return {
+                        classes: 'highlight',
+                        tooltip: 'Seminar'
+                    }
+                }
+            }}).on('show', function(e, date) {
+                $('td.highlight').tooltip();
+            }).on('hide', function(e, date) {
+                $('.tooltip-inner').addClass('hidden');
+                $('.arrow').addClass('hidden');
+            });
+
+                // $('#datepicker').datepicker("setDate", new Date());
+                // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
+
+                function applyFilter() {
+                    $('#seminar-filter-form').submit();
+                }
+
+                function rangefilter(arg) {
+                    $('input[name=min_price]').val(arg[0]);
+                    $('input[name=max_price]').val(arg[1]);
+                    applyFilter();
+                };
+        </script>
+
     @endsection
 </body>
 
