@@ -13,6 +13,7 @@ use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipQualification;
 use App\Models\ScholarshipUniversity;
 use App\Models\ScholarshipWhoCanApply;
+use App\Models\Seminar;
 
 class SeminarDetailsController extends Controller
 {
@@ -220,15 +221,14 @@ class SeminarDetailsController extends Controller
         return redirect('admin/scholarship');
     }
 
-
     public function all_scholarship() {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
         return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 
-    public function scholarship_details($slug) {
-        $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.default.find-scholarship.details", compact('scholarship'));
+    public function seminar_details($id) {
+        $seminar = Seminar::where('id', $id)->first();
+        return view("frontend.default.seminar-details", compact('seminar'));
 }
 }

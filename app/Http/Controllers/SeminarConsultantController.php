@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Language;
-use App\Models\Seminar;
-use App\Models\SeminarMode;
-use App\Models\SeminarSoftware;
-use App\Models\Service;
-use App\Models\ServicePackage;
-use App\Models\ServicePackagePayment;
+use Auth;
+use Session;
+use Validator;
 use App\Models\User;
 use App\Models\Wallet;
-use App\Utility\ServicesUtility;
-use App\Utility\ValidationUtility;
+use App\Models\Seminar;
+use App\Models\Service;
+use App\Models\Language;
+use App\Models\SeminarDate;
+use App\Models\SeminarMode;
 use Illuminate\Http\Request;
 use App\Utility\EmailUtility;
-use App\Utility\NotificationUtility;
-use Auth;
+use App\Models\ServicePackage;
+use App\Models\SeminarSoftware;
+use App\Utility\ServicesUtility;
+use App\Utility\ValidationUtility;
 
-use Validator;
-use Session;
+use App\Utility\NotificationUtility;
+use App\Models\ServicePackagePayment;
+use App\Http\Requests\StoreSeminarRequest;
+use App\Http\Requests\UpdateSeminarRequest;
 
 class SeminarConsultantController extends Controller
 {
@@ -30,10 +33,24 @@ class SeminarConsultantController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function seminar_index()
+    public function index(Request $request)
     {
-        $services = Auth::user()->services()->paginate(12);
-        return view('frontend.default.user.freelancer.projects.seminars.index', compact('services'));
+        $input = $request->all();
+        $search = '';
+
+        if ($request->has('search')){
+            $search = $input['search'];
+            $seminars = Seminar::where('title', 'like', '%'.$search.'%')->get();
+
+            if($input['search'] == ''){
+                $seminars = Seminar::orderBy('created_at', 'asc')->get();
+            }
+        } else {
+            $seminars = Seminar::with('seminar_dates')->orderBy('created_at', 'asc')->get();
+        }
+        // $services = Auth::user()->services()->paginate(12);
+
+        return view('frontend.default.user.freelancer.projects.seminars.index', compact('seminars', 'search'));
     }
 
     /**
@@ -42,16 +59,12 @@ class SeminarConsultantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-
     {
-    $seminar_mode=SeminarMode::all();
-    $seminar_software=SeminarSoftware::all();
-    $languages=Language::all();
-    $all_users=User::all();
-    $users = $all_users->where('user_type',"freelancer")->all();
-
-
-
+        $seminar_mode=SeminarMode::all();
+        $seminar_software=SeminarSoftware::all();
+        $languages=Language::all();
+        $all_users=User::all();
+        $users = $all_users->where('user_type',"freelancer")->all();
 
         if(ServicesUtility::can_create_service() == 1)
             return view('frontend.default.user.freelancer.projects.seminars.create',compact('seminar_mode','seminar_software','languages','users'));
@@ -70,49 +83,43 @@ class SeminarConsultantController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+        $input = $request->all();
+        $input['created_by'] = $user->id;
 
-        $request->validate([
-            'title' => 'required|max:255',
-            'seminar_date' => 'required|array',
-            'seminar_date.*' => 'required|date',
-            'seminar_mode_id' => 'required',
-            'seminar_software_id' => 'required',
-            'software_description' => 'required',
-            'language_id' => 'required',
-            'organiser_certificate' => 'required|max:255',
-            'user_id' => 'required',
-            'instructor_descriptions' => 'required',
-            'slug' => 'required|max:255',
-            'course_objectives' => 'required',
-            'learning_outcomes' => 'required',
-            'teaching_learning_methods' => 'required',
-            'teaching_resources' => 'required',
-            'seat' => 'required|integer',
-        ]);
+        $seminar = Seminar::create($input);
 
-        $seminar = new Seminar;
-        // dd($seminar);
+        if($request->seminar_date) {
+            foreach ($request->seminar_date as $key => $date) {
+                SeminarDate::create([
+                    'seminar_id' => $seminar->id,
+                    'seminar_date' => $input['seminar_date'][$key] ?? '',
+                    'descriptions' => $input['date_description'][$key] ?? '',
+                ]);
+            }
+        }
 
-        $seminar->title = $request->title;
-        $seminar->seminar_date = $request->seminar_date;
-        $seminar->seminar_mode_id = $request->seminar_mode_id;
-        $seminar->seminar_software_id = $request->seminar_software_id;
-        $seminar->software_description = $request->software_description;
-        $seminar->language_id = $request->language_id;
-        $seminar->organiser_certificate= $request->organiser_certificate;
-        $seminar->user_id= $request->user_id;
-        $seminar->instructor_descriptions = $request->instructor_descriptions;
-        $seminar->slug = $request->slug;
-        $seminar->course_objectives = $request->course_objectives;
-        $seminar->learning_outcomes = $request->learning_outcomes;
-        $seminar->teaching_learning_methods = $request->teaching_learning_methods;
-        $seminar->teaching_resources = $request->teaching_resources;
-        $seminar->seat=$request->seat;
-
-        $seminar->save();
+        // $request->validate([
+        //     'title' => 'required|max:255',
+        //     'seminar_date' => 'required|array',
+        //     'seminar_date.*' => 'required|date',
+        //     'seminar_mode_id' => 'required',
+        //     'seminar_software_id' => 'required',
+        //     'software_description' => 'required',
+        //     'language_id' => 'required',
+        //     'organiser_certificate' => 'required|max:255',
+        //     'user_id' => 'required',
+        //     'instructor_descriptions' => 'required',
+        //     'slug' => 'required|max:255',
+        //     'course_objectives' => 'required',
+        //     'learning_outcomes' => 'required',
+        //     'teaching_learning_methods' => 'required',
+        //     'teaching_resources' => 'required',
+        //     'seat' => 'required|integer',
+        // ]);
 
         flash(translate('Seminar post has been updated successfully'))->success();
-        return redirect()->route('seminar-consultant.seminar_index');
+        return redirect()->route('seminar-consultant.index');
     }
 
 
@@ -122,15 +129,11 @@ class SeminarConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
-        $seminar_mode=SeminarMode::all();
-        $seminar_software=SeminarSoftware::all();
-        $languages=Language::all();
-        $all_users=User::all();
-        $users = $all_users->where('user_type',"freelancer")->all();
+        $seminar = Seminar::with('seminar_dates')->find($id);
 
-        return view('frontend.default.user.freelancer.projects.seminars.edit',compact('seminar_mode','seminar_software','languages','users'));
+        return view('frontend.default.user.freelancer.projects.seminars.edit', compact('seminar'));
     }
 
     /**
@@ -140,9 +143,31 @@ class SeminarConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(UpdateSeminarRequest $request, $id)
     {
+        $seminar = Seminar::with('seminar_dates')->find($id);
+        $input = $request->all();
+        $user = Auth::user();
 
+        $input['updated_by'] = $user->id;
+        $seminar->update($input);
+
+        // Delete related seminar_dates
+        foreach ($seminar->seminar_dates as $seminarDate) {
+            $seminarDate->delete();
+        }
+
+        if($request->seminar_date) {
+            foreach ($request->seminar_date as $key => $date) {
+                $seminar->seminar_dates()->create([
+                    'seminar_date' => $input['seminar_date'][$key] ?? '',
+                    'descriptions' => $input['date_description'][$key] ?? '',
+                ]);
+            }
+        }
+
+        flash(translate( 'Seminar has been updated successfully'))->success();
+        return redirect()->back();
     }
 
     /**
@@ -151,10 +176,12 @@ class SeminarConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy(Seminar $seminar_consultant)
     {
+        $seminar_consultant->delete();
 
-        return redirect()->route('service.freelancer_index');
+        flash(translate( 'Seminar has been removed successfully'))->success();
+        return redirect()->route('seminar-consultant.index');
     }
 
 
