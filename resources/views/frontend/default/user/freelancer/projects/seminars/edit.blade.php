@@ -263,6 +263,17 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <!-- Zoom link -->
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">
+                                            {{ translate('Zoom link') }}
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="url" value="{{ $seminar->zoom_link }}" name="zoom_link"
+                                                class="form-control">
+                                        </div>
+                                    </div>
 
                                     <div class="form-group mb-0 text-right">
                                         <button type="submit" class="btn btn-primary">

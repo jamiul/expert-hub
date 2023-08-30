@@ -29,6 +29,7 @@ class Seminar extends Model
         'teaching_resources',
         'seat',
         'status',
+        'zoom_link',
         'created_by',
         'updated_by',
         'deleted_by'
@@ -60,5 +61,10 @@ class Seminar extends Model
     public function seminar_dates()
     {
         return $this->hasMany(SeminarDate::class);
+    }
+
+    public function seminar_instructors()
+    {
+        return $this->hasMany(SeminarInstructor::class);
     }
 }
