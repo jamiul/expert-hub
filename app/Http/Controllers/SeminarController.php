@@ -18,6 +18,7 @@ use App\Models\ScholarshipUniversity;
 use App\Models\ScholarshipWhoCanApply;
 use App\Models\Seminar;
 use App\Models\SeminarDate;
+use App\Models\SeminarInstructor;
 use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
 use Auth;
@@ -81,8 +82,18 @@ class SeminarController extends Controller
         $user = Auth::user();
         $input = $request->all();
         $input['created_by'] = $user->id;
+        $input['user_id'] = $user->id;
 
         $seminar = Seminar::create($input);
+
+        if($request->seminar_instructors) {
+            foreach ($request->seminar_instructors as $key => $instructor) {
+                SeminarInstructor::create([
+                    'seminar_id' => $seminar->id,
+                    'user_id' => $input['seminar_instructors'][$key] ?? ''
+                ]);
+            }
+        }
 
         if($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
@@ -138,6 +149,17 @@ class SeminarController extends Controller
         // Delete related seminar_dates
         foreach ($seminar->seminar_dates as $seminarDate) {
             $seminarDate->delete();
+        }
+        foreach ($seminar->seminar_instructors as $instructor) {
+            $instructor->delete();
+        }
+
+        if($request->seminar_instructors) {
+            foreach ($request->seminar_instructors as $key => $instructor) {
+                $seminar->seminar_instructors()->create([
+                    'user_id' => $input['seminar_instructors'][$key] ?? ''
+                ]);
+            }
         }
 
         if($request->seminar_date) {

@@ -25,6 +25,7 @@ class UpdateSeminarRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'seminar_instructors' => 'nullable',
             'seminar_mode_id' => 'nullable',
             'seminar_software_id' => 'nullable',
             'software_description' => 'nullable',

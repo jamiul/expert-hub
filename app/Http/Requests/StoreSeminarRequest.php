@@ -26,6 +26,7 @@ class StoreSeminarRequest extends FormRequest
         return [
             'title' => 'required',
             'seminar_mode_id' => 'nullable',
+            'seminar_instructors' => 'nullable',
             'seminar_software_id' => 'nullable',
             'software_description' => 'nullable',
             'language_id' => 'nullable',
