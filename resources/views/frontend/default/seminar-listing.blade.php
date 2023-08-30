@@ -70,6 +70,7 @@
         .hidden {
             display: none !important;
         }
+
         input {
             padding: 10px 20px 10px 20px;
             border: 1px solid lightgrey !important;
@@ -197,8 +198,8 @@
                     <div class="col-lg-7 col-12  w-100 my-auto">
                         <h3 class="text-white fw-700  frequently-qsn-title  ">Seminar List </h3>
                         <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                        <a href="register?type=2"
-                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a seminar</a>
+                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a
+                            seminar</a>
                     </div>
                     <div class="col-lg-1 col-12 my-auto"></div>
                     <div class="col-lg-4 col-12">
@@ -257,14 +258,15 @@
                                                 <input type="text" class="form-control fs-14 rounded  "
                                                     placeholder="{{ translate('Search for seminar') }}" name="keyword"
                                                     value="{{ $keyword }}">
-                                                    <div class="input-group-prepend rounded">
-                                                        <button type="submit" style="border: none;">
-                                                            <span class="input-group-text text-white border-left-0 rounded-right" :
-                                                            style="background:#275846;">
+                                                <div class="input-group-prepend rounded">
+                                                    <button type="submit" style="border: none;">
+                                                        <span
+                                                            class="input-group-text text-white border-left-0 rounded-right"
+                                                            : style="background:#275846;">
                                                             <i class="las la-search"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
+                                                        </span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -277,8 +279,9 @@
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="">
-                                               <input type="text" id="dp1" class="form-control fs-14 datepicker mr-2"
-                                                    placeholder="Select Date" name="date"><br>
+                                                <input type="text" id="dp1"
+                                                    class="form-control fs-14 datepicker mr-2" placeholder="Select Date"
+                                                    name="date"><br>
                                             </div>
                                         </div>
 
@@ -289,17 +292,14 @@
                                             </h6>
                                             <div class="aiz-checkbox-list">
                                                 {{-- @dd($seminar_mode_ids); --}}
-                                                @foreach(getSeminarModes() as $mode)
-                                                <label class="aiz-checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="seminar_mode_id[]"
-                                                        value="{{$mode['id']}}"
-                                                        onchange="applyFilter()"
-                                                        @if(in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{$mode['name']}}
-                                                    <span class="aiz-square-check"></span>
-                                                    <span class="float-right text-secondary fs-12"></span>
-                                                </label>
+                                                @foreach (getSeminarModes() as $mode)
+                                                    <label class="aiz-checkbox">
+                                                        <input type="checkbox" name="seminar_mode_id[]"
+                                                            value="{{ $mode['id'] }}" onchange="applyFilter()"
+                                                            @if (in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{ $mode['name'] }}
+                                                        <span class="aiz-square-check"></span>
+                                                        <span class="float-right text-secondary fs-12"></span>
+                                                    </label>
                                                 @endforeach
                                             </div>
 
@@ -309,14 +309,16 @@
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-                                            <select class="select2  form-control aiz-selectpicker rounded-1" name="seminar_software_id[]"
-                                             onchange="applyFilter()"
-                                                data-toggle="select2" data-live-search="true">
-                                                <option value="" class="fs-16" >{{ translate('Search seminar software') }}</option>
-                                            @foreach(getSeminarSoftwares() as $software)
-                                                <option value="{{$software['id']}}"           @if(in_array($software['id'], $seminar_software_ids)) selected @endif >{{$software['name']}}</option>
-                                            @endforeach
-                                             </select>
+                                            <select class="select2 form-control rounded-1"
+                                                name="seminar_software_id" onchange="applyFilter()" data-toggle="select2"
+                                                data-live-search="true">
+                                                <option value="" class="fs-16">
+                                                    {{ translate('Search seminar software') }}
+                                                </option>
+                                                @foreach (getSeminarSoftwares() as $software)
+                                                    <option value="{{ $software['id'] }}" @if (in_array($software['id'], $seminar_software_ids)) selected @endif>{{ $software['name'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
 
                                         <!-- Languages -->
@@ -325,12 +327,15 @@
                                                 <span class=" pr-3">{{ translate('Languages') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                @foreach(getLanguages() as $lang)
-                                                <label class="aiz-checkbox">
-                                                    <input type="checkbox" name="language_id[]" value="{{$lang['id']}}" onchange="applyFilter()"  @if(in_array($lang['id'], $language_ids)) checked @endif  >  {{$lang['name']}}
-                                                    <span class="aiz-square-check"></span>
-                                                    <span class="float-right text-secondary fs-12"></span>
-                                                </label>
+                                                @foreach (getLanguages() as $lang)
+                                                    <label class="aiz-checkbox">
+                                                        <input type="checkbox" name="language_id[]"
+                                                            value="{{ $lang['id'] }}" onchange="applyFilter()"
+                                                            @if (in_array($lang['id'], $language_ids)) checked @endif>
+                                                        {{ $lang['name'] }}
+                                                        <span class="aiz-square-check"></span>
+                                                        <span class="float-right text-secondary fs-12"></span>
+                                                    </label>
                                                 @endforeach
                                             </div>
 
@@ -459,7 +464,7 @@
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u>
                                                                 </p>
                                                                 <p class="fw-500 seminar-more">
-                                                                    <u>{{ getInstructorName(rand(10,14)) }}</u>
+                                                                    <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                                                 </p>
 
                                                             </div>
@@ -522,7 +527,7 @@
                                                                 </p>
                                                             </a>
 
-                                                            <a href="">
+                                                            <a href="{{ $seminar->zoom_link }}" target="_blank">
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
                                                                     <img class=" px-1  "
@@ -751,7 +756,6 @@
                 $('#seminar-filter-form').submit();
             }
         </script>
-
     @endsection
 
     @section('script')
@@ -761,13 +765,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-
-                // $('.datepicker').datepicker({
-                //     format: 'dd-mm-yyyy',
-                //     todayHighlight: true,
-                //     toggleActive: true
-                // });
-
                 $('.datepicker').datepicker({
                     format: 'dd-mm-yyyy',
                     toggleActive: true,
@@ -795,8 +792,11 @@
                 }).on('hide', function(e, date) {
                     $('.tooltip-inner').addClass('hidden');
                     $('.arrow').addClass('hidden');
+                }).on('changeDate', function(e, date){
+                    applyFilter();
                 });
             });
+
             function applyFilter() {
                 $('#seminar-filter-form').submit();
             }
@@ -809,46 +809,16 @@
         </script>
 
         <script type="text/javascript">
-            $('#datepicker').datepicker({
-                todayHighlight: true,
-                minDate: 0,
-                clearBtn: true,
-                // weekStart: 1,
-                // daysOfWeekHighlighted: "6,0",
-                autoclose: true,
-                todayHighlight: true,
-                beforeShowDay: function(date) {
-                var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
-                // get current month
-                var currentMonth = new Date().getMonth();
-                // if date.getMonth() === currentMonth, then highlight the date
-                if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
-                    return {
-                        classes: 'highlight',
-                        tooltip: 'Seminar'
-                    }
-                }
-            }}).on('show', function(e, date) {
-                $('td.highlight').tooltip();
-            }).on('hide', function(e, date) {
-                $('.tooltip-inner').addClass('hidden');
-                $('.arrow').addClass('hidden');
-            });
+            function applyFilter() {
+                $('#seminar-filter-form').submit();
+            }
 
-                // $('#datepicker').datepicker("setDate", new Date());
-                // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
-
-                function applyFilter() {
-                    $('#seminar-filter-form').submit();
-                }
-
-                function rangefilter(arg) {
-                    $('input[name=min_price]').val(arg[0]);
-                    $('input[name=max_price]').val(arg[1]);
-                    applyFilter();
-                };
+            function rangefilter(arg) {
+                $('input[name=min_price]').val(arg[0]);
+                $('input[name=max_price]').val(arg[1]);
+                applyFilter();
+            };
         </script>
-
     @endsection
 </body>
 
