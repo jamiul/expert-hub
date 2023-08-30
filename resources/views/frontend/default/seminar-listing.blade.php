@@ -456,7 +456,9 @@
                                                                 at
                                                                 Albany</p> --}}
                                                                 <p class="fw-500 seminar-more">
+                                                                    {{-- @dd($seminar->user_id) --}}
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u>
+
                                                                 </p>
                                                                 <p class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName(rand(10,14)) }}</u>

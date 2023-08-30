@@ -602,9 +602,19 @@ function getSeminarModeName($id) {
     return  $seminar_mode['name'];
 }
 
+// function getSoftwarePackageName($id) {
+//     $software_package = SeminarSoftware::where('id', $id)->first();
+//     return  $software_package['name'];
+
+// }
 function getSoftwarePackageName($id) {
     $software_package = SeminarSoftware::where('id', $id)->first();
-    return  $software_package['name'];
+    // return  $software_package['name'];
+    if ($software_package) {
+        return $software_package->name;
+    } else {
+        return 'software_package not found';
+    }
 }
 
 function getLanguageName($id) {
@@ -612,10 +622,22 @@ function getLanguageName($id) {
     return  $language['name'];
 }
 
+// function getInstructorName($id) {
+//     $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
+//     // dd($instructor['name']);
+//     return  $instructor['name'];
+// }
+
 function getInstructorName($id) {
-    $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
-    return  $instructor['name'];
+    $instructor = User::where('user_type', 'freelancer')->where('id', $id)->first();
+
+    if ($instructor) {
+        return $instructor->name;
+    } else {
+        return 'Instructor not found';
+    }
 }
+
 
 function getSeminarModes() {
     return SeminarMode::all()->toArray();
