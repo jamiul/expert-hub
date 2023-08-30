@@ -393,7 +393,7 @@
                                                             <div class="col-8 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-normal  pb-0 mb-0 p-0">
+                                                                    class="fre-scsh-right-side-details text-justify  pb-0 mb-0 p-0">
                                                                     This
                                                                     seminar will give you a strong working understanding of
                                                                     methods
