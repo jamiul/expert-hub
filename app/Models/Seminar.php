@@ -62,4 +62,9 @@ class Seminar extends Model
     {
         return $this->hasMany(SeminarDate::class);
     }
+
+    public function seminar_instructors()
+    {
+        return $this->hasMany(SeminarInstructor::class);
+    }
 }
