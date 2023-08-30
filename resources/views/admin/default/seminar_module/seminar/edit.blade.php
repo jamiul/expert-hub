@@ -140,24 +140,28 @@
                             </div>
                         </div>
                         <!--Course Instructor -->
-                        <div class="form-group row" id="country">
+                        {{-- @dd($seminar->seminar_instructors) --}}
+                        {{-- @dd(getCourseInstructors()); --}}
+                        @if (!$seminar->seminar_instructors->isEmpty())
+                        @foreach ($seminar->seminar_instructors as $seminar_instructor)
+                        <div class="form-group row">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Course Instructor') }}
-                                <span class="text-danger">*</span>
-
                             </label>
                             <div class="col-md-9">
                                 <select class="form-control" name="user_id" id="user_id" data-live-search="true"
                                     title="{{ translate('Course Instructor') }}" required>
                                     @foreach (getCourseInstructors() as $instructor)
                                         <option value="{{ $instructor['id'] }}"
-                                            {{ $instructor['id'] == $seminar->user_id ? 'selected' : '' }}>
+                                            {{ $instructor['id'] == $seminar_instructor->user_id ? 'selected' : '' }}>
                                             {{ $instructor['name'] }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
+                        @endforeach
+                        @endif
                         <!--Course Instructor Descriptions -->
                         <div class="form-group row">
                             <label class="col-md-3 col-from-label">

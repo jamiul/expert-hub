@@ -147,11 +147,9 @@
                         <div class="form-group row" id="country">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Course Instructor 1') }}
-                                <span class="text-danger">*</span>
-
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="user_id" id="user_id"
+                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 1') }}">
                                     @foreach ($course_instructors as $course_instructor)
                                         <option value="{{ $course_instructor['id'] }}">
@@ -165,11 +163,9 @@
                         <div class="form-group row" id="country">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Course Instructor 2') }}
-                                <span class="text-danger">*</span>
-
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="user_id" id="user_id"
+                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 2') }}">
                                     @foreach ($course_instructors as $course_instructor)
                                         <option value="{{ $course_instructor['id'] }}">
@@ -183,11 +179,9 @@
                         <div class="form-group row" id="country">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Course Instructor 3') }}
-                                <span class="text-danger">*</span>
-
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="user_id" id="user_id"
+                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 3') }}">
                                     @foreach ($course_instructors as $course_instructor)
                                         <option value="{{ $course_instructor['id'] }}">
