@@ -198,7 +198,7 @@
                         <h3 class="text-white fw-700  frequently-qsn-title  ">Seminar List </h3>
                         <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
                         <a href="register?type=2"
-                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Register</a>
+                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a seminar</a>
                     </div>
                     <div class="col-lg-1 col-12 my-auto"></div>
                     <div class="col-lg-4 col-12">
@@ -433,98 +433,103 @@
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                             </div>
                         </div>
-
-
                         <!-- seminar List -->
-
                         <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9  c-pointer ">
-                            <div class="row" style="background: #F2F7F2;">
+                            <div class="row " style="background: #F2F7F2;">
                                 <div class="col-lg-12">
-                                    <div class="all-scholarship-list border-bottom border-gray-600 mb-4 mt-3">
+                                    <div class="mb-4 mt-3">
                                         <div class="row ">
                                             @foreach ($seminars as $seminar)
-                                                <div class="col-lg-10 col-12">
-                                                    <a href="{{ route('seminar.details', $seminar->id) }}"
-                                                        class=" fw-700"style="color:#5ABC76;">
-                                                        <u class="seminar-title">{{ $seminar->title }}
-                                                        </u>
-                                                    </a>
-                                                    <div class="d-flex justify-content-between">
-                                                        <a href="#" class=" fs-16 fw-700 pb-1 "
-                                                            style="border-bottom: 2px solid  #000003; color: #000003">
+                                                <div class="d-lg-flex border-bottom my-3 all-scholarship-list ">
+                                                    <div class="col-lg-10 col-12 ">
+                                                        <a href="{{ route('seminar.details', $seminar->id) }}"
+                                                            class=" fw-700"style="color:#5ABC76;">
+                                                            <u class="seminar-title">{{ $seminar->title }}
+                                                            </u>
                                                         </a>
-                                                    </div>
-                                                    <div class="row mb-2 mx-1">
-                                                        <div class="col-lg-3 col-4 p-0">
-                                                            <p class="fre-scsh-left-side-title mb-0">
-                                                                Seminar Dates:
-                                                            </p>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class=" fs-16 fw-700 pb-1 "
+                                                                style="border-bottom: 2px solid  #000003; color: #000003">
+                                                            </a>
                                                         </div>
-                                                        <div class="col-lg-9 col-8 pl-0">
+                                                        <div class="row mb-2 mx-1">
+                                                            <div class="col-lg-3 col-4 p-0">
+                                                                <p class="fre-scsh-left-side-title mb-0">
+                                                                    Seminar Dates:
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-lg-9 col-8 pl-0">
 
-                                                            <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6 –
-                                                                Fri
-                                                                Sep 8,
-                                                                2023, from 10am – 3pm daily (Australian Eastern Standard
-                                                                Time)
-                                                            </p>
+                                                                <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6
+                                                                    –
+                                                                    Fri
+                                                                    Sep 8,
+                                                                    2023, from 10am – 3pm daily (Australian Eastern Standard
+                                                                    Time)
+                                                                </p>
 
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mx-1 ">
-                                                        <div class="col-4 col-lg-3 p-0 ">
-                                                            <p class="fre-scsh-left-side-title mb-0 p-0">
-                                                                Seminar Summary:
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-8 col-lg-9 pl-0">
+                                                        <div class="row mx-1 ">
+                                                            <div class="col-4 col-lg-3 p-0 ">
+                                                                <p class="fre-scsh-left-side-title mb-0 p-0">
+                                                                    Seminar Summary:
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-8 col-lg-9 pl-0">
 
-                                                            <p
-                                                                class="fre-scsh-right-side-details text-justify pb-0 mb-0 p-0">
-                                                                This
-                                                                seminar will give you a strong working understanding of
-                                                                methods
-                                                                used
-                                                                to design and analyse single-case experimental design
-                                                                studies
-                                                                (i.e.,
-                                                                n-of-1 trials, personalised trials, intrasubject,
-                                                                single-subjects,
-                                                                etc.)
-                                                                , including the assumptions underlying these methods and
-                                                                their
-                                                                limitations as well as their benefits. Demonstrations using
-                                                                real
-                                                                datasets will be incorporated together with hand-on exercise
-                                                                so
-                                                                that
-                                                                you will learn both the basic logic of single-case
-                                                                experiments
-                                                                and
-                                                                how to use them in your own research. In-depth
-                                                                interpretation of
-                                                                the
-                                                                obtained results will be made. An official ConsultantEdu,
-                                                                certificate of completion is provided at the conclusion of
-                                                                the
-                                                                seminar. For European PhD students, each seminar offers 2
-                                                                ECTS..
-                                                                <a href="{{ route('seminar.details', $seminar->id) }}"><u
-                                                                        class="seminar-more">Read More</u></a>
-                                                            </p>
+                                                                <p
+                                                                    class="fre-scsh-right-side-details text-normal  pb-0 mb-0 p-0">
+                                                                    This
+                                                                    seminar will give you a strong working understanding of
+                                                                    methods
+                                                                    used
+                                                                    to design and analyse single-case experimental design
+                                                                    studies
+                                                                    (i.e.,
+                                                                    n-of-1 trials, personalised trials, intrasubject,
+                                                                    single-subjects,
+                                                                    etc.)
+                                                                    , including the assumptions underlying these methods and
+                                                                    their
+                                                                    limitations as well as their benefits. Demonstrations
+                                                                    using
+                                                                    real
+                                                                    datasets will be incorporated together with hand-on
+                                                                    exercise
+                                                                    so
+                                                                    that
+                                                                    you will learn both the basic logic of single-case
+                                                                    experiments
+                                                                    and
+                                                                    how to use them in your own research. In-depth
+                                                                    interpretation of
+                                                                    the
+                                                                    obtained results will be made. An official
+                                                                    ConsultantEdu,
+                                                                    certificate of completion is provided at the conclusion
+                                                                    of
+                                                                    the
+                                                                    seminar. For European PhD students, each seminar offers
+                                                                    2
+                                                                    ECTS..
+                                                                    <a
+                                                                        href="{{ route('seminar.details', $seminar->id) }}"><u
+                                                                            class="seminar-more">Read More</u></a>
+                                                                </p>
 
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-lg-3 mx-1">
-                                                        <div class="col-4 col-lg-3 p-0">
-                                                            <p class="fre-scsh-left-side-title mb-1 ">
-                                                                Instructors:
-                                                            </p>
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-9 col-8  pl-0 fre-scsh-right-side-details  mb-1 p-0">
+                                                        <div class="row mt-lg-3 mx-1">
+                                                            <div class="col-4 col-lg-3 p-0">
+                                                                <p class="fre-scsh-left-side-title mb-1 ">
+                                                                    Instructors:
+                                                                </p>
+                                                            </div>
+                                                            <div
+                                                                class="col-lg-9 col-8  pl-0 fre-scsh-right-side-details  mb-1 p-0">
 
-                                                            {{-- <p class="fre-scsh-right-side-details  mb-1 p-0"><span
+                                                                {{-- <p class="fre-scsh-right-side-details  mb-1 p-0"><span
                                                                     class="fw-500 seminar-more"><u>Mariola
                                                                         Moeyaert</u></span> |
                                                                 Associate Professor of Statistics and Director | University
@@ -537,80 +542,85 @@
                                                                 at
                                                                 Albany</p> --}}
                                                             {{ getInstructorName($seminar->user_id) }}
+                                                                <p class="fw-500 seminar-more">
+                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u>
+                                                                </p>
 
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mx-1">
+                                                            <div class=" col-4 col-lg-3 p-0  pr-0">
+                                                                <p class=" fre-scsh-left-side-title ">
+                                                                    Seminar Mode:
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-8 col-lg-9  pl-0">
+
+                                                                <p
+                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mx-1">
+                                                            <div class="col-4 col-lg-3  p-0 pr-0">
+                                                                <p class=" fre-scsh-left-side-title">
+                                                                    Software Package:
+                                                                </p>
+                                                            </div>
+
+                                                            <div class=" col-8 col-lg-9  pl-0">
+
+                                                                <p
+                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    {{ getSoftwarePackageName($seminar->seminar_software_id) }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mx-1">
+                                                            <div class="col-4 col-lg-3 p-0 pr-0">
+                                                                <p class=" fre-scsh-left-side-title ">
+                                                                    Language:
+                                                                </p>
+                                                            </div>
+                                                            <div class=" col-8 col-lg-9 pl-0">
+
+                                                                <p
+                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    {{ getLanguageName($seminar->language_id) }}
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-lg-2 col-12">
+                                                        <div>
+                                                            <a href="">
+                                                                <p class="btn btn-primary btn-sm fs-14  w-100  fw-700">
 
-                                                    <div class="row mx-1">
-                                                        <div class=" col-4 col-lg-3 p-0  pr-0">
-                                                            <p class=" fre-scsh-left-side-title ">
-                                                                Seminar Mode:
-                                                            </p>
+                                                                    <img class=" px-1  "
+                                                                        src=" {{ url('/public/assets/seminar/register.png') }}"
+                                                                        alt="Image" style="width:25px; " />
+                                                                    {{ translate('Register now') }}
+
+                                                                </p>
+                                                            </a>
+
+                                                            <a href="">
+                                                                <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
+
+                                                                    <img class=" px-1  "
+                                                                        src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                        alt="Image" style="width:28px; " />
+                                                                    {{ translate('Zoom link') }}
+
+                                                                </p>
+                                                            </a>
                                                         </div>
-                                                        <div class="col-8 col-lg-9  pl-0">
-
-                                                            <p
-                                                                class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                                                {{ getSeminarModeName($seminar->seminar_mode_id) }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mx-1">
-                                                        <div class="col-4 col-lg-3  p-0 pr-0">
-                                                            <p class=" fre-scsh-left-side-title">
-                                                                Software Package:
-                                                            </p>
-                                                        </div>
-
-                                                        <div class=" col-8 col-lg-9  pl-0">
-
-                                                            <p
-                                                                class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                                                {{ getSoftwarePackageName($seminar->seminar_software_id) }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mx-1">
-                                                        <div class="col-4 col-lg-3 p-0 pr-0">
-                                                            <p class=" fre-scsh-left-side-title ">
-                                                                Language:
-                                                            </p>
-                                                        </div>
-                                                        <div class=" col-8 col-lg-9 pl-0">
-
-                                                            <p
-                                                                class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                                                {{ getLanguageName($seminar->language_id) }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-12">
-                                                    <div>
-                                                        <a href="">
-                                                            <p class="btn btn-primary btn-sm fs-15  w-100  fw-700">
-
-                                                                <img class=" px-1  "
-                                                                    src=" {{ url('/public/assets/seminar/register.png') }}"
-                                                                    alt="Image" style="width:25px; " />
-                                                                {{ translate('Register now') }}
-
-                                                            </p>
-                                                        </a>
-
-                                                        <a href="">
-                                                            <p class="btn btn-primary btn-sm  fs-16 w-100  fw-700">
-
-                                                                <img class=" px-1  "
-                                                                    src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
-                                                                    alt="Image" style="width:28px; " />
-                                                                {{ translate('Zoom link') }}
-
-                                                            </p>
-                                                        </a>
                                                     </div>
                                                 </div>
                                             @endforeach
+
                                         </div>
                                     </div>
 
@@ -634,8 +644,8 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block   p-3"
-                                                src=" {{ url('/public/assets/home/blog.png') }}" alt="Image"
-                                                style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                                src=" {{ url('/public/assets/home/post.png') }}" alt="Image"
+                                                style="width:55px; border-radius:50%; background-color:#275846; border:1px solid #fff" />
                                             <div class="need-help-progress-bar"></div>
                                         </div>
                                         <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
@@ -655,8 +665,8 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class="mb-2 mx-auto d-block text-black p-3"
-                                                src="{{ url('/public/assets/home/quiz1.png') }}" alt="Image"
-                                                style="width:55px; border-radius:50%; border:1px solid #000000;" />
+                                                src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
+                                                style="width:55px; border-radius:50%; background-color:#275846; border:1px solid #fff;" />
                                             <div class="need-help-progress-bar"></div>
                                         </div>
                                         <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
@@ -674,8 +684,8 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block p-3"
-                                                src=" {{ url('/public/assets/home/certificate.png') }}" alt="Image"
-                                                style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                                src=" {{ url('/public/assets/home/enroll.png') }}" alt="Image"
+                                                style="width:55px; border-radius:50%; background-color:#275846; border:1px solid #fff" />
                                             <div class="need-help-progress-bar"></div>
                                         </div>
                                         <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
@@ -693,9 +703,10 @@
                             <div class="col-xl-3 col-md-6">
                                 <div class=" ">
                                     <div class=" h-136px align-items-center">
-                                        <img class=" mb-2 mx-auto d-block p-3"
-                                            src=" {{ url('/public/assets/home/checked.png') }}" alt="Image"
-                                            style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                        <img class=" mb-2 mx-auto d-block  p-3"
+                                            src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
+                                            style="width:55px; background-color:#275846;  border-radius:50%; border:1px solid #fff" />
+
                                         <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
                                             Payment Securely
                                         </p>
