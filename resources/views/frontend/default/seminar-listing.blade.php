@@ -455,9 +455,11 @@
                                                                 Associate Professor of Statistics and Director | University
                                                                 at
                                                                 Albany</p> --}}
-                                                            {{ getInstructorName($seminar->user_id) }}
                                                                 <p class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u>
+                                                                </p>
+                                                                <p class="fw-500 seminar-more">
+                                                                    <u>{{ getInstructorName(rand(10,14)) }}</u>
                                                                 </p>
 
                                                             </div>
