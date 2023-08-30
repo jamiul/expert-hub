@@ -222,6 +222,52 @@
                                 {!! $seminar->software_description !!}
                             </p>
                         </div>
+                       <div>
+                         <div class="row mx-1 ">
+                            <div class="col-lg-3 col-12 p-0 pr-0">
+                                <p class=" fre-scsh-left-side-title ">
+                                    Ragistration:
+                                </p>
+                            </div>
+                            <div class="col-lg-9 col-12  pl-0">
+
+                                <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                <div>
+                                    <a class=" btn-primary border border-1 p-1 fs-16 fw-700  confirm-alert" href=""
+                                        data-target="">
+
+                                        <span class=""><u>Register now</u></span>
+                                    </a>
+                                    <span class="ml-2">(Note: You will be asked to sign up/sign in to
+                                        ConsultantEdu before continuing)</span>
+
+                                </div>
+                                </p>
+                            </div>
+                        </div class="pb-2">
+                        <div class="row mx-1">
+                            <div class="col-lg-3 col-12 p-0  pr-0">
+                                <p class=" fre-scsh-left-side-title ">
+                                    Course Instructor
+                                </p>
+                            </div>
+                            <div class="col-lg-9  col-12 pl-0">
+
+                                <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                <div>
+                                    <a class=" btn-primary fs-16  p-1 fw-700  confirm-alert" href=""
+                                        data-target="">
+
+                                        <span><u class="">Message now</u></span>
+                                    </a>
+                                    <span class="ml-2">(Note: You will be asked to sign up/sign in to
+                                        ConsultantEdu before continuing)</span>
+
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                       </div>
                     </div>
                 </div>
             </div>
