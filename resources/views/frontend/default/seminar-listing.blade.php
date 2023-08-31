@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
@@ -236,7 +235,6 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-
                                     @foreach ($categories as $category)
                                         <span id="category_{{ $category->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
@@ -273,7 +271,6 @@
 
                                     <div>
                                         <!-- Seminar date -->
-
                                         <div class="mt-2">
                                             <h6 class="text-left fs-16 py-2 fw-700">
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
@@ -284,7 +281,6 @@
                                                     name="date"><br>
                                             </div>
                                         </div>
-
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
@@ -302,7 +298,6 @@
                                                     </label>
                                                 @endforeach
                                             </div>
-
                                         </div>
                                         <!-- Seminar software -->
                                         <div class="mt-2">
@@ -320,7 +315,6 @@
                                                 @endforeach
                                             </select>
                                         </div>
-
                                         <!-- Languages -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 fs-16 fw-700 mt-3">
@@ -338,14 +332,9 @@
                                                     </label>
                                                 @endforeach
                                             </div>
-
                                         </div>
-
-
                                     </div>
-
                                     <!-- Seminar Topics -->
-
 
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
@@ -461,10 +450,13 @@
                                                                 at
                                                                 Albany</p> --}}
                                                                 <p class="fw-500 seminar-more">
-                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u>
+                                                                    <u>{{ getInstructorName($seminar->user_id) ? getInstructorName($seminar->user_id) : '' }}</u>
                                                                 </p>
                                                                 <p class="fw-500 seminar-more">
-                                                                    <u>{{ getInstructorName(rand(10, 14)) }}</u>
+                                                                    @php
+                                                                        $id = rand(10,13);
+                                                                    @endphp
+                                                                    <u>{{ getInstructorName($id) ? getInstructorName($id) : '' }}</u>
                                                                 </p>
 
                                                             </div>
@@ -477,7 +469,6 @@
                                                                 </p>
                                                             </div>
                                                             <div class="col-8 col-lg-9  pl-0">
-
                                                                 <p
                                                                     class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
                                                                     {{ getSeminarModeName($seminar->seminar_mode_id) }}
@@ -526,7 +517,6 @@
 
                                                                 </p>
                                                             </a>
-
                                                             <a href="{{ $seminar->zoom_link }}" target="_blank">
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
@@ -541,7 +531,6 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-
                                         </div>
                                     </div>
                                 </div>
