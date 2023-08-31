@@ -675,72 +675,6 @@
             });
         </script>
         <script>
-            // Get references to the month and year elements
-            const monthSelect = document.getElementById('month');
-            const yearInput = document.getElementById('year');
-
-            // Event listener to handle changes in month or year
-            monthSelect.addEventListener('change', updateCalendar);
-            yearInput.addEventListener('input', updateCalendar);
-
-            // Initial calendar rendering
-            updateCalendar();
-
-            // Function to update the calendar based on selected month and year
-            function updateCalendar() {
-                const month = parseInt(monthSelect.value);
-                const year = parseInt(yearInput.value);
-
-                // Clear the old calendar content
-                document.getElementById('calendar').innerHTML = '';
-
-                // Your logic to generate the calendar for the selected month and year goes here
-                // You can use JavaScript to create the calendar grid and populate it with dates
-
-                // Example: Display the selected month and year in the console
-                console.log(`Selected Month: ${month}, Selected Year: ${year}`);
-            }
-        </script>
-        <script>
-            function generateCalendar() {
-                var month = document.getElementById("monthSelect").value;
-                var year = document.getElementById("yearInput").value;
-                var daysInMonth = new Date(year, month, 0).getDate();
-                var firstDay = new Date(year, month - 1, 1).getDay();
-                var calendar = document.getElementById("calendar");
-
-                var table = '<table class="table"><thead><tr><th colspan="7" class="text-center">' + year + ' - ' + month +
-                    '</th></tr><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead><tbody><tr>';
-
-                var dayCount = 1;
-                // Add blank cells for days before the first day of the month
-                for (var i = 0; i < firstDay; i++) {
-                    table += '<td></td>';
-                }
-                // Add cells for each day in the month
-                for (var j = firstDay; j < 7; j++) {
-                    if (dayCount <= daysInMonth) {
-                        table += '<td>' + dayCount + '</td>';
-                        dayCount++;
-                    } else {
-                        table += '<td></td>';
-                    }
-                }
-
-                // Add remaining cells
-                while (dayCount <= daysInMonth) {
-                    if (new Date(year, month - 1, dayCount).getDay() === 0) {
-                        table += '</tr><tr>';
-                    }
-                    table += '<td>' + dayCount + '</td>';
-                    dayCount++;
-                }
-
-                table += '</tr></tbody></table>';
-                calendar.innerHTML = table;
-            }
-        </script>
-        <script>
             function removeCategory(categoryId) {
 
                 var categoryElement = document.getElementById('category_' + categoryId);
@@ -797,18 +731,6 @@
                 });
             });
 
-            function applyFilter() {
-                $('#seminar-filter-form').submit();
-            }
-
-            function rangefilter(arg) {
-                $('input[name=min_price]').val(arg[0]);
-                $('input[name=max_price]').val(arg[1]);
-                applyFilter();
-            };
-        </script>
-
-        <script type="text/javascript">
             function applyFilter() {
                 $('#seminar-filter-form').submit();
             }
