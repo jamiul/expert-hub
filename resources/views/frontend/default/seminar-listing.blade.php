@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
@@ -236,7 +235,6 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-
                                     @foreach ($categories as $category)
                                         <span id="category_{{ $category->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
@@ -299,7 +297,6 @@
                                                     </label>
                                                 @endforeach
                                             </div>
-
                                         </div>
                                         <!-- Seminar software -->
                                         <div class="mt-2">
@@ -318,7 +315,6 @@
                                                 @endforeach
                                             </select>
                                         </div>
-
                                         <!-- Languages -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 fs-16 fw-700 mt-3">
@@ -338,8 +334,8 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- Seminar Topics -->
+
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
@@ -441,6 +437,7 @@
                                                                 </p>
                                                             </div>
                                                             <div
+
                                                                 class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details seminar-small-device-font  mb-1 p-0">
                                                                 <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u> |
@@ -448,6 +445,7 @@
                                                                 <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                                                 </span>
+
 
                                                             </div>
                                                         </div>
@@ -459,6 +457,7 @@
                                                                 </p>
                                                             </div>
                                                             <div class="col-12 col-lg-9  pl-0">
+
 
                                                                 <p
                                                                     class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
@@ -508,7 +507,6 @@
 
                                                                 </p>
                                                             </a>
-
                                                             <a href="{{ $seminar->zoom_link }}" target="_blank">
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
@@ -523,7 +521,6 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-
                                         </div>
                                     </div>
                                 </div>
@@ -657,72 +654,6 @@
             });
         </script>
         <script>
-            // Get references to the month and year elements
-            const monthSelect = document.getElementById('month');
-            const yearInput = document.getElementById('year');
-
-            // Event listener to handle changes in month or year
-            monthSelect.addEventListener('change', updateCalendar);
-            yearInput.addEventListener('input', updateCalendar);
-
-            // Initial calendar rendering
-            updateCalendar();
-
-            // Function to update the calendar based on selected month and year
-            function updateCalendar() {
-                const month = parseInt(monthSelect.value);
-                const year = parseInt(yearInput.value);
-
-                // Clear the old calendar content
-                document.getElementById('calendar').innerHTML = '';
-
-                // Your logic to generate the calendar for the selected month and year goes here
-                // You can use JavaScript to create the calendar grid and populate it with dates
-
-                // Example: Display the selected month and year in the console
-                console.log(`Selected Month: ${month}, Selected Year: ${year}`);
-            }
-        </script>
-        <script>
-            function generateCalendar() {
-                var month = document.getElementById("monthSelect").value;
-                var year = document.getElementById("yearInput").value;
-                var daysInMonth = new Date(year, month, 0).getDate();
-                var firstDay = new Date(year, month - 1, 1).getDay();
-                var calendar = document.getElementById("calendar");
-
-                var table = '<table class="table"><thead><tr><th colspan="7" class="text-center">' + year + ' - ' + month +
-                    '</th></tr><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead><tbody><tr>';
-
-                var dayCount = 1;
-                // Add blank cells for days before the first day of the month
-                for (var i = 0; i < firstDay; i++) {
-                    table += '<td></td>';
-                }
-                // Add cells for each day in the month
-                for (var j = firstDay; j < 7; j++) {
-                    if (dayCount <= daysInMonth) {
-                        table += '<td>' + dayCount + '</td>';
-                        dayCount++;
-                    } else {
-                        table += '<td></td>';
-                    }
-                }
-
-                // Add remaining cells
-                while (dayCount <= daysInMonth) {
-                    if (new Date(year, month - 1, dayCount).getDay() === 0) {
-                        table += '</tr><tr>';
-                    }
-                    table += '<td>' + dayCount + '</td>';
-                    dayCount++;
-                }
-
-                table += '</tr></tbody></table>';
-                calendar.innerHTML = table;
-            }
-        </script>
-        <script>
             function removeCategory(categoryId) {
 
                 var categoryElement = document.getElementById('category_' + categoryId);
@@ -779,18 +710,6 @@
                 });
             });
 
-            function applyFilter() {
-                $('#seminar-filter-form').submit();
-            }
-
-            function rangefilter(arg) {
-                $('input[name=min_price]').val(arg[0]);
-                $('input[name=max_price]').val(arg[1]);
-                applyFilter();
-            };
-        </script>
-
-        <script type="text/javascript">
             function applyFilter() {
                 $('#seminar-filter-form').submit();
             }

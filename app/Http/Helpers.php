@@ -614,7 +614,8 @@ function getLanguageName($id) {
 
 function getInstructorName($id) {
     $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
-    return  $instructor['name'];
+
+    return $instructor ? $instructor->name : null;
 }
 
 function getSeminarModes() {
