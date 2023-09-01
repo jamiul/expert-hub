@@ -1,7 +1,7 @@
 <footer class=" fs-13 mt-auto p-1 p-sm-2 p-lg-4" style="background-color:#275846;">
     <div class="footer-content">
         <div class="aiz-footer-widget">
-            <div class="container mt-xl-5" class="margin-top">
+            <div class="container mt-xl-5 mt-5" class="margin-top">
                 {{-- <div class="aiz-front-widget ">
                     <img src="{{ custom_asset(get_setting('footer_logo')) }}" height="40" class="mb-4">
                     <div class="fs-14 text-white">
@@ -83,7 +83,7 @@
         <div class="aiz-footer-copyright fs-12 pb-xl-4 pb-7">
             <div class="container">
                 <div class="row align-items-center justify-content-center gutters-3">
-                    <div class="col-xl-3 col-sm-6">
+                    <div class="col-xl-4 col-sm-6">
                         @if (get_setting('language_switcher') == 'on')
                             <div class=" col-lg-12 col-12 fs-16 p-0 text-white">
                                 {!! get_setting('copyright_text') !!}
@@ -94,7 +94,7 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-xl-5 col-sm-6 p-0">
+                    <div class="col-xl-4 col-sm-6 p-0">
                         <div class="aiz-front-widget d-lg-flex px-3 align-items-center">
                             <h5 class="text-white fs-16 mr-lg-2">{{ get_setting('social_widget_title') }}</h5>
                            
