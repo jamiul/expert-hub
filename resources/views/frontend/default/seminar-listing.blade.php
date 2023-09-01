@@ -196,10 +196,10 @@
             <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
                 <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
                     <div class="col-lg-7 col-12  w-100 my-auto">
-                        <h3 class="text-white fw-700  frequently-qsn-title  ">Seminar List </h3>
-                        <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a
-                            seminar</a>
+                        <h3 class="text-white fw-700  frequently-qsn-title  ">Training and Expert Support Hub</h3>
+                        <p class="text-white fs-16 text-justify">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
+                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Register
+                            now</a>
                     </div>
                     <div class="col-lg-1 col-12 my-auto"></div>
                     <div class="col-lg-4 col-12">
@@ -270,10 +270,8 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div>
                                         <!-- Seminar date -->
-
                                         <div class="mt-2">
                                             <h6 class="text-left fs-16 py-2 fw-700">
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
@@ -284,7 +282,6 @@
                                                     name="date"><br>
                                             </div>
                                         </div>
-
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
@@ -309,14 +306,15 @@
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-                                            <select class="select2 form-control rounded-1"
-                                                name="seminar_software_id" onchange="applyFilter()" data-toggle="select2"
-                                                data-live-search="true">
+                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
+                                                onchange="applyFilter()" data-toggle="select2" data-live-search="true">
                                                 <option value="" class="fs-16">
                                                     {{ translate('Search seminar software') }}
                                                 </option>
                                                 @foreach (getSeminarSoftwares() as $software)
-                                                    <option value="{{ $software['id'] }}" @if (in_array($software['id'], $seminar_software_ids)) selected @endif>{{ $software['name'] }}</option>
+                                                    <option value="{{ $software['id'] }}"
+                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
+                                                        {{ $software['name'] }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -338,32 +336,27 @@
                                                     </label>
                                                 @endforeach
                                             </div>
-
                                         </div>
-
-
                                     </div>
 
                                     <!-- Seminar Topics -->
-
-
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                             </div>
                         </div>
                         <!-- seminar List -->
-                        <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9  c-pointer ">
-                            <div class="row " style="background: #F2F7F2;">
+                        <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9   ">
+                            <div class="row" style="background: #F2F7F2;">
                                 <div class="col-lg-12">
-                                    <div class="mb-4 mt-3">
+                                    <div class="mb-4 mt-2">
                                         <div class="row ">
                                             @foreach ($seminars as $seminar)
-                                                <div class="d-lg-flex border-bottom my-3 all-scholarship-list ">
+                                                <div class="d-lg-flex border-bottom my-2 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
                                                         <a href="{{ route('seminar.details', $seminar->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
-                                                            <u class="seminar-title">{{ $seminar->title }}
+                                                            <u class="seminar-title seminar-heading mx-1">{{ $seminar->title }}
                                                             </u>
                                                         </a>
                                                         <div class="d-flex justify-content-between">
@@ -372,14 +365,16 @@
                                                             </a>
                                                         </div>
                                                         <div class="row mb-2 mx-1">
-                                                            <div class="col-lg-3 col-4 p-0">
+                                                            <div class="col-lg-3 col-12 p-0">
                                                                 <p class="fre-scsh-left-side-title mb-0">
                                                                     Seminar Dates:
                                                                 </p>
                                                             </div>
-                                                            <div class="col-lg-9 col-8 pl-0">
+                                                            <div class="col-lg-9 col-12 pl-0">
 
-                                                                <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6
+                                                                <p
+                                                                    class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
+                                                                    Wed Sep 6
                                                                     –
                                                                     Fri
                                                                     Sep 8,
@@ -390,15 +385,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1 ">
-                                                            <div class="col-4 col-lg-3 p-0 ">
+                                                            <div class="col-12 col-lg-3 p-0 ">
                                                                 <p class="fre-scsh-left-side-title mb-0 p-0">
                                                                     Seminar Summary:
                                                                 </p>
                                                             </div>
-                                                            <div class="col-8 col-lg-9 pl-0">
+                                                            <div class="col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify  pb-0 mb-0 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify  pb-0 mb-0 p-0">
                                                                     This
                                                                     seminar will give you a strong working understanding of
                                                                     methods
@@ -439,70 +434,70 @@
 
                                                             </div>
                                                         </div>
-                                                        <div class="row mt-lg-3 mx-1">
-                                                            <div class="col-4 col-lg-3 p-0">
-                                                                <p class="fre-scsh-left-side-title mb-1 ">
+                                                        <div class="row mt-lg-3 mt-2 mx-1">
+                                                            <div class="col-12 col-lg-3 p-0">
+                                                                <p class="fre-scsh-left-side-title ">
                                                                     Instructors:
                                                                 </p>
                                                             </div>
                                                             <div
-                                                                class="col-lg-9 col-8  pl-0 fre-scsh-right-side-details  mb-1 p-0">
-                                                                <p class="fw-500 seminar-more">
-                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u>
-                                                                </p>
-                                                                <p class="fw-500 seminar-more">
+                                                                class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details seminar-small-device-font  mb-1 p-0">
+                                                                <span class="fw-500 seminar-more">
+                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u> |
+                                                                </span>
+                                                                <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName(rand(10, 14)) }}</u>
-                                                                </p>
+                                                                </span>
 
                                                             </div>
                                                         </div>
 
                                                         <div class="row mx-1">
-                                                            <div class=" col-4 col-lg-3 p-0  pr-0">
+                                                            <div class=" col-12 col-lg-3 p-0  pr-0">
                                                                 <p class=" fre-scsh-left-side-title ">
                                                                     Seminar Mode:
                                                                 </p>
                                                             </div>
-                                                            <div class="col-8 col-lg-9  pl-0">
+                                                            <div class="col-12 col-lg-9  pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getSeminarModeName($seminar->seminar_mode_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1">
-                                                            <div class="col-4 col-lg-3  p-0 pr-0">
+                                                            <div class="col-12 col-lg-3  p-0 pr-0">
                                                                 <p class=" fre-scsh-left-side-title">
                                                                     Software Package:
                                                                 </p>
                                                             </div>
 
-                                                            <div class=" col-8 col-lg-9  pl-0">
+                                                            <div class=" col-12 col-lg-9  pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getSoftwarePackageName($seminar->seminar_software_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1">
-                                                            <div class="col-4 col-lg-3 p-0 pr-0">
+                                                            <div class="col-12 col-lg-3 p-0 pr-0">
                                                                 <p class=" fre-scsh-left-side-title ">
                                                                     Language:
                                                                 </p>
                                                             </div>
-                                                            <div class=" col-8 col-lg-9 pl-0">
+                                                            <div class=" col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getLanguageName($seminar->language_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-12">
-                                                        <div>
+                                                    <div class="col-lg-2  col-12">
+                                                        <div class="pt-3 pt-lg-0 pt-xl-0">
                                                             <a href="">
                                                                 <p class="btn btn-primary btn-sm fs-14  w-100  fw-700">
 
@@ -779,7 +774,7 @@
                 }).on('hide', function(e, date) {
                     $('.tooltip-inner').addClass('hidden');
                     $('.arrow').addClass('hidden');
-                }).on('changeDate', function(e, date){
+                }).on('changeDate', function(e, date) {
                     applyFilter();
                 });
             });

@@ -928,7 +928,12 @@ div.scroll h6 a {
     .banner-img {
         width: 300px;
     }
-
+    .seminar-heading{
+       font-size: 20px;  
+    }
+    .seminar-small-device-font{
+        font-size: 13px !important;
+    }
     
 }
 

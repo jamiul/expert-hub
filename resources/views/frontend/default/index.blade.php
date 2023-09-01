@@ -251,7 +251,10 @@
                                                             {{ $category->name }}
                                                         </p>
                                                         <p class="fs-18 " style=" line-height:23px;">
-                                                            {{ $category->description }}</p>
+                                                            {{ $category->description }} <a
+                                                                href="{{ route('freelancer.category', $category->id) }}"
+                                                                class="nav-toggle "style="color:#6560E6;">Find
+                                                                Consultants</a></p>
                                                 </div>
                                             </div>
                                         </div>

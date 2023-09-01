@@ -27,8 +27,8 @@
                         <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
                     </div> -->
                 </div>
-                <div class="col-lg-6 col-sm-12">
-                    <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
+                <div class="col-lg-6 col-sm-12 ">
+                    <img class="" src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
                 </div>
             </div>
         </div>
