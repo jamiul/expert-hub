@@ -196,12 +196,29 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-                                    @foreach ($categories as $category)
-                                        <span id="category_{{ $category->id }}"
+                                    @foreach ($seminar_modes as $mode)
+                                        <span id="seminarMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                            {{ $category->name }} |<p class="m-0  d-inline fw-700"
-                                                onclick="removeCategory({{ $category->id }})">
+                                            {{ $mode->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeSeminarMode({{ $mode->id }})">
                                                 X</p>
+                                        </span>
+                                    @endforeach
+                                    @foreach ($languages as $language)
+                                        <span id="seminarLanguage_{{ $language->id }}"
+                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                            {{ $language->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeLanguage({{ $language->id }})">
+                                                X</p>
+                                        </span>
+                                    @endforeach
+                                    <!-- Seminar Software Badges -->
+                                    @foreach ($seminarSoftware as $software)
+                                        <span id="seminarSoftware_{{ $software->id }}"
+                                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                                            {{ $software->name }}
+                                            <p onclick="removeSeminarSoftware({{ $software->id }})"
+                                                class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
@@ -622,16 +639,48 @@
             });
         </script>
         <script>
-            function removeCategory(categoryId) {
+            function removeSeminarMode(Id) {
 
-                var categoryElement = document.getElementById('category_' + categoryId);
-                if (categoryElement) {
-                    categoryElement.parentNode.removeChild(categoryElement);
+                var seminarModeElement = document.getElementById('seminarMode_' + Id);
+                if (seminarModeElement) {
+                    seminarModeElement.parentNode.removeChild(seminarModeElement);
 
                     // Uncheck the corresponding checkbox
-                    var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+                    var checkbox = document.querySelector('input[name="seminar_mode_id[]"][value="' + Id + '"]');
                     if (checkbox) {
                         checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeLanguage(Id) {
+                var seminarLanguageElement = document.getElementById('seminarLanguage_' + Id);
+                if (seminarLanguageElement) {
+                    seminarLanguageElement.parentNode.removeChild(seminarLanguageElement);
+
+                    // Uncheck the corresponding checkbox
+                    var checkbox = document.querySelector('input[name="language_id[]"][value="' + Id + '"]');
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeSeminarSoftware(Id) {
+                let getSeminarSoftware = document.getElementById('seminarSoftware_' + Id);
+
+                if (getSeminarSoftware) {
+                    getSeminarSoftware.parentNode.removeChild(getSeminarSoftware);
+
+                    // Unselect the corresponding option
+                    let selectElement = document.querySelector('select[name="seminar_software_id"]');
+                    if (selectElement) {
+                        var optionElement = selectElement.querySelector('option[value="' + Id + '"]');
+                        if (optionElement) {
+                            optionElement.selected = false;
+                        }
                     }
                 }
                 $('#seminar-filter-form').submit();
@@ -854,12 +903,6 @@
             function applyFilter() {
                 $('#seminar-filter-form').submit();
             }
-
-            function rangefilter(arg) {
-                $('input[name=min_price]').val(arg[0]);
-                $('input[name=max_price]').val(arg[1]);
-                applyFilter();
-            };
         </script>
     @endsection
 </body>
