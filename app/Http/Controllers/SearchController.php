@@ -173,15 +173,6 @@ class SearchController extends Controller
                 $selected_seminar_mode = Seminar::whereIn('seminar_mode_id', $seminar_mode_ids)->pluck('seminar_mode_id');
                 $seminars = $seminars->whereIn('seminar_mode_id', $seminar_mode_ids);
             }
-            // if($request->date) {
-            //     $seminars = Seminar::with(['seminar_dates' => function ($query) {
-            //         $query->orderBy('seminar_date', 'DESC');
-            //     }])
-            //     ->whereHas('seminar_dates', function ($query) use ($request) {
-            //         $query->where('seminar_date', '>=', $request->date);
-            //     })
-            //     ->get();
-            // }
 
             if ($request->seminar_software_id != null) {
                 $seminar_software_ids[] = $request->seminar_software_id;
@@ -193,6 +184,16 @@ class SearchController extends Controller
                 $selected_seminar_lang = Seminar::whereIn('language_id', $language_ids)->pluck('language_id');
                 $seminars = $seminars->whereIn('language_id', $language_ids);
             }
+
+            $seminars->join('seminar_dates', 'seminars.id', '=', 'seminar_dates.seminar_id');
+            $seminarDate = [];
+            if ($request->seminar_date) {
+                $seminarDate = $request->seminar_date;
+                $formattedDate = \Carbon\Carbon::createFromFormat('d-m-Y', $request->seminar_date)->format('Y-m-d');
+                $seminars->whereDate('seminar_dates.seminar_date', '=', $formattedDate);
+            }
+
+            // dd($seminars);
             // $seminar_dates = SeminarDate::pluck('seminar_date');
             // $date_day = [];
             // $date_month = [];
@@ -209,7 +210,7 @@ class SearchController extends Controller
             $total = $seminars->count();
             $seminars = $seminars->paginate(8)->appends($request->query());
 
-            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id', 'language_id', 'seminar_mode_ids', 'selected_seminar_lang', 'selected_seminar_software', 'language_ids', 'seminar_software_ids'));
+            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id', 'language_id', 'seminar_mode_ids', 'selected_seminar_lang', 'selected_seminar_software', 'language_ids', 'seminar_software_ids','seminarDate'));
         } else if ($request->type == 'service') {
 
             $type = 'service';

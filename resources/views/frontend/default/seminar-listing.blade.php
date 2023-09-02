@@ -13,49 +13,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
     <style type="text/css">
-        /* .datepicker {
-            font-size: 0.875em;
-        }
-
-        .datepicker td,
-        .datepicker th {
-            width: 1.5em;
-            height: 1.5em;
-        } */
-
-        /* .datepicker td,
-        .datepicker th {
-            text-align: center;
-            width: 20px;
-            height: 30px !important;
-        }
-
-        .dropdown-menu {
-            border-color: #e2e5ec;
-            margin: 0;
-            border-radius: 0;
-            min-width: 327px !important;
-            font-size: inherit;
-            padding: 0;
-            -webkit-box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
-            box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
-            padding: 20px 20px 15px 20px !important;
-            border-radius: 4px;
-            max-width: 100% !important;
-        }
-
-        .datepicker table {
-            margin: 0;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            width: 100%;
-            height: 200px;
-        } */
-
         td.day.highlight {
             color: #DC322F;
             border-radius: 50% !important;
@@ -276,8 +233,8 @@
                                             </h6>
                                             <div class="">
                                                 <input type="text" id="dp1"
-                                                    class="form-control fs-14 datepicker mr-2" placeholder="Select Date"
-                                                    name="date"><br>
+                                                    class="form-control fs-14 datepicker mr-2" placeholder="{{ $seminarDate ? $seminarDate : 'Select Date' }}"
+                                                    name="seminar_date"><br>
                                             </div>
                                         </div>
                                         <!-- Seminar Mode -->
@@ -286,7 +243,6 @@
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                {{-- @dd($seminar_mode_ids); --}}
                                                 @foreach (getSeminarModes() as $mode)
                                                     <label class="aiz-checkbox">
                                                         <input type="checkbox" name="seminar_mode_id[]"
@@ -370,12 +326,13 @@
 
                                                                 <p
                                                                     class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
-                                                                    Wed Sep 6
+                                                                    {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set'}}
+                                                                    {{-- Wed Sep 6
                                                                     –
                                                                     Fri
                                                                     Sep 8,
                                                                     2023, from 10am – 3pm daily (Australian Eastern Standard
-                                                                    Time)
+                                                                    Time) --}}
                                                                 </p>
 
                                                             </div>
