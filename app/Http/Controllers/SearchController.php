@@ -158,13 +158,19 @@ class SearchController extends Controller
             $selected_seminar_lang = [];
             $selected_seminar_software = [];
             $categories = [];
-            $seminars = Seminar::query();
+            $seminarDate = [];
 
-            if ($keyword != null) {
-                $seminar_ids = Seminar::where('title', 'like', '%' . $keyword . '%')->pluck('id')->toArray();
-                if (!empty($seminar_ids)) {
-                    $seminars = $seminars->whereIn('id', $seminar_ids);
-                }
+            $seminars = Seminar::query();
+            $seminars->join('seminar_dates', 'seminars.id', '=', 'seminar_dates.seminar_id');
+
+            if ($request->seminar_date && $request->seminar_date != null) {
+                $seminarDate = $request->seminar_date;
+                $formattedDate = Carbon::createFromFormat('d-m-Y', $request->seminar_date)->format('Y-m-d');
+                $seminars->whereDate('seminar_dates.seminar_date', '=', $formattedDate);
+            }
+
+            if ($request->keyword != null) {
+                $seminars->where('title', 'like', '%' . $request->keyword . '%');
             }
 
             if ($request->seminar_mode_id != null) {
@@ -185,32 +191,57 @@ class SearchController extends Controller
                 $seminars = $seminars->whereIn('language_id', $language_ids);
             }
 
-            $seminars->join('seminar_dates', 'seminars.id', '=', 'seminar_dates.seminar_id');
-            $seminarDate = [];
-            if ($request->seminar_date) {
-                $seminarDate = $request->seminar_date;
-                $formattedDate = \Carbon\Carbon::createFromFormat('d-m-Y', $request->seminar_date)->format('Y-m-d');
-                $seminars->whereDate('seminar_dates.seminar_date', '=', $formattedDate);
+            $seminar_dates = SeminarDate::pluck('seminar_date')->toArray();
+            $date_day = [];
+            $date_month = [];
+            foreach ($seminar_dates as $dateStr) {
+                $timestamp = strtotime($dateStr);
+                $month = date('m', $timestamp); // Month (01-12)
+                $day = date('d', $timestamp);   // Day (01-31)
+                $year = date('Y', $timestamp);  // Year (e.g., 2023)
+
+                $date_month[] = $month;
+                $date_day[] = $day;
             }
 
-            // dd($seminars);
-            // $seminar_dates = SeminarDate::pluck('seminar_date');
-            // $date_day = [];
-            // $date_month = [];
-            // foreach ($seminar_dates->toArray() as $dateStr) {
-            //     $timestamp = strtotime($dateStr);
-            //     $month = date('m', $timestamp); // Month (01-12)
-            //     $day = date('d', $timestamp);   // Day (01-31)
-            //     $year = date('Y', $timestamp);  // Year (e.g., 2023)
+            $dates = [];
+            $months = [];
 
-            //     $date_month[] = $month;
-            //     $date_day[] = $day;
-            // }
-            // dd($date_month);
+            foreach ($date_month as $month) {
+                $monthInteger = intval($month);
+                if ($monthInteger >= 1 && $monthInteger <= 12) {
+                    $months[] = $monthInteger;
+                }
+            }
+
+            foreach ($date_day as $day) {
+                $dayInteger = intval($day);
+                if ($dayInteger >= 1 && $dayInteger <= 31) {
+                    $dates[] = $dayInteger;
+                }
+            }
+
             $total = $seminars->count();
             $seminars = $seminars->paginate(8)->appends($request->query());
 
-            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id', 'language_id', 'seminar_mode_ids', 'selected_seminar_lang', 'selected_seminar_software', 'language_ids', 'seminar_software_ids','seminarDate'));
+            return view('frontend.default.seminar-listing', compact(
+                'seminars',
+                'total',
+                'keyword',
+                'type',
+                'categories',
+                'category_id',
+                'language_id',
+                'seminar_mode_ids',
+                'selected_seminar_lang',
+                'selected_seminar_software',
+                'language_ids',
+                'seminar_software_ids',
+                'seminarDate',
+                'seminar_dates',
+                'months',
+                'dates'
+            ));
         } else if ($request->type == 'service') {
 
             $type = 'service';

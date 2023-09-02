@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
@@ -153,7 +154,10 @@
                 <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
                     <div class="col-lg-7 col-12  w-100 my-auto">
                         <h3 class="text-white fw-700  frequently-qsn-title  ">Training and Expert Support Hub</h3>
-                        <p class="text-white fs-16 text-justify">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
+                        <p class="text-white fs-16 text-justify">Learn a wide variety of the latest statistical methods by
+                            participating in expert-led seminars. Our instructors are a recognised experts in their
+                            respective fields. With their talent and experience, they make statistics engaging and
+                            comprehensible for researchers from diverse backgrounds.</p>
                         <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Register
                             now</a>
                     </div>
@@ -173,7 +177,7 @@
                         <div class="col-xl-8 offset-xl-2 text-center">
                             <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span
                                     class="fw-600">{{ $total }}</span>
-                                {{ translate('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
+                                {{ translate('seminar found for') }} <span class="fw-600">{{ $keyword }}</span>
                             </h1>
                         </div>
                     </div>
@@ -233,8 +237,9 @@
                                             </h6>
                                             <div class="">
                                                 <input type="text" id="dp1"
-                                                    class="form-control fs-14 datepicker mr-2" placeholder="{{ $seminarDate ? $seminarDate : 'Select Date' }}"
-                                                    name="seminar_date"><br>
+                                                    class="form-control fs-14 datepicker mr-2"
+                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
+                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
                                             </div>
                                         </div>
                                         <!-- Seminar Mode -->
@@ -326,7 +331,7 @@
 
                                                                 <p
                                                                     class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
-                                                                    {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set'}}
+                                                                    {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
                                                                     {{-- Wed Sep 6
                                                                     –
                                                                     Fri
@@ -394,7 +399,6 @@
                                                                 </p>
                                                             </div>
                                                             <div
-
                                                                 class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details seminar-small-device-font  mb-1 p-0">
                                                                 <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u> |
@@ -482,6 +486,13 @@
                                     </div>
                                 </div>
                             </div>
+                            @if (!is_array($seminars))
+                                <div class="aiz-pagination aiz-pagination-center flex-grow-1 mt-4">
+                                    <ul class="pagination">
+                                        {{ $seminars->links() }}
+                                    </ul>
+                                </div>
+                            @endif
                 </form>
 
             </div>
@@ -635,6 +646,60 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
+                var dateMonths = {!! json_encode($months) !!};
+                var dateDays = {!! json_encode($dates) !!};
+
+                const januaryDays = [];
+                const februaryDays = [];
+                const marchDays = [];
+                const aprilDays = [];
+                const mayDays = [];
+                const juneDays = [];
+                const julyDays = [];
+                const augustDays = [];
+                const septemberDays = [];
+                const octoberDays = [];
+                const novemberDays = [];
+                const decemberDays = [];
+                dateMonths.forEach((month, index) => {
+                    if (month === 1) {
+                        januaryDays.push(dateDays[index]);
+                    }
+                    if (month === 2) {
+                        februaryDays.push(dateDays[index]);
+                    }
+                    if (month === 3) {
+                        marchDays.push(dateDays[index]);
+                    }
+                    if (month === 4) {
+                        aprilDays.push(dateDays[index]);
+                    }
+                    if (month === 5) {
+                        mayDays.push(dateDays[index]);
+                    }
+                    if (month === 6) {
+                        julyDays.push(dateDays[index]);
+                    }
+                    if (month === 7) {
+                        julyDays.push(dateDays[index]);
+                    }
+                    if (month === 8) {
+                        augustDays.push(dateDays[index]);
+                    }
+                    if (month === 9) {
+                        septemberDays.push(dateDays[index]);
+                    }
+                    if (month === 10) {
+                        octoberDays.push(dateDays[index]);
+                    }
+                    if (month === 11) {
+                        novemberDays.push(dateDays[index]);
+                    }
+                    if (month === 12) {
+                        decemberDays.push(dateDays[index]);
+                    }
+                });
+
                 $('.datepicker').datepicker({
                     format: 'dd-mm-yyyy',
                     toggleActive: true,
@@ -645,15 +710,134 @@
                     // daysOfWeekHighlighted: "6,0",
                     autoclose: true,
                     beforeShowDay: function(date) {
-                        var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
                         // get current month
                         var currentMonth = new Date().getMonth();
+                        var currentYear = new Date().getFullYear();
+
+                        console.log("Current Month: " + currentMonth);
+                        console.log("Current Year: " + date.getFullYear());
                         // if date.getMonth() === currentMonth, then highlight the date
-                        if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
-                                hilightedDays)) {
-                            return {
-                                classes: 'highlight',
-                                tooltip: 'Seminar'
+                        if (date.getMonth() === 0 && currentYear === date.getFullYear()) {
+                            var hilightedDays = januaryDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 1 && currentYear === date.getFullYear()) {
+                            var hilightedDays = februaryDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 2 && currentYear === date.getFullYear()) {
+                            var hilightedDays = marchDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 3 && currentYear === date.getFullYear()) {
+                            var hilightedDays = aprilDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 4 && currentYear === date.getFullYear()) {
+                            var hilightedDays = mayDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 5 && currentYear === date.getFullYear()) {
+                            var hilightedDays = juneDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 6 && currentYear === date.getFullYear()) {
+                            var hilightedDays = julyDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+
+                        if (date.getMonth() === 7 && currentYear === date.getFullYear()) {
+                            var hilightedDays = augustDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 8 && currentYear === date.getFullYear()) {
+                            var hilightedDays = septemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+
+                        }
+                        if (date.getMonth() === 9 && currentYear === date.getFullYear()) {
+                            var hilightedDays = octoberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+
+                        }
+                        if (date.getMonth() === 10 && currentYear === date.getFullYear()) {
+                            var hilightedDays = novemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 11 && currentYear === date.getFullYear()) {
+                            var hilightedDays = decemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
                             }
                         }
                     }
