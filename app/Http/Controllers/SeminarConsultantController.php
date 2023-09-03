@@ -23,6 +23,7 @@ use App\Utility\NotificationUtility;
 use App\Models\ServicePackagePayment;
 use App\Http\Requests\StoreSeminarRequest;
 use App\Http\Requests\UpdateSeminarRequest;
+use App\Models\SeminarInstructor;
 
 class SeminarConsultantController extends Controller
 {
@@ -85,6 +86,7 @@ class SeminarConsultantController extends Controller
     {
         $user = Auth::user();
         $input = $request->all();
+        $input['project_category_id'] = $request->seminar_category;
         $input['created_by'] = $user->id;
 
         $seminar = Seminar::create($input);
@@ -95,6 +97,15 @@ class SeminarConsultantController extends Controller
                     'seminar_id' => $seminar->id,
                     'seminar_date' => $input['seminar_date'][$key] ?? '',
                     'descriptions' => $input['date_description'][$key] ?? '',
+                ]);
+            }
+        }
+
+        if($request->seminar_instructors) {
+            foreach($request->seminar_instructors as $key => $instructor) {
+                SeminarInstructor::create([
+                    'seminar_id' => $seminar->id,
+                    'user_id' => $input['seminar_instructors'][$key] ?? ''
                 ]);
             }
         }
@@ -143,10 +154,11 @@ class SeminarConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSeminarRequest $request, $id)
+    public function update(UpdateSeminarRequest $request, Seminar $seminar_consultant)
     {
-        $seminar = Seminar::with('seminar_dates')->find($id);
+        $seminar = $seminar_consultant;
         $input = $request->all();
+
         $user = Auth::user();
 
         $input['updated_by'] = $user->id;
@@ -161,7 +173,18 @@ class SeminarConsultantController extends Controller
             foreach ($request->seminar_date as $key => $date) {
                 $seminar->seminar_dates()->create([
                     'seminar_date' => $input['seminar_date'][$key] ?? '',
-                    'descriptions' => $input['date_description'][$key] ?? '',
+                ]);
+            }
+        }
+
+        foreach ($seminar->seminar_instructors as $seminar_instructor) {
+            $seminar_instructor->delete();
+        }
+
+        if($request->seminar_instructors) {
+            foreach ($request->seminar_instructors as $key => $date) {
+                $seminar->seminar_instructors()->create([
+                    'user_id' => $input['seminar_instructors'][$key] ?? '',
                 ]);
             }
         }

@@ -67,6 +67,23 @@
                                 {{ translate('Add Date') }}
                             </button>
                         </div>
+                        <!-- Seminar Category -->
+                        <div class="form-group row">
+                            <label class="col-md-3 col-from-label">
+                                {{ translate('Seminar Category') }}
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <select class="form-control aiz-selectpicker" name="seminar_category"
+                                    data-live-search="true" title="{{ translate('Select Seminar Category') }}">
+                                    @foreach (getProjectCategory() as $category)
+                                        <option value="{{ $category['id'] }}">
+                                            {{ $category['name'] }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <!-- Seminar Mode -->
                         <div class="form-group row" id="seminar_mode">
                             <label class="col-md-3 col-from-label">

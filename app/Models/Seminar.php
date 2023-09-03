@@ -32,7 +32,8 @@ class Seminar extends Model
         'zoom_link',
         'created_by',
         'updated_by',
-        'deleted_by'
+        'deleted_by',
+        'project_category_id'
     ];
 
     // protected static function boot()
