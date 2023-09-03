@@ -633,4 +633,17 @@ function getLanguages() {
 function getCourseInstructors() {
     return User::where('user_type', 'freelancer')->get()->toArray();
 }
+
+if (!function_exists('formatSeminarDate')) {
+    function formatSeminarDate($date)
+    {
+        $startDate = Carbon::parse($date)->format('D M j');
+        $endDate = Carbon::parse($date)->addDays(2)->format('D M j, Y');
+        $startTime = '10am';
+        $endTime = '3pm';
+        $timezone = 'Australian Eastern Standard Time';
+
+        return "{$startDate} – {$endDate}, from {$startTime} – {$endTime} daily ({$timezone})";
+    }
+}
 ?>
