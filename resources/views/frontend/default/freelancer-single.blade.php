@@ -302,6 +302,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="mx-4">
+                                    <h4>Book a consultation
+                                    </h4>
+                                    <div class="border">
+                                        <div class="row p-2">
+                                            <div class="col-2">
+                                                <img src="{{ my_asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}" alt="">
+                                            </div>
+                                            <div class="col-9 pl-0">
+                                                <div class="d-flex justify-content-between ">
+                                                <h5>Writing & Translation</h5>
+                                                <h5>$20 <span>/30min</span></h5>
+                                                </div>
+                                                <h6>Article & Blog Post writing, Creative Writing, White Paper Writing</h6>
+                                                <a class="fs-14" href="">Find a time</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                             <!-- work history -->
 
