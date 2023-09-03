@@ -303,20 +303,20 @@
                                     </div>
                                 </div>
                                 <div class="mx-4">
-                                    <h4>Book a consultation
+                                    <h4 class="fw-700 fs-18 text-black">Book a consultation
                                     </h4>
-                                    <div class="border">
-                                        <div class="row p-2">
+                                    <div class="border mb-3">
+                                        <div class="row p-3">
                                             <div class="col-2">
                                                 <img src="{{ my_asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}" alt="">
                                             </div>
-                                            <div class="col-9 pl-0">
+                                            <div class="col-9">
                                                 <div class="d-flex justify-content-between ">
-                                                <h5>Writing & Translation</h5>
-                                                <h5>$20 <span>/30min</span></h5>
+                                                <p class="fw-700 fs-18">Writing & Translation</p>
+                                                <p class="fw-700 fs-18">$20 <span class="fw-400 fs-18">/30min</span></p>
                                                 </div>
-                                                <h6>Article & Blog Post writing, Creative Writing, White Paper Writing</h6>
-                                                <a class="fs-14" href="">Find a time</a>
+                                                <p class="fs-16 mt-1 mb-0 ">Article & Blog Post writing, Creative Writing, White Paper Writing</p>
+                                                <a class="fs-16 " href="">Find a time</a>
                                             </div>
                                         </div>
 
