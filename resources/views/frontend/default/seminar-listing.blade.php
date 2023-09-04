@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
@@ -13,49 +14,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
     <style type="text/css">
-        /* .datepicker {
-            font-size: 0.875em;
-        }
-
-        .datepicker td,
-        .datepicker th {
-            width: 1.5em;
-            height: 1.5em;
-        } */
-
-        /* .datepicker td,
-        .datepicker th {
-            text-align: center;
-            width: 20px;
-            height: 30px !important;
-        }
-
-        .dropdown-menu {
-            border-color: #e2e5ec;
-            margin: 0;
-            border-radius: 0;
-            min-width: 327px !important;
-            font-size: inherit;
-            padding: 0;
-            -webkit-box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
-            box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
-            padding: 20px 20px 15px 20px !important;
-            border-radius: 4px;
-            max-width: 100% !important;
-        }
-
-        .datepicker table {
-            margin: 0;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            width: 100%;
-            height: 200px;
-        } */
-
         td.day.highlight {
             color: #DC322F;
             border-radius: 50% !important;
@@ -215,7 +173,7 @@
                         <div class="col-xl-8 offset-xl-2 text-center">
                             <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span
                                     class="fw-600">{{ $total }}</span>
-                                {{ translate('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
+                                {{ translate('seminar found for') }} <span class="fw-600">{{ $keyword }}</span>
                             </h1>
                         </div>
                     </div>
@@ -234,12 +192,29 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-                                    @foreach ($categories as $category)
-                                        <span id="category_{{ $category->id }}"
+                                    @foreach ($seminar_modes as $mode)
+                                        <span id="seminarMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                            {{ $category->name }} |<p class="m-0  d-inline fw-700"
-                                                onclick="removeCategory({{ $category->id }})">
+                                            {{ $mode->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeSeminarMode({{ $mode->id }})">
                                                 X</p>
+                                        </span>
+                                    @endforeach
+                                    @foreach ($languages as $language)
+                                        <span id="seminarLanguage_{{ $language->id }}"
+                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                            {{ $language->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeLanguage({{ $language->id }})">
+                                                X</p>
+                                        </span>
+                                    @endforeach
+                                    <!-- Seminar Software Badges -->
+                                    @foreach ($seminarSoftware as $software)
+                                        <span id="seminarSoftware_{{ $software->id }}"
+                                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                                            {{ $software->name }}
+                                            <p onclick="removeSeminarSoftware({{ $software->id }})"
+                                                class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
@@ -275,8 +250,9 @@
                                             </h6>
                                             <div class="">
                                                 <input type="text" id="dp1"
-                                                    class="form-control fs-14 datepicker mr-2" placeholder="Select Date"
-                                                    name="date"><br>
+                                                    class="form-control fs-14 datepicker mr-2"
+                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
+                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
                                             </div>
                                         </div>
                                         <!-- Seminar Mode -->
@@ -285,7 +261,6 @@
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                {{-- @dd($seminar_mode_ids); --}}
                                                 @foreach (getSeminarModes() as $mode)
                                                     <label class="aiz-checkbox">
                                                         <input type="checkbox" name="seminar_mode_id[]"
@@ -431,7 +406,6 @@
                                                                 </p>
                                                             </div>
                                                             <div
-
                                                                 class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details seminar-small-device-font  mb-1 p-0">
                                                                 <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName($seminar->user_id) }}</u> |
@@ -439,8 +413,6 @@
                                                                 <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                                                 </span>
-
-
                                                             </div>
                                                         </div>
 
@@ -519,6 +491,13 @@
                                     </div>
                                 </div>
                             </div>
+                            @if (!is_array($seminars))
+                                <div class="aiz-pagination aiz-pagination-center flex-grow-1 mt-4">
+                                    <ul class="pagination">
+                                        {{ $seminars->links() }}
+                                    </ul>
+                                </div>
+                            @endif
                 </form>
 
             </div>
@@ -648,16 +627,48 @@
             });
         </script>
         <script>
-            function removeCategory(categoryId) {
+            function removeSeminarMode(Id) {
 
-                var categoryElement = document.getElementById('category_' + categoryId);
-                if (categoryElement) {
-                    categoryElement.parentNode.removeChild(categoryElement);
+                var seminarModeElement = document.getElementById('seminarMode_' + Id);
+                if (seminarModeElement) {
+                    seminarModeElement.parentNode.removeChild(seminarModeElement);
 
                     // Uncheck the corresponding checkbox
-                    var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+                    var checkbox = document.querySelector('input[name="seminar_mode_id[]"][value="' + Id + '"]');
                     if (checkbox) {
                         checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeLanguage(Id) {
+                var seminarLanguageElement = document.getElementById('seminarLanguage_' + Id);
+                if (seminarLanguageElement) {
+                    seminarLanguageElement.parentNode.removeChild(seminarLanguageElement);
+
+                    // Uncheck the corresponding checkbox
+                    var checkbox = document.querySelector('input[name="language_id[]"][value="' + Id + '"]');
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeSeminarSoftware(Id) {
+                let getSeminarSoftware = document.getElementById('seminarSoftware_' + Id);
+
+                if (getSeminarSoftware) {
+                    getSeminarSoftware.parentNode.removeChild(getSeminarSoftware);
+
+                    // Unselect the corresponding option
+                    let selectElement = document.querySelector('select[name="seminar_software_id"]');
+                    if (selectElement) {
+                        var optionElement = selectElement.querySelector('option[value="' + Id + '"]');
+                        if (optionElement) {
+                            optionElement.selected = false;
+                        }
                     }
                 }
                 $('#seminar-filter-form').submit();
@@ -672,6 +683,60 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
+                var dateMonths = {!! json_encode($months) !!};
+                var dateDays = {!! json_encode($dates) !!};
+
+                const januaryDays = [];
+                const februaryDays = [];
+                const marchDays = [];
+                const aprilDays = [];
+                const mayDays = [];
+                const juneDays = [];
+                const julyDays = [];
+                const augustDays = [];
+                const septemberDays = [];
+                const octoberDays = [];
+                const novemberDays = [];
+                const decemberDays = [];
+                dateMonths.forEach((month, index) => {
+                    if (month === 1) {
+                        januaryDays.push(dateDays[index]);
+                    }
+                    if (month === 2) {
+                        februaryDays.push(dateDays[index]);
+                    }
+                    if (month === 3) {
+                        marchDays.push(dateDays[index]);
+                    }
+                    if (month === 4) {
+                        aprilDays.push(dateDays[index]);
+                    }
+                    if (month === 5) {
+                        mayDays.push(dateDays[index]);
+                    }
+                    if (month === 6) {
+                        julyDays.push(dateDays[index]);
+                    }
+                    if (month === 7) {
+                        julyDays.push(dateDays[index]);
+                    }
+                    if (month === 8) {
+                        augustDays.push(dateDays[index]);
+                    }
+                    if (month === 9) {
+                        septemberDays.push(dateDays[index]);
+                    }
+                    if (month === 10) {
+                        octoberDays.push(dateDays[index]);
+                    }
+                    if (month === 11) {
+                        novemberDays.push(dateDays[index]);
+                    }
+                    if (month === 12) {
+                        decemberDays.push(dateDays[index]);
+                    }
+                });
+
                 $('.datepicker').datepicker({
                     format: 'dd-mm-yyyy',
                     toggleActive: true,
@@ -682,15 +747,134 @@
                     // daysOfWeekHighlighted: "6,0",
                     autoclose: true,
                     beforeShowDay: function(date) {
-                        var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
                         // get current month
                         var currentMonth = new Date().getMonth();
+                        var currentYear = new Date().getFullYear();
+
+                        console.log("Current Month: " + currentMonth);
+                        console.log("Current Year: " + date.getFullYear());
                         // if date.getMonth() === currentMonth, then highlight the date
-                        if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
-                                hilightedDays)) {
-                            return {
-                                classes: 'highlight',
-                                tooltip: 'Seminar'
+                        if (date.getMonth() === 0 && currentYear === date.getFullYear()) {
+                            var hilightedDays = januaryDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 1 && currentYear === date.getFullYear()) {
+                            var hilightedDays = februaryDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 2 && currentYear === date.getFullYear()) {
+                            var hilightedDays = marchDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 3 && currentYear === date.getFullYear()) {
+                            var hilightedDays = aprilDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 4 && currentYear === date.getFullYear()) {
+                            var hilightedDays = mayDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 5 && currentYear === date.getFullYear()) {
+                            var hilightedDays = juneDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 6 && currentYear === date.getFullYear()) {
+                            var hilightedDays = julyDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+
+                        if (date.getMonth() === 7 && currentYear === date.getFullYear()) {
+                            var hilightedDays = augustDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 8 && currentYear === date.getFullYear()) {
+                            var hilightedDays = septemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+
+                        }
+                        if (date.getMonth() === 9 && currentYear === date.getFullYear()) {
+                            var hilightedDays = octoberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+
+                        }
+                        if (date.getMonth() === 10 && currentYear === date.getFullYear()) {
+                            var hilightedDays = novemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 11 && currentYear === date.getFullYear()) {
+                            var hilightedDays = decemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
                             }
                         }
                     }
@@ -707,12 +891,6 @@
             function applyFilter() {
                 $('#seminar-filter-form').submit();
             }
-
-            function rangefilter(arg) {
-                $('input[name=min_price]').val(arg[0]);
-                $('input[name=max_price]').val(arg[1]);
-                applyFilter();
-            };
         </script>
     @endsection
 </body>

@@ -602,9 +602,19 @@ function getSeminarModeName($id) {
     return  $seminar_mode['name'];
 }
 
+// function getSoftwarePackageName($id) {
+//     $software_package = SeminarSoftware::where('id', $id)->first();
+//     return  $software_package['name'];
+
+// }
 function getSoftwarePackageName($id) {
     $software_package = SeminarSoftware::where('id', $id)->first();
-    return  $software_package['name'];
+    // return  $software_package['name'];
+    if ($software_package) {
+        return $software_package->name;
+    } else {
+        return 'software_package not found';
+    }
 }
 
 function getLanguageName($id) {
@@ -617,6 +627,7 @@ function getInstructorName($id) {
 
     return $instructor ? $instructor->name : null;
 }
+
 
 function getSeminarModes() {
     return SeminarMode::all()->toArray();
@@ -632,5 +643,18 @@ function getLanguages() {
 
 function getCourseInstructors() {
     return User::where('user_type', 'freelancer')->get()->toArray();
+}
+
+if (!function_exists('formatSeminarDate')) {
+    function formatSeminarDate($date)
+    {
+        $startDate = Carbon::parse($date)->format('D M j');
+        $endDate = Carbon::parse($date)->addDays(2)->format('D M j, Y');
+        $startTime = '10am';
+        $endTime = '3pm';
+        $timezone = 'Australian Eastern Standard Time';
+
+        return "{$startDate} – {$endDate}, from {$startTime} – {$endTime} daily ({$timezone})";
+    }
 }
 ?>
