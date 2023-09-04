@@ -140,9 +140,9 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <!-- <div class="d-flex">
-                                        <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                        <div class="need-help-progress-bar"></div>
-                                    </div> -->
+                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                    <div class="need-help-progress-bar"></div>
+                                                </div> -->
                                             <div class="d-flex">
                                                 <img class="mb-2 mx-auto d-block text-black p-3"
                                                     src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
@@ -285,7 +285,7 @@
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                                 <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                <h2 class="fw-700 fre-small-font">Find academic jobs by category</h2>
+                                <h2 class="fw-700 fre-small-font">Find academic projects by category</h2>
                                 <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
@@ -337,13 +337,13 @@
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
-                            <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
-                                <span>All
-                                    Jobs</span>
-                            </a>
-                            <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
-                            </a>
-                        </h5> -->
+                                        <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+                                            <span>All
+                                                Jobs</span>
+                                        </a>
+                                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                        </a>
+                                    </h5> -->
                     </div>
 
                 </section>
@@ -442,7 +442,8 @@
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
 
-                            <h2 class="fw-700 fre-small-font">{{ translate('Find scholarship by category') }}</h2>
+                            <h2 class="fw-700 fre-small-font">{{ translate('Find academic scholarships by category') }}
+                            </h2>
 
                         </div>
                         <div>
@@ -769,7 +770,7 @@
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                            <h2 class="fw-700 fre-small-font">Featured research training</h2>
+                            <h2 class="fw-700 fre-small-font">Find academic training</h2>
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
@@ -788,64 +789,33 @@
                                 ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
                                 ->pluck('user_id');
                             
-                            $services = \App\Models\Service::inRandomOrder()
-                                ->whereIn('user_id', $user_ids)
-                                ->take(get_setting('max_service_show_homepage'))
-                                ->get();
+                            $seminars = \App\Models\Seminar::all();
                         @endphp
-                        @foreach ($services as $service)
+                        @foreach ($seminars as $seminar)
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
-                                <div class="card">
-                                    <a href="{{ route('service.show', $service->slug) }}">
-                                        @if ($service->image != null)
-                                            <img src="{{ custom_asset($service->image) }}" class="card-img-top"
-                                                alt="service_image" height="212">
-                                        @else
-                                            <img src="{{ my_asset('assets/frontend/default/img/placeholder-blog.jpg') }}"
-                                                class="card-img-top" alt="{{ translate('Service Image') }}"
-                                                height="212">
-                                        @endif
-                                    </a>
+                                <div class="card border-1">
+                                    <div class=" ">
+                                        <img class="w-100 h-220px" src=" {{ custom_asset($category->photo) }}"
+                                            alt="Image" />
+                                    </div>
+                                   
                                     <div class="card-body">
-                                        @if ($service->category != null)
-                                            <a href="{{ route('service.show', $service->slug) }} "
-                                                class="card-title text-dark  fw-700  fs-18">{{ $service->category->name }}</a>
-                                        @endif
-                                        <p class="card-text fs-16 mt-2 " style="height:48px;">
-                                            {{ \Illuminate\Support\Str::limit($service->title, 40, $end = '...') }}
+                                         <p class="fs-20">{{ $seminar->title }}
+                                    </p>
+                                        <p class="fre-scsh-right-side-details"> {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
                                         </p>
-                                        <!-- <div class="">
-                      <span>
-                        <img class="mr-2" src=" {{ url('/public/assets/home/star (2).png') }}" alt="Image"
-                          style="width:12px;" />
-                      </span>
-                      <span> 4896</span>
-                      <span> reviews</span>
-                    </div> -->
-                                        <hr>
-                                        <div class="d-flex justify-content-between align-items-center mt-1">
-                                            <div class="d-flex">
-                                                <span class="pr-2">
-                                                    @if ($service->user->photo != null)
-                                                        <img src="{{ custom_asset($service->user->photo) }}"
-                                                            alt="{{ translate('image') }}" height="35" width="35"
-                                                            class="rounded-circle">
-                                                    @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                                                            alt="{{ translate('image') }}" height="35" width="35"
-                                                            class="rounded-circle">
-                                                    @endif
-                                                </span>
-                                                <span class="d-flex flex-column justify-content-center">
-                                                    <a href="{{ route('freelancer.details', $service->user->user_name) }}"
-                                                        class="text-secondary fs-12"><span
-                                                            class=" ">{{ $service->user->name }}</span></a>
-                                                </span>
-                                            </div>
-                                            <div>
-                                                <span> from $50</span>
-                                            </div>
-                                        </div>
+                                        <p>
+                                            <span class="fw-500 fs-16 seminar-more">
+                                                <u>{{ getInstructorName($seminar->user_id) }}</u> |
+                                            </span>
+                                            <span class="fw-500 seminar-more">
+                                                <u>{{ getInstructorName(rand(10, 14)) }}</u>
+                                            </span>
+                                        </p>
+                                        <p
+                                            class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
+                                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                                        </p>
 
                                     </div>
                                 </div>
@@ -856,8 +826,8 @@
                     <h5 class="fre-button-show">
                         <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
                                 services</span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
-                            alt="Image" style="width:18px;" />
+                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image"
+                            style="width:18px;" />
                     </h5>
                 </div>
             </section>
@@ -1249,109 +1219,109 @@
 
 
         <!--
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-6">
-                  <h1>Column one</h1>
-                  <div class="px-3 py-2">
-                    <h6 class="fs-18">
-                      High School Chemistry Tutor</h6>
-                    <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                    <h6 class="fs-18 text-normal">Academic Coach</h6>
-                    <h6 class="fs-18 text-normal">Career Coach</h6>
-                    <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="px-3 py-2">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h1>Column one</h1>
+                              <div class="px-3 py-2">
+                                <h6 class="fs-18">
+                                  High School Chemistry Tutor</h6>
+                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="px-3 py-2">
 
-                    <h6 class="fs-18">
-                      High School Chemistry Tutor</h6>
-                    <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                    <h6 class="fs-18 text-normal">Academic Coach</h6>
-                    <h6 class="fs-18 text-normal">Career Coach</h6>
-                    <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="vertical-line"></div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="px-3 py-2">
+                                <h6 class="fs-18">
+                                  High School Chemistry Tutor</h6>
+                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="vertical-line"></div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="px-3 py-2">
 
-                    <h6 class="fs-18">
-                      High School Chemistry Tutor</h6>
-                    <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                    <h6 class="fs-18 text-normal">Academic Coach</h6>
-                    <h6 class="fs-18 text-normal">Career Coach</h6>
-                    <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="px-3 py-2">
+                                <h6 class="fs-18">
+                                  High School Chemistry Tutor</h6>
+                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="px-3 py-2">
 
-                    <h6 class="fs-18">
-                      High School Chemistry Tutor</h6>
-                    <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                    <h6 class="fs-18 text-normal">Academic Coach</h6>
-                    <h6 class="fs-18 text-normal">Career Coach</h6>
-                    <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+                                <h6 class="fs-18">
+                                  High School Chemistry Tutor</h6>
+                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
 
 
 
         <!-- Last section -->
         <!-- @if (get_setting('slider_section_show') == 'on')
     <section class=" " style="min-height:350px; background-color:#FBF7ED;">
-          <div class="container-main">
-            <div class="pb-5">
-              <div class="row ">
-                <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
-                  <div>
-                    <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
-                    <h2 class=" fw-700 fs-36 my-4"
-                      style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
-                      Download
-                      the
-                      App
-                    </h2>
-                    <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
-                      the
-                      watch on the plane, the subway or wherever you learn best
-                    </small>
-                    <div class="mt-3">
-                      <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
-                        <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
-                        <span>|</span>
-                        <span class="text-white"> Apple store</span>
+                      <div class="container-main">
+                        <div class="pb-5">
+                          <div class="row ">
+                            <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
+                              <div>
+                                <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
+                                <h2 class=" fw-700 fs-36 my-4"
+                                  style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+                                  Download
+                                  the
+                                  App
+                                </h2>
+                                <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
+                                  the
+                                  watch on the plane, the subway or wherever you learn best
+                                </small>
+                                <div class="mt-3">
+                                  <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
+                                    <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
+                                    <span>|</span>
+                                    <span class="text-white"> Apple store</span>
 
-                      </a>
-                      <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
-                        <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
-                          style="height:20px; " />
-                        <span>|</span>
-                        <span class="text-white">Google play store</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 " style="">
-                  <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
-                </div>
-              </div>
-            </div>
-          </div>
+                                  </a>
+                                  <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
+                                    <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
+                                      style="height:20px; " />
+                                    <span>|</span>
+                                    <span class="text-white">Google play store</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12 " style="">
+                              <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-        </section>>
+                    </section>>
     @endif -->
 
     @endsection
