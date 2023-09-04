@@ -251,7 +251,10 @@
                                                             {{ $category->name }}
                                                         </p>
                                                         <p class="fs-18 " style=" line-height:23px;">
-                                                            {{ $category->description }}</p>
+                                                            {{ $category->description }} <a
+                                                                href="{{ route('freelancer.category', $category->id) }}"
+                                                                class="nav-toggle "style="color:#6560E6;">Find
+                                                                Consultants</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -766,7 +769,7 @@
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                            <h2 class="fw-700 fre-small-font">Featured trending services</h2>
+                            <h2 class="fw-700 fre-small-font">Featured research training</h2>
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>

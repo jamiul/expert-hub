@@ -622,20 +622,10 @@ function getLanguageName($id) {
     return  $language['name'];
 }
 
-// function getInstructorName($id) {
-//     $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
-//     // dd($instructor['name']);
-//     return  $instructor['name'];
-// }
-
 function getInstructorName($id) {
-    $instructor = User::where('user_type', 'freelancer')->where('id', $id)->first();
+    $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
 
-    if ($instructor) {
-        return $instructor->name;
-    } else {
-        return 'Instructor not found';
-    }
+    return $instructor ? $instructor->name : null;
 }
 
 
@@ -653,5 +643,18 @@ function getLanguages() {
 
 function getCourseInstructors() {
     return User::where('user_type', 'freelancer')->get()->toArray();
+}
+
+if (!function_exists('formatSeminarDate')) {
+    function formatSeminarDate($date)
+    {
+        $startDate = Carbon::parse($date)->format('D M j');
+        $endDate = Carbon::parse($date)->addDays(2)->format('D M j, Y');
+        $startTime = '10am';
+        $endTime = '3pm';
+        $timezone = 'Australian Eastern Standard Time';
+
+        return "{$startDate} – {$endDate}, from {$startTime} – {$endTime} daily ({$timezone})";
+    }
 }
 ?>

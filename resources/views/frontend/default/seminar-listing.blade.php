@@ -14,49 +14,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
     <style type="text/css">
-        /* .datepicker {
-            font-size: 0.875em;
-        }
-
-        .datepicker td,
-        .datepicker th {
-            width: 1.5em;
-            height: 1.5em;
-        } */
-
-        /* .datepicker td,
-        .datepicker th {
-            text-align: center;
-            width: 20px;
-            height: 30px !important;
-        }
-
-        .dropdown-menu {
-            border-color: #e2e5ec;
-            margin: 0;
-            border-radius: 0;
-            min-width: 327px !important;
-            font-size: inherit;
-            padding: 0;
-            -webkit-box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
-            box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
-            padding: 20px 20px 15px 20px !important;
-            border-radius: 4px;
-            max-width: 100% !important;
-        }
-
-        .datepicker table {
-            margin: 0;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            width: 100%;
-            height: 200px;
-        } */
-
         td.day.highlight {
             color: #DC322F;
             border-radius: 50% !important;
@@ -70,6 +27,7 @@
         .hidden {
             display: none !important;
         }
+
         input {
             padding: 10px 20px 10px 20px;
             border: 1px solid lightgrey !important;
@@ -195,10 +153,13 @@
             <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
                 <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
                     <div class="col-lg-7 col-12  w-100 my-auto">
-                        <h3 class="text-white fw-700  frequently-qsn-title  ">Seminar List </h3>
-                        <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                        <a href="register?type=2"
-                            class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a seminar</a>
+                        <h3 class="text-white fw-700  frequently-qsn-title  ">Training and Expert Support Hub</h3>
+                        <p class="text-white fs-16 text-justify">Learn a wide variety of the latest statistical methods by
+                            participating in expert-led seminars. Our instructors are a recognised experts in their
+                            respective fields. With their talent and experience, they make statistics engaging and
+                            comprehensible for researchers from diverse backgrounds.</p>
+                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Register
+                            now</a>
                     </div>
                     <div class="col-lg-1 col-12 my-auto"></div>
                     <div class="col-lg-4 col-12">
@@ -216,7 +177,7 @@
                         <div class="col-xl-8 offset-xl-2 text-center">
                             <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span
                                     class="fw-600">{{ $total }}</span>
-                                {{ translate('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
+                                {{ translate('seminar found for') }} <span class="fw-600">{{ $keyword }}</span>
                             </h1>
                         </div>
                     </div>
@@ -235,13 +196,29 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-
-                                    @foreach ($categories as $category)
-                                        <span id="category_{{ $category->id }}"
+                                    @foreach ($seminar_modes as $mode)
+                                        <span id="seminarMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                            {{ $category->name }} |<p class="m-0  d-inline fw-700"
-                                                onclick="removeCategory({{ $category->id }})">
+                                            {{ $mode->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeSeminarMode({{ $mode->id }})">
                                                 X</p>
+                                        </span>
+                                    @endforeach
+                                    @foreach ($languages as $language)
+                                        <span id="seminarLanguage_{{ $language->id }}"
+                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                            {{ $language->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeLanguage({{ $language->id }})">
+                                                X</p>
+                                        </span>
+                                    @endforeach
+                                    <!-- Seminar Software Badges -->
+                                    @foreach ($seminarSoftware as $software)
+                                        <span id="seminarSoftware_{{ $software->id }}"
+                                            class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
+                                            {{ $software->name }}
+                                            <p onclick="removeSeminarSoftware({{ $software->id }})"
+                                                class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
@@ -257,90 +234,85 @@
                                                 <input type="text" class="form-control fs-14 rounded  "
                                                     placeholder="{{ translate('Search for seminar') }}" name="keyword"
                                                     value="{{ $keyword }}">
-                                                    <div class="input-group-prepend rounded">
-                                                        <button type="submit" style="border: none;">
-                                                            <span class="input-group-text text-white border-left-0 rounded-right" :
-                                                            style="background:#275846;">
+                                                <div class="input-group-prepend rounded">
+                                                    <button type="submit" style="border: none;">
+                                                        <span
+                                                            class="input-group-text text-white border-left-0 rounded-right"
+                                                            : style="background:#275846;">
                                                             <i class="las la-search"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
+                                                        </span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <div>
                                         <!-- Seminar date -->
-
                                         <div class="mt-2">
                                             <h6 class="text-left fs-16 py-2 fw-700">
                                                 <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
                                             <div class="">
-                                               <input type="text" id="dp1" class="form-control fs-14 datepicker mr-2"
-                                                    placeholder="Select Date" name="date"><br>
+                                                <input type="text" id="dp1"
+                                                    class="form-control fs-14 datepicker mr-2"
+                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
+                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
                                             </div>
                                         </div>
-
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                {{-- @dd($seminar_mode_ids); --}}
-                                                @foreach(getSeminarModes() as $mode)
-                                                <label class="aiz-checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="seminar_mode_id[]"
-                                                        value="{{$mode['id']}}"
-                                                        onchange="applyFilter()"
-                                                        @if(in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{$mode['name']}}
-                                                    <span class="aiz-square-check"></span>
-                                                    <span class="float-right text-secondary fs-12"></span>
-                                                </label>
+                                                @foreach (getSeminarModes() as $mode)
+                                                    <label class="aiz-checkbox">
+                                                        <input type="checkbox" name="seminar_mode_id[]"
+                                                            value="{{ $mode['id'] }}" onchange="applyFilter()"
+                                                            @if (in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{ $mode['name'] }}
+                                                        <span class="aiz-square-check"></span>
+                                                        <span class="float-right text-secondary fs-12"></span>
+                                                    </label>
                                                 @endforeach
                                             </div>
-
                                         </div>
                                         <!-- Seminar software -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-                                            <select class="select2  form-control aiz-selectpicker rounded-1" name="seminar_software_id[]"
-                                             onchange="applyFilter()"
-                                                data-toggle="select2" data-live-search="true">
-                                                <option value="" class="fs-16" >{{ translate('Search seminar software') }}</option>
-                                            @foreach(getSeminarSoftwares() as $software)
-                                                <option value="{{$software['id']}}"           @if(in_array($software['id'], $seminar_software_ids)) selected @endif >{{$software['name']}}</option>
-                                            @endforeach
-                                             </select>
+                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
+                                                onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                                <option value="" class="fs-16">
+                                                    {{ translate('Search seminar software') }}
+                                                </option>
+                                                @foreach (getSeminarSoftwares() as $software)
+                                                    <option value="{{ $software['id'] }}"
+                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
+                                                        {{ $software['name'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-
                                         <!-- Languages -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 fs-16 fw-700 mt-3">
                                                 <span class=" pr-3">{{ translate('Languages') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                @foreach(getLanguages() as $lang)
-                                                <label class="aiz-checkbox">
-                                                    <input type="checkbox" name="language_id[]" value="{{$lang['id']}}" onchange="applyFilter()"  @if(in_array($lang['id'], $language_ids)) checked @endif  >  {{$lang['name']}}
-                                                    <span class="aiz-square-check"></span>
-                                                    <span class="float-right text-secondary fs-12"></span>
-                                                </label>
+                                                @foreach (getLanguages() as $lang)
+                                                    <label class="aiz-checkbox">
+                                                        <input type="checkbox" name="language_id[]"
+                                                            value="{{ $lang['id'] }}" onchange="applyFilter()"
+                                                            @if (in_array($lang['id'], $language_ids)) checked @endif>
+                                                        {{ $lang['name'] }}
+                                                        <span class="aiz-square-check"></span>
+                                                        <span class="float-right text-secondary fs-12"></span>
+                                                    </label>
                                                 @endforeach
                                             </div>
-
                                         </div>
-
-
                                     </div>
-
                                     <!-- Seminar Topics -->
-
 
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
@@ -348,17 +320,17 @@
                             </div>
                         </div>
                         <!-- seminar List -->
-                        <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9  c-pointer ">
-                            <div class="row " style="background: #F2F7F2;">
+                        <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9   ">
+                            <div class="row" style="background: #F2F7F2;">
                                 <div class="col-lg-12">
-                                    <div class="mb-4 mt-3">
+                                    <div class="mb-4 mt-2">
                                         <div class="row ">
                                             @foreach ($seminars as $seminar)
-                                                <div class="d-lg-flex border-bottom my-3 all-scholarship-list ">
+                                                <div class="d-lg-flex border-bottom my-2 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
                                                         <a href="{{ route('seminar.details', $seminar->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
-                                                            <u class="seminar-title">{{ $seminar->title }}
+                                                            <u class="seminar-title seminar-heading mx-1">{{ $seminar->title }}
                                                             </u>
                                                         </a>
                                                         <div class="d-flex justify-content-between">
@@ -367,33 +339,36 @@
                                                             </a>
                                                         </div>
                                                         <div class="row mb-2 mx-1">
-                                                            <div class="col-lg-3 col-4 p-0">
+                                                            <div class="col-lg-3 col-12 p-0">
                                                                 <p class="fre-scsh-left-side-title mb-0">
                                                                     Seminar Dates:
                                                                 </p>
                                                             </div>
-                                                            <div class="col-lg-9 col-8 pl-0">
+                                                            <div class="col-lg-9 col-12 pl-0">
 
-                                                                <p class="fre-scsh-right-side-details pb-0  mb-0">Wed Sep 6
+                                                                <p
+                                                                    class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
+                                                                    {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
+                                                                    {{-- Wed Sep 6
                                                                     –
                                                                     Fri
                                                                     Sep 8,
                                                                     2023, from 10am – 3pm daily (Australian Eastern Standard
-                                                                    Time)
+                                                                    Time) --}}
                                                                 </p>
 
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1 ">
-                                                            <div class="col-4 col-lg-3 p-0 ">
+                                                            <div class="col-12 col-lg-3 p-0 ">
                                                                 <p class="fre-scsh-left-side-title mb-0 p-0">
                                                                     Seminar Summary:
                                                                 </p>
                                                             </div>
-                                                            <div class="col-8 col-lg-9 pl-0">
+                                                            <div class="col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify  pb-0 mb-0 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify  pb-0 mb-0 p-0">
                                                                     This
                                                                     seminar will give you a strong working understanding of
                                                                     methods
@@ -434,85 +409,70 @@
 
                                                             </div>
                                                         </div>
-                                                        <div class="row mt-lg-3 mx-1">
-                                                            <div class="col-4 col-lg-3 p-0">
-                                                                <p class="fre-scsh-left-side-title mb-1 ">
+                                                        <div class="row mt-lg-3 mt-2 mx-1">
+                                                            <div class="col-12 col-lg-3 p-0">
+                                                                <p class="fre-scsh-left-side-title ">
                                                                     Instructors:
                                                                 </p>
                                                             </div>
                                                             <div
-                                                                class="col-lg-9 col-8  pl-0 fre-scsh-right-side-details  mb-1 p-0">
-
-                                                                {{-- <p class="fre-scsh-right-side-details  mb-1 p-0"><span
-                                                                    class="fw-500 seminar-more"><u>Mariola
-                                                                        Moeyaert</u></span> |
-                                                                Associate Professor of Statistics and Director | University
-                                                                at
-                                                                Albany</p>
-                                                            <p class="fre-scsh-right-side-details  mb-1"><span
-                                                                    class="fw-500 seminar-more"> <u>Mahammad Riyadh</u>
-                                                                </span> |
-                                                                Associate Professor of Statistics and Director | University
-                                                                at
-                                                                Albany</p> --}}
-                                                                <p class="fw-500 seminar-more">
-                                                                    {{-- @dd($seminar->user_id) --}}
-                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u>
-
-                                                                </p>
-                                                                <p class="fw-500 seminar-more">
-                                                                    <u>{{ getInstructorName(rand(10,14)) }}</u>
-                                                                </p>
-
+                                                                class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details seminar-small-device-font  mb-1 p-0">
+                                                                <span class="fw-500 seminar-more">
+                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u> |
+                                                                </span>
+                                                                <span class="fw-500 seminar-more">
+                                                                    <u>{{ getInstructorName(rand(10, 14)) }}</u>
+                                                                </span>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mx-1">
-                                                            <div class=" col-4 col-lg-3 p-0  pr-0">
+                                                            <div class=" col-12 col-lg-3 p-0  pr-0">
                                                                 <p class=" fre-scsh-left-side-title ">
                                                                     Seminar Mode:
                                                                 </p>
                                                             </div>
-                                                            <div class="col-8 col-lg-9  pl-0">
+                                                            <div class="col-12 col-lg-9  pl-0">
+
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getSeminarModeName($seminar->seminar_mode_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1">
-                                                            <div class="col-4 col-lg-3  p-0 pr-0">
+                                                            <div class="col-12 col-lg-3  p-0 pr-0">
                                                                 <p class=" fre-scsh-left-side-title">
                                                                     Software Package:
                                                                 </p>
                                                             </div>
 
-                                                            <div class=" col-8 col-lg-9  pl-0">
+                                                            <div class=" col-12 col-lg-9  pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getSoftwarePackageName($seminar->seminar_software_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1">
-                                                            <div class="col-4 col-lg-3 p-0 pr-0">
+                                                            <div class="col-12 col-lg-3 p-0 pr-0">
                                                                 <p class=" fre-scsh-left-side-title ">
                                                                     Language:
                                                                 </p>
                                                             </div>
-                                                            <div class=" col-8 col-lg-9 pl-0">
+                                                            <div class=" col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getLanguageName($seminar->language_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-12">
-                                                        <div>
+                                                    <div class="col-lg-2  col-12">
+                                                        <div class="pt-3 pt-lg-0 pt-xl-0">
                                                             <a href="">
                                                                 <p class="btn btn-primary btn-sm fs-14  w-100  fw-700">
 
@@ -523,8 +483,7 @@
 
                                                                 </p>
                                                             </a>
-
-                                                            <a href="">
+                                                            <a href="{{ $seminar->zoom_link }}" target="_blank">
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
                                                                     <img class=" px-1  "
@@ -538,11 +497,17 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @if (!is_array($seminars))
+                                <div class="aiz-pagination aiz-pagination-center flex-grow-1 mt-4">
+                                    <ul class="pagination">
+                                        {{ $seminars->links() }}
+                                    </ul>
+                                </div>
+                            @endif
                 </form>
 
             </div>
@@ -672,88 +637,53 @@
             });
         </script>
         <script>
-            // Get references to the month and year elements
-            const monthSelect = document.getElementById('month');
-            const yearInput = document.getElementById('year');
+            function removeSeminarMode(Id) {
 
-            // Event listener to handle changes in month or year
-            monthSelect.addEventListener('change', updateCalendar);
-            yearInput.addEventListener('input', updateCalendar);
-
-            // Initial calendar rendering
-            updateCalendar();
-
-            // Function to update the calendar based on selected month and year
-            function updateCalendar() {
-                const month = parseInt(monthSelect.value);
-                const year = parseInt(yearInput.value);
-
-                // Clear the old calendar content
-                document.getElementById('calendar').innerHTML = '';
-
-                // Your logic to generate the calendar for the selected month and year goes here
-                // You can use JavaScript to create the calendar grid and populate it with dates
-
-                // Example: Display the selected month and year in the console
-                console.log(`Selected Month: ${month}, Selected Year: ${year}`);
-            }
-        </script>
-        <script>
-            function generateCalendar() {
-                var month = document.getElementById("monthSelect").value;
-                var year = document.getElementById("yearInput").value;
-                var daysInMonth = new Date(year, month, 0).getDate();
-                var firstDay = new Date(year, month - 1, 1).getDay();
-                var calendar = document.getElementById("calendar");
-
-                var table = '<table class="table"><thead><tr><th colspan="7" class="text-center">' + year + ' - ' + month +
-                    '</th></tr><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead><tbody><tr>';
-
-                var dayCount = 1;
-                // Add blank cells for days before the first day of the month
-                for (var i = 0; i < firstDay; i++) {
-                    table += '<td></td>';
-                }
-                // Add cells for each day in the month
-                for (var j = firstDay; j < 7; j++) {
-                    if (dayCount <= daysInMonth) {
-                        table += '<td>' + dayCount + '</td>';
-                        dayCount++;
-                    } else {
-                        table += '<td></td>';
-                    }
-                }
-
-                // Add remaining cells
-                while (dayCount <= daysInMonth) {
-                    if (new Date(year, month - 1, dayCount).getDay() === 0) {
-                        table += '</tr><tr>';
-                    }
-                    table += '<td>' + dayCount + '</td>';
-                    dayCount++;
-                }
-
-                table += '</tr></tbody></table>';
-                calendar.innerHTML = table;
-            }
-        </script>
-        <script>
-            function removeCategory(categoryId) {
-
-                var categoryElement = document.getElementById('category_' + categoryId);
-                if (categoryElement) {
-                    categoryElement.parentNode.removeChild(categoryElement);
+                var seminarModeElement = document.getElementById('seminarMode_' + Id);
+                if (seminarModeElement) {
+                    seminarModeElement.parentNode.removeChild(seminarModeElement);
 
                     // Uncheck the corresponding checkbox
-                    var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
+                    var checkbox = document.querySelector('input[name="seminar_mode_id[]"][value="' + Id + '"]');
                     if (checkbox) {
                         checkbox.checked = false;
                     }
                 }
                 $('#seminar-filter-form').submit();
             }
-        </script>
 
+            function removeLanguage(Id) {
+                var seminarLanguageElement = document.getElementById('seminarLanguage_' + Id);
+                if (seminarLanguageElement) {
+                    seminarLanguageElement.parentNode.removeChild(seminarLanguageElement);
+
+                    // Uncheck the corresponding checkbox
+                    var checkbox = document.querySelector('input[name="language_id[]"][value="' + Id + '"]');
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeSeminarSoftware(Id) {
+                let getSeminarSoftware = document.getElementById('seminarSoftware_' + Id);
+
+                if (getSeminarSoftware) {
+                    getSeminarSoftware.parentNode.removeChild(getSeminarSoftware);
+
+                    // Unselect the corresponding option
+                    let selectElement = document.querySelector('select[name="seminar_software_id"]');
+                    if (selectElement) {
+                        var optionElement = selectElement.querySelector('option[value="' + Id + '"]');
+                        if (optionElement) {
+                            optionElement.selected = false;
+                        }
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+        </script>
     @endsection
 
     @section('script')
@@ -763,12 +693,59 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
+                var dateMonths = {!! json_encode($months) !!};
+                var dateDays = {!! json_encode($dates) !!};
 
-                // $('.datepicker').datepicker({
-                //     format: 'dd-mm-yyyy',
-                //     todayHighlight: true,
-                //     toggleActive: true
-                // });
+                const januaryDays = [];
+                const februaryDays = [];
+                const marchDays = [];
+                const aprilDays = [];
+                const mayDays = [];
+                const juneDays = [];
+                const julyDays = [];
+                const augustDays = [];
+                const septemberDays = [];
+                const octoberDays = [];
+                const novemberDays = [];
+                const decemberDays = [];
+                dateMonths.forEach((month, index) => {
+                    if (month === 1) {
+                        januaryDays.push(dateDays[index]);
+                    }
+                    if (month === 2) {
+                        februaryDays.push(dateDays[index]);
+                    }
+                    if (month === 3) {
+                        marchDays.push(dateDays[index]);
+                    }
+                    if (month === 4) {
+                        aprilDays.push(dateDays[index]);
+                    }
+                    if (month === 5) {
+                        mayDays.push(dateDays[index]);
+                    }
+                    if (month === 6) {
+                        julyDays.push(dateDays[index]);
+                    }
+                    if (month === 7) {
+                        julyDays.push(dateDays[index]);
+                    }
+                    if (month === 8) {
+                        augustDays.push(dateDays[index]);
+                    }
+                    if (month === 9) {
+                        septemberDays.push(dateDays[index]);
+                    }
+                    if (month === 10) {
+                        octoberDays.push(dateDays[index]);
+                    }
+                    if (month === 11) {
+                        novemberDays.push(dateDays[index]);
+                    }
+                    if (month === 12) {
+                        decemberDays.push(dateDays[index]);
+                    }
+                });
 
                 $('.datepicker').datepicker({
                     format: 'dd-mm-yyyy',
@@ -780,15 +757,134 @@
                     // daysOfWeekHighlighted: "6,0",
                     autoclose: true,
                     beforeShowDay: function(date) {
-                        var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
                         // get current month
                         var currentMonth = new Date().getMonth();
+                        var currentYear = new Date().getFullYear();
+
+                        console.log("Current Month: " + currentMonth);
+                        console.log("Current Year: " + date.getFullYear());
                         // if date.getMonth() === currentMonth, then highlight the date
-                        if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (
-                                hilightedDays)) {
-                            return {
-                                classes: 'highlight',
-                                tooltip: 'Seminar'
+                        if (date.getMonth() === 0 && currentYear === date.getFullYear()) {
+                            var hilightedDays = januaryDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 1 && currentYear === date.getFullYear()) {
+                            var hilightedDays = februaryDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 2 && currentYear === date.getFullYear()) {
+                            var hilightedDays = marchDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 3 && currentYear === date.getFullYear()) {
+                            var hilightedDays = aprilDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 4 && currentYear === date.getFullYear()) {
+                            var hilightedDays = mayDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 5 && currentYear === date.getFullYear()) {
+                            var hilightedDays = juneDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 6 && currentYear === date.getFullYear()) {
+                            var hilightedDays = julyDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+
+                        if (date.getMonth() === 7 && currentYear === date.getFullYear()) {
+                            var hilightedDays = augustDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 8 && currentYear === date.getFullYear()) {
+                            var hilightedDays = septemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+
+                        }
+                        if (date.getMonth() === 9 && currentYear === date.getFullYear()) {
+                            var hilightedDays = octoberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+
+                        }
+                        if (date.getMonth() === 10 && currentYear === date.getFullYear()) {
+                            var hilightedDays = novemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
+                            }
+                        }
+                        if (date.getMonth() === 11 && currentYear === date.getFullYear()) {
+                            var hilightedDays = decemberDays;
+                            if (hilightedDays != undefined && ~hilightedDays.indexOf(date.getDate()) && (
+                                    hilightedDays)) {
+                                return {
+                                    classes: 'highlight',
+                                    tooltip: 'Seminar'
+                                }
                             }
                         }
                     }
@@ -797,60 +893,15 @@
                 }).on('hide', function(e, date) {
                     $('.tooltip-inner').addClass('hidden');
                     $('.arrow').addClass('hidden');
+                }).on('changeDate', function(e, date) {
+                    applyFilter();
                 });
             });
+
             function applyFilter() {
                 $('#seminar-filter-form').submit();
             }
-
-            function rangefilter(arg) {
-                $('input[name=min_price]').val(arg[0]);
-                $('input[name=max_price]').val(arg[1]);
-                applyFilter();
-            };
         </script>
-
-        <script type="text/javascript">
-            $('#datepicker').datepicker({
-                todayHighlight: true,
-                minDate: 0,
-                clearBtn: true,
-                // weekStart: 1,
-                // daysOfWeekHighlighted: "6,0",
-                autoclose: true,
-                todayHighlight: true,
-                beforeShowDay: function(date) {
-                var hilightedDays = [5, 6, 12, 19, 26, 30, 31];
-                // get current month
-                var currentMonth = new Date().getMonth();
-                // if date.getMonth() === currentMonth, then highlight the date
-                if (date.getMonth() === currentMonth && ~hilightedDays.indexOf(date.getDate()) && (hilightedDays)) {
-                    return {
-                        classes: 'highlight',
-                        tooltip: 'Seminar'
-                    }
-                }
-            }}).on('show', function(e, date) {
-                $('td.highlight').tooltip();
-            }).on('hide', function(e, date) {
-                $('.tooltip-inner').addClass('hidden');
-                $('.arrow').addClass('hidden');
-            });
-
-                // $('#datepicker').datepicker("setDate", new Date());
-                // $('#datepicker').datepicker('setDates', [new Date(2023, 7, 5), new Date(2023, 7, 8), new Date(2023, 7, 7)])
-
-                function applyFilter() {
-                    $('#seminar-filter-form').submit();
-                }
-
-                function rangefilter(arg) {
-                    $('input[name=min_price]').val(arg[0]);
-                    $('input[name=max_price]').val(arg[1]);
-                    applyFilter();
-                };
-        </script>
-
     @endsection
 </body>
 

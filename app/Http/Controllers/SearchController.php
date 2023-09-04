@@ -6,16 +6,20 @@ use Carbon\Carbon;
 use \App\Models\User;
 use \App\Models\Skill;
 use App\Models\Address;
+use App\Models\Seminar;
 use \App\Models\Project;
 use \App\Models\Service;
+use App\Models\Language;
 use App\Models\ProjectUser;
+use App\Models\SeminarDate;
+use App\Models\SeminarMode;
 use App\Models\UserPackage;
 use Illuminate\Support\Arr;
 use \App\Models\UserProfile;
 use Illuminate\Http\Request;
-use \App\Models\ProjectCategory;
-use App\Models\Seminar;
 use App\Models\ServicePackage;
+use \App\Models\ProjectCategory;
+use App\Models\SeminarSoftware;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
 
@@ -31,7 +35,7 @@ class SearchController extends Controller
             $childSkill_id = array('');
             $category_id = array('');
             // $rate1 = $request->rate1;
-            $rate1 =array('');
+            $rate1 = array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
@@ -39,7 +43,7 @@ class SearchController extends Controller
             $freelancers = UserProfile::query();
             // $hourlyRate = $request->input('rate1');
             $categories = [];
-            $category_ids=[];
+            $category_ids = [];
             $skills = [];
             $skill_ids = [];
             $rate = [];
@@ -66,7 +70,6 @@ class SearchController extends Controller
                 $category_ids = $request->category_id;
                 $categories = ProjectCategory::whereIn('id', $category_ids)->get();
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
-
             }
             if ($country_id != null) {
                 $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
@@ -92,37 +95,37 @@ class SearchController extends Controller
                     }
                 });
             }
-            if($request->hourly_rate != null) {
+            if ($request->hourly_rate != null) {
                 if (in_array('all', $hourly_rate)) {
                     $userProfiles = UserProfile::pluck('user_id')->all();
                 }
-                if(in_array('10', $hourly_rate)){
+                if (in_array('10', $hourly_rate)) {
                     $minHourlyRate = 1;
                     $maxHourlyRate = 9;
                     $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
                 }
 
-                if(in_array('20', $hourly_rate)){
+                if (in_array('20', $hourly_rate)) {
                     $minHourlyRate = 10;
                     $maxHourlyRate = 20;
                     $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
                 }
 
-                if(in_array('30', $hourly_rate)){
+                if (in_array('30', $hourly_rate)) {
                     $minHourlyRate = 20;
                     $maxHourlyRate = 30;
                     $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
                 }
 
-                if(in_array('40', $hourly_rate)){
+                if (in_array('40', $hourly_rate)) {
                     $minHourlyRate = 30;
                     $maxHourlyRate = 40;
                     $userProfiles = UserProfile::whereBetween('hourly_rate', [$minHourlyRate, $maxHourlyRate])->pluck('user_id')->toArray();
                 }
 
-                if(in_array('50', $hourly_rate)){
+                if (in_array('50', $hourly_rate)) {
                     $maxHourlyRate = 40;
-                    $userProfiles = UserProfile::where('hourly_rate', '>' ,$maxHourlyRate)->pluck('user_id')->toArray();
+                    $userProfiles = UserProfile::where('hourly_rate', '>', $maxHourlyRate)->pluck('user_id')->toArray();
                 }
 
                 $freelancers = $freelancers->whereIn('user_id', $userProfiles);
@@ -139,14 +142,13 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id',"category_ids", 'hourly_rate'));
-        } 
-        else if ($request->type == 'seminar') {
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate'));
+        } else if ($request->type == 'seminar') {
             $type = 'seminar';
-            // dd($request->all());
             $keyword = $request->keyword;
+            $seminar_ids = [];
             $seminarMode_id = [];
-            // $seminar_software_id = [];
+            $seminar_modes = [];
             $language_id = [];
             $category_id = [];
             $country_id = $request->country_id;
@@ -156,53 +158,97 @@ class SearchController extends Controller
             $selected_seminar_mode_id = [];
             $seminar_mode_ids = [];
             $language_ids = [];
-            $seminar_software_ids = $request->seminar_software_id ?? [];
+            $languages = [];
+            $seminar_software_ids = [];
+            $seminarSoftware = [];
             $selected_seminar_lang = [];
             $selected_seminar_software = [];
-            $categories = [];
+            $seminarDate = [];
+
             $seminars = Seminar::query();
+            $seminars->join('seminar_dates', 'seminars.id', '=', 'seminar_dates.seminar_id');
 
-
-            if ($keyword != null && $keyword != '') {
-                $seminar_ids = Seminar::where('title', 'like', '%' . $keyword . '%')->pluck('id');
-                $seminars = $seminars->whereIn('id', $seminar_ids);
+            if ($request->seminar_date && $request->seminar_date != null) {
+                $seminarDate = $request->seminar_date;
+                $formattedDate = Carbon::createFromFormat('d-m-Y', $request->seminar_date)->format('Y-m-d');
+                $seminars->whereDate('seminar_dates.seminar_date', '=', $formattedDate);
             }
 
-            if($request->seminar_mode_id != null) {
+            if ($request->keyword != null) {
+                $seminars->where('title', 'like', '%' . $request->keyword . '%');
+            }
+
+            if ($request->seminar_mode_id != null) {
                 $seminar_mode_ids = $request->seminar_mode_id;
-
-                $selected_seminar_mode = Seminar::whereIn('seminar_mode_id', $seminar_mode_ids)->pluck('seminar_mode_id');
+                $seminar_modes = SeminarMode::whereIn('id', $seminar_mode_ids)->get();
                 $seminars = $seminars->whereIn('seminar_mode_id', $seminar_mode_ids);
-
             }
-            // if($request->start_date) {
-            //     $seminars = Seminar::with(['seminar_dates' => function ($query) {
-            //         $query->orderBy('seminar_date', 'DESC');
-            //     }])
-            //     ->whereHas('seminar_dates', function ($query) use ($request) {
-            //         $query->where('seminar_date', '>=', $request->start_date);
-            //     })
-            //     ->get();
-            //     dd($seminars->toArray());
-            // }
 
-            // if($request->seminar_software_id != null) {
-            //     $seminar_software_ids= $request->seminar_software_id;
-            //     $selected_seminar_software = Seminar::whereIn('seminar_software_id', $seminar_software_ids)->pluck('seminar_software_id');
-            //     $seminars = $seminars->whereIn('seminar_software_id', $seminar_software_ids);
-            // }
+            if ($request->seminar_software_id != null) {
+                $seminar_software_ids[] = $request->seminar_software_id;
 
-            if($request->language_id != null) {
-                $language_ids= $request->language_id;
-                $selected_seminar_lang = Seminar::whereIn('language_id', $language_ids)->pluck('language_id');
+                $seminarSoftware = SeminarSoftware::whereIn('id', $seminar_software_ids)->get();
+                $seminars = $seminars->whereIn('seminar_software_id', $seminar_software_ids);
+            }
+
+            if ($request->language_id != null) {
+                $language_ids = $request->language_id;
+                $languages = Language::whereIn('id', $language_ids)->get();
                 $seminars = $seminars->whereIn('language_id', $language_ids);
             }
 
-                $total = $seminars->count();
-                $seminars = $seminars->paginate(8)->appends($request->query());
-               
+            $seminar_dates = SeminarDate::pluck('seminar_date')->toArray();
+            $date_day = [];
+            $date_month = [];
+            foreach ($seminar_dates as $dateStr) {
+                $timestamp = strtotime($dateStr);
+                $month = date('m', $timestamp); // Month (01-12)
+                $day = date('d', $timestamp);   // Day (01-31)
+                $year = date('Y', $timestamp);  // Year (e.g., 2023)
 
-            return view('frontend.default.seminar-listing', compact('seminars', 'total', 'keyword', 'type', 'categories', 'category_id','language_id','seminar_mode_ids','selected_seminar_lang','selected_seminar_software','language_ids','seminar_software_ids'));
+                $date_month[] = $month;
+                $date_day[] = $day;
+            }
+
+            $dates = [];
+            $months = [];
+
+            foreach ($date_month as $month) {
+                $monthInteger = intval($month);
+                if ($monthInteger >= 1 && $monthInteger <= 12) {
+                    $months[] = $monthInteger;
+                }
+            }
+
+            foreach ($date_day as $day) {
+                $dayInteger = intval($day);
+                if ($dayInteger >= 1 && $dayInteger <= 31) {
+                    $dates[] = $dayInteger;
+                }
+            }
+
+            $total = $seminars->count();
+            $seminars = $seminars->paginate(8)->appends($request->query());
+
+            return view('frontend.default.seminar-listing', compact(
+                'seminars',
+                'total',
+                'keyword',
+                'type',
+                'language_id',
+                'seminar_mode_ids',
+                'seminar_modes',
+                'selected_seminar_lang',
+                'selected_seminar_software',
+                'seminarSoftware',
+                'language_ids',
+                'languages',
+                'seminar_software_ids',
+                'seminarDate',
+                'seminar_dates',
+                'months',
+                'dates'
+            ));
         } else if ($request->type == 'service') {
 
             $type = 'service';
@@ -318,7 +364,7 @@ class SearchController extends Controller
             // Hourly filtered data
             if ($hourly_min !== null && $hourly_max !== null) {
                 $projects = $projects->where('type', 'Hourly')
-                                ->whereBetween('price', [$hourly_min, $hourly_max]);
+                    ->whereBetween('price', [$hourly_min, $hourly_max]);
             }
 
             if ($request->skill_id != null) {
@@ -386,7 +432,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max','hourly_min','hourly_max','selectedDurations'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations'));
         }
     }
 
