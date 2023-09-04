@@ -423,8 +423,6 @@
                                                                 <span class="fw-500 seminar-more">
                                                                     <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                                                 </span>
-
-
                                                             </div>
                                                         </div>
 
