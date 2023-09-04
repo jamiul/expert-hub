@@ -176,6 +176,22 @@
                                         <textarea class="aiz-text-editor" name="instructor_descriptions"></textarea>
                                     </div>
                                 </div>
+                                 {{-- attachments --}}
+                            <div class="form-group row">
+                                <label class="form-label col-md-3">{{ translate('Seminar Image') }}
+                                <span class="text-danger">*</span></label>
+                                <div class="col-md-9">
+                                    <div class="input-group " data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
+                                        </div>
+                                        <div class="form-control file-amount">{{ translate('Choose File') }}</div>
+                                        <input type="hidden" name="attachment" class="selected-files" required>
+                                    </div>
+                                    <div class="file-preview"></div>
+                                </div>
+
+                            </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">{{translate('Slug')}}

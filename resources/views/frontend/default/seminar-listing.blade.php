@@ -328,6 +328,7 @@
                                             @foreach ($seminars as $seminar)
                                                 <div class="d-lg-flex border-bottom my-2 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
+                                                        
                                                         <a href="{{ route('seminar.details', $seminar->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
                                                             <u class="seminar-title seminar-heading mx-1">{{ $seminar->title }}

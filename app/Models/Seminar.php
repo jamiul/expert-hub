@@ -22,6 +22,7 @@ class Seminar extends Model
         'organiser_certificate',
         'user_id',
         'instructor_descriptions',
+        'attachment',
         'slug',
         'course_objectives',
         'learning_outcomes',
