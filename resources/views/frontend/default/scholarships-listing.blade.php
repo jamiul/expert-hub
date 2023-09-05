@@ -5,15 +5,12 @@
         <div class="mb-4 pb-lg-4" style="background:#275846">
             <div class="row rounded-0 px-2 mt-1 mx-4">
                 <div class="col-lg-6 col-sm-12 my-auto">
-                    <h3 class="text-white fw-700 fs-30 site-font ">Available Scholerships</h3>
-                    <p class="fw-400 text-white text-justify site-font fs-15 mb-2">Our platform is designed to connect students like
-                        you with a wide range of scholarship opportunities. A graduate student seeking funding for advanced
-                        studies, we're here to guide you in your scholarship search. Let us assist you in your quest for
-                        educational excellence and financial support.</p>
-                    <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Post a
-                        Scholarship</a>
-
-
+                    <h3 class="text-white fw-700 fs-30 site-font ">Available Academic Scholarships
+                    </h3>
+                    <p class="fw-400 text-white  site-font fs-18 mb-2">View available academic scholarships and connect with
+                        experienced consultants to assist with your application. </p>
+                    <a href="register?type=2"
+                        class="btn rounded border site-font fs-20 mt-lg-2 frequently-qsn-title  text-white">Get Started</a>
                 </div>
                 <div class="col-lg-2 col-sm-12 "></div>
                 <div class="col-lg-4 col-sm-12 ">
@@ -48,7 +45,7 @@
                                         @if ($country_name != null)
                                             Scholarship for in {{ $country_name }}
                                         @else
-                                            {{ translate('Scholarships search filter') }}
+                                            {{ translate('Filter By') }}
                                     </h5>
                                     @endif
 
@@ -189,46 +186,46 @@
                                     </a>
 
                                     <!-- <div class="">
-                                            <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                {{ translate(' Find a consultant') }}
-                                            </p>
-                                        </div> -->
+                                                <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                                                    <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                    {{ translate(' Find a consultant') }}
+                                                </p>
+                                            </div> -->
                                 </div>
                                 <div class="col-lg-10 border-gray-400">
 
                                     <div class="site-font">
                                         <p class="site-font"> <!-- @if ($scholarship->university != null)
     <div class="  ">
-                                                <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
-                                                    @if ($scholarship->country != null)
+                                                    <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
+                                                        @if ($scholarship->country != null)
     {{ $scholarship->country->country_name }}
     @endif
-                                                </p>
-                                            </div>
+                                                    </p>
+                                                </div>
     @endif --></p>
                                     </div>
                                     <!-- <div class="row">
-                                            <div class="col-3 pr-0">
-                                                <p class="fre-scsh-left-side-title">
-                                                    Scholarships Overview:
-                                                </p>
-                                            </div>
-                                            <div class="col-9 pl-0">
+                                                <div class="col-3 pr-0">
+                                                    <p class="fre-scsh-left-side-title">
+                                                        Scholarships Overview:
+                                                    </p>
+                                                </div>
+                                                <div class="col-9 pl-0">
 
 
-                                                <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
-                                                    The Western Sydney University provides a wide range of research scholarships to support
-                                                    domestic and international research candidates. Scholarships are awarded based on a
-                                                    competitive process and are open to both new and current candidates
-                                                    <a class="fre-scsh-find-more-btn pt-0 text-success ">
-                                                        Read more
-                                                    </a>
-                                                </p>
+                                                    <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
+                                                        The Western Sydney University provides a wide range of research scholarships to support
+                                                        domestic and international research candidates. Scholarships are awarded based on a
+                                                        competitive process and are open to both new and current candidates
+                                                        <a class="fre-scsh-find-more-btn pt-0 text-success ">
+                                                            Read more
+                                                        </a>
+                                                    </p>
 
-                                            </div>
+                                                </div>
 
-                                        </div> -->
+                                            </div> -->
                                     <div class="row">
                                         <div class="col-9">
                                             <div class="d-flex justify-content-between">
@@ -247,14 +244,14 @@
                                                 </a>
 
                                                 <!-- <div>
-                                                <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
-                                                <div class="">
-                                                    <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                        <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                        {{ translate(' Find a consultant') }}
-                                                    </p>
-                                                </div>
-                                            </div> -->
+                                                    <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
+                                                    <div class="">
+                                                        <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                                                            <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                            {{ translate(' Find a consultant') }}
+                                                        </p>
+                                                    </div>
+                                                </div> -->
                                             </div>
                                             <div class="row">
                                                 <div class="col-3">
@@ -345,8 +342,8 @@
                                                 ensure you submit a
                                                 competitive application.
                                                 <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
-                                                        Find a consultant
-                                                    </a> -->
+                                                            Find a consultant
+                                                        </a> -->
                                             </p>
 
                                         </div>
@@ -368,6 +365,8 @@
                 <div class="">
                     <div class=" content-title  text-center py-5">
                         <h2 class="fw-700 fs-24 text-black mb-0">Need Scholarship help?</h2>
+                          <h5 class="text-center mt-lg-3">Navigating scholarships can be challenging. Let us help you:
+                                </h5>
                     </div>
                     <div class="row need-help-full-body">
                         <div class="col-xl-3 col-md-6">
@@ -379,12 +378,11 @@
                                             style="width:55px; border-radius:50%; border:1px solid #000000" />
                                         <div class="need-help-progress-bar"></div>
                                     </div>
-                                    <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Post a job
+                                    <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Post a Job
                                     </p>
                                 </div>
                                 <h6 class="fs-14 mt-2  text-black text-center">
-                                    Thousands of degrees, subjects and short courses from leading Australian unis in one
-                                    place.
+                                    Create a job posting, specifying your requirements. It’s free.
                                 </h6>
                             </div>
                         </div>
@@ -398,11 +396,11 @@
                                         <div class="need-help-progress-bar"></div>
                                     </div>
                                     <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black"> Receive
-                                        proposal
+                                        Proposals
                                     </p>
                                 </div>
                                 <h6 class="fs-14 mt-2  text-black text-center">
-                                    Guidance to find your best option, based on what's important to you.
+                                   Review the proposals from our academic consultants.
                                 </h6>
                             </div>
                         </div>
@@ -422,7 +420,7 @@
                                     </p>
                                 </div>
                                 <h6 class="fs-14 mt-2  text-black text-center">
-                                    Simplified online enrolment to give you easy access to uni study.
+                                    Select the consultant who is the best fit for your project.
                                 </h6>
                             </div>
 
@@ -434,11 +432,11 @@
                                         src=" {{ url('/public/assets/home/checked.png') }}" alt="Image"
                                         style="width:55px; border-radius:50%; border:1px solid #000000" />
                                     <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
-                                        Payment Securely
+                                        Pay Securely
                                     </p>
                                 </div>
                                 <h6 class="fs-14 mt-2  text-black text-center">
-                                    Get started on your study journey today.
+                                    Payment held in escrow until project is completed to your satisfaction.
                                 </h6>
                             </div>
 
@@ -447,7 +445,7 @@
                     </div>
                     <div class=" text-center py-5">
                         <h5 class="btn rounded-0 text-white" style="background-color:#275846;">
-                            Let's get started
+                            Get Started
                         </h5>
 
                     </div>

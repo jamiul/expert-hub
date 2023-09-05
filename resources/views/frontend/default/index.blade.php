@@ -39,14 +39,14 @@
                                 </div>
                                 <div class="carousel-caption">
                                     <div class="row">
-                                        <div class="col-lg-7 col-sm-12 home-cacap-head">
+                                        <div class="col-lg-8 col-sm-12 home-cacap-head">
                                             <h2 class=" sm-mx-auto fw-700 fs-40 fs-sm-36px" style="">
-                                                Hire the best consultations for any job, online</h2>
-                                            <p class="fs-20 fs-sm-14 my-4 ">Millions of people use ConsultantEdu to turn
-                                                their ideas
-                                                into
-                                                their reality.</p>
-                                            <div class="lg-my-3 my-sm-0 home-banner-button ">
+                                                Hire the best academic consultants</h2>
+                                            <p class="fs-20 fs-sm-14 mt-4 mb-5 ">ConsultantEdu Hub is an exclusive platform
+                                                featuring academic experts across diverse fields, encompassing curriculum
+                                                development, course accreditation, learning management systems, meticulous
+                                                research and analysis, and refined writing and editing.</p>
+                                            <div class="lg-my-3 mt-5 my-sm-0 home-banner-button ">
                                                 <a href="{{ route('register') }}?type=2"
                                                     class="btn text-white fw-700  fs-20 fs-sm-12 mr-2 mb-3"
                                                     style="background-color:#1d4335;">{{ translate('I want to Hire') }}</a>
@@ -64,7 +64,7 @@
                 </section>
         @endif
         <!--  Used by -->
-        <section class="">
+        {{-- <section class="">
             <div class=" home-slider">
                 <div class="row ">
                     <div class="col-lg-6 col-sm-12">
@@ -98,7 +98,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> --}}
 
         <!-- explore services -->
         @if (get_setting('how_it_works_show') == 'on')
@@ -107,11 +107,9 @@
                     <div class="">
                         <div class="">
                             <div class=" content-title  text-center pb-5 pt-3">
-                                <h2 class="fw-700 fs-36 text-white mb-3">Need Academic help?</h2>
-                                <h5 class="text-center text-white">It can be hard to know where to start. That's why we're
-                                    here to guide
-                                    you.
-                                </h5>
+                                <h2 class="fw-700 fs-36 text-white mb-3">Need academic assistance?</h2>
+                                <p class="text-center fs-20 text-white">Navigating academia can be challenging. Let us help you:
+                                </p>
                             </div>
                             <div class="row need-help-section">
                                 <div class="col-xl-3 col-md-6">
@@ -124,14 +122,15 @@
                                                 <div class="need-help-section-bar"></div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Post a job
+                                                Post a Job
+
 
                                             </p>
                                         </div>
 
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Thousands of degrees, subjects and short courses from leading Australian unis in
-                                            one place.
+                                            Create a job posting, specifying your requirements. It’s free.
+
                                         </h6>
                                     </div>
 
@@ -140,9 +139,9 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <!-- <div class="d-flex">
-                                                            <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                                            <div class="need-help-progress-bar"></div>
-                                                        </div> -->
+                                                                            <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                                            <div class="need-help-progress-bar"></div>
+                                                                        </div> -->
                                             <div class="d-flex">
                                                 <img class="mb-2 mx-auto d-block text-black p-3"
                                                     src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
@@ -150,11 +149,13 @@
                                                 <div class="need-help-section-bar"></div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Receive proposal
+                                                Receive Proposals
+
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Guidance to find your best option, based on what's important to you.
+                                            Review the proposals from our academic consultants.
+
                                         </h6>
                                     </div>
 
@@ -176,7 +177,8 @@
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Simplified online enrolment to give you easy access to uni study.
+                                            Select the consultant who is the best fit for your project.
+
                                         </h6>
                                     </div>
 
@@ -189,11 +191,11 @@
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <p
                                                 class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
-                                                Payment Securely
+                                                Pay Securely
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3 text-white text-center">
-                                            Get started on your study journey today.
+                                            Payment held in escrow until project is completed to your satisfaction.
                                         </h6>
                                     </div>
 
@@ -203,7 +205,7 @@
                             <div class=" text-center py-5">
                                 <a href="{{ url('/register') }}" class=" btn rounded border text-white fs-18"
                                     style="background-color:#275846;">
-                                    Let's get started
+                                    Get Started
                                 </a>
 
                             </div>
@@ -337,13 +339,13 @@
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
-                                                <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
-                                                    <span>All
-                                                        Jobs</span>
-                                                </a>
-                                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
-                                                </a>
-                                            </h5> -->
+                                                                <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+                                                                    <span>All
+                                                                        Jobs</span>
+                                                                </a>
+                                                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                                </a>
+                                                            </h5> -->
                     </div>
 
                 </section>
@@ -367,63 +369,57 @@
                                 impressive
                             </h2>
                             <div class="">
-                                <div class=" d-flex ">
+                                <div class="  ">
+
                                     <div>
-                                        <img class=" mr-2" src="{{ url('/public/assets/findJob/check.png') }}"
-                                            alt="Image" style="width:15px;" />
-                                    </div>
-                                    <div>
-                                        <h6 class="fs-16 "><span class="fw-700 heading-title">Accessible academic
-                                                experts:</span> Find work
-                                            that hits your
-                                            financial
-                                            goals
-                                            faster
-                                            with
-                                            ambitious startups
-                                            and well-known brands.</h6>
+                                        <h6 class="fs-18  fw-700 heading-title">Access to Expertise
+                                        </h6>
+                                        <p class="fs-16">ConsultantEdu specialises in academic fields like course
+                                            accreditation,
+                                            curriculum development, LMS, research and analysis.</p>
                                     </div>
                                     <div>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center">
-                                    <img class="" src="{{ url('/public/assets/findJob/check.png') }}"
-                                        alt="Image" style="width:15px;" />
-                                    <h6 class="fs-16 m-2"><span class="fw-700 heading-title">Fast responses:</span>
+                                <div class="">
 
-                                        Build a predictable pipeline of projects, big and small, through strong
-                                        connections.
+                                    <h6 class="fs-18 fw-700 heading-title">Project Flexibility
                                     </h6>
-
+                                    <p class="fs-16 "> ConsultantEdu is ideal for academic institutions seeking short-term
+                                        assistance or
+                                        specialised expertise without committing to long-term contracts.</p>
 
 
                                 </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="" src="{{ url('/public/assets/findJob/check.png') }}"
-                                        alt="Image" style="width:15px;" />
-                                    <h6 class="fs-16 m-2 "> <span class="fw-700 heading-title">High-quality work:</span>
-                                        Search for jobs or have
-                                        clients
-                                        come to you. The
-                                        opportunities
-                                        are endless.</h6>
+                                <div class="">
+                                    
+                                    <h6 class="fs-18 fw-700 heading-title "> Quality Assurance
+                                       
+                                        </h6>
+                                        <p class="fs-16 "> ConsultantEdu ensures academic institutions have access to experts aligned with
+                                        their educational standards and visibility to the consultants’ profiles, ratings,
+                                        and show case of their previous work.</p>
                                 </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="" src="{{ url('/public/assets/findJob/check.png') }}"
-                                        alt="Image" style="width:15px;" />
-                                    <h6 class="fs-16 m-2 "><span class="fw-700 heading-title">We're here to help
-                                            you:</span>
-                                        Search for jobs or have
-                                        clients
-                                        come to you. The
-                                        opportunities
-                                        are endless.</h6>
+                                <div class="">
+                                    
+                                    <h6 class="fs-18  fw-700 heading-title ">Cost-Effective Solutions
+                                           
+                                       </h6>
+                                       <p class="fs-16"> ConsultantEdu offers pricing options tailored to various budgets, ensuring fairness
+                                        and transparency in costs.</p>
+                                </div>
+                                <div class=" ">
+                                    
+                                    <h6 class="fs-18  fw-700 heading-title ">Efficient Processes
+                                        </h6>
+                                        <p class="fs-16">ConsultantEdu streamlines academic hiring and project management with specialised
+                                        tools, saving institutions valuable time.</p>
                                 </div>
                             </div>
                             <button type="button" class="btn mt-2 p-2 fs-16 px-4 text-white"
-                                style="background-color:#275846; margin-left:20px">
+                                style="background-color:#275846;">
                                 <span><a href="{{ url('/search?keyword=&type=freelancer') }}" class="text-white"> Find
-                                        talent</a></span>
+                                       Consultant</a></span>
                                 <span><img class=" px-1 " src=" {{ url('/public/assets/home/arrow.png') }}"
                                         alt="Image" style="width:18px; " />
                                 </span>
@@ -794,16 +790,16 @@
                         @foreach ($seminars as $seminar)
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
-                                     <img class="w-100 h-190px" src=" {{ custom_asset($category->photo) }}"
-                                            alt="Image" />
-                                        <div class="p-3">
-                                            <h5 class="card-title fs-20 mt-2 seminar-home-content"> {{ $seminar->title }}</h5>
-                                            
-                                                                {{-- <p
+                                    <img class="w-100 h-190px" src=" {{ custom_asset($category->photo) }}"
+                                        alt="Image" />
+                                    <div class="p-3">
+                                        <h5 class="card-title fs-20 mt-2 seminar-home-content"> {{ $seminar->title }}</h5>
+
+                                        {{-- <p
                                                                     class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
                                                                      {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
                                                                 </p> --}}
-                                             <p style="line-height:16px;">
+                                        <p style="line-height:16px;">
                                             <span class="fw-500 fs-16 seminar-more">
                                                 <u>{{ getInstructorName($seminar->user_id) }}</u> |
                                             </span>
@@ -811,11 +807,11 @@
                                                 <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                             </span>
                                         </p>
-                                            <p
-                                                class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                {{ getSeminarModeName($seminar->seminar_mode_id) }}
-                                            </p>
-                                        </div>
+                                        <p
+                                            class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
+                                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -836,18 +832,16 @@
             <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
                 <div class=" container-home">
                     <div class="content-title">
-                        <h2 class="fw-700 fre-small-font">Hear what recent ConsultantEdu clients have to say</h2>
+                        <h2 class="fw-700 fre-small-font">Client Feedback at ConsultantEdu</h2>
                     </div>
                     <div class="">
                         <div class="row ">
                             <div class="col-lg-4">
-                                <div class=" card rounded-1 " style="height:300px;">
+                                <div class=" card rounded-1 " style="height:350px;">
                                     <div class=" card-body">
-                                        <p class="text-primary mt-2 fs-18">Great Work</p>
-                                        <p class=" mt-3 fs-18 " style="height:120px;">"I am very satisfied with his work;
-                                            so far, he has
-                                            consistently
-                                            delivered his job on time. We will work together in the future."
+                                        <p class="text-primary  mt-2 fs-20">Client Name: Dr. Emily Johnson
+</p>
+                                        <p class=" mt-3 fs-16 text-justify " style="height:160px;">Prof. David Smith played a pivotal role in the development of our university curriculum. His expertise, creativity, and dedication to ensuring our program met the highest standards were truly outstanding. We are grateful for his contributions and highly recommend his services to any educational institution.
                                         </p>
                                         <hr>
                                         <div class="d-flex  ">
@@ -858,8 +852,8 @@
                   " />
                                             </div>
                                             <div>
-                                                <small class="fw-700 fs-14 text-black"> Curtney Henry</small>
-                                                <h6 class="fs-14 text-muted" style="Line height:10px;"> Academic advisor
+                                                <small class="fw-700 fs-14 text-black" style="  color:#6560E6 !important;"> Review for:  Prof. David Smith</small>
+                                                <h6 class="fs-14 text-muted" style="Line height:10px;">  Curriculum Development Consultant
                                                 </h6>
                                             </div>
                                         </div>
@@ -868,14 +862,11 @@
                             </div>
 
                             <div class="col-lg-4">
-                                <div class=" card rounded-1 " style="height:300px;">
+                                <div class=" card rounded-1 " style="height:350px;">
                                     <div class=" card-body">
-                                        <p class="text-primary mt-2 fs-18">Good Job</p>
-                                        <p class=" mt-3 fs-18 " style="height:120px;">"I am happy with his responsiveness
-                                            throughout the
-                                            entire
-                                            project
-                                            duration; he was very experienced and provided quality work."
+                                        <p class="text-primary mt-2 fs-20">Client Name: Jennifer Martinez
+</p>
+                                        <p class=" mt-3 fs-16 text-justify " style="height:180px;">We are immensely grateful to Dr. Johnson for his invaluable assistance in our university's accreditation process. His deep knowledge of accreditation standards and guidance were instrumental in helping us meet and exceed the required criteria. We highly recommend Dr. Johnson's consultancy services to any educational institution seeking accreditation.
                                         </p>
                                         <hr>
                                         <div class="d-flex  ">
@@ -886,21 +877,21 @@
                   " />
                                             </div>
                                             <div class="">
-                                                <small class="fw-700 fs-14 text-black"> Mr. jack</small>
-                                                <h6 class="fs-14 text-muted" style="Line height:10px;"> Information
-                                                    technology expert</h6>
+                                                <small class="fw-700 fs-14 text-black" style="  color:#6560E6 !important;"> Review for: Dr. Robert Johnson </small>
+                                                <h6 class="fs-14 text-muted" style="Line height:10px;"> Course Accreditation Consultant
+</h6>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 ">
-                                <div class=" card rounded-1 " style="height:300px;">
+                                <div class=" card rounded-1 " style="height:350px;">
                                     <div class=" card-body">
-                                        <p class="text-primary mt-2 fs-18">Fantastic</p>
-                                        <p class=" fs-18 " style="height:88px;">
-                                            " I am happy for my work and recommend him. He is a very potential and committed
-                                            person."
+                                        <p class="text-primary mt-2 fs-20">Client Name: Professor Emily Davis
+</p>
+                                        <p class=" fs-16 " style="height:140px;">
+                                            I had the pleasure of working with Dr. Johnson on a complex university research project, and his expertise was invaluable. His analytical skills and in-depth knowledge significantly enhanced our research efforts. I highly recommend his services to anyone seeking top-tier research and analysis support.
                                         </p>
                                         <div class="border-top mt-5"></div>
                                         <div class="d-flex  mt-3">
@@ -911,9 +902,10 @@
                   " />
                                             </div>
                                             <div>
-                                                <small class="fw-700 fs-14 text-black"> Mitchel Joe </small>
-                                                <h6 class="fs-14 text-muted" style="Line height:10px;">Thesis writing
-                                                    helper</h6>
+                                                <small class="fw-700 fs-14 text-black" style="  color:#6560E6 !important;"> Review for: Dr. Michael Johnson
+ </small>
+                                                <h6 class="fs-14 text-muted" style="Line height:10px;">Reasearch and Analysis
+                                                    Consultant</h6>
                                             </div>
                                         </div>
                                         </>
@@ -1217,109 +1209,109 @@
 
 
         <!--
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="row">
-                                    <div class="col-md-6">
-                                      <h1>Column one</h1>
-                                      <div class="px-3 py-2">
-                                        <h6 class="fs-18">
-                                          High School Chemistry Tutor</h6>
-                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                        <h6 class="fs-18 text-normal">Career Coach</h6>
-                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <div class="px-3 py-2">
+                                            <div class="container">
+                                              <div class="row">
+                                                <div class="col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-6">
+                                                      <h1>Column one</h1>
+                                                      <div class="px-3 py-2">
+                                                        <h6 class="fs-18">
+                                                          High School Chemistry Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <div class="px-3 py-2">
 
-                                        <h6 class="fs-18">
-                                          High School Chemistry Tutor</h6>
-                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                        <h6 class="fs-18 text-normal">Career Coach</h6>
-                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="vertical-line"></div>
-                                  <div class="row">
-                                    <div class="col-md-6">
-                                      <div class="px-3 py-2">
+                                                        <h6 class="fs-18">
+                                                          High School Chemistry Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <div class="vertical-line"></div>
+                                                  <div class="row">
+                                                    <div class="col-md-6">
+                                                      <div class="px-3 py-2">
 
-                                        <h6 class="fs-18">
-                                          High School Chemistry Tutor</h6>
-                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                        <h6 class="fs-18 text-normal">Career Coach</h6>
-                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <div class="px-3 py-2">
+                                                        <h6 class="fs-18">
+                                                          High School Chemistry Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <div class="px-3 py-2">
 
-                                        <h6 class="fs-18">
-                                          High School Chemistry Tutor</h6>
-                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                        <h6 class="fs-18 text-normal">Career Coach</h6>
-                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div> -->
+                                                        <h6 class="fs-18">
+                                                          High School Chemistry Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div> -->
 
 
 
         <!-- Last section -->
         <!-- @if (get_setting('slider_section_show') == 'on')
     <section class=" " style="min-height:350px; background-color:#FBF7ED;">
-                              <div class="container-main">
-                                <div class="pb-5">
-                                  <div class="row ">
-                                    <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
-                                      <div>
-                                        <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
-                                        <h2 class=" fw-700 fs-36 my-4"
-                                          style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
-                                          Download
-                                          the
-                                          App
-                                        </h2>
-                                        <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
-                                          the
-                                          watch on the plane, the subway or wherever you learn best
-                                        </small>
-                                        <div class="mt-3">
-                                          <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
-                                            <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
-                                            <span>|</span>
-                                            <span class="text-white"> Apple store</span>
+                                              <div class="container-main">
+                                                <div class="pb-5">
+                                                  <div class="row ">
+                                                    <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
+                                                      <div>
+                                                        <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
+                                                        <h2 class=" fw-700 fs-36 my-4"
+                                                          style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+                                                          Download
+                                                          the
+                                                          App
+                                                        </h2>
+                                                        <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
+                                                          the
+                                                          watch on the plane, the subway or wherever you learn best
+                                                        </small>
+                                                        <div class="mt-3">
+                                                          <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
+                                                            <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
+                                                            <span>|</span>
+                                                            <span class="text-white"> Apple store</span>
 
-                                          </a>
-                                          <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
-                                            <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
-                                              style="height:20px; " />
-                                            <span>|</span>
-                                            <span class="text-white">Google play store</span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12 " style="">
-                                      <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                                          </a>
+                                                          <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
+                                                            <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
+                                                              style="height:20px; " />
+                                                            <span>|</span>
+                                                            <span class="text-white">Google play store</span>
+                                                          </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-sm-12 " style="">
+                                                      <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
 
-                            </section>>
+                                            </section>>
     @endif -->
 
     @endsection

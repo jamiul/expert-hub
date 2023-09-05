@@ -34,18 +34,16 @@
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30 site-font  ">Find Our Experts</h3>
-                        <p class="fw-400 text-white text-justify site-font fs-15 mb-2">Expand your knowledge and
-                            master a diverse range of cutting-edge statistical methods through personalized consultations
-                            with
-                            our expert consultants. Our consultants are renowned authorities in their specialized domains,
-                            ensuring that you receive unparalleled guidance tailored to your specific needs. With their
-                            expertise and a keen focus on your unique requirements, you'll gain a deep understanding of
-                            statistics, no matter your background.</p>
-                        <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Find
-                            Consultants</a>
+                        <h3 class="text-white fw-700 fs-30 site-font  ">Hire Academic Consultants
+                        </h3>
+                        <p class="fw-400 text-white site-font fs-18 mb-2">Connect with a diverse range of experts in the
+                            field you are searching for to meet your academic requirements.
 
-                       
+                        </p>
+                        <a href="register?type=2"
+                            class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started</a>
+
+
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -165,11 +163,13 @@
                                             <div class="mb-4">
                                                 <div class="">
                                                     <div class="mb-5 border-bottom">
-                                                        <select class="select2 site-font form-control aiz-selectpicker rounded-1"
-                                                            name="skill_id[]" onchange="applyFilter()"
-                                                            data-toggle="select2" data-live-search="true">
+                                                        <select
+                                                            class="select2 site-font form-control aiz-selectpicker rounded-1"
+                                                            name="skill_id[]" onchange="applyFilter()" data-toggle="select2"
+                                                            data-live-search="true">
 
-                                                            <option value="" class="site-font">{{ translate('Search skills') }}
+                                                            <option value="" class="site-font">
+                                                                {{ translate('Search skills') }}
                                                             </option>
                                                             @foreach (\App\Models\Skill::all() as $key => $skill)
                                                                 <option class="site-font" value="{{ $skill->id }}"
@@ -224,7 +224,8 @@
 
                                         <!-- Hourly rates -->
                                         <h6 class="text-left mb-3 fs-14">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Hourly Rate (USD)') }}</span>
+                                            <span
+                                                class="pr-3 site-font fw-700">{{ translate('Hourly Rate (USD)') }}</span>
                                         </h6>
                                         <div class="mb-5 border-bottom">
                                             <div class="mb-2 mt-3" style="width: 245px;">
@@ -255,7 +256,8 @@
                                                 <select class="select2 site-font form-control aiz-selectpicker rounded-1"
                                                     name="country_id" onchange="applyFilter()" data-toggle="select2"
                                                     data-live-search="true">
-                                                    <option value="" class="site-font">{{ translate('Search countries') }}</option>
+                                                    <option value="" class="site-font">
+                                                        {{ translate('Search countries') }}</option>
                                                     @foreach (\App\Models\Country::all() as $key => $country)
                                                         <option value="{{ $country->id }}"
                                                             @if (isset($country_id) && $country_id == $country->id) selected @endif>
@@ -315,47 +317,50 @@
                                 <div class="card-body p-0">
                                     @foreach ($freelancers as $key => $freelancer)
                                         @if ($freelancer->user != null)
-                                            <div class="d-block site-font d-xl-flex site-font text-inherit all-scholarship-list px-3 py-4 border-bottom">
+                                            <div
+                                                class="d-block site-font d-xl-flex site-font text-inherit all-scholarship-list px-3 py-4 border-bottom">
                                                 <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
                                                     <span class="avatar flex-shrink-0 mr-4">
-                                                    @if ($freelancer->user->photo != null)
-                                                        <img src="{{ custom_asset($freelancer->user->photo) }}"
-                                                            alt="{{ $freelancer->user->name }}">
-                                                    @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
-                                                            alt="{{ $freelancer->user->name }}">
-                                                    @endif
-                                                    @if (Cache::has('user-is-online-' . $freelancer->user->id))
-                                                        <span
-                                                            class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
-                                                    @else
-                                                        <span
-                                                            class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
-                                                    @endif
-                                                </span>
+                                                        @if ($freelancer->user->photo != null)
+                                                            <img src="{{ custom_asset($freelancer->user->photo) }}"
+                                                                alt="{{ $freelancer->user->name }}">
+                                                        @else
+                                                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                                                                alt="{{ $freelancer->user->name }}">
+                                                        @endif
+                                                        @if (Cache::has('user-is-online-' . $freelancer->user->id))
+                                                            <span
+                                                                class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
+                                                        @else
+                                                            <span
+                                                                class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
+                                                        @endif
+                                                    </span>
                                                 </a>
                                                 <div class="flex-grow-1 ">
-                                                    <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
-                                                    <div class="d-flex">
-                                                        <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
+                                                    <a
+                                                        href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
+                                                        <div class="d-flex">
+                                                            <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}
+                                                            </h5>
 
-                                                        @if ($freelancer->user->address->country->photo == null)
-                                                            @php
-                                                                $flag_url = '/public/assets/frontend/default/img/avatar-place.png';
-                                                            @endphp
-                                                        @else
-                                                            @php
-                                                                $flag_url = $freelancer->user->address->country->photo;
-                                                            @endphp
-                                                        @endif
-                                                        <span>
+                                                            @if ($freelancer->user->address->country->photo == null)
+                                                                @php
+                                                                    $flag_url = '/public/assets/frontend/default/img/avatar-place.png';
+                                                                @endphp
+                                                            @else
+                                                                @php
+                                                                    $flag_url = $freelancer->user->address->country->photo;
+                                                                @endphp
+                                                            @endif
+                                                            <span>
 
-                                                            <img class=" mx-2 " src="{{ url($flag_url) }}"
-                                                                alt="{{ $freelancer->user->address->country->name }}"
-                                                                style="width:21px; height:14px; " />
-                                                        </span>
-                                                    </div>
-                                                </a>
+                                                                <img class=" mx-2 " src="{{ url($flag_url) }}"
+                                                                    alt="{{ $freelancer->user->address->country->name }}"
+                                                                    style="width:21px; height:14px; " />
+                                                            </span>
+                                                        </div>
+                                                    </a>
 
                                                     @if ($freelancer->specialistAt != null)
                                                         <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
@@ -394,7 +399,8 @@
                                                                 @endphp
                                                                 @if ($skill != null)
                                                                     <span
-                                                                        class="btn btn-light btn-xs mb-1 ml-1  text-white rounded border-0 fs-14" style="background-color:#275846;">{{ $skill->name }}</span>
+                                                                        class="btn btn-light btn-xs border  mb-1 ml-1  text-dark rounded border-0 fs-14"
+                                                                        style="  color:#6560E6 !important;">{{ $skill->name }}</span>
                                                                 @endif
                                                             @endforeach
                                                         </div>
