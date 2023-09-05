@@ -634,7 +634,7 @@ function getInstructorName($id) {
 }
 
 function getProjectCategory() {
-    return ProjectCategory::all()->toArray();
+    return ProjectCategory::all()->sortByDesc("id")->toArray();
 }
 
 function getSeminarModes() {
