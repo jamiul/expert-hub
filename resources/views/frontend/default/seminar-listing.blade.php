@@ -151,19 +151,15 @@
     @extends('frontend.default.layouts.app')
     @section('content')
         <div class="container-main-projects-banner">
-            <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
-                <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
-                    <div class="col-lg-7 col-12  w-100 my-auto">
-                        <h3 class="text-white fw-700  frequently-qsn-title  ">Training and Expert Support Hub</h3>
-                        <p class="text-white fs-16 text-justify">Learn a wide variety of the latest statistical methods by
-                            participating in expert-led seminars. Our instructors are a recognised experts in their
-                            respective fields. With their talent and experience, they make statistics engaging and
-                            comprehensible for researchers from diverse backgrounds.</p>
-                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Register
-                            now</a>
+            <div class="mb-4 pb-lg-4" style="background:#275846">
+                <div class="row rounded-0 px-2 mt-1 mx-4">
+                    <div class="col-lg-6 col-sm-12 my-auto">
+                        <h3 class="text-white fw-700 fs-30  site-font">Training and Expert Support Hub</h3>
+                        <p class="fw-400 text-white site-font fs-15 mb-2">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
+                        <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Find Instructors</a>
                     </div>
-                    <div class="col-lg-1 col-12 my-auto"></div>
-                    <div class="col-lg-4 col-12">
+                    <div class="col-lg-2 col-sm-12 "></div>
+                    <div class="col-lg-4 col-sm-12 ">
                         <img class="banner-img"
                             src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                             alt="">
@@ -197,6 +193,14 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
+                                    @foreach ($seminar_category as $category)
+                                        <span id="seminarCategory_{{ $category->id }}"
+                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                            {{ $category->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeSeminarCategory({{ $category->id }})">
+                                                X</p>
+                                        </span>
+                                    @endforeach
                                     @foreach ($seminar_modes as $mode)
                                         <span id="seminarMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
@@ -248,17 +252,38 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <!-- Seminar date -->
-                                        <div class="mt-2">
-                                            <h6 class="text-left fs-16 py-2 fw-700">
-                                                <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
+                                        <!-- categories  -->
+                                        <div class="mt-3">
+                                            <h6 class="text-left mb-3 fs-14 fw-700">
+                                                <span class="pr-3">{{ translate('Categories') }}</span>
                                             </h6>
-                                            <div class="">
-                                                <input type="text" id="dp1"
-                                                    class="form-control fs-14 datepicker mr-2"
-                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
-                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
-                                            </div>
+                                            @foreach (getProjectCategory() as $category)
+                                                <label class="aiz-checkbox w-100">
+                                                    <input type="checkbox" name="category_id[]"
+                                                        value="{{ $category['id'] }}" onchange="applyFilter()"
+                                                        @if (in_array($category['id'], $category_ids)) checked @endif>
+                                                    {{ $category['name'] }}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                                </label>
+                                            @endforeach
+                                        </div>
+                                        <!-- Seminar software -->
+                                        <div class="mt-2" id="seminar-software" style="display: none">
+                                            <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
+                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
+                                            </h6>
+                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
+                                                onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                                <option value="" class="fs-16">
+                                                    {{ translate('Search seminar software') }}
+                                                </option>
+                                                @foreach (getSeminarSoftwares() as $software)
+                                                    <option value="{{ $software['id'] }}"
+                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
+                                                        {{ $software['name'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
@@ -277,22 +302,17 @@
                                                 @endforeach
                                             </div>
                                         </div>
-                                        <!-- Seminar software -->
+                                        <!-- Seminar date -->
                                         <div class="mt-2">
-                                            <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
-                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
+                                            <h6 class="text-left fs-16 py-2 fw-700">
+                                                <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
-                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
-                                                onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                                <option value="" class="fs-16">
-                                                    {{ translate('Search seminar software') }}
-                                                </option>
-                                                @foreach (getSeminarSoftwares() as $software)
-                                                    <option value="{{ $software['id'] }}"
-                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
-                                                        {{ $software['name'] }}</option>
-                                                @endforeach
-                                            </select>
+                                            <div class="">
+                                                <input type="text" id="dp1"
+                                                    class="form-control fs-14 datepicker mr-2"
+                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
+                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
+                                            </div>
                                         </div>
                                         <!-- Languages -->
                                         <div class="mt-2">
@@ -314,7 +334,6 @@
                                         </div>
                                     </div>
                                     <!-- Seminar Topics -->
-
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
@@ -351,12 +370,6 @@
                                                                 <p
                                                                     class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
                                                                     {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
-                                                                    {{-- Wed Sep 6
-                                                                    –
-                                                                    Fri
-                                                                    Sep 8,
-                                                                    2023, from 10am – 3pm daily (Australian Eastern Standard
-                                                                    Time) --}}
                                                                 </p>
 
                                                             </div>
@@ -469,6 +482,20 @@
                                                                 <p
                                                                     class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getLanguageName($seminar->language_id) }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mx-1">
+                                                            <div class="col-12 col-lg-3 p-0 pr-0">
+                                                                <p class=" fre-scsh-left-side-title ">
+                                                                    Seminar Category:
+                                                                </p>
+                                                            </div>
+                                                            <div class=" col-12 col-lg-9 pl-0">
+
+                                                                <p
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
+                                                                    {{ $seminar->project_category_id ? getSeminarCategory($seminar->project_category_id) : ''}}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -661,6 +688,20 @@
 
                     // Uncheck the corresponding checkbox
                     var checkbox = document.querySelector('input[name="language_id[]"][value="' + Id + '"]');
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeSeminarCategory(Id) {
+                var seminarCategory = document.getElementById('seminarCategory_' + Id);
+                if (seminarCategory) {
+                    seminarCategory.parentNode.removeChild(seminarCategory);
+
+                    // Uncheck the corresponding checkbox
+                    var checkbox = document.querySelector('input[name="category_id[]"][value="' + Id + '"]');
                     if (checkbox) {
                         checkbox.checked = false;
                     }
@@ -898,7 +939,20 @@
                 }).on('changeDate', function(e, date) {
                     applyFilter();
                 });
+                showSemianrSoftwate();
             });
+
+            // Hide and show seminar software
+            function showSemianrSoftwate() {
+                let seminarSoftware = {!! json_encode($category_ids) !!};
+                for (let i = 0; i < seminarSoftware.length; i++) {
+                    // When category "Research and Analysis"
+                    // then show seminar software
+                    if (seminarSoftware[i] == 12) {
+                        $("#seminar-software").show();
+                    }
+                }
+            }
 
             function applyFilter() {
                 $('#seminar-filter-form').submit();

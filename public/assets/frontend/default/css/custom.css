@@ -742,7 +742,6 @@
     color: #000003;
     font-weight: 500;
     font-family: Neuemontreal, sans-serif;
-    
 }
 .fre-scsh-find-more-btn {
     font-size: 14px;
@@ -830,7 +829,6 @@
         transform: translateY(50%);
         left: 161px;
         right: 0;
-     
     }
 }
 
@@ -896,7 +894,15 @@ div.scroll h6 a {
     font-family: Neuemontreal, sans-serif;
     text-align: justify;
 }
-
+.site-font {
+    font-family: Neuemontreal, sans-serif;
+    font-weight: 500;
+}
+.p-title {
+    font-size: 20px;
+    font-family: Neuemontreal, sans-serif;
+   
+}
 @media (min-width: 425px) {
     .seminar-banner {
         max-width: 250px !important;
@@ -928,17 +934,27 @@ div.scroll h6 a {
     .banner-img {
         width: 300px;
     }
-    .seminar-heading{
-       font-size: 20px;  
+
+    .seminar-heading {
+        font-size: 20px;
     }
-    .seminar-small-device-font{
+    .seminar-small-device-font {
         font-size: 13px !important;
     }
-    
+    .consultant-banner-device-style {
+        font-size: 13px !important;
+    }
+    .seminar-home-content {
+        font-size: 16px !important;
+        font-weight: 500;
+    }
 }
 
 @media (max-width: 1600px) {
     .footer-segment {
         margin-left: 30px !important;
+    }
+    .banner-photo {
+        margin-left: 300px !important;
     }
 }

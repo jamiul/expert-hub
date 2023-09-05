@@ -83,13 +83,16 @@ class SeminarController extends Controller
         $input = $request->all();
         $input['created_by'] = $user->id;
         $input['user_id'] = $user->id;
+
+        $input['project_category_id'] = $request->seminar_category;
+
         $seminar = Seminar::create($input);
 
         if($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
                 SeminarInstructor::create([
                     'seminar_id' => $seminar->id,
-                    'user_id' => $input['seminar_instructors'][$key] ?? ''
+                    'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
                 ]);
             }
         }
@@ -156,7 +159,7 @@ class SeminarController extends Controller
         if($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
                 $seminar->seminar_instructors()->create([
-                    'user_id' => $input['seminar_instructors'][$key] ?? ''
+                    'user_id' => $input['seminar_instructors'][$key] ?? null
                 ]);
             }
         }
