@@ -369,7 +369,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Research Training ') }}</a>
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Academic Training ') }}</a>
                             </li>
                             <li class="nav-item dropdown  text-white">
                                 <a class="nav-link " href="{{route('aboutUs')}}" >

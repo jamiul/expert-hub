@@ -2,23 +2,24 @@
 
 @section('content')
     <div class="container-main-projects-banner">
-        <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
-            <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
-                <div class="col-lg-7 col-12  w-100 my-auto">
-                    <h3 class="text-white fw-700  frequently-qsn-title  ">Available scholarships </h3>
-                    <p class="text-white fs-16">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                    <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a
-                        scholarship</a>
-                </div>
-                <div class="col-lg-1 col-12 my-auto"></div>
-                <div class="col-lg-4 col-12">
-                    <img class="banner-img"
-                        src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
-                        alt="">
+            <div class="mb-4 pb-lg-4" style="background:#275846">
+                <div class="row rounded-0 px-2 mt-1 mx-4">
+                    <div class="col-lg-6 col-sm-12 my-auto">
+                        <h3 class="text-white fw-700 fs-30  ">Available Scholerships</h3>
+                        <p class="fw-400 text-white text-justify fs-15 mb-2">Our platform is designed to connect students like you with a wide range of scholarship opportunities. A graduate student seeking funding for advanced studies, we're here to guide you in your scholarship search. Let us assist you in your quest for educational excellence and financial support.</p>
+                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a scholarship</a>
+
+                      
+                    </div>
+                    <div class="col-lg-2 col-sm-12 "></div>
+                    <div class="col-lg-4 col-sm-12 ">
+                        <img class="banner-img"
+                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <section class="py-4 pb-lg-5 scholarship-list-page">
         <div class="container-main-scholarship">
             @if ($keyword != null)

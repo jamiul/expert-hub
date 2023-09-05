@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 @section('content')
-<section class="py-4 py-lg-3">
+<section class=" pb-lg-3">
     <div class="container-main-projects-banner">
-        <div class="mb-4" style="background:#FCEBE5">
+        <div class="mb-4 mt-lg-1 pb-lg-4" style="background:#275846">
             <div class="row rounded-0 px-2 mx-4">
                 <div class="col-lg-6 col-sm-12 my-auto">
-                    <h3 class="text-black fw-700 fs-30  ">Projects List</h3>
-                    <p class="fw-400 text-black fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
+                    <h3 class="text-white fw-700 fs-30  ">Projects List</h3>
+                    <p class="fw-400 text-white text-justify fs-15 mb-2">All the Lorem Ipsum generators on the Internet tend to repeat. All the Lorem Ipsum generators on the Internet tend to repeat. All the Lorem Ipsum generators on the Internet tend to repeat.</p>
                     <div class="input-group mb-3 mt-5">
                         <form action="" method="GET" class="w-100">
                             <input type="text" class="form-control position-relative z-0" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword" aria-label="Search" aria-describedby="searchButton" style="height: 60px;">
@@ -27,8 +27,9 @@
                         <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
                     </div> -->
                 </div>
-                <div class="col-lg-6 col-sm-12 ">
-                    <img class="" src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
+                <div class="col-lg-2 col-sm-12 "></div>
+                <div class="col-lg-4 col-sm-12 ">
+                    <img class="banner-img  " src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
                 </div>
             </div>
         </div>

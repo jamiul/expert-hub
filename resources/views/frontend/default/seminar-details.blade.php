@@ -37,9 +37,7 @@
                                     </div>
                                     <div class="col-lg-9 col-12 pl-0">
 
-                                        <p class="fre-scsh-right-side-details pb-0 mb-0 p-0">Wed Sep 6 – Fri
-                                            Sep 8,
-                                            2023, from 10am – 3pm daily (Australian Eastern Standard Time)
+                                        <p class="fre-scsh-right-side-details pb-0 mb-0 p-0"> {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
                                         </p>
 
                                     </div>
@@ -109,18 +107,15 @@
                                     <div class="col-lg-9 col-12 pl-0">
 
                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-lg-4 p-0">
-                                            {{-- <span class="fw-500 text-dark"><u class="seminar-more">Mariola
-                                                    Moeyaert</u></span> | Associate Professor of Statistics and Director |
-                                            University at
-                                            Albany --}}
-                                            {{ getInstructorName($seminar->user_id) }}
+                                          <p>
+                                            <span class="fw-500 seminar-more fre-scsh-right-side-details">
+                                                <u class="">{{ getInstructorName($seminar->user_id) }}</u> |
+                                            </span>
+                                            <span class="fw-500 fre-scsh-right-side-details seminar-more">
+                                                <u class="">{{ getInstructorName(rand(10, 14)) }}</u>
+                                            </span>
                                         </p>
-                                        {{-- <p class="fre-scsh-right-side-details text-justify mb-1 pr-lg-4">
-                                            <span class="fw-500 text-dark"><u class="seminar-more">Mariola
-                                                    Moeyaert</u></span> | Associate Professor of Statistics and Director |
-                                            University at
-                                            Albany
-                                        </p> --}}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="row mx-1">
