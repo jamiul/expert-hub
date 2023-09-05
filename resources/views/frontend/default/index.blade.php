@@ -266,7 +266,7 @@
                         </div>
                         <h5 class="fre-button-show">
                             <a href="{{ route('search') }}?category="
-                                class="fs-16 text-dark ">{{ translate('Browse More Categories') }}
+                                class="fs-16 text-dark ">{{ translate('All Consultants') }}
                                 <img class=" " src=" {{ url('/public/assets/home/arrow-right.png') }}"
                                     alt="Image" style="width:20px;" />
                             </a>
@@ -832,7 +832,7 @@
             <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
                 <div class=" container-home">
                     <div class="content-title">
-                        <h2 class="fw-700 fre-small-font">Client Feedback at ConsultantEdu</h2>
+                        <h2 class="fw-700 fre-small-font site-font" style="">Client Feedback at ConsultantEdu</h2>
                     </div>
                     <div class="">
                         <div class="row ">

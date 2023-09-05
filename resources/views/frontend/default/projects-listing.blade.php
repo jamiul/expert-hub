@@ -7,7 +7,7 @@
             <div class="mb-4 mt-lg-1 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30  ">Available Academic Projects
+                        <h3 class="text-white fw-700 fs-30 mt-3 ">Available Academic Projects
                         </h3>
                         <p class="fw-400 text-white text-justify fs-18 mb-2">View available academic projects and bid on the
                             ones that match your expertise.
@@ -369,7 +369,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="col-lg-8  px-lg-3">
+                                        <div class="col-lg-8 ">
                                             <a href="{{ route('project.details', $project->slug) }}"
                                                 class=" fs-20 lh-1-5 fw-700 p-title " style="color:#5ABC76;">
                                                 <u>{{ $project->name }}</u></a>
@@ -451,17 +451,17 @@
                                                     @endphp
                                                     @if ($skill != null)
                                                         <span
-                                                            class="btn btn-light btn-xs site-font fs-14 mb-1 ml-1  text-dark  border-0"
+                                                            class="btn btn-light btn-xs bg-soft-info-light site-font fs-14 mb-1 ml-1  text-dark  border-0"
                                                             style="  color:#6560E6 !important;">{{ $skill->name }}</span>
                                                     @endif
                                                 @endforeach
                                             </div>
                                         </div>
                                         <div
-                                            class="col-lg-3 flex-shrink-0 pt-4 pt-xl-0  d-flex flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px">
+                                            class="col-lg-3 col-12 flex-shrink-0 pt-4 pt-xl-0  d-flex-lg flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px  ">
 
-                                            <div class="btn d-flex justify-content-start align-items-center mt-2 py-2 fs-14 px-2 text-white"
-                                                style="background-color:#275846; width:165px;">
+                                            <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white"
+                                                style="background-color:#275846; ">
                                                 <img class=" px-1  "
                                                     src=" {{ url('/public/assets/find-consultant/budget.png') }}"
                                                     alt="Image" style="width:30px; " /> {{ translate('Budget') }}
@@ -470,7 +470,7 @@
                                             </div>
 
                                             <button href="{{ route('project.details', $project->slug) }}" type="button"
-                                                class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white"
+                                                class="btn d-flex justify-content-center align-items-center w-100 mt-2 py-2 fs-14 px-2 text-white"
                                                 style="background-color:#275846; ">
                                                 <img class=" px-1  "
                                                     src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
