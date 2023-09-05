@@ -301,7 +301,7 @@
                                             </div>
                                         </div>
                                         <!-- Seminar software -->
-                                        <div class="mt-2">
+                                        <div class="mt-2" id="seminar-software" style="display: none">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
@@ -950,7 +950,20 @@
                 }).on('changeDate', function(e, date) {
                     applyFilter();
                 });
+                showSemianrSoftwate();
             });
+
+            // Hide and show seminar software
+            function showSemianrSoftwate() {
+                let seminarSoftware = {!! json_encode($category_ids) !!};
+                for (let i = 0; i < seminarSoftware.length; i++) {
+                    // When category "Research and Analysis"
+                    // then show seminar software
+                    if (seminarSoftware[i] == 12) {
+                        $("#seminar-software").show();
+                    }
+                }
+            }
 
             function applyFilter() {
                 $('#seminar-filter-form').submit();
