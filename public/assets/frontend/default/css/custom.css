@@ -894,7 +894,15 @@ div.scroll h6 a {
     font-family: Neuemontreal, sans-serif;
     text-align: justify;
 }
-
+.site-font {
+    font-family: Neuemontreal, sans-serif;
+    font-weight: 500;
+}
+.p-title {
+    font-size: 20px;
+    font-family: Neuemontreal, sans-serif;
+   
+}
 @media (min-width: 425px) {
     .seminar-banner {
         max-width: 250px !important;
@@ -926,7 +934,7 @@ div.scroll h6 a {
     .banner-img {
         width: 300px;
     }
-   
+
     .seminar-heading {
         font-size: 20px;
     }
@@ -935,6 +943,10 @@ div.scroll h6 a {
     }
     .consultant-banner-device-style {
         font-size: 13px !important;
+    }
+    .seminar-home-content {
+        font-size: 16px !important;
+        font-weight: 500;
     }
 }
 
