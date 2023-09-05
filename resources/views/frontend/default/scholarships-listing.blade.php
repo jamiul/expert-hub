@@ -2,24 +2,28 @@
 
 @section('content')
     <div class="container-main-projects-banner">
-            <div class="mb-4 pb-lg-4" style="background:#275846">
-                <div class="row rounded-0 px-2 mt-1 mx-4">
-                    <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30  ">Available Scholerships</h3>
-                        <p class="fw-400 text-white text-justify fs-15 mb-2">Our platform is designed to connect students like you with a wide range of scholarship opportunities. A graduate student seeking funding for advanced studies, we're here to guide you in your scholarship search. Let us assist you in your quest for educational excellence and financial support.</p>
-                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Post a scholarship</a>
+        <div class="mb-4 pb-lg-4" style="background:#275846">
+            <div class="row rounded-0 px-2 mt-1 mx-4">
+                <div class="col-lg-6 col-sm-12 my-auto">
+                    <h3 class="text-white fw-700 fs-30 site-font ">Available Scholerships</h3>
+                    <p class="fw-400 text-white text-justify site-font fs-15 mb-2">Our platform is designed to connect students like
+                        you with a wide range of scholarship opportunities. A graduate student seeking funding for advanced
+                        studies, we're here to guide you in your scholarship search. Let us assist you in your quest for
+                        educational excellence and financial support.</p>
+                    <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Post a
+                        Scholarship</a>
 
-                      
-                    </div>
-                    <div class="col-lg-2 col-sm-12 "></div>
-                    <div class="col-lg-4 col-sm-12 ">
-                        <img class="banner-img"
-                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
-                            alt="">
-                    </div>
+
+                </div>
+                <div class="col-lg-2 col-sm-12 "></div>
+                <div class="col-lg-4 col-sm-12 ">
+                    <img class="banner-img"
+                        src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                        alt="">
                 </div>
             </div>
         </div>
+    </div>
     <section class="py-4 pb-lg-5 scholarship-list-page">
         <div class="container-main-scholarship">
             @if ($keyword != null)
@@ -185,72 +189,72 @@
                                     </a>
 
                                     <!-- <div class="">
-                                    <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                        <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                        {{ translate(' Find a consultant') }}
-                                    </p>
-                                </div> -->
-                                </div>
-                                <div class="col-lg-10 border-gray-400">
-
-                                    <div>
-                                        <!-- @if ($scholarship->university != null)
-    <div class="  ">
-                                        <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
-                                            @if ($scholarship->country != null)
-    {{ $scholarship->country->country_name }}
-    @endif
-                                        </p>
-                                    </div>
-    @endif -->
-                                    </div>
-                                    <!-- <div class="row">
-                                    <div class="col-3 pr-0">
-                                        <p class="fre-scsh-left-side-title">
-                                            Scholarships Overview:
-                                        </p>
-                                    </div>
-                                    <div class="col-9 pl-0">
-
-
-                                        <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
-                                            The Western Sydney University provides a wide range of research scholarships to support
-                                            domestic and international research candidates. Scholarships are awarded based on a
-                                            competitive process and are open to both new and current candidates
-                                            <a class="fre-scsh-find-more-btn pt-0 text-success ">
-                                                Read more
-                                            </a>
-                                        </p>
-
-                                    </div>
-
-                                </div> -->
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class=" fs-16 fw-700 pb-1 "
-                                                    title="{{ $scholarship->title }}"
-                                                    style="border-bottom: 2px solid  #000003; color: #000003">
-                                                    {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}
-                                                    |
-
-                                                    @if ($scholarship->university != null)
-                                                        {{ $scholarship->university->university_name }} |
-                                                        @if ($scholarship->country != null)
-                                                            {{ $scholarship->country->country_name }}
-                                                        @endif
-                                                    @endif
-                                                </a>
-
-                                                <!-- <div>
-                                        <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
-                                        <div class="">
                                             <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
                                                 <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
                                                 {{ translate(' Find a consultant') }}
                                             </p>
-                                        </div>
-                                    </div> -->
+                                        </div> -->
+                                </div>
+                                <div class="col-lg-10 border-gray-400">
+
+                                    <div class="site-font">
+                                        <p class="site-font"> <!-- @if ($scholarship->university != null)
+    <div class="  ">
+                                                <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
+                                                    @if ($scholarship->country != null)
+    {{ $scholarship->country->country_name }}
+    @endif
+                                                </p>
+                                            </div>
+    @endif --></p>
+                                    </div>
+                                    <!-- <div class="row">
+                                            <div class="col-3 pr-0">
+                                                <p class="fre-scsh-left-side-title">
+                                                    Scholarships Overview:
+                                                </p>
+                                            </div>
+                                            <div class="col-9 pl-0">
+
+
+                                                <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
+                                                    The Western Sydney University provides a wide range of research scholarships to support
+                                                    domestic and international research candidates. Scholarships are awarded based on a
+                                                    competitive process and are open to both new and current candidates
+                                                    <a class="fre-scsh-find-more-btn pt-0 text-success ">
+                                                        Read more
+                                                    </a>
+                                                </p>
+
+                                            </div>
+
+                                        </div> -->
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class=" fs-20 fw-700 site-font pb-1 "
+                                                    title="{{ $scholarship->title }}" style="color:#5ABC76;">
+                                                    <u>{{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}</u>
+                                                    |
+                                                    <u>
+                                                        @if ($scholarship->university != null)
+                                                            {{ $scholarship->university->university_name }} |
+                                                            @if ($scholarship->country != null)
+                                                                {{ $scholarship->country->country_name }}
+                                                            @endif
+                                                        @endif
+                                                    </u>
+                                                </a>
+
+                                                <!-- <div>
+                                                <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
+                                                <div class="">
+                                                    <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                                                        <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                        {{ translate(' Find a consultant') }}
+                                                    </p>
+                                                </div>
+                                            </div> -->
                                             </div>
                                             <div class="row">
                                                 <div class="col-3">
@@ -311,7 +315,6 @@
                                                         <span>{{ translate('Remove Bookmark') }}</span>
                                                     </a>
                                                 @else
-                                                
                                                     <a class="btn btn-primary btn-sm  d-flex align-items-center justify-content-center fs-14 fw-700 "
                                                         href="{{ route('bookmarked-scholarships.store', encrypt($scholarship->id)) }}">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
@@ -342,8 +345,8 @@
                                                 ensure you submit a
                                                 competitive application.
                                                 <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
-                                                Find a consultant
-                                            </a> -->
+                                                        Find a consultant
+                                                    </a> -->
                                             </p>
 
                                         </div>

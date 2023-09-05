@@ -140,9 +140,9 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <!-- <div class="d-flex">
-                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                                    <div class="need-help-progress-bar"></div>
-                                                </div> -->
+                                                            <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                            <div class="need-help-progress-bar"></div>
+                                                        </div> -->
                                             <div class="d-flex">
                                                 <img class="mb-2 mx-auto d-block text-black p-3"
                                                     src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
@@ -229,7 +229,7 @@
                                 <a href="search?keyword=&type=freelancer"
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
-                                        Consultant</span>
+                                        Consultants</span>
                                     <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
@@ -292,7 +292,7 @@
                                 <a href="{{ route('search') }}?category="
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
-                                        Jobs</span>
+                                        Projects</span>
                                     <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
@@ -332,18 +332,18 @@
                         <a href="{{ route('search') }}?category="
                             class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
                             <span>All
-                                Jobs</span>
+                                Projects</span>
                             <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
-                                        <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
-                                            <span>All
-                                                Jobs</span>
-                                        </a>
-                                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
-                                        </a>
-                                    </h5> -->
+                                                <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+                                                    <span>All
+                                                        Jobs</span>
+                                                </a>
+                                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                </a>
+                                            </h5> -->
                     </div>
 
                 </section>
@@ -456,7 +456,7 @@
                         </div>
                     </div>
                     <div class="row ">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=15&type=scholarships') }} "
                                     class="text-dark">
@@ -491,7 +491,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=8&type=scholarships') }}"
                                     class="text-dark">
@@ -529,7 +529,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=10&type=scholarships') }}"
                                     class="text-dark">
@@ -567,7 +567,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=11&type=scholarships') }}"
                                     class="text-dark">
@@ -604,7 +604,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=9&type=scholarships') }}"
                                     class="text-dark">
@@ -642,7 +642,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=7&type=scholarships') }}"
                                     class="text-dark">
@@ -680,7 +680,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=14&type=scholarships') }}"
                                     class="text-dark">
@@ -717,7 +717,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
                                 <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=12&type=scholarships') }}"
                                     class="text-dark">
@@ -763,7 +763,7 @@
             </section>
         @endif
 
-        <!-- Trending services -->
+        <!-- Academic training -->
         @if (get_setting('latest_project_show') == 'on')
             <section class="border-top bg-white" style=" padding-bottom:10px;">
                 <div class="container-home">
@@ -774,9 +774,9 @@
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
-                            <a href="{{ route('search') }}?keyword=&type=service"
+                            <a href="{{ url('/search?keyword=&type=seminar') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
-                                <span>All services</span>
+                                <span>All seminars</span>
                                 <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
@@ -793,18 +793,17 @@
                         @endphp
                         @foreach ($seminars as $seminar)
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
-                                <div class="card border-1">
-                                    <div class=" ">
-                                        <img class="w-100 h-220px" src=" {{ custom_asset($category->photo) }}"
+                                <div class="card border-1" style="height:350px;">
+                                     <img class="w-100 h-190px" src=" {{ custom_asset($category->photo) }}"
                                             alt="Image" />
-                                    </div>
-                                   
-                                    <div class="card-body">
-                                         <p class="fs-20">{{ $seminar->title }}
-                                    </p>
-                                        <p class="fre-scsh-right-side-details"> {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
-                                        </p>
-                                        <p>
+                                        <div class="p-3">
+                                            <h5 class="card-title fs-20 mt-2 seminar-home-content"> {{ $seminar->title }}</h5>
+                                            
+                                                                {{-- <p
+                                                                    class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
+                                                                     {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
+                                                                </p> --}}
+                                             <p style="line-height:16px;">
                                             <span class="fw-500 fs-16 seminar-more">
                                                 <u>{{ getInstructorName($seminar->user_id) }}</u> |
                                             </span>
@@ -812,20 +811,19 @@
                                                 <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                             </span>
                                         </p>
-                                        <p
-                                            class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
-                                        </p>
-
-                                    </div>
+                                            <p
+                                                class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
+                                                {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                                            </p>
+                                        </div>
                                 </div>
                             </div>
                         @endforeach
 
                     </div>
                     <h5 class="fre-button-show">
-                        <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark  "><span>All
-                                services</span></a>
+                        <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
+                                seminars</span></a>
                         <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
@@ -1219,109 +1217,109 @@
 
 
         <!--
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h1>Column one</h1>
-                              <div class="px-3 py-2">
-                                <h6 class="fs-18">
-                                  High School Chemistry Tutor</h6>
-                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                <h6 class="fs-18 text-normal">Career Coach</h6>
-                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="px-3 py-2">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <h1>Column one</h1>
+                                      <div class="px-3 py-2">
+                                        <h6 class="fs-18">
+                                          High School Chemistry Tutor</h6>
+                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="px-3 py-2">
 
-                                <h6 class="fs-18">
-                                  High School Chemistry Tutor</h6>
-                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                <h6 class="fs-18 text-normal">Career Coach</h6>
-                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="vertical-line"></div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="px-3 py-2">
+                                        <h6 class="fs-18">
+                                          High School Chemistry Tutor</h6>
+                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="vertical-line"></div>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="px-3 py-2">
 
-                                <h6 class="fs-18">
-                                  High School Chemistry Tutor</h6>
-                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                <h6 class="fs-18 text-normal">Career Coach</h6>
-                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="px-3 py-2">
+                                        <h6 class="fs-18">
+                                          High School Chemistry Tutor</h6>
+                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="px-3 py-2">
 
-                                <h6 class="fs-18">
-                                  High School Chemistry Tutor</h6>
-                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                <h6 class="fs-18 text-normal">Career Coach</h6>
-                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                        <h6 class="fs-18">
+                                          High School Chemistry Tutor</h6>
+                                        <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                        <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                        <h6 class="fs-18 text-normal">Career Coach</h6>
+                                        <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
+                            </div> -->
 
 
 
         <!-- Last section -->
         <!-- @if (get_setting('slider_section_show') == 'on')
     <section class=" " style="min-height:350px; background-color:#FBF7ED;">
-                      <div class="container-main">
-                        <div class="pb-5">
-                          <div class="row ">
-                            <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
-                              <div>
-                                <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
-                                <h2 class=" fw-700 fs-36 my-4"
-                                  style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
-                                  Download
-                                  the
-                                  App
-                                </h2>
-                                <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
-                                  the
-                                  watch on the plane, the subway or wherever you learn best
-                                </small>
-                                <div class="mt-3">
-                                  <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
-                                    <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
-                                    <span>|</span>
-                                    <span class="text-white"> Apple store</span>
+                              <div class="container-main">
+                                <div class="pb-5">
+                                  <div class="row ">
+                                    <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
+                                      <div>
+                                        <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
+                                        <h2 class=" fw-700 fs-36 my-4"
+                                          style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+                                          Download
+                                          the
+                                          App
+                                        </h2>
+                                        <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
+                                          the
+                                          watch on the plane, the subway or wherever you learn best
+                                        </small>
+                                        <div class="mt-3">
+                                          <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
+                                            <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
+                                            <span>|</span>
+                                            <span class="text-white"> Apple store</span>
 
-                                  </a>
-                                  <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
-                                    <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
-                                      style="height:20px; " />
-                                    <span>|</span>
-                                    <span class="text-white">Google play store</span>
-                                  </a>
+                                          </a>
+                                          <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
+                                            <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
+                                              style="height:20px; " />
+                                            <span>|</span>
+                                            <span class="text-white">Google play store</span>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 " style="">
+                                      <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-12 " style="">
-                              <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
 
-                    </section>>
+                            </section>>
     @endif -->
 
     @endsection

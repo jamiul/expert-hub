@@ -75,30 +75,30 @@
                             <div class="card-body pl-lg-0">
                                 <!-- Categories -->
                             <div class="mb-4">
-                                <h6 class="text-left mb-3 fs-14 fw-700">
-                                    <span class=" pr-3">{{ translate('Categories') }}</span>
+                                <h6 class="text-left mb-3 site-font">
+                                    <span class=" pr-3 fw-700">{{ translate('Categories') }}</span>
                                 </h6>
                                 <div class="">
 
                                     @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
 
-                                    <label class="aiz-checkbox w-100">
-                                        <input type="checkbox" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
+                                    <label class="aiz-checkbox w-100 site-font">
+                                        <input type="checkbox" class="" name="category_id[]" onchange="applyFilter()" value="{{ $category->id }}" @if (in_array($category->id,$category_ids)) checked @endif >
                                         {{$category->name}}
                                         <span class="aiz-square-check"></span>
-                                        <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                        <span class="float-right  fs-lg-16 "></span>
                                     </label>
                                     @endforeach
                                 </div>
                             </div>
                                 <!-- Budget -->
                                 <div class="mb-4">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class=" pr-3">{{ translate('Project Type') }}</span>
+                                    <h6 class="text-left mb-3 fs-14 site-font fw-700">
+                                        <span class=" pr-3 fw-700">{{ translate('Project Type') }}</span>
                                     </h6>
                                     <!-- Fixed Price Projects -->
                                     <div class="aiz-checkbox-list">
-                                        <label class="aiz-checkbox">
+                                        <label class="aiz-checkbox site-font">
                                             <input type="checkbox" name="projectType[]" value="Fixed" @if (in_array('Fixed', $projectType)) checked @endif onchange="applyFilter()"> {{ translate('Fixed Price') }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
@@ -106,16 +106,16 @@
                                     </div>
                                     <div class="d-flex">
                                         <div>
-                                            <input class="p-2" placeholder="Min" name="fixed_min" value="{{ $fixed_min ? $fixed_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input class="p-2" placeholder="Min" name="fixed_min" class="site-font" value="{{ $fixed_min ? $fixed_min : '' }}" style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
-                                        <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">to</p>
+                                        <p class="site-font  mb-0 d-flex justify-content-center align-items-center">to</p>
                                         <div>
-                                            <input onchange="applyFilter()" class="p-2" placeholder="Max" name="fixed_max" value="{{ $fixed_max ? $fixed_max : '' }}" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
+                                            <input onchange="applyFilter()" class="p-2" placeholder="Max" name="fixed_max"  class="site-font" value="{{ $fixed_max ? $fixed_max : '' }}" style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;" type="number">
                                         </div>
                                     </div>
                                     <!-- Hourly Projects -->
                                     <div class="aiz-checkbox-list mt-2">
-                                        <label class="aiz-checkbox">
+                                        <label class="aiz-checkbox site-font">
                                             <input onchange="applyFilter()" type="checkbox" name="projectType[]" value="Hourly" @if (in_array('Hourly', $projectType)) checked @endif> {{ translate('Hourly') }}
                                             <span class="aiz-square-check"></span>
                                             <span class="float-right text-secondary fs-12"></span>
@@ -135,11 +135,11 @@
                                     <select
                                         onchange="applyFilter()"
                                         name="durations[]"
-                                        class="select2 form-control aiz-selectpicker rounded-1"
+                                        class="select2 form-control site-font aiz-selectpicker rounded-1"
                                         data-toggle="select2"
                                         data-live-search="true"
                                     >
-                                        <option value="" @if (in_array('', $selectedDurations)) selected @endif>{{ translate('All Durations') }}</option>
+                                        <option  value="" @if (in_array('', $selectedDurations)) selected @endif>{{ translate('All Durations') }}</option>
 
                                     @foreach (getDurations() as $key => $duration)
                                         <option value="{{ $key }}" @if (in_array($key, $selectedDurations)) selected @endif> {{ $duration }} </option>
@@ -149,7 +149,7 @@
                             </div>
 
                                 <!-- Skills -->
-                                <div class="mb-4">
+                                <div class="mb-4 site-font">
                                     <!-- Countries -->
                                     <!-- <h6 class="text-left mb-3 fs-14 fw-700">
                                         <span class="pr-3">{{ translate('Skills') }}</span>
@@ -166,12 +166,12 @@
                                     </div> -->
                                     <div class="">
                                         <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="pr-3">{{ translate('Skills') }}</span>
+                                            <span class="pr-3 site-font">{{ translate('Skills') }}</span>
                                         </h6>
                                         <div class="mb-5 border-bottom">
-                                            <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                            <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id[]" class="site-font" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
 
-                                                <option value="">{{ translate('Search skills') }}</option>
+                                                <option value="" class="site-font">{{ translate('Search skills') }}</option>
                                                 @foreach (\App\Models\Skill::all() as $key => $skill)
                                                 <option value="{{ $skill->id }}" @if (in_array($skill->id, (array)$skill_ids ))
                                                     selected
@@ -181,7 +181,7 @@
 
                                             <div class="mt-3">
                                                 @foreach (\App\Models\ParentSkill::all()->reverse() as $key => $parentSkill)
-                                                <a class="text-dark d-flex justify-content-start align-items-center mb-1" data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
+                                                <a class="text-dark site-font d-flex justify-content-start align-items-center mb-1" data-toggle="collapse" href="#skill_{{$parentSkill->id}}" role="button" aria-expanded="true" aria-controls="skill_{{ $parentSkill->id}}">
                                                     <label class="fas fa-plus " style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
                                                     <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
                                                 </a>
@@ -304,18 +304,19 @@
                         <div class="card-body p-0 border-0 ">
 
                             @foreach ($projects as $key => $project)
-                            <a href="{{ route('project.details', $project->slug) }}" class="row card-project text-inherit px-3 py-4 all-scholarship-list" style="background: #F2F7F2; border-bottom:1px solid #ddd;">
+                            <div  class="row card-project text-inherit px-3 py-4 all-scholarship-list" style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                                 <div class="col-lg-1 p-0">
                                     <span class="avatar avatar-xs mb-lg-2" style="width:70px; height: 70px;">
                                         @if($project->image != null)
                                         <img src="{{ custom_asset($project->client->photo) }}">
                                         @else
-                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                        <a href="{{ route('project.details', $project->slug) }}"><img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"></a>
                                         @endif
                                     </span>
                                 </div>
+                                
                                 <div class="col-lg-8  px-lg-3">
-                                    <h5 class="h6 fw-700 lh-1-5"> {{$project->name}}</h5>
+                                    <a href="{{ route('project.details', $project->slug) }}" class=" fs-20 lh-1-5 fw-700 p-title " style="color:#5ABC76;" > <u>{{$project->name}}</u></a>
                                     <ul class="list-inline opacity-70 fs-12">
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-clock opacity-40"></i> --}}
@@ -324,7 +325,7 @@
                                                     <path id="Subtraction_5" data-name="Subtraction 5" d="M-13,12a6.007,6.007,0,0,1-6-6,6.007,6.007,0,0,1,6-6A6.007,6.007,0,0,1-7,6,6.006,6.006,0,0,1-13,12Zm-.5-9V7h.013l2.109,2.109.707-.706L-12.5,6.572V3Z" transform="translate(384 1963)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1 fw-700" style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans()}}</span>
+                                            <span class="ml-1 site-font text-dark fs-14 " style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans()}}</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-stream opacity-40"></i> --}}
@@ -335,7 +336,7 @@
                                                     <path id="Subtraction_3" data-name="Subtraction 3" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(500 1967)" fill="#055846" />
                                                 </g>
                                             </svg>
-                                            <span class="ml-1 fw-700 fs-14" style="color:black;">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
+                                            <span class="ml-1  site-font fs-14" style="color:black;">@if ($project->project_category != null) {{ $project->project_category->name }} @endif</span>
                                         </li>
                                         <li class="list-inline-item">
                                             {{-- <i class="las la-handshake"></i> --}}
@@ -348,7 +349,7 @@
                                                 <path d="M10.3691 11.3203H11.3158V12.267H10.3691V11.3203Z" fill="#055846" />
                                             </svg>
 
-                                            <span class="ml-1  fw-700 fs-14" style="color:black;">
+                                            <span class="ml-1  site-font  fs-14" style="color:black;">
                                                 @if ($project->bids > 0)
                                                 {{ $project->bids }}+
                                                 @else
@@ -357,7 +358,7 @@
                                                 Received</span>
                                         </li>
                                     </ul>
-                                    <div class="text-muted lh-1-4 fs-14">
+                                    <div class=" lh-1-4 site-font fs-14">
                                         <p> {{ \Illuminate\Support\Str::limit($project->excerpt, 260, $end = '...') }}
                                         </p>
                                     </div>
@@ -367,7 +368,7 @@
                                         $skill = \App\Models\Skill::find($skill_id);
                                         @endphp
                                         @if ($skill != null)
-                                        <span class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light  border-0">{{ $skill->name }}</span>
+                                        <span class="btn btn-light btn-xs site-font fs-14 mb-1 ml-1  text-white  border-0" style="background-color:#275846;">{{ $skill->name }}</span>
                                         @endif
                                         @endforeach
                                     </div>
@@ -386,7 +387,7 @@
                                     </button>
 
                                 </div>
-                            </a>
+                            </div>
                             @endforeach
 
                         </div>

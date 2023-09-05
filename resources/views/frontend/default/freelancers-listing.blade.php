@@ -34,15 +34,15 @@
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30  ">Find Our Experts</h3>
-                        <p class="fw-400 text-white text-justify fs-15 mb-2">Expand your knowledge and
+                        <h3 class="text-white fw-700 fs-30 site-font  ">Find Our Experts</h3>
+                        <p class="fw-400 text-white text-justify site-font fs-15 mb-2">Expand your knowledge and
                             master a diverse range of cutting-edge statistical methods through personalized consultations
                             with
                             our expert consultants. Our consultants are renowned authorities in their specialized domains,
                             ensuring that you receive unparalleled guidance tailored to your specific needs. With their
                             expertise and a keen focus on your unique requirements, you'll gain a deep understanding of
                             statistics, no matter your background.</p>
-                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Find
+                        <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Find
                             Consultants</a>
 
                        
@@ -141,11 +141,11 @@
                                     <!-- categories  -->
 
                                     <div class="mt-3">
-                                        <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="pr-3">{{ translate('Categories') }}</span>
+                                        <h6 class="text-left mb-3 fs-14 ">
+                                            <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
                                         </h6>
                                         @foreach (\App\Models\ProjectCategory::all() as $category)
-                                            <label class="aiz-checkbox w-100">
+                                            <label class="aiz-checkbox site-font w-100">
                                                 <input type="checkbox" name="category_id[]" value="{{ $category->id }}"
                                                     onchange="applyFilter()"
                                                     @if (in_array($category->id, $category_ids)) checked @endif>
@@ -159,20 +159,20 @@
                                     <!-- Skills -->
                                     <div class="card-body pl-lg-0">
                                         <div class="">
-                                            <h6 class="text-left mb-3 fs-14 fw-700">
-                                                <span class="pr-3">{{ translate('Skills') }}</span>
+                                            <h6 class="text-left mb-3 fs-14">
+                                                <span class="pr-3 site-font fw-700">{{ translate('Skills') }}</span>
                                             </h6>
                                             <div class="mb-4">
                                                 <div class="">
                                                     <div class="mb-5 border-bottom">
-                                                        <select class="select2 form-control aiz-selectpicker rounded-1"
+                                                        <select class="select2 site-font form-control aiz-selectpicker rounded-1"
                                                             name="skill_id[]" onchange="applyFilter()"
                                                             data-toggle="select2" data-live-search="true">
 
-                                                            <option value="">{{ translate('Search skills') }}
+                                                            <option value="" class="site-font">{{ translate('Search skills') }}
                                                             </option>
                                                             @foreach (\App\Models\Skill::all() as $key => $skill)
-                                                                <option value="{{ $skill->id }}"
+                                                                <option class="site-font" value="{{ $skill->id }}"
                                                                     @if (in_array($skill->id, (array) $skill_ids)) selected @endif>
                                                                     {{ $skill->name }}</option>
                                                             @endforeach
@@ -180,7 +180,7 @@
 
                                                         <div class="mt-3">
                                                             @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
-                                                                <a class="text-dark d-flex justify-content-start align-items-center mb-1"
+                                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
                                                                     data-toggle="collapse"
                                                                     href="#skill_{{ $parentSkill->id }}" role="button"
                                                                     aria-expanded="true"
@@ -203,7 +203,7 @@
                                                                                     class=" d-none"
                                                                                     onchange="applyFilter()">
                                                                                 <label
-                                                                                    class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0"
+                                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
                                                                                     for="{{ $subSkill->id }}">
                                                                                     {{ $subSkill->name }}</label>
                                                                             </div>
@@ -223,12 +223,12 @@
 
 
                                         <!-- Hourly rates -->
-                                        <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="pr-3">{{ translate('Hourly Rate (USD)') }}</span>
+                                        <h6 class="text-left mb-3 fs-14">
+                                            <span class="pr-3 site-font fw-700">{{ translate('Hourly Rate (USD)') }}</span>
                                         </h6>
                                         <div class="mb-5 border-bottom">
                                             <div class="mb-2 mt-3" style="width: 245px;">
-                                                <select class="select2 form-control aiz-selectpicker rounded-1"
+                                                <select class="select2 form-control site-font aiz-selectpicker rounded-1"
                                                     onchange="applyFilter()" data-live-search="true"
                                                     name="hourly_rate[]">
                                                     <option value="all"
@@ -246,16 +246,16 @@
 
 
                                         <!-- countries  -->
-                                        <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="pr-3">{{ translate('Countries') }}</span>
+                                        <h6 class="text-left mb-3 fs-14">
+                                            <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>
                                         </h6>
 
                                         <div class=" mb-5 ">
                                             <div class=" py-2 border-bottom ">
-                                                <select class="select2 form-control aiz-selectpicker rounded-1"
+                                                <select class="select2 site-font form-control aiz-selectpicker rounded-1"
                                                     name="country_id" onchange="applyFilter()" data-toggle="select2"
                                                     data-live-search="true">
-                                                    <option value="">{{ translate('Search countries') }}</option>
+                                                    <option value="" class="site-font">{{ translate('Search countries') }}</option>
                                                     @foreach (\App\Models\Country::all() as $key => $country)
                                                         <option value="{{ $country->id }}"
                                                             @if (isset($country_id) && $country_id == $country->id) selected @endif>
@@ -266,8 +266,8 @@
                                             </div>
                                         </div>
                                         <!-- Rating -->
-                                        <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Rating') }}</span>
+                                        <h6 class="text-left mb-3 fs-14">
+                                            <span class=" pr-3 site-font fw-700">{{ translate('Rating') }}</span>
                                         </h6>
                                         <div class="d-flex border-bottom">
                                             <div class="star-widget">
@@ -315,9 +315,9 @@
                                 <div class="card-body p-0">
                                     @foreach ($freelancers as $key => $freelancer)
                                         @if ($freelancer->user != null)
-                                            <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}"
-                                                class="d-block d-xl-flex  text-inherit all-scholarship-list px-3 py-4 border-bottom">
-                                                <span class="avatar flex-shrink-0 mr-4">
+                                            <div class="d-block site-font d-xl-flex site-font text-inherit all-scholarship-list px-3 py-4 border-bottom">
+                                                <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
+                                                    <span class="avatar flex-shrink-0 mr-4">
                                                     @if ($freelancer->user->photo != null)
                                                         <img src="{{ custom_asset($freelancer->user->photo) }}"
                                                             alt="{{ $freelancer->user->name }}">
@@ -333,7 +333,9 @@
                                                             class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                                                     @endif
                                                 </span>
+                                                </a>
                                                 <div class="flex-grow-1 ">
+                                                    <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
                                                     <div class="d-flex">
                                                         <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}</h5>
 
@@ -353,6 +355,7 @@
                                                                 style="width:21px; height:14px; " />
                                                         </span>
                                                     </div>
+                                                </a>
 
                                                     @if ($freelancer->specialistAt != null)
                                                         <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
@@ -391,7 +394,7 @@
                                                                 @endphp
                                                                 @if ($skill != null)
                                                                     <span
-                                                                        class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light text-dark rounded border-0 fs-14">{{ $skill->name }}</span>
+                                                                        class="btn btn-light btn-xs mb-1 ml-1  text-white rounded border-0 fs-14" style="background-color:#275846;">{{ $skill->name }}</span>
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -416,7 +419,7 @@
                                                         </p>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </div>
                                         @endif
                                     @endforeach
                                 </div>
