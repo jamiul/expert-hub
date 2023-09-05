@@ -84,9 +84,9 @@
 
                 <div class="mt-3">
                   <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="pr-3">{{ translate('Categories') }}</span>
+                    <span class="pr-3">{{ translate('Categoriesss') }}</span>
                   </h6>
-                  @foreach(\App\Models\ProjectCategory::all() as $category)
+                  @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
 
                   <label class="aiz-checkbox w-100">
                     <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"

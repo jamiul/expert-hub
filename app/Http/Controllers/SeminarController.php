@@ -83,8 +83,6 @@ class SeminarController extends Controller
         $input = $request->all();
         $input['created_by'] = $user->id;
         $input['user_id'] = $user->id;
-        // $input['attachment'] = $user->id;
-        // dd($request);
         $seminar = Seminar::create($input);
 
         if($request->seminar_instructors) {

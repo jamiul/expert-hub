@@ -68,6 +68,16 @@
                                                     X</p>
                                             </span>
                                         @endforeach
+                                        {{-- who can apply --}}
+                                        @foreach ($whoCanApplies as $whoCanApply)
+                                        <span id="whoCanApply_{{ $whoCanApply->id }}"
+                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                            {{ $whoCanApply->name }} | <p
+                                                onclick="removewhoCanApply({{ $whoCanApply->id }})"
+                                                class="m-0  d-inline fw-700">
+                                                X</p>
+                                        </span>
+                                    @endforeach
                                         <!-- country name -->
                                         @foreach ($countries as $country)
                                             <span id="country_{{ $country->id }}"
@@ -113,6 +123,22 @@
                                                         value="{{ $fieldStudy->id }}" onchange="applyFilter()"
                                                         @if (in_array($fieldStudy->id, $fieldStudy_ids)) checked @endif>
                                                     {{ $fieldStudy->name }}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-12"></span>
+                                                </label>
+                                            @endforeach
+                                        </div>
+                                        {{-- who can apply --}}
+                                        <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
+                                            <span class=" pr-3">{{ translate('Who Can Appaly') }}</span>
+                                        </h6>
+                                        <div class="aiz-checkbox-list">
+                                            @foreach (\App\Models\ScholarshipWhoCanApply::all() as $whoCanApply)
+                                                <label class="aiz-checkbox">
+                                                    <input type="checkbox" name="whoCanApply_id[]"
+                                                        value="{{ $whoCanApply->id }}" onchange="applyFilter()"
+                                                        @if (in_array($whoCanApply->id, $whoCanApply_ids)) checked @endif>
+                                                    {{ $whoCanApply->name }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
                                                 </label>
@@ -260,7 +286,7 @@
                                                 <div class="col-9 pl-0">
                                                     @if ($scholarship->WhoCanApply != null)
                                                         <p class="fre-scsh-right-side-details pb-0 mb-0">
-                                                            {{ $scholarship->WhoCanApply->title }}
+                                                            {{ $scholarship->WhoCanApply->name }}
                                                         </p>
                                                     @endif
                                                 </div>
@@ -310,7 +336,7 @@
                                                         <span>{{ translate('Remove Bookmark') }}</span>
                                                     </a>
                                                 @else
-                                                
+
                                                     <a class="btn btn-primary btn-sm  d-flex align-items-center justify-content-center fs-14 fw-700 "
                                                         href="{{ route('bookmarked-scholarships.store', encrypt($scholarship->id)) }}">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
@@ -486,7 +512,7 @@
     <script>
         function removeFieldStudy(fieldStudyId) {
             var fieldStudyElement = document.getElementById('fieldStudy_' + fieldStudyId);
-            console.log(fieldStudyElement);
+            // console.log(fieldStudyElement);
             if (fieldStudyElement) {
                 fieldStudyElement.parentNode.removeChild(fieldStudyElement);
 
@@ -518,6 +544,24 @@
             $('#scholarship-filter-form').submit();
         }
     </script>
+   <script>
+    function removewhoCanApply(whoCanApplyId) {
+        var whoCanApplyElement = document.getElementById('whoCanApply_' + whoCanApplyId);
+
+        if (whoCanApplyElement) {
+            whoCanApplyElement.parentNode.removeChild(whoCanApplyElement);
+
+            // Uncheck the corresponding checkbox
+            var checkbox = document.querySelector('input[name="whoCanApply_id[]"][value="' + whoCanApplyId + '"]');
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+
+            $('#scholarship-filter-form').submit();
+        }
+    }
+</script>
+
 @endsection
 
 @section('script')

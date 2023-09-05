@@ -19,6 +19,7 @@ use App\Models\ScholarshipCategory;
 use App\Models\ScholarshipCountry;
 use App\Models\ScholarshipFieldStudy;
 use App\Models\ScholarshipLevel;
+use App\Models\ScholarshipWhoCanApply;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
 
@@ -138,6 +139,7 @@ class SearchScholarshipController extends Controller
             $rating = $request->rating;
             $level_id = array('');
             $fieldStudy_id = array('');
+            $whoCanApply_id = array('');
             $country_id = array('');
             $min_price = $request->min_price;
             $max_price = $request->max_price;
@@ -150,8 +152,10 @@ class SearchScholarshipController extends Controller
             $country_name = '';
             $countries = [];
             $fieldStudies = [];
+            $whoCanApplies = [];
             $fieldStudy_ids = [];
-            // dd($fieldStudies);
+            $whoCanApply_ids = [];
+            // dd($whoCanApplies);
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -202,6 +206,7 @@ class SearchScholarshipController extends Controller
                 // dd($levels);
                 $scholarships = $scholarships->whereIn('level_id', $level_ids);
             }
+
             if ($request->fieldStudy_id != null) {
                 $fieldStudy_ids = $request->fieldStudy_id;
                 $fieldStudies =ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
@@ -211,29 +216,19 @@ class SearchScholarshipController extends Controller
                     }
                 });
             }
-            if (count($skill_ids) > 0) {
-                // $filtered_freelancers = [];
-                // foreach ($freelancers->get() as $key => $freelancer) {
+            if ($request->whoCanApply_id != null) {
+                $whoCanApply_ids = $request->whoCanApply_id;
+                $whoCanApplies = ScholarshipWhoCanApply::whereIn('id', $whoCanApply_ids)->get();
+                // dd($whoCanApplies);
+                $whoCanApply_id = $request->whoCanApply_id;
+                $scholarships = $scholarships->whereIn('whoCanApply_id', $whoCanApply_ids);
+            }
 
-                //     $skills_of_this_freelancer = json_decode($freelancer->skills);
-
-                //     if (!is_null($skills_of_this_freelancer)) {
-                //         foreach ($skills_of_this_freelancer as $key => $freelancer_slill_id) {
-                //             if (in_array($freelancer_slill_id, $skill_ids)) {
-                //                 array_push($filtered_freelancers, $freelancer);
-                //                 break;
-                //             }
-                //         }
-                //     }
-                // }
-
-                // $freelancers = $filtered_freelancers;
-            } else {
                 $ScholarshipTotal = $scholarships->count();
                 $scholarships = $scholarships->paginate(10)->appends($request->query());
-            }
+
             // dd($category_id);
-            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies'));
+            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies','whoCanApply_ids','whoCanApplies'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
