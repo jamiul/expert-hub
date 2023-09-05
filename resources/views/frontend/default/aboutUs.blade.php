@@ -8,7 +8,7 @@
             <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
                 <div class="col-lg-7 col-12  w-100 my-auto">
                     <h3 class="text-white fw-700  frequently-qsn-title  ">Welcome to ConsultantEdu </h3>
-                    <p class="text-white fs-16">Your one-stop academic freelancer platform where you can connect with
+                    <p class="text-white fs-18">Your one-stop academic freelancer platform where you can connect with
                         accessible academic experts, receive quick responses, and enjoy high-quality work to help you excel.
                     </p>
                     <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Create
@@ -34,7 +34,8 @@
                                 <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
                                     <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
                                     <p class=" mt-5 text-success fw-700 frequently-qsn-title">About ConsultantEdu</p>
-                                    <p class=" fw-500 seminar-objective-details">ConsultantEdu is a dynamic platform to connect
+                                    <p class=" fw-500 seminar-objective-details">ConsultantEdu is a dynamic platform to
+                                        connect
                                         passionate academic experts with individuals, institutions, and businesses seeking
                                         tailored education solutions. We believe that education has the power to shape the
                                         world, and our goal is to facilitate this transformation by offering a range of
@@ -89,8 +90,8 @@
 
                                                         <div class="frequently-qsn-details text-normal "
                                                             style=" line-height:22px;">
-                                                            {{ $category->description }} <a
-                                                                href="{{ route('freelancer.category', $category->id) }}"
+                                                            {{ $category->description }}
+                                                            <a href="{{ route('freelancer.category', $category->id) }}"
                                                                 class="nav-toggle "style="color:#6560E6;">Find
                                                                 Consultants</a>
                                                         </div>
@@ -108,154 +109,79 @@
             @endif
         </section>
         <hr>
-        {{-- Consultants – find the right work for you --}}
-        <section>
-            <div class="mb-5 ">
-                <div class=" mb-5 ">
-                    <h1 class="explore-find-oppor-title text-success fw-700 pt-3 mx-2 mx-lg-5">
-                        {{ translate('Consultants – find the right work for you') }}</h1>
+        <section class="">
+            <div class="container-home">
+                <div class="row ">
+                    <div class="col-lg-5">
+                        <img class="mr-2  img-fluid" src="{{ url('/public/assets/home/001.png') }}" alt="Image"
+                            style="width:500px;" />
+                    </div>
+                    <div class=" col-lg-7 col-sm-12">
+                        <h2 class="fw-700 mb-3 heading-title fre-small-font" style="">What makes
+                            ConsultantEdu
+                            impressive
+                        </h2>
+                        <div class="">
+                            <div class="  ">
 
-                    <div class="row mt-4 mx-lg-4 mx-xl-4  mx-2 ">
-                        <div class="col-lg-2 col-sm-12 pr-0">
-                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
-                                style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                                <div>
+                                    <h6 class="fs-18  fw-700 heading-title">Access to Expertise
+                                    </h6>
+                                    <p class="fs-16">ConsultantEdu specialises in academic fields like course
+                                        accreditation,
+                                        curriculum development, LMS, research and analysis.</p>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="">
+
+                                <h6 class="fs-18 fw-700 heading-title">Project Flexibility
+                                </h6>
+                                <p class="fs-16 "> ConsultantEdu is ideal for academic institutions seeking short-term
+                                    assistance or
+                                    specialised expertise without committing to long-term contracts.</p>
+
+
+                            </div>
+                            <div class="">
+
+                                <h6 class="fs-18 fw-700 heading-title "> Quality Assurance
+
+                                </h6>
+                                <p class="fs-16 "> ConsultantEdu ensures academic institutions have access to experts
+                                    aligned with
+                                    their educational standards and visibility to the consultants’ profiles, ratings,
+                                    and show case of their previous work.</p>
+                            </div>
+                            <div class="">
+
+                                <h6 class="fs-18  fw-700 heading-title ">Cost-Effective Solutions
+
+                                </h6>
+                                <p class="fs-16"> ConsultantEdu offers pricing options tailored to various budgets,
+                                    ensuring fairness
+                                    and transparency in costs.</p>
+                            </div>
+                            <div class=" ">
+
+                                <h6 class="fs-18  fw-700 heading-title ">Efficient Processes
+                                </h6>
+                                <p class="fs-16">ConsultantEdu streamlines academic hiring and project management with
+                                    specialised
+                                    tools, saving institutions valuable time.</p>
                             </div>
                         </div>
-                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
-                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
-                                {{ translate('
-                                                                Create your profile (it’s free)') }}</h1>
-                            <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
-                                {{ translate('An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.') }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row mt-4 mx-lg-4 mx-xl-4  mx-2 ">
-                        <div class="col-lg-2 col-sm-12 pr-0">
-                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
-                                style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
-                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
-                                {{ translate('Explore ways to earn') }}</h1>
-                            <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
-                                {{ translate('Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network') }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row mt-4 mx-lg-4 mx-xl-4 mx-2 ">
-                        <div class="col-lg-2 col-sm-12 pr-0">
-                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
-                                style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
-                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
-                                {{ translate('Get paid securely') }}</h1>
-                            <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
-                                {{ translate('Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.') }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row mt-2 mx-lg-4 mx-xl-4 mx-2 ">
-                        <div class="col-lg-2 col-sm-12 pr-0">
-                            <a href="search?keyword=&type=project" 
-                                class="btn rounded border fs-20 frequently-qsn-title  text-white text-white mt-2"
-                                style="background-color:#275846;">Find Project</a>
-                        </div>
+                        <a href="{{ url('/search?keyword=&type=freelancer') }}"
+                            class="btn rounded border fs-20 frequently-qsn-title  text-white text-white mt-2"
+                            style="background-color:#275846;">Find Consultant</a>
 
                     </div>
-
-
                 </div>
-                <hr>
             </div>
         </section>
-        {{-- Clients – find the best consultant for you --}}
-
-        <div class=" mb-5">
-            <h1 class="explore-find-oppor-title text-success fw-700  mx-2 mx-lg-5 ">
-                {{ translate('Clients – find the best consultant for you') }}</h1>
-            <div class="row mt-4 mx-lg-4 mx-2">
-                <div class="col-lg-2 col-sm-12 pr-0">
-                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
-                        style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
-                    <h1 class=" whyConsEdu-child-title text-dark fs-20 fw-700 ">
-                        {{ translate('Post a job') }}</h1>
-                    <p class="how-work-details fw-500 text-justify mx-lg-0 mx-2 mt-2">
-                        {{ translate('An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.') }}
-                    </p>
-                </div>
-            </div>
-            <div class="row mt-4 mx-lg-4 mx-2 ">
-                <div class="col-lg-2 col-sm-12 pr-0">
-                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
-                        style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
-                    <h1 class=" whyConsEdu-child-title  fs-20 fw-700 ">
-                        {{ translate('Receive proposal') }}</h1>
-                    <p class="how-work-details fw-500 text-justify mt-2">
-                        {{ translate("Guidance to find your best option, based on what's important to work with clients from around the world and build lasting partnerships.") }}
-                    </p>
-                </div>
-            </div>
-            <div class="row mt-4 mx-lg-4 mx-2">
-                <div class="col-lg-2 col-sm-12 pr-0 ">
-                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
-                        style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('How_it_Works_2.png') }}" alt="">
-                    </div>
-
-                </div>
-                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
-                    <h1 class="whyConsEdu-child-title fw-700 text-justify text-dark">{{ translate('Make Selection') }}
-                    </h1>
-                    <p class="how-work-details text-justify fw-500 mt-2">
-                        {{ translate('Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.') }}
-                    </p>
-                </div>
-            </div>
-            <div class="row mt-4 mx-lg-4 mx-2 ">
-                <div class="col-lg-2 col-sm-12 pr-0 ">
-                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100"
-                        style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('How_it_Works_2.png') }}" alt="">
-                    </div>
-
-                </div>
-                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
-                    <h1 class="whyConsEdu-child-title fw-700 text-dark ">{{ translate('Payment Securely') }}</h1>
-                    <p class="how-work-details text-justify  fw-500 mt-2">
-                        {{ translate('Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.') }}
-                    </p>
-                </div>
-            </div>
-
-            <div class="row mt-2 mx-lg-4 mx-2 ">
-                <div class="col-lg-2 col-sm-12 pr-0 ">
-                    <a href="search?keyword=&type=freelancer"
-                        class="btn rounded border fs-20 px-4 frequently-qsn-title  text-white text-white mt-2"
-                        style="background-color:#275846;">Find
-                        Consultant</a>
-                </div>
-            </div>
-        </div>
-
-        <hr>
         {{-- How payments work --}}
-        <div class=" mx-1">
+        {{-- <div class=" mx-1">
             <div class="row mt-5 mb-5">
                 <div class="col-lg-7 col-sm-12 mt-0 ml-lg-5 mx-2">
                     <div>
@@ -303,8 +229,171 @@
 
 
             </div>
-        </div>
+        </div> --}}
         <hr>
+        {{-- Consultants – find the right work for you --}}
+        <section>
+            <div class="mb-5 ">
+                <div class=" mb-5 ">
+                    <h1 class="explore-find-oppor-title text-success fw-700 pt-3 mx-2 mx-lg-5">
+                        {{ translate('Consultants – find the right work for you') }}</h1>
+
+                    <div class="row mt-4 mx-lg-4 mx-xl-4  mx-2 ">
+                        <div class="col-lg-2 col-sm-12 pr-0">
+                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                                style="background: #91E6B3; width:90% !important;">
+                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
+                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
+                                {{ translate('
+                                                                                                                                                                Create your profile (it’s free)') }}
+                            </h1>
+                            <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
+                                {{ translate('This means you can sign up and build your professional profile on the platform without any cost. Your profile is where you showcase your skills, qualifications, and experience, allowing potential clients or employers to learn about your expertise.') }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 mx-lg-4 mx-xl-4  mx-2 ">
+                        <div class="col-lg-2 col-sm-12 pr-0">
+                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                                style="background: #91E6B3; width:90% !important;">
+                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
+                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
+                                {{ translate('Explore ways to earn') }}</h1>
+                            <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
+                                {{ translate(': As a consultant, you have the opportunity to explore various avenues for earning income. This might include browsing through available projects, job listings, or freelance opportunities to find work that matches your skills and interests.') }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mx-lg-4 mx-xl-4 mx-2 ">
+                        <div class="col-lg-2 col-sm-12 pr-0">
+                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                                style="background: #91E6B3; width:90% !important;">
+                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
+                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
+                                {{ translate('Get paid securely') }}</h1>
+                            <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
+                                {{ translate('This assures consultants that the platform provides secure payment methods. When you successfully complete a project or task, you can expect to receive your payment without concerns about financial security or fraud, making it a trustworthy place to conduct business. ') }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mx-lg-4 mx-xl-4 mx-2 ">
+                        <div class="col-lg-2 col-sm-12 pr-0">
+                            <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                                style="background: #91E6B3; width:90% !important;">
+                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
+                            <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
+                                {{ translate('Fair Fee Structure: ') }}</h1>
+                            <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
+                                {{ translate("ConsultantEdu Hub service fees are designed to be fair and based on the total billings with each consultant. Here's how it works: 20% for the first $500 billed by the consultant, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-2 mx-lg-4 mx-xl-4 mx-2 ">
+                        <div class="col-lg-2 col-sm-12 pr-0">
+                            <a href="search?keyword=&type=project"
+                                class="btn rounded border fs-20 frequently-qsn-title  text-white text-white mt-2"
+                                style="background-color:#275846;">Find Project</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <hr>
+            </div>
+        </section>
+        {{-- Clients – find the best consultant for you --}}
+
+        <div class=" mb-5">
+            <h1 class="explore-find-oppor-title text-success fw-700  mx-2 mx-lg-5 ">
+                {{ translate('Clients – find the best consultant for you') }}</h1>
+            <div class="row mt-4 mx-lg-4 mx-2">
+                <div class="col-lg-2 col-sm-12 pr-0">
+                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                        style="background: #91E6B3; width:90% !important;">
+                        <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
+                    <h1 class=" whyConsEdu-child-title text-dark fs-20 fw-700 ">
+                        {{ translate('Post a job') }}</h1>
+                    <p class="how-work-details fw-500 text-justify mx-lg-0 mx-2 mt-2">
+                        {{ translate("By creating a job posting detailing your project's specific requirements. This service is provided to you free of charge") }}
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-4 mx-lg-4 mx-2 ">
+                <div class="col-lg-2 col-sm-12 pr-0">
+                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                        style="background: #91E6B3; width:90% !important;">
+                        <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
+                    <h1 class=" whyConsEdu-child-title  fs-20 fw-700 ">
+                        {{ translate('Receive proposal') }}</h1>
+                    <p class="how-work-details fw-500 text-justify mt-2">
+                        {{ translate("After posting your job, our platform will attract proposals from our pool of academic consultants. You'll have the opportunity to review these proposals thoroughly.") }}
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-4 mx-lg-4 mx-2">
+                <div class="col-lg-2 col-sm-12 pr-0 ">
+                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
+                        style="background: #91E6B3; width:90% !important;">
+                        <img class="mx-auto d-block w-50" src="{{ my_asset('How_it_Works_2.png') }}" alt="">
+                    </div>
+
+                </div>
+                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
+                    <h1 class="whyConsEdu-child-title fw-700 text-justify text-dark">{{ translate('Make Selection') }}
+                    </h1>
+                    <p class="how-work-details text-justify fw-500 mt-2">
+                        {{ translate("With the proposals in hand, you can carefully evaluate the qualifications, experience, and proposed approaches of our consultants. Choose the one who best aligns with your project's needs.") }}
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-4 mx-lg-4 mx-2 ">
+                <div class="col-lg-2 col-sm-12 pr-0 ">
+                    <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100"
+                        style="background: #91E6B3; width:90% !important;">
+                        <img class="mx-auto d-block w-50" src="{{ my_asset('How_it_Works_2.png') }}" alt="">
+                    </div>
+
+                </div>
+                <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
+                    <h1 class="whyConsEdu-child-title fw-700 text-dark ">{{ translate('Pay Securely') }}</h1>
+                    <p class="how-work-details text-justify  fw-500 mt-2">
+                        {{ translate("To ensure both your and the consultant's security, payments are held in escrow until the project reaches its agreed-upon completion and meets your satisfaction. This guarantees a safe and reliable transaction process.") }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-2 mx-lg-4 mx-2 ">
+                <div class="col-lg-2 col-sm-12 pr-0 ">
+                    <a href="search?keyword=&type=freelancer"
+                        class="btn rounded border fs-20 px-4 frequently-qsn-title  text-white text-white mt-2"
+                        style="background-color:#275846;">Find
+                        Consultant</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
         {{-- Reviews – how reviews work on ConsultantEdu --}}
         <div class="my-5 mx-lg-4 mx-2 border-bottom pb-5" id="reviewSection">
             <h1 class="explore-find-oppor-title text-success fw-700 mx-lg-4">
@@ -313,54 +402,39 @@
                 <div class="col-lg-12 col-sm-12 p-sm-0 mx-lg-2">
                     {{-- Consultants - Getting reviews on ConsultantEdu --}}
                     <div class="mt-2">
-                        <p class="whyConsEdu-child-title">Consultants
+                        <p class="whyConsEdu-child-title">For Consultants
                         </p>
-                        <p class="mt-2  frequently-qsn-details text-justify">A 14-day feedback period opens at the end of a
-                            contract
-                            where both the
-                            client and consultant can
-                            leave each other a review. The client is asked to give a review as part of ending the contract
-                            and most
-                            clients do.
+                        <p class="mt-2  frequently-qsn-details text-justify">At the end of a contract, a 14-day feedback
+                            period begins. During this time, both the client and consultant have the opportunity to leave
+                            reviews for each other. Clients are prompted to provide a review when closing the contract, and
+                            most clients do so.
                         </p>
                     </div>
                     {{-- Clients - Leaving a review on ConsultantEdu --}}
                     <div class="mt-2">
-                        <p class="whyConsEdu-child-title">Clients
+                        <p class="whyConsEdu-child-title">For Clients
                         </p>
-                        <p class="mt-2 frequently-qsn-details text-justify">During the 14-day feedback period at the end of
-                            a contract,
-                            the client
-                            will be asked to leave a review
-                            while ending the contract. As the consultant, you can also leave a review for the client by
-                            looking at
-                            your end of the contract. The review will be public once both of you leave one for each other or
-                            the
-                            14-day period ends.
+                        <p class="mt-2 frequently-qsn-details text-justify">Within the 14-day feedback period at the
+                            contract's conclusion, clients are encouraged to leave reviews when ending the contract. As a
+                            consultant, you can also leave a review for the client by accessing your contract's details. The
+                            reviews become public once both parties have left a review for each other or when the 14-day
+                            period concludes.
                         </p>
                         <p class="whyConsEdu-child-title">Contesting a review
                         </p>
-                        <p class="mt-2 frequently-qsn-details text-justify">There’s a few ways to change how your review
-                            appears on
-                            ConsultantEdu starting
-                            with
-                            responding to
-                            a review. Within 28 days of the end of the contract, you can post a follow-up comment to a
-                            review
-                            about you that will show up on your public profile. You can also work directly with your client
-                            or
-                            talent to enable feedback changes and revise the review. If you feel the review violates
-                            ConsultantEdu’s terms of service and you would like to dispute a review, ConsultantEdu’s
-                            customer
-                            service team is there to help.
+                        <p class="mt-2 frequently-qsn-details text-justify">If you wish to modify how a review appears on
+                            ConsultantEdu, you have several options. First, you can respond to a review by posting a
+                            follow-up comment within 28 days of the contract's end. This comment will be displayed on your
+                            public profile. Additionally, you can collaborate with your client or talent to request feedback
+                            changes and revise the review. If you believe a review violates ConsultantEdu's terms of service
+                            and wish to dispute it, our customer service team is available to assist you.
                         </p>
                         <p class="whyConsEdu-child-title">Checking your reviews
                         </p>
-                        <p class="mt-2 frequently-qsn-details text-justify">Seeing your reviews is easy on ConsultantEdu,
-                            simply visit
-                            your profile and all your public reviews will be there. If your contract just ended, it can take
-                            up to 14 days for your review to become public. You can also find your feedback for specific
-                            contracts in your contracts dashboard.
+                        <p class="mt-2 frequently-qsn-details text-justify">Viewing your reviews is straightforward on
+                            ConsultantEdu. Simply visit your profile to find all your public reviews. If your contract has
+                            recently concluded, please note that it may take up to 14 days for your review to become public.
+                            You can also access feedback for specific contracts in your contracts dashboard.
                         </p>
 
                     </div>
@@ -374,81 +448,106 @@
             <p class=" mx-4 fs-20 fw-700">Example</p>
             <div class="mx-auto fre-review-say-customer" style="width: 80%;margin:0 10%">
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Stephen <span class="text-muted fw-600 ">and</span> Amiya <span
-                            class="text-muted">worked together through</span> Talent Marketplace</p>
+                    <p class="fw-600 fs-20 ">Feedback</p>
                     <div class="mt-3 ">
-                        <span class="text-muted fs-16 mb-3">Client</span>
-                        <h4 class="fre-review-say-customer-review mt-2 text-justify">Stephen is a seasoned trademark
-                            attorney who is
-                            very clear in his approach. Swift, knowledgeable, to the point, sticks to the schedules and
-                            reliable when it comes to Trademark Office Action responses. Highly Recommended !</h4>
-                        <p class="fw-600 fs-16">Amiya D. <span class="text-muted">
-                                Australia</span> </p>
+                        <span class="text-dark fw-700 fs-16 mb-3">Client</span>
+                        <h4 class=" frequently-qsn-details mt-2 text-justify">Prof. David Smith played a pivotal
+                            role in the development of our university curriculum. His expertise, creativity, and dedication
+                            to ensuring our program met the highest standards were truly outstanding. Prof. Smith's
+                            meticulous attention to detail and ability to align the curriculum with our institution's goals
+                            made this project a success. We are grateful for his contributions and highly recommend his
+                            services to any educational institution.</h4>
+                        <p class="fw-600 fs-16" style="  color:#6560E6 !important;">Client Name: Dr. Emily Johnson</p>
+                        <p class="fw-600 fs-16 frequently-qsn-details">Review for Curriculum Development Consultant: Prof.
+                            David Smith</p>
                     </div>
                     <div class="mt-3">
-                        <span class="text-muted fs-16 mb-3">Consultant
+                        <span class="text-dark fw-700 fs-16 mb-3">Consultant:
                         </span>
-                        <h4 class="mt-2 fre-review-say-customer-review text-justify">Amiya was a great client. Clear
-                            deliverable and
-                            fast at responding. I look forward to working together in the future and I was happy to solve
-                            his problems.
+                        <h4 class="mt-2 frequently-qsn-details text-justify">Working with Dr. Emily Johnson and her
+                            team on curriculum development was a rewarding experience. Dr. Johnson's clear vision and
+                            commitment to excellence made the collaboration seamless. Her prompt communication and
+                            insightful feedback allowed us to refine the curriculum effectively. I am honored to have been
+                            part of this project and look forward to future collaborations with Dr. Johnson and her
+                            institution. Highly recommended.
                         </h4>
-                        <p class="fw-600 fs-16">Stephen P.
-                            <span class="text-muted"> UK</span>
+                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Consultant
+                            Name: Prof. David Smith
                         </p>
+                        <p class="fw-600 fs-16 frequently-qsn-details">Review for Client: Dr. Emily Johnson </p>
                     </div>
                 </div>
+
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-2 0 ">Stephen <span class="text-muted fw-600 ">and</span> Amiya <span
-                            class="text-muted">worked together through</span> Talent Marketplace</p>
+                    <p class="fw-600 fs-20 ">Feedback</p>
                     <div class="mt-3 ">
-                        <span class="text-muted fs-16 mb-3">Client</span>
-                        <h4 class="fre-review-say-customer-review mt-2 text-justify">Stephen is a seasoned trademark
-                            attorney who is
-                            very clear in his approach. Swift, knowledgeable, to the point, sticks to the schedules and
-                            reliable when it comes to Trademark Office Action responses. Highly Recommended !</h4>
-                        <p class="fw-600 fs-16">Amiya D. <span class="text-muted">
-                                Canada</span> </p>
-                        <p class=" bg-gray rounded-2 fs-16 p-1">Legal</p>
+                        <span class="text-dark fw-700 fs-16 mb-3">Client</span>
+                        <h4 class="frequently-qsn-details mt-2 text-justify">We are immensely grateful to Dr.
+                            Johnson for his invaluable assistance in our university's accreditation process. His deep
+                            knowledge of accreditation standards, attention to detail, and meticulous guidance were
+                            instrumental in helping us meet and exceed the required criteria. Dr. Johnson's professionalism
+                            and commitment to our institution's success were truly commendable. Thanks to his expertise, we
+                            achieved accreditation smoothly and with confidence. We highly recommend Dr. Johnson's
+                            consultancy services to any educational institution seeking accreditation.</p>
+                            <p class="  fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Client
+                                Name: Jennifer
+                                Martinez, Dean of Academic Affairs</p>
+                            <p class=" bg-gray rounded-2 fs-16 p-1 frequently-qsn-details">Review for Consultant: Dr.
+                                Robert Johnson,
+                                Accreditation Expert</p>
                     </div>
+
+
                     <div class="mt-3">
-                        <span class="text-muted fs-16 mb-3">Consultant
+                        <span class="text-dark fw-700 fs-16 mb-3">Consultant
                         </span>
-                        <h4 class="mt-2 fre-review-say-customer-review text-justify">Amiya was a great client. Clear
-                            deliverable and
-                            fast at responding. I look forward to working together in the future and I was happy to solve
-                            his problems.
+                        <h4 class="mt-2 frequently-qsn-details text-justify">Working with Jennifer and her
+                            dedicated team at the university was a rewarding experience. Their commitment to academic
+                            excellence and determination to meet accreditation standards were evident throughout the
+                            process. Jennifer provided clear guidance, access to necessary resources, and timely responses
+                            to inquiries, which greatly facilitated our consultancy work. It's been a privilege to assist
+                            the university in achieving accreditation, and I look forward to continued collaboration with
+                            such a professional and forward-thinking institution.
                         </h4>
-                        <p class="fw-600 fs-16">Stephen P.
-                            <span class="text-muted"> United States</span>
+                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Consultant
+                            Name: Dr. Robert
+                            Johnson
                         </p>
-                        <p class=" bg-gray rounded-2 fs-16 p-1">Legal</p>
+                        <p class=" fw-600  fs-16 p-1 frequently-qsn-details">Review for Client: Jennifer Martinez, Dean of
+                            Academic Affairs</p>
                     </div>
                 </div>
+
+
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Stephen <span class="text-muted fw-600 ">and</span> Amiya <span
-                            class="text-muted">worked together through</span> Talent Marketplace</p>
+                    <p class="fw-600 fs-20 ">Feedback</p>
                     <div class="mt-3 ">
-                        <span class="text-muted fs-16 mb-3">Client</span>
-                        <h4 class="fre-review-say-customer-review mt-2 text-justify">Stephen is a seasoned trademark
-                            attorney who is
-                            very clear in his approach. Swift, knowledgeable, to the point, sticks to the schedules and
-                            reliable when it comes to Trademark Office Action responses. Highly Recommended !</h4>
-                        <p class="fw-600 fs-16">Amiya D. <span class="text-muted">
-                                Australia</span> </p>
+                        <span class="text-dark fw-700 fs-16 mb-3">Client</span>
+                        <h4 class="frequently-qsn-details mt-2 text-justify">I had the pleasure of working with Dr.
+                            Johnson on a complex university research project, and his expertise was invaluable. His
+                            analytical skills and in-depth knowledge significantly enhanced our research efforts. Dr.
+                            Johnson was highly responsive, met all deadlines, and provided thorough analysis that greatly
+                            contributed to our project's success. I highly recommend his services to anyone seeking top-tier
+                            research and analysis support.</p>
+                            <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Review for
+                                Consultant: Dr. Michael
+                                Johnson</p>
                     </div>
                     <div class="mt-3">
-                        <span class="text-muted fs-16 mb-3">Consultant
+                        <span class="text-dark fw-700 fs-16 mb-3">Consultant
                         </span>
-                        <h4 class="mt-2 fre-review-say-customer-review text-justify">Amiya was a great client. Clear
-                            deliverable and
-                            fast at responding. I look forward to working together in the future and I was happy to solve
-                            his problems.
+                        <h4 class="mt-2 frequently-qsn-details text-justify">Collaborating with Professor Davis on
+                            the university research and analysis project was a rewarding experience. Her clear vision,
+                            dedication to academic excellence, and effective communication ensured a smooth and productive
+                            partnership. Her feedback and guidance were instrumental in shaping the research direction. I'm
+                            eager to engage in future academic endeavours with Professor Davis and highly recommend her as a
+                            client.
                         </h4>
-                        <p class="fw-600 fs-16">Stephen P.
-                            <span class="text-muted"> United States</span>
+                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Consultant
+                            Name: Dr. Michael
+                            Johnson
                         </p>
-                        <p class=" bg-gray rounded-2 fs-16 p-1">Legal</p>
+                        <p class=" fw-600  fs-16 p-1 frequently-qsn-details">Review for Client: Professor Emily Davis</p>
                     </div>
                 </div>
             </div>
@@ -494,17 +593,18 @@
                         <div class="col-lg-6 col-sm-12 py-3">
                             <div class=" border-bottom my-2">
                                 <input type="checkbox" id="fre-leave">
-                                <h4 class="faq-qsn-title">Is ConsultantEdu free to join as a freelancer?</h4>
+                                <h4 class="faq-qsn-title">Is ConsultantEdu Hub free to join as an academic consultant?</h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Yes, it’s free to join ConsultantEdu, complete your profile, search for work and
-                                    create
-                                    your own projects. Our service fee is based on your earnings with each client and
-                                    the sliding scale rewards long-term relationships.
+                                    Joining ConsultantEdu Hub as an academic consultant is absolutely free. You can create
+                                    your profile, search for work, and even initiate your own projects without any cost. Our
+                                    service fee is determined by your earnings with each client, and we offer a sliding
+                                    scale that rewards long-term relationships.
                                 </p>
                                 <div class="fre-content text-justify">
                                     <p>
-                                        You can upgrade to Freelancer Plus to more effectively market your services,
-                                        submit proposals and stand out from the crowd.
+                                        Additionally, you have the option to upgrade to ConsultantEdu Plus, which allows you
+                                        to more effectively market your services, submit proposals, and stand out from the
+                                        crowd.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-leave">Show less <img
                                             class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
@@ -519,14 +619,14 @@
                                 <input type="checkbox" id="fre-contest">
                                 <h4 class="faq-qsn-title">Can I grow my career on ConsultantEdu?</h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Yes, some of our most successful professionals have brought their strong background
-                                    and employment track record to ConsultantEdu. We know you may be new to freelancing
-                                    but
-                                    highly experienced in your field. Our
+                                    Absolutely! Many of our most successful academic experts have utilized their strong
+                                    academic backgrounds and employment records on ConsultantEdu. We understand that you may
+                                    be new to consulting but highly experienced in your field.
                                 </p>
                                 <div class="fre-content text-justify">
                                     <p>
-                                        complete guide shares our step-by-step tips for building your freelance career.
+                                        Our comprehensive guide offers step-by-step tips for building your consulting
+                                        career.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-contest">Show less <img
                                             class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
@@ -539,21 +639,16 @@
                             </div>
                             <div class=" border-bottom ">
                                 <input type="checkbox" id="fre-freelancing">
-                                <h4 class="faq-qsn-title mt-2 ">What can I gain from freelancing with
-                                    ConsultantEdu?
+                                <h4 class="faq-qsn-title mt-2 ">What can you gain from consulting with ConsultantEdu?
                                 </h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    work with great clients and well-known brands. Many choose ConsultantEdu because we
-                                    help
-                                    them do it well. How to Succeed as a Freelancer gives you a taste of the support we
-                                    offer to boost your success.
+                                    Work with prestigious clients and renowned institutions. Many choose ConsultantEdu for
+                                    our support in achieving excellence.
                                 </p>
                                 <div class="fre-content text-justify ">
                                     <p>
-                                        work with great clients and well-known brands. Many choose ConsultantEdu because
-                                        we
-                                        help them do it well. How to Succeed as a Freelancer gives you a taste of the
-                                        support we offer to boost your success.
+                                        How to Succeed as a Consultant' provides a glimpse of our success-boosting academic
+                                        resources.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-freelancing">Show less <img
                                             class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
@@ -563,84 +658,7 @@
                                         class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
                                         alt=""></label>
                             </div>
-                            <div class=" border-bottom">
-                                <input type="checkbox" id="fre-buildingBusiness">
-                                <h4 class="faq-qsn-title mt-2">Is ConsultantEdu good for building a business?
-                                </h4>
-                                <p class="frequently-qsn-details text-justify">
-                                    Yes, and creating an agency can be a great way to grow. Using our agency structure,
-                                    freelancers can collaborate as a single organization, delivering more to their
-                                    clients. Moving from solo freelancer to agency
-                                </p>
-                                <div class="fre-content">
-                                    <p>
-                                        owner is a big transition, but it might be the right one for you.
-                                    </p>
-                                    <label class="fre-expand-icon" for="fre-buildingBusiness">Show less <img
-                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
-                                            alt=""></label>
-                                </div>
 
-                                <label class="fre-expand-icon" for="fre-buildingBusiness">Read more <img
-                                        class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
-                                        alt=""></label>
-                            </div>
-                            <div class=" border-bottom">
-                                <h4 class="faq-qsn-title mt-2">What projects can I find on ConsultantEdu?</h4>
-                                <p class="frequently-qsn-details text-justify">
-                                    Clients are looking for help across almost every industry, job, and skill set. Find
-                                    the work you’re looking for, from specific projects to ongoing, long-term work, on
-                                    fixed-price and hourly contracts.
-                                </p>
-                            </div>
-                            <div class=" border-bottom">
-                                <input type="checkbox" id="fre-Connects">
-                                <h4 class="faq-qsn-title mt-2">What are Connects? </h4>
-                                <p class="frequently-qsn-details text-justify">
-                                    Connects are ConsultantEdu’s virtual currency. Freelancers and agencies use them to
-                                    show
-                                    their genuine interest as they submit proposals. Different jobs require different
-                                    amounts of Connects, some none at all.
-                                </p>
-                                <div class="fre-content">
-                                    <p class="text-justify">
-                                        Freelancer accounts receive free Connects every month. You can buy bundles of
-                                        them. And freelancers and agencies earn Connects by winning client interviews,
-                                        getting great reviews, and demonstrating their skills.
-                                    </p>
-                                    <label class="fre-expand-icon" for="fre-Connects">Show less <img
-                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
-                                            alt=""></label>
-                                </div>
-
-                                <label class="fre-expand-icon" for="fre-Connects">Read more <img
-                                        class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
-                                        alt=""></label>
-                            </div>
-                            <div class=" border-bottom">
-                                <input type="checkbox" id="fre-badges">
-                                <h4 class="faq-qsn-title mt-2">What do the different badges mean? </h4>
-                                <p class="frequently-qsn-details text-justify">
-                                    Our badges help you stand out. With a strong background in your field and early
-                                    success with clients, you’ll soon be invited to meet our Rising Talent criteria.
-                                    Keep building your reputation to earn our Top Rated
-                                </p>
-                                <div class="fre-content">
-                                    <p class="text-justify">
-                                        badge. Top Rated Plus shows you have a proven history of success on large and
-                                        long-term contracts. And Expert Vetted means you’ve gone through our rigorous
-                                        pre-screening to match your high-demand skills with the right clients. Get the
-                                        feedback, wear the badge , hit your goals.
-                                    </p>
-                                    <label class="fre-expand-icon" for="fre-badges">Show less <img
-                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
-                                            alt=""></label>
-                                </div>
-
-                                <label class="fre-expand-icon" for="fre-badges">Read more <img
-                                        class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
-                                        alt=""></label>
-                            </div>
 
                         </div>
                     </div>

@@ -153,9 +153,9 @@
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30  ">Training and Expert Support Hub</h3>
-                        <p class="fw-400 text-white fs-15 mb-2">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
-                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Find Instructors</a>
+                        <h3 class="text-white fw-700 fs-30  site-font">Training and Expert Support Hub</h3>
+                        <p class="fw-400 text-white site-font fs-15 mb-2">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
+                        <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Find Instructors</a>
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -333,7 +333,6 @@
                                         </div>
                                     </div>
                                     <!-- Seminar Topics -->
-
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
