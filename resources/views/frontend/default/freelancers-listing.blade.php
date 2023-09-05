@@ -9,94 +9,7 @@
 <body>
     @extends('frontend.default.layouts.app')
     @section('content')
-        {{-- <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
-            <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
-                <div class="col-lg-7 col-12  w-100 my-auto">
-                    <h3 class="text-white fw-700  frequently-qsn-title  ">Find Our Experts</h3>
-                    <p class="text-white fs-16 text-justify w-100 consultant-banner-device-style">Expand your knowledge and
-                        master a diverse range of cutting-edge statistical methods through personalized consultations with
-                        our expert consultants. Our consultants are renowned authorities in their specialized domains,
-                        ensuring that you receive unparalleled guidance tailored to your specific needs. With their
-                        expertise and a keen focus on your unique requirements, you'll gain a deep understanding of
-                        statistics, no matter your background.</p>
-                    <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Find
-                        Instructors</a>
-                </div>
 
-                {{-- @dd(getCountryName($country_id)); --}}
-
-                @foreach($categories as $category)
-                <span id="category_{{$category->id}}"
-                  class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                  {{$category ->name}} |<p class="m-0  d-inline fw-700" onclick="removeCategory({{$category->id}})">
-                    X</p>
-                </span>
-                @endforeach
-
-                <!-- hourly rate badge  -->
-                @if(count($hourly_rate) > 0)
-                  @foreach ($hourly_rate as $rate)
-                    @if ($rate != 'all')
-                      <span id="hourlyRate_{{ $rate }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
-                        {{ getHourlyRateName($rate) }}
-                          <p onclick="removeHourlyRate({{ $rate }})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
-                      </span>
-                    @endif
-                  @endforeach
-                @endif
-
-                <!-- country badge  -->
-                @if(! empty($country_id))
-                  <span id="countryID_{{ $country_id }}" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
-                    {{ getCountryName($country_id) }}
-                      <p onclick="removeCountryName({{ $country_id }})" class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
-                  </span>
-                @endif
-                <!-- search bar  -->
-                <input type="hidden" name="type" value="freelancer">
-                <form class="" method="GET">
-                  <div class=" d-flex align-items-center w-100">
-                    <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2"
-                      data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                      <i class="las la-filter"></i>
-                    </button>
-                    <div class="input-group rounded-2">
-                      <input type="text" class="form-control rounded  "
-                        placeholder="{{ translate('Search for consultants') }}" name="keyword" value="{{ $keyword }}">
-                      <button class="input-group-prepend rounded" type="submit">
-                        <span class="input-group-text text-white border-left-0 rounded-right" : style="">
-                          <i class="las la-search"></i>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <!-- categories  -->
-
-                <div class="mt-3">
-                  <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="pr-3">{{ translate('Categoriesss') }}</span>
-                  </h6>
-                  @foreach(\App\Models\ProjectCategory::all()->reverse() as $category)
-
-                  <label class="aiz-checkbox w-100">
-                    <input type="checkbox" name="category_id[]" value="{{$category->id}}" onchange="applyFilter()"
-                      @if(in_array($category->id, $category_ids)) checked @endif >
-                    {{$category->name}}
-                    <span class="aiz-square-check"></span>
-                    <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                  </label>
-                  @endforeach
-
-                <div class="col-lg-1 col-12 my-auto"></div>
-                <div class="col-lg-4 col-12">
-                    <img class="banner-img"
-                        src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
-                        alt="">
-
-                </div>
-            </div>
-        </div> --}}
         <div class="container-main-projects-banner">
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
@@ -209,7 +122,7 @@
                                         <h6 class="text-left mb-3 fs-14 ">
                                             <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
                                         </h6>
-                                        @foreach (\App\Models\ProjectCategory::all() as $category)
+                                        @foreach (\App\Models\ProjectCategory::all()->reverse() as $category)
                                             <label class="aiz-checkbox site-font w-100">
                                                 <input type="checkbox" name="category_id[]" value="{{ $category->id }}"
                                                     onchange="applyFilter()"
