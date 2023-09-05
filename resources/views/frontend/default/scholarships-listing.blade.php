@@ -5,7 +5,7 @@
         <div class="mb-4 pb-lg-4" style="background:#275846">
             <div class="row rounded-0 px-2 mt-1 mx-4">
                 <div class="col-lg-6 col-sm-12 my-auto">
-                    <h3 class="text-white fw-700 fs-30 site-font ">Available Academic Scholarships
+                    <h3 class="text-white fw-700 fs-30 mt-4 site-font ">Available Academic Scholarships
                     </h3>
                     <p class="fw-400 text-white  site-font fs-18 mb-2">View available academic scholarships and connect with
                         experienced consultants to assist with your application. </p>
@@ -172,7 +172,7 @@
 
                         @foreach ($scholarships as $scholarship)
                             <div class="row py-4  all-scholarship-list">
-                                <div class="col-lg-2 ">
+                                <div class="col-lg-2 col-12">
                                     <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid #ddd">
 
                                         <img src="{{ custom_asset($scholarship->banner) }}"
@@ -180,54 +180,54 @@
                                     </div>
 
                                     <a href="{{ $scholarship->website_link }}"
-                                        class="d-flex justify-content-center text-white btn c-pointer px-4  py-1"
+                                        class="d-flex justify-content-center  text-white btn c-pointer px-4  py-1"
                                         style="background: #275846;" target="_blank">
                                         Website
                                     </a>
 
                                     <!-- <div class="">
-                                                <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                    <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                    {{ translate(' Find a consultant') }}
-                                                </p>
-                                            </div> -->
+                                                        <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                                                            <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                            {{ translate(' Find a consultant') }}
+                                                        </p>
+                                                    </div> -->
                                 </div>
                                 <div class="col-lg-10 border-gray-400">
 
                                     <div class="site-font">
                                         <p class="site-font"> <!-- @if ($scholarship->university != null)
     <div class="  ">
-                                                    <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
-                                                        @if ($scholarship->country != null)
+                                                            <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
+                                                                @if ($scholarship->country != null)
     {{ $scholarship->country->country_name }}
     @endif
-                                                    </p>
-                                                </div>
+                                                            </p>
+                                                        </div>
     @endif --></p>
                                     </div>
                                     <!-- <div class="row">
-                                                <div class="col-3 pr-0">
-                                                    <p class="fre-scsh-left-side-title">
-                                                        Scholarships Overview:
-                                                    </p>
-                                                </div>
-                                                <div class="col-9 pl-0">
+                                                        <div class="col-3 pr-0">
+                                                            <p class="fre-scsh-left-side-title">
+                                                                Scholarships Overview:
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-9 pl-0">
 
 
-                                                    <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
-                                                        The Western Sydney University provides a wide range of research scholarships to support
-                                                        domestic and international research candidates. Scholarships are awarded based on a
-                                                        competitive process and are open to both new and current candidates
-                                                        <a class="fre-scsh-find-more-btn pt-0 text-success ">
-                                                            Read more
-                                                        </a>
-                                                    </p>
+                                                            <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
+                                                                The Western Sydney University provides a wide range of research scholarships to support
+                                                                domestic and international research candidates. Scholarships are awarded based on a
+                                                                competitive process and are open to both new and current candidates
+                                                                <a class="fre-scsh-find-more-btn pt-0 text-success ">
+                                                                    Read more
+                                                                </a>
+                                                            </p>
 
-                                                </div>
+                                                        </div>
 
-                                            </div> -->
+                                                    </div> -->
                                     <div class="row">
-                                        <div class="col-9">
+                                        <div class="col-lg-9 col-12">
                                             <div class="d-flex justify-content-between">
                                                 <a href="#" class=" fs-20 fw-700 site-font pb-1 "
                                                     title="{{ $scholarship->title }}" style="color:#5ABC76;">
@@ -244,22 +244,22 @@
                                                 </a>
 
                                                 <!-- <div>
-                                                    <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
-                                                    <div class="">
-                                                        <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                            <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                            {{ translate(' Find a consultant') }}
-                                                        </p>
-                                                    </div>
-                                                </div> -->
+                                                            <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
+                                                            <div class="">
+                                                                <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
+                                                                    <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                                    {{ translate(' Find a consultant') }}
+                                                                </p>
+                                                            </div>
+                                                        </div> -->
                                             </div>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-lg-3 col-12">
                                                     <p class="fre-scsh-left-side-title mb-0">
                                                         Who can Apply:
                                                     </p>
                                                 </div>
-                                                <div class="col-9 pl-0">
+                                                <div class="col-lg-9 col-12 pl-lg-0 pl-3">
                                                     @if ($scholarship->WhoCanApply != null)
                                                         <p class="fre-scsh-right-side-details pb-0 mb-0">
                                                             {{ $scholarship->WhoCanApply->title }}
@@ -268,12 +268,12 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-3 ">
+                                                <div class="col-lg-3 col-12 ">
                                                     <p class="fre-scsh-left-side-title mb-1">
                                                         Level of Study:
                                                     </p>
                                                 </div>
-                                                <div class="col-9  pl-0">
+                                                <div class="col-lg-9 col-12  pl-lg-0 pl-3">
                                                     @if ($scholarship->level != null)
                                                         <p class="fre-scsh-right-side-details  mb-1">
                                                             {{ $scholarship->level->level_name }}</p>
@@ -281,12 +281,12 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-lg-3  pr-0">
+                                                <div class="col-lg-3 col-12  pr-0">
                                                     <p class=" fre-scsh-left-side-title ">
                                                         Field of Study:
                                                     </p>
                                                 </div>
-                                                <div class="col-lg-9  pl-0">
+                                                <div class="col-lg-9 col-12  pl-lg-0 pl-3">
                                                     @php
                                                         $fieldStudys = json_decode($scholarship->fieldStudy_id);
                                                         $studyNames = \App\Models\ScholarshipFieldStudy::whereIn('id', $fieldStudys)->pluck('name')->implode('
@@ -297,8 +297,30 @@
                                                     </p>
                                                 </div>
                                             </div>
+                                            
+                                    <div class="row">
+                                        <div class="col-lg-3 col-12 ">
+                                            <p class=" fre-scsh-left-side-title ">
+                                                Need help with your Application:
+                                            </p>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-lg-9 col-12 pl-lg-0 pl-3 ">
+                                            <p class=" fre-scsh-right-side-details text-justify  mb-1 w-100 pr-4">
+                                                ConsultantEdu can connect you with experienced consultants who have received
+                                                scholarships in your
+                                                field. They can review your application and provide valuable feedback to to
+                                                ensure you submit a
+                                                competitive application.
+                                                <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
+                                                            Find a consultant
+                                                        </a> -->
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                        </div>
+                                        <div class="col-lg-3 col-12 mt-lg-0 mt-2">
                                             <div>
                                                 <!-- <img src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}" alt=""> -->
 
@@ -328,27 +350,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-2  ">
-                                            <p class=" fre-scsh-left-side-title ">
-                                                Need help with your Application:
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-10  ">
-                                            <p class=" fre-scsh-right-side-details text-justify  mb-1 pr-4">
-                                                ConsultantEdu can connect you with experienced consultants who have received
-                                                scholarships in your
-                                                field. They can review your application and provide valuable feedback to to
-                                                ensure you submit a
-                                                competitive application.
-                                                <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
-                                                            Find a consultant
-                                                        </a> -->
-                                            </p>
-
-                                        </div>
-
-                                    </div>
                                 </div>
                             </div>
                             <div class="lg:mx-10 lg:mb-20 " style="border:1px solid #ddd "></div>
@@ -365,8 +366,8 @@
                 <div class="">
                     <div class=" content-title  text-center py-5">
                         <h2 class="fw-700 fs-24 text-black mb-0">Need Scholarship help?</h2>
-                          <h5 class="text-center mt-lg-3">Navigating scholarships can be challenging. Let us help you:
-                                </h5>
+                        <h5 class="text-center mt-lg-3">Navigating scholarships can be challenging. Let us help you:
+                        </h5>
                     </div>
                     <div class="row need-help-full-body">
                         <div class="col-xl-3 col-md-6">
@@ -400,7 +401,7 @@
                                     </p>
                                 </div>
                                 <h6 class="fs-14 mt-2  text-black text-center">
-                                   Review the proposals from our academic consultants.
+                                    Review the proposals from our academic consultants.
                                 </h6>
                             </div>
                         </div>

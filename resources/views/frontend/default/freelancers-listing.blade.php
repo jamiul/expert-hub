@@ -34,7 +34,7 @@
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30 site-font  ">Hire Academic Consultants
+                        <h3 class="text-white fw-700 fs-30 site-font mt-3 ">Hire Academic Consultants
                         </h3>
                         <p class="fw-400 text-white site-font fs-18 mb-2">Connect with a diverse range of experts in the
                             field you are searching for to meet your academic requirements.
