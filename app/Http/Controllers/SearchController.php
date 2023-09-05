@@ -150,7 +150,8 @@ class SearchController extends Controller
             $seminarMode_id = [];
             $seminar_modes = [];
             $language_id = [];
-            $category_id = [];
+            $category_ids = [];
+            $seminar_category = [];
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
@@ -178,6 +179,11 @@ class SearchController extends Controller
                 $seminars->where('title', 'like', '%' . $request->keyword . '%');
             }
 
+            if ($request->category_id != null) {
+                $category_ids = $request->category_id;
+                $seminar_category = ProjectCategory::whereIn('id', $category_ids)->get();
+                $seminars = $seminars->whereIn('project_category_id', $category_ids);
+            }
             if ($request->seminar_mode_id != null) {
                 $seminar_mode_ids = $request->seminar_mode_id;
                 $seminar_modes = SeminarMode::whereIn('id', $seminar_mode_ids)->get();
@@ -236,6 +242,8 @@ class SearchController extends Controller
                 'keyword',
                 'type',
                 'language_id',
+                'category_ids',
+                'seminar_category',
                 'seminar_mode_ids',
                 'seminar_modes',
                 'selected_seminar_lang',

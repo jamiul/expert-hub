@@ -192,6 +192,14 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
+                                    @foreach ($seminar_category as $category)
+                                        <span id="seminarCategory_{{ $category->id }}"
+                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                            {{ $category->name }} |<p class="m-0  d-inline fw-700"
+                                                onclick="removeSeminarCategory({{ $category->id }})">
+                                                X</p>
+                                        </span>
+                                    @endforeach
                                     @foreach ($seminar_modes as $mode)
                                         <span id="seminarMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
@@ -243,6 +251,22 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <!-- categories  -->
+                                        <div class="mt-3">
+                                            <h6 class="text-left mb-3 fs-14 fw-700">
+                                                <span class="pr-3">{{ translate('Categories') }}</span>
+                                            </h6>
+                                            @foreach (getProjectCategory() as $category)
+                                                <label class="aiz-checkbox w-100">
+                                                    <input type="checkbox" name="category_id[]"
+                                                        value="{{ $category['id'] }}" onchange="applyFilter()"
+                                                        @if (in_array($category['id'], $category_ids)) checked @endif>
+                                                    {{ $category['name'] }}
+                                                    <span class="aiz-square-check"></span>
+                                                    <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                                </label>
+                                            @endforeach
+                                        </div>
                                         <!-- Seminar date -->
                                         <div class="mt-2">
                                             <h6 class="text-left fs-16 py-2 fw-700">
@@ -273,7 +297,7 @@
                                             </div>
                                         </div>
                                         <!-- Seminar software -->
-                                        <div class="mt-2">
+                                        <div class="mt-2" id="seminar-software" style="display: none">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
                                                 <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
@@ -457,6 +481,20 @@
                                                                 <p
                                                                     class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
                                                                     {{ getLanguageName($seminar->language_id) }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mx-1">
+                                                            <div class="col-12 col-lg-3 p-0 pr-0">
+                                                                <p class=" fre-scsh-left-side-title ">
+                                                                    Seminar Category:
+                                                                </p>
+                                                            </div>
+                                                            <div class=" col-12 col-lg-9 pl-0">
+
+                                                                <p
+                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
+                                                                    {{ getSeminarCategory($seminar->project_category_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -649,6 +687,20 @@
 
                     // Uncheck the corresponding checkbox
                     var checkbox = document.querySelector('input[name="language_id[]"][value="' + Id + '"]');
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+                $('#seminar-filter-form').submit();
+            }
+
+            function removeSeminarCategory(Id) {
+                var seminarCategory = document.getElementById('seminarCategory_' + Id);
+                if (seminarCategory) {
+                    seminarCategory.parentNode.removeChild(seminarCategory);
+
+                    // Uncheck the corresponding checkbox
+                    var checkbox = document.querySelector('input[name="category_id[]"][value="' + Id + '"]');
                     if (checkbox) {
                         checkbox.checked = false;
                     }
@@ -886,7 +938,20 @@
                 }).on('changeDate', function(e, date) {
                     applyFilter();
                 });
+                showSemianrSoftwate();
             });
+
+            // Hide and show seminar software
+            function showSemianrSoftwate() {
+                let seminarSoftware = {!! json_encode($category_ids) !!};
+                for (let i = 0; i < seminarSoftware.length; i++) {
+                    // When category "Research and Analysis"
+                    // then show seminar software
+                    if (seminarSoftware[i] == 12) {
+                        $("#seminar-software").show();
+                    }
+                }
+            }
 
             function applyFilter() {
                 $('#seminar-filter-form').submit();
