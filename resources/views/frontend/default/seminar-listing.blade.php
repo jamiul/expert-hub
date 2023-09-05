@@ -493,7 +493,7 @@
 
                                                                 <p
                                                                     class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                                    {{ getSeminarCategory($seminar->project_category_id) }}
+                                                                    {{ $seminar->project_category_id ? getSeminarCategory($seminar->project_category_id) : ''}}
                                                                 </p>
                                                             </div>
                                                         </div>
