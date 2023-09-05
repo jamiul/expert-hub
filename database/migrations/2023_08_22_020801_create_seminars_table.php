@@ -23,6 +23,7 @@ class CreateSeminarsTable extends Migration
             $table->string('organiser_certificate')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->longText('instructor_descriptions')->nullable();
+            $table->string('attachment')->nullable();
             $table->string('slug')->nullable();
             $table->longText('course_objectives')->nullable();
             $table->longText('learning_outcomes')->nullable();

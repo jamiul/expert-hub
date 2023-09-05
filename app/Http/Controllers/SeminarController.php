@@ -83,6 +83,7 @@ class SeminarController extends Controller
         $input = $request->all();
         $input['created_by'] = $user->id;
         $input['user_id'] = $user->id;
+
         $input['project_category_id'] = $request->seminar_category;
 
         $seminar = Seminar::create($input);
@@ -105,7 +106,7 @@ class SeminarController extends Controller
                 ]);
             }
         }
-
+        $seminar->attachment = $request->attachment;
         flash(translate('Seminar has been created successfully'))->success();
         return redirect()->route('seminar.index');
     }

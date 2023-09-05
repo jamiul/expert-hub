@@ -17,8 +17,9 @@
         td.day.highlight {
             color: #DC322F;
             border-radius: 50% !important;
-            background-image: linear-gradient(#275846, #275846) !important;
-            color: #fff !important;
+            border:1px solid #275846;
+            /* background-image: linear-gradient(#275846, #275846) !important; */
+            color: #0a0a0a !important;
             /* font-weight: 900;
             border-radius: 50%;
             background-color: lightblue; */
@@ -347,6 +348,7 @@
                                             @foreach ($seminars as $seminar)
                                                 <div class="d-lg-flex border-bottom my-2 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
+
                                                         <a href="{{ route('seminar.details', $seminar->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
                                                             <u class="seminar-title seminar-heading mx-1">{{ $seminar->title }}
