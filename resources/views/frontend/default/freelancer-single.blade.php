@@ -307,10 +307,10 @@
                                     </h4>
                                     <div class="border mb-3">
                                         <div class="row p-3">
-                                            <div class="col-2">
-                                                <img src="{{ my_asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}" alt="">
+                                            <div class="col-lg-2 col-md-2 col-sm-12">
+                                                <img  src="{{ my_asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}" alt="">
                                             </div>
-                                            <div class="col-9">
+                                            <div class="col-lg-9 col-md-9 col-sm-12">
                                                 <div class="d-flex justify-content-between ">
                                                 <p class="fw-700 fs-18">Writing & Translation</p>
                                                 <p class="fw-700 fs-18">$20 <span class="fw-400 fs-18">/30min</span></p>
