@@ -157,36 +157,17 @@
                                     value="{{ $seminar->organiser_certificate }}" class="form-control">
                             </div>
                         </div>
-                        <!--Course Instructor -->
-                            <div class="form-group row" id="country">
-                                <label class="col-md-3 col-from-label">
-                                    {{ translate('Course Instructor') }}
-                                    <span class="text-danger">*</span>
-
-                                </label>
-                                <div class="col-md-9">
-                                    <select class="form-control" name="user_id" id="user_id" data-live-search="true"
-                                        title="{{ translate('Course Instructor') }}" required>
-                                        @foreach (getCourseInstructors() as $instructor)
-                                            <option
-                                                value="{{ $instructor['id'] }}"
-                                                {{ $instructor['id'] == $seminar->user_id ? 'selected' : '' }}>
-                                                {{ $instructor['name'] }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <!--Course Instructor-2 -->
+                        {{-- @dd($seminar->seminar_instructors); --}}
+                            <!--Course Instructors -->
                             @foreach ($seminar->seminar_instructors as $seminar_instructor)
                                 <div class="form-group row" id="country">
                                     <label class="col-md-3 col-from-label">
-                                        {{ translate('Course Instructor') }} {{ $loop->iteration + 1 }}
+                                        {{ translate('Course Instructor') }} {{ $loop->iteration }}
                                     </label>
                                     <div class="col-md-9">
                                         <select class="form-control aiz-selectpicker" name="seminar_instructors[]"
                                             id="user_id" data-live-search="true"
-                                            title="{{ translate('Course Instructor 2') }}">
+                                            title="{{ translate('Select Course Instructor') }} {{ $loop->iteration }}">
                                             <option value="">Select Seminar Instructor</option>
                                             @foreach (getCourseInstructors() as $instructor)
                                                 <option value="{{ $instructor['id'] }}"

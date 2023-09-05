@@ -149,13 +149,17 @@
 <body>
     @extends('frontend.default.layouts.app')
     @section('content')
-         <div class="container-main-projects-banner">
+        <div class="container-main-projects-banner">
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
                         <h3 class="text-white fw-700 fs-30  ">Training and Expert Support Hub</h3>
-                        <p class="fw-400 text-white fs-15 mb-2">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
-                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Find Instructors</a>
+                        <p class="fw-400 text-white fs-15 mb-2">Learn a wide variety of the latest statistical methods by
+                            participating in expert-led seminars. Our instructors are a recognised experts in their
+                            respective fields. With their talent and experience, they make statistics engaging and
+                            comprehensible for researchers from diverse backgrounds.</p>
+                        <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Find
+                            Instructors</a>
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -267,17 +271,22 @@
                                                 </label>
                                             @endforeach
                                         </div>
-                                        <!-- Seminar date -->
-                                        <div class="mt-2">
-                                            <h6 class="text-left fs-16 py-2 fw-700">
-                                                <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
+                                        <!-- Seminar software -->
+                                        <div class="mt-2" id="seminar-software" style="display: none">
+                                            <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
+                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
                                             </h6>
-                                            <div class="">
-                                                <input type="text" id="dp1"
-                                                    class="form-control fs-14 datepicker mr-2"
-                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
-                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
-                                            </div>
+                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
+                                                onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                                <option value="" class="fs-16">
+                                                    {{ translate('Search seminar software') }}
+                                                </option>
+                                                @foreach (getSeminarSoftwares() as $software)
+                                                    <option value="{{ $software['id'] }}"
+                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
+                                                        {{ $software['name'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <!-- Seminar Mode -->
                                         <div class="mt-2">
@@ -296,22 +305,17 @@
                                                 @endforeach
                                             </div>
                                         </div>
-                                        <!-- Seminar software -->
-                                        <div class="mt-2" id="seminar-software" style="display: none">
-                                            <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
-                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
+                                        <!-- Seminar date -->
+                                        <div class="mt-2">
+                                            <h6 class="text-left fs-16 py-2 fw-700">
+                                                <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
                                             </h6>
-                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
-                                                onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                                <option value="" class="fs-16">
-                                                    {{ translate('Search seminar software') }}
-                                                </option>
-                                                @foreach (getSeminarSoftwares() as $software)
-                                                    <option value="{{ $software['id'] }}"
-                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
-                                                        {{ $software['name'] }}</option>
-                                                @endforeach
-                                            </select>
+                                            <div class="">
+                                                <input type="text" id="dp1"
+                                                    class="form-control fs-14 datepicker mr-2"
+                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
+                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
+                                            </div>
                                         </div>
                                         <!-- Languages -->
                                         <div class="mt-2">
@@ -368,7 +372,7 @@
 
                                                                 <p
                                                                     class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
-                                                                     {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
+                                                                    {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
                                                                 </p>
 
                                                             </div>

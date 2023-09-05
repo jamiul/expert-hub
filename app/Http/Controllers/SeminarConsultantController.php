@@ -95,8 +95,8 @@ class SeminarConsultantController extends Controller
             foreach ($request->seminar_date as $key => $date) {
                 SeminarDate::create([
                     'seminar_id' => $seminar->id,
-                    'seminar_date' => $input['seminar_date'][$key] ?? '',
-                    'descriptions' => $input['date_description'][$key] ?? '',
+                    'seminar_date' => $input['seminar_date'][$key] ?? null,
+                    'descriptions' => $input['date_description'][$key] ?? null,
                 ]);
             }
         }
@@ -105,7 +105,7 @@ class SeminarConsultantController extends Controller
             foreach($request->seminar_instructors as $key => $instructor) {
                 SeminarInstructor::create([
                     'seminar_id' => $seminar->id,
-                    'user_id' => $input['seminar_instructors'][$key] ?? ''
+                    'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
                 ]);
             }
         }
@@ -172,7 +172,7 @@ class SeminarConsultantController extends Controller
         if($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
                 $seminar->seminar_dates()->create([
-                    'seminar_date' => $input['seminar_date'][$key] ?? '',
+                    'seminar_date' => $input['seminar_date'][$key] ?? null,
                 ]);
             }
         }
@@ -182,9 +182,9 @@ class SeminarConsultantController extends Controller
         }
 
         if($request->seminar_instructors) {
-            foreach ($request->seminar_instructors as $key => $date) {
+            foreach ($request->seminar_instructors as $key => $instructor) {
                 $seminar->seminar_instructors()->create([
-                    'user_id' => $input['seminar_instructors'][$key] ?? '',
+                    'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
                 ]);
             }
         }
