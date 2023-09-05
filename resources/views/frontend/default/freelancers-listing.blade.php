@@ -379,7 +379,7 @@
                                                                 @endphp
                                                                 @if ($skill != null)
                                                                     <span
-                                                                        class="btn btn-light btn-xs border  mb-1 ml-1  text-dark rounded border-0 fs-14"
+                                                                        class="btn btn-light btn-xs border bg-soft-info-light   mb-1 ml-1  text-dark rounded border-0 fs-14"
                                                                         style="  color:#6560E6 !important;">{{ $skill->name }}</span>
                                                                 @endif
                                                             @endforeach

@@ -224,7 +224,7 @@
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75w-lg-75 lh-1-8 content-title ">
                                 <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                <h2 class="fw-700 fre-small-font">Hire academic consultants by category</h2>
+                                <h2 class="fw-700 fre-small-font text-success">Hire academic consultants by category</h2>
                                 <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
@@ -287,7 +287,7 @@
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                                 <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                <h2 class="fw-700 fre-small-font">Find academic projects by category</h2>
+                                <h2 class="fw-700 fre-small-font text-success">Find academic projects by category</h2>
                                 <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
@@ -364,7 +364,7 @@
                                 style="width:500px;" />
                         </div>
                         <div class=" col-lg-7 col-sm-12">
-                            <h2 class="fw-700 mb-3 heading-title fre-small-font" style="padding-top:36px;">What makes
+                            <h2 class="fw-700 mb-3 text-success heading-title fre-small-font" style="padding-top:36px; ">What makes
                                 ConsultantEdu
                                 impressive
                             </h2>
@@ -438,7 +438,7 @@
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
 
-                            <h2 class="fw-700 fre-small-font">{{ translate('Find academic scholarships by category') }}
+                            <h2 class="fw-700 fre-small-font text-success">{{ translate('Find academic scholarships by category') }}
                             </h2>
 
                         </div>
@@ -766,7 +766,7 @@
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                            <h2 class="fw-700 fre-small-font">Find academic training</h2>
+                            <h2 class="fw-700 fre-small-font text-success">Find academic training</h2>
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
@@ -832,7 +832,7 @@
             <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
                 <div class=" container-home">
                     <div class="content-title">
-                        <h2 class="fw-700 fre-small-font site-font" style="">Client Feedback at ConsultantEdu</h2>
+                        <h2 class="fw-700 fre-small-font site-font text-success" style="">Client Feedback at ConsultantEdu</h2>
                     </div>
                     <div class="">
                         <div class="row ">
@@ -922,7 +922,7 @@
         @if (get_setting('latest_project_show') == 'on')
             <div class="container-home ">
                 <div class="content-title">
-                    <h2 class="fw-700 fre-small-font">Find skill by category</h2>
+                    <h2 class="fw-700 fre-small-font text-success">Find skill by category</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
