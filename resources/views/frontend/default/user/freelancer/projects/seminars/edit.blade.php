@@ -24,6 +24,7 @@
                                 <form id="add_form" class="form-horizontal"
                                     action="{{ route('seminar-consultant.update', $seminar->id) }}" method="POST">
                                     @csrf
+                                    @method('PATCH')
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label">
                                             {{ translate('Seminar Title') }}
@@ -77,7 +78,25 @@
                                             {{ translate('Add Date') }}
                                         </button>
                                     </div>
-
+                                    <!-- Seminar Category -->
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-from-label">
+                                            {{ translate('Seminar Category') }}
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control aiz-selectpicker" name="project_category_id"
+                                                data-live-search="true">
+                                                @foreach (getProjectCategory() as $category)
+                                                    <option value="{{ $category['id'] }}"
+                                                        {{ $category['id'] == $seminar->project_category_id ? 'selected' : '' }}>
+                                                        {{ $category['name'] }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Seminar Mode -->
                                     <div class="form-group row" id="category">
                                         <label class="col-md-3 col-from-label">
                                             {{ translate('Seminar Mode') }}
@@ -173,6 +192,28 @@
                                             </select>
                                         </div>
                                     </div>
+
+                                    <!--Course Instructor-2 -->
+                                    @foreach ($seminar->seminar_instructors as $seminar_instructor)
+                                        <div class="form-group row" id="country">
+                                            <label class="col-md-3 col-from-label">
+                                                {{ translate('Course Instructor') }} {{ $loop->iteration+1 }}
+                                            </label>
+                                            <div class="col-md-9">
+                                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]"
+                                                    id="user_id" data-live-search="true"
+                                                    title="{{ translate('Course Instructor 2') }}">
+                                                    <option value="">Select Seminar Instructor</option>
+                                                    @foreach (getCourseInstructors() as $instructor)
+                                                        <option value="{{ $instructor['id'] }}"
+                                                            {{ $instructor['id'] == $seminar_instructor['user_id'] ? 'selected' : '' }}>
+                                                            {{ $instructor['name'] }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    @endforeach
 
                                     <!--Course Instructor Descriptions -->
                                     <div class="form-group row">

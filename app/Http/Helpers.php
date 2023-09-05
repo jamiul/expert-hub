@@ -7,6 +7,7 @@ use App\Mail\EmailManager;
 use App\Models\ChatThread;
 use App\Models\Country;
 use App\Models\Language;
+use App\Models\ProjectCategory;
 use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
 use App\Models\Translation;
@@ -621,6 +622,10 @@ function getLanguageName($id) {
     $language = Language::where('id', $id)->first();
     return  $language['name'];
 }
+function getSeminarCategory($id) {
+    $category = ProjectCategory::where('id', $id)->first();
+    return  $category['name'];
+}
 
 function getInstructorName($id) {
     $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
@@ -628,6 +633,9 @@ function getInstructorName($id) {
     return $instructor ? $instructor->name : null;
 }
 
+function getProjectCategory() {
+    return ProjectCategory::all()->sortByDesc("id")->toArray();
+}
 
 function getSeminarModes() {
     return SeminarMode::all()->toArray();
