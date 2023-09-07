@@ -12,6 +12,7 @@ use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
 use App\Models\Translation;
 use App\Models\User;
+use phpDocumentor\Reflection\Types\Boolean;
 
 if (!function_exists('areActiveRoutes')) {
     function areActiveRoutes(array $routes, $output = "active")
@@ -665,4 +666,18 @@ if (!function_exists('formatSeminarDate')) {
         return "{$startDate} – {$endDate}, from {$startTime} – {$endTime} daily ({$timezone})";
     }
 }
-?>
+
+function getFreelancerPhoto($freelancer){
+    $img_url = '/public/assets/frontend/default/img/avatar-place.png'; // Default image URL
+
+    if ($freelancer && $freelancer->user && $freelancer->user->address && $freelancer->user->address->country) {
+        // Check if each level exists before accessing 'photo'
+        $country = $freelancer->user->address->country;
+
+        if ($country->photo != null) {
+            $img_url = $country->photo;
+        }
+    }
+
+    return $img_url;
+}
