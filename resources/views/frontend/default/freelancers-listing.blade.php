@@ -323,21 +323,11 @@
                                                         <div class="d-flex">
                                                             <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}
                                                             </h5>
-
-                                                            @if ($freelancer->user->address->country->photo == null)
-                                                                @php
-                                                                    $flag_url = '/public/assets/frontend/default/img/avatar-place.png';
-                                                                @endphp
-                                                            @else
-                                                                @php
-                                                                    $flag_url = $freelancer->user->address->country->photo;
-                                                                @endphp
-                                                            @endif
                                                             <span>
-
-                                                                <img class=" mx-2 " src="{{ url($flag_url) }}"
-                                                                    alt="{{ $freelancer->user->address->country->name }}"
-                                                                    style="width:21px; height:14px; " />
+                                                                <img class="mx-2"
+                                                                    src="{{ url(getFreelancerPhoto($freelancer)) }}"
+                                                                    alt="{{ $freelancer->user->address->country ? $freelancer->user->address->country->name : '' }}"
+                                                                    style="width: 21px; height: 14px;" />
                                                             </span>
                                                         </div>
                                                     </a>
@@ -409,16 +399,14 @@
                                         @endif
                                     @endforeach
                                 </div>
-                                @if (!is_array($freelancers))
-                                    <div class="card-footer">
-                                        <div class="aiz-pagination aiz-pagination-center flex-grow-1">
-                                            <ul class="pagination">
-                                                {{ $freelancers->links() }}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                @endif
                             </div>
+                            @if (!is_array($freelancers))
+                                <div class="aiz-pagination aiz-pagination-center flex-grow-1 mt-4 mb-4">
+                                    <ul class="pagination">
+                                        {{ $freelancers->links() }}
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </form>
