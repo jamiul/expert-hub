@@ -166,7 +166,7 @@
                                                                     aria-expanded="true"
                                                                     aria-controls="skill_{{ $parentSkill->id }}">
                                                                     <label class="fas fa-plus "
-                                                                        style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
                                                                     <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}
                                                                     </p>
                                                                 </a>
@@ -185,7 +185,8 @@
                                                                                 <label
                                                                                     class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
                                                                                     for="{{ $subSkill->id }}">
-                                                                                    {{ $subSkill->name }}</label>
+                                                                                    {{ $subSkill->name }}
+                                                                                </label>
                                                                             </div>
                                                                         </div>
                                                                     @endforeach
@@ -225,6 +226,16 @@
                                             </div>
                                         </div>
 
+                                        {{-- consultantion option --}}
+                                       <div class="my-5">
+                                        <label class="aiz-checkbox site-font w-100 fw-700">
+                                            <input type="checkbox" name="Consultantions" value="Consultantions"
+                                                onchange="applyFilter()" class=" " @if($Consultantions ) checked @endif >
+                                                Consultantions
+                                            <span class="aiz-square-check"></span>
+                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                        </label>
+                                       </div>
 
                                         <!-- countries  -->
                                         <h6 class="text-left mb-3 fs-14">
@@ -385,6 +396,17 @@
                                                             @endforeach
                                                         </div>
                                                     @endif
+                                                    @if($Consultantions)
+                                                    <div class="d-flex w-25 mx-0">
+                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+
+                                                            {{ translate('Book a consultant') }}
+                                                        </p>
+                                                    </div>
+
+                                                    @endif
+
+
                                                 </div>
                                                 <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px"
                                                     style="">

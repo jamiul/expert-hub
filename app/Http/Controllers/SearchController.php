@@ -48,6 +48,8 @@ class SearchController extends Controller
             $skill_ids = [];
             $rate = [];
             $hourly_rate = $request->hourly_rate ?? [];
+            $Consultantions = $request->Consultantions;
+            // dd($Consultantions);
 
 
             if ($request->keyword != null) {
@@ -142,7 +144,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','Consultantions'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
