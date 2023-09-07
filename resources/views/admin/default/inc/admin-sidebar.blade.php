@@ -312,7 +312,7 @@
                                     @endcan
                                     @if (auth()->user()->can('show support settings category') ||
                                             auth()->user()->can('show default assigned
-                                                                                                                agent'))
+                                                                                                                                                    agent'))
                                         <li class="aiz-side-nav-item">
                                             <a href="#" class="aiz-side-nav-link">
                                                 <span
@@ -415,42 +415,126 @@
                             </ul>
                         </li>
                     @endif
-                @if (auth()->user()->can('show all blogs') ||
-                        auth()->user()->can('show blog category'))
-                    <li class="aiz-side-nav-item">
-                        <a href="#" class="aiz-side-nav-link">
-                            <i class="las la-blog aiz-side-nav-icon"></i>
-                            <span class="aiz-side-nav-text">{{ translate('Seminars') }}</span>
-                            <span class="aiz-side-nav-arrow"></span>
-                        </a>
-                        <ul class="aiz-side-nav-list level-2">
-                            @can('show all blogs')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('seminar.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['seminar.create', 'seminar.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('All Seminars') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('show blog category')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('seminar-mode.index') }}"
-                                        class="aiz-side-nav-link">
-                                        <span class="aiz-side-nav-text">{{ translate('Seminar Mode') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('show blog category')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('seminar-software.index') }}"
-                                        class="aiz-side-nav-link">
-                                        <span class="aiz-side-nav-text">{{ translate('Seminar Software') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
-                @endif
+                    @if (auth()->user()->can('show all blogs') ||
+                            auth()->user()->can('show blog category'))
+                        <li class="aiz-side-nav-item">
+                            <a href="#" class="aiz-side-nav-link">
+                                <i class="las la-blog aiz-side-nav-icon"></i>
+                                <span class="aiz-side-nav-text">{{ translate('Scholarships') }}</span>
+                                <span class="aiz-side-nav-arrow"></span>
+                            </a>
+                            <ul class="aiz-side-nav-list level-2">
+                                @can('show all blogs')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship.create', 'scholarship.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('All Scholarships') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-category.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-level.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-category.create', 'scholarship-category.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Study Level') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-university.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-university.create', 'scholarship-university.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('University') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-country.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-country.create', 'scholarship-country.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('country') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-city.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-city.create', 'scholarship-city.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Sub location') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-qualification.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-qualification.create', 'scholarship-qualification.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Qualification') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-who-can-apply.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-who-can-apply.create', 'scholarship-who-can-apply.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Who can apply') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('scholarship-field-study.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['scholarship-field-study.create', 'scholarship-field-study.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Field of study') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </li>
+                    @endif
+
+
+                    @if (auth()->user()->can('show all blogs') ||
+                            auth()->user()->can('show blog category'))
+                        <li class="aiz-side-nav-item">
+                            <a href="#" class="aiz-side-nav-link">
+                                <i class="las la-blog aiz-side-nav-icon"></i>
+                                <span class="aiz-side-nav-text">{{ translate('Seminars') }}</span>
+                                <span class="aiz-side-nav-arrow"></span>
+                            </a>
+                            <ul class="aiz-side-nav-list level-2">
+                                @can('show all blogs')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('seminar.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['seminar.create', 'seminar.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('All Seminars') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('seminar-mode.index') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Seminar Mode') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show blog category')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('seminar-software.index') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Seminar Software') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </li>
+                    @endif
 
 
                     @if (auth()->user()->can('show all subscribers') ||
@@ -485,7 +569,7 @@
                     @if (auth()->user()->can('show header') ||
                             auth()->user()->can('show footer') ||
                             auth()->user()->can('show
-                                                            pages') ||
+                                                                                pages') ||
                             auth()->user()->can('show apperance'))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
