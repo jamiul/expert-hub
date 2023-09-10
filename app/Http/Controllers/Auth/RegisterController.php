@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Session;
-use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\UserProfile;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use App\Mail\RegisterEmailSend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -53,21 +49,9 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm(Request $request, $code = null)
+    public function showRegistrationForm()
     {
-        if(!empty($code)) {
-            $user = $this->isRegister($code);
-            if(empty($user)) {
-                flash(translate('Ivalid code applied'))->error();
-                return redirect()->back();
-            }
-        }
-        return view('frontend.default.user_sign_up', compact('code'));
-    }
-
-    private function isRegister($code) {
-        $user = User::where('confirmation_code', $code)->first();
-        return $user;
+        return view('frontend.default.user_sign_up');
     }
 
     /**
@@ -80,35 +64,9 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users' ,'regex:/(.+)@(.+)\.(.+)/i'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
-    }
-
-    public function registerMailStore(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|unique:users,email'
-        ]);
-
-        $input = $request->all();
-        $string = Str::random(30);
-        $input['confirmation_code'] = $string;
-        $to = $input['email'];
-        $url = url('register/' . $string);
-
-        $details = [
-            'url' => $url,
-            'email' => $to,
-            'body' => config('constants.email.register.body'),
-        ];
-        // dd($input);
-        Mail::to($to)->send(new RegisterEmailSend($details));
-        User::firstOrCreate(['email' => $to], $input);
-
-        flash(translate('Invitation has been sent successfully.'))->success();
-
-        return redirect()->back();
     }
 
     /**
@@ -144,18 +102,6 @@ class RegisterController extends Controller
         $user_profile->user_id = $user->id;
         $user_profile->save();
 
-        // email data
-        $email_data = array(
-            'name' => $data['name'],
-            'email' => $data['email'],
-        );
-
-        Mail::send('emails.welcome_email', $email_data, function ($message) use ($email_data) {
-            $message->to($email_data['email'], $email_data['name'])
-                ->subject('Welcome to MyNotePaper')
-                ->from('info@mynotepaper.com', 'MyNotePaper');
-        });
-
         return $user;
     }
 
@@ -163,7 +109,7 @@ class RegisterController extends Controller
     {
         $user = $this->create($request->all());
 
-        // $this->guard()->login($user);
+        $this->guard()->login($user);
 
         if($user->email != null){
             if(get_setting('email_verification') != 1){
@@ -183,7 +129,7 @@ class RegisterController extends Controller
         }
 
         return $this->registered($request, $user)
-            ?: redirect()->route('login');
+            ?: redirect($this->redirectPath());
     }
 
 }
