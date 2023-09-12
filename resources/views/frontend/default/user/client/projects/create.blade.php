@@ -1,4 +1,5 @@
 @extends('frontend.default.layouts.app')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
 
 @section('content')
     <section class="py-5">
@@ -92,7 +93,7 @@
                                     </label>
                                     <select multiple class="form-control aiz-selectpicker" name="skills[]" required
                                         data-live-search="true" data-placeholder="Select required skills"
-                                        data-selected-text-format="count">
+                                        data-selected-text-format="count" id="countries">
                                         @foreach ($skills as $skill)
                                             <option value="{{ $skill->id }}">{{ $skill->name }}</option>
                                         @endforeach
@@ -108,8 +109,9 @@
                                         <div class="col-lg-4 card py-3 px-2 pr-0">
                                             @if ($client_package->fixed_limit > 0)
                                                 <div class="custom-control custom-radio custom-control-inline ">
-                                                    <input type="radio" id="projectTypeFixed" name="projectType"
-                                                        class="custom-control-input" value="Fixed" checked>
+                                                    <input  type="radio" id="projectTypeFixed"
+                                                        name="projectType" class="custom-control-input" value="Fixed"
+                                                        checked>
                                                     <label class="custom-control-label fw-700 text-black fs-16"
                                                         for="projectTypeFixed">{{ translate('Pay fixed price') }}
                                                         <p class="fw-500 fs-14">
@@ -144,44 +146,47 @@
                                             @endif
                                         </div>
                                     </div>
-
-
-                                    <!-- @if ($client_package->hourly_limit > 0)
-    <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="projectTypeLong" name="projectType" class="custom-control-input" value="hourly">
-                                                    <label class="custom-control-label" for="projectTypeLong">{{ translate('Hourly') }}</label>
-                                                </div>
-@else
-    <div class="alert alert-info custom-control-inline mb-0" role="alert">
-                                                    {{ translate('Your Hourly limit project post limit is over.') }}
-                                                </div>
-    @endif -->
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">
                                         {{ translate('What is your estimated budget?') }}
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-lg-3">
-                                            <select class="form-control aiz-selectpicker" id="category_id"
+                                            <select class="form-control aiz-selectpicker" id="options"
                                                 name="category_id" data-live-search="true" required>
-                                                <option value="">AUD</option>
-                                                <option value="">USD</option>
+                                                <option value="AUD">AUD</option>
+                                                <option value="USD">USD</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-9">
-                                            <select class="form-control aiz-selectpicker" id="category_id"
+                                            <select class="form-control aiz-selectpicker" id="choices"
                                                 name="category_id" data-live-search="true" required>
                                                 <option value="">Basic ($2 - 8 USD per hour) </option>
-                                                <option value="">Moderate ($8 - 15 USD per hour) </option>
+                                               <option value="">Moderate ($8 - 15 USD per hour) </option>
                                                 <option value="">Standard ($15 - 25 USD per hour) </option>
-                                                <option value="">Skilled ($25 -  50 USD per hour) </option>
+                                                <option value="">Skilled ($25 - 50 USD per hour) </option>
                                                 <option value="">Expert ($ 50 + per hour) </option>
 
                                             </select>
                                         </div>
+                                    </div> --}}
+                                    <div class="row px-3">
+                                        <select  class="col-lg-2 px-0 form-control aiz-selectpicker" id="options" >
+                                            <option value="AUD">AUD</option>
+                                            <option value="USD">USD</option>
+                                        </select>
+                                        <div class="col-lg-1 px-0"></div>
+                                        <select class="col-lg-9 px-0 form-control aiz-selectpicker" id="choices" >
+                                            <option value="">Basic ($2 - 8 AUD per hour) </option>
+                                            <option value="">Moderate ($8 - 15 AUD per hour) </option>
+                                            <option value="">Standard ($15 - 25 AUD per hour) </option>
+                                            <option value="">Skilled ($25 - 50 AUD per hour) </option>
+                                            <option value="">Expert ($ 50+ AUD per hour) </option>
+                                        </select>
                                     </div>
+
 
                                     {{-- <div class="form-group">
                                         <div class="input-group">
@@ -264,4 +269,42 @@
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Map your choices to your option value
+        var lookup = {
+            'AUD': ['Basic ($2 - 8 AUD per hour)', 'Moderate ($8 - 15 AUD per hour)', 'Standard ($15 - 25 AUD per hour)', 'Skilled ($25 - 50 AUD per hour)', 'Expert ($ 50+ AUD per hour)'],
+            'USD': ['Basic ($2 - 8 USD per hour)', 'Moderate ($8 - 15 USD per hour)', 'Standard ($15 - 25 USD per hour)', 'Skilled ($25 - 50 USD per hour)', 'Expert ($ 50+ USD  per hour)'],
+        };
+
+        // When an option is changed, search the above for matching choices
+        $('#options').on('change', function() {
+            // Set selected option as variable
+            var selectValue = $(this).val();
+
+            // Empty the target field
+            $('#choices').empty();
+
+            // For each choice in the selected option
+            for (i = 0; i < lookup[selectValue].length; i++) {
+                // Output choice in the target field
+                $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+            }
+
+            // Refresh the select picker
+            $('#choices').selectpicker('refresh');
+        });
+
+        // Initialize select pickers on page load
+        $('.aiz-selectpicker').selectpicker();
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+        new MultiSelectTag('countries')  // id
+    </script>
+
+@endsection
+@section('scripts')
+
 @endsection
