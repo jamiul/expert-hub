@@ -140,9 +140,9 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <!-- <div class="d-flex">
-                                                                                <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                                                                <div class="need-help-progress-bar"></div>
-                                                                            </div> -->
+                                                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                                                    <div class="need-help-progress-bar"></div>
+                                                                                </div> -->
                                             <div class="d-flex">
                                                 <img class="mb-2 mx-auto d-block text-black p-3"
                                                     src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
@@ -338,13 +338,13 @@
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
-                                                                    <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
-                                                                        <span>All
-                                                                            Jobs</span>
-                                                                    </a>
-                                                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
-                                                                    </a>
-                                                                </h5> -->
+                                                                        <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+                                                                            <span>All
+                                                                                Jobs</span>
+                                                                        </a>
+                                                                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                                        </a>
+                                                                    </h5> -->
                     </div>
 
                 </section>
@@ -463,13 +463,12 @@
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/social-science.jpg') }}"
+                                                <img src=" {{ url('/public/assets/home/Find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
                                                 <div>
-                                                    <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Social
-                                                        Sciences</p>
+                                                    <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Agriculture</p>
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
@@ -687,7 +686,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/engeneering.jpg') }}"
+                                                <img src=" {{ url('/public/assets/home/Find-scholarship/eng.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -841,7 +840,8 @@
                                     <div class=" card-body">
                                         <p class="text-primary mt-2 fs-20">Client Name: Dr. Emily Johnson
                                         </p>
-                                        <p class="mt-3 fs-16 text-justify mobile-text" style="height:160px;">Prof. David Smith
+                                        <p class="mt-3 fs-16 text-justify mobile-text" style="height:160px;">Prof. David
+                                            Smith
                                             played a pivotal role in the development of our university curriculum. His
                                             expertise, creativity, and dedication to ensuring our program met the highest
                                             standards were truly outstanding. We are grateful for his contributions and
@@ -873,18 +873,22 @@
                                         <p class="text-primary mt-2 fs-20">Client Name: Jennifer Martinez
                                         </p>
                                         <p class="mt-3 fs-16 text-justify mobile-text second" style="height:180px;">
-                                            We are immensely grateful to Dr. Johnson for his invaluable assistance in our university's accreditation process His deep knowledge of accreditation standards and guidance were instrumental in helping us meet and criteria. We highly recommend Dr. Johnson's consultancy services to any educational institution seeking accreditation.
+                                            We are immensely grateful to Dr. Johnson for his invaluable assistance in our
+                                            university's accreditation process His deep knowledge of accreditation standards
+                                            and guidance were instrumental in helping us meet and criteria. We highly
+                                            recommend Dr. Johnson's consultancy services to any educational institution
+                                            seeking accreditation.
                                         </p>
                                         <hr>
                                         <div class="d-flex  ">
                                             <div>
                                                 <img class="mr-2 border"
                                                     src=" {{ url('/public/assets/home/review-2.jpeg') }}" alt="Image"
-                                                    style="width:30px; border-radius:50%;"/>
+                                                    style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div class="">
-                                                <small class="fw-700 fs-14 text-black"
-                                                    style="color:#6560E6 !important;"> Review for: Dr. Robert Johnson
+                                                <small class="fw-700 fs-14 text-black" style="color:#6560E6 !important;">
+                                                    Review for: Dr. Robert Johnson
                                                 </small>
                                                 <h6 class="fs-14 text-muted" style="Line height:10px;"> Course
                                                     Accreditation Consultant
@@ -1222,109 +1226,109 @@
 
 
         <!--
-                                                <div class="container">
-                                                  <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="container">
                                                       <div class="row">
                                                         <div class="col-md-6">
-                                                          <h1>Column one</h1>
-                                                          <div class="px-3 py-2">
-                                                            <h6 class="fs-18">
-                                                              High School Chemistry Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Career Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                          <div class="row">
+                                                            <div class="col-md-6">
+                                                              <h1>Column one</h1>
+                                                              <div class="px-3 py-2">
+                                                                <h6 class="fs-18">
+                                                                  High School Chemistry Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                              <div class="px-3 py-2">
+
+                                                                <h6 class="fs-18">
+                                                                  High School Chemistry Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                              </div>
+                                                            </div>
                                                           </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                          <div class="px-3 py-2">
+                                                          <div class="vertical-line"></div>
+                                                          <div class="row">
+                                                            <div class="col-md-6">
+                                                              <div class="px-3 py-2">
 
-                                                            <h6 class="fs-18">
-                                                              High School Chemistry Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Career Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                                <h6 class="fs-18">
+                                                                  High School Chemistry Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                              <div class="px-3 py-2">
+
+                                                                <h6 class="fs-18">
+                                                                  High School Chemistry Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
+                                                                <h6 class="fs-18 text-normal">Academic Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Career Coach</h6>
+                                                                <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
+                                                              </div>
+                                                            </div>
                                                           </div>
                                                         </div>
                                                       </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                      <div class="vertical-line"></div>
-                                                      <div class="row">
-                                                        <div class="col-md-6">
-                                                          <div class="px-3 py-2">
-
-                                                            <h6 class="fs-18">
-                                                              High School Chemistry Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Career Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                                          </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                          <div class="px-3 py-2">
-
-                                                            <h6 class="fs-18">
-                                                              High School Chemistry Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">High School Physics Tutor</h6>
-                                                            <h6 class="fs-18 text-normal">Academic Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Career Coach</h6>
-                                                            <h6 class="fs-18 text-normal">Peer Academic Advisor</h6>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div> -->
+                                                    </div> -->
 
 
 
         <!-- Last section -->
         <!-- @if (get_setting('slider_section_show') == 'on')
     <section class=" " style="min-height:350px; background-color:#FBF7ED;">
-                                                  <div class="container-main">
-                                                    <div class="pb-5">
-                                                      <div class="row ">
-                                                        <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
-                                                          <div>
-                                                            <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
-                                                            <h2 class=" fw-700 fs-36 my-4"
-                                                              style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
-                                                              Download
-                                                              the
-                                                              App
-                                                            </h2>
-                                                            <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
-                                                              the
-                                                              watch on the plane, the subway or wherever you learn best
-                                                            </small>
-                                                            <div class="mt-3">
-                                                              <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
-                                                                <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
-                                                                <span>|</span>
-                                                                <span class="text-white"> Apple store</span>
+                                                      <div class="container-main">
+                                                        <div class="pb-5">
+                                                          <div class="row ">
+                                                            <div class="col-lg-6 col-sm-12 px-4  p-3" style="">
+                                                              <div>
+                                                                <button class="btn  text-white fs-14" style="background-color:#275846;">Start today</button>
+                                                                <h2 class=" fw-700 fs-36 my-4"
+                                                                  style="font-family:sans-serif; letter-spacing: -.032em; line-height: 1em;">
+                                                                  Download
+                                                                  the
+                                                                  App
+                                                                </h2>
+                                                                <small class=" my-1 fs-18">To classes on the go with scholarship Australia app. Stream or download to
+                                                                  the
+                                                                  watch on the plane, the subway or wherever you learn best
+                                                                </small>
+                                                                <div class="mt-3">
+                                                                  <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
+                                                                    <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
+                                                                    <span>|</span>
+                                                                    <span class="text-white"> Apple store</span>
 
-                                                              </a>
-                                                              <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
-                                                                <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
-                                                                  style="height:20px; " />
-                                                                <span>|</span>
-                                                                <span class="text-white">Google play store</span>
-                                                              </a>
+                                                                  </a>
+                                                                  <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
+                                                                    <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
+                                                                      style="height:20px; " />
+                                                                    <span>|</span>
+                                                                    <span class="text-white">Google play store</span>
+                                                                  </a>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 " style="">
+                                                              <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
                                                             </div>
                                                           </div>
                                                         </div>
-                                                        <div class="col-lg-6 col-sm-12 " style="">
-                                                          <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
-                                                        </div>
                                                       </div>
-                                                    </div>
-                                                  </div>
 
-                                                </section>>
+                                                    </section>>
     @endif -->
 
     @endsection
