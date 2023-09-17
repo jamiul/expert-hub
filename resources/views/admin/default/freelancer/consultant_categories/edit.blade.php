@@ -10,23 +10,23 @@
       </div>
       <div class="card-body">
 
-        <form class="form-horizontal" action="{{ route('consultant-categories.update', $project_category->id) }}"
+        <form class="form-horizontal" action="{{ route('consultant-categories.update', $consultant_category->id) }}"
           method="POST" enctype="multipart/form-data">
           <input name="_method" type="hidden" value="PATCH">
           @csrf
           <div class="form-group mb-3">
             <label for="name">{{translate('Name')}}</label>
             <input type="text" id="name" name="name" placeholder="{{ translate('Category Name') }}"
-              value="{{ $project_category->name }}" class="form-control" required>
+              value="{{ $consultant_category->name }}" class="form-control" required>
           </div>
           <div class="form-group mb-3">
             <label for="parent_id">{{translate('Parent')}}</label>
             <select class="select2 form-control aiz-selectpicker" name="parent_id" data-toggle="select2"
               data-placeholder="Choose ..." data-live-search="true">
-              <option value="0" @if ($project_category->parent_id == "0") selected @endif>{{ translate('No Parent') }}
+              <option value="0" @if ($consultant_category->parent_id == "0") selected @endif>{{ translate('No Parent') }}
               </option>
-              @foreach($project_categories as $project_cat)
-              <option value="{{$project_cat->id}}" @if ($project_cat->id == $project_category->parent_id) selected
+              @foreach($consultant_categories as $project_cat)
+              <option value="{{$project_cat->id}}" @if ($project_cat->id == $consultant_category->parent_id) selected
                 @endif>{{$project_cat->name}}</option>
               @endforeach
             </select>
@@ -34,7 +34,7 @@
           <div class="form-group mb-3">
             <label for="description">{{translate('Description')}}</label>
             <input type="text" id="description" name="description" placeholder="{{ translate('description') }}"
-              value="{{ $project_category->description}}" class="form-control" required>
+              value="{{ $consultant_category->description}}" class="form-control" required>
           </div>
           <div class="form-group mb-3">
             <label for="image">{{translate('Icon')}}</label>
@@ -43,7 +43,7 @@
                 <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse')}}</div>
               </div>
               <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-              <input type="hidden" name="photo" class="selected-files" value="{{ $project_category->photo }}">
+              <input type="hidden" name="photo" class="selected-files" value="{{ $consultant_category->photo }}">
             </div>
             <div class="file-preview box sm">
             </div>

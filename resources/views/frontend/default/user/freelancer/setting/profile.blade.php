@@ -200,7 +200,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <select class="form-control aiz-selectpicker" id="specialist" name="specialist" data-live-search="true" required>
-                                        @foreach (\App\Models\ProjectCategory::all() as $category)
+                                        @foreach (\App\Models\ConsultantCategory::all() as $category)
                                         <option value="{{ $category->id }}" @if ($user_profile->specialist == $category->id) selected @endif>
                                             {{ $category->name }}
                                         </option>

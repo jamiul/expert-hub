@@ -239,8 +239,10 @@
 
                         <div class="row gutters-10">
                             @if (get_setting('featured_category_list') != null)
-                                @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
-                                    @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
+                                    @php
+                                        $consultant_categories = \App\Models\ConsultantCategory::all()
+                                    @endphp
+                                @foreach ( $consultant_categories as $category )
                                         <div class="col-md-3">
                                             <div class="card" style="height:350px;">
                                                 <img class="w-100 h-170px" src=" {{ custom_asset($category->photo) }}"
@@ -259,7 +261,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endif
+
                                 @endforeach
                             @endif
                         </div>

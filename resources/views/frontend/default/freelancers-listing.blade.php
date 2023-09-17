@@ -122,7 +122,7 @@
                                         <h6 class="text-left mb-3 fs-14 ">
                                             <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
                                         </h6>
-                                        @foreach (\App\Models\ProjectCategory::all()->reverse() as $category)
+                                        @foreach (\App\Models\ConsultantCategory::all() as $category)
                                             <label class="aiz-checkbox site-font w-100">
                                                 <input type="checkbox" name="category_id[]" value="{{ $category->id }}"
                                                     onchange="applyFilter()"
@@ -342,7 +342,7 @@
                                                             </span>
                                                         </div>
                                                     </a>
-
+                                                   
                                                     @if ($freelancer->specialistAt != null)
                                                         <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
                                                     @endif

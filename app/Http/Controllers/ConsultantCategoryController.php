@@ -21,8 +21,8 @@ class ConsultantCategoryController extends Controller
      */
     public function index()
     {
-        $project_categories =ConsultantCategory::orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.default.freelancer.consultant_categories.index', compact('project_categories'));
+        $consultant_categories =ConsultantCategory::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.default.freelancer.consultant_categories.index', compact('consultant_categories'));
     }
 
     /**
@@ -43,15 +43,15 @@ class ConsultantCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $project_category = new ConsultantCategory;
-        $project_category->name = $request->name;
+        $consultant_category = new ConsultantCategory;
+        $consultant_category->name = $request->name;
         if ($request->parent_id != null) {
-            $project_category->parent_id = $request->parent_id;
+            $consultant_category->parent_id = $request->parent_id;
         }
-        $project_category->photo = $request->photo;
-        $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
-        $project_category->description = $request->description;
-        if($project_category->save()){
+        $consultant_category->photo = $request->photo;
+        $consultant_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
+        $consultant_category->description = $request->description;
+        if($consultant_category->save()){
             flash(translate('New Category has been added successfully!'))->success();
             return redirect()->route('consultant-categories.index');
         }
@@ -80,9 +80,9 @@ class ConsultantCategoryController extends Controller
      */
     public function edit($id)
     {
-        $project_category = ConsultantCategory::findOrFail(decrypt($id));
-        $project_categories = ConsultantCategory::whereNotIn('id',CategoryUtility::children_ids($project_category->id,true))->where('id', '!=' , $project_category->id)->get();
-        return view('admin.default.project.project_categories.edit', compact('project_category', 'project_categories'));
+        $consultant_category = ConsultantCategory::findOrFail(decrypt($id));
+        $consultant_categories = ConsultantCategory::whereNotIn('id',CategoryUtility::children_ids($consultant_category->id,true))->where('id', '!=' , $consultant_category->id)->get();
+        return view('admin.default.freelancer.consultant_categories.edit', compact('consultant_category', 'consultant_categories'));
 
     }
 
@@ -95,17 +95,17 @@ class ConsultantCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $project_category = ConsultantCategory::findOrFail($id);
-        $project_category->name = $request->name;
+        $consultant_category = ConsultantCategory::findOrFail($id);
+        $consultant_category->name = $request->name;
         if ($request->parent_id != null) {
-            $project_category->parent_id = $request->parent_id;
+            $consultant_category->parent_id = $request->parent_id;
         }
-        $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
-        $project_category->photo = $request->photo;
-        $project_category->description = $request->description;
-        if($project_category->save()){
+        $consultant_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
+        $consultant_category->photo = $request->photo;
+        $consultant_category->description = $request->description;
+        if($consultant_category->save()){
             flash(translate('New Category has been updated successfully!'))->success();
-            return redirect()->route('project-categories.index');
+            return redirect()->route('consultant-categories.index');
         }
         else {
             flash(translate('Something went wrong!'))->warning();
@@ -119,10 +119,11 @@ class ConsultantCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ConsultantCategory $consultant_category)
     {
-        CategoryUtility::delete_category(decrypt($id));
-        flash(translate('Category deleted'))->success();
-        return redirect()->route('project-categories.index');
+        dd($consultant_category);
+        ConsultantCategory::find($consultant_category)->delete();
+        return redirect()->route('consultant-categories.index');
+
     }
 }
