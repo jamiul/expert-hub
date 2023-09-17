@@ -903,6 +903,12 @@ div.scroll h6 a {
     font-family: Neuemontreal, sans-serif;
 
 }
+.singel-profile{
+    font-size: 30px;
+        font-weight: 700;
+        color:#5ABC76 !important;
+        font-family: Neuemontreal, sans-serif !important;
+}
 @media (min-width: 425px) {
     .seminar-banner {
         max-width: 250px !important;
@@ -957,4 +963,5 @@ div.scroll h6 a {
     .banner-photo {
         margin-left: 300px !important;
     }
+   
 }

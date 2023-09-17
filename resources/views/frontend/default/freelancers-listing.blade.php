@@ -405,7 +405,7 @@
                                                             <img class=" px-1  "
                                                                 src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
                                                                 alt="Image" style="width:36px; " />
-                                                            {{ translate('Hire me') }}
+                                                            {{ translate('Message') }}
                                                         </p>
                                                     </div>
                                                     <div class="d-flex w-100 mx-0">
@@ -413,7 +413,7 @@
                                                             <img class=" px-1  "
                                                                 src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
                                                                 alt="Image" style="width:28px; " />
-                                                            {{ translate('Zoom me') }}
+                                                            {{ translate('Consultation') }}
                                                         </p>
                                                     </div>
                                                 </div>

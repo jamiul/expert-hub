@@ -13,8 +13,8 @@
 
           @if (!Auth::check())
           <div class="col-4 p-0">
-            <a href="{{ route('register') }}?type=2" class="py-3 px-1 text-dark">{{ translate('I want to Hire') }}</a>
-            <a href="{{ route('register') }}?type=1" class="py-3 px-1 text-dark">{{ translate('I want to Work') }}</a>
+            <a href="{{ route('register') }}?type=2" class="py-3 px-1 text-dark">{{ translate('Find an expert') }}</a>
+            <a href="{{ route('register') }}?type=1" class="py-3 px-1 text-dark">{{ translate('Become an expert') }}</a>
           </div>
           @else
           <div class="logo ml-4 ">
@@ -79,7 +79,7 @@
                   </li>
                   <li class="nav-item ml-xl-3">
                     <a class="btn text-white " style="background-color:#275846;"
-                      href="{{ route('register') }}">{{ translate('Post a Job') }}</a>
+                      href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                   </li>
                   @elseif (isAdmin())
                   <li class="nav-item d-none d-lg-block">
@@ -323,11 +323,11 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Academic Consultants') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Find Consultants') }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Academic Projects') }}</a>
+                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Find Projects') }}</a>
               </li>
 
               <!-- <li class="dropdown mega_menu nav-item">
@@ -362,15 +362,16 @@
                                 </div>
                             </li> -->
 
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Academic Scholarships') }}</a>
-              </li>
+             
 
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Academic Training ') }}</a>
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Trainings ') }}</a>
                             </li>
+                             <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Scholarships Database') }}</a>
+              </li>
                             <li class="nav-item dropdown  text-white">
                                 <a class="nav-link " href="{{route('aboutUs')}}" >
                                     About Us
