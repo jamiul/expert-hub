@@ -309,7 +309,7 @@ body {
 }
 
 .need-help-section {
-    max-width: 1200px !important; /* Set your desired max-width value */
+    max-width: 1400px !important; /* Set your desired max-width value */
     margin-left: auto !important;
     margin-right: auto !important;
 }
@@ -337,12 +337,12 @@ body {
 
     .need-help-section-bar {
         height: 2px;
-        width: 91%;
+        width: 93%;
         background: white;
         position: absolute;
         bottom: 50%;
         transform: translateY(50%);
-        left: 161px;
+        left: 185px;
         right: 0;
     }
 }
@@ -439,7 +439,7 @@ body {
     }
     .fre-small-font {
         font-size: 24px !important;
-        color:#5ABC76;
+        color: #5abc76;
         font-family: Neuemontreal, sans-serif;
     }
     .fre-consultant-category {
@@ -449,7 +449,6 @@ body {
     .logo {
         width: 50px;
     }
-    
 }
 
 @media (min-width: 1200px) {

@@ -39,23 +39,20 @@
                                 </div>
                                 <div class="carousel-caption">
                                     <div class="row">
-                                        <div class="col-lg-8 col-sm-12 home-cacap-head">
+                                        <div class="col-lg-10 col-sm-12 home-cacap-head">
                                             <h2 class=" sm-mx-auto fw-700 fs-40 fs-sm-36px" style="">
-                                                Hire the best academic consultants</h2>
-                                            <p class="fs-20 fs-sm-14 mt-4 mb-5 ">ConsultantEdu Hub is an exclusive platform
-                                                featuring academic experts across diverse fields, encompassing curriculum
-                                                development, course accreditation, learning management systems, meticulous
-                                                research and analysis, and refined writing and editing.</p>
+                                               Find a top academic expert for your project </h2>
+                                            <p class="fs-20 fs-sm-14 mt-4 mb-5 ">ConsultantEdu Hub is an exclusive platform featuring top academic experts across diverse fields. Whether it's a personal or institutional project or media interviews, our pool of top academic experts is here to assist.</p>
                                             <div class="lg-my-3 mt-5 my-sm-0 home-banner-button ">
                                                 <a href="{{ route('register') }}?type=2"
                                                     class="btn text-white fw-700  fs-20 fs-sm-12 mr-2 mb-3"
-                                                    style="background-color:#1d4335;">{{ translate('I want to Hire') }}</a>
+                                                    style="background-color:#1d4335;">{{ translate('Find an expert') }}</a>
                                                 <a href="{{ route('register') }}?type=1"
                                                     class="btn text-white fw-700  fs-20 fs-sm-12  mb-3"
-                                                    style="background-color:#1d4335;">{{ translate('I want to Work') }}</a>
+                                                    style="background-color:#1d4335;">{{ translate('Become an expert') }}</a>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -104,13 +101,11 @@
         @if (get_setting('how_it_works_show') == 'on')
             <div class="border-top pb-2 " style="background-color:#275846;">
                 <div class="mt-5 pb-2">
-                    <div class="">
                         <div class="">
                             <div class=" content-title  text-center pb-5 pt-3">
-                                <h2 class="fw-700 fs-36 text-white mb-3">Need academic assistance?</h2>
-                                <p class="text-center fs-20 text-white">Navigating academia can be challenging. Let
-                                    us help you:
-                                </p>
+                                <h2 class="fw-700 fs-36 text-white mb-3">Looking for a top academic expert in the field?</h2>
+                                <p class="fw-700 fs-20 text-white mb-3 main-content" >Navigating academia can be challenging. We are the largest, globally connected network of top academic talent, and we're prepared to tackle your most critical projects.</p>
+                               
                             </div>
                             <div class="row need-help-section">
                                 <div class="col-xl-3 col-md-6">
@@ -123,14 +118,14 @@
                                                 <div class="need-help-section-bar"></div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Post a Job
+                                                Post your academic projects  
 
 
                                             </p>
                                         </div>
 
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Create a job posting, specifying your requirements. It’s free.
+                                            Whether it is a personal or institutional project, or media interviews, our pool of top academic experts are here to assist.
 
                                         </h6>
                                     </div>
@@ -144,18 +139,19 @@
                                                                                     <div class="need-help-progress-bar"></div>
                                                                                 </div> -->
                                             <div class="d-flex">
-                                                <img class="mb-2 mx-auto d-block text-black p-3"
+                                            <img class="mb-2 mx-auto d-block text-black p-3"
                                                     src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff;" />
-                                                <div class="need-help-section-bar"></div>
+                                            <div class="need-help-section-bar">
+                                            </div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Receive Proposals
+                                                Receive project interests
 
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Review the proposals from our academic consultants.
+                                            Review expressions of interest from our network of academic experts who are interested in working on your project. 
 
                                         </h6>
                                     </div>
@@ -172,12 +168,12 @@
                                                 <div class="need-help-section-bar"></div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Make Selection
+                                                Book meetings
 
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Select the consultant who is the best fit for your project.
+                                     Schedule meetings with the interested academic experts to determine which expert aligns best with your project requirements.
 
                                         </h6>
                                     </div>
@@ -190,11 +186,11 @@
                                                 src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
-                                                Pay Securely
+                                                Select the best match for you 
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3 text-white text-center">
-                                            Payment held in escrow until project is completed to your satisfaction.
+                                            Make an informed decision to choose the academic expert who best matches your project needs and objectives. 
                                         </h6>
                                     </div>
 
@@ -209,7 +205,6 @@
 
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         @endif

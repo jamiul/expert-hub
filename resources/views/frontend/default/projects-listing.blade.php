@@ -7,12 +7,14 @@
             <div class="mb-4 mt-lg-1 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30 mt-3 ">Available Academic Projects
+                        <h3 class="text-white fw-700 fs-30 mt-3 site-font ">Available Academic Projects
                         </h3>
-                        <p class="fw-400 text-white text-justify fs-18 mb-2">View available academic projects and bid on the
+                        <p class="fw-400 text-white text-justify fs-18 mb-2 site-font">View available academic projects and
+                            bid on the
                             ones that match your expertise.
                         </p>
-                         <a href="register?type=2" class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started</a>
+                        <a href="register?type=2"
+                            class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started</a>
                         {{-- <div class="input-group mb-3 mt-5">
                             <form action="" method="GET" class="w-100">
                                 <input type="text" class="form-control position-relative z-0"
@@ -30,11 +32,11 @@
                         </div> --}}
 
                         <!-- <div class="d-flex align-items-center">
-                            <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                <i class="las la-filter text-black-50">SS</i>
-                            </button>
-                            <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                        </div> -->
+                                <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                                    <i class="las la-filter text-black-50">SS</i>
+                                </button>
+                                <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
+                            </div> -->
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -76,9 +78,9 @@
 
                                 <!-- @foreach ($categories as $category)
     <span id="category_{{ $category->id }}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                    {{ $category->name }} |<p onclick="removeCategory({{ $category->id }})" class="m-0  d-inline fw-700">
-                                        X</p>
-                                </span>
+                                        {{ $category->name }} |<p onclick="removeCategory({{ $category->id }})" class="m-0  d-inline fw-700">
+                                            X</p>
+                                    </span>
     @endforeach -->
                                 @foreach ($categories as $category)
                                     <span id="category_{{ $category->id }}"
@@ -124,8 +126,8 @@
                                         </div>
                                         <div class="d-flex">
                                             <div>
-                                                <input class="p-2" placeholder="Min" name="fixed_min"
-                                                    class="site-font" value="{{ $fixed_min ? $fixed_min : '' }}"
+                                                <input class="p-2" placeholder="Min" name="fixed_min" class="site-font"
+                                                    value="{{ $fixed_min ? $fixed_min : '' }}"
                                                     style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;"
                                                     type="number">
                                             </div>
@@ -187,16 +189,16 @@
                                     <div class="mb-4 site-font">
                                         <!-- Countries -->
                                         <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="pr-3">{{ translate('Skills') }}</span>
-                                        </h6> -->
+                                                <span class="pr-3">{{ translate('Skills') }}</span>
+                                            </h6> -->
                                         <!-- <div class="mb-5" style="width: 245px;">
-                                            <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                                <option value="">{{ translate('Skills') }}</option>
-                                                @foreach (\App\Models\Skill::all() as $key => $skill)
+                                                <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
+                                                    <option value="">{{ translate('Skills') }}</option>
+                                                    @foreach (\App\Models\Skill::all() as $key => $skill)
     <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id == $skill->id) selected @endif>{{ $skill->name }}</option>
     @endforeach
-                                            </select>
-                                        </div> -->
+                                                </select>
+                                            </div> -->
                                         <div class="">
                                             <h6 class="text-left mb-3 fs-14 fw-700">
                                                 <span class="pr-3 site-font">{{ translate('Skills') }}</span>
@@ -253,33 +255,33 @@
 
                                     <!-- Price -->
                                     <!-- <input type="hidden" name="min_price" value="">
-                                    <input type="hidden" name="max_price" value="">
-                                    <h6 class="text-left mb-3 fs-14 fw-700">
-                                        <span class=" pr-3">{{ translate('Price') }}</span>
-                                    </h6>
-                                    <div class="aiz-range-slider mb-5 px-3">
-                                        <div id="input-slider-range" data-range-value-min="@if (\App\Models\Project::count() < 1) 0 @else {{ \App\Models\Project::min('price') }} @endif" data-range-value-max="@if (\App\Models\Project::count() < 1) 0 @else {{ \App\Models\Project::max('price') }} @endif">
-                                        </div>
+                                        <input type="hidden" name="max_price" value="">
+                                        <h6 class="text-left mb-3 fs-14 fw-700">
+                                            <span class=" pr-3">{{ translate('Price') }}</span>
+                                        </h6>
+                                        <div class="aiz-range-slider mb-5 px-3">
+                                            <div id="input-slider-range" data-range-value-min="@if (\App\Models\Project::count() < 1) 0 @else {{ \App\Models\Project::min('price') }} @endif" data-range-value-max="@if (\App\Models\Project::count() < 1) 0 @else {{ \App\Models\Project::max('price') }} @endif">
+                                            </div>
 
-                                        <div class="row mt-2">
-                                            <div class="col-6">
-                                                <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price)) data-range-value-low="{{ $min_price }}" @elseif(count($projects) > 1 && $projects->min('price') > 0)
+                                            <div class="row mt-2">
+                                                <div class="col-6">
+                                                    <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price)) data-range-value-low="{{ $min_price }}" @elseif(count($projects) > 1 && $projects->min('price') > 0)
                                                 data-range-value-low="{{ $projects->min('price') }}"
                                                 @else
                                                 data-range-value-low="0" @endif
-                                                    id="input-slider-range-value-low"
-                                                    ></span>
-                                            </div>
-                                            <div class="col-6 text-right">
-                                                <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price)) data-range-value-high="{{ $max_price }}" @elseif(count($projects) > 1 && $projects->max('price') > 0)
+                                                        id="input-slider-range-value-low"
+                                                        ></span>
+                                                </div>
+                                                <div class="col-6 text-right">
+                                                    <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price)) data-range-value-high="{{ $max_price }}" @elseif(count($projects) > 1 && $projects->max('price') > 0)
                                                 data-range-value-high="{{ $projects->max('price') }}"
                                                 @else
                                                 data-range-value-high="0" @endif
-                                                    id="input-slider-range-value-high"
-                                                    ></span>
+                                                        id="input-slider-range-value-high"
+                                                        ></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> -->
+                                        </div> -->
                                     {{-- <div class="">
                                         <h6 class="separator text-left mb-3 fs-12 text-uppercase text-secondary">
                                             <span class=" pr-3">Client History</span>
@@ -319,13 +321,13 @@
                         <div class="card mb-lg-0 border-0">
                             <input type="hidden" name="type" value="project">
                             <!-- <div class="card-header">
-                                <div class="d-flex align-items-center">
-                                    <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                        <i class="las la-filter"></i>
-                                    </button>
-                                    <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                                </div>
-                            </div> -->
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                                            <i class="las la-filter"></i>
+                                        </button>
+                                        <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
+                                    </div>
+                                </div> -->
 
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
@@ -369,7 +371,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="col-lg-8 ">
+                                        <div class="col-lg-9 ">
                                             <a href="{{ route('project.details', $project->slug) }}"
                                                 class=" fs-20 lh-1-5 fw-700 p-title " style="color:#5ABC76;">
                                                 <u>{{ $project->name }}</u></a>
@@ -385,8 +387,8 @@
                                                                 transform="translate(384 1963)" fill="#055846" />
                                                         </g>
                                                     </svg>
-                                                    <span class="ml-1 site-font text-dark fs-14 "
-                                                        style="color:black;">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
+                                                    <span
+                                                        class="ml-1 site-font text-dark fs-14 fw-700 ">{{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     {{-- <i class="las la-stream opacity-40"></i> --}}
@@ -405,7 +407,7 @@
                                                                 transform="translate(500 1967)" fill="#055846" />
                                                         </g>
                                                     </svg>
-                                                    <span class="ml-1  site-font fs-14" style="color:black;">
+                                                    <span class="ml-1  site-font fs-14 fw-700">
                                                         @if ($project->project_category != null)
                                                             {{ $project->project_category->name }}
                                                         @endif
@@ -430,7 +432,7 @@
                                                             fill="#055846" />
                                                     </svg>
 
-                                                    <span class="ml-1  site-font  fs-14" style="color:black;">
+                                                    <span class="ml-1  site-font fw-700 fs-14">
                                                         @if ($project->bids > 0)
                                                             {{ $project->bids }}+
                                                         @else
@@ -458,13 +460,13 @@
                                             </div>
                                         </div>
                                         <div
-                                            class="col-lg-3 col-12 flex-shrink-0 pt-4 pt-xl-0  d-flex-lg flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px  ">
+                                            class="col-lg-2 col-12 flex-shrink-0 pt-4 pt-xl-0  d-flex-lg flex-row-reverse flex-xl-column  align-items-center align-items-xl-end min-130px  ">
 
                                             <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white"
                                                 style="background-color:#275846; ">
                                                 <img class=" px-1  "
                                                     src=" {{ url('/public/assets/find-consultant/budget.png') }}"
-                                                    alt="Image" style="width:30px; " /> {{ translate('Budget') }}
+                                                    alt="Image" style="width:30px; " />
                                                 {{ single_price($project->price) }}
 
                                             </div>
@@ -475,7 +477,7 @@
                                                 <img class=" px-1  "
                                                     src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
                                                     alt="Image" style="width:36px; " />
-                                                Send Proposal
+                                                EOI
                                                 <img class=" px-1 " src=" {{ url('/public/assets/home/arrow.png') }}"
                                                     alt="Image" style="width:18px; " />
                                             </button>

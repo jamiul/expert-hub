@@ -13,8 +13,8 @@
 
           @if (!Auth::check())
           <div class="col-4 p-0">
-            <a href="{{ route('register') }}?type=2" class="py-3 px-1 text-dark">{{ translate('I want to Hire') }}</a>
-            <a href="{{ route('register') }}?type=1" class="py-3 px-1 text-dark">{{ translate('I want to Work') }}</a>
+            <a href="{{ route('register') }}?type=2" class="py-3 px-1 text-dark">{{ translate('Find an expert') }}</a>
+            <a href="{{ route('register') }}?type=1" class="py-3 px-1 text-dark">{{ translate('Become an expert') }}</a>
           </div>
           @else
           <div class="logo ml-4 ">
@@ -79,7 +79,7 @@
                   </li>
                   <li class="nav-item ml-xl-3">
                     <a class="btn text-white " style="background-color:#275846;"
-                      href="{{ route('register') }}">{{ translate('Post a Job') }}</a>
+                      href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                   </li>
                   @elseif (isAdmin())
                   <li class="nav-item d-none d-lg-block">
@@ -366,7 +366,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Training ') }}</a>
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Trainings ') }}</a>
                             </li>
                              <li class="nav-item">
                 <a class="nav-link text-white"

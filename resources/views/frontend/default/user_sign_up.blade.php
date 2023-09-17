@@ -92,10 +92,9 @@
 
 
                                 <div class="mb-5">
-                                    <button type="submit"
-                                        class="btn btn-block btn-primary rounded-1">{{ translate('Join With Us') }}</button>
-                                </div>
-
+                                    <button type="submit" class="btn btn-block btn-primary rounded-1">
+                                        {{ translate('Join With Us') }}</button>
+                            </div>
                                 @if (
                                     \App\Utility\SettingsUtility::get_settings_value('facebook_login_activation_checkbox') == 1 ||
                                         \App\Utility\SettingsUtility::get_settings_value('twitter_login_activation_checkbox') == 1 ||
