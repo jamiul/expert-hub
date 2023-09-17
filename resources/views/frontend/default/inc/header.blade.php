@@ -323,11 +323,11 @@
 
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Academic Consultants') }}</a>
+                  href="{{ url('/search?keyword=&type=freelancer')}}">{{ translate('Find Consultants') }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Academic Projects') }}</a>
+                  href="{{ url('/search?keyword=&type=project')}}">{{ translate('Find Projects') }}</a>
               </li>
 
               <!-- <li class="dropdown mega_menu nav-item">
@@ -362,15 +362,16 @@
                                 </div>
                             </li> -->
 
-              <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Academic Scholarships') }}</a>
-              </li>
+             
 
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Academic Training ') }}</a>
+                                <a class="nav-link text-white" href="{{ url('/search?keyword=&type=seminar')}}">{{ translate(' Find Training ') }}</a>
                             </li>
+                             <li class="nav-item">
+                <a class="nav-link text-white"
+                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Scholarships Database') }}</a>
+              </li>
                             <li class="nav-item dropdown  text-white">
                                 <a class="nav-link " href="{{route('aboutUs')}}" >
                                     About Us
