@@ -105,7 +105,7 @@
                             <div class=" content-title  text-center pb-5 pt-3">
                                 <h2 class="fw-700 fs-36 text-white mb-3">Looking for a top academic expert in the field?</h2>
                                 <p class="fw-700 fs-20 text-white mb-3 main-content" >Navigating academia can be challenging. We are the largest, globally connected network of top academic talent, and we're prepared to tackle your most critical projects.</p>
-                               
+
                             </div>
                             <div class="row need-help-section">
                                 <div class="col-xl-3 col-md-6">
@@ -118,7 +118,7 @@
                                                 <div class="need-help-section-bar"></div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Post your academic projects  
+                                                Post your academic projects
 
 
                                             </p>
@@ -151,7 +151,7 @@
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Review expressions of interest from our network of academic experts who are interested in working on your project. 
+                                            Review expressions of interest from our network of academic experts who are interested in working on your project.
 
                                         </h6>
                                     </div>
@@ -186,11 +186,11 @@
                                                 src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
-                                                Select the best match for you 
+                                                Select the best match for you
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3 text-white text-center">
-                                            Make an informed decision to choose the academic expert who best matches your project needs and objectives. 
+                                            Make an informed decision to choose the academic expert who best matches your project needs and objectives.
                                         </h6>
                                     </div>
 
@@ -301,7 +301,7 @@
                                 $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
                                     ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
                                     ->pluck('user_id');
-                                
+
                                 $services = \App\Models\ProjectCategory::all();
                             @endphp
                             @foreach ($services as $category)
@@ -353,81 +353,433 @@
         <!-- Join us -->
         @if (get_setting('latest_project_show') == 'on')
             <section class="border-top bg-white">
+                
+
                 <div class="container-home">
-                    <div class="row ">
-                        <div class="col-lg-5">
-                            <img class="mr-2  img-fluid" src="{{ url('/public/assets/home/001.png') }}" alt="Image"
-                                style="width:500px;" />
-                        </div>
-                        <div class=" col-lg-7 col-sm-12">
-                            <h2 class="fw-700 mb-3 text-success heading-title fre-small-font" style="padding-top:36px; ">
-                                What makes
-                                ConsultantEdu
-                                impressive
-                            </h2>
-                            <div class="">
-                                <div class="  ">
 
-                                    <div>
-                                        <h6 class="fs-18  fw-700 heading-title">Access to Expertise
-                                        </h6>
-                                        <p class="fs-16">ConsultantEdu specialises in academic fields like course
-                                            accreditation,
-                                            curriculum development, LMS, research and analysis.</p>
+                    <div class="my-5 mx-4" id="FAQs">
+                        <h1 class="explore-find-oppor-title text-success fw-700 mb-2"> What sets ConsultantEdu apart?
+                        </h1>
+                        <p class="fs-16 fw-700 text-black">ConsultantEdu is your premium platform for connecting with top-tier academic experts, serving a diverse clientele that includes esteemed higher education institutions, prominent media outlets, and individuals seeking expert guidance for their academic pursuits. Discover what makes us stand out:</p>
+                        <hr>
+
+                        <nav>
+                            <ul class="nav" id="myTab" role="tablist">
+                                <li class="nav-item mr-2">
+                                    <a class="  fs-20 p-1   btn  btn-outline-primary px-4" id="for-consultants" data-toggle="tab"
+                                        href="#consultant" role="tab" aria-controls="consultant" aria-selected="true">For Clients </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class=" fs-20 p-1 btn  btn-outline-primary px-4 " id="for-client" data-toggle="tab"
+                                        href="#client" role="tab" aria-controls="client" aria-selected="false">
+                                        For Consultant </a>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active mt-2" id="consultant" role="tabpanel"
+                            aria-labelledby="for-consultants">
+                            <!-- Frequently asked questions -->
+                            <div class=" rounded-2" style="background: #F2F7F2;">
+                                <div class="mx-2 mt-5 row">
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <img class="banner-img"
+                                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            alt="">
                                     </div>
-                                    <div>
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-leave">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            A Wealth of Expertise</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            Our platform is home to a vast pool of professionals, ensuring that users can readily access highly qualified experts with specialized knowledge tailored to their unique requirements.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-leave">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-leave">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-contest">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Global Accessibility</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        With our platform's global reach, users can tap into the expertise of top academic professionals from around the world.
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            This international perspective proves invaluable when seeking insights on global or cross-cultural educational challenges and opportunities.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-contest">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-contest">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-freelancing">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Comprehensive Support</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            program design, policy formulation, scholarship advice, or managing complete educational projects, our platform provides in-house experts to assist them at every step.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-freelancing">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-freelancing">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-Intuitive">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Intuitive User Experience</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Our user-friendly interface and streamlined process cater to users with varying levels of technical proficiency. Posting academic projects has never been easier,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            ensuring that users can swiftly identify the ideal expert for their needs while saving valuable time.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-aliored">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            ailored Expert Selection</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-aliored">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-aliored">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-secure">
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Secure Transactions</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-secure">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-secure">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="frequently-qsn-details text-justify">
+                                                Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
+                                            </p>
+                                        </div>
+
+
                                     </div>
                                 </div>
-                                <div class="">
 
-                                    <h6 class="fs-18 fw-700 heading-title">Project Flexibility
-                                    </h6>
-                                    <p class="fs-16 "> ConsultantEdu is ideal for academic institutions seeking short-term
-                                        assistance or
-                                        specialised expertise without committing to long-term contracts.</p>
-
-
-                                </div>
-                                <div class="">
-
-                                    <h6 class="fs-18 fw-700 heading-title "> Quality Assurance
-
-                                    </h6>
-                                    <p class="fs-16 "> ConsultantEdu ensures academic institutions have access to experts
-                                        aligned with
-                                        their educational standards and visibility to the consultants’ profiles, ratings,
-                                        and show case of their previous work.</p>
-                                </div>
-                                <div class="">
-
-                                    <h6 class="fs-18  fw-700 heading-title ">Cost-Effective Solutions
-
-                                    </h6>
-                                    <p class="fs-16"> ConsultantEdu offers pricing options tailored to various budgets,
-                                        ensuring fairness
-                                        and transparency in costs.</p>
-                                </div>
-                                <div class=" ">
-
-                                    <h6 class="fs-18  fw-700 heading-title ">Efficient Processes
-                                    </h6>
-                                    <p class="fs-16">ConsultantEdu streamlines academic hiring and project management with
-                                        specialised
-                                        tools, saving institutions valuable time.</p>
-                                </div>
                             </div>
-                            <button type="button" class="btn mt-2 p-2 fs-16 px-4 text-white"
-                                style="background-color:#275846;">
-                                <span><a href="{{ url('/search?keyword=&type=freelancer') }}" class="text-white"> Find
-                                        Consultant</a></span>
-                                <span><img class=" px-1 " src=" {{ url('/public/assets/home/arrow.png') }}"
-                                        alt="Image" style="width:18px; " />
-                                </span>
-                            </button>
                         </div>
+                        <div class="tab-pane fade mt-2" id="client" role="tabpanel" aria-labelledby="for-client">
+                            <!-- Frequently asked questions -->
+                            <div class=" rounded-2" style="background: #F2F7F2;">
+                                <div class="mx-2 mt-5 row">
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <img class="banner-img"
+                                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-leave">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            A Wealth of Expertise</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            Our platform is home to a vast pool of professionals, ensuring that users can readily access highly qualified experts with specialized knowledge tailored to their unique requirements.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-leave">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-leave">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-contest">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Global Accessibility</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        With our platform's global reach, users can tap into the expertise of top academic professionals from around the world.
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            This international perspective proves invaluable when seeking insights on global or cross-cultural educational challenges and opportunities.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-contest">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-contest">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-freelancing">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Comprehensive Support</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            program design, policy formulation, scholarship advice, or managing complete educational projects, our platform provides in-house experts to assist them at every step.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-freelancing">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-freelancing">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-Intuitive">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Intuitive User Experience</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Our user-friendly interface and streamlined process cater to users with varying levels of technical proficiency. Posting academic projects has never been easier,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            ensuring that users can swiftly identify the ideal expert for their needs while saving valuable time.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-aliored">
+
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            ailored Expert Selection</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-aliored">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-aliored">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-secure">
+                                                        <h4 class="make-impressive-title ml-1">
+                                                            Secure Transactions</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-secure">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-secure">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="frequently-qsn-details text-justify">
+                                                Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="queries" role="tabpanel" aria-labelledby="other-queries">
+                            <p class="text-center text-red fw-700 fs-16" style="color:red">Upcoming topic</p>
+                        </div>
+
                     </div>
                 </div>
             </section>
+
         @endif
 
         <!--Find scholarship by category -->
@@ -784,7 +1136,7 @@
                             $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
                                 ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
                                 ->pluck('user_id');
-                            
+
                             $seminars = \App\Models\Seminar::all();
                         @endphp
                         @foreach ($seminars as $seminar)

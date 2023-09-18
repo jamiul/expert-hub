@@ -227,15 +227,24 @@
                                         </div>
 
                                         {{-- consultantion option --}}
-                                       <div class="my-5">
-                                        <label class="aiz-checkbox site-font w-100 fw-700">
-                                            <input type="checkbox" name="Consultantions" value="Consultantions"
-                                                onchange="applyFilter()" class=" " @if($Consultantions ) checked @endif >
-                                                Consultantions
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                        </label>
-                                       </div>
+                                        <div class="my-5">
+                                            <label class="aiz-checkbox site-font w-100 fw-700">
+                                                <input type="checkbox" name="available_interview" value="interview"
+                                                    onchange="applyFilter()" class=" "
+                                                    @if ($available_interview) checked @endif>
+                                                Available for Midea Interview
+                                                <span class="aiz-square-check"></span>
+                                                <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                            </label>
+                                            <label class="aiz-checkbox site-font w-100 fw-700">
+                                                <input type="checkbox" name="consultantions" value="consultantions"
+                                                    onchange="applyFilter()" class=" "
+                                                    @if ($consultantions) checked @endif>
+                                                Offer Consultantion
+                                                <span class="aiz-square-check"></span>
+                                                <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                            </label>
+                                        </div>
 
                                         <!-- countries  -->
                                         <h6 class="text-left mb-3 fs-14">
@@ -342,7 +351,7 @@
                                                             </span>
                                                         </div>
                                                     </a>
-                                                   
+
                                                     @if ($freelancer->specialistAt != null)
                                                         <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
                                                     @endif
@@ -386,14 +395,13 @@
                                                             @endforeach
                                                         </div>
                                                     @endif
-                                                    @if($Consultantions)
-                                                    <div class="d-flex w-25 mx-0">
-                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+                                                    @if ($consultantions)
+                                                        <div class="d-flex w-25 mx-0">
+                                                            <p class="btn btn-primary btn-sm  w-100  fw-700">
 
-                                                            {{ translate('Book a consultant') }}
-                                                        </p>
-                                                    </div>
-
+                                                                {{ translate('Book a consultant') }}
+                                                            </p>
+                                                        </div>
                                                     @endif
 
 

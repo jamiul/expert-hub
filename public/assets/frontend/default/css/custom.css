@@ -268,6 +268,15 @@
 #fre-contest {
     display: none;
 }
+#fre-Intuitive {
+    display: none;
+}
+#fre-aliored {
+    display: none;
+}
+#fre-secure {
+    display: none;
+}
 #fre-ch:checked ~ label {
     display: none;
 }
@@ -284,6 +293,24 @@
     display: none;
 }
 #fre-contest:checked ~ .fre-content {
+    display: block;
+}
+#fre-Intuitive:checked ~ label {
+    display: none;
+}
+#fre-Intuitive:checked ~ .fre-content {
+    display: block;
+}
+#fre-aliored:checked ~ label {
+    display: none;
+}
+#fre-aliored:checked ~ .fre-content {
+    display: block;
+}
+#fre-secure:checked ~ label {
+    display: none;
+}
+#fre-secure:checked ~ .fre-content {
     display: block;
 }
 .fre-content {
@@ -963,5 +990,15 @@ div.scroll h6 a {
     .banner-photo {
         margin-left: 300px !important;
     }
-   
+
+}
+
+.make-impressive-title{
+    color: #95DF00 !important;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-family: Neuemontreal, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1em;
 }
