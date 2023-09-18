@@ -353,7 +353,7 @@
         <!-- Join us -->
         @if (get_setting('latest_project_show') == 'on')
             <section class="border-top bg-white">
-                
+
 
                 <div class="container-home">
 
@@ -1140,9 +1140,10 @@
                             $seminars = \App\Models\Seminar::all();
                         @endphp
                         @foreach ($seminars as $seminar)
+                       
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
-                                    <img class="w-100 h-190px" src=" {{ custom_asset($category->photo) }}"
+                                    <img class="w-100 h-190px" src=" {{ custom_asset($seminar->attachment) }}"
                                         alt="Image" />
                                     <div class="p-3">
                                         <h5 class="card-title fs-20 mt-2 seminar-home-content"> {{ $seminar->title }}</h5>

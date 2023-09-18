@@ -174,7 +174,7 @@ class SeminarController extends Controller
         }
 
         flash(translate( 'Seminar has been updated successfully'))->success();
-        return redirect()->back();
+        return redirect()->route('seminar.index');
     }
 
     public function change_status(Request $request) {
