@@ -681,3 +681,49 @@ function getFreelancerPhoto($freelancer){
 
     return $img_url;
 }
+if (!function_exists('getCurrentUrl')) {
+    function getCurrentUrl()
+    {
+        return request()->fullUrl();
+    }
+}
+function GetUrls(){
+    $data=array();
+    $remainingUrl='';
+    $baseUrl = config('app.url');
+    $fullUrl = getCurrentUrl();
+    $baseParts = parse_url($baseUrl);
+    $fullParts = parse_url($fullUrl);
+    if ($baseParts['host'] === $fullParts['host']) {
+
+    $remainingUrl = rtrim($fullParts['path'], '/');
+    $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
+    }
+    if($remainingUrl==''){
+        $defaultdata = PageOptimization::where('id', 1)->get(); 
+        $data['title']=$defaultdata[0]->title;
+        $data['keyword']=$defaultdata[0]->keyword;
+        $data['description']=$defaultdata[0]->description; 
+    }else{
+        $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl.'%')->get();
+        if($pageoptimizations->isEmpty()){
+            $defaultdata = PageOptimization::where('id', 1)->get(); 
+            $data['title']=$defaultdata[0]->title;
+            $data['keyword']=$defaultdata[0]->keyword;
+            $data['description']=$defaultdata[0]->description;
+        }else{
+            if($pageoptimizations[0]->description->isNotEmpty()){
+            $data['title']=$pageoptimizations[0]->description->title;
+            $data['keyword']=$pageoptimizations[0]->description->keyword;
+            $data['description']=$pageoptimizations[0]->$description->description;
+            }
+            else{
+            $defaultdata = PageOptimization::where('id', 1)->get(); 
+            $data['title']=$defaultdata[0]->title;
+            $data['keyword']=$defaultdata[0]->keyword;
+            $data['description']=$defaultdata[0]->description;
+            }
+        }  
+    }
+    return $data;
+}

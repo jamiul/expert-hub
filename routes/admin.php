@@ -267,4 +267,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/uploaded-files/destroy/{id}', 'AizUploadController@destroy')->name('uploaded-files.destroy');
 
     Route::get('/cache-cache', 'HomeController@clearCache')->name('cache.clear');
+    // For SEO
+    Route::resource('site-page', 'SitePagesController');
+    Route::resource('page-optimization', 'PageOptimizationController');
 });

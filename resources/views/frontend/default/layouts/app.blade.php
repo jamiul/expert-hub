@@ -6,6 +6,7 @@
         $locale = env('DEFAULT_LANGUAGE');
     }
     $lang = \App\Models\Language::where('code', $locale)->first();
+    $data=GetUrls();
 @endphp
 <!DOCTYPE html>
 @if($lang != null && $lang->rtl == 1)
@@ -14,19 +15,21 @@
 <html lang="en">
 @endif
 <head>
-
+    <title>{{$data['title']}}</title>
+    <meta name="keywords" content="{{$data['keyword']}}">
+    <meta name="description" content="{{$data['description']}}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="app-url" content="{{ getBaseURL() }}">
 	<meta name="file-base-url" content="{{ getFileBaseURL() }}">
 
     <!-- Title -->
-    <title>@yield('meta_title', get_setting('website_name').' | '.get_setting('site_motto'))</title>
+    <!-- <title>@yield('meta_title', get_setting('website_name').' | '.get_setting('site_motto'))</title> -->
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="@yield('meta_description', get_setting('meta_description'))" />
-    <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords'))">
+    <!-- <meta name="description" content="@yield('meta_description', get_setting('meta_description'))" />
+    <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords'))"> -->
 
     @yield('meta')
 
