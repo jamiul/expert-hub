@@ -103,7 +103,7 @@
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px)  {
     .text-primary.mt-2.fs-20 {
         font-size: 1.25rem !important;
     }
@@ -118,5 +118,13 @@
     .fs-16.text-justify.mobile-text {
         font-size: 14px !important;
         height: 150px !important;
+    }
+   
+}
+@media only screen and (min-width: 1200px)  {
+    
+    .main-content {
+        margin-left: 275px !important;
+        margin-right: 275px !important;
     }
 }
