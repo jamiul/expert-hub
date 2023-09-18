@@ -12,6 +12,8 @@ use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
 use App\Models\Translation;
 use App\Models\User;
+use App\Models\PageOptimization;
+use App\Models\SitePage;
 use phpDocumentor\Reflection\Types\Boolean;
 
 if (!function_exists('areActiveRoutes')) {
@@ -700,10 +702,12 @@ function GetUrls(){
     $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
     }
     if($remainingUrl==''){
-        $defaultdata = PageOptimization::where('id', 1)->get(); 
+        $defaultdata = PageOptimization::where('id', 1)->get();
+        if($pageoptimizations->isNotEmpty()){
         $data['title']=$defaultdata[0]->title;
         $data['keyword']=$defaultdata[0]->keyword;
-        $data['description']=$defaultdata[0]->description; 
+        $data['description']=$defaultdata[0]->description;
+        } 
     }else{
         $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl.'%')->get();
         if($pageoptimizations->isEmpty()){
