@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
 
 	<!-- aiz core css -->
-	<link rel="stylesheet" href="{{ my_asset('assets/common/css/vendors.css') }}">
+	<link rel="stylesheet" href="{{ my_asset('assets/common/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ my_asset('assets/common/css/aiz-core.css') }}">
 
 	<script>
