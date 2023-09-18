@@ -119,10 +119,11 @@ class ConsultantCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ConsultantCategory $consultant_category)
+    public function destroy($id)
     {
-        dd($consultant_category);
-        ConsultantCategory::find($consultant_category)->delete();
+        // dd($id);
+        ConsultantCategory::find($id)->delete();
+        flash(translate('Category is deleted'))->success();
         return redirect()->route('consultant-categories.index');
 
     }
