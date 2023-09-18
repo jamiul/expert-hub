@@ -994,11 +994,11 @@ div.scroll h6 a {
 }
 
 .make-impressive-title{
-    color: #95DF00 !important;
+    /* color: #95DF00 !important; */
     letter-spacing: -0.02em;
     margin-bottom: 10px;
     font-family: Neuemontreal, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.1em;
 }

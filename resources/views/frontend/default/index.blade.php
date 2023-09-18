@@ -358,9 +358,9 @@
                 <div class="container-home">
 
                     <div class="my-5 mx-4" id="FAQs">
-                        <h1 class="explore-find-oppor-title text-success fw-700 mb-2"> What sets ConsultantEdu apart?
+                        <h1 class="fw-700 fre-small-font text-success mb-2"> What sets ConsultantEdu apart?
                         </h1>
-                        <p class="fs-16 fw-700 text-black">ConsultantEdu is your premium platform for connecting with top-tier academic experts, serving a diverse clientele that includes esteemed higher education institutions, prominent media outlets, and individuals seeking expert guidance for their academic pursuits. Discover what makes us stand out:</p>
+                        {{-- <p class="fs-16 fw-700 text-black">ConsultantEdu is your premium platform for connecting with top-tier academic experts, serving a diverse clientele that includes esteemed higher education institutions, prominent media outlets, and individuals seeking expert guidance for their academic pursuits. Discover what makes us stand out:</p> --}}
                         <hr>
 
                         <nav>
@@ -400,7 +400,7 @@
                                                 <div class=" border-bottom">
                                                     <input type="checkbox" id="fre-leave">
 
-                                                        <h4 class="make-impressive-title ml-1">
+                                                        <h4 class="make-impressive-title ml-1 text-success">
                                                             A Wealth of Expertise</h4>
                                                     <p class="frequently-qsn-details text-justify">
                                                         ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
@@ -428,7 +428,7 @@
                                                 <div class=" border-bottom">
                                                     <input type="checkbox" id="fre-contest">
 
-                                                        <h4 class="make-impressive-title ml-1">
+                                                        <h4 class="make-impressive-title ml-1 text-success">
                                                             Global Accessibility</h4>
                                                     <p class="frequently-qsn-details text-justify">
                                                         With our platform's global reach, users can tap into the expertise of top academic professionals from around the world.
@@ -457,7 +457,7 @@
                                                 <div class=" border-bottom">
                                                     <input type="checkbox" id="fre-freelancing">
 
-                                                        <h4 class="make-impressive-title ml-1">
+                                                        <h4 class="make-impressive-title ml-1 text-success">
                                                             Comprehensive Support</h4>
                                                     <p class="frequently-qsn-details text-justify">
                                                         ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
@@ -486,7 +486,7 @@
                                                 <div class=" border-bottom">
                                                     <input type="checkbox" id="fre-Intuitive">
 
-                                                        <h4 class="make-impressive-title ml-1">
+                                                        <h4 class="make-impressive-title ml-1 text-success">
                                                             Intuitive User Experience</h4>
                                                     <p class="frequently-qsn-details text-justify">
                                                         Our user-friendly interface and streamlined process cater to users with varying levels of technical proficiency. Posting academic projects has never been easier,
@@ -515,8 +515,8 @@
                                                 <div class=" border-bottom">
                                                     <input type="checkbox" id="fre-aliored">
 
-                                                        <h4 class="make-impressive-title ml-1">
-                                                            ailored Expert Selection</h4>
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Tailored Expert Selection</h4>
                                                     <p class="frequently-qsn-details text-justify">
                                                         Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
 
@@ -543,7 +543,7 @@
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
                                                     <input type="checkbox" id="fre-secure">
-                                                        <h4 class="make-impressive-title ml-1">
+                                                        <h4 class="text-success make-impressive-title ml-1 text-success">
                                                             Secure Transactions</h4>
                                                     <p class="frequently-qsn-details text-justify">
                                                         Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
@@ -565,11 +565,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
+                                        {{-- <div>
                                             <p class="frequently-qsn-details text-justify">
                                                 Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
                                             </p>
-                                        </div>
+                                        </div> --}}
 
 
                                     </div>
