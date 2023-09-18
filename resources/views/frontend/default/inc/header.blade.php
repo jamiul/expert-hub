@@ -344,7 +344,7 @@
                                         </div>
                                         <div class="col-lg-3 col-sm-6  ">
                                             <div id="wayToEarn" class="w-75 mega-menu-fj-item">
-                                                <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
+                                                <a class="dropdown-item" href="ways-to-earn">{{ translate('Ways to earn') }}</a>
                                                 <p>
                                                     {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
                                                 </p>
@@ -370,10 +370,10 @@
                             </li>
                              <li class="nav-item">
                 <a class="nav-link text-white"
-                  href="{{ route('scholarshipSearch')}}?keyword=&type=scholarships">{{ translate('Scholarships Database') }}</a>
+                  href="{{ route('scholarship-search')}}?keyword=&type=scholarships">{{ translate('Scholarships Database') }}</a>
               </li>
                             <li class="nav-item dropdown  text-white">
-                                <a class="nav-link " href="{{route('aboutUs')}}" >
+                                <a class="nav-link " href="{{route('about-us')}}" >
                                     About Us
                                 </a>
                                 <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
@@ -391,7 +391,7 @@
                             <p>{{translate("See what it's like to collaborate on scholarship australia")}}</p>
                           </div>
                           <div id="wayToEarn" class="w-75 mega-menu-fj-item">
-                            <a class="dropdown-item" href="waysToEarn">{{ translate('Ways to earn') }}</a>
+                            <a class="dropdown-item" href="ways-to-earn">{{ translate('Ways to earn') }}</a>
                             <p>
                               {{translate('Learn why Scholarship australia has the right opportunities for you.')}}
                             </p>
