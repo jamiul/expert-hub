@@ -15,6 +15,6 @@ class UserProfile extends Model
 
     public function specialistAt()
     {
-        return $this->belongsTo(ProjectCategory::class, 'specialist')->withTrashed();
+        return $this->belongsTo(ConsultantCategory::class, 'specialist')->withTrashed();
     }
 }

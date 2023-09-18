@@ -190,6 +190,14 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('show consultant category')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('consultant-categories.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['consultant-categories.index', 'consultant-categories.edit', 'consultant-categories.destroy']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Consultant Category') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
 
                                 @can('show freelancer badges')
                                     <li class="aiz-side-nav-item">

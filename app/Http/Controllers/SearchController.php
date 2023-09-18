@@ -19,6 +19,7 @@ use \App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Models\ServicePackage;
 use \App\Models\ProjectCategory;
+use \App\Models\ConsultantCategory;
 use App\Models\SeminarSoftware;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
@@ -70,7 +71,7 @@ class SearchController extends Controller
             }
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
-                $categories = ProjectCategory::whereIn('id', $category_ids)->get();
+                $categories = ConsultantCategory::whereIn('id', $category_ids)->get();
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {

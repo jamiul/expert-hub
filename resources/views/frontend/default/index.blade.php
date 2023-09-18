@@ -234,8 +234,10 @@
 
                         <div class="row gutters-10">
                             @if (get_setting('featured_category_list') != null)
-                                @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
-                                    @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
+                                    @php
+                                        $consultant_categories = \App\Models\ConsultantCategory::all()
+                                    @endphp
+                                @foreach ( $consultant_categories as $category )
                                         <div class="col-md-3">
                                             <div class="card" style="height:350px;">
                                                 <img class="w-100 h-170px" src=" {{ custom_asset($category->photo) }}"
@@ -254,7 +256,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endif
+
                                 @endforeach
                             @endif
                         </div>
@@ -458,13 +460,12 @@
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/social-science.jpg') }}"
+                                                <img src=" {{ url('/public/assets/home/Find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
                                                 <div>
-                                                    <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Social
-                                                        Sciences</p>
+                                                    <p class="card-title  fs-19 fs-700" style=" line-height:17px;">Agriculture</p>
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
