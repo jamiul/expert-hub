@@ -696,14 +696,16 @@ function GetUrls(){
     $fullUrl = getCurrentUrl();
     $baseParts = parse_url($baseUrl);
     $fullParts = parse_url($fullUrl);
-    if ($baseParts['host'] === $fullParts['host']) {
 
-    $remainingUrl = rtrim($fullParts['path'], '/');
-    $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
+     if ($baseParts['host'] === $fullParts['host']) {
+    if(!empty($fullParts['path']) && !empty($baseParts['path'])){
+        $remainingUrl = rtrim($fullParts['path'], '/');
+        $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
+    }    
     }
     if($remainingUrl==''){
         $defaultdata = PageOptimization::where('id', 1)->get();
-        if($pageoptimizations->isNotEmpty()){
+        if($defaultdata->isNotEmpty()){
         $data['title']=$defaultdata[0]->title;
         $data['keyword']=$defaultdata[0]->keyword;
         $data['description']=$defaultdata[0]->description;
