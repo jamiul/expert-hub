@@ -712,9 +712,11 @@ function GetUrls(){
         $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl.'%')->get();
         if($pageoptimizations->isEmpty()){
             $defaultdata = PageOptimization::where('id', 1)->get(); 
+            if($defaultdata->isNotEmpty()){
             $data['title']=$defaultdata[0]->title;
             $data['keyword']=$defaultdata[0]->keyword;
             $data['description']=$defaultdata[0]->description;
+            }
         }else{
             if($pageoptimizations[0]->description->isNotEmpty()){
             $data['title']=$pageoptimizations[0]->description->title;
@@ -723,9 +725,11 @@ function GetUrls(){
             }
             else{
             $defaultdata = PageOptimization::where('id', 1)->get(); 
+            if($defaultdata->isNotEmpty()){
             $data['title']=$defaultdata[0]->title;
             $data['keyword']=$defaultdata[0]->keyword;
             $data['description']=$defaultdata[0]->description;
+            }
             }
         }  
     }

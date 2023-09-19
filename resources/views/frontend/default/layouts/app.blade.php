@@ -6,7 +6,7 @@
         $locale = env('DEFAULT_LANGUAGE');
     }
     $lang = \App\Models\Language::where('code', $locale)->first();
-   
+    $data=GetUrls();
 @endphp
 <!DOCTYPE html>
 @if($lang != null && $lang->rtl == 1)
@@ -15,8 +15,14 @@
 <html lang="en">
 @endif
 <head>
-    
+@php
+    if(!empty($data)){
+    @endphp
+    <title>{{$data['title']}}</title>
+    <meta name="keywords" content="{{$data['keyword']}}">
+    <meta name="description" content="{{$data['description']}}"/>  
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @php } @endphp
 	<meta name="app-url" content="{{ getBaseURL() }}">
 	<meta name="file-base-url" content="{{ getFileBaseURL() }}">
 
