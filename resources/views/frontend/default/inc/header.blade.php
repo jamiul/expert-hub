@@ -63,7 +63,7 @@
             </div>
             <div class="menu pr-2">
               <nav class="navbar-expand">
-                <ul class="navbar-nav ml-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-center">
                   <li class="nav-item d-lg-none">
                     <a class="p-2 d-inline-block" href="javascript:void(0);" data-toggle="class-toggle"
                       data-target=".front-header-search">
@@ -74,10 +74,10 @@
                   <li class="nav-item d-none d-lg-block">
                     <a class="nav-link" href="{{ route('login') }}">{{ translate('Log In') }}</a>
                   </li>
-                  <li class="nav-item ml-xl-3">
+                  <li class="nav-item ms-xl-3">
                     <a class="nav-link" href="{{ route('register') }}">{{ translate('Sign Up') }}</a>
                   </li>
-                  <li class="nav-item ml-xl-3">
+                  <li class="nav-item ms-xl-3">
                     <a class="btn text-white " style="background-color:#275846;"
                       href="{{ route('register') }}">{{ translate('Post a Project') }}</a>
                   </li>
@@ -312,7 +312,7 @@
           <div class="collapse navbar-collapse px-4" id="navbarSupportedContent">
 
             <!-- Left links -->
-            <ul class="navbar-nav ml-auto ps-lg-0 " style="padding-left: 0.15rem">
+            <ul class="navbar-nav ms-auto ps-lg-0 " style="padding-left: 0.15rem">
 
               <!-- Navbar dropdown -->
               <li class="nav-item ml-lg-2">

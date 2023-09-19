@@ -78,7 +78,7 @@
             </div>
         </div><!-- .aiz-footer-widget -->
         <div class="container">
-            <hr style="background-color:white; filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.08));">
+            <hr style="background-color:white; filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.08));border-color: #fff;opacity: 1;">
         </div>
         <div class="aiz-footer-copyright fs-12 pb-xl-4 pb-7">
             <div class="container">
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     @if (get_setting('app_link_section_show') == 'on')
-                        <div class="col-xl-4 col-sm-12 w-100 ">
+                        <div class="col-xl-4 col-sm-12">
                             <div class="aiz-front-widget d-lg-flex ml-lg-2  align-items-center ">
                                 <h5 class="fs-16 text-white mr-lg-2">{{ translate('Mobile Apps') }}</h5>
                                 <ul class="list-inline apps">

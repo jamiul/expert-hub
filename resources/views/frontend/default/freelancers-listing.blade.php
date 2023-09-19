@@ -134,78 +134,117 @@
                                         @endforeach
                                     </div>
 
-                <div class="card-body pl-lg-0">
-                  <div class="">
-                    <!-- Categories -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Categories') }}</span>
-                    </h6>
-                    <div class="mb-5">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('All Categories') }}</option>
-                        @foreach(\App\Models\ProjectCategory::all() as $category)
-                        <option value="{{ $category->slug }}" @if (isset($_GET['category_id']) &&
-                          $_GET['category_id']==$category->slug ) selected @endif>
-                          {{$category->name}}
-                        </option>
-                        @endforeach
-                      </select>
-                    </div>
-                    <!-- skills -->
-                    <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                    <span class="bg-white pr-3">{{ translate('Skills') }}</span>
-                  </h6> -->
-                    <!-- <div class="mb-5">
-                    <select class="select2 form-control aiz-selectpicker rounded-1" name="category_id"
-                      onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                      <option value="">{{ translate('All skills') }}</option>
-                      @foreach(\App\Models\skill::all() as $skill)
-                      <option value="{{ $skill->id }}" @if (isset($_GET['skill_id']) && $_GET['skill_id']==$skill->
-                        slug
-                        ) selected @endif>
-                        {{$skill->name}}
-                      </option>
-                      @endforeach
-                    </select>
-                  </div> -->
-                    <!-- Countries -->
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Countries') }}</span>
-                    </h6>
-                    <div class="mb-5">
-                      <select class="select2 form-control aiz-selectpicker rounded-1" name="country_id"
-                        onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                        <option value="">{{ translate('All Countries') }}</option>
-                        @foreach (\App\Models\Country::all() as $key => $country)
-                        <option value="{{ $country->id }}" @if (isset($country_id) && $country_id==$country->id )
-                          selected
-                          @endif>{{ $country->name }}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                    <!-- Hourly Rate -->
-                    <input type="hidden" name="min_price" value="">
-                    <input type="hidden" name="max_price" value="">
-                    <h6 class="text-left mb-3 fs-14 fw-700">
-                      <span class="bg-white pr-3">{{ translate('Hourly Rate') }}</span>
-                    </h6>
-                    <div class="aiz-range-slider mb-5 px-3">
-                      <div id="input-slider-range"
-                        data-range-value-min="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::min('hourly_rate') }} @endif"
-                        data-range-value-max="@if(\App\Models\UserProfile::count() < 1) 0 @else {{ \App\Models\UserProfile::max('hourly_rate') }} @endif">
-                      </div>
+                                    <!-- Skills -->
+                                    <div class="card-body pl-lg-0">
+                                        <div class="">
+                                            <h6 class="text-left mb-3 fs-14">
+                                                <span class="pr-3 site-font fw-700">{{ translate('Skills') }}</span>
+                                            </h6>
+                                            <div class="mb-4">
+                                                <div class="">
+                                                    <div class="mb-5 border-bottom">
+                                                        <select
+                                                            class="select2 site-font form-control aiz-selectpicker rounded-1"
+                                                            name="skill_id[]" onchange="applyFilter()" data-toggle="select2"
+                                                            data-live-search="true">
+
+                                                            <option value="" class="site-font">
+                                                                {{ translate('Search skills') }}
+                                                            </option>
+                                                            @foreach (\App\Models\Skill::all() as $key => $skill)
+                                                                <option class="site-font" value="{{ $skill->id }}"
+                                                                    @if (in_array($skill->id, (array) $skill_ids)) selected @endif>
+                                                                    {{ $skill->name }}</option>
+                                                            @endforeach
+                                                        </select>
+
+                                                        <div class="mt-3">
+                                                            @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
+                                                                    data-toggle="collapse"
+                                                                    href="#skill_{{ $parentSkill->id }}" role="button"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="skill_{{ $parentSkill->id }}">
+                                                                    <label class="fas fa-plus "
+                                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                                    <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}
+                                                                    </p>
+                                                                </a>
+                                                                <div class="overflow-auto h-130px collapse "
+                                                                    id="skill_{{ $parentSkill->id }}">
+                                                                    @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
+                                                                        <div
+                                                                            class=" w-200px child-skill-project-filtering">
+                                                                            <div class="mb-1 ">
+                                                                                <input type="checkbox"
+                                                                                    name="childSkill_id[]"
+                                                                                    id="{{ $subSkill->id }}"
+                                                                                    value="{{ $subSkill->id }}"
+                                                                                    class=" d-none"
+                                                                                    onchange="applyFilter()">
+                                                                                <label
+                                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
+                                                                                    for="{{ $subSkill->id }}">
+                                                                                    {{ $subSkill->name }}
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- Hourly rates -->
+                                        <h6 class="text-left mb-3 fs-14">
+                                            <span
+                                                class="pr-3 site-font fw-700">{{ translate('Hourly Rate (USD)') }}</span>
+                                        </h6>
+                                        <div class="mb-5 border-bottom">
+                                            <div class="mb-2 mt-3" style="width: 245px;">
+                                                <select class="select2 form-control site-font aiz-selectpicker rounded-1"
+                                                    onchange="applyFilter()" data-live-search="true"
+                                                    name="hourly_rate[]">
+                                                    <option value="all"
+                                                        @if (in_array('all', $hourly_rate)) selected @endif>
+                                                        {{ translate('Any hourly rate') }}</option>
+
+                                                    @foreach (getHourlyRate() as $key => $rate)
+                                                        <option value="{{ $key }}"
+                                                            @if (in_array($key, $hourly_rate)) selected @endif>
+                                                            {{ $rate }} </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
 
                                         {{-- consultantion option --}}
-                                       <div class="my-5">
-                                        <label class="aiz-checkbox site-font w-100 fw-700">
-                                            <input type="checkbox" name="Consultantions" value="Consultantions"
-                                                onchange="applyFilter()" class=" " @if($Consultantions ) checked @endif >
-                                                Consultantions
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                        </label>
-                                       </div>
+                                        <div class="my-5">
+                                            <label class="aiz-checkbox site-font w-100 fw-700">
+                                                <input type="checkbox" name="available_interview" value="interview"
+                                                    onchange="applyFilter()" class=" "
+                                                    >
+                                                Available for Midea Interview
+                                                <span class="aiz-square-check"></span>
+                                                <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                            </label>
+                                            <label class="aiz-checkbox site-font w-100 fw-700">
+                                                <input type="checkbox" name="consultantions" value="consultantions"
+                                                    onchange="applyFilter()" class=" "
+                                                   >
+                                                Offer Consultantion
+                                                <span class="aiz-square-check"></span>
+                                                <span class="float-right text-secondary fs-lg-16 fs-14"></span>
+                                            </label>
+                                        </div>
 
                                         <!-- countries  -->
                                         <h6 class="text-left mb-3 fs-14">
@@ -312,7 +351,7 @@
                                                             </span>
                                                         </div>
                                                     </a>
-                                                   
+
                                                     @if ($freelancer->specialistAt != null)
                                                         <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
                                                     @endif
@@ -356,15 +395,14 @@
                                                             @endforeach
                                                         </div>
                                                     @endif
-                                                    @if($Consultantions)
-                                                    <div class="d-flex w-25 mx-0">
-                                                        <p class="btn btn-primary btn-sm  w-100  fw-700">
+                                                    
+                                                        <div class="d-flex w-25 mx-0">
+                                                            <p class="btn btn-primary btn-sm  w-100  fw-700">
 
-                                                            {{ translate('Book a consultant') }}
-                                                        </p>
-                                                    </div>
-
-                                                    @endif
+                                                                {{ translate('Book a consultant') }}
+                                                            </p>
+                                                        </div>
+                                                    
 
 
                                                 </div>
