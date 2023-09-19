@@ -22,6 +22,7 @@
             </div>
 
             <div class="col-md-2">
+            <div class="col-md-2">
                 <div class="form-group mb-0">
                     <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($search) value="{{ $search }}" @endisset placeholder="{{ translate('Type & Enter') }}">
                 </div>
