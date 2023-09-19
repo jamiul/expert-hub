@@ -230,16 +230,14 @@
                                         <div class="my-5">
                                             <label class="aiz-checkbox site-font w-100 fw-700">
                                                 <input type="checkbox" name="available_interview" value="interview"
-                                                    onchange="applyFilter()" class=" "
-                                                    @if isset($available_interview) checked @endif>
+                                                    onchange="applyFilter()" class=" ">
                                                 Available for Midea Interview
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
                                             <label class="aiz-checkbox site-font w-100 fw-700">
                                                 <input type="checkbox" name="consultantions" value="consultantions"
-                                                    onchange="applyFilter()" class=" "
-                                                    @if ($consultantions) checked @endif>
+                                                    onchange="applyFilter()" class=" ">
                                                 Offer Consultantion
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -395,14 +393,14 @@
                                                             @endforeach
                                                         </div>
                                                     @endif
-                                                    @if ($consultantions)
+                                                    
                                                         <div class="d-flex w-25 mx-0">
                                                             <p class="btn btn-primary btn-sm  w-100  fw-700">
 
                                                                 {{ translate('Book a consultant') }}
                                                             </p>
                                                         </div>
-                                                    @endif
+                                                    
 
 
                                                 </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePageOptimizationsTable extends Migration
+class PageOptimizations extends Migration
 {
     /**
      * Run the migrations.
@@ -16,14 +16,13 @@ class CreatePageOptimizationsTable extends Migration
         Schema::create('page_optimizations', function (Blueprint $table) {
             $table->id();
             $table->integer('s_page_id');
-            $table->string('name',500);
             $table->string('title',500);
             $table->string('keyword',2000);
             $table->string('description',2000);
             $table->integer('user_id');
             $table->timestamp('deleted_at');
             $table->timestamps();                     
-        });
+        }); 
     }
 
     /**
@@ -33,6 +32,6 @@ class CreatePageOptimizationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('page_optimizations');
+        //
     }
 }

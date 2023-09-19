@@ -320,9 +320,9 @@
 
                                             </div>
                                         </div>
-
+                                    </a>
                                 </div>
-                                </a>
+                                
                             @endforeach
 
                         </div>
