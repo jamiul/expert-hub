@@ -305,7 +305,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
-              <img class=" " src="{{url('/public/assets/frontend/default/img/menu.png')}}" alt="Image" />
+              <img class=" " src="{{asset('/assets/frontend/default/img/menu.png')}}" alt="Image" />
             </span>
           </button>
           </button> <!-- Collapsible wrapper -->

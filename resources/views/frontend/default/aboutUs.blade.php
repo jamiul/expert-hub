@@ -113,7 +113,7 @@
             <div class="container-home">
                 <div class="row ">
                     <div class="col-lg-5">
-                        <img class="mr-2  img-fluid" src="{{ url('/public/assets/home/001.png') }}" alt="Image"
+                        <img class="mr-2  img-fluid" src="{{ asset('/assets/home/001.png') }}" alt="Image"
                             style="width:500px;" />
                     </div>
                     <div class=" col-lg-7 col-sm-12">

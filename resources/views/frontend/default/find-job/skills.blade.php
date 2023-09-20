@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{url('/public/assets/frontend/default/css/custom.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/frontend/default/css/custom.css')}}">
   <title>Document</title>
 </head>
 
@@ -26,7 +26,7 @@
             </button>
           </div>
           <div class="d-flex ml-5">
-            <div><img src="{{url('/public/assets/findJob/video.png')}}" alt="Image" class=" mr-3 rounded-2"
+            <div><img src="{{asset('/assets/findJob/video.png')}}" alt="Image" class=" mr-3 rounded-2"
                 style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
             </div>
             <div><span class="fs-16" style="color:#5ABC76;"> Watch a demo</span></div>
@@ -123,7 +123,7 @@
               <div class="col-md-8">
                 <div class="d-flex form-inputs">
                   <input class="form-control" type="text" placeholder="Search any product...">
-                  <img src=" {{url('/public/assets/findJob/00.png')}}" alt="Image"
+                  <img src=" {{asset('/assets/findJob/00.png')}}" alt="Image"
                     class=" position-absolute bottom-0 start-0 d-flex align-items-center"
                     style="width:14px; justify:center; align-items:center;  " />
                 </div>

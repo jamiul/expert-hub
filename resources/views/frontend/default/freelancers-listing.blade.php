@@ -411,7 +411,7 @@
                                                     <div class="d-flex w-100 mx-0">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
                                                             <img class=" px-1  "
-                                                                src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
+                                                                src=" {{ asset('/assets/find-consultant/logo-1.png') }}"
                                                                 alt="Image" style="width:36px; " />
                                                             {{ translate('Message') }}
                                                         </p>
@@ -419,7 +419,7 @@
                                                     <div class="d-flex w-100 mx-0">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
                                                             <img class=" px-1  "
-                                                                src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                src=" {{ asset('/assets/find-consultant/zoom.png') }}"
                                                                 alt="Image" style="width:28px; " />
                                                             {{ translate('Consultation') }}
                                                         </p>

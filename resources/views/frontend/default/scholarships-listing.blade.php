@@ -213,7 +213,7 @@
 
                                     <!-- <div class="">
                                                         <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                            <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                            <img class=" px-1  " src=" {{ asset('/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
                                                             {{ translate(' Find a consultant') }}
                                                         </p>
                                                     </div> -->
@@ -273,7 +273,7 @@
                                                             <img src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
                                                             <div class="">
                                                                 <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                                    <img class=" px-1  " src=" {{ url('/public/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
+                                                                    <img class=" px-1  " src=" {{ asset('/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
                                                                     {{ translate(' Find a consultant') }}
                                                                 </p>
                                                             </div>
@@ -401,7 +401,7 @@
                                 <div class=" h-136px align-items-center">
                                     <div class="d-flex">
                                         <img class=" mb-2 mx-auto d-block   p-3"
-                                            src=" {{ url('/public/assets/home/blog.png') }}" alt="Image"
+                                            src=" {{ asset('/assets/home/blog.png') }}" alt="Image"
                                             style="width:55px; border-radius:50%; border:1px solid #000000" />
                                         <div class="need-help-progress-bar"></div>
                                     </div>
@@ -418,7 +418,7 @@
                                 <div class=" h-136px align-items-center">
                                     <div class="d-flex">
                                         <img class="mb-2 mx-auto d-block text-black p-3"
-                                            src="{{ url('/public/assets/home/quiz1.png') }}" alt="Image"
+                                            src="{{ asset('/assets/home/quiz1.png') }}" alt="Image"
                                             style="width:55px; border-radius:50%; border:1px solid #000000;" />
                                         <div class="need-help-progress-bar"></div>
                                     </div>
@@ -437,7 +437,7 @@
                                     <div class="d-flex">
                                         <img class=" mb-2 mx-auto d-block
                                      p-3"
-                                            src=" {{ url('/public/assets/home/certificate.png') }}" alt="Image"
+                                            src=" {{ asset('/assets/home/certificate.png') }}" alt="Image"
                                             style="width:55px; border-radius:50%; border:1px solid #000000" />
                                         <div class="need-help-progress-bar"></div>
                                     </div>
@@ -456,7 +456,7 @@
                             <div class=" ">
                                 <div class=" h-136px align-items-center">
                                     <img class=" mb-2 mx-auto d-block p-3"
-                                        src=" {{ url('/public/assets/home/checked.png') }}" alt="Image"
+                                        src=" {{ asset('/assets/home/checked.png') }}" alt="Image"
                                         style="width:55px; border-radius:50%; border:1px solid #000000" />
                                     <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
                                         Pay Securely

@@ -15,7 +15,7 @@
             itaque architecto cum, quod molestias saepe.</p>
           <a href="" class="btn">Learn More</a>
         </div>
-        <video src="{{url('/public/assets/home/1.mp4')}}" muted autoplay loop></video>
+        <video src="{{asset('/assets/home/1.mp4')}}" muted autoplay loop></video>
       </div>
     </div>
 
@@ -26,7 +26,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus illo rerum fuga doloribus temporibus
             itaque architecto cum, quod molestias saepe.</p>
         </div>
-        <video src="{{url('/public/assets/home/2.mp4')}}" muted autoplay loop></video>
+        <video src="{{asset('/assets/home/2.mp4')}}" muted autoplay loop></video>
       </div>
     </div>
 
@@ -37,7 +37,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus illo rerum fuga doloribus temporibus
             itaque architecto cum, quod molestias saepe.</p>
         </div>
-        <video src="{{url('/public/assets/home/3.mp4')}}" muted autoplay loop></video>
+        <video src="{{asset('/assets/home/3.mp4')}}" muted autoplay loop></video>
       </div>
     </div>
 
@@ -48,7 +48,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus illo rerum fuga doloribus temporibus
             itaque architecto cum, quod molestias saepe.</p>
         </div>
-        <video src="{{url('/public/assets/home/4.mp4')}}" muted autoplay loop></video>
+        <video src="{{asset('/assets/home/4.mp4')}}" muted autoplay loop></video>
       </div>
     </div>
     <div id="next" onclick="next()"> >

@@ -32,7 +32,7 @@
                         <div class="carousel-inner" style="">
                             <div class="carousel-item active">
                                 <video style="min-width:100%;" playsinline autoplay muted loop>
-                                    <source class=" opacity-100" src=" {{ url('/public/assets/home/01.mp4') }}"
+                                    <source class=" opacity-100" src=" {{ asset('/assets/home/01.mp4') }}"
                                         type="video/mp4" />
                                 </video>
                                 <div class="carousel-caption carousel-caption-background">
@@ -113,7 +113,7 @@
                                         <div class=" h-136px align-items-center">
                                             <div class="d-flex">
                                                 <img class=" mb-2 mx-auto d-block   p-3"
-                                                    src=" {{ url('/public/assets/home/post.png') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/post.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff" />
                                                 <div class="need-help-section-bar"></div>
                                             </div>
@@ -135,12 +135,12 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <!-- <div class="d-flex">
-                                                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ asset('/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
                                                                                     <div class="need-help-progress-bar"></div>
                                                                                 </div> -->
                                             <div class="d-flex">
                                             <img class="mb-2 mx-auto d-block text-black p-3"
-                                                    src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
+                                                    src="{{ asset('/assets/home/quiz.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff;" />
                                             <div class="need-help-section-bar">
                                             </div>
@@ -163,7 +163,7 @@
                                             <div class="d-flex">
                                                 <img class=" mb-2 mx-auto d-block
                                      p-3"
-                                                    src=" {{ url('/public/assets/home/enroll.png') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/enroll.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff" />
                                                 <div class="need-help-section-bar"></div>
                                             </div>
@@ -183,7 +183,7 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <img class=" mb-2 mx-auto d-block p-3"
-                                                src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
+                                                src=" {{ asset('/assets/home/check.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
                                                 Select the best match for you
@@ -226,7 +226,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Consultants</span>
-                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -263,7 +263,7 @@
                         <h5 class="fre-button-show">
                             <a href="{{ route('search') }}?category="
                                 class="fs-16 text-dark ">{{ translate('All Consultants') }}
-                                <img class=" " src=" {{ url('/public/assets/home/arrow-right.png') }}"
+                                <img class=" " src=" {{ asset('/assets/home/arrow-right.png') }}"
                                     alt="Image" style="width:20px;" />
                             </a>
                         </h5>
@@ -291,7 +291,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Projects</span>
-                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -331,7 +331,7 @@
                             class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
                             <span>All
                                 Projects</span>
-                            <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                            <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
@@ -339,7 +339,7 @@
                                                                             <span>All
                                                                                 Jobs</span>
                                                                         </a>
-                                                                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
                                                                         </a>
                                                                     </h5> -->
                     </div>
@@ -799,7 +799,7 @@
                             <a href="{{ route('scholarshipSearch') }}?keyword=&type=scholarships"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All Scholarships</span>
-                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -812,7 +812,7 @@
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/agriculture.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -821,7 +821,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -846,7 +846,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/university.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/university.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -859,7 +859,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px;  margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -884,7 +884,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/medical.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/medical.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -897,7 +897,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -922,7 +922,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/humnaties.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/humnaties.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -934,7 +934,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -959,7 +959,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/education.jpeg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/education.jpeg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -972,7 +972,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -997,7 +997,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/arts.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/arts.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1010,7 +1010,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1035,7 +1035,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/eng.jpg') }}" class="card-img-top"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/eng.jpg') }}" class="card-img-top"
                                                     alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1047,7 +1047,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1072,7 +1072,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/IT.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/IT.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1083,7 +1083,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>@php
                                                             $fieldStudyId = 12;
@@ -1105,7 +1105,7 @@
                     <h5 class=" fre-button-show">
                         <a href="" class="fs-16 text-dark  "><span>All Scholarships
                             </span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image"
+                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
             </section>
@@ -1125,7 +1125,7 @@
                             <a href="{{ url('/search?keyword=&type=seminar') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All seminars</span>
-                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -1168,7 +1168,7 @@
                     <h5 class="fre-button-show">
                         <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
                                 seminars</span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image"
+                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
                 </div>
@@ -1201,7 +1201,7 @@
                                         <div class="d-flex">
                                             <div>
                                                 <img class="mr-2 border "
-                                                    src=" {{ url('/public/assets/home/review-1.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/review-1.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -1233,7 +1233,7 @@
                                         <div class="d-flex  ">
                                             <div>
                                                 <img class="mr-2 border"
-                                                    src=" {{ url('/public/assets/home/review-2.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/review-2.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div class="">
@@ -1263,7 +1263,7 @@
                                         <div class="d-flex  mt-3">
                                             <div>
                                                 <img class="mr-2  border"
-                                                    src=" {{ url('/public/assets/home/review-3.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/review-3.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -1657,13 +1657,13 @@
                                                                 </small>
                                                                 <div class="mt-3">
                                                                   <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
-                                                                    <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
+                                                                    <img class="" src=" {{ asset('/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
                                                                     <span>|</span>
                                                                     <span class="text-white"> Apple store</span>
 
                                                                   </a>
                                                                   <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
-                                                                    <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
+                                                                    <img class="" src="{{ asset('/assets/home/playstore.png') }}" alt="Image"
                                                                       style="height:20px; " />
                                                                     <span>|</span>
                                                                     <span class="text-white">Google play store</span>
@@ -1672,7 +1672,7 @@
                                                               </div>
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12 " style="">
-                                                              <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
+                                                              <img src=" {{ asset('/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
                                                             </div>
                                                           </div>
                                                         </div>

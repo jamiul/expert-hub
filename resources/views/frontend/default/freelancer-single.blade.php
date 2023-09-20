@@ -77,7 +77,7 @@
                                         <!-- <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
                                                 <div class="d-flex">
                                                     <div class="d-lg-flex justify-content-center align-items-center">
-                                                        <img src="{{ url('/public/assets/frontend/default/img/freelancer_profile/success.png') }}" alt="">
+                                                        <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}" alt="">
                                                         <p class="ml-1 mb-0 fs-15 text-black fw-600" style="margin-right: 70px;">100% Job Success</p>
                                                     </div>
                                                     <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
@@ -127,7 +127,7 @@
                                     <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
                                         <div class="d-flex">
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <img src="{{ url('/public/assets/frontend/default/img/freelancer_profile/success.png') }}"
+                                                <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}"
                                                     alt="">
                                                 <p class="ml-1 mb-0 fs-15 text-black site-font fw-600"
                                                     style="margin-right: 70px;">100% Job Success</p>

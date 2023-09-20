@@ -465,7 +465,7 @@
                                             <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white"
                                                 style="background-color:#275846; ">
                                                 <img class=" px-1  "
-                                                    src=" {{ url('/public/assets/find-consultant/budget.png') }}"
+                                                    src=" {{ asset('/assets/find-consultant/budget.png') }}"
                                                     alt="Image" style="width:30px; " />
                                                 {{ single_price($project->price) }}
 
@@ -475,10 +475,10 @@
                                                 class="btn d-flex justify-content-center align-items-center w-100 mt-2 py-2 fs-14 px-2 text-white"
                                                 style="background-color:#275846; ">
                                                 <img class=" px-1  "
-                                                    src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
+                                                    src=" {{ asset('/assets/find-consultant/logo-1.png') }}"
                                                     alt="Image" style="width:36px; " />
                                                 EOI
-                                                <img class=" px-1 " src=" {{ url('/public/assets/home/arrow.png') }}"
+                                                <img class=" px-1 " src=" {{ asset('/assets/home/arrow.png') }}"
                                                     alt="Image" style="width:18px; " />
                                             </button>
 
