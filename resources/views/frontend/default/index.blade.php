@@ -1035,7 +1035,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/eng.jpg') }}" class="card-img-top"
+                                                <img src=" {{ url('/public/assets/home/Find-scholarship/eng.jpg') }}" class="card-img-top"
                                                     alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1140,7 +1140,7 @@
                             $seminars = \App\Models\Seminar::all();
                         @endphp
                         @foreach ($seminars as $seminar)
-                       
+
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
                                     <img class="w-100 h-190px" src=" {{ custom_asset($seminar->attachment) }}"
