@@ -67,7 +67,7 @@
                                                 @if($project->project_user->user->photo != null)
                                                     <img src="{{ custom_asset($project->project_user->user->photo) }}">
                                                 @else
-                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
 		                                    </span>
 		                                    <div class="pl-2">

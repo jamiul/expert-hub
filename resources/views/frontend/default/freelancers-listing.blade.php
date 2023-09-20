@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
@@ -28,7 +28,7 @@
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
                         <img class="banner-img"
-                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                             alt="">
                     </div>
                 </div>
@@ -325,7 +325,7 @@
                                                             <img src="{{ custom_asset($freelancer->user->photo) }}"
                                                                 alt="{{ $freelancer->user->name }}">
                                                         @else
-                                                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                                                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                                                 alt="{{ $freelancer->user->name }}">
                                                         @endif
                                                         @if (Cache::has('user-is-online-' . $freelancer->user->id))

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/frontend/default/css/home.css')}}">
 
 </head>
 
@@ -14,7 +14,7 @@
   @if ($freelancer->cover_photo != null)
   <img src="{{ custom_asset($freelancer->cover_photo) }}" alt="{{ $freelancer->name }}" class="img-fit h-250px">
   @else
-  <img src="{{ my_asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"
+  <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"
     class="img-fit h-250px" style="background-color:#275846;">
   @endif
 </div> -->
@@ -28,7 +28,7 @@
                 @if ($freelancer->photo != null)
                 <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }}">
                 @else
-                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ $freelancer->name }}">
+                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ $freelancer->name }}">
                 @endif
                 @if(Cache::has('user-is-online-' . $freelancer->id))
                 <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>

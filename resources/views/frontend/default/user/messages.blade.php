@@ -36,7 +36,7 @@
                                                                 @if ($single_chat_thread->sender->photo != null)
                                                                 <img src="{{ custom_asset($single_chat_thread->receiver->photo) }}">
                                                                 @else
-                                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                                 @endif
 
                                                                 @if(Cache::has('user-is-online-' . $single_chat_thread->receiver->id))
@@ -70,7 +70,7 @@
                                                                 @if ($single_chat_thread->sender->photo != null)
                                                                 <img src="{{ custom_asset($single_chat_thread->sender->photo) }}">
                                                                 @else
-                                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                                 @endif
 
                                                                 @if(Cache::has('user-is-online-' . $single_chat_thread->sender->id))

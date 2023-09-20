@@ -21,7 +21,7 @@
                                             @if ($chat->sender->photo != null)
                                                 <img src="{{ custom_asset($chat->sender->photo)}}">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                         </span>
                                         <div class="media-body">
@@ -40,7 +40,7 @@
                                             @if ($chat->sender->photo != null)
                                                 <img src="{{ custom_asset($chat->sender->photo)}}">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                         </span>
                                         <div class="media-body">
@@ -54,7 +54,7 @@
                                                             <div class="mb-2 file-preview-item" title="{{ $attachment->file_original_name }}.{{ $attachment->extension }}">
                                                                 <a href="{{ route('download_attachment', $attachment->id) }}" target="_blank" class="d-block">
                                                                     <div class="thumb">
-                                                                        <img src="{{ my_asset($attachment->file_name) }}" class="img-fit">
+                                                                        <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                                                     </div>
                                                                     <div class="body">
                                                                         <h6 class="d-flex">
@@ -105,7 +105,7 @@
                                             @if ($chat->sender->photo != null)
                                                 <img src="{{ custom_asset($chat->sender->photo)}}">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                         </span>
                                     </div>
@@ -125,7 +125,7 @@
                                                             <div class="mb-2 mr-0 ml-2 file-preview-item border-soft-dark" title="{{ $attachment->file_original_name }}.{{ $attachment->extension }}">
                                                                 <a href="{{ route('download_attachment', $attachment->id) }}" target="_blank" class="d-block text-white">
                                                                     <div class="thumb">
-                                                                        <img src="{{ my_asset($attachment->file_name) }}" class="img-fit">
+                                                                        <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                                                     </div>
                                                                     <div class="body">
                                                                         <h6 class="d-flex">
@@ -165,7 +165,7 @@
                                             @if ($chat->sender->photo != null)
                                                 <img src="{{ custom_asset($chat->sender->photo)}}">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                         </span>
                                     </div>

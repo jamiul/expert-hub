@@ -82,13 +82,13 @@
                 <div class="align-items-stretch d-flex dropdown">
                     <a class="dropdown-toggle no-arrow" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="false" aria-expanded="false">
                         <span class="btn btn-icon">
-                            <img src="{{ my_asset('assets/frontend/default/img/flags/'.$locale.'.png') }}" height="11">
+                            <img src="{{ asset('assets/frontend/default/img/flags/'.$locale.'.png') }}" height="11">
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-xs">
                         @foreach (\App\Models\Language::where('enable',1)->get() as $key => $language)
                             <a href="{{ route('language.change',$language->code) }}" class="dropdown-item">
-                                <img src="{{ my_asset('assets/frontend/default/img/flags/'.$language->code.'.png') }}" height="11">
+                                <img src="{{ asset('assets/frontend/default/img/flags/'.$language->code.'.png') }}" height="11">
                                 <span class="ml-2">{{ $language->name }}</span>
                             </a>
                         @endforeach
@@ -104,7 +104,7 @@
                                 @if (Auth::user()->photo != null)
                                     <img src="{{custom_asset(Auth::user()->photo)}}">
                                 @else
-                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                 @endif
                             </span>
                             <span class="d-none d-md-block">

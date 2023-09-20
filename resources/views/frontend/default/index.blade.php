@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/card.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/card.css') }}">
 
 </head>
 <style>
@@ -71,23 +71,23 @@
                                 </h4>
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('Microsoft.svg') }}" alt="">
+                                <img class=" " src="{{ asset('Microsoft.svg') }}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('Airbnb.svg') }}" alt="">
+                                <img class=" " src="{{ asset('Airbnb.svg') }}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 ">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('automatic.svg') }}" alt="">
+                                <img class=" " src="{{ asset('automatic.svg') }}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('Bissell.svg') }}" alt="">
+                                <img class=" " src="{{ asset('Bissell.svg') }}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('NASDAQ.svg') }}" alt="">
+                                <img class=" " src="{{ asset('NASDAQ.svg') }}" alt="">
                             </div>
                         </div>
 
@@ -388,13 +388,13 @@
                                 <div class="mx-2 mt-5 row">
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <img class="banner-img"
-                                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                             alt="">
                                     </div>
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -410,11 +410,11 @@
                                                             Our platform is home to a vast pool of professionals, ensuring that users can readily access highly qualified experts with specialized knowledge tailored to their unique requirements.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-leave">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-leave">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -422,7 +422,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -439,11 +439,11 @@
                                                             This international perspective proves invaluable when seeking insights on global or cross-cultural educational challenges and opportunities.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-contest">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-contest">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -451,7 +451,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -468,11 +468,11 @@
                                                             program design, policy formulation, scholarship advice, or managing complete educational projects, our platform provides in-house experts to assist them at every step.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-freelancing">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-freelancing">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -480,7 +480,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -497,11 +497,11 @@
                                                             ensuring that users can swiftly identify the ideal expert for their needs while saving valuable time.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -509,7 +509,7 @@
                                         </div>
                                         {{-- <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -526,11 +526,11 @@
                                                             project completion, ensuring that satisfaction is paramount in every collaboration.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-aliored">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-aliored">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -538,7 +538,7 @@
                                         </div> --}}
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -555,11 +555,11 @@
                                                             project completion, ensuring that satisfaction is paramount in every collaboration.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-secure">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-secure">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -583,13 +583,13 @@
                                 <div class="mx-2 mt-5 row">
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <img class="banner-img"
-                                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                             alt="">
                                     </div>
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -605,11 +605,11 @@
                                                             Our platform is home to a vast pool of professionals, ensuring that users can readily access highly qualified experts with specialized knowledge tailored to their unique requirements.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-leave">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-leave">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -617,7 +617,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -634,11 +634,11 @@
                                                             This international perspective proves invaluable when seeking insights on global or cross-cultural educational challenges and opportunities.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-contest">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-contest">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -646,7 +646,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -663,11 +663,11 @@
                                                             program design, policy formulation, scholarship advice, or managing complete educational projects, our platform provides in-house experts to assist them at every step.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-freelancing">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-freelancing">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -675,7 +675,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -692,11 +692,11 @@
                                                             ensuring that users can swiftly identify the ideal expert for their needs while saving valuable time.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -704,7 +704,7 @@
                                         </div>
                                         {{-- <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -721,11 +721,11 @@
                                                             project completion, ensuring that satisfaction is paramount in every collaboration.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-aliored">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-aliored">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>
@@ -733,7 +733,7 @@
                                         </div> --}}
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -750,11 +750,11 @@
                                                             project completion, ensuring that satisfaction is paramount in every collaboration.
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-secure">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                                                 alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-secure">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                                             alt=""> </label>
 
                                                 </div>

@@ -1,6 +1,6 @@
 @extends('frontend.default.layouts.app')
-<link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/aboutUs.css') }}">
-<link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
+<link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/aboutUs.css') }}">
+<link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
 
 @section('content')
     <div class="container-main-projects-banner">
@@ -17,7 +17,7 @@
                 <div class="col-lg-1 col-12 my-auto"></div>
                 <div class="col-lg-4 col-12">
                     <img class="banner-img"
-                        src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                        src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                         alt="">
                 </div>
             </div>
@@ -223,7 +223,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-12  mt-2">
                     <img class="w-lg-100 h-lg-100 w-100 mx-lg-0  payments-img "
-                        src="{{ my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg') }}"
+                        src="{{ asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg') }}"
                         alt="">
                 </div>
 
@@ -242,7 +242,7 @@
                         <div class="col-lg-2 col-sm-12 pr-0">
                             <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                                 style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                                <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -260,7 +260,7 @@
                         <div class="col-lg-2 col-sm-12 pr-0">
                             <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                                 style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                                <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -275,7 +275,7 @@
                         <div class="col-lg-2 col-sm-12 pr-0">
                             <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                                 style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                                <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -290,7 +290,7 @@
                         <div class="col-lg-2 col-sm-12 pr-0">
                             <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                                 style="background: #91E6B3; width:90% !important;">
-                                <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                                <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -324,7 +324,7 @@
                 <div class="col-lg-2 col-sm-12 pr-0">
                     <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                         style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                        <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -339,7 +339,7 @@
                 <div class="col-lg-2 col-sm-12 pr-0">
                     <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                         style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('Post-A-Job.png') }}" alt="">
+                        <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
@@ -354,7 +354,7 @@
                 <div class="col-lg-2 col-sm-12 pr-0 ">
                     <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                         style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('How_it_Works_2.png') }}" alt="">
+                        <img class="mx-auto d-block w-50" src="{{ asset('How_it_Works_2.png') }}" alt="">
                     </div>
 
                 </div>
@@ -370,7 +370,7 @@
                 <div class="col-lg-2 col-sm-12 pr-0 ">
                     <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100"
                         style="background: #91E6B3; width:90% !important;">
-                        <img class="mx-auto d-block w-50" src="{{ my_asset('How_it_Works_2.png') }}" alt="">
+                        <img class="mx-auto d-block w-50" src="{{ asset('How_it_Works_2.png') }}" alt="">
                     </div>
 
                 </div>
@@ -587,7 +587,7 @@
                     <div class="mx-2 mt-5 row">
                         <div class="col-lg-6 col-sm-12 py-3">
                             <img class="banner-img"
-                                src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                 alt="">
                         </div>
                         <div class="col-lg-6 col-sm-12 py-3">
@@ -607,11 +607,11 @@
                                         crowd.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-leave">Show less <img
-                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                            class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                             alt=""></label>
                                 </div>
                                 <label class="fre-expand-icon" for="fre-leave">Read more <img
-                                        class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                        class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                         alt=""> </label>
 
                             </div>
@@ -629,12 +629,12 @@
                                         career.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-contest">Show less <img
-                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                            class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                             alt=""></label>
                                 </div>
 
                                 <label class="fre-expand-icon" for="fre-contest">Read more <img
-                                        class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                        class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                         alt=""></label>
                             </div>
                             <div class=" border-bottom ">
@@ -651,11 +651,11 @@
                                         resources.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-freelancing">Show less <img
-                                            class="w-15px h-15px arrow-icon " src="{{ my_asset('upload.png') }}"
+                                            class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
                                             alt=""></label>
                                 </div>
                                 <label class="fre-expand-icon" for="fre-freelancing">Read more <img
-                                        class="w-15px h-15px arrow-icon " src="{{ my_asset('down-chevron.png') }}"
+                                        class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
                                         alt=""></label>
                             </div>
 
@@ -671,7 +671,7 @@
                     <div class="mx-2 row">
                         <div class="col-lg-6 col-sm-12 py-3">
 
-                            <img src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            <img src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                 alt="">
                         </div>
                         <div class="col-lg-6 col-sm-12 py-3">

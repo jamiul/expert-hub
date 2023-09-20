@@ -41,7 +41,7 @@
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
                         <img class="banner-img  "
-                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                             alt="">
                     </div>
                 </div>
@@ -366,7 +366,7 @@
                                                     <img src="{{ custom_asset($project->client->photo) }}">
                                                 @else
                                                     <a href="{{ route('project.details', $project->slug) }}"><img
-                                                            src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"></a>
+                                                            src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"></a>
                                                 @endif
                                             </span>
                                         </div>

@@ -50,7 +50,7 @@
             			<div class="card w-100 rounded-2 bg-hov-soft-primary border-1 border-gray-light">
             				<div class="card-body mt-3">
             					<a href="{{ route('projects.create') }}" class="btn btn-primary btn-block rounded-1 py-3 mb-3">
-									<i class="las la-plus fs-40"></i> 
+									<i class="las la-plus fs-40"></i>
 									<br>
 									<span class="fw-700">{{ translate('Add New Project') }}</span>
 								</a>
@@ -175,7 +175,7 @@
 															@if($project->client->photo != null)
 																<img src="{{ custom_asset($project->client->photo) }}">
 															@else
-																<img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+																<img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 															@endif
 														</span>
 														<span class="flex-grow-1 text-truncate-2">{{ $project->name }}</span>
@@ -203,7 +203,7 @@
 														@if($user->photo != null)
 															<img src="{{ custom_asset($user->photo) }}">
 														@else
-															<img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+															<img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 														@endif
 													</span>
 													<span class="flex-grow-1 text-truncate-2">{{ $user->name }}</span>

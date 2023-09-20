@@ -14,7 +14,7 @@
                             <h6 class="mb-0 pb-2 fw-700">
                                 Scholarship Type
                             </h6>
-                            <img class="" style="width:20px; height:20px;" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+                            <img class="" style="width:20px; height:20px;" src="{{asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -48,7 +48,7 @@
                             <h6 class="mb-0 pb-2 fw-700">
                                 Level of Study
                             </h6>
-                            <img class="" style="width:20px; height:20px;" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+                            <img class="" style="width:20px; height:20px;" src="{{asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
                         <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample2">
@@ -81,7 +81,7 @@
                             <h6 class="mb-0 pb-2 fw-700">
                                 Field of Study
                             </h6>
-                            <img class="" style="width:20px; height:20px;" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+                            <img class="" style="width:20px; height:20px;" src="{{asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
 
                         <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample3">
@@ -156,7 +156,7 @@
                             <h6 class="mb-0 pb-2 fw-700">
                                 Location
                             </h6>
-                            <img class="" style="width:20px; height:20px;" src="{{my_asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
+                            <img class="" style="width:20px; height:20px;" src="{{asset('assets/frontend/default/img/scholarship/down-arrow.png')}}" alt="">
                         </div>
                         <!-- search box -->
                         <div class="input-group">
@@ -277,7 +277,7 @@
                                 <a href="{{ route('scholarship.details', $scholarship->slug) }}" class=" fs-16 fw-700 pb-1 " title="{{ $scholarship->title }}" style="border-bottom: 2px solid  #000003; color: #000003">
                                     {{ \Illuminate\Support\Str::limit($scholarship->title, 50, $end = '...') }}
                                 </a>
-                                <img src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                <img src="{{asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
                             </h2>
                             <div>
                                 @if($scholarship->university != null)

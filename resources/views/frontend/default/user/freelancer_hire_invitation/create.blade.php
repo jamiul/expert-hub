@@ -5,7 +5,7 @@
     @if ($freelancer->cover_photo != null)
         <img src="{{ custom_asset($freelancer->cover_photo) }}" alt="{{ $freelancer->name }}"class="img-fit h-250px">
     @else
-        <img src="{{ my_asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"class="img-fit h-250px">
+        <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"class="img-fit h-250px">
     @endif
 </div>
 <div class="mt-n5">
@@ -18,7 +18,7 @@
                             @if($freelancer->photo != null)
                                 <img src="{{ custom_asset($freelancer->photo) }}">
                             @else
-                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                             @endif
                             @if(Cache::has('user-is-online-' . $freelancer->id))
                                 <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>

@@ -165,7 +165,7 @@
     <div class="modal-dialog fre-modal-main-section" role="document">
         <div class="modal-content fre-modal-content-section">
             <div class="d-flex mx-3 h-45px align-items-center">
-                <img src="{{my_asset('assets/frontend/default/img/scholarship/back.png')}}" class="mr-2 mt-2 c-pointer" id="backButton" >
+                <img src="{{asset('assets/frontend/default/img/scholarship/back.png')}}" class="mr-2 mt-2 c-pointer" id="backButton" >
 
                 <h5 class="modal-title fw-600" id="drawerModalLabel" style="color:#275846">Select subject area</h5>
 

@@ -84,7 +84,7 @@
                                     @if ($attachment->type == 'document')
                                         <i class="la la-file-text"></i>
                                     @elseif ($attachment->type == 'image')
-                                        <img src="{{ my_asset($attachment->file_name) }}" class="img-fit">
+                                        <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                     @endif
                                 </div>
                                 <div class="col body">
@@ -135,7 +135,7 @@
                                     @if($project->client->photo != null)
                                         <img src="{{ custom_asset($project->client->photo) }}">
                                     @else
-                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                     @endif
                                 </span>
                                 <div class="ml-2">

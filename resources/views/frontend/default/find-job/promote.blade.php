@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/frontend/default/css/home.css')}}">
 
 </head>
 
@@ -114,7 +114,7 @@
         </p>
       </div>
       <div class=" col-lg-4  ml-lg-5 col-sm-12">
-        <img class="img-fluid rounded-1" src="{{my_asset('powerful-relationship.jpg')}}" alt="">
+        <img class="img-fluid rounded-1" src="{{asset('powerful-relationship.jpg')}}" alt="">
       </div>
     </div>
   </div>

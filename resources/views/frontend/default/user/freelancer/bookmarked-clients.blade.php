@@ -25,7 +25,7 @@
                                                     @if($bookmarked_client->client->photo != null)
                                                         <img src="{{ custom_asset($bookmarked_client->client->photo) }}">
                                                     @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                     @endif
                                                     <span class="badge badge-dot badge-secondary badge-circle badge-status"></span>
                                                 </span>

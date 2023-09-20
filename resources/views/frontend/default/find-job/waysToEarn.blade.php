@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{my_asset('/assets/frontend/default/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/frontend/default/css/home.css')}}">
 
 </head>
 <!-- <style>
@@ -40,13 +40,13 @@
           <div class="col-10">
             <div class="row">
               <div class="mr-5">
-                <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+                <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
               </div>
               <div class="mr-5">
-                <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+                <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
               </div>
               <div class="mr-5">
-                <img class="" src="{{my_asset('automatic.svg')}}" alt="">
+                <img class="" src="{{asset('automatic.svg')}}" alt="">
               </div>
             </div>
           </div>

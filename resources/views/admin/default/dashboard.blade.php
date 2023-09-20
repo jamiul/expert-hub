@@ -144,7 +144,7 @@
                                         @if($project_user->user->photo != null)
                                             <img class="img-fluid rounded-circle" src="{{ custom_asset($project_user->user->photo) }}">
                                         @else
-                                            <img class="img-fluid rounded-circle" src="{{ my_asset('assets/backend/default/img/avatar-place.png') }}">
+                                            <img class="img-fluid rounded-circle" src="{{ asset('assets/backend/default/img/avatar-place.png') }}">
                                         @endif
                                     </span>
                                     <div class="pl-2">

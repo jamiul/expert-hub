@@ -57,7 +57,7 @@
 <body>
   <div class="mail-wrapper">
     <div class="mail-logo" align="center">
-		<img style="margin-bottom:16px;" class="logo" src="{{ my_asset('assets/frontend/default/img/logo.png') }}">
+		<img style="margin-bottom:16px;" class="logo" src="{{ asset('assets/frontend/default/img/logo.png') }}">
 	</div>
     <div>
 		Please register your account information by clicking the "Register an account" button below.

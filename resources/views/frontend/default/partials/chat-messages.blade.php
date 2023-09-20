@@ -6,7 +6,7 @@
                     @if ($chat_thread->receiver->photo != null)
                         <img src="{{ custom_asset($chat_thread->receiver->photo) }}">
                     @else
-                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
                 </span>
                 <div class="media-body">
@@ -24,7 +24,7 @@
                     @if ($chat_thread->sender->photo != null)
                         <img src="{{ custom_asset($chat_thread->sender->photo) }}">
                     @else
-                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
                 </span>
                 <div class="media-body">
@@ -82,7 +82,7 @@
                         @if ($chat_thread->receiver->photo != null)
                             <img src="{{ custom_asset($chat_thread->receiver->photo) }}">
                         @else
-                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                         @endif
                         <span class="badge badge-dot badge-success badge-circle badge-status"></span>
                     </span>
@@ -99,7 +99,7 @@
                     <div class="text-center">
                         @foreach ($chat_thread->receiver->badges as $key => $user_badge)
                             @if ($user_badge->badge != null)
-                                <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ my_asset($user_badge->badge->icon) }}"></span>
+                                <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ asset($user_badge->badge->icon) }}"></span>
                             @endif
                         @endforeach
                     </div>
@@ -176,7 +176,7 @@
                         @if ($chat_thread->sender->photo != null)
                             <img src="{{ custom_asset($chat_thread->sender->photo) }}">
                         @else
-                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                         @endif
                         <span class="badge badge-dot badge-success badge-circle badge-status"></span>
                     </span>
@@ -193,7 +193,7 @@
                     <div class="text-center">
                         @foreach ($chat_thread->sender->badges as $key => $user_badge)
                             @if ($user_badge->badge != null)
-                                <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ my_asset($user_badge->badge->icon) }}"></span>
+                                <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ asset($user_badge->badge->icon) }}"></span>
                             @endif
                         @endforeach
                     </div>

@@ -210,27 +210,12 @@ function getCompletedProjectsByFreelancer($id)
         ->distinct();
 }
 
-//return file path with public
-if (!function_exists('my_asset')) {
-    /**
-     * Generate an asset path for the application.
-     *
-     * @param string $path
-     * @param bool|null $secure
-     * @return string
-     */
-    function my_asset($path, $secure = null)
-    {
-        return app('url')->asset('public/' . $path, $secure);
-    }
-}
-
 //return file uploaded via uploader
 if (!function_exists('custom_asset')) {
     function custom_asset($id)
     {
         if (\App\Models\Upload::find($id) != null) {
-            return my_asset(\App\Models\Upload::find($id)->file_name);
+            return asset(\App\Models\Upload::find($id)->file_name);
         }
         return null;
     }
