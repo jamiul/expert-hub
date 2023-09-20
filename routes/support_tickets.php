@@ -7,7 +7,7 @@ Route::group(['prefix' => 'support'], function(){
 	Route::get('/solved-ticket', 'SupportTicketController@solved_ticket')->name('support-tickets.solved_ticket');
 	Route::get('/active-ticket', 'SupportTicketController@active_ticket')->name('support-tickets.active_ticket');
 	Route::post('support-ticket/agent/reply', 'SupportTicketController@ticket_reply')->name('support-ticket.admin_reply');
-	Route::get('/support-ticket/destroy/{id}', 'SupportTicketController@destroy')->name('support-tickets.destroy');
+//	Route::get('/support-ticket/destroy/{id}', 'SupportTicketController@destroy')->name('support-tickets.destroy');
 
 
 	// deafult staff for assigning ticket
@@ -15,8 +15,7 @@ Route::group(['prefix' => 'support'], function(){
 
 	// Support categories
 	Route::resource('support-categories','SupportCategoryController');
-	Route::get('/support-categories/destroy/{id}', 'SupportCategoryController@destroy')->name('support_categories.destroy');
-
+	//Route::get('/support-categories/destroy/{id}', 'SupportCategoryController@destroy')->name('support_categories.destroy');
 });
 
 Route::group(['middleware' => ['user', 'verified']], function(){

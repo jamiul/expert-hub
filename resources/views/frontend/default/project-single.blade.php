@@ -72,7 +72,7 @@
                                             <div class="mb-2 file-preview-item" title="{{ $attachment->file_name }}">
                                                 <a href="{{ route('download_attachment', $attachment->id) }}" target="_blank" class="d-block">
                                                     <div class="thumb">
-                                                        <img src="{{ my_asset($attachment->file_name) }}" class="img-fit">
+                                                        <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                                     </div>
                                                     <div class="body">
                                                         <h6 class="d-flex">
@@ -173,7 +173,7 @@
                                                 @if($project->client->photo != null)
                                                     <img src="{{ custom_asset($project->client->photo) }}">
                                                 @else
-                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
                                                 @if(Cache::has('user-is-online-' . $project->client_user_id ))
                                                     <span class="badge badge-dot badge-success badge-circle badge-status"></span>
@@ -313,7 +313,7 @@
                                                         @if($similar_type_project->client->photo != null)
                                                             <img src="{{ custom_asset($similar_type_project->client->photo) }}">
                                                         @else
-                                                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                         @endif
         		                                    </span>
         		                                    <div class="pl-2">

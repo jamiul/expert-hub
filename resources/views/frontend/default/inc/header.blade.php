@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{ my_asset('assets/frontend/default/css/header.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/frontend/default/css/header.css') }}">
 </head>
 
 <body>
@@ -196,7 +196,7 @@
                               @if ($chat->chatThread->receiver->photo != null)
                               <img src="{{ custom_asset($chat->chatThread->receiver->photo) }}">
                               @else
-                              <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                              <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                               @endif
                               @if(Cache::has('user-is-online-' . $chat->chatThread->receiver->id))
                               <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
@@ -207,7 +207,7 @@
                               @if ($chat->chatThread->sender->photo != null)
                               <img src="{{ custom_asset($chat->chatThread->sender->photo) }}">
                               @else
-                              <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                              <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                               @endif
                               @if(Cache::has('user-is-online-' . $chat->chatThread->sender->id))
                               <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
@@ -255,7 +255,7 @@
                         @if (Auth::user()->photo != null)
                         <img src="{{custom_asset(Auth::user()->photo)}}">
                         @else
-                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                         @endif
                       </span>
                       <span class="ml-2 text-left d-none d-xl-inline-block">
@@ -305,7 +305,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
-              <img class=" " src="{{url('/public/assets/frontend/default/img/menu.png')}}" alt="Image" />
+              <img class=" " src="{{asset('/assets/frontend/default/img/menu.png')}}" alt="Image" />
             </span>
           </button>
           </button> <!-- Collapsible wrapper -->
@@ -362,7 +362,7 @@
                                 </div>
                             </li> -->
 
-             
+
 
 
                             <li class="nav-item">
@@ -445,7 +445,7 @@
                           <h3> Hiring & Working with Independent Talent</h3>
                         </div>
                         <a href="" class="about-mega-menu-sm">See more</a> <img
-                          src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                          src="{{asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                       </div>
                     </div>
                   </div>

@@ -77,7 +77,7 @@ class NotificationUtility
                 $item['message'] = $notification->message;
                 $item['link'] = url($notification->link);
                 $item['sender_name'] = $notification->sender->name;
-                $item['sender_photo'] = $notification->sender->photo > 0 ? custom_asset($notification->sender->photo) : my_asset('assets/backend/default/img/avatar-place.png');
+                $item['sender_photo'] = $notification->sender->photo > 0 ? custom_asset($notification->sender->photo) : asset('assets/backend/default/img/avatar-place.png');
                 $item['seen'] = $notification->seen_by_receiver == 1 ? true : false;
                 $item['date'] = Carbon::parse($notification->created_at)->diffForHumans();
 

@@ -25,7 +25,7 @@
                                 <div class="col-lg-2 col-sm-12 "></div>
                                 <div class="col-lg-2 col-sm-12 ">
                                     {{-- <img class=""
-                                        src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                        src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                         alt=""> --}}
                                 </div>
                             </div>

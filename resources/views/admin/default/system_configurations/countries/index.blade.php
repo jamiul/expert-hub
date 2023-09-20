@@ -26,7 +26,7 @@
                                         <td>{{ ($key+1) + ($countries->currentPage() - 1)*$countries->perPage() }}</td>
                                         <td>{{$country->name}}</td>
                                         <td>{{$country->code}}</td>
-                                        <td><img class="img-md" src="{{ my_asset($country->photo) }}" height="50px" alt="{{translate('icon')}}"></td>
+                                        <td><img class="img-md" src="{{ asset($country->photo) }}" height="50px" alt="{{translate('icon')}}"></td>
                                         <td>
                                             <div class="btn-group mb-2">
                                                 <div class="btn-group">

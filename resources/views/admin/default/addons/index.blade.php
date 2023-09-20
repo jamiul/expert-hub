@@ -26,7 +26,7 @@
                                 @forelse(\App\Models\Addon::all() as $key => $addon)
                                     <li class="list-group-item">
                                         <div class="d-flex align-items-center">
-                                            <img class="h-60px" src="{{ my_asset($addon->image) }}" alt="Image">
+                                            <img class="h-60px" src="{{ asset($addon->image) }}" alt="Image">
                                             <div class="mr-3 ml-5">
                                                 <h4 class="fs-16 fw-600">{{ ucfirst($addon->name) }}</h4>
                                             </div>
@@ -44,7 +44,7 @@
                                 @empty
                                     <li class="list-group-item">
                                         <div class="text-center">
-                                            <img class="mw-100 h-200px" src="{{ my_asset('assets/backend/default/img/nothing.svg') }}" alt="Image">
+                                            <img class="mw-100 h-200px" src="{{ asset('assets/backend/default/img/nothing.svg') }}" alt="Image">
                                             <h5 class="mb-0 h5 mt-3">{{ translate('No Addon Installed')}}</h5>
                                         </div>
                                     </li>
@@ -69,6 +69,6 @@
 
 @section('script')
     <script type="text/javascript">
-        
+
     </script>
 @endsection

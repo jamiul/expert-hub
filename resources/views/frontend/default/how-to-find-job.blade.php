@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ my_asset('public/assets/frontend/default/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/frontend/default/css/custom.css') }}">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                         <p class="">{{translate('Professionals rate clients')}}</p>
                         <div class="find-job-banner-rating">
                             <div class=" find-job-banner-star ">
-                                <img class="" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/rating.svg')}}" alt="">
+                                <img class="" src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/rating.svg')}}" alt="">
                                 <p>{{translate('4.9/5')}}</p>
                             </div>
                             <p class="find-job-banner-total-review">{{translate('based on 2.4M+ reviews')}}</p>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 py-2 px-5 ">
-                    <img src="{{my_asset('how-tohire-banar.png')}}" class="rounded-2 img-fluid" alt="" style="">
+                    <img src="{{asset('how-tohire-banar.png')}}" class="rounded-2 img-fluid" alt="" style="">
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <div cass="row ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
-                            <img class="mx-auto d-block w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
+                            <img class="mx-auto d-block w-50" src="{{asset('Post-A-Job.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
@@ -59,7 +59,7 @@
                 <div class="row mt-4 ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
-                            <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works.png')}}" alt="" >
+                            <img class="mx-auto d-block w-50" src="{{asset('How_it_Works.png')}}" alt="" >
                         </div>
 
                     </div>
@@ -67,14 +67,14 @@
                         <h1 class="how-work-title">{{translate('Explore ways to earn')}}</h1>
                         <p class="how-work-details mt-2">{{translate('Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network')}}</p>
                         <a class="text-primary fs-16 pt-2 c-pointer">
-                            <img src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/down-arrow.png')}}" alt="">
+                            <img src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/down-arrow.png')}}" alt="">
                             <u class="pt-3">{{translate('See ways to earn')}}</u></a>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
-                            <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works_2.png')}}" alt="">
+                            <img class="mx-auto d-block w-50" src="{{asset('How_it_Works_2.png')}}" alt="">
                         </div>
 
                     </div>
@@ -96,23 +96,23 @@
                             <h4 class="trusted "> Used by </h4>
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+                            <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+                            <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-6 ">
                     <div class="row">
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
+                            <img class=" " src="{{asset('automatic.svg')}}" alt="">
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+                            <img class=" " src="{{asset('Bissell.svg')}}" alt="">
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+                            <img class=" " src="{{asset('NASDAQ.svg')}}" alt="">
                         </div>
                     </div>
 
@@ -138,7 +138,7 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-4 col-sm-12 ">
                         <div class="card  h-100" style="width: 18rem;">
-                            <img class="card-img-top" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/opportunity.svg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/opportunity.svg')}}" alt="Card image cap">
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6 ">
                             <div class="card h-90 position-relative">
-                                <img class="card-img-top rounded-1" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}" alt="Card image cap">
+                                <img class="card-img-top rounded-1" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}" alt="Card image cap">
                                 <div class="" style="background: #F2F7F2; ">
 
                                     <div class="card-body">
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="bg-white rounded-2 hth-profile-active position-absolute">
                                     <div class="px-3 py-1 d-flex">
-                                        <img class="rounded-circle pr-1 position-relative" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}" alt="">
+                                        <img class="rounded-circle pr-1 position-relative" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}" alt="">
                                         <p class="fs-14 ">{{translate('Stefan M.')}}</p>
                                         <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
 
@@ -172,7 +172,7 @@
 
                         <div class="col-lg-6 col-sm-6 ">
                             <div class="card  h-90 position-relative">
-                                <img class="card-img-top" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/blog.jpg')}}" alt="Card image cap" style="height:200px;">
+                                <img class="card-img-top" src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/blog.jpg')}}" alt="Card image cap" style="height:200px;">
 
                                 <div class="" style="background: #F2F7F2;">
 
@@ -184,7 +184,7 @@
 
                                 <div class="bg-white rounded-2 hth-profile-active position-absolute">
                                     <div class="px-3 py-1 d-flex">
-                                        <img class="rounded-circle pr-1 position-relative" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}" alt="">
+                                        <img class="rounded-circle pr-1 position-relative" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}" alt="">
                                         <p class="fs-14 ">{{translate("Md. Mojahidul I.")}}</p>
 
                                         <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
@@ -214,7 +214,7 @@
                 </div>
                 <div class="col-lg-2"></div>
                 <div class="col-lg-4 col-sm-12 my-auto ">
-                    <img class="card-img-top blog-img" src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/message.svg')}}" alt="Card image cap">
+                    <img class="card-img-top blog-img" src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/message.svg')}}" alt="Card image cap">
 
                 </div>
             </div>
@@ -224,7 +224,7 @@
         <div class="" style="margin-top: 100px;">
             <div class="row mt-5 mb-5">
                 <div class="col-lg-5 col-sm-12 mr-5">
-                    <img class="w-100 payments-img " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg')}}" alt="">
+                    <img class="w-100 payments-img " src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg')}}" alt="">
                 </div>
 
                 <div class="col-lg-5 col-sm-12 mt-5 ml-5">
@@ -280,9 +280,9 @@
                             <p>
                                 You can upgrade to Freelancer Plus to more effectively market your services, submit proposals and stand out from the crowd.
                             </p>
-                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""> </label>
+                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""> </label>
 
                     </div>
                     <div class=" border-bottom">
@@ -295,10 +295,10 @@
                             <p>
                                 complete guide shares our step-by-step tips for building your freelance career.
                             </p>
-                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom ">
                         <input type="checkbox" id="fre-freelancing">
@@ -310,9 +310,9 @@
                             <p>
                                 work with great clients and well-known brands. Many choose Upwork because we help them do it well. How to Succeed as a Freelancer gives you a taste of the support we offer to boost your success.
                             </p>
-                            <label class="fre-expand-icon" for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-buildingBusiness">
@@ -324,10 +324,10 @@
                             <p>
                                 owner is a big transition, but it might be the right one for you.
                             </p>
-                            <label class="fre-expand-icon" for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <h4 class="frequently-qsn-title">What projects can I find on Upwork?</h4>
@@ -345,10 +345,10 @@
                             <p>
                                 Freelancer accounts receive free Connects every month. You can buy bundles of them. And freelancers and agencies earn Connects by winning client interviews, getting great reviews, and demonstrating their skills.
                             </p>
-                            <label class="fre-expand-icon" for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-badges">
@@ -360,10 +360,10 @@
                             <p>
                                 badge. Top Rated Plus shows you have a proven history of success on large and long-term contracts. And Expert Vetted means you’ve gone through our rigorous pre-screening to match your high-demand skills with the right clients. Get the feedback, wear the badge , hit your goals.
                             </p>
-                            <label class="fre-expand-icon" for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
 
                 </div>
@@ -375,7 +375,7 @@
             <div class="row mt-4">
                 <div class="col-lg-4 col-12">
                     <div class="card h-90 ">
-                        <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-1.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top rounded-top-1 " src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-1.jpg')}}" alt="Card image cap">
                         <div class="" style="background: #F2F7F2; ">
                             <div class="card-body">
                                 <p class="htfj-learn-work-child-title">Getting started</p>
@@ -390,7 +390,7 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="card h-90 ">
-                        <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-2.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top rounded-top-1 " src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-2.jpg')}}" alt="Card image cap">
                         <div class="" style="background: #F2F7F2; ">
 
                             <div class="card-body">
@@ -407,7 +407,7 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="card h-90 ">
-                        <img class="card-img-top rounded-top-1 " src="{{my_asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-3.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top rounded-top-1 " src="{{asset('assets/frontend/default/img/whyScholarship/howToFindJob/learnWorkimg-3.jpg')}}" alt="Card image cap">
                         <div class="" style="background: #F2F7F2; ">
 
                             <div class="card-body">

@@ -231,7 +231,7 @@
 
                                 </div>
                             </div>
-                            
+
                             <div class="m-3 px-3">
                                 <h6 class="text-left mb-2 fs-14 fw-700"><span class="bg-white pr-3">{{ translate('Share Service') }}</span></h6>
                                 <div class="aiz-share"></div>
@@ -255,7 +255,7 @@
                                             @if($similar_type_sevice->image != null)
                                                 <img src="{{ custom_asset($similar_type_sevice->image) }}" class="card-img-top" alt="service_image" height="212" style="border-radius: 16px 16px 0px 0px;">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212" style="border-radius: 16px 16px 0px 0px;">
+                                                <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212" style="border-radius: 16px 16px 0px 0px;">
                                             @endif
                                         </a>
                                         <div class="card-body">
@@ -264,14 +264,14 @@
                                                     @if ($similar_type_sevice->user->photo != null)
                                                         <img src="{{ custom_asset($similar_type_sevice->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                     @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                     @endif
                                                 </span>
                                                 <span class="d-flex flex-column justify-content-center">
                                                     <a href="{{ route('freelancer.details', $similar_type_sevice->user->user_name) }}" class="text-secondary fs-14"><span class="font-weight-bold">{{ $similar_type_sevice->user->name }}</span></a>
                                                 </span>
                                             </div>
-                                            
+
                                             <a href="{{ route('service.show', $similar_type_sevice->slug) }}" class="text-dark">
                                                 <h5 class="card-title fs-16 fw-700">{{ \Illuminate\Support\Str::limit($similar_type_sevice->title, 45, $end='...') }}</h5>
                                             </a>

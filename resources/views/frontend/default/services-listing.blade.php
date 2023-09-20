@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{my_asset('assets/frontend/default/css/services-listing.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/default/css/services-listing.css')}}">
 </head>
 
 <body>
@@ -243,13 +243,13 @@
                                     <p class="fw-400 text-black fs-15 mb-2">Give your visitor a smooth online experience with a solid UX design</p>
                                     <div class="d-flex align-items-center ">
                                         <div class="bg-white rounded-circle">
-                                            <img class=" px-2 py-2 center d-block" src="{{my_asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="" style="height:30px">
+                                            <img class=" px-2 py-2 center d-block" src="{{asset('assets/frontend/default/img/servicesList/video_icon.svg')}}" alt="" style="height:30px">
                                         </div>
                                         <p class="fw-400 text-black fs-15 ml-2 mb-0">How ConsultantEdu Works</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
-                                    <img src="{{my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
+                                    <img src="{{asset('assets/frontend/default/img/servicesList/Designer_Flatline.png')}}" alt="">
 
                                 </div>
                             </div>
@@ -262,8 +262,8 @@
                                     <p class="fs-15 fw-400 mb-0">Most viewed and all-time top-selling services</p>
                                 </div>
                                 <div class="d-flex">
-                                    <!-- <img class="text-black c-pointer preBtn" src=" {{url('/public/assets/findJob/left-arrow.png')}}" alt="Image" style="width:18px;" />
-                                    <img class=" text-black c-pointer nexBtn" src=" {{url('/public/assets/findJob/right-arrows.png')}}" alt="Image" style="width:18px;" /> -->
+                                    <!-- <img class="text-black c-pointer preBtn" src=" {{asset('/assets/findJob/left-arrow.png')}}" alt="Image" style="width:18px;" />
+                                    <img class=" text-black c-pointer nexBtn" src=" {{asset('/assets/findJob/right-arrows.png')}}" alt="Image" style="width:18px;" /> -->
 
                                 </div>
 
@@ -279,7 +279,7 @@
                                                         @if($service->image != null)
                                                         <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
                                                         @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
+                                                        <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                                         @endif
                                                     </a>
                                                     <div class="card-body hov-box-body">
@@ -288,7 +288,7 @@
                                                                 @if ($service->user->photo != null)
                                                                 <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                                 @else
-                                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                                 @endif
                                                             </span>
                                                             <span class="d-flex flex-column justify-content-center">
@@ -308,7 +308,7 @@
                                                     </div>
                                                 </div>
                                                 <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
-                                                    <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                                    <img class=" p-2 center d-block c-pointer" src="{{asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
                                                 </div>
                                             </div>
                                             @endforeach
@@ -351,7 +351,7 @@
                                                 @if($service->image != null)
                                                 <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
                                                 @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
+                                                <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                                 @endif
                                             </a>
                                             <div class="card-body hov-box-body">
@@ -360,7 +360,7 @@
                                                         @if ($service->user->photo != null)
                                                         <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @endif
                                                     </span>
                                                     <span class="d-flex flex-column justify-content-center">
@@ -384,15 +384,15 @@
                                             @if (Auth::check() && ($bookmarked_service = \App\Models\BookmarkedService::where('user_id', auth()->user()->id)->where('service_id', $service->id)->first()) != null)
 
                                             <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.destroy', $bookmarked_service->id) }}" data-target="#bookmark-remove-modal">
-                                                <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/fillupheart.png')}}" alt="">
+                                                <img class=" p-2 center d-block c-pointer" src="{{asset('assets/frontend/default/img/scholarship/fillupheart.png')}}" alt="">
                                             </a>
                                             @else
                                             <a class="" href="{{route('bookmarked-services.store', encrypt($service->id))}}">
-                                                <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
+                                                <img class=" p-2 center d-block c-pointer" src="{{asset('assets/frontend/default/img/scholarship/heart.png')}}" alt="">
                                             </a>
                                             @endif
 
-                                            <!-- <img class=" p-2 center d-block c-pointer" src="{{my_asset('assets/frontend/default/img/scholarship/heart.png')}}" alt=""> -->
+                                            <!-- <img class=" p-2 center d-block c-pointer" src="{{asset('assets/frontend/default/img/scholarship/heart.png')}}" alt=""> -->
                                         </div>
                                     </div>
 
@@ -415,14 +415,14 @@
                                     <div class="card  rounded-1" style="height:430px">
                                         <div class="">
                                             <div class=" ">
-                                                <img class="card-img" src="{{my_asset('assets/frontend/default/img/servicesList/Surface.svg')}}" alt="Image" />
+                                                <img class="card-img" src="{{asset('assets/frontend/default/img/servicesList/Surface.svg')}}" alt="Image" />
                                             </div>
                                             <div class="card-body" style="height: 150px;">
                                                 <div>
                                                     <p class="card-title mt-1 fs-12">Art & Illustration</p>
                                                     <p class="card-title mt-1 fs-16 fw-700 h-50px">I will create modern flat design illustration</p>
                                                     <span>
-                                                        <img class="mr-2" src="{{my_asset('assets/frontend/default/img/servicesList/star.svg')}}" alt="Image" style="width:12px;" />
+                                                        <img class="mr-2" src="{{asset('assets/frontend/default/img/servicesList/star.svg')}}" alt="Image" style="width:12px;" />
                                                     </span>
                                                     <span class="fw-700 text-black mr-1"> 4.82 </span>
                                                     <span class="text-muted">94 reviews</span>
@@ -433,7 +433,7 @@
                                                         @if ($service->user->photo != null)
                                                         <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @else
-                                                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @endif
                                                     </span>
                                                     <span class="d-flex flex-column justify-content-center">

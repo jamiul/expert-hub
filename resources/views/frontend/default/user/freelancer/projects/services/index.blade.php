@@ -25,7 +25,7 @@
                                     @if($service->image != null)
                                         <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                     @else
-                                        <img src="{{ my_asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
+                                        <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                     @endif
                                 </a>
                                 <div class="card-body">
@@ -34,7 +34,7 @@
                                             @if (Auth::user()->photo != null)
                                                 <img src="{{ custom_asset(Auth::user()->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                             @endif
                                         </span>
                                         <span class="d-flex flex-column justify-content-center">

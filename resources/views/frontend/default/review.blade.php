@@ -3,7 +3,7 @@
 
 <head>
 
-    <link rel="stylesheet" href="{{ my_asset('public/assets/frontend/default/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/frontend/default/css/custom.css') }}">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                     <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Join scholarship</button>
                 </div>
                 <div class="col-lg-6  py-2 px-5">
-                    <img src="{{my_asset('review-banner.jpeg')}}" class="w-100 h-100 rounded-2" alt="">
+                    <img src="{{asset('review-banner.jpeg')}}" class="w-100 h-100 rounded-2" alt="">
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 p-3 ">
                     <h4 class="fre-review-clients">
                         Clients rate talent
-                        <img class="pb-1" src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/rating.svg')}}" alt="">
+                        <img class="pb-1" src="{{asset('assets/frontend/default/img/whyScholarship/reviews/rating.svg')}}" alt="">
                         4.9/5
                     </h4>
                     <p>Based on <span class="fw-700">2.9 million</span> reviews
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 p-3">
                     <h4 class="fre-review-clients">Clients rate talent
-                        <img class="pb-1" src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/rating.svg')}}" alt="">
+                        <img class="pb-1" src="{{asset('assets/frontend/default/img/whyScholarship/reviews/rating.svg')}}" alt="">
                         4.9/5
                     </h4>
                     <p class="fs-1">Based on <span class="fw-700">2.9 million</span> reviews
@@ -151,7 +151,7 @@
                                 <div class="card bg-white ">
                                     <div class="p-3 fre-review-work-done-card">
                                         <h4 class="fw-700 fs-22 mb-5">Nasdaq Leans on Hybrid Teams to Transform Itself into a Digital Media Leader</h4>
-                                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                                 <div class="card bg-white">
                                     <div class="p-3  fre-review-work-done-card">
                                         <h4 class="fw-700 fs-22 mb-5">Nasdaq Leans on Hybrid Teams to Transform Itself into a Digital Media Leader</h4>
-                                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -180,23 +180,23 @@
                                 <h4 class="trusted "> Used by </h4>
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+                                <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+                                <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-6 ">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
+                                <img class=" " src="{{asset('automatic.svg')}}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+                                <img class=" " src="{{asset('Bissell.svg')}}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" pt-2" src="{{my_asset('NASDAQ.svg')}}" alt="">
+                                <img class=" pt-2" src="{{asset('NASDAQ.svg')}}" alt="">
                             </div>
                         </div>
 
@@ -245,19 +245,19 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 rounded-1 mx-3 my-sm-2 c-pointer " style="background: #f2f7f2;">
                     <div class="py-2 px-1">
                         <h4 class="review-say-other-way-card-text">Talent Marketplace</h4>
-                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 rounded-1 c-pointer mx-3 my-sm-2" style="background: #f2f7f2;">
                     <div class="py-2 px-1">
                         <h4 class="fre-review-say-other-way-card-text">Enterprise Suite</h4>
-                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 rounded-1 mx-3 my-sm-2 c-pointer" style="background: #f2f7f2;">
                     <div class="py-2 px-1">
                         <h4 class="fre-review-say-other-way-card-text">Project Catalog</h4>
-                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{my_asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
+                        <a href="" class=" fre-review-work-done-read">Read Article</a> <img src="{{asset('assets/frontend/default/img/whyScholarship/reviews/arrow.svg')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -283,7 +283,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
-                                        <img class="mx-auto d-block w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
+                                        <img class="mx-auto d-block w-50" src="{{asset('Post-A-Job.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Post a job (it’s free)</h5>
                                     <p class="fre-review-hf-card-text">Tell us what you need. Provide as many details as possible, but don’t worry about getting it perfect.</p>
@@ -296,7 +296,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
-                                        <img class="mx-auto  d-block w-50" src="{{my_asset('How_it_Works.png')}}" alt="">
+                                        <img class="mx-auto  d-block w-50" src="{{asset('How_it_Works.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Talent comes to you</h5>
                                     <p class="fre-review-hf-card-text">Get qualified proposals within 24 hours, and meet the candidates you’re excited about. Hire as soon as you’re ready.</p>
@@ -309,7 +309,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works_1.png')}}" alt="">
+                                        <img class="mx-auto d-block w-50" src="{{asset('How_it_Works_1.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Collaborate easily</h5>
                                     <p class="fre-review-hf-card-text">Use scholarship australia to chat or video call, share files, and track project progress right from the app.</p>
@@ -322,7 +322,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-flex w-50 " src="{{my_asset('How_it_Works_2.png')}}" alt="">
+                                        <img class="mx-auto d-flex w-50 " src="{{asset('How_it_Works_2.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Payment simplified</h5>
                                     <p class="fre-review-hf-card-text">Receive invoices and make payments through scholarship australia. Only pay for work you authorize.</p>
@@ -345,7 +345,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-block  w-50" src="{{my_asset('Post-A-Job.png')}}" alt="">
+                                        <img class="mx-auto d-block  w-50" src="{{asset('Post-A-Job.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Create your profile (it’s free)</h5>
                                     <p class="fre-review-hf-card-text">An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.</p>
@@ -359,7 +359,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
-                                        <img class="mx-auto d-block  w-50" src="{{my_asset('How_it_Works_1.png')}}" alt="">
+                                        <img class="mx-auto d-block  w-50" src="{{asset('How_it_Works_1.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Explore ways to earn</h5>
                                     <p class="fre-review-hf-card-text">Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network.</p>
@@ -372,7 +372,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-block w-50" src="{{my_asset('How_it_Works_2.png')}}" alt="">
+                                        <img class="mx-auto d-block w-50" src="{{asset('How_it_Works_2.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Get paid securely</h5>
                                     <p class="fre-review-hf-card-text">{{translate('Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.')}}</p>
@@ -419,9 +419,9 @@
                             <p>
                                 contracts within that same 14-day feedback period. The review will be public once both of you leave one for each other or the 14-day period ends.
                             </p>
-                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""> </label>
+                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""> </label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-contest">
@@ -433,10 +433,10 @@
                             <p>
                                 will show up on your public profile. You can also work directly with your client or talent to enable feedback changes and revise the review. If you feel the review violates scholarship australia’s terms of service and you would like to dispute a review, scholarship australia’s customer service team is there to help.
                             </p>
-                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom content-blog">
                         <input type="checkbox" id="fre-ch">
@@ -447,9 +447,9 @@
                             Seeing your reviews is easy on scholarship australia, simply visit your profile and all your public reviews will be there. If your contract just ended, it can take up to 14 days for your review to become public. You can also find your feedback for specific contracts in your contracts dashboard.
                         </p>
                         <div class="fre-content ">
-                            <label class="fre-expand-icon" for="fre-ch">Show less <img class="w-15px h-15px arrow-icon " src="{{my_asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-ch">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-ch">Read more <img class="w-15px h-15px arrow-icon " src="{{my_asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-ch">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
                     </div>
                 </div>
             </div>
@@ -461,7 +461,7 @@
         <div class="fre-container-main-powerful  rounded-2" style="background: #1F57C3;">
             <div class="row mx-2 py-3">
                 <div class="col-lg-5 col-sm-12">
-                    <img class="img-fluid rounded-1" src="{{my_asset('powerful-relationship.jpg')}}" alt="">
+                    <img class="img-fluid rounded-1" src="{{asset('powerful-relationship.jpg')}}" alt="">
                 </div>
                 <div class="col-lg-7 col-sm-12 lg-position-relative ">
                     <h1 class="fw-700 text-white fs-30px">Build powerful relationships, one review at a time</h1>

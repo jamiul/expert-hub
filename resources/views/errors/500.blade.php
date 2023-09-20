@@ -12,7 +12,7 @@
 					<i class="la la-arrow-left mr-2"></i>
 					<span>{{ translate('Back to Homepage') }}</span>
 				</a>
-				<img src="{{ my_asset('assets/frontend/default/img/500.svg') }}" class="img-fluid w-75">
+				<img src="{{ asset('assets/frontend/default/img/500.svg') }}" class="img-fluid w-75">
 			</div>
 		</div>
 	</div>

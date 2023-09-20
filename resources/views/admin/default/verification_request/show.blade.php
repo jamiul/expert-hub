@@ -17,7 +17,7 @@
                     @if($user->photo != null)
                         <img src="{{ custom_asset($user->photo) }}">
                     @else
-                        <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                        <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
                     <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
                 </span>
@@ -175,12 +175,12 @@
                                     $attachment = \App\Models\Upload::find($verification_request->attachment);
                                 @endphp
                                 @if ($attachment != null)
-                                <a class="d-flex justify-content-between align-items-center mt-2 file-preview-item text-reset" href="{{ my_asset($attachment->file_name)}}" target="_blank" download>
+                                <a class="d-flex justify-content-between align-items-center mt-2 file-preview-item text-reset" href="{{ asset($attachment->file_name)}}" target="_blank" download>
                                     <div class="align-items-center align-self-stretch d-flex justify-content-center thumb">
                                         @if ($attachment->type == 'document')
                                             <i class="la la-file-text"></i>
                                         @elseif ($attachment->type == 'image')
-                                            <img src="{{ my_asset($attachment->file_name) }}" class="img-fit">
+                                            <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                         @endif
                                     </div>
                                     <div class="col body">

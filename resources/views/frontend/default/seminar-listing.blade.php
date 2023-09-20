@@ -3,7 +3,7 @@
 
 <head>
 
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"
@@ -161,7 +161,7 @@
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
                         <img class="banner-img"
-                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                             alt="">
                     </div>
                 </div>
@@ -506,7 +506,7 @@
                                                                 <p class="btn btn-primary btn-sm fs-14  w-100  fw-700">
 
                                                                     <img class=" px-1  "
-                                                                        src=" {{ url('/public/assets/seminar/register.png') }}"
+                                                                        src=" {{ asset('/assets/seminar/register.png') }}"
                                                                         alt="Image" style="width:25px; " />
                                                                     {{ translate('Register now') }}
 
@@ -516,7 +516,7 @@
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
                                                                     <img class=" px-1  "
-                                                                        src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                        src=" {{ asset('/assets/find-consultant/zoom.png') }}"
                                                                         alt="Image" style="width:28px; " />
                                                                     {{ translate('Zoom link') }}
 
@@ -555,7 +555,7 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block   p-3"
-                                                src=" {{ url('/public/assets/home/post.png') }}" alt="Image"
+                                                src=" {{ asset('/assets/home/post.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; background-color:#275846; border:1px solid #fff" />
                                             <div class="need-help-progress-bar"></div>
                                         </div>
@@ -576,7 +576,7 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class="mb-2 mx-auto d-block text-black p-3"
-                                                src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
+                                                src="{{ asset('/assets/home/quiz.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; background-color:#275846; border:1px solid #fff;" />
                                             <div class="need-help-progress-bar"></div>
                                         </div>
@@ -595,7 +595,7 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block p-3"
-                                                src=" {{ url('/public/assets/home/enroll.png') }}" alt="Image"
+                                                src=" {{ asset('/assets/home/enroll.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; background-color:#275846; border:1px solid #fff" />
                                             <div class="need-help-progress-bar"></div>
                                         </div>
@@ -615,7 +615,7 @@
                                 <div class=" ">
                                     <div class=" h-136px align-items-center">
                                         <img class=" mb-2 mx-auto d-block  p-3"
-                                            src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
+                                            src=" {{ asset('/assets/home/check.png') }}" alt="Image"
                                             style="width:55px; background-color:#275846;  border-radius:50%; border:1px solid #fff" />
 
                                         <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">

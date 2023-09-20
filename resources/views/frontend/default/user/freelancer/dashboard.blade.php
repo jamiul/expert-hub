@@ -159,7 +159,7 @@
                                                 @if($projectUser->project->client->photo != null)
                                                 <img src="{{ custom_asset($projectUser->project->client->photo) }}">
                                                 @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
                                             </span>
                                             <span class="flex-grow-1 text-truncate-2">{{ $projectUser->project->name }}</span>
@@ -187,7 +187,7 @@
                                                 @if($project->client->photo != null)
                                                 <img src="{{ custom_asset($project->client->photo) }}">
                                                 @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
                                             </span>
                                             <span class="flex-grow-1 text-truncate-2">{{ $project->name }}</span>

@@ -2,8 +2,8 @@
     <html lang="en">
 
     <head>
-        <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
-        <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/single-profile.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/single-profile.css') }}">
 
     </head>
 
@@ -15,7 +15,7 @@
                 @if ($freelancer->cover_photo != null)
     <img src="{{ custom_asset($freelancer->cover_photo) }}" alt="{{ $freelancer->name }}" class="img-fit h-250px">
 @else
-    <img src="{{ my_asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"
+    <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"
                 class="img-fit h-250px" style="background-color:#275846;">
     @endif
             </div> -->
@@ -33,7 +33,7 @@
                                                     <img src="{{ custom_asset($freelancer->photo) }}"
                                                         alt="{{ $freelancer->name }}">
                                                 @else
-                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                                         alt="{{ $freelancer->name }}">
                                                 @endif
                                                 @if (Cache::has('user-is-online-' . $freelancer->id))
@@ -77,7 +77,7 @@
                                         <!-- <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
                                                 <div class="d-flex">
                                                     <div class="d-lg-flex justify-content-center align-items-center">
-                                                        <img src="{{ url('/public/assets/frontend/default/img/freelancer_profile/success.png') }}" alt="">
+                                                        <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}" alt="">
                                                         <p class="ml-1 mb-0 fs-15 text-black fw-600" style="margin-right: 70px;">100% Job Success</p>
                                                     </div>
                                                     <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
@@ -118,7 +118,7 @@
                                                 </div>
                                                 <div class="rounded-circle" style="border:1px solid #ddd;">
                                                     <img class="p-2 center d-block c-pointer"
-                                                        src="{{ my_asset('assets/frontend/default/img/scholarship/heart.png') }}"
+                                                        src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}"
                                                         alt="">
                                                 </div>
                                             @endif
@@ -127,7 +127,7 @@
                                     <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
                                         <div class="d-flex">
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <img src="{{ url('/public/assets/frontend/default/img/freelancer_profile/success.png') }}"
+                                                <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}"
                                                     alt="">
                                                 <p class="ml-1 mb-0 fs-15 text-black site-font fw-600"
                                                     style="margin-right: 70px;">100% Job Success</p>
@@ -373,7 +373,7 @@
                                         <div class="border mb-3">
                                             <div class="row p-3">
                                                 <div class="col-lg-2 col-md-2 col-sm-12">
-                                                    <img src="{{ my_asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
+                                                    <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
                                                         alt="">
                                                 </div>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
@@ -428,13 +428,13 @@
                                     {{-- Completed and runing work part start --}}
                                     @php
                                         $completedProjects = getCompletedProjectsByFreelancer($freelancer->id)->get();
-                                        
+
                                         // Extract project IDs from the collection using pluck
                                         $projectIds = $completedProjects->pluck('id');
-                                        
+
                                         // Retrieve project details using the extracted IDs
                                         $projects = \App\Models\Project::whereIn('id', $projectIds)->get();
-                                        
+
                                     @endphp
 
 

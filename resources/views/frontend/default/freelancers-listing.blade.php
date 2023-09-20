@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
@@ -28,7 +28,7 @@
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
                         <img class="banner-img"
-                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                             alt="">
                     </div>
                 </div>
@@ -230,14 +230,16 @@
                                         <div class="my-5">
                                             <label class="aiz-checkbox site-font w-100 fw-700">
                                                 <input type="checkbox" name="available_interview" value="interview"
-                                                    onchange="applyFilter()" class=" ">
+                                                    onchange="applyFilter()" class=" "
+                                                    @if ($available_interview) checked @endif>
                                                 Available for Midea Interview
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
                                             <label class="aiz-checkbox site-font w-100 fw-700">
                                                 <input type="checkbox" name="consultantions" value="consultantions"
-                                                    onchange="applyFilter()" class=" ">
+                                                    onchange="applyFilter()" class=" "
+                                                    @if ($consultantions) checked @endif>
                                                 Offer Consultantion
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -323,7 +325,7 @@
                                                             <img src="{{ custom_asset($freelancer->user->photo) }}"
                                                                 alt="{{ $freelancer->user->name }}">
                                                         @else
-                                                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                                                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                                                 alt="{{ $freelancer->user->name }}">
                                                         @endif
                                                         @if (Cache::has('user-is-online-' . $freelancer->user->id))
@@ -393,15 +395,14 @@
                                                             @endforeach
                                                         </div>
                                                     @endif
-                                                    
+                                                    @if ($consultantions)
                                                         <div class="d-flex w-25 mx-0">
                                                             <p class="btn btn-primary btn-sm  w-100  fw-700">
 
                                                                 {{ translate('Book a consultant') }}
                                                             </p>
                                                         </div>
-                                                    
-
+                                                    @endif
 
                                                 </div>
                                                 <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px"
@@ -409,7 +410,7 @@
                                                     <div class="d-flex w-100 mx-0">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
                                                             <img class=" px-1  "
-                                                                src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
+                                                                src=" {{ asset('/assets/find-consultant/logo-1.png') }}"
                                                                 alt="Image" style="width:36px; " />
                                                             {{ translate('Message') }}
                                                         </p>
@@ -417,7 +418,7 @@
                                                     <div class="d-flex w-100 mx-0">
                                                         <p class="btn btn-primary btn-sm  w-100  fw-700">
                                                             <img class=" px-1  "
-                                                                src=" {{ url('/public/assets/find-consultant/zoom.png') }}"
+                                                                src=" {{ asset('/assets/find-consultant/zoom.png') }}"
                                                                 alt="Image" style="width:28px; " />
                                                             {{ translate('Consultation') }}
                                                         </p>

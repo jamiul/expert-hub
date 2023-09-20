@@ -97,9 +97,9 @@
                     <div class="col-xl-4 col-sm-6 p-0">
                         <div class="aiz-front-widget d-lg-flex px-3 align-items-center">
                             <h5 class="text-white fs-16 mr-lg-2">{{ get_setting('social_widget_title') }}</h5>
-                           
+
                             <ul class="list-inline apps">
-                               
+
                                  @if (!empty(get_setting('facebook_link')))
                                     <li class="list-inline-item">
                                         <a href="{{ get_setting('facebook_link') }}" target="_blank"
@@ -205,7 +205,7 @@
                         @if (Auth::user()->photo != null)
                             <img src="{{ custom_asset(Auth::user()->photo) }}" class="rounded-circle size-20px">
                         @else
-                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                 class="rounded-circle size-20px">
                         @endif
                         @if (Cache::has('user-is-online-' . Auth::user()->id))
@@ -222,7 +222,7 @@
                         @if (Auth::user()->photo != null)
                             <img src="{{ custom_asset(Auth::user()->photo) }}" class="rounded-circle size-20px">
                         @else
-                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                 class="rounded-circle size-20px">
                         @endif
                     </span>
@@ -232,7 +232,7 @@
         @else
             <a href="{{ route('login') }}" class="text-reset flex-grow-1 pb-2 pt-3 text-center">
                 <span class="d-block mx-auto">
-                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"
+                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                         class="rounded-circle size-20px">
                 </span>
                 <span class="d-block fs-10 fw-600 opacity-60">{{ translate('Account') }}</span>

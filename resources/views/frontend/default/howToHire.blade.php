@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{ my_asset('public/assets/frontend/default/css/custom.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/assets/frontend/default/css/custom.css') }}">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 
         </div>
         <div class="col-lg-6 py-2 px-5 ">
-          <img src="{{my_asset('how-tohire-banar.png')}}" class="rounded-2 " alt="" style="">
+          <img src="{{asset('how-tohire-banar.png')}}" class="rounded-2 " alt="" style="">
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
     <div class="row mt-5 mb-5">
       <div class="col-lg-6 col-sm-12 ">
         <img class="img-fluid rounded-2"
-          src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/postJob.jpg')}}" alt="">
+          src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/postJob.jpg')}}" alt="">
       </div>
       <div class="col-lg-1"></div>
       <div class="col-lg-5 col-sm-12 mt-2">
@@ -76,7 +76,7 @@
           <div class="col-lg-6 col-sm-6 ">
             <div class="card h-100 position-relative">
               <img class="card-img-top rounded-1"
-                src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-1.jpg')}}"
+                src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-1.jpg')}}"
                 alt="Card image cap">
               <div class="card-body">
                 <p class="card-text">You will get a perfect logo designed for your business</p>
@@ -85,7 +85,7 @@
               <div class="bg-white rounded-2 hth-profile-active position-absolute">
                 <div class="px-3 py-1 d-flex">
                   <img class="rounded-circle pr-1 position-relative"
-                    src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}"
+                    src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-1.png')}}"
                     alt="">
                   <p class="fs-14 ">Stefan M.</p>
                   <!-- <div class="position-absolute bg-danger h-10px w-10px rounded-circle end-0"> -->
@@ -98,7 +98,7 @@
           <div class="col-lg-6 col-sm-6 ">
             <div class="card  h-100 position-relative">
               <img class="card-img-top"
-                src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}"
+                src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/Browse-2.jpeg')}}"
                 alt="Card image cap">
               <div class="card-body">
                 <p class="card-text">You will get a fully customizable WordPress website. No code needed.</p>
@@ -107,7 +107,7 @@
               <div class="bg-white rounded-2 hth-profile-active position-absolute">
                 <div class="px-3 py-1 d-flex">
                   <img class="rounded-circle pr-1 position-relative"
-                    src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}"
+                    src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/card_profile-2.png')}}"
                     alt="">
                   <p class="fs-14 ">Md. Mojahidul I.</p>
 
@@ -128,7 +128,7 @@
         <div class="col-6 ">
           <div class="py-2  h-100" style="background:#F2F7F2">
             <img class="rounded-circle w-150px h-150px mx-auto d-block mt-3 mb-1"
-              src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/profile-1.jpeg')}}"
+              src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/profile-1.jpeg')}}"
               alt="Card image cap">
             <div class="text-center">
               <p class="text-black fw-700 fs-20px">Fernanda P.</p>
@@ -142,7 +142,7 @@
         <div class="col-6  ">
           <div class="h-100 py-2" style="background:#F2F7F2">
             <img class="rounded-circle w-150px h-150px mx-auto d-block mt-3 mb-1"
-              src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/profile-2.jpeg')}}"
+              src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/profile-2.jpeg')}}"
               alt="Card image cap">
             <div class="text-center">
               <p class=" text-black fw-700 fs-20px">Ron Z.</p>
@@ -196,27 +196,27 @@
       <div class="col-lg-6 col-12">
         <div class="approvalCheckMark">
           <div class="d-flex mb-2 approvalCheckMark">
-            <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
+            <img class="mr-3" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
               alt="">
             <p>Browse similar projects they’ve worked on</p>
           </div>
           <div class="d-flex mb-2 approvalCheckMark">
-            <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
+            <img class="mr-3" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
               alt="">
             <p>Directly access proven talent without unnecessary layers</p>
           </div>
           <div class="d-flex mb-2 approvalCheckMark">
-            <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
+            <img class="mr-3" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
               alt="">
             <p>Check their portfolio</p>
           </div>
           <div class="d-flex mb-2 approvalCheckMark">
-            <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
+            <img class="mr-3" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
               alt="">
             <p>Check qualifications</p>
           </div>
           <div class="d-flex  approvalCheckMark">
-            <img class="mr-3" src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
+            <img class="mr-3" src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/check.png')}}"
               alt="">
             <p>Run a chat or video interview</p>
           </div>
@@ -234,23 +234,23 @@
             <h4 class="trusted "> Used by </h4>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{my_asset('Microsoft.svg')}}" alt="">
+            <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{my_asset('Airbnb.svg')}}" alt="">
+            <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
           </div>
         </div>
       </div>
       <div class="col-6 ">
         <div class="row">
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{my_asset('automatic.svg')}}" alt="">
+            <img class=" " src="{{asset('automatic.svg')}}" alt="">
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{my_asset('Bissell.svg')}}" alt="">
+            <img class=" " src="{{asset('Bissell.svg')}}" alt="">
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{my_asset('NASDAQ.svg')}}" alt="">
+            <img class=" " src="{{asset('NASDAQ.svg')}}" alt="">
           </div>
         </div>
 
@@ -264,7 +264,7 @@
     <div class="row mt-5 mb-5">
       <div class="col-lg-5 col-sm-12 mr-5">
         <img class="img-fluid rounded-right "
-          src="{{my_asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt=""
+          src="{{asset('assets/frontend/default/img/whyScholarship/Howtohire/safe-with-us.jpg')}}" alt=""
           style="height:500px;">
       </div>
 

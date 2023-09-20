@@ -14,7 +14,7 @@
 //Admin
 Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function(){
     Route::resource('manual_payment_methods','ManualPaymentMethodController');
-    Route::get('/manual_payment_methods/destroy/{id}', 'ManualPaymentMethodController@destroy')->name('manual_payment_methods.destroy');
+    //Route::get('/manual_payment_methods/destroy/{id}', 'ManualPaymentMethodController@destroy')->name('manual_payment_methods.destroy');
 
     Route::get('/manual_package_payments_history', 'PackagePaymentController@manual_package_payments_history')->name('offline_package_payments_history');
     Route::get('/manual_package_payment/approve/{id}', 'PackagePaymentController@approve_offline_package_payment')->name('offline_package_payment.approve');

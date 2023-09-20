@@ -41,7 +41,7 @@
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
                         <img class="banner-img  "
-                            src="{{ my_asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                             alt="">
                     </div>
                 </div>
@@ -366,7 +366,7 @@
                                                     <img src="{{ custom_asset($project->client->photo) }}">
                                                 @else
                                                     <a href="{{ route('project.details', $project->slug) }}"><img
-                                                            src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}"></a>
+                                                            src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"></a>
                                                 @endif
                                             </span>
                                         </div>
@@ -465,7 +465,7 @@
                                             <div class="btn d-flex justify-content-center align-items-center mt-2 py-2 fs-14 px-2 text-white"
                                                 style="background-color:#275846; ">
                                                 <img class=" px-1  "
-                                                    src=" {{ url('/public/assets/find-consultant/budget.png') }}"
+                                                    src=" {{ asset('/assets/find-consultant/budget.png') }}"
                                                     alt="Image" style="width:30px; " />
                                                 {{ single_price($project->price) }}
 
@@ -475,10 +475,10 @@
                                                 class="btn d-flex justify-content-center align-items-center w-100 mt-2 py-2 fs-14 px-2 text-white"
                                                 style="background-color:#275846; ">
                                                 <img class=" px-1  "
-                                                    src=" {{ url('/public/assets/find-consultant/logo-1.png') }}"
+                                                    src=" {{ asset('/assets/find-consultant/logo-1.png') }}"
                                                     alt="Image" style="width:36px; " />
                                                 EOI
-                                                <img class=" px-1 " src=" {{ url('/public/assets/home/arrow.png') }}"
+                                                <img class=" px-1 " src=" {{ asset('/assets/home/arrow.png') }}"
                                                     alt="Image" style="width:18px; " />
                                             </button>
 

@@ -39,7 +39,7 @@
                                         @if($client->user->photo != null)
                                             <img src="{{ custom_asset($client->user->photo) }}">
                                         @else
-                                            <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                         @endif
                                         <span class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
                                     </div>
@@ -59,9 +59,9 @@
 
                                 <!-- Rewards -->
                                 <div class="mb-3">
-                                    <img class="max-width-4 mr-1" src="{{ my_asset('assets/frontend/svg/illustrations/top-level-award.svg') }}" alt="Image Description" title="Top Seller">
-                                    <img class="max-width-4 mx-1" src="{{ my_asset('assets/frontend/svg/illustrations/verified-user.svg') }}" alt="Image Description" title="Verified user">
-                                    <img class="max-width-4 ml-1" src="{{ my_asset('assets/frontend/svg/illustrations/top-endorsed.svg') }}" alt="Image Description" title="Top Endorsed">
+                                    <img class="max-width-4 mr-1" src="{{ asset('assets/frontend/svg/illustrations/top-level-award.svg') }}" alt="Image Description" title="Top Seller">
+                                    <img class="max-width-4 mx-1" src="{{ asset('assets/frontend/svg/illustrations/verified-user.svg') }}" alt="Image Description" title="Verified user">
+                                    <img class="max-width-4 ml-1" src="{{ asset('assets/frontend/svg/illustrations/top-endorsed.svg') }}" alt="Image Description" title="Top Endorsed">
                                 </div>
                                 <!-- End Rewards -->
 

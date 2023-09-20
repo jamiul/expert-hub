@@ -61,7 +61,7 @@ Route::resource('subscribers', 'SubscriberController');
 Auth::routes(['verify' => true]);
 
 Route::controller('Auth\VerificationController')->group(function () {
-    Route::get('/email/resend', 'resend')->name('verification.resend');
+//    Route::get('/email/resend', 'resend')->name('verification.resend');
     Route::get('/verification-confirmation/{code}', 'verification_confirmation')->name('email.verification.confirmation');
 });
 
@@ -209,28 +209,24 @@ Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']
     Route::get('/project-done/{id}', 'ProjectController@project_done')->name('projects.complete');
 
     Route::resource('bookmarked-freelancers', 'BookmarkedFreelancerController');
-    Route::get('/bookmarked-freelancers/store/{id}', 'BookmarkedFreelancerController@store')->name('bookmarked-freelancers.store');
-    Route::get('/bookmarked-freelancers/destroy/{id}', 'BookmarkedFreelancerController@destroy')->name('bookmarked-freelancers.destroy');
+//    Route::get('/bookmarked-freelancers/store/{id}', 'BookmarkedFreelancerController@store')->name('bookmarked-freelancers.store');
+//    Route::get('/bookmarked-freelancers/destroy/{id}', 'BookmarkedFreelancerController@destroy')->name('bookmarked-freelancers.destroy');
     Route::get('/client/purchased-services', 'ServiceController@client_purchased_services')->name('client.purchased.services');
-
-
-
 
     Route::get('/service/{id}/cancel', 'ServiceController@cancel_service')->name('services.cancel');
     Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
-
 
     Route::get('/client/cancel-requests-services', 'ServiceController@client_cancel_requested_services')->name('client.services.cancel.requests');
     Route::get('/client/cancelled-services', 'ServiceController@client_cancelled_services')->name('client.services.cancelled');
 });
 
 Route::resource('bookmarked-scholarships', 'BookmarkedScholarshipController');
-Route::get('/bookmarked-scholarships/store/{id}', 'BookmarkedScholarshipController@store')->name('bookmarked-scholarships.store');
-Route::get('/bookmarked-scholarships/destroy/{id}', 'BookmarkedScholarshipController@destroy')->name('bookmarked-scholarships.destroy');
+//Route::get('/bookmarked-scholarships/store/{id}', 'BookmarkedScholarshipController@store')->name('bookmarked-scholarships.store');
+//Route::get('/bookmarked-scholarships/destroy/{id}', 'BookmarkedScholarshipController@destroy')->name('bookmarked-scholarships.destroy');
 
 Route::resource('bookmarked-services', 'BookmarkedServiceController');
-Route::get('/bookmarked-services/store/{id}', 'BookmarkedServiceController@store')->name('bookmarked-services.store');
-Route::get('/bookmarked-services/destroy/{id}', 'BookmarkedServiceController@destroy')->name('bookmarked-services.destroy');
+//Route::get('/bookmarked-services/store/{id}', 'BookmarkedServiceController@store')->name('bookmarked-services.store');
+//Route::get('/bookmarked-services/destroy/{id}', 'BookmarkedServiceController@destroy')->name('bookmarked-services.destroy');
 
 
 Route::get('service/show/{slug}', 'ServiceController@show')->name('service.show');
@@ -290,8 +286,8 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
     Route::post('/send-withdrawal-request/store', 'PaytoFreelancerController@send_withdrawal_request_store')->name('store_withdrawal_request_to_admin');
 
     Route::resource('bookmarked-projects', 'BookmarkedProjectController');
-    Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
-    Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
+//    Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
+//    Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
 
     Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
     Route::get('/following-clients/store/{id}', 'BookmarkedClientController@store')->name('bookmarked-clients.store');
@@ -307,7 +303,7 @@ Route::resource('seminar-consultant', 'SeminarConsultantController');
 Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/search?category_id[]={id}&type=project', 'SearchController@index')->name('projects.category');
 Route::get('/skill/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
-Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
+Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('search.category');
 Route::get('/search?category_id[]={category_id}&type=freelancer', 'SearchController@index')->name('freelancer.category');
 
 //scholarship list
@@ -316,9 +312,6 @@ Route::get('/scholarship-search', 'SearchScholarshipController@index')->name('sc
 Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarship-search.skill');
 Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
 Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
-
-
-
 
 Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');
 Route::get('/private-project-details/{slug}', 'HomeController@private_project_details')->name('private_project.details');

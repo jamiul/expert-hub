@@ -10,7 +10,7 @@
                 @if (Auth::user()->photo != null)
                 <img src="{{ custom_asset(Auth::user()->photo) }}">
                 @else
-                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                 @endif
                 @if(Cache::has('user-is-online-' . Auth::user()->id))
                     <span class="badge badge-dot badge-success badge-circle badge-status"></span>

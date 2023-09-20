@@ -10,7 +10,7 @@
           @if ($user->photo != null)
           <img src="{{ custom_asset($user->photo)}}">
           @else
-          <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+          <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
           @endif
           <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
         </span>
@@ -28,7 +28,7 @@
           @foreach ($user->badges as $key => $user_badge)
           @if ($user_badge->badge != null)
           <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img
-              src="{{ my_asset($user_badge->badge->icon) }}"></span>
+              src="{{ asset($user_badge->badge->icon) }}"></span>
           @endif
           @endforeach
         </div>

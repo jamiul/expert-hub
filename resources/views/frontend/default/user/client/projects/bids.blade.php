@@ -24,7 +24,7 @@
                                             @if($bid_user->freelancer->photo != null)
                                                 <img src="{{ custom_asset($bid_user->freelancer->photo) }}">
                                             @else
-                                                <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                             <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                                         </a>

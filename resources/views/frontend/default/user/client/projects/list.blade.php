@@ -85,7 +85,7 @@
 	                                                @if($project->hire_invitation->freelancer->photo != null)
 	                                                    <img src="{{ custom_asset($project->hire_invitation->freelancer->photo) }}">
 	                                                @else
-	                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+	                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 	                                                @endif
 			                                    </span>
 			                                    <div class="pl-2">
@@ -127,7 +127,7 @@
 	                                                @if($project->project_user->user->photo != null)
 	                                                    <img src="{{ custom_asset($project->project_user->user->photo) }}">
 	                                                @else
-	                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+	                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 	                                                @endif
 			                                    </span>
 			                                    <div class="pl-md-2 pt-2 pt-md-0">
@@ -158,7 +158,7 @@
                                                 @if($project->hire_invitation->freelancer->photo != null)
                                                     <img src="{{ custom_asset($project->hire_invitation->freelancer->photo) }}">
                                                 @else
-                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
 		                                    </span>
 		                                    <div class="pl-2">
@@ -187,7 +187,7 @@
                                                 @if($project->project_user->user->photo != null)
                                                     <img src="{{ custom_asset($project->project_user->user->photo) }}">
                                                 @else
-                                                    <img src="{{ my_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
 		                                    </span>
 		                                    <div class="pl-2">

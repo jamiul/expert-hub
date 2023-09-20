@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/home.css') }}">
-    <link rel="stylesheet" href="{{ my_asset('/assets/frontend/default/css/card.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/card.css') }}">
 
 </head>
 <style>
@@ -32,7 +32,7 @@
                         <div class="carousel-inner" style="">
                             <div class="carousel-item active">
                                 <video style="min-width:100%;" playsinline autoplay muted loop>
-                                    <source class=" opacity-100" src=" {{ url('/public/assets/home/01.mp4') }}"
+                                    <source class=" opacity-100" src=" {{ asset('/assets/home/01.mp4') }}"
                                         type="video/mp4" />
                                 </video>
                                 <div class="carousel-caption carousel-caption-background">
@@ -71,23 +71,23 @@
                                 </h4>
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('Microsoft.svg') }}" alt="">
+                                <img class=" " src="{{ asset('Microsoft.svg') }}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('Airbnb.svg') }}" alt="">
+                                <img class=" " src="{{ asset('Airbnb.svg') }}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 ">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('automatic.svg') }}" alt="">
+                                <img class=" " src="{{ asset('automatic.svg') }}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('Bissell.svg') }}" alt="">
+                                <img class=" " src="{{ asset('Bissell.svg') }}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{ my_asset('NASDAQ.svg') }}" alt="">
+                                <img class=" " src="{{ asset('NASDAQ.svg') }}" alt="">
                             </div>
                         </div>
 
@@ -105,7 +105,7 @@
                             <div class=" content-title  text-center pb-5 pt-3">
                                 <h2 class="fw-700 fs-36 text-white mb-3">Looking for a top academic expert in the field?</h2>
                                 <p class="fw-700 fs-20 text-white mb-3 main-content" >Navigating academia can be challenging. We are the largest, globally connected network of top academic talent, and we're prepared to tackle your most critical projects.</p>
-                               
+
                             </div>
                             <div class="row need-help-section">
                                 <div class="col-xl-3 col-md-6">
@@ -113,12 +113,12 @@
                                         <div class=" h-136px align-items-center">
                                             <div class="d-flex">
                                                 <img class=" mb-2 mx-auto d-block   p-3"
-                                                    src=" {{ url('/public/assets/home/post.png') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/post.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff" />
                                                 <div class="need-help-section-bar"></div>
                                             </div>
                                             <p class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white">
-                                                Post your academic projects  
+                                                Post your academic projects
 
 
                                             </p>
@@ -135,12 +135,12 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <!-- <div class="d-flex">
-                                                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ asset('/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
                                                                                     <div class="need-help-progress-bar"></div>
                                                                                 </div> -->
                                             <div class="d-flex">
                                             <img class="mb-2 mx-auto d-block text-black p-3"
-                                                    src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
+                                                    src="{{ asset('/assets/home/quiz.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff;" />
                                             <div class="need-help-section-bar">
                                             </div>
@@ -151,7 +151,7 @@
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3  text-white text-center">
-                                            Review expressions of interest from our network of academic experts who are interested in working on your project. 
+                                            Review expressions of interest from our network of academic experts who are interested in working on your project.
 
                                         </h6>
                                     </div>
@@ -163,7 +163,7 @@
                                             <div class="d-flex">
                                                 <img class=" mb-2 mx-auto d-block
                                      p-3"
-                                                    src=" {{ url('/public/assets/home/enroll.png') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/enroll.png') }}" alt="Image"
                                                     style="width:55px; border-radius:50%; border:1px solid #fff" />
                                                 <div class="need-help-section-bar"></div>
                                             </div>
@@ -183,14 +183,14 @@
                                     <div class=" ">
                                         <div class=" h-136px align-items-center">
                                             <img class=" mb-2 mx-auto d-block p-3"
-                                                src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
+                                                src=" {{ asset('/assets/home/check.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
-                                                Select the best match for you 
+                                                Select the best match for you
                                             </p>
                                         </div>
                                         <h6 class="fs-18 mt-3 text-white text-center">
-                                            Make an informed decision to choose the academic expert who best matches your project needs and objectives. 
+                                            Make an informed decision to choose the academic expert who best matches your project needs and objectives.
                                         </h6>
                                     </div>
 
@@ -226,7 +226,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Consultants</span>
-                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -235,7 +235,7 @@
                         <div class="row gutters-10">
                             @if (get_setting('featured_category_list') != null)
                                     @php
-                                        $consultant_categories = \App\Models\ConsultantCategory::all()
+                                        $consultant_categories = \App\Models\ConsultantCategory::take(8)->get();
                                     @endphp
                                 @foreach ( $consultant_categories as $category )
                                         <div class="col-md-3">
@@ -263,7 +263,7 @@
                         <h5 class="fre-button-show">
                             <a href="{{ route('search') }}?category="
                                 class="fs-16 text-dark ">{{ translate('All Consultants') }}
-                                <img class=" " src=" {{ url('/public/assets/home/arrow-right.png') }}"
+                                <img class=" " src=" {{ asset('/assets/home/arrow-right.png') }}"
                                     alt="Image" style="width:20px;" />
                             </a>
                         </h5>
@@ -291,7 +291,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Projects</span>
-                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -301,8 +301,8 @@
                                 $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
                                     ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
                                     ->pluck('user_id');
-                                
-                                $services = \App\Models\ProjectCategory::all();
+
+                                $services = \App\Models\ProjectCategory::take(8)->get();
                             @endphp
                             @foreach ($services as $category)
                                 <div class="col-md-3">
@@ -331,7 +331,7 @@
                             class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
                             <span>All
                                 Projects</span>
-                            <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                            <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
@@ -339,7 +339,7 @@
                                                                             <span>All
                                                                                 Jobs</span>
                                                                         </a>
-                                                                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
                                                                         </a>
                                                                     </h5> -->
                     </div>
@@ -353,81 +353,433 @@
         <!-- Join us -->
         @if (get_setting('latest_project_show') == 'on')
             <section class="border-top bg-white">
+
+
                 <div class="container-home">
-                    <div class="row ">
-                        <div class="col-lg-5">
-                            <img class="mr-2  img-fluid" src="{{ url('/public/assets/home/001.png') }}" alt="Image"
-                                style="width:500px;" />
-                        </div>
-                        <div class=" col-lg-7 col-sm-12">
-                            <h2 class="fw-700 mb-3 text-success heading-title fre-small-font" style="padding-top:36px; ">
-                                What makes
-                                ConsultantEdu
-                                impressive
-                            </h2>
-                            <div class="">
-                                <div class="  ">
 
-                                    <div>
-                                        <h6 class="fs-18  fw-700 heading-title">Access to Expertise
-                                        </h6>
-                                        <p class="fs-16">ConsultantEdu specialises in academic fields like course
-                                            accreditation,
-                                            curriculum development, LMS, research and analysis.</p>
+                    <div class="my-5 mx-4" id="FAQs">
+                        <h1 class="fw-700 fre-small-font text-success mb-2"> What sets ConsultantEdu apart?
+                        </h1>
+                        {{-- <p class="fs-16 fw-700 text-black">ConsultantEdu is your premium platform for connecting with top-tier academic experts, serving a diverse clientele that includes esteemed higher education institutions, prominent media outlets, and individuals seeking expert guidance for their academic pursuits. Discover what makes us stand out:</p> --}}
+                        <hr>
+
+                        <nav>
+                            <ul class="nav" id="myTab" role="tablist">
+                                <li class="nav-item mr-2">
+                                    <a class="  fs-20 p-1   btn  btn-outline-primary px-4" id="for-consultants" data-toggle="tab"
+                                        href="#consultant" role="tab" aria-controls="consultant" aria-selected="true">For Clients </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class=" fs-20 p-1 btn  btn-outline-primary px-4 " id="for-client" data-toggle="tab"
+                                        href="#client" role="tab" aria-controls="client" aria-selected="false">
+                                        For Consultant </a>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active mt-2" id="consultant" role="tabpanel"
+                            aria-labelledby="for-consultants">
+                            <!-- Frequently asked questions -->
+                            <div class=" rounded-2" style="background: #F2F7F2;">
+                                <div class="mx-2 mt-5 row">
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <img class="banner-img"
+                                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            alt="">
                                     </div>
-                                    <div>
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-leave">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            A Wealth of Expertise</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            Our platform is home to a vast pool of professionals, ensuring that users can readily access highly qualified experts with specialized knowledge tailored to their unique requirements.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-leave">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-leave">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-contest">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Global Accessibility</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        With our platform's global reach, users can tap into the expertise of top academic professionals from around the world.
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            This international perspective proves invaluable when seeking insights on global or cross-cultural educational challenges and opportunities.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-contest">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-contest">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-freelancing">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Comprehensive Support</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            program design, policy formulation, scholarship advice, or managing complete educational projects, our platform provides in-house experts to assist them at every step.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-freelancing">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-freelancing">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-Intuitive">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Intuitive User Experience</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Our user-friendly interface and streamlined process cater to users with varying levels of technical proficiency. Posting academic projects has never been easier,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            ensuring that users can swiftly identify the ideal expert for their needs while saving valuable time.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-aliored">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Tailored Expert Selection</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-aliored">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-aliored">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div> --}}
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-secure">
+                                                        <h4 class="text-success make-impressive-title ml-1 text-success">
+                                                            Secure Transactions</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-secure">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-secure">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div>
+                                            <p class="frequently-qsn-details text-justify">
+                                                Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
+                                            </p>
+                                        </div> --}}
+
+
                                     </div>
                                 </div>
-                                <div class="">
 
-                                    <h6 class="fs-18 fw-700 heading-title">Project Flexibility
-                                    </h6>
-                                    <p class="fs-16 "> ConsultantEdu is ideal for academic institutions seeking short-term
-                                        assistance or
-                                        specialised expertise without committing to long-term contracts.</p>
-
-
-                                </div>
-                                <div class="">
-
-                                    <h6 class="fs-18 fw-700 heading-title "> Quality Assurance
-
-                                    </h6>
-                                    <p class="fs-16 "> ConsultantEdu ensures academic institutions have access to experts
-                                        aligned with
-                                        their educational standards and visibility to the consultants’ profiles, ratings,
-                                        and show case of their previous work.</p>
-                                </div>
-                                <div class="">
-
-                                    <h6 class="fs-18  fw-700 heading-title ">Cost-Effective Solutions
-
-                                    </h6>
-                                    <p class="fs-16"> ConsultantEdu offers pricing options tailored to various budgets,
-                                        ensuring fairness
-                                        and transparency in costs.</p>
-                                </div>
-                                <div class=" ">
-
-                                    <h6 class="fs-18  fw-700 heading-title ">Efficient Processes
-                                    </h6>
-                                    <p class="fs-16">ConsultantEdu streamlines academic hiring and project management with
-                                        specialised
-                                        tools, saving institutions valuable time.</p>
-                                </div>
                             </div>
-                            <button type="button" class="btn mt-2 p-2 fs-16 px-4 text-white"
-                                style="background-color:#275846;">
-                                <span><a href="{{ url('/search?keyword=&type=freelancer') }}" class="text-white"> Find
-                                        Consultant</a></span>
-                                <span><img class=" px-1 " src=" {{ url('/public/assets/home/arrow.png') }}"
-                                        alt="Image" style="width:18px; " />
-                                </span>
-                            </button>
                         </div>
+                        <div class="tab-pane fade mt-2" id="client" role="tabpanel" aria-labelledby="for-client">
+                            <!-- Frequently asked questions -->
+                            <div class=" rounded-2" style="background: #F2F7F2;">
+                                <div class="mx-2 mt-5 row">
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <img class="banner-img"
+                                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 py-3">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-leave">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            A Wealth of Expertise</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            Our platform is home to a vast pool of professionals, ensuring that users can readily access highly qualified experts with specialized knowledge tailored to their unique requirements.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-leave">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-leave">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-contest">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Global Accessibility</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        With our platform's global reach, users can tap into the expertise of top academic professionals from around the world.
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            This international perspective proves invaluable when seeking insights on global or cross-cultural educational challenges and opportunities.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-contest">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-contest">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-freelancing">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Comprehensive Support</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            program design, policy formulation, scholarship advice, or managing complete educational projects, our platform provides in-house experts to assist them at every step.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-freelancing">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-freelancing">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-Intuitive">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Intuitive User Experience</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Our user-friendly interface and streamlined process cater to users with varying levels of technical proficiency. Posting academic projects has never been easier,
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            ensuring that users can swiftly identify the ideal expert for their needs while saving valuable time.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-aliored">
+
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Tailored Expert Selection</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-aliored">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-aliored">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div> --}}
+                                        <div class="row mt-1">
+                                            <div class="col-1">
+                                                <img src="{{asset('tick.png')}}" alt="" height="22">
+                                            </div>
+                                            <div class="col-11 pl-0">
+                                                <div class=" border-bottom">
+                                                    <input type="checkbox" id="fre-secure">
+                                                        <h4 class="make-impressive-title ml-1 text-success">
+                                                            Secure Transactions</h4>
+                                                    <p class="frequently-qsn-details text-justify">
+                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+
+
+                                                    </p>
+                                                    <div class="fre-content text-justify">
+                                                        <p>
+                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
+                                                        </p>
+                                                        <label class="fre-expand-icon" for="fre-secure">Show less <img
+                                                                class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <label class="fre-expand-icon" for="fre-secure">Read more <img
+                                                            class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                                            alt=""> </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div>
+                                            <p class="frequently-qsn-details text-justify">
+                                                Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
+                                            </p>
+                                        </div> --}}
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="queries" role="tabpanel" aria-labelledby="other-queries">
+                            <p class="text-center text-red fw-700 fs-16" style="color:red">Upcoming topic</p>
+                        </div>
+
                     </div>
                 </div>
             </section>
+
         @endif
 
         <!--Find scholarship by category -->
@@ -447,7 +799,7 @@
                             <a href="{{ route('scholarship-search') }}?keyword=&type=scholarships"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All Scholarships</span>
-                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -460,7 +812,7 @@
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/agriculture.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -469,7 +821,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -494,7 +846,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/university.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/university.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -507,7 +859,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px;  margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -532,7 +884,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/medical.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/medical.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -545,7 +897,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -570,7 +922,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/humnaties.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/humnaties.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -582,7 +934,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -607,7 +959,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/education.jpeg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/education.jpeg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -620,7 +972,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -645,7 +997,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/arts.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/arts.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -658,7 +1010,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -683,7 +1035,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/eng.jpg') }}" class="card-img-top"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/eng.jpg') }}" class="card-img-top"
                                                     alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -695,7 +1047,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -720,7 +1072,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/IT.jpg') }}"
+                                                <img src=" {{ asset('/assets/home/Find-scholarship/IT.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -731,7 +1083,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ asset('/assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>@php
                                                             $fieldStudyId = 12;
@@ -753,7 +1105,7 @@
                     <h5 class=" fre-button-show">
                         <a href="" class="fs-16 text-dark  "><span>All Scholarships
                             </span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image"
+                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
             </section>
@@ -773,7 +1125,7 @@
                             <a href="{{ url('/search?keyword=&type=seminar') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All seminars</span>
-                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -784,13 +1136,14 @@
                             $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
                                 ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
                                 ->pluck('user_id');
-                            
+
                             $seminars = \App\Models\Seminar::all();
                         @endphp
                         @foreach ($seminars as $seminar)
+
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
-                                    <img class="w-100 h-190px" src=" {{ custom_asset($category->photo) }}"
+                                    <img class="w-100 h-190px" src=" {{ custom_asset($seminar->attachment) }}"
                                         alt="Image" />
                                     <div class="p-3">
                                         <h5 class="card-title fs-20 mt-2 seminar-home-content"> {{ $seminar->title }}</h5>
@@ -815,7 +1168,7 @@
                     <h5 class="fre-button-show">
                         <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
                                 seminars</span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image"
+                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
                 </div>
@@ -848,7 +1201,7 @@
                                         <div class="d-flex">
                                             <div>
                                                 <img class="mr-2 border "
-                                                    src=" {{ url('/public/assets/home/review-1.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/review-1.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -880,7 +1233,7 @@
                                         <div class="d-flex  ">
                                             <div>
                                                 <img class="mr-2 border"
-                                                    src=" {{ url('/public/assets/home/review-2.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/review-2.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div class="">
@@ -910,7 +1263,7 @@
                                         <div class="d-flex  mt-3">
                                             <div>
                                                 <img class="mr-2  border"
-                                                    src=" {{ url('/public/assets/home/review-3.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('/assets/home/review-3.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -1304,13 +1657,13 @@
                                                                 </small>
                                                                 <div class="mt-3">
                                                                   <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class=" btn mb-3 ">
-                                                                    <img class="" src=" {{ url('/public/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
+                                                                    <img class="" src=" {{ asset('/assets/home/apple.png') }}" alt="Image" style="height:20px; " />
                                                                     <span>|</span>
                                                                     <span class="text-white"> Apple store</span>
 
                                                                   </a>
                                                                   <a href="{{ route('register') }}?type=2" style="background-color:#275846;" class="btn  mb-3">
-                                                                    <img class="" src="{{ url('/public/assets/home/playstore.png') }}" alt="Image"
+                                                                    <img class="" src="{{ asset('/assets/home/playstore.png') }}" alt="Image"
                                                                       style="height:20px; " />
                                                                     <span>|</span>
                                                                     <span class="text-white">Google play store</span>
@@ -1319,7 +1672,7 @@
                                                               </div>
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12 " style="">
-                                                              <img src=" {{ url('/public/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
+                                                              <img src=" {{ asset('/assets/findJob/home-banner.png') }}" alt="Image" class=" w-100" style=" " />
                                                             </div>
                                                           </div>
                                                         </div>
