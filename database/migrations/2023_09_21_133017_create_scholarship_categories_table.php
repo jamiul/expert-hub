@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PageOptimizations extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class PageOptimizations extends Migration
      */
     public function up()
     {
-        Schema::create('page_optimizations', function (Blueprint $table) {
+        Schema::create('scholarship_categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('page_id');
-            $table->string('title');
-            $table->text('keyword');
-            $table->text('description');
-            $table->bigInteger('user_id');
-            $table->softDeletes();
+            $table->string('category_name');
+            $table->string('slug')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -32,6 +29,6 @@ class PageOptimizations extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('scholarship_categories');
     }
-}
+};

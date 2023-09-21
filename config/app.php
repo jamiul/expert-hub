@@ -159,13 +159,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-//        Intervention\Image\ImageServiceProvider::class,
-//        Yajra\Datatables\DatatablesServiceProvider::class,
-//        Laravel\Socialite\SocialiteServiceProvider::class,
-//        Unicodeveloper\Paystack\PaystackServiceProvider::class,
-//        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
-//        KingFlamez\Rave\RaveServiceProvider::class,
-//        MehediIitdu\CoreComponentRepository\CoreComponentRepositoryServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Unicodeveloper\Paystack\PaystackServiceProvider::class,
+        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
+        KingFlamez\Rave\RaveServiceProvider::class,
+        MehediIitdu\CoreComponentRepository\CoreComponentRepositoryServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -179,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
 
     ],
 
