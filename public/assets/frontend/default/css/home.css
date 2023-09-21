@@ -588,3 +588,6 @@ div.scroll h6 a {
     margin-left: 120px;
     margin-right: 120px;
 }
+.carousel-caption {
+    color: #fff !important;
+}

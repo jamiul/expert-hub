@@ -91,10 +91,10 @@ Route::get('/carusel', function () {
     return view('carusel');
 })->name('carusel');
 
-Route::get('/waysToEarn', function () {
+Route::get('/ways-to-earn', function () {
 
     return view('frontend.default.find-job.waysToEarn');
-})->name('waysToEarn');
+})->name('ways-to-earn');
 
 // promote content
 
@@ -129,7 +129,7 @@ Route::get('/success-stories', function () {
     return view('frontend.default.success-stories');
 })->name('success-stories');
 Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
-Route::get('/aboutUs','WhyScholarshipController@whyFreelancerEdu')->name('aboutUs');
+Route::get('/about-us','WhyScholarshipController@whyFreelancerEdu')->name('about-us');
 Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
 Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
@@ -307,10 +307,11 @@ Route::get('/search?category={category_slug}&type=service', 'SearchController@in
 Route::get('/search?category_id[]={category_id}&type=freelancer', 'SearchController@index')->name('freelancer.category');
 
 //scholarship list
-Route::get('/scholarshipSearch', 'SearchScholarshipController@index')->name('scholarshipSearch');
-// Route::get('/scholarshipSearch?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
-Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarshipSearch.skill');
-Route::get('/scholarshipSearch?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+Route::get('/scholarship-search', 'SearchScholarshipController@index')->name('scholarship-search');
+// Route::get('/scholarship-search?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
+Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarship-search.skill');
+Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
 
 Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');
 Route::get('/private-project-details/{slug}', 'HomeController@private_project_details')->name('private_project.details');

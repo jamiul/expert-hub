@@ -404,7 +404,6 @@
                                                         </div>
                                                     @endif
 
-
                                                 </div>
                                                 <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 flex-xl-column w-lg-80px"
                                                     style="">

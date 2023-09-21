@@ -830,7 +830,33 @@
                             </a>
                         </li>
                     @endcan
-
+                    @can('optimization')
+                    <li class="aiz-side-nav-item">
+                            <a href="#" class="aiz-side-nav-link">
+                                <i class="las la-blog aiz-side-nav-icon"></i>
+                                <span class="aiz-side-nav-text">{{ translate('Optimization') }}</span>
+                                <span class="aiz-side-nav-arrow"></span>
+                            </a>
+                            <ul class="aiz-side-nav-list level-2">
+                                @can('show all site pages')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('site-page.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['seminar.create', 'seminar.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Site Pages') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('show all page optimization')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('page-optimization.index') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Page Optimization') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                
+                            </ul>
+                        </li>
+                    @endcan
                     @if (auth()->user()->can('system update') ||
                             auth()->user()->can('show server status'))
                         <li class="aiz-side-nav-item">
