@@ -48,8 +48,8 @@
                             {{ $loop->iteration }}
                         </td>
                         <td>
-                        @if(isset($pageoptimization->site_pages->title))
-                            {{$pageoptimization->site_pages->title}}
+                        @if(isset($pageoptimization->sitePage->title))
+                            {{$pageoptimization->sitePage->title}}
                         @endif
                         </td>
                         <td>

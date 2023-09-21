@@ -82,7 +82,6 @@ Route::post('/cities/get_city_by_country', 'CityController@get_city_by_country')
 Route::post('/user-account-type', 'UserController@set_account_type')->name('user.account.type');
 
 
-
 // find job section
 
 
@@ -128,10 +127,10 @@ Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
 Route::get('/success-stories', function () {
     return view('frontend.default.success-stories');
 })->name('success-stories');
-Route::get('/review','WhyScholarshipController@why_scholarship_review')->name('review');
-Route::get('/about-us','WhyScholarshipController@whyFreelancerEdu')->name('about-us');
-Route::get('/how-to-hire','WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
-Route::get('/how-to-find-job','WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
+Route::get('/review', 'WhyScholarshipController@why_scholarship_review')->name('review');
+Route::get('/about-us', 'WhyScholarshipController@whyFreelancerEdu')->name('about-us');
+Route::get('/how-to-hire', 'WhyScholarshipController@why_scholarship_howToHire')->name('how-to-hire');
+Route::get('/how-to-find-job', 'WhyScholarshipController@why_scholarship_howToFindJob')->name('how-to-find-job');
 
 Route::group(['middleware' => ['user']], function () {
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');
@@ -252,7 +251,6 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
     Route::get('/profile-settings/work-experience-delete/{id}', 'WorkExperienceController@destroy')->name('user_profile.work_experience_destroy');
 
 
-
     Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
     Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');
     Route::post('/profile-settings/education-info-update/{id}', 'FreelancerEducationController@update')->name('user_profile.education_info_update');
@@ -311,7 +309,6 @@ Route::get('/scholarship-search', 'SearchScholarshipController@index')->name('sc
 // Route::get('/scholarship-search?category={slug}', 'SearchScholarshipController@index')->name('projects.category');
 Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarship-search.skill');
 Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
-Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
 
 Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');
 Route::get('/private-project-details/{slug}', 'HomeController@private_project_details')->name('private_project.details');
@@ -326,9 +323,9 @@ Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name
 // Route::get('/freelancer/{user_name}', 'HomeController@freelancer_meeting')->name('freelancer.meeting');
 Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 
- //seminars
+//seminars
 
-	 Route::get('seminar/{id}', 'SeminarDetailsController@seminar_details')->name('seminar.details');
+Route::get('seminar/{id}', 'SeminarDetailsController@seminar_details')->name('seminar.details');
 //Payments
 
 //Paypal
@@ -361,7 +358,5 @@ Route::post('/paytm/callback', 'PaytmController@callback')->name('paytm.callback
 
 //flutterwave
 Route::get('/rave/callback', 'FlutterwaveController@callback')->name('flutterwave.callback');
-
-
 
 Route::get('/{slug}', 'PageController@show_custom_page')->name('custom-pages.show_custom_page');

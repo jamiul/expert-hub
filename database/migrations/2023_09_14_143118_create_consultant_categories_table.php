@@ -17,8 +17,8 @@ class CreateConsultantCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('parent_id')->default(0);
-            $table->string('photo')->nullable();
-            $table->string('description');
+            $table->string('photo');
+            $table->text('description');
             $table->softDeletes();
             $table->timestamps();
         });

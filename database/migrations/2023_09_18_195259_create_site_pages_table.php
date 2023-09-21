@@ -14,11 +14,11 @@ class CreateSitePagesTable extends Migration
     public function up()
     {
         Schema::create('site_pages', function (Blueprint $table) {
-            $table->id();            
-            $table->string('title',1000);
-            $table->string('url',500);
-            $table->integer('user_id');
-            $table->timestamp('deleted_at');
+            $table->id();
+            $table->text('title');
+            $table->text('url');
+            $table->bigInteger('user_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

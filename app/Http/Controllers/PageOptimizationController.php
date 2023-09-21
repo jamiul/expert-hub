@@ -15,8 +15,9 @@ class PageOptimizationController extends Controller
 {
     public function __construct()
     {
-         $this->middleware(['permission:show all blogs'])->only('index');
+        $this->middleware(['permission:show all blogs'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,19 +29,19 @@ class PageOptimizationController extends Controller
         $input = $request->all();
         $search = '';
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $search = $input['search'];
-            $pageoptimizations = PageOptimization::with('site_pages')->where('title', 'like', '%'.$search.'%')->get();
+            $pageoptimizations = PageOptimization::with('sitePage')->where('title', 'like', '%' . $search . '%')->get();
 
-            if($input['search'] == ''){
-                $pageoptimizations = PageOptimization::with('site_pages')->orderBy('created_at', 'asc')->get();
+            if ($input['search'] == '') {
+                $pageoptimizations = PageOptimization::with('sitePage')->orderBy('created_at', 'asc')->get();
             }
         } else {
-            $pageoptimizations = PageOptimization::with('site_pages')->orderBy('created_at', 'asc')->get();
+            $pageoptimizations = PageOptimization::with('sitePage')->orderBy('created_at', 'asc')->get();
         }
 
         // dd($pageoptimizations);
-        return view('admin.default.optimization.pageoptimization.index', compact('pageoptimizations','search'));
+        return view('admin.default.optimization.pageoptimization.index', compact('pageoptimizations', 'search'));
     }
 
     /**
@@ -52,14 +53,14 @@ class PageOptimizationController extends Controller
     {
         $sitepages = SitePage::all();
 
-        return view('admin.default.optimization.pageoptimization.create',compact('sitepages'));
+        return view('admin.default.optimization.pageoptimization.create', compact('sitepages'));
 
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -70,11 +71,10 @@ class PageOptimizationController extends Controller
         // $input['created_at'] = $user->id;
         $input['user_id'] = $user->id;
 
-       
 
         PageOptimization::create($input);
 
-        
+
         flash(translate('Page Optimization  has been created successfully'))->success();
         return redirect()->route('page-optimization.index');
     }
@@ -82,7 +82,7 @@ class PageOptimizationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,20 +93,20 @@ class PageOptimizationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(PageOptimization $page_optimization)
     {
         $sitepages = SitePage::all();
-        return view('admin.default.optimization.pageoptimization.edit', compact('page_optimization','sitepages'));
+        return view('admin.default.optimization.pageoptimization.edit', compact('page_optimization', 'sitepages'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, PageOptimization $page_optimization)
@@ -118,13 +118,14 @@ class PageOptimizationController extends Controller
         $page_optimization->update($input);
 
         // Delete related seminar_dates
-       
 
-        flash(translate( 'Page Optimization has been updated successfully'))->success();
+
+        flash(translate('Page Optimization has been updated successfully'))->success();
         return redirect()->back();
     }
 
-    public function change_status(Request $request) {
+    public function change_status(Request $request)
+    {
         $scholarship = Scholarship::find($request->id);
         $scholarship->status = $request->status;
 
@@ -135,19 +136,13 @@ class PageOptimizationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PageOptimization $page_optimization)
+    public function destroy(PageOptimization $sitePage)
     {
-        
-    
-            //  print_r($site_page);
-        $site_page->delete();
-        
-
-        flash(translate( 'Page Optimization has been removed successfully'))->success();
+        $sitePage->delete();
+        flash(translate('Page Optimization has been removed successfully'))->success();
         return redirect()->route('page-optimization.index');
     }
-
 }

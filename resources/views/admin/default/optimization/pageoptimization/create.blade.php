@@ -46,7 +46,7 @@
                             {{ translate('Page') }}
                         </label>
                         <div class="col-md-9">
-                        <select class="form-control " name="s_page_id"
+                        <select class="form-control " name="page_id"
                                     data-live-search="true" title="{{ translate('Select Page') }}">
                                     @foreach ($sitepages as $sitepage)
                                         <option value="{{ $sitepage['id'] }}">
@@ -61,12 +61,12 @@
                             {{ translate('Descrition') }}
                         </label>
                         <div class="col-md-9">
-                        
+
                             <textarea name="description" rows="5" class="form-control"></textarea>
                         </div>
                         </div>
 
-                       
+
                         <div class="form-group mb-0 text-right">
                             <button type="submit" class="btn btn-primary">
                                 {{ translate('Save') }}

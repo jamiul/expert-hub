@@ -19,6 +19,7 @@ class SitePagesController extends Controller
     {
         $this->middleware(['permission:show all blogs'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,11 +31,11 @@ class SitePagesController extends Controller
         $input = $request->all();
         $search = '';
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $search = $input['search'];
-            $sitepages = SitePage::where('title', 'like', '%'.$search.'%')->get();
+            $sitepages = SitePage::where('title', 'like', '%' . $search . '%')->get();
 
-            if($input['search'] == ''){
+            if ($input['search'] == '') {
                 $sitepages = SitePage::orderBy('created_at', 'asc')->get();
             }
         } else {
@@ -42,7 +43,7 @@ class SitePagesController extends Controller
         }
 
 
-        return view('admin.default.optimization.sitepage.index', compact('sitepages','search'));
+        return view('admin.default.optimization.sitepage.index', compact('sitepages', 'search'));
     }
 
     /**
@@ -52,7 +53,7 @@ class SitePagesController extends Controller
      */
     public function create()
     {
-    
+
 
         return view('admin.default.optimization.sitepage.create');
 
@@ -61,7 +62,7 @@ class SitePagesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -72,11 +73,10 @@ class SitePagesController extends Controller
         // $input['created_at'] = $user->id;
         $input['user_id'] = $user->id;
 
-       
 
         SitePage::create($input);
 
-        
+
         flash(translate('Site Page  has been created successfully'))->success();
         return redirect()->route('page-optimization.index');
     }
@@ -84,7 +84,7 @@ class SitePagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -95,7 +95,7 @@ class SitePagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(SitePage $site_page)
@@ -106,8 +106,8 @@ class SitePagesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SitePage $site_page)
@@ -119,13 +119,14 @@ class SitePagesController extends Controller
         $site_page->update($input);
 
         // Delete related seminar_dates
-       
 
-        flash(translate( 'Site Page has been updated successfully'))->success();
+
+        flash(translate('Site Page has been updated successfully'))->success();
         return redirect()->back();
     }
 
-    public function change_status(Request $request) {
+    public function change_status(Request $request)
+    {
         $scholarship = Scholarship::find($request->id);
         $scholarship->status = $request->status;
 
@@ -136,18 +137,16 @@ class SitePagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(SitePage $site_page)
     {
-        
-    
-            //  print_r($site_page);
+        //  print_r($site_page);
         $site_page->delete();
-        
 
-        flash(translate( 'Site Page has been removed successfully'))->success();
+        flash(translate('Site Page has been removed successfully'))->success();
+
         return redirect()->route('page-optimization.index');
     }
 

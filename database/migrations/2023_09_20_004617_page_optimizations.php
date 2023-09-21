@@ -15,14 +15,14 @@ class PageOptimizations extends Migration
     {
         Schema::create('page_optimizations', function (Blueprint $table) {
             $table->id();
-            $table->integer('s_page_id');
-            $table->string('title',500);
-            $table->string('keyword',2000);
-            $table->string('description',2000);
-            $table->integer('user_id');
-            $table->timestamp('deleted_at');
-            $table->timestamps();                     
-        }); 
+            $table->integer('page_id');
+            $table->string('title');
+            $table->text('keyword');
+            $table->text('description');
+            $table->bigInteger('user_id');
+            $table->softDeletes();
+            $table->timestamps();
+        });
     }
 
     /**
