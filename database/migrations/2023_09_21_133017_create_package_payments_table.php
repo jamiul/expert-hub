@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('package_id');
             $table->string('package_type', 50)->nullable();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->double('amount', 8, 2);
             $table->string('payment_type', 200);
             $table->string('payment_method', 200);

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('freelancer_accounts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('bank_name')->nullable();
             $table->string('bank_account_name')->nullable();
             $table->string('bank_account_number', 200)->nullable();

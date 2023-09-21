@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('user_packages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->integer('package_id');
             $table->date('package_invalid_at')->nullable();
             $table->unsignedInteger('number_of_days')->nullable();

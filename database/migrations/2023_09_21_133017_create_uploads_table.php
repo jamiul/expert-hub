@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('file_original_name')->nullable();
             $table->string('file_name')->nullable();
-            $table->integer('user_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->integer('file_size')->nullable();
             $table->string('extension', 10)->nullable();
             $table->string('type', 15)->nullable();
