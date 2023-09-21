@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConsultantCategoriesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateConsultantCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('consultant_categories', function (Blueprint $table) {
+        Schema::create('scholarship_universities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('parent_id')->default(0);
-            $table->string('photo');
-            $table->text('description');
-            $table->softDeletes();
+            $table->string('university_name');
+            $table->string('slug')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -31,6 +29,6 @@ class CreateConsultantCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consultant_categories');
+        Schema::dropIfExists('scholarship_universities');
     }
-}
+};
