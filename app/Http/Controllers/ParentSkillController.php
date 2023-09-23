@@ -21,8 +21,8 @@ class ParentSkillController extends Controller
     public function index()
 
     {
-       
-        $skills = ParentSkill::latest()->paginate(10);
+
+        $skills = ParentSkill::first()->paginate(10);
         return view('admin.default.freelancer.ParentSkills.index', compact('skills'));
 
     }

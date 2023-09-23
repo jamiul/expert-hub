@@ -151,7 +151,7 @@
                                                             <option value="" class="site-font">
                                                                 {{ translate('Search skills') }}
                                                             </option>
-                                                            @foreach (\App\Models\Skill::all() as $key => $skill)
+                                                            @foreach (\App\Models\Skill::all()->reverse() as $key => $skill)
                                                                 <option class="site-font" value="{{ $skill->id }}"
                                                                     @if (in_array($skill->id, (array) $skill_ids)) selected @endif>
                                                                     {{ $skill->name }}</option>
