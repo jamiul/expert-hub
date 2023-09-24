@@ -33,7 +33,7 @@
                         <div class="carousel-inner" style="">
                             <div class="carousel-item active">
                                 <video style="min-width:100%;" playsinline autoplay muted loop>
-                                    <source class=" opacity-100" src=" {{ url('assets/home/01.mp4') }}"
+                                    <source class=" opacity-100" src=" {{ asset('assets/home/01.mp4') }}"
                                         type="video/mp4" />
                                 </video>
                                 <div class="carousel-caption carousel-caption-background">
@@ -119,7 +119,7 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block   p-3"
-                                                src=" {{ url('assets/home/post.png') }}" alt="Image"
+                                                src=" {{ asset('assets/home/post.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <div class="need-help-section-bar"></div>
                                         </div>
@@ -140,7 +140,7 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class="mb-2 mx-auto d-block text-black p-3"
-                                                src="{{ url('assets/home/quiz.png') }}" alt="Image"
+                                                src="{{ asset('assets/home/quiz.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff;" />
                                             <div class="need-help-section-bar">
                                             </div>
@@ -162,7 +162,7 @@
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block
                                      p-3"
-                                                src=" {{ url('assets/home/enroll.png') }}" alt="Image"
+                                                src=" {{ asset('assets/home/enroll.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <div class="need-help-section-bar"></div>
                                         </div>
@@ -182,7 +182,7 @@
                                 <div class=" ">
                                     <div class=" h-136px align-items-center">
                                         <img class=" mb-2 mx-auto d-block p-3"
-                                            src=" {{ url('assets/home/check.png') }}" alt="Image"
+                                            src=" {{ asset('assets/home/check.png') }}" alt="Image"
                                             style="width:55px; border-radius:50%; border:1px solid #fff" />
                                         <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
                                             Select the best match for you
@@ -198,7 +198,7 @@
 
                         </div>
                         <div class=" text-center py-5">
-                            <a href="{{ url('/register') }}" class=" btn rounded border text-white fs-18"
+                            <a href="{{ asset('/register') }}" class=" btn rounded border text-white fs-18"
                                 style="background-color:#275846;">
                                 Get Started
                             </a>
@@ -228,7 +228,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Consultants</span>
-                                    <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -236,9 +236,7 @@
 
                         <div class="row gutters-10">
                             @if (get_setting('featured_category_list') != null)
-                                @php
-                                    $consultant_categories = \App\Models\ConsultantCategory::take(8)->get();
-                                @endphp
+                                
                                 @foreach ($consultant_categories as $category)
                                     <div class="col-md-3">
                                         <div class="card" style="height:350px;">
@@ -264,7 +262,7 @@
                         <h5 class="fre-button-show">
                             <a href="{{ route('search') }}?category="
                                 class="fs-16 text-dark ">{{ translate('All Consultants') }}
-                                <img class=" " src=" {{ url('assets/home/arrow-right.png') }}"
+                                <img class=" " src=" {{ asset('assets/home/arrow-right.png') }}"
                                     alt="Image" style="width:20px;" />
                             </a>
                         </h5>
@@ -294,19 +292,13 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Projects</span>
-                                    <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
                         </div>
                         <div class="row gutters-10">
-                            @php
-                                $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
-                                    ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
-                                    ->pluck('user_id');
 
-                                $services = \App\Models\ProjectCategory::take(8)->get();
-                            @endphp
                             @foreach ($services as $category)
                                 <div class="col-lg-3">
                                     <a href="{{ route('projects.category', $category->slug) }} " class="text-dark">
@@ -334,7 +326,7 @@
                             class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
                             <span>All
                                 Projects</span>
-                            <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                            <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
@@ -342,7 +334,7 @@
                                                                                                 <span>All
                                                                                                     Jobs</span>
                                                                                             </a>
-                                                                                            <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                                                            <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
                                                                                             </a>
                                                                                         </h5> -->
                     </div>
@@ -845,7 +837,7 @@
                             <a href="{{ route('scholarship-search') }}?keyword=&type=scholarships"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All Scholarships</span>
-                                <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -853,12 +845,12 @@
                     <div class="row ">
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=15&type=scholarships') }} "
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=15&type=scholarships') }} "
                                     class="text-dark">
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/agriculture.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -868,7 +860,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -888,12 +880,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=8&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=8&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/university.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/university.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -906,7 +898,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px;  margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -926,12 +918,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=10&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=10&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/medical.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/medical.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -944,7 +936,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -964,12 +956,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=11&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=11&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/humnaties.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/humnaties.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -981,7 +973,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1001,12 +993,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=9&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=9&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/education.jpeg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/education.jpeg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1019,7 +1011,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1039,12 +1031,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=7&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=7&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/arts.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/arts.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1057,7 +1049,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1077,12 +1069,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=14&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=14&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/eng.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/eng.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1094,7 +1086,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1114,12 +1106,12 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="caorusel-box">
-                                <a href="{{ url('scholarshipSearch?fieldStudy_id%5B%5D=12&type=scholarships') }}"
+                                <a href="{{ asset('scholarshipSearch?fieldStudy_id%5B%5D=12&type=scholarships') }}"
                                     class="text-dark">
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('assets/home/Find-scholarship/IT.jpg') }}"
+                                                <img src=" {{ asset('assets/home/Find-scholarship/IT.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1130,7 +1122,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('assets/home/star (2).png') }}"
+                                                                src=" {{ asset('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>@php
                                                             $fieldStudyId = 12;
@@ -1152,7 +1144,7 @@
                     <h5 class=" fre-button-show">
                         <a href="" class="fs-16 text-dark  "><span>All Scholarships
                             </span></a>
-                        <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                        <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                             alt="Image" style="width:18px;" />
                     </h5>
             </section>
@@ -1169,23 +1161,17 @@
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
-                            <a href="{{ url('/search?keyword=&type=seminar') }}"
+                            <a href="{{ asset('/search?keyword=&type=seminar') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All seminars</span>
-                                <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
                     </div>
 
                     <div class="row">
-                        @php
-                            $user_ids = \App\Models\UserPackage::where('package_invalid_at', '!=', null)
-                                ->where('package_invalid_at', '>', Carbon\Carbon::now()->format('Y-m-d'))
-                                ->pluck('user_id');
 
-                            $seminars = \App\Models\Seminar::all();
-                        @endphp
                         @foreach ($seminars as $seminar)
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
@@ -1213,9 +1199,9 @@
 
                     </div>
                     <h5 class="fre-button-show">
-                        <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
+                        <a href="{{ asset('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
                                 seminars</span></a>
-                        <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
+                        <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                             alt="Image" style="width:18px;" />
                     </h5>
                 </div>
@@ -1248,7 +1234,7 @@
                                         <div class="d-flex">
                                             <div>
                                                 <img class="mr-2 border "
-                                                    src=" {{ url('assets/home/review-1.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('assets/home/review-1.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -1280,7 +1266,7 @@
                                         <div class="d-flex  ">
                                             <div>
                                                 <img class="mr-2 border"
-                                                    src=" {{ url('assets/home/review-2.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('assets/home/review-2.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div class="">
@@ -1310,7 +1296,7 @@
                                         <div class="d-flex  mt-3">
                                             <div>
                                                 <img class="mr-2  border"
-                                                    src=" {{ url('assets/home/review-3.jpeg') }}" alt="Image"
+                                                    src=" {{ asset('assets/home/review-3.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -1343,7 +1329,7 @@
 
                 <div class="row">
 
-                    @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                    @foreach ($parentSkills as $key => $parentSkill)
                         <div class="col-lg-3 com-md-3 col-sm-2">
                             <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
                                 data-toggle="collapse" href="#skill_{{ $parentSkill->id }}" role="button"
@@ -1354,7 +1340,7 @@
                                 <p class="mb-0 fs-15 fw-700 text-dark ">{{ $parentSkill->name }}</p>
                             </a>
                             <div class="collapse" id="skill_{{ $parentSkill->id }}">
-                                @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
+                                @foreach ($skills as $subSkill)
                                     <div class=" w-200px child-skill-project-filtering">
                                         <div class="mb-1 ">
                                             <input type="checkbox" name="childSkill_id[]" id="{{ $subSkill->id }}"

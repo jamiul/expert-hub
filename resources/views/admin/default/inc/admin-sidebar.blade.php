@@ -190,6 +190,15 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('show freelancer experts')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('experts.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['experts.index', 'experts.edit']) }}">
+                                            <span
+                                                class="aiz-side-nav-text">{{ translate('Consultant Expertise') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('show consultant category')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('consultant-categories.index') }}"
@@ -853,7 +862,7 @@
                                         </a>
                                     </li>
                                 @endcan
-                                
+
                             </ul>
                         </li>
                     @endcan
