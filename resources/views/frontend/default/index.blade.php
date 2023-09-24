@@ -33,7 +33,7 @@
                         <div class="carousel-inner" style="">
                             <div class="carousel-item active">
                                 <video style="min-width:100%;" playsinline autoplay muted loop>
-                                    <source class=" opacity-100" src=" {{ url('/public/assets/home/01.mp4') }}"
+                                    <source class=" opacity-100" src=" {{ url('assets/home/01.mp4') }}"
                                         type="video/mp4" />
                                 </video>
                                 <div class="carousel-caption carousel-caption-background">
@@ -119,7 +119,7 @@
                                     <div class=" h-136px align-items-center">
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block   p-3"
-                                                src=" {{ url('/public/assets/home/post.png') }}" alt="Image"
+                                                src=" {{ url('assets/home/post.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <div class="need-help-section-bar"></div>
                                         </div>
@@ -134,18 +134,13 @@
 
                                     </h6>
                                 </div>
-
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class=" ">
                                     <div class=" h-136px align-items-center">
-                                        <!-- <div class="d-flex">
-                                                                                                    <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
-                                                                                                    <div class="need-help-progress-bar"></div>
-                                                                                                </div> -->
                                         <div class="d-flex">
                                             <img class="mb-2 mx-auto d-block text-black p-3"
-                                                src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
+                                                src="{{ url('assets/home/quiz.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff;" />
                                             <div class="need-help-section-bar">
                                             </div>
@@ -167,7 +162,7 @@
                                         <div class="d-flex">
                                             <img class=" mb-2 mx-auto d-block
                                      p-3"
-                                                src=" {{ url('/public/assets/home/enroll.png') }}" alt="Image"
+                                                src=" {{ url('assets/home/enroll.png') }}" alt="Image"
                                                 style="width:55px; border-radius:50%; border:1px solid #fff" />
                                             <div class="need-help-section-bar"></div>
                                         </div>
@@ -187,7 +182,7 @@
                                 <div class=" ">
                                     <div class=" h-136px align-items-center">
                                         <img class=" mb-2 mx-auto d-block p-3"
-                                            src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
+                                            src=" {{ url('assets/home/check.png') }}" alt="Image"
                                             style="width:55px; border-radius:50%; border:1px solid #fff" />
                                         <p class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white">
                                             Select the best match for you
@@ -233,7 +228,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Consultants</span>
-                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -269,7 +264,7 @@
                         <h5 class="fre-button-show">
                             <a href="{{ route('search') }}?category="
                                 class="fs-16 text-dark ">{{ translate('All Consultants') }}
-                                <img class=" " src=" {{ url('/public/assets/home/arrow-right.png') }}"
+                                <img class=" " src=" {{ url('assets/home/arrow-right.png') }}"
                                     alt="Image" style="width:20px;" />
                             </a>
                         </h5>
@@ -299,7 +294,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Projects</span>
-                                    <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -339,17 +334,17 @@
                             class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
                             <span>All
                                 Projects</span>
-                            <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                            <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                                 alt="Image" style="width:18px;" />
                         </a>
                         <!-- <h5 class="mx-3 fre-button-show">
-                                                                                        <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
-                                                                                            <span>All
-                                                                                                Jobs</span>
-                                                                                        </a>
-                                                                                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
-                                                                                        </a>
-                                                                                    </h5> -->
+                                                                                            <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
+                                                                                                <span>All
+                                                                                                    Jobs</span>
+                                                                                            </a>
+                                                                                            <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
+                                                                                            </a>
+                                                                                        </h5> -->
                     </div>
 
                 </section>
@@ -398,13 +393,13 @@
                                 <div class="mx-2 mt-5 row">
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <img class="banner-img"
-                                            src="{{asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                             alt="">
                                     </div>
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -425,12 +420,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-leave">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-leave">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -438,7 +432,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -459,12 +453,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-contest">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-contest">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -472,7 +465,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -494,12 +487,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-freelancing">Show less
                                                             <img class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-freelancing">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -507,7 +499,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -528,12 +520,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -570,7 +561,7 @@
                                         </div> --}}
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -590,12 +581,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-secure">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-secure">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -619,13 +609,13 @@
                                 <div class="mx-2 mt-5 row">
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <img class="banner-img"
-                                            src="{{asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
+                                            src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
                                             alt="">
                                     </div>
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -646,12 +636,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-leave">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-leave">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -659,7 +648,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -680,12 +669,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-contest">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-contest">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -693,7 +681,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -715,12 +703,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-freelancing">Show less
                                                             <img class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-freelancing">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -728,7 +715,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -749,12 +736,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -791,7 +777,7 @@
                                         </div> --}}
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -811,12 +797,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-secure">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{asset('upload.png') }}"
-                                                                alt=""></label>
+                                                                src="{{ asset('upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-secure">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -860,7 +845,7 @@
                             <a href="{{ route('scholarship-search') }}?keyword=&type=scholarships"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All Scholarships</span>
-                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -873,7 +858,7 @@
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/agriculture.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -883,7 +868,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -908,7 +893,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/university.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/university.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -921,7 +906,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px;  margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -946,7 +931,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/medical.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/medical.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -959,7 +944,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -984,7 +969,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/humnaties.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/humnaties.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -996,7 +981,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1021,7 +1006,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/education.jpeg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/education.jpeg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1034,7 +1019,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1059,7 +1044,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/arts.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/arts.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1072,7 +1057,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1097,7 +1082,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/eng.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/eng.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1109,7 +1094,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>
                                                         @php
@@ -1134,7 +1119,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ url('/public/assets/home/Find-scholarship/IT.jpg') }}"
+                                                <img src=" {{ url('assets/home/Find-scholarship/IT.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1145,7 +1130,7 @@
                                                     <div class="mt-2">
                                                         <span>
                                                             <img class="mr-2"
-                                                                src=" {{ url('/public/assets/home/star (2).png') }}"
+                                                                src=" {{ url('assets/home/star (2).png') }}"
                                                                 alt="Image" style="width:14px; margin-bottom:5px;" />
                                                         </span>@php
                                                             $fieldStudyId = 12;
@@ -1167,7 +1152,7 @@
                     <h5 class=" fre-button-show">
                         <a href="" class="fs-16 text-dark  "><span>All Scholarships
                             </span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                        <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                             alt="Image" style="width:18px;" />
                     </h5>
             </section>
@@ -1187,7 +1172,7 @@
                             <a href="{{ url('/search?keyword=&type=seminar') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All seminars</span>
-                                <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -1230,7 +1215,7 @@
                     <h5 class="fre-button-show">
                         <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
                                 seminars</span></a>
-                        <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                        <img class=" category-list " src=" {{ url('assets/findJob/right.png') }}"
                             alt="Image" style="width:18px;" />
                     </h5>
                 </div>
@@ -1263,7 +1248,7 @@
                                         <div class="d-flex">
                                             <div>
                                                 <img class="mr-2 border "
-                                                    src=" {{ url('/public/assets/home/review-1.jpeg') }}" alt="Image"
+                                                    src=" {{ url('assets/home/review-1.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
@@ -1295,7 +1280,7 @@
                                         <div class="d-flex  ">
                                             <div>
                                                 <img class="mr-2 border"
-                                                    src=" {{ url('/public/assets/home/review-2.jpeg') }}" alt="Image"
+                                                    src=" {{ url('assets/home/review-2.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div class="">
@@ -1325,7 +1310,7 @@
                                         <div class="d-flex  mt-3">
                                             <div>
                                                 <img class="mr-2  border"
-                                                    src=" {{ url('/public/assets/home/review-3.jpeg') }}" alt="Image"
+                                                    src=" {{ url('assets/home/review-3.jpeg') }}" alt="Image"
                                                     style="width:30px; border-radius:50%;" />
                                             </div>
                                             <div>
