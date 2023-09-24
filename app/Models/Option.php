@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
+use App\Enums\OptionGroupEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Option extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'group' => OptionGroupEnum::class,
+    ];
 }
