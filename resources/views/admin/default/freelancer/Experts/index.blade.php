@@ -26,7 +26,7 @@
 
                                     @if ($expert->parent_id != null)
 
-                                        <td >{{getExpertiseParentName($expert->parent_id)}}</td>
+                                        <td >{{$expert->parent->name}}</td>
                                     @else
                                         <td> - </td>
                                     @endif

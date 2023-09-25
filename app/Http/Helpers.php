@@ -621,11 +621,6 @@ function getInstructorName($id) {
 
     return $instructor ? $instructor->name : null;
 }
-function getExpertiseParentName($id) {
-    $parentExpertise =  Experts::where('id', $id)->first();
-    return  $parentExpertise->name ;
-}
-
 function getProjectCategory() {
     return ProjectCategory::all()->sortByDesc("id")->toArray();
 }

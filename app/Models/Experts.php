@@ -11,11 +11,11 @@ class Experts extends Model
 
     public function parent()
     {
-        return $this->belongsTo(Experts::class, 'id');
+        return $this->belongsTo(Experts::class, 'parent_id');
     }
 
     public function childrens()
     {
-        return $this->hasMany(Experts::class, 'parent_id');
+        return $this->hasMany(Experts::class, 'id');
     }
 }
