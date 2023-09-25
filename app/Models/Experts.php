@@ -11,7 +11,7 @@ class Experts extends Model
 
     public function parent()
     {
-        return $this->belongsTo(Experts::class, 'parent_id');
+        return $this->belongsTo(Experts::class, 'id');
     }
 
     public function children()

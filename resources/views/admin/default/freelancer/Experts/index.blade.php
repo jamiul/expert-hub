@@ -20,12 +20,13 @@
                         <tbody>
                             @foreach ($allExpertList as $key => $expert)
                                 <tr>
-                                    <td>{{ $key + 1 + ($experts->currentPage() - 1) * $experts->perPage() }}</td>
+                                    <td>{{ $key + 1 + ($allExpertList->currentPage() - 1) * $allExpertList->perPage() }}</td>
 
                                     <td>{{ $expert->name }}</td>
 
                                     @if ($expert->parent_id != null)
-                                        <td>{{ $expert->parent_id }}</td>
+
+                                        <td >{{getExpertiseParentName($expert->parent_id)}}</td>
                                     @else
                                         <td> - </td>
                                     @endif
@@ -35,7 +36,7 @@
                                             title="{{ translate('Edit') }}">
                                             <i class="las la-edit"></i>
                                         </a>
-                                      
+
                                         <a href="#"
                                             class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
                                             data-href="{{ route('experts.destroy', $expert->id) }}"
@@ -48,7 +49,7 @@
                         </tbody>
                     </table>
                     <div class="aiz-pagination aiz-pagination-center">
-                        {{ $experts->links() }}
+                        {{ $allExpertList->links() }}
                     </div>
                 </div>
             </div>
