@@ -42,7 +42,7 @@
                                         <div class="col-lg-10 col-sm-12 home-cacap-head">
                                             <h2 class=" sm-mx-auto fw-700 fs-40 fs-sm-36px" style="">
                                                Find a top academic expert for your project </h2>
-                                            <p class="fs-20 fs-sm-14 mt-4 mb-5 ">ConsultantEdu Hub is an exclusive platform featuring top academic experts across diverse fields. Whether it's a personal or institutional project or media interviews, our pool of top academic experts is here to assist.</p>
+                                            <p class="fs-20 fs-sm-14 mt-4 mb-5 ">EduExHub is an exclusive platform featuring top academic experts across diverse fields. Whether it's a personal or institutional project or media interviews, our pool of top academic experts is here to assist.</p>
                                             <div class="lg-my-3 mt-5 my-sm-0 home-banner-button ">
                                                 <a href="{{ route('register') }}?type=2"
                                                     class="btn text-white fw-700  fs-20 fs-sm-12 mr-2 mb-3"
@@ -103,8 +103,11 @@
                 <div class="mt-5 pb-2">
                         <div class="">
                             <div class=" content-title  text-center pb-5 pt-3">
-                                <h2 class="fw-700 fs-36 text-white mb-3">Looking for a top academic expert in the field?</h2>
-                                <p class="fw-700 fs-20 text-white mb-3 main-content" >Navigating academia can be challenging. We are the largest, globally connected network of top academic talent, and we're prepared to tackle your most critical projects.</p>
+                                <h2 class="fw-700 fs-36 text-white mb-3">
+
+                                    Searching academic experts made easy
+                                    </h2>
+                                <p class="fw-700 fs-20 text-white mb-3 main-content" >We are the largest, globally connected network of top academic talent, and we're prepared to tackle your most critical projects.</p>
 
                             </div>
                             <div class="row need-help-section">
@@ -218,7 +221,7 @@
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75w-lg-75 lh-1-8 content-title ">
                                 <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                <h2 class="fw-700 fre-small-font text-success">Hire academic consultants by category</h2>
+                                <h2 class="fw-700 fre-small-font text-success">Browse academic consultants by category.</h2>
                                 <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
@@ -283,7 +286,7 @@
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                                 <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                <h2 class="fw-700 fre-small-font text-success">Find academic projects by category</h2>
+                                <h2 class="fw-700 fre-small-font text-success">Explore academic projects by category</h2>
                                 <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
@@ -316,13 +319,10 @@
                                                 <p class="fs-22 fw-600 " style="height:45px; line-height:23px;">
                                                     {{ $category->name }}
                                                 </p>
-
-
                                             </div>
                                         </div>
                                     </a>
-                                </div>
-                                
+                                </div>                             
                             @endforeach
 
                         </div>
@@ -358,7 +358,7 @@
                 <div class="container-home">
 
                     <div class="my-5 mx-4" id="FAQs">
-                        <h1 class="fw-700 fre-small-font text-success mb-2"> What sets ConsultantEdu apart?
+                        <h1 class="fw-700 fre-small-font text-success mb-2"> What sets EduExHub apart?
                         </h1>
                         {{-- <p class="fs-16 fw-700 text-black">ConsultantEdu is your premium platform for connecting with top-tier academic experts, serving a diverse clientele that includes esteemed higher education institutions, prominent media outlets, and individuals seeking expert guidance for their academic pursuits. Discover what makes us stand out:</p> --}}
                         <hr>
@@ -403,7 +403,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             A Wealth of Expertise</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
+                                                       EduExHub takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
                                                     </p>
                                                     <div class="fre-content text-justify">
                                                         <p>
@@ -460,7 +460,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             Comprehensive Support</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
+                                                       EduExHub offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
 
                                                     </p>
                                                     <div class="fre-content text-justify">
@@ -518,7 +518,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             Tailored Expert Selection</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+                                                        Security is paramount atEduExHub. To guarantee peace of mind for both users and experts, we hold payments in escrow until
 
                                                     </p>
                                                     <div class="fre-content text-justify">
@@ -546,7 +546,7 @@
                                                         <h4 class="text-success make-impressive-title ml-1 text-success">
                                                             Secure Transactions</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+                                                        Security is paramount atEduExHub. To guarantee peace of mind for both users and experts, we hold payments in escrow until
 
 
                                                     </p>
@@ -567,7 +567,7 @@
                                         </div>
                                         {{-- <div>
                                             <p class="frequently-qsn-details text-justify">
-                                                Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
+                                                ChooseEduExHub as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
                                             </p>
                                         </div> --}}
 
@@ -598,7 +598,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             A Wealth of Expertise</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        ConsultantEdu takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
+                                                       EduExHub takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.
                                                     </p>
                                                     <div class="fre-content text-justify">
                                                         <p>
@@ -655,7 +655,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             Comprehensive Support</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        ConsultantEdu offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
+                                                       EduExHub offers an array of comprehensive services designed to meet a wide spectrum of needs. Whether users are embarking on course accreditations, curriculum development,
 
                                                     </p>
                                                     <div class="fre-content text-justify">
@@ -713,7 +713,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             Tailored Expert Selection</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+                                                        Security is paramount atEduExHub. To guarantee peace of mind for both users and experts, we hold payments in escrow until
 
                                                     </p>
                                                     <div class="fre-content text-justify">
@@ -741,7 +741,7 @@
                                                         <h4 class="make-impressive-title ml-1 text-success">
                                                             Secure Transactions</h4>
                                                     <p class="frequently-qsn-details text-justify">
-                                                        Security is paramount at ConsultantEdu. To guarantee peace of mind for both users and experts, we hold payments in escrow until
+                                                        Security is paramount atEduExHub. To guarantee peace of mind for both users and experts, we hold payments in escrow until
 
 
                                                     </p>
@@ -762,7 +762,7 @@
                                         </div>
                                         {{-- <div>
                                             <p class="frequently-qsn-details text-justify">
-                                                Choose ConsultantEdu as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
+                                                ChooseEduExHub as your trusted partner in the pursuit of academic excellence. Explore our platform, post your projects, and connect with top academic experts dedicated to helping you achieve your educational and professional aspirations. Together, we'll make a remarkable difference in the world of academia and beyond.
                                             </p>
                                         </div> --}}
 
@@ -1118,7 +1118,7 @@
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
                             <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                            <h2 class="fw-700 fre-small-font text-success">Find academic training</h2>
+                            <h2 class="fw-700 fre-small-font text-success">Explore academic training by category</h2>
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
@@ -1163,133 +1163,130 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
-                    <h5 class="fre-button-show">
-                        <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
-                                seminars</span></a>
-                        <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image"
-                            style="width:18px;" />
-                    </h5>
-                </div>
+                        <h5 class="fre-button-show">
+                            <a href="{{ url('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
+                                    seminars</span></a>
+                            <img class=" category-list " src=" {{ url('/public/assets/findJob/right.png') }}"
+                                alt="Image" style="width:18px;" />
+                        </h5>
+                        </div>  
             </section>
         @endif
 
-        <!-- learn with scholarship australia -->
-        @if (get_setting('latest_project_show') == 'on')
-            <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
-                <div class=" container-home">
-                    <div class="content-title">
-                        <h2 class="fw-700 fre-small-font site-font text-success" style="">Client Feedback at
-                            ConsultantEdu</h2>
-                    </div>
-                    <div class="">
-                        <div class="row ">
-                            <div class="col-lg-4">
-                                <div class=" card rounded-1 " style="height:350px;">
-                                    <div class=" card-body">
-                                        <p class="text-primary mt-2 fs-20">Client Name: Dr. Emily Johnson
-                                        </p>
-                                        <p class="mt-3 fs-16 text-justify mobile-text" style="height:160px;">Prof. David
-                                            Smith
-                                            played a pivotal role in the development of our university curriculum. His
-                                            expertise, creativity, and dedication to ensuring our program met the highest
-                                            standards were truly outstanding. We are grateful for his contributions and
-                                            highly recommend his services to any educational institution.
-                                        </p>
-                                        <hr>
-                                        <div class="d-flex">
-                                            <div>
-                                                <img class="mr-2 border "
-                                                    src=" {{ asset('/assets/home/review-1.jpeg') }}" alt="Image"
-                                                    style="width:30px; border-radius:50%;" />
-                                            </div>
-                                            <div>
-                                                <small class="fw-700 fs-14 text-black"
-                                                    style="  color:#6560E6 !important;"> Review for:
-                                                    Prof. David Smith</small>
-                                                <h6 class="fs-14 text-muted" style="Line height:10px;"> Curriculum
-                                                    Development Consultant
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+  <!-- learn with scholarship australia -->
+  @if (get_setting('latest_project_show') == 'on')
+  <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
+      <div class=" container-home">
+          <div class="content-title">
+              <h2 class="fw-700 fre-small-font site-font text-success" style="">Client Feedback at
+                  EduExHub</h2>
+          </div>
+          <div class="">
+              <div class="row ">
+                  <div class="col-lg-4">
+                      <div class=" card rounded-1 " style="height:350px;">
+                          <div class=" card-body">
+                              <p class="text-primary mt-2 fs-20">Client Name: Dr. Emily Johnson
+                              </p>
+                              <p class="mt-3 fs-16 text-justify mobile-text" style="height:160px;">Prof. David
+                                  Smith
+                                  played a pivotal role in the development of our university curriculum. His
+                                  expertise, creativity, and dedication to ensuring our program met the highest
+                                  standards were truly outstanding. We are grateful for his contributions and
+                                  highly recommend his services to any educational institution.
+                              </p>
+                              <hr>
+                              <div class="d-flex">
+                                  <div>
+                                      <img class="mr-2 border "
+                                          src=" {{ url('/public/assets/home/review-1.jpeg') }}" alt="Image"
+                                          style="width:30px; border-radius:50%;" />
+                                  </div>
+                                  <div>
+                                      <small class="fw-700 fs-14 text-black"
+                                          style="  color:#6560E6 !important;"> Review for:
+                                          Prof. David Smith</small>
+                                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Curriculum
+                                          Development Consultant
+                                      </h6>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
-                            <div class="col-lg-4">
-                                <div class=" card rounded-1 " style="height:350px;">
-                                    <div class=" card-body">
-                                        <p class="text-primary mt-2 fs-20">Client Name: Jennifer Martinez
-                                        </p>
-                                        <p class="mt-3 fs-16 text-justify mobile-text second" style="height:180px;">
-                                            We are immensely grateful to Dr. Johnson for his invaluable assistance in our
-                                            university's accreditation process His deep knowledge of accreditation standards
-                                            and guidance were instrumental in helping us meet and criteria. We highly
-                                            recommend Dr. Johnson's consultancy services to any educational institution
-                                            seeking accreditation.
-                                        </p>
-                                        <hr>
-                                        <div class="d-flex  ">
-                                            <div>
-                                                <img class="mr-2 border"
-                                                    src=" {{ asset('/assets/home/review-2.jpeg') }}" alt="Image"
-                                                    style="width:30px; border-radius:50%;" />
-                                            </div>
-                                            <div class="">
-                                                <small class="fw-700 fs-14 text-black" style="color:#6560E6 !important;">
-                                                    Review for: Dr. Robert Johnson
-                                                </small>
-                                                <h6 class="fs-14 text-muted" style="Line height:10px;"> Course
-                                                    Accreditation Consultant
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 ">
-                                <div class=" card rounded-1 " style="height:350px;">
-                                    <div class=" card-body">
-                                        <p class="text-primary mt-2 fs-20">Client Name: Professor Emily Davis
-                                        </p>
-                                        <p class="fs-16 text-justify mobile-text" style="height:140px;">
-                                            I had the pleasure of working with Dr. Johnson on a complex university research
-                                            project, and his expertise was invaluable. His analytical skills and in-depth
-                                            knowledge significantly enhanced our research efforts. I highly recommend his
-                                            services to anyone seeking top-tier research and analysis support.
-                                        </p>
-                                        <div class="border-top mt-5"></div>
-                                        <div class="d-flex  mt-3">
-                                            <div>
-                                                <img class="mr-2  border"
-                                                    src=" {{ asset('/assets/home/review-3.jpeg') }}" alt="Image"
-                                                    style="width:30px; border-radius:50%;" />
-                                            </div>
-                                            <div>
-                                                <small class="fw-700 fs-14 text-black"
-                                                    style="  color:#6560E6 !important;"> Review for: Dr. Michael Johnson
-                                                </small>
-                                                <h6 class="fs-14 text-muted" style="Line height:10px;">Reasearch and
-                                                    Analysis
-                                                    Consultant</h6>
-                                            </div>
-                                        </div>
-                                        </>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            </section>
-        @endif
-
-
+                  <div class="col-lg-4">
+                      <div class=" card rounded-1 " style="height:350px;">
+                          <div class=" card-body">
+                              <p class="text-primary mt-2 fs-20">Client Name: Jennifer Martinez
+                              </p>
+                              <p class="mt-3 fs-16 text-justify mobile-text second" style="height:180px;">
+                                  We are immensely grateful to Dr. Johnson for his invaluable assistance in our
+                                  university's accreditation process His deep knowledge of accreditation standards
+                                  and guidance were instrumental in helping us meet and criteria. We highly
+                                  recommend Dr. Johnson's consultancy services to any educational institution
+                                  seeking accreditation.
+                              </p>
+                              <hr>
+                              <div class="d-flex  ">
+                                  <div>
+                                      <img class="mr-2 border"
+                                          src=" {{ url('/public/assets/home/review-2.jpeg') }}" alt="Image"
+                                          style="width:30px; border-radius:50%;" />
+                                  </div>
+                                  <div class="">
+                                      <small class="fw-700 fs-14 text-black" style="color:#6560E6 !important;">
+                                          Review for: Dr. Robert Johnson
+                                      </small>
+                                      <h6 class="fs-14 text-muted" style="Line height:10px;"> Course
+                                          Accreditation Consultant
+                                      </h6>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 ">
+                      <div class=" card rounded-1 " style="height:350px;">
+                          <div class=" card-body">
+                              <p class="text-primary mt-2 fs-20">Client Name: Professor Emily Davis
+                              </p>
+                              <p class="fs-16 text-justify mobile-text" style="height:140px;">
+                                  I had the pleasure of working with Dr. Johnson on a complex university research
+                                  project, and his expertise was invaluable. His analytical skills and in-depth
+                                  knowledge significantly enhanced our research efforts. I highly recommend his
+                                  services to anyone seeking top-tier research and analysis support.
+                              </p>
+                              <div class="border-top mt-5"></div>
+                              <div class="d-flex  mt-3">
+                                  <div>
+                                      <img class="mr-2  border"
+                                          src=" {{ url('/public/assets/home/review-3.jpeg') }}" alt="Image"
+                                          style="width:30px; border-radius:50%;" />
+                                  </div>
+                                  <div>
+                                      <small class="fw-700 fs-14 text-black"
+                                          style="  color:#6560E6 !important;"> Review for: Dr. Michael Johnson
+                                      </small>
+                                      <h6 class="fs-14 text-muted" style="Line height:10px;">Reasearch and
+                                          Analysis
+                                          Consultant</h6>
+                                  </div>
+                              </div>
+                              </>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  </section>
+@endif
         <!-- skills section  -->
 
         @if (get_setting('latest_project_show') == 'on')
             <div class="container-home ">
                 <div class="content-title">
-                    <h2 class="fw-700 fre-small-font text-success">Find skill by category</h2>
+                    <h2 class="fw-700 fre-small-font text-success">Discover our academic expert skillsets</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-3">

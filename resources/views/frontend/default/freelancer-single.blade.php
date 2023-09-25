@@ -4,12 +4,9 @@
     <head>
         <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
         <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/single-profile.css') }}">
-
     </head>
-
     <body>
         @extends('frontend.default.layouts.app')
-
         @section('content')
             <!-- <div class="h-250px">
                 @if ($freelancer->cover_photo != null)
@@ -28,7 +25,7 @@
                                 <div class="row freelancer-user-identity-profile-section">
                                     <div class="col-lg-8 col-10 pl-sm-0">
                                         <div class="profile-identity">
-                                            <span class="avatar avatar-xl avatar-sm-sm mr-lg-3 mr-sm-2">
+                                            <span class="avatar avatar-xl avatar-sm-sm mr-lg-3 mr-sm-2">                         
                                                 @if ($freelancer->photo != null)
                                                     <img src="{{ custom_asset($freelancer->photo) }}"
                                                         alt="{{ $freelancer->name }}">
@@ -49,6 +46,13 @@
                                                     <div class="d-flex align-items-center" style="color:#5ABC76;">
                                                         <h4 class="frePage-freelancer-name  singel-profile site-font">
                                                             {{ $freelancer->name }}</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="name">
+                                                    <div class="d-flex align-items-center" style="color:#5ABC76;">
+                                                        <h4 class=" site-font">
+                                                        Curriculum Development  
+                                                              </h4>
                                                     </div>
                                                 </div>
                                                 <div class="location-status">
@@ -124,7 +128,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
+                                    {{-- <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
                                         <div class="d-flex">
                                             <div class="d-flex justify-content-center align-items-center">
                                                 <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}"
@@ -134,7 +138,7 @@
                                             </div>
                                             <p class="mb-0 fs-15 text-black fw-600 site-font">Top Rated Plus</p>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -208,7 +212,7 @@
                                     </div>
                                     @endif --}}
                                 <div class="freePage-earning-sec-for-responsive">
-                                    <div class="border-bottom ">
+                                    {{-- <div class="border-bottom ">
                                         <div class="d-flex justify-content-between mt-3 mx-4">
                                             <div>
                                                 <h4 class="fs-16 fw-700 text-black mb-1 site-font">$9K+</h4>
@@ -223,23 +227,31 @@
                                                 <p class="fs-14 text-black site-font">Total Hours</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class=" mt-5">
+                                    </div> --}}
+                                    <div class="mt-4 ">
                                         <div class="mx-4">
+                                            <div>
+                                                <h4 class="fs-18 fw-600 mb-2 site-font">Research Profile</h4>
+                                                <a href="https://scholar.google.com/" class="fs-14  site-font"><u class="text-dark mb-2">Browse more...</u></a>
+                                            </div>
+                                            <div>
+                                                <h4 class="fs-18 fw-600 mb-2 site-font">University Profile</h4>
+                                                <a href="https://www.ox.ac.uk/" class="fs-14 site-font mb-2"><u class="text-dark">Browse more...</u></a>
+                                            </div>
                                             <div>
                                                 <h4 class="fs-18 fw-600 mb-2 site-font">Hours per week</h4>
                                                 <p class="fs-14 site-font">More than 30 hrs/week</p>
                                             </div>
                                             <div class="mt-4">
                                                 <h4 class="fs-18 fw-600 mb-2 site-font">Languages</h4>
-                                                <p class="fs-14 site-font">English: Native or Bilingual</p>
+                                                <p class="fs-14 site-font">Proficient in English</p>
                                             </div>
-                                            <div class="mt-4">
+                                            {{-- <div class="mt-4">
                                                 <h4 class="fs-18 fw-600 mb-2 site-font">Verifications
                                                 </h4>
                                                 <p class="fs-14 mb-0 site-font">Phone Number: Verified</p>
                                                 <p class="fs-14 site-font">ID: Verified</p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -267,7 +279,7 @@
                                     <!-- Employment history -->
                                     <div class="mx-4 mt-4 border-bottom mb-3">
                                         <div class="">
-                                            <h4 class="h6 fw-700 mb-0 fs-18"> {{ translate('Employment history') }}</h4>
+                                            <h4 class="h6 fw-700 mb-0 fs-18"> {{ translate('Work Experience') }}</h4>
                                         </div>
                                         <div class="pb-3">
                                             <ul class="list-group list-group-flush">
@@ -312,8 +324,8 @@
                                         <div class="tab-pane fade show active mt-4" id="list-home" role="tabpanel"
                                             aria-labelledby="list-home-list">
                                             <div class="d-flex justify-content-between mt-3 ">
-                                                <h4 class="fw-700 fs-18 text-black site-font">Profile overview</h4>
-                                                <h4 class="fw-700 fs-18 text-black">$30.00/hr</h4>
+                                                <h4 class="fw-700 fs-18 text-black site-font">Biography </h4>
+                                                <h4 class="fw-700 fs-18 text-black">$200.00/hr</h4>
                                             </div>
                                             <div class="mt-3">
                                                 <p class="fs-14 site-font">Prof. Michael is an accomplished Curriculum
@@ -331,6 +343,30 @@
                                                 </p>
                                             </div>
                                         </div>
+                                          <!-- skills -->
+                                <div class='border-bottom mt-4 mb-3'>
+                                    <div class="  ">
+                                        <h4 class="">{{ translate('Expertise') }}</h4>
+
+                                        <div>
+                                            @if ($freelancer->profile->skills != null)
+                                                @foreach (json_decode($freelancer->profile->skills, true) as $key => $skill_id)
+                                                    @php
+                                                        $skill = \App\Models\Skill::find($skill_id);
+                                                    @endphp
+                                                    @if ($skill)
+                                                        <span
+                                                            class="btn btn-light btn-xs border bg-soft-info-light site-font   mb-1 ml-1  text-dark rounded border-0 fs-14"
+                                                            style="  color:#6560E6 !important;">{{ $skill->name }}
+                                                        </span>
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+
+
+                                </div>
                                         <div class="tab-pane fade mt-4" id="list-profile" role="tabpanel"
                                             aria-labelledby="list-profile-list">
                                             <div class="d-flex justify-content-between mt-3 ">
@@ -368,7 +404,7 @@
                                         </div>
                                     </div>
                                     <div class="mx-4">
-                                        <h4 class="fw-700 fs-18 text-black site-font">Book a consultation
+                                        <h4 class="fw-700 fs-18 text-black site-font">Book Expert for Consultation 
                                         </h4>
                                         <div class="border mb-3">
                                             <div class="row p-3">
@@ -378,24 +414,69 @@
                                                 </div>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="d-flex justify-content-between ">
-                                                        <p class="fw-700 fs-18 site-font">Curriculum Development Specialist
+                                                        <p class="fw-700 fs-18 site-font"><span>Expertise:</span>Curriculum Development
                                                         </p>
                                                         <p class="fw-700 fs-18">$20 <span
                                                                 class="fw-400 fs-18">/30min</span></p>
                                                     </div>
-                                                    <p class="fs-16 mt-1 mb-0 site-font ">Prof. Michael offers consultation
-                                                        services to educational institutions, schools, and individuals
-                                                        seeking expertise in curriculum development, educational assessment,
-                                                        and pedagogical innovation. To schedule a consultation or inquire
-                                                        about services, please use the contact information below</p>
-                                                    <a class="fs-16 site-font seminar-more " href="">Find a
-                                                        time</a>
+                                                    <p class="fs-16 mt-1 mb-0 site-font ">
+                                                        Prof. Michael offers consultation services to educational institutions, businesses and individuals seeking expertise in curriculum development.
+                                                        
+                                                    </p>
+                                                    <p class="fs-16 mt-1 mb-0 site-font">To schedule a consultation, <span class="fs-16 site-font seminar-more">book a time</span></p>
+                                                    
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="border mb-3">
+                                            <div class="row p-3">
+                                                <div class="col-lg-2 col-md-2 col-sm-12">
+                                                    <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
+                                                        alt="">
+                                                </div>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <p class="fw-700 fs-18 site-font"><span>Expertise:</span>Public Health                         
+                                                        </p>
+                                                        <p class="fw-700 fs-18">$20 <span
+                                                                class="fw-400 fs-18">/30min</span></p>
+                                                    </div>
+                                                    <p class="fs-16 mt-1 mb-0 site-font ">
+                                                        Prof. Michael offers consultation services to educational institutions, businesses and individuals seeking expertise in curriculum development.  
+                                                    </p>
+                                                    <p class="fs-16 mt-1 mb-0 site-font">To schedule a consultation, <span class="fs-16 site-font seminar-more">book a time</span></p>
+                                                    
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="mx-4">
+                                        <h4 class="fw-700 fs-18 text-black site-font">Book Expert for TV Interview
+                                        </h4>
+                                        <div class="border mb-3">
+                                            <div class="row p-3">
+                                                <div class="col-lg-2 col-md-2 col-sm-12">
+                                                    <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
+                                                        alt="">
+                                                </div>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="">
+                                                        <p class="fw-700 fs-18 site-font"><span>Expertise:</span>Public Health                         
+                                                        </p>
+                                                    </div>
+                                                    <p class="fs-16 mt-1 mb-0 site-font ">
+                                                        Prof. Michael is an expert for media in the following fields: Public Health and Infectious diseases. They are happy to lend their expertise to share their research discoveries and insights with the community via media channels.</p>
+                                                    <p class="fs-16 mt-1 mb-0 site-font">To schedule a consultation, <span class="fs-16 site-font seminar-more">book a time</span></p>
+                                                    
                                                 </div>
                                             </div>
 
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <!-- work history -->
 
                                 <div class="border-bottom-2 mt-4">
@@ -562,7 +643,7 @@
 
                                 <!-- portfolio -->
 
-                                <div class='border-bottom mt-4 mb-3'>
+                                {{-- <div class='border-bottom mt-4 mb-3'>
                                     <div class="mx-4  ">
                                         <h4 class="">{{ translate('Portfolio') }}</h4>
                                         <div class="row">
@@ -610,41 +691,12 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-
-
                                         </div>
                                     </div>
-                                </div>
-                                <!-- skills -->
-                                <div class='border-bottom mt-4 mb-3'>
-                                    <div class="mx-4  ">
-                                        <h4 class="">{{ translate('Skills') }}</h4>
-
-                                        <div>
-                                            @if ($freelancer->profile->skills != null)
-                                                @foreach (json_decode($freelancer->profile->skills, true) as $key => $skill_id)
-                                                    @php
-                                                        $skill = \App\Models\Skill::find($skill_id);
-                                                    @endphp
-                                                    @if ($skill)
-                                                        <span
-                                                            class="btn btn-light btn-xs border bg-soft-info-light site-font   mb-1 ml-1  text-dark rounded border-0 fs-14"
-                                                            style="  color:#6560E6 !important;">{{ $skill->name }}
-                                                        </span>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                        </div>
-                                    </div>
-
-
-                                </div>
+                                </div> --}}
+ 
                             </div>
                         </div>
-
-
-
-
 
                         <!-- responsive after hourly rate,Languages,Verifications start -->
                         <div class="freePage-hourlyRate-languages-verifications-responsive">
@@ -668,16 +720,10 @@
                             </div>
                         </div>
                         <!-- responsive after hourly rate,Languages,Verifications end -->
-
-
-
-
-
-
                     </div>
 
                     {{-- services part --}}
-                    <div class=" mt-5">
+                    {{-- <div class=" mt-5">
                         <div class="">
                             <h4 class="h6 fw-700 mb-0"> {{ translate('Services') }}</h4>
                         </div>
@@ -722,13 +768,9 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-
-
-
-
 
             <script>
                 function updateTime() {
