@@ -20,12 +20,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::get('/skills/destroy/{id}', 'SkillController@destroy')->name('skills.delete');
     Route::resource('skills', 'SkillController');
+    Route::resource('experts', "ExpertsController");
 
     Route::get('/parent_skills/destroy/{id}', 'ParentSkillController@destroy')->name('parent_skills.delete');
     Route::resource('parent_skills', 'ParentSkillController');
 
-    Route::resource('consultant-categories', 'consultantCategoryController');
-    Route::get('/consultant-categories/destroy/{id}', 'consultantCategoryController@destroy')->name('consultant-categories.delete');
+    Route::resource('consultant-categories', 'ConsultantCategoryController');
+    Route::get('/consultant-categories/destroy/{id}', 'ConsultantCategoryController@destroy')->name('consultant-categories.delete');
+
 
     Route::resource('badges', 'BadgeController');
     Route::get('/badges/destroy/{id}', 'BadgeController@destroy')->name('badges.delete');
