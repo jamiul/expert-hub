@@ -7,9 +7,14 @@ use Auth;
 use App\Models\User;
 use App\Models\Project;
 use App\Models\ChatThread;
+use App\Models\ConsultantCategory;
 use App\Models\UserProfile;
 use App\Models\FreelancerAccount;
+use App\Models\ParentSkill;
+use App\Models\ProjectCategory;
 use App\Models\Scholarship;
+use App\Models\Seminar;
+use App\Models\Skill;
 use Carbon;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
@@ -34,6 +39,13 @@ class HomeController extends Controller
      */
     public function index() {
         $scholarships = Scholarship::all();
+        $parentSkills = ParentSkill::all();
+        $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
+
+        $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
+        $seminars = Seminar::all();
+        $services = ProjectCategory::take(8)->get();
+        $consultant_categories = ConsultantCategory::take(8)->get();
         $subjectCounts = [];
 
         foreach ($scholarships as $scholarship) {
@@ -45,7 +57,7 @@ class HomeController extends Controller
             $subjectCounts[$subject] += $scholarship->available_slots;
         }
 
-        return view('frontend.default.index',compact('subjectCounts'));
+        return view('frontend.default.index',compact('subjectCounts','parentSkills','skills','seminars','scholarships','services','consultant_categories'));
     }
 
     //Admin login
