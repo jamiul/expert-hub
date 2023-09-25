@@ -99,7 +99,7 @@
                                                         <div class="modal-body text-center">
                                                             <p class="mt-1">
                                                                 {{ translate('Are you sure to delete this?') }}</p>
-                                                            <form action="{{ route('seminar-consultant.destroy', $seminar->id) }}"
+                                                            <form action="{{ route('seminar-consultant.delete', $seminar->id) }}"
                                                                 method="POST">
                                                                 @csrf
                                                                 @method('DELETE')

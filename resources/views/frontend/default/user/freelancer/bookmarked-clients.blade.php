@@ -14,7 +14,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="card rounded-2 border-gray-light">
                                     <div class="absolute-top-right p-2">
-                                        <a class="d-inline-block confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.destroy', $bookmarked_client->id) }}" data-toggle="tooltip" title="{{ translate('Remove from bookmark') }}" data-target="#unfollow-modal">
+                                        <a class="d-inline-block confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.delete', $bookmarked_client->id) }}" data-toggle="tooltip" title="{{ translate('Remove from bookmark') }}" data-target="#unfollow-modal">
                                             <i class="las la-bookmark la-2x"></i>
                                         </a>
                                     </div>
