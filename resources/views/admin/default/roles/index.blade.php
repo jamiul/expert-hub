@@ -36,13 +36,13 @@
                             <tr>
                                 <td>{{ ($key+1) + ($roles->currentPage() - 1)*$roles->perPage() }}</td>
                                 <td>{{$role->name}}</td>
-                                <td class="text-right">                                    
+                                <td class="text-right">
                                     <a href="{{ route('roles.edit', encrypt($role->id)) }}" class="btn btn-soft-primary btn-icon btn-circle btn-sm btn icon" title="{{ translate('Edit') }}">
                                         <i class="las la-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0)" data-href="{{route('roles.destroy', $role->id)}}" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" title="{{ translate('Delete') }}">
+                                    <a href="javascript:void(0)" data-href="{{route('roles.delete', $role->id)}}" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" title="{{ translate('Delete') }}">
                                         <i class="las la-trash"></i>
-                                    </a>                                
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach
@@ -50,7 +50,7 @@
                     </table>
                 </div>
             </div>
-        </div>       
+        </div>
     </div>
     <div class="row">
         {{ $roles->links() }}

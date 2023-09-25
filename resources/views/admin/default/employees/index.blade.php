@@ -44,7 +44,7 @@
                                         <a class="btn btn-soft-primary btn-icon btn-circle btn-sm btn icon" href="{{ route('employees.edit', encrypt($employee->user_id)) }}" title="{{translate('Edit')}}">
                                             <i class="las la-pen"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('employees.destroy', $employee->user_id)}}" title="{{translate('Delete')}}">
+                                        <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('employees.delete', $employee->user_id)}}" title="{{translate('Delete')}}">
                                             <i class="las la-trash"></i>
                                         </a>
                                     </td>

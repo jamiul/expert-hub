@@ -41,7 +41,7 @@
                   <i class="las la-edit"></i>
                 </a>
                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                  data-href="{{route('scholarship-category.destroy', $category->id)}}"
+                  data-href="{{route('scholarship-category.delete', $category->id)}}"
                   title="{{ translate('Delete') }}">
                   <i class="las la-trash"></i>
                 </a>

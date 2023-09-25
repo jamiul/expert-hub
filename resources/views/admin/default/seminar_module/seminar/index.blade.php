@@ -21,7 +21,7 @@
                 <h5 class="mb-md-0 h6">{{ translate('All Seminar posts') }}</h5>
             </div>
 
-            
+
             <div class="col-md-2">
                 <div class="form-group mb-0">
                     <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($search) value="{{ $search }}" @endisset placeholder="{{ translate('Type & Enter') }}">
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="modal-body text-center">
                                     <p class="mt-1">{{translate('Are you sure to delete this?')}}</p>
-                                    <form action="{{ route('seminar.destroy', $seminar->id) }}" method="POST">
+                                    <form action="{{ route('seminar.delete', $seminar->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-link mt-2" data-dismiss="modal">{{translate('Cancel')}}</button>
@@ -108,7 +108,7 @@
                 </tbody>
             </table>
 
-            {{-- @dd(route('seminar.destroy', $seminar->id)); --}}
+            {{-- @dd(route('seminar.delete', $seminar->id)); --}}
             <div class="aiz-pagination">
                 {{-- {{ $scholarships->links() }} --}}
             </div>

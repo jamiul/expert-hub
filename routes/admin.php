@@ -13,22 +13,22 @@ Route::get('/admin', 'HomeController@admin_dashboard')->name('admin.dashboard')-
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('profile', 'ProfileController@admin_profile')->name('admin.profile');
 
-//    Route::get('/project-categories/destroy/{id}', 'ProjectCategoryController@destroy')->name('project-categories.destroy');
+    Route::get('/project-categories/destroy/{id}', 'ProjectCategoryController@destroy')->name('project-categories.delete');
     Route::post('profile-update', 'ProfileController@update_admin_profile')->name('admin_profile.update');
 
     Route::resource('/project-categories', 'ProjectCategoryController');
 
-    //Route::get('/skills/destroy/{id}', 'SkillController@destroy')->name('skills.destroy');
+    Route::get('/skills/destroy/{id}', 'SkillController@destroy')->name('skills.delete');
     Route::resource('skills', 'SkillController');
 
-//    Route::get('/parent_skills/destroy/{id}', 'ParentSkillController@destroy')->name('parent_skills.destroy');
+    Route::get('/parent_skills/destroy/{id}', 'ParentSkillController@destroy')->name('parent_skills.delete');
     Route::resource('parent_skills', 'ParentSkillController');
 
     Route::resource('consultant-categories', 'consultantCategoryController');
-//    Route::get('/consultant-categories/destroy/{id}', 'consultantCategoryController@destroy')->name('consultant-categories.destroy');
+    Route::get('/consultant-categories/destroy/{id}', 'consultantCategoryController@destroy')->name('consultant-categories.delete');
 
     Route::resource('badges', 'BadgeController');
-//    Route::get('/badges/destroy/{id}', 'BadgeController@destroy')->name('badges.destroy');
+    Route::get('/badges/destroy/{id}', 'BadgeController@destroy')->name('badges.delete');
     Route::get('/client-badge', 'BadgeController@client_badges_create')->name('client_badges_create');
     Route::get('/client-badge/list', 'BadgeController@client_badges_index')->name('client_badges_index');
     Route::get('/client-badge/edit/{id}', 'BadgeController@client_badges_edit')->name('client_badges_edit');
@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/freelancer-package-create/{type}', 'PackageController@create')->name('freelancer_package.create');
     Route::post('/package-store', 'PackageController@store')->name('package.store');
     Route::post('/package-update/{id}', 'PackageController@update')->name('package.update');
-    Route::get('/package-destroy/{id}', 'PackageController@destroy')->name('package.destroy');
+    Route::get('/package-destroy/{id}', 'PackageController@destroy')->name('package.delete');
     Route::get('/freelancer-package-edit/{id}', 'PackageController@edit')->name('freelancer_package.edit');
     Route::get('/client-package-index/{type}', 'PackageController@index')->name('client_package.index');
     Route::get('/client-package-create/{type}', 'PackageController@create')->name('client_package.create');
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     //LanguageController for Freelancer and Client
     Route::resource('/languages', 'LanguageController');
-//    Route::get('/languages/destroy/{id}', 'LanguageController@destroy')->name('languages.destroy');
+    Route::get('/languages/destroy/{id}', 'LanguageController@destroy')->name('languages.delete');
     Route::post('/languages/update_language_status', 'LanguageController@update_language_status')->name('languages.update_language_status');
     Route::post('/languages/key_value_store', 'LanguageController@key_value_store')->name('languages.key_value_store');
     Route::post('/languages/update_language_status', 'LanguageController@update_language_status')->name('languages.update_language_status');
@@ -60,12 +60,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     //CurrencyController
     Route::resource('currencies', 'CurrencyController');
-    //Route::get('/currencies/destroy/{id}', 'CurrencyController@destroy')->name('currencies.destroy');
+    Route::get('/currencies/destroy/{id}', 'CurrencyController@destroy')->name('currencies.delete');
     Route::get('/currency/set_currency', 'CurrencyController@set_currency')->name('currencies.set_currency');
 
     //RoleController
     Route::resource('roles', 'RoleController');
-//    Route::get('/roles/destroy/{id}', 'RoleController@destroy')->name('roles.destroy');
+    Route::get('/roles/destroy/{id}', 'RoleController@destroy')->name('roles.delete');
 
     //EmployeeController
     Route::get('/employees/{name}', 'EmployeeController@index')->name('employees.index');
@@ -74,15 +74,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::post('/employee/update/{id}', 'EmployeeController@update')->name('employees.update');
     Route::get('/employee/edit/{id}', 'EmployeeController@edit')->name('employees.edit');
     Route::get('/employee/set-permission/{id}', 'EmployeeController@show')->name('employees.set_permission');
-    Route::get('/employees/destroy/{id}', 'EmployeeController@destroy')->name('employees.destroy');
+    Route::get('/employees/destroy/{id}', 'EmployeeController@destroy')->name('employees.delete');
 
     Route::post('/permissions/update/{id}', 'EmployeeController@permission_update')->name('permissions.update');
 
     Route::resource('countries', 'CountryController');
-    //Route::get('/countries/destroy/{id}', 'CountryController@destroy')->name('countries.destroy');
+    Route::get('/countries/destroy/{id}', 'CountryController@destroy')->name('countries.delete');
 
     Route::resource('cities', 'CityController');
-    //Route::get('/cities/destroy/{id}', 'CityController@destroy')->name('cities.destroy');
+    Route::get('/cities/destroy/{id}', 'CityController@destroy')->name('cities.delete');
 
     Route::get('/all-projects', 'AdminProjectController@all_projects')->name('all_projects');
     Route::get('/running-projects', 'AdminProjectController@running_projects')->name('running_projects');
@@ -101,7 +101,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::get('cancel-project-request/index', 'CancelProjectController@index')->name('cancel-project-request.index');
     Route::post('cancel-project-request/show', 'CancelProjectController@show')->name('cancel-project-request.show');
-    Route::get('cancel-project-request/destroy/{id}', 'CancelProjectController@destroy')->name('cancel-project-request.destroy');
+    Route::get('cancel-project-request/destroy/{id}', 'CancelProjectController@destroy')->name('cancel-project-request.delete');
     Route::post('cancel-project-request/accepted', 'CancelProjectController@request_accepted')->name('cancel-project-request.request_accepted');
 
     //general config
@@ -144,9 +144,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     //Blog Section
     Route::resource('blog-category', 'BlogCategoryController');
-    //Route::get('/blog-category/destroy/{id}', 'BlogCategoryController@destroy')->name('blog-category.destroy');
+    //Route::get('/blog-category/destroy/{id}', 'BlogCategoryController@destroy')->name('blog-category.delete');
     Route::resource('blog', 'BlogController');
-    //Route::get('/blog/destroy/{id}', 'BlogController@destroy')->name('blog.destroy');
+    //Route::get('/blog/destroy/{id}', 'BlogController@destroy')->name('blog.delete');
     Route::post('/blog/change-status', 'BlogController@change_status')->name('blog.change-status');
 
     //seminars
@@ -156,29 +156,29 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     //scholarships
     Route::resource('scholarship-category', 'ScholarshipCategoryController');
-//    Route::get('/scholarship-category/destroy/{id}', 'ScholarshipCategoryController@destroy')->name('scholarship-category.destroy');
+    Route::get('/scholarship-category/destroy/{id}', 'ScholarshipCategoryController@destroy')->name('scholarship-category.delete');
     Route::resource('scholarship', 'ScholarshipController');
-//    Route::get('/scholarship/destroy/{id}', 'ScholarshipController@destroy')->name('scholarship.destroy');
+    Route::get('/scholarship/destroy/{id}', 'ScholarshipController@destroy')->name('scholarship.delete');
     Route::post('/scholarship/change-status', 'ScholarshipController@change_status')->name('scholarship.change-status');
 
     Route::resource('scholarship-level', 'ScholarshipLevelController');
-//    Route::get('/scholarship-level/destroy/{id}', 'ScholarshipLevelController@destroy')->name('scholarship-level.destroy');
+    Route::get('/scholarship-level/destroy/{id}', 'ScholarshipLevelController@destroy')->name('scholarship-level.delete');
     Route::resource('scholarship-university', 'ScholarshipUniversityController');
-//    Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.destroy');
+//    Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.delete');
     Route::resource('scholarship-country', 'ScholarshipCountryController');
-//    Route::get('/scholarship-country/destroy/{id}', 'ScholarshipCountryController@destroy')->name('scholarship-country.destroy');
+    Route::get('/scholarship-country/destroy/{id}', 'ScholarshipCountryController@destroy')->name('scholarship-country.delete');
     Route::resource('scholarship-city', 'ScholarshipCityController');
-//    Route::get('/scholarship-city/destroy/{id}', 'ScholarshipCityController@destroy')->name('scholarship-city.destroy');
+    Route::get('/scholarship-city/destroy/{id}', 'ScholarshipCityController@destroy')->name('scholarship-city.delete');
     Route::resource('scholarship-qualification', 'ScholarshipQualificationController');
-//    Route::get('/scholarship-qualification/destroy/{id}', 'ScholarshipQualificationController@destroy')->name('scholarship-qualification.destroy');
+    Route::get('/scholarship-qualification/destroy/{id}', 'ScholarshipQualificationController@destroy')->name('scholarship-qualification.delete');
     Route::resource('scholarship-who-can-apply', 'ScholarshipWhoCanApplyController');
-//    Route::get('/scholarship-who-can-apply/destroy/{id}', 'ScholarshipWhoCanApplyController@destroy')->name('scholarship-who-can-apply.destroy');
+    Route::get('/scholarship-who-can-apply/destroy/{id}', 'ScholarshipWhoCanApplyController@destroy')->name('scholarship-who-can-apply.delete');
     Route::resource('scholarship-field-study', 'ScholarshipFieldStudyController');
-//    Route::get('/scholarship-field-study/destroy/{id}', 'ScholarshipFieldStudyController@destroy')->name('scholarship-field-study.destroy');
+    Route::get('/scholarship-field-study/destroy/{id}', 'ScholarshipFieldStudyController@destroy')->name('scholarship-field-study.delete');
 
     //Subscribers
     Route::controller('SubscriberController')->group(function () {
-        Route::get('/subscribers/destroy/{id}', 'destroy')->name('admin.subscribers.destroy');
+        Route::get('/subscribers/destroy/{id}', 'destroy')->name('admin.subscribers.delete');
     });
 
     // Newsletter
@@ -199,7 +199,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::view('/appearance', 'admin.default.website.appearance')->name('website.appearance')->middleware(['permission:show apperance']);
         // Route::view('/website/pages/new', 'admin.default.website.pages-new')->name('website.pages.new');
         Route::resource('custom-pages', 'PageController');
-//        Route::get('/custom-pages/destroy/{id}', 'PageController@destroy')->name('custom-pages.destroy');
+        Route::get('/custom-pages/destroy/{id}', 'PageController@destroy')->name('custom-pages.delete');
     });
 
     //Policy related
@@ -237,7 +237,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::post('cancel-service-request/show', 'ServiceController@cancel_service_request_show')->name('cancel-service-request.show');
     Route::post('cancel-service-request/accepted', 'ServiceController@cancel_service_request_accepted')->name('cancel-service-request.request_accepted');
 
-    Route::get('/admin-service/{id}/cancel', 'ServiceController@admin_cancel_service')->name('cancel-service-request.destroy');
+    Route::get('/admin-service/{id}/cancel', 'ServiceController@admin_cancel_service')->name('cancel-service-request.delete');
 
 
     Route::get('/all-service-payments', 'ServicePaymentController@admin_index')->name('service_payment_history_for_admin');
@@ -257,8 +257,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/notifications', 'NotificationController@admin_listing')->name('admin.notifications');
 
     Route::resource('staffs', 'StaffController');
-//    Route::get('/staffs/delete/{id}', 'StaffController@destroy')->name('staffs.destroy');
-
+    Route::get('/staffs/delete/{id}', 'StaffController@destroy')->name('staffs.delete');
 
     Route::view('/system/update', 'admin.default.system.update')->name('system_update');
     Route::view('/system/server-status', 'admin.default.system.server_status')->name('system_server');
@@ -266,7 +265,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     // uploaded files
     Route::any('/uploaded-files/file-info', 'AizUploadController@file_info')->name('uploaded-files.info');
     Route::resource('/uploaded-files', 'AizUploadController');
-//    Route::get('/uploaded-files/destroy/{id}', 'AizUploadController@destroy')->name('uploaded-files.destroy');
+    Route::get('/uploaded-files/destroy/{id}', 'AizUploadController@destroy')->name('uploaded-files.delete');
 
     Route::get('/cache-cache', 'HomeController@clearCache')->name('cache.clear');
     // For SEO

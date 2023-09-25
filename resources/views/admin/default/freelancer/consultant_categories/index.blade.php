@@ -58,7 +58,7 @@
                                         @can('project cat delete')
                                             <a href="#"
                                                 class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                                                data-href="{{ route('consultant-categories.destroy', $consultant_category->id) }}"
+                                                data-href="{{ route('consultant-categories.delete', $consultant_category->id) }}"
                                                 title="{{ translate('Delete') }}">
                                                 <i class="las la-trash"></i>
                                             </a>
