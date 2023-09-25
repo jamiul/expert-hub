@@ -17,7 +17,7 @@ class ExpertsController extends Controller
     {
         $experts = Experts::with('childrens')->whereNull('parent_id')->get();
 
-        $allExpertList=Experts::latest()->paginate(200);
+        $allExpertList=Experts::latest()->paginate(400);
 
         // $allExpertLists = Experts->where('parent_id',"id")->get();
         // dd($allExpertList);
@@ -44,7 +44,7 @@ class ExpertsController extends Controller
 
     public function edit($id)
     {
-        $experts = Experts::with('children')->whereNull('parent_id')->paginate(10);
+        $experts = Experts::with('childrens')->whereNull('parent_id')->paginate(10);
         $expert = Experts::findOrFail($id);
         return view('admin.default.freelancer.Experts.edit', compact('expert','experts'));
     }
@@ -64,9 +64,16 @@ class ExpertsController extends Controller
         }
     }
 
-    public function destroy(Experts $experts)
+    public function destroy($id)
     {
-        $experts->delete();
-        return redirect()->route('experts.index')->with('success', 'Experts deleted successfully.');
+        $skill = Experts::findOrFail($id);
+        if(Experts::destroy($id)){
+            flash(translate('Experts Info has been deleted successfully'))->success();
+            return redirect()->route('experts.index');
+        }
+        else {
+            flash(translate('Sorry! Something went wrong.'))->error();
+            return back();
+        }
     }
 }

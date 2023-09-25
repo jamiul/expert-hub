@@ -24,6 +24,7 @@ use \App\Models\ConsultantCategory;
 use App\Models\SeminarSoftware;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
+use \App\Models\Experts;
 
 class SearchController extends Controller
 {
@@ -56,6 +57,12 @@ class SearchController extends Controller
             $parentSkills = ParentSkill::all();
             $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
             $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
+            $consultantCategory = ConsultantCategory::all();
+            // $expertises= Experts::all();
+            $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
+            $expertiseIds = $expertises->pluck('id'); // Get an array of parent_expertise_ids
+            $experts = Experts::whereIn('parent_id', $expertiseIds)->get();
+            // dd($experts);
 
 
             if ($request->keyword != null) {
@@ -150,7 +157,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','consultantCategory','expertises','experts'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;

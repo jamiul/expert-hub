@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/skills/destroy/{id}', 'SkillController@destroy')->name('skills.delete');
     Route::resource('skills', 'SkillController');
     Route::resource('experts', "ExpertsController");
+    Route::get('/experts/destroy/{id}', 'ExpertsController@destroy')->name('experts.delete');
 
     Route::get('/parent_skills/destroy/{id}', 'ParentSkillController@destroy')->name('parent_skills.delete');
     Route::resource('parent_skills', 'ParentSkillController');

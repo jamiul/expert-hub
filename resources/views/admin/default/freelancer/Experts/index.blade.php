@@ -39,7 +39,7 @@
 
                                         <a href="#"
                                             class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                                            data-href="{{ route('experts.destroy', $expert->id) }}"
+                                            data-href="{{ route('experts.delete', $expert->id) }}"
                                             title="{{ translate('Delete') }}">
                                             <i class="las la-trash"></i>
                                         </a>

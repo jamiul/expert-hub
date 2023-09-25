@@ -14,10 +14,9 @@
             <div class="mb-4 pb-lg-4" style="background:#275846">
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
-                        <h3 class="text-white fw-700 fs-30 site-font mt-3 ">Hire Academic Consultants
+                        <h3 class="text-white fw-700 fs-30 site-font mt-3 ">Find Academic Experts
                         </h3>
-                        <p class="fw-400 text-white site-font fs-18 mb-2">Connect with a diverse range of experts in the
-                            field you are searching for to meet your academic requirements.
+                        <p class="fw-400 text-white site-font fs-18 mb-2">Connect with a diverse range of experts in the field you are searching for to meet your academic requirements.
 
                         </p>
                         <a href="register?type=2"
@@ -54,7 +53,7 @@
                                 <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px"
                                     style="background: #F2F7F2;">
                                     <div class=" border-0 pl-lg-0">
-                                        <h5 class="my-3 fs-21 fw-700">{{ translate('Consultant for hire') }}</h5>
+                                        <h5 class="my-3 fs-21 fw-700">{{ translate('Academic Expert Search') }}</h5>
                                         <button class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
                                             data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                                             <i class="las la-times la-2x"></i>
@@ -116,13 +115,56 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <!-- categories  -->
 
+                                    {{-- Expertise --}}
                                     <div class="mt-3">
+                                        <h6 class="text-left mb-3 fs-14 ">
+                                            <span class="pr-3 site-font fw-700">{{ translate('Expertise') }}</span>
+                                        </h6>
+                                        <div class="mt-3">
+                                            @foreach ($expertises as $key => $expertise)
+
+                                               <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
+                                               data-toggle="collapse"
+                                               href="#skill_{{ $expertise->id }}" role="button"
+                                               aria-expanded="true"
+                                               aria-controls="skill_{{ $expertise->id }}">
+                                               <label class="fas fa-plus "
+                                                   style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                               <p class="mb-0 fs-14 fw-500">{{ $expertise->name }}
+                                               </p>
+                                           </a>
+
+                                                <div class="overflow-auto h-130px collapse "
+                                                    id="skill_{{ $expertise->id }}">
+                                                    @foreach ($experts as $expert)
+                                                    <div
+                                                        class=" w-200px child-skill-project-filtering">
+                                                        <div class="mb-1 ">
+                                                            <input type="checkbox"
+                                                                name="childSkill_id[]"
+                                                                id="{{ $expert->id }}"
+                                                                value="{{$expert->id }}"
+                                                                class=" d-none"
+                                                                onchange="applyFilter()">
+                                                            <label
+                                                                class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
+                                                                for="{{ $expert->id }}">
+                                                                {{ $expert->name }}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                      <!-- categories  -->
+                                     <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
                                             <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
                                         </h6>
-                                        @foreach (\App\Models\ConsultantCategory::all() as $category)
+                                        @foreach ($consultantCategory as $category)
                                             <label class="aiz-checkbox site-font w-100">
                                                 <input type="checkbox" name="category_id[]" value="{{ $category->id }}"
                                                     onchange="applyFilter()"
@@ -151,7 +193,7 @@
                                                             <option value="" class="site-font">
                                                                 {{ translate('Search skills') }}
                                                             </option>
-                                                            @foreach (\App\Models\Skill::all()->reverse() as $key => $skill)
+                                                            @foreach ($skills as $key => $skill)
                                                                 <option class="site-font" value="{{ $skill->id }}"
                                                                     @if (in_array($skill->id, (array) $skill_ids)) selected @endif>
                                                                     {{ $skill->name }}</option>
