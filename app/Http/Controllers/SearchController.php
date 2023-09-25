@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use \App\Models\User;
 use \App\Models\Skill;
+use \App\Models\parentSkill;
 use App\Models\Address;
 use App\Models\Seminar;
 use \App\Models\Project;
@@ -52,6 +53,9 @@ class SearchController extends Controller
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
             // dd($Consultantions);
+            $parentSkills = ParentSkill::all();
+            $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
+            $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
 
 
             if ($request->keyword != null) {
@@ -146,7 +150,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills'));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;

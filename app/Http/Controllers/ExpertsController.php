@@ -15,7 +15,7 @@ class ExpertsController extends Controller
      */
     public function index()
     {
-        $experts = Experts::with('children')->whereNull('parent_id')->get();
+        $experts = Experts::with('childrens')->whereNull('parent_id')->get();
 
         $allExpertList=Experts::latest()->paginate(200);
 
