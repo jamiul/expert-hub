@@ -38,7 +38,7 @@
                             <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{url('admin/scholarship-who-can-apply/'.$category->id.'/edit')}}" title="{{ translate('Edit') }}">
                                 <i class="las la-edit"></i>
                             </a>
-                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('scholarship-who-can-apply.destroy', $category->id)}}" title="{{ translate('Delete') }}">
+                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('scholarship-who-can-apply.delete', $category->id)}}" title="{{ translate('Delete') }}">
                                 <i class="las la-trash"></i>
                             </a>
                         </td>

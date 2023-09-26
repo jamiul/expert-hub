@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateExpertsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bookmarked_projects', function (Blueprint $table) {
+        Schema::create('experts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('project_id');
+            $table->string('name');
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookmarked_projects');
+        Schema::dropIfExists('experts');
     }
-};
+}

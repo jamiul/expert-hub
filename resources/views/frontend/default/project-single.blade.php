@@ -127,7 +127,7 @@
 								</div>
                                 <div class="mb-3">
                                     @if (Auth::check() && ($bookmarked_project = \App\Models\BookmarkedProject::where('user_id', auth()->user()->id)->where('project_id', $project->id)->first()) != null)
-                                        <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.destroy', $bookmarked_project->id) }}" data-target="#bookmark-remove-modal">
+                                        <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.delete', $bookmarked_project->id) }}" data-target="#bookmark-remove-modal">
                                             <i class="las la-bookmark fs-16 fw-700"></i>
                                             <span>{{ translate('Remove Bookmark') }}</span>
                                         </a>

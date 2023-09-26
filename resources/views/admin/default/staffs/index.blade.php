@@ -51,26 +51,26 @@
                         @foreach($staffs as $key => $staff)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $staff->user->name }}</td>                                
-                                <td>{{ $staff->user->email }}</td>                            
+                                <td>{{ $staff->user->name }}</td>
+                                <td>{{ $staff->user->email }}</td>
                                 <td>
                                     @if ($staff->role != null)
                                         {{$staff->role->name}}
                                     @endif
-                                </td>                                
-                                <td class="text-right">                                    
+                                </td>
+                                <td class="text-right">
                                     <a href="{{ route('staffs.edit', encrypt($staff->id)) }}" class="btn btn-soft-primary btn-icon btn-circle btn-sm btn icon" title="{{ translate('Edit') }}">
                                         <i class="las la-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0)" data-href="{{route('staffs.destroy', $staff->id)}}" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" title="{{ translate('Delete') }}">
+                                    <a href="javascript:void(0)" data-href="{{route('staffs.delete', $staff->id)}}" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" title="{{ translate('Delete') }}">
                                         <i class="las la-trash"></i>
-                                    </a>                                
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
-                
+
             </div>
         </div>
     </div>

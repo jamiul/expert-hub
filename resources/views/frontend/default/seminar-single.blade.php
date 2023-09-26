@@ -403,7 +403,7 @@
                 @if (Auth::check() && ($bookmarked_freelancer = \App\Models\BookmarkedFreelancer::where('user_id',
                 auth()->user()->id)->where('freelancer_user_id', $freelancer->id)->first()) != null)
                 <a class="btn btn-block btn-primary rounded-1 confirm-alert" href="javascript:void(0)"
-                  data-href="{{ route('bookmarked-freelancers.destroy', $bookmarked_freelancer->id) }}"
+                  data-href="{{ route('bookmarked-freelancers.delete', $bookmarked_freelancer->id) }}"
                   data-target="#bookmark-remove-modal">
                   <i class="las la-bookmark"></i>
                   <span>{{ translate('Remove Bookmark') }}</span>

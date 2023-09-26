@@ -151,7 +151,7 @@
                                                             <option value="" class="site-font">
                                                                 {{ translate('Search skills') }}
                                                             </option>
-                                                            @foreach (\App\Models\Skill::all() as $key => $skill)
+                                                            @foreach (\App\Models\Skill::all()->reverse() as $key => $skill)
                                                                 <option class="site-font" value="{{ $skill->id }}"
                                                                     @if (in_array($skill->id, (array) $skill_ids)) selected @endif>
                                                                     {{ $skill->name }}</option>
@@ -159,7 +159,7 @@
                                                         </select>
 
                                                         <div class="mt-3">
-                                                            @foreach (\App\Models\ParentSkill::all() as $key => $parentSkill)
+                                                            @foreach ($parentSkills as $key => $parentSkill)
                                                                 <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
                                                                     data-toggle="collapse"
                                                                     href="#skill_{{ $parentSkill->id }}" role="button"
@@ -172,7 +172,7 @@
                                                                 </a>
                                                                 <div class="overflow-auto h-130px collapse "
                                                                     id="skill_{{ $parentSkill->id }}">
-                                                                    @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
+                                                                    @foreach ($skills as $subSkill)
                                                                         <div
                                                                             class=" w-200px child-skill-project-filtering">
                                                                             <div class="mb-1 ">
