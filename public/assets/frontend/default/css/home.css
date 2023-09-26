@@ -157,6 +157,14 @@ body {
     width: 86%;
     margin: 70px 8%;
 }
+.profile-single {
+    width: 86%;
+    margin: 20px 8%;
+}
+.profile-leftside{
+    border-color: #275846 !important;
+    color: #275846;
+}
 .home-slider {
     width: 84%;
     margin: 10px 8% 30px !important;

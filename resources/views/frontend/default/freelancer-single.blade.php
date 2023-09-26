@@ -3,280 +3,145 @@
 
     <head>
         <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
-        <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/single-profile.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/single-Profile.css') }}">
     </head>
     <body>
         @extends('frontend.default.layouts.app')
         @section('content')
-            <!-- <div class="h-250px">
-                @if ($freelancer->cover_photo != null)
-    <img src="{{ custom_asset($freelancer->cover_photo) }}" alt="{{ $freelancer->name }}" class="img-fit h-250px">
-@else
-    <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"
-                class="img-fit h-250px" style="background-color:#275846;">
-    @endif
-            </div> -->
-
-            <div class="mt-lg-3 position-relative freelancer-profile-main-section">
+            <div class="position-relative freelancer-Profile-main-section border-bottom">
+               <div class="border-bottom">
+                <div class="profile-single">
+                    <nav class="justify-content-between d-flex " style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">Find Consultant</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Professor Kassiou</li>
+                        </ol>
+                       <div class="d-flex mx-4 ">
+                        <div class="rounded mx-1 border-primary" style="border:1px solid #61B895;">
+                            <img class="p-2 center d-block c-pointer"
+                                src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}"
+                                alt="">
+                        </div>
+                        <div class="rounded" style="border:1px solid #61B895;">
+                            <img class="p-2 center d-block c-pointer"
+                                src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}"
+                                alt="">
+                        </div>
+                       </div>
+                      </nav>
+                   </div>
+               </div>
                 <div class="container-home rounded-1">
-                    <div class="border">
-                        <div class=" border-bottom">
-                            <div class=" p-sm-20px p-lg-30px">
-                                <div class="row freelancer-user-identity-profile-section">
-                                    <div class="col-lg-8 col-10 pl-sm-0">
-                                        <div class="profile-identity">
-                                            <span class="avatar avatar-xl avatar-sm-sm mr-lg-3 mr-sm-2">                         
-                                                @if ($freelancer->photo != null)
-                                                    <img src="{{ custom_asset($freelancer->photo) }}"
-                                                        alt="{{ $freelancer->name }}">
-                                                @else
-                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
-                                                        alt="{{ $freelancer->name }}">
-                                                @endif
-                                                @if (Cache::has('user-is-online-' . $freelancer->id))
-                                                    <span
-                                                        class="badge badge-dot badge-circle badge-success badge-status badge-md "></span>
-                                                @else
-                                                    <span
-                                                        class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
-                                                @endif
-                                            </span>
-                                            <div class="identity-container">
-                                                <div class="name">
-                                                    <div class="d-flex align-items-center" style="color:#5ABC76;">
-                                                        <h4 class="frePage-freelancer-name  singel-profile site-font">
-                                                            {{ $freelancer->name }}</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="name">
-                                                    <div class="d-flex align-items-center" style="color:#5ABC76;">
-                                                        <h4 class=" site-font">
-                                                        Curriculum Development  
-                                                              </h4>
-                                                    </div>
-                                                </div>
-                                                <div class="location-status">
-                                                    <div class="location fw-700 d-lg-flex d-md-flex d-sm-block">
-                                                        <div class="mr-lg-2 mb-sm-1 btn btn-light btn-xs border bg-soft-info-light   mb-1 ml-1  text-dark rounded border-0 fs-14"
-                                                            style="  color:#6560E6 !important;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="9.6"
-                                                                height="12" viewBox="0 0 9.6 12">
-                                                                <path id="Path_25847" data-name="Path 25847"
-                                                                    d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z"
-                                                                    transform="translate(-4 -2)" fill="#989ea8" />
-                                                            </svg>
-                                                            @if ($freelancer->address != null && $freelancer->address->city != null && $freelancer->address->country != null)
-                                                                <span
-                                                                    class="ml-lg-1">{{ $freelancer->address->city->name }},
-                                                                    {{ $freelancer->address->country->name }}</span>
-                                                            @endif
-                                                        </div>
-                                                        <div class="btn btn-light btn-xs border bg-soft-info-light   mb-1 ml-1  text-dark rounded border-0 fs-14"
-                                                            style="  color:#6560E6 !important;" id="local-time"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="availability"></div>
-                                            </div>
-                                        </div>
-                                        <!-- <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
-                                                <div class="d-flex">
-                                                    <div class="d-lg-flex justify-content-center align-items-center">
-                                                        <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}" alt="">
-                                                        <p class="ml-1 mb-0 fs-15 text-black fw-600" style="margin-right: 70px;">100% Job Success</p>
-                                                    </div>
-                                                    <p class="mb-0 fs-15 text-black fw-600">Top Rated Plus</p>
-                                                </div>
-                                            </div> -->
-                                    </div>
-                                    <div class="col-lg-4 col-2 ">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="dropdown ">
-                                                <a class="d-flex justify-content-center align-items-center  c-pointer"
-                                                    style="border:1px solid #ddd;height:35px; width:35px; border-radius:50%;"
-                                                    id="menuDropdown" role="button" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <p class="p-0 mb-1">...</p>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right mt-5"
-                                                    aria-labelledby="menuDropdown">
-                                                    <!-- Add your menu items here -->
-                                                    <a class="dropdown-item  fs-14 fw-500  site-font text-dark"
-                                                        href="#">Add a note</a>
-                                                    <a class="dropdown-item fs-14 site-font fw-500 text-dark"
-                                                        href="#">Flag as inapproprite</a>
-                                                </div>
-                                            </div>
-                                            @php
-                                                $users = \App\Models\User::where('user_type', 'client')->get();
-                                            @endphp
-
-                                            @if (!Auth::check() || $users->contains(Auth::user()))
-                                                <div class="hire-button hire-me-button-res-frePage ">
-                                                    <a href="{{ route('invition_for_hire_freelancer', $freelancer->user_name) }}"
-                                                        class="hire-link">Hire Me</a>
-                                                </div>
-                                                <div class="hire-me-button-res-frePage">
-                                                    <a class="btn text-white fw-600 fs-14"
-                                                        style="background-color:#275846; border-radius:20px; padding: 6px 35px;"
-                                                        href="#">Invite</a>
-                                                </div>
-                                                <div class="rounded-circle" style="border:1px solid #ddd;">
-                                                    <img class="p-2 center d-block c-pointer"
-                                                        src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}"
-                                                        alt="">
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    {{-- <div class="mt-4 frePage-job-rat-part " style="margin-left: 140px;">
-                                        <div class="d-flex">
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('/assets/frontend/default/img/freelancer_profile/success.png') }}"
-                                                    alt="">
-                                                <p class="ml-1 mb-0 fs-15 text-black site-font fw-600"
-                                                    style="margin-right: 70px;">100% Job Success</p>
-                                            </div>
-                                            <p class="mb-0 fs-15 text-black fw-600 site-font">Top Rated Plus</p>
-                                        </div>
-                                    </div> --}}
-                                </div>
-                            </div>
-                        </div>
-                        <!-- for responsive hire me and invite button  start-->
-                        <div class=" freePage-hire-invite-btn-show">
-                            <div class=" py-2 px-4">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="dropdown">
-                                        <a class="d-flex justify-content-center align-items-center c-pointer"
-                                            style="border:1px solid #ddd;height:35px; width:35px; border-radius:50%;"
-                                            id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            <p class="p-0 mb-1">...</p>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right mt-5"
-                                            aria-labelledby="menuDropdown">
-                                            <a class="dropdown-item selected" href="#" id="newest site-font">Newest
-                                                first</a>
-                                            <a class="dropdown-item site-font" href="#" id="highest">Highest
-                                                rated</a>
-
-                                        </div>
-                                    </div>
-                                    <div class="hire-button  ">
-                                        <a href="{{ route('invition_for_hire_freelancer', $freelancer->user_name) }}"
-                                            class="hire-link site-font">Hire Me</a>
-                                    </div>
-                                    <div class="freePage-invite-button-for-responsive">
-                                        <a class="btn text-white fw-600 fs-14" style=" padding: 6px 35px;"
-                                            href="#">Invite</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- for responsive hire me and invite button end -->
-
+                    <div class="">
                         <div class="row">
                             <!-- left side -->
-                            <div class="col-lg-4 col-xl-3 col-12 left-aside pr-0">
-                                <!-- <div class="view-profile-main-single"></div> -->
-
-                                <!-- earning-sec-for-responsive-start -->
-                                <div class="border-bottom freePage-earning-sec-for-sm-responsive">
-                                    <div class="row mt-3 mx-4">
-                                        <div class="col-4 p-0">
-                                            <h4 class="fs-16 fw-700 text-black mb-1 site-font">$9K+</h4>
-                                            <p class="fs-14 text-black site-font">Total Earnings</p>
-                                        </div>
-                                        <div class="col-4 p-0">
-                                            <h4 class="fs-16 fw-700 text-black mb-1">14</h4>
-                                            <p class="fs-14 text-black site-font">Total Jobs</p>
-                                        </div>
-                                        <div class="col-4 p-0">
-                                            <h4 class="fs-16 fw-700 text-black mb-1">359</h4>
-                                            <p class="fs-14 text-black site-font">Total Hours</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- earning-sec-for-responsive-end -->
-
-
-                                {{-- @if (!Auth::check())
-                                    <div class="freePage-earning-sec-for-responsive bg-gray border-bottom">
-                                        <div class="p-4">
-                                            <h4 class="text-black fs-18 fw-600 pb-3">Ready to work with {{ $freelancer->name }}?</h4>
-                                            <a class="btn text-white w-100" style="background-color:#275846;" href="{{ route('register') }}">Sign up</a>
-
-                                            <p class="text-center fs-14 fw-600 text-black pt-3">Already have an account?<a href=href="{{ route('login') }}"> Log in</a></p>
-                                        </div>
-                                    </div>
-                                    @endif --}}
-                                <div class="freePage-earning-sec-for-responsive">
-                                    {{-- <div class="border-bottom ">
-                                        <div class="d-flex justify-content-between mt-3 mx-4">
-                                            <div>
-                                                <h4 class="fs-16 fw-700 text-black mb-1 site-font">$9K+</h4>
-                                                <p class="fs-14 text-black site-font">Total Earnings</p>
-                                            </div>
-                                            <div>
-                                                <h4 class="fs-16 fw-700 text-black mb-1 site-font">14</h4>
-                                                <p class="fs-14 text-black site-font">Total Jobs</p>
-                                            </div>
-                                            <div>
-                                                <h4 class="fs-16 fw-700 text-black mb-1 site-font">359</h4>
-                                                <p class="fs-14 text-black site-font">Total Hours</p>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                    <div class="mt-4 ">
-                                        <div class="mx-4">
-                                            <div>
-                                                <h4 class="fs-18 fw-600 mb-2 site-font">Research Profile</h4>
-                                                <a href="https://scholar.google.com/" class="fs-14  site-font"><u class="text-dark mb-2">Browse more...</u></a>
-                                            </div>
-                                            <div>
-                                                <h4 class="fs-18 fw-600 mb-2 site-font">University Profile</h4>
-                                                <a href="https://www.ox.ac.uk/" class="fs-14 site-font mb-2"><u class="text-dark">Browse more...</u></a>
-                                            </div>
-                                            <div>
-                                                <h4 class="fs-18 fw-600 mb-2 site-font">Hours per week</h4>
-                                                <p class="fs-14 site-font">More than 30 hrs/week</p>
-                                            </div>
-                                            <div class="mt-4">
-                                                <h4 class="fs-18 fw-600 mb-2 site-font">Languages</h4>
-                                                <p class="fs-14 site-font">Proficient in English</p>
-                                            </div>
-                                            {{-- <div class="mt-4">
-                                                <h4 class="fs-18 fw-600 mb-2 site-font">Verifications
-                                                </h4>
-                                                <p class="fs-14 mb-0 site-font">Phone Number: Verified</p>
-                                                <p class="fs-14 site-font">ID: Verified</p>
-                                            </div> --}}
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-lg-4 col-xl-3 col-12 left-aside shadow-lg pr-0 h-50">      
                                 <!-- Education -->
-                                <div class="mx-4 mt-4 border-bottom mb-3">
-                                    <div class="">
-                                        <h4 class="h6 fw-700 mb-0 fs-18 site-font"> {{ translate('Education') }}</h4>
+                                <div class="mx-4  border-bottom mb-3">
+                                    <div class="justify-content-center text-center mt-4">
+                                        <img style="width:176px; height:177px;" src=" {{ asset('/assets/home/Find-scholarship/arts.jpg') }}"
+                                        class="" alt="service_image">
                                     </div>
+                                    <div>
+                                       
+                                    <h5 class="text-black fs-23 fw-500 pb-3 text-center mt-3"> {{ $freelancer->name }}</h5>
+                                    <h6 class="text-center fs-16 fw-400">Curriculum Development Specialist</h6>
+                                    <h6 class="text-center text-primary fs-16">Public Health </h6>
+                                                                        {{-- location --}}
+                                                                        <div class="location fw-700 ">
+                                                                            <div class="mr-lg-2 mb-sm-1 text-center  mb-1 ml-1  text-dark fs-14">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="9.6"
+                                                                                    height="12" viewBox="0 0 9.6 12">
+                                                                                    <path id="Path_25847" data-name="Path 25847"
+                                                                                        d="M8.8,2A4.806,4.806,0,0,0,4,6.8c0,1.953,1.418,3.575,2.92,5.292.475.544.967,1.106,1.405,1.675a.6.6,0,0,0,.95,0c.438-.569.93-1.131,1.405-1.675,1.5-1.717,2.92-3.338,2.92-5.292A4.806,4.806,0,0,0,8.8,2Zm0,6.6a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,8.8,8.6Z"
+                                                                                        transform="translate(-4 -2)" fill="#989ea8" />
+                                                                                </svg>
+                                                                                @if ($freelancer->address != null && $freelancer->address->city != null && $freelancer->address->country != null)
+                                                                                    <span
+                                                                                        class="ml-lg-1 ">{{ $freelancer->address->city->name }},
+                                                                                        {{ $freelancer->address->country->name }}</span>
+                                                                                @endif
+                                                                            </div>
+                                                                            <div class=" text-dark text-center fs-14" id="local-time"></div>
+                                                                        </div>
+
+                                                                      </div>
+                                                                        <div class="border-bottom pb-3">
+                                                                            
+                                            <div>
+                                                <p class="btn btn-primary btn-sm  w-100  fw-700 mt-3">
+                                                {{ translate('Book a Consultation') }}
+                                            </p>
+                                        </div>
+                                    <div>
+                                        <p class="btn border-1 btn-sm  w-100  fw-700 profile-leftside" style="color: #275846; border-color:#275846 !important;" >
+                                            {{ translate('Book a TV Interview') }}
+                                        </p>
+                                </div>
+                                    <div>
+                                        <p class="btn border-1 btn-sm  w-100  fw-700 profile-leftside" style="color: #275846; border-color:#275846 !important;" >
+                                            {{ translate('Invite to Project') }}
+                                        </p>
+                                </div>
+                                                                        </div>
+
+                                <div class="mt-4">
+                                    <h4 class="fs-16 fw-700 mb-2 site-font">Languages</h4>
+                                    <p class="fs-14 fw-500 site-font">Proficient in English</p>
+                                </div>
+                                <div class='mt-4 mb-3'>
+                                    <div class="  ">
+                                        <h6 class="fs-16 fw-700">{{ translate('Expertise') }}</h6>
+                                       
+                                        {{-- skills  --}}
+
+                                        <div>
+                                            @if ($freelancer->Profile->skills != null)
+                                                @foreach (json_decode($freelancer->Profile->skills, true) as $key => $skill_id)
+                                                    @php
+                                                        $skill = \App\Models\Skill::find($skill_id);
+                                                    @endphp
+                                                    @if ($skill)
+                                                        <span
+                                                            class="btn fs-14 text-primary border rounded-2 py-1 px-2 border-primary site-font mb-1"
+                                                            >{{ $skill->name }}
+                                                        </span>
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                {{-- education  --}}
+                                        
                                     <div class="">
+                                        <h5 class="fs-16 mt-4 fw-700">{{ translate('Education') }}</h5>
                                         <ul class="list-group list-group-flush site-font">
                                             @foreach ($freelancer->education_details as $key => $education)
                                                 <li class="list-group-item px-0">
-                                                    <h6 class="fw-500 fs-16 mb-1 site-font">{{ $education->school_name }}
+                                                    <h6 class="fw-600 fs-14 mb-1 site-font m-0">{{ $education->school_name }}
                                                     </h6>
-                                                    <p class="mb-0 text-muted">{{ $education->degree }} |
+                                                    <p class="mb-0 fw-400">{{ $education->degree }} |
                                                         {{ $education->passing_year }} </p>
 
                                                 </li>
                                             @endforeach
                                         </ul>
                                     </div>
-                                </div>
+                                    </div>
 
-                                <div class=" mt-5">
-                                    <!-- Employment history -->
+
+                                </div>
+  
+                                    <div>
+                                        <h4 class="fs-16 fw-700 mb-2 site-font">University Profile</h4>
+                                        <a href="https://www.ox.ac.uk/" class="fs-14 site-font mb-2"><u class="text-dark">http://127.0.0.1:8000/freelancer/mr-consultant20230405-091010..</u></a>
+                                    </div>
+                                    <div>
+                                        <h4 class="fs-16 fw-700 mb-2 mt-4 site-font">Research Profile</h4>
+                                        <a href="https://scholar.google.com/" class="fs-14  site-font"><u class="text-dark mb-2">http://127.0.0.1:8000/freelancer/mr-consultant20230405-091010..</u></a>
+                                    </div>                    
+                                </div>
+                                <!-- Employment history -->
+                                {{-- <div class=" mt-5">  
                                     <div class="mx-4 mt-4 border-bottom mb-3">
                                         <div class="">
                                             <h4 class="h6 fw-700 mb-0 fs-18"> {{ translate('Work Experience') }}</h4>
@@ -314,13 +179,13 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <!-- details side or right side -->
                             <div class="col-lg-8 col-xl-9 col-12 pl-0">
-                                <div class="border-bottom">
-                                    <div class="tab-content mx-4" id="nav-tabContent">
+                                <div class="">
+                                    <div class="tab-content mx-4 border mb-3 px-2" id="nav-tabContent">
                                         <div class="tab-pane fade show active mt-4" id="list-home" role="tabpanel"
                                             aria-labelledby="list-home-list">
                                             <div class="d-flex justify-content-between mt-3 ">
@@ -338,79 +203,21 @@
                                                     commitment to education, Prof. Michael has made significant
                                                     contributions to the field. Prof. Michael's passion for improving
                                                     educational outcomes is evident through numerous publications,
-                                                    professional memberships, and awards, making them a prominent figure in
+                                                    Professional memberships, and awards, making them a prominent figure in
                                                     curriculum development, education research, and consultation services.
                                                 </p>
                                             </div>
                                         </div>
-                                          <!-- skills -->
-                                <div class='border-bottom mt-4 mb-3'>
-                                    <div class="  ">
-                                        <h4 class="">{{ translate('Expertise') }}</h4>
-
-                                        <div>
-                                            @if ($freelancer->profile->skills != null)
-                                                @foreach (json_decode($freelancer->profile->skills, true) as $key => $skill_id)
-                                                    @php
-                                                        $skill = \App\Models\Skill::find($skill_id);
-                                                    @endphp
-                                                    @if ($skill)
-                                                        <span
-                                                            class="btn btn-light btn-xs border bg-soft-info-light site-font   mb-1 ml-1  text-dark rounded border-0 fs-14"
-                                                            style="  color:#6560E6 !important;">{{ $skill->name }}
-                                                        </span>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                        </div>
                                     </div>
-
-
-                                </div>
-                                        <div class="tab-pane fade mt-4" id="list-profile" role="tabpanel"
-                                            aria-labelledby="list-profile-list">
-                                            <div class="d-flex justify-content-between mt-3 ">
-                                                <h4 class="fw-700 fs-18 text-black">Design Engineer</h4>
-                                                <h4 class="fw-700 fs-18 text-black">$30.00/hr</h4>
-                                            </div>
-                                            <div class="mt-3">
-                                                <p class="fs-14 ">I have always focused on getting better at the skills
-                                                    that have more practical insight and that are most relevant in a career
-                                                    as a product developer. Being a mechanical engineer I am much inclined
-                                                    towards structural behavior of dynamic real world systems. For that
-                                                    working on skills like finite element analysis, CAD/CAM became my thing.
-                                                    I got to work on many prestigious design and fabrication projects like
-                                                    formula student car and UAV launcher. I started working as a freelancer
-                                                    during my second year of graduation from a local market and this has
-                                                    helped me develop a good reputation in the market. I have been involved
-                                                    in many voluntary activities to help Facebook communities like "MATLAB"
-                                                    and "Ansys Workbench" where I get to socialize with multicultural people
-                                                    from around the world, listen to their problems in these software
-                                                    domains and helping them in a healthy collaborative environment.Prof.
-                                                    Michael is an accomplished Curriculum Development Specialist with a
-                                                    distinguished career in education and a track record of providing
-                                                    consultation services. Holding a Doctor of Education (Ed.D.) in
-                                                    Curriculum and Instruction, Prof. Michael has dedicated expertise in
-                                                    designing innovative curricula, enhancing student engagement, and
-                                                    conducting research on educational best practices. With a background in
-                                                    curriculum coordination, consultation, and a strong commitment to
-                                                    education, Prof. Michael has made significant contributions to the
-                                                    field. Prof. Michael's passion for improving educational outcomes is
-                                                    evident through numerous publications, professional memberships, and
-                                                    awards, making them a prominent figure in curriculum development,
-                                                    education research, and consultation services.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mx-4">
+                                    <div class="mx-4 border mb-3 p-2">
                                         <h4 class="fw-700 fs-18 text-black site-font">Book Expert for Consultation 
                                         </h4>
-                                        <div class="border mb-3">
+                                        <div class=" mb-3">
                                             <div class="row p-3">
                                                 <div class="col-lg-2 col-md-2 col-sm-12">
                                                     <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
                                                         alt="">
+                                                        <p>Prof. Michael</p>
                                                 </div>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="d-flex justify-content-between ">
@@ -429,11 +236,16 @@
                                             </div>
 
                                         </div>
-                                        <div class="border mb-3">
+ 
+                                    </div>
+                                    <div class="mx-4 border mb-3 p-2">
+                                        <h4 class="fw-700 fs-18 text-black site-font">Book Expert for Consultation 
+                                        </h4>
                                             <div class="row p-3">
                                                 <div class="col-lg-2 col-md-2 col-sm-12">
                                                     <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
                                                         alt="">
+                                                        <p>Prof. Michael</p>
                                                 </div>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="d-flex justify-content-between ">
@@ -449,277 +261,295 @@
                                                     
                                                 </div>
                                             </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="mx-4">
-                                        <h4 class="fw-700 fs-18 text-black site-font">Book Expert for TV Interview
-                                        </h4>
-                                        <div class="border mb-3">
-                                            <div class="row p-3">
-                                                <div class="col-lg-2 col-md-2 col-sm-12">
-                                                    <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
-                                                        alt="">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="">
-                                                        <p class="fw-700 fs-18 site-font"><span>Expertise:</span>Public Health                         
-                                                        </p>
-                                                    </div>
-                                                    <p class="fs-16 mt-1 mb-0 site-font ">
-                                                        Prof. Michael is an expert for media in the following fields: Public Health and Infectious diseases. They are happy to lend their expertise to share their research discoveries and insights with the community via media channels.</p>
-                                                    <p class="fs-16 mt-1 mb-0 site-font">To schedule a consultation, <span class="fs-16 site-font seminar-more">book a time</span></p>
-                                                    
-                                                </div>
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
-                                
-                                <!-- work history -->
-
-                                <div class="border-bottom-2 mt-4">
-                                    <div class="mx-4 d-flex align-items-center mt-2  mb-3">
-                                        <h4 class="mr-3">Work History</h4>
-                                        <div class="dropdown">
-                                            <a class="d-flex justify-content-center align-items-center c-pointer"
-                                                style="border:1px solid #ddd;height:35px; width:35px; border-radius:50%;"
-                                                id="menuDropdown" role="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <p class="p-0 mb-1">...</p>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-left mt-5"
-                                                aria-labelledby="menuDropdown">
-                                                <a class="dropdown-item selected fs-14 fw-500 text-dark" href="#"
-                                                    id="newest">Newest first
-                                                </a>
-                                                <a class="dropdown-item  fs-14 fw-500 text-dark" href="#"
-                                                    id="highest">Highest rated
-                                                </a>
-                                                <a class="dropdown-item fs-14 fw-500 text-dark" href="#"
-                                                    id="lowest">Lowest rated
-                                                </a>
-                                                <a class="dropdown-item fs-14 fw-500 text-dark" href="#"
-                                                    id="largest">Largest projects
-                                                </a>
+                                <div class="mx-4 border p-2 mb-3">
+                                    <h4 class="fw-700 fs-18 text-black site-font">Book Expert for TV Interview
+                                    </h4>
+                                    <div class=" mb-3">
+                                        <div class="row p-3">
+                                            <div class="col-lg-2 col-md-2 col-sm-12">
+                                                <img src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
+                                                    alt="">
+                                                    <p>Prof. Michael</p>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="">
+                                                    <p class="fw-700 fs-18 site-font"><span>Expertise:</span>Public Health                         
+                                                    </p>
+                                                </div>
+                                                <p class="fs-16 mt-1 mb-0 site-font ">
+                                                    Prof. Michael is an expert for media in the following fields: Public Health and Infectious diseases. They are happy to lend their expertise to share their research discoveries and insights with the community via media channels.</p>
+                                                <p class="fs-16 mt-1 mb-0 site-font">To schedule a consultation, <span class="fs-16 site-font seminar-more">book a time</span></p>
+                                                
                                             </div>
                                         </div>
+
                                     </div>
-                                    {{-- Completed and runing work part start --}}
-                                    @php
-                                        $completedProjects = getCompletedProjectsByFreelancer($freelancer->id)->get();
-
-                                        // Extract project IDs from the collection using pluck
-                                        $projectIds = $completedProjects->pluck('id');
-
-                                        // Retrieve project details using the extracted IDs
-                                        $projects = \App\Models\Project::whereIn('id', $projectIds)->get();
-
-                                    @endphp
+                                </div>
 
 
+                                <div class="mx-4 border p-2">
+                                    <h4 class="fw-700 fs-18 text-black site-font">Work Experience</h4>
+                                    <div class=" mb-3 border-bottom">
+                                                <div class="">
+                                                    <p class="fw-700 fs-18 site-font">Director of Curriculer Development                         
+                                                    </p>
+                                                    <p>Public Health Institute of Sydney, Sydney, Australia | 2020-Present</p>
+                                                </div>
+                                                <p class="fs-14 mt-1 mb-0 site-font ">
+                                                    As a Director of Curriculum Development at the Public Health Institute of Sydney, I have played a pivotal role in shaping the education landscape. My responsibilities include:</p>
+                                                    <p>Collaborating with faculty members to design and implement innovative curricula for undergraduate and graduate programs in public health.</p>
+                                                   <p>Conducting ongoing research to identify emerging trends and best practices in public health education.</p>
+                                                    <p>Overseeing the development of assessment tools and methodologies to evaluate student learning outcomes.</p>
+                                                    </p>
+                                                
+                                           
+
+                                    </div>
+                                    <div class=" mb-3 border-bottom">
+                                                <div class="">
+                                                    <p class="fw-700 fs-18 site-font">Lead Researcher in Public Health Education                       
+                                                    </p>
+                                                    <p>Lead Researcher in Public Health Education | 2010-2015</p>
+                                                </div>
+                                                <p class="fs-14 mt-1 mb-0 site-font ">
+                                                    In this role, I contributed to the advancement of public health education and curriculum development by:</p>
+                                                    <p>Leading research projects focused on identifying key factors contributing to student engagement and success in public health programs.</p>
+                                                   <p>Collaborating with international partners to conduct comparative studies on curriculum design and its impact on educational outcomes.</p>
+                                                   
+                                    </div>
+                                    <div class=" mb-3">
+                                                <div class="">
+                                                    <p class="fw-700 fs-18 site-font">Consultant for Educational Institutions                         
+                                                    </p>
+                                                    <p>Self-Employed Curriculum Development Consultant | 2005-2010</p>
+                                                </div>
+                                                <p class="fs-14 mt-1 mb-0 site-font ">
+                                                    As a Director of Curriculum Development at the Public Health Institute of Sydney, I have played a pivotal role in shaping the education landscape. My responsibilities include:</p>
+                                                    <p>Collaborating with faculty members to design and implement innovative curricula for undergraduate and graduate programs in public health.</p>
+                                                   <p>Conducting ongoing research to identify emerging trends and best practices in public health education.</p>
+                                                    <p>Overseeing the development of assessment tools and methodologies to evaluate student learning outcomes.</p>
+                                                    </p>
+                                    </div>
+                                </div>
+                                <div class="border mt-4 mx-4">     
                                     <ul class="nav nav-tabs freePage-work-history-com-prog" id="myTab"
                                         role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link  active fs-16  " id="hiring-talent-tab" data-toggle="tab"
-                                                href="#hiring" role="tab" aria-controls="hiring">Completed
-                                                ({{ $projects->count() }})</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link fs-16 seminar-more " id="finding-work-tab"
+                                            <a class="nav-link active fs-16  " id="finding-work-tab"
                                                 data-toggle="tab" href="#finding" role="tab" aria-controls="finding"
-                                                aria-selected="false">In progress</a>
+                                                aria-selected="false">Current Projects</a>
+                                        </li>
+                                        <span class="mt-2">|</span>
+                                        <li class="nav-item">
+                                            <a class="nav-link  fs-16  " id="hiring-talent-tab" data-toggle="tab"
+                                                href="#hiring" role="tab" aria-controls="hiring">Completed Projects
+                                            </a>
                                         </li>
                                     </ul>
+                                    
                                     {{-- Completed and runing work part start --}}
                                     <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="hiring" role="tabpanel"
-                                            aria-labelledby="hiring-talent-tab">
-                                            @foreach ($projects as $key => $project)
-                                                <div class="mx-4 mt-3 pb-3">
-                                                    <div class="mb-4">
-                                                        <div class="list-group list-group-flush border-bottom">
-                                                            <h4 class="fw-600 fs-18 mb-1 lh-1-6 text-success">
-                                                                {{ $project->name }}
-                                                            </h4>
-                                                            @foreach (\App\Models\Review::where('published', 1)->where('reviewed_user_id', $freelancer->id)->where('project_id', $project->id)->get() as $key => $review)
-                                                                <div class="d-flex align-items-center">
-                                                                    @if ($review->rating)
-                                                                        <span class="rating rating-sm mr-1">
-                                                                            {{ renderStarRating($review->rating) }}
-                                                                        </span>
-                                                                        <span
-                                                                            class=" rounded text-black   fs-13 fw-700 pb-0 mb-0 text-center">
-                                                                            {{ $review->rating }} .0
-                                                                        </span>
-                                                                    @endif
-                                                                    <div class="date-range ml-1">
-                                                                        <span
-                                                                            class="text-muted ml-2">{{ Carbon\Carbon::parse($project->created_at)->toFormattedDateString() }}
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="description fw-500 fs-16">
-                                                                    @if ($review)
-                                                                        <p class="font-italic">
-                                                                            "{{ $review->review }}"
-                                                                        </p>
-                                                                    @else
-                                                                        <p class="font-italic">
-                                                                            "No feedback given"
-                                                                        </p>
-                                                                    @endif
-                                                                </div>
-                                                            @endforeach
-
-
-                                                            <div class="d-flex justify-content-between pt-2 pb-4">
-                                                                <p class="fw-600 fs-16">${{ $project->price }}
-                                                                </p>
-                                                                <p class="fw-500 fs-16">$90.00 /hr</p>
-                                                                <p class="fw-500 fs-16">49 hours</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endforeach
+                                        <div class="tab-pane fade " id="hiring" role="tabpanel"
+                                            aria-labelledby="hiring-talent-tab">                                           
                                         </div>
-                                        <div class="tab-pane fade" id="finding" role="tabpanel"
+                                        <div class="tab-pane fade show active" id="finding" role="tabpanel"
                                             aria-labelledby="finding-work-tab">
-                                            <p class="fw-700 fs-16 text-center text-red my-5">No running project</p>
-                                        </div>
-
-                                    </div>
-
-                                    {{-- @foreach ($projects as $key => $project)
-                                <div class="mx-4 mt-3 pb-3">
-                                    <div class="mb-4">
-                                        <div class="list-group list-group-flush border-bottom">
-                                                <h4 class="fw-600 fs-18 mb-1 lh-1-6 text-success" >{{$project->name}}
-                                                </h4>
-                                                @foreach (\App\Models\Review::where('published', 1)->where('reviewed_user_id', $freelancer->id)->where('project_id', $project->id)->get() as $key => $review)
-
-
-                                                    <div class="d-flex align-items-center">
-                                                            @if ($review->rating)
-                                                            <span class="rating rating-sm mr-1">
-                                                                {{ renderStarRating($review->rating) }}
-                                                            </span>
-                                                            <span class=" rounded text-black   fs-13 fw-700 pb-0 mb-0 text-center">
-                                                                {{ $review->rating }} .0
-                                                            </span>
-                                                            @endif
-                                                            <div class="date-range ml-1">
-                                                                <span class="text-muted ml-2">{{ Carbon\Carbon::parse($project->created_at)->toFormattedDateString() }}
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                    <div class="description fw-500 fs-16">
-                                                        @if ($review)
-                                                        <p class="font-italic">
-                                                            "{{ $review->review }}"
-                                                        </p>
-                                                        @else
-                                                        <p class="font-italic">
-                                                            "No feedback given"
-                                                        </p>
-                                                        @endif
-                                                    </div>
-                                                @endforeach
-
-
-                                                <div class="d-flex justify-content-between pt-2 pb-4">
-                                                    <p class="fw-600 fs-16">${{$project->price}}
+                                            <div class=" mb-3  p-2">
+                                              <div class="border-bottom">
+                                                <div class="">
+                                                    <p class="fw-700 fs-18 site-font">Development of Innovative Public Health Curriculum                       
                                                     </p>
-                                                    <p class="fw-500 fs-16">$90.00 /hr</p>
-                                                    <p class="fw-500 fs-16">49 hours</p>
+                                                    <p>Public Health Institute of Sydney, Sydney, Australia | 2018-2022</p>
                                                 </div>
-                                        </div>
+                                                <div class="fs-14 mt-1 mb-0 site-font ">
+                                                    
+                                                    <p>I led a groundbreaking project in collaboration with Public Health Institute of Sydney to develop an innovative public health curriculum. This project aimed to revamp the university's existing curriculum to align with the latest research, pedagogical trends, and industry demands. Key highlights of this project included:</p>
+                                                    <p>Conducting a comprehensive needs assessment to identify gaps in the current curriculum and the evolving requirements of the public health field.</p>
+                                                    <p>Collaborating with a team of subject matter experts to design a competency-based curriculum that emphasised practical skills and interdisciplinary learning.</p>
+                                            </div>
+                                              </div>
+
                                     </div>
-                                </div>
-                                @endforeach --}}
-                                </div>
-
-                                <!-- portfolio -->
-
-                                {{-- <div class='border-bottom mt-4 mb-3'>
-                                    <div class="mx-4  ">
-                                        <h4 class="">{{ translate('Portfolio') }}</h4>
-                                        <div class="row">
-                                            @foreach ($freelancer->userPortfolios as $key => $portfolio)
-                                                <div class="col-4 c-pointer">
-                                                    <div class=" mt-2">
-                                                        <img src="{{ custom_asset($portfolio->photo) }}"
-                                                            class="card-img-top" alt="Image Description"
-                                                            style="height:180px;" data-toggle="modal"
-                                                            data-target="#portfolio-modal-{{ $key }}">
-                                                        <div class="y">
-                                                            <p class=" fs-14 site-font fw-600" style="color:#275846;">
-                                                                {{ $portfolio->name }}</p>
-                                                        </div>
-                                                    </div>
+                                                
+                                           <div class=" mb-2 p-2">
+                                                <div class="">
+                                                    <p class="fw-700 fs-18 site-font">Comparative Analysis of Public Health Curriculam                        
+                                                    </p>
+                                                    <p>International Public Health Education Consortium | 2018-2022</p>
                                                 </div>
-                                                <!-- modal -->
-                                                <div class="modal fade" id="portfolio-modal-{{ $key }}">
-                                                    <div
-                                                        class="modal-dialog modal-dialog-centered modal-dialog-zoom modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title h6">{{ $portfolio->name }}</h5>
-                                                                <button type="button" class="close"
-                                                                    data-dismiss="modal">
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <div class="col-md-7">
-                                                                        <img class="img-fluid mb-3 h-300px"
-                                                                            src="{{ custom_asset($portfolio->photo) }}"
-                                                                            alt="{{ $portfolio->name }}">
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <h3 class="h5 mb-3">
-                                                                            {{ translate('About the project') }}</h3>
-                                                                        <div class="text-muted site-font">
-                                                                            {{ $portfolio->description }}
+                                                <div class="fs-14 mt-1 mb-0 site-font ">
+                                                    
+                                                    <p>In this role, I contributed to the advancement of public health education and curriculum development by:</p>
+                                                    <p>Collaborating with a diverse team of international researchers to collect and analyse data from a wide range of universities and public health programs.
+                                                        Evaluating curriculum structures, content, pedagogical approaches, and assessment methods to identify commonalities, differences, and best practices.
+                                                        Conducting surveys and interviews with faculty members and students to gather qualitative insights into the effectiveness of various curricular models.</p>
+                                               </div>
+
+                                             </div>
+
+                                    </div>
+                                        </div>
+
+                                
+                            </div>
+                            <div class="mx-4 border p-2 mt-3 mb-3">
+                                   <div class="d-flex justify-content-between ">
+                                            <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
+                                                <h4 class="fw-700 fs-23 text-black site-font">Portfolio
+                                                </h4>
+                                            </div>
+                                            <div>
+                                                <a href=""
+                                                    class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
+                                                    <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}"
+                                                        alt="Image" style="width:18px;" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-lg-4 col-md-6 col-12">
+                                                <div class="caorusel-box">
+                                                    <a href=""
+                                                        class="text-dark">
+                                                        <div class="card rounded" style="height:330px">
+                                                            <div class="">
+                                                                <div class=" ">
+                                                                    <img src=" {{ asset('/assets/home/Find-scholarship/university.jpg') }}"
+                                                                        class="card-img-top" alt="service_image" height="212">
+                                                                </div>
+                                                                <div class="p-3">
+                                                                    <div>
+                    
+                                                                        <p class="card-title  fs-16" style=" line-height:17px;">
+                                                                          Comparative Analysis of Public Health Curriculam</p>
+                    
+                                                                        <div class="mt-3">
+                                                                            <span class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary"> Public Health</span>
+                                                                            <span class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary"> Infactious diseases</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                    
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </div>
-                                            @endforeach
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-12">
+                                                <div class="caorusel-box">
+                                                    <a href=""
+                                                        class="text-dark">
+                                                        <div class="card rounded" style="height:330px">
+                                                            <div class="">
+                                                                <div class=" ">
+                                                                    <img src=" {{ asset('/assets/home/Find-scholarship/university.jpg') }}"
+                                                                        class="card-img-top" alt="service_image" height="212">
+                                                                </div>
+                                                                <div class="p-3">
+                                                                    <div>
+                    
+                                                                        <p class="card-title  fs-16" style=" line-height:17px;">
+                                                                            Comparative Analysis of Public Health Curriculam</p>
+                    
+                                                                        <div class="mt-2">
+                                                                            <div class="mt-3">
+                                                                                <span class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary"> Public Health</span>
+                                                                                <span class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary"> Infactious diseases</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                    
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-12">
+                                                <div class="caorusel-box">
+                                                    <a href=""
+                                                        class="text-dark">
+                                                        <div class="card rounded" style="height:330px">
+                                                            <div class="">
+                                                                <div class=" ">
+                                                                    <img src=" {{ asset('/assets/home/Find-scholarship/university.jpg') }}"
+                                                                        class="card-img-top" alt="service_image" height="212">
+                                                                </div>
+                                                                <div class="p-3">
+                                                                    <div>
+                    
+                                                                        <p class="card-title  fs-16 " style=" line-height:17px;">
+                                                                            Comparative Analysis of Public Health Curriculam</p>
+                    
+                                                                        <div class="mt-2">
+                                                                            <div class="mt-3">
+                                                                                <span class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary"> Public Health</span>
+                                                                                <span class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary"> Infactious diseases</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                    
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            
+                                           
+                    
+                    
                                         </div>
-                                    </div>
-                                </div> --}}
- 
+                                        <h5 class=" fre-button-show">
+                                            <a href="" class="fs-16 text-dark  "><span>All Scholarships
+                                                </span></a>
+                                            <img class=" category-list " src=" {{ asset('/assets/findJob/right.png') }}" alt="Image"
+                                                style="width:18px;" />
+                                        </h5>
+                              
+                        
                             </div>
-                        </div>
-
-                        <!-- responsive after hourly rate,Languages,Verifications start -->
-                        <div class="freePage-hourlyRate-languages-verifications-responsive">
-                            <div class=" mt-5">
-                                <div class="mx-4">
+                            <div class="mx-4 border p-2 mt-3 mb-3">
+                                <h4 class="fw-700 fs-18 text-black site-font">Testimonials
+                                </h4>
+                                <div class=" mb-3">
+                                    <p>Prof. Michael is an expert for media in the following fields: Public Health and Infectious diseases. They are happy to lend their expertise to share their research discoveries and insights with the community via media channels.</p>
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img class="h-75 w-75" src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
+                                                alt="" > 
+                                        </div>
+                                        <div class="">
+                                            <p class="fw-700 fs-18 site-font">Prof. David smith                        
+                                            </p>
+                                            <p class=" fs-14 site-font">Dean | School of Business| Sydney Islamic Business School.                      
+                                            </p>
+                                        </div>
+                                        
+                                    </div>
                                     <div>
-                                        <h4 class="fs-18 fw-600 mb-2 site-font">Hours per week</h4>
-                                        <p class="fs-14 site-font">More than 30 hrs/week</p>
+                                        <p>Prof. Michael is an expert for media in the following fields: Public Health and Infectious diseases. They are happy to lend their expertise to share their research discoveries and insights with the community via media channels.</p>
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img class="h-75 w-75" src="{{ asset('assets/frontend/default/img/consultant_booking.jpeg  ') }}"
+                                                    alt="" > 
+                                            </div>
+                                            <div class="">
+                                                <p class="fw-700 fs-18 site-font">Prof. Daniel                       
+                                                </p>
+                                                <p class=" fs-14 site-font">Dean | School of Business| EduEx University.                      
+                                                </p>
+                                            </div>
+                                            
+                                        </div>
+                                       <p class="text-center"><u> More Testimonals</u></p>
                                     </div>
-                                    <div class="mt-4">
-                                        <h4 class="fs-18 fw-600 mb-2 site-font">Languages</h4>
-                                        <p class="fs-14 site-font">English: Native or Bilingual</p>
-                                    </div>
-                                    <div class="mt-4">
-                                        <h4 class="fs-18 fw-600 mb-2 site-font">Verifications
-                                        </h4>
-                                        <p class="fs-14 mb-0 site-font">Phone Number: Verified</p>
-                                        <p class="fs-14 site-font">ID: Verified</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                        <!-- responsive after hourly rate,Languages,Verifications end -->
                     </div>
 
                     {{-- services part --}}
