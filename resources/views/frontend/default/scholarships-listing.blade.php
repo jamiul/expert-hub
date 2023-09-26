@@ -354,7 +354,7 @@
                                                         ($bookmarked_scholarship = \App\Models\BookmarkedScholarship::where('user_id', auth()->user()->id)->where('scholarship_id', $scholarship->id)->first()) != null)
                                                     <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
                                                         href="javascript:void(0)"
-                                                        data-href="{{ route('bookmarked-scholarships.destroy', $bookmarked_scholarship->id) }}"
+                                                        data-href="{{ route('bookmarked-scholarships.delete', $bookmarked_scholarship->id) }}"
                                                         data-target="#bookmark-remove-modal">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
                                                         <span>{{ translate('Remove Bookmark') }}</span>

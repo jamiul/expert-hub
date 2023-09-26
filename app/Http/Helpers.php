@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Mail\EmailManager;
 use App\Models\ChatThread;
 use App\Models\Country;
+use App\Models\Experts;
 use App\Models\Language;
 use App\Models\ProjectCategory;
 use App\Models\SeminarMode;
@@ -620,7 +621,6 @@ function getInstructorName($id) {
 
     return $instructor ? $instructor->name : null;
 }
-
 function getProjectCategory() {
     return ProjectCategory::all()->sortByDesc("id")->toArray();
 }
@@ -686,7 +686,7 @@ function GetUrls(){
     if(!empty($fullParts['path']) && !empty($baseParts['path'])){
         $remainingUrl = rtrim($fullParts['path'], '/');
         $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
-    }    
+    }
     }
     if($remainingUrl==''){
         $defaultdata = PageOptimization::where('id', 1)->get();
@@ -694,11 +694,11 @@ function GetUrls(){
         $data['title']=$defaultdata[0]->title;
         $data['keyword']=$defaultdata[0]->keyword;
         $data['description']=$defaultdata[0]->description;
-        } 
+        }
     }else{
         $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl.'%')->get();
         if($pageoptimizations->isEmpty()){
-            $defaultdata = PageOptimization::where('id', 1)->get(); 
+            $defaultdata = PageOptimization::where('id', 1)->get();
             if($defaultdata->isNotEmpty()){
             $data['title']=$defaultdata[0]->title;
             $data['keyword']=$defaultdata[0]->keyword;
@@ -711,14 +711,14 @@ function GetUrls(){
             $data['description']=$pageoptimizations[0]->$description->description;
             }
             else{
-            $defaultdata = PageOptimization::where('id', 1)->get(); 
+            $defaultdata = PageOptimization::where('id', 1)->get();
             if($defaultdata->isNotEmpty()){
             $data['title']=$defaultdata[0]->title;
             $data['keyword']=$defaultdata[0]->keyword;
             $data['description']=$defaultdata[0]->description;
             }
             }
-        }  
+        }
     }
     return $data;
 }

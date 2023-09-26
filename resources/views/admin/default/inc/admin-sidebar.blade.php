@@ -85,7 +85,7 @@
                                 @can('show project category')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('project-categories.index') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['project-categories.index', 'project-categories.edit', 'project-categories.destroy']) }}">
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['project-categories.index', 'project-categories.edit', 'project-categories.delete']) }}">
                                             <span class="aiz-side-nav-text">{{ translate('Project Category') }}</span>
                                         </a>
                                     </li>
@@ -190,10 +190,19 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('show freelancer experts')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('experts.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['experts.index', 'experts.edit']) }}">
+                                            <span
+                                                class="aiz-side-nav-text">{{ translate('Consultant Expertise') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('show consultant category')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('consultant-categories.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['consultant-categories.index', 'consultant-categories.edit', 'consultant-categories.destroy']) }}">
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['consultant-categories.index', 'consultant-categories.edit', 'consultant-categories.delete']) }}">
                                         <span class="aiz-side-nav-text">{{ translate('Consultant Category') }}</span>
                                     </a>
                                 </li>
@@ -853,7 +862,7 @@
                                         </a>
                                     </li>
                                 @endcan
-                                
+
                             </ul>
                         </li>
                     @endcan

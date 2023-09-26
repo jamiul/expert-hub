@@ -46,7 +46,7 @@
                                         <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
                                         title="{{ translate('Delete') }}" onclick="$(this).find('form').submit();">
                                             <i class="las la-trash"></i>
-                                            <form action="{{ route('seminar-software.destroy', $seminar_software->id) }}" method="POST">
+                                            <form action="{{ route('seminar-software.delete', $seminar_software->id) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>

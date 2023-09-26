@@ -60,7 +60,7 @@
 
                         <div class="text-lg-right text-center">
                             @if (Auth::check() && ($bookmarked_client = \App\Models\BookmarkedClient::where('user_id', auth()->user()->id)->where('client_user_id', $client->id)->first()) != null)
-                                <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.destroy', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
+                                <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.delete', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
                             @else
                                 <a class="btn btn-primary" href="{{ route('bookmarked-clients.store', encrypt($client->id)) }}">{{ translate('Follow') }}</a>
                             @endif

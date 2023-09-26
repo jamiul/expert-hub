@@ -56,7 +56,7 @@
                                         <a href="javascript:void(0)" onclick="show_cancel_request_modal('{{ $cancel_project->id }}')" class="btn btn-soft-primary btn-icon btn-circle btn-sm" title="{{translate('Show')}}">
                                             <i class="las la-eye"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-project-request.destroy', $cancel_project->id) }}" title="{{translate('Delete')}}">
+                                        <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-project-request.delete', $cancel_project->id) }}" title="{{translate('Delete')}}">
                                             <i class="las la-trash"></i>
                                         </a>
                                     </td>
