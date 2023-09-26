@@ -1,1 +1,2 @@
-EduExHub
+EduExHub - Project Setup
+---------------------------------
