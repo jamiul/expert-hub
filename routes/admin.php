@@ -167,7 +167,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('scholarship-level', 'ScholarshipLevelController');
     Route::get('/scholarship-level/destroy/{id}', 'ScholarshipLevelController@destroy')->name('scholarship-level.delete');
     Route::resource('scholarship-university', 'ScholarshipUniversityController');
-//    Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.delete');
+    Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.delete');
     Route::resource('scholarship-country', 'ScholarshipCountryController');
     Route::get('/scholarship-country/destroy/{id}', 'ScholarshipCountryController@destroy')->name('scholarship-country.delete');
     Route::resource('scholarship-city', 'ScholarshipCityController');
@@ -191,7 +191,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::post('/newsletter/test/smtp', 'testEmail')->name('test.smtp');
     });
 
-
     // website setting
     Route::group(['prefix' => 'website'], function () {
         Route::get('/home', 'SystemConfigurationController@home_settings')->name('website.home');
@@ -208,8 +207,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     //Policy related
     Route::get('/policy/{type}', 'SystemConfigurationController@policy_index')->name('policy.index');
     Route::post('/system-policy/update', 'SystemConfigurationController@policy_update')->name('system_policy.update');
-
-
 
     //Milestone Pay Requests
     Route::get('/all-milestone-requests', 'MilestonePaymentController@all_milestone_request_index')->name('milestone-requests.admin.all');
