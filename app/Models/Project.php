@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     use SoftDeletes;
+
+    protected $casts = [
+        'skills' => 'array',
+    ];
+
     public function project_category()
     {
         return $this->belongsTo(ProjectCategory::class);

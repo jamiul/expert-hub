@@ -26,7 +26,7 @@
 							<div class="card project-card rounded-2 border-gray-light">
 								<div class="card-header border-bottom-0">
 									<div>
-										<span class="badge badge-primary badge-inline badge-md">{{ single_price($project->price) }}</span>
+										<span class="badge badge-primary badge-inline badge-md">{{ $project->budget }}</span>
 									</div>
 									<div>
 										@if ($project->cancel_status == 1)
@@ -67,7 +67,7 @@
 										<p>{{ $project->excerpt }}</p>
 									</div>
 									<div>
-                                        @foreach (json_decode($project->skills) as $key => $skill_id)
+                                        @foreach ($project->skills as $key => $skill_id)
                                             @php
                                                 $skill = \App\Models\Skill::find($skill_id);
                                             @endphp
