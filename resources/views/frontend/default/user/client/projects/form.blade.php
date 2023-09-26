@@ -44,7 +44,7 @@
                 {{ translate('Attach file') }}</div>
         </div>
         <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-        <input type="hidden" name="attachments" class="selected-files">
+        <input type="hidden" name="attachments" class="selected-files" value="{{ old('attachments', $project->attachments) }}">
     </div>
     <div class="file-preview"></div>
 </div>
@@ -167,10 +167,9 @@
         {{ translate('Project category') }}
         <span class="text-danger">*</span>
     </label>
-    <select class="form-control aiz-selectpicker" id="category_id" name="project_category_id"
-        data-live-search="true" required>
+    <select class="form-control aiz-selectpicker" id="category_id" name="project_category_id" data-live-search="true" required>
+        <option value="">Select a project category</option>
         @foreach ($categories as $category)
-            <option value="">Select a project category</option>
             <option value="{{ $category->id }}" @if(old('project_category_id', $project->project_category_id) == $category->id) selected @endif>{{ $category->name }}</option>
         @endforeach
     </select>
