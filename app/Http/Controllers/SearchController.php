@@ -58,11 +58,11 @@ class SearchController extends Controller
             $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
             $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
             $consultantCategory = ConsultantCategory::all();
-            // $expertises= Experts::all();
+            $expertiseChild= Experts::all();
             $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
-            $expertiseIds = $expertises->pluck('id'); // Get an array of parent_expertise_ids
-            $experts = Experts::whereIn('parent_id', $expertiseIds)->get();
-            // dd($experts);
+            // $expertiseIds = $expertises->pluck('id'); // Get an array of parent_expertise_ids
+            // $experts = Experts::whereIn('parent_id', $expertiseIds)->get();
+            // dd($expertises->toArray());
 
 
             if ($request->keyword != null) {
@@ -156,8 +156,9 @@ class SearchController extends Controller
 
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
+            // dd($expertises->toArray());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','consultantCategory','expertises','experts'));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','consultantCategory','expertises',));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;

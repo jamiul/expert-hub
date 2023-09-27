@@ -137,13 +137,13 @@
 
                                                 <div class="overflow-auto h-130px collapse "
                                                     id="skill_{{ $expertise->id }}">
-                                                    @foreach ($experts as $expert)
+                                                    @foreach ($expertise->childrens as $expert)
                                                     <div
                                                         class=" w-200px child-skill-project-filtering">
                                                         <div class="mb-1 ">
                                                             <input type="checkbox"
                                                                 name="childSkill_id[]"
-                                                                id="{{ $expert->id }}"
+                                                                id="{{ $expertise->id }}"
                                                                 value="{{$expert->id }}"
                                                                 class=" d-none"
                                                                 onchange="applyFilter()">
