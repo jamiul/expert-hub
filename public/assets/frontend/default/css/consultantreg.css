@@ -1,0 +1,99 @@
+/*-----login page-----*/
+.clogin .card {
+    padding: 60px 12px 60px 12px !important;
+    box-shadow: 10px 10px 20px 0px #0e00621f !important;
+}
+.clogin .logo {
+    width: 210px;
+}
+.custom-input-group {
+    position: relative;
+}
+.clogin .card .typetab {
+    border: 1px solid #0000001a;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.clogin .card .typetab.selected-tab {
+    background: #f4f7f6;
+    border: 1px solid #275846;
+}
+.custom-input-group input[type="text"] {
+    padding-left: 40px;
+}
+.clogin img .logo {
+    width: 220px;
+    height: 46px;
+}
+.custom-input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 32px;
+}
+.custom-input-group .bold-text {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+.custom-input-group input[type="radio"] {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+.clogin .card button.btn-join {
+    border-radius: 5px;
+}
+.clogin .card p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+/*-----signup page-----*/
+.csignup .form {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    max-width: 600px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    box-shadow: 10px 10px 20px 0px #0e00621f !important;
+}
+.csignup .sign-up-form {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.csignup .sign-up-google,
+.csignup .sign-up-apple {
+    margin-right: 5px;
+}
+.csignup .textOnInput {
+    position: relative !important;
+}
+.csignup .textOnInput label {
+    position: absolute !important;
+    top: -12px !important;
+    left: 23px !important;
+    padding: 2px !important;
+    z-index: 1 !important;
+    background-color: white !important;
+}
+.csignup .form-select {
+    padding: 12px;
+}
+.csignup button.btn.border {
+    text-align: left;
+    padding-left: 8px;
+    margin-top: 10px;
+}
+.csignup .google-icon-img img {
+    margin-right: 12px !important;
+}
+.csignup .text-center p a {
+    color: #275846;
+}
