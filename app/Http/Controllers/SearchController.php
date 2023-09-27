@@ -37,14 +37,12 @@ class SearchController extends Controller
             $skill_id = array('');
             $childSkill_id = array('');
             $category_id = array('');
-            // $rate1 = $request->rate1;
             $rate1 = array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
-            // $hourlyRate = $request->input('rate1');
             $categories = [];
             $category_ids = [];
             $skills = [];
@@ -53,17 +51,12 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            // dd($Consultantions);
             $parentSkills = ParentSkill::all();
             $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
             $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
             $consultantCategory = ConsultantCategory::all();
             $expertiseChild= Experts::all();
             $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
-            // $expertiseIds = $expertises->pluck('id'); // Get an array of parent_expertise_ids
-            // $experts = Experts::whereIn('parent_id', $expertiseIds)->get();
-            // dd($expertises->toArray());
-
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -156,7 +149,6 @@ class SearchController extends Controller
 
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
-            // dd($expertises->toArray());
 
             return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','consultantCategory','expertises',));
         } else if ($request->type == 'seminar') {
@@ -181,7 +173,6 @@ class SearchController extends Controller
             $selected_seminar_lang = [];
             $selected_seminar_software = [];
             $seminarDate = [];
-
             $seminars = Seminar::query();
             $seminars->join('seminar_dates', 'seminars.id', '=', 'seminar_dates.seminar_id');
 
@@ -294,22 +285,11 @@ class SearchController extends Controller
                 $services = $services->whereIn('id', $service_ids);
             }
             if ($request->delivery_time != null) {
-                // $service_delivery_time_ids = ServicePackage::where('delivery_time');
-                // $services = $services->whereIn('id', $service_ids);
                 $delivery_times =  9;
-                // dd($delivery_time);
                 $service_delivery_time_ids = ServicePackage::where('delivery_time', '<', $delivery_times)->pluck('service_id');
-                // dd($service_delivery_time_ids);
                 $services = $services->whereIn('id', $service_delivery_time_ids);
             }
 
-            // $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
-
-            // $category_ids = CategoryUtility::children_ids($category_id);
-            // $category_ids[] = $category_id;
-            // if ($category_id != null) {
-            //     $projects = $services->whereIn('project_cat_id', $category_ids);
-            // }
 
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
@@ -321,14 +301,12 @@ class SearchController extends Controller
             $skill_id = array('');
             $childSkill_id = array('');
             $category_id = array('');
-            // $rate1 = $request->rate1;
             $rate1 = array('');
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
             $freelancers = UserProfile::query();
-            // $hourlyRate = $request->input('rate1');
             $categories = [];
             $category_ids = [];
             $skills = [];
