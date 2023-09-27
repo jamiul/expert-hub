@@ -17,7 +17,7 @@ class ExpertsController extends Controller
     {
         $experts = Experts::with('childrens')->whereNull('parent_id')->get();
 
-        $allExpertList=Experts::latest()->paginate(400);
+        $allExpertList=Experts::latest()->paginate(50);
 
         // $allExpertLists = Experts->where('parent_id',"id")->get();
         // dd($allExpertList);

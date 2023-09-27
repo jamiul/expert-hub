@@ -4,55 +4,43 @@ namespace Database\Seeders;
 
 use App\Models\Experts;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-
-
-
-
-class ExpertInsertDataSeeder extends Seeder
+class ExpertsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
 
-
-
-
-
-
-
     public function run()
     {
-        $feed = public_path("expertiseInsert.csv");
+        DB::table('experts')->delete();
+
+        $feed = public_path("experts.csv");
 
         // Read the CSV and return as an array
         $data = array_map('str_getcsv', file($feed));
-        $keys = array_shift($data);
 
-        // Initialize parent as null for the first row
-        $parent = null;
+        $parentExperts = array_shift($data);
 
+        // add parent id to experts table
+        foreach ($parentExperts as $parent) {
+            $parent = Experts::create([
+                'name' => $parent,
+                'parent_id' => null,
+            ]);
+        }
+
+        // add child experts with parent id
         foreach ($data as $row) {
-            // Create a new expert record for each value in the row
-            foreach ($row as $value) {
-                if ($parent === null) {
-                    // The first value in each row is a parent
-                    $parent = Experts::create([
-                        'name' => $value,
-                        'parent_id' => null,
-                    ]);
-                } else {
-                    // All subsequent values in the row are children
+            foreach ($row as $key => $name) {
+                if (!empty($name)) {
                     Experts::create([
-                        'name' => $value,
-                        'parent_id' => $parent->id,
+                        'name' => $name,
+                        'parent_id' => $key + 1, // Use $key as the parent_id
                     ]);
                 }
             }
-
-            // Reset parent to null for the next row
-            $parent = null;
         }
     }
-
 }
