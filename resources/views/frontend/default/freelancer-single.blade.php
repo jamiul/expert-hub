@@ -6,13 +6,16 @@
         <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/single-Profile.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
+    <style>
+       
+    </style>
 
     <body>
         @extends('frontend.default.layouts.app')
         @section('content')
             <div class="position-relative freelancer-Profile-main-section border-bottom">
                 <div class="border-bottom">
-                    <div class="profile-single">
+                    <div class="container mt-4">
                         {{-- breadcrumb  --}}
                         <nav class="justify-content-between d-flex " style="--bs-breadcrumb-divider: '>';"
                             aria-label="breadcrumb">
@@ -42,13 +45,13 @@
                     </div>
                 </div>
 
-                <div class="container-home rounded-1">
+                <div class="container rounded-1 mt-5">
                     <div class="">
-                        <div class="row">
+                        <div class="row g-5">
                             <!-- left side -->
-                            <div class="col-lg-4 col-xl-3 col-12 left-aside shadow-lg pr-0 h-50">
+                            <div class="col-lg-4 col-xl-3 col-12 left-aside shadow-right-xl  shadow-sm pr-0 h-50">
                                 <!-- Profile-->
-                                <div class="mx-4  border-bottom mb-3">
+                                <div class="mx-lg-4  border-bottom mb-3">
                                     <div class="justify-content-center text-center mt-4">
                                         <img style="width:176px; height:177px;"
                                             src=" {{ asset('/assets/home/Find-scholarship/Profile.png') }}" class=""
@@ -208,18 +211,18 @@
                             </div>
 
                             <!-- details side or right side -->
-                            <div class="col-lg-8 col-xl-9 col-12 pl-0">
+                            <div class="col-lg-8 col-xl-9 col-12 pl-lg-3 ">
                                 <div class="">
                                     {{-- Biography  --}}
-                                    <div class="tab-content mx-4 border mb-4 px-2" id="nav-tabContent">
+                                    <div class="tab-content mx-4 rounded border mb-4 px-2" id="nav-tabContent">
                                         <div class="tab-pane fade show active mt-4 px-3" id="list-home" role="tabpanel"
                                             aria-labelledby="list-home-list">
                                             <div class="d-flex justify-content-between mt-3 ">
-                                                <h4 class="fw-700 fs-23 text-black expert-profile-font">Biography </h4>
+                                                <h4 class="fw-700 fs-23 text-black expert-profile-font ">Biography </h4>
                                                 <h4 class="fw-700 fs-16 text-black">$200.00/hr</h4>
                                             </div>
                                             <div class="mt-3">
-                                                <p class="fs-16 expert-profile-font">Prof. Michael is an accomplished
+                                                <p class="fs-16 expert-profile-font biography-info">Prof. Michael is an accomplished
                                                     Curriculum
                                                     Development Specialist with a distinguished career in education and a
                                                     track record of providing consultation services. Holding a Doctor of
@@ -237,19 +240,19 @@
                                         </div>
                                     </div>
 
-                                    {{-- Expert Consultation --}}
-                                    <div class="mx-4 border mb-4 px-4 pt-4">
-                                        <h4 class="fw-600 fs-19 text-black expert-profile-font ">Book Expert for
+                                   
+                                    {{-- >Expert Consultation   --}}
+                                    <div class="mx-4 rounded border mb-4 p-4">
+                                       <h4 class="fw-600 fs-19 text-black expert-profile-font mb-2">Book Expert for
                                             Consultation </h4>
-                                        <div class=" mb-3">
                                             <div class="row">
-                                                <div class="col-lg-3 col-md-2 col-sm-12 mt-2 ">
-                                                    <img style="height:161px; width:240px;"
-                                                        src=" {{ asset('/assets/home/Find-scholarship/Edu-expert.png') }}"
-                                                        class="mr-2" alt="service_image">
-                                                    <p class="fw-700 fs-16 text-center">Prof. Michael</p>
+                                                <div class="col-md-3 col-lg-3 col-12 px-lg-3">
+                                                    <img  class="mr-2"
+                                                    alt="service_image" class="img-fluid"
+                                                    src=" {{ asset('/assets/home/Find-scholarship/Edu-expert.png') }}">
+                                                <p class="fw-700 fs-16 text-center">Prof. Michael</p>
                                                 </div>
-                                                <div class="col-lg-8 col-md-9 col-sm-12">
+                                                <div class="col-md-8 col-lg-8 col-12">
                                                     <div class="d-flex justify-content-between ">
                                                         <div>
                                                             <span class="fs-16 fw-700">Expert:</span>
@@ -258,11 +261,11 @@
                                                                 Public Health</span>
                                                             <span
                                                                 class="btn fs-14 text-primary border rounded-2 py-0 px-2 border-primary">
-                                                                Infactious diseases</span>
-
+                                                                Infactious Diseases</span>
                                                         </div>
-                                                        <h4 class="fw-700 fs-16">$20 <span
-                                                                class="fw-700 fs-16">/30min</span></h4>
+                                                        <h4 class="fw-700 fs-16">$20
+                                                            <span class="fw-700 fs-16">/30min</span>
+                                                        </h4>
                                                     </div>
                                                     <p class="fs-16 mt-3 mb-0 expert-profile-font ">
                                                         <span class="text-dark fw-700">Prof. Michael</span>
@@ -273,28 +276,26 @@
 
                                                     </p>
                                                     <p class="fs-14 mt-1 mb-0 expert-profile-font">To schedule a
-                                                        consultation,
-                                                        <span
+                                                        consultation, <span
                                                             class="fs-14 fw-700 expert-profile-font seminar-more text-primary"><u
                                                                 style="color:#275846 !important;">Book a time</u></span>
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
+
                                     </div>
-                                    {{-- Expert Consultation --}}
-                                    <div class="mx-4 border mb-3 px-4 pt-4">
-                                        <h4 class="fw-600 fs-19 text-black expert-profile-font mb-2">Book Expert for
+                                    {{-- >Expert Consultation   --}}
+                                    <div class="mx-4 rounded border mb-4 p-4">
+                                       <h4 class="fw-600 fs-19 text-black expert-profile-font mb-2">Book Expert for
                                             Consultation </h4>
-                                        <div class=" mb-3">
                                             <div class="row">
-                                                <div class="col-lg-3 col-md-2 col-sm-12 mt-2">
-                                                    <img style="height:161px; width:240px;" class="mr-2"
-                                                        alt="service_image"
-                                                        src=" {{ asset('/assets/home/Find-scholarship/Expert.png') }}">
-                                                    <p class="fw-700 fs-16 text-center">Prof. Michael</p>
+                                                <div class="col-md-3 col-lg-3 col-12 px-lg-3">
+                                                    <img  class="mr-2"
+                                                    alt="service_image" class="img-fluid"
+                                                    src=" {{ asset('/assets/home/Find-scholarship/Expert.png') }}">
+                                                <p class="fw-700 fs-16 text-center">Prof. Michael</p>
                                                 </div>
-                                                <div class="col-lg-8 col-md-9 col-sm-12">
+                                                <div class="col-md-8 col-lg-8 col-12">
                                                     <div class="d-flex justify-content-between ">
                                                         <div>
                                                             <span class="fs-16 fw-700">Expert:</span>
@@ -319,25 +320,22 @@
                                                             class="fs-14 fw-700 expert-profile-font seminar-more text-primary"><u
                                                                 style="color:#275846 !important;">Book a time</u></span>
                                                     </p>
-
                                                 </div>
                                             </div>
-                                        </div>
+
                                     </div>
-                                    {{-- >Book Expert for TV Interview   --}}
-                                    <div class="mx-4 border mb-4 p-4">
+                                     {{-- >Book Expert for TV Interview   --}}
+                                    <div class="mx-4 rounded border mb-4 p-4">
                                         <h4 class="fw-600 fs-19 text-black expert-profile-font mb-2">Book Expert for TV
                                             Interview </h4>
-                                        <div class=" mb-3">
                                             <div class="row">
-                                                <div class="col-lg-3 col-md-2 col-sm-12 mt-2">
-                                                    <img style="height:161px; width:240px;"
-                                                        src=" {{ asset('/assets/home/Find-scholarship/Tv-interview.png') }}"
-                                                        class="mr-2" alt="service_image">
+                                                <div class="col-md-3 col-lg-3 col-12 px-lg-3">
+                                                    <img   src=" {{ asset('/assets/home/Find-scholarship/Tv-interview.png') }}"
+                                                    class="" alt="service_image" class="img-fluid">
                                                     <p class="fw-700 fs-16 text-center">Prof. Michael</p>
                                                 </div>
-                                                <div class="col-lg-8 col-md-9 col-sm-12">
-                                                    <div class="d-flex justify-content-between ">
+                                                <div class="col-md-8 col-lg-8 col-12">
+                                                     <div class="d-flex justify-content-between ">
                                                         <div>
                                                             <span class="fs-16 fw-700">Expert:</span>
                                                             <span
@@ -353,7 +351,7 @@
                                                             institutions, businesses and individuals seeking expertise in
                                                             <span class="text-dark fw-700">curriculum
                                                                 development</span>.</span>
-
+            
                                                     </p>
                                                     <p class="fs-14 mt-1 mb-0 expert-profile-font">To schedule a
                                                         consultation, <span
@@ -362,13 +360,12 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
 
                                     </div>
                                 </div>
                                 {{-- Work Experience  --}}
 
-                                <div class="mx-4 border p-3">
+                                <div class="mx-4 rounded border p-3">
                                     <div class="d-flex mb-2">
                                         <img style="height:24px; width:24px;" class="mr-2" alt="service_image"
                                             src=" {{ asset('/assets/home/Find-scholarship/Experience.png') }}">
@@ -445,7 +442,7 @@
                                 </div>
                                 {{-- Projects  --}}
 
-                                <div class="border mt-4 mx-4">
+                                <div class="rounded border mt-4 mx-4">
                                     <div class="d-flex align-items-center px-3">
                                         <img style="height:24px; width:24px;"
                                             src=" {{ asset('/assets/home/Find-scholarship/Project.png') }}"
@@ -610,7 +607,7 @@
 
                                 {{-- Portfolio  --}}
 
-                                <div class="mx-4 border p-2 px-4 mt-3 mb-3">
+                                <div class="mx-4 rounded border p-2 px-4 mt-3 mb-3">
                                     <div class="d-flex justify-content-between ">
                                         <div class="w-lg-75 w-xl-50 lh-1-8 d-flex content-title ">
                                             <img style="height:24px; width:24px;"
@@ -740,7 +737,7 @@
                                     </div>
                                 </div>
                                 {{-- Testimonials  --}}
-                                <div class="mx-4 border p-2 px-4 mt-3 mb-3">
+                                <div class="mx-4 rounded border p-2 px-4 mt-3 mb-3">
                                     <div class="d-flex align-items-center mb-3">
                                         <img style="height:24px; width:24px;" class="mr-2" alt="service_image"
                                             src=" {{ asset('/assets/home/Find-scholarship/Testimonial.png') }}">

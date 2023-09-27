@@ -157,9 +157,15 @@ body {
     width: 86%;
     margin: 70px 8%;
 }
+.biography-info{
+    line-height: 25.52px !important;
+}
 .profile-single {
     width: 86%;
     margin: 20px 8%;
+}
+li.breadcrumb-item::before{
+    color:red;
 }
 .profile-leftside{
     border-color: #275846 !important;
