@@ -20,7 +20,6 @@ class ExpertsTableSeeder extends Seeder
 
         // Read the CSV and return as an array
         $data = array_map('str_getcsv', file($feed));
-
         $parentExperts = array_shift($data);
 
         // add parent id to experts table

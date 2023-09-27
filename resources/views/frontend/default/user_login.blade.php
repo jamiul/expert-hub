@@ -4,7 +4,7 @@
 <div class="py-4 py-lg-5">
     <div class="container">
         <div class="row">
-            <div class="col-xxl-4 col-xl-5 col-md-7 mx-auto">
+            <div class=" col-xl-5 col-md-7 col-lg-6 mx-auto">
                 <div class="card rounded-2 border-gray-light">
                     <div class="card-body">
 
