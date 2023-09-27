@@ -315,7 +315,7 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            // dd($Consultantions);
+            $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
             $parentSkills = ParentSkill::all();
             $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
             $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
@@ -413,7 +413,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills'));
+            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','expertises'));
         }else {
             $type = 'project';
             $keyword = $request->keyword;
