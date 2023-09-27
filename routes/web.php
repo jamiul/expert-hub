@@ -40,8 +40,8 @@ Route::get('/demo/cron_1', 'DemoController@cron_1');
 Route::get('/demo/cron_2', 'DemoController@cron_2');
 
 //consultant Registration
-Route::get('/consultantlogin', 'DemoController@consultantLogin');
-Route::get('/consultantsignup', 'DemoController@consultantSignup');
+Route::get('/consultant-login', 'DemoController@consultantLogin');
+Route::get('/consultant-signup', 'DemoController@consultantSignup');
 
 Route::get('/refresh-csrf', function () {
     return csrf_token();
