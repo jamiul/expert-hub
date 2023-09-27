@@ -646,7 +646,7 @@ function getCourseInstructors() {
 
 function getConsultantCategory() : array
 {
-    return ConsultantCategory::all()->sortByDesc("id")->toArray();
+    return ConsultantCategory::all()->toArray();
 }
 
 function getSkills() : array
