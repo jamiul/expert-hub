@@ -44,7 +44,7 @@ class HomeController extends Controller
 
         $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
         $seminars = Seminar::all();
-        $services = ProjectCategory::take(8)->get();
+        $services = ProjectCategory::take(8)->get()->reverse();
         $consultant_categories = ConsultantCategory::take(8)->get();
         $subjectCounts = [];
 

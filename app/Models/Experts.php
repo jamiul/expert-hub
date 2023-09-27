@@ -16,6 +16,6 @@ class Experts extends Model
 
     public function childrens()
     {
-        return $this->hasMany(Experts::class, 'id');
+        return $this->hasMany(Experts::class, 'parent_id', 'id');
     }
 }
