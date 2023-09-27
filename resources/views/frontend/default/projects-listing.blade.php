@@ -447,7 +447,7 @@
                                                 </p>
                                             </div>
                                             <div>
-                                                @foreach (json_decode($project->skills) as $key => $skill_id)
+                                                @foreach (($project->skills) as $key => $skill_id)
                                                     @php
                                                         $skill = \App\Models\Skill::find($skill_id);
                                                     @endphp
