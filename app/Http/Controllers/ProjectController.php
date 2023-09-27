@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Utility\EmailUtility;
-use App\Utility\NotificationUtility;
-use Illuminate\Http\Request;
-use Auth;
-use App\Models\Skill;
+use App\Enums\OptionGroupEnum;
+use App\Http\Requests\ProjectRequest;
+use App\Models\Badge;
+use App\Models\HireInvitation;
+use App\Models\MilestonePayment;
+use App\Models\Option;
 use App\Models\Project;
 use App\Models\ProjectBid;
-use App\Models\ProjectUser;
-use App\Models\HireInvitation;
 use App\Models\ProjectCategory;
-use App\Models\MilestonePayment;
-use App\Models\Badge;
+use App\Models\ProjectUser;
+use App\Models\Skill;
 use App\Models\UserBadge;
-use Response;
-use Illuminate\Support\Str;
+use App\Utility\EmailUtility;
+use App\Utility\NotificationUtility;
+use Auth;
 use DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Response;
 
 class ProjectController extends Controller
 {
@@ -112,10 +115,13 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        $budget_aud = Option::where('group', OptionGroupEnum::BudgetAUD)->where('status', 1)->pluck('value')->toArray();
+        $budget_usd = Option::where('group', OptionGroupEnum::BudgetUSD)->where('status', 1)->pluck('value')->toArray();
         $categories = ProjectCategory::all();
         $skills = Skill::all();
         $client_package = Auth::user()->userPackage;
-        return view('frontend.default.user.client.projects.create', compact('categories','skills', 'client_package'));
+        
+        return view('frontend.default.user.client.projects.create', compact('categories','skills', 'client_package', 'budget_aud', 'budget_usd'));
     }
 
     /**
@@ -124,9 +130,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
-        // dd($request->all());
+        // dd($request->validated());
         $uploadAble = false;
 
         if($request->projectType == 'Fixed'){
@@ -151,13 +157,13 @@ class ProjectController extends Controller
         if($uploadAble){
             $project = new Project;
             $project->name = $request->name;
-            $project->type = $request->projectType;
-            $project->price = $request->price;
-            $project->project_category_id = $request->category_id;
-            $project->excerpt = $request->excerpt;
-            $project->skills = json_encode($request->skills);
             $project->description = $request->description;
-            $project->attachment = $request->attachments;
+            $project->attachments = $request->attachments;
+            $project->skills = $request->skills;
+            $project->type = $request->type;
+            $project->currency = $request->currency;
+            $project->budget = $request->budget;
+            $project->project_category_id = $request->project_category_id;
             $project->client_user_id = Auth::user()->id;
             $project->slug = Str::slug($request->name, '-').date('Ymd-his');
             $project->save();
@@ -206,11 +212,14 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
+        $budget_aud = Option::where('group', OptionGroupEnum::BudgetAUD)->where('status', 1)->pluck('value')->toArray();
+        $budget_usd = Option::where('group', OptionGroupEnum::BudgetUSD)->where('status', 1)->pluck('value')->toArray();
         $project = Project::findOrFail(decrypt($id));
         $categories = ProjectCategory::all();
         $skills = Skill::all();
+        $client_package = Auth::user()->userPackage;
         if ($project->closed == '0') {
-            return view('frontend.default.user.client.projects.edit',compact('categories','skills','project'));
+            return view('frontend.default.user.client.projects.edit',compact('categories','skills','project','client_package', 'budget_aud', 'budget_usd'));
         }
         else {
             return redirect()->back();
@@ -228,13 +237,16 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
         $project->name = $request->name;
-        $project->type = $request->projectType;
-        $project->price = $request->price;
-        $project->project_category_id = $request->category_id;
-        $project->excerpt = $request->excerpt;
-        $project->skills = json_encode($request->skills);
         $project->description = $request->description;
-        $project->attachment = $request->attachment;
+        $project->attachments = $request->attachments;
+        $project->skills = $request->skills;
+        $project->type = $request->type;
+        $project->currency = $request->currency;
+        $project->budget = $request->budget;
+        $project->project_category_id = $request->project_category_id;
+        $project->excerpt = $request->excerpt;
+        $project->skills = $request->skills;
+        $project->attachments = $request->attachments;
         $project->client_user_id = Auth::user()->id;
         if ($project->slug == null) {
             $project->slug = Str::slug($request->name, '-').date('Ymd-his');
