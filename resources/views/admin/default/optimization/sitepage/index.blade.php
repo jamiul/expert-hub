@@ -50,7 +50,7 @@
                         <td>
                             {{ $sitepage->url}}
                         </td>
-                       
+
                         <td class="text-right">
                             <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('site-page.edit',$sitepage->id)}}" title="{{ translate('Edit') }}">
                                 <i class="las la-pen"></i>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="modal-body text-center">
                                     <p class="mt-1">{{translate('Are you sure to delete this?')}}</p>
-                                    <form action="{{ route('site-page.destroy', $sitepage->id) }}" method="POST">
+                                    <form action="{{ route('site-page.delete', $sitepage->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-link mt-2" data-dismiss="modal">{{translate('Cancel')}}</button>
@@ -85,7 +85,7 @@
                 </tbody>
             </table>
 
-            {{-- @dd(route('seminar.destroy', $seminar->id)); --}}
+            {{-- @dd(route('seminar.delete', $seminar->id)); --}}
             <div class="aiz-pagination">
                 {{-- {{ $scholarships->links() }} --}}
             </div>

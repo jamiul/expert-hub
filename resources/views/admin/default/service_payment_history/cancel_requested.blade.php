@@ -82,7 +82,7 @@
                                     <a href="javascript:void(0)" onclick="show_cancel_request_modal('{{ $service_payment->id }}')" class="btn btn-soft-primary btn-icon btn-circle btn-sm" title="{{translate('Show')}}">
                                         <i class="las la-eye"></i>
                                     </a>
-                                    <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-service-request.destroy', $service_payment->id) }}" title="{{translate('Delete')}}">
+                                    <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-service-request.delete', $service_payment->id) }}" title="{{translate('Delete')}}">
                                         <i class="las la-trash"></i>
                                     </a>
                                 </td>

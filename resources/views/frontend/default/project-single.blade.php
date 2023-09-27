@@ -52,7 +52,7 @@
 							</div>
 							<h6 class="text-left mb-3"><span class="bg-white pr-3 fs-14 fw-700">{{ translate('Skills Required') }}</span></h6>
 							<div class="mb-5">
-                                @foreach (json_decode($project->skills) as $key => $skill_id)
+                                @foreach ($project->skills as $key => $skill_id)
                                     @php
                                         $skill = \App\Models\Skill::find($skill_id);
                                     @endphp
@@ -63,7 +63,7 @@
 							</div>
 							<h6 class="text-left mb-3"><span class="bg-white pr-3 fs-14 fw-700">{{ translate('Attachments') }}</span></h6>
                             <div class="file-preview box">
-                                @foreach (explode(',', $project->attachment) as $key => $attachment_id)
+                                @foreach (explode(',', $project->attachments) as $key => $attachment_id)
                                     @php
                                         $attachment = \App\Models\Upload::find($attachment_id);
                                     @endphp
@@ -115,7 +115,7 @@
 							<div class="card-body p-4">
                                 <div class="mb-4">
 									<p class="fs-12 mb-2">{{ translate('Budget') }}</p>
-									<h4 class="mb-0 fw-900 mb-2">{{ single_price($project->price) }}</h4>
+									<h4 class="mb-0 fw-900 mb-2">{{ $project->budget }}</h4>
                                     <p class="fs-12 fw-700"><strong>{{ count($project->projectBids) }} &nbsp;&nbsp; {{ translate('Bids') }}</strong></p>
 								</div>
                                 <div class="mb-3">
@@ -127,7 +127,7 @@
 								</div>
                                 <div class="mb-3">
                                     @if (Auth::check() && ($bookmarked_project = \App\Models\BookmarkedProject::where('user_id', auth()->user()->id)->where('project_id', $project->id)->first()) != null)
-                                        <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.destroy', $bookmarked_project->id) }}" data-target="#bookmark-remove-modal">
+                                        <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.delete', $bookmarked_project->id) }}" data-target="#bookmark-remove-modal">
                                             <i class="las la-bookmark fs-16 fw-700"></i>
                                             <span>{{ translate('Remove Bookmark') }}</span>
                                         </a>

@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="card-footer justify-content-between">
                                     <span class="btn btn-primary btn-sm rounded-1"><a href="{{ route('service.edit', $service->slug) }}" class="text-white">{{ translate('Edit') }}</a></span>
-                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('service.destroy', $service->slug) }}" title="Delete">
+                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('service.delete', $service->slug) }}" title="Delete">
                                         <i class="las la-trash"></i>
                                     </a>
                                 </div>

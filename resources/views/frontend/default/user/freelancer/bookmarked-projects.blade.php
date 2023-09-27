@@ -64,7 +64,7 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="d-inline-block confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.destroy', $bookmarked_project->id) }}" data-toggle="tooltip" title="{{ translate('Remove from bookmark') }}" data-target="#bookmark-remove-modal">
+                                            <a class="d-inline-block confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.delete', $bookmarked_project->id) }}" data-toggle="tooltip" title="{{ translate('Remove from bookmark') }}" data-target="#bookmark-remove-modal">
                                                 <i class="las la-bookmark la-2x"></i>
                                             </a>
                                         </div>

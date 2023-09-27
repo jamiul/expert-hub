@@ -1,19 +1,23 @@
 <?php
 
-use App\Models\Currency;
-use App\Models\SystemConfiguration;
 use App\Models\Role;
+use App\Models\User;
+use App\Models\Skill;
+use App\Models\Country;
+use App\Models\Experts;
+use App\Models\Currency;
+use App\Models\Language;
+use App\Models\SitePage;
 use App\Mail\EmailManager;
 use App\Models\ChatThread;
-use App\Models\Country;
-use App\Models\Language;
-use App\Models\ProjectCategory;
+use App\Models\ParentSkill;
 use App\Models\SeminarMode;
-use App\Models\SeminarSoftware;
 use App\Models\Translation;
-use App\Models\User;
+use App\Models\ProjectCategory;
+use App\Models\SeminarSoftware;
 use App\Models\PageOptimization;
-use App\Models\SitePage;
+use App\Models\ConsultantCategory;
+use App\Models\SystemConfiguration;
 use phpDocumentor\Reflection\Types\Boolean;
 
 if (!function_exists('areActiveRoutes')) {
@@ -620,7 +624,6 @@ function getInstructorName($id) {
 
     return $instructor ? $instructor->name : null;
 }
-
 function getProjectCategory() {
     return ProjectCategory::all()->sortByDesc("id")->toArray();
 }
@@ -639,6 +642,42 @@ function getLanguages() {
 
 function getCourseInstructors() {
     return User::where('user_type', 'freelancer')->get()->toArray();
+}
+
+function getConsultantCategory() : array
+{
+    return ConsultantCategory::all()->sortByDesc("id")->toArray();
+}
+
+function getSkills() : array
+{
+    return Skill::all()->sortByDesc("id")->toArray();
+}
+
+function getSkillsByID($id): array
+{
+    $skill = Skill::find($id);
+
+    if ($skill !== null) {
+        return $skill->toArray();
+    } else {
+        return [];
+    }
+}
+
+function getParentSkills() : array
+{
+    return ParentSkill::all()->sortByDesc("id")->toArray();
+}
+
+function getSubSkills($id) : object
+{
+    return Skill::where('parent_skill_id', $id)->get();
+}
+
+function getCountry() : array
+{
+    return Country::all()->toArray();
 }
 
 if (!function_exists('formatSeminarDate')) {
@@ -686,7 +725,7 @@ function GetUrls(){
     if(!empty($fullParts['path']) && !empty($baseParts['path'])){
         $remainingUrl = rtrim($fullParts['path'], '/');
         $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
-    }    
+    }
     }
     if($remainingUrl==''){
         $defaultdata = PageOptimization::where('id', 1)->get();
@@ -694,11 +733,11 @@ function GetUrls(){
         $data['title']=$defaultdata[0]->title;
         $data['keyword']=$defaultdata[0]->keyword;
         $data['description']=$defaultdata[0]->description;
-        } 
+        }
     }else{
         $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl.'%')->get();
         if($pageoptimizations->isEmpty()){
-            $defaultdata = PageOptimization::where('id', 1)->get(); 
+            $defaultdata = PageOptimization::where('id', 1)->get();
             if($defaultdata->isNotEmpty()){
             $data['title']=$defaultdata[0]->title;
             $data['keyword']=$defaultdata[0]->keyword;
@@ -711,14 +750,14 @@ function GetUrls(){
             $data['description']=$pageoptimizations[0]->$description->description;
             }
             else{
-            $defaultdata = PageOptimization::where('id', 1)->get(); 
+            $defaultdata = PageOptimization::where('id', 1)->get();
             if($defaultdata->isNotEmpty()){
             $data['title']=$defaultdata[0]->title;
             $data['keyword']=$defaultdata[0]->keyword;
             $data['description']=$defaultdata[0]->description;
             }
             }
-        }  
+        }
     }
     return $data;
 }

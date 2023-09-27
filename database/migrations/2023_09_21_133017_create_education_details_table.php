@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('education_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->string('degree')->nullable();
             $table->integer('passing_year')->nullable();
             $table->integer('country_id')->nullable();

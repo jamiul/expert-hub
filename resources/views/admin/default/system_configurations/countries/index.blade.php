@@ -35,7 +35,7 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a class="dropdown-item" href="{{ route('countries.edit', encrypt($country->id)) }}">{{translate('Edit')}}</a>
-                                                        <a class="dropdown-item confirm-delete" data-href="{{route('countries.destroy', $country->id)}}">{{translate('Delete')}}</a>
+                                                        <a class="dropdown-item confirm-delete" data-href="{{route('countries.delete', $country->id)}}">{{translate('Delete')}}</a>
                                                     </div>
                                                 </div>
                                             </div>

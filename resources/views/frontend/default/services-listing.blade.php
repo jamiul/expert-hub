@@ -383,7 +383,7 @@
                                         <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
                                             @if (Auth::check() && ($bookmarked_service = \App\Models\BookmarkedService::where('user_id', auth()->user()->id)->where('service_id', $service->id)->first()) != null)
 
-                                            <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.destroy', $bookmarked_service->id) }}" data-target="#bookmark-remove-modal">
+                                            <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.delete', $bookmarked_service->id) }}" data-target="#bookmark-remove-modal">
                                                 <img class=" p-2 center d-block c-pointer" src="{{asset('assets/frontend/default/img/scholarship/fillupheart.png')}}" alt="">
                                             </a>
                                             @else

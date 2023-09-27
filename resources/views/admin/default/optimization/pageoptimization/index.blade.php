@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="modal-body text-center">
                                     <p class="mt-1">{{translate('Are you sure to delete this?')}}</p>
-                                    <form action="{{ route('page-optimization.destroy', $pageoptimization->id) }}" method="POST">
+                                    <form action="{{ route('page-optimization.delete', $pageoptimization->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-link mt-2" data-dismiss="modal">{{translate('Cancel')}}</button>
@@ -95,7 +95,7 @@
                 </tbody>
             </table>
 
-            {{-- @dd(route('seminar.destroy', $seminar->id)); --}}
+            {{-- @dd(route('seminar.delete', $seminar->id)); --}}
             <div class="aiz-pagination">
                 {{-- {{ $scholarships->links() }} --}}
             </div>

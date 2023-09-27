@@ -55,7 +55,7 @@
                                                     <i class="las la-pen"></i>
                                                 </a>
                                                 @if($language->code != 'en')
-                                                <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('languages.destroy', $language->id)}}" title="{{translate('Delete')}}">
+                                                <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('languages.delete', $language->id)}}" title="{{translate('Delete')}}">
                                                     <i class="las la-trash"></i>
                                                 </a>
                                                 @endif
