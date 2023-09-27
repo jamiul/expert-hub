@@ -63,5 +63,15 @@ class DemoController extends Controller
         File::deleteDirectory(base_path('public/uploads'));
     }
 
+    public function consultantLogin()
+    {
+        return view('frontend.default.consultantlogin');
+    }
+    
+    public function consultantSignup()
+    {
+        return view('frontend.default.consultantsignup');
+    }
+
 
 }
