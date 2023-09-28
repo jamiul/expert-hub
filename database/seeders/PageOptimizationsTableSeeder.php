@@ -2,21 +2,25 @@
 
 namespace Database\Seeders;
 
-use DB;
 use Illuminate\Database\Seeder;
+use App\Models\PageOptimization;
 
 class PageOptimizationsTableSeeder extends Seeder
 {
-
     /**
-     * Auto generated seed file
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        DB::table('page_optimizations')->delete();
-
-
+        PageOptimization::create([
+            'id' => '1',
+            'page_id' => 1,
+            'title' => 'Consultant Edu',
+            'keyword' => 'Course Accreditations, Instructional Designer, Curriculum Developer, Subject Matter, Expert, Accreditation Specialist, Education Consultant, Learning Designer, Assessment Coordinator, Quality Assurance Analyst, Content Writer, Researcher',
+            'description' => 'Education system',
+            'user_id' => 1
+        ]);
     }
 }

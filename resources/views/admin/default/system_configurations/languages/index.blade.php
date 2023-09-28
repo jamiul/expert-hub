@@ -87,7 +87,7 @@
                                 <div class="form-group mb-3">
                                     <label for="code">{{translate('Code')}}</label>
                                     <select class="form-control aiz-selectpicker" name="code" id="code" title="{{ translate('Select a country code') }}" data-live-search="true">
-                                        @foreach (\File::files(base_path('public/assets/frontend/default/img/flags')) as $path)
+                                        @foreach (\File::files(base_path('assets/frontend/default/img/flags')) as $path)
                                             <option
                                                 value="{{ pathinfo($path)['filename'] }}"
                                                 data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/'.pathinfo($path)['filename'].'.png') }}' height='11' class='mr-2'><span>{{ strtoupper(pathinfo($path) ['filename']) }}</span></div>" ></option>

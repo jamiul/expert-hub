@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ asset('public/assets/frontend/default/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/default/css/custom.css') }}">
 </head>
 
 <body>
