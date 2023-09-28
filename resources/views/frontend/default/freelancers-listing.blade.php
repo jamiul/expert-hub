@@ -16,7 +16,8 @@
                     <div class="col-lg-6 col-sm-12 my-auto">
                         <h3 class="text-white fw-700 fs-30 site-font mt-3 ">Find Academic Experts
                         </h3>
-                        <p class="fw-400 text-white site-font fs-18 mb-2">Connect with a diverse range of experts in the field you are searching for to meet your academic requirements.
+                        <p class="fw-400 text-white site-font fs-18 mb-2">Connect with a diverse range of experts in the
+                            field you are searching for to meet your academic requirements.
 
                         </p>
                         <a href="register?type=2"
@@ -59,7 +60,6 @@
                                             <i class="las la-times la-2x"></i>
                                         </button>
                                     </div>
-                                    {{-- @dd(getCountryName($country_id)); --}}
 
                                     @foreach ($categories as $category)
                                         <span id="category_{{ $category->id }}"
@@ -123,44 +123,37 @@
                                         </h6>
                                         <div class="mt-3">
                                             @foreach ($expertises as $key => $expertise)
-
-                                               <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
-                                               data-toggle="collapse"
-                                               href="#skill_{{ $expertise->id }}" role="button"
-                                               aria-expanded="true"
-                                               aria-controls="skill_{{ $expertise->id }}">
-                                               <label class="fas fa-plus "
-                                                   style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                               <p class="mb-0 fs-14 fw-500">{{ $expertise->name }}
-                                               </p>
-                                           </a>
-
+                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
+                                                    data-toggle="collapse" href="#skill_{{ $expertise->id }}"
+                                                    role="button" aria-expanded="true"
+                                                    aria-controls="skill_{{ $expertise->id }}">
+                                                    <label class="fas fa-plus "
+                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                    <p class="mb-0 fs-14 fw-500">{{ $expertise->name }}
+                                                    </p>
+                                                </a>
                                                 <div class="overflow-auto h-130px collapse "
                                                     id="skill_{{ $expertise->id }}">
                                                     @foreach ($expertise->childrens as $expert)
-                                                    <div
-                                                        class=" w-200px child-skill-project-filtering">
-                                                        <div class="mb-1 ">
-                                                            <input type="checkbox"
-                                                                name="childSkill_id[]"
-                                                                id="{{ $expertise->id }}"
-                                                                value="{{$expert->id }}"
-                                                                class=" d-none"
-                                                                onchange="applyFilter()">
-                                                            <label
-                                                                class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
-                                                                for="{{ $expert->id }}">
-                                                                {{ $expert->name }}
-                                                            </label>
+                                                        <div class=" w-200px child-skill-project-filtering">
+                                                            <div class="mb-1 ">
+                                                                <input type="checkbox" name="childSkill_id[]"
+                                                                    id="{{ $expertise->id }}" value="{{ $expert->id }}"
+                                                                    class=" d-none" onchange="applyFilter()">
+                                                                <label
+                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
+                                                                    for="{{ $expert->id }}">
+                                                                    {{ $expert->name }}
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                @endforeach
+                                                    @endforeach
                                                 </div>
                                             @endforeach
                                         </div>
                                     </div>
-                                      <!-- categories  -->
-                                     <div class="mt-3">
+                                    <!-- categories  -->
+                                    <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
                                             <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
                                         </h6>
@@ -187,8 +180,8 @@
                                                     <div class="mb-5 border-bottom">
                                                         <select
                                                             class="select2 site-font form-control aiz-selectpicker rounded-1"
-                                                            name="skill_id[]" onchange="applyFilter()" data-toggle="select2"
-                                                            data-live-search="true">
+                                                            name="skill_id[]" onchange="applyFilter()"
+                                                            data-toggle="select2" data-live-search="true">
 
                                                             <option value="" class="site-font">
                                                                 {{ translate('Search skills') }}
@@ -208,7 +201,7 @@
                                                                     aria-expanded="true"
                                                                     aria-controls="skill_{{ $parentSkill->id }}">
                                                                     <label class="fas fa-plus "
-                                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0; background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
                                                                     <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}
                                                                     </p>
                                                                 </a>
