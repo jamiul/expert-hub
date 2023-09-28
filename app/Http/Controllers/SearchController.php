@@ -52,9 +52,6 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            // $parentSkills = ParentSkill::all();
-            // $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
-            // $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
             $skills= Skill::with('childrens')->whereNull('parent_id')->get();
             $consultantCategory = ConsultantCategory::all();
             $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
@@ -317,9 +314,6 @@ class SearchController extends Controller
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
             $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
-            // $parentSkills = ParentSkill::all();
-            // $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
-            // $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
             $skills= Skill::with('childrens')->whereNull('parent_id')->get();
 
 
@@ -440,9 +434,6 @@ class SearchController extends Controller
             $skill_ids = [];
             $country_id = $request ->country_id;
             $project_category = ProjectCategory::all();
-            // $parentSkills = ParentSkill::all();
-            // $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
-            // $child_skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
             $skills= Skill::with('childrens')->whereNull('parent_id')->get();
             $all_skills = Skill::all();
             $countries = Country::all();

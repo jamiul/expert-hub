@@ -14,29 +14,9 @@
                             ones that match your expertise.
                         </p>
                         <a href="register?type=2"
-                            class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started</a>
-                        {{-- <div class="input-group mb-3 mt-5">
-                            <form action="" method="GET" class="w-100">
-                                <input type="text" class="form-control position-relative z-0"
-                                    placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}"
-                                    name="keyword" aria-label="Search" aria-describedby="searchButton"
-                                    style="height: 60px;">
-                                <div class="input-group-append position-absolute"
-                                    style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
-                                    <button class="btn btn-primary" type="submit" id="searchButton"
-                                        data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
-                                        Search
-                                    </button>
-                                </div>
-                            </form>
-                        </div> --}}
+                            class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started
+                        </a>
 
-                        <!-- <div class="d-flex align-items-center">
-                                    <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                        <i class="las la-filter text-black-50">SS</i>
-                                    </button>
-                                    <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                                </div> -->
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -464,22 +444,7 @@
             </form>
         </div>
     </section>
-    <!-- <script>
-        function removeCategory(categoryId) {
-            var categoryElement = document.getElementById('category_' + categoryId);
 
-            if (categoryElement) {
-                categoryElement.parentNode.removeChild(categoryElement);
-
-                // Uncheck the corresponding checkbox
-                var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
-                if (checkbox) {
-                    checkbox.checked = false;
-                }
-            }
-            $('#project-filter-form').submit();
-        }
-    </script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function removeCategory(categoryId) {
