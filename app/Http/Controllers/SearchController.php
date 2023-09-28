@@ -319,6 +319,7 @@ class SearchController extends Controller
             $parentSkills = ParentSkill::all();
             $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
             $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
+            
 
 
             if ($request->keyword != null) {

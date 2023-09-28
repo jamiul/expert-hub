@@ -115,23 +115,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <!-- categories  -->
-
-                                    <div class="mt-3">
-                                        <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
-                                        </h6>
-                                        @foreach (getConsultantCategory() as $category)
-                                            <label class="aiz-checkbox site-font w-100">
-                                                <input type="checkbox" name="category_id[]" value="{{ $category['id'] }}"
-                                                    onchange="applyFilter()"
-                                                    @if (in_array($category['id'], $category_ids)) checked @endif>
-                                                {{ $category['name'] }}
-                                                <span class="aiz-square-check"></span>
-                                                <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                            </label>
-                                        @endforeach
-                                    </div>
+                                   
 
                                     <!-- Skills -->
                                     <div class="card-body pl-lg-0">
@@ -144,8 +128,8 @@
                                                     <div class="mb-5 border-bottom">
                                                         <select
                                                             class="select2 site-font form-control aiz-selectpicker rounded-1"
-                                                            name="skill_id[]" onchange="applyFilter()" data-toggle="select2"
-                                                            data-live-search="true">
+                                                            name="skill_id[]" onchange="applyFilter()"
+                                                            data-toggle="select2" data-live-search="true">
 
                                                             <option value="" class="site-font">
                                                                 {{ translate('Search skills') }}
@@ -166,7 +150,8 @@
                                                                     aria-controls="skill_{{ $parentSkill['id'] }}">
                                                                     <label class="fas fa-plus "
                                                                         style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                                    <p class="mb-0 fs-14 fw-500">{{ $parentSkill['name'] }}
+                                                                    <p class="mb-0 fs-14 fw-500">
+                                                                        {{ $parentSkill['name'] }}
                                                                     </p>
                                                                 </a>
                                                                 <div class="overflow-auto h-130px collapse "
