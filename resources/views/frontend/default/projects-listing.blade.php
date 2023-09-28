@@ -88,7 +88,7 @@
                                     <div class="mb-4 site-font">
                                         <div class="">
                                             <h6 class="text-left mb-3 fs-14">
-                                                <span class="pr-3 site-font fw-700">{{ translate('Skills') }}</span>
+                                                <span class="pr-3 site-font fw-700">{{ translate('Project Skills') }}</span>
                                             </h6>
                                             <div class="mb-4">
                                                 <div class="">
