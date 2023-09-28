@@ -117,7 +117,7 @@
                                <div class=" h-136px align-items-center">
                                    <div class="d-flex">
                                        <img class=" mb-2 mx-auto d-block   p-3"
-                                           src=" {{ url('/public/assets/home/post.png') }}" alt="Image"
+                                           src=" {{ asset('assets/home/post.png') }}" alt="Image"
                                            style="width:55px; border-radius:50%; border:1px solid #fff" />
                                        <div class="need-help-section-bar"></div>
                                    </div>
@@ -141,12 +141,12 @@
                            <div class=" ">
                                <div class=" h-136px align-items-center">
                                    <!-- <div class="d-flex">
-                                                                                           <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ url('/public/assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
+                                                                                           <img class=" mb-2 mx-auto d-block text-black  p-3" src=" {{ asset('assets/home/quiz1.png') }}" alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000; " />
                                                                                            <div class="need-help-progress-bar"></div>
                                                                                        </div> -->
                                    <div class="d-flex">
                                        <img class="mb-2 mx-auto d-block text-black p-3"
-                                           src="{{ url('/public/assets/home/quiz.png') }}" alt="Image"
+                                           src="{{ asset('assets/home/quiz.png') }}" alt="Image"
                                            style="width:55px; border-radius:50%; border:1px solid #fff;" />
                                        <div class="need-help-section-bar">
                                        </div>
@@ -171,13 +171,13 @@
                                    <div class="d-flex">
                                        <img class=" mb-2 mx-auto d-block
                                 p-3"
-                                           src=" {{ url('/public/assets/home/enroll.png') }}" alt="Image"
+                                           src=" {{ asset('assets/home/enroll.png') }}" alt="Image"
                                            style="width:55px; border-radius:50%; border:1px solid #fff" />
                                        <div class="need-help-section-bar"></div>
                                    </div>
                                    <p
                                        class="fs-22 fw-700 mb-lg-2 mt-3 consultant-category text-center text-white site-font">
-                                       Select the best match for you 
+                                       Select the best match for you
 
                                    </p>
                                </div>
@@ -193,7 +193,7 @@
                            <div class=" ">
                                <div class=" h-136px align-items-center">
                                    <img class=" mb-2 mx-auto d-block p-3"
-                                       src=" {{ url('/public/assets/home/check.png') }}" alt="Image"
+                                       src=" {{ asset('assets/home/check.png') }}" alt="Image"
                                        style="width:55px; border-radius:50%; border:1px solid #fff" />
                                    <p
                                        class="fs-22 mt-3 fw-700 mb-lg-2 consultant-category text-center text-white site-font">
@@ -247,7 +247,7 @@
 
                         <div class="row gutters-10">
                             @if (get_setting('featured_category_list') != null)
-                                
+
                                 @foreach ($consultant_categories as $category)
                                     <div class="col-md-3">
                                         <div class="card" style="height:350px;">
@@ -324,7 +324,7 @@
                                         </div>
 
                                     </a>
-                                </div>                             
+                                </div>
                             @endforeach
 
                         </div>
@@ -1229,7 +1229,7 @@
                               <div class="d-flex">
                                   <div>
                                       <img class="mr-2 border "
-                                          src=" {{ url('/public/assets/home/review-1.jpeg') }}" alt="Image"
+                                          src=" {{ asset('assets/home/review-1.jpeg') }}" alt="Image"
                                           style="width:30px; border-radius:50%;" />
                                   </div>
                                   <div>
@@ -1261,7 +1261,7 @@
                               <div class="d-flex  ">
                                   <div>
                                       <img class="mr-2 border"
-                                          src=" {{ url('/public/assets/home/review-2.jpeg') }}" alt="Image"
+                                          src=" {{ asset('assets/home/review-2.jpeg') }}" alt="Image"
                                           style="width:30px; border-radius:50%;" />
                                   </div>
                                   <div class="">
@@ -1291,7 +1291,7 @@
                               <div class="d-flex  mt-3">
                                   <div>
                                       <img class="mr-2  border"
-                                          src=" {{ url('/public/assets/home/review-3.jpeg') }}" alt="Image"
+                                          src=" {{ asset('assets/home/review-3.jpeg') }}" alt="Image"
                                           style="width:30px; border-radius:50%;" />
                                   </div>
                                   <div>
