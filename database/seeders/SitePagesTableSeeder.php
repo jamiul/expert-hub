@@ -2,21 +2,20 @@
 
 namespace Database\Seeders;
 
-use DB;
 use Illuminate\Database\Seeder;
+use App\Models\SitePage;
 
 class SitePagesTableSeeder extends Seeder
 {
-
-    /**
-     * Auto generated seed file
-     *
-     * @return void
-     */
     public function run()
     {
-        DB::table('site_pages')->delete();
-
-
+        // Seed the "site_pages" table with sample data
+        SitePage::create([
+            'id' => '1',
+            'title' => 'Default',
+            'url' => '/',
+            'user_id' => 1
+        ]);
+        // Add more records as needed...
     }
 }
