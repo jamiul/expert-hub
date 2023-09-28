@@ -157,6 +157,22 @@ body {
     width: 86%;
     margin: 70px 8%;
 }
+.biography-info{
+    line-height: 25.52px !important;
+}
+.expert-singel-profile{
+    font-size: 16px;
+}
+
+.profile-single {
+    width: 86%;
+    margin: 20px 8%;
+}
+
+.profile-leftside{
+    border-color: #275846 !important;
+    color: #275846;
+}
 .home-slider {
     width: 84%;
     margin: 10px 8% 30px !important;
@@ -260,6 +276,7 @@ body {
         margin-bottom: 2%;
         margin-top: -18%;
     }
+
 }
 
 /* skill part  */
@@ -449,6 +466,9 @@ body {
     .logo {
         width: 50px;
     }
+    .expert-singel-profile{
+        font-size: 16px !important;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -478,6 +498,7 @@ body {
     .fre-button-show {
         display: none !important;
     }
+  
 }
 
 @media (min-width: 1100px) {
