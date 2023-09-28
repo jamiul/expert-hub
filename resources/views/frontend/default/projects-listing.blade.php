@@ -158,10 +158,7 @@
 
                                             </div>
                                         </div>
-
-
                                     </div>
-
                                     <!-- Budget -->
                                     <div class="mb-4">
                                         <h6 class="text-left mb-3 fs-14 site-font fw-700">
@@ -236,7 +233,6 @@
                                             </select>
                                         </div>
                                     </div>
-
                                     <!-- countries  -->
                                     <h6 class="text-left mb-3 fs-14">
                                         <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>

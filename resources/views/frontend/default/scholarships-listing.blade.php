@@ -74,7 +74,7 @@
                                         @foreach ($whoCanApplies as $whoCanApply)
                                         <span id="whoCanApply_{{ $whoCanApply->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                            {{ $whoCanApply->name }} | <p
+                                            {{ $whoCanApply->title }} | <p
                                                 onclick="removewhoCanApply({{ $whoCanApply->id }})"
                                                 class="m-0  d-inline fw-700">
                                                 X</p>
@@ -116,7 +116,7 @@
                                         </div>
 
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Field of Study') }}</span>
+                                            <span class=" pr-3">{{ translate('Scholarship by field') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
                                             @foreach (\App\Models\ScholarshipFieldStudy::all() as $fieldStudy)
@@ -140,7 +140,7 @@
                                                     <input type="checkbox" name="whoCanApply_id[]"
                                                         value="{{ $whoCanApply->id }}" onchange="applyFilter()"
                                                         @if (in_array($whoCanApply->id, $whoCanApply_ids)) checked @endif>
-                                                    {{ $whoCanApply->name }}
+                                                    {{ $whoCanApply->title }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
                                                 </label>
