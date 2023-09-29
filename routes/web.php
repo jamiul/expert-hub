@@ -298,7 +298,7 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 // seminar consultant resource route
 Route::resource('seminar-consultant', 'SeminarConsultantController');
 
-Route::get('/search', 'SearchController@index')->name('search');
+Route::get('/search', [\App\Http\Controllers\SearchController::class, 'index'])->name('search');
 Route::get('/search?category_id[]={id}&type=project', 'SearchController@index')->name('projects.category');
 Route::get('/skill/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
 Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('search.category');
@@ -319,7 +319,7 @@ Route::get('/client/{user_name}', 'HomeController@client_details')->name('client
 Route::get('/client-lists', 'HomeController@client_list')->name('client.lists');
 
 Route::get('/freelancer-lists', 'HomeController@freelancer_list')->name('freelancer.lists');
-Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name('freelancer.details');
+Route::get('/freelancer/{user_name}', [\App\Http\Controllers\HomeController::class, 'freelancer_details'])->name('freelancer.details');
 // Route::get('/freelancer/{user_name}', 'HomeController@freelancer_meeting')->name('freelancer.meeting');
 Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 

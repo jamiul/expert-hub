@@ -164,12 +164,24 @@ class HomeController extends Controller
         return view('frontend.default.freelancers-listing', compact('freelancers', 'total_freelancers'));
     }
 
-    //Show specific freelancer details to user
-    public function freelancer_details($username)
+    /**
+     * Show specific freelancer details to user
+     * @param string $username
+     * @return \Illuminate\View\View
+     */
+    public function freelancer_details($username): \Illuminate\View\View
     {
-        $freelancer = User::where('user_name', $username)->first();
+        try {
+            //TODO:: if freelancer set profile as private, do not display
+            $freelancer = User::where('user_name', $username)
+                              ->where('user_type', 'freelancer')
+                              ->where('banned', 0)
+                              ->firstOrFail();
+        } catch (\Exception $ex){
+            abort(404);
+        }
 
-        return view('frontend.default.freelancer-single', compact('freelancer'));
+        return view('frontend.default.freelancer.freelancer-single', compact('freelancer'));
     }
     // Freelancer meeting arrange
 
