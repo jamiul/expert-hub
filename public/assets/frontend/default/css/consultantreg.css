@@ -1,3 +1,24 @@
+/*-----common----------*/
+.card-shadow {
+    box-shadow: 10px 10px 20px 0px #0e00621f !important;
+}
+.a-underline {
+    text-decoration: underline;
+}
+.card button.btn-join {
+    border-radius: 4px;
+}
+.border-all-5 {
+    border-radius: 4px !important;
+}
+.border-green-2 {
+    border: 2px solid #275846 !important;
+}
+.btn-back {
+    background-color: transparent;
+    border: 2px solid #27584633 !important;
+    color: #275846;
+}
 /*-----login page-----*/
 .clogin .card {
     padding: 60px 12px 60px 12px !important;
@@ -26,7 +47,7 @@
     width: 220px;
     height: 46px;
 }
-.custom-input-group .icon {
+.clogin .custom-input-group .icon {
     position: absolute;
     top: 50%;
     left: 12px;
@@ -46,15 +67,16 @@
     right: 10px;
     transform: translateY(-50%);
 }
-.clogin .card button.btn-join {
-    border-radius: 5px;
-}
 .clogin .card p {
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
 }
 /*-----signup page-----*/
+.csignup {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .csignup .form {
     position: relative;
     z-index: 1;
@@ -96,4 +118,251 @@
 }
 .csignup .text-center p a {
     color: #275846;
+}
+/*-----Email Verify--------*/
+.cvemail .card {
+    padding: 60px 12px 60px 12px !important;
+}
+.cvemail h4 {
+    font-family: Public Sans;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.cvemail p {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.cvemail a {
+    font-size: 14px;
+    color: #5abc76;
+    padding: 2px 0;
+}
+/*-----Profile setup--------*/
+.psetup .input-field {
+    width: 100%;
+    padding-left: 50px;
+    border: none;
+    background: url("../img/consultantreg/user-circle.png") no-repeat;
+    background-position-x: left;
+    height: 40px;
+    background-size: contain;
+}
+
+.psetup .input-icons {
+    margin-bottom: 30px;
+    height: 60px;
+}
+.psetup p.card-text {
+    font-size: 14px;
+}
+/*-----Profile Details--------*/
+.cprofiled h5 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 23px;
+    margin-bottom: 2px;
+}
+.cprofiled p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.timeline-item {
+    margin-bottom: 10px;
+}
+.icon-item.icon-item-sm {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+.timeline-vertical
+    .timeline-item:not(:last-child)
+    .timeline-item-bar
+    .timeline-bar {
+    position: absolute;
+    left: 18px;
+    top: 28px;
+}
+.timeline-vertical.timeline-with-details
+    .timeline-item:not(:last-child)
+    .timeline-item-bar
+    .timeline-bar {
+    height: calc(100% - 1.6rem) !important;
+}
+.timeline-bar {
+    border: 2px solid #e4e7ec;
+}
+.bg-primary-100 {
+    background-image: url("../img/consultantreg/step-icon.png");
+    background-repeat: no-repeat;
+}
+.bg-primary-100.current-step {
+    background-image: url("../img/consultantreg/current-step-icon.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.bg-primary-100.tick-step {
+    background-image: url("../img/consultantreg/_Step icon base.png");
+    background-repeat: no-repeat;
+    background-size: 85%;
+}
+.container-style {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 75%;
+    justify-content: center;
+}
+.cprofiled hr {
+    border-color: #e2e5ec;
+}
+.tick-bar {
+    border: 2px solid #5abc76;
+}
+/*-----Profile expertises--------*/
+.prexpertise .col .card {
+    height: 550px;
+}
+.card-expertise {
+    margin-top: 30px;
+}
+.prexpertise .has-search .form-control {
+    padding-left: 2.375rem;
+}
+.prexpertise .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+.prexpertise .form-select {
+    border: none;
+    border-top: 1px solid #00000012;
+    border-radius: 0;
+}
+.prexpertise .custom-input-group {
+    position: relative;
+}
+.prexpertise .custom-input-group .bold-text {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+.prexpertise .custom-input-group .icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+}
+.btn-badge {
+    background-color: #f9f9f9;
+    padding-right: 38px;
+    position: relative;
+    margin: 6px 2px;
+    border: 1px solid #30374445;
+}
+.prexpertise span.badge.badge-light {
+    background-color: transparent;
+    position: absolute;
+    right: 6px;
+    top: 11px;
+}
+.badge i.lar.la-times-circle {
+    color: #3037447d;
+}
+/*-----Profile Education--------*/
+.cpeducation .form-control {
+    padding: 1rem 1rem;
+    height: calc(1.3125rem + 1.2rem + 8px);
+}
+.cpeducation .textOnInput {
+    position: relative;
+}
+.cpeducation .textOnInput label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 2px;
+    z-index: 1;
+    background-color: #ffffff;
+}
+/*-----Biography--------*/
+.textOnInput {
+    position: relative;
+}
+.textOnInput label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 2px;
+    z-index: 1;
+    background-color: #ffffff;
+}
+.cprofiled textarea.form-control.brife-words {
+    min-height: 134px;
+}
+.cprofiled hr {
+    border-color: #e2e5ec;
+}
+/*-----Profile Consultation--------*/
+.pconsult .text-style {
+    color: #57b572;
+    font-weight: bold;
+}
+.pconsult .text-style-button {
+    color: #275846;
+    font-weight: bold;
+}
+.btn-tags-outline{
+    background-color: transparent;
+    color: #4CAF50;
+    padding: 2px 12px;
+    margin-right: 5px;
+    border-radius: 20px !important;
+    border: 1px solid #4CAF50;
+    font-size: 14px;
+}
+.user-avatar,
+        .btn-avatar-upload {
+            width: 265px !important;
+        }
+/*-----Responsive--------*/
+@media (max-width: 1200px) {
+    .position-md-relative {
+        position: relative !important;
+    }
+    .timeline-vertical .timeline-item-bar .timeline-bar {
+        left: 11px !important;
+    }
+}
+@media (max-width: 768px) {
+    .csignup .form {
+        padding: 30px !important;
+    }
+    .cvemail .card {
+        padding: 30px 12px 30px 12px !important;
+    }
+}
+@media (max-width: 576px) {
+    .csignup .form {
+        padding: 30px 10px !important;
+    }
+    .activity-bar {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    .prexpertise .col .card-expertise {
+        height: 280px;
+    }
 }

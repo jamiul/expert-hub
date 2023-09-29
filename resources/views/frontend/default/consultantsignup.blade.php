@@ -94,7 +94,7 @@
                                 Terms of Service,including the User Agreement and Privacy Policy.</label>
                         </div>
                         <div class="col-12 mt-3">
-                            <button class="btn btn-block btn-primary rounded-1 w-100 py-2" type="submit">Join as an Edu
+                            <button class="btn btn-block btn-primary btn-join w-100 py-2" type="submit">Join as an Edu
                                 Expert</button>
                         </div>
                         <div class="text-center  mt-3">

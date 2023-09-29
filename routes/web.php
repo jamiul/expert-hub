@@ -42,6 +42,20 @@ Route::get('/demo/cron_2', 'DemoController@cron_2');
 //consultant Registration
 Route::get('/consultant-login', 'DemoController@consultantLogin');
 Route::get('/consultant-signup', 'DemoController@consultantSignup');
+Route::get('/verify-email', 'DemoController@consultantVerifyEmail');
+Route::get('/verify-your-email', 'DemoController@consultantVerifyYourEmail');
+Route::get('/profile-setup', 'DemoController@profileSetup');
+Route::get('/profiile-details', 'DemoController@profileDetails');
+Route::get('/profiile-expertises', 'DemoController@profileExpertises');
+Route::get('/profiile-education', 'DemoController@profileEducation');
+Route::get('/profiile-consultation', 'DemoController@profileConsultation');
+Route::get('/profiile-consultation-books', 'DemoController@profileConsultationBooks');
+Route::get('/profiile-consultation-interview', 'DemoController@profileConsultationInterview');
+Route::get('/profiile-biography', 'DemoController@profileBiography');
+Route::get('/profiile-picture', 'DemoController@profilePicture');
+Route::get('/profiile-completed', 'DemoController@profileCompleted');
+Route::get('/profiile-expertises-popup', 'DemoController@profileExpertisesPopup');
+
 
 Route::get('/refresh-csrf', function () {
     return csrf_token();

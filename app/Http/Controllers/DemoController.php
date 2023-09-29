@@ -62,16 +62,66 @@ class DemoController extends Controller
     {
         File::deleteDirectory(base_path('public/uploads'));
     }
-
+// -------- Consultabt pages------------
     public function consultantLogin()
     {
         return view('frontend.default.consultantlogin');
-    }
-    
+    }    
     public function consultantSignup()
     {
         return view('frontend.default.consultantsignup');
     }
-
+    public function consultantVerifyEmail()
+    {
+        return view('frontend.default.consultantverifyemail');
+    }
+    public function consultantVerifyYourEmail()
+    {
+        return view('frontend.default.consultantverifyyouremail');
+    }
+    public function profileSetup()
+    {
+        return view('frontend.default.profilesetup');
+    }    
+    public function profileDetails()
+    {
+        return view('frontend.default.profiledetails');
+    }
+    public function profileExpertises()
+    {
+        return view('frontend.default.profileexpertises');
+    }
+    public function profileEducation()
+    {
+        return view('frontend.default.profileeducation');
+    }
+    public function profileConsultation()
+    {
+        return view('frontend.default.profileconsultation');
+    }
+    public function profileExpertisesPopup()
+    {
+        return view('frontend.default.profileexpertisespopup');
+    }
+    public function profileConsultationBooks()
+    {
+        return view('frontend.default.profileconsultationbooks');
+    }
+    public function profileConsultationInterview()
+    {
+        return view('frontend.default.profileconsultationinterview');
+    } 
+    public function profileBiography()
+    {
+        return view('frontend.default.profilebiography');
+    }
+    public function profilePicture()
+    {
+        return view('frontend.default.profilepicture');
+    }
+    public function profileCompleted()
+    {
+        return view('frontend.default.profilecompleted');
+    }
 
 }
