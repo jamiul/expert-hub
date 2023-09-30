@@ -324,19 +324,59 @@
     color: #275846;
     font-weight: bold;
 }
-.btn-tags-outline{
+.btn-tags-outline {
     background-color: transparent;
-    color: #4CAF50;
+    color: #4caf50;
     padding: 2px 12px;
     margin-right: 5px;
     border-radius: 20px !important;
-    border: 1px solid #4CAF50;
+    border: 1px solid #4caf50;
     font-size: 14px;
 }
 .user-avatar,
-        .btn-avatar-upload {
-            width: 265px !important;
-        }
+.btn-avatar-upload {
+    width: 265px !important;
+}
+/*-----Modal--------*/
+.modal {
+    --bs-modal-width: 600px;
+    --bs-modal-padding: 3rem;
+}
+.modal-content .modal-header {
+    padding: 2px 20px;
+    border-bottom: 0;
+    min-height: 60px;
+}
+.modal-content .modal-body {
+    padding: 0px 50px 40px;
+}
+.btngreen {
+    background-color: #5abc76 !important;
+    border-color: #4f9869;
+}
+.btngray {
+    background-color: #f9f9f9 !important;
+    border-color: #c3c5c8;
+    color: #000000;
+}
+.btngray,
+.btngreen {
+    font-size: 14px;
+    margin: 4px 5px 4px 0;
+    text-align: left;
+}
+.modal .textOnInput label {
+    position: absolute;
+    top: -10px;
+    left: 45px;
+    padding: 2px;
+    z-index: 1;
+    background-color: #ffffff;
+}
+.modal .form-control {
+    padding: 1.675rem 0.75rem !important;
+    font-size: 1rem;
+}
 /*-----Responsive--------*/
 @media (max-width: 1200px) {
     .position-md-relative {
