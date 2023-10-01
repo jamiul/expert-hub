@@ -25,6 +25,7 @@ use App\Models\SeminarSoftware;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
 use \App\Models\Experts;
+use \App\Models\Country;
 
 class SearchController extends Controller
 {
@@ -51,11 +52,8 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            $parentSkills = ParentSkill::all();
-            $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
-            $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
+            $skills= Skill::with('childrens')->whereNull('parent_id')->get();
             $consultantCategory = ConsultantCategory::all();
-            $expertiseChild= Experts::all();
             $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
 
             if ($request->keyword != null) {
@@ -150,7 +148,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','consultantCategory','expertises',));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','skills','consultantCategory','expertises',));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
@@ -316,9 +314,8 @@ class SearchController extends Controller
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
             $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
-            $parentSkills = ParentSkill::all();
-            $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
-            $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
+            $skills= Skill::with('childrens')->whereNull('parent_id')->get();
+
 
 
             if ($request->keyword != null) {
@@ -413,7 +410,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','parentSkills','skills','expertises'));
+            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','skills','expertises'));
         }else {
             $type = 'project';
             $keyword = $request->keyword;
@@ -422,13 +419,11 @@ class SearchController extends Controller
             $sort = $request->sort;
             $skill_id = array('');
             $childSkill_id = array('');
-
             $fixed_min = $request->fixed_min;
             $fixed_max = $request->fixed_max;
             $hourly_min = $request->hourly_min;
             $hourly_max = $request->hourly_max;
             $selectedDurations = $request->input('durations') ?? [];
-
             $category_id = array('');
             $min_price = $request->min_price;
             $max_price = $request->max_price;
@@ -437,6 +432,11 @@ class SearchController extends Controller
             $category_ids = [];
             $skills = [];
             $skill_ids = [];
+            $country_id = $request ->country_id;
+            $project_category = ProjectCategory::all();
+            $skills= Skill::with('childrens')->whereNull('parent_id')->get();
+            $all_skills = Skill::all();
+            $countries = Country::all();
 
 
 
@@ -446,6 +446,7 @@ class SearchController extends Controller
             } else {
                 $projects = Project::biddable()->notcancel()->open()->where('private', '0');
             }
+
 
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
@@ -530,7 +531,11 @@ class SearchController extends Controller
                 $project_ids = Project::where('name', 'like', '%' . $keyword . '%')->pluck('id');
                 $projects = $projects->whereIn('id', $project_ids);
             }
+            if ($country_id != null) {
+                $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
+                $projects = $projects->whereIn('client_user_id', $user_ids);
 
+            }
             switch ($sort) {
                 case '1':
                     $projects = $projects->orderBy('hourly_rate', 'desc');
@@ -552,11 +557,9 @@ class SearchController extends Controller
                     break;
             }
 
-
-
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations','project_category','all_skills','countries','country_id'));
         }
     }
 

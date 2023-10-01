@@ -14,29 +14,9 @@
                             ones that match your expertise.
                         </p>
                         <a href="register?type=2"
-                            class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started</a>
-                        {{-- <div class="input-group mb-3 mt-5">
-                            <form action="" method="GET" class="w-100">
-                                <input type="text" class="form-control position-relative z-0"
-                                    placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}"
-                                    name="keyword" aria-label="Search" aria-describedby="searchButton"
-                                    style="height: 60px;">
-                                <div class="input-group-append position-absolute"
-                                    style="position:absolute;top: 5px;right: 9px;padding: 3px 0;">
-                                    <button class="btn btn-primary" type="submit" id="searchButton"
-                                        data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
-                                        Search
-                                    </button>
-                                </div>
-                            </form>
-                        </div> --}}
+                            class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started
+                        </a>
 
-                        <!-- <div class="d-flex align-items-center">
-                                <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                    <i class="las la-filter text-black-50">SS</i>
-                                </button>
-                                <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                            </div> -->
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -76,12 +56,6 @@
                                     </button>
                                 </div>
 
-                                <!-- @foreach ($categories as $category)
-    <span id="category_{{ $category->id }}" class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                        {{ $category->name }} |<p onclick="removeCategory({{ $category->id }})" class="m-0  d-inline fw-700">
-                                            X</p>
-                                    </span>
-    @endforeach -->
                                 @foreach ($categories as $category)
                                     <span id="category_{{ $category->id }}"
                                         class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
@@ -93,11 +67,11 @@
                                     <!-- Categories -->
                                     <div class="mb-4">
                                         <h6 class="text-left mb-3 site-font">
-                                            <span class=" pr-3 fw-700">{{ translate('Categories') }}</span>
+                                            <span class=" pr-3 fw-700">{{ translate('Projects By Categories') }}</span>
                                         </h6>
                                         <div class="">
 
-                                            @foreach (\App\Models\ProjectCategory::all()->reverse() as $category)
+                                            @foreach ($project_category as $category)
                                                 <label class="aiz-checkbox w-100 site-font">
                                                     <input type="checkbox" class="" name="category_id[]"
                                                         onchange="applyFilter()" value="{{ $category->id }}"
@@ -107,6 +81,77 @@
                                                     <span class="float-right  fs-lg-16 "></span>
                                                 </label>
                                             @endforeach
+                                        </div>
+                                    </div>
+
+                                    <!-- Skills -->
+                                    <div class="mb-4 site-font">
+                                        <div class="">
+                                            <h6 class="text-left mb-3 fs-14">
+                                                <span class="pr-3 site-font fw-700">{{ translate('Project Skills') }}</span>
+                                            </h6>
+                                            <div class="mb-4">
+                                                <div class="">
+                                                    <div class="mb-5 border-bottom">
+                                                        <select
+                                                            class="select2 site-font form-control aiz-selectpicker rounded-1"
+                                                            name="skill_id[]" onchange="applyFilter()"
+                                                            data-toggle="select2" data-live-search="true">
+
+                                                            <option value="" class="site-font">
+                                                                {{ translate('Search skills') }}
+                                                            </option>
+                                                            @foreach ($skills as $key => $skill)
+                                                                @foreach ($skill->childrens as $subSkill)
+                                                                    <option class="site-font" value="{{ $subSkill->id }}"
+                                                                        @if (in_array($subSkill->id, (array) $skill_ids)) selected @endif>
+                                                                        {{ $subSkill->name }}</option>
+                                                                @endforeach
+                                                            @endforeach
+                                                        </select>
+
+                                                        <div class="mt-3">
+                                                            @foreach ($skills as $key => $skill)
+                                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
+                                                                    data-toggle="collapse"
+                                                                    href="#skill_{{ $skill->id }}" role="button"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="skill_{{ $skill->id }}">
+                                                                    <label class="fas fa-plus "
+                                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0; background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
+                                                                    <p class="mb-0 fs-14 fw-500">{{ $skill->name }}
+                                                                    </p>
+                                                                </a>
+                                                                <div class="overflow-auto h-130px collapse "
+                                                                    id="skill_{{ $skill->id }}">
+                                                                    @foreach ($skill->childrens as $subSkill)
+                                                                        <div
+                                                                            class=" w-200px child-skill-project-filtering">
+                                                                            <div class="mb-1 ">
+                                                                                <input type="checkbox"
+                                                                                    name="childSkill_id[]"
+                                                                                    id="{{ $subSkill->id }}"
+                                                                                    value="{{ $subSkill->id }}"
+                                                                                    class=" d-none"
+                                                                                    onchange="applyFilter()">
+                                                                                <label
+                                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
+                                                                                    for="{{ $subSkill->id }}">
+                                                                                    {{ $subSkill->name }}
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- Budget -->
@@ -168,7 +213,6 @@
                                                     type="number">
                                             </div>
                                         </div>
-
                                         <div class="mt-3">
                                             <select onchange="applyFilter()" name="durations[]"
                                                 class="select2 form-control site-font aiz-selectpicker rounded-1"
@@ -184,131 +228,27 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <!-- countries  -->
+                                    <h6 class="text-left mb-3 fs-14">
+                                        <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>
+                                    </h6>
 
-                                    <!-- Skills -->
-                                    <div class="mb-4 site-font">
-                                        <!-- Countries -->
-                                        <!-- <h6 class="text-left mb-3 fs-14 fw-700">
-                                                <span class="pr-3">{{ translate('Skills') }}</span>
-                                            </h6> -->
-                                        <!-- <div class="mb-5" style="width: 245px;">
-                                                <select class="select2 form-control aiz-selectpicker rounded-1" name="skill_id" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                                    <option value="">{{ translate('Skills') }}</option>
-                                                    @foreach (\App\Models\Skill::all() as $key => $skill)
-    <option value="{{ $skill->id }}" @if (isset($skill_id) && $skill_id == $skill->id) selected @endif>{{ $skill->name }}</option>
-    @endforeach
-                                                </select>
-                                            </div> -->
-                                        <div class="">
-                                            <h6 class="text-left mb-3 fs-14 fw-700">
-                                                <span class="pr-3 site-font">{{ translate('Skills') }}</span>
-                                            </h6>
-                                            <div class="mb-5 border-bottom">
-                                                <select class="select2 form-control aiz-selectpicker rounded-1"
-                                                    name="skill_id[]" class="site-font" onchange="applyFilter()"
-                                                    data-toggle="select2" data-live-search="true">
+                                    <div class=" mb-5 ">
+                                        <div class=" py-2 border-bottom ">
+                                            <select class="select2 site-font form-control aiz-selectpicker rounded-1"
+                                                name="country_id" onchange="applyFilter()" data-toggle="select2"
+                                                data-live-search="true">
+                                                <option value="" class="site-font">
+                                                    {{ translate('Search countries') }}</option>
+                                                @foreach ($countries as $key => $country)
+                                                    <option value="{{ $country->id }}"
+                                                        @if (isset($country_id) && $country_id == $country->id) selected @endif>
+                                                        {{ $country->name }}</option>
+                                                @endforeach
+                                            </select>
 
-                                                    <option value="" class="site-font">
-                                                        {{ translate('Search skills') }}</option>
-                                                    @foreach (\App\Models\Skill::all() as $key => $skill)
-                                                        <option value="{{ $skill->id }}"
-                                                            @if (in_array($skill->id, (array) $skill_ids)) selected @endif>
-                                                            {{ $skill->name }}</option>
-                                                    @endforeach
-                                                </select>
-
-                                                <div class="mt-3">
-                                                    @foreach (\App\Models\ParentSkill::all()->reverse() as $key => $parentSkill)
-                                                        <a class="text-dark site-font d-flex justify-content-start align-items-center mb-1"
-                                                            data-toggle="collapse" href="#skill_{{ $parentSkill->id }}"
-                                                            role="button" aria-expanded="true"
-                                                            aria-controls="skill_{{ $parentSkill->id }}">
-                                                            <label class="fas fa-plus "
-                                                                style="border: 1px solid gray;border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: gray;color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                            <p class="mb-0 fs-14 fw-500">{{ $parentSkill->name }}</p>
-                                                        </a>
-                                                        <div class="overflow-auto h-130px collapse "
-                                                            id="skill_{{ $parentSkill->id }}">
-                                                            @foreach (\App\Models\Skill::where('parent_skill_id', $parentSkill->id)->get() as $subSkill)
-                                                                <div class=" w-200px child-skill-project-filtering">
-                                                                    <div class="mb-1 ">
-                                                                        <input type="checkbox" name="childSkill_id[]"
-                                                                            id="{{ $subSkill->id }}"
-                                                                            value="{{ $subSkill->id }}" class=" d-none"
-                                                                            onchange="applyFilter()">
-                                                                        <label
-                                                                            class="c-pointer fs-12 text-dark ml-3 fw-500 mb-0"
-                                                                            for="{{ $subSkill->id }}">
-                                                                            {{ $subSkill->name }}</label>
-                                                                    </div>
-                                                                </div>
-                                                            @endforeach
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-
-                                            </div>
                                         </div>
-
-
                                     </div>
-
-                                    <!-- Price -->
-                                    <!-- <input type="hidden" name="min_price" value="">
-                                        <input type="hidden" name="max_price" value="">
-                                        <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Price') }}</span>
-                                        </h6>
-                                        <div class="aiz-range-slider mb-5 px-3">
-                                            <div id="input-slider-range" data-range-value-min="@if (\App\Models\Project::count() < 1) 0 @else {{ \App\Models\Project::min('price') }} @endif" data-range-value-max="@if (\App\Models\Project::count() < 1) 0 @else {{ \App\Models\Project::max('price') }} @endif">
-                                            </div>
-
-                                            <div class="row mt-2">
-                                                <div class="col-6">
-                                                    <span class="range-slider-value value-low fs-14 fw-600 opacity-70" @if (isset($min_price)) data-range-value-low="{{ $min_price }}" @elseif(count($projects) > 1 && $projects->min('price') > 0)
-                                                data-range-value-low="{{ $projects->min('price') }}"
-                                                @else
-                                                data-range-value-low="0" @endif
-                                                        id="input-slider-range-value-low"
-                                                        ></span>
-                                                </div>
-                                                <div class="col-6 text-right">
-                                                    <span class="range-slider-value value-high fs-14 fw-600 opacity-70" @if (isset($max_price)) data-range-value-high="{{ $max_price }}" @elseif(count($projects) > 1 && $projects->max('price') > 0)
-                                                data-range-value-high="{{ $projects->max('price') }}"
-                                                @else
-                                                data-range-value-high="0" @endif
-                                                        id="input-slider-range-value-high"
-                                                        ></span>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                    {{-- <div class="">
-                                        <h6 class="separator text-left mb-3 fs-12 text-uppercase text-secondary">
-                                            <span class=" pr-3">Client History</span>
-                                        </h6>
-                                        <div class="aiz-radio-list">
-                                            <label class="aiz-radio">
-                                                <input type="radio" name="radio3" checked="checked"> Any client history
-                                                <span class="aiz-rounded-check"></span>
-                                                <span class="float-right text-secondary fs-12">(200)</span>
-                                            </label>
-                                            <label class="aiz-radio">
-                                                <input type="radio" name="radio3"> No hires
-                                                <span class="aiz-rounded-check"></span>
-                                                <span class="float-right text-secondary fs-12">(200)</span>
-                                            </label>
-                                            <label class="aiz-radio">
-                                                <input type="radio" name="radio3"> 1 to 10 hires
-                                                <span class="aiz-rounded-check"></span>
-                                                <span class="float-right text-secondary fs-12">(200)</span>
-                                            </label>
-                                            <label class="aiz-radio">
-                                                <input type="radio" name="radio3"> 10+ hires
-                                                <span class="aiz-rounded-check"></span>
-                                                <span class="float-right text-secondary fs-12">(200)</span>
-                                            </label>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
                             <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
@@ -321,13 +261,13 @@
                         <div class="card mb-lg-0 border-0">
                             <input type="hidden" name="type" value="project">
                             <!-- <div class="card-header">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                            <i class="las la-filter"></i>
-                                        </button>
-                                        <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                                    </div>
-                                </div> -->
+                                        <div class="d-flex align-items-center">
+                                            <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                                                <i class="las la-filter"></i>
+                                            </button>
+                                            <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
+                                        </div>
+                                    </div> -->
 
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
@@ -447,7 +387,7 @@
                                                 </p>
                                             </div>
                                             <div>
-                                                @foreach (($project->skills) as $key => $skill_id)
+                                                @foreach ($project->skills as $key => $skill_id)
                                                     @php
                                                         $skill = \App\Models\Skill::find($skill_id);
                                                     @endphp
@@ -504,22 +444,7 @@
             </form>
         </div>
     </section>
-    <!-- <script>
-        function removeCategory(categoryId) {
-            var categoryElement = document.getElementById('category_' + categoryId);
 
-            if (categoryElement) {
-                categoryElement.parentNode.removeChild(categoryElement);
-
-                // Uncheck the corresponding checkbox
-                var checkbox = document.querySelector('input[name="category_id[]"][value="' + categoryId + '"]');
-                if (checkbox) {
-                    checkbox.checked = false;
-                }
-            }
-            $('#project-filter-form').submit();
-        }
-    </script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function removeCategory(categoryId) {
