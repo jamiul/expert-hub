@@ -117,34 +117,29 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <div class="row">
+                    <div class="row avatar-area">
                         <div class="col-md-12">
                             <h4 class="text-bold">Upload your profile picture</h4>
                             <p>Please upload the image you would like to appear in your profile</p>
-                            <div class="user-avatar">
-                                <img src="../assets/frontend/default/img/user-avatar.jpg" />
-                                <p class="text-center mt-2">Max 2MB 500px 500px</p>
-                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 p-0 pl-2 ">
-                            <button class="w-100 border btn btn-lg border-all-5 border-green-2 btn-avatar-upload">
+                        <div class="user-avatar">
+                            <img src="../assets/frontend/default/img/user-avatar.jpg" class="avatar-picture" />
+                            <p class="text-center mt-2">Max 2MB 500px 500px</p>
+                            <button class="w-100 border btn btn-lg border-all-5 border-green-2 user-avatar">
                                 <i class="las la-upload fs-4"></i> Upload Profile
                             </button>
-                            <div class="col-6 col-md-12 text-center mt-3 mb-4">
+                            <div class="col-md-12 text-center mt-3 mb-4 user-avatar">
                                 <a href="#">Remove Profile</a>
                             </div>
                         </div>
                     </div>
                     <hr class="my-4">
-                    <div class="row">
-                        <div class="row mb-5">
-                            <div class="col-md-6">
-                                <p>intial steps in creating your profile are now complete!</p>
-                                <button class="w-100 btn btn-primary btn-lg border-all-5 btn-lg">preview your
-                                    Profile</button>
-                            </div>
+
+                    <div class="row mb-5">
+                        <div class="col-lg-6 col-md-12">
+                            <p>Intial steps in creating your profile are now complete!</p>
+                            <button class="w-100 btn btn-primary btn-lg border-all-5 btn-lg">Preview Your
+                                Profile</button>
                         </div>
                     </div>
                     <div class="row">
@@ -152,13 +147,13 @@
                             <div class="w-100">
                                 <hr class="my-4">
                                 <div class="row gy-3">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-4 col-md-5">
                                         <button class="w-100 border btn-lg border-all-5 btn-back">
                                             <i class="las la-arrow-left la-lg"></i> Back
                                         </button>
                                     </div>
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-4 col-md-2"></div>
+                                    <div class="col-lg-4 col-md-5">
                                         <button class="w-100 btn btn-primary btn-lg border-all-5"
                                             type="submit">Next</button>
                                     </div>
@@ -166,7 +161,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

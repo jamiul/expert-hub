@@ -131,7 +131,6 @@
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
-
                             </div>
                             <div class="textOnInput">
                                 <label for="university" class="mr-3 ml-3">University</label>
@@ -141,7 +140,6 @@
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
-
                             </div>
                             <div class="textOnInput">
                                 <label for="start" class="ml-3 mr-3">Start Year</label>
@@ -152,7 +150,6 @@
                                     <option value="3">2015</option>
                                     <option value="3">2016</option>
                                 </select>
-
                             </div>
                             <div class="textOnInput">
                                 <label for="endyear" class="ml-3 mr-3">End Year</label>
@@ -170,19 +167,18 @@
                                             src="../assets/frontend/default/img/add_circle.png"></>
                                     </span>Add Education Qualification</button>
                             </div>
-
                             <div class="row">
                                 <div class="col">
                                     <div class="w-100">
                                         <hr class="my-4">
                                         <div class="row gy-3">
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-5">
                                                 <button class="w-100 border btn-lg border-all-5 btn-back">
                                                     <i class="las la-arrow-left la-lg"></i> Back
                                                 </button>
                                             </div>
-                                            <div class="col-md-4"></div>
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-2"></div>
+                                            <div class="col-lg-4 col-md-5">
                                                 <button class="w-100 btn btn-primary btn-lg border-all-5"
                                                     type="submit">Next</button>
                                             </div>

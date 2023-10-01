@@ -24,16 +24,16 @@
                                             alt="Login with apple" />
                                     </span>Sign up with Apple</button>
                             </div>
-                            <div class="row my-3">
+                            <div class="row my-3 mx-0 mb-md-0 p-0">
                                 <div class="col">
                                     <hr>
                                 </div>
-                                <div class="col-auto">OR</div>
+                                <div class="col-auto pt-2">OR</div>
                                 <div class="col">
                                     <hr>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 mb-3 my-sm-3">
                                 <div class="textOnInput">
                                     <label for="inputText">Title</label>
                                     <select class="form-select" id="country" required="">
@@ -42,21 +42,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 mb-3 my-sm-3">
                                 <div class="textOnInput">
                                     <label for="firstname">First name</label>
                                     <input class="form-control py-4" placeholder="Your First Name" type="text"
                                         name="firstname" id="firstname">
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 mb-3 my-sm-3">
                                 <div class="textOnInput">
                                     <label for="lastname">Last name</label>
                                     <input class="form-control py-4" placeholder="Your Last Name" type="text"
                                         name="lastname" id="lastname">
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mt-0">
                                 <div class="textOnInput">
                                     <label for="email">Email Address</label>
                                     <input class="form-control py-4 mt-3" placeholder="name@gmail.com" type="email"

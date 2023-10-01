@@ -116,22 +116,26 @@
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <div class="card-body my-auto">
-                        <h4 class="text-bold">Would you like offer<span class="text-style"> consultation</span> services?</h4>
+                        <h4 class="text-bold">Would you like offer<span class="text-style"> consultation</span> services?
+                        </h4>
                         <div class="w-100">
                             <div class="row ">
                                 <div class="col-md-4 d-flex">
                                     <button class="w-100 btn btn-primary m-2 border-all-5" type="submit">Yes</button>
-                                    <button class="w-100 m-2 btn btn-outline-success border-all-5 border-green-2"><span class="text-style-button">No</span> </button>
+                                    <button class="w-100 m-2 btn btn-outline-success border-all-5 border-green-2"><span
+                                            class="text-style-button">No</span> </button>
                                 </div>
                                 <div class="col-md-8"></div>
                             </div>
                         </div>
-                        <h4 class="text-bold mt-4">Would you like offer<span class="text-style"> TV interview </span>services?</h4>
+                        <h4 class="text-bold mt-4">Would you like offer<span class="text-style"> TV interview
+                            </span>services?</h4>
                         <div class="w-100">
                             <div class="row ">
                                 <div class="col-md-4 d-flex">
                                     <button class="w-100 btn btn-primary m-2 border-all-5" type="submit">Yes</button>
-                                    <button class="w-100 m-2 btn btn-outline-success border-all-5 border-green-2"><span class="text-style-button"> No</span>
+                                    <button class="w-100 m-2 btn btn-outline-success border-all-5 border-green-2"><span
+                                            class="text-style-button"> No</span>
                                     </button>
                                 </div>
                                 <div class="col-md-8"></div>
@@ -142,14 +146,15 @@
                                 <div class="w-100">
                                     <hr class="my-4">
                                     <div class="row gy-3">
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-5">
                                             <button class="w-100 border btn-lg border-all-5 btn-back">
                                                 <i class="las la-arrow-left la-lg"></i> Back
                                             </button>
                                         </div>
-                                        <div class="col-md-4"></div>
-                                        <div class="col-md-4">
-                                            <button class="w-100 btn btn-primary btn-lg border-all-5" type="submit">Next</button>
+                                        <div class="col-lg-4 col-md-2"></div>
+                                        <div class="col-lg-4 col-md-5">
+                                            <button class="w-100 btn btn-primary btn-lg border-all-5"
+                                                type="submit">Next</button>
                                         </div>
                                     </div>
                                 </div>

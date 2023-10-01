@@ -5,7 +5,7 @@
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row cvemail">
-                <div class="col-xxl-5 col-xl-5 col-md-7 mx-auto">
+                <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
                     <form class="needs-validation" method="post">
                         <div class="card card-shadow mb-4 rounded-3  pt-4 pb-4">
                             <img class="mb-4 mx-auto logo" src="{{ asset('assets/frontend/default/img/consultantreg/letter.png') }}"
@@ -15,7 +15,7 @@
                             </div>
                             <div class="card-body my-auto">
                                 <p>We just sent an email to your email address. Please check your email inbox and click the link provided to verify your email address.</p>
-                                <div class="row">
+                                <div class="row profile-chlinks">
                                     <div class="col-sm-5 pl-0 pr-0 pb-2">
                                     <a href="#" class="a-underline">Change email address</a>
                                     </div>

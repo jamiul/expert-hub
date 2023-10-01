@@ -136,21 +136,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="w-100">
-                                <hr class="my-4">
-                                <div class="row gy-3">
-                                    <div class="col-md-4">
-                                        <button class="w-100 border btn-lg border-all-5 btn-back">
-                                            <i class="las la-arrow-left la-lg"></i> Back
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
-                                        <button class="w-100 btn btn-primary btn-lg border-all-5"
-                                            type="submit">Next</button>
-                                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="w-100">
+                            <hr class="my-4">
+                            <div class="row gy-3">
+                                <div class="col-lg-4 col-md-5">
+                                    <button class="w-100 border btn-lg border-all-5 btn-back">
+                                        <i class="las la-arrow-left la-lg"></i> Back
+                                    </button>
+                                </div>
+                                <div class="col-lg-4 col-md-2"></div>
+                                <div class="col-lg-4 col-md-5">
+                                    <button class="w-100 btn btn-primary btn-lg border-all-5" type="submit">Next</button>
                                 </div>
                             </div>
                         </div>
