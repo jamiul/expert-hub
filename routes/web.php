@@ -45,16 +45,16 @@ Route::get('/consultant-signup', 'DemoController@consultantSignup');
 Route::get('/verify-email', 'DemoController@consultantVerifyEmail');
 Route::get('/verify-your-email', 'DemoController@consultantVerifyYourEmail');
 Route::get('/profile-setup', 'DemoController@profileSetup');
-Route::get('/profiile-details', 'DemoController@profileDetails');
-Route::get('/profiile-expertises', 'DemoController@profileExpertises');
-Route::get('/profiile-education', 'DemoController@profileEducation');
-Route::get('/profiile-consultation', 'DemoController@profileConsultation');
-Route::get('/profiile-consultation-books', 'DemoController@profileConsultationBooks');
-Route::get('/profiile-consultation-interview', 'DemoController@profileConsultationInterview');
-Route::get('/profiile-biography', 'DemoController@profileBiography');
-Route::get('/profiile-picture', 'DemoController@profilePicture');
-Route::get('/profiile-completed', 'DemoController@profileCompleted');
-Route::get('/profiile-expertises-popup', 'DemoController@profileExpertisesPopup');
+Route::get('/profile-details', 'DemoController@profileDetails');
+Route::get('/profile-expertises', 'DemoController@profileExpertises');
+Route::get('/profile-education', 'DemoController@profileEducation');
+Route::get('/profile-consultation', 'DemoController@profileConsultation');
+Route::get('/profile-consultation-books', 'DemoController@profileConsultationBooks');
+Route::get('/profile-consultation-interview', 'DemoController@profileConsultationInterview');
+Route::get('/profile-biography', 'DemoController@profileBiography');
+Route::get('/profile-picture', 'DemoController@profilePicture');
+Route::get('/profile-completed', 'DemoController@profileCompleted');
+Route::get('/profile-expertises-popup', 'DemoController@profileExpertisesPopup');
 
 
 Route::get('/refresh-csrf', function () {
