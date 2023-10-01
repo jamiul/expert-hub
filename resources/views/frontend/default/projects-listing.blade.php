@@ -230,7 +230,7 @@
                                     </div>
                                     <!-- countries  -->
                                     <h6 class="text-left mb-3 fs-14">
-                                        <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>
+                                        <span class="pr-3 site-font fw-700">{{ translate('Location') }}</span>
                                     </h6>
 
                                     <div class=" mb-5 ">
@@ -314,7 +314,7 @@
                                         <div class="col-lg-9 ">
                                             <a href="{{ route('project.details', $project->slug) }}"
                                                 class=" fs-20 lh-1-5 fw-700 p-title " style="color:#5ABC76;">
-                                                <u>{{ $project->name }}</u></a>
+                                                {{ $project->name }}</a>
                                             <ul class="list-inline opacity-70 fs-12">
                                                 <li class="list-inline-item">
                                                     {{-- <i class="las la-clock opacity-40"></i> --}}
@@ -446,6 +446,7 @@
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script>
         function removeCategory(categoryId) {
             var categoryElement = document.getElementById('category_' + categoryId);
@@ -462,17 +463,7 @@
             $('#project-filter-form').submit();
         }
     </script>
-@endsection
-
-
-@section('script')
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
+      <script type="text/javascript">
         function applyFilter() {
             $('#project-filter-form').submit();
         }

@@ -146,25 +146,25 @@
                                             @endforeach
                                         </div>
                                         <!-- Country -->
-                                        <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ __('Country') }}</span>
+                                        <h6 class="text-left mb-3 fs-14">
+                                            <span class="pr-3 site-font fw-700">{{ __('Country') }}</span>
                                         </h6>
-                                        <div class="mb-5">
 
-                                            <select multiple class="select2 form-control aiz-selectpicker rounded-1"
-                                                name="country_id[]" onchange="applyFilter()" data-toggle="select2"
-                                                data-live-search="true">
-                                                <option value="0" @if (in_array(0, $country_id) || ($country_id[0] == '' && $country_id == '')) selected @endif>
-                                                    {{ __('All Countries') }}
-                                                </option>
-                                                @foreach ($scholarshipCountry as $country)
-                                                    <option value="{{ $country->id }}"
-                                                        @if (in_array($country->id, $country_id)) selected @endif>
-                                                        {{ $country->country_name }}</option>
-                                                @endforeach
-                                            </select>
+                                        <div class=" mb-5 ">
+                                            <div class=" py-2 border-bottom ">
+                                                <select class="select2 site-font form-control aiz-selectpicker rounded-1"
+                                                    name="country_id[]" onchange="applyFilter()" data-toggle="select2"
+                                                    data-live-search="true">
+                                                    <option value="" class="site-font">
+                                                        {{ translate('Search countries') }}</option>
+                                                    @foreach ($scholarshipCountry as $key => $country)
+                                                        <option  value="{{ $country->id }}"
+                                                            @if (in_array($country->id, $country_id)) selected @endif>
+                                                            {{ $country->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
-
                                     </div>
                                     <!-- Skills -->
                                     <div class="pt-3 d-none">
@@ -244,7 +244,7 @@
                                                 <div class="col-lg-9 col-12 pl-lg-0 pl-3">
                                                     @if ($scholarship->WhoCanApply != null)
                                                         <p class="fre-scsh-right-side-details pb-0 mb-0">
-                                                            {{ $scholarship->WhoCanApply->name }}
+                                                            {{ $scholarship->WhoCanApply->title }}
                                                         </p>
                                                     @endif
                                                 </div>
@@ -521,9 +521,6 @@
             }
         }
     </script>
-@endsection
-
-@section('script')
     <script type="text/javascript">
         function applyFilter() {
             $('#scholarship-filter-form').submit();
@@ -535,5 +532,9 @@
             applyFilter();
         };
     </script>
+@endsection
+
+@section('script')
+
     @include('frontend.default.partials.bookmark_remove_modal')
 @endsection
