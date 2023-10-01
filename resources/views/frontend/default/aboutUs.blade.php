@@ -7,9 +7,9 @@
         <div class="mb-4 mt-lg-1 pb-lg-4" style="background:#275846">
             <div class="row rounded-0 px-2 mx-4">
                 <div class="col-lg-6 col-sm-12 my-auto">
-                    <h3 class="text-white fw-700 fs-30 mt-3 site-font ">Welcome to EduExHub
+                    <h3 class="text-white fw-700 fs-30 mt-3 site-font ">Welcome to {{ config('app.name') }}
                     </h3>
-                    <p class="fw-400 text-white text-justify fs-18 mb-2 site-font">EduExHub is a one stop education expert
+                    <p class="fw-400 text-white text-justify fs-18 mb-2 site-font">{{ config("app.name") }}is a one stop education expert
                         hub, featuring top academic experts across diverse fields. Whether it's a personal or institutional
                         project or media interviews, our pool of top academic experts is here to assist.
                     </p>
@@ -36,16 +36,16 @@
                             <div class="d-flex justify-content-between ">
                                 <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
                                     <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                    <p class=" mt-5 text-success fw-700 frequently-qsn-title">About EduExHub</p>
-                                    <p class=" fw-500 seminar-objective-details">Welcome to EduExHub, your premier
+                                    <p class=" mt-5 text-success fw-700 frequently-qsn-title">About {{ config('app.name') }}</p>
+                                    <p class=" fw-500 seminar-objective-details">Welcome to {{ config('app.name') }}, your premier
                                         destination for connecting with top academic experts across a diverse spectrum of
                                         fields and disciplines. Whether you represent a higher education institution, a
                                         media organisation, or are an individual seeking expert guidance for your academic
-                                        pursuits, EduExHub is your ultimate resource for empowerment.
+                                        pursuits, {{ config('app.name') }} is your ultimate resource for empowerment.
 
 
                                     </p>
-                                    <p class=" fw-500 seminar-objective-details">At EduExHub, we proudly provide an
+                                    <p class=" fw-500 seminar-objective-details">At {{ config('app.name') }}, we proudly provide an
                                         extensive and diverse network of distinguished academic professionals, ensuring that
                                         you have access to highly qualified experts with specialised knowledge tailored to
                                         your unique requirements. Our global platform transcends borders, providing you with
@@ -113,7 +113,7 @@
                     </div>
                     <div class=" col-lg-7 col-sm-12">
                         <h2 class="fw-700 mb-3 heading-title fre-small-font" style="">What makes
-                            EduExHub
+                            {{ config('app.name') }}
                             impressive
                         </h2>
                         <div class="">
@@ -122,7 +122,7 @@
                                 <div>
                                     <h6 class="fs-18  fw-700 heading-title">Access to Expertise
                                     </h6>
-                                    <p class="fs-16">EduExHub specialises in academic fields like course
+                                    <p class="fs-16">{{ config('app.name') }} specialises in academic fields like course
                                         accreditation,
                                         curriculum development, LMS, research and analysis.</p>
                                 </div>
@@ -133,7 +133,7 @@
 
                                 <h6 class="fs-18 fw-700 heading-title">Project Flexibility
                                 </h6>
-                                <p class="fs-16 "> EduExHub is ideal for academic institutions seeking short-term
+                                <p class="fs-16 "> {{ config('app.name') }} is ideal for academic institutions seeking short-term
                                     assistance or
                                     specialised expertise without committing to long-term contracts.</p>
 
@@ -144,7 +144,7 @@
                                 <h6 class="fs-18 fw-700 heading-title "> Quality Assurance
 
                                 </h6>
-                                <p class="fs-16 "> EduExHub ensures academic institutions have access to experts
+                                <p class="fs-16 "> {{ config('app.name') }} ensures academic institutions have access to experts
                                     aligned with
                                     their educational standards and visibility to the consultants’ profiles, ratings,
                                     and show case of their previous work.</p>
@@ -154,7 +154,7 @@
                                 <h6 class="fs-18  fw-700 heading-title ">Cost-Effective Solutions
 
                                 </h6>
-                                <p class="fs-16"> EduExHub offers pricing options tailored to various budgets,
+                                <p class="fs-16"> {{ config('app.name') }} offers pricing options tailored to various budgets,
                                     ensuring fairness
                                     and transparency in costs.</p>
                             </div>
@@ -162,7 +162,7 @@
 
                                 <h6 class="fs-18  fw-700 heading-title ">Efficient Processes
                                 </h6>
-                                <p class="fs-16">EduExHub streamlines academic hiring and project management with
+                                <p class="fs-16">{{ config('app.name') }} streamlines academic hiring and project management with
                                     specialised
                                     tools, saving institutions valuable time.</p>
                             </div>
@@ -242,8 +242,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
-                                {{ translate('
-                                                                                                                                                                                                                                                                Create your profile (it’s free)') }}
+                                {{ translate('Create your profile (it’s free)') }}
                             </h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
                                 {{ translate('This means you can sign up and build your professional profile on the platform without any cost. Your profile is where you showcase your skills, qualifications, and experience, allowing potential clients or employers to learn about your expertise.') }}
@@ -292,7 +291,7 @@
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
                                 {{ translate('Fair Fee Structure: ') }}</h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
-                                {{ translate("EduExHub Hub service fees are designed to be fair and based on the total billings with each consultant. Here's how it works: 20% for the first $500 billed by the consultant, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
+                                {{ config('app.name') }} service fees are designed to be fair and based on the total billings with each consultant. Here's how it works: 20% for the first $500 billed by the consultant, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
                             </p>
                         </div>
                     </div>
@@ -304,8 +303,6 @@
                         </div>
 
                     </div>
-
-
                 </div>
                 <hr>
             </div>
@@ -418,16 +415,16 @@
                         <p class="whyConsEdu-child-title">Contesting a review
                         </p>
                         <p class="mt-2 frequently-qsn-details text-justify">If you wish to modify how a review appears on
-                            EduExHub, you have several options. First, you can respond to a review by posting a
+                            {{ config('app.name') }}, you have several options. First, you can respond to a review by posting a
                             follow-up comment within 28 days of the contract's end. This comment will be displayed on your
                             public profile. Additionally, you can collaborate with your client or talent to request feedback
-                            changes and revise the review. If you believe a review violates EduExHub's terms of service
+                            changes and revise the review. If you believe a review violates {{ config('app.name') }} 's terms of service
                             and wish to dispute it, our customer service team is available to assist you.
                         </p>
                         <p class="whyConsEdu-child-title">Checking your reviews
                         </p>
                         <p class="mt-2 frequently-qsn-details text-justify">Viewing your reviews is straightforward on
-                            EduExHub. Simply visit your profile to find all your public reviews. If your contract has
+                            {{ config('app.name') }}. Simply visit your profile to find all your public reviews. If your contract has
                             recently concluded, please note that it may take up to 14 days for your review to become public.
                             You can also access feedback for specific contracts in your contracts dashboard.
                         </p>
@@ -443,7 +440,7 @@
             <p class=" mx-4 fs-20 fw-700">Example</p>
             <div class="mx-auto fre-review-say-customer" style="width: 80%;margin:0 10%">
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Feedback</p>
+                    <p class="fw-600 fs-20 ">Testimonial</p>
                     <div class="mt-3 ">
                         <span class="text-dark fw-700 fs-16 mb-3">Client</span>
                         <h4 class=" frequently-qsn-details mt-2 text-justify">Prof. David Smith played a pivotal
@@ -588,16 +585,16 @@
                         <div class="col-lg-6 col-sm-12 py-3">
                             <div class=" border-bottom my-2">
                                 <input type="checkbox" id="fre-leave">
-                                <h4 class="faq-qsn-title">Is EduExHub Hub free to join as an academic consultant?</h4>
+                                <h4 class="faq-qsn-title">Is {{ config('app.name') }} free to join as an academic consultant?</h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Joining EduExHub Hub as an academic consultant is absolutely free. You can create
+                                    Joining {{ config('app.name') }} as an academic consultant is absolutely free. You can create
                                     your profile, search for work, and even initiate your own projects without any cost. Our
                                     service fee is determined by your earnings with each client, and we offer a sliding
                                     scale that rewards long-term relationships.
                                 </p>
                                 <div class="fre-content text-justify">
                                     <p>
-                                        Additionally, you have the option to upgrade to EduExHub Plus, which allows you
+                                        Additionally, you have the option to upgrade to {{ config('app.name') }} Plus, which allows you
                                         to more effectively market your services, submit proposals, and stand out from the
                                         crowd.
                                     </p>
@@ -612,10 +609,10 @@
                             </div>
                             <div class=" border-bottom">
                                 <input type="checkbox" id="fre-contest">
-                                <h4 class="faq-qsn-title">Can I grow my career on EduExHub?</h4>
+                                <h4 class="faq-qsn-title">Can I grow my career on {{ config('app.name') }}?</h4>
                                 <p class="frequently-qsn-details text-justify">
                                     Absolutely! Many of our most successful academic experts have utilized their strong
-                                    academic backgrounds and employment records on EduExHub. We understand that you may
+                                    academic backgrounds and employment records on {{ config('app.name') }}. We understand that you may
                                     be new to consulting but highly experienced in your field.
                                 </p>
                                 <div class="fre-content text-justify">
@@ -634,10 +631,10 @@
                             </div>
                             <div class=" border-bottom ">
                                 <input type="checkbox" id="fre-freelancing">
-                                <h4 class="faq-qsn-title mt-2 ">What can you gain from consulting with EduExHub?
+                                <h4 class="faq-qsn-title mt-2 ">What can you gain from consulting with {{ config('app.name') }}?
                                 </h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Work with prestigious clients and renowned institutions. Many choose EduExHub for
+                                    Work with prestigious clients and renowned institutions. Many choose {{ config('app.name') }} for
                                     our support in achieving excellence.
                                 </p>
                                 <div class="fre-content text-justify ">
