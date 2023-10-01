@@ -15,8 +15,7 @@
                 <div class="col-lg-2 col-sm-12 "></div>
                 <div class="col-lg-4 col-sm-12 ">
                     <img class="banner-img"
-                        src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
-                        alt="">
+                        src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -26,7 +25,7 @@
             @if ($keyword != null)
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 text-center">
-                        <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ t('ScholarshipTotal') }} <span
+                        <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ __('ScholarshipTotal') }} <span
                                 class="fw-600">{{ $ScholarshipTotal }}</span>
                             {{ t('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
                         </h1>
@@ -45,7 +44,7 @@
                                         @if ($country_name != null)
                                             Scholarship for in {{ $country_name }}
                                         @else
-                                            {{ t('Filter By') }}
+                                            {{ __('Filter By') }}
                                     </h5>
                                     @endif
 
@@ -72,14 +71,14 @@
                                         @endforeach
                                         {{-- who can apply --}}
                                         @foreach ($whoCanApplies as $whoCanApply)
-                                        <span id="whoCanApply_{{ $whoCanApply->id }}"
-                                            class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
-                                            {{ $whoCanApply->title }} | <p
-                                                onclick="removewhoCanApply({{ $whoCanApply->id }})"
-                                                class="m-0  d-inline fw-700">
-                                                X</p>
-                                        </span>
-                                    @endforeach
+                                            <span id="whoCanApply_{{ $whoCanApply->id }}"
+                                                class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
+                                                {{ $whoCanApply->title }} | <p
+                                                    onclick="removewhoCanApply({{ $whoCanApply->id }})"
+                                                    class="m-0  d-inline fw-700">
+                                                    X</p>
+                                            </span>
+                                        @endforeach
                                         <!-- country name -->
                                         @foreach ($countries as $country)
                                             <span id="country_{{ $country->id }}"
@@ -100,7 +99,7 @@
                                     <div class="">
                                         <!-- Level of Study -->
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ t('Level of Study') }}</span>
+                                            <span class=" pr-3">{{ __('Level of Study') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
                                             @foreach (\App\Models\ScholarshipLevel::all() as $level)
@@ -116,7 +115,7 @@
                                         </div>
 
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ t('Scholarship by field') }}</span>
+                                            <span class=" pr-3">{{ __('Scholarship by field') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
                                             @foreach (\App\Models\ScholarshipFieldStudy::all() as $fieldStudy)
@@ -132,10 +131,10 @@
                                         </div>
                                         {{-- who can apply --}}
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ t('Who Can Appaly') }}</span>
+                                            <span class=" pr-3">{{ __('Who Can Appaly') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
-                                            @foreach (\App\Models\ScholarshipWhoCanApply::all() as $whoCanApply)
+                                            @foreach ($whoCanApply as $whoCanApply)
                                                 <label class="aiz-checkbox">
                                                     <input type="checkbox" name="whoCanApply_id[]"
                                                         value="{{ $whoCanApply->id }}" onchange="applyFilter()"
@@ -148,7 +147,7 @@
                                         </div>
                                         <!-- Country -->
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ t('Country') }}</span>
+                                            <span class=" pr-3">{{ __('Country') }}</span>
                                         </h6>
                                         <div class="mb-5">
 
@@ -156,9 +155,9 @@
                                                 name="country_id[]" onchange="applyFilter()" data-toggle="select2"
                                                 data-live-search="true">
                                                 <option value="0" @if (in_array(0, $country_id) || ($country_id[0] == '' && $country_id == '')) selected @endif>
-                                                    {{ t('All Countries') }}
+                                                    {{ __('All Countries') }}
                                                 </option>
-                                                @foreach (\App\Models\ScholarshipCountry::all() as $country)
+                                                @foreach ($scholarshipCountry as $country)
                                                     <option value="{{ $country->id }}"
                                                         @if (in_array($country->id, $country_id)) selected @endif>
                                                         {{ $country->country_name }}</option>
@@ -170,7 +169,7 @@
                                     <!-- Skills -->
                                     <div class="pt-3 d-none">
                                         <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="bg-white pr-3">{{ t('Skills') }}</span>
+                                            <span class="bg-white pr-3">{{ __('Skills') }}</span>
                                         </h6>
                                         <div class="">
                                             <select class="select2 form-control aiz-selectpicker" multiple="multiple"
@@ -210,48 +209,14 @@
                                         style="background: #275846;" target="_blank">
                                         Website
                                     </a>
-
-                                    <!-- <div class="">
-                                                        <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                            <img class=" px-1  " src=" {{ asset('/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                            {{ t(' Find a consultant') }}
-                                                        </p>
-                                                    </div> -->
                                 </div>
                                 <div class="col-lg-10 border-gray-400">
 
                                     <div class="site-font">
-                                        <p class="site-font"> <!-- @if ($scholarship->university != null)
-    <div class="  ">
-                                                            <p class=" fre-scsh-uni-name mb-1"> {{ $scholarship->university->university_name }} |
-                                                                @if ($scholarship->country != null)
-    {{ $scholarship->country->country_name }}
-    @endif
-                                                            </p>
-                                                        </div>
-    @endif --></p>
+                                        <p class="site-font">
+
+                                        </p>
                                     </div>
-                                    <!-- <div class="row">
-                                                        <div class="col-3 pr-0">
-                                                            <p class="fre-scsh-left-side-title">
-                                                                Scholarships Overview:
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-9 pl-0">
-
-
-                                                            <p class="fre-scsh-right-side-details text-justify pr-4  mb-0 pb-0">
-                                                                The Western Sydney University provides a wide range of research scholarships to support
-                                                                domestic and international research candidates. Scholarships are awarded based on a
-                                                                competitive process and are open to both new and current candidates
-                                                                <a class="fre-scsh-find-more-btn pt-0 text-success ">
-                                                                    Read more
-                                                                </a>
-                                                            </p>
-
-                                                        </div>
-
-                                                    </div> -->
                                     <div class="row">
                                         <div class="col-lg-9 col-12">
                                             <div class="d-flex justify-content-between">
@@ -269,15 +234,6 @@
                                                     </u>
                                                 </a>
 
-                                                <!-- <div>
-                                                            <img src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}" alt="">
-                                                            <div class="">
-                                                                <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
-                                                                    <img class=" px-1  " src=" {{ asset('/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                                    {{ t(' Find a consultant') }}
-                                                                </p>
-                                                            </div>
-                                                        </div> -->
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-3 col-12">
@@ -324,27 +280,29 @@
                                                 </div>
                                             </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-3 col-12 ">
-                                            <p class=" fre-scsh-left-side-title ">
-                                                Need help with your Application:
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-9 col-12 pl-lg-0 pl-3 ">
-                                            <p class=" fre-scsh-right-side-details text-justify  mb-1 w-100 pr-4">
-                                                ConsultantEdu can connect you with experienced consultants who have received
-                                                scholarships in your
-                                                field. They can review your application and provide valuable feedback to to
-                                                ensure you submit a
-                                                competitive application.
-                                                <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
-                                                            Find a consultant
-                                                        </a> -->
-                                            </p>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-12 ">
+                                                    <p class=" fre-scsh-left-side-title ">
+                                                        Need help with your Application:
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-9 col-12 pl-lg-0 pl-3 ">
+                                                    <p class=" fre-scsh-right-side-details text-justify  mb-1 w-100 pr-4">
+                                                        ConsultantEdu can connect you with experienced consultants who have
+                                                        received
+                                                        scholarships in your
+                                                        field. They can review your application and provide valuable
+                                                        feedback to to
+                                                        ensure you submit a
+                                                        competitive application.
+                                                        <!-- <a href="{{ route('register') }}?type=2" class="fre-scsh-find-more-btn text-success m-0">
+                                                                Find a consultant
+                                                            </a> -->
+                                                    </p>
 
-                                        </div>
+                                                </div>
 
-                                    </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-3 col-12 mt-lg-0 mt-2">
                                             <div>
@@ -363,13 +321,13 @@
                                                     <a class="btn btn-primary btn-sm  d-flex align-items-center justify-content-center fs-14 fw-700 "
                                                         href="{{ route('bookmarked-scholarships.store', encrypt($scholarship->id)) }}">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span class="ml-2">{{ t('Bookmark') }}</span>
+                                                        <span class="ml-2">{{ __('Bookmark') }}</span>
                                                     </a>
                                                 @endif
                                                 <a href="{{ url('/search?keyword=&type=freelancer') }}"
                                                     class="btn btn-primary btn-sm mt-2 d-flex align-items-center justify-content-center fs-14 fw-700  tex-black mb-1">
                                                     <i class="las la-user-tie fs-16 fw-700 mr-1"></i>
-                                                    <span>{{ t('Hire Consultant') }}</span>
+                                                    <span>{{ __('Hire Consultant') }}</span>
                                                 </a>
 
                                             </div>
@@ -455,9 +413,8 @@
                         <div class="col-xl-3 col-md-6">
                             <div class=" ">
                                 <div class=" h-136px align-items-center">
-                                    <img class=" mb-2 mx-auto d-block p-3"
-                                        src=" {{ asset('/assets/home/checked.png') }}" alt="Image"
-                                        style="width:55px; border-radius:50%; border:1px solid #000000" />
+                                    <img class=" mb-2 mx-auto d-block p-3" src=" {{ asset('/assets/home/checked.png') }}"
+                                        alt="Image" style="width:55px; border-radius:50%; border:1px solid #000000" />
                                     <p class="fs-18 fw-700 mb-lg-2 consultant-category text-center text-black">
                                         Pay Securely
                                     </p>
@@ -547,24 +504,23 @@
             $('#scholarship-filter-form').submit();
         }
     </script>
-   <script>
-    function removewhoCanApply(whoCanApplyId) {
-        var whoCanApplyElement = document.getElementById('whoCanApply_' + whoCanApplyId);
+    <script>
+        function removewhoCanApply(whoCanApplyId) {
+            var whoCanApplyElement = document.getElementById('whoCanApply_' + whoCanApplyId);
 
-        if (whoCanApplyElement) {
-            whoCanApplyElement.parentNode.removeChild(whoCanApplyElement);
+            if (whoCanApplyElement) {
+                whoCanApplyElement.parentNode.removeChild(whoCanApplyElement);
 
-            // Uncheck the corresponding checkbox
-            var checkbox = document.querySelector('input[name="whoCanApply_id[]"][value="' + whoCanApplyId + '"]');
-            if (checkbox) {
-                checkbox.checked = false;
+                // Uncheck the corresponding checkbox
+                var checkbox = document.querySelector('input[name="whoCanApply_id[]"][value="' + whoCanApplyId + '"]');
+                if (checkbox) {
+                    checkbox.checked = false;
+                }
+
+                $('#scholarship-filter-form').submit();
             }
-
-            $('#scholarship-filter-form').submit();
         }
-    }
-</script>
-
+    </script>
 @endsection
 
 @section('script')
