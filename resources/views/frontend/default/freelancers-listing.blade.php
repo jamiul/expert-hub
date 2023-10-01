@@ -116,46 +116,10 @@
                                         </div>
                                     </form>
 
-                                    {{-- Expertise --}}
-                                    <div class="mt-3">
-                                        <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
-                                        </h6>
-                                        <div class="mt-3">
-                                            @foreach ($expertises as $key => $expertise)
-                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
-                                                    data-toggle="collapse" href="#skill_{{ $expertise->id }}"
-                                                    role="button" aria-expanded="true"
-                                                    aria-controls="skill_{{ $expertise->id }}">
-                                                    <label class="fas fa-plus "
-                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                    <p class="mb-0 fs-14 fw-500">{{ $expertise->name }}
-                                                    </p>
-                                                </a>
-                                                <div class="overflow-auto h-130px collapse "
-                                                    id="skill_{{ $expertise->id }}">
-                                                    @foreach ($expertise->childrens as $expert)
-                                                        <div class=" w-200px child-skill-project-filtering">
-                                                            <div class="mb-1 ">
-                                                                <input type="checkbox" name="childSkill_id[]"
-                                                                    id="{{ $expertise->id }}" value="{{ $expert->id }}"
-                                                                    class=" d-none" onchange="applyFilter()">
-                                                                <label
-                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
-                                                                    for="{{ $expert->id }}">
-                                                                    {{ $expert->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
                                     <!-- categories  -->
                                     <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
+                                            <span class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
                                         </h6>
                                         @foreach ($consultantCategory as $category)
                                             <label class="aiz-checkbox site-font w-100">
@@ -230,15 +194,10 @@
                                                                 </div>
                                                             @endforeach
                                                         </div>
-
                                                     </div>
                                                 </div>
-
-
                                             </div>
-
                                         </div>
-
 
                                         <!-- Hourly rates -->
                                         <h6 class="text-left mb-3 fs-14">
@@ -269,7 +228,7 @@
                                                 <input type="checkbox" name="available_interview" value="interview"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($available_interview) checked @endif>
-                                                Available for Midea Interview
+                                                    {{ __('Available for Media Interview') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
@@ -277,15 +236,15 @@
                                                 <input type="checkbox" name="consultantions" value="consultantions"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($consultantions) checked @endif>
-                                                Offer Consultantion
+                                                    {{ __('Offer Consultantion') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
                                         </div>
 
-                                        <!-- countries  -->
+                                        <!-- Location  -->
                                         <h6 class="text-left mb-3 fs-14">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>
+                                            <span class="pr-3 site-font fw-700">{{ __('Location') }}</span>
                                         </h6>
 
                                         <div class=" mb-5 ">
@@ -294,11 +253,11 @@
                                                     name="country_id" onchange="applyFilter()" data-toggle="select2"
                                                     data-live-search="true">
                                                     <option value="" class="site-font">
-                                                        {{ translate('Search countries') }}</option>
-                                                    @foreach (\App\Models\Country::all() as $key => $country)
-                                                        <option value="{{ $country->id }}"
-                                                            @if (isset($country_id) && $country_id == $country->id) selected @endif>
-                                                            {{ $country->name }}</option>
+                                                        {{ translate('Select Location') }}</option>
+                                                    @foreach (getCountry() as $country)
+                                                        <option value="{{ $country['id'] }}"
+                                                            @if (isset($country_id) && $country_id == $country['id']) selected @endif>
+                                                            {{ $country['name'] }}</option>
                                                     @endforeach
                                                 </select>
 
