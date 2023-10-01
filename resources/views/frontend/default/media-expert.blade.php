@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 @endif
-                <form id="freelancer-filter-form" action="" method="GET">
+                <form id="media-expert" action="" method="GET">
                     <div class="row gutters-10">
                         <!-- Sidebar -->
                         <div class="col-xl-3 col-lg-4 mb-5">
@@ -137,7 +137,7 @@
                                                     @foreach ($expertise->childrens as $expert)
                                                         <div class=" w-200px child-skill-project-filtering">
                                                             <div class="mb-1 ">
-                                                                <input type="checkbox" name="childSkill_id[]"
+                                                                <input type="checkbox" name="expertise[]"
                                                                     id="{{ $expertise->id }}" value="{{ $expert->id }}"
                                                                     class=" d-none" onchange="applyFilter()">
                                                                 <label
@@ -152,89 +152,9 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                    <!-- categories  -->
-                                    <div class="mt-3">
-                                        <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
-                                        </h6>
-                                        @foreach (getConsultantCategory() as $category)
-                                            <label class="aiz-checkbox site-font w-100">
-                                                <input type="checkbox" name="category_id[]"
-                                                    value="{{ $category['id'] }}" onchange="applyFilter()"
-                                                    @if (in_array($category['id'], $category_ids)) checked @endif>
-                                                {{ $category['name'] }}
-                                                <span class="aiz-square-check"></span>
-                                                <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                            </label>
-                                        @endforeach
-                                    </div>
 
                                     <!-- Skills -->
-                                    <div class="card-body pl-lg-0">
-                                        <div class="">
-                                            <h6 class="text-left mb-3 fs-14">
-                                                <span class="pr-3 site-font fw-700">{{ translate('Skills') }}</span>
-                                            </h6>
-                                            <div class="mb-4">
-                                                <div class="">
-                                                    <div class="mb-5 border-bottom">
-                                                        <select
-                                                            class="select2 site-font form-control aiz-selectpicker rounded-1"
-                                                            name="skill_id[]" onchange="applyFilter()"
-                                                            data-toggle="select2" data-live-search="true">
-
-                                                            <option value="" class="site-font">
-                                                                {{ translate('Search skills') }}
-                                                            </option>
-                                                            @foreach ($skills as $key => $skill)
-                                                                @foreach ($skill->childrens as $subSkill)
-                                                                    <option class="site-font" value="{{ $subSkill->id }}"
-                                                                        @if (in_array($subSkill->id, (array) $skill_ids)) selected @endif>
-                                                                        {{ $subSkill->name }}
-                                                                    </option>
-                                                                @endforeach
-                                                            @endforeach
-                                                        </select>
-                                                        <div class="mt-3">
-                                                            @foreach ($skills as $key => $skill)
-                                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
-                                                                    data-toggle="collapse"
-                                                                    href="#skill_{{ $skill->id }}" role="button"
-                                                                    aria-expanded="true"
-                                                                    aria-controls="skill_{{ $skill->id }}">
-                                                                    <label class="fas fa-plus "
-                                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0; background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                                    <p class="mb-0 fs-14 fw-500">
-                                                                        {{ $skill->name }}
-                                                                    </p>
-                                                                </a>
-                                                                <div class="overflow-auto h-130px collapse "
-                                                                    id="skill_{{ $skill->id }}">
-                                                                    @foreach ($skill->childrens as $subSkill)
-                                                                        <div
-                                                                            class=" w-200px child-skill-project-filtering">
-                                                                            <div class="mb-1 ">
-                                                                                <input type="checkbox"
-                                                                                    name="childSkill_id[]"
-                                                                                    id="{{ $subSkill->id }}"
-                                                                                    value="{{ $subSkill->id }}"
-                                                                                    class=" d-none"
-                                                                                    onchange="applyFilter()">
-                                                                                <label
-                                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
-                                                                                    for="{{ $subSkill->id }}">
-                                                                                    {{ $subSkill->name }}
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            @endforeach
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="card-body pl-lg-0 mt-4">
                                         <!-- Hourly rates -->
                                         <h6 class="text-left mb-3 fs-14">
                                             <span
@@ -262,7 +182,7 @@
                                                 <input type="checkbox" name="available_interview" value="interview"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($available_interview) checked @endif>
-                                                Available for Midea Interview
+                                                    {{ __('Available for Media Interview') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
@@ -270,15 +190,15 @@
                                                 <input type="checkbox" name="consultantions" value="consultantions"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($consultantions) checked @endif>
-                                                Offer Consultantion
+                                                    {{ __('Offer Consultantion') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
                                         </div>
 
-                                        <!-- countries  -->
+                                        <!-- Location  -->
                                         <h6 class="text-left mb-3 fs-14">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>
+                                            <span class="pr-3 site-font fw-700">{{ translate('Location') }}</span>
                                         </h6>
 
                                         <div class=" mb-5 ">
@@ -287,7 +207,7 @@
                                                     name="country_id" onchange="applyFilter()" data-toggle="select2"
                                                     data-live-search="true">
                                                     <option value="" class="site-font">
-                                                        {{ translate('Search countries') }}</option>
+                                                        {{ translate('Select Location') }}</option>
                                                     @foreach (getCountry() as $country)
                                                         <option value="{{ $country['id'] }}"
                                                             @if (isset($country_id) && $country_id == $country['id']) selected @endif>
@@ -512,7 +432,7 @@
                         checkbox.checked = false;
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#media-expert').submit();
             }
 
             // remove hourly rate by clicking x sign
@@ -531,7 +451,7 @@
                         }
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#media-expert').submit();
             }
 
             // remove country name from badges
@@ -550,7 +470,7 @@
                         }
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#media-expert').submit();
             }
         </script>
 
@@ -561,7 +481,7 @@
             var text = e.options[e.selectedIndex].text;
 
             function applyFilter() {
-                $('#freelancer-filter-form').submit();
+                $('#media-expert').submit();
             }
 
             function rangefilter(arg) {

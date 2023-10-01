@@ -156,7 +156,7 @@
                                     <!-- categories  -->
                                     <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Categories') }}</span>
+                                            <span class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
                                         </h6>
                                         @foreach ($consultantCategory as $category)
                                             <label class="aiz-checkbox site-font w-100">
@@ -231,15 +231,10 @@
                                                                 </div>
                                                             @endforeach
                                                         </div>
-
                                                     </div>
                                                 </div>
-
-
                                             </div>
-
                                         </div>
-
 
                                         <!-- Hourly rates -->
                                         <h6 class="text-left mb-3 fs-14">
@@ -270,7 +265,7 @@
                                                 <input type="checkbox" name="available_interview" value="interview"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($available_interview) checked @endif>
-                                                Available for Midea Interview
+                                                    {{ __('Available for Media Interview') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
@@ -278,15 +273,15 @@
                                                 <input type="checkbox" name="consultantions" value="consultantions"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($consultantions) checked @endif>
-                                                Offer Consultantion
+                                                    {{ __('Offer Consultantion') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
                                         </div>
 
-                                        <!-- countries  -->
+                                        <!-- Location  -->
                                         <h6 class="text-left mb-3 fs-14">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Countries') }}</span>
+                                            <span class="pr-3 site-font fw-700">{{ __('Location') }}</span>
                                         </h6>
 
                                         <div class=" mb-5 ">
@@ -295,11 +290,11 @@
                                                     name="country_id" onchange="applyFilter()" data-toggle="select2"
                                                     data-live-search="true">
                                                     <option value="" class="site-font">
-                                                        {{ translate('Search countries') }}</option>
-                                                    @foreach (\App\Models\Country::all() as $key => $country)
-                                                        <option value="{{ $country->id }}"
-                                                            @if (isset($country_id) && $country_id == $country->id) selected @endif>
-                                                            {{ $country->name }}</option>
+                                                        {{ translate('Select Location') }}</option>
+                                                    @foreach (getCountry() as $country)
+                                                        <option value="{{ $country['id'] }}"
+                                                            @if (isset($country_id) && $country_id == $country['id']) selected @endif>
+                                                            {{ $country['name'] }}</option>
                                                     @endforeach
                                                 </select>
 

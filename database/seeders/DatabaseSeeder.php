@@ -40,7 +40,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FreelancerServicesPackagesTableSeeder::class);
         $this->call(HireInvitationsTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
-        $this->call(MigrationsTableSeeder::class);
         $this->call(MilestonePaymentsTableSeeder::class);
         $this->call(ModelHasRolesTableSeeder::class);
         $this->call(ModelHasPermissionsTableSeeder::class);

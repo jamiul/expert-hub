@@ -1208,7 +1208,7 @@
   <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
       <div class=" container-home">
           <div class="content-title">
-              <h2 class="fw-700 fre-small-font site-font text-success" style="">Client Feedback at
+              <h2 class="fw-700 fre-small-font site-font text-success" style="">Client Testimonial at
                   EduExHub</h2>
           </div>
           <div class="">

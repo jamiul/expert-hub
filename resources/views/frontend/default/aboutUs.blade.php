@@ -4,21 +4,24 @@
 
 @section('content')
     <div class="container-main-projects-banner">
-        <div class="p-lg-4 mb-4 mt-1" style="background:#275846">
-            <div class="row rounded-0 px-lg-2 mx-lg-5 px-4">
-                <div class="col-lg-7 col-12  w-100 my-auto">
-                    <h3 class="text-white fw-700  frequently-qsn-title  ">Welcome to ConsultantEdu </h3>
-                    <p class="text-white fs-18">Your one-stop academic freelancer platform where you can connect with
-                        accessible academic experts, receive quick responses, and enjoy high-quality work to help you excel.
+        <div class="mb-4 mt-lg-1 pb-lg-4" style="background:#275846">
+            <div class="row rounded-0 px-2 mx-4">
+                <div class="col-lg-6 col-sm-12 my-auto">
+                    <h3 class="text-white fw-700 fs-30 mt-3 site-font ">Welcome to {{ config('app.name') }}
+                    </h3>
+                    <p class="fw-400 text-white text-justify fs-18 mb-2 site-font">{{ config("app.name") }}is a one stop education expert
+                        hub, featuring top academic experts across diverse fields. Whether it's a personal or institutional
+                        project or media interviews, our pool of top academic experts is here to assist.
                     </p>
-                    <a href="register?type=2" class="btn rounded border fs-20 frequently-qsn-title  text-white">Create
-                        Profile</a>
+                    <a href="register?type=2"
+                        class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started
+                    </a>
+
                 </div>
-                <div class="col-lg-1 col-12 my-auto"></div>
-                <div class="col-lg-4 col-12">
-                    <img class="banner-img"
-                        src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}"
-                        alt="">
+                <div class="col-lg-2 col-sm-12 "></div>
+                <div class="col-lg-4 col-sm-12 ">
+                    <img class="banner-img  "
+                        src="{{ asset('assets/frontend/default/img/servicesList/Designer_Flatline.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -33,38 +36,30 @@
                             <div class="d-flex justify-content-between ">
                                 <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
                                     <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
-                                    <p class=" mt-5 text-success fw-700 frequently-qsn-title">About ConsultantEdu</p>
-                                    <p class=" fw-500 seminar-objective-details">ConsultantEdu is a dynamic platform to
-                                        connect
-                                        passionate academic experts with individuals, institutions, and businesses seeking
-                                        tailored education solutions. We believe that education has the power to shape the
-                                        world, and our goal is to facilitate this transformation by offering a range of
-                                        services that elevate learning experiences. So, we've built a unique hub where
-                                        academic experts meet people who want high-quality educational services.
+                                    <p class=" mt-5 text-success fw-700 frequently-qsn-title">About {{ config('app.name') }}</p>
+                                    <p class=" fw-500 seminar-objective-details">Welcome to {{ config('app.name') }}, your premier
+                                        destination for connecting with top academic experts across a diverse spectrum of
+                                        fields and disciplines. Whether you represent a higher education institution, a
+                                        media organisation, or are an individual seeking expert guidance for your academic
+                                        pursuits, {{ config('app.name') }} is your ultimate resource for empowerment.
+
+
                                     </p>
-                                    <p class=" fw-500 seminar-objective-details">Our comprehensive collection of services is
-                                        meticulously designed to cater to
-                                        diverse educational needs: Our Accreditation experts provide adept guidance through
-                                        the course accreditation process, ensuring adherence to the highest standards for
-                                        official course recognition. Crafting captivating lessons and curricula can be
-                                        challenging—our Curriculum Development Experts excel in creating plans that not only
-                                        facilitate learning but also infuse it with excitement. In an era shaped by
-                                        technology, Learning Management Systems (LMS) play a pivotal role in reshaping
-                                        education. Our LMS experts assist in selecting and configuring these systems to
-                                        facilitate seamless online learning experiences.
-                                        Words wield significant influence in education. </p>
+                                    <p class=" fw-500 seminar-objective-details">At {{ config('app.name') }}, we proudly provide an
+                                        extensive and diverse network of distinguished academic professionals, ensuring that
+                                        you have access to highly qualified experts with specialised knowledge tailored to
+                                        your unique requirements. Our global platform transcends borders, providing you with
+                                        an international perspective that proves invaluable when addressing global or
+                                        cross-cultural educational challenges and opportunities.</p>
                                     <p class=" fw-500 seminar-objective-details">
-                                        Our Writing and Editing experts
-                                        conduct comprehensive reviews to elevate your articles, manuscripts, and theses to
-                                        the highest academic standards in your field. Informed decision-making hinges on
-                                        accurate information. Our experts specialise in data collection and analysis,
-                                        enhancing your research outcomes through interactive seminars and expert advice.
-                                        Bridging language barriers, our Transcription and Translation services make
-                                        educational content accessible to diverse linguistic audiences. Ensuring
-                                        inclusivity, we offer Scholarship Application assistance, providing valuable
-                                        feedback to enhance the competitiveness of your application. Personalised mentoring
-                                        and tutoring empower your learning journey, equipping you with one-on-one guidance
-                                        to excel in both your studies and career pursuits.</p>
+                                        Our comprehensive suite of services caters to a wide spectrum of needs, including
+                                        but not limited to course accreditations, curriculum development, program design,
+                                        policy formulation, scholarship advice, and complete educational project management.
+                                        With our intuitive user interface, you can effortlessly post academic projects,
+                                        review expressions of interest from our top academic experts, and make informed
+                                        decisions that align with your project goals. Furthermore, we prioritise security by
+                                        securely holding payments in escrow until project completion, ensuring satisfaction
+                                        in every collaboration.</p>
 
                                     <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                                 </div>
@@ -118,7 +113,7 @@
                     </div>
                     <div class=" col-lg-7 col-sm-12">
                         <h2 class="fw-700 mb-3 heading-title fre-small-font" style="">What makes
-                            ConsultantEdu
+                            {{ config('app.name') }}
                             impressive
                         </h2>
                         <div class="">
@@ -127,7 +122,7 @@
                                 <div>
                                     <h6 class="fs-18  fw-700 heading-title">Access to Expertise
                                     </h6>
-                                    <p class="fs-16">ConsultantEdu specialises in academic fields like course
+                                    <p class="fs-16">{{ config('app.name') }} specialises in academic fields like course
                                         accreditation,
                                         curriculum development, LMS, research and analysis.</p>
                                 </div>
@@ -138,7 +133,7 @@
 
                                 <h6 class="fs-18 fw-700 heading-title">Project Flexibility
                                 </h6>
-                                <p class="fs-16 "> ConsultantEdu is ideal for academic institutions seeking short-term
+                                <p class="fs-16 "> {{ config('app.name') }} is ideal for academic institutions seeking short-term
                                     assistance or
                                     specialised expertise without committing to long-term contracts.</p>
 
@@ -149,7 +144,7 @@
                                 <h6 class="fs-18 fw-700 heading-title "> Quality Assurance
 
                                 </h6>
-                                <p class="fs-16 "> ConsultantEdu ensures academic institutions have access to experts
+                                <p class="fs-16 "> {{ config('app.name') }} ensures academic institutions have access to experts
                                     aligned with
                                     their educational standards and visibility to the consultants’ profiles, ratings,
                                     and show case of their previous work.</p>
@@ -159,7 +154,7 @@
                                 <h6 class="fs-18  fw-700 heading-title ">Cost-Effective Solutions
 
                                 </h6>
-                                <p class="fs-16"> ConsultantEdu offers pricing options tailored to various budgets,
+                                <p class="fs-16"> {{ config('app.name') }} offers pricing options tailored to various budgets,
                                     ensuring fairness
                                     and transparency in costs.</p>
                             </div>
@@ -167,7 +162,7 @@
 
                                 <h6 class="fs-18  fw-700 heading-title ">Efficient Processes
                                 </h6>
-                                <p class="fs-16">ConsultantEdu streamlines academic hiring and project management with
+                                <p class="fs-16">{{ config('app.name') }} streamlines academic hiring and project management with
                                     specialised
                                     tools, saving institutions valuable time.</p>
                             </div>
@@ -193,7 +188,7 @@
                         <div class="mt-4">
                             <p class="payment-work-child-title ">{{ translate('All in one place') }}</p>
                             <p class="payment-work-child-details">
-                                {{ translate('Invoice clients and track your earnings on ConsultantEdu for a simple and streamlined process.') }}
+                                {{ translate('Invoice clients and track your earnings on EduExHub for a simple and streamlined process.') }}
                             </p>
                         </div>
                         <div class="mt-4">
@@ -247,8 +242,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
-                                {{ translate('
-                                                                                                                                                                Create your profile (it’s free)') }}
+                                {{ translate('Create your profile (it’s free)') }}
                             </h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
                                 {{ translate('This means you can sign up and build your professional profile on the platform without any cost. Your profile is where you showcase your skills, qualifications, and experience, allowing potential clients or employers to learn about your expertise.') }}
@@ -297,7 +291,7 @@
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
                                 {{ translate('Fair Fee Structure: ') }}</h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
-                                {{ translate("ConsultantEdu Hub service fees are designed to be fair and based on the total billings with each consultant. Here's how it works: 20% for the first $500 billed by the consultant, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
+                                {{ config('app.name') }} service fees are designed to be fair and based on the total billings with each consultant. Here's how it works: 20% for the first $500 billed by the consultant, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
                             </p>
                         </div>
                     </div>
@@ -309,8 +303,6 @@
                         </div>
 
                     </div>
-
-
                 </div>
                 <hr>
             </div>
@@ -394,13 +386,13 @@
 
         <hr>
 
-        {{-- Reviews – how reviews work on ConsultantEdu --}}
+        {{-- Reviews – how reviews work on EduExHub --}}
         <div class="my-5 mx-lg-4 mx-2 border-bottom pb-5" id="reviewSection">
             <h1 class="explore-find-oppor-title text-success fw-700 mx-lg-4">
                 {{ translate('How reviews work ') }}</h1>
             <div class="row mx-lg-3 mx-0 ">
                 <div class="col-lg-12 col-sm-12 p-sm-0 mx-lg-2">
-                    {{-- Consultants - Getting reviews on ConsultantEdu --}}
+                    {{-- Consultants - Getting reviews on EduExHub --}}
                     <div class="mt-2">
                         <p class="whyConsEdu-child-title">For Consultants
                         </p>
@@ -410,7 +402,7 @@
                             most clients do so.
                         </p>
                     </div>
-                    {{-- Clients - Leaving a review on ConsultantEdu --}}
+                    {{-- Clients - Leaving a review on EduExHub --}}
                     <div class="mt-2">
                         <p class="whyConsEdu-child-title">For Clients
                         </p>
@@ -423,16 +415,16 @@
                         <p class="whyConsEdu-child-title">Contesting a review
                         </p>
                         <p class="mt-2 frequently-qsn-details text-justify">If you wish to modify how a review appears on
-                            ConsultantEdu, you have several options. First, you can respond to a review by posting a
+                            {{ config('app.name') }}, you have several options. First, you can respond to a review by posting a
                             follow-up comment within 28 days of the contract's end. This comment will be displayed on your
                             public profile. Additionally, you can collaborate with your client or talent to request feedback
-                            changes and revise the review. If you believe a review violates ConsultantEdu's terms of service
+                            changes and revise the review. If you believe a review violates {{ config('app.name') }} 's terms of service
                             and wish to dispute it, our customer service team is available to assist you.
                         </p>
                         <p class="whyConsEdu-child-title">Checking your reviews
                         </p>
                         <p class="mt-2 frequently-qsn-details text-justify">Viewing your reviews is straightforward on
-                            ConsultantEdu. Simply visit your profile to find all your public reviews. If your contract has
+                            {{ config('app.name') }}. Simply visit your profile to find all your public reviews. If your contract has
                             recently concluded, please note that it may take up to 14 days for your review to become public.
                             You can also access feedback for specific contracts in your contracts dashboard.
                         </p>
@@ -448,7 +440,7 @@
             <p class=" mx-4 fs-20 fw-700">Example</p>
             <div class="mx-auto fre-review-say-customer" style="width: 80%;margin:0 10%">
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Feedback</p>
+                    <p class="fw-600 fs-20 ">Testimonial</p>
                     <div class="mt-3 ">
                         <span class="text-dark fw-700 fs-16 mb-3">Client</span>
                         <h4 class=" frequently-qsn-details mt-2 text-justify">Prof. David Smith played a pivotal
@@ -593,16 +585,16 @@
                         <div class="col-lg-6 col-sm-12 py-3">
                             <div class=" border-bottom my-2">
                                 <input type="checkbox" id="fre-leave">
-                                <h4 class="faq-qsn-title">Is ConsultantEdu Hub free to join as an academic consultant?</h4>
+                                <h4 class="faq-qsn-title">Is {{ config('app.name') }} free to join as an academic consultant?</h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Joining ConsultantEdu Hub as an academic consultant is absolutely free. You can create
+                                    Joining {{ config('app.name') }} as an academic consultant is absolutely free. You can create
                                     your profile, search for work, and even initiate your own projects without any cost. Our
                                     service fee is determined by your earnings with each client, and we offer a sliding
                                     scale that rewards long-term relationships.
                                 </p>
                                 <div class="fre-content text-justify">
                                     <p>
-                                        Additionally, you have the option to upgrade to ConsultantEdu Plus, which allows you
+                                        Additionally, you have the option to upgrade to {{ config('app.name') }} Plus, which allows you
                                         to more effectively market your services, submit proposals, and stand out from the
                                         crowd.
                                     </p>
@@ -617,10 +609,10 @@
                             </div>
                             <div class=" border-bottom">
                                 <input type="checkbox" id="fre-contest">
-                                <h4 class="faq-qsn-title">Can I grow my career on ConsultantEdu?</h4>
+                                <h4 class="faq-qsn-title">Can I grow my career on {{ config('app.name') }}?</h4>
                                 <p class="frequently-qsn-details text-justify">
                                     Absolutely! Many of our most successful academic experts have utilized their strong
-                                    academic backgrounds and employment records on ConsultantEdu. We understand that you may
+                                    academic backgrounds and employment records on {{ config('app.name') }}. We understand that you may
                                     be new to consulting but highly experienced in your field.
                                 </p>
                                 <div class="fre-content text-justify">
@@ -639,10 +631,10 @@
                             </div>
                             <div class=" border-bottom ">
                                 <input type="checkbox" id="fre-freelancing">
-                                <h4 class="faq-qsn-title mt-2 ">What can you gain from consulting with ConsultantEdu?
+                                <h4 class="faq-qsn-title mt-2 ">What can you gain from consulting with {{ config('app.name') }}?
                                 </h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Work with prestigious clients and renowned institutions. Many choose ConsultantEdu for
+                                    Work with prestigious clients and renowned institutions. Many choose {{ config('app.name') }} for
                                     our support in achieving excellence.
                                 </p>
                                 <div class="fre-content text-justify ">
