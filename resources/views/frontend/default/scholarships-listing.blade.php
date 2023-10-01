@@ -26,9 +26,9 @@
             @if ($keyword != null)
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 text-center">
-                        <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('ScholarshipTotal') }} <span
+                        <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ t('ScholarshipTotal') }} <span
                                 class="fw-600">{{ $ScholarshipTotal }}</span>
-                            {{ translate('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
+                            {{ t('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
                         </h1>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                                         @if ($country_name != null)
                                             Scholarship for in {{ $country_name }}
                                         @else
-                                            {{ translate('Filter By') }}
+                                            {{ t('Filter By') }}
                                     </h5>
                                     @endif
 
@@ -100,7 +100,7 @@
                                     <div class="">
                                         <!-- Level of Study -->
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Level of Study') }}</span>
+                                            <span class=" pr-3">{{ t('Level of Study') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
                                             @foreach (\App\Models\ScholarshipLevel::all() as $level)
@@ -116,7 +116,7 @@
                                         </div>
 
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Scholarship by field') }}</span>
+                                            <span class=" pr-3">{{ t('Scholarship by field') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
                                             @foreach (\App\Models\ScholarshipFieldStudy::all() as $fieldStudy)
@@ -132,7 +132,7 @@
                                         </div>
                                         {{-- who can apply --}}
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Who Can Appaly') }}</span>
+                                            <span class=" pr-3">{{ t('Who Can Appaly') }}</span>
                                         </h6>
                                         <div class="aiz-checkbox-list">
                                             @foreach (\App\Models\ScholarshipWhoCanApply::all() as $whoCanApply)
@@ -148,7 +148,7 @@
                                         </div>
                                         <!-- Country -->
                                         <h6 class="text-left mt-4 mb-3 fs-14 fw-700">
-                                            <span class=" pr-3">{{ translate('Country') }}</span>
+                                            <span class=" pr-3">{{ t('Country') }}</span>
                                         </h6>
                                         <div class="mb-5">
 
@@ -156,7 +156,7 @@
                                                 name="country_id[]" onchange="applyFilter()" data-toggle="select2"
                                                 data-live-search="true">
                                                 <option value="0" @if (in_array(0, $country_id) || ($country_id[0] == '' && $country_id == '')) selected @endif>
-                                                    {{ translate('All Countries') }}
+                                                    {{ t('All Countries') }}
                                                 </option>
                                                 @foreach (\App\Models\ScholarshipCountry::all() as $country)
                                                     <option value="{{ $country->id }}"
@@ -170,7 +170,7 @@
                                     <!-- Skills -->
                                     <div class="pt-3 d-none">
                                         <h6 class="text-left mb-3 fs-14 fw-700">
-                                            <span class="bg-white pr-3">{{ translate('Skills') }}</span>
+                                            <span class="bg-white pr-3">{{ t('Skills') }}</span>
                                         </h6>
                                         <div class="">
                                             <select class="select2 form-control aiz-selectpicker" multiple="multiple"
@@ -214,7 +214,7 @@
                                     <!-- <div class="">
                                                         <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
                                                             <img class=" px-1  " src=" {{ asset('/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                            {{ translate(' Find a consultant') }}
+                                                            {{ t(' Find a consultant') }}
                                                         </p>
                                                     </div> -->
                                 </div>
@@ -274,7 +274,7 @@
                                                             <div class="">
                                                                 <p class="btn btn-primary btn-sm mt-2 w-100  fw-700">
                                                                     <img class=" px-1  " src=" {{ asset('/assets/find-consultant/logo-1.png') }}" alt="Image" style="width:36px; " />
-                                                                    {{ translate(' Find a consultant') }}
+                                                                    {{ t(' Find a consultant') }}
                                                                 </p>
                                                             </div>
                                                         </div> -->
@@ -357,19 +357,19 @@
                                                         data-href="{{ route('bookmarked-scholarships.delete', $bookmarked_scholarship->id) }}"
                                                         data-target="#bookmark-remove-modal">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span>{{ translate('Remove Bookmark') }}</span>
+                                                        <span>{{ t('Remove Bookmark') }}</span>
                                                     </a>
                                                 @else
                                                     <a class="btn btn-primary btn-sm  d-flex align-items-center justify-content-center fs-14 fw-700 "
                                                         href="{{ route('bookmarked-scholarships.store', encrypt($scholarship->id)) }}">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
-                                                        <span class="ml-2">{{ translate('Bookmark') }}</span>
+                                                        <span class="ml-2">{{ t('Bookmark') }}</span>
                                                     </a>
                                                 @endif
                                                 <a href="{{ url('/search?keyword=&type=freelancer') }}"
                                                     class="btn btn-primary btn-sm mt-2 d-flex align-items-center justify-content-center fs-14 fw-700  tex-black mb-1">
                                                     <i class="las la-user-tie fs-16 fw-700 mr-1"></i>
-                                                    <span>{{ translate('Hire Consultant') }}</span>
+                                                    <span>{{ t('Hire Consultant') }}</span>
                                                 </a>
 
                                             </div>

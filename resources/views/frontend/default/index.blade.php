@@ -1321,19 +1321,18 @@
                 </div>
 
                 <div class="row">
-
-                    @foreach ($parentSkills as $key => $parentSkill)
+                    @foreach ($skills as $key => $skill)
                         <div class="col-lg-3 com-md-3 col-sm-2">
                             <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
-                                data-toggle="collapse" href="#skill_{{ $parentSkill->id }}" role="button"
-                                aria-expanded="false" aria-controls="skill_{{ $parentSkill->id }}">
-                                <label id="icon_{{ $parentSkill->id }}"
+                                data-toggle="collapse" href="#skill_{{ $skill->id }}" role="button"
+                                aria-expanded="false" aria-controls="skill_{{ $skill->id }}">
+                                <label id="icon_{{ $skill->id }}"
                                     style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"
                                     class="fas fa-plus"></label>
-                                <p class="mb-0 fs-15 fw-700 text-dark ">{{ $parentSkill->name }}</p>
+                                <p class="mb-0 fs-15 fw-700 text-dark ">{{ $skill->name }}</p>
                             </a>
-                            <div class="collapse" id="skill_{{ $parentSkill->id }}">
-                                @foreach ($skills as $subSkill)
+                            <div class="collapse" id="skill_{{ $skill->id }}">
+                                @foreach ($skill->childrens as $subSkill)
                                     <div class=" w-200px child-skill-project-filtering">
                                         <div class="mb-1 ">
                                             <input type="checkbox" name="childSkill_id[]" id="{{ $subSkill->id }}"

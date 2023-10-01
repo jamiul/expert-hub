@@ -39,10 +39,7 @@ class HomeController extends Controller
      */
     public function index() {
         $scholarships = Scholarship::all();
-        $parentSkills = ParentSkill::all();
-        $parentSkillIds = $parentSkills->pluck('id'); // Get an array of parent_skill_ids
-
-        $skills = Skill::whereIn('parent_skill_id', $parentSkillIds)->get();
+        $skills= Skill::with('childrens')->whereNull('parent_id')->get();
         $seminars = Seminar::all();
         $services = ProjectCategory::take(8)->get()->reverse();
         $consultant_categories = ConsultantCategory::take(8)->get();
@@ -57,7 +54,7 @@ class HomeController extends Controller
             $subjectCounts[$subject] += $scholarship->available_slots;
         }
 
-        return view('frontend.default.index',compact('subjectCounts','parentSkills','skills','seminars','scholarships','services','consultant_categories'));
+        return view('frontend.default.index',compact('subjectCounts','seminars','scholarships','services','consultant_categories','skills'));
     }
 
     //Admin login

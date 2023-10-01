@@ -189,11 +189,11 @@
                                                                 @foreach ($skill->childrens as $subSkill)
                                                                     <option class="site-font" value="{{ $subSkill->id }}"
                                                                         @if (in_array($subSkill->id, (array) $skill_ids)) selected @endif>
-                                                                        {{ $subSkill->name }}</option>
+                                                                        {{ $subSkill->name }}
+                                                                    </option>
                                                                 @endforeach
                                                             @endforeach
                                                         </select>
-
                                                         <div class="mt-3">
                                                             @foreach ($skills as $key => $skill)
                                                                 <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
@@ -203,7 +203,8 @@
                                                                     aria-controls="skill_{{ $skill->id }}">
                                                                     <label class="fas fa-plus "
                                                                         style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0; background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                                    <p class="mb-0 fs-14 fw-500">{{ $skill->name }}
+                                                                    <p class="mb-0 fs-14 fw-500">
+                                                                        {{ $skill->name }}
                                                                     </p>
                                                                 </a>
                                                                 <div class="overflow-auto h-130px collapse "
@@ -229,13 +230,9 @@
                                                                 </div>
                                                             @endforeach
                                                         </div>
-
                                                     </div>
                                                 </div>
-
-
                                             </div>
-
                                         </div>
                                         <!-- Hourly rates -->
                                         <h6 class="text-left mb-3 fs-14">

@@ -209,7 +209,8 @@
 													<span class="flex-grow-1 text-truncate-2">{{ $user->name }}</span>
 													<span class="flex-shrink-0 ml-3">
 														<span class="d-block opacity-50 fs-10">{{ translate('Hourly Rate') }}</span>
-														<span class="fs-15">{{ !empty($user->profile->hourly_rate) ? single_price($user->profile->hourly_rate) : '' }}
+														<span class="fs-15">
+                                                            {{ !empty($user->profile->hourly_rate) ? single_price($user->profile->hourly_rate) : '' }}
                                                         </span>
 													</span>
 												</a>
