@@ -372,70 +372,29 @@
 
                                 <!-- Navbar dropdown -->
                                 <li class="nav-item ml-lg-2">
-                                    <!-- <li class="nav-item">
-                <a class="nav-link text-white"
-                  href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Post Academic Jobs') }}</a>
-              </li> -->
-
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
-                                        href="{{ url('/search?keyword=&type=freelancer') }}">{{ translate('Find Consultants') }}</a>
+                                        href="{{ url('/search?keyword=&type=freelancer') }}">{{ __('Find Experts') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
-                                        href="{{ url('/search?keyword=&type=project') }}">{{ translate('Find Projects') }}</a>
-                                </li>
-
-                                <!-- <li class="dropdown mega_menu nav-item">
-                                <a class=" dropdown-toggle nav-link text-white " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ translate('Find Jobs') }}
-                                </a>
-                                <div class="dropdown-menu mega_area" aria-labelledby="dropdownMenuButton">
-                                    <div class="row mx-2">
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div id="findSkills" class="w-75  mega-menu-fj-item">
-                                                <a class="dropdown-item" href="{{ route('skills') }}?keyword=&type=project">{{ translate('Find work for your skills') }}</a>
-                                                <p>{{ translate('Show clients you’re the one they want.') }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6  ">
-                                            <div id="wayToEarn" class="w-75 mega-menu-fj-item">
-                                                <a class="dropdown-item" href="ways-to-earn">{{ translate('Ways to earn') }}</a>
-                                                <p>
-                                                    {{ translate('Learn why Scholarship australia has the right opportunities for you.') }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div id='promoteYourself' class="w-78 mega-menu-fj-item">
-                                                <a class="dropdown-item " href="{{ route('promote') }}">{{ translate('Find ways to promote yourself') }}</a>
-                                                <p>{{ translate('Explore the kind of work available in your field.') }}</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </li> -->
-
-
-
-
-                                <li class="nav-item">
-                                    <a class="nav-link text-white"
-                                        href="{{ url('/search?keyword=&type=seminar') }}">{{ translate(' Find Trainings ') }}</a>
+                                        href="{{ url('/search?keyword=&type=project') }}">{{ __('Find Projects') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
-                                        href="{{ url('/search?keyword=&type=media-expert') }}">{{ translate('Media Expert Database') }}</a>
+                                        href="{{ url('/search?keyword=&type=media-expert') }}">{{ __('Experts Database for Media') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
-                                        href="{{ route('scholarship-search') }}?keyword=&type=scholarships">{{ translate('Scholarships Database') }}</a>
+                                        href="{{ route('scholarship-search') }}?keyword=&type=scholarships">{{ __('Scholarships Database') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white"
+                                        href="{{ url('/search?keyword=&type=seminar') }}">{{ __('Find Trainings ') }}</a>
                                 </li>
                                 <li class="nav-item dropdown  text-white">
                                     <a class="nav-link " href="{{ route('about-us') }}">
-                                        About Us
+                                        {{ __('About Us') }}
                                     </a>
                                     <div class="dropdown-menu mega_area" aria-labelledby="mega_product">
                                         <div class="row">
