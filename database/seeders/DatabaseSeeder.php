@@ -49,7 +49,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PackagesTableSeeder::class);
         $this->call(PageOptimizationsTableSeeder::class);
         $this->call(PagesTableSeeder::class);
-        $this->call(ParentSkillsTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(PayToFreelancersTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
@@ -77,7 +76,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SeminarInstructorsTableSeeder::class);
         $this->call(ServicePaymentsTableSeeder::class);
         $this->call(SitePagesTableSeeder::class);
-        $this->call(SkillsTableSeeder::class);
         $this->call(StaffTableSeeder::class);
         $this->call(SubscribersTableSeeder::class);
         $this->call(SystemConfigurationsTableSeeder::class);

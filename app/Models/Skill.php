@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Skill extends Model
 {
-    use SoftDeletes;
+    protected $fillable = [ 'parent_id','name'];
+
     public function parent()
     {
-        return $this->belongsTo(ParentSkill::class, 'parent_skill_id');
+        return $this->belongsTo(Skill::class, 'parent_id');
     }
 
+    public function childrens()
+    {
+        return $this->hasMany(Skill::class, 'parent_id', 'id');
+    }
 }
