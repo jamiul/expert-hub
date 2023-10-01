@@ -147,7 +147,6 @@ class SearchScholarshipController extends Controller
             $freelancers = UserProfile::query();
             $scholarships = Scholarship::query();
             $category_names = [];
-            // $categories =[];
             $levels = [];
             $country_name = '';
             $countries = [];
@@ -155,7 +154,9 @@ class SearchScholarshipController extends Controller
             $whoCanApplies = [];
             $fieldStudy_ids = [];
             $whoCanApply_ids = [];
-            // dd($whoCanApplies);
+            $whoCanApply=ScholarshipWhoCanApply::all();
+            $scholarshipCountry=ScholarshipCountry::all();
+
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -174,36 +175,23 @@ class SearchScholarshipController extends Controller
                 $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
             }
 
-            // if ($request->category_id != null) {
-            //     $category_ids = $request->category_id;
-            //     $categories = ScholarshipCategory::whereIn('id', $category_ids)->get();
-            //     $request->input('category_ids');
-            //     $category_id =$request->category_id;
-            //     $scholarships = $scholarships->whereIn('category_id', $category_id);
-            // }
             if ($request->country_id != null) {
 
                 $country_ids = $request->country_id;
                 $countries = ScholarshipCountry::whereIn('id', $country_ids)->get();
-                // dd($countries);
-
                 $country_id = $request->country_id;
                 if ($country_ids[0] == "0") {
                     $allCountry = "0";
-                    // dd($country_id);
                     $scholarships = $scholarships->where('country_id', '!=', $allCountry);
-                    // dd($scholarships);
 
                 } else {
                     $scholarships = $scholarships->whereIn('country_id', $country_ids);
                 }
-                // dd($scholarships);
             }
             if ($request->level_id != null) {
                 $level_ids = $request->level_id;
                 $levels = ScholarshipLevel::whereIn('id', $level_ids)->get();
                 $level_id = $request->level_id;
-                // dd($levels);
                 $scholarships = $scholarships->whereIn('level_id', $level_ids);
             }
 
@@ -219,7 +207,6 @@ class SearchScholarshipController extends Controller
             if ($request->whoCanApply_id != null) {
                 $whoCanApply_ids = $request->whoCanApply_id;
                 $whoCanApplies = ScholarshipWhoCanApply::whereIn('id', $whoCanApply_ids)->get();
-                // dd($whoCanApplies);
                 $whoCanApply_id = $request->whoCanApply_id;
                 $scholarships = $scholarships->whereIn('whoCanApply_id', $whoCanApply_ids);
             }
@@ -227,8 +214,7 @@ class SearchScholarshipController extends Controller
                 $ScholarshipTotal = $scholarships->count();
                 $scholarships = $scholarships->paginate(10)->appends($request->query());
 
-            // dd($category_id);
-            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies','whoCanApply_ids','whoCanApplies'));
+            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies','whoCanApply_ids','whoCanApplies','whoCanApply','scholarshipCountry'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
