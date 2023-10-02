@@ -121,11 +121,11 @@
                             <div class="col-md-3">
                                 <img src="../assets/frontend/default/img/user-front-laptop.jpg" alt="Image"
                                     class="img-fluid">
-                                <p class="mb-0 p-2 fs-5">Prof. Michael</p>
+                                <p class="mb-0 p-2 fw-bold">Prof. Michael</p>
                             </div>
                             <div class="col-md-9">
                                 <div class="row">
-                                    <div class="col-md-4 order-md-last text-right">
+                                    <div class="col-lg-4 order-lg-last text-right">
                                         <p class="pr-4"><b>$120/30mins</b></p>
                                     </div>
                                     <div class="col-md-8 mb-3 fs-4">

@@ -2,9 +2,9 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
-    <div class="container my-5">
+    <div class="container-lg my-5">
         <div class="row g-5 prexpertise">
-            <div class="col-md-4 col-lg-4 ">
+            <div class="col-md-5 col-lg-4">
                 <div class="card h-100 card-shadow">
                     <div class="card-body">
                         <div class="timeline-vertical timeline-with-details">
@@ -111,9 +111,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 col-lg-8 ">
+            <div class="col-md-7 col-lg-8">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col col-color">
+                    <div class="col-lg-4 col-md-12  col-sm-6 col-color">
                         <h5 class="text-bold">Fields</h5>
                         <div class="card p-3 btn-back">
                             <div class="form-group has-search ">
@@ -130,64 +130,71 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Art</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Art">
                                     <option>Art 1</option>
                                     <option>Art 2</option>
                                     <option>Art 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Biology</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Biology">
                                     <option>Biology 1</option>
                                     <option>Biology 2</option>
                                     <option>Biology 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Business</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Business">
                                     <option>Business 1</option>
                                     <option>Business 2</option>
                                     <option>Business 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Chemistry</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Chemistry">
                                     <option>Chemistry 1</option>
                                     <option>Chemistry 2</option>
                                     <option>Chemistry 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Computer Programming</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Computer Programming">
                                     <option>Computer Programming 1</option>
                                     <option>Computer Programming 2</option>
                                     <option>Computer Programming 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Data Analytsis</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Data Analytsis">
                                     <option>Data Analytsis 1</option>
                                     <option>Data Analytsis 2</option>
                                     <option>Data Analytsis 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Design</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Design">
                                     <option>Design 1</option>
                                     <option>Design 2</option>
                                     <option>Design 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-lg-4 col-md-12 col-sm-6">
                         <h5>Categories of Expertise</h5>
                         <div class="card p-3 btn-back">
                             <div class="form-group has-search ">
@@ -195,80 +202,89 @@
                                 <input type="text" class="form-control" placeholder="Search by categories..">
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Accreditation Specialists</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Accreditation Specialists">
                                     <option>Accreditation Specialists 1</option>
                                     <option>Accreditation Specialists 2</option>
                                     <option>Accreditation Specialists 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Curriculum Experts</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Curriculum Experts">
                                     <option>Curriculum Experts 1</option>
                                     <option>Curriculum Experts 2</option>
                                     <option>Curriculum Experts 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Program Experts</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Program Experts">
                                     <option>Program Experts 1</option>
                                     <option>Program Experts 2</option>
                                     <option>Program Experts 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">LMS Experts</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="LMS Experts">
                                     <option>LMS Experts 1</option>
                                     <option>LMS Experts 2</option>
                                     <option>LMS Experts 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Industry Experts</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Industry Experts">
                                     <option>Industry Experts 1</option>
                                     <option>Industry Experts 2</option>
                                     <option>Industry Experts 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Finance Experts</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Finance Experts">
                                     <option>Finance Experts 1</option>
                                     <option>Finance Experts 2</option>
                                     <option>Finance Experts 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Policy Experts</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Policy Experts">
                                     <option>Policy Experts 1</option>
                                     <option>Policy Experts 2</option>
                                     <option>Policy Experts 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Project Managers</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Project Managers">
                                     <option>Project Managers 1</option>
                                     <option>Project Managers 2</option>
                                     <option>Project Managers 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="" required="">
-                                    <option value="">Research & Analysis</option>
+                                <select class="selectpicker" id="" required="" >
+                                    <optgroup label="Research & Analysis">
                                     <option>Research & Analysis 1</option>
                                     <option>Research & Analysis 2</option>
                                     <option>Research & Analysis 3</option>
+                                    </optgroup>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col ">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="card card-expertise  p-3 btn-back">
                             <h5 class="text-bold">Expertise</h5>
                             <div class="form-group ">

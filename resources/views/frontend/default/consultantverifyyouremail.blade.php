@@ -4,22 +4,19 @@
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
 
     <style>
-        .edu-for-time {
-            line-height: 0.3;
-            color: #303744;
-        }
+        
     </style>
 
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row clogin">
-                <div class="col-xxl-7 col-xl-7 col-md-7 mx-auto">
+                <div class="col-xl-7 col-lg-8 col-md-10 mx-auto">
                     <form class="needs-validation p-3" method="post">
                         <div class="card card-shadow mb-4 rounded-3  pt-4 pb-4">
                             <div class="card-body my-auto">
                                 <img class="mb-4 w-50 logo" src="{{ asset('assets/frontend/default/img/eduexhub.png') }}" alt="Edu Expert Hub" />
                                 <div class="">
-                                    <h4 class="mt-3">Verify your email address to complete registration</h4>
+                                    <h4 class="mt-3 vye-heading">Verify your email address to complete registration</h4>
                                 </div>
                                 <div class="custom-input-group first-input my-auto">
                                     <div>
