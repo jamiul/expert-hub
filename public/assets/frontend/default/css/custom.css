@@ -928,13 +928,12 @@ div.scroll h6 a {
 .p-title {
     font-size: 20px;
     font-family: Neuemontreal, sans-serif;
-
 }
-.singel-profile{
+.singel-profile {
     font-size: 30px;
-        font-weight: 700;
-        color:#5ABC76 !important;
-        font-family: Neuemontreal, sans-serif !important;
+    font-weight: 700;
+    color: #5abc76 !important;
+    font-family: Neuemontreal, sans-serif !important;
 }
 @media (min-width: 425px) {
     .seminar-banner {
@@ -990,10 +989,9 @@ div.scroll h6 a {
     .banner-photo {
         margin-left: 300px !important;
     }
-
 }
 
-.make-impressive-title{
+.make-impressive-title {
     /* color: #95DF00 !important; */
     letter-spacing: -0.02em;
     margin-bottom: 10px;
@@ -1002,3 +1000,4 @@ div.scroll h6 a {
     font-weight: 700;
     line-height: 1.1em;
 }
+
