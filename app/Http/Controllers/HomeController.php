@@ -180,8 +180,8 @@ class HomeController extends Controller
 
         return view('frontend.default.freelancer.freelancer-single', compact('freelancer'));
     }
-    // Freelancer meeting arrange
 
+    // Freelancer meeting arrange
     public function freelancer_meeting($user_name)
     {
         $user = User::where('user_name', $user_name)->first();

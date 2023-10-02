@@ -44,23 +44,30 @@ class ProfileController extends Controller
         }
         flash(translate('This Email is already used.'))->error();
         return back();
-        
+
     }
 
-    //Redirect to user profile page to update profile
-    public function user_profile()
+    /**
+     * Redirect to user profile page to update profile
+     * @return \Illuminate\View\View
+     */
+    public function user_profile(): \Illuminate\View\View
     {
-        $user_profile = UserProfile::where('user_id', Auth::user()->id)->first();
-        $verification = Verification::where('user_id', Auth::user()->id)->where('type', 'identity_verification')->first();
+        try {
+            $user = Auth::user();
+            $verification = $user->verifications()->where('type','identity_verification')->first();
 
-        if (isClient()) {
-            return view('frontend.default.user.client.settings.profile', compact('user_profile', 'verification'));
-        }
-        elseif (isFreelancer()) {
-            return view('frontend.default.user.freelancer.setting.profile', compact('user_profile','verification'));
-        }
-        else {
-            flash(translate('Sorry! Something went wrong.'))->error();
+            if (isClient()) {
+                return view('frontend.default.user.client.settings.profile', compact('user',  'verification'));
+            }
+            elseif (isFreelancer()) {
+                return view('frontend.default.user.freelancer.setting.profile', compact('user', 'verification'));
+            }
+            else {
+                flash(translate('Sorry! Something went wrong.'))->error();
+                return back();
+            }
+        } catch (\Exception $ex){
             return back();
         }
     }
