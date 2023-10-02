@@ -118,7 +118,8 @@
                                     {{-- Expertise --}}
                                     <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
+                                            <span
+                                                class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
                                         </h6>
                                         <div class="mt-3">
                                             @foreach ($expertises as $key => $expertise)
@@ -472,9 +473,7 @@
                 $('#media-expert').submit();
             }
         </script>
-    @endsection
 
-    @section('script')
         <script type="text/javascript">
             let e = document.getElementById("hourlyRateSelect");
 

@@ -17,7 +17,7 @@
         td.day.highlight {
             color: #DC322F;
             border-radius: 50% !important;
-            border:1px solid #275846;
+            border: 1px solid #275846;
             /* background-image: linear-gradient(#275846, #275846) !important; */
             color: #0a0a0a !important;
             /* font-weight: 900;
@@ -155,8 +155,12 @@
                 <div class="row rounded-0 px-2 mt-1 mx-4">
                     <div class="col-lg-6 col-sm-12 my-auto">
                         <h3 class="text-white fw-700 fs-30  site-font mt-3">Training and Expert Support Hub</h3>
-                        <p class="fw-400 text-white site-font fs-18 mb-2">Learn a wide variety of the latest statistical methods by participating in expert-led seminars. Our instructors are a recognised experts in their respective fields. With their talent and experience, they make statistics engaging and comprehensible for researchers from diverse backgrounds.</p>
-                        <a href="register?type=2" class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Find Instructors</a>
+                        <p class="fw-400 text-white site-font fs-18 mb-2">Learn a wide variety of the latest statistical
+                            methods by participating in expert-led seminars. Our instructors are a recognised experts in
+                            their respective fields. With their talent and experience, they make statistics engaging and
+                            comprehensible for researchers from diverse backgrounds.</p>
+                        <a href="register?type=2"
+                            class="btn rounded border site-font fs-20 frequently-qsn-title  text-white">Find Instructors</a>
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">
@@ -495,7 +499,7 @@
 
                                                                 <p
                                                                     class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                                    {{ $seminar->project_category_id ? getSeminarCategory($seminar->project_category_id) : ''}}
+                                                                    {{ $seminar->project_category_id ? getSeminarCategory($seminar->project_category_id) : '' }}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -727,9 +731,7 @@
                 $('#seminar-filter-form').submit();
             }
         </script>
-    @endsection
 
-    @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
@@ -959,6 +961,18 @@
             }
         </script>
     @endsection
+
+    <script type="text/javascript">
+        function applyFilter() {
+            $('#seminar-filter-form').submit();
+        }
+
+        function rangefilter(arg) {
+            $('input[name=min_price]').val(arg[0]);
+            $('input[name=max_price]').val(arg[1]);
+            applyFilter();
+        };
+    </script>
 </body>
 
 </html>

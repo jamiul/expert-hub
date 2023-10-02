@@ -22,6 +22,7 @@ use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipWhoCanApply;
 use App\Utility\CategoryUtility;
 use \App\Models\SystemConfiguration;
+use \App\Models\Country;
 
 class SearchScholarshipController extends Controller
 {
@@ -155,7 +156,8 @@ class SearchScholarshipController extends Controller
             $fieldStudy_ids = [];
             $whoCanApply_ids = [];
             $whoCanApply=ScholarshipWhoCanApply::all();
-            $scholarshipCountry=ScholarshipCountry::all();
+            // $scholarshipCountry=ScholarshipCountry::all();
+            $scholarshipCountry = Country::all();
 
 
             if ($request->keyword != null) {
@@ -214,7 +216,7 @@ class SearchScholarshipController extends Controller
                 $ScholarshipTotal = $scholarships->count();
                 $scholarships = $scholarships->paginate(10)->appends($request->query());
 
-            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies','whoCanApply_ids','whoCanApplies','whoCanApply','scholarshipCountry'));
+            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies','whoCanApply_ids','whoCanApplies','whoCanApply','scholarshipCountry','countries'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
