@@ -36,8 +36,6 @@ Route::get('/clear-cache-all', function () {
 Route::get('slider', function () {
     return view('frontend/default.inc.videoSlide');
 });
-Route::get('/demo/cron_1', 'DemoController@cron_1');
-Route::get('/demo/cron_2', 'DemoController@cron_2');
 
 //consultant Registration
 Route::get('/consultant-login', 'DemoController@consultantLogin');
@@ -346,35 +344,11 @@ Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name(
 Route::get('seminar/{id}', 'SeminarDetailsController@seminar_details')->name('seminar.details');
 //Payments
 
-//Paypal
-Route::get('/paypal/payment/done', 'PayPalController@getDone')->name('payment.done');
-Route::get('/paypal/payment/cancel', 'PayPalController@getCancel')->name('payment.cancel');
-
 //STRIPE
 Route::get('/stripe', 'StripePaymentController@index');
 Route::post('/stripe/create-checkout-session', 'StripePaymentController@create_checkout_session')->name('stripe.get_token');
 Route::any('/stripe/payment/callback', 'StripePaymentController@callback')->name('stripe.callback');
 Route::get('/stripe/success', 'StripePaymentController@success')->name('stripe.success');
 Route::get('/stripe/cancel', 'StripePaymentController@cancel')->name('stripe.cancel');
-
-//Paystack
-Route::get('/paystack/payment/callback', 'PaystackController@handleGatewayCallback');
-
-// SSLCOMMERZ Start
-Route::get('/sslcommerz/pay', 'PublicSslCommerzPaymentController@index');
-Route::POST('/sslcommerz/success', 'PublicSslCommerzPaymentController@success');
-Route::POST('/sslcommerz/fail', 'PublicSslCommerzPaymentController@fail');
-Route::POST('/sslcommerz/cancel', 'PublicSslCommerzPaymentController@cancel');
-Route::POST('/sslcommerz/ipn', 'PublicSslCommerzPaymentController@ipn');
-
-//Instamojo
-Route::get('/instamojo/payment/pay-success', 'InstamojoController@success')->name('instamojo.success');
-
-//Paytm
-Route::get('/paytm/index', 'PaytmController@index');
-Route::post('/paytm/callback', 'PaytmController@callback')->name('paytm.callback');
-
-//flutterwave
-Route::get('/rave/callback', 'FlutterwaveController@callback')->name('flutterwave.callback');
 
 Route::get('/{slug}', 'PageController@show_custom_page')->name('custom-pages.show_custom_page');

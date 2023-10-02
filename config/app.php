@@ -162,10 +162,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Unicodeveloper\Paystack\PaystackServiceProvider::class,
-        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
-        KingFlamez\Rave\RaveServiceProvider::class,
-        MehediIitdu\CoreComponentRepository\CoreComponentRepositoryServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -233,9 +229,6 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Carbon' => Illuminate\Support\Carbon::class,
-        'Paystack' => Unicodeveloper\Paystack\Facades\Paystack::class,
-        'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class,
-        'Rave' => KingFlamez\Rave\Facades\Rave::class,
     ],
 
 ];
