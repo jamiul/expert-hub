@@ -102,7 +102,7 @@ class HomeController extends Controller
     public function project_details($slug)
     {
         $project = Project::where('slug', $slug)->first();
-        return view('frontend.default.project-single', compact('project'));
+        return view('frontend.default.project-details.project-single', compact('project'));
     }
 
     //Show details info of specific project
