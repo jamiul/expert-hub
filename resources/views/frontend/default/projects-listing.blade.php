@@ -384,8 +384,7 @@
                                                 </li>
                                             </ul>
                                             <div class=" lh-1-4 site-font fs-14">
-                                                <p>{{ \Illuminate\Support\Str::limit(strip_tags($project->description), 260, $end = '...') }}</p>
-
+                                                <p>{!!$project->description!!}</p>
                                             </div>
                                             <div>
                                                 @foreach ($project->skills as $key => $skill_id)
