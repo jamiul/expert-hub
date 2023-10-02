@@ -199,6 +199,10 @@ body {
 .fre-profile {
     margin-top: -9rem !important;
 }
+
+.job-details{
+    font-family: calfox;
+}
 /* responsive */
 @media only screen and (max-width: 1210px) {
     .home-banner-button {
