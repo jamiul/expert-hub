@@ -433,7 +433,7 @@ class SearchController extends Controller
             $skills = [];
             $skill_ids = [];
             $country_id = $request ->country_id;
-            $project_category = ProjectCategory::all();
+            $projectCategory = ProjectCategory::all();
             $skills= Skill::with('childrens')->whereNull('parent_id')->get();
             $all_skills = Skill::all();
             $countries = Country::all();
@@ -559,7 +559,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations','project_category','all_skills','countries','country_id'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations','projectCategory','all_skills','countries','country_id'));
         }
     }
 

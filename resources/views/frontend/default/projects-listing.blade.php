@@ -1,5 +1,6 @@
 @extends('frontend.default.layouts.app')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/project-listing.css') }}">
 
 @section('content')
     <section class=" pb-lg-3">
@@ -71,8 +72,8 @@
                                         </h6>
                                         <div class="">
 
-                                            @foreach ($project_category as $category)
-                                             <label class="aiz-checkbox w-100 site-font">
+                                            @foreach ($projectCategory as $category)
+                                                <label class="aiz-checkbox w-100 site-font">
                                                     <input type="checkbox" class="" name="category_id[]"
                                                         onchange="applyFilter()" value="{{ $category->id }}"
                                                         @if (in_array($category->id, $category_ids)) checked @endif>
@@ -171,19 +172,17 @@
                                         </div>
                                         <div class="d-flex">
                                             <div>
-                                                <input class="p-2" placeholder="Min" name="fixed_min"
-                                                    class="site-font" value="{{ $fixed_min ? $fixed_min : '' }}"
-                                                    style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;"
-                                                    type="number">
+                                                <input class="p-2 site-font project-page-fixed-price-right"
+                                                placeholder="Min"
+                                                 name="fixed_min"
+                                                 value="{{ $fixed_min ? $fixed_min : '' }}" type="number">
                                             </div>
                                             <p class="site-font  mb-0 d-flex justify-content-center align-items-center">to
                                             </p>
                                             <div>
-                                                <input onchange="applyFilter()" class="p-2" placeholder="Max"
-                                                    name="fixed_max" class="site-font"
-                                                    value="{{ $fixed_max ? $fixed_max : '' }}"
-                                                    style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;"
-                                                    type="number">
+                                                <input onchange="applyFilter()" class="p-2 site-font  project-page-fixed-price-left" placeholder="Max"
+                                                    name="fixed_max"
+                                                    value="{{ $fixed_max ? $fixed_max : '' }}" type="number">
                                             </div>
                                         </div>
                                         <!-- Hourly Projects -->
@@ -198,18 +197,17 @@
                                         </div>
                                         <div class="d-flex">
                                             <div>
-                                                <input class="p-2" name="hourly_min"
+                                                <input class="p-2 project-page-fixed-price-right" name="hourly_min"
                                                     value="{{ $hourly_min ? $hourly_min : '' }}" placeholder="Min"
-                                                    style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;"
+
                                                     type="number">
                                             </div>
                                             <p class="fs-16 fw-400 mb-0 d-flex justify-content-center align-items-center">
                                                 to</p>
                                             <div>
                                                 <input onchange="applyFilter()" name="hourly_max"
-                                                    value="{{ $hourly_max ? $hourly_max : '' }}" class="p-2"
+                                                    value="{{ $hourly_max ? $hourly_max : '' }}" class="p-2 project-page-fixed-price-left"
                                                     placeholder="Max"
-                                                    style="width:80px;margin-left:35px;height: 32px;border: 1px solid #c6c4c4;"
                                                     type="number">
                                             </div>
                                         </div>
@@ -260,15 +258,6 @@
                     <div class="col-xl-9 col-lg-8 ">
                         <div class="card mb-lg-0 border-0">
                             <input type="hidden" name="type" value="project">
-                            <!-- <div class="card-header">
-                                                <div class="d-flex align-items-center">
-                                                    <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                                        <i class="las la-filter"></i>
-                                                    </button>
-                                                    <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                                                </div>
-                                            </div> -->
-
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
                                     <p class="fw-500 fs-15 text-black mb-0"> <span
@@ -385,7 +374,8 @@
                                                 </li>
                                             </ul>
                                             <div class=" lh-1-4 site-font fs-14">
-                                                <p>{!! \Illuminate\Support\Str::limit(strip_tags($project->description), 350) !!}</p>
+                                                <p>{{ \Illuminate\Support\Str::limit(strip_tags($project->description), 350) }}
+                                                </p>
                                                 <p>
                                                 </p>
                                             </div>
