@@ -73,7 +73,7 @@
                                                 <hr>
                                                 <div class=" lh-2 mb-5">
                                                     <div>
-                                                        <h6 class="fs-16 job-details" style="line-height: 25px;">Seeking an experienced Curriculum Developer to create a cutting-edge curriculum
+                                                        <h6 class="fs-16 job-details site-font" style="line-height: 25px;">Seeking an experienced Curriculum Developer to create a cutting-edge curriculum
                                                             for our postgraduate public health unit. You will collaborate with our team to
                                                             design a comprehensive curriculum that aligns with industry trends and academic
                                                             standards. Your role involves conducting research, developing course materials,

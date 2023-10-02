@@ -471,7 +471,7 @@
                 </div>
 
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Feedback</p>
+                    <p class="fw-600 fs-20 ">Testimonial</p>
                     <div class="mt-3 ">
                         <span class="text-dark fw-700 fs-16 mb-3">Client</span>
                         <h4 class="frequently-qsn-details mt-2 text-justify">We are immensely grateful to Dr.
@@ -512,7 +512,7 @@
 
 
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Feedback</p>
+                    <p class="fw-600 fs-20 ">Testimonial</p>
                     <div class="mt-3 ">
                         <span class="text-dark fw-700 fs-16 mb-3">Client</span>
                         <h4 class="frequently-qsn-details mt-2 text-justify">I had the pleasure of working with Dr.
