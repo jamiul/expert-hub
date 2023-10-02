@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->index('user_profiles_user_id_foreign');
             $table->integer('user_role_id')->nullable();
             $table->string('gender', 50)->nullable();
-            $table->string('nationality', 20)->nullable();
+            $table->integer('nationality')->nullable();
             $table->string('specialist')->nullable();
             $table->longText('bio')->nullable();
             $table->longText('skills')->nullable();
