@@ -88,15 +88,16 @@
                                     <div class="mb-4 site-font">
                                         <div class="">
                                             <h6 class="text-left mb-3 fs-14">
-                                                <span class="pr-3 site-font fw-700">{{ translate('Project Skills') }}</span>
+                                                <span
+                                                    class="pr-3 site-font fw-700">{{ translate('Project Skills') }}</span>
                                             </h6>
                                             <div class="mb-4">
                                                 <div class="">
                                                     <div class="mb-5 border-bottom">
                                                         <select
                                                             class="select2 site-font form-control aiz-selectpicker rounded-1"
-                                                            name="skill_id[]" onchange="applyFilter()"
-                                                            data-toggle="select2" data-live-search="true">
+                                                            name="skill_id[]" onchange="applyFilter()" data-toggle="select2"
+                                                            data-live-search="true">
 
                                                             <option value="" class="site-font">
                                                                 {{ translate('Search skills') }}
@@ -125,8 +126,7 @@
                                                                 <div class="overflow-auto h-130px collapse "
                                                                     id="skill_{{ $skill->id }}">
                                                                     @foreach ($skill->childrens as $subSkill)
-                                                                        <div
-                                                                            class=" w-200px child-skill-project-filtering">
+                                                                        <div class=" w-200px child-skill-project-filtering">
                                                                             <div class="mb-1 ">
                                                                                 <input type="checkbox"
                                                                                     name="childSkill_id[]"
@@ -171,8 +171,8 @@
                                         </div>
                                         <div class="d-flex">
                                             <div>
-                                                <input class="p-2" placeholder="Min" name="fixed_min" class="site-font"
-                                                    value="{{ $fixed_min ? $fixed_min : '' }}"
+                                                <input class="p-2" placeholder="Min" name="fixed_min"
+                                                    class="site-font" value="{{ $fixed_min ? $fixed_min : '' }}"
                                                     style="width:80px;margin-right:35px; height: 32px;border: 1px solid #c6c4c4;"
                                                     type="number">
                                             </div>
@@ -261,13 +261,13 @@
                         <div class="card mb-lg-0 border-0">
                             <input type="hidden" name="type" value="project">
                             <!-- <div class="card-header">
-                                        <div class="d-flex align-items-center">
-                                            <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                                                <i class="las la-filter"></i>
-                                            </button>
-                                            <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
-                                        </div>
-                                    </div> -->
+                                                <div class="d-flex align-items-center">
+                                                    <button class="btn btn-sm btn-icon btn-soft-secondary d-lg-none flex-shrink-0 mr-2" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
+                                                        <i class="las la-filter"></i>
+                                                    </button>
+                                                    <input type="text" class="form-control form-control-sm rounded-1" placeholder="{{ translate('Search Keyword') }}" value="{{ $keyword }}" name="keyword">
+                                                </div>
+                                            </div> -->
 
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
@@ -295,10 +295,10 @@
                                     </select>
                                 </div>
                             </div>
+
                             <div class="card-body p-0 border-0 ">
 
                                 @foreach ($projects as $key => $project)
-
                                     <div class="row card-project text-inherit px-3 py-4 all-scholarship-list"
                                         style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                                         <div class="col-lg-1 p-0">
@@ -384,7 +384,9 @@
                                                 </li>
                                             </ul>
                                             <div class=" lh-1-4 site-font fs-14">
-                                                <p>{!!$project->description!!}</p>
+                                                <p>{!! \Illuminate\Support\Str::limit(strip_tags($project->description), 350) !!}</p>
+                                                <p>
+                                                </p>
                                             </div>
                                             <div>
                                                 @foreach ($project->skills as $key => $skill_id)
@@ -463,7 +465,7 @@
             $('#project-filter-form').submit();
         }
     </script>
-      <script type="text/javascript">
+    <script type="text/javascript">
         function applyFilter() {
             $('#project-filter-form').submit();
         }
