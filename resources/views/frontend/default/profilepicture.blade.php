@@ -135,10 +135,10 @@
                     </div>
                     <hr class="my-4">
 
-                    <div class="row mb-5">
-                        <div class="col-lg-6 col-md-12">
+                    <div class="row mb-5 mob-text-center">
+                        <div class="col-lg-8 col-md-12">
                             <p>Intial steps in creating your profile are now complete!</p>
-                            <button class="w-100 btn btn-primary btn-lg border-all-5 btn-lg">Preview Your
+                            <button class="btn btn-primary btn-lg border-all-5 btn-lg px-5">Preview Your 
                                 Profile</button>
                         </div>
                     </div>
