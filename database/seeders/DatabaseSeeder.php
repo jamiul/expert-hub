@@ -87,5 +87,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VerificationsTableSeeder::class);
         $this->call(WalletsTableSeeder::class);
         $this->call(WorkExperiencesTableSeeder::class);
+        $this->call(CountryFlagSeederUpdate::class);
+        $this->call(OptionSeeder::class);
     }
 }

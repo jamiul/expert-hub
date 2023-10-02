@@ -17,8 +17,8 @@
             </span>
         </div>
         <div class="w-100">
-            <h5 class="text-black fs-20 fw-600 pb-2 text-center mt-3 ">{{ $freelancer->name }}</h5>
-            @if ($freelancer->profile->specialistAt != null)
+            <h5 class="text-black fs-20 fw-700 pb-2 text-center mt-3 px-0 ">{{ $freelancer->name }}</h5>
+            @if($freelancer->profile->specialistAt != null)
                 <h6 class="text-center fs-16 fw-400 text-muted">{{ $freelancer->profile->specialistAt->name }}</h6>
             @endif
             <h6 class="text-center  fw-700 fs-16" style=" color: #0059C9;">Public Health </h6>

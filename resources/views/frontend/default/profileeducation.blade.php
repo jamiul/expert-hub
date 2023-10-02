@@ -5,7 +5,7 @@
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row g-5 cpeducation">
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-5 col-lg-4">
                     <div class="card h-100 card-shadow">
                         <div class="card-body">
                             <div class="timeline-vertical timeline-with-details">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-8">
+                <div class="col-md-7 col-lg-8">
                     <h4 class="text-bold">Tell us about your edcation qualifications</h4>
                     <p>Complete the information bellow</p>
                     <div class="card-body my-auto">
@@ -162,7 +162,7 @@
                                 </select>
 
                             </div>
-                            <div class="d-grid gap-2 col-lg-5 col-md-5 col-sm-12 mt-3">
+                            <div class="d-grid gap-2 col-xl-6 col-lg-8 col-md-12 mt-3">
                                 <button class="btn border fs-5" type="button"> <span class="google-icon-img"><img
                                             src="../assets/frontend/default/img/add_circle.png"></>
                                     </span>Add Education Qualification</button>

@@ -675,9 +675,9 @@ function getSubSkills($id) : object
     return Skill::where('parent_skill_id', $id)->get();
 }
 
-function getCountry() : array
+function getCountry() : \Illuminate\Support\Collection
 {
-    return Country::all()->toArray();
+    return Country::all();
 }
 
 if (!function_exists('formatSeminarDate')) {
@@ -694,7 +694,7 @@ if (!function_exists('formatSeminarDate')) {
 }
 
 function getFreelancerPhoto($freelancer){
-    $img_url = '/public/assets/frontend/default/img/avatar-place.png'; // Default image URL
+    $img_url = asset('assets/frontend/default/img/avatar-place.png'); // Default image URL
 
     if ($freelancer && $freelancer->user && $freelancer->user->address && $freelancer->user->address->country) {
         // Check if each level exists before accessing 'photo'

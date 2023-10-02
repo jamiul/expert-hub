@@ -118,7 +118,8 @@
                                     {{-- Expertise --}}
                                     <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
-                                            <span class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
+                                            <span
+                                                class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
                                         </h6>
                                         <div class="mt-3">
                                             @foreach ($expertises as $key => $expertise)
@@ -207,10 +208,10 @@
                                                     data-live-search="true">
                                                     <option value="" class="site-font">
                                                         {{ translate('Select Location') }}</option>
-                                                    @foreach (getCountry() as $country)
-                                                        <option value="{{ $country['id'] }}"
-                                                            @if (isset($country_id) && $country_id == $country['id']) selected @endif>
-                                                            {{ $country['name'] }}</option>
+                                                    @foreach (\App\Models\Country::all() as $country)
+                                                        <option value="{{ $country->id }}"
+                                                                @if (isset($country_id) && $country_id == $country->id) selected @endif>
+                                                            {{ $country->name }}</option>
                                                     @endforeach
                                                 </select>
 
@@ -472,9 +473,7 @@
                 $('#media-expert').submit();
             }
         </script>
-    @endsection
 
-    @section('script')
         <script type="text/javascript">
             let e = document.getElementById("hourlyRateSelect");
 
