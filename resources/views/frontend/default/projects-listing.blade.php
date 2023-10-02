@@ -298,6 +298,7 @@
                             <div class="card-body p-0 border-0 ">
 
                                 @foreach ($projects as $key => $project)
+
                                     <div class="row card-project text-inherit px-3 py-4 all-scholarship-list"
                                         style="background: #F2F7F2; border-bottom:1px solid #ddd;">
                                         <div class="col-lg-1 p-0">
@@ -383,8 +384,8 @@
                                                 </li>
                                             </ul>
                                             <div class=" lh-1-4 site-font fs-14">
-                                                <p> {{ \Illuminate\Support\Str::limit($project->excerpt, 260, $end = '...') }}
-                                                </p>
+                                                <p>{{ \Illuminate\Support\Str::limit(strip_tags($project->description), 260, $end = '...') }}</p>
+
                                             </div>
                                             <div>
                                                 @foreach ($project->skills as $key => $skill_id)
