@@ -11,7 +11,7 @@
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row prcomplete">
-                <div class="col-xxl-5 col-xl-5 col-md-7 mx-auto">
+                <div class="col-lg-6 col-md-7 mx-auto">
                     <form class="needs-validation" method="post">
                         <div class="card card-shadow mb-4 rounded-3  pt-4 pb-4">
                             <div class="col-lg-2 pl-5">

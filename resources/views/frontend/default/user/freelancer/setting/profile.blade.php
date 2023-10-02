@@ -86,7 +86,7 @@
 
                                 <div id="uname_response"></div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="username" name="username" @if ($user_profile->user->user_name != null) value="{{ $user_profile->user->user_name }}" @endif
+                                    <input type="text" class="form-control" id="username" name="username" @if ($user->user_name != null) value="{{ $user->user_name }}" @endif
                                     placeholder="{{ translate('Enter your username') }}"
                                     aria-label="Enter your username" required aria-describedby="usernameLabel"
                                     data-msg="Please enter your username." data-error-class="u-has-error"
@@ -99,12 +99,12 @@
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" name="email" @if ($user_profile->user->email != null) value="{{ $user_profile->user->email }}" @endif
+                                    <input type="email" class="form-control" name="email" @if ($user->email != null) value="{{ $user->email }}" @endif
                                     placeholder="{{ translate('Enter your email address') }}"
                                     aria-label="Enter your email address" required aria-describedby="emailLabel"
                                     disabled>
                                     <div class="input-group-append">
-                                        @if ($user_profile->user->email_verified_at == null)
+                                        @if ($user->email_verified_at == null)
                                         <a class="btn btn-secondary" href="{{ route('email.verification') }}">
                                             {{ translate('Send Verification Link') }}
                                         </a>
@@ -116,7 +116,7 @@
                                         @endif
                                     </div>
                                 </div>
-                                @if ($user_profile->user->email_verified_at == null)
+                                @if ($user->email_verified_at == null)
                                 <span class="alert alert-danger d-block mt-1 py-1">{{ translate('Verify your email address') }}</span>
                                 @endif
                             </div>
@@ -136,11 +136,11 @@
                             <div class="form-group">
                                 <label>{{ translate('Skill') }} <span class="text-danger">*</span>
                                     ({{ translate('Max') }}
-                                    {{ $user_profile->user->userPackage->skill_add_limit }})</label>
-                                <select class="form-control aiz-selectpicker" multiple name="skills[]" data-live-search="true" data-selected-text-format="count" data-max-options="{{ $user_profile->user->userPackage->skill_add_limit }}">
-                                    @if ($user_profile->skills != null)
+                                    {{ $user->userPackage->skill_add_limit }})</label>
+                                <select class="form-control aiz-selectpicker" multiple name="skills[]" data-live-search="true" data-selected-text-format="count" data-max-options="{{ $user->userPackage->skill_add_limit }}">
+                                    @if ($user->profile->skills != null)
                                     @foreach (\App\Models\Skill::all() as $key => $skill)
-                                    <option value="{{ $skill->id }}" @if (in_array($skill->id, json_decode($user_profile->skills))) selected @endif>{{ $skill->name }}
+                                    <option value="{{ $skill->id }}" @if (in_array($skill->id, json_decode($user->profile->skills))) selected @endif>{{ $skill->name }}
                                     </option>
                                     @endforeach
                                     @else
@@ -162,7 +162,7 @@
                             </div>
                             <!-- End Title -->
                             <div class="form-group">
-                                <textarea class="form-control" rows="3" name="bio" required>{{ $user_profile->bio }}</textarea>
+                                <textarea class="form-control" rows="3" name="bio" required>{{ $user->profile->bio }}</textarea>
                             </div>
                             <div class="mt-4 text-right">
                                 <!-- Buttons -->
@@ -189,7 +189,7 @@
                                         {{ translate('Name') }}
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input type="text" class="form-control" name="name" value="{{ $user_profile->user->name }}" placeholder="{{ translate('Enter your name') }}" aria-label="Enter your name" required aria-describedby="nameLabel" data-msg="Please enter your name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                    <input type="text" class="form-control" name="name" value="{{ $user->name }}" placeholder="{{ translate('Enter your name') }}" aria-label="Enter your name" required aria-describedby="nameLabel" data-msg="Please enter your name." data-error-class="u-has-error" data-success-class="u-has-success">
                                     <small class="form-text text-muted">{{ translate('Displayed on your public profile, notifications and other places') }}.</small>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
                                     </label>
                                     <select class="form-control aiz-selectpicker" id="specialist" name="specialist" data-live-search="true" required>
                                         @foreach (\App\Models\ConsultantCategory::all() as $category)
-                                        <option value="{{ $category->id }}" @if ($user_profile->specialist == $category->id) selected @endif>
+                                        <option value="{{ $category->id }}" @if ($user->profile->specialist == $category->id) selected @endif>
                                             {{ $category->name }}
                                         </option>
                                         @endforeach
@@ -214,7 +214,7 @@
                                         {{ translate('Hourly Rate') }}
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input type="number" class="form-control" name="hourly_rate" value="{{ $user_profile->hourly_rate }}" placeholder="100" required>
+                                    <input type="number" class="form-control" name="hourly_rate" value="{{ $user->profile->hourly_rate }}" placeholder="100" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -224,13 +224,13 @@
                                 </label>
                                 <!-- Input -->
                                 <select class="form-control aiz-selectpicker" name="gender" required data-minimum-results-for-search="Infinity" data-msg="Please select your gender." data-error-class="u-has-error" data-success-class="u-has-success">
-                                    <option value="male" @if ($user_profile->gender == 'male') selected @endif>
+                                    <option value="male" @if ($user->profile->gender == 'male') selected @endif>
                                         {{ translate('Male') }}
                                     </option>
-                                    <option value="female" @if ($user_profile->gender == 'female') selected @endif>
+                                    <option value="female" @if ($user->profile->gender == 'female') selected @endif>
                                         {{ translate('Female') }}
                                     </option>
-                                    <option value="other" @if ($user_profile->gender == 'other') selected @endif>
+                                    <option value="other" @if ($user->profile->gender == 'other') selected @endif>
                                         {{ translate('Other') }}
                                     </option>
                                 </select>
@@ -244,8 +244,8 @@
                                     </label>
                                     <select class="form-control aiz-selectpicker" id="country_id" name="country_id" data-live-search="true" required data-msg="Please select your country.">
                                         @foreach (\App\Models\Country::all() as $key => $country)
-                                        @if (optional($user_profile->user->address)->country_id != null)
-                                        <option value="{{ $country->id }}" @if ($user_profile->user->address->country_id == $country->id) selected @endif>
+                                        @if (optional($user->address)->country_id != null)
+                                        <option value="{{ $country->id }}" @if ($user->address->country_id == $country->id) selected @endif>
                                             {{ $country->name }}
                                         </option>
                                         @else
@@ -262,7 +262,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="postal_code" class="form-label">{{ translate('Postal Code') }}</label>
-                                    <input type="text" id="postal_code" name="postal_code" @if (optional($user_profile->user->address)->postal_code != null) value="{{ $user_profile->user->address->postal_code }}" @endif
+                                    <input type="text" id="postal_code" name="postal_code" @if (optional($user->address)->postal_code != null) value="{{ $user->address->postal_code }}" @endif
                                     required placeholder="{{ translate('Eg. 1203') }}" class="form-control">
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
                                     {{ translate('Address') }}
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input type="text" class="form-control" name="address" @if (optional($user_profile->user->address)->street != null) value="{{ $user_profile->user->address->street }}" @endif
+                                <input type="text" class="form-control" name="address" @if (optional($user->address)->street != null) value="{{ $user->address->street }}" @endif
                                 placeholder="{{ translate('Enter your street address') }}" required
                                 aria-describedby="nameLabel">
                             </div>
@@ -281,7 +281,7 @@
                                         {{ translate('Contact') }}
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input type="text" class="form-control" name="phone" @if (optional($user_profile->user->address)->phone != null) value="{{ $user_profile->user->address->phone }}" @endif
+                                    <input type="text" class="form-control" name="phone" @if (optional($user->address)->phone != null) value="{{ $user->address->phone }}" @endif
                                     placeholder="{{ translate('Enter your contact number') }}"
                                     aria-label="Enter your contact number" required aria-describedby="nameLabel"
                                     data-msg="Enter your contact number." data-error-class="u-has-error"
@@ -293,10 +293,10 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <select class="form-control aiz-selectpicker country-flag-select" id="nationality" name="nationality" required data-live-search="true">
-                                        @foreach (getCountry() as $country)
+                                        @foreach (\App\Models\Country::all() as $country)
                                             <option value=""
-                                                    data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  strtolower($country['code']) . '.png') }}' height='11' class='mr-2'><span>{{ $country['code'] }}</span></div>"
-                                                    @if ($user_profile->nationality == $country['code'])
+                                                    data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  $country->photo) }}' height='11' class='mr-2'><span>{{ $country->name }}</span></div>"
+                                                    @if ($user->profile->nationality == $country->id)
                                                         selected
                                             @endif
                                             ></option>
@@ -329,7 +329,7 @@
                                         </div>
                                     </div>
                                     <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                    <input type="hidden" name="profile_photo" class="selected-files" value="{{ $user_profile->user->photo }}">
+                                    <input type="hidden" name="profile_photo" class="selected-files" value="{{ $user->photo }}">
                                 </div>
                                 <div class="file-preview"></div>
                             </div>
@@ -342,7 +342,7 @@
                                         </div>
                                     </div>
                                     <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                    <input type="hidden" name="cover_photo" class="selected-files" value="{{ $user_profile->user->cover_photo }}">
+                                    <input type="hidden" name="cover_photo" class="selected-files" value="{{ $user->cover_photo }}">
                                 </div>
                                 <div class="file-preview"></div>
                             </div>
@@ -362,10 +362,10 @@
                         <h4 class="h6 font-weight-medium mb-0">{{ translate('Portfolio') }}</h4>
                     </div>
                     <div class="card-body">
-                        @if (count($user_profile->user->userPortfolios) > 0)
+                        @if (count($user->userPortfolios) > 0)
                         <div class="border-bottom mb-4">
                             <div class="row gutters-10">
-                                @foreach ($user_profile->user->userPortfolios as $key => $portfolio)
+                                @foreach ($user->userPortfolios as $key => $portfolio)
                                 <div class="col-xxl-3 col-lg-4 col-sm-6">
                                     <div class="card position-relative text-reset mb-3 rounded-1 border-gray-light">
                                         <img class="img-fit mw-100" src="{{ custom_asset($portfolio->photo) }}" height="240">
@@ -388,7 +388,7 @@
                             </div>
                         </div>
                         @endif
-                        @if ($user_profile->user->userPackage->portfolio_add_limit > count($user_profile->user->userPortfolios))
+                        @if ($user->userPackage->portfolio_add_limit > count($user->userPortfolios))
                         <form action="{{ route('user_profile.portfolio_add') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -445,10 +445,10 @@
                     </div>
                     <div class="card-body">
 
-                        @if (count($user_profile->user->workExperiences) > 0)
+                        @if (count($user->workExperiences) > 0)
                         <div class="border-bottom mb-4">
                             <div class="row gutters-10">
-                                @foreach ($user_profile->user->workExperiences as $key => $work_experience)
+                                @foreach ($user->workExperiences as $key => $work_experience)
                                 <div class="col-md-6">
                                     <div class="card rounded-1 border-gray-light">
                                         <div class="card-body">
@@ -484,7 +484,7 @@
                             </div>
                         </div>
                         @endif
-                        @if ($user_profile->user->userPackage->job_exp_limit > count($user_profile->user->workExperiences))
+                        @if ($user->userPackage->job_exp_limit > count($user->workExperiences))
                         <form action="{{ route('user_profile.work_experience_add') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -543,10 +543,10 @@
                         <h4 class="h6 font-weight-medium mb-0">{{ translate('Education Information') }}</h4>
                     </div>
                     <div class="card-body">
-                        @if (count($user_profile->user->education_details) > 0)
+                        @if (count($user->education_details) > 0)
                         <div class="border-bottom mb-4">
                             <div class="row gutters-10">
-                                @foreach ($user_profile->user->education_details as $key => $education)
+                                @foreach ($user->education_details as $key => $education)
                                 <div class="col-md-6">
                                     <li class="card rounded-1 border-gray-light">
                                         <div class="card-body">
@@ -646,7 +646,7 @@
                     }));
                 }
                 $("#city_id > option").each(function() {
-                    if (this.value == '{{ optional($user_profile->user->address)->city_id }}') {
+                    if (this.value == '{{ optional($user->address)->city_id }}') {
                         $("#city_id").val(this.value).change();
                     }
                 });

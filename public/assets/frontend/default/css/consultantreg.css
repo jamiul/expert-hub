@@ -144,6 +144,15 @@
     color: #5abc76;
     padding: 2px 0;
 }
+.edu-for-time {
+    line-height: 0.3;
+    color: #303744;
+}
+.vye-heading{
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 23px;
+}
 /*-----Profile setup--------*/
 .psetup .input-field {
     width: 100%;
@@ -228,6 +237,9 @@
 .prexpertise .col .card {
     height: 550px;
 }
+.prexpertise .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
 .prexpertise button.btn.dropdown-toggle.btn-light {
     border-right: 0;
     border-left: 0;
@@ -291,7 +303,7 @@
 }
 .btn-badge {
     background-color: #f9f9f9;
-    padding-right: 38px;
+    padding: 5px 36px 5px 5px;
     position: relative;
     margin: 6px 2px;
     border: 1px solid #30374445;
@@ -300,7 +312,7 @@
     background-color: transparent;
     position: absolute;
     right: 6px;
-    top: 11px;
+    top: 6px;
 }
 .badge i.lar.la-times-circle {
     color: #3037447d;
@@ -422,6 +434,9 @@
     }
     .user-avatar {
         margin: auto;
+    }
+    .mob-text-center{
+        text-align: center; 
     }
 }
 @media (max-width: 576px) {
