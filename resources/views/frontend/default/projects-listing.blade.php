@@ -71,7 +71,8 @@
                                         </h6>
                                         <div class="">
 
-                                            @foreach ($p8                           <label class="aiz-checkbox w-100 site-font">
+                                            @foreach ($project_category as $category)
+                                             <label class="aiz-checkbox w-100 site-font">
                                                     <input type="checkbox" class="" name="category_id[]"
                                                         onchange="applyFilter()" value="{{ $category->id }}"
                                                         @if (in_array($category->id, $category_ids)) checked @endif>
