@@ -13,6 +13,11 @@ class UserProfile extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function national()
+    {
+        return $this->hasOne(Country::class, 'nationality', 'id');
+    }
+
     public function specialistAt()
     {
         return $this->belongsTo(ConsultantCategory::class, 'specialist')->withTrashed();
