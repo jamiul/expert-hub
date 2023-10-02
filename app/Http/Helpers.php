@@ -675,7 +675,7 @@ function getSubSkills($id) : object
     return Skill::where('parent_skill_id', $id)->get();
 }
 
-function getCountry() : array
+function getCountry() : \Illuminate\Support\Collection
 {
     return Country::all();
 }
