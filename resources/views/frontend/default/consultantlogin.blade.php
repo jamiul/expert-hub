@@ -5,7 +5,7 @@
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row clogin">
-                <div class="col-xxl-5 col-xl-5 col-md-7 mx-auto">
+                <div class="col-lg-5 col-md-7 mx-auto">
                     <form class="needs-validation" method="post">
                         <div class="card mb-4 rounded-3 shadow-sm pt-4 pb-4">
                             <img class="mb-4 mx-auto logo" src="{{ asset('assets/frontend/default/img/eduexhub.png') }}"
