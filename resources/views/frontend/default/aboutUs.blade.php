@@ -29,7 +29,7 @@
     <div class="whyFreeEdu-container-main mb-5 " style="background-color:#F2F7F2">
         <section>
             @if (get_setting('featured_category_show') == 'on')
-                <form id=" consultant-filter-form" action="" method="GET">
+                <form id=" EduExpert-filter-form" action="" method="GET">
                     <section class="">
                         <div class="whyFreeEdu-container-main">
 
@@ -88,7 +88,7 @@
                                                             {{ $category->description }}
                                                             <a href="{{ route('freelancer.category', $category->id) }}"
                                                                 class="nav-toggle "style="color:#6560E6;">Find
-                                                                Consultants</a>
+                                                                EduExpert</a>
                                                         </div>
                                                     </div>
 
@@ -146,7 +146,7 @@
                                 </h6>
                                 <p class="fs-16 "> {{ config('app.name') }} ensures academic institutions have access to experts
                                     aligned with
-                                    their educational standards and visibility to the consultants’ profiles, ratings,
+                                    their educational standards and visibility to the EduExperts’ profiles, ratings,
                                     and show case of their previous work.</p>
                             </div>
                             <div class="">
@@ -169,69 +169,19 @@
                         </div>
                         <a href="{{ url('/search?keyword=&type=freelancer') }}"
                             class="btn rounded border fs-20 frequently-qsn-title  text-white text-white mt-2"
-                            style="background-color:#275846;">Find Consultant</a>
+                            style="background-color:#275846;">Find EduExpert</a>
 
                     </div>
                 </div>
             </div>
         </section>
-        {{-- How payments work --}}
-        {{-- <div class=" mx-1">
-            <div class="row mt-5 mb-5">
-                <div class="col-lg-7 col-sm-12 mt-0 ml-lg-5 mx-2">
-                    <div>
-                        <h1 class="explore-find-oppor-title text-success fw-700 ">{{ translate('How payments work') }}
-                        </h1>
-                        <p class="payment-work-main-details">
-                            {{ translate('Whether you’re paid hourly or on a fixed-price contract, all the work you complete comes with payment protection.') }}
-                        </p>
-                        <div class="mt-4">
-                            <p class="payment-work-child-title ">{{ translate('All in one place') }}</p>
-                            <p class="payment-work-child-details">
-                                {{ translate('Invoice clients and track your earnings on EduExHub for a simple and streamlined process.') }}
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="payment-work-child-title ">{{ translate('Choose how you get paid') }}</p>
-                            <p class="payment-work-child-details">
-                                {{ translate('Use what works best for you—including direct deposit, PayPal, Payoneer, wire transfer, and more..') }}
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="payment-work-child-title ">{{ translate('No fees until you complete your work') }}
-                            </p>
-                            <p class="payment-work-child-details">
-                                {{ translate('Our service fees are taken as a percentage of your earnings. We charge you based on lifetime earnings with each client:') }}
-                            </p>
-
-                            <ul class="payment-work-child-details">
-                                <li class="payment-work-child-details-percent ">
-                                    {{ translate('20% for the first $500 you bill your client') }}</li>
-                                <li class="payment-work-child-details-percent ">
-                                    {{ translate("10% for total billings between $500.01 and $10,000") }}</li>
-                                <li class="payment-work-child-details-percent ">
-                                    {{ translate("5% for total billings over $10,000") }}</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-sm-12  mt-2">
-                    <img class="w-lg-100 h-lg-100 w-100 mx-lg-0  payments-img "
-                        src="{{ asset('assets/frontend/default/img/whyScholarship/howToFindJob/payments.jpg') }}"
-                        alt="">
-                </div>
-
-
-            </div>
-        </div> --}}
         <hr>
-        {{-- Consultants – find the right work for you --}}
+        {{-- EduExperts – find the right work for you --}}
         <section>
             <div class="mb-5 ">
                 <div class=" mb-5 ">
                     <h1 class="explore-find-oppor-title text-success fw-700 pt-3 mx-2 mx-lg-5">
-                        {{ translate('Consultants – find the right work for you') }}</h1>
+                        {{ translate('EduExpert – find the right work for you') }}</h1>
 
                     <div class="row mt-4 mx-lg-4 mx-xl-4  mx-2 ">
                         <div class="col-lg-2 col-sm-12 pr-0">
@@ -261,7 +211,7 @@
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
                                 {{ translate('Explore ways to earn') }}</h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
-                                {{ translate(': As a consultant, you have the opportunity to explore various avenues for earning income. This might include browsing through available projects, job listings, or freelance opportunities to find work that matches your skills and interests.') }}
+                                {{ translate(': As a EduExpert, you have the opportunity to explore various avenues for earning income. This might include browsing through available projects, job listings, or freelance opportunities to find work that matches your skills and interests.') }}
                             </p>
                         </div>
                     </div>
@@ -276,7 +226,7 @@
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
                                 {{ translate('Get paid securely') }}</h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
-                                {{ translate('This assures consultants that the platform provides secure payment methods. When you successfully complete a project or task, you can expect to receive your payment without concerns about financial security or fraud, making it a trustworthy place to conduct business. ') }}
+                                {{ translate('This assures EduExperts that the platform provides secure payment methods. When you successfully complete a project or task, you can expect to receive your payment without concerns about financial security or fraud, making it a trustworthy place to conduct business. ') }}
                             </p>
                         </div>
                     </div>
@@ -291,7 +241,7 @@
                             <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2 fs-20 fw-700 ">
                                 {{ translate('Fair Fee Structure: ') }}</h1>
                             <p class="how-work-details fw-500 mx-lg-0 mx-2 text-justify mt-2">
-                                {{ config('app.name') }} service fees are designed to be fair and based on the total billings with each consultant. Here's how it works: 20% for the first $500 billed by the consultant, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
+                                {{ config('app.name') }} service fees are designed to be fair and based on the total billings with each EduExpert. Here's how it works: 20% for the first $500 billed by the EduExpert, 10% for total billings between $500.01 and $10,000, and 5% for total billings exceeding $10,000") }}
                             </p>
                         </div>
                     </div>
@@ -307,11 +257,11 @@
                 <hr>
             </div>
         </section>
-        {{-- Clients – find the best consultant for you --}}
+        {{-- Clients – find the best EduExpert for you --}}
 
         <div class=" mb-5">
             <h1 class="explore-find-oppor-title text-success fw-700  mx-2 mx-lg-5 ">
-                {{ translate('Clients – find the best consultant for you') }}</h1>
+                {{ translate("Clients – find the best EduExpert for you") }}</h1>
             <div class="row mt-4 mx-lg-4 mx-2">
                 <div class="col-lg-2 col-sm-12 pr-0">
                     <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
@@ -338,7 +288,7 @@
                     <h1 class=" whyConsEdu-child-title  fs-20 fw-700 ">
                         {{ translate('Receive proposal') }}</h1>
                     <p class="how-work-details fw-500 text-justify mt-2">
-                        {{ translate("After posting your job, our platform will attract proposals from our pool of academic consultants. You'll have the opportunity to review these proposals thoroughly.") }}
+                        {{ translate("After posting your job, our platform will attract proposals from our pool of academic EduExperts. You'll have the opportunity to review these proposals thoroughly.") }}
                     </p>
                 </div>
             </div>
@@ -354,7 +304,7 @@
                     <h1 class="whyConsEdu-child-title fw-700 text-justify text-dark">{{ translate('Make Selection') }}
                     </h1>
                     <p class="how-work-details text-justify fw-500 mt-2">
-                        {{ translate("With the proposals in hand, you can carefully evaluate the qualifications, experience, and proposed approaches of our consultants. Choose the one who best aligns with your project's needs.") }}
+                        {{ translate("With the proposals in hand, you can carefully evaluate the qualifications, experience, and proposed approaches of our EduExperts. Choose the one who best aligns with your project's needs.") }}
                     </p>
                 </div>
             </div>
@@ -369,7 +319,7 @@
                 <div class="col-lg-10 col-sm-12 my-auto pl-lg-0 mx-lg-0 mx-2">
                     <h1 class="whyConsEdu-child-title fw-700 text-dark ">{{ translate('Pay Securely') }}</h1>
                     <p class="how-work-details text-justify  fw-500 mt-2">
-                        {{ translate("To ensure both your and the consultant's security, payments are held in escrow until the project reaches its agreed-upon completion and meets your satisfaction. This guarantees a safe and reliable transaction process.") }}
+                        {{ translate("To ensure both your and the EduExpert security, payments are held in escrow until the project reaches its agreed-upon completion and meets your satisfaction. This guarantees a safe and reliable transaction process.") }}
                     </p>
                 </div>
             </div>
@@ -379,7 +329,7 @@
                     <a href="search?keyword=&type=freelancer"
                         class="btn rounded border fs-20 px-4 frequently-qsn-title  text-white text-white mt-2"
                         style="background-color:#275846;">Find
-                        Consultant</a>
+                        EduExpert</a>
                 </div>
             </div>
         </div>
@@ -392,12 +342,12 @@
                 {{ translate('How reviews work ') }}</h1>
             <div class="row mx-lg-3 mx-0 ">
                 <div class="col-lg-12 col-sm-12 p-sm-0 mx-lg-2">
-                    {{-- Consultants - Getting reviews on EduExHub --}}
+                    {{-- EduExperts - Getting reviews on EduExHub --}}
                     <div class="mt-2">
-                        <p class="whyConsEdu-child-title">For Consultants
+                        <p class="whyConsEdu-child-title">For EduExpert
                         </p>
                         <p class="mt-2  frequently-qsn-details text-justify">At the end of a contract, a 14-day feedback
-                            period begins. During this time, both the client and consultant have the opportunity to leave
+                            period begins. During this time, both the client and EduExpert have the opportunity to leave
                             reviews for each other. Clients are prompted to provide a review when closing the contract, and
                             most clients do so.
                         </p>
@@ -408,7 +358,7 @@
                         </p>
                         <p class="mt-2 frequently-qsn-details text-justify">Within the 14-day feedback period at the
                             contract's conclusion, clients are encouraged to leave reviews when ending the contract. As a
-                            consultant, you can also leave a review for the client by accessing your contract's details. The
+                            EduExpert, you can also leave a review for the client by accessing your contract's details. The
                             reviews become public once both parties have left a review for each other or when the 14-day
                             period concludes.
                         </p>
@@ -432,9 +382,6 @@
                     </div>
 
                 </div>
-
-
-
             </div>
             <hr>
             <p class=" mx-4 fs-20 fw-700">Example</p>
@@ -450,11 +397,11 @@
                             made this project a success. We are grateful for his contributions and highly recommend his
                             services to any educational institution.</h4>
                         <p class="fw-600 fs-16" style="  color:#6560E6 !important;">Client Name: Dr. Emily Johnson</p>
-                        <p class="fw-600 fs-16 frequently-qsn-details">Review for Curriculum Development Consultant: Prof.
+                        <p class="fw-600 fs-16 frequently-qsn-details">Review for Curriculum Development EduExpert: Prof.
                             David Smith</p>
                     </div>
                     <div class="mt-3">
-                        <span class="text-dark fw-700 fs-16 mb-3">Consultant:
+                        <span class="text-dark fw-700 fs-16 mb-3">EduExpert:
                         </span>
                         <h4 class="mt-2 frequently-qsn-details text-justify">Working with Dr. Emily Johnson and her
                             team on curriculum development was a rewarding experience. Dr. Johnson's clear vision and
@@ -463,7 +410,7 @@
                             part of this project and look forward to future collaborations with Dr. Johnson and her
                             institution. Highly recommended.
                         </h4>
-                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Consultant
+                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">EduExpert
                             Name: Prof. David Smith
                         </p>
                         <p class="fw-600 fs-16 frequently-qsn-details">Review for Client: Dr. Emily Johnson </p>
@@ -484,14 +431,14 @@
                             <p class="  fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Client
                                 Name: Jennifer
                                 Martinez, Dean of Academic Affairs</p>
-                            <p class=" bg-gray rounded-2 fs-16 p-1 frequently-qsn-details">Review for Consultant: Dr.
+                            <p class=" bg-gray rounded-2 fs-16 p-1 frequently-qsn-details">Review for EduExpert: Dr.
                                 Robert Johnson,
                                 Accreditation Expert</p>
                     </div>
 
 
                     <div class="mt-3">
-                        <span class="text-dark fw-700 fs-16 mb-3">Consultant
+                        <span class="text-dark fw-700 fs-16 mb-3">EduExpert
                         </span>
                         <h4 class="mt-2 frequently-qsn-details text-justify">Working with Jennifer and her
                             dedicated team at the university was a rewarding experience. Their commitment to academic
@@ -501,7 +448,7 @@
                             the university in achieving accreditation, and I look forward to continued collaboration with
                             such a professional and forward-thinking institution.
                         </h4>
-                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Consultant
+                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">EduExpert
                             Name: Dr. Robert
                             Johnson
                         </p>
@@ -512,7 +459,7 @@
 
 
                 <div class="border border border-white rounded-2 p-3 my-2">
-                    <p class="fw-600 fs-20 ">Feedback</p>
+                    <p class="fw-600 fs-20 ">{{ config('app.name') }}</p>
                     <div class="mt-3 ">
                         <span class="text-dark fw-700 fs-16 mb-3">Client</span>
                         <h4 class="frequently-qsn-details mt-2 text-justify">I had the pleasure of working with Dr.
@@ -522,11 +469,11 @@
                             contributed to our project's success. I highly recommend his services to anyone seeking top-tier
                             research and analysis support.</p>
                             <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Review for
-                                Consultant: Dr. Michael
+                                EduExpert: Dr. Michael
                                 Johnson</p>
                     </div>
                     <div class="mt-3">
-                        <span class="text-dark fw-700 fs-16 mb-3">Consultant
+                        <span class="text-dark fw-700 fs-16 mb-3">EduExpert
                         </span>
                         <h4 class="mt-2 frequently-qsn-details text-justify">Collaborating with Professor Davis on
                             the university research and analysis project was a rewarding experience. Her clear vision,
@@ -535,7 +482,7 @@
                             eager to engage in future academic endeavours with Professor Davis and highly recommend her as a
                             client.
                         </h4>
-                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">Consultant
+                        <p class="fw-600 fs-16 frequently-qsn-details" style="  color:#6560E6 !important;">EduExpert
                             Name: Dr. Michael
                             Johnson
                         </p>
@@ -556,9 +503,9 @@
             <nav>
                 <ul class="nav" id="myTab" role="tablist">
                     <li class="nav-item ">
-                        <a class="  fs-20 p-1   btn  btn-outline-primary px-4" id="for-consultants" data-toggle="tab"
-                            href="#consultant" role="tab" aria-controls="consultant" aria-selected="true">For
-                            Consultants </a>
+                        <a class="  fs-20 p-1   btn  btn-outline-primary px-4" id="for-EduExperts" data-toggle="tab"
+                            href="#EduExpert" role="tab" aria-controls="EduExpert" aria-selected="true">For
+                            EduExpert </a>
                     </li>
 
                     <li class="nav-item">
@@ -572,8 +519,8 @@
 
         </div>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active mt-2" id="consultant" role="tabpanel"
-                aria-labelledby="for-consultants">
+            <div class="tab-pane fade show active mt-2" id="EduExpert" role="tabpanel"
+                aria-labelledby="for-EduExperts">
                 <!-- Frequently asked questions -->
                 <div class=" rounded-2" style="background: #F2F7F2;">
                     <div class="mx-2 mt-5 row">
@@ -585,9 +532,9 @@
                         <div class="col-lg-6 col-sm-12 py-3">
                             <div class=" border-bottom my-2">
                                 <input type="checkbox" id="fre-leave">
-                                <h4 class="faq-qsn-title">Is {{ config('app.name') }} free to join as an academic consultant?</h4>
+                                <h4 class="faq-qsn-title">Is {{ config('app.name') }} free to join as an academic EduExpert?</h4>
                                 <p class="frequently-qsn-details text-justify">
-                                    Joining {{ config('app.name') }} as an academic consultant is absolutely free. You can create
+                                    Joining {{ config('app.name') }} as an academic EduExpert is absolutely free. You can create
                                     your profile, search for work, and even initiate your own projects without any cost. Our
                                     service fee is determined by your earnings with each client, and we offer a sliding
                                     scale that rewards long-term relationships.
@@ -639,7 +586,7 @@
                                 </p>
                                 <div class="fre-content text-justify ">
                                     <p>
-                                        How to Succeed as a Consultant' provides a glimpse of our success-boosting academic
+                                        How to Succeed as a EduExpert' provides a glimpse of our success-boosting academic
                                         resources.
                                     </p>
                                     <label class="fre-expand-icon" for="fre-freelancing">Show less <img

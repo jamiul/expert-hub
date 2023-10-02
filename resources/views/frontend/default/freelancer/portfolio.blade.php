@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between ">
         <div class="w-lg-75 w-xl-50 lh-1-8 d-flex content-title ">
             <img style="height:24px; width:24px;"
-                 src=" {{ asset('assets/home/Find-scholarship/Vector.png') }}"
+                 src=" {{ asset('assets/home/Find-scholarship/Portfolio.png') }}"
                  class="mr-2" alt="service_image">
             <h4 class="fw-700 fs-23 text-black ">{{ translate('Portfolio') }}</h4>
         </div>
@@ -15,7 +15,7 @@
                      alt="Image" style="width:8px;" />
             </a>
             <a href=""
-               class=" fs-16 text-dark btn rounded-1 border bg-primary  text-center fre-consultant-category">
+               class=" fs-16 text-dark btn rounded-1 border text-center fre-consultant-category" style="background-color:#0059C9;">
                 <img class=" category-list "
                      src=" {{ asset('assets/home/Find-scholarship/Right-arrow.png') }}"
                      alt="Image" style="width:8px;" />

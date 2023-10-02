@@ -2,10 +2,10 @@
 <div class="mx-lg-4 rounded border p-2 px-4 mt-3 mb-3">
     <div class="d-flex  mb-3">
         <img style="height:24px; width:24px;" class="mr-1" alt="service_image"
-             src=" {{ asset('/assets/home/Find-scholarship/Testimonial-2.png') }}">
+             src=" {{ asset('/assets/home/Find-scholarship/Testimonial.png') }}">
         <h4 class="fw-700 fs-23 text-black "> Testimonials</h4>
         <img style="height:24px; width:24px;" class="ml-1" alt="service_image"
-             src=" {{ asset('/assets/home/Find-scholarship/Testimonial.png') }}">
+             src=" {{ asset('/assets/home/Find-scholarship/Testimonial-2.png') }}">
     </div>
     <div class=" mb-3 ">
         <p class="fs-16"><i>Prof. Michael Kassiou played a pivotal role in the development
@@ -52,7 +52,7 @@
                 </div>
 
             </div>
-            <p class="text-center text-primary fs-16 fw-700"><u> More Testimonals ></u></p>
+            <p class="text-center fs-16 fw-700" style="color:#0059C9;"><u> More Testimonals ></u></p>
             <img src=" {{ asset('/assets/home/Find-scholarship/Right-arrow.png') }}"
                  class=" rounded" alt="service_image">
         </div>

@@ -14,14 +14,21 @@
                         class="text-black fs-14">{{ $freelancer->name }}</span></li>
             </ol>
             <div class="d-flex mx-4 ">
+                <div class="mr-1 my-2 justify-content-center align-items-center">
+                    <a href="" class=" border btn-sm fs-15 text-white w-100 p-2 fw-700 profile-leftside"
+                       style=" background: #0059C9;
+                       !important;">
+                        {{ translate('Message') }}
+                    </a>
+                </div>
                 <div>
-                    <img class="p-2 center d-block c-pointer mr-1 "
-                         style="width:35px; height:35px; border:1px solid #61B895"
+                    <img class="p-2 center d-block c-pointer mr-1 border "
+                         style="width:35px; height:35px; border:1px solid #FFFFFF"
                          src="{{ asset('/assets/home/Find-scholarship/Love.png') }}" alt="">
                 </div>
                 <div class="rounded">
-                    <img class="p-2 center d-block c-pointer"
-                         style="width:35px; height:35px; border:1px solid #61B895;"
+                    <img class="p-2 center d-block c-pointer border"
+                         style="width:35px; height:35px; border:1px solid #FFFFFF;"
                          src="{{ asset('/assets/home/Find-scholarship/Share.png') }}" alt="">
                 </div>
             </div>

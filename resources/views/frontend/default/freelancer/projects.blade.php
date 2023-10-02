@@ -8,13 +8,13 @@
         <ul class="nav nav-tabs freePage-work-history-com-prog" id="myTab"
             role="tablist">
             <li class="nav-item">
-                <a class="nav-link  fs-23 fw-700 text-primary " id="finding-work-tab"
+                <a class="nav-link  fs-23 fw-700 " id="finding-work-tab" style="color:#0059C9 !important;"
                    data-toggle="tab" href="#finding" role="tab"
                    aria-controls="finding" aria-selected="false">Current Projects</a>
             </li>
             <span class="mt-3">|</span>
             <li class="nav-item">
-                <a class="nav-link show active fs-23 text-primary fw-700 "
+                <a class="nav-link show active fs-23  fw-700 " style="color:#0059C9;"
                    id="hiring-talent-tab" data-toggle="tab" href="#hiring"
                    role="tab" aria-controls="hiring">Completed Projects
                 </a>
@@ -34,8 +34,7 @@
                             <p class="fw-700 fs-19 ">Development of
                                 Innovative Public Health Curriculum
                             </p>
-                            <h6 class="fs-16 "><span class="text-muted"><i>Public Health
-                                                                        Institute of Sydney, Sydney, Australia </i></span> |
+                            <h6 class="fs-16 "><span class="text-muted"><i>Public Health Institute of Sydney, Sydney, Australia </i></span> |
                                 <span class="fw-700">2018-2022</span>
                             </h6>
 
