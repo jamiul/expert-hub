@@ -293,9 +293,11 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <select class="form-control aiz-selectpicker country-flag-select" id="nationality" name="nationality" required data-live-search="true">
-                                        @foreach (\File::files(base_path('assets/frontend/default/img/flags')) as $path)
-                                        <option value="{{ pathinfo($path)['filename'] }}" data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' . pathinfo($path)['filename'] . '.png') }}' height='11' class='mr-2'><span>{{ strtoupper(pathinfo($path)['filename']) }}</span></div>" @if ($user_profile->nationality == pathinfo($path)['filename'])
-                                            selected
+                                        @foreach (getCountry() as $country)
+                                            <option value=""
+                                                    data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  strtolower($country['code']) . '.png') }}' height='11' class='mr-2'><span>{{ $country['code'] }}</span></div>"
+                                                    @if ($user_profile->nationality == $country['code'])
+                                                        selected
                                             @endif
                                             ></option>
                                         @endforeach
