@@ -208,10 +208,10 @@
                                                     data-live-search="true">
                                                     <option value="" class="site-font">
                                                         {{ translate('Select Location') }}</option>
-                                                    @foreach (getCountry() as $country)
-                                                        <option value="{{ $country['id'] }}"
-                                                            @if (isset($country_id) && $country_id == $country['id']) selected @endif>
-                                                            {{ $country['name'] }}</option>
+                                                    @foreach (\App\Models\Country::all() as $country)
+                                                        <option value="{{ $country->id }}"
+                                                                @if (isset($country_id) && $country_id == $country->id) selected @endif>
+                                                            {{ $country->name }}</option>
                                                     @endforeach
                                                 </select>
 
