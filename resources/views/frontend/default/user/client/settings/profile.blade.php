@@ -86,7 +86,7 @@
                                     </label>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="username"
-                                            @if ($user->user_name != null) value="{{ $user->user_name }}" @endif
+                                            @if ($user_profile->user->user_name != null) value="{{ $user_profile->user->user_name }}" @endif
                                             placeholder="{{ translate('Enter your username') }}"
                                             aria-label="Enter your username" required aria-describedby="usernameLabel"
                                             data-msg="Please enter your username." data-error-class="u-has-error"
@@ -102,12 +102,12 @@
                                     </label>
                                     <div class="input-group">
                                         <input type="email" class="form-control" name="email"
-                                            @if ($user->email != null) value="{{ $user->email }}" @endif
+                                            @if ($user_profile->user->email != null) value="{{ $user_profile->user->email }}" @endif
                                             placeholder="{{ translate('Enter your email address') }}"
                                             aria-label="{{ translate('Enter your email address') }}" required
                                             aria-describedby="emailLabel" disabled>
                                         <div class="input-group-append">
-                                            @if ($user->email_verified_at == null)
+                                            @if ($user_profile->user->email_verified_at == null)
                                                 <a class="btn btn-secondary" href="{{ route('email.verification') }}">
                                                     {{ translate('Send Verification Link') }}
                                                 </a>
@@ -119,7 +119,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    @if ($user->email_verified_at == null)
+                                    @if ($user_profile->user->email_verified_at == null)
                                         <span
                                             class="alert alert-danger d-block mt-1 py-1">{{ translate('Verify your email address') }}</span>
                                     @endif
@@ -148,8 +148,8 @@
                                 </div>
                                 <!-- End Title -->
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="3" maxlength="{{ $user->userPackage->bio_text_limit }}"
-                                        name="bio" required>{{ $user->profile->bio }}</textarea>
+                                    <textarea class="form-control" rows="3" maxlength="{{ $user_profile->user->userPackage->bio_text_limit }}"
+                                        name="bio" required>{{ $user_profile->bio }}</textarea>
                                 </div>
 
                                 <div class="mt-4 text-right">
@@ -180,7 +180,7 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <input type="text" class="form-control" name="name"
-                                            value="{{ $user->name }}"
+                                            value="{{ $user_profile->user->name }}"
                                             placeholder="{{ translate('Enter your name') }}">
                                         <small
                                             class="form-text text-muted">{{ translate('Displayed on your public profile, notifications and other places') }}.</small>
@@ -192,11 +192,11 @@
                                         </label>
                                         <!-- Input -->
                                         <select class="form-control aiz-selectpicker" name="gender" required>
-                                            <option value="male" @if ($user->profile->gender == 'male') selected @endif>
+                                            <option value="male" @if ($user_profile->gender == 'male') selected @endif>
                                                 {{ translate('Male') }}</option>
-                                            <option value="female" @if ($user->profile->gender == 'female') selected @endif>
+                                            <option value="female" @if ($user_profile->gender == 'female') selected @endif>
                                                 {{ translate('Female') }}</option>
-                                            <option value="other" @if ($user->profile->gender == 'other') selected @endif>
+                                            <option value="other" @if ($user_profile->gender == 'other') selected @endif>
                                                 {{ translate('Other') }}</option>
                                         </select>
                                         <!-- End Input -->
@@ -212,7 +212,19 @@
                                                 {{ translate('Country') }}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            {!! Form::select('country_id', \App\Models\Country::pluck('name', 'id'), optional($user->address)->country_id, ['class' => 'form-control aiz-selectpicker', 'id' => 'country_id', 'required' => 'required', 'data-msg' => 'Please select your country.']) !!}
+                                            <select class="form-control aiz-selectpicker" name="country_id" id="country_id"
+                                                required data-live-search="true">
+                                                @foreach (\App\Models\Country::all() as $key => $country)
+                                                    @if ($user_profile->user->address->country_id != null)
+                                                        <option value="{{ $country->id }}"
+                                                            @if ($user_profile->user->address->country_id == $country->id) selected @endif>
+                                                            {{ $country->name }}</option>
+                                                    @else
+                                                        <option value="{{ $country->id }}">{{ $country->name }}
+                                                        </option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="country" class="form-label">{{ translate('City') }}</label>
@@ -225,7 +237,7 @@
                                             <label for="postal_code"
                                                 class="form-label">{{ translate('Postal Code') }}</label>
                                             <input type="text" id="postal_code" name="postal_code"
-                                                @if ($user->address->postal_code != null) value="{{ $user->address->postal_code }}" @endif
+                                                @if ($user_profile->user->address->postal_code != null) value="{{ $user_profile->user->address->postal_code }}" @endif
                                                 required placeholder="{{ translate('Eg. 1203') }}"
                                                 class="form-control">
                                         </div>
@@ -240,7 +252,7 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <input type="text" class="form-control" name="address"
-                                            @if ($user->address->street != null) value="{{ $user->address->street }}" @endif
+                                            @if ($user_profile->user->address->street != null) value="{{ $user_profile->user->address->street }}" @endif
                                             placeholder="{{ translate('Enter your street address') }}" required>
                                     </div>
                                 </div>
@@ -253,7 +265,7 @@
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" class="form-control" name="phone"
-                                                @if ($user->address->phone != null) value="{{ $user->address->phone }}" @endif
+                                                @if ($user_profile->user->address->phone != null) value="{{ $user_profile->user->address->phone }}" @endif
                                                 placeholder="{{ translate('Enter your contact number') }}" required>
                                         </div>
                                         <div class="col-md-6">
@@ -262,11 +274,14 @@
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <select class="form-control aiz-selectpicker" name="nationality" required
-                                                    data-live-search="true">
-                                                @foreach (\App\Models\Country::all() as $country)
-                                                    <option value="{{ $country->id }}"
-                                                            data-content="<div class=''><img src='{{ asset('assets/flag/' . $country->photo) }}' height='11' class='mr-2'><span>{{ $country->name }}</span></div>"
-                                                        {{ ($user->profile->nationality == $country->id) ? 'selected' : '' }}></option>
+                                                data-live-search="true">
+                                                @foreach (getCountry() as $country)
+                                                    <option value=""
+                                                        data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  strtolower($country['code']) . '.png') }}' height='11' class='mr-2'><span>{{ $country['code'] }}</span></div>"
+                                                        @if ($user_profile->nationality == $country['code'])
+                                                        selected
+                                                @endif
+                                                ></option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -300,7 +315,7 @@
                                         </div>
                                         <div class="form-control file-amount">{{ translate('Choose File') }}</div>
                                         <input type="hidden" name="profile_photo" class="selected-files"
-                                            value="{{ $user->photo }}">
+                                            value="{{ $user_profile->user->photo }}">
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
@@ -314,7 +329,7 @@
                                         </div>
                                         <div class="form-control file-amount">{{ translate('Choose File') }}</div>
                                         <input type="hidden" name="cover_photo" class="selected-files"
-                                            value="{{ $user->cover_photo }}">
+                                            value="{{ $user_profile->user->cover_photo }}">
                                     </div>
                                     <div class="file-preview box sm"></div>
                                 </div>
@@ -351,7 +366,7 @@
                     }));
                 }
                 $("#city_id > option").each(function() {
-                    if (this.value == '{{ optional($user->address)->city_id }}') {
+                    if (this.value == '{{ optional($user_profile->user->address)->city_id }}') {
                         $("#city_id").val(this.value).change();
                     }
                 });

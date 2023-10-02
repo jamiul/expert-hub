@@ -156,6 +156,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('seminar', 'SeminarController');
     Route::resource('seminar-mode', 'SeminarModeController');
     Route::resource('seminar-software', 'SeminarSoftwareController');
+    Route::get('/seminar/destroy/{id}', 'SeminarController@destroy')->name('seminar.delete');
+    Route::get('/seminar-mode/destroy/{id}', 'SeminarModeController@destroy')->name('seminar-mode.delete');
+    Route::get('/seminar-software/destroy/{id}', 'SeminarSoftwareController@destroy')->name('seminar-software.delete');
 
     //scholarships
     Route::resource('scholarship-category', 'ScholarshipCategoryController');
