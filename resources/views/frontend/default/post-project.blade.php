@@ -179,8 +179,8 @@
                                     </div> --}}
                                     <div class="row px-3">
                                         <select class="col-lg-2 px-0 form-control aiz-selectpicker" id="options">
-                                            <option value="AUD" id="options">AUD</option>
-                                            <option value="USD " id="choices">USD</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="USD">USD</option>
                                         </select>
                                         <div class="col-lg-1 px-0"></div>
                                         <select class="col-lg-9 px-0 form-control aiz-selectpicker" >
