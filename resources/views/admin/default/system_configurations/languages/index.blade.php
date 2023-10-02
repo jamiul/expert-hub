@@ -87,9 +87,9 @@
                                 <div class="form-group mb-3">
                                     <label for="code">{{translate('Code')}}</label>
                                     <select class="form-control aiz-selectpicker" name="code" id="code" title="{{ translate('Select a country code') }}" data-live-search="true">
-                                        @foreach (getCountry() as $country)
+                                        @foreach (\App\Models\Country::all() as $country)
                                             <option value=""
-                                                    data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  strtolower($country['code']) . '.png') }}' height='11' class='mr-2'><span>{{ $country['code'] }}</span></div>"
+                                                    data-content="<div class=''><img src='{{ asset('assets/flag/' .  $country->photo) }}' height='11' class='mr-2'><span>{{ $country->name }}</span></div>"
                                             ></option>
                                         @endforeach
                                     </select>
