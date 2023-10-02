@@ -377,10 +377,12 @@
                                                             <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}
                                                             </h5>
                                                             <span>
+                                                                @if($freelancer->user->address->country)
                                                                 <img class="mx-2"
-                                                                    src="{{ url(getFreelancerPhoto($freelancer)) }}"
-                                                                    alt="{{ $freelancer->user->address->country ? $freelancer->user->address->country->name : '' }}"
+                                                                    src="{{ asset('assets/flag/' . $freelancer->user->address->country->photo) }}"
+                                                                    alt="{{ $freelancer->user->address->country->name }}"
                                                                     style="width: 21px; height: 14px;" />
+                                                                @endif
                                                             </span>
                                                         </div>
                                                     </a>
