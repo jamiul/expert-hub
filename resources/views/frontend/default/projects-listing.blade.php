@@ -71,8 +71,7 @@
                                         </h6>
                                         <div class="">
 
-                                            @foreach ($project_category as $category)
-                                                <label class="aiz-checkbox w-100 site-font">
+                                            @foreach ($p8                           <label class="aiz-checkbox w-100 site-font">
                                                     <input type="checkbox" class="" name="category_id[]"
                                                         onchange="applyFilter()" value="{{ $category->id }}"
                                                         @if (in_array($category->id, $category_ids)) checked @endif>
@@ -315,6 +314,7 @@
                                             <a href="{{ route('project.details', $project->slug) }}"
                                                 class=" fs-20 lh-1-5 fw-700 p-title " style="color:#5ABC76;">
                                                 {{ $project->name }}</a>
+
                                             <ul class="list-inline opacity-70 fs-12">
                                                 <li class="list-inline-item">
                                                     {{-- <i class="las la-clock opacity-40"></i> --}}
