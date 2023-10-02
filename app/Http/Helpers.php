@@ -677,7 +677,7 @@ function getSubSkills($id) : object
 
 function getCountry() : array
 {
-    return Country::all()->toArray();
+    return Country::all();
 }
 
 if (!function_exists('formatSeminarDate')) {

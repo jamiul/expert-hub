@@ -293,10 +293,10 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <select class="form-control aiz-selectpicker country-flag-select" id="nationality" name="nationality" required data-live-search="true">
-                                        @foreach (getCountry() as $country)
+                                        @foreach (\App\Models\Country::all() as $country)
                                             <option value=""
-                                                    data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  strtolower($country['code']) . '.png') }}' height='11' class='mr-2'><span>{{ $country['code'] }}</span></div>"
-                                                    @if ($user->profile->nationality == $country['code'])
+                                                    data-content="<div class=''><img src='{{ asset('assets/frontend/default/img/flags/' .  $country->photo) }}' height='11' class='mr-2'><span>{{ $country->name }}</span></div>"
+                                                    @if ($user->profile->nationality == $country->id)
                                                         selected
                                             @endif
                                             ></option>
