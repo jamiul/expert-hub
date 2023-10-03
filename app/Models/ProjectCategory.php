@@ -11,7 +11,7 @@ class ProjectCategory extends Model
     use SoftDeletes;
     public function projects()
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Project::class, 'project_category_id');
     }
 
     public function services()

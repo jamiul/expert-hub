@@ -68,7 +68,7 @@
                                     <!-- Categories -->
                                     <div class="mb-4">
                                         <h6 class="text-left mb-3 site-font">
-                                            <span class=" pr-3 fw-700">{{ translate('Projects By Categories') }}</span>
+                                            <span class=" pr-3 fw-700">{{ translate('Projects by categories') }}</span>
                                         </h6>
                                         <div class="">
 
@@ -90,7 +90,7 @@
                                         <div class="">
                                             <h6 class="text-left mb-3 fs-14">
                                                 <span
-                                                    class="pr-3 site-font fw-700">{{ translate('Project Skills') }}</span>
+                                                    class="pr-3 site-font fw-700">{{ translate('Project skills') }}</span>
                                             </h6>
                                             <div class="mb-4">
                                                 <div class="">
@@ -158,7 +158,7 @@
                                     <!-- Budget -->
                                     <div class="mb-4">
                                         <h6 class="text-left mb-3 fs-14 site-font fw-700">
-                                            <span class=" pr-3 fw-700">{{ translate('Project Type') }}</span>
+                                            <span class=" pr-3 fw-700">{{ translate('Project type') }}</span>
                                         </h6>
                                         <!-- Fixed Price Projects -->
                                         <div class="aiz-checkbox-list">
@@ -375,8 +375,6 @@
                                             </ul>
                                             <div class=" lh-1-4 site-font fs-14">
                                                 <p>{{ \Illuminate\Support\Str::limit(strip_tags($project->description), 350) }}
-                                                </p>
-                                                <p>
                                                 </p>
                                             </div>
                                             <div>

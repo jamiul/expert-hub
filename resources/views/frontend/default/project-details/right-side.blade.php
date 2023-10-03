@@ -6,8 +6,18 @@
                 <h6 class="text-primary fs-14 fw-700 ">
 
                     <h6 class="">{{ translate('Budget') }}</h6>
-                    <h6 class="fs-16 fw-700">$200</h6>
-                    <h6>Proposals: <span class="fw-700">Less than 5</span></h6>
+                    @if ($project->budget)
+                        <h6 class="fs-16 fw-700">{{ $project->budget }}</h6>
+                    @else
+                        <h6 class="fs-16 fw-700">${{ $project->price }}</h6>
+                    @endif
+                    <h6>Proposals: <span class="fw-700">
+                        @if ($project->bids < 5)
+                            Less than 5
+                        @else
+                            {{ $project->bids }}
+                        @endif
+                    </span></h6>
                     <h6>Interviewing: 0</h6>
                     <h6>Last viewed by client: 1 hour ago</h6>
                     <h6 class="btn btn-primary btn-sm fs-15  w-100  fw-700 mt-3">
@@ -27,10 +37,10 @@
             </div>
             <div class="mb-4">
 
-                <div class="border p-3 rounded-1 create-account" role="alert" >
+                <div class="border p-3 rounded-1 create-account" role="alert">
                     {{ translate('You need to ') }}
                     <u>
-                        <a class="c-pointer fw-700 fs-14 account-login" >{{ translate('Log in') }}</a></u>
+                        <a class="c-pointer fw-700 fs-14 account-login">{{ translate('Log in') }}</a></u>
                     {{ translate("as a freelancer to bid the project. Don't have an account with us?") }}
                     <u>
                         <h6 class="c-pointer fs-12 fw-700 fs-14 account-login">
@@ -48,7 +58,7 @@
                     <img src=" {{ asset('/assets/home/find-scholarship/payment.png') }}"
                         class="card-img-top rounded mr-2 p-payment" alt="service_image">
                     <div>
-                        <h6 class="fs-14 fw-700 payment-para" >Payment method
+                        <h6 class="fs-14 fw-700 payment-para">Payment method
                         </h6>
                         <h6 class="fs-14">Verified</h6>
                     </div>
@@ -64,18 +74,18 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <img src=" {{ asset('/assets/home/find-scholarship/job.png') }}" class="card-img-top p-payment rounded mr-2"
-                        alt="service_image">
+                    <img src=" {{ asset('/assets/home/find-scholarship/job.png') }}"
+                        class="card-img-top p-payment rounded mr-2" alt="service_image">
                     <div>
-                        <h6 class="fs-14 fw-700 payment-para">7 jobs posted
+                        <h6 class="fs-14 fw-700 payment-para">{{ $jobPosted }} jobs posted
 
                         </h6>
-                        <h6 class="fs-14">100% hire rate, 4 open jobs</h6>
+                        <h6 class="fs-14">100% hire rate, {{ $jobOpen }} open jobs</h6>
                     </div>
                 </div>
                 <div class="d-flex">
-                    <img src=" {{ asset('/assets/home/find-scholarship/rate.png') }}" class="card-img-top p-payment rounded mr-2"
-                        alt="service_image">
+                    <img src=" {{ asset('/assets/home/find-scholarship/rate.png') }}"
+                        class="card-img-top p-payment rounded mr-2" alt="service_image">
                     <div>
                         <h6 class="fs-14 fw-700 payment-para">$9.50 /hr avg hr rate
                             paid
