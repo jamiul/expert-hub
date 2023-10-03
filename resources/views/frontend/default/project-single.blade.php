@@ -89,7 +89,6 @@
                                             <div class="mb-5">
                                                 <div>
                                                     @foreach ($project->skills as $key => $skill_id)
-
                                                         @if ($skill != null)
                                                             <a href="{{ route('search.skill', ['skill' => $skill_id, 'type' => 'projects']) }}"
                                                                 class="btn fs-14 job-details fw-700 text-primary border rounded-2 py-0 px-2 border-primary  mb-1">{{ $skill->name }}</a>
@@ -213,7 +212,8 @@
                                                                 style="color:#275846;">{{ __('Log in') }}</a></u>
                                                         {{ __("as a freelancer to bid the project. Don't have an account with us?") }}
                                                         <u>
-                                                            <a  href="{{ route('register') }}" class="c-pointer fs-12 fw-700 fs-14 d-block"
+                                                            <a href="{{ route('register') }}"
+                                                                class="c-pointer fs-12 fw-700 fs-14 d-block"
                                                                 style="color:#275846;">
                                                                 {{ __('Create an account now') }}</a>
                                                         </u>

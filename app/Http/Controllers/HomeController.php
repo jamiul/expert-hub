@@ -107,15 +107,10 @@ class HomeController extends Controller
         foreach($project->skills as $skill_id){
             $skill = Skill::find($skill_id);
         }
-        // $attachments =;
         foreach(explode(',', $project->attachments) as $attachment_id){
             $attachment = Upload::find($attachment_id);
         }
-
-
-        // $skill = Skill::find($skill_id);
-        // dd($skill);
-        return view('frontend.default.project-single', compact('project','jobPosted','jobOpen','similar_types','skill','attachment'));
+        return view('frontend.default.project-details.project-single', compact('project','jobPosted','jobOpen','similar_types','skill','attachment'));
     }
 
     //Show details info of specific project

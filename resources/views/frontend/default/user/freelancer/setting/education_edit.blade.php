@@ -22,6 +22,10 @@
                         <form action="{{ route('user_profile.education_info_update', $education->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
+                                <label id="usernameLabel" class="form-label">{{ translate('Degree') }}<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="degree" value="{{ $education->degree }}" placeholder="{{ translate('Ex. Bachelor of Science') }}" required>
+                            </div>
+                            <div class="form-group">
                                 <label id="usernameLabel" class="form-label">{{ translate('School Name') }}<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="school_name" value="{{ $education->school_name }}" placeholder="{{ translate('School Name') }}" required>
                             </div>
