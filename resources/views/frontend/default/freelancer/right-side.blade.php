@@ -1,5 +1,5 @@
 <!-- details side or right side -->
-<div class="col-lg-8 col-xl-9 col-12 pl-lg-3  mt-3 mt-lg-0">
+<div class="">
     <div class=" ">
         {{-- Biography  --}}
         <div class="tab-content mx-lg-4 rounded border mb-4 px-2" id="nav-tabContent">

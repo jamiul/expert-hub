@@ -1,11 +1,11 @@
 <!-- left side -->
-<div class="col-lg-4 col-xl-3 col-12 shadow-right-xl  shadow-sm pr-0 h-50 p-0 m-0">
+<div class="">
     <!-- Profile-->
     <div class="mx-lg-4 mb-3">
         <div class="justify-content-center text-center mt-4">
-            <span class="avatar flex-shrink-0 mr-4">
+            <span class=" flex-shrink-0 mr-4">
                 @if ($freelancer->photo != null)
-                    <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }}">
+                    <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }} " class="expert-name">
                 @else
                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ $freelancer->name }}">
                 @endif
@@ -17,13 +17,13 @@
             </span>
         </div>
         <div class="w-100">
-            <h5 class="text-black fs-20 fw-700 pb-2 text-center mt-3 px-0 ">{{ $freelancer->name }}</h5>
-            @if($freelancer->profile->specialistAt != null)
+            <h5 class="text-black fs-lg-23 fs-16 fw-500 pb-2 text-center mt-3 px-0 ">{{ $freelancer->name }}</h5>
+            @if ($freelancer->profile->specialistAt != null)
                 <h6 class="text-center fs-16 fw-400 text-muted">{{ $freelancer->profile->specialistAt->name }}</h6>
             @endif
-            <h6 class="text-center  fw-700 fs-16" style=" color: #0059C9;">Public Health </h6>
+            <h6 class="text-center  fw-700 fs-16 expertise">Public Health </h6>
             <div class="d-flex align-items-center justify-content-center  mt-4">
-                <span class="bg-rating p-1 text-white px-1 mr-1 fs-10" style="background:#95DF00;">
+                <span class="bg-rating p-1 text-white px-1 mr-1 fs-10 expert-ratings">
                     {{ formatRating(getAverageRating($freelancer->id)) }}
                 </span>
                 <span class="rating rating-md rating-mr-1">
@@ -35,7 +35,7 @@
             <div class="d-flex align-items-center justify-content-center  mt-4">
                 <div class="">
                     <img style="width:16px; height:20px;" class="text-center mr-1"
-                        src=" {{ asset('assets/home/Find-scholarship/Location.png') }}" class=""
+                        src=" {{ asset('assets/home/find-scholarship/location.png') }}" class=""
                         alt="service_image">
                 </div>
                 <div class=" text-dark text-center fs-14">
@@ -43,8 +43,8 @@
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-2">
-                <div class=""><img style="width:20px; height:20px;" class="text-center mr-1"
-                        src=" {{ asset('assets/home/Find-scholarship/Time.png') }}" class="" alt="service_image">
+                <div class=""><img class="text-center mr-1 expert-timezone"
+                        src=" {{ asset('assets/home/find-scholarship/time.png') }}" class="" alt="service_image">
                 </div>
                 {{-- //todo: add timezone for freelancer and get current time --}}
                 <div class=" text-dark text-center fs-14">10.15 AEST</div>
@@ -53,20 +53,17 @@
         <div class="mx-2 mx-lg-0 mx-md-0">
             <div class="border-bottom border-2 pb-3">
                 <div class=" pb-3">
-                    <a href="#" class="btn  btn-sm fs-15  w-100  fw-700 mt-3 text-white"
-                        style=" background: #0059C9;">
+                    <a href="#" class="btn  btn-sm fs-15 expert-consultation w-100  fw-700 mt-3 text-white">
                         {{ translate('Book a Consultation') }}
                     </a>
                 </div>
                 <div class=" pb-3">
-                    <a href="" class="btn border-1 btn-sm fs-15 w-100  fw-700 profile-leftside"
-                        style="color: #0059C9; border-color:#0059C9 !important;">
+                    <a href="" class="btn border-1 btn-sm fs-15 w-100 expert-interview fw-700 profile-leftside">
                         {{ translate('Book a TV Interview') }}
                     </a>
                 </div>
                 <div class=" pb-3">
-                    <a href="" class="btn border-1 btn-sm fs-15 w-100  fw-700 profile-leftside"
-                        style="color: #0059C9; border-color:#0059C9 !important;">
+                    <a href="" class="btn border-1 btn-sm fs-15 w-100  fw-700 expert-interview profile-leftside">
                         {{ translate('Invite to Project') }}
                     </a>
                 </div>
@@ -75,8 +72,8 @@
             <div class="mt-4">
                 <h6 class="fs-16 fw-700">{{ translate('Languages') }}</h6>
                 <div class="d-flex align-items-center">
-                    <div class=""><img style="width:24px; height:24px;" class="text-center mr-1"
-                            src=" {{ asset('assets/home/Find-scholarship/Language.png') }}" alt="service_image">
+                    <div class=""><img class="text-center p-icon mr-1"
+                            src=" {{ asset('assets/home/find-scholarship/language.png') }}" alt="service_image">
                     </div>
 
                     {{-- //todo: add language skills for freelancer --}}
@@ -94,8 +91,8 @@
                                     $skill = \App\Models\Skill::find($skill_id);
                                 @endphp
                                 @if ($skill != null)
-                                    <span class="btn fs-14  border rounded-2 py-0 px-2   mb-1"
-                                        style="border-color: #0059C9; color:#0059C9;">{{ $skill->name }}</span>
+                                    <span
+                                        class="btn fs-14 expert-skills  border rounded-2 py-0 px-2   mb-1">{{ $skill->name }}</span>
                                 @endif
                             @endforeach
                         </section>

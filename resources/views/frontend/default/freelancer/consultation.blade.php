@@ -4,17 +4,17 @@
     <div class="row">
         <div class="col-md-3 col-lg-3 col-12 px-lg-3">
             <img class="mr-2 w-100" alt="service_image" class="img-fluid"
-                src=" {{ asset('/assets/home/Find-scholarship/Edu-expert.png') }}">
+                src=" {{ asset('/assets/home/find-scholarship/edu-expert.png') }}">
             <p class="fw-700 fs-16 text-center">Prof. Michael</p>
         </div>
         <div class="col-md-8 col-lg-8 col-12">
             <div class="d-flex justify-content-between ">
                 <div>
                     <span class="fs-16 fw-700">Expert:</span>
-                    <span class="btn fs-14 border rounded-2 py-0 px-2 " style="border-color: #0059C9!important; color:#0059C9 !important;">
+                    <span class="btn fs-14 border rounded-2 py-0 px-2 c-expertise "
+                       >
                         Public Health</span>
-                    <span class="btn fs-14 text-primary border rounded-2 py-0 px-2 "
-                        style="border-color: #0059C9!important; color:#0059C9 !important;">
+                    <span class="btn fs-14 border rounded-2 py-0 px-2 c-expertise">
                         Infactious Diseases</span>
                 </div>
                 <h4 class="fw-700 fs-16">$20
@@ -30,7 +30,7 @@
 
             </p>
             <p class="fs-14 mt-1 mb-0 ">To schedule a
-                consultation, <span class="fs-14 fw-700  seminar-more " style="color:#0059C9;"><u>Book a time</u></span>
+                consultation, <span class="fs-14 fw-700  seminar-more expertise "><u>Book a time</u></span>
             </p>
         </div>
     </div>
@@ -38,15 +38,14 @@
     <div class="row">
         <div class="col-md-3 col-lg-3 col-12 px-lg-3">
             <img class="mr-2 w-100" alt="service_image" class="img-fluid"
-                src=" {{ asset('/assets/home/Find-scholarship/Expert.png') }}">
+                src=" {{ asset('/assets/home/find-scholarship/expert.png') }}">
             <p class="fw-700 fs-16 text-center">Prof. Michael</p>
         </div>
         <div class="col-md-8 col-lg-8 col-12">
             <div class="d-flex justify-content-between ">
                 <div>
                     <span class="fs-16 fw-700">Expert:</span>
-                    <span class="btn fs-14 text-primary border rounded-2 py-0 px-2 "
-                        style="border-color: #0059C9!important; color:#0059C9 !important;">
+                    <span class="btn fs-14  border rounded-2 py-0 px-2 c-expertise">
                         Public Health</span>
                 </div>
                 <h4 class="fw-700 fs-16">$20
@@ -62,7 +61,7 @@
 
             </p>
             <p class="fs-14 mt-1 mb-0 ">To schedule a
-                consultation, <span class="fs-14 fw-700  seminar-more " style="color:#0059C9;"><u>Book
+                consultation, <span class="fs-14 fw-700 expertise seminar-more "><u>Book
                         a time</u></span>
             </p>
         </div>

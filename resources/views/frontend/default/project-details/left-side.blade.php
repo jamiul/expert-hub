@@ -1,28 +1,28 @@
-<div class="col-xxl-9 col-xl-8 col-lg-7 pr-lg-0 border shadow-sm ">
-    <div class="  p-lg-4">
+<div class=" ">
+    <div class="p-lg-4">
         <div class="">
             <h5 class="my-3 lh-1-5 fs-23 fw-700 job-details">Developing curriculum for Postgraduate public health
                 unit</h5>
             <ul class="list-inline opacity-70 fs-13">
                 <li class="list-inline-item">
                     {{-- <i class="las la-clock"></i> --}}
-                    <img style="height:24px; width:24px;" class="mr-1" alt="service_image"
-                        src=" {{ asset('/assets/home/Find-scholarship/Project-post.png') }}">
+                    <img  class="mr-1 project-post-time" alt="service_image"
+                        src=" {{ asset('/assets/home/find-scholarship/project-post.png') }}">
                     <span class="fs-14">Posted: 2 weeks ago</span>
 
                 </li>
                 <li class="list-inline-item">
                     <a href="" target="_blank" class="text-inherit">
                         {{-- <i class="las la-stream"></i> --}}
-                        <img style="height:24px; width:24px;" class="mr-1" alt="service_image"
-                            src=" {{ asset('/assets/home/Find-scholarship/category.png') }}">
+                        <img  class="mr-1 project-post-time" alt="service_image"
+                            src=" {{ asset('/assets/home/find-scholarship/category.png') }}">
                         <span class="fs-14">Category: Curriculum development</span>
                     </a>
                 </li>
                 <li class="list-inline-item">
                     {{-- <i class="las la-handshake"></i> --}}
-                    <img style="height:24px; width:24px;" class="mr-" alt="service_image"
-                        src=" {{ asset('/assets/home/Find-scholarship/Duration.png') }}">
+                    <img  class="project-post-time" alt="service_image"
+                        src=" {{ asset('/assets/home/find-scholarship/duration.png') }}">
                     <span class="fs-14 job-details">
                         Timeframe: Short-term (< 1 month) </span>
                 </li>
@@ -30,7 +30,7 @@
             <hr>
             <div class=" lh-2 mb-5">
                 <div>
-                    <h6 class="fs-16 job-details site-font" style="line-height: 25px;">Seeking an experienced Curriculum
+                    <h6 class="fs-16  custom-font project-overview " >Seeking an experienced Curriculum
                         Developer to create a cutting-edge curriculum
                         for our postgraduate public health unit. You will collaborate with our team to
                         design a comprehensive curriculum that aligns with industry trends and academic
@@ -99,7 +99,7 @@
                             <div class="" style="">
                                 <div class="">
                                     <div class=" ">
-                                        <img src=" {{ asset('/assets/home/Find-scholarship/Attachment-1.png') }}"
+                                        <img src=" {{ asset('/assets/home/find-scholarship/attachment-1.png') }}"
                                             class="card-img-top rounded-0" alt="service_image" height="158"
                                             width="212">
                                     </div>
@@ -126,7 +126,7 @@
                             <div class=" ">
                                 <div class="">
                                     <div class=" ">
-                                        <img src=" {{ asset('/assets/home/Find-scholarship/Attachment-2.png') }}"
+                                        <img src=" {{ asset('/assets/home/find-scholarship/attachment-2.png') }}"
                                             class="card-img-top rounded-0" alt="service_image" height="158"
                                             width="212">
                                     </div>
