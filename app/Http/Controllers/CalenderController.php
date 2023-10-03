@@ -31,15 +31,15 @@ class CalenderController extends Controller
         $scholarships = Calender::orderBy('seminar_date', 'desc');
 
 
-        if ($request->search != null){
-            $scholarships = $scholarships->where('seminar_date', 'like', '%'.$request->search.'%');
+        if ($request->search != null) {
+            $scholarships = $scholarships->where('seminar_date', 'like', '%' . $request->search . '%');
             $sort_search = $request->search;
         }
 
         // $scholarships = $scholarships->paginate(15);
         // dd($scholarships);
 
-        return view('admin.default.seminar_module.calender.index', compact('scholarships','sort_search'));
+        return view('admin.default.seminar_module.calender.index', compact('scholarships', 'sort_search'));
     }
 
     /**
@@ -58,8 +58,7 @@ class CalenderController extends Controller
         $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
         $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories',"scholarship_levels",'scholarship_universities','scholarship_country','scholarship_city','scholarship_qualification','scholarship_whoCanApply','scholarship_fieldStudy'));
-
+        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories', "scholarship_levels", 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
     }
 
     /**
@@ -127,7 +126,6 @@ class CalenderController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**
@@ -148,7 +146,7 @@ class CalenderController extends Controller
         $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
         $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship','scholarship_categories','scholarship_levels','scholarship_universities','scholarship_country','scholarship_city','scholarship_qualification','scholarship_whoCanApply','scholarship_fieldStudy'));
+        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship', 'scholarship_categories', 'scholarship_levels', 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
     }
 
     /**
@@ -175,7 +173,7 @@ class CalenderController extends Controller
         $scholarship->city_id = $request->city_id;
         $scholarship->whoCanApply_id = $request->whoCanApply_id;
         $scholarship->qualification_id = $request->qualification_id;
-        $scholarship->fieldStudy_id =json_encode($request->fieldStudy_id);
+        $scholarship->fieldStudy_id = json_encode($request->fieldStudy_id);
         $scholarship->title = $request->title;
         $scholarship->banner = $request->banner;
         $scholarship->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
@@ -189,11 +187,12 @@ class CalenderController extends Controller
         // dd($scholarship->fieldStudy_id);
         $scholarship->save();
 
-        flash(translate( 'Scholarship post has been updated successfully'))->success();
+        flash(translate('Scholarship post has been updated successfully'))->success();
         return redirect()->route('scholarship.index');
     }
 
-    public function change_status(Request $request) {
+    public function change_status(Request $request)
+    {
         $scholarship = Scholarship::find($request->id);
         $scholarship->status = $request->status;
 
@@ -215,14 +214,16 @@ class CalenderController extends Controller
     }
 
 
-    public function all_scholarship() {
+    public function all_scholarship()
+    {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
         return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 
-    public function scholarship_details($slug) {
+    public function scholarship_details($slug)
+    {
         $scholarship = Scholarship::where('slug', $slug)->first();
         return view("frontend.default.find-scholarship.details", compact('scholarship'));
-}
+    }
 }

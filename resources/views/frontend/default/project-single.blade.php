@@ -16,7 +16,7 @@
                             <ol class="breadcrumb d-flex align-items-center">
                                 <li class="breadcrumb-item"><a href="#"> <img class="p-2 center d-block c-pointer"
                                             style="width:30px; height:30px;"
-                                            src="{{ asset('/assets/home/Find-scholarship/Home.png') }}" alt=""></a>
+                                            src="{{ asset('/assets/home/find-scholarship/Home.png') }}" alt=""></a>
                                 </li>
                                 <li class="breadcrumb-item "><a href="#"
                                         class="text-muted  fw-600 fs-14 job-details">Find Projects</a>
@@ -28,12 +28,12 @@
                                 <div>
                                     <img class="p-2 center d-block c-pointer mr-1 "
                                         style="width:35px; height:35px; border:1px solid #61B895"
-                                        src="{{ asset('/assets/home/Find-scholarship/Love.png') }}" alt="">
+                                        src="{{ asset('/assets/home/find-scholarship/Love.png') }}" alt="">
                                 </div>
                                 <div class="rounded">
                                     <img class="p-2 center d-block c-pointer"
                                         style="width:35px; height:35px; border:1px solid #61B895;"
-                                        src="{{ asset('/assets/home/Find-scholarship/Share.png') }}" alt="">
+                                        src="{{ asset('/assets/home/find-scholarship/Share.png') }}" alt="">
                                 </div>
                             </div>
                         </nav>
@@ -51,7 +51,7 @@
                                                 <li class="list-inline-item">
                                                     {{-- <i class="las la-clock"></i> --}}
                                                     <img style="height:24px; width:24px;" class="mr-1" alt="service_image"
-                                                        src=" {{ asset('/assets/home/Find-scholarship/Project-post.png') }}">
+                                                        src=" {{ asset('/assets/home/find-scholarship/Project-post.png') }}">
                                                     <span class="fs-14">Posted:
                                                         {{ Carbon\Carbon::parse($project->created_at)->diffForHumans() }}</span>
 
@@ -61,7 +61,7 @@
                                                         {{-- <i class="las la-stream"></i> --}}
                                                         <img style="height:24px; width:24px;" class="mr-1"
                                                             alt="service_image"
-                                                            src=" {{ asset('/assets/home/Find-scholarship/Language.png') }}">
+                                                            src=" {{ asset('/assets/home/find-scholarship/Language.png') }}">
                                                         <span class="fs-14">Category: @if ($project->project_category != null)
                                                                 {{ $project->project_category->name }}
                                                             @endif
@@ -71,7 +71,7 @@
                                                 <li class="list-inline-item">
                                                     {{-- <i class="las la-handshake"></i> --}}
                                                     <img style="height:24px; width:24px;" class="mr-" alt="service_image"
-                                                        src=" {{ asset('/assets/home/Find-scholarship/Duration.png') }}">
+                                                        src=" {{ asset('/assets/home/find-scholarship/Duration.png') }}">
                                                     <span class="fs-14 job-details">
                                                         Timeframe: Short-term (< 1 month) </span>
                                                 </li>
@@ -194,7 +194,7 @@
 
                                                     <p class="btn btn-block border  d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1"
                                                         style="border-color:#275846;">
-                                                        <img src=" {{ asset('/assets/home/Find-scholarship/Bookmark.png') }}"
+                                                        <img src=" {{ asset('/assets/home/find-scholarship/Bookmark.png') }}"
                                                             class="card-img-top " style="width:18px; height:18px;"
                                                             alt="service_image">
                                                         <span class="ml-1"
@@ -227,7 +227,7 @@
                                                     </h6>
 
                                                     <div class="d-flex">
-                                                        <img src=" {{ asset('/assets/home/Find-scholarship/Payment.png') }}"
+                                                        <img src=" {{ asset('/assets/home/find-scholarship/Payment.png') }}"
                                                             class="card-img-top rounded mr-2"
                                                             style="width:20px; height:20px;" alt="service_image">
                                                         <div>
@@ -238,7 +238,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="d-flex">
-                                                        <img src=" {{ asset('/assets/home/Find-scholarship/Language.png') }}"
+                                                        <img src=" {{ asset('/assets/home/find-scholarship/Language.png') }}"
                                                             class="card-img-top rounded mr-2"
                                                             style="width:20px; height:20px;" alt="service_image">
                                                         <div>
@@ -249,7 +249,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="d-flex">
-                                                        <img src=" {{ asset('/assets/home/Find-scholarship/Job.png') }}"
+                                                        <img src=" {{ asset('/assets/home/find-scholarship/Job.png') }}"
                                                             class="card-img-top rounded mr-2"
                                                             style="width:20px; height:20px;" alt="service_image">
                                                         <div>
@@ -263,7 +263,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="d-flex">
-                                                        <img src=" {{ asset('/assets/home/Find-scholarship/Rate.png') }}"
+                                                        <img src=" {{ asset('/assets/home/find-scholarship/Rate.png') }}"
                                                             class="card-img-top rounded mr-2"
                                                             style="width:20px; height:20px;" alt="service_image">
                                                         <div>
@@ -307,7 +307,7 @@
 
                                                                     <img style="height:24px; width:24px;" class="mr-1"
                                                                         alt="service_image"
-                                                                        src=" {{ asset('/assets/home/Find-scholarship/Project-post.png') }}">
+                                                                        src=" {{ asset('/assets/home/find-scholarship/Project-post.png') }}">
                                                                     <span>Posted: <span
                                                                             class="fw-700">{{ Carbon\Carbon::parse($similar_type_project->created_at)->diffForHumans() }}</span></span>
 
@@ -318,7 +318,7 @@
 
                                                                         <img style="height:24px; width:24px;"
                                                                             class="mr-1" alt="service_image"
-                                                                            src=" {{ asset('/assets/home/Find-scholarship/Language.png') }}">
+                                                                            src=" {{ asset('/assets/home/find-scholarship/Language.png') }}">
                                                                         <span class="">Category: <span
                                                                                 class="fw-700">
                                                                                 @if ($similar_type_project->project_category_id != null)
@@ -331,7 +331,7 @@
 
                                                                     <img style="height:24px; width:24px;" class="mr-1"
                                                                         alt="service_image"
-                                                                        src=" {{ asset('/assets/home/Find-scholarship/Duration.png') }}">
+                                                                        src=" {{ asset('/assets/home/find-scholarship/Duration.png') }}">
                                                                     <span class="">
                                                                         Timeframe: <span class="fw-700">Short-term (< 1
                                                                                 month)</span> </span>
@@ -346,7 +346,7 @@
                                                                 <span>
                                                                     <img style="height:13px; width:13px;" class="ml-2"
                                                                         alt="service_image"
-                                                                        src=" {{ asset('/assets/home/Find-scholarship/Arrow.png') }}"></span>
+                                                                        src=" {{ asset('/assets/home/find-scholarship/Arrow.png') }}"></span>
 
                                                             </div>
 
