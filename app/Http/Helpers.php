@@ -616,7 +616,7 @@ function getLanguageName($id) {
 }
 function getSeminarCategory($id) {
     $category = ProjectCategory::where('id', $id)->first();
-    return  $category['name'];
+    return $category->name ?? null;
 }
 
 function getInstructorName($id) {

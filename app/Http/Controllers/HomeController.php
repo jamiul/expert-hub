@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Auth;
-use App\Models\User;
-use App\Models\Project;
 use App\Models\ChatThread;
 use App\Models\ConsultantCategory;
-use App\Models\UserProfile;
 use App\Models\FreelancerAccount;
-use App\Models\ParentSkill;
+use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\Scholarship;
 use App\Models\Seminar;
 use App\Models\Skill;
-use Carbon;
-use Illuminate\Support\Str;
-use Spatie\Permission\Models\Permission;
+use App\Models\Upload;
+use App\Models\User;
+use App\Models\UserProfile;
 use Artisan;
+use Auth;
+use Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class HomeController extends Controller
 {
@@ -37,9 +37,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index() {
+    public function index()
+    {
         $scholarships = Scholarship::all();
-        $skills= Skill::with('childrens')->whereNull('parent_id')->get();
+        $skills = Skill::with('childrens')->whereNull('parent_id')->get();
         $seminars = Seminar::all();
         $services = ProjectCategory::take(8)->get()->reverse();
         $consultant_categories = ConsultantCategory::take(8)->get();
@@ -54,13 +55,13 @@ class HomeController extends Controller
             $subjectCounts[$subject] += $scholarship->available_slots;
         }
 
-        return view('frontend.default.index',compact('subjectCounts','seminars','scholarships','services','consultant_categories','skills'));
+        return view('frontend.default.index', compact('subjectCounts', 'seminars', 'scholarships', 'services', 'consultant_categories', 'skills'));
     }
 
     //Admin login
     public function admin_login()
     {
-        if(Auth::check() && (auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")){
+        if (Auth::check() && (auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")) {
             return redirect()->route('home');
         }
         return view('auth.login');
@@ -69,7 +70,7 @@ class HomeController extends Controller
     //User login
     public function login()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             return redirect()->route('home');
         }
         return view('frontend.default.user_login');
@@ -87,13 +88,11 @@ class HomeController extends Controller
         $user_profile = UserProfile::where('user_id', Auth::user()->id)->first();
 
 
-        if(isFreelancer()){
+        if (isFreelancer()) {
             return view('frontend.default.user.freelancer.dashboard');
-        }
-        elseif(isClient()){
+        } elseif (isClient()) {
             return view('frontend.default.user.client.dashboard');
-        }
-        else {
+        } else {
             abort(404);
         }
     }
@@ -102,7 +101,21 @@ class HomeController extends Controller
     public function project_details($slug)
     {
         $project = Project::where('slug', $slug)->first();
-        return view('frontend.default.project-single', compact('project'));
+        $jobPosted = Project::where('client_user_id',$project->client_user_id)->where('cancel_status', '=',0)->count();
+        $jobOpen = Project::where('client_user_id',$project->client_user_id)->where('closed', '=', 0)->where('cancel_status', '=',0)->count();
+        $similar_types = Project::where('type', $project->type)->where('id', '!=', $project->id)->where('closed', '!=', 1)->limit(3)->get();
+        foreach($project->skills as $skill_id){
+            $skill = Skill::find($skill_id);
+        }
+        // $attachments =;
+        foreach(explode(',', $project->attachments) as $attachment_id){
+            $attachment = Upload::find($attachment_id);
+        }
+
+
+        // $skill = Skill::find($skill_id);
+        // dd($skill);
+        return view('frontend.default.project-single', compact('project','jobPosted','jobOpen','similar_types','skill','attachment'));
     }
 
     //Show details info of specific project
@@ -112,12 +125,12 @@ class HomeController extends Controller
         if ($project != null) {
             $id = $project->id;
             $user = Auth::user()->id;
-            $chat_thread = ChatThread::where(function ($query) use ($id){
-                                $query->where('project_id', '=', $id);
-                            })->where(function ($query) use ($user){
-                                $query->where('sender_user_id', '=', $user)
-                                      ->orWhere('receiver_user_id', '=', $user);
-                            })->first();
+            $chat_thread = ChatThread::where(function ($query) use ($id) {
+                $query->where('project_id', '=', $id);
+            })->where(function ($query) use ($user) {
+                $query->where('sender_user_id', '=', $user)
+                    ->orWhere('receiver_user_id', '=', $user);
+            })->first();
         }
         return view('frontend.default.private_project_single', compact('project', 'chat_thread'));
     }
@@ -171,10 +184,10 @@ class HomeController extends Controller
         try {
             //TODO:: if freelancer set profile as private, do not display
             $freelancer = User::where('user_name', $username)
-                              ->where('user_type', 'freelancer')
-                              ->where('banned', 0)
-                              ->firstOrFail();
-        } catch (\Exception $ex){
+                ->where('user_type', 'freelancer')
+                ->where('banned', 0)
+                ->firstOrFail();
+        } catch (\Exception $ex) {
             abort(404);
         }
 
@@ -197,26 +210,26 @@ class HomeController extends Controller
         if ($user_name != null) {
             $response = "<span style='color: red; font-size: 8pt'>User name already Exist.</span>";
             return $response;
-        }
-        else {
+        } else {
             $response = "<span style='color: green; font-size: 8pt'>{{translate('Available')}}.</span>";
             return $response;
         }
     }
 
-    public function send_email_verification_request(Request $request){
+    public function send_email_verification_request(Request $request)
+    {
         return send_email_verification_email();
     }
 
-    public function verification_confirmation($code){
+    public function verification_confirmation($code)
+    {
         $user = User::where('verification_code', $code)->first();
-        if($user != null){
+        if ($user != null) {
             $user->email_verified_at = Carbon::now();
             $user->save();
 
             flash(translate('Your email has been verified successfully'))->success();
-        }
-        else {
+        } else {
             flash(translate('Sorry, we could not verifiy you. Please try again'))->warning();
         }
 
@@ -230,5 +243,4 @@ class HomeController extends Controller
         flash(translate('Cache cleared successfully'))->success();
         return back();
     }
-
 }
