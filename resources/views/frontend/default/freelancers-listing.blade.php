@@ -115,44 +115,6 @@
                                             </div>
                                         </div>
                                     </form>
-
-                                    {{-- Expertise --}}
-                                    <div class="mt-3">
-                                        <h6 class="text-left mb-3 fs-14 ">
-                                            <span
-                                                class="pr-3 site-font fw-700">{{ translate('Expert by Categories') }}</span>
-                                        </h6>
-                                        <div class="mt-3">
-                                            @foreach ($expertises as $key => $expertise)
-                                                <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
-                                                    data-toggle="collapse" href="#skill_{{ $expertise->id }}"
-                                                    role="button" aria-expanded="true"
-                                                    aria-controls="skill_{{ $expertise->id }}">
-                                                    <label class="fas fa-plus "
-                                                        style="border-radius: 50%;height: 18px; width: 17px;align-items:center;margin: 0 5px 0 0;background: #95DF00; color: white;display: flex;justify-content: center;align-content: center; font-size:9px"></label>
-                                                    <p class="mb-0 fs-14 fw-500">{{ $expertise->name }}
-                                                    </p>
-                                                </a>
-                                                <div class="overflow-auto h-130px collapse "
-                                                    id="skill_{{ $expertise->id }}">
-                                                    @foreach ($expertise->childrens as $expert)
-                                                        <div class=" w-200px child-skill-project-filtering">
-                                                            <div class="mb-1 ">
-                                                                <input type="checkbox" name="childSkill_id[]"
-                                                                    id="{{ $expertise->id }}" value="{{ $expert->id }}"
-                                                                    class=" d-none" onchange="applyFilter()">
-                                                                <label
-                                                                    class="c-pointer site-font fs-12 text-dark ml-3 fw-500 mb-0"
-                                                                    for="{{ $expert->id }}">
-                                                                    {{ $expert->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
                                     <!-- categories  -->
                                     <div class="mt-3">
                                         <h6 class="text-left mb-3 fs-14 ">
@@ -172,13 +134,13 @@
 
                                     <!-- Skills -->
                                     <div class="card-body pl-lg-0">
-                                        <div class="">
+                                        <div class="mb-2 mt-2">
                                             <h6 class="text-left mb-3 fs-14">
                                                 <span class="pr-3 site-font fw-700">{{ translate('Skills') }}</span>
                                             </h6>
-                                            <div class="mb-4">
+                                            <div class="mb-1">
                                                 <div class="">
-                                                    <div class="mb-5 border-bottom">
+                                                    <div class="mb-2 border-bottom">
                                                         <select
                                                             class="select2 site-font form-control aiz-selectpicker rounded-1"
                                                             name="skill_id[]" onchange="applyFilter()"
@@ -196,7 +158,7 @@
                                                             @endforeach
                                                         </select>
 
-                                                        <div class="mt-3">
+                                                        <div class="mt-3 mb-2">
                                                             @foreach ($skills as $key => $skill)
                                                                 <a class="text-dark d-flex justify-content-start align-items-center site-font mb-1"
                                                                     data-toggle="collapse"
@@ -237,12 +199,12 @@
                                         </div>
 
                                         <!-- Hourly rates -->
-                                        <h6 class="text-left mb-3 fs-14">
+                                        <h6 class="text-left mb-3 fs-14 mt-3">
                                             <span
                                                 class="pr-3 site-font fw-700">{{ translate('Hourly Rate (USD)') }}</span>
                                         </h6>
-                                        <div class="mb-5 border-bottom">
-                                            <div class="mb-2 mt-3" style="width: 245px;">
+                                        <div class="mb-2 border-bottom">
+                                            <div class="mb-2 mt-3">
                                                 <select class="select2 form-control site-font aiz-selectpicker rounded-1"
                                                     onchange="applyFilter()" data-live-search="true"
                                                     name="hourly_rate[]">
@@ -260,7 +222,7 @@
                                         </div>
 
                                         {{-- consultantion option --}}
-                                        <div class="my-5">
+                                        <div class="my-2">
                                             <label class="aiz-checkbox site-font w-100 fw-700">
                                                 <input type="checkbox" name="available_interview" value="interview"
                                                     onchange="applyFilter()" class=" "
@@ -273,7 +235,7 @@
                                                 <input type="checkbox" name="consultantions" value="consultantions"
                                                     onchange="applyFilter()" class=" "
                                                     @if ($consultantions) checked @endif>
-                                                    {{ __('Offer Consultantion') }}
+                                                    {{ __('Offer Consultation') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
                                             </label>
@@ -284,7 +246,7 @@
                                             <span class="pr-3 site-font fw-700">{{ __('Location') }}</span>
                                         </h6>
 
-                                        <div class=" mb-5 ">
+                                        <div class="mb-3">
                                             <div class=" py-2 border-bottom ">
                                                 <select class="select2 site-font form-control aiz-selectpicker rounded-1"
                                                     name="country_id" onchange="applyFilter()" data-toggle="select2"
@@ -302,7 +264,7 @@
                                         </div>
                                         <!-- Rating -->
                                         <h6 class="text-left mb-3 fs-14">
-                                            <span class=" pr-3 site-font fw-700">{{ translate('Rating') }}</span>
+                                            <span class="pr-3 site-font fw-700">{{ translate('Rating') }}</span>
                                         </h6>
                                         <div class="d-flex border-bottom">
                                             <div class="star-widget">

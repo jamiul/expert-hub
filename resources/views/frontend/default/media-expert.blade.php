@@ -105,10 +105,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                {{-- Experts list --}}
-                                <div class="mt-3">
-                                    <livewire:experts-list />
-                                </div>
                                 <!-- Parent experts  -->
                                 <div class="mt-3">
                                     <livewire:parent-experts />
@@ -119,8 +115,12 @@
                                     <div class="mb-3">
                                         <livewire:child-experts />
                                     </div>
+                                    {{-- Experts list --}}
+                                    <div class="mt-3">
+                                        <livewire:experts-list />
+                                    </div>
                                     <!-- Hourly rates -->
-                                    <h6 class="text-left mb-3 fs-14">
+                                    <h6 class="text-left mb-3 fs-14 mt-4">
                                         <span class="pr-3 site-font fw-700">{{ translate('Hourly Rate (USD)') }}</span>
                                     </h6>
                                     <div class="mb-2 border-bottom">
@@ -137,26 +137,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    {{-- consultantion option --}}
-                                    <div class="mt-3">
-                                        <label class="aiz-checkbox site-font w-100 fw-700">
-                                            <input type="checkbox" name="available_interview" value="interview"
-                                                onchange="applyFilter()" class=" "
-                                                @if ($available_interview) checked @endif>
-                                            {{ __('Available for Media Interview') }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                        </label>
-                                        <label class="aiz-checkbox site-font w-100 fw-700">
-                                            <input type="checkbox" name="consultantions" value="consultantions"
-                                                onchange="applyFilter()" class=" "
-                                                @if ($consultantions) checked @endif>
-                                            {{ __('Offer Consultantion') }}
-                                            <span class="aiz-square-check"></span>
-                                            <span class="float-right text-secondary fs-lg-16 fs-14"></span>
-                                        </label>
-                                    </div>
-
                                     <!-- Location  -->
                                     <livewire:country-list />
                                     <!-- Rating -->
