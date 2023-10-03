@@ -845,7 +845,7 @@
                                     <div class="card rounded " style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/agriculture.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/agriculture.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -880,7 +880,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/university.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/university.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -918,7 +918,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/medical.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/medical.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -956,7 +956,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/humnaties.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/humnaties.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -993,7 +993,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/education.jpeg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/education.jpeg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1031,7 +1031,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/arts.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/arts.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1069,7 +1069,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/eng.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/eng.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">
@@ -1106,7 +1106,7 @@
                                     <div class="card rounded" style="height:330px">
                                         <div class="">
                                             <div class=" ">
-                                                <img src=" {{ asset('assets/home/Find-scholarship/IT.jpg') }}"
+                                                <img src=" {{ asset('assets/home/find-scholarship/IT.jpg') }}"
                                                     class="card-img-top" alt="service_image" height="212">
                                             </div>
                                             <div class="p-3">

@@ -1,11 +1,11 @@
 {{-- Testimonials  --}}
 <div class="mx-lg-4 rounded border p-2 px-4 mt-3 mb-3">
     <div class="d-flex  mb-3">
-        <img style="height:24px; width:24px;" class="mr-1" alt="service_image"
-             src=" {{ asset('/assets/home/Find-scholarship/Testimonial-2.png') }}">
+        <img class="mr-1 testimonals-icon" alt="service_image"
+            src=" {{ asset('/assets/home/find-scholarship/testimonial.png') }}">
         <h4 class="fw-700 fs-23 text-black "> Testimonials</h4>
-        <img style="height:24px; width:24px;" class="ml-1" alt="service_image"
-             src=" {{ asset('/assets/home/Find-scholarship/Testimonial.png') }}">
+        <img class="ml-1 testimonals-icon" alt="service_image"
+            src=" {{ asset('/assets/home/find-scholarship/testimonial-2.png') }}">
     </div>
     <div class=" mb-3 ">
         <p class="fs-16"><i>Prof. Michael Kassiou played a pivotal role in the development
@@ -17,9 +17,8 @@
         </p>
         <div class="d-flex border-bottom pb-3">
             <div class="">
-                <img class="h-75 w-75"
-                     src="{{ asset('/assets/home/Find-scholarship/Testimonial-1.png') }}"
-                     alt="">
+                <img class="h-75 w-75" src="{{ asset('/assets/home/find-scholarship/testimonial-1.png') }}"
+                    alt="">
             </div>
             <div class="">
                 <h6 class="fw-700 fs-18 ">Prof. David smith
@@ -39,9 +38,8 @@
                     accreditation.</i></p>
             <div class="d-flex">
                 <div class="">
-                    <img class="h-75 w-75"
-                         src="{{ asset('/assets/home/Find-scholarship/Testimonial-1.png') }}"
-                         alt="">
+                    <img class="h-75 w-75" src="{{ asset('/assets/home/find-scholarship/testimonial-1.png') }}"
+                        alt="">
                 </div>
                 <div class="">
                     <h6 class="fw-700 fs-18 ">Prof. Daniel
@@ -52,9 +50,9 @@
                 </div>
 
             </div>
-            <p class="text-center text-primary fs-16 fw-700"><u> More Testimonals ></u></p>
-            <img src=" {{ asset('/assets/home/Find-scholarship/Right-arrow.png') }}"
-                 class=" rounded" alt="service_image">
+            <p class="text-center fs-16 fw-700 testimonals"><u> More Testimonals ></u></p>
+            <img src=" {{ asset('/assets/home/find-scholarship/right-arrow.png') }}" class=" rounded"
+                alt="service_image">
         </div>
 
     </div>

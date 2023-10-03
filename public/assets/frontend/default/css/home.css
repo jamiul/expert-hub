@@ -1,6 +1,7 @@
 body {
     font-family: "DM Sans", sans-serif;
 }
+
 .category-title {
     font-weight: 700;
 }
@@ -199,9 +200,126 @@ body {
 .fre-profile {
     margin-top: -9rem !important;
 }
+/* project details  */
+.project-details-breadcrumb{
+    width: 35px;
+    height: 35px;
+    border:1px solid #61B895;
+}
+.home-icon{
+    width: 30px;
+    height: 30px;
+}
+.project-post-time{
+    width: 24px;
+    height: 24px;
+}
+.project-overview{
+    line-height: 24px;
+}
+.view-details{
+    width: 13px;
+    height: 13px;
+}
+.similar-projects{
+    line-height: 25px;
+}
+.p-image{
+    width: 24px;
+    height: 24px;
+}
+.projects-desc{
+    line-height: 22px;
+}
+.project-save{
+    border-color:#275846;
+    outline-color: #275846;
+    
+}
+.project-save-img{
+    width: 18px;
+    height: 18px;
+}
+.create-account{
+    background-color: #EFF7F4;
+}
+.account-login{
+    color:#275846;
+}
+.p-payment{
+    width: 20px;
+    height: 20px;
+    
+}
+.payment-para{
+    line-height: 21px;
 
-.job-details{
-    font-family: calfox;
+}
+
+/* expert profile  */
+.experience{
+    line-height: 26px;
+}
+.testimonals{
+    color:#0059C9;
+}
+.testimonals-icon{
+    width: 24px;
+    height: 24px;
+}
+.current-project{
+    line-height:26px;
+}
+.p-icon{
+    height:24px; 
+    width:24px;
+}
+.p-button{
+    width: 8px;
+}
+.portfolios{
+    height: 330px;
+}
+.portfolio-name{
+    line-height:17px;
+}
+.expert-name{
+    width: 177px;
+     height: 176px;
+}
+.expertise{
+    color: #0059C9;
+}
+.expert-ratings{
+    background:#95DF00;
+}
+.expert-timezone{
+    width: 20px;
+    height: 20px;
+}
+.expert-consultation{
+    background: #0059C9;
+}
+.expert-interview{
+    color: #0059C9; 
+    border-color:#0059C9;
+}
+.expert-skills{
+    border-color: #0059C9;
+    color:#0059C9;
+}
+/* consultation  */
+.c-expertise{
+    border-color: #0059C9 !important;
+    color:#0059C9 !important;
+}
+.breadcrumb-icon{
+    width:35px; 
+    height:35px; 
+    border:1px solid #FFFFFF;
+}
+.breadcrumb-btn{
+    background: #0059C9;
 }
 /* responsive */
 @media only screen and (max-width: 1210px) {
