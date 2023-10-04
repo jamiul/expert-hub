@@ -62,7 +62,7 @@ class DemoController extends Controller
     {
         File::deleteDirectory(base_path('public/uploads'));
     }
-// -------- Consultabt pages------------
+// -------- Consultant Registration pages------------
     public function consultantLogin()
     {
         return view('frontend.default.consultantlogin');
@@ -122,6 +122,23 @@ class DemoController extends Controller
     public function profileCompleted()
     {
         return view('frontend.default.profilecompleted');
+    }
+    // -------- Client Registration pages------------
+    public function clientLogin()
+    {
+        return view('frontend.default.clientlogin');
+    }    
+    public function clientSignup()
+    {
+        return view('frontend.default.clientsignup');
+    }
+    public function clientVerifyEmail()
+    {
+        return view('frontend.default.clientverifyemail');
+    }
+    public function clientVerifyYourEmail()
+    {
+        return view('frontend.default.clientverifyyouremail');
     }
 
 }
