@@ -1,4 +1,26 @@
 /*-----common----------*/
+@font-face {
+    font-family: "colfax";
+    src: url("../../../colfax-font/Colfax-Regular.otf");
+}
+@font-face {
+    font-family: "colfaxbold";
+    src: url("../../../colfax-font/Colfax-Bold.otf");
+}
+.ff-colfax {
+    font-family: "colfax";
+}
+.btn-outline-primary {
+    color: #0059c9;
+    border: 2px solid #0059c9 !important;
+    background-color: transparent;
+}
+.btn-primary,
+.btn-soft-primary:hover,
+.btn-outline-primary:hover {
+    background-color: #0059c9;
+    color: #ffffff !important;
+}
 .card-shadow {
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
 }
@@ -19,13 +41,38 @@
     border: 2px solid #27584633 !important;
     color: #275846;
 }
+section.exp-my {
+    margin: 80px auto;
+    min-height: 800px;
+}
+section.exp-my2 {
+    margin: 20px auto 80px auto;
+    min-height: 720px;
+}
+a.exp-signuplink {
+    color: #275846;
+    font-family: colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: underline;
+}
+.sidebar-steps {
+    max-width: 330px;
+    min-width: 280px;
+}
 /*-----login page-----*/
+section.exp-login {
+    margin: 80px auto;
+}
 .clogin .card {
     padding: 60px 12px 60px 12px !important;
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
 }
 .clogin .logo {
-    width: 210px;
+    width: 210px !important;
 }
 .custom-input-group {
     position: relative;
@@ -37,8 +84,8 @@
     font-size: 18px;
 }
 .clogin .card .typetab.selected-tab {
-    background: #f4f7f6;
-    border: 1px solid #275846;
+    background: #0059c90d;
+    border: 1px solid #0059c9;
 }
 .custom-input-group input[type="text"] {
     padding-left: 40px;
@@ -72,6 +119,7 @@
     font-weight: 400;
     line-height: 26px;
 }
+
 /*-----signup page-----*/
 .csignup {
     margin-left: 10px;
@@ -116,9 +164,9 @@
 .csignup .google-icon-img img {
     margin-right: 12px !important;
 }
-.csignup .text-center p a {
+/* .csignup .text-center p a {
     color: #275846;
-}
+} */
 /*-----Email Verify--------*/
 .cvemail .card {
     padding: 60px 12px 60px 12px !important;
@@ -141,14 +189,14 @@
 }
 .cvemail a {
     font-size: 14px;
-    color: #5abc76;
+    color: #0059c9;
     padding: 2px 0;
 }
 .edu-for-time {
     line-height: 0.3;
     color: #303744;
 }
-.vye-heading{
+.vye-heading {
     font-size: 19px;
     font-weight: 500;
     line-height: 23px;
@@ -163,13 +211,19 @@
     height: 40px;
     background-size: contain;
 }
-
+.profile-pic {
+    max-width: 220px;
+}
 .psetup .input-icons {
     margin-bottom: 30px;
     height: 60px;
 }
 .psetup p.card-text {
     font-size: 14px;
+}
+.psetup i.la-map-marker,
+.psetup i.la-clock {
+    color: #5abc76;
 }
 /*-----Profile Details--------*/
 .cprofiled h5 {
@@ -237,7 +291,10 @@
 .prexpertise .col .card {
     height: 550px;
 }
-.prexpertise .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+.prexpertise
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+        .input-group-btn
+    ) {
     width: 100%;
 }
 .prexpertise button.btn.dropdown-toggle.btn-light {
@@ -413,6 +470,14 @@
     padding: 1.675rem 0.75rem !important;
     font-size: 1rem;
 }
+.kind-regard-eduexhub {
+    line-height: 0.3;
+    color: #6e737c;
+}
+section.exp-completed-my {
+    margin: 80px auto;
+    min-height: 500px;
+}
 /*-----Responsive--------*/
 @media (max-width: 1200px) {
     .position-md-relative {
@@ -435,8 +500,8 @@
     .user-avatar {
         margin: auto;
     }
-    .mob-text-center{
-        text-align: center; 
+    .mob-text-center {
+        text-align: center;
     }
 }
 @media (max-width: 576px) {
@@ -452,5 +517,8 @@
     }
     .prexpertise .col .card-expertise {
         height: 280px;
+    }
+    .sidebar-steps {
+        max-width: inherit;
     }
 }

@@ -2,10 +2,11 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
+    <section class="exp-my2">
     <div class="container my-5">
         <div class="row g-5 cprofiled">
-            <div class="col-md-5 col-lg-4 ">
-                <div class="card h-100 card-shadow">
+            <div class="col-md-5 col-lg-4 sidebar-steps">
+                <div class="card card-shadow">
                     <div class="card-body">
                         <div class="timeline-vertical timeline-with-details">
                             <div class="timeline-item">
@@ -14,8 +15,7 @@
                                         <div class="timeline-item-bar position-md-relative me-3 me-md-0 border-400">
                                             <div
                                                 class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100 tick-step">
-                                            </div>
-                                            <span class="timeline-bar tick-bar"></span>
+                                            </div><span class="timeline-bar tick-bar"></span>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -65,8 +65,8 @@
                                     <div class="col-12 col-sm-auto activity-bar d-flex">
                                         <div class="timeline-item-bar position-md-relative me-3 me-md-0 border-400">
                                             <div
-                                                class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100 tick-step">
-                                            </div><span class="timeline-bar tick-bar"></span>
+                                                class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100 current-step">
+                                            </div><span class="timeline-bar"></span>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -82,7 +82,7 @@
                                     <div class="col-12 col-sm-auto activity-bar d-flex">
                                         <div class="timeline-item-bar position-md-relative me-3 me-md-0 border-400">
                                             <div
-                                                class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100 current-step">
+                                                class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100">
                                             </div><span class="timeline-bar"></span>
                                         </div>
                                     </div>
@@ -98,7 +98,8 @@
                                 <div class="row g-sm-3">
                                     <div class="col-12 col-sm-auto activity-bar d-flex">
                                         <div class="timeline-item-bar position-md-relative me-3 me-md-0 border-400">
-                                            <div class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100">
+                                            <div
+                                                class="icon-item icon-item-sm rounded-7 shadow-none bg-primary-100">
                                             </div>
                                         </div>
                                     </div>
@@ -110,6 +111,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -138,18 +140,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col mb-5">
                         <div class="w-100">
                             <hr class="my-4">
                             <div class="row gy-3">
                                 <div class="col-lg-4 col-md-5">
-                                    <button class="w-100 border btn-lg border-all-5 btn-back">
+                                    <button class="w-100 border btn-lg border-all-5 btn-outline-primary">
                                         <i class="las la-arrow-left la-lg"></i> Back
                                     </button>
                                 </div>
                                 <div class="col-lg-4 col-md-2"></div>
                                 <div class="col-lg-4 col-md-5">
-                                    <button class="w-100 btn btn-primary btn-lg border-all-5" type="submit">Next</button>
+                                    <button class="w-100 btn btn-primary btn-lg border-all-5"
+                                        type="submit">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -158,4 +161,5 @@
             </div>
         </div>
     </div>
+</section> 
 @endsection

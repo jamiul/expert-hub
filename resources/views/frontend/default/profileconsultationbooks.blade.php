@@ -2,11 +2,12 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
+    <section class="exp-my2">
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row g-5 pconsult">
-                <div class="col-md-5 col-lg-4 ">
-                    <div class="card h-100 card-shadow">
+                <div class="col-md-5 col-lg-4 sidebar-steps">
+                    <div class="card card-shadow">
                         <div class="card-body">
                             <div class="timeline-vertical timeline-with-details">
                                 <div class="timeline-item">
@@ -150,8 +151,7 @@
                             <div class="row ">
                                 <div class="col-md-4 d-flex">
                                     <button class="w-100 btn btn-primary m-2 border-all-5" type="submit">Yes</button>
-                                    <button class="w-100 m-2 btn btn-outline-success border-all-5 border-green-2"><span
-                                            class="text-style-button">No</span> </button>
+                                    <button class="w-100 m-2 btn border-all-5  btn-outline-primary">No</button>
                                 </div>
                                 <div class="col-md-8"></div>
                             </div>
@@ -162,20 +162,18 @@
                             <div class="row ">
                                 <div class="col-md-4 d-flex">
                                     <button class="w-100 btn btn-primary m-2 border-all-5" type="submit">Yes</button>
-                                    <button class="w-100 m-2 btn btn-outline-success border-all-5 border-green-2"><span
-                                            class="text-style-button"> No</span>
-                                    </button>
+                                    <button class="w-100 m-2 btn border-all-5  btn-outline-primary">No</button>
                                 </div>
                                 <div class="col-md-8"></div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-5">
                                 <div class="w-100">
                                     <hr class="my-4">
                                     <div class="row gy-3">
                                         <div class="col-lg-4 col-md-5">
-                                            <button class="w-100 border btn-lg border-all-5 btn-back">
+                                            <button class="w-100 border btn-lg border-all-5 btn-outline-primary">
                                                 <i class="las la-arrow-left la-lg"></i> Back
                                             </button>
                                         </div>
@@ -193,4 +191,5 @@
             </div>
         </div>
     </div>
+</section>  
 @endsection

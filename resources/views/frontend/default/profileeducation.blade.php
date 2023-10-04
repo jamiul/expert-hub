@@ -2,11 +2,12 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
+    <section class="exp-my2">
     <div class="py-4 py-lg-5">
         <div class="container">
             <div class="row g-5 cpeducation">
-                <div class="col-md-5 col-lg-4">
-                    <div class="card h-100 card-shadow">
+                <div class="col-md-5 col-lg-4 sidebar-steps">
+                    <div class="card card-shadow">
                         <div class="card-body">
                             <div class="timeline-vertical timeline-with-details">
                                 <div class="timeline-item">
@@ -163,17 +164,17 @@
 
                             </div>
                             <div class="d-grid gap-2 col-xl-6 col-lg-8 col-md-12 mt-3">
-                                <button class="btn border fs-5" type="button"> <span class="google-icon-img"><img
+                                <button class="btn border btn-outline-primary fs-5" type="button"> <span class="google-icon-img"><img
                                             src="../assets/frontend/default/img/add_circle.png"></>
                                     </span>Add Education Qualification</button>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col mb-5">
                                     <div class="w-100">
                                         <hr class="my-4">
                                         <div class="row gy-3">
                                             <div class="col-lg-4 col-md-5">
-                                                <button class="w-100 border btn-lg border-all-5 btn-back">
+                                                <button class="w-100 border btn-lg btn-outline-primary border-all-5">
                                                     <i class="las la-arrow-left la-lg"></i> Back
                                                 </button>
                                             </div>
@@ -192,4 +193,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
