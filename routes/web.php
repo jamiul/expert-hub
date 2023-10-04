@@ -54,6 +54,12 @@ Route::get('/profile-picture', 'DemoController@profilePicture');
 Route::get('/profile-completed', 'DemoController@profileCompleted');
 Route::get('/profile-expertises-popup', 'DemoController@profileExpertisesPopup');
 
+//client Registration
+Route::get('/client-login', 'DemoController@clientLogin');
+Route::get('/client-signup', 'DemoController@clientSignup');
+Route::get('/client-verify-email', 'DemoController@clientVerifyEmail');
+Route::get('/client-verify-your-email', 'DemoController@clientVerifyYourEmail');
+
 
 Route::get('/refresh-csrf', function () {
     return csrf_token();

@@ -10,6 +10,9 @@
 .ff-colfax {
     font-family: "colfax";
 }
+.ff-colfaxbold {
+    font-family: "colfaxbold";
+}
 .btn-outline-primary {
     color: #0059c9;
     border: 2px solid #0059c9 !important;
@@ -20,6 +23,19 @@
 .btn-outline-primary:hover {
     background-color: #0059c9;
     color: #ffffff !important;
+}
+a{
+    color: #303744;
+    font-family: colfax;
+    text-decoration: underline;
+}
+.form-check-input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin-top: 0px;
+}
+label.form-check-label {
+    padding-left: 8px;
 }
 .card-shadow {
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
@@ -51,9 +67,8 @@ section.exp-my2 {
 }
 a.exp-signuplink {
     color: #275846;
-    font-family: colfax;
+    font-family: colfaxbold;
     font-size: 16px;
-    font-weight: 500;
     line-height: 26px;
     letter-spacing: 0em;
     text-align: left;
@@ -191,6 +206,7 @@ section.exp-login {
     font-size: 14px;
     color: #0059c9;
     padding: 2px 0;
+    font-weight: 600;
 }
 .edu-for-time {
     line-height: 0.3;
@@ -198,7 +214,7 @@ section.exp-login {
 }
 .vye-heading {
     font-size: 19px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 23px;
 }
 /*-----Profile setup--------*/

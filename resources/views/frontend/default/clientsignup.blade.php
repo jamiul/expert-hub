@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="form-check mb-3">
-                            <input type="checkbox" class="form-check-input from-input-field" id="same-address">
+                            <input type="checkbox" class="form-check-input from-input-field" id="same-address" checked>
                             <label class="form-check-label" for="same-address">Send me emails with tips on how to find
                                 projects that fit my expertise.</label>
                         </div>
@@ -93,8 +93,7 @@
                             <label class="form-check-label" for="save-info">Yes, I understand and agree to the <a href="#"> EduEXHub Terms of Service</a>,including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a>.</label>
                         </div>
                         <div class="col-12 mt-3">
-                            <button class="btn btn-block btn-primary btn-join w-100 py-2 ff-colfax" type="submit">Join as an Edu
-                                Expert</button>
+                            <button class="btn btn-block btn-primary btn-join w-100 py-2 ff-colfax" type="submit">Join as a Client</button>
                         </div>
                         <div class="text-center  mt-3">
                             <p>Already have an account, <a href="#" class="exp-signuplink">Sign In</a> </p>

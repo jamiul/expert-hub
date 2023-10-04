@@ -12,31 +12,29 @@
                                 <img class="mb-4 mx-auto logo" src="{{ asset('assets/frontend/default/img/eduexhub.png') }}"
                                     alt="Edu Expert Hub" />
                                 <div class="">
-                                    <h4 class="mt-3 text-center mx-auto ff-colfaxbold">Join as an Edu Expert or Client</h4>
+                                    <h4 class="mt-3 text-center mx-auto ff-colfaxbold fw-5">Join as an Edu Expert or Client</h4>
                                 </div>
                                 <div class="card-body my-auto">
                                     <div class="custom-input-group first-input my-auto">
-                                        <div class="mb-2 p-4 typetab selected-tab">
+                                        <div class="mb-2 p-4 typetab">
                                             <img class="icon"
                                                 src="{{ asset('assets/frontend/default/img/badge.png') }}"
                                                 alt="Edu Expert" />
                                             <span class="bold-text">I'm an Edu Expert</span>
                                             <input type="radio" name="usertype" id="userexpert" class="checkbox"
-                                                value="eduexpert" checked>
+                                                value="eduexpert" >
                                         </div>
                                     </div>
                                     <div class="custom-input-group mt-3">
-                                        <div class="mb-2 p-4 typetab">
+                                        <div class="mb-2 p-4 typetab selected-tab">
                                             <img class="icon"
                                                 src="{{ asset('assets/frontend/default/img/badge.png') }}"
                                                 alt="Edu Client" />
                                             <span class="bold-text">I'm a Client</span>
-                                            <input type="radio" name="usertype" id="usertype" value="client">
+                                            <input type="radio" name="usertype" id="usertype" value="client" checked>
                                         </div>
                                     </div>
-                                    <button type="button" class="w-100 btn btn-lg btn-primary mt-3 btn-join ff-colfax">Join
-                                        as an Edu
-                                        Expert</button>
+                                    <button type="button" class="w-100 btn btn-lg btn-primary mt-3 btn-join ff-colfax">Join as a Client</button>
                                 </div>
                                 <div class="text-center">
                                     <p class="text-muted mb-0">Already have an account, <a class="exp-signuplink"
