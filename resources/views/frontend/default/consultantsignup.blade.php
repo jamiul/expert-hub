@@ -2,7 +2,7 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
-    <div class="py-4 py-lg-5">
+    <section class="exp-my">
         <div class="container">
             <div class="row csignup">
                 <div class="form border p-5 rounded justify-content-center">
@@ -94,15 +94,15 @@
                                 Terms of Service,including the User Agreement and Privacy Policy.</label>
                         </div>
                         <div class="col-12 mt-3">
-                            <button class="btn btn-block btn-primary btn-join w-100 py-2" type="submit">Join as an Edu
+                            <button class="btn btn-block btn-primary btn-join w-100 py-2 ff-colfax" type="submit">Join as an Edu
                                 Expert</button>
                         </div>
                         <div class="text-center  mt-3">
-                            <p>Already have an account, <a href="#" class="fw-bold">Sign in</a> </p>
+                            <p>Already have an account, <a href="#" class="exp-signuplink">Sign In</a> </p>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
