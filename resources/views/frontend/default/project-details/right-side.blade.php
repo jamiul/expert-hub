@@ -12,12 +12,12 @@
                         <h6 class="fs-16 fw-700">${{ $project->price }}</h6>
                     @endif
                     <h6>Proposals: <span class="fw-700">
-                        @if ($project->bids < 5)
-                            Less than 5
-                        @else
-                            {{ $project->bids }}
-                        @endif
-                    </span></h6>
+                            @if ($project->bids < 5)
+                                Less than 5
+                            @else
+                                {{ $project->bids }}
+                            @endif
+                        </span></h6>
                     <h6>Interviewing: 0</h6>
                     <h6>Last viewed by client: 1 hour ago</h6>
                     <h6 class="btn btn-primary btn-sm fs-15  w-100  fw-700 mt-3">

@@ -69,7 +69,7 @@
                         <h6 class="fs-16 mb-0  my-3">In this role, I
                             contributed to the advancement of public health education and
                             curriculum development by:</h6>
-                        <h6 class="fs-16 mb-0  my-2 current-project" >Collaborating with a diverse team of
+                        <h6 class="fs-16 mb-0  my-2 current-project">Collaborating with a diverse team of
                             international researchers to collect and analyse data from a
                             wide range of universities and public health programs.
                             Evaluating curriculum structures, content, pedagogical

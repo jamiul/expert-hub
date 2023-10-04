@@ -11,8 +11,7 @@
             <div class="d-flex justify-content-between ">
                 <div>
                     <span class="fs-16 fw-700">Expert:</span>
-                    <span class="btn fs-14 border rounded-2 py-0 px-2 c-expertise "
-                       >
+                    <span class="btn fs-14 border rounded-2 py-0 px-2 c-expertise ">
                         Public Health</span>
                     <span class="btn fs-14 border rounded-2 py-0 px-2 c-expertise">
                         Infactious Diseases</span>

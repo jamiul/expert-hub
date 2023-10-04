@@ -7,8 +7,7 @@
                             style="width:30px; height:30px;" src="{{ asset('assets/home/find-scholarship/home.png') }}"
                             alt=""></a>
                 </li>
-                <li class="breadcrumb-item "><a
-                        href="{{ url('search?') . http_build_query(['type' => 'freelancer']) }}"
+                <li class="breadcrumb-item "><a href="{{ url('search?') . http_build_query(['type' => 'freelancer']) }}"
                         class="text-muted fs-14">Find Consultant</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page"><span

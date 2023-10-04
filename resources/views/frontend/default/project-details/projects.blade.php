@@ -42,7 +42,9 @@
                                             Timeframe: <span class="fw-700">Short-term (< 1 month)</span> </span>
                                     </li>
                                 </ul>
-                                <p class="fs-14 fw-500 projects-desc ">{{ \Illuminate\Support\Str::limit(strip_tags($similar_type_project->description), 150) }}</p>
+                                <p class="fs-14 fw-500 projects-desc ">
+                                    {{ \Illuminate\Support\Str::limit(strip_tags($similar_type_project->description), 150) }}
+                                </p>
                                 <div class="d-flex align-items-center">
                                     <span class="fw-600 fs-14">View Details</span>
                                     <span>
