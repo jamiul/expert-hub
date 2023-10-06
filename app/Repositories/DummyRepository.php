@@ -40,7 +40,7 @@ class DummyRepository extends AbstractRepository
     }
 
     /**
-     * @param string $id
+     * @param  string $id
      * @return mixed
      */
     public function findByUniqueId(string $id): Country

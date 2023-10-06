@@ -46,7 +46,7 @@ class SeminarConsultantController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -60,20 +60,24 @@ class SeminarConsultantController extends Controller
 
         if ($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
-                SeminarDate::create([
+                SeminarDate::create(
+                    [
                     'seminar_id' => $seminar->id,
                     'seminar_date' => $input['seminar_date'][$key] ?? null,
                     'descriptions' => $input['date_description'][$key] ?? null,
-                ]);
+                    ]
+                );
             }
         }
 
         if ($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
-                SeminarInstructor::create([
+                SeminarInstructor::create(
+                    [
                     'seminar_id' => $seminar->id,
                     'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
-                ]);
+                    ]
+                );
             }
         }
 
@@ -125,7 +129,7 @@ class SeminarConsultantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -138,8 +142,8 @@ class SeminarConsultantController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateSeminarRequest $request, Seminar $seminar_consultant)
@@ -159,9 +163,11 @@ class SeminarConsultantController extends Controller
 
         if ($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
-                $seminar->seminar_dates()->create([
+                $seminar->seminar_dates()->create(
+                    [
                     'seminar_date' => $input['seminar_date'][$key] ?? null,
-                ]);
+                    ]
+                );
             }
         }
 
@@ -171,9 +177,11 @@ class SeminarConsultantController extends Controller
 
         if ($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
-                $seminar->seminar_instructors()->create([
+                $seminar->seminar_instructors()->create(
+                    [
                     'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
-                ]);
+                    ]
+                );
             }
         }
 
@@ -184,7 +192,7 @@ class SeminarConsultantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Seminar $seminar_consultant)

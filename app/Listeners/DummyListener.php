@@ -11,6 +11,5 @@ class DummyListener
      */
     public function handle()
     {
-
     }
 }

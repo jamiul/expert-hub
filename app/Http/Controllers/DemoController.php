@@ -59,7 +59,7 @@ class DemoController extends Controller
         $zip->extractTo('public/uploads');
     }
 
-// -------- Consultant Registration pages------------
+    // -------- Consultant Registration pages------------
 
     public function consultantLogin()
     {

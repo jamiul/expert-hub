@@ -23,24 +23,32 @@ class UserController extends Controller
         $query = null;
         $freelancers = UserProfile::query();
 
-        $user_ids = User::where(function ($user) use ($sort_search) {
-            $user->where('user_type', 'freelancer');
-        })->pluck('id')->toArray();
+        $user_ids = User::where(
+            function ($user) use ($sort_search) {
+                $user->where('user_type', 'freelancer');
+            }
+        )->pluck('id')->toArray();
 
-        $freelancers = $freelancers->where(function ($freelancer) use ($user_ids) {
-            $freelancer->whereIn('user_id', $user_ids);
-        });
+        $freelancers = $freelancers->where(
+            function ($freelancer) use ($user_ids) {
+                $freelancer->whereIn('user_id', $user_ids);
+            }
+        );
 
         if ($request->search != null || $request->type != null) {
             if ($request->has('search')) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function ($user) use ($sort_search) {
-                    $user->where('user_type', 'freelancer')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
-                })->pluck('id')->toArray();
+                $user_ids = User::where(
+                    function ($user) use ($sort_search) {
+                        $user->where('user_type', 'freelancer')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+                    }
+                )->pluck('id')->toArray();
 
-                $freelancers = $freelancers->where(function ($freelancer) use ($user_ids) {
-                    $freelancer->whereIn('user_id', $user_ids);
-                });
+                $freelancers = $freelancers->where(
+                    function ($freelancer) use ($user_ids) {
+                        $freelancer->whereIn('user_id', $user_ids);
+                    }
+                );
             }
             if ($request->type != null) {
                 $var = explode(",", $request->type);
@@ -73,24 +81,31 @@ class UserController extends Controller
         $query = null;
         $clients = UserProfile::query();
 
-        $user_ids = User::where(function ($user) use ($sort_search) {
-            $user->where('user_type', 'client');
-        })->pluck('id')->toArray();
+        $user_ids = User::where(
+            function ($user) use ($sort_search) {
+                $user->where('user_type', 'client');
+            }
+        )->pluck('id')->toArray();
 
-        $freelancers = $clients->where(function ($freelancer) use ($user_ids) {
-            $freelancer->whereIn('user_id', $user_ids);
-        });
-
+        $freelancers = $clients->where(
+            function ($freelancer) use ($user_ids) {
+                $freelancer->whereIn('user_id', $user_ids);
+            }
+        );
 
         if ($request->search != null || $request->type != null) {
             if ($request->has('search')) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function ($user) use ($sort_search) {
-                    $user->where('user_type', 'client')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
-                })->pluck('id')->toArray();
-                $clients = $clients->where(function ($client) use ($user_ids) {
-                    $client->whereIn('user_id', $user_ids);
-                });
+                $user_ids = User::where(
+                    function ($user) use ($sort_search) {
+                        $user->where('user_type', 'client')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+                    }
+                )->pluck('id')->toArray();
+                $clients = $clients->where(
+                    function ($client) use ($user_ids) {
+                        $client->whereIn('user_id', $user_ids);
+                    }
+                );
             }
             if ($request->type != null) {
                 $var = explode(",", $request->type);

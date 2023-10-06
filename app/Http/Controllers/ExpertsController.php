@@ -25,10 +25,12 @@ class ExpertsController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $data = $request->validate(
+            [
             'name' => 'required|string|max:255',
             'parent_id' => 'nullable|exists:experts,id',
-        ]);
+            ]
+        );
 
         Experts::create($data);
 

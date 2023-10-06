@@ -13,9 +13,9 @@ class PublicSslCommerzPaymentController extends Controller
 {
     public function index(Request $request)
     {
-        # Here you have to receive all the order data to initate the payment.
-        # Lets your oder trnsaction informations are saving in a table called "orders"
-        # In orders table order uniq identity is "order_id","order_status" field contain status of the transaction, "grand_total" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
+        // Here you have to receive all the order data to initate the payment.
+        // Lets your oder trnsaction informations are saving in a table called "orders"
+        // In orders table order uniq identity is "order_id","order_status" field contain status of the transaction, "grand_total" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
         $user = Auth::user();
         $total_amount = Session::get('payment_data')['amount'];
         $post_data = array();
@@ -35,7 +35,7 @@ class PublicSslCommerzPaymentController extends Controller
             $post_data['value_d'] = Session::get('payment_data')['service_package_id'];
         }
 
-        # CUSTOMER INFORMATION
+        // CUSTOMER INFORMATION
         $post_data['cus_name'] = $user->name;
         $post_data['cus_add1'] = $user->address->street;
         $post_data['cus_city'] = $user->address->city != null ? $user->address->city->name : "";
@@ -50,7 +50,7 @@ class PublicSslCommerzPaymentController extends Controller
 
 
         $sslc = new SSLCommerz();
-        # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
+        // initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
         $payment_options = $sslc->initiate($post_data, false);
 
         if (!is_array($payment_options)) {
@@ -68,7 +68,7 @@ class PublicSslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        #End to received these value from session. which was saved in index function.
+        // End to received these value from session. which was saved in index function.
         $payment = json_encode($request->all());
 
         if (isset($request->value_b)) {
@@ -112,11 +112,11 @@ class PublicSslCommerzPaymentController extends Controller
 
     public function ipn(Request $request)
     {
-        #Received all the payement information from the gateway
-        if ($request->input('tran_id')) { #Check transation id is posted or not.
+        // Received all the payement information from the gateway
+        if ($request->input('tran_id')) { // Check transation id is posted or not.
             $tran_id = $request->input('tran_id');
 
-            #Check order status in order tabel against the transaction id or order id.
+            // Check order status in order tabel against the transaction id or order id.
             $order = Order::findOrFail($request->session()->get('order_id'));
 
             if ($order->payment_status == 'Pending') {

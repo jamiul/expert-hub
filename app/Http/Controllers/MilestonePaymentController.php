@@ -42,7 +42,7 @@ class MilestonePaymentController extends Controller
     }
 
     // Offline payment history
-    public function offline_project_payments_history(Request $request)
+    public function offlineProjectPaymentsHistory(Request $request)
     {
         $sort_search = null;
 
@@ -208,7 +208,7 @@ class MilestonePaymentController extends Controller
     }
 
     // Offline Payment
-    public function offline_milestone_payment_to_admin(Request $request)
+    public function offlineMilestonePaymentToAdmin(Request $request)
     {
         $milestone_req = MilestonePayment::findOrFail($request->milestone_payment_id);
         $milestone_req->payment_method = $request->payment_option;
@@ -236,7 +236,7 @@ class MilestonePaymentController extends Controller
         }
     }
 
-    public function approve_offline_project_payment($id)
+    public function approveOfflineProjectPayment($id)
     {
         $milestone_req = MilestonePayment::findOrFail($id);
         $project = ProjectUser::where('project_id', $milestone_req->project_id)->where('user_id', $milestone_req->freelancer_user_id)->first();

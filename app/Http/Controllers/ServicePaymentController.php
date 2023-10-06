@@ -25,7 +25,7 @@ class ServicePaymentController extends Controller
     }
 
     // Offline Service Payment history
-    public function offline_service_payments_history(Request $request)
+    public function offlineServicePaymentsHistory(Request $request)
     {
         $min_date = null;
         $max_date = null;
@@ -93,7 +93,7 @@ class ServicePaymentController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function purchase_service_package_offline(Request $request)
+    public function purchaseServicePackageOffline(Request $request)
     {
         $service_package = ServicePackage::findOrFail($request->service_package_id);
         $package = $service_package->service->user->userPackage->package;
@@ -122,7 +122,7 @@ class ServicePaymentController extends Controller
         return redirect()->route('client.purchased.services');
     }
 
-    public function approve_offline_service_payment($id)
+    public function approveOfflineServicePayment($id)
     {
         $service_package_payment = ServicePackagePayment::findOrFail($id);
         $service_package_payment->approval = 1;

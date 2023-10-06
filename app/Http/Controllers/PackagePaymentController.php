@@ -42,7 +42,7 @@ class PackagePaymentController extends Controller
     }
 
     //admin Offline package payment history
-    public function manual_package_payments_history(Request $request)
+    public function manualPackagePaymentsHistory(Request $request)
     {
         $min_date = null;
         $max_date = null;
@@ -176,7 +176,7 @@ class PackagePaymentController extends Controller
     }
 
     // Offline Package Purchase
-    public function purchase_package_offline(Request $request)
+    public function purchasePackageOffline(Request $request)
     {
         $package = Package::findOrFail($request->package_id);
         $package_payment = new PackagePayment;
@@ -196,7 +196,7 @@ class PackagePaymentController extends Controller
     }
 
     // Offline package payment approval
-    public function approve_offline_package_payment($id)
+    public function approveOfflinePackagePayment($id)
     {
         $package_payment = PackagePayment::findOrFail($id);
         $package_payment->approval = 1;

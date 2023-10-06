@@ -46,15 +46,17 @@ class ScholarshipWebsiteLinksController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         // dd($request);
-        $request->validate([
+        $request->validate(
+            [
             'web_link' => 'required|max:255',
-        ]);
+            ]
+        );
 
         $category = new ScholarshipWebsiteLinks;
         // dd($category);
@@ -71,7 +73,7 @@ class ScholarshipWebsiteLinksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -82,7 +84,7 @@ class ScholarshipWebsiteLinksController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -96,15 +98,17 @@ class ScholarshipWebsiteLinksController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $request->validate(
+            [
             'web_link' => 'required|max:255',
-        ]);
+            ]
+        );
 
         $category = ScholarshipWebsiteLinks::find($id);
 
@@ -121,7 +125,7 @@ class ScholarshipWebsiteLinksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
 

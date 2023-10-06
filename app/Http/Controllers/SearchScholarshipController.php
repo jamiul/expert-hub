@@ -193,11 +193,13 @@ class SearchScholarshipController extends Controller
             if ($request->fieldStudy_id != null) {
                 $fieldStudy_ids = $request->fieldStudy_id;
                 $fieldStudies = ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
-                $scholarships = $scholarships->where(function ($query) use ($fieldStudy_ids) {
-                    foreach ($fieldStudy_ids as $field_id) {
-                        $query->orWhere('fieldStudy_id', 'like', '%' . $field_id . '%');
+                $scholarships = $scholarships->where(
+                    function ($query) use ($fieldStudy_ids) {
+                        foreach ($fieldStudy_ids as $field_id) {
+                            $query->orWhere('fieldStudy_id', 'like', '%' . $field_id . '%');
+                        }
                     }
-                });
+                );
             }
             if ($request->whoCanApply_id != null) {
                 $whoCanApply_ids = $request->whoCanApply_id;

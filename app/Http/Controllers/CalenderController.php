@@ -65,32 +65,42 @@ class CalenderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
-        $request->validate([
+        $request->validate(
+            [
             'category_id' => 'required',
             'title' => 'required|max:255',
-        ]);
-        $request->validate([
+            ]
+        );
+        $request->validate(
+            [
             'level_id' => 'required',
             'title' => 'required|max:255',
-        ]);
-        $request->validate([
+            ]
+        );
+        $request->validate(
+            [
             'country_id' => 'required',
             'title' => 'required|max:255',
-        ]);
-        $request->validate([
+            ]
+        );
+        $request->validate(
+            [
             'city_id' => 'required',
             'title' => 'required|max:255',
-        ]);
-        $request->validate([
+            ]
+        );
+        $request->validate(
+            [
             'qualification_id' => 'required',
             'title' => 'required|max:255',
-        ]);
+            ]
+        );
 
         $scholarship = new Scholarship;
 
@@ -122,7 +132,7 @@ class CalenderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -132,7 +142,7 @@ class CalenderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -153,16 +163,18 @@ class CalenderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $request->validate(
+            [
             'category_id' => 'required',
             'title' => 'required|max:255',
-        ]);
+            ]
+        );
 
         $scholarship = Scholarship::find($id);
 
@@ -204,7 +216,7 @@ class CalenderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

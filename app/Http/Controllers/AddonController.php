@@ -40,7 +40,7 @@ class AddonController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -159,7 +159,7 @@ class AddonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Addon $addon
+     * @param  \App\Models\Addon $addon
      * @return \Illuminate\Http\Response
      */
     public function show(Addon $addon)
@@ -175,7 +175,7 @@ class AddonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Addon $addon
+     * @param  \App\Models\Addon $addon
      * @return \Illuminate\Http\Response
      */
     public function edit(Addon $addon)
@@ -186,8 +186,8 @@ class AddonController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Addon $addon
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\Addon        $addon
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -197,7 +197,7 @@ class AddonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Addon $addon
+     * @param  \App\Models\Addon $addon
      * @return \Illuminate\Http\Response
      */
     public function activation(Request $request)

@@ -48,6 +48,7 @@ class ProfileController extends Controller
 
     /**
      * Redirect to user profile page to update profile
+     *
      * @return \Illuminate\View\View
      */
     public function userProfile(): \Illuminate\View\View

@@ -106,9 +106,9 @@ class AizUploadController extends Controller
             $upload = new Upload;
             $extension = strtolower($request->file('aiz_file')->getClientOriginalExtension());
 
-            if (env('DEMO_MODE') == 'On' &&
-                isset($type[$extension]) &&
-                $type[$extension] == 'archive'
+            if (env('DEMO_MODE') == 'On'
+                && isset($type[$extension])
+                && $type[$extension] == 'archive'
             ) {
                 return '{}';
             }
@@ -139,13 +139,21 @@ class AizUploadController extends Controller
                         $height = $img->height();
                         $width = $img->width();
                         if ($width > $height && $width > 1500) {
-                            $img->resize(1500, null, function ($constraint) {
-                                $constraint->aspectRatio();
-                            });
+                            $img->resize(
+                                1500,
+                                null,
+                                function ($constraint) {
+                                    $constraint->aspectRatio();
+                                }
+                            );
                         } elseif ($height > 1500) {
-                            $img->resize(null, 800, function ($constraint) {
-                                $constraint->aspectRatio();
-                            });
+                            $img->resize(
+                                null,
+                                800,
+                                function ($constraint) {
+                                    $constraint->aspectRatio();
+                                }
+                            );
                         }
                         $img->save(base_path('public/') . $path);
                         clearstatcache();

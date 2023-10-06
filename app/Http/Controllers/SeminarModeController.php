@@ -41,20 +41,24 @@ class SeminarModeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $input = $request->all();
-        $request->validate([
+        $request->validate(
+            [
             'name' => 'required|max:255',
-        ]);
+            ]
+        );
 
-        SeminarMode::create([
+        SeminarMode::create(
+            [
             'name' => $input['name'],
             'slug' => convertSlug($input['name']),
-        ]);
+            ]
+        );
 
         flash(translate('Seminar mode has been created successfully'))->success();
         return redirect()->route('seminar-mode.index');
@@ -72,7 +76,7 @@ class SeminarModeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -83,7 +87,7 @@ class SeminarModeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(SeminarMode $seminar_mode)
@@ -94,20 +98,24 @@ class SeminarModeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SeminarMode $seminar_mode)
     {
-        $request->validate([
+        $request->validate(
+            [
             'name' => 'required|max:255',
-        ]);
+            ]
+        );
 
-        $seminar_mode->update([
+        $seminar_mode->update(
+            [
             'name' => $request->name,
             'slug' => convertSlug($request->name),
-        ]);
+            ]
+        );
 
         flash(translate('Seminar Mode has been updated successfully'))->success();
 
@@ -117,7 +125,7 @@ class SeminarModeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(SeminarMode $seminar_mode)

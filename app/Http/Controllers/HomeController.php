@@ -119,12 +119,16 @@ class HomeController extends Controller
         if ($project != null) {
             $id = $project->id;
             $user = Auth::user()->id;
-            $chat_thread = ChatThread::where(function ($query) use ($id) {
-                $query->where('project_id', '=', $id);
-            })->where(function ($query) use ($user) {
-                $query->where('sender_user_id', '=', $user)
-                    ->orWhere('receiver_user_id', '=', $user);
-            })->first();
+            $chat_thread = ChatThread::where(
+                function ($query) use ($id) {
+                    $query->where('project_id', '=', $id);
+                }
+            )->where(
+                function ($query) use ($user) {
+                    $query->where('sender_user_id', '=', $user)
+                        ->orWhere('receiver_user_id', '=', $user);
+                }
+            )->first();
         }
         return view('frontend.default.private_project_single', compact('project', 'chat_thread'));
     }
@@ -154,7 +158,8 @@ class HomeController extends Controller
 
     /**
      * Show specific freelancer details to user
-     * @param string $username
+     *
+     * @param  string $username
      * @return \Illuminate\View\View
      */
     public function freelancerDetails($username): \Illuminate\View\View

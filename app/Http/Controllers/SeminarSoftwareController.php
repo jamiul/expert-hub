@@ -40,20 +40,24 @@ class SeminarSoftwareController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $input = $request->all();
-        $request->validate([
+        $request->validate(
+            [
             'name' => 'required|max:255',
-        ]);
+            ]
+        );
 
-        SeminarSoftware::create([
+        SeminarSoftware::create(
+            [
             'name' => $input['name'],
             'slug' => convertSlug($input['name']),
-        ]);
+            ]
+        );
 
         flash(translate('Seminar software has been created successfully'))->success();
 
@@ -72,7 +76,7 @@ class SeminarSoftwareController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -83,7 +87,7 @@ class SeminarSoftwareController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(SeminarSoftware $seminar_software)
@@ -94,20 +98,24 @@ class SeminarSoftwareController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SeminarSoftware $seminar_software)
     {
-        $request->validate([
+        $request->validate(
+            [
             'name' => 'required|max:255',
-        ]);
+            ]
+        );
 
-        $seminar_software->update([
+        $seminar_software->update(
+            [
             'name' => $request->name,
             'slug' => convertSlug($request->name),
-        ]);
+            ]
+        );
 
         flash(translate('Seminar Software has been updated successfully'))->success();
         return redirect()->route('seminar-software.index');
@@ -116,7 +124,7 @@ class SeminarSoftwareController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(SeminarSoftware $seminar_software)

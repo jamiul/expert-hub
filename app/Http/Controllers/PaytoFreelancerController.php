@@ -27,12 +27,16 @@ class PaytoFreelancerController extends Controller
         if ($request->search != null || $request->date != null) {
             if ($request->search != null) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function ($user) use ($sort_search) {
-                    $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
-                })->pluck('id')->toArray();
-                $pay_to_freelancers = $pay_to_freelancers->where(function ($freelancer) use ($user_ids) {
-                    $freelancer->whereIn('user_id', $user_ids);
-                });
+                $user_ids = User::where(
+                    function ($user) use ($sort_search) {
+                        $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+                    }
+                )->pluck('id')->toArray();
+                $pay_to_freelancers = $pay_to_freelancers->where(
+                    function ($freelancer) use ($user_ids) {
+                        $freelancer->whereIn('user_id', $user_ids);
+                    }
+                );
                 $pay_to_freelancers = $pay_to_freelancers->paginate(12);
             } elseif ($request->date != null) {
                 $sort_search_by_date = $request->date;
@@ -124,12 +128,16 @@ class PaytoFreelancerController extends Controller
         if ($request->search != null || $request->type != null) {
             if ($request->has('search')) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function ($user) use ($sort_search) {
-                    $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
-                })->pluck('id')->toArray();
-                $withdraw_requests = $withdraw_requests->where(function ($withdraw_request) use ($user_ids) {
-                    $withdraw_request->whereIn('user_id', $user_ids);
-                });
+                $user_ids = User::where(
+                    function ($user) use ($sort_search) {
+                        $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+                    }
+                )->pluck('id')->toArray();
+                $withdraw_requests = $withdraw_requests->where(
+                    function ($withdraw_request) use ($user_ids) {
+                        $withdraw_request->whereIn('user_id', $user_ids);
+                    }
+                );
             }
             if ($request->type != null) {
                 $var = explode(",", $request->type);

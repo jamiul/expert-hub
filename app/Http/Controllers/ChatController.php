@@ -42,12 +42,16 @@ class ChatController extends Controller
         $chat_threads = ChatThread::orderBy('created_at', 'desc');
         if ($request->has('search')) {
             $sort_search = $request->search;
-            $user_ids = User::where(function ($user) use ($sort_search) {
-                $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
-            })->pluck('id')->toArray();
-            $chat_threads = $chat_threads->where(function ($chat_thread) use ($user_ids) {
-                $chat_thread->whereIn('sender_user_id', $user_ids)->orWhereIn('receiver_user_id', $user_ids);
-            });
+            $user_ids = User::where(
+                function ($user) use ($sort_search) {
+                    $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+                }
+            )->pluck('id')->toArray();
+            $chat_threads = $chat_threads->where(
+                function ($chat_thread) use ($user_ids) {
+                    $chat_thread->whereIn('sender_user_id', $user_ids)->orWhereIn('receiver_user_id', $user_ids);
+                }
+            );
             $chat_threads = $chat_threads->paginate(10);
         } else {
             $chat_threads = $chat_threads->paginate(12);

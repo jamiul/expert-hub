@@ -22,7 +22,8 @@ class StripePaymentController extends Controller
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        $session = \Stripe\Checkout\Session::create([
+        $session = \Stripe\Checkout\Session::create(
+            [
             'payment_method_types' => ['card'],
             'line_items' => [
                 [
@@ -39,7 +40,8 @@ class StripePaymentController extends Controller
             'mode' => 'payment',
             'success_url' => route('stripe.success'),
             'cancel_url' => route('stripe.cancel'),
-        ]);
+            ]
+        );
 
         return response()->json(['id' => $session->id, 'status' => 200]);
     }
