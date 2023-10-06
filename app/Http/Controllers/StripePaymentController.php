@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Stripe\Stripe;
 
 class StripePaymentController extends Controller
 {
@@ -14,13 +15,12 @@ class StripePaymentController extends Controller
      */
     public function index()
     {
-        // dd(Session::get('payment_data'));
         return view('frontend.default.stripe.stripe');
     }
 
-    public function create_checkout_session(Request $request)
+    public function createCheckoutSession(Request $request)
     {
-        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $session = \Stripe\Checkout\Session::create([
             'payment_method_types' => ['card'],

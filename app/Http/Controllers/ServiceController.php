@@ -24,7 +24,7 @@ class ServiceController extends Controller
         $this->messages = ValidationUtility::get_service_validation_message();
     }
 
-    public function freelancer_index()
+    public function freelancerIndex()
     {
         $services = Auth::user()->services()->paginate(12);
         return view('frontend.default.user.freelancer.projects.services.index', compact('services'));
@@ -227,7 +227,7 @@ class ServiceController extends Controller
         return view('frontend.default.user.freelancer.projects.services.index');
     }
 
-    public function sold_services()
+    public function soldServices()
     {
         $this->middleware('freelancer');
         $purchasedServices = ServicePackagePayment::where('service_owner_id', Auth::user()->id)->latest()->paginate(12);

@@ -103,13 +103,13 @@ class PaytoFreelancerController extends Controller
         return redirect()->route('withdraw_request.index');
     }
 
-    public function send_withdrawal_request_index()
+    public function sendWithdrawalRequestIndex()
     {
         $profile = UserProfile::where('user_id', Auth::user()->id)->first();
         return view('frontend.default.user.freelancer.earnings.withdrawal-make', compact('profile'));
     }
 
-    public function withdrawal_history_index()
+    public function withdrawalHistoryIndex()
     {
         $withdraw_requests = PayToFreelancer::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
         return view('frontend.default.user.freelancer.earnings.withdrawal-history', compact('withdraw_requests'));
@@ -146,7 +146,7 @@ class PaytoFreelancerController extends Controller
         return view('admin.default.withdraw_request.index', compact('withdraw_requests', 'sort_search', 'col_name', 'query'));
     }
 
-    public function send_withdrawal_request_store(Request $request)
+    public function sendWithdrawalRequestStore(Request $request)
     {
         if ($request->amount <= Auth::user()->profile->balance && $request->amount >= \App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value) {
             $pay_to_freelancer = new PayToFreelancer;

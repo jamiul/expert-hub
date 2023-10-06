@@ -5,7 +5,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\BiddingController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookmarkedClientController;
 use App\Http\Controllers\BookmarkedFreelancerController;
+use App\Http\Controllers\BookmarkedProjectController;
 use App\Http\Controllers\BookmarkedScholarshipController;
 use App\Http\Controllers\BookmarkedServiceController;
 use App\Http\Controllers\CancelProjectController;
@@ -20,12 +22,18 @@ use App\Http\Controllers\MilestonePaymentController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackagePaymentController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaytoFreelancerController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SearchScholarshipController;
+use App\Http\Controllers\SeminarConsultantController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaticPageController;
+use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WalletController;
@@ -47,6 +55,7 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Auth::routes(['verify' => true]);
 
 //consultant Registration
 Route::get('/consultant-login', [DemoController::class, 'consultantLogin']);
@@ -85,8 +94,6 @@ Route::get('/register/{code}', [RegisterController::class, 'showRegistrationForm
 
 // Subscribe
 Route::resource('subscribers', SubscriberController::class);
-
-Auth::routes(['verify' => true]);
 Route::get('/verification-confirmation/{code}', [VerificationController::class, 'verificationConfirmation'])->name('email.verification.confirmation');
 
 Route::get('/admin/login', [HomeController::class, 'adminLogin'])->name('admin.login');
@@ -103,7 +110,6 @@ Route::get('/check', [UserController::class, 'userOnlineStatus']);
 
 Route::post('/user-name-check', 'HomeController@user_name_check')->name('user_name_check');
 Route::post('/cities/get_city_by_country', 'CityController@get_city_by_country')->name('cities.get_city_by_country');
-
 Route::post('/user-account-type', 'UserController@set_account_type')->name('user.account.type');
 
 // find job section
@@ -257,59 +263,51 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
     Route::post('/partial-payment-modal', [MilestonePaymentController::class, 'requestModal'])->name('milestone_payment_request.modal');
     Route::post('/partial-payment-request-store', [MilestonePaymentController::class, 'requestStore'])->name('partial_payment_request');
     Route::get('/sent-milestone-requests', [MilestonePaymentController::class, 'sentMilestoneRequestIndex'])->name('sent-milestone-requests.all');
-    Route::get('/recieved-milestone-payment', [MilestonePaymentController::class, 'recieved_milestone_payment_index'])->name('recieved_milestone_payment_index');
+    Route::get('/recieved-milestone-payment', [MilestonePaymentController::class, 'recievedMilestonePaymentIndex'])->name('recieved_milestone_payment_index');
 
     //payment history
-    Route::get('/send-withdrawal-request', 'PaytoFreelancerController@send_withdrawal_request_index')->name('send_withdrawal_request_to_admin');
-    Route::get('/withdrawal-history', 'PaytoFreelancerController@withdrawal_history_index')->name('withdrawal_history_index');
-    Route::post('/send-withdrawal-request/store', 'PaytoFreelancerController@send_withdrawal_request_store')->name('store_withdrawal_request_to_admin');
+    Route::get('/send-withdrawal-request', [PaytoFreelancerController::class, 'sendWithdrawalRequestIndex'])->name('send_withdrawal_request_to_admin');
+    Route::get('/withdrawal-history', [PaytoFreelancerController::class, 'withdrawalHistoryIndex'])->name('withdrawal_history_index');
+    Route::post('/send-withdrawal-request/store', [PaytoFreelancerController::class, 'sendWithdrawalRequestStore'])->name('store_withdrawal_request_to_admin');
 
-    Route::resource('bookmarked-projects', 'BookmarkedProjectController');
-    Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
-    Route::get('/following-clients/store/{id}', 'BookmarkedClientController@store')->name('bookmarked-clients.store');
-    Route::get('/following-clients/destroy/{id}', 'BookmarkedClientController@destroy')->name('bookmarked-clients.destroy');
-
-    Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
-    Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
-
+    Route::resource('bookmarked-projects', BookmarkedProjectController::class);
+    Route::get('/following-clients', [BookmarkedClientController::class, 'index'])->name('bookmarked-clients.index');
+    Route::get('/following-clients/store/{id}', [BookmarkedClientController::class, 'store'])->name('bookmarked-clients.store');
+    Route::get('/following-clients/destroy/{id}', [BookmarkedClientController::class, 'destroy'])->name('bookmarked-clients.destroy');
+    Route::get('/services', [ServiceController::class, 'freelancerIndex'])->name('service.freelancer_index');
+    Route::get('services/purchased', [ServiceController::class, 'soldServices'])->name('service.sold');
 });
-// seminar consultant resource route
-Route::resource('seminar-consultant', 'SeminarConsultantController');
 
-Route::get('/search', [\App\Http\Controllers\SearchController::class, 'index'])->name('search');
-Route::get('/search?category_id[]={id}&type=project', 'SearchController@index')->name('projects.category');
-Route::get('/skill/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
-Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('search.category');
-Route::get('/search?category_id[]={category_id}&type=freelancer', 'SearchController@index')->name('freelancer.category');
+// seminar consultant resource route
+Route::resource('seminar-consultant', SeminarConsultantController::class);
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/search?category_id[]={id}&type=project', [SearchController::class, 'index'])->name('projects.category');
+Route::get('/skill/{skill}/{type}', [SearchController::class, 'searchBySkill'])->name('search.skill');
+Route::get('/search?category={category_slug}&type=service', [SearchController::class, 'index'])->name('search.category');
+Route::get('/search?category_id[]={category_id}&type=freelancer', [SearchController::class, 'index'])->name('freelancer.category');
 
 //scholarship list
-Route::get('/scholarship-search', 'SearchScholarshipController@index')->name('scholarship-search');
-Route::get('/skills/{skill}/{type}', 'SearchScholarshipController@searchBySkill')->name('scholarship-search.skill');
-Route::get('/scholarship-search?category={category_slug}&type=service', 'SearchScholarshipController@index')->name('services.category');
+Route::get('/scholarship-search', [SearchScholarshipController::class, 'index'])->name('scholarship-search');
+Route::get('/skills/{skill}/{type}', [SearchScholarshipController::class, 'searchBySkill'])->name('scholarship-search.skill');
+Route::get('/scholarship-search?category={category_slug}&type=service', [SearchScholarshipController::class, 'index'])->name('services.category');
 
-Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');
-Route::get('/private-project-details/{slug}', 'HomeController@private_project_details')->name('private_project.details');
+Route::get('/project/{slug}', [HomeController::class, 'projectDetails'])->name('project.details');
+Route::get('/private-project-details/{slug}', [HomeController::class, 'privateProjectDetails'])->name('private_project.details');
+Route::get('/client/{user_name}', [HomeController::class, 'clientDetails'])->name('client.details');
+Route::get('/client-lists', [HomeController::class, 'clientList'])->name('client.lists');
 
-Route::get('/project-lists', 'HomeController@all_projects')->name('projects.list');
-
-Route::get('/client/{user_name}', 'HomeController@client_details')->name('client.details');
-Route::get('/client-lists', 'HomeController@client_list')->name('client.lists');
-
-Route::get('/freelancer-lists', 'HomeController@freelancer_list')->name('freelancer.lists');
-Route::get('/freelancer/{user_name}', [HomeController::class, 'freelancer_details'])->name('freelancer.details');
-// Route::get('/freelancer/{user_name}', 'HomeController@freelancer_meeting')->name('freelancer.meeting');
-Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
+Route::get('/freelancer-lists', [HomeController::class, 'freelancerList'])->name('freelancer.lists');
+Route::get('/freelancer/{user_name}', [HomeController::class, 'freelancerDetails'])->name('freelancer.details');
 
 //seminars
-
 Route::get('seminar/{id}', 'SeminarDetailsController@seminar_details')->name('seminar.details');
-//Payments
 
-//STRIPE
-Route::get('/stripe', 'StripePaymentController@index');
-Route::post('/stripe/create-checkout-session', 'StripePaymentController@create_checkout_session')->name('stripe.get_token');
-Route::any('/stripe/payment/callback', 'StripePaymentController@callback')->name('stripe.callback');
-Route::get('/stripe/success', 'StripePaymentController@success')->name('stripe.success');
-Route::get('/stripe/cancel', 'StripePaymentController@cancel')->name('stripe.cancel');
+//Payments -STRIPE
+Route::get('/stripe', [StripePaymentController::class, 'index']);
+Route::post('/stripe/create-checkout-session', [StripePaymentController::class, 'createCheckoutSession'])->name('stripe.get_token');
+Route::any('/stripe/payment/callback', [StripePaymentController::class, 'callback'])->name('stripe.callback');
+Route::get('/stripe/success', [StripePaymentController::class, 'success'])->name('stripe.success');
+Route::get('/stripe/cancel', [StripePaymentController::class, 'cancel'])->name('stripe.cancel');
 
-Route::get('/{slug}', 'PageController@show_custom_page')->name('custom-pages.show_custom_page');
+Route::get('/{slug}', [PageController::class, 'showCustomPage'])->name('custom-pages.show_custom_page');

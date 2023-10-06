@@ -38,8 +38,8 @@ class PageController extends Controller
         $page = new Page;
         $page->title = $request->title;
         $page->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
-        $page->content = $request->content;
-        $page->meta_title = $request->meta_title;
+        $page->content = $request->get('content');
+        $page->meta_title = $request->get('meta_title');
         $page->meta_description = $request->meta_description;
         $page->keywords = $request->keywords;
         $page->meta_image = $request->meta_image;
@@ -87,8 +87,8 @@ class PageController extends Controller
         $page = Page::findOrFail($id);
         $page->title = $request->title;
         $page->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->slug));
-        $page->content = $request->content;
-        $page->meta_title = $request->meta_title;
+        $page->content = $request->get('content');
+        $page->meta_title = $request->get('meta_title');
         $page->meta_description = $request->meta_description;
         $page->keywords = $request->keywords;
         $page->meta_image = $request->meta_image;
@@ -113,7 +113,7 @@ class PageController extends Controller
         return back();
     }
 
-    public function show_custom_page($slug)
+    public function showCustomPage($slug)
     {
         $page = Page::where('slug', $slug)->first();
         if ($page != null) {

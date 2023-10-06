@@ -97,7 +97,7 @@ class HomeController extends Controller
     }
 
     //Show details info of specific project
-    public function project_details($slug)
+    public function projectDetails($slug)
     {
         $project = Project::where('slug', $slug)->first();
         $jobPosted = Project::where('client_user_id', $project->client_user_id)->where('cancel_status', '=', 0)->count();
@@ -113,7 +113,7 @@ class HomeController extends Controller
     }
 
     //Show details info of specific project
-    public function private_project_details($slug)
+    public function privateProjectDetails($slug)
     {
         $project = Project::where('slug', $slug)->first();
         if ($project != null) {
@@ -129,23 +129,7 @@ class HomeController extends Controller
         return view('frontend.default.private_project_single', compact('project', 'chat_thread'));
     }
 
-    //Show all project list to user
-    // public function all_projects(Request $request)
-    // {
-    //     $projects = Project::biddable()->notcancel()->where('private', '0')->latest();
-    //
-    //     $keyword = null;
-    //     if($request->has('keyword')){
-    //         $keyword = $request->keyword;
-    //         $projects = $projects->where('name', 'like', '%'.$keyword.'%');
-    //     }
-    //     $total = count($projects->get());
-    //     $projects = $projects->paginate(8);
-    //     return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total'));
-    // }
-
-    //Show specific client details to user
-    public function client_details($username)
+    public function clientDetails($username)
     {
         $client = User::where('user_name', $username)->first();
         $open_projects = Project::where('client_user_id', $client->id)->biddable()->open()->notcancel()->latest()->get();
@@ -153,7 +137,7 @@ class HomeController extends Controller
     }
 
     //Show all client's list to user
-    public function client_list()
+    public function clientList()
     {
         $clients = UserProfile::where('user_role_id', '3')->paginate(8);
         $total_clients = UserProfile::where('user_role_id', '3')->get();
@@ -161,7 +145,7 @@ class HomeController extends Controller
     }
 
     //Show all freelancer's list to user
-    public function freelancer_list()
+    public function freelancerList()
     {
         $freelancers = UserProfile::where('user_role_id', '2')->paginate(8);
         $total_freelancers = UserProfile::where('user_role_id', '2')->get();
@@ -173,7 +157,7 @@ class HomeController extends Controller
      * @param string $username
      * @return \Illuminate\View\View
      */
-    public function freelancer_details($username): \Illuminate\View\View
+    public function freelancerDetails($username): \Illuminate\View\View
     {
         try {
             //TODO:: if freelancer set profile as private, do not display
