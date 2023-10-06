@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Verification;
 use App\Models\User;
+use App\Models\Verification;
 use Auth;
+use Illuminate\Http\Request;
 use Session;
 
 class VerificationController extends Controller
@@ -18,17 +18,16 @@ class VerificationController extends Controller
     public function index(Request $request)
     {
 
-            $sort_search = null;
-            $users = User::where('user_type', 'freelancer')->orWhere('user_type', 'client')->orderBy('created_at', 'desc');
+        $sort_search = null;
+        $users = User::where('user_type', 'freelancer')->orWhere('user_type', 'client')->orderBy('created_at', 'desc');
 
-            if ($request->has('search')){
-                $sort_search = $request->search;
-                $users = $users->where('name', 'like', '%'.$sort_search.'%')->orWhere('email', 'like', '%'.$sort_search.'%');
-            }
+        if ($request->has('search')) {
+            $sort_search = $request->search;
+            $users = $users->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+        }
 
-            $users = $users->paginate(10);
-            return view('admin.default.verification_request.index', compact('users', 'sort_search'));
-
+        $users = $users->paginate(10);
+        return view('admin.default.verification_request.index', compact('users', 'sort_search'));
     }
 
     //Verification Info sent to admin
@@ -47,8 +46,7 @@ class VerificationController extends Controller
         if ($verification->save()) {
             flash(translate('Your verification file has been sent successfully'))->success();
             return back();
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -60,27 +58,13 @@ class VerificationController extends Controller
         return view('admin.default.verification_request.show', compact('user'));
     }
 
-    public function destroy($id)
-    {
-        $verification = Verification::findOrFail($id);
-        if (Verification::destroy($id)) {
-            flash(translate('Verification info has been deleted successfully'))->error();
-            return redirect()->route('verification_requests');
-        }
-        else {
-            flash(translate('Something went wrong'))->error();
-            return back();
-        }
-    }
-
     public function verification_accept(Request $request)
     {
         $verification = Verification::findOrFail($request->id);
         $verification->verified = 1;
         if ($verification->save()) {
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
     }
@@ -90,9 +74,20 @@ class VerificationController extends Controller
         $verification = Verification::findOrFail($request->id);
         if (Verification::destroy($verification->id)) {
             return 1;
-        }
-        else {
+        } else {
             return 0;
+        }
+    }
+
+    public function destroy($id)
+    {
+        $verification = Verification::findOrFail($id);
+        if (Verification::destroy($id)) {
+            flash(translate('Verification info has been deleted successfully'))->error();
+            return redirect()->route('verification_requests');
+        } else {
+            flash(translate('Something went wrong'))->error();
+            return back();
         }
     }
 }

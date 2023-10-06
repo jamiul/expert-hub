@@ -20,7 +20,6 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Response;
 
 class ProjectController extends Controller
 {
@@ -35,72 +34,68 @@ class ProjectController extends Controller
         return view('frontend.default.user.client.projects.list', compact('projects'));
     }
 
-    public function my_open_project()
+    public function myOpenProject()
     {
         $projects = Project::where('client_user_id', Auth::user()->id)->open()->biddable()->notcancel()->latest()->paginate(10);
         return view('frontend.default.user.client.projects.my_open_projects', compact('projects'));
     }
 
-    public function my_running_project()
+    public function myRunningProject()
     {
         if (isClient()) {
             $projects = Project::where('client_user_id', Auth::user()->id)->where('biddable', '0')->open()->notcancel()->latest()->paginate(10);
             return view('frontend.default.user.client.projects.my_running_project', compact('projects'));
-        }
-        elseif (isFreelancer()) {
+        } elseif (isFreelancer()) {
             $running_projects = DB::table('projects')
-                    ->join('project_users', 'projects.id', '=', 'project_users.project_id')
-                    ->where('project_users.user_id', Auth::user()->id)
-                    ->where('projects.cancel_status', 0)
-                    ->where('projects.closed', 0)
-                    ->select('projects.id','project_users.hired_at')
-                    ->distinct()
-                    ->paginate(10);
+                ->join('project_users', 'projects.id', '=', 'project_users.project_id')
+                ->where('project_users.user_id', Auth::user()->id)
+                ->where('projects.cancel_status', 0)
+                ->where('projects.closed', 0)
+                ->select('projects.id', 'project_users.hired_at')
+                ->distinct()
+                ->paginate(10);
             return view('frontend.default.user.freelancer.projects.my_running_project', compact('running_projects'));
         }
     }
 
-    public function bidded_projects()
+    public function biddedProjects()
     {
         $bidded_projects = ProjectBid::where('bid_by_user_id', Auth::user()->id)->paginate(10);
         $total_bidded_projects = ProjectBid::where('bid_by_user_id', Auth::user()->id)->get();
         return view('frontend.default.user.freelancer.projects.bidded', compact('bidded_projects', 'total_bidded_projects'));
     }
 
-    public function my_cancelled_project()
+    public function myCancelledProject()
     {
         if (isClient()) {
             $projects = Project::where('client_user_id', Auth::user()->id)->where('cancel_status', '1')->latest()->paginate(10);
             return view('frontend.default.user.client.projects.my_cancelled_project', compact('projects'));
-        }
-        elseif (isFreelancer()) {
+        } elseif (isFreelancer()) {
             $cancelled_projects = DB::table('projects')
-                    ->orderBy('projects.created_at', 'desc')
-                    ->join('project_users', 'projects.id', '=', 'project_users.project_id')
-                    ->where('projects.cancel_status', 1)
-                    ->where('project_users.user_id', Auth::user()->id)
-                    ->select('projects.id')
-                    ->distinct()
-                    ->paginate(10);
+                ->orderBy('projects.created_at', 'desc')
+                ->join('project_users', 'projects.id', '=', 'project_users.project_id')
+                ->where('projects.cancel_status', 1)
+                ->where('project_users.user_id', Auth::user()->id)
+                ->select('projects.id')
+                ->distinct()
+                ->paginate(10);
 
             return view('frontend.default.user.freelancer.projects.my_cancelled_project', compact('cancelled_projects'));
         }
-
     }
 
-    public function my_completed_project()
+    public function myCompletedProject()
     {
         if (isClient()) {
             $projects = Project::where('client_user_id', Auth::user()->id)->closed()->latest()->paginate(10);
             return view('frontend.default.user.client.projects.my_completed_project', compact('projects'));
-        }
-        elseif (isFreelancer()) {
+        } elseif (isFreelancer()) {
             $completed_projects = getCompletedProjectsByFreelancer(Auth::user()->id)->paginate(10);
             return view('frontend.default.user.freelancer.projects.my_completed_project', compact('completed_projects'));
         }
     }
 
-    public function project_bids($slug)
+    public function projectBids($slug)
     {
         $project = Project::where('slug', $slug)->first();
         $project_bids = $project->bids;
@@ -120,14 +115,14 @@ class ProjectController extends Controller
         $categories = ProjectCategory::all();
         $skills = Skill::all();
         $client_package = Auth::user()->userPackage;
-        
-        return view('frontend.default.user.client.projects.create', compact('categories','skills', 'client_package', 'budget_aud', 'budget_usd'));
+
+        return view('frontend.default.user.client.projects.create', compact('categories', 'skills', 'client_package', 'budget_aud', 'budget_usd'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProjectRequest $request)
@@ -135,26 +130,25 @@ class ProjectController extends Controller
         // dd($request->validated());
         $uploadAble = false;
 
-        if($request->projectType == 'Fixed'){
+        if ($request->projectType == 'Fixed') {
             $userPackage = Auth::user()->userPackage;
-            if($userPackage->fixed_limit > 0){
-                $userPackage->fixed_limit -= 1 ;
+            if ($userPackage->fixed_limit > 0) {
+                $userPackage->fixed_limit -= 1;
+                $userPackage->save();
+
+                $uploadAble = true;
+            }
+        } else {
+            $userPackage = Auth::user()->userPackage;
+            if ($userPackage->long_term_limit > 0) {
+                $userPackage->long_term_limit -= 1;
                 $userPackage->save();
 
                 $uploadAble = true;
             }
         }
-        else{
-            $userPackage = Auth::user()->userPackage;
-            if($userPackage->long_term_limit > 0){
-                $userPackage->long_term_limit -= 1 ;
-                $userPackage->save();
 
-                $uploadAble = true;
-            }
-        }
-
-        if($uploadAble){
+        if ($uploadAble) {
             $project = new Project;
             $project->name = $request->name;
             $project->description = $request->description;
@@ -165,29 +159,28 @@ class ProjectController extends Controller
             $project->budget = $request->budget;
             $project->project_category_id = $request->project_category_id;
             $project->client_user_id = Auth::user()->id;
-            $project->slug = Str::slug($request->name, '-').date('Ymd-his');
+            $project->slug = Str::slug($request->name, '-') . date('Ymd-his');
             $project->save();
 
             //to admin
             NotificationUtility::set_notification(
                 "project_created_by_client",
                 translate('A new Project has been created by'),
-                route('project.details',['slug'=>$project->slug],false),
+                route('project.details', ['slug' => $project->slug], false),
                 0,
                 Auth::user()->id,
                 'admin'
             );
             EmailUtility::send_email(
                 translate('A new Project has been created'),
-                translate('A new Project has been created by'). Auth::user()->name,
+                translate('A new Project has been created by') . Auth::user()->name,
                 system_email(),
-                route('project.details',['slug'=>$project->slug])
+                route('project.details', ['slug' => $project->slug])
             );
 
             flash(translate('Project has been created successfully'))->success();
             return redirect()->route('projects.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Project creating limit has been reached.'))->warning();
             return back();
         }
@@ -196,7 +189,7 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -207,7 +200,7 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -219,9 +212,8 @@ class ProjectController extends Controller
         $skills = Skill::all();
         $client_package = Auth::user()->userPackage;
         if ($project->closed == '0') {
-            return view('frontend.default.user.client.projects.edit',compact('categories','skills','project','client_package', 'budget_aud', 'budget_usd'));
-        }
-        else {
+            return view('frontend.default.user.client.projects.edit', compact('categories', 'skills', 'project', 'client_package', 'budget_aud', 'budget_usd'));
+        } else {
             return redirect()->back();
         }
     }
@@ -229,8 +221,8 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -249,14 +241,34 @@ class ProjectController extends Controller
         $project->attachments = $request->attachments;
         $project->client_user_id = Auth::user()->id;
         if ($project->slug == null) {
-            $project->slug = Str::slug($request->name, '-').date('Ymd-his');
+            $project->slug = Str::slug($request->name, '-') . date('Ymd-his');
         }
         if ($project->save()) {
             flash(translate('Project has been updated successfully'))->success();
             return redirect()->route('projects.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
+            return back();
+        }
+    }
+
+    public function projectCancel($id)
+    {
+        $active_project = ProjectUser::where('project_id', $id)->first();
+        $project = Project::findOrFail($id);
+        if ($active_project == null) {
+            $project->cancel_status = '1';
+            $project->cancel_by_user_id = Auth::user()->id;
+            $project->save();
+            if ($project->private == '1') {
+                Project::destroy($project->id);
+            }
+            flash(translate('Project has been cancelled successfully'))->success();
+            return redirect()->back();
+        } elseif ($active_project != null) {
+            return view('frontend.default.user.projects.project_cancel_request', compact('project'));
+        } else {
+            flash(translate('Something went wrong'))->error();
             return back();
         }
     }
@@ -264,7 +276,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -276,7 +288,7 @@ class ProjectController extends Controller
             $bid->delete();
         }
 
-        foreach ($project->reviews as $key =>$review) {
+        foreach ($project->reviews as $key => $review) {
             $review->delete();
         }
 
@@ -286,109 +298,76 @@ class ProjectController extends Controller
 
         $invites = HireInvitation::where('project_id', $project->id)->get();
         if ($invites != null) {
-            foreach ($invites as $key =>$invite) {
+            foreach ($invites as $key => $invite) {
                 $invite->delete();
             }
         }
 
         $milestone_payments = MilestonePayment::where('project_id', $project->id)->get();
         if ($milestone_payments != null) {
-            foreach ($milestone_payments as $key =>$milestone_payment) {
+            foreach ($milestone_payments as $key => $milestone_payment) {
                 $milestone_payment->delete();
             }
         }
 
         $project_users = ProjectUser::where('project_id', $project->id)->get();
         if ($project_users != null) {
-            foreach ($project_users as $key =>$project_user) {
+            foreach ($project_users as $key => $project_user) {
                 $project_user->delete();
             }
         }
 
-        if(Project::destroy(decrypt($id))){
+        if (Project::destroy(decrypt($id))) {
             flash(translate('Project has been deleted successfully'))->success();
             return redirect()->route('all_projects');
-        }
-        else{
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
         }
     }
 
-    public function project_cancel($id)
-    {
-        $active_project = ProjectUser::where('project_id', $id)->first();
-        $project = Project::findOrFail($id);
-        if ($active_project == null)
-        {
-            $project->cancel_status = '1';
-            $project->cancel_by_user_id = Auth::user()->id;
-            $project->save();
-            if ($project->private == '1') {
-                Project::destroy($project->id);
-            }
-            flash(translate('Project has been cancelled successfully'))->success();
-            return redirect()->back();
-        }
-        elseif ($active_project != null) {
-            return view('frontend.default.user.projects.project_cancel_request', compact('project'));
-        }
-        else
-        {
-            flash(translate('Something went wrong'))->error();
-            return back();
-        }
-    }
-
-    public function get_bid_modal(Request $request)
-    {
-        $project = Project::findOrFail($request->id);
-        return view('frontend.default.partials.bid_for_project_modal', compact('project'));
-    }
-
-    public function project_done($id)
+    public function projectDone($id)
     {
         $project = Project::findOrFail($id);
 
-        if(MilestonePayment::where('project_id', $project->id)->where('paid_status', 1)->sum('amount') >= $project->project_user->hired_at){
+        if (MilestonePayment::where('project_id', $project->id)->where('paid_status', 1)->sum('amount') >= $project->project_user->hired_at) {
             $project->closed = 1;
             $project->save();
             try {
                 $this->check_for_client_project_badge($project->client_user_id);
                 $this->check_for_freelancer_project_badge($project->project_user->user_id);
             } catch (\Exception $e) {
-
             }
 
             //to freelancer
             NotificationUtility::set_notification(
                 "project_completed_by_client",
                 translate('A Project has been marked as completed by'),
-                route('project.details',['slug'=>$project->slug],false),
+                route('project.details', ['slug' => $project->slug], false),
                 $project->project_user->user_id,
                 Auth::user()->id,
                 'freelancer'
             );
             EmailUtility::send_email(
                 translate('A Project has been marked as completed'),
-                translate('A Project has been marked as completed by'). Auth::user()->name,
+                translate('A Project has been marked as completed by') . Auth::user()->name,
                 get_email_by_user_id($project->project_user->user_id),
-                route('project.details',['slug'=>$project->slug])
+                route('project.details', ['slug' => $project->slug])
             );
-        }
-        else {
+        } else {
             flash(translate('Please complete the payments to end this project'))->warning();
         }
 
         return back();
     }
 
-    public function check_for_client_project_badge($user_id){
-        $badges = Badge::where('type','project_badge')->where('role_id', 'client')->orderBy('value', 'desc')->get();
+    public function check_for_client_project_badge($user_id)
+    {
+        $badges = Badge::where('type', 'project_badge')->where('role_id', 'client')->orderBy('value', 'desc')->get();
         foreach ($badges as $key => $badge) {
-            if(Project::where('client_user_id', $user_id)->where('closed', 1)->count() >= $badge->value){
+            if (Project::where('client_user_id', $user_id)->where('closed', 1)->count() >= $badge->value) {
                 $user_badge = UserBadge::where('user_id', $user_id)->where('type', 'project_badge')->first();
-                if($user_badge == null){
+                if ($user_badge == null) {
                     $user_badge = new UserBadge;
                 }
                 $user_badge->user_id = $user_id;
@@ -401,20 +380,21 @@ class ProjectController extends Controller
         }
     }
 
-    public function check_for_freelancer_project_badge($user_id){
-        $badges = Badge::where('type','project_badge')->where('role_id', 'freelancer')->orderBy('value', 'desc')->get();
+    public function check_for_freelancer_project_badge($user_id)
+    {
+        $badges = Badge::where('type', 'project_badge')->where('role_id', 'freelancer')->orderBy('value', 'desc')->get();
         $total = 0;
         foreach (ProjectUser::where('user_id', $user_id)->get() as $key => $project_user) {
-            if($project_user->project != null){
-                if($project_user->project->closed){
+            if ($project_user->project != null) {
+                if ($project_user->project->closed) {
                     $total++;
                 }
             }
         }
         foreach ($badges as $key => $badge) {
-            if($total >= $badge->value){
+            if ($total >= $badge->value) {
                 $user_badge = UserBadge::where('user_id', $user_id)->where('type', 'project_badge')->first();
-                if($user_badge == null){
+                if ($user_badge == null) {
                     $user_badge = new UserBadge;
                 }
                 $user_badge->user_id = $user_id;
@@ -426,6 +406,4 @@ class ProjectController extends Controller
             }
         }
     }
-
-
 }

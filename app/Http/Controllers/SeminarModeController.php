@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\SeminarMode;
-
-
+use Illuminate\Http\Request;
 
 class SeminarModeController extends Controller
 {
@@ -14,6 +11,7 @@ class SeminarModeController extends Controller
     {
         $this->middleware(['permission:show blog category'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,11 +22,11 @@ class SeminarModeController extends Controller
         $input = $request->all();
         $search = '';
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $search = $input['search'];
-            $seminar_modes = SeminarMode::where('name', 'like', '%'.$search.'%')->get();
+            $seminar_modes = SeminarMode::where('name', 'like', '%' . $search . '%')->get();
 
-            if($input['search'] == ''){
+            if ($input['search'] == '') {
                 $seminar_modes = SeminarMode::orderBy('name', 'asc')->get();
             }
         } else {
@@ -41,19 +39,9 @@ class SeminarModeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -73,9 +61,18 @@ class SeminarModeController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+    }
+
+    /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -86,19 +83,19 @@ class SeminarModeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(SeminarMode $seminar_mode)
     {
-        return view('admin.default.seminar_module.seminar_mode.edit',  compact('seminar_mode'));
+        return view('admin.default.seminar_module.seminar_mode.edit', compact('seminar_mode'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SeminarMode $seminar_mode)
@@ -110,7 +107,7 @@ class SeminarModeController extends Controller
         $seminar_mode->update([
             'name' => $request->name,
             'slug' => convertSlug($request->name),
-            ]);
+        ]);
 
         flash(translate('Seminar Mode has been updated successfully'))->success();
 
@@ -120,7 +117,7 @@ class SeminarModeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(SeminarMode $seminar_mode)

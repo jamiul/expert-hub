@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\FreelancerAccount;
 use App\Models\User;
 use App\Models\UserProfile;
-use App\Models\FreelancerAccount;
 use Cache;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -14,7 +14,6 @@ class UserController extends Controller
     {
         $this->middleware(['permission:show all freelancers'])->only('all_freelancers');
         $this->middleware(['permission:show all clients'])->only('all_clients');
-
     }
 
     public function all_freelancers(Request $request)
@@ -24,26 +23,26 @@ class UserController extends Controller
         $query = null;
         $freelancers = UserProfile::query();
 
-        $user_ids = User::where(function($user) use ($sort_search){
+        $user_ids = User::where(function ($user) use ($sort_search) {
             $user->where('user_type', 'freelancer');
         })->pluck('id')->toArray();
 
-        $freelancers = $freelancers->where(function($freelancer) use ($user_ids){
+        $freelancers = $freelancers->where(function ($freelancer) use ($user_ids) {
             $freelancer->whereIn('user_id', $user_ids);
         });
 
         if ($request->search != null || $request->type != null) {
-            if ($request->has('search')){
+            if ($request->has('search')) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function($user) use ($sort_search){
-                    $user->where('user_type', 'freelancer')->where('name', 'like', '%'.$sort_search.'%')->orWhere('email', 'like', '%'.$sort_search.'%');
+                $user_ids = User::where(function ($user) use ($sort_search) {
+                    $user->where('user_type', 'freelancer')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
                 })->pluck('id')->toArray();
 
-                $freelancers = $freelancers->where(function($freelancer) use ($user_ids){
+                $freelancers = $freelancers->where(function ($freelancer) use ($user_ids) {
                     $freelancer->whereIn('user_id', $user_ids);
                 });
             }
-            if ($request->type != null){
+            if ($request->type != null) {
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
@@ -51,16 +50,14 @@ class UserController extends Controller
             }
 
             $freelancers = $freelancers->paginate(10);
-        }
-        else {
+        } else {
             $freelancers = $freelancers->orderBy('created_at', 'desc')->paginate(10);
         }
 
         return view('admin.default.freelancer.freelancers.index', compact('freelancers', 'sort_search', 'col_name', 'query'));
-
     }
 
-     public function login($id)
+    public function login($id)
     {
         $user = User::findOrFail(decrypt($id));
         auth()->login($user, true);
@@ -76,26 +73,26 @@ class UserController extends Controller
         $query = null;
         $clients = UserProfile::query();
 
-        $user_ids = User::where(function($user) use ($sort_search){
+        $user_ids = User::where(function ($user) use ($sort_search) {
             $user->where('user_type', 'client');
         })->pluck('id')->toArray();
 
-        $freelancers = $clients->where(function($freelancer) use ($user_ids){
+        $freelancers = $clients->where(function ($freelancer) use ($user_ids) {
             $freelancer->whereIn('user_id', $user_ids);
         });
 
 
         if ($request->search != null || $request->type != null) {
-            if ($request->has('search')){
+            if ($request->has('search')) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function($user) use ($sort_search){
-                    $user->where('user_type', 'client')->where('name', 'like', '%'.$sort_search.'%')->orWhere('email', 'like', '%'.$sort_search.'%');
+                $user_ids = User::where(function ($user) use ($sort_search) {
+                    $user->where('user_type', 'client')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
                 })->pluck('id')->toArray();
-                $clients = $clients->where(function($client) use ($user_ids){
+                $clients = $clients->where(function ($client) use ($user_ids) {
                     $client->whereIn('user_id', $user_ids);
                 });
             }
-            if ($request->type != null){
+            if ($request->type != null) {
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
@@ -103,8 +100,7 @@ class UserController extends Controller
             }
 
             $clients = $clients->paginate(10);
-        }
-        else {
+        } else {
             $clients = $clients->orderBy('created_at', 'desc')->paginate(10);
         }
         return view('admin.default.client.clients.index', compact('clients', 'sort_search', 'col_name', 'query'));
@@ -124,7 +120,7 @@ class UserController extends Controller
         $user_profile = UserProfile::where('user_id', $user->id)->first();
         $user_account = FreelancerAccount::where('user_id', $user->id)->first();
         $projects = $user->number_of_projects()->paginate(10);
-        return view('admin.default.client.clients.show', compact('user', 'user_profile', 'user_account','projects'));
+        return view('admin.default.client.clients.show', compact('user', 'user_profile', 'user_account', 'projects'));
     }
 
     public function userOnlineStatus()
@@ -132,22 +128,22 @@ class UserController extends Controller
         $users = User::all();
 
         foreach ($users as $user) {
-            if (Cache::has('user-is-online-' . $user->id))
+            if (Cache::has('user-is-online-' . $user->id)) {
                 echo "User " . $user->name . " is online.";
-            else
+            } else {
                 echo "User " . $user->name . " is offline.";
+            }
         }
     }
 
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        if($user->banned){
+        if ($user->banned) {
             $user->banned = 0;
             $user->save();
             flash(translate('User has been unbanned successfully'))->success();
-        }
-        else{
+        } else {
             $user->banned = 1;
             $user->save();
             flash(translate('User has been banned successfully'))->success();
@@ -159,12 +155,11 @@ class UserController extends Controller
     {
         auth()->user()->user_type = $request->user_type;
 
-        if(auth()->user()->save()) {
+        if (auth()->user()->save()) {
             session()->forget('new_user');
         }
 
         flash(translate('User account type set successfully'))->success();
         return back();
-
     }
 }

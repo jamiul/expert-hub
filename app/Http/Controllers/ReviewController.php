@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Models\Review;
 use App\Utility\EmailUtility;
 use App\Utility\NotificationUtility;
-use Illuminate\Http\Request;
-use App\Models\Review;
-use App\Models\Project;
 use Auth;
+use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
@@ -29,7 +29,7 @@ class ReviewController extends Controller
         return view('admin.default.reviews.client', compact('reviews'));
     }
 
-    public function review_index($type)
+    public function reviewIndex($type)
     {
         $reviews = Review::where('reviewed_user_id', Auth::user()->id)->latest()->paginate(10);
         return view('frontend.default.user.reviews.index', compact('reviews'));
@@ -58,32 +58,32 @@ class ReviewController extends Controller
             NotificationUtility::set_notification(
                 "client_review_by_freelancer",
                 translate('You have been given a review for a project by'),
-                route('user_review', ['type'=>'client'], false),
+                route('user_review', ['type' => 'client'], false),
                 $project->client_user_id,
                 Auth::user()->id,
                 'client'
             );
             EmailUtility::send_email(
                 translate('You have been given a review for a project'),
-                translate('You have been given a review for a project by'). Auth::user()->name,
+                translate('You have been given a review for a project by') . Auth::user()->name,
                 get_email_by_user_id($project->client_user_id),
-                route('user_review', ['type'=>'client'])
+                route('user_review', ['type' => 'client'])
             );
-        } else if (isClient()) {
+        } elseif (isClient()) {
             //client to freelancer
             NotificationUtility::set_notification(
                 "freelancer_review_by_client",
                 translate('You have been given a review for a project by'),
-                route('user_review', ['type'=>'freelancer'], false),
+                route('user_review', ['type' => 'freelancer'], false),
                 $project->project_user->user_id,
                 Auth::user()->id,
                 'freelancer'
             );
             EmailUtility::send_email(
                 translate('You have been given a review for a project'),
-                translate('You have been given a review for a project by'). Auth::user()->name,
+                translate('You have been given a review for a project by') . Auth::user()->name,
                 get_email_by_user_id($project->project_user->user_id),
-                route('user_review', ['type'=>'freelancer'])
+                route('user_review', ['type' => 'freelancer'])
             );
         }
 
@@ -117,5 +117,4 @@ class ReviewController extends Controller
 
         return 1;
     }
-    
 }

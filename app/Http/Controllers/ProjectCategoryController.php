@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\ProjectCategory;
 use App\Utility\CategoryUtility;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ProjectCategoryController extends Controller
@@ -12,8 +12,8 @@ class ProjectCategoryController extends Controller
     public function __construct()
     {
         $this->middleware(['permission:show project category'])->only('index');
-
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +21,7 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        $project_categories =ProjectCategory::first()->paginate(10);
+        $project_categories = ProjectCategory::first()->paginate(10);
         return view('admin.default.project.project_categories.index', compact('project_categories'));
     }
 
@@ -38,7 +38,7 @@ class ProjectCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,13 +49,12 @@ class ProjectCategoryController extends Controller
             $project_category->parent_id = $request->parent_id;
         }
         $project_category->photo = $request->photo;
-        $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
+        $project_category->slug = Str::slug($request->name, '-') . '-' . Str::random(5);
         $project_category->description = $request->description;
-        if($project_category->save()){
+        if ($project_category->save()) {
             flash(translate('New Category has been added successfully!'))->success();
             return redirect()->route('project-categories.index');
-        }
-        else {
+        } else {
             flash(translate('Something went wrong!'))->warning();
             return back();
         }
@@ -64,7 +63,7 @@ class ProjectCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,22 +74,21 @@ class ProjectCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $project_category = ProjectCategory::findOrFail(decrypt($id));
-        $project_categories = ProjectCategory::whereNotIn('id',CategoryUtility::children_ids($project_category->id,true))->where('id', '!=' , $project_category->id)->get();
+        $project_categories = ProjectCategory::whereNotIn('id', CategoryUtility::children_ids($project_category->id, true))->where('id', '!=', $project_category->id)->get();
         return view('admin.default.project.project_categories.edit', compact('project_category', 'project_categories'));
-
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,14 +98,13 @@ class ProjectCategoryController extends Controller
         if ($request->parent_id != null) {
             $project_category->parent_id = $request->parent_id;
         }
-        $project_category->slug = Str::slug($request->name, '-').'-'.Str::random(5);
+        $project_category->slug = Str::slug($request->name, '-') . '-' . Str::random(5);
         $project_category->photo = $request->photo;
         $project_category->description = $request->description;
-        if($project_category->save()){
+        if ($project_category->save()) {
             flash(translate('New Category has been updated successfully!'))->success();
             return redirect()->route('project-categories.index');
-        }
-        else {
+        } else {
             flash(translate('Something went wrong!'))->warning();
             return back();
         }
@@ -116,7 +113,7 @@ class ProjectCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

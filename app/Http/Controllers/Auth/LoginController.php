@@ -3,15 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Address;
+use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Socialite;
-use Session;
-use App\Models\User;
-use App\Models\Address;
-use App\Models\UserProfile;
 use Illuminate\Support\Str;
-use CoreComponentRepository;
+use Session;
+use Socialite;
 
 class LoginController extends Controller
 {
@@ -33,7 +32,16 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';    /**
+* Create a new controller instance.
+*
+* @return void
+*/
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
 
     public function redirectToProvider($provider)
     {
@@ -53,10 +61,9 @@ class LoginController extends Controller
     public function handleProviderCallback(Request $request, $provider)
     {
         try {
-            if($provider == 'twitter'){
+            if ($provider == 'twitter') {
                 $user = Socialite::driver('twitter')->user();
-            }
-            else{
+            } else {
                 $user = Socialite::driver($provider)->stateless()->user();
             }
         } catch (\Exception $e) {
@@ -66,22 +73,22 @@ class LoginController extends Controller
 
         // check if they're an existing user
         $existingUser = User::where('provider_id', $user->id)->orWhere('email', $user->email)->first();
-        if($existingUser){
+        if ($existingUser) {
             // log them in
             auth()->login($existingUser, true);
-            
-            $user_profile = UserProfile::where('user_id', auth()->user()->id)->first();            
+
+            $user_profile = UserProfile::where('user_id', auth()->user()->id)->first();
         } else {
             // create a new user
-            $newUser                  = new User;
-            $newUser->name            = $user->name;
-            $newUser->user_name       = Str::slug($user->name, '-').date('Ymd-his');
-            $newUser->email           = $user->email;
+            $newUser = new User;
+            $newUser->name = $user->name;
+            $newUser->user_name = Str::slug($user->name, '-') . date('Ymd-his');
+            $newUser->email = $user->email;
             $newUser->email_verified_at = date('Y-m-d Hms');
-            $newUser->provider_id     = $user->id;
+            $newUser->provider_id = $user->id;
 
             $newUser->save();
-            Session::put('new_user', true);            
+            Session::put('new_user', true);
 
             $user_profile = new UserProfile;
             $user_profile->user_id = $newUser->id;
@@ -92,35 +99,29 @@ class LoginController extends Controller
 
             auth()->login($newUser, true);
         }
-        if(session('link') != null){
+        if (session('link') != null) {
             return redirect(session('link'));
-        }
-        else{
+        } else {
             return redirect()->route('dashboard');
         }
     }
 
-
     public function authenticated()
     {
-        if(auth()->user()->user_type == ' ' || auth()->user()->user_type == 'staff')
-        {
+        if (auth()->user()->user_type == ' ' || auth()->user()->user_type == 'staff') {
             return redirect()->route('admin.dashboard');
-        }
-        else {
-            if(auth()->user()->banned){
+        } else {
+            if (auth()->user()->banned) {
                 flash(translate('You are banned'))->warning();
                 return redirect()->route('home');
             }
-            if(auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'staff')
-            {
+            if (auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'staff') {
                 return redirect()->route('admin.dashboard');
             }
 
-            if(session('link') != null){
+            if (session('link') != null) {
                 return redirect(session('link'));
-            }
-            else{
+            } else {
                 return redirect()->route('dashboard');
             }
         }
@@ -128,10 +129,9 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        if(auth()->user() != null && (auth()->user()->user_type != null && auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")){
+        if (auth()->user() != null && (auth()->user()->user_type != null && auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")) {
             $redirect_route = 'admin.login';
-        }
-        else{
+        } else {
             $redirect_route = 'dashboard';
         }
 
@@ -140,15 +140,5 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         return $this->loggedOut($request) ?: redirect()->route($redirect_route);
-    }
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
     }
 }

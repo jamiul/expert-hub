@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Role;
 use App\Models\WorkExperience;
-use Session;
 use Auth;
+use Illuminate\Http\Request;
 
 class WorkExperienceController extends Controller
 {
     //Adding new work exp info
     public function store(Request $request)
     {
-        if(count(Auth::user()->workExperiences) < Auth::user()->userPackage->job_exp_limit){
+        if (count(Auth::user()->workExperiences) < Auth::user()->userPackage->job_exp_limit) {
             $work_exp = new WorkExperience;
             $work_exp->user_id = Auth::user()->id;
             $work_exp->company_name = $request->company_name;
@@ -24,8 +22,7 @@ class WorkExperienceController extends Controller
             if ($request->present == 'on') {
                 $work_exp->present = '1';
                 $work_exp->start = date($request->start_date);
-            }
-            else {
+            } else {
                 $work_exp->present = '0';
                 $work_exp->start = date($request->start_date);
                 $work_exp->end = date($request->end_date);
@@ -34,8 +31,7 @@ class WorkExperienceController extends Controller
             $work_exp->save();
             flash(translate('New work experience has been added successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Work experience adding limit has been reached.'))->warning();
             return back();
         }
@@ -63,8 +59,7 @@ class WorkExperienceController extends Controller
         if ($request->present == 'on') {
             $work_exp->present = '1';
             $work_exp->start = date($request->start_date);
-        }
-        else {
+        } else {
             $work_exp->present = '0';
             $work_exp->start = date($request->start_date);
             $work_exp->end = date($request->end_date);
@@ -73,14 +68,14 @@ class WorkExperienceController extends Controller
         if ($work_exp->save()) {
             flash(translate('Work Experience has been updated successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
     }
 
-    public function destroy(Request $request, $id){
+    public function destroy(Request $request, $id)
+    {
         $work_exp = WorkExperience::findOrFail(decrypt($id));
         $work_exp->delete();
 

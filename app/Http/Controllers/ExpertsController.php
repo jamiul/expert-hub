@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Experts;
 use Illuminate\Http\Request;
 
@@ -17,17 +16,11 @@ class ExpertsController extends Controller
     {
         $experts = Experts::with('childrens')->whereNull('parent_id')->get();
 
-        $allExpertList=Experts::latest()->paginate(50);
+        $allExpertList = Experts::latest()->paginate(50);
 
         // $allExpertLists = Experts->where('parent_id',"id")->get();
         // dd($allExpertList);
-        return view('admin.default.freelancer.Experts.index', compact('experts','allExpertList'));
-    }
-
-    public function create()
-    {
-        // Logic for showing the Experts creation form
-        return view('admin.default.freelancer.create');
+        return view('admin.default.freelancer.Experts.index', compact('experts', 'allExpertList'));
     }
 
     public function store(Request $request)
@@ -42,11 +35,17 @@ class ExpertsController extends Controller
         return redirect()->route('experts.index')->with('success', 'Experts created successfully.');
     }
 
+    public function create()
+    {
+        // Logic for showing the Experts creation form
+        return view('admin.default.freelancer.create');
+    }
+
     public function edit($id)
     {
         $experts = Experts::with('childrens')->whereNull('parent_id')->paginate(10);
         $expert = Experts::findOrFail($id);
-        return view('admin.default.freelancer.Experts.edit', compact('expert','experts'));
+        return view('admin.default.freelancer.Experts.edit', compact('expert', 'experts'));
     }
 
     public function update(Request $request, $id)
@@ -57,8 +56,7 @@ class ExpertsController extends Controller
         if ($skill->save()) {
             flash(translate('Experts has been Updated successfully'))->success();
             return redirect()->route('experts.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -67,11 +65,10 @@ class ExpertsController extends Controller
     public function destroy($id)
     {
         $skill = Experts::findOrFail($id);
-        if(Experts::destroy($id)){
+        if (Experts::destroy($id)) {
             flash(translate('Experts Info has been deleted successfully'))->success();
             return redirect()->route('experts.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }

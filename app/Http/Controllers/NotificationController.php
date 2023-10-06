@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Utility\NotificationUtility;
 use Illuminate\Http\Request;
-use App\Models\Notification;
 
 class NotificationController extends Controller
 {
@@ -17,17 +16,17 @@ class NotificationController extends Controller
     {
 
         NotificationUtility::make_my_notifications_seen();
-        $notifications = NotificationUtility::get_my_notifications(10,false,0,true);
+        $notifications = NotificationUtility::get_my_notifications(10, false, 0, true);
 
-        return view('admin.default.notifications',compact('notifications'));
+        return view('admin.default.notifications', compact('notifications'));
     }
 
-    public function frontend_listing()
+    public function frontendListing()
     {
         NotificationUtility::make_my_notifications_seen();
-        $notifications = NotificationUtility::get_my_notifications(5,false,0,true);
+        $notifications = NotificationUtility::get_my_notifications(5, false, 0, true);
 
-        return view('frontend.default.user.notifications',compact('notifications'));
+        return view('frontend.default.user.notifications', compact('notifications'));
     }
 
     /**
@@ -43,7 +42,7 @@ class NotificationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -54,7 +53,7 @@ class NotificationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +64,7 @@ class NotificationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,8 +75,8 @@ class NotificationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -88,7 +87,7 @@ class NotificationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

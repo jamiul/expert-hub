@@ -9,8 +9,8 @@
 namespace App\Utility;
 
 use App\Models\Notification;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class NotificationUtility
 {
@@ -29,7 +29,6 @@ class NotificationUtility
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
-
     }
 
     public static function get_my_notifications($limit = 0, $only_unseen = true, $only_count = false, $paginated = false)
@@ -46,9 +45,9 @@ class NotificationUtility
         $panel = '';
         if (isClient()) {
             $panel = 'client';
-        } else if (isFreelancer()) {
+        } elseif (isFreelancer()) {
             $panel = 'freelancer';
-        } else if (!isClient() && !isFreelancer()) {
+        } elseif (!isClient() && !isFreelancer()) {
             $panel = 'admin';
         }
 
@@ -65,14 +64,14 @@ class NotificationUtility
         //return only the numbers of notifications
         if ($only_count) {
             return $notifications_query->count();
-        } else if ($paginated) {
+        } elseif ($paginated) {
             //return paginated data for all notifications page
             return $notifications_query->paginate($limit);
         }
         $notifications = $notifications_query->limit($limit)->get();
 
         foreach ($notifications as $notification) {
-            if($notification->sender != null){
+            if ($notification->sender != null) {
                 $item = array();
                 $item['message'] = $notification->message;
                 $item['link'] = url($notification->link);
@@ -94,9 +93,9 @@ class NotificationUtility
             $panel = '';
             if (isClient()) {
                 $panel = 'client';
-            } else if (isFreelancer()) {
+            } elseif (isFreelancer()) {
                 $panel = 'freelancer';
-            } else if (!isClient() && !isFreelancer()) {
+            } elseif (!isClient() && !isFreelancer()) {
                 $panel = 'admin';
             }
 
@@ -114,6 +113,5 @@ class NotificationUtility
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
-
     }
 }

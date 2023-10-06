@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
@@ -13,6 +12,7 @@ class RoleController extends Controller
         $this->middleware(['permission:show employee roles'])->only('index');
         $this->middleware(['permission:show create roles'])->only('create');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +22,20 @@ class RoleController extends Controller
     {
         $roles = Role::paginate(9);
         return view('admin.default.roles.index', compact('roles'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $role = Role::create(['name' => $request->name]);
+        $role->givePermissionTo($request->permissions);
+        flash(translate('Role has been inserted successfully'))->success();
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -35,23 +49,9 @@ class RoleController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $role = Role::create(['name' => $request->name]);
-        $role->givePermissionTo($request->permissions);
-        flash(translate('Role has been inserted successfully'))->success();
-        return redirect()->route('roles.index');
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -62,7 +62,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -74,8 +74,8 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
 
@@ -92,16 +92,15 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        if(Role::destroy($id)){
+        if (Role::destroy($id)) {
             flash(translate('Role has been deleted successfully'))->success();
             return redirect()->route('roles.index');
-        }
-        else{
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
         }

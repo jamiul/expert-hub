@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Role;
-use App\Models\UserRole;
 use App\Models\Address;
+use App\Models\Role;
 use App\Models\User;
-use Hash; 
+use App\Models\UserRole;
+use Hash;
+use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
@@ -19,8 +19,50 @@ class EmployeeController extends Controller
     }
 
     public function create()
-    { 
-        return view('admin.default.employees.create'); 
+    {
+        return view('admin.default.employees.create');
+    }
+
+    public function show($id)
+    {
+        $user_role = UserRole::findOrFail(decrypt($id));
+        return view('admin.default.employees.set_access_permission', compact('user_role'));
+    }
+
+    public function edit($id)
+    {
+        $user = User::findOrFail(decrypt($id));
+        return view('admin.default.employees.edit', compact('user'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+
+        if (strlen($request->password) > 0) {
+            $user->password = Hash::make($request->password);
+        }
+        if ($request->hasFile('avatar')) {
+            $user->photo = $request->file('avatar')->store('uploads/avatar');
+        }
+        if ($user->save()) {
+            $user_role = UserRole::where('user_id', $user->id)->first();
+            $user_role->role_id = $request->designation;
+            $user_role->save();
+            $address = Address::where('addressable_id', $user->id)->first();
+            $address->street = $request->street;
+            $address->country_id = $request->country_id;
+            $address->city_id = $request->city_id;
+            $address->postal_code = $request->postal_code;
+            $address->phone = $request->phone;
+            $user->address()->save($address);
+            flash(translate('Employee Info has been updated successfully'))->success();
+            return redirect()->route('employees.index', Role::find($request->designation)->name);
+        } else {
+            flash(translate('Sorry! Something went wrong.'))->error();
+            return back();
+        }
     }
 
     public function store(Request $request)
@@ -41,58 +83,14 @@ class EmployeeController extends Controller
             $user->address()->save($address);
             flash(translate('New Employee has been appointed successfully'))->success();
             return redirect()->route('employees.index', Role::find($request->designation)->name);
-        }
-        else {
-            flash(translate('Sorry! Something went wrong.'))->error();
-            return back();
-        }
-    }
-
-    public function show($id)
-    { 
-        $user_role = UserRole::findOrFail(decrypt($id));
-        return view('admin.default.employees.set_access_permission', compact('user_role')); 
-    }
-
-    public function edit($id)
-    { 
-        $user = User::findOrFail(decrypt($id));
-        return view('admin.default.employees.edit', compact('user')); 
-    }
-
-    public function update(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
-        $user->name = $request->name;
-
-        if(strlen($request->password) > 0){
-             $user->password = Hash::make($request->password);
-        }
-        if ($request->hasFile('avatar')) {
-            $user->photo = $request->file('avatar')->store('uploads/avatar');
-        }
-        if ($user->save()) {
-            $user_role = UserRole::where('user_id', $user->id)->first();
-            $user_role->role_id = $request->designation;
-            $user_role->save();
-            $address = Address::where('addressable_id', $user->id)->first();
-            $address->street = $request->street;
-            $address->country_id = $request->country_id;
-            $address->city_id = $request->city_id;
-            $address->postal_code = $request->postal_code;
-            $address->phone = $request->phone;
-            $user->address()->save($address);
-            flash(translate('Employee Info has been updated successfully'))->success();
-            return redirect()->route('employees.index', Role::find($request->designation)->name);
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
     }
 
     public function destroy($id)
-     { 
+    {
         $user_role = UserRole::where('user_id', $id)->first();
         $user = User::findOrFail($id);
         if (UserRole::destroy($user_role->id)) {
@@ -100,24 +98,22 @@ class EmployeeController extends Controller
             User::destroy($id);
             flash(translate('Employee has been deleted successfully'))->success();
             return redirect()->back();
-        }
-        else {
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
-        } 
-     }
+        }
+    }
 
     public function permission_update(Request $request, $id)
     {
         $user_role = UserRole::findOrFail($id);
-        if($request->has('permissions')){
+        if ($request->has('permissions')) {
             $user_role->permissions = json_encode($request->permissions);
-            if($user_role->save()){
+            if ($user_role->save()) {
                 flash(translate('Permission has been updated successfully'))->success();
                 return redirect()->back();
             }
-        }
-        else {
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
         }

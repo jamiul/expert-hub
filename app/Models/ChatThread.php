@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ChatThread extends Model
 {
     use SoftDeletes;
+
     public function chats()
     {
         return $this->hasMany(Chat::class);

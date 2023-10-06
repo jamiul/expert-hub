@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Utility\SettingsUtility;
 use Gate;
+use Illuminate\Http\Request;
 
 class PaymentConfigurationController extends Controller
 {
@@ -12,6 +12,7 @@ class PaymentConfigurationController extends Controller
     {
         $this->middleware(['permission:show payment gateways setting'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,16 +20,15 @@ class PaymentConfigurationController extends Controller
      */
     public function index()
     {
-        
+
         return view('admin.default.system_configurations.payment_config.index');
-        
     }
 
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

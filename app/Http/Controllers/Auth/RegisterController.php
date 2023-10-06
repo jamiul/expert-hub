@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
-use App\Models\Address;
-use App\Models\UserProfile;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Address;
+use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class RegisterController extends Controller
@@ -54,25 +54,36 @@ class RegisterController extends Controller
         return view('frontend.default.user_sign_up');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function register(Request $request)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
+        $user = $this->create($request->all());
+
+        $this->guard()->login($user);
+
+        if ($user->email != null) {
+            if (get_setting('email_verification') != 1) {
+                $user->email_verified_at = date('Y-m-d H:m:s');
+                $user->save();
+                flash(translate('Registration successful.'))->success();
+            } else {
+                try {
+                    $user->sendEmailVerificationNotification();
+                    flash(translate('Registration successful. Please verify your email.'))->success();
+                } catch (\Throwable $th) {
+                    $user->delete();
+                    flash(translate('Registration failed. Please try again later.'))->error();
+                }
+            }
+        }
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
@@ -81,14 +92,14 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'user_name' =>Str::slug($data['name'], '-').date('Ymd-his'),
+            'user_name' => Str::slug($data['name'], '-') . date('Ymd-his'),
             'password' => Hash::make($data['password']),
         ]);
 
         if (in_array('freelancer', $data['user_types'])) {
             $user->user_type = 'freelancer';
         }
-        if(in_array('client', $data['user_types'])) {
+        if (in_array('client', $data['user_types'])) {
             $user->user_type = 'client';
         }
 
@@ -105,31 +116,18 @@ class RegisterController extends Controller
         return $user;
     }
 
-    public function register(Request $request)
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param array $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
     {
-        $user = $this->create($request->all());
-
-        $this->guard()->login($user);
-
-        if($user->email != null){
-            if(get_setting('email_verification') != 1){
-                $user->email_verified_at = date('Y-m-d H:m:s');
-                $user->save();
-                flash(translate('Registration successful.'))->success();
-            }
-            else {
-                try {
-                    $user->sendEmailVerificationNotification();
-                    flash(translate('Registration successful. Please verify your email.'))->success();
-                } catch (\Throwable $th) {
-                    $user->delete();
-                    flash(translate('Registration failed. Please try again later.'))->error();
-                }
-            }
-        }
-
-        return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
     }
-
 }

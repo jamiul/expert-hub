@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use Auth;
+use Closure;
 use Illuminate\Contracts\Foundation\Application;
 
 class CheckForMaintenanceMode
@@ -21,13 +21,13 @@ class CheckForMaintenanceMode
      * @var array
      */
     protected $except = [
-        '/admin*','/login','/logout', '/aiz-uploader*'
+        '/admin*', '/login', '/logout', '/aiz-uploader*'
     ];
 
     /**
      * Create a new middleware instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @return void
      */
     public function __construct(Application $app)
@@ -38,19 +38,18 @@ class CheckForMaintenanceMode
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      *
      * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     public function handle($request, Closure $next)
     {
-        if ($this->app->isDownForMaintenance()){
-            if((Auth::check() && Auth::user()->user_type == 'admin') || $this->inExceptArray($request)) {
+        if ($this->app->isDownForMaintenance()) {
+            if ((Auth::check() && Auth::user()->user_type == 'admin') || $this->inExceptArray($request)) {
                 return $next($request);
-            }
-            else {
+            } else {
                 return abort(503);
             }
         }
@@ -61,7 +60,7 @@ class CheckForMaintenanceMode
     /**
      * Determine if the request has a URI that should be accessible in maintenance mode.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return bool
      */
     protected function inExceptArray($request)

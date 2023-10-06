@@ -2,12 +2,12 @@
 
 namespace App\Http;
 
-use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use App\Http\Middleware\AdminMiddleware;
-use App\Http\Middleware\FreelancerMiddleware;
 use App\Http\Middleware\ClientMiddleware;
-use App\Http\Middleware\UserMiddleware;
+use App\Http\Middleware\FreelancerMiddleware;
 use App\Http\Middleware\PackagePurchased;
+use App\Http\Middleware\UserMiddleware;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {

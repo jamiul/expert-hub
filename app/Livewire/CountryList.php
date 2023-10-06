@@ -13,6 +13,7 @@ class CountryList extends Component
     {
         $this->countries = Country::all();
     }
+
     public function render()
     {
         return view('livewire.country-list');

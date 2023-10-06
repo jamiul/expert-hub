@@ -2,30 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use \App\Models\User;
-use \App\Models\Skill;
-use \App\Models\ParentSkill;
 use App\Models\Address;
-use App\Models\Seminar;
-use \App\Models\Project;
-use \App\Models\Service;
+use App\Models\ConsultantCategory;
+use App\Models\Country;
+use App\Models\Experts;
 use App\Models\Language;
-use App\Models\ProjectUser;
+use App\Models\Project;
+use App\Models\ProjectCategory;
+use App\Models\Seminar;
 use App\Models\SeminarDate;
 use App\Models\SeminarMode;
-use App\Models\UserPackage;
-use Illuminate\Support\Arr;
-use \App\Models\UserProfile;
-use Illuminate\Http\Request;
-use App\Models\ServicePackage;
-use \App\Models\ProjectCategory;
-use \App\Models\ConsultantCategory;
 use App\Models\SeminarSoftware;
-use App\Utility\CategoryUtility;
-use \App\Models\SystemConfiguration;
-use \App\Models\Experts;
-use \App\Models\Country;
+use App\Models\Service;
+use App\Models\ServicePackage;
+use App\Models\Skill;
+use App\Models\SystemConfiguration;
+use App\Models\User;
+use App\Models\UserPackage;
+use App\Models\UserProfile;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
@@ -52,9 +48,9 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            $skills= Skill::with('childrens')->whereNull('parent_id')->get();
+            $skills = Skill::with('childrens')->whereNull('parent_id')->get();
             $consultantCategory = ConsultantCategory::all();
-            $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
+            $expertises = Experts::with('childrens')->whereNull('parent_id')->get();
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -78,7 +74,7 @@ class SearchController extends Controller
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {
-                $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
+                $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $freelancers = $freelancers->whereIn('user_id', $user_ids);
             }
 
@@ -148,7 +144,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','skills','consultantCategory','expertises',));
+            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'consultantCategory', 'expertises',));
         } else if ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
@@ -271,7 +267,7 @@ class SearchController extends Controller
             $budget = $request->budget;
             $country_id = array('');
             $speaks = array('');
-            $level =  array('');
+            $level = array('');
             $category_id = array('');
             $user_ids = UserPackage::where('package_invalid_at', '!=', null)
                 ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
@@ -283,7 +279,7 @@ class SearchController extends Controller
                 $services = $services->whereIn('id', $service_ids);
             }
             if ($request->delivery_time != null) {
-                $delivery_times =  9;
+                $delivery_times = 9;
                 $service_delivery_time_ids = ServicePackage::where('delivery_time', '<', $delivery_times)->pluck('service_id');
                 $services = $services->whereIn('id', $service_delivery_time_ids);
             }
@@ -313,9 +309,8 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            $expertises= Experts::with('childrens')->whereNull('parent_id')->get();
-            $skills= Skill::with('childrens')->whereNull('parent_id')->get();
-
+            $expertises = Experts::with('childrens')->whereNull('parent_id')->get();
+            $skills = Skill::with('childrens')->whereNull('parent_id')->get();
 
 
             if ($request->keyword != null) {
@@ -340,7 +335,7 @@ class SearchController extends Controller
                 $freelancers = $freelancers->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {
-                $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
+                $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $freelancers = $freelancers->whereIn('user_id', $user_ids);
             }
 
@@ -410,8 +405,8 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating',  'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate','consultantions','available_interview','skills','expertises'));
-        }else {
+            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'expertises'));
+        } else {
             $type = 'project';
             $keyword = $request->keyword;
             $projectType = $request->projectType ?? [];
@@ -432,12 +427,11 @@ class SearchController extends Controller
             $category_ids = [];
             $skills = [];
             $skill_ids = [];
-            $country_id = $request ->country_id;
+            $country_id = $request->country_id;
             $projectCategory = ProjectCategory::all();
-            $skills= Skill::with('childrens')->whereNull('parent_id')->get();
+            $skills = Skill::with('childrens')->whereNull('parent_id')->get();
             $all_skills = Skill::all();
             $countries = Country::all();
-
 
 
             $project_approval = SystemConfiguration::where('type', 'project_approval')->first()->value;
@@ -532,7 +526,7 @@ class SearchController extends Controller
                 $projects = $projects->whereIn('id', $project_ids);
             }
             if ($country_id != null) {
-                $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
+                $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $projects = $projects->whereIn('client_user_id', $user_ids);
 
             }
@@ -559,7 +553,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations','projectCategory','all_skills','countries','country_id'));
+            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations', 'projectCategory', 'all_skills', 'countries', 'country_id'));
         }
     }
 

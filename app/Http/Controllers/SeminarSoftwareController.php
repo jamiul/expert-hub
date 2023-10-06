@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\SeminarSoftware;
-
+use Illuminate\Http\Request;
 
 class SeminarSoftwareController extends Controller
 {
@@ -13,6 +11,7 @@ class SeminarSoftwareController extends Controller
     {
         $this->middleware(['permission:show blog category'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,11 +22,11 @@ class SeminarSoftwareController extends Controller
         $input = $request->all();
         $search = '';
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $search = $input['search'];
-            $seminar_softwares = SeminarSoftware::where('name', 'like', '%'.$search.'%')->get();
+            $seminar_softwares = SeminarSoftware::where('name', 'like', '%' . $search . '%')->get();
 
-            if($input['search'] == ''){
+            if ($input['search'] == '') {
                 $seminar_softwares = SeminarSoftware::orderBy('name', 'asc')->get();
             }
         } else {
@@ -39,18 +38,9 @@ class SeminarSoftwareController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -71,9 +61,18 @@ class SeminarSoftwareController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+    }
+
+    /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,19 +83,19 @@ class SeminarSoftwareController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(SeminarSoftware $seminar_software)
     {
-        return view('admin.default.seminar_module.seminar_software.edit',  compact('seminar_software'));
+        return view('admin.default.seminar_module.seminar_software.edit', compact('seminar_software'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SeminarSoftware $seminar_software)
@@ -117,7 +116,7 @@ class SeminarSoftwareController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(SeminarSoftware $seminar_software)

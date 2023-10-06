@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Country;
 use App\Models\City;
 use Gate;
+use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
@@ -19,8 +18,7 @@ class CityController extends Controller
         if (Gate::allows('state_index')) {
             $cities = City::paginate(10);
             return view('admin.default.system_configurations.cities.index', compact('cities'));
-        }
-        else {
+        } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
         }
@@ -39,7 +37,7 @@ class CityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,8 +48,7 @@ class CityController extends Controller
         if ($city->save()) {
             flash(translate('New City has been inserted successfully'))->success();
             return redirect()->route('cities.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -60,7 +57,7 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,7 +68,7 @@ class CityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +76,7 @@ class CityController extends Controller
         if (Gate::allows('state_edit')) {
             $city = City::findOrFail(decrypt($id));
             return view('admin.default.system_configurations.cities.edit', compact('city'));
-        }
-        else {
+        } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
         }
@@ -89,8 +85,8 @@ class CityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,8 +97,7 @@ class CityController extends Controller
         if ($city->save()) {
             flash(translate('City has been updated successfully'))->success();
             return redirect()->route('cities.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -111,23 +106,21 @@ class CityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         if (Gate::allows('state_delete')) {
             $city = City::findOrFail($id);
-            if(City::destroy($id)){
+            if (City::destroy($id)) {
                 flash(translate('City has been deleted successfully'))->success();
                 return redirect()->route('cities.index');
-            }
-            else {
+            } else {
                 flash(translate('Something went wrong!'))->warning();
                 return back();
             }
-        }
-        else {
+        } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
         }

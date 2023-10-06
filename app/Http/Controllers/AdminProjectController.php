@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Http\Request;
 
 class AdminProjectController extends Controller
 {
@@ -13,8 +13,8 @@ class AdminProjectController extends Controller
         $this->middleware(['permission:show running projects'])->only('running_projects');
         $this->middleware(['permission:show open projects'])->only('open_projects');
         $this->middleware(['permission:show cancelled projects'])->only('cancelled_projects');
-
     }
+
     //Admin can see all projects in admin panel
     public function all_projects(Request $request)
     {
@@ -28,19 +28,18 @@ class AdminProjectController extends Controller
                 $products = Project::where('client_user_id', $request->user_id);
                 $client_id = $request->user_id;
             }
-            if ($request->search != null){
-                $projects = Project::where('name', 'like', '%'.$request->search.'%');
+            if ($request->search != null) {
+                $projects = Project::where('name', 'like', '%' . $request->search . '%');
                 $sort_search = $request->search;
             }
-            if ($request->type != null){
+            if ($request->type != null) {
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
                 $projects = Project::orderBy($col_name, $query);
             }
             $projects = $projects->latest()->paginate(12);
-        }
-        else {
+        } else {
             $projects = Project::latest()->paginate(12);
         }
         return view('admin.default.project.projects.index', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
@@ -58,8 +57,8 @@ class AdminProjectController extends Controller
             $products = $projects->where('client_user_id', $request->user_id);
             $client_id = $request->user_id;
         }
-        if ($request->search != null){
-            $projects = $projects->where('name', 'like', '%'.$request->search.'%');
+        if ($request->search != null) {
+            $projects = $projects->where('name', 'like', '%' . $request->search . '%');
             $sort_search = $request->search;
         }
 
@@ -81,19 +80,18 @@ class AdminProjectController extends Controller
                 $products = Project::where('client_user_id', $request->user_id);
                 $client_id = $request->user_id;
             }
-            if ($request->search != null){
-                $projects = Project::where('name', 'like', '%'.$request->search.'%');
+            if ($request->search != null) {
+                $projects = Project::where('name', 'like', '%' . $request->search . '%');
                 $sort_search = $request->search;
             }
-            if ($request->type != null){
+            if ($request->type != null) {
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
                 $projects = Project::orderBy($col_name, $query);
             }
             $projects = $projects->biddable()->open()->notcancel()->paginate(12);
-        }
-        else {
+        } else {
             $projects = Project::biddable()->open()->notcancel()->latest()->paginate(12);
         }
         return view('admin.default.project.projects.open_projects', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
@@ -112,19 +110,18 @@ class AdminProjectController extends Controller
                 $products = Project::where('client_user_id', $request->user_id);
                 $client_id = $request->user_id;
             }
-            if ($request->search != null){
-                $projects = Project::where('name', 'like', '%'.$request->search.'%');
+            if ($request->search != null) {
+                $projects = Project::where('name', 'like', '%' . $request->search . '%');
                 $sort_search = $request->search;
             }
-            if ($request->type != null){
+            if ($request->type != null) {
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
                 $projects = Project::orderBy($col_name, $query);
             }
             $projects = $projects->biddable()->open()->notcancel()->paginate(12);
-        }
-        else {
+        } else {
             $projects = Project::where('cancel_status', '1')->latest()->paginate(12);
         }
 
@@ -135,10 +132,9 @@ class AdminProjectController extends Controller
     {
         $project = Project::findOrFail($request->id);
         $project->project_approval = $request->status;
-        if($project->save()){
+        if ($project->save()) {
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
     }

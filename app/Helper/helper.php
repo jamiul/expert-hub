@@ -1,30 +1,29 @@
 <?php
 
-use App\Models\Role;
-use App\Models\User;
-use App\Models\Skill;
-use App\Models\Country;
-use App\Models\Experts;
-use App\Models\Currency;
-use App\Models\Language;
-use App\Models\SitePage;
 use App\Mail\EmailManager;
 use App\Models\ChatThread;
-use App\Models\ParentSkill;
-use App\Models\SeminarMode;
-use App\Models\Translation;
-use App\Models\ProjectCategory;
-use App\Models\SeminarSoftware;
-use App\Models\PageOptimization;
 use App\Models\ConsultantCategory;
+use App\Models\Country;
+use App\Models\Currency;
+use App\Models\Language;
+use App\Models\PageOptimization;
+use App\Models\ParentSkill;
+use App\Models\ProjectCategory;
+use App\Models\SeminarMode;
+use App\Models\SeminarSoftware;
+use App\Models\SitePage;
+use App\Models\Skill;
 use App\Models\SystemConfiguration;
-use phpDocumentor\Reflection\Types\Boolean;
+use App\Models\Translation;
+use App\Models\User;
 
 if (!function_exists('areActiveRoutes')) {
     function areActiveRoutes(array $routes, $output = "active")
     {
         foreach ($routes as $route) {
-            if (Route::currentRouteName() == $route) return $output;
+            if (Route::currentRouteName() == $route) {
+                return $output;
+            }
         }
     }
 }
@@ -182,13 +181,14 @@ if (!function_exists('isFreelancer')) {
     }
 }
 
-function translate($key, $lang = null){
-    if($lang == null){
+function translate($key, $lang = null)
+{
+    if ($lang == null) {
         $lang = App::getLocale();
     }
 
     $translation_def = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'))->where('lang_key', $key)->first();
-    if($translation_def == null){
+    if ($translation_def == null) {
         $translation_def = new Translation;
         $translation_def->lang = env('DEFAULT_LANGUAGE', 'en');
         $translation_def->lang_key = $key;
@@ -198,10 +198,9 @@ function translate($key, $lang = null){
 
     //Check for session lang
     $translation_locale = Translation::where('lang_key', $key)->where('lang', $lang)->first();
-    if($translation_locale != null){
+    if ($translation_locale != null) {
         return $translation_locale->lang_value;
-    }
-    else {
+    } else {
         return $translation_def->lang_value;
     }
 }
@@ -272,7 +271,7 @@ if (!function_exists('get_email_by_user_id')) {
 if (!function_exists('email_footer_text')) {
     function email_footer_text()
     {
-        return env('APP_NAME')." © 2020 All rights reserved";
+        return env('APP_NAME') . " © 2020 All rights reserved";
     }
 }
 
@@ -307,8 +306,9 @@ if (!function_exists('send_email_verification_email')) {
     }
 }
 
-function timezones(){
-    $timezones = Array(
+function timezones()
+{
+    $timezones = array(
         '(GMT-12:00) International Date Line West' => 'Pacific/Kwajalein',
         '(GMT-11:00) Midway Island' => 'Pacific/Midway',
         '(GMT-11:00) Samoa' => 'Pacific/Apia',
@@ -467,10 +467,10 @@ if (!function_exists('app_timezone')) {
 if (!function_exists('chat_threads')) {
     function chat_threads()
     {
-        $data  = array();
+        $data = array();
         if (Auth::check()) {
             foreach (ChatThread::where('sender_user_id', Auth::user()->id)->orWhere('receiver_user_id', Auth::user()->id)->get() as $key => $chat_thread) {
-                if(count($chat_thread->chats()->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)->get()) > 0){
+                if (count($chat_thread->chats()->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)->get()) > 0) {
                     $data[] = $chat_thread->id;
                 }
             }
@@ -483,29 +483,31 @@ if (!function_exists('chat_threads')) {
 if (!function_exists('get_setting')) {
     function get_setting($key, $default = "")
     {
-        $setting =  \App\Utility\SettingsUtility::get_settings_value($key) ;
+        $setting = \App\Utility\SettingsUtility::get_settings_value($key);
         return $setting == "" ? $default : $setting;
     }
 }
 
-function hex2rgba($color, $opacity = false) {
+function hex2rgba($color, $opacity = false)
+{
 
     $default = 'rgb(0,0,0)';
 
     //Return default if no color provided
-    if(empty($color))
-          return $default;
+    if (empty($color)) {
+        return $default;
+    }
 
     //Sanitize $color if "#" is provided
-    if ($color[0] == '#' ) {
-        $color = substr( $color, 1 );
+    if ($color[0] == '#') {
+        $color = substr($color, 1);
     }
 
     //Check if color has 6 or 3 characters and get values
     if (strlen($color) == 6) {
-        $hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
-    } elseif ( strlen( $color ) == 3 ) {
-        $hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+        $hex = array($color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5]);
+    } elseif (strlen($color) == 3) {
+        $hex = array($color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2]);
     } else {
         return $default;
     }
@@ -514,12 +516,13 @@ function hex2rgba($color, $opacity = false) {
     $rgb = array_map('hexdec', $hex);
 
     //Check if opacity is set(rgba or rgb)
-    if($opacity){
-        if(abs($opacity) > 1)
+    if ($opacity) {
+        if (abs($opacity) > 1) {
             $opacity = 1.0;
-        $output = 'rgba('.implode(",",$rgb).','.$opacity.')';
+        }
+        $output = 'rgba(' . implode(",", $rgb) . ',' . $opacity . ')';
     } else {
-        $output = 'rgb('.implode(",",$rgb).')';
+        $output = 'rgb(' . implode(",", $rgb) . ')';
     }
 
     //Return rgb(a) color string
@@ -533,19 +536,22 @@ function getHourlyRate()
 }
 
 // get hourly rate name
-function getHourlyRateName($key) {
-    if(isset(getHourlyRate()[$key])){
+function getHourlyRateName($key)
+{
+    if (isset(getHourlyRate()[$key])) {
         return getHourlyRate()[$key];
     }
 }
 
 // get country name by id
-function getCountryName($countryID) {
+function getCountryName($countryID)
+{
     return Country::where('id', $countryID)->value('name');
 }
 
 // get all durations
-function getDurations() : array {
+function getDurations(): array
+{
     return config('constants.durations');
 }
 
@@ -563,12 +569,14 @@ function convertSlug($name)
 }
 
 // get consultant from users table
-function getConsultants() {
+function getConsultants()
+{
     return User::where('user_type', 'freelancer')->get()->toArray();
 }
 
 // get user roles
-function getUserRoles() {
+function getUserRoles()
+{
     if (Auth::check()) {
         $roles = Auth::user()->roles->pluck('id', 'id');
         if ($roles) {
@@ -577,8 +585,9 @@ function getUserRoles() {
     }
     return [];
 }
-function isRoleConsultant() {
 
+function isRoleConsultant()
+{
 }
 
 function isRoleAdmin()
@@ -590,9 +599,10 @@ function isRoleAdmin()
 }
 
 // get seminar mode name
-function getSeminarModeName($id) {
+function getSeminarModeName($id)
+{
     $seminar_mode = SeminarMode::where('id', $id)->first();
-    return  $seminar_mode['name'];
+    return $seminar_mode['name'];
 }
 
 // function getSoftwarePackageName($id) {
@@ -600,7 +610,8 @@ function getSeminarModeName($id) {
 //     return  $software_package['name'];
 
 // }
-function getSoftwarePackageName($id) {
+function getSoftwarePackageName($id)
+{
     $software_package = SeminarSoftware::where('id', $id)->first();
     // return  $software_package['name'];
     if ($software_package) {
@@ -610,46 +621,56 @@ function getSoftwarePackageName($id) {
     }
 }
 
-function getLanguageName($id) {
+function getLanguageName($id)
+{
     $language = Language::where('id', $id)->first();
-    return  $language['name'];
+    return $language['name'];
 }
-function getSeminarCategory($id) {
+
+function getSeminarCategory($id)
+{
     $category = ProjectCategory::where('id', $id)->first();
     return $category->name ?? null;
 }
 
-function getInstructorName($id) {
-    $instructor =  User::where('user_type', 'freelancer')->where('id', $id)->first();
+function getInstructorName($id)
+{
+    $instructor = User::where('user_type', 'freelancer')->where('id', $id)->first();
 
     return $instructor ? $instructor->name : null;
 }
-function getProjectCategory() {
+
+function getProjectCategory()
+{
     return ProjectCategory::all()->sortByDesc("id")->toArray();
 }
 
-function getSeminarModes() {
+function getSeminarModes()
+{
     return SeminarMode::all()->toArray();
 }
 
-function getSeminarSoftwares() {
+function getSeminarSoftwares()
+{
     return SeminarSoftware::all()->toArray();
 }
 
-function getLanguages() {
+function getLanguages()
+{
     return Language::all()->toArray();
 }
 
-function getCourseInstructors() {
+function getCourseInstructors()
+{
     return User::where('user_type', 'freelancer')->get()->toArray();
 }
 
-function getConsultantCategory() : array
+function getConsultantCategory(): array
 {
     return ConsultantCategory::all()->toArray();
 }
 
-function getSkills() : array
+function getSkills(): array
 {
     return Skill::all()->sortByDesc("id")->toArray();
 }
@@ -665,17 +686,17 @@ function getSkillsByID($id): array
     }
 }
 
-function getParentSkills() : array
+function getParentSkills(): array
 {
     return ParentSkill::all()->sortByDesc("id")->toArray();
 }
 
-function getSubSkills($id) : object
+function getSubSkills($id): object
 {
     return Skill::where('parent_skill_id', $id)->get();
 }
 
-function getCountry() : \Illuminate\Support\Collection
+function getCountry(): \Illuminate\Support\Collection
 {
     return Country::all();
 }
@@ -693,7 +714,8 @@ if (!function_exists('formatSeminarDate')) {
     }
 }
 
-function getFreelancerPhoto($freelancer){
+function getFreelancerPhoto($freelancer)
+{
     $img_url = asset('assets/frontend/default/img/avatar-place.png'); // Default image URL
 
     if ($freelancer && $freelancer->user && $freelancer->user->address && $freelancer->user->address->country) {
@@ -707,55 +729,56 @@ function getFreelancerPhoto($freelancer){
 
     return $img_url;
 }
+
 if (!function_exists('getCurrentUrl')) {
     function getCurrentUrl()
     {
         return request()->fullUrl();
     }
 }
-function GetUrls(){
-    $data=array();
-    $remainingUrl='';
+function GetUrls()
+{
+    $data = array();
+    $remainingUrl = '';
     $baseUrl = config('app.url');
     $fullUrl = getCurrentUrl();
     $baseParts = parse_url($baseUrl);
     $fullParts = parse_url($fullUrl);
 
-     if ($baseParts['host'] === $fullParts['host']) {
-    if(!empty($fullParts['path']) && !empty($baseParts['path'])){
-        $remainingUrl = rtrim($fullParts['path'], '/');
-        $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
-    }
-    }
-    if($remainingUrl==''){
-        $defaultdata = PageOptimization::where('id', 1)->get();
-        if($defaultdata->isNotEmpty()){
-        $data['title']=$defaultdata[0]->title;
-        $data['keyword']=$defaultdata[0]->keyword;
-        $data['description']=$defaultdata[0]->description;
+    if ($baseParts['host'] === $fullParts['host']) {
+        if (!empty($fullParts['path']) && !empty($baseParts['path'])) {
+            $remainingUrl = rtrim($fullParts['path'], '/');
+            $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
         }
-    }else{
-        $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl.'%')->get();
-        if($pageoptimizations->isEmpty()){
+    }
+    if ($remainingUrl == '') {
+        $defaultdata = PageOptimization::where('id', 1)->get();
+        if ($defaultdata->isNotEmpty()) {
+            $data['title'] = $defaultdata[0]->title;
+            $data['keyword'] = $defaultdata[0]->keyword;
+            $data['description'] = $defaultdata[0]->description;
+        }
+    } else {
+        $pageoptimizations = SitePage::with('description')->where('url', 'like', $remainingUrl . '%')->get();
+        if ($pageoptimizations->isEmpty()) {
             $defaultdata = PageOptimization::where('id', 1)->get();
-            if($defaultdata->isNotEmpty()){
-            $data['title']=$defaultdata[0]->title;
-            $data['keyword']=$defaultdata[0]->keyword;
-            $data['description']=$defaultdata[0]->description;
+            if ($defaultdata->isNotEmpty()) {
+                $data['title'] = $defaultdata[0]->title;
+                $data['keyword'] = $defaultdata[0]->keyword;
+                $data['description'] = $defaultdata[0]->description;
             }
-        }else{
-            if($pageoptimizations[0]->description->isNotEmpty()){
-            $data['title']=$pageoptimizations[0]->description->title;
-            $data['keyword']=$pageoptimizations[0]->description->keyword;
-            $data['description']=$pageoptimizations[0]->$description->description;
-            }
-            else{
-            $defaultdata = PageOptimization::where('id', 1)->get();
-            if($defaultdata->isNotEmpty()){
-            $data['title']=$defaultdata[0]->title;
-            $data['keyword']=$defaultdata[0]->keyword;
-            $data['description']=$defaultdata[0]->description;
-            }
+        } else {
+            if ($pageoptimizations[0]->description->isNotEmpty()) {
+                $data['title'] = $pageoptimizations[0]->description->title;
+                $data['keyword'] = $pageoptimizations[0]->description->keyword;
+                $data['description'] = $pageoptimizations[0]->$description->description;
+            } else {
+                $defaultdata = PageOptimization::where('id', 1)->get();
+                if ($defaultdata->isNotEmpty()) {
+                    $data['title'] = $defaultdata[0]->title;
+                    $data['keyword'] = $defaultdata[0]->keyword;
+                    $data['description'] = $defaultdata[0]->description;
+                }
             }
         }
     }

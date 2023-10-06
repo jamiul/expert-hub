@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\EducationDetail;
 use Auth;
+use Illuminate\Http\Request;
 
 class FreelancerEducationController extends Controller
 {
@@ -19,8 +19,7 @@ class FreelancerEducationController extends Controller
         if ($education->save()) {
             flash(translate('Your Info has been updated successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -44,14 +43,14 @@ class FreelancerEducationController extends Controller
         if ($education->save()) {
             flash(translate('Education Info has been updated successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
     }
 
-    public function destroy(Request $request, $id){
+    public function destroy(Request $request, $id)
+    {
         $education = EducationDetail::findOrFail(decrypt($id));
         $education->delete();
 

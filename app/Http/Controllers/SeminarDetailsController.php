@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\ScholarshipCategory;
 use App\Models\Scholarship;
+use App\Models\ScholarshipCategory;
 use App\Models\ScholarshipCity;
 use App\Models\ScholarshipCountry;
 use App\Models\ScholarshipFieldStudy;
@@ -14,6 +12,7 @@ use App\Models\ScholarshipQualification;
 use App\Models\ScholarshipUniversity;
 use App\Models\ScholarshipWhoCanApply;
 use App\Models\Seminar;
+use Illuminate\Http\Request;
 
 class SeminarDetailsController extends Controller
 {
@@ -21,6 +20,7 @@ class SeminarDetailsController extends Controller
     {
         $this->middleware(['permission:show all blogs'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +42,7 @@ class SeminarDetailsController extends Controller
 
         return view('admin.default.seminar_module.seminar.index', compact('scholarships', 'sort_search'));
     }
+
     public function details()
     {
 
@@ -71,7 +72,7 @@ class SeminarDetailsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -128,7 +129,7 @@ class SeminarDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -138,7 +139,7 @@ class SeminarDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -159,8 +160,8 @@ class SeminarDetailsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -210,7 +211,7 @@ class SeminarDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

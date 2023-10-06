@@ -18,7 +18,6 @@ class SettingsUtility
         $settings = SystemConfiguration::where('type', $type)->first();
 
         if (is_null($settings)) {
-
             $settings = new SystemConfiguration;
             $settings->type = $type;
             $settings->value = $value;

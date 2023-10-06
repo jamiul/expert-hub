@@ -9,9 +9,6 @@
 namespace App\Utility;
 
 use App\Mail\EmailManager;
-use App\Models\Notification;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 use Mail;
 
 class EmailUtility

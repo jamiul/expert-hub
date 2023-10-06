@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\BookmarkedProject;
 use Auth;
+use Illuminate\Http\Request;
 
 class BookmarkedProjectController extends Controller
 {
@@ -32,21 +32,20 @@ class BookmarkedProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store($id)
     {
         $userPackage = Auth::user()->userPackage;
-        if($userPackage->bookmark_project_limit > count(BookmarkedProject::where('user_id', Auth::user()->id)->get())){
+        if ($userPackage->bookmark_project_limit > count(BookmarkedProject::where('user_id', Auth::user()->id)->get())) {
             $bookmarked_project = new BookmarkedProject;
             $bookmarked_project->user_id = Auth::user()->id;
             $bookmarked_project->project_id = decrypt($id);
             $bookmarked_project->save();
             $userPackage->bookmark_project_limit--;
             $userPackage->save();
-        }
-        else {
+        } else {
             flash(translate('Project bookmark limit has been reached.'))->warning();
         }
 
@@ -56,7 +55,7 @@ class BookmarkedProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +66,7 @@ class BookmarkedProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -78,8 +77,8 @@ class BookmarkedProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,7 +89,7 @@ class BookmarkedProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

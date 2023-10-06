@@ -9,7 +9,7 @@ class SeminarInstructor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id' ,'seminar_id'];
+    protected $fillable = ['user_id', 'seminar_id'];
 
     public function seminar()
     {

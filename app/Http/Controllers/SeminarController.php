@@ -2,26 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSeminarRequest;
 use App\Http\Requests\UpdateSeminarRequest;
 use App\Models\Language;
-use Illuminate\Http\Request;
-use App\Models\ScholarshipCategory;
 use App\Models\Scholarship;
-use App\Models\ScholarshipCity;
-use App\Models\ScholarshipCountry;
-use App\Models\ScholarshipFieldStudy;
-use App\Models\ScholarshipLevel;
-use App\Models\ScholarshipQualification;
-use App\Models\ScholarshipUniversity;
-use App\Models\ScholarshipWhoCanApply;
 use App\Models\Seminar;
 use App\Models\SeminarDate;
 use App\Models\SeminarInstructor;
 use App\Models\SeminarMode;
 use App\Models\SeminarSoftware;
 use Auth;
+use Illuminate\Http\Request;
 
 class SeminarController extends Controller
 {
@@ -29,6 +20,7 @@ class SeminarController extends Controller
     {
         $this->middleware(['permission:show all blogs'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,11 +32,11 @@ class SeminarController extends Controller
         $input = $request->all();
         $search = '';
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $search = $input['search'];
-            $seminars = Seminar::where('title', 'like', '%'.$search.'%')->get();
+            $seminars = Seminar::where('title', 'like', '%' . $search . '%')->get();
 
-            if($input['search'] == ''){
+            if ($input['search'] == '') {
                 $seminars = Seminar::orderBy('created_at', 'asc')->get();
             }
         } else {
@@ -52,29 +44,13 @@ class SeminarController extends Controller
         }
 
 
-        return view('admin.default.seminar_module.seminar.index', compact('seminars','search'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $seminar_modes = SeminarMode::all();
-        $seminar_softwares = SeminarSoftware::all();
-        $languages = Language::all();
-        $course_instructors = getConsultants();
-
-        return view('admin.default.seminar_module.seminar.create', compact('seminar_modes','seminar_softwares','languages','course_instructors'));
-
+        return view('admin.default.seminar_module.seminar.index', compact('seminars', 'search'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreSeminarRequest $request)
@@ -88,7 +64,7 @@ class SeminarController extends Controller
 
         $seminar = Seminar::create($input);
 
-        if($request->seminar_instructors) {
+        if ($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
                 SeminarInstructor::create([
                     'seminar_id' => $seminar->id,
@@ -97,7 +73,7 @@ class SeminarController extends Controller
             }
         }
 
-        if($request->seminar_date) {
+        if ($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
                 SeminarDate::create([
                     'seminar_id' => $seminar->id,
@@ -112,20 +88,34 @@ class SeminarController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $seminar_modes = SeminarMode::all();
+        $seminar_softwares = SeminarSoftware::all();
+        $languages = Language::all();
+        $course_instructors = getConsultants();
+
+        return view('admin.default.seminar_module.seminar.create', compact('seminar_modes', 'seminar_softwares', 'languages', 'course_instructors'));
+    }
+
+    /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Seminar $seminar)
@@ -136,8 +126,8 @@ class SeminarController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateSeminarRequest $request, Seminar $seminar)
@@ -156,7 +146,7 @@ class SeminarController extends Controller
             $instructor->delete();
         }
 
-        if($request->seminar_instructors) {
+        if ($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
                 $seminar->seminar_instructors()->create([
                     'user_id' => $input['seminar_instructors'][$key] ?? null
@@ -164,7 +154,7 @@ class SeminarController extends Controller
             }
         }
 
-        if($request->seminar_date) {
+        if ($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
                 $seminar->seminar_dates()->create([
                     'seminar_date' => $input['seminar_date'][$key] ?? '',
@@ -173,11 +163,12 @@ class SeminarController extends Controller
             }
         }
 
-        flash(translate( 'Seminar has been updated successfully'))->success();
+        flash(translate('Seminar has been updated successfully'))->success();
         return redirect()->route('seminar.index');
     }
 
-    public function change_status(Request $request) {
+    public function change_status(Request $request)
+    {
         $scholarship = Scholarship::find($request->id);
         $scholarship->status = $request->status;
 
@@ -188,15 +179,14 @@ class SeminarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Seminar $seminar)
     {
         $seminar->delete();
 
-        flash(translate( 'Seminar has been removed successfully'))->success();
+        flash(translate('Seminar has been removed successfully'))->success();
         return redirect()->route('seminar.index');
     }
-
 }

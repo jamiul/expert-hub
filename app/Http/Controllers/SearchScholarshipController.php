@@ -2,27 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use \App\Models\User;
-use \App\Models\Skill;
 use App\Models\Address;
-use \App\Models\Project;
-use \App\Models\Service;
-use App\Models\ProjectUser;
-use App\Models\UserPackage;
-use Illuminate\Support\Arr;
-use \App\Models\UserProfile;
-use Illuminate\Http\Request;
-use \App\Models\ProjectCategory;
+use App\Models\Country;
+use App\Models\Project;
+use App\Models\ProjectCategory;
 use App\Models\Scholarship;
-use App\Models\ScholarshipCategory;
 use App\Models\ScholarshipCountry;
 use App\Models\ScholarshipFieldStudy;
 use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipWhoCanApply;
+use App\Models\Service;
+use App\Models\Skill;
+use App\Models\SystemConfiguration;
+use App\Models\User;
+use App\Models\UserPackage;
+use App\Models\UserProfile;
 use App\Utility\CategoryUtility;
-use \App\Models\SystemConfiguration;
-use \App\Models\Country;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class SearchScholarshipController extends Controller
 {
@@ -64,7 +61,7 @@ class SearchScholarshipController extends Controller
             }
 
             if ($country_id != null) {
-                $user_ids =  Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
+                $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $freelancers = $freelancers->whereIn('user_id', $user_ids);
             }
 
@@ -87,7 +84,6 @@ class SearchScholarshipController extends Controller
             if (count($skill_ids) > 0) {
                 $filtered_freelancers = [];
                 foreach ($freelancers->get() as $key => $freelancer) {
-
                     $skills_of_this_freelancer = json_decode($freelancer->skills);
 
                     if (!is_null($skills_of_this_freelancer)) {
@@ -106,7 +102,7 @@ class SearchScholarshipController extends Controller
                 $freelancers = $freelancers->paginate(8)->appends($request->query());
             }
             return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price'));
-        } else if ($request->type == 'service') {
+        } elseif ($request->type == 'service') {
             $type = 'service';
             $keyword = $request->keyword;
             $rating = $request->rating;
@@ -133,8 +129,7 @@ class SearchScholarshipController extends Controller
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
             return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
-        } else if ($request->type == 'scholarships') {
-
+        } elseif ($request->type == 'scholarships') {
             $type = 'scholarships';
             $keyword = $request->keyword;
             $rating = $request->rating;
@@ -155,7 +150,7 @@ class SearchScholarshipController extends Controller
             $whoCanApplies = [];
             $fieldStudy_ids = [];
             $whoCanApply_ids = [];
-            $whoCanApply=ScholarshipWhoCanApply::all();
+            $whoCanApply = ScholarshipWhoCanApply::all();
             // $scholarshipCountry=ScholarshipCountry::all();
             $scholarshipCountry = Country::all();
 
@@ -178,14 +173,12 @@ class SearchScholarshipController extends Controller
             }
 
             if ($request->country_id != null) {
-
                 $country_ids = $request->country_id;
                 $countries = ScholarshipCountry::whereIn('id', $country_ids)->get();
                 $country_id = $request->country_id;
                 if ($country_ids[0] == "0") {
                     $allCountry = "0";
                     $scholarships = $scholarships->where('country_id', '!=', $allCountry);
-
                 } else {
                     $scholarships = $scholarships->whereIn('country_id', $country_ids);
                 }
@@ -199,7 +192,7 @@ class SearchScholarshipController extends Controller
 
             if ($request->fieldStudy_id != null) {
                 $fieldStudy_ids = $request->fieldStudy_id;
-                $fieldStudies =ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
+                $fieldStudies = ScholarshipFieldStudy::whereIn('id', $fieldStudy_ids)->get();
                 $scholarships = $scholarships->where(function ($query) use ($fieldStudy_ids) {
                     foreach ($fieldStudy_ids as $field_id) {
                         $query->orWhere('fieldStudy_id', 'like', '%' . $field_id . '%');
@@ -213,10 +206,10 @@ class SearchScholarshipController extends Controller
                 $scholarships = $scholarships->whereIn('whoCanApply_id', $whoCanApply_ids);
             }
 
-                $ScholarshipTotal = $scholarships->count();
-                $scholarships = $scholarships->paginate(10)->appends($request->query());
+            $ScholarshipTotal = $scholarships->count();
+            $scholarships = $scholarships->paginate(10)->appends($request->query());
 
-            return view('frontend.default.scholarships-listing', compact(  'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies','whoCanApply_ids','whoCanApplies','whoCanApply','scholarshipCountry','countries'));
+            return view('frontend.default.scholarships-listing', compact('keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies', 'whoCanApply_ids', 'whoCanApplies', 'whoCanApply', 'scholarshipCountry', 'countries'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;

@@ -8,5 +8,4 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Currency extends Model
 {
     use SoftDeletes;
-
 }

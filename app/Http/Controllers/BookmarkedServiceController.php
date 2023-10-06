@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\BookmarkedProject;
 use App\Models\BookmarkedScholarship;
 use App\Models\BookmarkedService;
 use Auth;
+use Illuminate\Http\Request;
 
 class BookmarkedServiceController extends Controller
 {
@@ -28,13 +28,12 @@ class BookmarkedServiceController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store($id)
@@ -52,13 +51,12 @@ class BookmarkedServiceController extends Controller
 
         $user = Auth::user();
         // dd($users);
-        if($user !=null){
+        if ($user != null) {
             $bookmarked_service = new BookmarkedService();
             $bookmarked_service->user_id = Auth::user()->id;
             $bookmarked_service->service_id = decrypt($id);
             $bookmarked_service->save();
-        }
-        else{
+        } else {
             return redirect()->route('login');
         }
         return back();
@@ -67,7 +65,7 @@ class BookmarkedServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,7 +76,7 @@ class BookmarkedServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +87,8 @@ class BookmarkedServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,7 +99,7 @@ class BookmarkedServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

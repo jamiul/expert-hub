@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Currency;
-use Redirect,Response; 
+use Illuminate\Http\Request;
 
 class CurrencyController extends Controller
 {
@@ -12,6 +11,7 @@ class CurrencyController extends Controller
     {
         $this->middleware(['permission:show system currency setting'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +21,6 @@ class CurrencyController extends Controller
     {
         $currencies = Currency::all();
         return view('admin.default.system_configurations.currencies.index', compact('currencies'));
-
     }
 
     /**
@@ -37,7 +36,7 @@ class CurrencyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,8 +49,7 @@ class CurrencyController extends Controller
         if ($currency->save()) {
             flash(translate('Currency has been inserted successfully'))->success();
             return redirect()->route('currencies.index');
-        }
-        else{
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
         }
@@ -60,7 +58,7 @@ class CurrencyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,7 +69,7 @@ class CurrencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -83,8 +81,8 @@ class CurrencyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -97,8 +95,7 @@ class CurrencyController extends Controller
         if ($currency->save()) {
             flash(translate('Currency has been updated successfully'))->success();
             return redirect()->route('currencies.index');
-        }
-        else{
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
         }
@@ -107,13 +104,13 @@ class CurrencyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $currency = Currency::findOrFail($id);
-        if(Currency::destroy($id)){
+        if (Currency::destroy($id)) {
             flash(translate('Currency has been deleted successfully'))->success();
             return redirect()->route('currencies.index');
         }
@@ -123,7 +120,7 @@ class CurrencyController extends Controller
     }
 
     public function set_currency()
-    { 
+    {
         $currencies = Currency::all();
         return view('admin.default.system_configurations.currencies.set_currency', compact('currencies'));
     }

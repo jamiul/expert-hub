@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Calender;
-use Illuminate\Http\Request;
-use App\Models\ScholarshipCategory;
 use App\Models\Scholarship;
+use App\Models\ScholarshipCategory;
 use App\Models\ScholarshipCity;
 use App\Models\ScholarshipCountry;
 use App\Models\ScholarshipFieldStudy;
@@ -13,6 +12,7 @@ use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipQualification;
 use App\Models\ScholarshipUniversity;
 use App\Models\ScholarshipWhoCanApply;
+use Illuminate\Http\Request;
 
 class CalenderController extends Controller
 {
@@ -20,6 +20,7 @@ class CalenderController extends Controller
     {
         $this->middleware(['permission:show all blogs'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -64,7 +65,7 @@ class CalenderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -121,7 +122,7 @@ class CalenderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -131,7 +132,7 @@ class CalenderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -152,8 +153,8 @@ class CalenderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -203,7 +204,7 @@ class CalenderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

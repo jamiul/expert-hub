@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Address extends Model
 {
     use SoftDeletes;
+
     protected $fillable = [
         'street', 'country_id', 'city_id', 'postal_code', 'phone',
     ];
+
     public function addressable()
     {
         return $this->morphTo();

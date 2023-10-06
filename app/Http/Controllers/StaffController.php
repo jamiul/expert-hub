@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Staff;
 use App\Models\Role;
+use App\Models\Staff;
 use App\Models\User;
 use Hash;
+use Illuminate\Http\Request;
 
 class StaffController extends Controller
 {
@@ -15,6 +15,7 @@ class StaffController extends Controller
         $this->middleware(['permission:show all staffs'])->only('index');
         $this->middleware(['permission:show create staff'])->only('create');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +41,7 @@ class StaffController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,12 +51,12 @@ class StaffController extends Controller
         $user->email = $request->email;
         $user->user_type = "staff";
         $user->password = Hash::make($request->password);
-        if($user->save()){
+        if ($user->save()) {
             $staff = new Staff;
             $staff->user_id = $user->id;
             $staff->role_id = $request->role_id;
             $user->assignRole(Role::findOrFail($request->role_id)->name);
-            if($staff->save()){
+            if ($staff->save()) {
                 flash(translate('Staff has been inserted successfully'))->success();
                 return redirect()->route('staffs.index');
             }
@@ -68,7 +69,7 @@ class StaffController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -79,7 +80,7 @@ class StaffController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -92,8 +93,8 @@ class StaffController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -102,13 +103,13 @@ class StaffController extends Controller
         $user = $staff->user;
         $user->name = $request->name;
         $user->email = $request->email;
-        if($request->password != null && strlen($request->password) > 0){
+        if ($request->password != null && strlen($request->password) > 0) {
             $user->password = Hash::make($request->password);
         }
-        if($user->save()){
+        if ($user->save()) {
             $user->assignRole(Role::findOrFail($request->role_id)->name);
             $staff->role_id = $request->role_id;
-            if($staff->save()){
+            if ($staff->save()) {
                 flash(translate('Staff has been updated successfully'))->success();
                 return redirect()->route('staffs.index');
             }
@@ -121,13 +122,13 @@ class StaffController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         User::destroy(Staff::findOrFail($id)->user->id);
-        if(Staff::destroy($id)){
+        if (Staff::destroy($id)) {
             flash(translate('Staff has been deleted successfully'))->success();
             return redirect()->route('staffs.index');
         }

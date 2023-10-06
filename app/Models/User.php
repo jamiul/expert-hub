@@ -2,27 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Address;
-use App\Models\Transaction;
-use App\Models\UserBadge;
-use App\Models\UserProfile;
-use App\Models\UserRole;
-use App\Models\Project;
-use App\Models\Review;
-use App\Models\ProjectBid;
-use App\Models\ProjectUser;
-use App\Models\Portfolio;
-use App\Models\UserPackage;
-use App\Models\Verification;
-use App\Models\WorkExperience;
-use App\Models\EducationDetail;
-use App\Models\Service;
-use App\Models\ServicePackagePayment;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Notifications\EmailVerificationNotification;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -30,6 +14,20 @@ class User extends Authenticatable implements MustVerifyEmail
     use Notifiable;
     use SoftDeletes;
     use HasRoles;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'user_name',
+        'confirmation_code'
+    ];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
     public function sendEmailVerificationNotification()
     {
@@ -39,22 +37,6 @@ class User extends Authenticatable implements MustVerifyEmail
             //throw $th;
         }
     }
-
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'user_name',
-        'confirmation_code'
-    ];
-
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 
     public function address()
     {

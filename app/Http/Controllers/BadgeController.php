@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Country;
+use App\Models\Badge;
 use App\Repositories\Badge\BadgeInterface;
 use Illuminate\Http\Request;
-use App\Models\Badge;
-use App\Models\Role;
-
 
 class BadgeController extends Controller
 {
@@ -21,23 +18,23 @@ class BadgeController extends Controller
     public function index()
     {
         list($badges, $role) = $this->repository->getBadgesAndRole('freelancer');
-        return view('admin.default.freelancer.badges.index', compact('badges','role'));
+        return view('admin.default.freelancer.badges.index', compact('badges', 'role'));
     }
 
     public function client_badges_index()
     {
         list($badges, $role) = $this->repository->getBadgesAndRole('client');
-        return view('admin.default.client.badges.index', compact('badges','role'));
+        return view('admin.default.client.badges.index', compact('badges', 'role'));
     }
 
     public function store(Request $request)
     {
-        $badge          = new Badge;
-        $badge->name    = $request->name;
-        $badge->type    = $request->type;
-        $badge->value   = $request->value;
+        $badge = new Badge;
+        $badge->name = $request->name;
+        $badge->type = $request->type;
+        $badge->value = $request->value;
         $badge->role_id = $request->role_id;
-        $badge->icon    = $request->icon;
+        $badge->icon = $request->icon;
         $badge->save();
 
         flash(translate('New Badge has been updated successfully!'))->success();
@@ -68,11 +65,11 @@ class BadgeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $badge          = Badge::findOrFail($id);
-        $badge->name    = $request->name;
-        $badge->type    = $request->type;
-        $badge->value   = $request->value;
-        $badge->icon    = $request->icon;
+        $badge = Badge::findOrFail($id);
+        $badge->name = $request->name;
+        $badge->type = $request->type;
+        $badge->value = $request->value;
+        $badge->icon = $request->icon;
         $badge->save();
 
         flash(translate('New Badge has been updated successfully!'))->success();
@@ -82,7 +79,6 @@ class BadgeController extends Controller
         if ($request->role_id == "client") {
             return redirect()->route('client_badges_index');
         }
-
     }
 
     public function destroy($id)

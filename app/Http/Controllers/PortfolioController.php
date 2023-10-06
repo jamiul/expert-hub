@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Portfolio;
-use App\Models\Role;
-use Session;
 use Auth;
-use App\Models\UserProfile;
+use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
     //New Portfolio Add
     public function store(Request $request)
     {
-        if(count(Auth::user()->userPortfolios) < Auth::user()->userPackage->portfolio_add_limit){
+        if (count(Auth::user()->userPortfolios) < Auth::user()->userPackage->portfolio_add_limit) {
             $portfolio = new Portfolio;
             $portfolio->user_id = Auth::user()->id;
             $portfolio->name = $request->portfolio_name;
@@ -27,8 +24,7 @@ class PortfolioController extends Controller
             $portfolio->save();
             flash(translate('Your Portfolio has been added successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Portfolio adding limit has been reached.'))->warning();
             return back();
         }
@@ -56,14 +52,14 @@ class PortfolioController extends Controller
         if ($portfolio->save()) {
             flash(translate('Your Portfolio has been updated successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
     }
 
-    public function destroy(Request $request, $id){
+    public function destroy(Request $request, $id)
+    {
         $portfolio = Portfolio::findOrFail(decrypt($id));
         $portfolio->delete();
 

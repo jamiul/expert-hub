@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\ScholarshipQualification;
 use Illuminate\Http\Request;
 
@@ -12,6 +11,7 @@ class ScholarshipQualificationController extends Controller
     {
         $this->middleware(['permission:show blog category'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,13 +19,13 @@ class ScholarshipQualificationController extends Controller
      */
     public function index(Request $request)
     {
-        $sort_search =null;
+        $sort_search = null;
         $categories = ScholarshipQualification::orderBy('qualification_name', 'asc');
 
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $sort_search = $request->search;
-            $categories = $categories->where('qualification_name', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('qualification_name', 'like', '%' . $sort_search . '%');
         }
 
         $categories = $categories->paginate(15);
@@ -40,13 +40,12 @@ class ScholarshipQualificationController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -71,7 +70,7 @@ class ScholarshipQualificationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -82,7 +81,7 @@ class ScholarshipQualificationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -90,14 +89,14 @@ class ScholarshipQualificationController extends Controller
         $level = ScholarshipQualification::find($id);
         // $all_categories = ScholarshipQualification::all();
 
-        return view('admin.default.scholarship_module.qualification_name.edit',  compact('level'));
+        return view('admin.default.scholarship_module.qualification_name.edit', compact('level'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -121,7 +120,7 @@ class ScholarshipQualificationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
 

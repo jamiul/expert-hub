@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\BlogCategory;
 use App\Models\Blog;
+use App\Models\BlogCategory;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -13,6 +12,7 @@ class BlogController extends Controller
     {
         $this->middleware(['permission:show all blogs'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,14 +23,14 @@ class BlogController extends Controller
         $sort_search = null;
         $blogs = Blog::orderBy('created_at', 'desc');
 
-        if ($request->search != null){
-            $blogs = $blogs->where('title', 'like', '%'.$request->search.'%');
+        if ($request->search != null) {
+            $blogs = $blogs->where('title', 'like', '%' . $request->search . '%');
             $sort_search = $request->search;
         }
 
         $blogs = $blogs->paginate(15);
 
-        return view('admin.default.blog_system.blog.index', compact('blogs','sort_search'));
+        return view('admin.default.blog_system.blog.index', compact('blogs', 'sort_search'));
     }
 
     /**
@@ -47,7 +47,7 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -79,18 +79,17 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -98,14 +97,14 @@ class BlogController extends Controller
         $blog = Blog::find($id);
         $blog_categories = BlogCategory::all();
 
-        return view('admin.default.blog_system.blog.edit', compact('blog','blog_categories'));
+        return view('admin.default.blog_system.blog.edit', compact('blog', 'blog_categories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -135,7 +134,8 @@ class BlogController extends Controller
         return redirect()->route('blog.index');
     }
 
-    public function change_status(Request $request) {
+    public function change_status(Request $request)
+    {
         $blog = Blog::find($request->id);
         $blog->status = $request->status;
 
@@ -146,7 +146,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -157,12 +157,14 @@ class BlogController extends Controller
     }
 
 
-    public function all_blog() {
+    public function allBlog()
+    {
         $blogs = Blog::where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
         return view("frontend.default.blog.listing", compact('blogs'));
     }
 
-    public function blog_details($slug) {
+    public function blogDetails($slug)
+    {
         $blog = Blog::where('slug', $slug)->first();
         return view("frontend.default.blog.details", compact('blog'));
     }

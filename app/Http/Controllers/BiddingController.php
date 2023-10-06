@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Utility\EmailUtility;
-use App\Utility\NotificationUtility;
-use Illuminate\Http\Request;
+use App\Models\Project;
 use App\Models\ProjectBid;
 use App\Models\UserPackage;
-use App\Models\Project;
-use App\Models\Notification;
+use App\Utility\EmailUtility;
+use App\Utility\NotificationUtility;
 use Auth;
+use Illuminate\Http\Request;
 
 class BiddingController extends Controller
 {
@@ -17,19 +16,18 @@ class BiddingController extends Controller
     public function store(Request $request)
     {
         $biddable = false;
-        if(Project::findOrFail($request->project_id)->type == 'Fixed'){
+        if (Project::findOrFail($request->project_id)->type == 'Fixed') {
             $userPackage = UserPackage::where('user_id', Auth::user()->id)->first();
-            if($userPackage->fixed_limit > 0){
-                $userPackage->fixed_limit -= 1 ;
+            if ($userPackage->fixed_limit > 0) {
+                $userPackage->fixed_limit -= 1;
                 $userPackage->save();
 
                 $biddable = true;
             }
-        }
-        else{
+        } else {
             $userPackage = UserPackage::where('user_id', Auth::user()->id)->first();
-            if($userPackage->long_term_limit > 0){
-                $userPackage->long_term_limit -= 1 ;
+            if ($userPackage->long_term_limit > 0) {
+                $userPackage->long_term_limit -= 1;
                 $userPackage->save();
 
                 $biddable = true;
@@ -43,24 +41,24 @@ class BiddingController extends Controller
             $bid->message = $request->message;
             $bid->save();
 
-            $project = Project::where('id',$request->project_id)->first();
-            $project->bids ++;
+            $project = Project::where('id', $request->project_id)->first();
+            $project->bids++;
             $project->save();
 
             //from freelancer to client
             NotificationUtility::set_notification(
                 "freelancer_bid_on_project",
                 translate('A new bid has been submitted by'),
-                route('project.details',['slug'=>$project->slug],false),
+                route('project.details', ['slug' => $project->slug], false),
                 $project->client_user_id,
                 Auth::user()->id,
                 'client'
             );
             EmailUtility::send_email(
                 translate('A new bid has been submitted'),
-                translate('A new bid has been submitted by'). Auth::user()->name,
+                translate('A new bid has been submitted by') . Auth::user()->name,
                 get_email_by_user_id($project->client_user_id),
-                route('project.details',['slug'=>$project->slug])
+                route('project.details', ['slug' => $project->slug])
             );
 
             flash(translate('Bid has been submitted successfully'))->success();

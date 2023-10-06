@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\ScholarshipWhoCanApply;
 use Illuminate\Http\Request;
 
@@ -12,22 +11,22 @@ class ScholarshipWhoCanApplyController extends Controller
     {
         $this->middleware(['permission:show blog category'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-
     {
 
-        $sort_search =null;
+        $sort_search = null;
         $categories = ScholarshipWhoCanApply::orderBy('title', 'asc');
 
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $sort_search = $request->search;
-            $categories = $categories->where('title', 'like', '%'.$sort_search.'%');
+            $categories = $categories->where('title', 'like', '%' . $sort_search . '%');
         }
 
         $categories = $categories->paginate(15);
@@ -42,13 +41,12 @@ class ScholarshipWhoCanApplyController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -73,7 +71,7 @@ class ScholarshipWhoCanApplyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,7 +82,7 @@ class ScholarshipWhoCanApplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -92,14 +90,14 @@ class ScholarshipWhoCanApplyController extends Controller
         $level = ScholarshipWhoCanApply::find($id);
         // $all_categories = ScholarshipWhoCanApply::all();
 
-        return view('admin.default.scholarship_module.who_can_apply.edit',  compact('level'));
+        return view('admin.default.scholarship_module.who_can_apply.edit', compact('level'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -124,7 +122,7 @@ class ScholarshipWhoCanApplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
 

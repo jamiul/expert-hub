@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Country;
 use Gate;
+use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
@@ -18,8 +18,7 @@ class CountryController extends Controller
         if (Gate::allows('country_index')) {
             $countries = Country::paginate(10);
             return view('admin.default.system_configurations.countries.index', compact('countries'));
-        }
-        else {
+        } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
         }
@@ -36,33 +35,9 @@ class CountryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $country = new Country;
-        $country->name = $request->name;
-        $country->code = $request->code;
-        if($request->hasFile('icon')){
-            $country->photo = $request->file('icon')->store('uploads/images/country');
-        }
-        if ($country->save()) {
-            flash(translate('New Country has been inserted successfully'))->success();
-            return redirect()->route('countries.index');
-        }
-        else {
-            flash(translate('Sorry! Something went wrong.'))->error();
-            return back();
-        }
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -73,7 +48,7 @@ class CountryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -81,8 +56,7 @@ class CountryController extends Controller
         if (Gate::allows('country_edit')) {
             $country = Country::findOrFail(decrypt($id));
             return view('admin.default.system_configurations.countries.edit', compact('country'));
-        }
-        else {
+        } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
         }
@@ -91,8 +65,8 @@ class CountryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,7 +74,7 @@ class CountryController extends Controller
         $country = Country::findOrFail($id);
         $country->name = $request->name;
         $country->code = $request->code;
-        if($request->hasFile('icon')){
+        if ($request->hasFile('icon')) {
             if ($country->icon) {
                 unlink($country->photo);
             }
@@ -109,8 +83,30 @@ class CountryController extends Controller
         if ($country->save()) {
             flash(translate('Country info has been updated successfully'))->success();
             return redirect()->route('countries.index');
+        } else {
+            flash(translate('Sorry! Something went wrong.'))->error();
+            return back();
         }
-        else {
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $country = new Country;
+        $country->name = $request->name;
+        $country->code = $request->code;
+        if ($request->hasFile('icon')) {
+            $country->photo = $request->file('icon')->store('uploads/images/country');
+        }
+        if ($country->save()) {
+            flash(translate('New Country has been inserted successfully'))->success();
+            return redirect()->route('countries.index');
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -119,21 +115,20 @@ class CountryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         if (Gate::allows('country_delete')) {
             $country = Country::findOrFail($id);
-            if(Country::destroy($id)){
+            if (Country::destroy($id)) {
                 unlink($country->icon);
                 flash(translate('Country has been deleted successfully'))->success();
                 return redirect()->route('countries.index');
             }
             return back();
-        }
-        else {
+        } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
         }

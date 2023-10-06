@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class PayToFreelancer extends Model
 {
     use SoftDeletes;
+
     public function admin()
     {
         return $this->belongsTo(User::class, 'paid_by');

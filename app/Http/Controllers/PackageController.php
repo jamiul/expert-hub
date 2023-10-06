@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Package;
-use App\Models\UserProfile;
+use App\Models\Project;
 use App\Models\UserPackage;
-use App\Models\Role;
 use Auth;
-use Session;
+use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
@@ -23,28 +21,25 @@ class PackageController extends Controller
         $packages = Package::latest()->where('type', $type)->paginate(10);
         if ($type == 'freelancer') {
             return view('admin.default.freelancer.packages.index', compact('packages'));
-        }
-        elseif ($type == 'client') {
+        } elseif ($type == 'client') {
             return view('admin.default.client.packages.index', compact('packages'));
         }
-
     }
 
     public function create($type)
     {
         if ($type == 'freelancer') {
             return view('admin.default.freelancer.packages.create');
-        }
-        elseif ($type == 'client') {
+        } elseif ($type == 'client') {
             return view('admin.default.client.packages.create');
         }
-
     }
 
-    public function store(Request $request){
-        $package        = new Package;
-        $package->type  = $request->type;
-        $package->name  = $request->name;
+    public function store(Request $request)
+    {
+        $package = new Package;
+        $package->type = $request->type;
+        $package->name = $request->name;
         $package->price = $request->price;
         $package->badge = $request->badge;
         $package->photo = $request->photo;
@@ -52,8 +47,7 @@ class PackageController extends Controller
         if ($request->type == 'freelancer') {
             $package->commission = $request->commission;
             $package->commission_type = $request->commission_type;
-        }
-        else {
+        } else {
             $package->commission = 0;
             $package->commission_type = 'amount';
         }
@@ -70,39 +64,37 @@ class PackageController extends Controller
 
         if ($request->following_status != null) {
             $package->following_status = 1;
-        }
-        else {
+        } else {
             $package->following_status = 0;
         }
         $package->bio_text_limit = $request->bio_text_limit;
         if ($request->active != null) {
             $package->active = 1;
-        }
-        else {
+        } else {
             $package->active = 0;
         }
         if ($request->recommended != null) {
             $package->recommended = 1;
-        }
-        else {
+        } else {
             $package->recommended = 0;
         }
         if ($package->save()) {
             flash(translate('New Package has been inserted successfully'))->success();
-            return redirect()->route($request->type.'_package.index',$request->type);
+            return redirect()->route($request->type . '_package.index', $request->type);
         }
     }
 
     public function edit($id)
     {
         $package = Package::findOrFail(decrypt($id));
-        return view('admin.default.'.$package->type.'.'.'packages.edit', compact('package'));
+        return view('admin.default.' . $package->type . '.' . 'packages.edit', compact('package'));
     }
 
-    public function update(Request $request, $id){
-        $package        = Package::findOrFail($id);
-        $package->type  = $request->type;
-        $package->name  = $request->name;
+    public function update(Request $request, $id)
+    {
+        $package = Package::findOrFail($id);
+        $package->type = $request->type;
+        $package->name = $request->name;
         $package->price = $request->price;
         $package->badge = $request->badge;
         $package->photo = $request->photo;
@@ -125,28 +117,24 @@ class PackageController extends Controller
 
         if ($request->following_status != null) {
             $package->following_status = 1;
-        }
-        else {
+        } else {
             $package->following_status = 0;
         }
         $package->bio_text_limit = $request->bio_text_limit;
         if ($request->active != null) {
             $package->active = 1;
-        }
-        else {
+        } else {
             $package->active = 0;
         }
         if ($request->recommended != null) {
             $package->recommended = 1;
-        }
-        else {
+        } else {
             $package->recommended = 0;
         }
         if ($package->save()) {
             flash(translate('New Package has been updated successfully'))->success();
-            return redirect()->route($request->type.'_package.index',$request->type);
-        }
-        else {
+            return redirect()->route($request->type . '_package.index', $request->type);
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -156,7 +144,7 @@ class PackageController extends Controller
     {
         $package = Package::findOrFail($id);
 
-        if(Package::destroy($id)){
+        if (Package::destroy($id)) {
             flash(translate('Package Info has been deleted successfully'))->success();
             return redirect()->back();
         }
@@ -164,58 +152,53 @@ class PackageController extends Controller
     }
 
     //Show specific user packages
-    public function select_package()
+    public function selectPackage()
     {
         if (Auth::check()) {
             if (isClient()) {
                 $packages = Package::where('type', 'client')->where('active', '1')->get();
                 return view('frontend.default.user.client.package_select', compact('packages'));
-            }
-            elseif (isFreelancer()) {
+            } elseif (isFreelancer()) {
                 $packages = Package::where('type', 'freelancer')->where('active', '1')->get();
                 return view('frontend.default.user.freelancer.package_select', compact('packages'));
             }
-        }
-        else {
+        } else {
             abort(404);
         }
     }
 
-    public function get_package_purchase_modal(Request $request)
+    public function getPackagePurchaseModal(Request $request)
     {
         $package = Package::findOrFail($request->id);
         return view('frontend.default.partials.package_purchase_modal', compact('package'));
     }
 
-    public function package_purchase_free($id)
+    public function packagePurchaseFree($id)
     {
         $package = Package::findOrFail($id);
 
         $userPackage = Auth::user()->userPackage;
-        if($userPackage == null){
+        if ($userPackage == null) {
             $userPackage = new UserPackage;
             $userPackage->user_id = Auth::user()->id;
-        }
-        elseif ($userPackage->package_id == $package->id) {
+        } elseif ($userPackage->package_id == $package->id) {
             flash(translate('You are using this package already.'))->warning();
             return back();
         }
         $userPackage->package_id = $package->id;
-        if($package->number_of_days > 0){
-            $userPackage->package_invalid_at = date('Y-m-d', strtotime('+ '.$package->number_of_days.'days'));
+        if ($package->number_of_days > 0) {
+            $userPackage->package_invalid_at = date('Y-m-d', strtotime('+ ' . $package->number_of_days . 'days'));
         }
 
         if ($userPackage->fixed_limit == null) {
             $userPackage->fixed_limit = $package->fixed_limit;
-        }
-        else {
+        } else {
             $userPackage->fixed_limit += $package->fixed_limit;
         }
 
         if ($userPackage->long_term_limit == null) {
             $userPackage->long_term_limit = $package->long_term_limit;
-        }
-        else {
+        } else {
             $userPackage->long_term_limit += $package->long_term_limit;
         }
 
@@ -231,5 +214,11 @@ class PackageController extends Controller
 
         flash(translate('New Package has been purchased successfully'))->success();
         return redirect()->route('dashboard');
+    }
+
+    public function getBidModal(Request $request)
+    {
+        $project = Project::findOrFail($request->id);
+        return view('frontend.default.partials.bid_for_project_modal', compact('project'));
     }
 }

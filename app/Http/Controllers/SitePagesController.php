@@ -2,16 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Log;
-
-use App\Http\Requests\StoreSeminarRequest;
-use App\Http\Requests\UpdateSeminarRequest;
-use App\Models\Language;
-use Illuminate\Http\Request;
 use App\Models\SitePage;
-
 use Auth;
+use Illuminate\Http\Request;
 
 class SitePagesController extends Controller
 {
@@ -47,19 +40,6 @@ class SitePagesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-
-        return view('admin.default.optimization.sitepage.create');
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -82,6 +62,18 @@ class SitePagesController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+
+
+        return view('admin.default.optimization.sitepage.create');
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param int $id
@@ -89,7 +81,6 @@ class SitePagesController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**
@@ -149,5 +140,4 @@ class SitePagesController extends Controller
 
         return redirect()->route('page-optimization.index');
     }
-
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Wallet;
 use App\Models\User;
+use App\Models\Wallet;
 use Auth;
+use Illuminate\Http\Request;
 use session;
 
 class WalletController extends Controller
@@ -13,6 +13,43 @@ class WalletController extends Controller
     public function __construct()
     {
         $this->middleware(['permission:show wallet history'])->only('admin_index');
+    }
+
+    public function admin_index()
+    {
+        $wallets = Wallet::latest()->paginate(10);
+        return view('admin.default.wallet_recharge_history.index', compact('wallets'));
+    }
+
+    public function rechage(Request $request)
+    {
+        $data['amount'] = round($request->amount);
+        $data['payment_method'] = $request->payment_option;
+        $data['payment_type'] = 'wallet_payment';
+
+        $request->session()->put('payment_data', $data);
+        if ($request->payment_option == 'paypal') {
+            $paypal = new PayPalController;
+            return $paypal->getCheckout();
+        } elseif ($request->payment_option == 'stripe') {
+            $stripe = new StripePaymentController;
+            return $stripe->index();
+        } elseif ($request->payment_option == 'sslcommerz') {
+            $sslcommerz = new PublicSslCommerzPaymentController;
+            return $sslcommerz->index($request);
+        } elseif ($request->payment_option == 'paystack') {
+            $paystack = new PaystackController;
+            return $paystack->redirectToGateway($request);
+        } elseif ($request->payment_option == 'instamojo') {
+            $instamojo = new InstamojoController;
+            return $instamojo->pay($request);
+        } elseif ($request->payment_option == 'paytm') {
+            $paytm = new PaytmController;
+            return $paytm->index();
+        } elseif ($request->payment_option == 'flutterwave') {
+            $flutterwave = new FlutterwaveController;
+            return $flutterwave->initialize();
+        }
     }
 
     /**
@@ -24,50 +61,6 @@ class WalletController extends Controller
     {
         $wallets = Wallet::where('user_id', Auth::user()->id)->latest()->paginate(10);
         return view('frontend.default.user.wallet.index', compact('wallets'));
-    }
-
-    public function admin_index()
-    {
-        $wallets = Wallet::latest()->paginate(10);
-        return view('admin.default.wallet_recharge_history.index', compact('wallets'));
-    }
-    
-
-    public function rechage(Request $request)
-    {
-        $data['amount'] = round($request->amount);
-        $data['payment_method'] = $request->payment_option;
-        $data['payment_type'] = 'wallet_payment';
-
-        $request->session()->put('payment_data', $data);
-        if($request->payment_option == 'paypal'){
-            $paypal = new PayPalController;
-            return $paypal->getCheckout();
-        }
-        elseif ($request->payment_option == 'stripe') {
-            $stripe = new StripePaymentController;
-            return $stripe->index();
-        }
-        elseif ($request->payment_option == 'sslcommerz') {
-            $sslcommerz = new PublicSslCommerzPaymentController;
-            return $sslcommerz->index($request);
-        }
-        elseif ($request->payment_option == 'paystack') {
-            $paystack = new PaystackController;
-            return $paystack->redirectToGateway($request);
-        }
-        elseif ($request->payment_option == 'instamojo') {
-            $instamojo = new InstamojoController;
-            return $instamojo->pay($request);
-        }
-        elseif ($request->payment_option == 'paytm') {
-            $paytm = new PaytmController;
-            return $paytm->index();
-        }
-        elseif ($request->payment_option == 'flutterwave') {
-            $flutterwave = new FlutterwaveController;
-            return $flutterwave->initialize();
-        }
     }
 
     public function wallet_payment_done($payment_data, $payment_details)
@@ -94,8 +87,8 @@ class WalletController extends Controller
 
     public function wallet_payment_by_admin(Request $request)
     {
-        $data['amount'] = (float) $request->amount;
-        $data['payment_method'] = "Offline Payment"; 
+        $data['amount'] = (float)$request->amount;
+        $data['payment_method'] = "Offline Payment";
 
         $user = User::where('id', $request->user_id)->first();
         $user_profile = $user->profile;

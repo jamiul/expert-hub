@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Skill;
+use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
@@ -12,6 +12,7 @@ class SkillController extends Controller
     {
         $this->middleware(['permission:show freelancer skills'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +22,6 @@ class SkillController extends Controller
     {
         $skills = Skill::latest()->paginate(15);
         return view('admin.default.freelancer.skills.index', compact('skills'));
-
     }
 
     /**
@@ -37,7 +37,7 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,8 +48,7 @@ class SkillController extends Controller
         if ($skill->save()) {
             flash(translate('New Skill has been inserted successfully'))->success();
             return redirect()->route('skills.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -58,7 +57,7 @@ class SkillController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,7 +68,7 @@ class SkillController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -81,8 +80,8 @@ class SkillController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -93,8 +92,7 @@ class SkillController extends Controller
         if ($skill->save()) {
             flash(translate('Skill has been Updated successfully'))->success();
             return redirect()->route('skills.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
@@ -103,17 +101,16 @@ class SkillController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $skill = Skill::findOrFail($id);
-        if(Skill::destroy($id)){
+        if (Skill::destroy($id)) {
             flash(translate('Skill Info has been deleted successfully'))->success();
             return redirect()->route('skills.index');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }

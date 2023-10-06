@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Mail\EmailManager;
+use Illuminate\Http\Request;
 use Mail;
 
 class EmailConfigurationController extends Controller
@@ -12,6 +12,7 @@ class EmailConfigurationController extends Controller
     {
         $this->middleware(['permission:show email setting'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +23,8 @@ class EmailConfigurationController extends Controller
         return view('admin.default.system_configurations.email_config.index');
     }
 
-    public function testEmail(Request $request){
+    public function testEmail(Request $request)
+    {
         $array['view'] = 'emails.template';
         $array['subject'] = "SMTP Test";
         $array['from'] = env('MAIL_USERNAME');
@@ -43,14 +45,11 @@ class EmailConfigurationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
     }
-
-
-
 }

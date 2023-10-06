@@ -2,28 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Session;
-use Validator;
-use App\Models\User;
-use App\Models\Wallet;
-use App\Models\Seminar;
-use App\Models\Service;
-use App\Models\Language;
-use App\Models\SeminarDate;
-use App\Models\SeminarMode;
-use Illuminate\Http\Request;
-use App\Utility\EmailUtility;
-use App\Models\ServicePackage;
-use App\Models\SeminarSoftware;
-use App\Utility\ServicesUtility;
-use App\Utility\ValidationUtility;
-
-use App\Utility\NotificationUtility;
-use App\Models\ServicePackagePayment;
-use App\Http\Requests\StoreSeminarRequest;
 use App\Http\Requests\UpdateSeminarRequest;
+use App\Models\Language;
+use App\Models\Seminar;
+use App\Models\SeminarDate;
 use App\Models\SeminarInstructor;
+use App\Models\SeminarMode;
+use App\Models\SeminarSoftware;
+use App\Models\User;
+use App\Utility\ServicesUtility;
+use Auth;
+use Illuminate\Http\Request;
 
 class SeminarConsultantController extends Controller
 {
@@ -39,11 +28,11 @@ class SeminarConsultantController extends Controller
         $input = $request->all();
         $search = '';
 
-        if ($request->has('search')){
+        if ($request->has('search')) {
             $search = $input['search'];
-            $seminars = Seminar::where('title', 'like', '%'.$search.'%')->get();
+            $seminars = Seminar::where('title', 'like', '%' . $search . '%')->get();
 
-            if($input['search'] == ''){
+            if ($input['search'] == '') {
                 $seminars = Seminar::orderBy('created_at', 'asc')->get();
             }
         } else {
@@ -55,31 +44,9 @@ class SeminarConsultantController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $seminar_mode=SeminarMode::all();
-        $seminar_software=SeminarSoftware::all();
-        $languages=Language::all();
-        $all_users=User::all();
-        $users = $all_users->where('user_type',"freelancer")->all();
-
-        if(ServicesUtility::can_create_service() == 1)
-            return view('frontend.default.user.freelancer.projects.seminars.create',compact('seminar_mode','seminar_software','languages','users'));
-
-        flash(translate('Sorry! Your service creation limit is over.'))->warning();
-
-        return redirect()->route('service.freelancer_index');
-    }
-
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -91,7 +58,7 @@ class SeminarConsultantController extends Controller
 
         $seminar = Seminar::create($input);
 
-        if($request->seminar_date) {
+        if ($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
                 SeminarDate::create([
                     'seminar_id' => $seminar->id,
@@ -101,8 +68,8 @@ class SeminarConsultantController extends Controller
             }
         }
 
-        if($request->seminar_instructors) {
-            foreach($request->seminar_instructors as $key => $instructor) {
+        if ($request->seminar_instructors) {
+            foreach ($request->seminar_instructors as $key => $instructor) {
                 SeminarInstructor::create([
                     'seminar_id' => $seminar->id,
                     'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
@@ -133,11 +100,32 @@ class SeminarConsultantController extends Controller
         return redirect()->route('seminar-consultant.index');
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $seminar_mode = SeminarMode::all();
+        $seminar_software = SeminarSoftware::all();
+        $languages = Language::all();
+        $all_users = User::all();
+        $users = $all_users->where('user_type', "freelancer")->all();
+
+        if (ServicesUtility::can_create_service() == 1) {
+            return view('frontend.default.user.freelancer.projects.seminars.create', compact('seminar_mode', 'seminar_software', 'languages', 'users'));
+        }
+
+        flash(translate('Sorry! Your service creation limit is over.'))->warning();
+
+        return redirect()->route('service.freelancer_index');
+    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -150,8 +138,8 @@ class SeminarConsultantController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateSeminarRequest $request, Seminar $seminar_consultant)
@@ -169,7 +157,7 @@ class SeminarConsultantController extends Controller
             $seminarDate->delete();
         }
 
-        if($request->seminar_date) {
+        if ($request->seminar_date) {
             foreach ($request->seminar_date as $key => $date) {
                 $seminar->seminar_dates()->create([
                     'seminar_date' => $input['seminar_date'][$key] ?? null,
@@ -181,7 +169,7 @@ class SeminarConsultantController extends Controller
             $seminar_instructor->delete();
         }
 
-        if($request->seminar_instructors) {
+        if ($request->seminar_instructors) {
             foreach ($request->seminar_instructors as $key => $instructor) {
                 $seminar->seminar_instructors()->create([
                     'user_id' => $instructor ? $input['seminar_instructors'][$key] : null
@@ -189,26 +177,21 @@ class SeminarConsultantController extends Controller
             }
         }
 
-        flash(translate( 'Seminar has been updated successfully'))->success();
+        flash(translate('Seminar has been updated successfully'))->success();
         return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Seminar $seminar_consultant)
     {
         $seminar_consultant->delete();
 
-        flash(translate( 'Seminar has been removed successfully'))->success();
+        flash(translate('Seminar has been removed successfully'))->success();
         return redirect()->route('seminar-consultant.index');
     }
-
-
-
-
-
 }

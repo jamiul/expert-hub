@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-
-use App\Models\Language;
-use Illuminate\Http\Request;
-
-use Auth;
 use App\Models\PageOptimization;
 use App\Models\SitePage;
+use Auth;
+use Illuminate\Http\Request;
 
 class PageOptimizationController extends Controller
 {
@@ -45,19 +41,6 @@ class PageOptimizationController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $sitepages = SitePage::all();
-
-        return view('admin.default.optimization.pageoptimization.create', compact('sitepages'));
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -80,6 +63,18 @@ class PageOptimizationController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $sitepages = SitePage::all();
+
+        return view('admin.default.optimization.pageoptimization.create', compact('sitepages'));
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param int $id
@@ -87,7 +82,6 @@ class PageOptimizationController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**

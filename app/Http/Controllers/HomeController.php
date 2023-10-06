@@ -19,7 +19,6 @@ use Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-
 class HomeController extends Controller
 {
     /**
@@ -59,7 +58,7 @@ class HomeController extends Controller
     }
 
     //Admin login
-    public function admin_login()
+    public function adminLogin()
     {
         if (Auth::check() && (auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")) {
             return redirect()->route('home');
@@ -101,16 +100,16 @@ class HomeController extends Controller
     public function project_details($slug)
     {
         $project = Project::where('slug', $slug)->first();
-        $jobPosted = Project::where('client_user_id',$project->client_user_id)->where('cancel_status', '=',0)->count();
-        $jobOpen = Project::where('client_user_id',$project->client_user_id)->where('closed', '=', 0)->where('cancel_status', '=',0)->count();
+        $jobPosted = Project::where('client_user_id', $project->client_user_id)->where('cancel_status', '=', 0)->count();
+        $jobOpen = Project::where('client_user_id', $project->client_user_id)->where('closed', '=', 0)->where('cancel_status', '=', 0)->count();
         $similar_types = Project::where('type', $project->type)->where('id', '!=', $project->id)->where('closed', '!=', 1)->limit(3)->get();
-        foreach($project->skills as $skill_id){
+        foreach ($project->skills as $skill_id) {
             $skill = Skill::find($skill_id);
         }
-        foreach(explode(',', $project->attachments) as $attachment_id){
+        foreach (explode(',', $project->attachments) as $attachment_id) {
             $attachment = Upload::find($attachment_id);
         }
-        return view('frontend.default.project-details.project-single', compact('project','jobPosted','jobOpen','similar_types','skill','attachment'));
+        return view('frontend.default.project-details.project-single', compact('project', 'jobPosted', 'jobOpen', 'similar_types', 'skill', 'attachment'));
     }
 
     //Show details info of specific project
@@ -211,12 +210,12 @@ class HomeController extends Controller
         }
     }
 
-    public function send_email_verification_request(Request $request)
+    public function sendEmailVerificationRequest(Request $request)
     {
         return send_email_verification_email();
     }
 
-    public function verification_confirmation($code)
+    public function verificationConfirmation($code)
     {
         $user = User::where('verification_code', $code)->first();
         if ($user != null) {

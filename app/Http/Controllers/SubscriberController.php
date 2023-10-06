@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Subscriber;
+use Illuminate\Http\Request;
 
 class SubscriberController extends Controller
 {
-     public function __construct()
+    public function __construct()
     {
         $this->middleware(['permission:show all subscribers'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,19 +36,18 @@ class SubscriberController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $subscriber = Subscriber::where('email', $request->email)->first();
-        if($subscriber == null){
+        if ($subscriber == null) {
             $subscriber = new Subscriber;
             $subscriber->email = $request->email;
             $subscriber->save();
             flash(translate('You have subscribed successfully'))->success();
-        }
-        else{
+        } else {
             flash(translate('You are  already a subscriber'))->success();
         }
         return back();
@@ -56,7 +56,7 @@ class SubscriberController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +67,7 @@ class SubscriberController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -78,8 +78,8 @@ class SubscriberController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,7 +90,7 @@ class SubscriberController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

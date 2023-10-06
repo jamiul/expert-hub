@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Upload;
-use Response;
 use Auth;
-use Intervention\Image\Facades\Image;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Response;
 
 class AizUploadController extends Controller
 {
@@ -16,7 +16,8 @@ class AizUploadController extends Controller
         $this->middleware(['permission:manage file upload'])->only('index');
     }
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
 
         $all_uploads = Upload::query();
         $search = null;
@@ -24,7 +25,7 @@ class AizUploadController extends Controller
 
         if ($request->search != null) {
             $search = $request->search;
-            $all_uploads->where('file_original_name', 'like', '%'.$request->search.'%');
+            $all_uploads->where('file_original_name', 'like', '%' . $request->search . '%');
         }
 
         $sort_by = $request->sort;
@@ -48,62 +49,64 @@ class AizUploadController extends Controller
 
         $all_uploads = $all_uploads->paginate(60)->appends(request()->query());
 
-        return view('admin.default.uploaded_files.index', compact('all_uploads', 'search', 'sort_by') );
+        return view('admin.default.uploaded_files.index', compact('all_uploads', 'search', 'sort_by'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.default.uploaded_files.create');
     }
 
-    public function show_uploader(Request $request){
+    public function showUploader(Request $request)
+    {
         return view('uploader.aiz-uploader');
     }
 
-    public function upload(Request $request){
+    public function upload(Request $request)
+    {
 
         $type = array(
-            "jpg"=>"image",
-            "jpeg"=>"image",
-            "png"=>"image",
-            "svg"=>"image",
-            "webp"=>"image",
-            "gif"=>"image",
-            "mp4"=>"video",
-            "mpg"=>"video",
-            "mpeg"=>"video",
-            "webm"=>"video",
-            "ogg"=>"video",
-            "avi"=>"video",
-            "mov"=>"video",
-            "flv"=>"video",
-            "swf"=>"video",
-            "mkv"=>"video",
-            "wmv"=>"video",
-            "wma"=>"audio",
-            "aac"=>"audio",
-            "wav"=>"audio",
-            "mp3"=>"audio",
-            "zip"=>"archive",
-            "rar"=>"archive",
-            "7z"=>"archive",
-            "doc"=>"document",
-            "txt"=>"document",
-            "docx"=>"document",
-            "pdf"=>"document",
-            "csv"=>"document",
-            "xml"=>"document",
-            "ods"=>"document",
-            "xlr"=>"document",
-            "xls"=>"document",
-            "xlsx"=>"document"
+            "jpg" => "image",
+            "jpeg" => "image",
+            "png" => "image",
+            "svg" => "image",
+            "webp" => "image",
+            "gif" => "image",
+            "mp4" => "video",
+            "mpg" => "video",
+            "mpeg" => "video",
+            "webm" => "video",
+            "ogg" => "video",
+            "avi" => "video",
+            "mov" => "video",
+            "flv" => "video",
+            "swf" => "video",
+            "mkv" => "video",
+            "wmv" => "video",
+            "wma" => "audio",
+            "aac" => "audio",
+            "wav" => "audio",
+            "mp3" => "audio",
+            "zip" => "archive",
+            "rar" => "archive",
+            "7z" => "archive",
+            "doc" => "document",
+            "txt" => "document",
+            "docx" => "document",
+            "pdf" => "document",
+            "csv" => "document",
+            "xml" => "document",
+            "ods" => "document",
+            "xlr" => "document",
+            "xls" => "document",
+            "xlsx" => "document"
         );
 
-        if($request->hasFile('aiz_file')){
+        if ($request->hasFile('aiz_file')) {
             $upload = new Upload;
             $extension = strtolower($request->file('aiz_file')->getClientOriginalExtension());
 
-            if (
-                env('DEMO_MODE') == 'On' &&
+            if (env('DEMO_MODE') == 'On' &&
                 isset($type[$extension]) &&
                 $type[$extension] == 'archive'
             ) {
@@ -158,7 +161,7 @@ class AizUploadController extends Controller
                         file_get_contents(base_path('public/') . $path),
                         [
                             'visibility' => 'public',
-                            'ContentType' =>  $extension == 'svg' ? 'image/svg+xml' : $file_mime
+                            'ContentType' => $extension == 'svg' ? 'image/svg+xml' : $file_mime
                         ]
                     );
                     if ($arr[0] != 'updates') {
@@ -177,11 +180,11 @@ class AizUploadController extends Controller
         }
     }
 
-    public function get_uploaded_files(Request $request)
+    public function getUploadedFiles(Request $request)
     {
         $uploads = Upload::where('user_id', Auth::user()->id);
         if ($request->search != null) {
-            $uploads->where('file_original_name', 'like', '%'.$request->search.'%');
+            $uploads->where('file_original_name', 'like', '%' . $request->search . '%');
         }
         if ($request->sort != null) {
             switch ($request->sort) {
@@ -205,14 +208,13 @@ class AizUploadController extends Controller
         return $uploads->paginate(60)->appends(request()->query());
     }
 
-    public function destroy(Request $request,$id)
+    public function destroy(Request $request, $id)
     {
-        try{
-            unlink(public_path().'/'.Upload::where('id', $id)->first()->file_name);
+        try {
+            unlink(public_path() . '/' . Upload::where('id', $id)->first()->file_name);
             Upload::destroy($id);
             flash(translate('File deleted successfully'))->success();
-        }
-        catch(\Exception $e){
+        } catch (\Exception $e) {
             Upload::destroy($id);
             flash(translate('File deleted successfully'))->success();
         }
@@ -220,31 +222,30 @@ class AizUploadController extends Controller
     }
 
 
-    public function get_preview_files(Request $request){
+    public function getPreviewFiles(Request $request)
+    {
         $ids = explode(',', $request->ids);
         $files = Upload::whereIn('id', $ids)->get();
         return $files;
     }
 
     //Download project attachment
-    public function attachment_download($id)
+    public function attachmentDownload($id)
     {
         $project_attachment = Upload::find($id);
-        try{
-           $file_path = public_path($project_attachment->file_name);
+        try {
+            $file_path = public_path($project_attachment->file_name);
             return Response::download($file_path);
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             flash(translate('File does not exist!'))->error();
             return back();
         }
-
     }
 
     //Download project attachment
     public function file_info(Request $request)
     {
         $file = Upload::findOrFail($request['id']);
-        return view('admin.default.uploaded_files.info',compact('file'));
+        return view('admin.default.uploaded_files.info', compact('file'));
     }
-
 }

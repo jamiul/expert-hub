@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 // use Symfony\Component\Console\Input\Input;
+use App\Models\Language;
+use App\Models\Translation;
 use App\Rules\Lowercase;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use App\Models\Language;
-use App\Models\Translation;
-use Validator;
 use Redirect;
 use Session;
-use File;
+use Validator;
 
 class LanguageController extends Controller
 {
@@ -104,8 +103,7 @@ class LanguageController extends Controller
             // saveJSONFile($language->code, openJSONFile('en'));
             flash(translate('Language has been inserted successfully'))->success();
             return redirect()->route('languages.index');
-        }
-        else {
+        } else {
             flash(translate('Something went wrong'))->error();
             return back();
         }
@@ -120,15 +118,15 @@ class LanguageController extends Controller
 
     public function show(Request $request, $id)
     {
-        $sort_search  = null;
-        $language     = Language::findOrFail(decrypt($id));
-        $lang_keys    = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'));
-        if ($request->has('search')){
-            $sort_search  = $request->search;
-            $lang_keys    = $lang_keys->where('lang_key', 'like', '%'.$sort_search.'%');
+        $sort_search = null;
+        $language = Language::findOrFail(decrypt($id));
+        $lang_keys = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'));
+        if ($request->has('search')) {
+            $sort_search = $request->search;
+            $lang_keys = $lang_keys->where('lang_key', 'like', '%' . $sort_search . '%');
         }
         $lang_keys = $lang_keys->paginate(50);
-        return view('admin.default.system_configurations.languages.language_view', compact('language','lang_keys','sort_search'));
+        return view('admin.default.system_configurations.languages.language_view', compact('language', 'lang_keys', 'sort_search'));
     }
 
     /**
@@ -220,20 +218,19 @@ class LanguageController extends Controller
     {
         $language = Language::findOrFail($request->id);
         foreach ($request->values as $key => $value) {
-          $translation_def = Translation::where('lang_key', $key)->where('lang', $language->code)->first();
-          if($translation_def == null){
-              $translation_def              = new Translation;
-              $translation_def->lang        = $language->code;
-              $translation_def->lang_key    = $key;
-              $translation_def->lang_value  = $value;
-              $translation_def->save();
-          }
-          else {
-              $translation_def->lang_value = $value;
-              $translation_def->save();
-          }
+            $translation_def = Translation::where('lang_key', $key)->where('lang', $language->code)->first();
+            if ($translation_def == null) {
+                $translation_def = new Translation;
+                $translation_def->lang = $language->code;
+                $translation_def->lang_key = $key;
+                $translation_def->lang_value = $value;
+                $translation_def->save();
+            } else {
+                $translation_def->lang_value = $value;
+                $translation_def->save();
+            }
         }
-        flash(translate('Translations updated for ').$language->name)->success();
+        flash(translate('Translations updated for ') . $language->name)->success();
         return back();
     }
 

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use App\Models\User;
-use Session;
 use Auth;
+use Illuminate\Http\Request;
+use Session;
 
 session_start();
 
@@ -18,21 +19,19 @@ class PublicSslCommerzPaymentController extends Controller
         $user = Auth::user();
         $total_amount = Session::get('payment_data')['amount'];
         $post_data = array();
-        $post_data['total_amount'] =  $total_amount;
+        $post_data['total_amount'] = $total_amount;
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = substr(md5($user->id), 0, 10); // tran_id must be unique
 
         $post_data['value_a'] = $user->id;
         $post_data['value_b'] = Session::get('payment_data')['payment_type'];
         $post_data['value_c'] = $total_amount;
-        
-        if(Session::get('payment_data')['payment_type'] == 'package_payment'){
+
+        if (Session::get('payment_data')['payment_type'] == 'package_payment') {
             $post_data['value_d'] = Session::get('payment_data')['package_id'];
-        }
-        elseif (Session::get('payment_data')['payment_type'] == 'milestone_payment') {
+        } elseif (Session::get('payment_data')['payment_type'] == 'milestone_payment') {
             $post_data['value_d'] = Session::get('payment_data')['milestone_request_id'];
-        }
-        elseif (Session::get('payment_data')['payment_type'] == 'service_payment') {
+        } elseif (Session::get('payment_data')['payment_type'] == 'service_payment') {
             $post_data['value_d'] = Session::get('payment_data')['service_package_id'];
         }
 
@@ -42,9 +41,9 @@ class PublicSslCommerzPaymentController extends Controller
         $post_data['cus_city'] = $user->address->city != null ? $user->address->city->name : "";
         $post_data['cus_postcode'] = $user->address->postal_code;
         $post_data['cus_country'] = $user->address->country != null ? $user->address->country->name : "";
-        $post_data['cus_phone'] = $user->address->phone ;
+        $post_data['cus_phone'] = $user->address->phone;
 
-        $server_name=$request->root()."/";
+        $server_name = $request->root() . "/";
         $post_data['success_url'] = $server_name . "sslcommerz/success";
         $post_data['fail_url'] = $server_name . "sslcommerz/fail";
         $post_data['cancel_url'] = $server_name . "sslcommerz/cancel";
@@ -58,47 +57,6 @@ class PublicSslCommerzPaymentController extends Controller
             print_r($payment_options);
             $payment_options = array();
         }
-
-    }
-
-    public function success(Request $request)
-    {
-        #End to received these value from session. which was saved in index function.
-        $payment = json_encode($request->all());
-
-        if(isset($request->value_b)){
-            if($request->value_b == 'package_payment'){
-                $data['amount'] = $request->value_c;
-                $data['payment_method'] = 'sslcommerz';
-                $data['package_id'] = $request->value_d;
-                $data['payment_type'] = 'package_payment';
-                
-                Auth::login(User::find($request->value_a));
-                return (new PackagePaymentController)->package_payment_done($data, $payment);
-            }
-            elseif ($request->value_b == 'milestone_payment') {
-                $data['amount'] = $request->value_c;
-                $data['payment_method'] = 'sslcommerz';
-                $data['milestone_request_id'] = $request->value_d;
-                
-                Auth::login(User::find($request->value_a));
-                return (new MilestonePaymentController)->milestone_payment_done($data, $payment);
-            }
-            elseif ($request->value_b == 'service_payment') {
-                $data['amount'] = $request->value_c;
-                $data['payment_method'] = 'sslcommerz';
-                $data['service_package_id'] = $request->value_d;
-                
-                Auth::login(User::find($request->value_a));
-                return (new ServicePaymentController)->service_package_payment_done($data, $payment);
-            }
-            elseif ($request->value_b == 'wallet_payment') {
-                $data['amount'] = $request->value_c;
-                $data['payment_method'] = 'sslcommerz';
-                Auth::login(User::find($request->value_a));
-                return (new WalletController)->wallet_payment_done($data, $payment);
-            }
-        }
     }
 
     public function fail(Request $request)
@@ -108,51 +66,79 @@ class PublicSslCommerzPaymentController extends Controller
         return redirect()->url()->previous();
     }
 
-     public function cancel(Request $request)
+    public function success(Request $request)
+    {
+        #End to received these value from session. which was saved in index function.
+        $payment = json_encode($request->all());
+
+        if (isset($request->value_b)) {
+            if ($request->value_b == 'package_payment') {
+                $data['amount'] = $request->value_c;
+                $data['payment_method'] = 'sslcommerz';
+                $data['package_id'] = $request->value_d;
+                $data['payment_type'] = 'package_payment';
+
+                Auth::login(User::find($request->value_a));
+                return (new PackagePaymentController)->package_payment_done($data, $payment);
+            } elseif ($request->value_b == 'milestone_payment') {
+                $data['amount'] = $request->value_c;
+                $data['payment_method'] = 'sslcommerz';
+                $data['milestone_request_id'] = $request->value_d;
+
+                Auth::login(User::find($request->value_a));
+                return (new MilestonePaymentController)->milestone_payment_done($data, $payment);
+            } elseif ($request->value_b == 'service_payment') {
+                $data['amount'] = $request->value_c;
+                $data['payment_method'] = 'sslcommerz';
+                $data['service_package_id'] = $request->value_d;
+
+                Auth::login(User::find($request->value_a));
+                return (new ServicePaymentController)->service_package_payment_done($data, $payment);
+            } elseif ($request->value_b == 'wallet_payment') {
+                $data['amount'] = $request->value_c;
+                $data['payment_method'] = 'sslcommerz';
+                Auth::login(User::find($request->value_a));
+                return (new WalletController)->wallet_payment_done($data, $payment);
+            }
+        }
+    }
+
+    public function cancel(Request $request)
     {
         $request->session()->forget('payment_data');
         flash(translate('Payment cancelled'))->success();
-    	return redirect()->url()->previous();
+        return redirect()->url()->previous();
     }
 
-     public function ipn(Request $request)
+    public function ipn(Request $request)
     {
         #Received all the payement information from the gateway
-      if($request->input('tran_id')) #Check transation id is posted or not.
-      {
+        if ($request->input('tran_id')) { #Check transation id is posted or not.
+            $tran_id = $request->input('tran_id');
 
-          $tran_id = $request->input('tran_id');
+            #Check order status in order tabel against the transaction id or order id.
+            $order = Order::findOrFail($request->session()->get('order_id'));
 
-        #Check order status in order tabel against the transaction id or order id.
-          $order = Order::findOrFail($request->session()->get('order_id'));
+            if ($order->payment_status == 'Pending') {
+                $sslc = new SSLCommerz();
+                $validation = $sslc->orderValidate($tran_id, $order->grand_total, 'BDT', $request->all());
+                if ($validation == true) {
+                    /*
+                    That means IPN worked. Here you need to update order status
+                    in order table as Processing or Complete.
+                    Here you can also sent sms or email for successfull transaction to customer
+                    */
+                    echo "Transaction is successfully Complete";
+                } else {
+                    /*
+                    That means IPN worked, but Transation validation failed.
+                    Here you need to update order status as Failed in order table.
+                    */
 
-                if($order->payment_status =='Pending')
-                {
-                    $sslc = new SSLCommerz();
-                    $validation = $sslc->orderValidate($tran_id, $order->grand_total, 'BDT', $request->all());
-                    if($validation == TRUE)
-                    {
-                        /*
-                        That means IPN worked. Here you need to update order status
-                        in order table as Processing or Complete.
-                        Here you can also sent sms or email for successfull transaction to customer
-                        */
-                        echo "Transaction is successfully Complete";
-                    }
-                    else
-                    {
-                        /*
-                        That means IPN worked, but Transation validation failed.
-                        Here you need to update order status as Failed in order table.
-                        */
-
-                        echo "validation Fail";
-                    }
-
+                    echo "validation Fail";
                 }
-        }
-        else
-        {
+            }
+        } else {
             echo "Inavalid Data";
         }
     }

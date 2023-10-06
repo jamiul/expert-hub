@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProjectUser extends Model
 {
     use SoftDeletes;
+
     public function project()
     {
         return $this->belongsTo(Project::class);

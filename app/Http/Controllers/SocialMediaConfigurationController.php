@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Utility\SettingsUtility;
 use Illuminate\Http\Request;
-use App\Utility\SettingsUtility; 
 
 class SocialMediaConfigurationController extends Controller
 {
@@ -11,6 +11,7 @@ class SocialMediaConfigurationController extends Controller
     {
         $this->middleware(['permission:show third party api setting'])->only('index');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,16 +19,15 @@ class SocialMediaConfigurationController extends Controller
      */
     public function index()
     {
-        
+
         return view('admin.default.system_configurations.social_media_config.index');
-        
     }
 
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Http\Request;
 
 class VerificationController extends Controller
 {
@@ -42,7 +42,7 @@ class VerificationController extends Controller
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
 
-      public function resend(Request $request)
+    public function resend(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
             return redirect($this->redirectPath());
@@ -53,19 +53,19 @@ class VerificationController extends Controller
         return back()->with('resent', true);
     }
 
-    public function verification_confirmation($code){
+    public function verificationConfirmation($code)
+    {
         $user = User::where('verification_code', $code)->first();
-        if($user != null){
+        if ($user != null) {
             $user->email_verified_at = Carbon::now();
             $user->save();
             auth()->login($user, true);
             flash(translate('Your email has been verified successfully'))->success();
-        }
-        else {
+        } else {
             flash(translate('Sorry, we could not verifiy you. Please try again'))->error();
         }
 
-        if($user->user_type == 'admin') {
+        if ($user->user_type == 'admin') {
             return redirect()->route('admin.dashboard');
         }
 

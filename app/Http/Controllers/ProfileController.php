@@ -1,14 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Session;
+
+use App\Models\Address;
+use App\Models\FreelancerAccount;
+use App\Models\User;
+use App\Models\UserProfile;
 use Auth;
 use Hash;
-use App\Models\User;
-use App\Models\Address;
-use App\Models\UserProfile;
-use App\Models\Verification;
-use App\Models\FreelancerAccount;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ProfileController extends Controller
@@ -22,20 +22,20 @@ class ProfileController extends Controller
     // Update admin profile
     public function update_admin_profile(Request $request)
     {
-        if(env("DEMO_MODE") == "On"){
+        if (env("DEMO_MODE") == "On") {
             flash(translate('This action is blocked in demo version!'))->error();
             return back();
         }
-        if (!User::where('email', $request->email)->where( 'id', '!=', auth()->user()->id)->first()) {
+        if (!User::where('email', $request->email)->where('id', '!=', auth()->user()->id)->first()) {
             $user = User::findOrFail(auth()->user()->id);
             $user->name = $request->name;
             $user->email = $request->email;
-            if($request->new_password != null && ($request->new_password == $request->confirm_password)){
+            if ($request->new_password != null && ($request->new_password == $request->confirm_password)) {
                 $user->password = Hash::make($request->new_password);
             }
             $user->photo = $request->profile_photo;
 
-            if($user->save()){
+            if ($user->save()) {
                 flash(translate('Your Profile has been updated successfully!'))->success();
                 return back();
             }
@@ -44,49 +44,46 @@ class ProfileController extends Controller
         }
         flash(translate('This Email is already used.'))->error();
         return back();
-
     }
 
     /**
      * Redirect to user profile page to update profile
      * @return \Illuminate\View\View
      */
-    public function user_profile(): \Illuminate\View\View
+    public function userProfile(): \Illuminate\View\View
     {
         try {
             $user = Auth::user();
-            $verification = $user->verifications()->where('type','identity_verification')->first();
+            $verification = $user->verifications()->where('type', 'identity_verification')->first();
 
             if (isClient()) {
-                return view('frontend.default.user.client.settings.profile', compact('user',  'verification'));
-            }
-            elseif (isFreelancer()) {
+                return view('frontend.default.user.client.settings.profile', compact('user', 'verification'));
+            } elseif (isFreelancer()) {
                 return view('frontend.default.user.freelancer.setting.profile', compact('user', 'verification'));
-            }
-            else {
+            } else {
                 flash(translate('Sorry! Something went wrong.'))->error();
                 return back();
             }
-        } catch (\Exception $ex){
+        } catch (\Exception $ex) {
             return back();
         }
     }
 
-    public function user_account()
+    public function userAccount()
     {
         $freelancer_account = FreelancerAccount::where('user_id', Auth::user()->id)->first();
         return view('frontend.default.user.freelancer.setting.account', compact('freelancer_account'));
     }
 
-    public function basic_info_update(Request $request)
+    public function basicInfoUpdate(Request $request)
     {
-        if(env("DEMO_MODE") == "On"){
+        if (env("DEMO_MODE") == "On") {
             flash(translate('This action is blocked in demo version!'))->error();
             return back();
         }
 
         $user = User::findOrFail(Auth::user()->id);
-        if($request->new_password != null && ($request->new_password == $request->confirm_password)){
+        if ($request->new_password != null && ($request->new_password == $request->confirm_password)) {
             $user->password = Hash::make($request->new_password);
         }
         $user->name = $request->name;
@@ -99,7 +96,7 @@ class ProfileController extends Controller
                 $user_profile->hourly_rate = $request->hourly_rate;
             }
             if ($user_profile->save()) {
-                $user_address =  Address::where('addressable_id', $user->id)->first();
+                $user_address = Address::where('addressable_id', $user->id)->first();
                 $user_address->street = $request->address;
                 $user_address->country_id = $request->country_id;
                 $user_address->city_id = $request->city_id;
@@ -108,24 +105,21 @@ class ProfileController extends Controller
                 if ($user->address()->save($user_address)) {
                     flash(translate('Your Info has been updated successfully'))->success();
                     return redirect()->route('user.profile');
-                }
-                else {
+                } else {
                     flash(translate('Sorry! Something went wrong.'))->error();
                     return back();
                 }
-            }
-            else {
+            } else {
                 flash(translate('Sorry! Something went wrong.'))->error();
                 return back();
             }
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
     }
 
-    public function photo_update(Request $request)
+    public function photoUpdate(Request $request)
     {
         $user = User::findOrFail(Auth::user()->id);
         $user->photo = $request->profile_photo;
@@ -133,15 +127,15 @@ class ProfileController extends Controller
         if ($user->save()) {
             flash(translate('Your Picture has been updated successfully'))->success();
             return redirect()->route('user.profile');
-        }
-        else {
+        } else {
             flash(translate('Sorry! Something went wrong.'))->error();
             return back();
         }
     }
-    public function bio_update(Request $request)
+
+    public function bioUpdate(Request $request)
     {
-        if(env("DEMO_MODE") == "On"){
+        if (env("DEMO_MODE") == "On") {
             flash(translate('This action is blocked in demo version!'))->error();
             return back();
         }
@@ -150,7 +144,7 @@ class ProfileController extends Controller
         $username_availability = User::where('user_name', '=', Str::slug($request->username, '-'))->first();
         if ($username_availability == null) {
             $user->user_name = Str::slug($request->username, '-');
-            if($request->new_password != null && ($request->new_password == $request->confirm_password)){
+            if ($request->new_password != null && ($request->new_password == $request->confirm_password)) {
                 $user->password = Hash::make($request->new_password);
             }
             if ($user->save()) {
@@ -163,9 +157,8 @@ class ProfileController extends Controller
                 flash(translate('Your info has been updated successfully'))->success();
                 return redirect()->route('user.profile');
             }
-        }
-        else {
-            if($request->new_password != null && ($request->new_password == $request->confirm_password)){
+        } else {
+            if ($request->new_password != null && ($request->new_password == $request->confirm_password)) {
                 $user->password = Hash::make($request->new_password);
                 $user->save();
             }

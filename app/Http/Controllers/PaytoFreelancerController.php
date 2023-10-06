@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FreelancerAccount;
+use App\Models\PayToFreelancer;
+use App\Models\User;
+use App\Models\UserProfile;
 use App\Utility\EmailUtility;
 use App\Utility\NotificationUtility;
-use Illuminate\Http\Request;
-use App\Models\PayToFreelancer;
-use App\Models\FreelancerAccount;
-use App\Models\UserProfile;
-use App\Models\User;
 use Auth;
+use Illuminate\Http\Request;
 
 class PaytoFreelancerController extends Controller
 {
@@ -27,28 +27,25 @@ class PaytoFreelancerController extends Controller
         if ($request->search != null || $request->date != null) {
             if ($request->search != null) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function($user) use ($sort_search){
-                    $user->where('name', 'like', '%'.$sort_search.'%')->orWhere('email', 'like', '%'.$sort_search.'%');
+                $user_ids = User::where(function ($user) use ($sort_search) {
+                    $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
                 })->pluck('id')->toArray();
-                $pay_to_freelancers = $pay_to_freelancers->where(function($freelancer) use ($user_ids){
+                $pay_to_freelancers = $pay_to_freelancers->where(function ($freelancer) use ($user_ids) {
                     $freelancer->whereIn('user_id', $user_ids);
                 });
                 $pay_to_freelancers = $pay_to_freelancers->paginate(12);
-            }
-            elseif ($request->date != null){
+            } elseif ($request->date != null) {
                 $sort_search_by_date = $request->date;
                 $var = explode(" / ", $request->date);
                 $min_date = $var[0];
                 $max_date = $var[1];
                 $pay_to_freelancers = $pay_to_freelancers->whereBetween('created_at', [$min_date, $max_date])->paginate(12);
             }
-        }
-        else {
+        } else {
             $pay_to_freelancers = $pay_to_freelancers->paginate(12);
         }
 
-        return view('admin.default.pay_to_freelancer.index', compact('pay_to_freelancers','sort_search', 'sort_search_by_date'));
-
+        return view('admin.default.pay_to_freelancer.index', compact('pay_to_freelancers', 'sort_search', 'sort_search_by_date'));
     }
 
     public function pay_to_freelancer($id)
@@ -78,15 +75,15 @@ class PaytoFreelancerController extends Controller
             NotificationUtility::set_notification(
                 "freelancer_withdrawal_request_accepted_by_admin",
                 translate('A new withdrawal request has been accepted by'),
-                route('withdrawal_history_index',[],false),
+                route('withdrawal_history_index', [], false),
                 $pay_to_freelancer->user_id,
                 Auth::user()->id,
                 'freelancer'
             );
             EmailUtility::send_email(
                 translate('A new withdrawal request has been accepted'),
-                translate('A new withdrawal request has been accepted by'). Auth::user()->name,
-                get_email_by_user_id( $pay_to_freelancer->user_id),
+                translate('A new withdrawal request has been accepted by') . Auth::user()->name,
+                get_email_by_user_id($pay_to_freelancer->user_id),
                 route('withdrawal_history_index')
             );
 
@@ -98,7 +95,8 @@ class PaytoFreelancerController extends Controller
         }
     }
 
-    public function cancel_request($id){
+    public function cancel_request($id)
+    {
         $pay_to_freelancer = PayToFreelancer::find(decrypt($id));
         $pay_to_freelancer->delete();
         flash(translate('Payment has been cancelled'))->success();
@@ -124,16 +122,16 @@ class PaytoFreelancerController extends Controller
         $query = null;
         $withdraw_requests = PayToFreelancer::where('paid_status', 0);
         if ($request->search != null || $request->type != null) {
-            if ($request->has('search')){
+            if ($request->has('search')) {
                 $sort_search = $request->search;
-                $user_ids = User::where(function($user) use ($sort_search){
-                    $user->where('name', 'like', '%'.$sort_search.'%')->orWhere('email', 'like', '%'.$sort_search.'%');
+                $user_ids = User::where(function ($user) use ($sort_search) {
+                    $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
                 })->pluck('id')->toArray();
-                $withdraw_requests = $withdraw_requests->where(function($withdraw_request) use ($user_ids){
+                $withdraw_requests = $withdraw_requests->where(function ($withdraw_request) use ($user_ids) {
                     $withdraw_request->whereIn('user_id', $user_ids);
                 });
             }
-            if ($request->type != null){
+            if ($request->type != null) {
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
@@ -141,18 +139,16 @@ class PaytoFreelancerController extends Controller
             }
 
             $withdraw_requests = $withdraw_requests->paginate(10);
-        }
-        else {
+        } else {
             $withdraw_requests = $withdraw_requests->orderBy('created_at', 'desc')->paginate(10);
         }
 
         return view('admin.default.withdraw_request.index', compact('withdraw_requests', 'sort_search', 'col_name', 'query'));
-
     }
 
     public function send_withdrawal_request_store(Request $request)
     {
-        if($request->amount <= Auth::user()->profile->balance && $request->amount >= \App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value){
+        if ($request->amount <= Auth::user()->profile->balance && $request->amount >= \App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value) {
             $pay_to_freelancer = new PayToFreelancer;
             $pay_to_freelancer->user_id = Auth::user()->id;
             $pay_to_freelancer->requested_amount = $request->amount;
@@ -168,14 +164,14 @@ class PaytoFreelancerController extends Controller
             NotificationUtility::set_notification(
                 "freelancer_withdrawal_request",
                 translate('A new withdrawal has been requested by'),
-                route('withdraw_request.index',[],false),
+                route('withdraw_request.index', [], false),
                 0,
                 Auth::user()->id,
                 'admin'
             );
             EmailUtility::send_email(
                 translate('A new withdrawal has been requested'),
-                translate('A new withdrawal has been requested by'). Auth::user()->name,
+                translate('A new withdrawal has been requested by') . Auth::user()->name,
                 system_email(),
                 route('withdraw_request.index')
             );

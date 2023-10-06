@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\FreelancerAccount;
 use Auth;
+use Illuminate\Http\Request;
 
 class FreelancerAccountController extends Controller
 {
@@ -26,13 +26,11 @@ class FreelancerAccountController extends Controller
             if ($freelancer_account->save()) {
                 flash(translate('Your Info has been updated successfully'))->success();
                 return redirect()->route('user.account');
-            }
-            else {
+            } else {
                 flash(translate('Sorry! Something went wrong.'))->error();
                 return back();
             }
-        }
-        else {
+        } else {
             $freelancer_account = new FreelancerAccount;
             $freelancer_account->user_id = Auth::user()->id;
             if ($request->bank_name != null) {
@@ -48,8 +46,7 @@ class FreelancerAccountController extends Controller
             if ($freelancer_account->save()) {
                 flash(translate('Your Info has been updated successfully'))->success();
                 return redirect()->route('user.account');
-            }
-            else {
+            } else {
                 flash(translate('Sorry! Something went wrong.'))->error();
                 return back();
             }

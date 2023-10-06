@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
+use App\Repositories\AbstractInterface;
+use App\Repositories\AbstractRepository;
 use App\Repositories\Badge\BadgeInterface;
 use App\Repositories\Badge\BadgeRepository;
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\AbstractInterface;
-use App\Repositories\AbstractRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {

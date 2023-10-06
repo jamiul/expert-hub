@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Utility\EmailUtility;
-use App\Utility\NotificationUtility;
-use Illuminate\Http\Request;
-use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\WalletPaymentController;
-use App\Models\PackagePayment;
-use App\Models\UserProfile;
 use App\Models\Package;
+use App\Models\PackagePayment;
 use App\Models\UserPackage;
+use App\Utility\EmailUtility;
+use App\Utility\NotificationUtility;
 use Auth;
-Use Session;
+use Illuminate\Http\Request;
+use Session;
 
 class PackagePaymentController extends Controller
 {
@@ -21,6 +19,7 @@ class PackagePaymentController extends Controller
     {
         $this->middleware(['permission:show package payments'])->only('admin_index');
     }
+
     //admin package payment history
     public function admin_index(Request $request)
     {
@@ -29,19 +28,17 @@ class PackagePaymentController extends Controller
         $sort_search = null;
 
         $package_payments = PackagePayment::orderBy('created_at', 'desc');
-        if ($request->date != null){
+        if ($request->date != null) {
             $sort_search = $request->date;
             $var = explode(" / ", $request->date);
             $min_date = $var[0];
             $max_date = $var[1];
             $package_payments = $package_payments->whereBetween('created_at', [$min_date, $max_date])->paginate(12);
-        }
-        else {
+        } else {
             $package_payments = $package_payments->paginate(12);
         }
 
         return view('admin.default.package_payment.index', compact('package_payments', 'sort_search'));
-
     }
 
     //admin Offline package payment history
@@ -52,23 +49,21 @@ class PackagePaymentController extends Controller
         $sort_search = null;
 
         $package_payments = PackagePayment::orderBy('created_at', 'desc')->where('offline_payment', 1);
-        if ($request->date != null){
+        if ($request->date != null) {
             $sort_search = $request->date;
             $var = explode(" / ", $request->date);
             $min_date = $var[0];
             $max_date = $var[1];
             $package_payments = $package_payments->whereBetween('created_at', [$min_date, $max_date])->paginate(12);
-        }
-        else {
+        } else {
             $package_payments = $package_payments->paginate(12);
         }
 
         return view('manual_payment.package_payments', compact('package_payments', 'sort_search'));
-
     }
 
     // Online Package Purchase
-    public function purchase_package(Request $request)
+    public function purchasePackage(Request $request)
     {
         $package = Package::findOrFail($request->package_id);
         $data['package_id'] = $package->id;
@@ -78,44 +73,36 @@ class PackagePaymentController extends Controller
         $data['payment_type'] = 'package_payment';
         $request->session()->put('payment_data', $data);
 
-        if($request->payment_option == 'paypal'){
+        if ($request->payment_option == 'paypal') {
             $paypal = new PayPalController;
             return $paypal->getCheckout();
-        }
-        elseif ($request->payment_option == 'stripe') {
+        } elseif ($request->payment_option == 'stripe') {
             $stripe = new StripePaymentController;
             return $stripe->index();
-        }
-        elseif ($request->payment_option == 'sslcommerz') {
+        } elseif ($request->payment_option == 'sslcommerz') {
             $sslcommerz = new PublicSslCommerzPaymentController;
             return $sslcommerz->index($request);
-        }
-        elseif ($request->payment_option == 'paystack') {
+        } elseif ($request->payment_option == 'paystack') {
             $paystack = new PaystackController;
             return $paystack->redirectToGateway($request);
-        }
-        elseif ($request->payment_option == 'instamojo') {
+        } elseif ($request->payment_option == 'instamojo') {
             $instamojo = new InstamojoController;
             return $instamojo->pay($request);
-        }
-        elseif ($request->payment_option == 'paytm') {
+        } elseif ($request->payment_option == 'paytm') {
             $paytm = new PaytmController;
             return $paytm->index();
-        }
-        elseif ($request->payment_option == 'flutterwave') {
+        } elseif ($request->payment_option == 'flutterwave') {
             $flutterwave = new FlutterwaveController;
             return $flutterwave->initialize();
-        }
-        elseif ($request->payment_option == 'wallet') {
+        } elseif ($request->payment_option == 'wallet') {
             $user_profile = Auth::user()->profile;
             if ($user_profile->balance >= $package->price) {
                 $user_profile->balance -= $package->price;
                 $user_profile->save();
                 return $this->package_payment_done(Session::get('payment_data'), null);
-            }
-            else{
+            } else {
                 flash(translate('You do not have enough wallet balance.'))->error();
-                return back(); 
+                return back();
             }
         }
     }
@@ -133,27 +120,25 @@ class PackagePaymentController extends Controller
         $package_payment->payment_details = $payment;
         if ($package_payment->save()) {
             $userPackage = Auth::user()->userPackage;
-            if($userPackage == null){
+            if ($userPackage == null) {
                 $userPackage = new UserPackage;
                 $userPackage->user_id = Auth::user()->id;
             }
 
             $userPackage->package_id = $package->id;
-            if($package->number_of_days > 0){
-                $userPackage->package_invalid_at = date('Y-m-d', strtotime('+ '.$package->number_of_days.'days'));
+            if ($package->number_of_days > 0) {
+                $userPackage->package_invalid_at = date('Y-m-d', strtotime('+ ' . $package->number_of_days . 'days'));
             }
 
             if ($userPackage->fixed_limit == null) {
                 $userPackage->fixed_limit = $package->fixed_limit;
-            }
-            else {
+            } else {
                 $userPackage->fixed_limit += $package->fixed_limit;
             }
 
             if ($userPackage->long_term_limit == null) {
                 $userPackage->long_term_limit = $package->long_term_limit;
-            }
-            else {
+            } else {
                 $userPackage->long_term_limit += $package->long_term_limit;
             }
 
@@ -171,7 +156,7 @@ class PackagePaymentController extends Controller
             NotificationUtility::set_notification(
                 "package_purchased",
                 translate('A new package has been purchased by'),
-                route('package_payment_history_for_admin',[],false),
+                route('package_payment_history_for_admin', [], false),
                 0,
                 Auth::user()->id,
                 'admin'
@@ -179,7 +164,7 @@ class PackagePaymentController extends Controller
 
             EmailUtility::send_email(
                 translate('A new package has been purchased'),
-                translate('A new package has been purchased by '). Auth::user()->name,
+                translate('A new package has been purchased by ') . Auth::user()->name,
                 system_email(),
                 route('package_payment_history_for_admin')
             );
@@ -191,78 +176,75 @@ class PackagePaymentController extends Controller
     }
 
     // Offline Package Purchase
-    public function purchase_package_offline(Request $request){
-      $package = Package::findOrFail($request->package_id);
-      $package_payment = new PackagePayment;
-      $package_payment->package_id      = $package->id;
-      $package_payment->package_type    = $package->type;
-      $package_payment->user_id         = Auth::user()->id;
-      $package_payment->amount          = $package->price;
-      $package_payment->payment_type    = 'package_payment';
-      $package_payment->payment_method  = $request->payment_option;
-      $package_payment->payment_details = $request->trx_id;
-      $package_payment->offline_payment = 1;
-      $package_payment->receipt         = $request->photo;
-      $package_payment->approval        = 0;
-      $package_payment->save();
-      flash(translate('Offline payment has been done. Please wait for admin approval.'))->success();
-      return redirect()->route('freelancer.packages.history');
+    public function purchase_package_offline(Request $request)
+    {
+        $package = Package::findOrFail($request->package_id);
+        $package_payment = new PackagePayment;
+        $package_payment->package_id = $package->id;
+        $package_payment->package_type = $package->type;
+        $package_payment->user_id = Auth::user()->id;
+        $package_payment->amount = $package->price;
+        $package_payment->payment_type = 'package_payment';
+        $package_payment->payment_method = $request->payment_option;
+        $package_payment->payment_details = $request->trx_id;
+        $package_payment->offline_payment = 1;
+        $package_payment->receipt = $request->photo;
+        $package_payment->approval = 0;
+        $package_payment->save();
+        flash(translate('Offline payment has been done. Please wait for admin approval.'))->success();
+        return redirect()->route('freelancer.packages.history');
     }
 
     // Offline package payment approval
     public function approve_offline_package_payment($id)
     {
-      $package_payment = PackagePayment::findOrFail($id);
-      $package_payment->approval = 1;
+        $package_payment = PackagePayment::findOrFail($id);
+        $package_payment->approval = 1;
 
         $userPackage = $package_payment->user->userPackage;
-        if($userPackage == null){
-            $userPackage          = new UserPackage;
+        if ($userPackage == null) {
+            $userPackage = new UserPackage;
             $userPackage->user_id = $package_payment->user_id;
         }
 
         $userPackage->package_id = $package_payment->package_id;
-        if($package_payment->package->number_of_days > 0){
-            $userPackage->package_invalid_at = date('Y-m-d', strtotime('+ '.$package_payment->package->number_of_days.'days'));
+        if ($package_payment->package->number_of_days > 0) {
+            $userPackage->package_invalid_at = date('Y-m-d', strtotime('+ ' . $package_payment->package->number_of_days . 'days'));
         }
 
         if ($userPackage->fixed_limit == null) {
             $userPackage->fixed_limit = $package_payment->package->fixed_limit;
-        }
-        else {
+        } else {
             $userPackage->fixed_limit += $package_payment->package->fixed_limit;
         }
 
         if ($userPackage->long_term_limit == null) {
             $userPackage->long_term_limit = $package_payment->package->long_term_limit;
-        }
-        else {
+        } else {
             $userPackage->long_term_limit += $package_payment->package->long_term_limit;
         }
 
-        $userPackage->skill_add_limit         = $package_payment->package->skill_add_limit;
-        $userPackage->portfolio_add_limit     = $package_payment->package->portfolio_add_limit;
-        $userPackage->job_exp_limit           = $package_payment->package->job_exp_limit;
-        $userPackage->bookmark_project_limit  = $package_payment->package->bookmark_project_limit;
-        $userPackage->following_status        = $package_payment->package->following_status;
-        $userPackage->bio_text_limit          = $package_payment->package->bio_text_limit;
-        $userPackage->service_limit           = $package_payment->package->service_limit;
+        $userPackage->skill_add_limit = $package_payment->package->skill_add_limit;
+        $userPackage->portfolio_add_limit = $package_payment->package->portfolio_add_limit;
+        $userPackage->job_exp_limit = $package_payment->package->job_exp_limit;
+        $userPackage->bookmark_project_limit = $package_payment->package->bookmark_project_limit;
+        $userPackage->following_status = $package_payment->package->following_status;
+        $userPackage->bio_text_limit = $package_payment->package->bio_text_limit;
+        $userPackage->service_limit = $package_payment->package->service_limit;
 
         if ($userPackage->save()) {
-          $package_payment->save();
-          flash(translate('Offline payment approved successfully.'))->success();
-          return redirect()->route('offline_package_payments_history');
+            $package_payment->save();
+            flash(translate('Offline payment approved successfully.'))->success();
+            return redirect()->route('offline_package_payments_history');
+        } else {
+            flash(translate('Something went wrong'))->error();
+            return back();
         }
-        else {
-          flash(translate('Something went wrong'))->error();
-          return back();
-        }
-
     }
 
-    public function freelancer_package_purchase_history_index()
+    public function freelancerPackagePurchaseHistoryIndex()
     {
-        $package_payments = PackagePayment::where('user_id' , Auth::user()->id)->latest()->paginate(12);
+        $package_payments = PackagePayment::where('user_id', Auth::user()->id)->latest()->paginate(12);
         return view('frontend.default.user.packages.history', compact('package_payments'));
     }
 }
