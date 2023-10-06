@@ -119,7 +119,7 @@ class CurrencyController extends Controller
         return back();
     }
 
-    public function set_currency()
+    public function setCurrency()
     {
         $currencies = Currency::all();
         return view('admin.default.system_configurations.currencies.set_currency', compact('currencies'));

@@ -36,7 +36,7 @@ class ChatController extends Controller
         return view('frontend.default.user.messages', compact('chat_threads'));
     }
 
-    public function admin_chat_index(Request $request)
+    public function adminChatIndex(Request $request)
     {
         $sort_search = null;
         $chat_threads = ChatThread::orderBy('created_at', 'desc');
@@ -61,7 +61,7 @@ class ChatController extends Controller
         return view('admin.default.chats.index', compact('chat_threads', 'sort_search'));
     }
 
-    public function admin_chat_details($id)
+    public function adminChatDetails($id)
     {
         $chat_thread = ChatThread::findOrFail(decrypt($id));
         $chats = $chat_thread->chats;

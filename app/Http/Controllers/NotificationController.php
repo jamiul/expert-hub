@@ -12,9 +12,8 @@ class NotificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function admin_listing()
+    public function adminListing()
     {
-
         NotificationUtility::make_my_notifications_seen();
         $notifications = NotificationUtility::get_my_notifications(10, false, 0, true);
 

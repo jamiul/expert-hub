@@ -16,22 +16,22 @@ class SystemConfigurationController extends Controller
         $this->middleware(['permission:show refund setting'])->only('refund_settings');
     }
 
-    public function activation_view()
+    public function activationView()
     {
         return view('admin.default.system_configurations.activation');
     }
 
-    public function freelancer_payment_config()
+    public function freelancerPaymentConfig()
     {
         return view('admin.default.system_configurations.freelancer_payment_config');
     }
 
-    public function refund_settings()
+    public function refundSettings()
     {
         return view('admin.default.system_configurations.refund_settings');
     }
 
-    public function env_key_update(Request $request)
+    public function envKeyUpdate(Request $request)
     {
         foreach ($request->types as $key => $type) {
             $this->overWriteEnvFile($type, $request[$type]);
@@ -145,7 +145,7 @@ class SystemConfigurationController extends Controller
         return back();
     }
 
-    public function home_settings(Request $request)
+    public function homeSettings(Request $request)
     {
         return view('admin.default.website.home');
     }
@@ -157,14 +157,14 @@ class SystemConfigurationController extends Controller
 
 
     //return policy page
-    public function policy_index($type)
+    public function policyIndex($type)
     {
         $policy = SystemConfiguration::where('type', $type)->first();
         return view('admin.default.policies.index', compact('policy'));
     }
 
     //policy info update
-    public function policy_update(Request $request)
+    public function policyUpdate(Request $request)
     {
         $system_policy = SystemConfiguration::where('type', $request->type)->first();
         $system_policy->value = $request->value;

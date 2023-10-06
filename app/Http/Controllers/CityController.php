@@ -126,7 +126,7 @@ class CityController extends Controller
         }
     }
 
-    public function get_city_by_country(Request $request)
+    public function getCityByCountry(Request $request)
     {
         $cities = City::where('country_id', $request->country_id)->get();
         return $cities;

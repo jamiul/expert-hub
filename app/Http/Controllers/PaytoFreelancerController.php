@@ -52,7 +52,7 @@ class PaytoFreelancerController extends Controller
         return view('admin.default.pay_to_freelancer.index', compact('pay_to_freelancers', 'sort_search', 'sort_search_by_date'));
     }
 
-    public function pay_to_freelancer($id)
+    public function payToFreelancer($id)
     {
         $withdraw_request = PayToFreelancer::find(decrypt($id));
         $user = $withdraw_request->user;
@@ -99,7 +99,7 @@ class PaytoFreelancerController extends Controller
         }
     }
 
-    public function cancel_request($id)
+    public function cancelRequest($id)
     {
         $pay_to_freelancer = PayToFreelancer::find(decrypt($id));
         $pay_to_freelancer->delete();
@@ -119,7 +119,7 @@ class PaytoFreelancerController extends Controller
         return view('frontend.default.user.freelancer.earnings.withdrawal-history', compact('withdraw_requests'));
     }
 
-    public function withdraw_requests(Request $request)
+    public function withdrawRequests(Request $request)
     {
         $sort_search = null;
         $col_name = null;

@@ -75,17 +75,15 @@ class HomeController extends Controller
         return view('frontend.default.user_login');
     }
 
-    public function admin_dashboard()
+    public function adminDashboard()
     {
         return view('admin.default.dashboard');
     }
-
 
     //Redirect user-based dashboard
     public function dashboard()
     {
         $user_profile = UserProfile::where('user_id', Auth::user()->id)->first();
-
 
         if (isFreelancer()) {
             return view('frontend.default.user.freelancer.dashboard');
@@ -187,7 +185,7 @@ class HomeController extends Controller
     }
 
     //check if username exists
-    public function user_name_check(Request $request)
+    public function userNameCheck(Request $request)
     {
         $user_name = User::where('user_name', '=', Str::slug($request->username, '-'))->first();
         if ($user_name != null) {

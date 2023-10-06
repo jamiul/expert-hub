@@ -58,7 +58,7 @@ class VerificationController extends Controller
         return view('admin.default.verification_request.show', compact('user'));
     }
 
-    public function verification_accept(Request $request)
+    public function verificationAccept(Request $request)
     {
         $verification = Verification::findOrFail($request->id);
         $verification->verified = 1;
@@ -69,7 +69,7 @@ class VerificationController extends Controller
         }
     }
 
-    public function verification_reject(Request $request)
+    public function verificationReject(Request $request)
     {
         $verification = Verification::findOrFail($request->id);
         if (Verification::destroy($verification->id)) {

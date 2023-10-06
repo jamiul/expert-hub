@@ -12,6 +12,7 @@ use App\Http\Controllers\BookmarkedScholarshipController;
 use App\Http\Controllers\BookmarkedServiceController;
 use App\Http\Controllers\CancelProjectController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\FreelancerAccountController;
 use App\Http\Controllers\FreelancerEducationController;
@@ -31,6 +32,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SearchScholarshipController;
 use App\Http\Controllers\SeminarConsultantController;
+use App\Http\Controllers\SeminarDetailsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\StripePaymentController;
@@ -108,9 +110,9 @@ Route::get('/language/{locale}', [LanguageController::class, 'changeLanguage'])-
 Route::get('/package-select', [PackageController::class, 'selectPackage'])->name('select_package');
 Route::get('/check', [UserController::class, 'userOnlineStatus']);
 
-Route::post('/user-name-check', 'HomeController@user_name_check')->name('user_name_check');
-Route::post('/cities/get_city_by_country', 'CityController@get_city_by_country')->name('cities.get_city_by_country');
-Route::post('/user-account-type', 'UserController@set_account_type')->name('user.account.type');
+Route::post('/user-name-check', [HomeController::class, 'userNameCheck'])->name('user_name_check');
+Route::post('/cities/get_city_by_country', [CityController::class, 'getCityByCountry'])->name('cities.get_city_by_country');
+Route::post('/user-account-type', [UserController::class, 'setAccountType'])->name('user.account.type');
 
 // find job section
 Route::get('/ways-to-earn', [StaticPageController::class, 'waysToEarn'])->name('ways-to-earn');
@@ -301,7 +303,7 @@ Route::get('/freelancer-lists', [HomeController::class, 'freelancerList'])->name
 Route::get('/freelancer/{user_name}', [HomeController::class, 'freelancerDetails'])->name('freelancer.details');
 
 //seminars
-Route::get('seminar/{id}', 'SeminarDetailsController@seminar_details')->name('seminar.details');
+Route::get('seminar/{id}', [SeminarDetailsController::class, 'seminarDetails'])->name('seminar.details');
 
 //Payments -STRIPE
 Route::get('/stripe', [StripePaymentController::class, 'index']);

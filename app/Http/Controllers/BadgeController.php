@@ -21,7 +21,7 @@ class BadgeController extends Controller
         return view('admin.default.freelancer.badges.index', compact('badges', 'role'));
     }
 
-    public function client_badges_index()
+    public function clientBadgesIndex()
     {
         list($badges, $role) = $this->repository->getBadgesAndRole('client');
         return view('admin.default.client.badges.index', compact('badges', 'role'));
@@ -57,7 +57,7 @@ class BadgeController extends Controller
         return view('admin.default.freelancer.badges.edit', compact('badge'));
     }
 
-    public function client_badges_edit($id)
+    public function clientBadgesEdit($id)
     {
         $badge = Badge::findOrFail(decrypt($id));
         return view('admin.default.client.badges.edit', compact('badge'));

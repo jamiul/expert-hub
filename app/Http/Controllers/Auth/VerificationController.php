@@ -53,16 +53,17 @@ class VerificationController extends Controller
         return back()->with('resent', true);
     }
 
-    public function verificationConfirmation($code)
+    public function verificationConfirmation(?string $code = null)
     {
         $user = User::where('verification_code', $code)->first();
+
         if ($user != null) {
             $user->email_verified_at = Carbon::now();
             $user->save();
             auth()->login($user, true);
             flash(translate('Your email has been verified successfully'))->success();
         } else {
-            flash(translate('Sorry, we could not verifiy you. Please try again'))->error();
+            flash(translate('Sorry, we could not verify you. Please try again'))->error();
         }
 
         if ($user->user_type == 'admin') {

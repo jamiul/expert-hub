@@ -5,269 +5,321 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/admin', 'HomeController@admin_dashboard')->name('admin.dashboard')->middleware(['admin']);
+use App\Http\Controllers\AddonController;
+use App\Http\Controllers\AdminProjectController;
+use App\Http\Controllers\AizUploadController;
+use App\Http\Controllers\BadgeController;
+use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CancelProjectController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\ConsultantCategoryController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\EmailConfigurationController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ExpertsController;
+use App\Http\Controllers\GeneralConfigurationController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\MilestonePaymentController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PackagePaymentController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PageOptimizationController;
+use App\Http\Controllers\PaytoFreelancerController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectCategoryController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ScholarshipCategoryController;
+use App\Http\Controllers\ScholarshipCityController;
+use App\Http\Controllers\ScholarshipController;
+use App\Http\Controllers\ScholarshipCountryController;
+use App\Http\Controllers\ScholarshipFieldStudyController;
+use App\Http\Controllers\ScholarshipLevelController;
+use App\Http\Controllers\ScholarshipQualificationController;
+use App\Http\Controllers\ScholarshipUniversityController;
+use App\Http\Controllers\ScholarshipWhoCanApplyController;
+use App\Http\Controllers\SeminarController;
+use App\Http\Controllers\SeminarModeController;
+use App\Http\Controllers\SeminarSoftwareController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServicePaymentController;
+use App\Http\Controllers\SitePagesController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\SystemConfigurationController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\WalletController;
+
+Route::get('/admin', [HomeController::class, 'adminDashboard'])
+    ->name('admin.dashboard')
+    ->middleware(['admin']);
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('profile', 'ProfileController@admin_profile')->name('admin.profile');
+    Route::get('profile', [ProfileController::class, 'adminProfile'])->name('admin.profile');
 
-    Route::get('/project-categories/destroy/{id}', 'ProjectCategoryController@destroy')->name('project-categories.delete');
-    Route::post('profile-update', 'ProfileController@update_admin_profile')->name('admin_profile.update');
+    Route::get('/project-categories/destroy/{id}', [ProjectCategoryController::class, 'destroy'])->name('project-categories.delete');
+    Route::post('profile-update', [ProfileController::class, 'updateAdminProfile'])->name('admin_profile.update');
 
-    Route::resource('/project-categories', 'ProjectCategoryController');
+    Route::resource('/project-categories', ProjectCategoryController::class);
 
-    Route::get('/skills/destroy/{id}', 'SkillController@destroy')->name('skills.delete');
-    Route::resource('skills', 'SkillController');
-    Route::resource('experts', "ExpertsController");
-    Route::get('/experts/destroy/{id}', 'ExpertsController@destroy')->name('experts.delete');
+    Route::resource('skills', SkillController::class);
+    Route::get('/skills/destroy/{id}', [SkillController::class, 'destroy'])->name('skills.delete');
 
-    Route::get('/parent_skills/destroy/{id}', 'ParentSkillController@destroy')->name('parent_skills.delete');
-    Route::resource('parent_skills', 'ParentSkillController');
+    Route::resource('experts', ExpertsController::class);
+    Route::get('/experts/destroy/{id}', [ExpertsController::class, 'destroy'])->name('experts.delete');
 
-    Route::resource('consultant-categories', 'ConsultantCategoryController');
-    Route::get('/consultant-categories/destroy/{id}', 'ConsultantCategoryController@destroy')->name('consultant-categories.delete');
+    Route::resource('consultant-categories', ConsultantCategoryController::class);
+    Route::get('/consultant-categories/destroy/{id}', [ConsultantCategoryController::class, 'destroy'])->name('consultant-categories.delete');
 
+    Route::resource('badges', BadgeController::class);
+    Route::get('/badges/destroy/{id}', [BadgeController::class, 'destroy'])->name('badges.delete');
 
-    Route::resource('badges', 'BadgeController');
-    Route::get('/badges/destroy/{id}', 'BadgeController@destroy')->name('badges.delete');
-    Route::get('/client-badge', 'BadgeController@client_badges_create')->name('client_badges_create');
-    Route::get('/client-badge/list', 'BadgeController@client_badges_index')->name('client_badges_index');
-    Route::get('/client-badge/edit/{id}', 'BadgeController@client_badges_edit')->name('client_badges_edit');
-
-    // wallet balance add by admin
-    Route::post('/wallet-balance-by-admin', 'WalletController@wallet_payment_by_admin')->name('admin_wallet.store');
-
-    //PackageController for Freelancer and Client
-    Route::get('/freelancer-package-index/{type}', 'PackageController@index')->name('freelancer_package.index');
-    Route::get('/freelancer-package-create/{type}', 'PackageController@create')->name('freelancer_package.create');
-    Route::post('/package-store', 'PackageController@store')->name('package.store');
-    Route::post('/package-update/{id}', 'PackageController@update')->name('package.update');
-    Route::get('/package-destroy/{id}', 'PackageController@destroy')->name('package.delete');
-    Route::get('/freelancer-package-edit/{id}', 'PackageController@edit')->name('freelancer_package.edit');
-    Route::get('/client-package-index/{type}', 'PackageController@index')->name('client_package.index');
-    Route::get('/client-package-create/{type}', 'PackageController@create')->name('client_package.create');
-    Route::get('/client-package-edit/{id}', 'PackageController@edit')->name('client_package.edit');
-
-    //LanguageController for Freelancer and Client
-    Route::resource('/languages', 'LanguageController');
-    Route::get('/languages/destroy/{id}', 'LanguageController@destroy')->name('languages.delete');
-    Route::post('/languages/update_language_status', 'LanguageController@update_language_status')->name('languages.update_language_status');
-    Route::post('/languages/key_value_store', 'LanguageController@key_value_store')->name('languages.key_value_store');
-    Route::post('/languages/update_language_status', 'LanguageController@update_language_status')->name('languages.update_language_status');
-
-    //.env update
-    Route::post('/env_key_update', 'SystemConfigurationController@env_key_update')->name('env_key_update.update');
-    Route::post('/system-configuration/update', 'SystemConfigurationController@update')->name('system_configuration.update');
-
-    //CurrencyController
-    Route::resource('currencies', 'CurrencyController');
-    Route::get('/currencies/destroy/{id}', 'CurrencyController@destroy')->name('currencies.delete');
-    Route::get('/currency/set_currency', 'CurrencyController@set_currency')->name('currencies.set_currency');
-
-    //RoleController
-    Route::resource('roles', 'RoleController');
-    Route::get('/roles/destroy/{id}', 'RoleController@destroy')->name('roles.delete');
-
-    //EmployeeController
-    Route::get('/employees/{name}', 'EmployeeController@index')->name('employees.index');
-    Route::get('/employee/create', 'EmployeeController@create')->name('employees.create');
-    Route::post('/employee/store', 'EmployeeController@store')->name('employees.store');
-    Route::post('/employee/update/{id}', 'EmployeeController@update')->name('employees.update');
-    Route::get('/employee/edit/{id}', 'EmployeeController@edit')->name('employees.edit');
-    Route::get('/employee/set-permission/{id}', 'EmployeeController@show')->name('employees.set_permission');
-    Route::get('/employees/destroy/{id}', 'EmployeeController@destroy')->name('employees.delete');
-
-    Route::post('/permissions/update/{id}', 'EmployeeController@permission_update')->name('permissions.update');
-
-    Route::resource('countries', 'CountryController');
-    Route::get('/countries/destroy/{id}', 'CountryController@destroy')->name('countries.delete');
-
-    Route::resource('cities', 'CityController');
-    Route::get('/cities/destroy/{id}', 'CityController@destroy')->name('cities.delete');
-
-    Route::get('/all-projects', 'AdminProjectController@all_projects')->name('all_projects');
-    Route::get('/running-projects', 'AdminProjectController@running_projects')->name('running_projects');
-    Route::get('/open-projects', 'AdminProjectController@open_projects')->name('open_projects');
-    Route::get('/cancelled-projects', 'AdminProjectController@cancelled_projects')->name('cancelled_projects');
-    Route::get('/projects/destroy/{id}', 'ProjectController@destroy')->name('delete_project_by_admin');
-    Route::post('/projects/approval-status', 'AdminProjectController@project_approval')->name('project_approval');
-
-    Route::get('/general-configuration', 'SystemConfigurationController@activation_view')->name('general_configuration');
-    Route::post('/general-configuration-update', 'SystemConfigurationController@updateActivation')->name('system_configuration.update.activation');
-
-    Route::post('/freelancer-payment-configuration-update', 'SystemConfigurationController@update')->name('freelancer_payment_config_update');
-
-    Route::get('/freelancer-payment-configuration', 'SystemConfigurationController@freelancer_payment_config')->name('freelancer_payment_settings');
-    Route::get('/refund-settings', 'SystemConfigurationController@refund_settings')->name('refund_settings');
-
-    Route::get('cancel-project-request/index', 'CancelProjectController@index')->name('cancel-project-request.index');
-    Route::post('cancel-project-request/show', 'CancelProjectController@show')->name('cancel-project-request.show');
-    Route::get('cancel-project-request/destroy/{id}', 'CancelProjectController@destroy')->name('cancel-project-request.delete');
-    Route::post('cancel-project-request/accepted', 'CancelProjectController@request_accepted')->name('cancel-project-request.request_accepted');
-
-    //general config
-    Route::resource('general-config', 'GeneralConfigurationController')->only([
-        'index', 'store'
-    ]);
-
-    //email config
-    Route::resource('email-config', 'EmailConfigurationController')->only([
-        'index', 'store'
-    ]);
-    Route::post('/email-config/test/smtp', 'EmailConfigurationController@testEmail')->name('testemail.smtp');
-
-    //payment config
-    Route::resource('payment-config', 'PaymentConfigurationController')->only([
-        'index', 'store'
-    ]);
-
-    //Social Media config
-    Route::resource('social-media-config', 'SocialMediaConfigurationController')->only([
-        'index', 'store'
-    ]);
-
-    Route::get('/all-freelancers', 'UserController@all_freelancers')->name('all_freelancers');
-    Route::get('/freelancer-info/{user_name}', 'UserController@freelancer_details')->name('freelancer_info_show');
-    Route::get('/freelancer-info/{user_name}', 'UserController@freelancer_details')->name('freelancer_info_show');
-
-    Route::get('/all-clients', 'UserController@all_clients')->name('all_clients');
-    Route::get('/client-info/{user_name}', 'UserController@client_details')->name('client_info_show');
-
-    Route::get('user/ban/{id}', 'UserController@destroy')->name('user.ban');
-
-    Route::get('/user/login/{id}', 'UserController@login')->name('freelancers_clients.login');
-
-    Route::get('/verification-requests', 'VerificationController@index')->name('verification_requests');
-    Route::get('/verification-request/details/{username}', 'VerificationController@show')->name('verification_request_details');
-    Route::get('/verification-request/destroy/{id}', 'VerificationController@destroy')->name('verification_request_delete');
-    Route::post('/verification-accept', 'VerificationController@verification_accept')->name('verififaction_accept');
-    Route::post('/verification-reject', 'VerificationController@verification_reject')->name('verififaction_reject');
-
-    //Blog Section
-    Route::resource('blog-category', 'BlogCategoryController');
-    //Route::get('/blog-category/destroy/{id}', 'BlogCategoryController@destroy')->name('blog-category.delete');
-    Route::resource('blog', 'BlogController');
-    //Route::get('/blog/destroy/{id}', 'BlogController@destroy')->name('blog.delete');
-    Route::post('/blog/change-status', 'BlogController@change_status')->name('blog.change-status');
-
-    //seminars
-    Route::resource('seminar', 'SeminarController');
-    Route::resource('seminar-mode', 'SeminarModeController');
-    Route::resource('seminar-software', 'SeminarSoftwareController');
-    Route::get('/seminar/destroy/{id}', 'SeminarController@destroy')->name('seminar.delete');
-    Route::get('/seminar-mode/destroy/{id}', 'SeminarModeController@destroy')->name('seminar-mode.delete');
-    Route::get('/seminar-software/destroy/{id}', 'SeminarSoftwareController@destroy')->name('seminar-software.delete');
-
-    //scholarships
-    Route::resource('scholarship-category', 'ScholarshipCategoryController');
-    Route::get('/scholarship-category/destroy/{id}', 'ScholarshipCategoryController@destroy')->name('scholarship-category.delete');
-    Route::resource('scholarship', 'ScholarshipController');
-    Route::get('/scholarship/destroy/{id}', 'ScholarshipController@destroy')->name('scholarship.delete');
-    Route::post('/scholarship/change-status', 'ScholarshipController@change_status')->name('scholarship.change-status');
-
-    Route::resource('scholarship-level', 'ScholarshipLevelController');
-    Route::get('/scholarship-level/destroy/{id}', 'ScholarshipLevelController@destroy')->name('scholarship-level.delete');
-    Route::resource('scholarship-university', 'ScholarshipUniversityController');
-    Route::get('/scholarship-university/destroy/{id}', 'ScholarshipUniversityController@destroy')->name('scholarship-university.delete');
-    Route::resource('scholarship-country', 'ScholarshipCountryController');
-    Route::get('/scholarship-country/destroy/{id}', 'ScholarshipCountryController@destroy')->name('scholarship-country.delete');
-    Route::resource('scholarship-city', 'ScholarshipCityController');
-    Route::get('/scholarship-city/destroy/{id}', 'ScholarshipCityController@destroy')->name('scholarship-city.delete');
-    Route::resource('scholarship-qualification', 'ScholarshipQualificationController');
-    Route::get('/scholarship-qualification/destroy/{id}', 'ScholarshipQualificationController@destroy')->name('scholarship-qualification.delete');
-    Route::resource('scholarship-who-can-apply', 'ScholarshipWhoCanApplyController');
-    Route::get('/scholarship-who-can-apply/destroy/{id}', 'ScholarshipWhoCanApplyController@destroy')->name('scholarship-who-can-apply.delete');
-    Route::resource('scholarship-field-study', 'ScholarshipFieldStudyController');
-    Route::get('/scholarship-field-study/destroy/{id}', 'ScholarshipFieldStudyController@destroy')->name('scholarship-field-study.delete');
-
-    //Subscribers
-    Route::controller('SubscriberController')->group(function () {
-        Route::get('/subscribers/destroy/{id}', 'destroy')->name('admin.subscribers.delete');
+    Route::group(['prefix' => 'client-badge'], function () {
+        Route::get('/', [BadgeController::class, 'store'])->name('client_badges_create');
+        Route::get('/list', [BadgeController::class, 'clientBadgesIndex'])->name('client_badges_index');
+        Route::get('/edit/{id}', [BadgeController::class, 'clientBadgesEdit'])->name('client_badges_edit');
     });
 
+    // wallet balance add by admin
+    Route::post('/wallet-balance-by-admin', [WalletController::class, 'walletPaymentByAdmin'])->name('admin_wallet.store');
+
+    //PackageController for Freelancer and Client
+    Route::get('/freelancer-package-index/{type}', [PackageController::class, 'index'])->name('freelancer_package.index');
+    Route::get('/freelancer-package-create/{type}', [PackageController::class, 'create'])->name('freelancer_package.create');
+    Route::post('/package-store', [PackageController::class, 'store'])->name('package.store');
+    Route::post('/package-update/{id}', [PackageController::class, 'update'])->name('package.update');
+    Route::get('/package-destroy/{id}', [PackageController::class, 'destroy'])->name('package.delete');
+    Route::get('/freelancer-package-edit/{id}', [PackageController::class, 'edit'])->name('freelancer_package.edit');
+    Route::get('/client-package-index/{type}', [PackageController::class, 'index'])->name('client_package.index');
+    Route::get('/client-package-create/{type}', [PackageController::class, 'create'])->name('client_package.create');
+    Route::get('/client-package-edit/{id}', [PackageController::class, 'edit'])->name('client_package.edit');
+
+    //LanguageController for Freelancer and Client
+    Route::resource('/languages', LanguageController::class);
+
+    Route::group(['prefix' => 'languages'], function () {
+        Route::get('/destroy/{id}', [LanguageController::class, 'destroy'])->name('languages.delete');
+        Route::post('/key_value_store', [LanguageController::class, 'keyValueStore'])->name('languages.key_value_store');
+        Route::post('/update_language_status', [LanguageController::class, 'updateLanguageStatus'])->name('languages.update_language_status');
+    });
+
+    //.env update
+    Route::post('/env_key_update', [SystemConfigurationController::class, 'envKeyUpdate'])->name('env_key_update.update');
+    Route::post('/system-configuration/update', [SystemConfigurationController::class, 'update'])->name('system_configuration.update');
+
+    //CurrencyController
+    Route::resource('currencies', CurrencyController::class);
+    Route::get('/currencies/destroy/{id}', [CurrencyController::class, 'destroy'])->name('currencies.delete');
+    Route::get('/currency/set_currency', [CurrencyController::class, 'setCurrency'])->name('currencies.set_currency');
+
+    //RoleController
+    Route::resource('roles', RoleController::class);
+    Route::get('/roles/destroy/{id}', [RoleController::class, 'destroy'])->name('roles.delete');
+
+    //EmployeeController
+    Route::group(['prefix' => 'employees'], function () {
+        Route::get('/{name}', [EmployeeController::class, 'index'])->name('employees.index');
+        Route::get('/create', [EmployeeController::class, 'create'])->name('employees.create');
+        Route::post('/store', [EmployeeController::class, 'store'])->name('employees.store');
+        Route::post('/update/{id}', [EmployeeController::class, 'update'])->name('employees.update');
+        Route::get('/edit/{id}', [EmployeeController::class, 'edit'])->name('employees.edit');
+        Route::get('/set-permission/{id}', [EmployeeController::class, 'show'])->name('employees.set_permission');
+        Route::get('/destroy/{id}', [EmployeeController::class, 'destroy'])->name('employees.delete');
+    });
+
+    Route::post('/permissions/update/{id}', [EmployeeController::class, 'permissionUpdate'])->name('permissions.update');
+
+    Route::resource('countries', CountryController::class);
+    Route::get('/countries/destroy/{id}', [CountryController::class, 'destroy'])->name('countries.delete');
+
+    Route::resource('cities', CityController::class);
+    Route::get('/cities/destroy/{id}', [CityController::class, 'destroy'])->name('cities.delete');
+
+    Route::get('/all-projects', [AdminProjectController::class, 'allProjects'])->name('all_projects');
+    Route::get('/running-projects', [AdminProjectController::class, 'runningProjects'])->name('running_projects');
+    Route::get('/open-projects', [AdminProjectController::class, 'openProjects'])->name('open_projects');
+    Route::get('/cancelled-projects', [AdminProjectController::class, 'cancelledProjects'])->name('cancelled_projects');
+    Route::get('/projects/destroy/{id}', [ProjectController::class, 'destroy'])->name('delete_project_by_admin');
+    Route::post('/projects/approval-status', [AdminProjectController::class, 'projectApproval'])->name('project_approval');
+
+    Route::get('/general-configuration', [SystemConfigurationController::class, 'activationView'])->name('general_configuration');
+    Route::post('/general-configuration-update', [SystemConfigurationController::class, 'updateActivation'])->name('system_configuration.update.activation');
+    Route::post('/freelancer-payment-configuration-update', [SystemConfigurationController::class, 'update'])->name('freelancer_payment_config_update');
+
+    Route::get('/freelancer-payment-configuration', [SystemConfigurationController::class, 'freelancerPaymentConfig'])->name('freelancer_payment_settings');
+    Route::get('/refund-settings', [SystemConfigurationController::class, 'refundSettings'])->name('refund_settings');
+
+    Route::get('cancel-project-request/index', )->name('cancel-project-request.index');
+    Route::post('cancel-project-request/show', [CancelProjectController::class, 'show'])->name('cancel-project-request.show');
+    Route::get('cancel-project-request/destroy/{id}', [CancelProjectController::class, 'destroy'])->name('cancel-project-request.delete');
+    Route::post('cancel-project-request/accepted', [CancelProjectController::class, 'requestAccepted'])->name('cancel-project-request.request_accepted');
+
+    //general config
+    Route::resource('general-config', GeneralConfigurationController::class);
+
+    //email config
+    Route::resource('email-config', EmailConfigurationController::class);
+
+    //payment config
+    Route::resource('payment-config', \App\Http\Controllers\PaymentConfigurationController::class);
+
+    //Social Media config
+    Route::resource('social-media-config', \App\Http\Controllers\SocialMediaConfigurationController::class);
+
+    Route::get('/all-freelancers', [UserController::class, 'allFreelancers'])->name('all_freelancers');
+    Route::get('/freelancer-info/{user_name}', [UserController::class, 'freelancerDetails'])->name('freelancer_info_show');
+
+    Route::get('/all-clients', [UserController::class, 'allClients'])->name('all_clients');
+    Route::get('/client-info/{user_name}', [UserController::class, 'clientDetails'])->name('client_info_show');
+    Route::get('user/ban/{id}', [UserController::class, 'destroy'])->name('user.ban');
+    Route::get('/user/login/{id}', [UserController::class, 'login'])->name('freelancers_clients.login');
+
+    Route::get('/verification-requests', [VerificationController::class, 'index'])->name('verification_requests');
+    Route::get('/verification-request/details/{username}', [VerificationController::class, 'show'])->name('verification_request_details');
+    Route::get('/verification-request/destroy/{id}', [VerificationController::class, 'destroy'])->name('verification_request_delete');
+    Route::post('/verification-accept', [VerificationController::class, 'verificationAccept'])->name('verififaction_accept');
+    Route::post('/verification-reject', [VerificationController::class, 'verificationReject'])->name('verififaction_reject');
+
+    //Blog Section
+    Route::resource('blog-category', BlogCategoryController::class);
+    Route::get('/blog-category/destroy/{id}', [BlogCategoryController::class, 'destroy'])->name('blog-category.delete');
+
+    Route::resource('blog', BlogController::class);
+    Route::get('/blog/destroy/{id}', [BlogController::class, 'destroy'])->name('blog.delete');
+    Route::post('/blog/change-status', [BlogController::class, 'changeStatus'])->name('blog.change-status');
+
+    //seminars
+    Route::resource('seminar', SeminarController::class);
+    Route::resource('seminar-mode', SeminarModeController::class);
+    Route::resource('seminar-software', SeminarSoftwareController::class);
+    Route::get('/seminar/destroy/{id}', [SeminarController::class, 'destroy'])->name('seminar.delete');
+    Route::get('/seminar-mode/destroy/{id}', [SeminarModeController::class, 'destroy'])->name('seminar-mode.delete');
+    Route::get('/seminar-software/destroy/{id}', [SeminarSoftwareController::class, 'destroy'])->name('seminar-software.delete');
+
+    //scholarships
+    Route::resource('scholarship-category', ScholarshipCategoryController::class);
+    Route::get('/scholarship-category/destroy/{id}', [ScholarshipCategoryController::class, 'destroy'])->name('scholarship-category.delete');
+    Route::resource('scholarship', ScholarshipController::class);
+    Route::get('/scholarship/destroy/{id}', [ScholarshipController::class, 'destroy'])->name('scholarship.delete');
+    Route::post('/scholarship/change-status', [ScholarshipController::class, 'changeStatus'])->name('scholarship.change-status');
+
+    Route::resource('scholarship-level', ScholarshipLevelController::class);
+    Route::get('/scholarship-level/destroy/{id}', [ScholarshipLevelController::class, 'destroy'])->name('scholarship-level.delete');
+
+    Route::resource('scholarship-university', ScholarshipUniversityController::class);
+    Route::get('/scholarship-university/destroy/{id}', [ScholarshipUniversityController::class, 'destroy'])->name('scholarship-university.delete');
+
+    Route::resource('scholarship-country', ScholarshipCountryController::class);
+    Route::get('/scholarship-country/destroy/{id}', [ScholarshipCountryController::class, 'destroy'])->name('scholarship-country.delete');
+
+    Route::resource('scholarship-city', ScholarshipCityController::class);
+    Route::get('/scholarship-city/destroy/{id}', [ScholarshipCityController::class, 'destroy'])->name('scholarship-city.delete');
+
+    Route::resource('scholarship-qualification', ScholarshipQualificationController::class);
+    Route::get('/scholarship-qualification/destroy/{id}', [ScholarshipQualificationController::class, 'destroy'])->name('scholarship-qualification.delete');
+
+    Route::resource('scholarship-who-can-apply', ScholarshipWhoCanApplyController::class);
+    Route::get('/scholarship-who-can-apply/destroy/{id}', [ScholarshipWhoCanApplyController::class, 'destroy'])->name('scholarship-who-can-apply.delete');
+
+    Route::resource('scholarship-field-study', ScholarshipFieldStudyController::class);
+    Route::get('/scholarship-field-study/destroy/{id}', [ScholarshipFieldStudyController::class, 'destroy'])->name('scholarship-field-study.delete');
+
+    //Subscribers
+    Route::get('/subscribers/destroy/{id}', [\App\Http\Controllers\SubscriberController::class, 'destroy'])->name('admin.subscribers.delete');
+
     // Newsletter
-    Route::controller('NewsletterController')->group(function () {
-        Route::get('/newsletter', 'index')->name('newsletters.index');
-        Route::post('/newsletter/send', 'send')->name('newsletters.send');
-        Route::post('/newsletter/test/smtp', 'testEmail')->name('test.smtp');
+    Route::group(['prefix' => 'newsletter'], function () {
+        Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletters.index');
+        Route::post('/newsletter/send', [NewsletterController::class, 'send'])->name('newsletters.send');
+        Route::post('/newsletter/test/smtp', [NewsletterController::class, 'testEmail'])->name('test.smtp');
     });
 
     // website setting
     Route::group(['prefix' => 'website'], function () {
-        Route::get('/home', 'SystemConfigurationController@home_settings')->name('website.home');
-
+        Route::get('/home', [SystemConfigurationController::class, 'homeSettings'])->name('website.home');
         Route::view('/header', 'admin.default.website.header')->name('website.header')->middleware(['permission:show header']);
         Route::view('/footer', 'admin.default.website.footer')->name('website.footer')->middleware(['permission:show footer']);
         Route::view('/pages', 'admin.default.website.pages')->name('website.pages')->middleware(['permission:show pages']);
         Route::view('/appearance', 'admin.default.website.appearance')->name('website.appearance')->middleware(['permission:show apperance']);
-        // Route::view('/website/pages/new', 'admin.default.website.pages-new')->name('website.pages.new');
-        Route::resource('custom-pages', 'PageController');
-        Route::get('/custom-pages/destroy/{id}', 'PageController@destroy')->name('custom-pages.delete');
+
+        Route::resource('custom-pages', PageController::class);
+        Route::get('/custom-pages/destroy/{id}', [PageController::class, 'destroy'])->name('custom-pages.delete');
     });
 
     //Policy related
-    Route::get('/policy/{type}', 'SystemConfigurationController@policy_index')->name('policy.index');
-    Route::post('/system-policy/update', 'SystemConfigurationController@policy_update')->name('system_policy.update');
+    Route::get('/policy/{type}', [SystemConfigurationController::class, 'policyIndex'])->name('policy.index');
+    Route::post('/system-policy/update',  [SystemConfigurationController::class, 'policyUpdate'])->name('system_policy.update');
 
     //Milestone Pay Requests
-    Route::get('/all-milestone-requests', 'MilestonePaymentController@all_milestone_request_index')->name('milestone-requests.admin.all');
-    Route::get('/milestone-requests/{id}', 'MilestonePaymentController@milestone_request_details')->name('milestone_request_details');
-
-    //chat_view
-    Route::get('/user-chats', 'ChatController@admin_chat_index')->name('chat.admin.all');
-    Route::get('/user-chats/{id}', 'ChatController@admin_chat_details')->name('chat_details_for_admin');
+    Route::get('/all-milestone-requests', [MilestonePaymentController::class, 'index'])->name('milestone-requests.admin.all');
+    Route::get('/milestone-requests/{id}', [MilestonePaymentController::class, 'milestoneRequestDetails'])->name('milestone_request_details');
 
     // Milestone payment History
-    Route::get('/all-project-payments', 'MilestonePaymentController@admin_index')->name('payment_history_for_admin');
+    Route::get('/all-project-payments', [MilestonePaymentController::class, 'adminIndex'])->name('payment_history_for_admin');
 
     // Milestone payment to freelancer
-    Route::get('/pay-to-user/{id}', 'PaytoFreelancerController@pay_to_freelancer')->name('pay_to_freelancer');
-    Route::get('/pay_to_freelancer/cancel/{id}', 'PaytoFreelancerController@cancel_request')->name('pay_to_freelancer.cancel');
-    Route::get('/freelancer-payments', 'PaytoFreelancerController@index')->name('freelancer_payment.index');
-    Route::post('/pay-to-user/pay-store', 'PaytoFreelancerController@pay')->name('project_milestone_pay_from_admin');
-    Route::get('/withdraw-requests', 'PaytoFreelancerController@withdraw_requests')->name('withdraw_request.index');
+    Route::get('/pay-to-user/{id}', [PaytoFreelancerController::class, 'payToFreelancer'])->name('pay_to_freelancer');
+    Route::get('/pay_to_freelancer/cancel/{id}', [PaytoFreelancerController::class, 'cancelRequest'])->name('pay_to_freelancer.cancel');
+    Route::get('/freelancer-payments', [PaytoFreelancerController::class, 'index'])->name('freelancer_payment.index');
+    Route::post('/pay-to-user/pay-store', [PaytoFreelancerController::class, 'pay'])->name('project_milestone_pay_from_admin');
+    Route::get('/withdraw-requests', [PaytoFreelancerController::class, 'withdrawRequests'])->name('withdraw_request.index');
 
     // Package payment History
-    Route::get('/all-package-payments', 'PackagePaymentController@admin_index')->name('package_payment_history_for_admin');
+    Route::get('/all-package-payments', [PackagePaymentController::class, 'adminIndex'])->name('package_payment_history_for_admin');
 
     // Service payment history
-    Route::get('/all-services-admin', 'ServiceController@admin_all_services')->name('all_services_admin');
-    Route::get('/all-cancelled_services', 'ServiceController@all_cancelled_services')->name('cancelled_services_admin');
+    Route::get('/all-services-admin', [ServiceController::class, 'adminAllServices'])->name('all_services_admin');
+    Route::get('/all-cancelled_services', [ServiceController::class, 'allCancelledServices'])->name('cancelled_services_admin');
 
-    Route::get('/services-requested-for-cancellation', 'ServiceController@admin_requested_services_for_cancellation')->name('service_cancellation.requests');
-    Route::post('cancel-service-request/show', 'ServiceController@cancel_service_request_show')->name('cancel-service-request.show');
-    Route::post('cancel-service-request/accepted', 'ServiceController@cancel_service_request_accepted')->name('cancel-service-request.request_accepted');
+    Route::get('/services-requested-for-cancellation', [ServiceController::class, 'adminRequestedServicesForCancellation'])->name('service_cancellation.requests');
+    Route::post('cancel-service-request/show', [ServiceController::class, 'cancelServiceRequestShow'])->name('cancel-service-request.show');
+    Route::post('cancel-service-request/accepted', [ServiceController::class, 'cancelServiceRequestAccepted'])->name('cancel-service-request.request_accepted');
 
-    Route::get('/admin-service/{id}/cancel', 'ServiceController@admin_cancel_service')->name('cancel-service-request.delete');
-
-
-    Route::get('/all-service-payments', 'ServicePaymentController@admin_index')->name('service_payment_history_for_admin');
+    Route::get('/admin-service/{id}/cancel', [ServiceController::class, 'adminCancelService'])->name('cancel-service-request.delete');
+    Route::get('/all-service-payments', [ServicePaymentController::class, 'adminIndex'])->name('service_payment_history_for_admin');
 
     // Wallet Recharge History
-    Route::get('/all-wallet-recharges', 'WalletController@admin_index')->name('wallet_history.admin');
+    Route::get('/all-wallet-recharges', [WalletController::class, 'adminIndex'])->name('wallet_history.admin');
+
+    //chat_view
+    Route::get('/user-chats', [ChatController::class, 'adminChatIndex'])->name('chat.admin.all');
+    Route::get('/user-chats/{id}',  [ChatController::class, 'adminChatDetails'])->name('chat_details_for_admin');
 
     //Addon
-    Route::resource('addons', 'AddonController');
-    Route::post('/addons/activation', 'AddonController@activation')->name('addons.activation');
+    Route::resource('addons', AddonController::class);
+    Route::post('/addons/activation', [AddonController::class, 'activation'])->name('addons.activation');
 
     //Freelancer Review
-    Route::get('/reviews/freelancer', 'ReviewController@freelancer_review_index')->name('reviews.freelancer');
-    Route::get('/reviews/client', 'ReviewController@client_review_index')->name('reviews.client');
-    Route::post('/reviews/published', 'ReviewController@update_review_published')->name('reviews.published');
+    Route::group(['prefix' => 'reviews'], function () {
+        Route::get('/freelancer', [ReviewController::class, 'freelancerReviewIndex'])->name('reviews.freelancer');
+        Route::get('/client', [ReviewController::class, 'clientReviewIndex'])->name('reviews.client');
+        Route::post('/published', [ReviewController::class, 'updateReviewPublished'])->name('reviews.published');
+    });
 
-    Route::get('/notifications', 'NotificationController@admin_listing')->name('admin.notifications');
+    Route::get('/notifications', [NotificationController::class, 'adminListing'])->name('admin.notifications');
 
-    Route::resource('staffs', 'StaffController');
-    Route::get('/staffs/delete/{id}', 'StaffController@destroy')->name('staffs.delete');
+    Route::resource('staffs', StaffController::class);
+    Route::get('/staffs/delete/{id}', [StaffController::class, 'destroy'])->name('staffs.delete');
 
     Route::view('/system/update', 'admin.default.system.update')->name('system_update');
     Route::view('/system/server-status', 'admin.default.system.server_status')->name('system_server');
 
     // uploaded files
-    Route::any('/uploaded-files/file-info', 'AizUploadController@file_info')->name('uploaded-files.info');
-    Route::resource('/uploaded-files', 'AizUploadController');
-    Route::get('/uploaded-files/destroy/{id}', 'AizUploadController@destroy')->name('uploaded-files.delete');
+    Route::resource('/uploaded-files', AizUploadController::class);
+    Route::any('/uploaded-files/file-info', [AizUploadController::class, 'file_info'])->name('uploaded-files.info');
+    Route::get('/uploaded-files/destroy/{id}', [AizUploadController::class, 'destroy'])->name('uploaded-files.delete');
 
-    Route::get('/cache-cache', 'HomeController@clearCache')->name('cache.clear');
+    Route::get('/cache-cache', [HomeController::class, 'clearCache'])->name('cache.clear');
+
     // For SEO
-    Route::resource('site-page', 'SitePagesController');
-    Route::resource('page-optimization', 'PageOptimizationController');
+    Route::resource('site-page', SitePagesController::class);
+    Route::resource('page-optimization', PageOptimizationController::class);
 });

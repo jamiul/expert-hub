@@ -16,7 +16,7 @@ class UserController extends Controller
         $this->middleware(['permission:show all clients'])->only('all_clients');
     }
 
-    public function all_freelancers(Request $request)
+    public function allFreelancers(Request $request)
     {
         $sort_search = null;
         $col_name = null;
@@ -74,7 +74,7 @@ class UserController extends Controller
     }
 
 
-    public function all_clients(Request $request)
+    public function allClients(Request $request)
     {
         $sort_search = null;
         $col_name = null;
@@ -121,7 +121,7 @@ class UserController extends Controller
         return view('admin.default.client.clients.index', compact('clients', 'sort_search', 'col_name', 'query'));
     }
 
-    public function freelancer_details($user_name)
+    public function freelancerDetails($user_name)
     {
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
@@ -129,7 +129,7 @@ class UserController extends Controller
         return view('admin.default.freelancer.freelancers.show', compact('user', 'user_profile', 'user_account'));
     }
 
-    public function client_details($user_name)
+    public function clientDetails($user_name)
     {
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
@@ -166,7 +166,7 @@ class UserController extends Controller
         return back();
     }
 
-    public function set_account_type(Request $request)
+    public function setAccountType(Request $request)
     {
         auth()->user()->user_type = $request->user_type;
 

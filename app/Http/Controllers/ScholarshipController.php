@@ -203,7 +203,7 @@ class ScholarshipController extends Controller
         return redirect()->route('scholarship.index');
     }
 
-    public function change_status(Request $request)
+    public function changeStatus(Request $request)
     {
         $scholarship = Scholarship::find($request->id);
         $scholarship->status = $request->status;

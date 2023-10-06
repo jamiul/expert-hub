@@ -14,13 +14,13 @@ use Illuminate\Support\Str;
 class ProfileController extends Controller
 {
     // Show admin profile
-    public function admin_profile()
+    public function adminProfile()
     {
         return view('admin.default.profiles.index');
     }
 
     // Update admin profile
-    public function update_admin_profile(Request $request)
+    public function updateAdminProfile(Request $request)
     {
         if (env("DEMO_MODE") == "On") {
             flash(translate('This action is blocked in demo version!'))->error();

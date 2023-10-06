@@ -15,7 +15,7 @@ class WalletController extends Controller
         $this->middleware(['permission:show wallet history'])->only('admin_index');
     }
 
-    public function admin_index()
+    public function adminIndex()
     {
         $wallets = Wallet::latest()->paginate(10);
         return view('admin.default.wallet_recharge_history.index', compact('wallets'));
@@ -85,7 +85,7 @@ class WalletController extends Controller
         return redirect()->route('wallet.index');
     }
 
-    public function wallet_payment_by_admin(Request $request)
+    public function walletPaymentByAdmin(Request $request)
     {
         $data['amount'] = (float)$request->amount;
         $data['payment_method'] = "Offline Payment";

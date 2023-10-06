@@ -241,7 +241,7 @@ class ServiceController extends Controller
         return view('frontend.default.user.client.services.purchased', compact('purchasedServices'));
     }
 
-    public function admin_all_services()
+    public function adminAllServices()
     {
         $this->middleware('admin');
         $services = Service::latest()->paginate(12);
@@ -273,19 +273,19 @@ class ServiceController extends Controller
         return view('frontend.default.user.client.services.cancel_requested', compact('purchasedServices'));
     }
 
-    public function admin_requested_services_for_cancellation()
+    public function adminRequestedServicesForCancellation()
     {
         $service_payments = ServicePackagePayment::orderBy('id', 'desc')->where('cancel_requested', 1)->where('cancel_status', 0)->paginate(12);
         return view('admin.default.service_payment_history.cancel_requested', compact('service_payments'));
     }
 
-    public function cancel_service_request_show(Request $request)
+    public function cancelServiceRequestShow(Request $request)
     {
         $requested_cancel_service = ServicePackagePayment::findOrFail($request->id);
         return view('admin.default.service_payment_history.cancel_requested_show_modal', compact('requested_cancel_service'));
     }
 
-    public function cancel_service_request_accepted(Request $request)
+    public function cancelServiceRequestAccepted(Request $request)
     {
 
         $requested_cancel_service = ServicePackagePayment::findOrFail($request->service_payment_id);
@@ -353,7 +353,7 @@ class ServiceController extends Controller
         }
     }
 
-    public function admin_cancel_service($id)
+    public function adminCancelService($id)
     {
         $requested_service = ServicePackagePayment::findOrFail($id);
 
@@ -367,7 +367,7 @@ class ServiceController extends Controller
     }
 
 
-    public function all_cancelled_services()
+    public function allCancelledServices()
     {
         $this->middleware('admin');
         $service_payments = ServicePackagePayment::orderBy('id', 'desc')->where('cancel_status', 1)->paginate(12);

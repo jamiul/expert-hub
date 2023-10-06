@@ -17,13 +17,13 @@ class ReviewController extends Controller
         $this->middleware(['permission:show client reviews'])->only('client_review_index');
     }
 
-    public function freelancer_review_index()
+    public function freelancerReviewIndex()
     {
         $reviews = Review::where('reviewed_user_role_id', 2)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.default.reviews.freelancer', compact('reviews'));
     }
 
-    public function client_review_index()
+    public function clientReviewIndex()
     {
         $reviews = Review::where('reviewed_user_role_id', 3)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.default.reviews.client', compact('reviews'));
@@ -100,7 +100,7 @@ class ReviewController extends Controller
         return back();
     }
 
-    function update_review_published(Request $request)
+    function updateReviewPublished(Request $request)
     {
         $review = Review::findOrFail($request->id);
         $review->published = $request->status;

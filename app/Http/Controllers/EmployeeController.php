@@ -104,7 +104,7 @@ class EmployeeController extends Controller
         }
     }
 
-    public function permission_update(Request $request, $id)
+    public function permissionUpdate(Request $request, $id)
     {
         $user_role = UserRole::findOrFail($id);
         if ($request->has('permissions')) {

@@ -24,7 +24,7 @@ class MilestonePaymentController extends Controller
     }
 
     // online Payment history
-    public function admin_index(Request $request)
+    public function adminIndex(Request $request)
     {
         $sort_search = null;
 
@@ -348,7 +348,7 @@ class MilestonePaymentController extends Controller
         }
     }
 
-    public function milestone_request_details($id)
+    public function milestoneRequestDetails($id)
     {
         $milestone_payment = MilestonePayment::findOrFail(decrypt($id));
         return view('admin.default.milestone_payments.show', compact('milestone_payment'));

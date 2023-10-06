@@ -214,7 +214,7 @@ class LanguageController extends Controller
         }
     }
 
-    public function key_value_store(Request $request)
+    public function keyValueStore(Request $request)
     {
         $language = Language::findOrFail($request->id);
         foreach ($request->values as $key => $value) {
@@ -234,7 +234,7 @@ class LanguageController extends Controller
         return back();
     }
 
-    public function update_language_status(Request $request)
+    public function updateLanguageStatus(Request $request)
     {
         $language = Language::findOrFail($request->id);
         $language->enable = $request->status;

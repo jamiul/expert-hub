@@ -21,7 +21,7 @@ class PackagePaymentController extends Controller
     }
 
     //admin package payment history
-    public function admin_index(Request $request)
+    public function adminIndex(Request $request)
     {
         $min_date = null;
         $max_date = null;

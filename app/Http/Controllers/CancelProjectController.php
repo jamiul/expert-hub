@@ -76,7 +76,7 @@ class CancelProjectController extends Controller
     }
 
     //Cancel Request accepted by admin
-    public function request_accepted(Request $request)
+    public function requestAccepted(Request $request)
     {
         $project = Project::findOrFail($request->project_id);
         $project->cancel_status = 1;

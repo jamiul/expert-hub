@@ -16,7 +16,7 @@ class AdminProjectController extends Controller
     }
 
     //Admin can see all projects in admin panel
-    public function all_projects(Request $request)
+    public function allProjects(Request $request)
     {
         $col_name = null;
         $query = null;
@@ -46,7 +46,7 @@ class AdminProjectController extends Controller
     }
 
     //Admin can see all running projects in admin panel
-    public function running_projects(Request $request)
+    public function runningProjects(Request $request)
     {
         $sort_search = null;
         $client_id = null;
@@ -68,7 +68,7 @@ class AdminProjectController extends Controller
     }
 
     //Admin can see all open projects in admin panel
-    public function open_projects(Request $request)
+    public function openProjects(Request $request)
     {
         $col_name = null;
         $query = null;
@@ -98,7 +98,7 @@ class AdminProjectController extends Controller
     }
 
     //Admin can see all cancelled projects in admin panel
-    public function cancelled_projects(Request $request)
+    public function cancelledProjects(Request $request)
     {
         $col_name = null;
         $query = null;
@@ -128,7 +128,7 @@ class AdminProjectController extends Controller
         return view('admin.default.project.projects.cancelled_projects', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
     }
 
-    public function project_approval(Request $request)
+    public function projectApproval(Request $request)
     {
         $project = Project::findOrFail($request->id);
         $project->project_approval = $request->status;

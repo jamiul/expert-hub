@@ -240,7 +240,7 @@ class SeminarDetailsController extends Controller
         return view("frontend.default.find-scholarship.listing", compact('scholarships'));
     }
 
-    public function seminar_details($id)
+    public function seminarDetails($id)
     {
         $seminar = Seminar::where('id', $id)->first();
         return view("frontend.default.seminar-details", compact('seminar'));

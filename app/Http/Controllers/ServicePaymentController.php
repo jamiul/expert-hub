@@ -18,7 +18,7 @@ class ServicePaymentController extends Controller
     }
 
     // Online Service payment history
-    public function admin_index()
+    public function adminIndex()
     {
         $service_payments = ServicePackagePayment::orderBy('id', 'desc')->paginate(12);
         return view('admin.default.service_payment_history.index', compact('service_payments'));

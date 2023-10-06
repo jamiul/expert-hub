@@ -138,7 +138,7 @@ class BlogController extends Controller
         return redirect()->route('blog.index');
     }
 
-    public function change_status(Request $request)
+    public function changeStatus(Request $request)
     {
         $blog = Blog::find($request->id);
         $blog->status = $request->status;
