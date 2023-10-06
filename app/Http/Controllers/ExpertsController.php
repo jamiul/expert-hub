@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Expertise;
 use App\Models\Experts;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,9 @@ class ExpertsController extends Controller
      */
     public function index()
     {
-        $experts = Experts::with('childrens')->whereNull('parent_id')->get();
+        $experts = Expertise::with('childrens')->whereNull('parent_id')->get();
 
-        $allExpertList = Experts::latest()->paginate(50);
+        $allExpertList = Expertise::latest()->paginate(50);
 
         // $allExpertLists = Experts->where('parent_id',"id")->get();
         // dd($allExpertList);
@@ -32,7 +33,7 @@ class ExpertsController extends Controller
             ]
         );
 
-        Experts::create($data);
+        Expertise::create($data);
 
         return redirect()->route('experts.index')->with('success', 'Experts created successfully.');
     }
@@ -45,14 +46,14 @@ class ExpertsController extends Controller
 
     public function edit($id)
     {
-        $experts = Experts::with('childrens')->whereNull('parent_id')->paginate(10);
-        $expert = Experts::findOrFail($id);
+        $experts = Expertise::with('childrens')->whereNull('parent_id')->paginate(10);
+        $expert = Expertise::findOrFail($id);
         return view('admin.default.freelancer.Experts.edit', compact('expert', 'experts'));
     }
 
     public function update(Request $request, $id)
     {
-        $skill = Experts::findOrFail($id);
+        $skill = Expertise::findOrFail($id);
         $skill->name = $request->name;
         $skill->parent_id = $request->parent_id;
         if ($skill->save()) {
@@ -66,8 +67,7 @@ class ExpertsController extends Controller
 
     public function destroy($id)
     {
-        $skill = Experts::findOrFail($id);
-        if (Experts::destroy($id)) {
+        if (Expertise::destroy($id)) {
             flash(translate('Experts Info has been deleted successfully'))->success();
             return redirect()->route('experts.index');
         } else {

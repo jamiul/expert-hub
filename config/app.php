@@ -175,7 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -229,6 +229,7 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Carbon' => Illuminate\Support\Carbon::class,
+        'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
     ],
 
 ];

@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Expert extends Model
+class Expertise extends Model
 {
+    protected $table = 'expertise';
+
     protected $fillable = ['name', 'parent_id'];
 
     public function parent()

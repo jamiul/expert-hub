@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Expertise;
 use App\Models\Experts;
 use Livewire\Component;
 
@@ -12,7 +13,7 @@ class ParentExperts extends Component
     public function mount()
     {
         // Fetch parent experts
-        $this->parentExperts = Experts::whereNull('parent_id')->get();
+        $this->parentExperts = Expertise::whereNull('parent_id')->get();
     }
 
     public function render()

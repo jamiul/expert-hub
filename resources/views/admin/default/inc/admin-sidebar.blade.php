@@ -183,8 +183,8 @@
                                 @endcan
                                 @can('show freelancer skills')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('parent_skills.index') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['parent_skills.index', 'parent_skills.edit']) }}">
+                                        <a href="{{ route('skills.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['skills.index', 'skills.edit']) }}">
                                             <span
                                                 class="aiz-side-nav-text">{{ translate('Consultant Parent Skills') }}</span>
                                         </a>

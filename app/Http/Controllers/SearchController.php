@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Address;
 use App\Models\ConsultantCategory;
 use App\Models\Country;
+use App\Models\Expertise;
 use App\Models\Experts;
 use App\Models\Language;
 use App\Models\Project;
@@ -50,7 +51,7 @@ class SearchController extends Controller
             $available_interview = $request->available_interview;
             $skills = Skill::with('childrens')->whereNull('parent_id')->get();
             $consultantCategory = ConsultantCategory::all();
-            $expertises = Experts::with('childrens')->whereNull('parent_id')->get();
+            $expertises = Expertise::with('childrens')->whereNull('parent_id')->get();
 
             if ($request->keyword != null) {
                 $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
@@ -144,8 +145,27 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'consultantCategory', 'expertises',));
-        } else if ($request->type == 'seminar') {
+            return view('frontend.default.freelancers-listing', compact(
+                'freelancers',
+                'total',
+                'keyword',
+                'type',
+                'rating',
+                'skill_ids',
+                'country_id',
+                'min_price',
+                'max_price',
+                'categories',
+                'category_id',
+                "category_ids",
+                'hourly_rate',
+                'consultantions',
+                'available_interview',
+                'skills',
+                'consultantCategory',
+                'expertises'
+            ));
+        } elseif ($request->type == 'seminar') {
             $type = 'seminar';
             $keyword = $request->keyword;
             $seminar_ids = [];
@@ -258,8 +278,7 @@ class SearchController extends Controller
                 'months',
                 'dates'
             ));
-        } else if ($request->type == 'service') {
-
+        } elseif ($request->type == 'service') {
             $type = 'service';
             $keyword = $request->keyword;
             $rating = $request->rating;
@@ -288,7 +307,7 @@ class SearchController extends Controller
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
             return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level', 'category_id'));
-        } else if ($request->type == 'media-expert') {
+        } elseif ($request->type == 'media-expert') {
             $type = 'media-expert';
             $keyword = $request->keyword;
             $rating = $request->rating ?? [];
@@ -309,7 +328,7 @@ class SearchController extends Controller
             $hourly_rate = $request->hourly_rate ?? [];
             $consultantions = $request->consultantions;
             $available_interview = $request->available_interview;
-            $expertises = Experts::with('childrens')->whereNull('parent_id')->get();
+            $expertises = Expertise::with('childrens')->whereNull('parent_id')->get();
             $skills = Skill::with('childrens')->whereNull('parent_id')->get();
 
 
@@ -528,7 +547,6 @@ class SearchController extends Controller
             if ($country_id != null) {
                 $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
                 $projects = $projects->whereIn('client_user_id', $user_ids);
-
             }
             switch ($sort) {
                 case '1':

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ScholarshipWebsiteLinks;
+use App\Models\ScholarshipWebsiteLink;
 use Illuminate\Http\Request;
 
-class ScholarshipWebsiteLinksController extends Controller
+class ScholarshipWebsiteLinkController extends Controller
 {
     public function __construct()
     {
@@ -21,7 +21,7 @@ class ScholarshipWebsiteLinksController extends Controller
     {
 
         $sort_search = null;
-        $categories = ScholarshipWebsiteLinks::orderBy('web_link', 'asc');
+        $categories = ScholarshipWebsiteLink::orderBy('web_link', 'asc');
 
 
         if ($request->has('search')) {
@@ -58,7 +58,7 @@ class ScholarshipWebsiteLinksController extends Controller
             ]
         );
 
-        $category = new ScholarshipWebsiteLinks;
+        $category = new ScholarshipWebsiteLink();
         // dd($category);
         $category->web_link = $request->web_link;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->web_link));
@@ -89,8 +89,7 @@ class ScholarshipWebsiteLinksController extends Controller
      */
     public function edit($id)
     {
-        $level = ScholarshipWebsiteLinks::find($id);
-        // $all_categories = ScholarshipWebsiteLinks::all();
+        $level = ScholarshipWebsiteLink::find($id);
 
         return view('admin.default.scholarship_module.who_can_apply.edit', compact('level'));
     }
@@ -110,7 +109,7 @@ class ScholarshipWebsiteLinksController extends Controller
             ]
         );
 
-        $category = ScholarshipWebsiteLinks::find($id);
+        $category = ScholarshipWebsiteLink::find($id);
 
         $category->web_link = $request->web_link;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->web_link));
@@ -131,7 +130,7 @@ class ScholarshipWebsiteLinksController extends Controller
 
     public function destroy($id)
     {
-        ScholarshipWebsiteLinks::find($id)->delete();
+        ScholarshipWebsiteLink::find($id)->delete();
         return redirect('admin/scholarship-who-can-apply');
     }
 }

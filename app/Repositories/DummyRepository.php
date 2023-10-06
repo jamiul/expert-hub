@@ -9,6 +9,7 @@ use App\Models\Country;
  */
 class DummyRepository extends AbstractRepository
 {
+    public Country $model;
 
     /**
      * @param Country $model

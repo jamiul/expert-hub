@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Expertise;
 use App\Models\Experts;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ExpertsTableSeeder extends Seeder
+class ExpertiseTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +15,7 @@ class ExpertsTableSeeder extends Seeder
 
     public function run()
     {
-        DB::table('experts')->delete();
+        DB::table('expertise')->delete();
 
         $feed = public_path("experts.csv");
 
@@ -24,7 +25,7 @@ class ExpertsTableSeeder extends Seeder
 
         // add parent id to experts table
         foreach ($parentExperts as $parent) {
-            $parent = Experts::create([
+            $parent = Expertise::create([
                 'name' => $parent,
                 'parent_id' => null,
             ]);
@@ -34,7 +35,7 @@ class ExpertsTableSeeder extends Seeder
         foreach ($data as $row) {
             foreach ($row as $key => $name) {
                 if (!empty($name)) {
-                    Experts::create([
+                    Expertise::create([
                         'name' => $name,
                         'parent_id' => $key + 1, // Use $key as the parent_id
                     ]);
