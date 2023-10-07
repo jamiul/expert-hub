@@ -60,7 +60,7 @@
                         tools, saving institutions valuable time.</p>
                 </div>
             </div>
-            <a href="{{ url('/search?keyword=&type=freelancer') }}"
+            <a href="{{ url('/search?keyword=&type=expert') }}"
                 class="btn rounded border fs-20 frequently-qsn-title  text-white text-white mt-2"
                 style="background-color:#275846;">Find EduExpert</a>
 

@@ -87,13 +87,13 @@
                                                 <i class="las la-eye"></i>
                                             </a>
                                         @endif
-                                        @can ('freelancer delete')
+                                        @can ('expert delete')
                                             @if ($client->user->banned)
                                                 <a href="javascript:void(0)" class="btn btn-soft-succss btn-icon btn-circle btn-sm confirm-alert" data-target="#unban-modal" data-href="{{ route('user.ban', $client->user->id) }}" title="{{translate('Unban')}}">
                                                     <i class="las la-ban"></i>
                                                 </a>
                                             @else
-                                                <a href="{{route('freelancers_clients.login', encrypt($client->user->id))}}" class="btn btn-soft-success btn-icon btn-circle btn-sm" title="{{translate('Login as client')}}">
+                                                <a href="{{route('experts_clients.login', encrypt($client->user->id))}}" class="btn btn-soft-success btn-icon btn-circle btn-sm" title="{{translate('Login as client')}}">
                                                     <i class="las la-sign-in-alt"></i>
                                                 </a>
                                                 <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-alert" data-target="#ban-modal" data-href="{{ route('user.ban', $client->user->id) }}" title="{{translate('Ban')}}">

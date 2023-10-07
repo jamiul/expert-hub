@@ -16,7 +16,7 @@
                             <label for="name">{{translate('Name')}}</label>
                             <input type="text" id="name" name="name" required placeholder="{{ translate('Eg. Completed 100+ projects') }}" value="{{ $badge->name }}" class="form-control" required>
                         </div>
-                        <input type="hidden" name="role_id" value="freelancer">
+                        <input type="hidden" name="role_id" value="expert">
                         <div class="form-group mb-3">
                             <label for="type">{{translate('Badge Type')}}</label>
                             <select class="select2 form-control aiz-selectpicker" name="type" id="type" data-show="selectShow" data-target=".min-num-type" data-placeholder="Choose ...">

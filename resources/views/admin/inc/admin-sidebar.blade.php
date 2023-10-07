@@ -143,45 +143,45 @@
                             </a>
                         </li>
                     @endcan
-                    @if (auth()->user()->can('show all freelancers') ||
-                            auth()->user()->can('show freelancer packages') ||
-                            auth()->user()->can('show freelancer skills') ||
-                            auth()->user()->can('show freelancer parent skills') ||
-                            auth()->user()->can('show freelancer badges'))
+                    @if (auth()->user()->can('show all experts') ||
+                            auth()->user()->can('show expert packages') ||
+                            auth()->user()->can('show expert skills') ||
+                            auth()->user()->can('show expert parent skills') ||
+                            auth()->user()->can('show expert badges'))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
                                 <i class="las la-user-circle aiz-side-nav-icon"></i>
-                                <span class="aiz-side-nav-text">{{ translate('Freelancers') }}</span>
+                                <span class="aiz-side-nav-text">{{ translate('Experts') }}</span>
                                 <span class="aiz-side-nav-arrow"></span>
                             </a>
                             <ul class="aiz-side-nav-list level-2">
-                                @can('show all freelancers')
+                                @can('show all experts')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('all_freelancers') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['all_freelancers', 'freelancer_info_show']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('All Freelancers') }}</span>
+                                        <a href="{{ route('all_experts') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['all_experts', 'expert_info_show']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('All Experts') }}</span>
                                         </a>
                                     </li>
                                 @endcan
 
-                                @can('show freelancer packages')
+                                @can('show expert packages')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('freelancer_package.index', 'freelancer') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['freelancer_package.index', 'freelancer_package.create', 'freelancer_package.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('Freelancer Packages') }}</span>
+                                        <a href="{{ route('expert_package.index', 'expert') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['expert_package.index', 'expert_package.create', 'expert_package.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Expert Packages') }}</span>
                                         </a>
                                     </li>
                                 @endcan
 
-                                @can('show freelancer skills')
+                                @can('show expert skills')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('skills.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['skills.index', 'skills.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('Freelancer Skills') }}</span>
+                                            <span class="aiz-side-nav-text">{{ translate('Expert Skills') }}</span>
                                         </a>
                                     </li>
                                 @endcan
-                                @can('show freelancer skills')
+                                @can('show expert skills')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('skills.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['skills.index', 'skills.edit']) }}">
@@ -190,7 +190,7 @@
                                         </a>
                                     </li>
                                 @endcan
-                                @can('show freelancer experts')
+                                @can('show expert experts')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('expertise.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['expertise.index', 'expertise.edit']) }}">
@@ -208,11 +208,11 @@
                                 </li>
                             @endcan
 
-                                @can('show freelancer badges')
+                                @can('show expert badges')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('badges.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['badges.index', 'badges.create', 'badges.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('Freelancer Badges') }}</span>
+                                            <span class="aiz-side-nav-text">{{ translate('Expert Badges') }}</span>
                                         </a>
                                     </li>
                                 @endcan
@@ -259,7 +259,7 @@
                             </ul>
                         </li>
                     @endif
-                    @if (auth()->user()->can('show freelancers reviews') ||
+                    @if (auth()->user()->can('show experts reviews') ||
                             auth()->user()->can('show client reviews'))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -268,11 +268,11 @@
                                 <span class="aiz-side-nav-arrow"></span>
                             </a>
                             <ul class="aiz-side-nav-list level-2">
-                                @can('show freelancers reviews')
+                                @can('show experts reviews')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('reviews.freelancer') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['reviews.freelancer', 'freelancer_review_details']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('Freelancers Reviews') }}</span>
+                                        <a href="{{ route('reviews.expert') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['reviews.expert', 'expert_review_details']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Experts Reviews') }}</span>
                                         </a>
                                     </li>
                                 @endcan
@@ -368,8 +368,8 @@
                     @if (auth()->user()->can('show project payments') ||
                             auth()->user()->can('show package payments') ||
                             auth()->user()->can('show service payments') ||
-                            auth()->user()->can('show freelancer withdraw requests') ||
-                            auth()->user()->can('show freelancer payouts') ||
+                            auth()->user()->can('show expert withdraw requests') ||
+                            auth()->user()->can('show expert payouts') ||
                             auth()->user()->can('show wallet history'))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -404,20 +404,20 @@
                                     </li>
                                 @endcan
 
-                                @can('show freelancer withdraw requests')
+                                @can('show expert withdraw requests')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('withdraw_request.index') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['pay_to_freelancer']) }}">
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['pay_to_expert']) }}">
                                             <span
-                                                class="aiz-side-nav-text">{{ translate('Freelancer Withdraw Requests') }}</span>
+                                                class="aiz-side-nav-text">{{ translate('Expert Withdraw Requests') }}</span>
                                         </a>
                                     </li>
                                 @endcan
 
-                                @can('show freelancer payouts')
+                                @can('show expert payouts')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('freelancer_payment.index') }}" class="aiz-side-nav-link">
-                                            <span class="aiz-side-nav-text">{{ translate('Freelancer Payouts') }}</span>
+                                        <a href="{{ route('expert_payment.index') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Expert Payouts') }}</span>
                                         </a>
                                     </li>
                                 @endcan
@@ -666,7 +666,7 @@
                             auth()->user()->can('show email setting') ||
                             auth()->user()->can('show payment gateways setting') ||
                             auth()->user()->can('show third party api setting') ||
-                            auth()->user()->can('show freelancer payment') ||
+                            auth()->user()->can('show expert payment') ||
                             auth()->user()->can('show refund setting'))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -733,10 +733,10 @@
                                     </li>
                                 @endcan
 
-                                @can('show freelancer payment')
+                                @can('show expert payment')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('freelancer_payment_settings') }}" class="aiz-side-nav-link">
-                                            <span class="aiz-side-nav-text">{{ translate('Freelancer Payment') }}</span>
+                                        <a href="{{ route('expert_payment_settings') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Expert Payment') }}</span>
                                         </a>
                                     </li>
                                 @endcan

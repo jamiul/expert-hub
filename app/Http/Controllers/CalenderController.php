@@ -29,18 +29,15 @@ class CalenderController extends Controller
     public function index(Request $request)
     {
         $sort_search = null;
-        $scholarships = Calender::orderBy('seminar_date', 'desc');
+        $scholarships = Calender::orderBy('training_date', 'desc');
 
 
         if ($request->search != null) {
-            $scholarships = $scholarships->where('seminar_date', 'like', '%' . $request->search . '%');
+            $scholarships = $scholarships->where('training_date', 'like', '%' . $request->search . '%');
             $sort_search = $request->search;
         }
 
-        // $scholarships = $scholarships->paginate(15);
-        // dd($scholarships);
-
-        return view('admin.seminar_module.calender.index', compact('scholarships', 'sort_search'));
+        return view('admin.training_module.calender.index', compact('scholarships', 'sort_search'));
     }
 
     /**
@@ -231,12 +228,12 @@ class CalenderController extends Controller
     {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
-        return view("frontend.find-scholarship.listing", compact('scholarships'));
+        return view("frontend.scholarship.listing", compact('scholarships'));
     }
 
     public function scholarship_details($slug)
     {
         $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.find-scholarship.details", compact('scholarship'));
+        return view("frontend.scholarship.details", compact('scholarship'));
     }
 }

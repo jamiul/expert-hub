@@ -15,7 +15,7 @@
                             <label for="name">{{translate('Package Name')}}</label>
                             <input type="text" id="name" name="name" required placeholder="{{ translate('Eg. Bronze Package') }}" class="form-control">
                         </div>
-                        <input type="hidden" id="type" name="type" value="freelancer" class="form-control">
+                        <input type="hidden" id="type" name="type" value="expert" class="form-control">
                         <div class="form-group mb-3">
                             <label for="price">{{translate('Price')}}</label>
                             <input type="number" min="0" step="0.01" id="price" name="price" required placeholder="{{ translate('Eg. 25') }}" class="form-control">

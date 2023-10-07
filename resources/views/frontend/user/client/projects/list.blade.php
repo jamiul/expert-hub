@@ -80,22 +80,22 @@
                                 <div class="card-footer">
                                 	@if ($project->cancel_status == 1)
                                 		@if($project->private == 1)
-                                			<a href="{{ route('expert.details', $project->hire_invitation->freelancer->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
+                                			<a href="{{ route('expert.details', $project->hire_invitation->expert->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 			                                    <span class="avatar avatar-xs">
-	                                                @if($project->hire_invitation->freelancer->photo != null)
-	                                                    <img src="{{ custom_asset($project->hire_invitation->freelancer->photo) }}">
+	                                                @if($project->hire_invitation->expert->photo != null)
+	                                                    <img src="{{ custom_asset($project->hire_invitation->expert->photo) }}">
 	                                                @else
 	                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 	                                                @endif
 			                                    </span>
 			                                    <div class="pl-2">
-			                                    	<h4 class="h6 mb-0 fs-14">{{ $project->hire_invitation->freelancer->name }}</h4>
+			                                    	<h4 class="h6 mb-0 fs-14">{{ $project->hire_invitation->expert->name }}</h4>
 	                                                <div class="">
 	    												<span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-	                                                        {{ getAverageRating($project->hire_invitation->freelancer->id) }}
+	                                                        {{ getAverageRating($project->hire_invitation->expert->id) }}
 	    												</span>
 	    												<span class="opacity-50">
-	    													({{ getNumberOfReview($project->hire_invitation->freelancer->id) }} {{ translate('Reviews') }})
+	    													({{ getNumberOfReview($project->hire_invitation->expert->id) }} {{ translate('Reviews') }})
 	    												</span>
 	    											</div>
 			                                    </div>
@@ -148,27 +148,27 @@
                                             </span>
 										</div>
 	                                    @if (\App\Models\Review::where('project_id', $project->id)->where('reviewer_user_id', Auth::user()->id)->first() == null)
-	                                        <button type="button" onclick="showRatingModal({{ $project->id }})" class="btn btn-secondary btn-sm fw-500 rounded-1">{{ translate('Rate This Freelancer') }}</button>
+	                                        <button type="button" onclick="showRatingModal({{ $project->id }})" class="btn btn-secondary btn-sm fw-500 rounded-1">{{ translate('Rate This Expert') }}</button>
 	                                    @else
 	                                        <span class="badge badge-inline badge-soft-secondary">{{ translate('You Already rated this client') }}</span>
 	                                    @endif
 									@elseif($project->private == 1)
-	                                    <a href="{{ route('expert.details', $project->hire_invitation->freelancer->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
+	                                    <a href="{{ route('expert.details', $project->hire_invitation->expert->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 		                                    <span class="avatar avatar-xs">
-                                                @if($project->hire_invitation->freelancer->photo != null)
-                                                    <img src="{{ custom_asset($project->hire_invitation->freelancer->photo) }}">
+                                                @if($project->hire_invitation->expert->photo != null)
+                                                    <img src="{{ custom_asset($project->hire_invitation->expert->photo) }}">
                                                 @else
                                                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
 		                                    </span>
 		                                    <div class="pl-2">
-		                                    	<h4 class="h6 mb-0 fs-14">{{ $project->hire_invitation->freelancer->name }}</h4>
+		                                    	<h4 class="h6 mb-0 fs-14">{{ $project->hire_invitation->expert->name }}</h4>
                                                 <div class="">
     												<span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                                        {{ getAverageRating($project->hire_invitation->freelancer->id) }}
+                                                        {{ getAverageRating($project->hire_invitation->expert->id) }}
     												</span>
     												<span class="opacity-50">
-    													({{ getNumberOfReview($project->hire_invitation->freelancer->id) }} {{ translate('Reviews') }})
+    													({{ getNumberOfReview($project->hire_invitation->expert->id) }} {{ translate('Reviews') }})
     												</span>
     											</div>
 		                                    </div>
@@ -255,7 +255,7 @@
                 <form action="{{ route('reviews.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h4 class="h6 mb-0">{{translate('Rate This Freelancer')}}</h4>
+                        <h4 class="h6 mb-0">{{translate('Rate This Expert')}}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -291,7 +291,7 @@
                     </div>
                     <div class="modal-footer">
         				<button type="button" class="btn btn-light rounded-1" data-dismiss="modal">{{ translate('Close') }}</button>
-        				<button type="submit" class="btn btn-primary rounded-1">{{ translate('Rate This Freelancer') }}</button>
+        				<button type="submit" class="btn btn-primary rounded-1">{{ translate('Rate This Expert') }}</button>
         			</div>
                 </form>
             </div>

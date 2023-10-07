@@ -147,8 +147,8 @@
                     _token: '{{ csrf_token() }}',
                     package_id: package_id
                 }, function (data) {
-                    $('#offline_freelancer_package_purchase_modal_body').html(data);
-                    $('#offline_freelancer_package_purchase_modal').modal('show');
+                    $('#offline_expert_package_purchase_modal_body').html(data);
+                    $('#offline_expert_package_purchase_modal').modal('show');
                 });
             }
         }
@@ -215,14 +215,14 @@
 
 
     <!-- offline payment Modal -->
-    <div class="modal fade" id="offline_freelancer_package_purchase_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="offline_expert_package_purchase_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{ translate('Package Purchase by Offline Payment') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div id="offline_freelancer_package_purchase_modal_body"></div>
+                <div id="offline_expert_package_purchase_modal_body"></div>
             </div>
         </div>
     </div>

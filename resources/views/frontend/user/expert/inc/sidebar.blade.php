@@ -74,7 +74,7 @@
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('service.freelancer_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
+                            <a href="{{ route('service.expert_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('All Services') }}</span>
                             </a>
                         </li>
@@ -230,7 +230,7 @@
                 </li>
                 <!-- Reviews -->
                 <li class="aiz-side-nav-item">
-                    <a href="{{ route('user_review', 'freelancer') }}" class="aiz-side-nav-link d-flex align-items-center {{ areActiveRoutes(['select_package'])}}">
+                    <a href="{{ route('user_review', 'expert') }}" class="aiz-side-nav-link d-flex align-items-center {{ areActiveRoutes(['select_package'])}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
                             <path id="Path_25823" data-name="Path 25823" d="M-58.2,53.029c-.427.319-3.166-1.7-3.691-1.709s-3.295,1.973-3.717,1.646.57-3.679.412-4.2-2.81-2.671-2.644-3.192,3.519-.569,3.945-.889,1.558-3.624,2.083-3.619,1.6,3.328,2.026,3.654,3.773.431,3.931.955S-58.384,48.3-58.55,48.82-57.776,52.71-58.2,53.029Z" transform="translate(67.851 -41.064)" fill="#989ea8"/>
                         </svg>

@@ -31,7 +31,7 @@
                 <h1 class=" whyConsEdu-child-title mx-lg-0 mx-2  fs-20 fw-700 ">
                     {{ translate('Explore ways to earn') }}</h1>
                 <p class="how-work-details fw-500 mx-lg-0 mx-2  text-justify mt-2">
-                    {{ translate(': As a EduExpert, you have the opportunity to explore various avenues for earning income. This might include browsing through available projects, job listings, or freelance opportunities to find work that matches your skills and interests.') }}
+                    {{ translate(': As a EduExpert, you have the opportunity to explore various avenues for earning income. This might include browsing through available projects, job listings, or expert opportunities to find work that matches your skills and interests.') }}
                 </p>
             </div>
         </div>

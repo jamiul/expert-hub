@@ -5,7 +5,7 @@
   <div class="col-xl-4">
     <div class="card">
       <div class="card-body text-center">
-        <h1>freelancer meeting page</h1>
+        <h1>Expert meeting page</h1>
         <span class="avatar avatar-xxl mb-3">
           @if ($user->photo != null)
           <img src="{{ custom_asset($user->photo)}}">

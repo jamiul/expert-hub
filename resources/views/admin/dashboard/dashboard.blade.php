@@ -24,9 +24,9 @@
                     <div class="px-3 pt-3">
                         <div class="opacity-50">
                             <span class="fs-12 d-block">{{ translate('Total Earnings From') }}</span>
-                            {{ translate('Freelancer Subscription') }}
+                            {{ translate('Expert Subscription') }}
                         </div>
-                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::freelancer()->sum('amount')) }}</div>
+                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::expert()->sum('amount')) }}</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="rgba(255,255,255,0.3)" fill-opacity="1" d="M0,128L34.3,112C68.6,96,137,64,206,96C274.3,128,343,224,411,250.7C480,277,549,235,617,213.3C685.7,192,754,192,823,181.3C891.4,171,960,149,1029,117.3C1097.1,85,1166,43,1234,58.7C1302.9,75,1371,149,1406,186.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -54,7 +54,7 @@
                             <span class="fs-12 d-block">{{ translate('Total Earnings of') }}</span>
                             {{ translate('All Time') }}
                         </div>
-                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::client()->sum('amount') + \App\Models\PackagePayment::freelancer()->sum('amount') + \App\Models\MilestonePayment::sum('admin_profit')) }}</div>
+                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::client()->sum('amount') + \App\Models\PackagePayment::expert()->sum('amount') + \App\Models\MilestonePayment::sum('admin_profit')) }}</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="rgba(255,255,255,0.3)" fill-opacity="1" d="M0,128L34.3,112C68.6,96,137,64,206,96C274.3,128,343,224,411,250.7C480,277,549,235,617,213.3C685.7,192,754,192,823,181.3C891.4,171,960,149,1029,117.3C1097.1,85,1166,43,1234,58.7C1302.9,75,1371,149,1406,186.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -78,7 +78,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
-                        <h6 class="mb-0 fs-14">{{ translate('Top Freelancer Packages') }}</h6>
+                        <h6 class="mb-0 fs-14">{{ translate('Top Expert Packages') }}</h6>
                     </div>
                     <div class="card-body">
                         <canvas id="pie-2" class="w-100" height="280"></canvas>
@@ -111,8 +111,8 @@
                         <h5 class="h1 fw-700">{{ count(\App\Models\User::where('user_type', 'client')->where('created_at', '>', Carbon\Carbon::now()->subDays(30))->get()) }}</h5>
                     </div>
                     <div class="col-6 pt-3 mb-3">
-                        <span class="mb-2 d-block fs-13 opacity-60">{{ translate('New Freelancers') }}</span>
-                        <h5 class="h1 fw-700">{{ count(\App\Models\User::where('user_type', 'freelancer')->where('created_at', '>', Carbon\Carbon::now()->subDays(30))->get()) }}</h5>
+                        <span class="mb-2 d-block fs-13 opacity-60">{{ translate('New Experts') }}</span>
+                        <h5 class="h1 fw-700">{{ count(\App\Models\User::where('user_type', 'expert')->where('created_at', '>', Carbon\Carbon::now()->subDays(30))->get()) }}</h5>
                     </div>
                     <div class="col-6 pt-3 mb-3">
                         <span class="mb-2 d-block fs-13 opacity-60">{{ translate('Posted Projects') }}</span>
@@ -176,10 +176,10 @@
 </div>
 
 @php
-    $freelancerPackageNames = \App\Models\Package::freelancer()->pluck('name');
-    $freelancerPackageHistory = array();
-    foreach (\App\Models\Package::freelancer()->get() as $key => $freelancerPackage) {
-        array_push($freelancerPackageHistory, count($freelancerPackage->package_payments));
+    $expertPackageNames = \App\Models\Package::expert()->pluck('name');
+    $expertPackageHistory = array();
+    foreach (\App\Models\Package::expert()->get() as $key => $expertPackage) {
+        array_push($expertPackageHistory, count($expertPackage->package_payments));
     }
 
     $clientPackageNames = \App\Models\Package::client()->pluck('name');
@@ -233,10 +233,10 @@
     AIZ.plugins.chart('#pie-2',{
         type: 'doughnut',
         data: {
-            labels: @php echo $freelancerPackageNames @endphp,
+            labels: @php echo $expertPackageNames @endphp,
             datasets: [
                 {
-                    data: @php echo json_encode($freelancerPackageHistory) @endphp,
+                    data: @php echo json_encode($expertPackageHistory) @endphp,
                     backgroundColor: [
                         "#fd3995",
                         "#34bfa3",
@@ -288,20 +288,20 @@
                 {
                     fill: false,
                     borderColor: '#377dff',
-                    label: '{{translate('Freelancer Package')}}',
+                    label: '{{translate('Expert Package')}}',
                     data: [
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '01')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '02')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '03')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '04')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '05')->whereYear('created_at', '=', date('Y'))->sum('amount') }},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '06')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '07')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '08')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '09')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '10')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '11')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
-                        {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '12')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '01')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '02')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '03')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '04')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '05')->whereYear('created_at', '=', date('Y'))->sum('amount') }},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '06')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '07')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '08')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '09')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '10')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '11')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
+                        {{ \App\Models\PackagePayment::where('package_type', 'expert')->whereMonth('created_at', '=', '12')->whereYear('created_at', '=', date('Y'))->sum('amount')}},
                     ],
 
                 },

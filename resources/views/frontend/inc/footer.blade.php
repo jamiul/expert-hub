@@ -197,7 +197,7 @@
                 class="d-block fs-10 fw-600 {{ areActiveRoutes(['all.messages'], 'opacity-100 fw-600') }} opacity-60">{{ translate('Messages') }}</span>
         </a>
         @if (Auth::check())
-            @if (isClient() || isFreelancer())
+            @if (isClient() || isExpert())
                 <a href="javascript:void(0)"
                     class="text-reset flex-grow-1 mobile-side-nav-thumb pb-2 pt-3 text-center"
                     data-toggle="class-toggle" data-target=".aiz-mobile-side-nav">
@@ -249,7 +249,7 @@
                 @include('frontend.user.client.inc.sidebar')
             </div>
         </div>
-    @elseif(isFreelancer())
+    @elseif(isExpert())
         <div class="aiz-mobile-side-nav collapse-sidebar-wrap sidebar-xl d-xl-none z-1035 sidebar-right">
             <div class="overlay dark c-pointer overlay-fixed" data-toggle="class-toggle"
                 data-target=".aiz-mobile-side-nav" data-same=".mobile-side-nav-thumb"></div>

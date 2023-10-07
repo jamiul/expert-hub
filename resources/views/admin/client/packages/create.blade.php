@@ -65,7 +65,7 @@
                             <input type="number" min="0" step="1" id="bio_text_limit" name="bio_text_limit" required placeholder="{{ translate('Eg. 120') }}" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="following_status">{{translate('Enable Freelancer Following ?')}}</label>
+                            <label for="following_status">{{translate('Enable Expert Following ?')}}</label>
                             <div>
                                 <label class="aiz-switch aiz-switch-success mb-0">
                                     <input type="checkbox" checked="checked" name="following_status">

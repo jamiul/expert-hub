@@ -4,14 +4,14 @@
     <div class="mx-lg-4 mb-3">
         <div class="justify-content-center text-center mt-4">
             <span class=" flex-shrink-0 mr-4">
-                @if ($freelancer->photo != null)
-                    <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }} "
+                @if ($expert->photo != null)
+                    <img src="{{ custom_asset($expert->photo) }}" alt="{{ $expert->name }} "
                          class="expert-name">
                 @else
                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
-                         alt="{{ $freelancer->name }}">
+                         alt="{{ $expert->name }}">
                 @endif
-                @if (Cache::has('user-is-online-' . $freelancer->id))
+                @if (Cache::has('user-is-online-' . $expert->id))
                     <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
                 @else
                     <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
@@ -19,17 +19,17 @@
             </span>
         </div>
         <div class="w-100">
-            <h5 class="text-black fs-lg-23 fs-16 fw-500 pb-2 text-center mt-3 px-0 ">{{ $freelancer->name }}</h5>
-            @if ($freelancer->profile->specialistAt != null)
-                <h6 class="text-center fs-16 fw-400 text-muted">{{ $freelancer->profile->specialistAt->name }}</h6>
+            <h5 class="text-black fs-lg-23 fs-16 fw-500 pb-2 text-center mt-3 px-0 ">{{ $expert->name }}</h5>
+            @if ($expert->profile->specialistAt != null)
+                <h6 class="text-center fs-16 fw-400 text-muted">{{ $expert->profile->specialistAt->name }}</h6>
             @endif
             <h6 class="text-center  fw-700 fs-16 expertise">Public Health </h6>
             <div class="d-flex align-items-center justify-content-center  mt-4">
                 <span class="bg-rating p-1 text-white px-1 mr-1 fs-10 expert-ratings">
-                    {{ formatRating(getAverageRating($freelancer->id)) }}
+                    {{ formatRating(getAverageRating($expert->id)) }}
                 </span>
                 <span class="rating rating-md rating-mr-1">
-                    {{ renderStarRating(getAverageRating($freelancer->id)) }}
+                    {{ renderStarRating(getAverageRating($expert->id)) }}
                 </span>
             </div>
 
@@ -41,7 +41,7 @@
                          alt="service_image">
                 </div>
                 <div class=" text-dark text-center fs-14">
-                    {{ $freelancer->address->city->name }}, {{ $freelancer->address->country->name }}
+                    {{ $expert->address->city->name }}, {{ $expert->address->country->name }}
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-2">
@@ -49,7 +49,7 @@
                                    src=" {{ asset('assets/home/find-scholarship/time.png') }}" class=""
                                    alt="service_image">
                 </div>
-                {{-- //todo: add timezone for freelancer and get current time --}}
+                {{-- //todo: add timezone for expert and get current time --}}
                 <div class=" text-dark text-center fs-14">10.15 AEST</div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                                        alt="service_image">
                     </div>
 
-                    {{-- //todo: add language skills for freelancer --}}
+                    {{-- //todo: add language skills for expert --}}
                     <div class=" fs-14 fw-500 ">Proficient in English</div>
                 </div>
             </div>
@@ -88,9 +88,9 @@
                 <div class="  ">
                     <h6 class="fs-16 fw-700">{{ translate('Expertise') }}</h6>
                     {{-- skills  --}}
-                    @if ($freelancer->profile->skills != null)
+                    @if ($expert->profile->skills != null)
                         <section>
-                            @foreach (json_decode($freelancer->profile->skills) as $skill_id)
+                            @foreach (json_decode($expert->profile->skills) as $skill_id)
                                 @php
                                     $skill = \App\Models\Skill::find($skill_id);
                                 @endphp
@@ -101,7 +101,7 @@
                             @endforeach
                         </section>
                     @endif
-                    @if ($freelancer->education_details != '')
+                    @if ($expert->education_details != '')
                         @include('frontend.expert.education')
                     @endif
                 </div>

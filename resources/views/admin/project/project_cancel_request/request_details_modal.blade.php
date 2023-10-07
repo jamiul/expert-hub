@@ -19,12 +19,12 @@
 </div>
 @php
  $milestone_payments = \App\Models\MilestonePayment::where('project_id', $cancel_project->project_id)->where('paid_status',1)->get();
-    $freelancer_profit = 0;
+    $expert_profit = 0;
     $total_amount = 0;
     foreach ($milestone_payments as $key =>$milestone_payment) {
-        $freelancer_profit += $milestone_payment->freelancer_profit;
+        $expert_profit += $milestone_payment->expert_profit;
         $total_amount += $milestone_payment->amount;
-    }   
+    }
 @endphp
 <div>
     <div class="form-group mb-3">
@@ -34,8 +34,8 @@
 </div>
 <div>
     <div class="form-group mb-3">
-        <label>{{ translate('Freelancer Profit') }}</label>
-        <input type="text" disabled value="{{ single_price($freelancer_profit) }}" class="form-control">
+        <label>{{ translate('Expert Profit') }}</label>
+        <input type="text" disabled value="{{ single_price($expert_profit) }}" class="form-control">
     </div>
 </div>
 

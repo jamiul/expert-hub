@@ -32,19 +32,12 @@
                             id="url" name="url" class="form-control"
                             required>
                         </div>
-
-
-                        <!-- Seminar Slug -->
-
-
-
-
+                        <!-- Training Slug -->
                             <div class="form-group mb-0 text-right">
                                 <button type="submit" class="btn btn-primary">
                                     {{ translate('Update') }}
                                 </button>
                             </div>
-
                     </form>
                 </div>
             </div>
@@ -63,8 +56,8 @@
         let add_date = 0;
         $('#addDate').click(function() {
             ++add_date;
-            $('#seminarDateTable').append(
-                '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
+            $('#expertDateTable').append(
+                '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Training Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
             );
         });
 

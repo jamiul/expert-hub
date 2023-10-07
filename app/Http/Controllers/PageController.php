@@ -117,7 +117,7 @@ class PageController extends Controller
     {
         $page = Page::where('slug', $slug)->first();
         if ($page != null) {
-            return view('frontend.custom_page', compact('page'));
+            return view('frontend.home.custom_page', compact('page'));
         }
         abort(404);
     }

@@ -45,9 +45,9 @@ use App\Http\Controllers\ScholarshipLevelController;
 use App\Http\Controllers\ScholarshipQualificationController;
 use App\Http\Controllers\ScholarshipUniversityController;
 use App\Http\Controllers\ScholarshipWhoCanApplyController;
-use App\Http\Controllers\SeminarController;
-use App\Http\Controllers\SeminarModeController;
-use App\Http\Controllers\SeminarSoftwareController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\TrainingModeController;
+use App\Http\Controllers\TrainingSoftwareController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServicePaymentController;
 use App\Http\Controllers\SitePagesController;
@@ -196,13 +196,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/blog/destroy/{id}', [BlogController::class, 'destroy'])->name('blog.delete');
     Route::post('/blog/change-status', [BlogController::class, 'changeStatus'])->name('blog.change-status');
 
-    //seminars
-    Route::resource('seminar', SeminarController::class);
-    Route::resource('seminar-mode', SeminarModeController::class);
-    Route::resource('seminar-software', SeminarSoftwareController::class);
-    Route::get('/seminar/destroy/{id}', [SeminarController::class, 'destroy'])->name('seminar.delete');
-    Route::get('/seminar-mode/destroy/{id}', [SeminarModeController::class, 'destroy'])->name('seminar-mode.delete');
-    Route::get('/seminar-software/destroy/{id}', [SeminarSoftwareController::class, 'destroy'])->name('seminar-software.delete');
+    //trainings
+    Route::resource('training', TrainingController::class);
+    Route::resource('training-mode', TrainingModeController::class);
+    Route::resource('training-software', TrainingSoftwareController::class);
+    Route::get('/training/destroy/{id}', [TrainingController::class, 'destroy'])->name('training.delete');
+    Route::get('/training-mode/destroy/{id}', [TrainingModeController::class, 'destroy'])->name('training-mode.delete');
+    Route::get('/training-software/destroy/{id}', [TrainingSoftwareController::class, 'destroy'])->name('training-software.delete');
 
     //scholarships
     Route::resource('scholarship-category', ScholarshipCategoryController::class);

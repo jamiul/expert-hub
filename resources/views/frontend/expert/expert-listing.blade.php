@@ -39,12 +39,12 @@
                         <div class="col-xl-8 offset-xl-2 text-center">
                             <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span
                                     class="fw-600">{{ $total }}</span>
-                                {{ translate('freelancers found for') }} <span class="fw-600">{{ $keyword }}</span>
+                                {{ translate('experts found for') }} <span class="fw-600">{{ $keyword }}</span>
                             </h1>
                         </div>
                     </div>
                 @endif
-                <form id="freelancer-filter-form" action="" method="GET">
+                <form id="expert-filter-form" action="" method="GET">
                     <div class="row gutters-10">
                         <!-- Sidebar -->
                         <div class="col-xl-3 col-lg-4 mb-5">
@@ -92,7 +92,7 @@
                                         </span>
                                     @endif
                                     <!-- search bar  -->
-                                    <input type="hidden" name="type" value="freelancer">
+                                    <input type="hidden" name="type" value="expert">
                                     <form class="" method="GET">
                                         <div class=" d-flex align-items-center w-100">
                                             <button
@@ -303,25 +303,25 @@
                             </div>
                         </div>
 
-                        <!-- Freelancer List -->
+                        <!-- expert List -->
                         <div class="col-xl-9 col-lg-7">
                             <div class="card mb-lg-0 rounded border-gray-light" style="background: #F2F7F2;">
 
                                 <div class="card-body p-0">
-                                    @foreach ($freelancers as $key => $freelancer)
-                                        @if ($freelancer->user != null)
+                                    @foreach ($experts as $key => $expert)
+                                        @if ($expert->user != null)
                                             <div
                                                 class="d-block site-font d-xl-flex site-font text-inherit all-scholarship-list px-3 py-4 border-bottom">
-                                                <a href="{{ route('expert.details', $freelancer->user->user_name) }}">
+                                                <a href="{{ route('expert.details', $expert->user->user_name) }}">
                                                     <span class="avatar flex-shrink-0 mr-4">
-                                                        @if ($freelancer->user->photo != null)
-                                                            <img src="{{ custom_asset($freelancer->user->photo) }}"
-                                                                alt="{{ $freelancer->user->name }}">
+                                                        @if ($expert->user->photo != null)
+                                                            <img src="{{ custom_asset($expert->user->photo) }}"
+                                                                alt="{{ $expert->user->name }}">
                                                         @else
                                                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
-                                                                alt="{{ $freelancer->user->name }}">
+                                                                alt="{{ $expert->user->name }}">
                                                         @endif
-                                                        @if (Cache::has('user-is-online-' . $freelancer->user->id))
+                                                        @if (Cache::has('user-is-online-' . $expert->user->id))
                                                             <span
                                                                 class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
                                                         @else
@@ -332,53 +332,53 @@
                                                 </a>
                                                 <div class="flex-grow-1 ">
                                                     <a
-                                                        href="{{ route('expert.details', $freelancer->user->user_name) }}">
+                                                        href="{{ route('expert.details', $expert->user->user_name) }}">
                                                         <div class="d-flex">
-                                                            <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}
+                                                            <h5 class=" fs-18 fw-700 mb-1">{{ $expert->user->name }}
                                                             </h5>
                                                             <span>
-                                                                @if($freelancer->user->address->country)
+                                                                @if($expert->user->address->country)
                                                                 <img class="mx-2"
-                                                                    src="{{ asset('assets/flag/' . $freelancer->user->address->country->photo) }}"
-                                                                    alt="{{ $freelancer->user->address->country->name }}"
+                                                                    src="{{ asset('assets/flag/' . $expert->user->address->country->photo) }}"
+                                                                    alt="{{ $expert->user->address->country->name }}"
                                                                     style="width: 21px; height: 14px;" />
                                                                 @endif
                                                             </span>
                                                         </div>
                                                     </a>
 
-                                                    @if ($freelancer->specialistAt != null)
-                                                        <p class="fs-16 ">{{ $freelancer->specialistAt->name }}</p>
+                                                    @if ($expert->specialistAt != null)
+                                                        <p class="fs-16 ">{{ $expert->specialistAt->name }}</p>
                                                     @endif
 
                                                     <div class="d-flex text-dark fs-14 mb-3">
                                                         <div class="mr-2">
                                                             <span class="bg-rating p-1 text-white px-1 mr-1 fs-10"
                                                                 style="background:#95DF00;">
-                                                                {{ formatRating(getAverageRating($freelancer->user->id)) }}
+                                                                {{ formatRating(getAverageRating($expert->user->id)) }}
                                                             </span>
                                                             <span class="rating rating-md rating-mr-1">
-                                                                {{ renderStarRating(getAverageRating($freelancer->user->id)) }}
+                                                                {{ renderStarRating(getAverageRating($expert->user->id)) }}
                                                             </span>
                                                             <span>(0 Jobs)</span>
                                                             <span class="mx-2">
-                                                                {{ count($freelancer->user->reviews) }}
+                                                                {{ count($expert->user->reviews) }}
                                                                 {{ translate('Reviews') }}
                                                             </span>
 
                                                             <span>
-                                                                {{ single_price($freelancer->hourly_rate) }} USD per hour
+                                                                {{ single_price($expert->hourly_rate) }} USD per hour
                                                             </span>
 
                                                         </div>
 
                                                     </div>
                                                     <div class="text-dark lh-1-8">
-                                                        <p class="text-truncate-3 fs-14">{{ $freelancer->bio }}</p>
+                                                        <p class="text-truncate-3 fs-14">{{ $expert->bio }}</p>
                                                     </div>
-                                                    @if ($freelancer->skills != null)
+                                                    @if ($expert->skills != null)
                                                         <div>
-                                                            @foreach (json_decode($freelancer->skills) as $key => $skill_id)
+                                                            @foreach (json_decode($expert->skills) as $key => $skill_id)
                                                                 @php
                                                                     $skill = \App\Models\Skill::find($skill_id);
                                                                 @endphp
@@ -424,10 +424,10 @@
                                     @endforeach
                                 </div>
                             </div>
-                            @if (!is_array($freelancers))
+                            @if (!is_array($experts))
                                 <div class="aiz-pagination aiz-pagination-center flex-grow-1 mt-4 mb-4">
                                     <ul class="pagination">
-                                        {{ $freelancers->links() }}
+                                        {{ $experts->links() }}
                                     </ul>
                                 </div>
                             @endif
@@ -477,7 +477,7 @@
                         checkbox.checked = false;
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#expert-filter-form').submit();
             }
 
             // remove hourly rate by clicking x sign
@@ -496,7 +496,7 @@
                         }
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#expert-filter-form').submit();
             }
 
             // remove country name from badges
@@ -515,7 +515,7 @@
                         }
                     }
                 }
-                $('#freelancer-filter-form').submit();
+                $('#expert-filter-form').submit();
             }
         </script>
 
@@ -526,7 +526,7 @@
             var text = e.options[e.selectedIndex].text;
 
             function applyFilter() {
-                $('#freelancer-filter-form').submit();
+                $('#expert-filter-form').submit();
             }
 
             function rangefilter(arg) {

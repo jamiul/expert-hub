@@ -29,10 +29,10 @@
                             <th>#</th>
                             <th>{{ translate('Project') }}</th>
                             <th data-breakpoints="md">{{ translate('Client') }}</th>
-                            <th data-breakpoints="md">{{ translate('Freelancer') }}</th>
+                            <th data-breakpoints="md">{{ translate('Expert') }}</th>
                             <th>{{ translate('Amount') }}</th>
                             <th data-breakpoints="sm">{{ translate('My Earnings') }}</th>
-                            <th data-breakpoints="sm">{{ translate('Freelancer Earnings') }}</th>
+                            <th data-breakpoints="sm">{{ translate('Expert Earnings') }}</th>
                             <th data-breakpoints="sm">{{ translate('Payment Status') }}</th>
                             @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
                               <th data-breakpoints="">{{ translate('Approval').' ( '.translate('For Manual Payment').' )'}}</th>
@@ -49,10 +49,10 @@
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $milestone_payment->project->name }}</td>
                                 <td>{{ $milestone_payment->client->name }}</td>
-                                <td>{{ $milestone_payment->freelancer->name }}</td>
+                                <td>{{ $milestone_payment->expert->name }}</td>
                                 <td>{{ single_price($milestone_payment->amount) }}</td>
                                 <td>{{ single_price($milestone_payment->admin_profit) }}</td>
-                                <td>{{ single_price($milestone_payment->freelancer_profit) }}</td>
+                                <td>{{ single_price($milestone_payment->expert_profit) }}</td>
                                 <td>
                                     @if( $milestone_payment->paid_status == 1 )
                                         <span class="badge badge-inline badge-success">{{ translate('Paid via') }} {{ $milestone_payment->payment_method }}</span>

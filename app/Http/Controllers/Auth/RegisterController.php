@@ -51,7 +51,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('frontend.user_sign_up');
+        return view('frontend.home.user_sign_up');
     }
 
     public function register(Request $request)
@@ -76,8 +76,7 @@ class RegisterController extends Controller
             }
         }
 
-        return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+        return $this->registered($request, $user) ?: redirect($this->redirectPath());
     }
 
     /**

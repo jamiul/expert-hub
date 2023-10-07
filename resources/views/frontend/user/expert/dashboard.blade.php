@@ -116,11 +116,11 @@
                         <div class="col-md-4">
                             <div class="rounded-1 p-4 mb-4 d-flex flex-column justify-content-center" style="min-height: 116px;background: #45b5aa;">
                                 <div class="text-white">{{ translate('This Month Earnings') }}</div>
-                                <div class="h4 fw-700 text-white">{{ single_price(\App\Models\MilestonePayment::where('paid_status', 1)->where('freelancer_user_id', Auth::user()->id)->whereBetween('updated_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('freelancer_profit')) }}</div>
+                                <div class="h4 fw-700 text-white">{{ single_price(\App\Models\MilestonePayment::where('paid_status', 1)->where('expert_user_id', Auth::user()->id)->whereBetween('updated_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('expert_profit')) }}</div>
                             </div>
                             <div class="rounded-1 p-4 bg-dark d-flex flex-column justify-content-center" style="min-height: 116px;background: #45b5aa;">
                                 <div class="text-white">{{ translate('Total Earnings') }}</div>
-                                <div class="h4 fw-700 text-white">{{ single_price(\App\Models\MilestonePayment::where('paid_status', 1)->where('freelancer_user_id', Auth::user()->id)->sum('freelancer_profit')) }}</div>
+                                <div class="h4 fw-700 text-white">{{ single_price(\App\Models\MilestonePayment::where('paid_status', 1)->where('expert_user_id', Auth::user()->id)->sum('expert_profit')) }}</div>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -133,7 +133,7 @@
             </div>
             <div class="row gutters-15">
                 <div class="col-md-4 mb-4">
-                    <a href="{{ route('service.freelancer_index') }}" class="btn btn-block btn-primary rounded-1 py-4">{{ translate('My Services') }}</a>
+                    <a href="{{ route('service.expert_index') }}" class="btn btn-block btn-primary rounded-1 py-4">{{ translate('My Services') }}</a>
                 </div>
                 <div class="col-md-4 mb-4">
                     <a href="{{ route('user.profile') }}" class="btn btn-block btn-primary rounded-1 py-4">{{ translate('Profile Settings') }}</a>
@@ -346,7 +346,7 @@
                         </div>
                         <div class="card-body c-scrollbar-light pt-3" style="max-height: 320px;overflow-y: scroll;">
                             <ul class="list-group">
-                                @foreach (\App\Models\Package::freelancer()->active()->get()->except(Auth::user()->profile->package_id) as $key => $package)
+                                @foreach (\App\Models\Package::expert()->active()->get()->except(Auth::user()->profile->package_id) as $key => $package)
                                 <li class="list-group-item mb-3 rounded-1 bg-hov-soft-primary">
                                     <a href="{{ route('select_package') }}" class="d-flex align-items-center text-inherit">
                                         <img src="{{ custom_asset($package->badge) }}" class="img-fluid mr-4 h-60px">
@@ -441,73 +441,73 @@
                 data: [{
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '01') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '01') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '02') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '02') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '03') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '03') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '04') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '04') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '05') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '05') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '06') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '06') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '07') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '07') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '08') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '08') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '09') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '09') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '10') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '10') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '11') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '11') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     },
                     {
                         {
                             \
-                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('freelancer_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '12') - > whereYear('created_at', '=', date('Y')) - > sum('freelancer_profit')
+                            App\ Models\ MilestonePayment::where('paid_status', 1) - > where('expert_user_id', Auth::user() - > id) - > whereMonth('created_at', '=', '12') - > whereYear('created_at', '=', date('Y')) - > sum('expert_profit')
                         }
                     }
                 ],

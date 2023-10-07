@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="row ">
-        @foreach ($freelancer->userPortfolios as $user_portfolio)
+        @foreach ($expert->userPortfolios as $user_portfolio)
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="caorusel-box">
                     <a href="" class="text-dark">

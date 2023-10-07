@@ -25,7 +25,7 @@
                                     <tr>
                                         <th data-breakpoints="">#</th>
                                         <th data-breakpoints="" width="15%">{{ translate('Project') }}</th>
-                                        <th data-breakpoints="md">{{ translate('Freelancer') }}</th>
+                                        <th data-breakpoints="md">{{ translate('Expert') }}</th>
                                         <th data-breakpoints="md">{{ translate('Time') }}</th>
                                         <th data-breakpoints="">{{ translate('Amount') }}</th>
                                         <th data-breakpoints="">{{ translate('Status') }}</th>
@@ -41,7 +41,7 @@
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $milestone->project->name }}</td>
                                             <td>
-                                                {{ $milestone->freelancer->name }}
+                                                {{ $milestone->expert->name }}
                                             </td>
                                             <td>{{ $milestone->created_at }}</td>
                                             <td>

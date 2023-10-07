@@ -10,10 +10,10 @@ use App\Models\Experts;
 use App\Models\Language;
 use App\Models\Project;
 use App\Models\ProjectCategory;
-use App\Models\Seminar;
-use App\Models\SeminarDate;
-use App\Models\SeminarMode;
-use App\Models\SeminarSoftware;
+use App\Models\Training;
+use App\Models\TrainingDate;
+use App\Models\TrainingMode;
+use App\Models\TrainingSoftware;
 use App\Models\Service;
 use App\Models\ServicePackage;
 use App\Models\Skill;
@@ -165,69 +165,69 @@ class SearchController extends Controller
                 'consultantCategory',
                 'expertises'
             ));
-        } elseif ($request->type == 'seminar') {
-            $type = 'seminar';
+        } elseif ($request->type == 'training') {
+            $type = 'training';
             $keyword = $request->keyword;
-            $seminar_ids = [];
-            $seminarMode_id = [];
-            $seminar_modes = [];
+            $training_ids = [];
+            $trainingMode_id = [];
+            $training_modes = [];
             $language_id = [];
             $category_ids = [];
-            $seminar_category = [];
+            $training_category = [];
             $country_id = $request->country_id;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
-            $selected_seminar_mode_id = [];
-            $seminar_mode_ids = [];
+            $selected_training_mode_id = [];
+            $training_mode_ids = [];
             $language_ids = [];
             $languages = [];
-            $seminar_software_ids = [];
-            $seminarSoftware = [];
-            $selected_seminar_lang = [];
-            $selected_seminar_software = [];
-            $seminarDate = [];
-            $seminars = Seminar::query();
-            $seminars->join('seminar_dates', 'seminars.id', '=', 'seminar_dates.seminar_id');
+            $training_software_ids = [];
+            $trainingSoftware = [];
+            $selected_training_lang = [];
+            $selected_training_software = [];
+            $trainingDate = [];
+            $trainings = Training::query();
+            $trainings->join('training_dates', 'trainings.id', '=', 'training_dates.training_id');
 
-            if ($request->seminar_date && $request->seminar_date != null) {
-                $seminarDate = $request->seminar_date;
-                $formattedDate = Carbon::createFromFormat('d-m-Y', $request->seminar_date)->format('Y-m-d');
-                $seminars->whereDate('seminar_dates.seminar_date', '=', $formattedDate);
+            if ($request->training_date && $request->training_date != null) {
+                $trainingDate = $request->training_date;
+                $formattedDate = Carbon::createFromFormat('d-m-Y', $request->training_date)->format('Y-m-d');
+                $trainings->whereDate('training_dates.training_date', '=', $formattedDate);
             }
 
             if ($request->keyword != null) {
-                $seminars->where('title', 'like', '%' . $request->keyword . '%');
+                $trainings->where('title', 'like', '%' . $request->keyword . '%');
             }
 
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
-                $seminar_category = ProjectCategory::whereIn('id', $category_ids)->get();
-                $seminars = $seminars->whereIn('project_category_id', $category_ids);
+                $training_category = ProjectCategory::whereIn('id', $category_ids)->get();
+                $trainings = $trainings->whereIn('project_category_id', $category_ids);
             }
-            if ($request->seminar_mode_id != null) {
-                $seminar_mode_ids = $request->seminar_mode_id;
-                $seminar_modes = SeminarMode::whereIn('id', $seminar_mode_ids)->get();
-                $seminars = $seminars->whereIn('seminar_mode_id', $seminar_mode_ids);
+            if ($request->training_mode_id != null) {
+                $training_mode_ids = $request->training_mode_id;
+                $training_modes = TrainingMode::whereIn('id', $training_mode_ids)->get();
+                $trainings = $trainings->whereIn('training_mode_id', $training_mode_ids);
             }
 
-            if ($request->seminar_software_id != null) {
-                $seminar_software_ids[] = $request->seminar_software_id;
+            if ($request->training_software_id != null) {
+                $training_software_ids[] = $request->training_software_id;
 
-                $seminarSoftware = SeminarSoftware::whereIn('id', $seminar_software_ids)->get();
-                $seminars = $seminars->whereIn('seminar_software_id', $seminar_software_ids);
+                $trainingSoftware = TrainingSoftware::whereIn('id', $training_software_ids)->get();
+                $trainings = $trainings->whereIn('training_software_id', $training_software_ids);
             }
 
             if ($request->language_id != null) {
                 $language_ids = $request->language_id;
                 $languages = Language::whereIn('id', $language_ids)->get();
-                $seminars = $seminars->whereIn('language_id', $language_ids);
+                $trainings = $trainings->whereIn('language_id', $language_ids);
             }
 
-            $seminar_dates = SeminarDate::pluck('seminar_date')->toArray();
+            $training_dates = TrainingDate::pluck('training_date')->toArray();
             $date_day = [];
             $date_month = [];
-            foreach ($seminar_dates as $dateStr) {
+            foreach ($training_dates as $dateStr) {
                 $timestamp = strtotime($dateStr);
                 $month = date('m', $timestamp); // Month (01-12)
                 $day = date('d', $timestamp);   // Day (01-31)
@@ -254,27 +254,27 @@ class SearchController extends Controller
                 }
             }
 
-            $total = $seminars->count();
-            $seminars = $seminars->paginate(8)->appends($request->query());
+            $total = $trainings->count();
+            $trainings = $trainings->paginate(8)->appends($request->query());
 
-            return view('frontend.seminar-listing', compact(
-                'seminars',
+            return view('frontend.training.training-listing', compact(
+                'trainings',
                 'total',
                 'keyword',
                 'type',
                 'language_id',
                 'category_ids',
-                'seminar_category',
-                'seminar_mode_ids',
-                'seminar_modes',
-                'selected_seminar_lang',
-                'selected_seminar_software',
-                'seminarSoftware',
+                'training_category',
+                'training_mode_ids',
+                'training_modes',
+                'selected_training_lang',
+                'selected_training_software',
+                'trainingSoftware',
                 'language_ids',
                 'languages',
-                'seminar_software_ids',
-                'seminarDate',
-                'seminar_dates',
+                'training_software_ids',
+                'trainingDate',
+                'training_dates',
                 'months',
                 'dates'
             ));
@@ -306,7 +306,8 @@ class SearchController extends Controller
 
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
-            return view('frontend.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level', 'category_id'));
+
+            return view('frontend.service.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level', 'category_id'));
         } elseif ($request->type == 'media-expert') {
             $type = 'media-expert';
             $keyword = $request->keyword;
@@ -424,7 +425,7 @@ class SearchController extends Controller
             $total = $experts->count();
             $experts = $experts->paginate(8)->appends($request->query());
 
-            return view('frontend.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'expertises'));
+            return view('frontend.expert.media-expert', compact('experts', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'expertises'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
@@ -571,7 +572,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations', 'projectCategory', 'all_skills', 'countries', 'country_id'));
+            return view('frontend.project.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations', 'projectCategory', 'all_skills', 'countries', 'country_id'));
         }
     }
 
@@ -596,7 +597,7 @@ class SearchController extends Controller
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
 
-            return view('frontend.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
+            return view('frontend.project.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
         }
     }
 }

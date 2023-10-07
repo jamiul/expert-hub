@@ -7,11 +7,11 @@
                             style="width:30px; height:30px;" src="{{ asset('assets/home/find-scholarship/home.png') }}"
                             alt=""></a>
                 </li>
-                <li class="breadcrumb-item "><a href="{{ url('search?') . http_build_query(['type' => 'freelancer']) }}"
+                <li class="breadcrumb-item "><a href="{{ url('search?') . http_build_query(['type' => 'expert']) }}"
                         class="text-muted fs-14">Find Consultant</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page"><span
-                        class="text-black fs-14">{{ $freelancer->name }}</span></li>
+                        class="text-black fs-14">{{ $expert->name }}</span></li>
             </ol>
             <div class="d-flex mx-4 ">
                 <div class="mr-1 my-2 justify-content-center align-items-center">

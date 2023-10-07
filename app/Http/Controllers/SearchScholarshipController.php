@@ -128,7 +128,8 @@ class SearchScholarshipController extends Controller
 
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
-            return view('frontend.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
+
+            return view('frontend.service.services-listing', compact('services', 'total', 'keyword', 'type', 'rating'));
         } elseif ($request->type == 'scholarships') {
             $type = 'scholarships';
             $keyword = $request->keyword;
@@ -211,7 +212,7 @@ class SearchScholarshipController extends Controller
             $ScholarshipTotal = $scholarships->count();
             $scholarships = $scholarships->paginate(10)->appends($request->query());
 
-            return view('frontend.scholarships-listing', compact('keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies', 'whoCanApply_ids', 'whoCanApplies', 'whoCanApply', 'scholarshipCountry', 'countries'));
+            return view('frontend.scholarship.scholarship-listing', compact('keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'scholarships', 'level_id', 'country_id', 'fieldStudy_id', 'fieldStudy_ids', 'ScholarshipTotal', 'levels', 'country_name', 'countries', 'fieldStudies', 'whoCanApply_ids', 'whoCanApplies', 'whoCanApply', 'scholarshipCountry', 'countries'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
@@ -279,7 +280,7 @@ class SearchScholarshipController extends Controller
             }
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price'));
+            return view('frontend.project.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price'));
         }
     }
 
@@ -303,7 +304,7 @@ class SearchScholarshipController extends Controller
             $projects = $projects->where('skills', 'like', '%' . '"' . $id . '"' . '%')->latest();
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
+            return view('frontend.project.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
         }
     }
 }

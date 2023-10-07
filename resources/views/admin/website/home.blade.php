@@ -415,17 +415,17 @@
 						@endphp</textarea>
                     </div>
                     <div class="form-group">
-                        <label>{{ translate('Title (Freelancer)') }}</label>
-                        <input type="hidden" name="types[]" value="cta_section_title_freelancer">
+                        <label>{{ translate('Title (Expert)') }}</label>
+                        <input type="hidden" name="types[]" value="cta_section_title_expert">
                         <input type="text" class="form-control" placeholder="{{ translate('Title') }}"
-                            name="cta_section_title_freelancer"
-                            value="{{ App\Models\SystemConfiguration::where('type', 'cta_section_title_freelancer')->first() ? App\Models\SystemConfiguration::where('type', 'cta_section_title_freelancer')->first()->value : '' }}">
+                            name="cta_section_title_expert"
+                            value="{{ App\Models\SystemConfiguration::where('type', 'cta_section_title_expert')->first() ? App\Models\SystemConfiguration::where('type', 'cta_section_title_expert')->first()->value : '' }}">
                     </div>
                     <div class="form-group">
-                        <label>{{ translate('Sub title (Freelancer)') }}</label>
-                        <input type="hidden" name="types[]" value="cta_section_subtitle_freelancer">
-                        <textarea class="form-control resize-off" placeholder="{{ translate('Type..') }}" name="cta_section_subtitle_freelancer">@php
-							echo App\Models\SystemConfiguration::where('type', 'cta_section_subtitle_freelancer')->first() ? App\Models\SystemConfiguration::where('type', 'cta_section_subtitle_freelancer')->first()->value : '';
+                        <label>{{ translate('Sub title (Expert)') }}</label>
+                        <input type="hidden" name="types[]" value="cta_section_subtitle_expert">
+                        <textarea class="form-control resize-off" placeholder="{{ translate('Type..') }}" name="cta_section_subtitle_expert">@php
+							echo App\Models\SystemConfiguration::where('type', 'cta_section_subtitle_expert')->first() ? App\Models\SystemConfiguration::where('type', 'cta_section_subtitle_expert')->first()->value : '';
 						@endphp</textarea>
                     </div>
                     <div class="form-group">

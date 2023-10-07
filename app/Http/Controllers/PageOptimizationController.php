@@ -111,10 +111,8 @@ class PageOptimizationController extends Controller
         // $input['updated_at'] = $user->id;
         $page_optimization->update($input);
 
-        // Delete related seminar_dates
-
-
         flash(translate('Page Optimization has been updated successfully'))->success();
+
         return redirect()->back();
     }
 

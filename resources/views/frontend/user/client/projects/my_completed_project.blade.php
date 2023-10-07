@@ -84,7 +84,7 @@
 		                                </a>
 									</div>
                                     @if (\App\Models\Review::where('project_id', $project->id)->where('reviewer_user_id', Auth::user()->id)->first() == null)
-                                        <button type="button" onclick="showRatingModal({{ $project->id }})" class="btn btn-secondary btn-sm fw-500 rounded-1">{{ translate('Rate This Freelancer') }}</button>
+                                        <button type="button" onclick="showRatingModal({{ $project->id }})" class="btn btn-secondary btn-sm fw-500 rounded-1">{{ translate('Rate This Expert') }}</button>
                                     @else
                                         <span class="badge badge-inline badge-soft-secondary rounded-1">{{ translate('You Already rated this client') }}</span>
                                     @endif
@@ -125,7 +125,7 @@
                 <form action="{{ route('reviews.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h4 class="h6 mb-0">{{translate('Rate This Freelancer')}}</h4>
+                        <h4 class="h6 mb-0">{{translate('Rate This Expert')}}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -161,7 +161,7 @@
                     </div>
                     <div class="modal-footer">
         				<button type="button" class="btn btn-light" data-dismiss="modal">{{ translate('Close') }}</button>
-        				<button type="submit" class="btn btn-primary rounded-1">{{ translate('Rate This Freelancer') }}</button>
+        				<button type="submit" class="btn btn-primary rounded-1">{{ translate('Rate This Expert') }}</button>
         			</div>
                 </form>
             </div>

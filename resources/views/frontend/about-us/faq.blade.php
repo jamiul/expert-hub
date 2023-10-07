@@ -129,7 +129,7 @@
                     <div class="">
                         <h4 class="faq-qsn-title">How does Scholarship australia make money?</h4>
                         <p class="frequently-qsn-details text-justify ">
-                            We charge freelancers and agencies a 10% freelancer service fee on their earnings.
+                            We charge experts and agencies a 10% expert service fee on their earnings.
                         </p>
                         <hr>
                     </div>

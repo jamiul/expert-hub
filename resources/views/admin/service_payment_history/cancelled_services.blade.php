@@ -30,10 +30,10 @@
                             <th>{{ translate('Service') }}</th>
                             <th data-breakpoints="sm">{{ translate('Service Type') }}</th>
                             <th data-breakpoints="md">{{ translate('Client') }}</th>
-                            <th data-breakpoints="md">{{ translate('Freelancer') }}</th>
+                            <th data-breakpoints="md">{{ translate('Expert') }}</th>
                             <th>{{ translate('Amount') }}</th>
                             <th data-breakpoints="sm">{{ translate('My Earnings') }}</th>
-                            <th data-breakpoints="sm">{{ translate('Freelancer Earnings') }}</th>
+                            <th data-breakpoints="sm">{{ translate('Expert Earnings') }}</th>
                             <th data-breakpoints="sm">{{ translate('Refund Amount') }}</th>
                             <th>{{ translate('Payment Method') }}</th>
                             @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
@@ -50,10 +50,10 @@
                                 <td><a target="_blank" href="{{ route('service.show', $service_payment->servicePackage->service->slug) }}">{{ $service_payment->servicePackage->service->title }}</a></td>
                                 <td>{{ ucfirst($service_payment->servicePackage->service_type) }}</td>
                                 <td>{{ $service_payment->user->name }}</td>
-                                <td>{{ $service_payment->freelancer->name }}</td>
+                                <td>{{ $service_payment->expert->name }}</td>
                                 <td>{{ single_price($service_payment->amount) }}</td>
                                 <td>{{ single_price($service_payment->admin_profit) }}</td>
-                                <td>{{ single_price($service_payment->freelancer_profit) }}</td>
+                                <td>{{ single_price($service_payment->expert_profit) }}</td>
                                 <td>{{ $service_payment->refund_percentage }}%</td>
                                 <td>
                                     <span class="badge badge-inline badge-success">{{ translate('Paid via') }} {{ $service_payment->payment_method }}</span>

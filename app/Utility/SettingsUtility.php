@@ -14,7 +14,7 @@ class SettingsUtility
 {
     public static function get_settings_value($type)
     {
-        $value = "";
+        $value = '';
         $settings = SystemConfiguration::where('type', $type)->first();
 
         if (is_null($settings)) {

@@ -48,7 +48,7 @@
                                 <th>{{translate('Project Category')}}</th>
                                 <th>{{translate('Type')}}</th>
                                 <th>{{translate('Client')}}</th>
-                                <th>{{translate('Freelancer')}}</th>
+                                <th>{{translate('Expert')}}</th>
                                 <th>{{translate('Price')}}</th>
                                 <th>{{translate('Hired at')}}</th>
                             </tr>

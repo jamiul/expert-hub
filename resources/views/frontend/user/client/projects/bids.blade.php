@@ -21,17 +21,17 @@
                                 <div class="flex-grow-1">
                                     <div class="d-flex">
                                         <a href="" target="_blank" class="avatar flex-shrink-0 mr-4">
-                                            @if($bid_user->freelancer->photo != null)
-                                                <img src="{{ custom_asset($bid_user->freelancer->photo) }}">
+                                            @if($bid_user->expert->photo != null)
+                                                <img src="{{ custom_asset($bid_user->expert->photo) }}">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                             <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                                         </a>
                                         <div class="flex-grow-1">
-                                            <h5 class="fw-600 mb-1"><a href="" target="_blank" class="text-inherit">{{ $bid_user->freelancer->name }}</a></h5>
-                                            @if($bid_user->freelancer->profile->specialist != null )
-                                            <p class="opacity-50 mb-2">{{ $bid_user->freelancer->profile->specialistAt->name }}</p>
+                                            <h5 class="fw-600 mb-1"><a href="" target="_blank" class="text-inherit">{{ $bid_user->expert->name }}</a></h5>
+                                            @if($bid_user->expert->profile->specialist != null )
+                                            <p class="opacity-50 mb-2">{{ $bid_user->expert->profile->specialistAt->name }}</p>
                                             @endif
                                             <div class="d-flex text-secondary fs-12 mb-3">
                                                 <div class="mr-2">
@@ -47,8 +47,8 @@
                                                 </div>
                                                 <div>
                                                     <i class="las la-map-marker opacity-50"></i>
-                                                        @if ($bid_user->freelancer->address != null && $bid_user->freelancer->address->city != null && $bid_user->freelancer->address->country != null)
-                                                            <span>{{ $bid_user->freelancer->address->city->name }}, {{ $bid_user->freelancer->address->country->name }}</span>
+                                                        @if ($bid_user->expert->address != null && $bid_user->expert->address->city != null && $bid_user->expert->address->country != null)
+                                                            <span>{{ $bid_user->expert->address->city->name }}, {{ $bid_user->expert->address->country->name }}</span>
                                                         @endif
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@
                                             <form class="mt-2" action="{{ route('call_for_interview') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" id="project_id" name="project_id" value="{{ $project->id }}">
-                                                <input type="hidden" id="user_name" name="user_name" value="{{ $bid_user->freelancer->user_name }}">
+                                                <input type="hidden" id="user_name" name="user_name" value="{{ $bid_user->expert->user_name }}">
                                                 <button type="submit" class="btn btn-primary btn-sm btn-block rounded-1">{{ translate('Call for Interview') }}</button>
                                             </form>
                                         @elseif($project->project_user != null && $project->project_user->user_id == $bid_user->bid_by_user_id)

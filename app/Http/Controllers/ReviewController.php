@@ -20,7 +20,7 @@ class ReviewController extends Controller
     public function freelancerReviewIndex()
     {
         $reviews = Review::where('reviewed_user_role_id', 2)->orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.reviews.freelancer', compact('reviews'));
+        return view('admin.reviews.expert', compact('reviews'));
     }
 
     public function clientReviewIndex()

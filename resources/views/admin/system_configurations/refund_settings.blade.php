@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="alert alert-info">
-                                {{ translate("On project cancelation, this amount will be refunded to the client and deducted from the freelancer balance.") }}
+                                {{ translate("On project cancelation, this amount will be refunded to the client and deducted from the expert balance.") }}
                             </div>
                         </div>
                         <div class="form-group">
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="alert alert-info">
-                                {{ translate("On service cancelation, this amount will be refunded to the client and deducted from the freelancer balance.") }}
+                                {{ translate("On service cancelation, this amount will be refunded to the client and deducted from the expert balance.") }}
                             </div>
                         </div>
                         <div class="form-group mb-0 text-right">

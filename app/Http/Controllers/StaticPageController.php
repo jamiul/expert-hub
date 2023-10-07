@@ -6,36 +6,36 @@ class StaticPageController extends Controller
 {
     public function waysToEarn()
     {
-        return view('frontend.find-job.waysToEarn');
+        return view('frontend.ob.waysToEarn');
     }
 
     public function promote()
     {
-        return view('frontend.find-job.promote');
+        return view('frontend.job.promote');
     }
 
     public function sendProposal()
     {
-        return view('frontend.find-job.sendProposal');
+        return view('frontend.job.send-proposal');
     }
 
     public function badge()
     {
-        return view('frontend.find-job.badge');
+        return view('frontend.job.badge');
     }
 
     public function proposal()
     {
-        return view('frontend.find-job.proposal');
+        return view('frontend.job.proposal');
     }
 
     public function skills()
     {
-        return view('frontend.find-job.skills');
+        return view('frontend.static-page.skills');
     }
 
     public function successStories()
     {
-        return view('frontend.success-stories');
+        return view('frontend.static-page.success-stories');
     }
 }

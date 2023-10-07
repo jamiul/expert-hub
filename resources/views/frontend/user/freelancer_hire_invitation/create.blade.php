@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="h-250px">
-    @if ($freelancer->cover_photo != null)
-        <img src="{{ custom_asset($freelancer->cover_photo) }}" alt="{{ $freelancer->name }}"class="img-fit h-250px">
+    @if ($expert->cover_photo != null)
+        <img src="{{ custom_asset($expert->cover_photo) }}" alt="{{ $expert->name }}"class="img-fit h-250px">
     @else
-        <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $freelancer->name }}"class="img-fit h-250px">
+        <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $expert->name }}"class="img-fit h-250px">
     @endif
 </div>
 <div class="mt-n5">
@@ -15,12 +15,12 @@
                 <div class="media align-items-center d-block d-md-flex">
                     <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
                         <span class="avatar avatar-xxl">
-                            @if($freelancer->photo != null)
-                                <img src="{{ custom_asset($freelancer->photo) }}">
+                            @if($expert->photo != null)
+                                <img src="{{ custom_asset($expert->photo) }}">
                             @else
                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                             @endif
-                            @if(Cache::has('user-is-online-' . $freelancer->id))
+                            @if(Cache::has('user-is-online-' . $expert->id))
                                 <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
                             @else
                                 <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
@@ -29,25 +29,25 @@
                     </div>
                     <div class="media-body d-lg-flex justify-content-between align-items-center">
                         <div class="mr-3 mb-4 mb-lg-0 text-center text-md-left">
-                            <h1 class="h5 mb-1 fw-700">{{ $freelancer->name }}</h1>
-                            <p class="opacity-60">{{ $freelancer->profile->specialist }}</p>
+                            <h1 class="h5 mb-1 fw-700">{{ $expert->name }}</h1>
+                            <p class="opacity-60">{{ $expert->profile->specialist }}</p>
 
                             <div class="d-flex justify-content-center justify-content-md-between text-secondary fs-12 mb-3">
                                 <div class="mr-2">
                                     <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                        {{ formatRating(getAverageRating($freelancer->id)) }}
+                                        {{ formatRating(getAverageRating($expert->id)) }}
                                     </span>
                                     <span class="rating rating-sm">
-                                        {{ renderStarRating(getAverageRating($freelancer->id)) }}
+                                        {{ renderStarRating(getAverageRating($expert->id)) }}
                                     </span>
                                     <span>
-                                        ({{ getNumberOfReview($freelancer->id) }} {{ translate('Reviews') }})
+                                        ({{ getNumberOfReview($expert->id) }} {{ translate('Reviews') }})
                                     </span>
                                 </div>
                                 <div>
                                     <i class="las la-map-marker opacity-50"></i>
-                                      @if($freelancer->address != null && $freelancer->address->city != null && $freelancer->address->country != null)
-                                          <span>{{ $freelancer->address->city->name }}, {{ $freelancer->address->country->name }}</span>
+                                      @if($expert->address != null && $expert->address->city != null && $expert->address->country != null)
+                                          <span>{{ $expert->address->city->name }}, {{ $expert->address->country->name }}</span>
                                       @endif
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
 
                         <div class="text-lg-right d-flex justify-content-between align-items-end d-lg-block">
                             <div class="mb-lg-4">
-                                <h4 class="mb-0">{{ single_price($freelancer->profile->hourly_rate) }}</h4>
+                                <h4 class="mb-0">{{ single_price($expert->profile->hourly_rate) }}</h4>
                                 <div class="small text-secondary">
                                     <span>{{ translate('per Hour') }}</span>
                                 </div>
@@ -78,9 +78,9 @@
                         <h2 class="text-dark h5 mb-0">{{ translate('Send invitation for a private project') }}</h2>
                     </div>
                     <div class="card-body">
-                        <form class="form-horizontal" action="{{ route('invition_for_hire_freelancer_sent') }}" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="{{ route('invition_for_hire_expert_sent') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="freelancer_id" value="{{ $freelancer->id }}">
+                            <input type="hidden" name="expert_id" value="{{ $expert->id }}">
                             <div class="form-group">
                                 <label class="form-label">{{ translate('Project title') }}<span class="text-danger">*</span>
                                 </label>

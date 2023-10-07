@@ -7,8 +7,8 @@
 
 <div>
     <div class="form-group mb-3">
-        <label>{{ translate('Freelancer Name') }}</label>
-        <input type="text" disabled value="{{ $requested_cancel_service->freelancer->name }}" class="form-control">
+        <label>{{ translate('Expert Name') }}</label>
+        <input type="text" disabled value="{{ $requested_cancel_service->expert->name }}" class="form-control">
     </div>
 </div>
 <div>
@@ -20,8 +20,8 @@
 
 <div>
     <div class="form-group mb-3">
-        <label>{{ translate('Freelancer Profit') }}</label>
-        <input type="text" disabled value="{{ single_price($requested_cancel_service->freelancer_profit) }}" class="form-control">
+        <label>{{ translate('Expert Profit') }}</label>
+        <input type="text" disabled value="{{ single_price($requested_cancel_service->expert_profit) }}" class="form-control">
     </div>
 </div>
 

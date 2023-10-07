@@ -30,7 +30,7 @@
                     @csrf
                     <input type="hidden" name="id" value="{{ $withdraw_request->id }}">
                     <div class="form-group mb-3">
-                        <label for="total_amount">{{translate('Freelancer Balance')}}</label>
+                        <label for="total_amount">{{translate('Expert Balance')}}</label>
                         <input type="number" id="total_amount" name="total_amount" min="10" step="0.01" value="{{ $user_profile->balance }}" required class="form-control" disabled>
                     </div>
                     <div class="form-group mb-3">

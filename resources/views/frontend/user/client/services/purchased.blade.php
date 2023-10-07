@@ -28,7 +28,7 @@
                                     <tr>
                                         <th data-breakpoints="">#</th>
                                         <th data-breakpoints="">{{ translate('Service Title') }}</th>
-                                        <th data-breakpoints="md">{{ translate('Freelancer') }}</th>
+                                        <th data-breakpoints="md">{{ translate('Expert') }}</th>
                                         <th data-breakpoints="">{{ translate('Service Type') }}</th>
                                         <th data-breakpoints="md">{{ translate('Bought At') }}</th>
                                         @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
@@ -53,7 +53,7 @@
                                                 @endif
                                             </a>
                                         </td>
-                                        <td><a target="_blank" href="{{ route('expert.details', $purchasedService->freelancer->user_name) }}">{{ $purchasedService->freelancer->name }}</a></td>
+                                        <td><a target="_blank" href="{{ route('expert.details', $purchasedService->expert->user_name) }}">{{ $purchasedService->expert->name }}</a></td>
                                         <td>{{ ucfirst($purchasedService->servicePackage->service_type) }}</td>
                                         <td>{{ single_price($purchasedService->amount) }}</td>
                                         @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)

@@ -44,9 +44,9 @@
                                             </div>
                                             <select class="form-control aiz-selectpicker  rounded-left-0"
                                                 name="type">
-                                                <option value="freelancer"
-                                                    @isset($type) @if ($type == 'freelancer') selected @endif @endisset>
-                                                    {{ translate('Freelancers') }}
+                                                <option value="expert"
+                                                    @isset($type) @if ($type == 'expert') selected @endif @endisset>
+                                                    {{ translate('Experts') }}
                                                 </option>
                                                 <option value="project"
                                                     @isset($type) @if ($type == 'project') selected @endif @endisset>
@@ -96,7 +96,7 @@
                                             <a class="nav-link fw-700"
                                                 href="{{ route('admin.dashboard') }}">{{ translate('My Panel') }}</a>
                                         </li>
-                                    @elseif (isClient() || isFreelancer())
+                                    @elseif (isClient() || isExpert())
                                         <li class="dropdown d-none d-lg-block">
                                             <a class="dropdown-toggle no-arrow position-relative p-2"
                                                 data-toggle="dropdown" href="javascript:void(0);" role="button"
@@ -311,7 +311,7 @@
                                                 </span>
                                                 <span class="ml-2 text-left d-none d-xl-inline-block">
                                                     <span class="h6 d-block mb-0">{{ Auth::user()->name }}</span>
-                                                    @if (Auth::check() && isFreelancer())
+                                                    @if (Auth::check() && isExpert())
                                                         <span
                                                             class="small fw-500 text-muted">{{ single_price(Auth::user()->profile->balance) }}</span>
                                                     @endif
@@ -374,7 +374,7 @@
                                 <li class="nav-item ml-lg-2">
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
-                                        href="{{ url('/search?keyword=&type=freelancer') }}">{{ __('Find Experts') }}</a>
+                                        href="{{ url('/search?keyword=&type=expert') }}">{{ __('Find Experts') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white"

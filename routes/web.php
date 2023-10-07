@@ -31,8 +31,8 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SearchScholarshipController;
-use App\Http\Controllers\SeminarConsultantController;
-use App\Http\Controllers\SeminarDetailsController;
+use App\Http\Controllers\TrainingConsultantController;
+use App\Http\Controllers\TrainingDetailsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\StripePaymentController;
@@ -280,8 +280,8 @@ Route::group(['middleware' => ['auth', 'verified', 'expert', 'packagePurchased']
     Route::get('services/purchased', [ServiceController::class, 'soldServices'])->name('service.sold');
 });
 
-// seminar consultant resource route
-Route::resource('seminar-consultant', SeminarConsultantController::class);
+// training consultant resource route
+Route::resource('training-consultant', TrainingConsultantController::class);
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/search?category_id[]={id}&type=project', [SearchController::class, 'index'])->name('projects.category');
@@ -302,8 +302,8 @@ Route::get('/client-lists', [HomeController::class, 'clientList'])->name('client
 Route::get('/expert-lists', [HomeController::class, 'expertList'])->name('expert.lists');
 Route::get('/expert/{user_name}', [HomeController::class, 'expertDetails'])->name('expert.details');
 
-//seminars
-Route::get('seminar/{id}', [SeminarDetailsController::class, 'seminarDetails'])->name('seminar.details');
+//trainings
+Route::get('training/{id}', [TrainingDetailsController::class, 'trainingDetails'])->name('training.details');
 
 //Payments -STRIPE
 Route::get('/stripe', [StripePaymentController::class, 'index']);

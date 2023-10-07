@@ -9,8 +9,8 @@ class Calender extends Model
 {
     use SoftDeletes;
 
-    public function posts()
+    public function trainings()
     {
-        return $this->hasMany(Seminar::class);
+        return $this->hasMany(Training::class);
     }
 }

@@ -230,12 +230,12 @@ class ScholarshipController extends Controller
     {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
-        return view("frontend.find-scholarship.listing", compact('scholarships'));
+        return view("frontend.scholarship.listing", compact('scholarships'));
     }
 
     public function scholarship_details($slug)
     {
         $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.find-scholarship.details", compact('scholarship'));
+        return view("frontend.scholarship.details", compact('scholarship'));
     }
 }

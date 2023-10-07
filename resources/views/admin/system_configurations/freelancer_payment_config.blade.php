@@ -9,7 +9,7 @@
                     <h5 class="mb-0 h6">{{translate("Minimum Amount For Withdraw Request")}}</h5>
                 </div>
                 <div class="card-body">
-                    <form class="form-horizontal" action="{{ route('freelancer_payment_config_update') }}" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{ route('expert_payment_config_update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="types[]" value="min_withdraw_amount">
                         <div class="form-group">
@@ -18,7 +18,7 @@
 							<small class="form-text text-muted"></small>
 						</div>
                         <div class="alert alert-info">
-                            {{ translate("Freelancer need to have minimum this amount of balance in his account to make a withdrawal request.") }}
+                            {{ translate("Expert need to have minimum this amount of balance in his account to make a withdrawal request.") }}
                         </div>
                         <div class="form-group mb-0 text-right">
                             <button type="submit" class="btn btn-primary">{{translate('Update')}}</button>

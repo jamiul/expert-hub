@@ -9,8 +9,8 @@ use App\Models\Language;
 use App\Models\PageOptimization;
 use App\Models\ParentSkill;
 use App\Models\ProjectCategory;
-use App\Models\SeminarMode;
-use App\Models\SeminarSoftware;
+use App\Models\TrainingMode;
+use App\Models\TrainingSoftware;
 use App\Models\SitePage;
 use App\Models\Skill;
 use App\Models\SystemConfiguration;
@@ -205,7 +205,7 @@ function translate($key, $lang = null)
     }
 }
 
-function getCompletedProjectsByFreelancer($id)
+function getCompletedProjectsByExpert($id)
 {
     return DB::table('projects')
         ->join('project_users', 'projects.id', '=', 'project_users.project_id')
@@ -571,7 +571,7 @@ function convertSlug($name)
 // get consultant from users table
 function getConsultants()
 {
-    return User::where('user_type', 'freelancer')->get()->toArray();
+    return User::where('user_type', 'expert')->get()->toArray();
 }
 
 // get user roles
@@ -598,21 +598,17 @@ function isRoleAdmin()
     return false;
 }
 
-// get seminar mode name
-function getSeminarModeName($id)
+// get training mode name
+function getTrainingModeName($id)
 {
-    $seminar_mode = SeminarMode::where('id', $id)->first();
-    return $seminar_mode['name'];
+    $training_mode = TrainingMode::where('id', $id)->first();
+
+    return $training_mode['name'];
 }
 
-// function getSoftwarePackageName($id) {
-//     $software_package = SeminarSoftware::where('id', $id)->first();
-//     return  $software_package['name'];
-
-// }
 function getSoftwarePackageName($id)
 {
-    $software_package = SeminarSoftware::where('id', $id)->first();
+    $software_package = TrainingSoftware::where('id', $id)->first();
     // return  $software_package['name'];
     if ($software_package) {
         return $software_package->name;
@@ -627,7 +623,7 @@ function getLanguageName($id)
     return $language['name'];
 }
 
-function getSeminarCategory($id)
+function getTrainingCategory($id)
 {
     $category = ProjectCategory::where('id', $id)->first();
     return $category->name ?? null;
@@ -635,7 +631,7 @@ function getSeminarCategory($id)
 
 function getInstructorName($id)
 {
-    $instructor = User::where('user_type', 'freelancer')->where('id', $id)->first();
+    $instructor = User::where('user_type', 'expert')->where('id', $id)->first();
 
     return $instructor ? $instructor->name : null;
 }
@@ -645,14 +641,14 @@ function getProjectCategory()
     return ProjectCategory::all()->sortByDesc("id")->toArray();
 }
 
-function getSeminarModes()
+function getTrainingModes()
 {
-    return SeminarMode::all()->toArray();
+    return TrainingMode::all()->toArray();
 }
 
-function getSeminarSoftwares()
+function getTrainingSoftwares()
 {
-    return SeminarSoftware::all()->toArray();
+    return TrainingSoftware::all()->toArray();
 }
 
 function getLanguages()
@@ -662,7 +658,7 @@ function getLanguages()
 
 function getCourseInstructors()
 {
-    return User::where('user_type', 'freelancer')->get()->toArray();
+    return User::where('user_type', 'expert')->get()->toArray();
 }
 
 function getConsultantCategory(): array
@@ -701,8 +697,8 @@ function getCountry(): \Illuminate\Support\Collection
     return Country::all();
 }
 
-if (!function_exists('formatSeminarDate')) {
-    function formatSeminarDate($date)
+if (!function_exists('formatTrainingDate')) {
+    function formatTrainingDate($date)
     {
         $startDate = Carbon::parse($date)->format('D M j');
         $endDate = Carbon::parse($date)->addDays(2)->format('D M j, Y');
@@ -714,13 +710,13 @@ if (!function_exists('formatSeminarDate')) {
     }
 }
 
-function getFreelancerPhoto($freelancer)
+function getExpertPhoto($expert)
 {
     $img_url = asset('assets/frontend/default/img/avatar-place.png'); // Default image URL
 
-    if ($freelancer && $freelancer->user && $freelancer->user->address && $freelancer->user->address->country) {
+    if ($expert && $expert->user && $expert->user->address && $expert->user->address->country) {
         // Check if each level exists before accessing 'photo'
-        $country = $freelancer->user->address->country;
+        $country = $expert->user->address->country;
 
         if ($country->photo != null) {
             $img_url = $country->photo;

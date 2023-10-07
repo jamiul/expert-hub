@@ -5,7 +5,7 @@
             src=" {{ asset('/assets/home/find-scholarship/experience.png') }}">
         <h4 class="fw-700 fs-23 text-black  mb-3">{{ translate('Work Experience') }}</h4>
     </div>
-    @foreach ($freelancer->workExperiences as $user_work_exp)
+    @foreach ($expert->workExperiences as $user_work_exp)
         <div class="mb-4 border-bottom pb-3">
             <div class="">
                 <h6 class="fw-600 fs-19">{{ $user_work_exp->designation }} at {{ $user_work_exp->company_name }}</h6>

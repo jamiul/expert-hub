@@ -123,7 +123,7 @@
                 <form action="{{ route('reviews.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h4 class="h6 mb-0">{{translate('Rate This Freelancer')}}</h4>
+                        <h4 class="h6 mb-0">{{translate('Rate This Expert')}}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">

@@ -39,8 +39,8 @@
     <div class="form-group mb-4">
       <div class="aiz-radio-inline">
         <label class="aiz-radio">
-          <input type="radio" name="user_types[]" value="freelancer" @if($type=='freelancer' ) checked @endif>
-          {{ translate('As A Freelancer') }}
+          <input type="radio" name="user_types[]" value="expert" @if($type=='expert' ) checked @endif>
+          {{ translate('As an Expert') }}
           <span class="aiz-rounded-check"></span>
         </label>
         <label class="aiz-radio">

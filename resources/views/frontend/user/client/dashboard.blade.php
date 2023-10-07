@@ -64,9 +64,9 @@
 								<div class="mb-1">
 									<small class="fs-12 text-secondary">{{ translate('Find & Build your project with') }}</small>
 								</div>
-								<a href="{{ route('search') }}?type=freelancer" class="text-primary fs-14 fw-700 d-flex align-items-center mb-1">
+								<a href="{{ route('search') }}?type=expert" class="text-primary fs-14 fw-700 d-flex align-items-center mb-1">
 									<i class="la la-search fs-20 fw-900 mr-2" style="transform-origin: 0 50%; transform: rotate(-90deg) translate(-50%, 50%);"></i>
-									<span>{{ translate('Freelancers') }}</span>
+									<span>{{ translate('Experts') }}</span>
 								</a>
             				</div>
             			</div>
@@ -191,12 +191,12 @@
 	            	<div class="col-md-6">
 	            		<div class="card rounded-2 border-gray-light">
 	            			<div class="card-header border-0">
-	            				<h6 class="mb-0 fs-16 fw-700">{{ translate('Suggested Freelancers') }}</h6>
+	            				<h6 class="mb-0 fs-16 fw-700">{{ translate('Suggested Experts') }}</h6>
 	            			</div>
 	            			<div class="card-body px-0 pt-0">
 	            				<div class="aiz-auto-scroll c-scrollbar-light px-4" style="height: 340px; overflow-y: scroll;">
 		            				<ul class="list-group list-group-flush">
-		            					@foreach (\App\Models\User::where('user_type', 'freelancer')->inRandomOrder()->limit(10)->get(); as $key => $user)
+		            					@foreach (\App\Models\User::where('user_type', 'expert')->inRandomOrder()->limit(10)->get() as $key => $user)
 											<li class="list-group-item border-0 px-0">
 												<a href="{{ route('expert.details', $user->user_name) }}" class="text-inherit d-flex align-items-center">
 													<span class="avatar avatar-sm flex-shrink-0 bg-soft-primary mr-3">
@@ -290,7 +290,7 @@
                                                 <i class="las la-times text-white"></i>
                                             </span>
                                         @endif
-                                        <span>{{ translate('Freelancer Bookmark option') }}</span>
+                                        <span>{{ translate('Expert Bookmark option') }}</span>
                                     </li>
             					</ul>
             				</div>

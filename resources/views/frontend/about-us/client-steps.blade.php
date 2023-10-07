@@ -65,7 +65,7 @@
 
     <div class="row mt-2 mx-lg-4 mx-2 ">
         <div class="col-lg-2 col-sm-12 pr-0 ">
-            <a href="search?keyword=&type=freelancer"
+            <a href="search?keyword=&type=expert"
                 class="btn rounded border fs-20 px-4 frequently-qsn-title  text-white text-white mt-2"
                 style="background-color:#275846;">Find
                 EduExpert</a>

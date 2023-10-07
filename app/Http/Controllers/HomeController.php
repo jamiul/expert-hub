@@ -8,7 +8,7 @@ use App\Models\FreelancerAccount;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\Scholarship;
-use App\Models\Seminar;
+use App\Models\Training;
 use App\Models\Skill;
 use App\Models\Upload;
 use App\Models\User;
@@ -40,7 +40,7 @@ class HomeController extends Controller
     {
         $scholarships = Scholarship::all();
         $skills = Skill::with('childrens')->whereNull('parent_id')->get();
-        $seminars = Seminar::all();
+        $trainins = Training::all();
         $services = ProjectCategory::take(8)->get()->reverse();
         $consultant_categories = ConsultantCategory::take(8)->get();
         $subjectCounts = [];
@@ -54,7 +54,7 @@ class HomeController extends Controller
             $subjectCounts[$subject] += $scholarship->available_slots;
         }
 
-        return view('frontend.index', compact('subjectCounts', 'seminars', 'scholarships', 'services', 'consultant_categories', 'skills'));
+        return view('frontend.home.index', compact('subjectCounts', 'trainins', 'scholarships', 'services', 'consultant_categories', 'skills'));
     }
 
     //Admin login
@@ -63,6 +63,7 @@ class HomeController extends Controller
         if (Auth::check() && (auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")) {
             return redirect()->route('home');
         }
+
         return view('auth.login');
     }
 
@@ -72,7 +73,7 @@ class HomeController extends Controller
         if (Auth::check()) {
             return redirect()->route('home');
         }
-        return view('frontend.user_login');
+        return view('frontend.home.user_login');
     }
 
     public function adminDashboard()
@@ -83,8 +84,6 @@ class HomeController extends Controller
     //Redirect user-based dashboard
     public function dashboard()
     {
-        $user_profile = UserProfile::where('user_id', Auth::user()->id)->first();
-
         if (isFreelancer()) {
             return view('frontend.user.freelancer.dashboard');
         } elseif (isClient()) {
@@ -101,13 +100,16 @@ class HomeController extends Controller
         $jobPosted = Project::where('client_user_id', $project->client_user_id)->where('cancel_status', '=', 0)->count();
         $jobOpen = Project::where('client_user_id', $project->client_user_id)->where('closed', '=', 0)->where('cancel_status', '=', 0)->count();
         $similar_types = Project::where('type', $project->type)->where('id', '!=', $project->id)->where('closed', '!=', 1)->limit(3)->get();
+
         foreach ($project->skills as $skill_id) {
             $skill = Skill::find($skill_id);
         }
+
         foreach (explode(',', $project->attachments) as $attachment_id) {
             $attachment = Upload::find($attachment_id);
         }
-        return view('frontend.project-details.project-single', compact('project', 'jobPosted', 'jobOpen', 'similar_types', 'skill', 'attachment'));
+
+        return view('frontend.project.project-single', compact('project', 'jobPosted', 'jobOpen', 'similar_types', 'skill', 'attachment'));
     }
 
     //Show details info of specific project
@@ -128,14 +130,14 @@ class HomeController extends Controller
                 }
             )->first();
         }
-        return view('frontend.private_project_single', compact('project', 'chat_thread'));
+        return view('frontend.project.private_project_single', compact('project', 'chat_thread'));
     }
 
     public function clientDetails($username)
     {
         $client = User::where('user_name', $username)->first();
         $open_projects = Project::where('client_user_id', $client->id)->biddable()->open()->notcancel()->latest()->get();
-        return view('frontend.client-single', compact('client', 'open_projects'));
+        return view('frontend.home.client-single', compact('client', 'open_projects'));
     }
 
     //Show all client's list to user
@@ -143,7 +145,7 @@ class HomeController extends Controller
     {
         $clients = UserProfile::where('user_role_id', '3')->paginate(8);
         $total_clients = UserProfile::where('user_role_id', '3')->get();
-        return view('frontend.clients-listing', compact('clients', 'total_clients'));
+        return view('frontend.home.clients-listing', compact('clients', 'total_clients'));
     }
 
     //Show all freelancer's list to user

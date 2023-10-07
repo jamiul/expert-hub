@@ -12,13 +12,13 @@
           @csrf
           <div class="form-group">
             <label for="types">{{translate('Frontend Website Name')}}</label>
-            <input type="text" name="website_name" class="form-control" placeholder="{{ translate('FreelancerEdu') }}"
+            <input type="text" name="website_name" class="form-control" placeholder="{{ translate('EduExHub') }}"
               value="{{ get_setting('website_name') }}">
           </div>
           <div class="form-group">
             <label for="types">{{translate('Site Motto')}}</label>
             <input type="text" name="site_motto" class="form-control"
-              placeholder="{{ translate('Best Freelance Marketplace') }}" value="{{  get_setting('site_motto') }}">
+              placeholder="{{ translate('Best Expert Marketplace') }}" value="{{  get_setting('site_motto') }}">
           </div>
           <div class="form-group">
             <label class="form-label" for="signinSrEmail">{{ translate('Site Icon') }}</label>

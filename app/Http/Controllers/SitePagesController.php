@@ -109,10 +109,8 @@ class SitePagesController extends Controller
         // $input['updated_at'] = $user->id;
         $site_page->update($input);
 
-        // Delete related seminar_dates
-
-
         flash(translate('Site Page has been updated successfully'))->success();
+
         return redirect()->back();
     }
 

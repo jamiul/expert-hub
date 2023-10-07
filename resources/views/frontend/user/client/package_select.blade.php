@@ -43,12 +43,12 @@
                                     @if ($package->following_status == 0)
                                         <span class=" text-secondary">
                                             <i class="las la-times mr-2"></i>
-                                            {{ translate('Freelancer Following') }}
+                                            {{ translate('Expert Following') }}
                                         </span>
                                     @else
                                         <span class="">
                                             <i class="las la-check text-success mr-2"></i>
-                                            {{ translate('Freelancer Following') }}
+                                            {{ translate('Expert Following') }}
                                         </span>
                                     @endif
                                 </li>

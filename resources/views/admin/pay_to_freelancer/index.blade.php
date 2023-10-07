@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <form class="" id="sort_freelancer_payment_list" action="" method="GET">
+                <form class="" id="sort_expert_payment_list" action="" method="GET">
                     <div class="card-header row gutters-5">
                         <div class="col text-center text-md-left">
                             <h1 class="mb-0 h6">{{translate('Freelnacer Payments')}}</h1>
@@ -47,12 +47,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($pay_to_freelancers as $key => $pay_to_freelancer)
+                            @foreach($pay_to_experts as $key => $pay_to_expert)
                                 <tr>
-                                    <td>{{ ($key+1) + ($pay_to_freelancers->currentPage() - 1)*$pay_to_freelancers->perPage() }}</td>
-                                    @if ($pay_to_freelancer->admin != null)
+                                    <td>{{ ($key+1) + ($pay_to_experts->currentPage() - 1)*$pay_to_experts->perPage() }}</td>
+                                    @if ($pay_to_expert->admin != null)
                                         <td>
-                                            {{$pay_to_freelancer->admin->name}}
+                                            {{$pay_to_expert->admin->name}}
                                         </td>
                                     @else
                                         <td>
@@ -60,32 +60,32 @@
                                         </td>
                                     @endif
                                     <td>
-                                        @if ($pay_to_freelancer->user != null)
-                                            {{$pay_to_freelancer->user->name}}
+                                        @if ($pay_to_expert->user != null)
+                                            {{$pay_to_expert->user->name}}
                                         @else
                                             {{translate('Not Found')}}
                                         @endif
                                     </td>
                                     <td>
-                                        {{single_price($pay_to_freelancer->paid_amount)}}
+                                        {{single_price($pay_to_expert->paid_amount)}}
                                     </td>
                                     <td>
-                                        {{strtoupper($pay_to_freelancer->payment_method)}}
+                                        {{strtoupper($pay_to_expert->payment_method)}}
                                     </td>
                                     <td>
-                                        @if ($pay_to_freelancer->paid_status != 0)
+                                        @if ($pay_to_expert->paid_status != 0)
                                             <span class="badge badge-inline badge-primary">{{ translate('Paid') }}</span>
                                         @else
                                             <span class="badge badge-inline badge-danger">{{ translate('Non-Paid') }}</span>
                                         @endif
                                     </td>
                                     <td>
-                                        {{$pay_to_freelancer->created_at}}
+                                        {{$pay_to_expert->created_at}}
                                     </td>
                                     <td class="text-right">
-                                        @if ($pay_to_freelancer->reciept != null)
-                                            <a href="{{ custom_asset($pay_to_freelancer->reciept) }}" target="_blank" class="badge badge-inline badge-primary">{{ translate('Show Reciept') }}</a>
-                                        @elseif(!$pay_to_freelancer->paid_status)
+                                        @if ($pay_to_expert->reciept != null)
+                                            <a href="{{ custom_asset($pay_to_expert->reciept) }}" target="_blank" class="badge badge-inline badge-primary">{{ translate('Show Reciept') }}</a>
+                                        @elseif(!$pay_to_expert->paid_status)
                                             <span class="badge badge-inline badge-secondary">N/A</span>
                                         @else
                                             <span class="badge badge-inline badge-secondary">{{ translate('No Reciept') }}</span>
@@ -96,7 +96,7 @@
                         </tbody>
                     </table>
                     <div class="aiz-pagimation">
-                        {{ $pay_to_freelancers->appends(request()->input())->links() }}
+                        {{ $pay_to_experts->appends(request()->input())->links() }}
                     </div>
                 </div>
             </div>

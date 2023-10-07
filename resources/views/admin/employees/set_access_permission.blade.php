@@ -100,7 +100,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Freelancer list') }}</label>
+                                <label>{{ translate('Expert list') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="9" @if (in_array(9, $permissions)) checked @endif> {{ translate('View') }}
@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Freelancer package') }}</label>
+                                <label>{{ translate('Expert package') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="11" @if (in_array(11, $permissions)) checked @endif> {{ translate('View') }}
@@ -144,7 +144,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Freelancer skill') }}</label>
+                                <label>{{ translate('Expert skill') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="15" @if (in_array(15, $permissions)) checked @endif> {{ translate('View') }}
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Freelancer badge') }}</label>
+                                <label>{{ translate('Expert badge') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="19" @if (in_array(19, $permissions)) checked @endif> {{ translate('View') }}
@@ -272,7 +272,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Freelancer review') }}</label>
+                                <label>{{ translate('Expert review') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="35" @if (in_array(35, $permissions)) checked @endif> {{ translate('View') }}
@@ -422,7 +422,7 @@
                                         <span class="aiz-square-check"></span>
                                     </label>
                                     <label class="aiz-checkbox">
-                                        <input type="checkbox" name="permissions[]" value="54" @if (in_array(54, $permissions)) checked @endif> {{ translate('Freelancer Package History') }}
+                                        <input type="checkbox" name="permissions[]" value="54" @if (in_array(54, $permissions)) checked @endif> {{ translate('Expert Package History') }}
                                         <span class="aiz-square-check"></span>
                                     </label>
                                 </div>
@@ -447,7 +447,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Freelancer payment') }}</label>
+                                <label>{{ translate('Expert payment') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="57" @if (in_array(57, $permissions)) checked @endif> {{ translate('Payment History from Admin') }}
@@ -632,7 +632,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group mb-4">
-                                <label>{{ translate('Pay to Freelancer') }}</label>
+                                <label>{{ translate('Pay to Expert') }}</label>
                                 <div class="aiz-checkbox-inline">
                                     <label class="aiz-checkbox">
                                         <input type="checkbox" name="permissions[]" value="91" @if (in_array(91, $permissions)) checked @endif> {{ translate('Pay') }}

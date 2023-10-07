@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap" rel="stylesheet">
 @endpush
 @section('content')
-    <div class="position-relative freelancer-Profile-main-section border-bottom">
+    <div class="position-relative expert-Profile-main-section border-bottom">
         @include('frontend.expert.breadcrumb')
 
         <div class="container rounded-1 mt-5">

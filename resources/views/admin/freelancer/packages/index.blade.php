@@ -7,8 +7,8 @@
 			<h1 class="h3">{{translate('Freelnacer Packages')}}</h1>
 		</div>
 		<div class="col-md-6 text-md-right">
-            @can('create new freelancer package')
-			<a href="{{ route('freelancer_package.create','freelancer') }}" class="btn btn-primary">
+            @can('create new expert package')
+			<a href="{{ route('expert_package.create','expert') }}" class="btn btn-primary">
 				<span>{{translate('Create New Package')}}</span>
 			</a>
             @endcan
