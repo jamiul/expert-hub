@@ -2,7 +2,7 @@
 
 <div class="aiz-main-wrapper d-flex flex-column">
 
-    @include('frontend/default.inc.header')
+    @include('frontend.inc.header')
 
     <!-- ========== MAIN CONTENT ========== -->
 
@@ -12,7 +12,7 @@
 
     <!-- ========== END MAIN CONTENT ========== -->
 
-    @include('frontend/default.inc.footer')
+    @include('frontend.inc.footer')
 
 </div>
 

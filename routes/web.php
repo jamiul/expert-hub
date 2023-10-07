@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\BiddingController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookmarkedClientController;
-use App\Http\Controllers\BookmarkedFreelancerController;
+use App\Http\Controllers\BookmarkedExpertController;
 use App\Http\Controllers\BookmarkedProjectController;
 use App\Http\Controllers\BookmarkedScholarshipController;
 use App\Http\Controllers\BookmarkedServiceController;
@@ -210,7 +210,7 @@ Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']
 
     //project completed
     Route::get('/project-done/{id}', [ProjectController::class, 'projectDone'])->name('projects.complete');
-    Route::resource('bookmarked-freelancers', BookmarkedFreelancerController::class);
+    Route::resource('bookmarked-freelancers', BookmarkedExpertController::class);
     Route::get('/client/purchased-services', [ServiceController::class, 'clientPurchasedServices'])->name('client.purchased.services');
 
     Route::get('/service/{id}/cancel', [ServiceController::class, 'cancelService'])->name('services.cancel');

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use DB;
 use Illuminate\Database\Seeder;
 
-class BookmarkedFreelancersTableSeeder extends Seeder
+class BookmarkedExpertsTableSeeder extends Seeder
 {
 
     /**
@@ -15,14 +15,14 @@ class BookmarkedFreelancersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('bookmarked_freelancers')->delete();
+        DB::table('bookmarked_experts')->delete();
 
-        DB::table('bookmarked_freelancers')->insert(array(
+        DB::table('bookmarked_experts')->insert(array(
             0 =>
                 array(
                     'id' => 1,
                     'user_id' => 5,
-                    'freelancer_user_id' => 6,
+                    'expert_user_id' => 6,
                     'created_at' => '2023-04-15 06:33:24',
                     'updated_at' => '2023-04-15 06:33:24',
                     'deleted_at' => NULL,
@@ -31,7 +31,7 @@ class BookmarkedFreelancersTableSeeder extends Seeder
                 array(
                     'id' => 2,
                     'user_id' => 5,
-                    'freelancer_user_id' => 12,
+                    'expert_user_id' => 12,
                     'created_at' => '2023-04-15 06:33:34',
                     'updated_at' => '2023-04-15 06:33:34',
                     'deleted_at' => NULL,
@@ -40,7 +40,7 @@ class BookmarkedFreelancersTableSeeder extends Seeder
                 array(
                     'id' => 3,
                     'user_id' => 5,
-                    'freelancer_user_id' => 14,
+                    'expert_user_id' => 14,
                     'created_at' => '2023-04-15 06:33:43',
                     'updated_at' => '2023-04-15 06:33:43',
                     'deleted_at' => NULL,

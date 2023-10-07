@@ -149,7 +149,7 @@ class SystemConfigurationsTableSeeder extends Seeder
             16 =>
                 array(
                     'id' => 17,
-                    'type' => 'freelancer_policy',
+                    'type' => 'expert_policy',
                     'value' => 'Copyright laws can vary from one country to the next; thus, it is vitally important that you acknowledge the diï¬€erences in the laws no matter where your staï¬€ members are located.SPELL OUT COMPLIANCE PROCEDURESâ€¦â€¦including whom employees should contact within your organization with copyright questions. Explain how employees can determine if they need copyright permission and how to obtain permissions from rightsholders (publishers and authors).INFORM EMPLOYEES ABOUT THE USE OF YOUR ORGANIZATIONâ€™S OWN COPYRIGHTED MATERIALSFor example: How should employees handle the issue of works for hire with contractors and other non-employees who produce work for your organization? When is it okay to distribute your organizationâ€™s own materials?ADVISE EMPLOYEES ON THE PROPER HANDLING OF INFRINGEMENTEncourage employees to do the right thing, and to follow speciï¬c procedures when they witness instances of copyright infringement within your organization. Also, identify procedures for how employees should handle infringement of your companyâ€™s own works that they discover online or in the marketplace.&nbsp;Once you have developed your policy, be sure to formally introduce these guidelines to employees and issue periodic reminders. You may also consider including copyright compliance in your new employee orientation as well as in trainingfor existing staff.',
                     'created_at' => '2019-12-29 12:24:20',
                     'updated_at' => '2019-12-29 06:59:18',
@@ -462,7 +462,7 @@ class SystemConfigurationsTableSeeder extends Seeder
                 array(
                     'id' => 56,
                     'type' => 'meta_title',
-                    'value' => 'FreelancerEdu',
+                    'value' => 'EduExHub',
                     'created_at' => '2020-05-04 19:04:01',
                     'updated_at' => '2023-05-24 04:59:37',
                 ),
@@ -470,7 +470,7 @@ class SystemConfigurationsTableSeeder extends Seeder
                 array(
                     'id' => 57,
                     'type' => 'meta_description',
-                    'value' => 'FreelancerEdu is a educational consultancy platform. Our consultants will assist you to submit a competitive scholarship application that stands out.',
+                    'value' => 'EduExHub is a educational consultancy platform. Our consultants will assist you to submit a competitive scholarship application that stands out.',
                     'created_at' => '2020-05-04 19:04:01',
                     'updated_at' => '2023-05-24 04:59:37',
                 ),
@@ -478,7 +478,7 @@ class SystemConfigurationsTableSeeder extends Seeder
                 array(
                     'id' => 58,
                     'type' => 'meta_keywords',
-                    'value' => 'FreelancerEdu, Australia',
+                    'value' => 'EduExHub, Australia',
                     'created_at' => '2020-05-04 19:04:01',
                     'updated_at' => '2023-05-26 14:23:25',
                 ),
@@ -941,7 +941,7 @@ class SystemConfigurationsTableSeeder extends Seeder
             115 =>
                 array(
                     'id' => 123,
-                    'type' => 'cta_section_title_freelancer',
+                    'type' => 'cta_section_title_expert',
                     'value' => 'Ready to Get Started',
                     'created_at' => '2022-11-21 18:48:22',
                     'updated_at' => '2022-11-21 18:48:22',
@@ -949,7 +949,7 @@ class SystemConfigurationsTableSeeder extends Seeder
             116 =>
                 array(
                     'id' => 124,
-                    'type' => 'cta_section_subtitle_freelancer',
+                    'type' => 'cta_section_subtitle_expert',
                     'value' => 'You can bid a project, select from premade projects or contact your client through Scholarships Australia platform.<br><br>It iss easy & your payment is secured.',
                     'created_at' => '2022-11-21 18:48:22',
                     'updated_at' => '2023-04-05 08:20:03',

@@ -21,7 +21,7 @@ class BadgesTableSeeder extends Seeder
             0 =>
                 array(
                     'id' => 1,
-                    'role_id' => 'freelancer',
+                    'role_id' => 'expert',
                     'type' => 'earning_badge',
                     'name' => 'Level One',
                     'value' => 5000.0,
@@ -33,7 +33,7 @@ class BadgesTableSeeder extends Seeder
             1 =>
                 array(
                     'id' => 2,
-                    'role_id' => 'freelancer',
+                    'role_id' => 'expert',
                     'type' => 'earning_badge',
                     'name' => 'New Seller',
                     'value' => 0.0,
@@ -45,7 +45,7 @@ class BadgesTableSeeder extends Seeder
             2 =>
                 array(
                     'id' => 3,
-                    'role_id' => 'freelancer',
+                    'role_id' => 'expert',
                     'type' => 'earning_badge',
                     'name' => 'Level Two',
                     'value' => 10000.0,
@@ -57,7 +57,7 @@ class BadgesTableSeeder extends Seeder
             3 =>
                 array(
                     'id' => 4,
-                    'role_id' => 'freelancer',
+                    'role_id' => 'expert',
                     'type' => 'earning_badge',
                     'name' => 'Top Rated Seller',
                     'value' => 15000.0,

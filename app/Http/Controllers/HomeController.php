@@ -149,9 +149,10 @@ class HomeController extends Controller
     //Show all freelancer's list to user
     public function freelancerList()
     {
-        $freelancers = UserProfile::where('user_role_id', '2')->paginate(8);
-        $total_freelancers = UserProfile::where('user_role_id', '2')->get();
-        return view('frontend.freelancers-listing', compact('freelancers', 'total_freelancers'));
+        $experts = UserProfile::where('user_role_id', '2')->paginate(8);
+        $totalExperts = UserProfile::where('user_role_id', '2')->get();
+
+        return view('frontend.expert.expert-listing', compact('experts', 'totalExperts'));
     }
 
     /**
@@ -172,7 +173,7 @@ class HomeController extends Controller
             abort(404);
         }
 
-        return view('frontend.freelancer.freelancer-single', compact('freelancer'));
+        return view('frontend.expert.freelancer-single', compact('freelancer'));
     }
 
     // Freelancer meeting arrange
@@ -181,7 +182,7 @@ class HomeController extends Controller
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
         $user_account = FreelancerAccount::where('user_id', $user->id)->first();
-        return view('frontend.freelancer-details', compact('user', 'user_profile', 'user_account'));
+        return view('frontend.expert.expert-details', compact('user', 'user_profile', 'user_account'));
     }
 
     //check if username exists

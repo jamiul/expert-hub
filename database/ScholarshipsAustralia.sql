@@ -116,11 +116,11 @@ CREATE TABLE `bookmarked_clients` (
 INSERT INTO `bookmarked_clients` (`id`, `user_id`, `client_user_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1,	8,	9,	'2023-04-06 12:00:00',	'2023-04-06 12:00:00',	NULL);
 
-DROP TABLE IF EXISTS `bookmarked_freelancers`;
-CREATE TABLE `bookmarked_freelancers` (
+DROP TABLE IF EXISTS `bookmarked_experts`;
+CREATE TABLE `bookmarked_experts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `freelancer_user_id` int(11) NOT NULL,
+  `expert_user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,

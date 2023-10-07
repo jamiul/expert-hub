@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use DB;
 use Illuminate\Database\Seeder;
 
-class FreelancerAccountsTableSeeder extends Seeder
+class ExpertAccountsTableSeeder extends Seeder
 {
 
     /**
@@ -15,8 +15,6 @@ class FreelancerAccountsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('freelancer_accounts')->delete();
-
-
+        DB::table('expert_accounts')->delete();
     }
 }

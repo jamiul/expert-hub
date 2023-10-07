@@ -34,7 +34,7 @@ class NotificationsTableSeeder extends Seeder
             1 =>
                 array(
                     'id' => 2,
-                    'notification_type' => 'freelancer_withdrawal_request',
+                    'notification_type' => 'expert_withdrawal_request',
                     'sender_id' => 4,
                     'receiver_id' => 0,
                     'message' => 'A new withdrawal has been requested by',
@@ -86,7 +86,7 @@ class NotificationsTableSeeder extends Seeder
             5 =>
                 array(
                     'id' => 6,
-                    'notification_type' => 'freelancer_bid_on_project',
+                    'notification_type' => 'expert_bid_on_project',
                     'sender_id' => 4,
                     'receiver_id' => 5,
                     'message' => 'A new bid has been submitted by',
@@ -112,7 +112,7 @@ class NotificationsTableSeeder extends Seeder
             7 =>
                 array(
                     'id' => 8,
-                    'notification_type' => 'freelancer_bid_on_project',
+                    'notification_type' => 'expert_bid_on_project',
                     'sender_id' => 8,
                     'receiver_id' => 9,
                     'message' => 'A new bid has been submitted by',

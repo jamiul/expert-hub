@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('amount', 10, 0);
             $table->string('payment_type', 20)->default('service_payment');
             $table->decimal('admin_profit');
-            $table->decimal('freelancer_profit');
+            $table->decimal('expert_profit');
             $table->string('payment_method', 200);
             $table->text('payment_details')->nullable();
             $table->tinyInteger('cancel_status')->default(0);

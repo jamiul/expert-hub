@@ -20,8 +20,24 @@ class ServiceController extends Controller
     public function __construct()
     {
         $this->middleware(['permission:show services'])->only('admin_all_services');
-        $this->rules = ValidationUtility::get_service_validation_rules();
-        $this->messages = ValidationUtility::get_service_validation_message();
+        $this->rules = [
+            'title' => 'required',
+            'category_id' => 'required',
+            'basic_price' => 'required|numeric',
+            'basic_delivery_time' => 'required',
+            'basic_revision_limit' => 'required',
+            'basic_included_description' => 'required',
+        ];
+        $this->messages = [
+            'title.required' => translate('Title is required.'),
+            'category_id.required' => translate('Category is required.'),
+            'basic_price.required' => translate('Basic Price is required.'),
+            'standard_price.numeric' => translate('Standard Price should be a number.'),
+            'basic_price.numeric' => translate('Basic price should be a number.'),
+            'premium_price.numeric' => translate('Premium price should be a number.'),
+            'basic_delivery_time.required' => translate('Basic delivery time limit field is requried.'),
+            'basic_revision_limit.required' => translate('Basic Revision limit is required.'),
+        ];
     }
 
     public function freelancerIndex()

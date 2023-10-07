@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('freelancer_services', function (Blueprint $table) {
+        Schema::create('expert_services_packages', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->text('title');
-            $table->text('image')->nullable();
-            $table->string('slug')->nullable();
-            $table->longText('about_service')->nullable();
-            $table->bigInteger('project_cat_id');
+            $table->string('service_type', 20);
+            $table->bigInteger('service_price');
+            $table->integer('delivery_time');
+            $table->string('revision_limit')->nullable();
+            $table->text('feature_description')->nullable();
+            $table->integer('service_id');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('freelancer_services');
+        Schema::dropIfExists('expert_services_packages');
     }
 };

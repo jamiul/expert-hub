@@ -5,9 +5,11 @@
         <div class="justify-content-center text-center mt-4">
             <span class=" flex-shrink-0 mr-4">
                 @if ($freelancer->photo != null)
-                    <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }} " class="expert-name">
+                    <img src="{{ custom_asset($freelancer->photo) }}" alt="{{ $freelancer->name }} "
+                         class="expert-name">
                 @else
-                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ $freelancer->name }}">
+                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
+                         alt="{{ $freelancer->name }}">
                 @endif
                 @if (Cache::has('user-is-online-' . $freelancer->id))
                     <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
@@ -35,8 +37,8 @@
             <div class="d-flex align-items-center justify-content-center  mt-4">
                 <div class="">
                     <img style="width:16px; height:20px;" class="text-center mr-1"
-                        src=" {{ asset('assets/home/find-scholarship/location.png') }}" class=""
-                        alt="service_image">
+                         src=" {{ asset('assets/home/find-scholarship/location.png') }}" class=""
+                         alt="service_image">
                 </div>
                 <div class=" text-dark text-center fs-14">
                     {{ $freelancer->address->city->name }}, {{ $freelancer->address->country->name }}
@@ -44,7 +46,8 @@
             </div>
             <div class="d-flex align-items-center justify-content-center mt-2">
                 <div class=""><img class="text-center mr-1 expert-timezone"
-                        src=" {{ asset('assets/home/find-scholarship/time.png') }}" class="" alt="service_image">
+                                   src=" {{ asset('assets/home/find-scholarship/time.png') }}" class=""
+                                   alt="service_image">
                 </div>
                 {{-- //todo: add timezone for freelancer and get current time --}}
                 <div class=" text-dark text-center fs-14">10.15 AEST</div>
@@ -73,7 +76,8 @@
                 <h6 class="fs-16 fw-700">{{ translate('Languages') }}</h6>
                 <div class="d-flex align-items-center">
                     <div class=""><img class="text-center p-icon mr-1"
-                            src=" {{ asset('assets/home/find-scholarship/language.png') }}" alt="service_image">
+                                       src=" {{ asset('assets/home/find-scholarship/language.png') }}"
+                                       alt="service_image">
                     </div>
 
                     {{-- //todo: add language skills for freelancer --}}
@@ -92,19 +96,19 @@
                                 @endphp
                                 @if ($skill != null)
                                     <span
-                                        class="btn fs-14 expert-skills  border rounded-2 py-0 px-2   mb-1">{{ $skill->name }}</span>
+                                            class="btn fs-14 expert-skills  border rounded-2 py-0 px-2   mb-1">{{ $skill->name }}</span>
                                 @endif
                             @endforeach
                         </section>
                     @endif
                     @if ($freelancer->education_details != '')
-                        @include('frontend.freelancer.education')
+                        @include('frontend.expert.education')
                     @endif
                 </div>
             </div>
 
             {{-- //todo: add links --}}
-            @include('frontend.freelancer.links')
+            @include('frontend.expert.links')
         </div>
     </div>
 </div>

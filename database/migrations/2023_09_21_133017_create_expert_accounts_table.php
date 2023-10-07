@@ -13,10 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bookmarked_freelancers', function (Blueprint $table) {
+        Schema::create('expert_accounts', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('freelancer_user_id');
+            $table->string('bank_name')->nullable();
+            $table->string('bank_account_name')->nullable();
+            $table->string('bank_account_number', 200)->nullable();
+            $table->string('bank_routing_number')->nullable();
+            $table->string('paypal_acc_name')->nullable();
+            $table->string('paypal_email')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookmarked_freelancers');
+        Schema::dropIfExists('expert_accounts');
     }
 };

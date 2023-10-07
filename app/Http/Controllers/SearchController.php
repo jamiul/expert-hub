@@ -145,7 +145,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.freelancers-listing', compact(
+            return view('frontend.expert.listing', compact(
                 'freelancers',
                 'total',
                 'keyword',

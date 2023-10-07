@@ -22,8 +22,6 @@
                         </p>
                         <a href="register?type=2"
                             class="btn rounded border site-font fs-20 mt-lg-3 frequently-qsn-title  text-white">Get Started</a>
-
-
                     </div>
                     <div class="col-lg-2 col-sm-12 "></div>
                     <div class="col-lg-4 col-sm-12 ">

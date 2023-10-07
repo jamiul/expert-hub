@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use DB;
 use Illuminate\Database\Seeder;
 
-class PayToFreelancersTableSeeder extends Seeder
+class PayToExpertsTableSeeder extends Seeder
 {
 
     /**
@@ -15,9 +15,9 @@ class PayToFreelancersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pay_to_freelancers')->delete();
+        DB::table('pay_to_experts')->delete();
 
-        DB::table('pay_to_freelancers')->insert(array(
+        DB::table('pay_to_experts')->insert(array(
             0 =>
                 array(
                     'id' => 1,

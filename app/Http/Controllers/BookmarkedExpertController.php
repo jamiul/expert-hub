@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookmarkedFreelancer;
+use App\Models\BookmarkedExpert;
 use Auth;
 use Illuminate\Http\Request;
 
-class BookmarkedFreelancerController extends Controller
+class BookmarkedExpertController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class BookmarkedFreelancerController extends Controller
      */
     public function index()
     {
-        $bookmarked_freelancers = BookmarkedFreelancer::where('user_id', Auth::user()->id)->paginate(8);
+        $bookmarked_freelancers = BookmarkedExpert::where('user_id', Auth::user()->id)->paginate(8);
         return view('frontend.user.client.bookmarked-freelancers', compact('bookmarked_freelancers'));
     }
 
@@ -39,7 +39,7 @@ class BookmarkedFreelancerController extends Controller
     {
         $userPackage = Auth::user()->userPackage;
         if ($userPackage->following_status) {
-            $bookmarked_freelancer = new BookmarkedFreelancer;
+            $bookmarked_freelancer = new BookmarkedExpert;
             $bookmarked_freelancer->user_id = Auth::user()->id;
             $bookmarked_freelancer->freelancer_user_id = decrypt($id);
             $bookmarked_freelancer->save();
@@ -92,7 +92,7 @@ class BookmarkedFreelancerController extends Controller
      */
     public function destroy($id)
     {
-        BookmarkedFreelancer::destroy($id);
+        BookmarkedExpert::destroy($id);
         return back();
     }
 }

@@ -16,20 +16,20 @@
         </div>
 
         {{-- //todo: add consultation --}}
-        @include('frontend.freelancer.consultation')
+        @include('frontend.expert.consultation')
     </div>
 
     @if ($freelancer->workExperiences != null)
-        @include('frontend.freelancer.work-experience')
+        @include('frontend.expert.work-experience')
     @endif
 
     {{-- //todo: add current and finished projects --}}
-    @include('frontend.freelancer.projects')
+    @include('frontend.expert.projects')
 
     @if ($freelancer->userPortfolios != null)
-        @include('frontend.freelancer.portfolio')
+        @include('frontend.expert.portfolio')
     @endif
 
     {{-- //todo: add testimonials --}}
-    @include('frontend.freelancer.testimonials')
+    @include('frontend.expert.testimonials')
 </div>

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pay_to_freelancers', function (Blueprint $table) {
+        Schema::create('pay_to_experts', function (Blueprint $table) {
             $table->id();
             $table->integer('paid_by')->nullable();
             $table->integer('user_id');
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pay_to_freelancers');
+        Schema::dropIfExists('pay_to_experts');
     }
 };

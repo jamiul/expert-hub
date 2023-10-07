@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('type', 20)->comment('client/freelancer');
+            $table->char('type', 20)->comment('client/expert');
             $table->string('name');
             $table->double('price', 8, 2);
             $table->unsignedInteger('number_of_days')->default(0);

@@ -10,16 +10,16 @@
 @endpush
 @section('content')
     <div class="position-relative freelancer-Profile-main-section border-bottom">
-        @include('frontend.freelancer.breadcrumb')
+        @include('frontend.expert.breadcrumb')
 
         <div class="container rounded-1 mt-5">
             <div class="">
                 <div class="row">
                     <div class="col-lg-5 col-xl-4 col-md-4 col-12 shadow-right-xl shadow-sm pr-0 h-50 p-0 m-0">
-                        @include('frontend.freelancer.left-side')
+                        @include('frontend.expert.left-side')
                     </div>
                     <div class="col-lg-7 col-xl-8 col-12 pl-lg-3 col-md-8 col-12 mt-3 mt-lg-0  mt-md-0">
-                        @include('frontend.freelancer.right-side')
+                        @include('frontend.expert.right-side')
                     </div>
                 </div>
             </div>
