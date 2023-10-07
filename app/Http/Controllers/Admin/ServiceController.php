@@ -1,10 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\FlutterwaveController;
 use App\Http\Controllers\Frontend\Controller;
 use App\Http\Controllers\Frontend\ServicePaymentController;
 use App\Http\Controllers\Frontend\StripePaymentController;
+use App\Http\Controllers\InstamojoController;
+use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\PaystackController;
+use App\Http\Controllers\PaytmController;
+use App\Http\Controllers\PublicSslCommerzPaymentController;
 use App\Models\Service;
 use App\Models\ServicePackage;
 use App\Models\ServicePackagePayment;
@@ -17,6 +23,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Session;
 use Validator;
+use function App\Http\Controllers\get_email_by_user_id;
 
 class ServiceController extends Controller
 {

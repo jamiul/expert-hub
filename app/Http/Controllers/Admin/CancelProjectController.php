@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Frontend\Controller;
 use App\Models\CancelProject;
@@ -11,6 +11,7 @@ use App\Utility\EmailUtility;
 use App\Utility\NotificationUtility;
 use Auth;
 use Illuminate\Http\Request;
+use function App\Http\Controllers\system_email;
 
 class CancelProjectController extends Controller
 {

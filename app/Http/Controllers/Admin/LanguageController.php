@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 // use Symfony\Component\Console\Input\Input;
 use App\Http\Controllers\Frontend\Controller;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Frontend\Controller;
 use App\Models\ChatThread;
@@ -14,6 +14,7 @@ use App\Utility\NotificationUtility;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use function App\Http\Controllers\get_email_by_user_id;
 
 class HireController extends Controller
 {

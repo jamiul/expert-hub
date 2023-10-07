@@ -1,11 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\FlutterwaveController;
 use App\Http\Controllers\Frontend\Controller;
 use App\Http\Controllers\Frontend\EscrowPaymentController;
 use App\Http\Controllers\Frontend\StripePaymentController;
+use App\Http\Controllers\InstamojoController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\PaystackController;
+use App\Http\Controllers\PaytmController;
+use App\Http\Controllers\PublicSslCommerzPaymentController;
 use App\Models\Badge;
 use App\Models\MilestonePayment;
 use App\Models\Package;
@@ -18,6 +23,8 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 use Session;
+use function App\Http\Controllers\get_email_by_user_id;
+use function App\Http\Controllers\system_email;
 
 class MilestonePaymentController extends Controller
 {

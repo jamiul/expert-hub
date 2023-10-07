@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Frontend\Controller;
+use App\Http\Controllers\Scholarship;
 use App\Models\SitePage;
 use Auth;
 use Illuminate\Http\Request;

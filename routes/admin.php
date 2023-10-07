@@ -5,58 +5,58 @@
 |--------------------------------------------------------------------------
 */
 
-use App\Http\Controllers\Frontend\AddonController;
-use App\Http\Controllers\Frontend\AdminProjectController;
-use App\Http\Controllers\Frontend\AizUploadController;
-use App\Http\Controllers\Frontend\BadgeController;
-use App\Http\Controllers\Frontend\BlogCategoryController;
-use App\Http\Controllers\Frontend\BlogController;
-use App\Http\Controllers\Frontend\CancelProjectController;
-use App\Http\Controllers\Frontend\ChatController;
-use App\Http\Controllers\Frontend\CityController;
-use App\Http\Controllers\Frontend\ConsultantCategoryController;
-use App\Http\Controllers\Frontend\CountryController;
-use App\Http\Controllers\Frontend\CurrencyController;
-use App\Http\Controllers\Frontend\EmailConfigurationController;
-use App\Http\Controllers\Frontend\EmployeeController;
-use App\Http\Controllers\Frontend\ExpertiseController;
-use App\Http\Controllers\Frontend\GeneralConfigurationController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\LanguageController;
-use App\Http\Controllers\Frontend\MilestonePaymentController;
-use App\Http\Controllers\Frontend\NewsletterController;
-use App\Http\Controllers\Frontend\NotificationController;
-use App\Http\Controllers\Frontend\PackageController;
-use App\Http\Controllers\Frontend\PackagePaymentController;
-use App\Http\Controllers\Frontend\PageController;
-use App\Http\Controllers\Frontend\PageOptimizationController;
-use App\Http\Controllers\Frontend\PaytoExpertController;
-use App\Http\Controllers\Frontend\ProfileController;
-use App\Http\Controllers\Frontend\ProjectCategoryController;
-use App\Http\Controllers\Frontend\ProjectController;
-use App\Http\Controllers\Frontend\ReviewController;
-use App\Http\Controllers\Frontend\RoleController;
-use App\Http\Controllers\Frontend\ScholarshipCategoryController;
-use App\Http\Controllers\Frontend\ScholarshipCityController;
-use App\Http\Controllers\Frontend\ScholarshipController;
-use App\Http\Controllers\Frontend\ScholarshipCountryController;
-use App\Http\Controllers\Frontend\ScholarshipFieldStudyController;
-use App\Http\Controllers\Frontend\ScholarshipLevelController;
-use App\Http\Controllers\Frontend\ScholarshipQualificationController;
-use App\Http\Controllers\Frontend\ScholarshipUniversityController;
-use App\Http\Controllers\Frontend\ScholarshipWhoCanApplyController;
-use App\Http\Controllers\Frontend\ServiceController;
-use App\Http\Controllers\Frontend\ServicePaymentController;
-use App\Http\Controllers\Frontend\SitePagesController;
-use App\Http\Controllers\Frontend\SkillController;
-use App\Http\Controllers\Frontend\StaffController;
-use App\Http\Controllers\Frontend\SystemConfigurationController;
-use App\Http\Controllers\Frontend\TrainingController;
-use App\Http\Controllers\Frontend\TrainingModeController;
-use App\Http\Controllers\Frontend\TrainingSoftwareController;
-use App\Http\Controllers\Frontend\UserController;
-use App\Http\Controllers\Frontend\VerificationController;
-use App\Http\Controllers\Frontend\WalletController;
+use App\Http\Controllers\Admin\AddonController;
+use App\Http\Controllers\Admin\AdminProjectController;
+use App\Http\Controllers\Admin\AizUploadController;
+use App\Http\Controllers\Admin\BadgeController;
+use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CancelProjectController;
+use App\Http\Controllers\Admin\ChatController;
+use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\ConsultantCategoryController;
+use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\CurrencyController;
+use App\Http\Controllers\Admin\EmailConfigurationController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\ExpertiseController;
+use App\Http\Controllers\Admin\GeneralConfigurationController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\MilestonePaymentController;
+use App\Http\Controllers\Admin\NewsletterController;
+use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Admin\PackagePaymentController;
+use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PageOptimizationController;
+use App\Http\Controllers\Admin\PaytoExpertController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProjectCategoryController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\ScholarshipCategoryController;
+use App\Http\Controllers\Admin\ScholarshipCityController;
+use App\Http\Controllers\Admin\ScholarshipController;
+use App\Http\Controllers\Admin\ScholarshipCountryController;
+use App\Http\Controllers\Admin\ScholarshipFieldStudyController;
+use App\Http\Controllers\Admin\ScholarshipLevelController;
+use App\Http\Controllers\Admin\ScholarshipQualificationController;
+use App\Http\Controllers\Admin\ScholarshipUniversityController;
+use App\Http\Controllers\Admin\ScholarshipWhoCanApplyController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ServicePaymentController;
+use App\Http\Controllers\Admin\SitePagesController;
+use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\SystemConfigurationController;
+use App\Http\Controllers\Admin\TrainingController;
+use App\Http\Controllers\Admin\TrainingModeController;
+use App\Http\Controllers\Admin\TrainingSoftwareController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VerificationController;
+use App\Http\Controllers\Admin\WalletController;
 
 Route::get('/admin', [HomeController::class, 'adminDashboard'])
     ->name('admin.dashboard')
@@ -169,10 +169,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('email-config', EmailConfigurationController::class);
 
     //payment config
-    Route::resource('payment-config', \App\Http\Controllers\Frontend\PaymentConfigurationController::class);
+    Route::resource('payment-config', \App\Http\Controllers\Admin\PaymentConfigurationController::class);
 
     //Social Media config
-    Route::resource('social-media-config', \App\Http\Controllers\Frontend\SocialMediaConfigurationController::class);
+    Route::resource('social-media-config', \App\Http\Controllers\Admin\SocialMediaConfigurationController::class);
 
     Route::get('/all-experts', [UserController::class, 'allExperts'])->name('all_experts');
     Route::get('/expert-info/{user_name}', [UserController::class, 'expertDetails'])->name('expert_info_show');
@@ -233,7 +233,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/scholarship-field-study/destroy/{id}', [ScholarshipFieldStudyController::class, 'destroy'])->name('scholarship-field-study.delete');
 
     //Subscribers
-    Route::get('/subscribers/destroy/{id}', [\App\Http\Controllers\Frontend\SubscriberController::class, 'destroy'])->name('admin.subscribers.delete');
+    Route::get('/subscribers/destroy/{id}', [\App\Http\Controllers\Admin\SubscriberController::class, 'destroy'])->name('admin.subscribers.delete');
 
     // Newsletter
     Route::group(['prefix' => 'newsletter'], function () {

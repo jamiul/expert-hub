@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Frontend\Controller;
 use App\Models\ChatThread;
@@ -19,6 +19,7 @@ use Auth;
 use Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use function App\Http\Controllers\send_email_verification_email;
 
 class HomeController extends Controller
 {
