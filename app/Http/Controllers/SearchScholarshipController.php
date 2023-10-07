@@ -25,8 +25,8 @@ class SearchScholarshipController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->type == 'freelancer') {
-            $type = 'freelancer';
+        if ($request->type == 'expert') {
+            $type = 'expert';
             $keyword = $request->keyword;
             $rating = $request->rating;
             $category_id = (ProjectCategory::where('slug', $request->category_id)->first() != null) ? ProjectCategory::where('slug', $request->category_id)->first()->id : null;
@@ -40,7 +40,7 @@ class SearchScholarshipController extends Controller
 
 
             if ($request->keyword != null) {
-                $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
@@ -48,7 +48,7 @@ class SearchScholarshipController extends Controller
 
                 $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             } else {
-                $user_ids = User::where('user_type', 'freelancer')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
@@ -82,26 +82,26 @@ class SearchScholarshipController extends Controller
             }
 
             if (count($skill_ids) > 0) {
-                $filtered_freelancers = [];
+                $filtered_experts = [];
                 foreach ($experts->get() as $key => $expert) {
-                    $skills_of_this_freelancer = json_decode($expert->skills);
+                    $skills_of_this_expert = json_decode($expert->skills);
 
-                    if (!is_null($skills_of_this_freelancer)) {
-                        foreach ($skills_of_this_freelancer as $key => $expert_slill_id) {
+                    if (!is_null($skills_of_this_expert)) {
+                        foreach ($skills_of_this_expert as $key => $expert_slill_id) {
                             if (in_array($expert_slill_id, $skill_ids)) {
-                                array_push($filtered_freelancers, $expert);
+                                array_push($filtered_experts, $expert);
                                 break;
                             }
                         }
                     }
                 }
-                $total = count($filtered_freelancers);
-                $experts = $filtered_freelancers;
+                $total = count($filtered_experts);
+                $experts = $filtered_experts;
             } else {
                 $total = $experts->count();
                 $experts = $experts->paginate(8)->appends($request->query());
             }
-            return view('frontend.freelancers-listing', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price'));
+            return view('frontend.experts-listing', compact('experts', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price'));
         } elseif ($request->type == 'service') {
             $type = 'service';
             $keyword = $request->keyword;
@@ -157,7 +157,7 @@ class SearchScholarshipController extends Controller
 
 
             if ($request->keyword != null) {
-                $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
@@ -165,7 +165,7 @@ class SearchScholarshipController extends Controller
 
                 $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             } else {
-                $user_ids = User::where('user_type', 'freelancer')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)

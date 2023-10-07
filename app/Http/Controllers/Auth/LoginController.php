@@ -50,7 +50,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('frontend.user_login');
+        return view('frontend.home.user_login');
     }
 
     public function handleProviderCallback(Request $request, $provider)

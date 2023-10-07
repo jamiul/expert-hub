@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\PayToFreelancer;
+use App\Models\PayToExpert;
 
 class PayToFreelancerRepository
 {
-    public PayToFreelancer $model;
+    public PayToExpert $model;
 
     /**
-     * @param PayToFreelancer $model
+     * @param PayToExpert $model
      */
-    public function __construct(PayToFreelancer $model)
+    public function __construct(PayToExpert $model)
     {
     }
 }

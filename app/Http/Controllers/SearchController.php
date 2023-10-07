@@ -28,8 +28,8 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->type == 'freelancer') {
-            $type = 'freelancer';
+        if ($request->type == 'expert') {
+            $type = 'expert';
             $keyword = $request->keyword;
             $rating = $request->rating ?? [];
             $skill_id = array('');
@@ -54,7 +54,7 @@ class SearchController extends Controller
             $expertises = Expertise::with('childrens')->whereNull('parent_id')->get();
 
             if ($request->keyword != null) {
-                $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
@@ -62,7 +62,7 @@ class SearchController extends Controller
 
                 $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             } else {
-                $user_ids = User::where('user_type', 'freelancer')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
@@ -334,7 +334,7 @@ class SearchController extends Controller
 
 
             if ($request->keyword != null) {
-                $user_ids = User::where('user_type', 'freelancer')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->where('name', 'like', '%' . $keyword . '%')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
@@ -342,7 +342,7 @@ class SearchController extends Controller
 
                 $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             } else {
-                $user_ids = User::where('user_type', 'freelancer')->pluck('id');
+                $user_ids = User::where('user_type', 'expert')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)

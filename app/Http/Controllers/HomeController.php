@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ChatThread;
 use App\Models\ConsultantCategory;
-use App\Models\FreelancerAccount;
+use App\Models\ExpertAccount;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\Scholarship;
@@ -40,7 +40,7 @@ class HomeController extends Controller
     {
         $scholarships = Scholarship::all();
         $skills = Skill::with('childrens')->whereNull('parent_id')->get();
-        $trainins = Training::all();
+        $trainings = Training::all();
         $services = ProjectCategory::take(8)->get()->reverse();
         $consultant_categories = ConsultantCategory::take(8)->get();
         $subjectCounts = [];
@@ -54,7 +54,7 @@ class HomeController extends Controller
             $subjectCounts[$subject] += $scholarship->available_slots;
         }
 
-        return view('frontend.home.index', compact('subjectCounts', 'trainins', 'scholarships', 'services', 'consultant_categories', 'skills'));
+        return view('frontend.home.index', compact('subjectCounts', 'trainings', 'scholarships', 'services', 'consultant_categories', 'skills'));
     }
 
     //Admin login
@@ -84,8 +84,8 @@ class HomeController extends Controller
     //Redirect user-based dashboard
     public function dashboard()
     {
-        if (isFreelancer()) {
-            return view('frontend.user.freelancer.dashboard');
+        if (isExpert()) {
+            return view('frontend.user.expert.dashboard');
         } elseif (isClient()) {
             return view('frontend.user.client.dashboard');
         } else {
@@ -148,8 +148,8 @@ class HomeController extends Controller
         return view('frontend.home.clients-listing', compact('clients', 'total_clients'));
     }
 
-    //Show all freelancer's list to user
-    public function freelancerList()
+    //Show all expert's list to user
+    public function expertList()
     {
         $experts = UserProfile::where('user_role_id', '2')->paginate(8);
         $totalExperts = UserProfile::where('user_role_id', '2')->get();
@@ -158,32 +158,32 @@ class HomeController extends Controller
     }
 
     /**
-     * Show specific freelancer details to user
+     * Show specific expert details to user
      *
      * @param  string $username
      * @return \Illuminate\View\View
      */
-    public function freelancerDetails($username): \Illuminate\View\View
+    public function expertDetails($username): \Illuminate\View\View
     {
         try {
-            //TODO:: if freelancer set profile as private, do not display
+            //TODO:: if expert set profile as private, do not display
             $expert = User::where('user_name', $username)
-                ->where('user_type', 'freelancer')
+                ->where('user_type', 'expert')
                 ->where('banned', 0)
                 ->firstOrFail();
         } catch (\Exception $ex) {
             abort(404);
         }
 
-        return view('frontend.expert.freelancer-single', compact('freelancer'));
+        return view('frontend.expert.expert-single', compact('expert'));
     }
 
-    // Freelancer meeting arrange
-    public function freelancer_meeting($user_name)
+    // Expert meeting arrange
+    public function expert_meeting($user_name)
     {
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
-        $user_account = FreelancerAccount::where('user_id', $user->id)->first();
+        $user_account = ExpertAccount::where('user_id', $user->id)->first();
         return view('frontend.expert.expert-details', compact('user', 'user_profile', 'user_account'));
     }
 

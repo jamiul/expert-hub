@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FreelancerAccount;
+use App\Models\ExpertAccount;
 use App\Models\User;
 use App\Models\UserProfile;
 use Cache;
@@ -12,11 +12,11 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['permission:show all freelancers'])->only('all_freelancers');
+        $this->middleware(['permission:show all experts'])->only('all_experts');
         $this->middleware(['permission:show all clients'])->only('all_clients');
     }
 
-    public function allFreelancers(Request $request)
+    public function allExperts(Request $request)
     {
         $sort_search = null;
         $col_name = null;
@@ -25,7 +25,7 @@ class UserController extends Controller
 
         $user_ids = User::where(
             function ($user) use ($sort_search) {
-                $user->where('user_type', 'freelancer');
+                $user->where('user_type', 'expert');
             }
         )->pluck('id')->toArray();
 
@@ -40,7 +40,7 @@ class UserController extends Controller
                 $sort_search = $request->search;
                 $user_ids = User::where(
                     function ($user) use ($sort_search) {
-                        $user->where('user_type', 'freelancer')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
+                        $user->where('user_type', 'expert')->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
                     }
                 )->pluck('id')->toArray();
 
@@ -62,7 +62,7 @@ class UserController extends Controller
             $experts = $experts->orderBy('created_at', 'desc')->paginate(10);
         }
 
-        return view('admin.freelancer.freelancers.index', compact('freelancers', 'sort_search', 'col_name', 'query'));
+        return view('admin.expert.experts.index', compact('experts', 'sort_search', 'col_name', 'query'));
     }
 
     public function login($id)
@@ -121,19 +121,19 @@ class UserController extends Controller
         return view('admin.client.clients.index', compact('clients', 'sort_search', 'col_name', 'query'));
     }
 
-    public function freelancerDetails($user_name)
+    public function expertDetails($user_name)
     {
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
-        $user_account = FreelancerAccount::where('user_id', $user->id)->first();
-        return view('admin.freelancer.freelancers.show', compact('user', 'user_profile', 'user_account'));
+        $user_account = ExpertAccount::where('user_id', $user->id)->first();
+        return view('admin.expert.experts.show', compact('user', 'user_profile', 'user_account'));
     }
 
     public function clientDetails($user_name)
     {
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
-        $user_account = FreelancerAccount::where('user_id', $user->id)->first();
+        $user_account = ExpertAccount::where('user_id', $user->id)->first();
         $projects = $user->number_of_projects()->paginate(10);
         return view('admin.client.clients.show', compact('user', 'user_profile', 'user_account', 'projects'));
     }

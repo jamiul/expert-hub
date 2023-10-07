@@ -39,7 +39,7 @@ class TrainingConsultantController extends Controller
             $training = Training::with('training_dates')->orderBy('created_at', 'asc')->get();
         }
 
-        return view('frontend.user.freelancer.projects.trainings.index', compact('training', 'search'));
+        return view('frontend.user.expert.projects.trainings.index', compact('training', 'search'));
     }
 
     /**

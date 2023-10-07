@@ -16,7 +16,7 @@ class ExpertMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && isFreelancer()) {
+        if (Auth::check() && isExpert()) {
             return $next($request);
         } else {
             session(['link' => url()->current()]);

@@ -4,7 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\ClientMiddleware;
-use App\Http\Middleware\FreelancerMiddleware;
+use App\Http\Middleware\ExpertMiddleware;
 use App\Http\Middleware\PackagePurchased;
 use App\Http\Middleware\UserMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -62,7 +62,7 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'admin' => AdminMiddleware::class,
         'user' => UserMiddleware::class,
-        'freelancer' => FreelancerMiddleware::class,
+        'expert' => ExpertMiddleware::class,
         'client' => ClientMiddleware::class,
         'packagePurchased' => PackagePurchased::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,

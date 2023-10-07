@@ -87,14 +87,14 @@ class CancelProjectController extends Controller
             $expert_profit = 0;
             foreach ($milestone_payments as $key => $milestone_payment) {
                 $total_amount += $milestone_payment->amount;
-                $expert_profit += $milestone_payment->freelancer_profit;
+                $expert_profit += $milestone_payment->expert_profit;
             }
             if ($milestone_payments != null && $total_amount > 0) {
-                $deduct_freelancer_amount = ($expert_profit * $request->refund_percentage) / 100;
+                $deduct_expert_amount = ($expert_profit * $request->refund_percentage) / 100;
                 $refund_to_client_amount = ($total_amount * $request->refund_percentage) / 100;
 
                 $expert_profile = $project->project_user->user->profile;
-                $expert_profile->balance = $expert_profile->balance - $deduct_freelancer_amount;
+                $expert_profile->balance = $expert_profile->balance - $deduct_expert_amount;
                 $expert_profile->save();
 
                 $client_profile = $project->client->profile;

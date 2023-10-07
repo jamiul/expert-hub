@@ -19,8 +19,8 @@ class WhyScholarshipController extends Controller
         return view('frontend.static-page.how-to-find-job');
     }
 
-    function whyFreelancerEdu()
+    function whyEduExHub()
     {
-        return view('frontend.aboutUs.aboutUs');
+        return view('frontend.about-us.about-us');
     }
 }

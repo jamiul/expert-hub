@@ -12,7 +12,7 @@ class SystemConfigurationController extends Controller
     public function __construct()
     {
         $this->middleware(['permission:show activation setting'])->only('activation_view');
-        $this->middleware(['permission:show freelancer payment'])->only('freelancer_payment_config');
+        $this->middleware(['permission:show expert payment'])->only('expert_payment_config');
         $this->middleware(['permission:show refund setting'])->only('refund_settings');
     }
 
@@ -21,9 +21,9 @@ class SystemConfigurationController extends Controller
         return view('admin.system_configurations.activation');
     }
 
-    public function freelancerPaymentConfig()
+    public function expertPaymentConfig()
     {
-        return view('admin.system_configurations.freelancer_payment_config');
+        return view('admin.system_configurations.expert_payment_config');
     }
 
     public function refundSettings()

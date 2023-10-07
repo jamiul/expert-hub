@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FreelancerAccount;
+use App\Models\ExpertAccount;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -11,7 +11,8 @@ class ExpertAccountController extends Controller
     // Expert Account related info store like bank, paypal etc
     public function store(Request $request)
     {
-        $expert_account = FreelancerAccount::where('user_id', Auth::user()->id)->first();
+        $expert_account = ExpertAccount::where('user_id', Auth::user()->id)->first();
+
         if ($expert_account != null) {
             if ($request->bank_name != null) {
                 $expert_account->bank_name = $request->bank_name;
@@ -31,7 +32,7 @@ class ExpertAccountController extends Controller
                 return back();
             }
         } else {
-            $expert_account = new FreelancerAccount;
+            $expert_account = new ExpertAccount;
             $expert_account->user_id = Auth::user()->id;
             if ($request->bank_name != null) {
                 $expert_account->bank_name = $request->bank_name;

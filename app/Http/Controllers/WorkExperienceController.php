@@ -41,8 +41,8 @@ class WorkExperienceController extends Controller
     public function edit($id)
     {
         $work_exp = WorkExperience::findOrFail(decrypt($id));
-        if (isFreelancer()) {
-            return view('frontend.user.freelancer.setting.work_experience_edit', compact('work_exp'));
+        if (isExpert()) {
+            return view('frontend.user.expert.setting.work_experience_edit', compact('work_exp'));
         }
     }
 

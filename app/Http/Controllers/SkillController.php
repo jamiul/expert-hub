@@ -10,7 +10,7 @@ class SkillController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['permission:show freelancer skills'])->only('index');
+        $this->middleware(['permission:show expert skills'])->only('index');
     }
 
     /**
@@ -21,7 +21,7 @@ class SkillController extends Controller
     public function index()
     {
         $skills = Skill::latest()->paginate(15);
-        return view('admin.freelancer.skills.index', compact('skills'));
+        return view('admin.expert.skills.index', compact('skills'));
     }
 
     /**
@@ -74,7 +74,7 @@ class SkillController extends Controller
     public function edit($id)
     {
         $skill = Skill::findOrFail(decrypt($id));
-        return view('admin.freelancer.skills.edit', compact('skill'));
+        return view('admin.expert.skills.edit', compact('skill'));
     }
 
     /**

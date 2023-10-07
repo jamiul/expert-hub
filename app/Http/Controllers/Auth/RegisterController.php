@@ -97,8 +97,8 @@ class RegisterController extends Controller
             ]
         );
 
-        if (in_array('freelancer', $data['user_types'])) {
-            $user->user_type = 'freelancer';
+        if (in_array('expert', $data['user_types'])) {
+            $user->user_type = 'expert';
         }
         if (in_array('client', $data['user_types'])) {
             $user->user_type = 'client';

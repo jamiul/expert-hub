@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
-use App\Models\FreelancerAccount;
+use App\Models\ExpertAccount;
 use App\Models\User;
 use App\Models\UserProfile;
 use Auth;
@@ -59,8 +59,8 @@ class ProfileController extends Controller
 
             if (isClient()) {
                 return view('frontend.user.client.settings.profile', compact('user', 'verification'));
-            } elseif (isFreelancer()) {
-                return view('frontend.user.freelancer.setting.profile', compact('user', 'verification'));
+            } elseif (isExpert()) {
+                return view('frontend.user.expert.setting.profile', compact('user', 'verification'));
             } else {
                 flash(translate('Sorry! Something went wrong.'))->error();
                 return back();
@@ -72,8 +72,8 @@ class ProfileController extends Controller
 
     public function userAccount()
     {
-        $expert_account = FreelancerAccount::where('user_id', Auth::user()->id)->first();
-        return view('frontend.user.freelancer.setting.account', compact('freelancer_account'));
+        $expert_account = ExpertAccount::where('user_id', Auth::user()->id)->first();
+        return view('frontend.user.expert.setting.account', compact('expert_account'));
     }
 
     public function basicInfoUpdate(Request $request)

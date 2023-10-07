@@ -152,7 +152,7 @@ class PackagePaymentController extends Controller
 
             $userPackage->save();
 
-            //from freelancer/client to admin
+            //from expert/client to admin
             NotificationUtility::set_notification(
                 "package_purchased",
                 translate('A new package has been purchased by'),
@@ -192,7 +192,7 @@ class PackagePaymentController extends Controller
         $package_payment->approval = 0;
         $package_payment->save();
         flash(translate('Offline payment has been done. Please wait for admin approval.'))->success();
-        return redirect()->route('freelancer.packages.history');
+        return redirect()->route('expert.packages.history');
     }
 
     // Offline package payment approval
@@ -242,7 +242,7 @@ class PackagePaymentController extends Controller
         }
     }
 
-    public function freelancerPackagePurchaseHistoryIndex()
+    public function expertPackagePurchaseHistoryIndex()
     {
         $package_payments = PackagePayment::where('user_id', Auth::user()->id)->latest()->paginate(12);
         return view('frontend.user.packages.history', compact('package_payments'));

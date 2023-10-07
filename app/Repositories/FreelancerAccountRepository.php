@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\FreelancerAccount;
+use App\Models\ExpertAccount;
 
 class FreelancerAccountRepository
 {
-    public FreelancerAccount $model;
+    public ExpertAccount $model;
 
     /**
-     * @param FreelancerAccount $model
+     * @param ExpertAccount $model
      */
-    public function __construct(FreelancerAccount $model)
+    public function __construct(ExpertAccount $model)
     {
     }
 }

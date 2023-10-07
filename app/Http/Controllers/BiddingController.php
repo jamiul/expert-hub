@@ -47,7 +47,7 @@ class BiddingController extends Controller
 
             //from expert to client
             NotificationUtility::set_notification(
-                "freelancer_bid_on_project",
+                "expert_bid_on_project",
                 translate('A new bid has been submitted by'),
                 route('project.details', ['slug' => $project->slug], false),
                 $project->client_user_id,

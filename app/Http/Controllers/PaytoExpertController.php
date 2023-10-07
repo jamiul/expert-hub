@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FreelancerAccount;
-use App\Models\PayToFreelancer;
+use App\Models\ExpertAccount;
+use App\Models\PayToExpert;
 use App\Models\User;
 use App\Models\UserProfile;
 use App\Utility\EmailUtility;
@@ -23,7 +23,7 @@ class PaytoExpertController extends Controller
     {
         $sort_search = null;
         $sort_search_by_date = null;
-        $pay_to_freelancers = PayToFreelancer::orderBy('created_at', 'desc')->where('paid_status', 1);
+        $pay_to_experts = PayToExpert::orderBy('created_at', 'desc')->where('paid_status', 1);
         if ($request->search != null || $request->date != null) {
             if ($request->search != null) {
                 $sort_search = $request->search;
@@ -32,62 +32,62 @@ class PaytoExpertController extends Controller
                         $user->where('name', 'like', '%' . $sort_search . '%')->orWhere('email', 'like', '%' . $sort_search . '%');
                     }
                 )->pluck('id')->toArray();
-                $pay_to_freelancers = $pay_to_freelancers->where(
+                $pay_to_experts = $pay_to_experts->where(
                     function ($expert) use ($user_ids) {
                         $expert->whereIn('user_id', $user_ids);
                     }
                 );
-                $pay_to_freelancers = $pay_to_freelancers->paginate(12);
+                $pay_to_experts = $pay_to_experts->paginate(12);
             } elseif ($request->date != null) {
                 $sort_search_by_date = $request->date;
                 $var = explode(" / ", $request->date);
                 $min_date = $var[0];
                 $max_date = $var[1];
-                $pay_to_freelancers = $pay_to_freelancers->whereBetween('created_at', [$min_date, $max_date])->paginate(12);
+                $pay_to_experts = $pay_to_experts->whereBetween('created_at', [$min_date, $max_date])->paginate(12);
             }
         } else {
-            $pay_to_freelancers = $pay_to_freelancers->paginate(12);
+            $pay_to_experts = $pay_to_experts->paginate(12);
         }
 
-        return view('admin.pay_to_freelancer.index', compact('pay_to_freelancers', 'sort_search', 'sort_search_by_date'));
+        return view('admin.pay_to_expert.index', compact('pay_to_experts', 'sort_search', 'sort_search_by_date'));
     }
 
-    public function payToFreelancer($id)
+    public function payToExpert($id)
     {
-        $withdraw_request = PayToFreelancer::find(decrypt($id));
+        $withdraw_request = PayToExpert::find(decrypt($id));
         $user = $withdraw_request->user;
         $user_profile = UserProfile::where('user_id', $user->id)->first();
 
-        $user_account = FreelancerAccount::where('user_id', $user->id)->first();
+        $user_account = ExpertAccount::where('user_id', $user->id)->first();
         return view('admin.withdraw_request.pay', compact('user', 'user_profile', 'user_account', 'withdraw_request'));
     }
 
     public function pay(Request $request)
     {
-        $pay_to_freelancer = PayToFreelancer::find($request->id);
-        $pay_to_freelancer->paid_by = Auth::user()->id;
-        $pay_to_freelancer->paid_amount = $request->amount;
-        $pay_to_freelancer->payment_method = $request->type;
-        $pay_to_freelancer->reciept = $request->reciept;
-        $pay_to_freelancer->paid_status = 1;
-        if ($pay_to_freelancer->save()) {
-            $profile = UserProfile::where('user_id', $pay_to_freelancer->user_id)->first();
-            $profile->balance = $profile->balance + $pay_to_freelancer->requested_amount - $request->amount;
+        $pay_to_expert = PayToExpert::find($request->id);
+        $pay_to_expert->paid_by = Auth::user()->id;
+        $pay_to_expert->paid_amount = $request->amount;
+        $pay_to_expert->payment_method = $request->type;
+        $pay_to_expert->reciept = $request->reciept;
+        $pay_to_expert->paid_status = 1;
+        if ($pay_to_expert->save()) {
+            $profile = UserProfile::where('user_id', $pay_to_expert->user_id)->first();
+            $profile->balance = $profile->balance + $pay_to_expert->requested_amount - $request->amount;
             $profile->save();
 
             //from admin to expert
             NotificationUtility::set_notification(
-                "freelancer_withdrawal_request_accepted_by_admin",
+                "expert_withdrawal_request_accepted_by_admin",
                 translate('A new withdrawal request has been accepted by'),
                 route('withdrawal_history_index', [], false),
-                $pay_to_freelancer->user_id,
+                $pay_to_expert->user_id,
                 Auth::user()->id,
                 'expert'
             );
             EmailUtility::send_email(
                 translate('A new withdrawal request has been accepted'),
                 translate('A new withdrawal request has been accepted by') . Auth::user()->name,
-                get_email_by_user_id($pay_to_freelancer->user_id),
+                get_email_by_user_id($pay_to_expert->user_id),
                 route('withdrawal_history_index')
             );
 
@@ -101,8 +101,8 @@ class PaytoExpertController extends Controller
 
     public function cancelRequest($id)
     {
-        $pay_to_freelancer = PayToFreelancer::find(decrypt($id));
-        $pay_to_freelancer->delete();
+        $pay_to_expert = PayToExpert::find(decrypt($id));
+        $pay_to_expert->delete();
         flash(translate('Payment has been cancelled'))->success();
         return redirect()->route('withdraw_request.index');
     }
@@ -115,7 +115,7 @@ class PaytoExpertController extends Controller
 
     public function withdrawalHistoryIndex()
     {
-        $withdraw_requests = PayToFreelancer::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
+        $withdraw_requests = PayToExpert::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
         return view('frontend.user.expert.earnings.withdrawal-history', compact('withdraw_requests'));
     }
 
@@ -124,7 +124,7 @@ class PaytoExpertController extends Controller
         $sort_search = null;
         $col_name = null;
         $query = null;
-        $withdraw_requests = PayToFreelancer::where('paid_status', 0);
+        $withdraw_requests = PayToExpert::where('paid_status', 0);
         if ($request->search != null || $request->type != null) {
             if ($request->has('search')) {
                 $sort_search = $request->search;
@@ -157,20 +157,20 @@ class PaytoExpertController extends Controller
     public function sendWithdrawalRequestStore(Request $request)
     {
         if ($request->amount <= Auth::user()->profile->balance && $request->amount >= \App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value) {
-            $pay_to_freelancer = new PayToFreelancer;
-            $pay_to_freelancer->user_id = Auth::user()->id;
-            $pay_to_freelancer->requested_amount = $request->amount;
-            $pay_to_freelancer->payment_method = $request->payment_method;
-            $pay_to_freelancer->descriptions = $request->descriptions;
-            $pay_to_freelancer->save();
+            $pay_to_expert = new PayToExpert;
+            $pay_to_expert->user_id = Auth::user()->id;
+            $pay_to_expert->requested_amount = $request->amount;
+            $pay_to_expert->payment_method = $request->payment_method;
+            $pay_to_expert->descriptions = $request->descriptions;
+            $pay_to_expert->save();
 
-            $profile = UserProfile::where('user_id', $pay_to_freelancer->user_id)->first();
+            $profile = UserProfile::where('user_id', $pay_to_expert->user_id)->first();
             $profile->balance -= $request->amount;
             $profile->save();
 
             //from expert to admin
             NotificationUtility::set_notification(
-                "freelancer_withdrawal_request",
+                "expert_withdrawal_request",
                 translate('A new withdrawal has been requested by'),
                 route('withdraw_request.index', [], false),
                 0,

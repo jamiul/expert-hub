@@ -40,10 +40,10 @@ class ServiceController extends Controller
         ];
     }
 
-    public function freelancerIndex()
+    public function expertIndex()
     {
         $services = Auth::user()->services()->paginate(12);
-        return view('frontend.user.freelancer.projects.services.index', compact('services'));
+        return view('frontend.user.expert.projects.services.index', compact('services'));
     }
 
     /**
@@ -54,12 +54,12 @@ class ServiceController extends Controller
     public function create()
     {
         if (ServicesUtility::can_create_service() == 1) {
-            return view('frontend.user.freelancer.projects.services.create');
+            return view('frontend.user.expert.projects.services.create');
         }
 
         flash(translate('Sorry! Your service creation limit is over.'))->warning();
 
-        return redirect()->route('service.freelancer_index');
+        return redirect()->route('service.expert_index');
     }
 
     /**
@@ -72,7 +72,7 @@ class ServiceController extends Controller
     {
         if (ServicesUtility::can_create_service() != 1) {
             flash(translate('Sorry! Your service creation limit is over.'))->warning();
-            return redirect()->route('service.freelancer_index');
+            return redirect()->route('service.expert_index');
         }
 
         if (!$this->validate_service($request)) {
@@ -84,11 +84,11 @@ class ServiceController extends Controller
 
         if ($service_created == 1) {
             flash(translate('Service saved successfully'))->success();
-            return redirect(route('service.freelancer_index'));
+            return redirect(route('service.expert_index'));
         }
 
         flash(translate('Service was not saved successfully. Please try again.'))->error();
-        return redirect()->route('service.freelancer_index');
+        return redirect()->route('service.expert_index');
     }
 
     public function validate_service($request)
@@ -133,7 +133,7 @@ class ServiceController extends Controller
         $service = Service::where('slug', $slug)->first();
         $service_packages = $service->service_packages;
 
-        return view('frontend.user.freelancer.projects.services.edit', compact('service', 'service_packages'));
+        return view('frontend.user.expert.projects.services.edit', compact('service', 'service_packages'));
     }
 
     /**
@@ -154,7 +154,7 @@ class ServiceController extends Controller
 
         if ($service_updated == 1) {
             flash(translate('Service updated successfully'))->success();
-            return redirect(route('service.freelancer_index'));
+            return redirect(route('service.expert_index'));
         }
 
         flash(translate('Service was not updated successfully. Please try again.'))->error();
@@ -180,7 +180,7 @@ class ServiceController extends Controller
             flash(translate('Service was not successfully deleted.'))->error();
         }
 
-        return redirect()->route('service.freelancer_index');
+        return redirect()->route('service.expert_index');
     }
 
     public function getServicePackagePurchaseModal(Request $request)
@@ -240,14 +240,14 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('frontend.user.freelancer.projects.services.index');
+        return view('frontend.user.expert.projects.services.index');
     }
 
     public function soldServices()
     {
-        $this->middleware('freelancer');
+        $this->middleware('expert');
         $purchasedServices = ServicePackagePayment::where('service_owner_id', Auth::user()->id)->latest()->paginate(12);
-        return view('frontend.user.freelancer.projects.services.purchased', compact('purchasedServices'));
+        return view('frontend.user.expert.projects.services.purchased', compact('purchasedServices'));
     }
 
     public function clientPurchasedServices()
@@ -307,11 +307,11 @@ class ServiceController extends Controller
         $requested_cancel_service = ServicePackagePayment::findOrFail($request->service_payment_id);
         $requested_cancel_service->cancel_status = 1;
         if ($requested_cancel_service->save()) {
-            $deduct_freelancer_amount = ($requested_cancel_service->freelancer_profit * $request->refund_percentage) / 100;
+            $deduct_expert_amount = ($requested_cancel_service->expert_profit * $request->refund_percentage) / 100;
             $refund_to_client_amount = ($requested_cancel_service->amount * $request->refund_percentage) / 100;
 
-            $expert_profile = $requested_cancel_service->freelancer->profile;
-            $expert_profile->balance = $expert_profile->balance - $deduct_freelancer_amount;
+            $expert_profile = $requested_cancel_service->expert->profile;
+            $expert_profile->balance = $expert_profile->balance - $deduct_expert_amount;
             $expert_profile->save();
 
             $client_profile = $requested_cancel_service->user->profile;
@@ -329,14 +329,14 @@ class ServiceController extends Controller
             $wallet->type = "Service Cancellation Refund";
             $wallet->save();
 
-            //admin to freelancer
+            //admin to expert
             NotificationUtility::set_notification(
                 "service_cancel_request_approved_by_admin",
                 translate('A Service cancellation is approved by '),
                 route('service.sold', [], false),
                 $requested_cancel_service->service_owner_id,
                 Auth::user()->id,
-                'freelancer'
+                'expert'
             );
             EmailUtility::send_email(
                 translate('A Project cancellation is approved'),

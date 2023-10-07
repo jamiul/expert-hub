@@ -28,8 +28,8 @@ class ExpertEducationController extends Controller
     public function edit($id)
     {
         $education = EducationDetail::findOrFail(decrypt($id));
-        if (isFreelancer()) {
-            return view('frontend.user.freelancer.setting.education_edit', compact('education'));
+        if (isExpert()) {
+            return view('frontend.user.expert.setting.education_edit', compact('education'));
         }
     }
 

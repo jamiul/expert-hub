@@ -39,20 +39,16 @@
         <hr>
         {{-- EduExperts – find the right work for you --}}
         <section>
-            @include('frontend.aboutUs.eduExpert-steps')
-
+            @include('frontend.aboutUs.edu-expert-steps')
         </section>
         {{-- Clients – find the best client for you --}}
-        @include('frontend.aboutUs.client-steps')
+        @include('frontend.about-us.client-steps')
         <hr>
 
         {{-- Reviews – how reviews work on EduExHub --}}
-        @include('frontend.aboutUs.reviews')
+        @include('frontend.about-us.reviews')
         {{-- FAQS --}}
-        @include('frontend.aboutUs.faq')
-
-    </div>
-    </div>
+        @include('frontend.about-us.faq')
     </div>
 
     <script>
