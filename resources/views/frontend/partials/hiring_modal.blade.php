@@ -6,7 +6,7 @@
             <span class="text-danger">*</span>
         </label>
         <div class="form-group">
-            <input type="text" class="form-control form-control-sm" name="project_name" value="{{ $chat_thread->project->name }}" disabled>
+            <input type="text" class="form-control form-control-sm" name="project_name" value="{{ $chatThread->project->name }}" disabled>
         </div>
     </div>
     <div class="form-group">

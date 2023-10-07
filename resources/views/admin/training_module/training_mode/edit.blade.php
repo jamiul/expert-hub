@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-body">
                     <form id="add_form" class="form-horizontal"
-                        action="{{ route('training-mode.update', $training_mode->id) }}" method="POST">
+                        action="{{ route('training-mode.update', $trainingMode->id) }}" method="POST">
                         @csrf
                         @method('PATCH')
 
@@ -16,7 +16,7 @@
                             <label class="col-md-3 col-form-label">{{ translate('Name') }}</label>
                             <div class="col-md-9">
                                 <input type="text" placeholder="{{ translate('Name') }}" id="category_name"
-                                    name="name" value="{{ $training_mode->name }}" class="form-control"
+                                    name="name" value="{{ $trainingMode->name }}" class="form-control"
                                     required>
                             </div>
                         </div>

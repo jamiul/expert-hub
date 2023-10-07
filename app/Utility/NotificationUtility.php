@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 
 class NotificationUtility
 {
-    public static function set_notification($type, $message = '', $link = '/', $receiver = 0, $sender = false, $showing_panel = null)
+    public static function setNotification($type, $message = '', $link = '/', $receiver = 0, $sender = false, $showingPanel = null)
     {
         try {
             $notification = new Notification;
@@ -24,21 +24,21 @@ class NotificationUtility
             $notification->message = translate($message);
             $notification->link = $link;
             $notification->seen_by_receiver = 0;
-            $notification->showing_panel = $showing_panel;
+            $notification->showing_panel = $showingPanel;
             $notification->save();
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
     }
 
-    public static function get_my_notifications($limit = 0, $only_unseen = true, $only_count = false, $paginated = false)
+    public static function getMyNotifications($limit = 0, $onlyUnseen = true, $onlyCount = false, $paginated = false)
     {
         $list = array();
         $count = 0;
 
-        if (!Auth::check() && !$only_count) {
+        if (!Auth::check() && !$onlyCount) {
             return $list;
-        } elseif (!Auth::check() && $only_count) {
+        } elseif (!Auth::check() && $onlyCount) {
             return $count;
         }
 
@@ -52,23 +52,23 @@ class NotificationUtility
         }
 
 
-        $notifications_query = Notification::where('receiver_id', Auth::user()->id)->latest();
+        $notificationsQuery = Notification::where('receiver_id', Auth::user()->id)->latest();
 
         if ($panel == 'admin') {
-            $notifications_query->orWhere('showing_panel', $panel);
+            $notificationsQuery->orWhere('showing_panel', $panel);
         }
-        if ($only_unseen == true) {
-            $notifications_query->where('seen_by_receiver', 0);
+        if ($onlyUnseen == true) {
+            $notificationsQuery->where('seen_by_receiver', 0);
         }
 
         //return only the numbers of notifications
-        if ($only_count) {
-            return $notifications_query->count();
+        if ($onlyCount) {
+            return $notificationsQuery->count();
         } elseif ($paginated) {
             //return paginated data for all notifications page
-            return $notifications_query->paginate($limit);
+            return $notificationsQuery->paginate($limit);
         }
-        $notifications = $notifications_query->limit($limit)->get();
+        $notifications = $notificationsQuery->limit($limit)->get();
 
         foreach ($notifications as $notification) {
             if ($notification->sender != null) {
@@ -76,7 +76,7 @@ class NotificationUtility
                 $item['message'] = $notification->message;
                 $item['link'] = url($notification->link);
                 $item['sender_name'] = $notification->sender->name;
-                $item['sender_photo'] = $notification->sender->photo > 0 ? custom_asset($notification->sender->photo) : asset('assets/backend/default/img/avatar-place.png');
+                $item['sender_photo'] = $notification->sender->photo > 0 ? customAsset($notification->sender->photo) : asset('assets/backend/default/img/avatar-place.png');
                 $item['seen'] = $notification->seen_by_receiver == 1 ? true : false;
                 $item['date'] = Carbon::parse($notification->created_at)->diffForHumans();
 
@@ -87,7 +87,7 @@ class NotificationUtility
         return $list;
     }
 
-    public static function make_my_notifications_seen()
+    public static function makeMyNotificationsSeen()
     {
         try {
             $panel = '';
@@ -103,13 +103,13 @@ class NotificationUtility
                 return false;
             }
 
-            $notifications_query = Notification::where('receiver_id', Auth::user()->id);
-            $notifications_query->where('seen_by_receiver', 0);
+            $notificationsQuery = Notification::where('receiver_id', Auth::user()->id);
+            $notificationsQuery->where('seen_by_receiver', 0);
 
             if ($panel == 'admin') {
-                $notifications_query->orWhere('showing_panel', $panel);
+                $notificationsQuery->orWhere('showing_panel', $panel);
             }
-            $notifications_query->update(['seen_by_receiver' => 1]);
+            $notificationsQuery->update(['seen_by_receiver' => 1]);
         } catch (\Exception $e) {
             dd($e->getMessage());
         }

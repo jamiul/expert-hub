@@ -16,12 +16,12 @@
                         </div>
                     </div>
                     <div class="">
-                        @forelse ($private_projects as $key => $private_project)
-                            @if ($private_project->project != null)
+                        @forelse ($privateProjects as $key => $privateProject)
+                            @if ($privateProject->project != null)
                                 <div class="card project-card overflow-hidden rounded-2 border-gray-light">
                                     <div class="card-header border-bottom-0">
                                         <div>
-                                            <span class="badge badge-primary badge-inline badge-md">{{ single_price($private_project->project->price) }}</span>
+                                            <span class="badge badge-primary badge-inline badge-md">{{ singlePrice($privateProject->project->price) }}</span>
                                         </div>
                                         <div>
                                             <span class="badge badge-secondary badge-inline badge-md">{{ translate('Pending') }}</span>
@@ -29,31 +29,31 @@
                                     </div>
                                     <div class="card-body pt-1">
                                         <h5 class="h6 fw-600 lh-1-5">
-                                            <a href="{{ route('project.details', $private_project->project->slug) }}" class="text-inherit" target="_blank">{{ $private_project->project->name }}</a>
+                                            <a href="{{ route('project.details', $privateProject->project->slug) }}" class="text-inherit" target="_blank">{{ $privateProject->project->name }}</a>
                                         </h5>
                                         <ul class="list-inline opacity-70 fs-12">
                                             <li class="list-inline-item">
                                                 <i class="las la-clock opacity-40"></i>
-                                                <span>{{ Carbon\Carbon::parse($private_project->created_at)->diffForHumans() }}</span>
+                                                <span>{{ Carbon\Carbon::parse($privateProject->created_at)->diffForHumans() }}</span>
                                             </li>
                                             <li class="list-inline-item">
                                                 <a href="" target="_blank" class="text-inherit">
                                                     <i class="las la-stream opacity-40"></i>
-                                                    <span>@if ($private_project->project->project_category != null) {{ $private_project->project->project_category->name }} @else {{ translate('Removed Category') }} @endif</span>
+                                                    <span>@if ($privateProject->project->project_category != null) {{ $privateProject->project->project_category->name }} @else {{ translate('Removed Category') }} @endif</span>
                                                 </a>
                                             </li>
                                             <li class="list-inline-item">
                                                 <i class="las la-handshake"></i>
-                                                <span>{{ $private_project->project->type }}</span>
+                                                <span>{{ $privateProject->project->type }}</span>
                                             </li>
                                         </ul>
                                         <div class="text-muted lh-1-8">
-                                            <p>{{ $private_project->project->excerpt }}</p>
+                                            <p>{{ $privateProject->project->excerpt }}</p>
                                         </div>
                                         <div>
-                                            @foreach (json_decode($private_project->project->skills) as $key => $skill_id)
+                                            @foreach (json_decode($privateProject->project->skills) as $key => $skillId)
                                                 @php
-                                                    $skill = \App\Models\Skill::find($skill_id);
+                                                    $skill = \App\Models\Skill::find($skillId);
                                                 @endphp
                                                 @if ($skill != null)
                                                     <a href="" class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2">{{ $skill->name }}</a>
@@ -62,22 +62,22 @@
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="{{ route('client.details', $private_project->client->user_name) }}" class="d-flex mr-3 align-items-center text-reset">
+                                        <a href="{{ route('client.details', $privateProject->client->user_name) }}" class="d-flex mr-3 align-items-center text-reset">
                                             <span class="avatar avatar-xs overflow-hidden">
-                                                <img class="img-fluid rounded-circle" src="{{ custom_asset($private_project->client->photo) }}">
+                                                <img class="img-fluid rounded-circle" src="{{ customAsset($privateProject->client->photo) }}">
                                             </span>
                                             <div class="pl-2">
-                                                <h4 class="fs-14 mb-1">{{ $private_project->client->name }}</h4>
+                                                <h4 class="fs-14 mb-1">{{ $privateProject->client->name }}</h4>
                                                 <div class="text-secondary fs-10">
                                                     <i class="las la-star text-warning"></i>
-                                                    <span class="fw-600">{{ formatRating(getAverageRating($private_project->client->id)) }}</span>
-                                                    <span>({{ getNumberOfReview($private_project->client->id) }} {{ translate('reviews') }})</span>
+                                                    <span class="fw-600">{{ formatRating(getAverageRating($privateProject->client->id)) }}</span>
+                                                    <span>({{ getNumberOfReview($privateProject->client->id) }} {{ translate('reviews') }})</span>
                                                 </div>
                                             </div>
                                         </a>
                                         <div>
-                                            <a href="{{ route('hiring.reject', encrypt($private_project->id)) }}" class="btn btn-danger btn-sm rounded-1">{{ translate('Reject') }}</a>
-                                            <a href="javascript:void(0)" class="btn btn-success btn-sm rounded-1" onclick="hiring_modal('{{ $private_project->project->name }}',{{ $private_project->project->price }}, {{ $private_project->project->id }}, {{ Auth::user()->id }})">{{ translate('Accpet') }}</a>
+                                            <a href="{{ route('hiring.reject', encrypt($privateProject->id)) }}" class="btn btn-danger btn-sm rounded-1">{{ translate('Reject') }}</a>
+                                            <a href="javascript:void(0)" class="btn btn-success btn-sm rounded-1" onclick="hiring_modal('{{ $privateProject->project->name }}',{{ $privateProject->project->price }}, {{ $privateProject->project->id }}, {{ Auth::user()->id }})">{{ translate('Accpet') }}</a>
                                             <a href="{{ route('all.messages') }}" class="btn btn-primary btn-sm rounded-1">{{ translate('Chat With Client') }}</a>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@
                         @endforelse
                     </div>
                     <div class="aiz-pagination">
-                        {{ $private_projects->links() }}
+                        {{ $privateProjects->links() }}
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        function hiring_modal(project_name,project_price, project_id, user_id){
+        function hiringModal(project_name,project_price, project_id, user_id){
             $('input[name=project_name]').val(project_name);
             $('input[name=amount]').val(project_price);
             $('input[name=project_id]').val(project_id);

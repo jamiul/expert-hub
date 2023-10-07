@@ -112,7 +112,7 @@
 @section('script')
 
     <!-- <script type="text/javascript">
-        function change_status(el){
+        function changeStatus(el){
             var status = 0;
             if(el.checked){
                 var status = 1;

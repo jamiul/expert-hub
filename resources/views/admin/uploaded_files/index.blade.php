@@ -21,10 +21,10 @@
             </div>
             <div class="col-md-3 ml-auto mr-0">
                 <select class="form-control form-control-xs aiz-selectpicker" name="sort" onchange="sort_uploads()">
-                    <option value="newest" @if($sort_by == 'newest') selected="" @endif>{{ translate('Sort by newest') }}</option>
-                    <option value="oldest" @if($sort_by == 'oldest') selected="" @endif>{{ translate('Sort by oldest') }}</option>
-                    <option value="smallest" @if($sort_by == 'smallest') selected="" @endif>{{ translate('Sort by smallest') }}</option>
-                    <option value="largest" @if($sort_by == 'largest') selected="" @endif>{{ translate('Sort by largest') }}</option>
+                    <option value="newest" @if($sortBy == 'newest') selected="" @endif>{{ translate('Sort by newest') }}</option>
+                    <option value="oldest" @if($sortBy == 'oldest') selected="" @endif>{{ translate('Sort by oldest') }}</option>
+                    <option value="smallest" @if($sortBy == 'smallest') selected="" @endif>{{ translate('Sort by smallest') }}</option>
+                    <option value="largest" @if($sortBy == 'largest') selected="" @endif>{{ translate('Sort by largest') }}</option>
                 </select>
             </div>
             <div class="col-md-3">
@@ -37,12 +37,12 @@
     </form>
     <div class="card-body">
     	<div class="row gutters-5">
-    		@foreach($all_uploads as $key => $file)
+    		@foreach($allUploads as $key => $file)
     			@php
     				if($file->file_original_name == null){
-    				    $file_name = translate('Unknown');
+    				    $fileName = translate('Unknown');
     				}else{
-    					$file_name = $file->file_original_name;
+    					$fileName = $file->file_original_name;
 	    			}
     			@endphp
     			<div class="col-auto w-240px w-lg-220px">
@@ -56,7 +56,7 @@
     								<i class="las la-info-circle mr-2"></i>
     								<span>{{ translate('Details Info') }}</span>
     							</a>
-    							<a href="{{ asset($file->file_name) }}" target="_blank" download="{{ $file_name }}.{{ $file->extension }}" class="dropdown-item">
+    							<a href="{{ asset($file->file_name) }}" target="_blank" download="{{ $fileName }}.{{ $file->extension }}" class="dropdown-item">
     								<i class="la la-download mr-2"></i>
     								<span>{{ translate('Download') }}</span>
     							</a>
@@ -70,7 +70,7 @@
     							</a>
     						</div>
     					</div>
-    					<div class="card card-file aiz-uploader-select c-default" title="{{ $file_name }}.{{ $file->extension }}">
+    					<div class="card card-file aiz-uploader-select c-default" title="{{ $fileName }}.{{ $file->extension }}">
     						<div class="card-file-thumb">
     							@if($file->type == 'image')
     								<img src="{{ asset($file->file_name) }}" class="img-fit">
@@ -82,7 +82,7 @@
     						</div>
     						<div class="card-body">
     							<h6 class="d-flex">
-    								<span class="text-truncate title">{{ $file_name }}</span>
+    								<span class="text-truncate title">{{ $fileName }}</span>
     								<span class="ext">.{{ $file->extension }}</span>
     							</h6>
     							<p>{{ formatBytes($file->file_size) }}</p>
@@ -93,7 +93,7 @@
     		@endforeach
     	</div>
 		<div class="aiz-pagination mt-3">
-			{{ $all_uploads->appends(request()->input())->links() }}
+			{{ $allUploads->appends(request()->input())->links() }}
 		</div>
     </div>
 </div>
@@ -156,7 +156,7 @@
 			}
 		    $temp.remove();
 		}
-        function sort_uploads(el){
+        function sortUploads(el){
             $('#sort_uploads').submit();
         }
 	</script>

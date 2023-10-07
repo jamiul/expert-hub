@@ -88,9 +88,9 @@
                                                     class=" fs-16 fw-700">{{ translate('Skills Required') }}</span></h6>
                                             <div class="mb-5">
                                                 <div>
-                                                    @foreach ($project->skills as $key => $skill_id)
+                                                    @foreach ($project->skills as $key => $skillId)
                                                         @if ($skill != null)
-                                                            <a href="{{ route('search.skill', ['skill' => $skill_id, 'type' => 'projects']) }}"
+                                                            <a href="{{ route('search.skill', ['skill' => $skillId, 'type' => 'projects']) }}"
                                                                 class="btn fs-14 job-details fw-700 text-primary border rounded-2 py-0 px-2 border-primary  mb-1">{{ $skill->name }}</a>
                                                         @endif
                                                     @endforeach
@@ -101,7 +101,7 @@
                                                     class=" pr-3 fs-16 fw-700 job-details">{{ translate('Attachments') }}</span>
                                             </h6>
                                             <div class="file-preview box">
-                                                @foreach (explode(',', $project->attachments) as $key => $attachment_id)
+                                                @foreach (explode(',', $project->attachments) as $key => $attachmentId)
                                                     <div class="col-lg-4 col-md-6 col-12">
                                                         @if ($attachment != null)
                                                             @if ($attachment->type == 'image')
@@ -286,18 +286,18 @@
                                 <span class="fs-23 fw-700">{{ translate('Similar Projects') }}</span>
                             </h6>
                             <div class="row mt-3">
-                                @foreach ($similar_types as $similar_type_project)
-                                    @if (count($similar_types) > 0)
+                                @foreach ($similarTypes as $similarTypeProject)
+                                    @if (count($similarTypes) > 0)
                                         <div class="col-lg-4 col-md-6 col-12 pr-0">
                                             <div class="caorusel-box">
-                                                <a href="{{ route('project.details', $similar_type_project->slug) }}"
+                                                <a href="{{ route('project.details', $similarTypeProject->slug) }}"
                                                     class="text-dark">
                                                     <div class="card ">
                                                         <div class="p-3">
 
                                                             <div>
                                                                 <h6 class="  fw-700 fs-19" style="line-height: 25px;">
-                                                                    {{ $similar_type_project->name }}
+                                                                    {{ $similarTypeProject->name }}
                                                                 </h6>
 
 
@@ -309,7 +309,7 @@
                                                                         alt="service_image"
                                                                         src=" {{ asset('/assets/home/find-scholarship/Project-post.png') }}">
                                                                     <span>Posted: <span
-                                                                            class="fw-700">{{ Carbon\Carbon::parse($similar_type_project->created_at)->diffForHumans() }}</span></span>
+                                                                            class="fw-700">{{ Carbon\Carbon::parse($similarTypeProject->created_at)->diffForHumans() }}</span></span>
 
                                                                 </li>
                                                                 <li class="list-inline-item" style="line-height: 22px;">
@@ -321,8 +321,8 @@
                                                                             src=" {{ asset('/assets/home/find-scholarship/Language.png') }}">
                                                                         <span class="">Category: <span
                                                                                 class="fw-700">
-                                                                                @if ($similar_type_project->project_category_id != null)
-                                                                                    {{ getTrainingCategory($similar_type_project->project_category_id) }}
+                                                                                @if ($similarTypeProject->project_category_id != null)
+                                                                                    {{ getTrainingCategory($similarTypeProject->project_category_id) }}
                                                                                 @endif
                                                                             </span></span>
                                                                     </a>
@@ -339,7 +339,7 @@
                                                             </ul>
                                                             <p class="fs-14 fw-500 " style="line-height: 22px;"
                                                                 style="line-height: 22px; font-family:colfax;">
-                                                                {{ \Illuminate\Support\Str::limit(strip_tags($similar_type_project->description), 350) }}
+                                                                {{ \Illuminate\Support\Str::limit(strip_tags($similarTypeProject->description), 350) }}
                                                             </p>
                                                             <div class="d-flex align-items-center">
                                                                 <span class="fw-600 fs-14">View Details</span>
@@ -369,7 +369,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    function bid_modal(id) {
+    function bidModal(id) {
         $.post('{{ route('get_bid_for_project_modal') }}', {
             _token: '{{ csrf_token() }}',
             id: id

@@ -51,8 +51,8 @@
                                         </td>
                                         <td>{{ $purchasedService->user->name }}</td>
                                         <td>{{ ucfirst($purchasedService->servicePackage->service_type) }}</td>
-                                        <td>{{ single_price($purchasedService->amount) }}</td>
-                                        <td>{{ single_price($purchasedService->expert_profit) }}</td>
+                                        <td>{{ singlePrice($purchasedService->amount) }}</td>
+                                        <td>{{ singlePrice($purchasedService->expert_profit) }}</td>
                                         <td>{{ $purchasedService->created_at }}</td>
                                     @endforeach
                                     </tr>

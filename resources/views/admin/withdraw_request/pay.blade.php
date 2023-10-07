@@ -8,14 +8,14 @@
                 <h5 class="mb-0">{{ $user->name }} {{ translate('Account Information') }}</h5>
             </div>
             <div class="card-body">
-                @if ($user_account != null)
-                    <p class="text-muted"><strong>{{ translate('Bank Name') }} :</strong> <span class="ml-2">{{ $user_account->bank_name }}</span></p>
-                    <p class="text-muted"><strong>{{ translate('Bank Account Name') }} :</strong><span class="ml-2">{{ $user_account->bank_account_name }}</span></p>
-                    <p class="text-muted"><strong>{{ translate('Bank Account Number') }} :</strong><span class="ml-2">{{ $user_account->bank_account_number }}</span></p>
-                    <p class="text-muted"><strong>{{ translate('Bank Routing Number') }} :</strong><span class="ml-2">{{ $user_account->bank_routing_number }}</span></p>
+                @if ($userAccount != null)
+                    <p class="text-muted"><strong>{{ translate('Bank Name') }} :</strong> <span class="ml-2">{{ $userAccount->bank_name }}</span></p>
+                    <p class="text-muted"><strong>{{ translate('Bank Account Name') }} :</strong><span class="ml-2">{{ $userAccount->bank_account_name }}</span></p>
+                    <p class="text-muted"><strong>{{ translate('Bank Account Number') }} :</strong><span class="ml-2">{{ $userAccount->bank_account_number }}</span></p>
+                    <p class="text-muted"><strong>{{ translate('Bank Routing Number') }} :</strong><span class="ml-2">{{ $userAccount->bank_routing_number }}</span></p>
                     <hr>
-                    <p class="text-muted"><strong>{{ translate('Paypal Account') }} :</strong> <span class="ml-2">{{ $user_account->paypal_acc_name }}</span></p>
-                    <p class="text-muted"><strong>{{ translate('Paypal Email') }} :</strong> <span class="ml-2">{{ $user_account->paypal_email }}</span></p>
+                    <p class="text-muted"><strong>{{ translate('Paypal Account') }} :</strong> <span class="ml-2">{{ $userAccount->paypal_acc_name }}</span></p>
+                    <p class="text-muted"><strong>{{ translate('Paypal Email') }} :</strong> <span class="ml-2">{{ $userAccount->paypal_email }}</span></p>
                 @endif
             </div>
         </div>
@@ -28,26 +28,26 @@
             <div class="card-body">
                 <form class="form-horizontal" action="{{ route('project_milestone_pay_from_admin') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="id" value="{{ $withdraw_request->id }}">
+                    <input type="hidden" name="id" value="{{ $withdrawRequest->id }}">
                     <div class="form-group mb-3">
                         <label for="total_amount">{{translate('Expert Balance')}}</label>
-                        <input type="number" id="total_amount" name="total_amount" min="10" step="0.01" value="{{ $user_profile->balance }}" required class="form-control" disabled>
+                        <input type="number" id="total_amount" name="total_amount" min="10" step="0.01" value="{{ $userProfile->balance }}" required class="form-control" disabled>
                     </div>
                     <div class="form-group mb-3">
                         <label for="total_amount">{{translate('Requested Amount')}}</label>
-                        <input type="number" id="total_amount" name="total_amount" min="10" step="0.01" value="{{ $withdraw_request->requested_amount }}" required class="form-control" disabled>
+                        <input type="number" id="total_amount" name="total_amount" min="10" step="0.01" value="{{ $withdrawRequest->requested_amount }}" required class="form-control" disabled>
                     </div>
                     <div class="form-group mb-3">
                         <label for="amount">{{translate('Pay Amount')}}</label>
-                        <input type="number" id="amount" name="amount" min="{{ \App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value }}" value="{{ $withdraw_request->requested_amount }}" step="0.01" required class="form-control" required>
+                        <input type="number" id="amount" name="amount" min="{{ \App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value }}" value="{{ $withdrawRequest->requested_amount }}" step="0.01" required class="form-control" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="type">{{translate('Payment Type')}}</label>
                         <select class="form-control aiz-selectpicker" name="type" id="type" data-placeholder="Choose ...">
-                            <option value="bank" @if ($withdraw_request->payment_method == 'bank')
+                            <option value="bank" @if ($withdrawRequest->payment_method == 'bank')
                                 selected
                             @endif>{{translate('Bank')}}</option>
-                            <option value="paypal" @if ($withdraw_request->payment_method == 'paypal')
+                            <option value="paypal" @if ($withdrawRequest->payment_method == 'paypal')
                                 selected
                             @endif>{{translate('Paypal')}}</option>
                         </select>

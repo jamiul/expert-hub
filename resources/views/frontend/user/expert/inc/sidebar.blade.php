@@ -9,7 +9,7 @@
         <div class="px-4 text-center mb-4">
             <span class="avatar avatar-md mb-3">
                 @if (Auth::user()->photo != null)
-                <img src="{{ custom_asset(Auth::user()->photo) }}">
+                <img src="{{ customAsset(Auth::user()->photo) }}">
                 @else
                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                 @endif
@@ -22,9 +22,9 @@
             <h4 class="h5 fs-16 fw-700">{{ Auth::user()->name }}</h4>
             <h6 class="h5 fs-12 text-secondary">{{ Auth::user()->email }}</h6>
             <div class="text-center my-3">
-                @foreach (Auth::user()->badges as $key => $user_badge)
-                    @if ($user_badge->badge != null)
-                        <span class="avatar avatar-square avatar-xxs mr-1" title="{{ $user_badge->badge->name }}"><img src="{{ custom_asset($user_badge->badge->icon) }}"></span>
+                @foreach (Auth::user()->badges as $key => $userBadge)
+                    @if ($userBadge->badge != null)
+                        <span class="avatar avatar-square avatar-xxs mr-1" title="{{ $userBadge->badge->name }}"><img src="{{ customAsset($userBadge->badge->icon) }}"></span>
                     @endif
                 @endforeach
             </div>
@@ -213,8 +213,8 @@
                     </li>
                 @endif
                 @php
-                    $unseen_chat_threads = chat_threads();
-                    $unseen_chat_thread_count = count($unseen_chat_threads);
+                    $unseenChatThreads = chatThreads();
+                    $unseenChatThreadCount = count($unseenChatThreads);
                 @endphp
                 <!-- Message -->
                 <li class="aiz-side-nav-item">
@@ -225,7 +225,7 @@
                             </g>
                         </svg>
                         <span class="aiz-side-nav-text ml-2">{{ translate('Message') }}</span>
-                        <span class="badge badge-primary badge-circle">{{ $unseen_chat_thread_count }}</span>
+                        <span class="badge badge-primary badge-circle">{{ $unseenChatThreadCount }}</span>
                     </a>
                 </li>
                 <!-- Reviews -->

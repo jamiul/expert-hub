@@ -15,12 +15,12 @@
                             <div class="row gutters-10 mb-4">
                                 <div class="col-md-6">
                                     <div class="alert alert-info mb-0">
-                                        {{ translate('Your available balance is') }} {{ single_price(optional($profile)->balance) }}
+                                        {{ translate('Your available balance is') }} {{ singlePrice(optional($profile)->balance) }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="alert alert-info mb-0">
-                                        {{ translate('Minimum withdrawal amount is') }} {{ single_price(\App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value) }}
+                                        {{ translate('Minimum withdrawal amount is') }} {{ singlePrice(\App\Models\SystemConfiguration::where('type', 'min_withdraw_amount')->first()->value) }}
                                     </div>
                                 </div>
                             </div>

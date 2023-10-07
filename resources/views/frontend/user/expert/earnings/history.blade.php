@@ -37,10 +37,10 @@
                                         <tr>
                                             <td>{{ $key+1 }}</td>
                                             <td><a href="#" class="text-secondary">{{ $milestone->project->name }}</a></td>
-                                            <td>{{ single_price($milestone->amount) }}</td>
-                                            <td>{{ single_price($milestone->expert_profit) }}</td>
+                                            <td>{{ singlePrice($milestone->amount) }}</td>
+                                            <td>{{ singlePrice($milestone->expert_profit) }}</td>
                                             <td>{{ $milestone->created_at }}</td>
-                                            <td>{{ single_price($milestone->admin_profit) }}</td>
+                                            <td>{{ singlePrice($milestone->admin_profit) }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

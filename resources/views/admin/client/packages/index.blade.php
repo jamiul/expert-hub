@@ -44,8 +44,8 @@
                                 <td>{{$package->name}}</td>
                                 <td class="text-capitalize">{{str_replace('_', ' ', $package->type)}}</td>
 								<td>{{count(\App\Models\PackagePayment::where('package_id', $package->id)->get())}} {{ translate('times') }}</td>
-                                <td><img class="img-md" src="{{ custom_asset($package->badge) }}" height="45px" alt="{{translate('badge')}}"></td>
-                                <td>{{single_price($package->price)}}</td>
+                                <td><img class="img-md" src="{{ customAsset($package->badge) }}" height="45px" alt="{{translate('badge')}}"></td>
+                                <td>{{singlePrice($package->price)}}</td>
                                 <td>
                                     @if ($package->recommended == "1")
                                         <span class="badge badge-inline badge-success">{{ translate('Recommended') }}</span>
@@ -53,7 +53,7 @@
                                         <span class="badge badge-inline badge-secondary">{{ translate('Not Recommended') }}</span>
                                     @endif
                                 </td>
-                                <td><img class="img-md" src="{{ custom_asset($package->photo) }}" height="45px" alt="{{translate('icon')}}"></td>
+                                <td><img class="img-md" src="{{ customAsset($package->photo) }}" height="45px" alt="{{translate('icon')}}"></td>
                                 <td>
                                     @if ($package->active == "1")
                                         <span class="badge badge-inline badge-primary">{{ translate('Active') }}</span>

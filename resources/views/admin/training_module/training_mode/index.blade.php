@@ -31,21 +31,21 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($training_modes as $key => $training_mode)
+            @foreach($trainingModes as $key => $trainingMode)
 
             <tr>
               <td>{{ $key+1 }}</td>
-              <td>{{ $training_mode->name	 }}</td>
+              <td>{{ $trainingMode->name	 }}</td>
 
               <td class="text-right">
                 <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                  href="{{url('admin/training-mode/'.$training_mode->id.'/edit')}}" title="{{ translate('Edit') }}">
+                  href="{{url('admin/training-mode/'.$trainingMode->id.'/edit')}}" title="{{ translate('Edit') }}">
                   <i class="las la-edit"></i>
                 </a>
                 <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
                   title="{{ translate('Delete') }}" onclick="$(this).find('form').submit();">
                   <i class="las la-trash"></i>
-                  <form action="{{ route('training-mode.delete', $training_mode->id) }}" method="POST">
+                  <form action="{{ route('training-mode.delete', $trainingMode->id) }}" method="POST">
                     @method('DELETE')
                     @csrf
                 </form>

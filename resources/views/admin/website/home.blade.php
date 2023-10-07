@@ -126,7 +126,7 @@
                         <label>{{ translate('Sub title') }}</label>
                         <input type="hidden" name="types[]" value="how_it_works_subtitle">
                         <textarea class="form-control resize-off" placeholder="{{ translate('Type..') }}" name="how_it_works_subtitle">@php
-							echo get_setting('how_it_works_subtitle');
+							echo getSetting('how_it_works_subtitle');
 						@endphp
 					</textarea>
                     </div>
@@ -144,7 +144,7 @@
                                     <div class="form-control file-amount">{{ translate('Choose File') }}</div>
                                     <input type="hidden" name="types[]" value="how_it_works_banner_1">
                                     <input type="hidden" name="how_it_works_banner_1"
-                                        value="{{ get_setting('how_it_works_banner_1') }}" class="selected-files">
+                                        value="{{ getSetting('how_it_works_banner_1') }}" class="selected-files">
                                 </div>
                                 <div class="file-preview"></div>
                             </div>
@@ -154,7 +154,7 @@
                                 <textarea class="aiz-text-editor form-control" name="how_it_works_description_1"
                                     placeholder="{{ translate('Type..') }}" data-min-height="150">
 								@php
-									echo get_setting('how_it_works_description_1');
+									echo getSetting('how_it_works_description_1');
 								@endphp
 							</textarea>
                             </div>
@@ -174,7 +174,7 @@
                                     <div class="form-control file-amount">{{ translate('Choose File') }}</div>
                                     <input type="hidden" name="types[]" value="how_it_works_banner_2">
                                     <input type="hidden" name="how_it_works_banner_2"
-                                        value="{{ get_setting('how_it_works_banner_2') }}" class="selected-files">
+                                        value="{{ getSetting('how_it_works_banner_2') }}" class="selected-files">
                                 </div>
                                 <div class="file-preview box"></div>
                             </div>
@@ -184,7 +184,7 @@
                                 <textarea class="aiz-text-editor form-control" name="how_it_works_description_2"
                                     placeholder="{{ translate('Type..') }}" data-min-height="150">
 								@php
-									echo get_setting('how_it_works_description_2');
+									echo getSetting('how_it_works_description_2');
 								@endphp
 							</textarea>
                             </div>
@@ -204,7 +204,7 @@
                                     <div class="form-control file-amount">{{ translate('Choose File') }}</div>
                                     <input type="hidden" name="types[]" value="how_it_works_banner_3">
                                     <input type="hidden" name="how_it_works_banner_3"
-                                        value="{{ get_setting('how_it_works_banner_3') }}" class="selected-files">
+                                        value="{{ getSetting('how_it_works_banner_3') }}" class="selected-files">
                                 </div>
                                 <div class="file-preview box"></div>
                             </div>
@@ -214,7 +214,7 @@
                                 <textarea class="aiz-text-editor form-control" name="how_it_works_description_3"
                                     placeholder="{{ translate('Type..') }}" data-min-height="150">
 								@php
-									echo get_setting('how_it_works_description_3');
+									echo getSetting('how_it_works_description_3');
 								@endphp
 							</textarea>
                             </div>
@@ -235,7 +235,7 @@
                         <label class="aiz-switch mb-0">
                             <input type="hidden" name="types[]" value="latest_project_show">
                             <input type="checkbox" name="latest_project_show"
-                                @if (get_setting('latest_project_show') == 'on') checked @endif>
+                                @if (getSetting('latest_project_show') == 'on') checked @endif>
                             <span></span>
                         </label>
                     </div>
@@ -252,7 +252,7 @@
                         <label>{{ translate('Sub title') }}</label>
                         <input type="hidden" name="types[]" value="latest_project_subtitle">
                         <textarea class="form-control resize-off" placeholder="{{ translate('Type..') }}" name="latest_project_subtitle">@php
-							echo get_setting('latest_project_subtitle');
+							echo getSetting('latest_project_subtitle');
 						@endphp
 					</textarea>
                     </div>
@@ -288,7 +288,7 @@
                         <label>{{ translate('Sub title') }}</label>
                         <input type="hidden" name="types[]" value="featured_category_subtitle">
                         <textarea class="form-control resize-off" placeholder="{{ translate('Type..') }}" name="featured_category_subtitle">@php
-							echo get_setting('featured_category_subtitle');
+							echo getSetting('featured_category_subtitle');
 						@endphp</textarea>
                     </div>
                     <div class="form-group">
@@ -296,9 +296,9 @@
                         <input type="hidden" name="types[]" value="featured_category_list">
                         <select class="form-control aiz-selectpicker" multiple name="featured_category_list[]"
                             data-live-search="true" data-selected-text-format="count">
-                            @php $featured_category_list = json_decode(get_setting('featured_category_list'), true); @endphp
+                            @php $featuredCategoryList = json_decode(getSetting('featured_category_list'), true); @endphp
                             @foreach (App\Models\ProjectCategory::latest()->get() as $key => $value)
-                                <option value="{{ $value->id }}" @if (is_array($featured_category_list) && in_array($value->id, $featured_category_list)) selected @endif>
+                                <option value="{{ $value->id }}" @if (is_array($featuredCategoryList) && in_array($value->id, $featuredCategoryList)) selected @endif>
                                     {{ $value->name }}</option>
                             @endforeach
                         </select>
@@ -375,7 +375,7 @@
                         <label>{{ translate('Max Service Show') }}</label>
                         <input type="hidden" name="types[]" value="max_service_show_homepage">
                         <input type="number" class="form-control" title="{{ translate('Max Service Show') }}"
-                            name="max_service_show_homepage" value="{{ get_setting('max_service_show_homepage') }}">
+                            name="max_service_show_homepage" value="{{ getSetting('max_service_show_homepage') }}">
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">{{ translate('Update') }}</button>
@@ -457,7 +457,7 @@
                         <label class="aiz-switch mb-0">
                             <input type="hidden" name="types[]" value="blog_section_show">
                             <input type="checkbox" name="blog_section_show"
-                                @if (get_setting('blog_section_show') == 'on') checked @endif>
+                                @if (getSetting('blog_section_show') == 'on') checked @endif>
                             <span></span>
                         </label>
                     </div>
@@ -467,19 +467,19 @@
                         <label>{{ translate('Title') }}</label>
                         <input type="hidden" name="types[]" value="blog_section_title">
                         <input type="text" class="form-control" placeholder="{{ translate('Title') }}"
-                            name="blog_section_title" value="{{ get_setting('blog_section_title') }}">
+                            name="blog_section_title" value="{{ getSetting('blog_section_title') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ translate('Sub Title') }}</label>
                         <input type="hidden" name="types[]" value="blog_section_subtitle">
                         <input type="text" class="form-control" placeholder="{{ translate('Sub Title') }}"
-                            name="blog_section_subtitle" value="{{ get_setting('blog_section_subtitle') }}">
+                            name="blog_section_subtitle" value="{{ getSetting('blog_section_subtitle') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ translate('Max Blog Show') }}</label>
                         <input type="hidden" name="types[]" value="max_blog_show_homepage">
                         <input type="number" class="form-control" title="{{ translate('Max Blog Show') }}"
-                            name="max_blog_show_homepage" value="{{ get_setting('max_blog_show_homepage') }}">
+                            name="max_blog_show_homepage" value="{{ getSetting('max_blog_show_homepage') }}">
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">{{ translate('Update') }}</button>

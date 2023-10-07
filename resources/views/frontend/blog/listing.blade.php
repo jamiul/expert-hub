@@ -19,7 +19,7 @@
                 <div class="card mb-3 overflow-hidden rounded-2 border-gray-light hov-box">
                     <a href="{{ route('blog.details', $blog->slug) }}" class="text-reset d-block">
                         <img
-                            src="{{ custom_asset($blog->banner) }}"
+                            src="{{ customAsset($blog->banner) }}"
                             alt="{{ $blog->title }}"
                             class="img-fluid lazyload h-220px"
                         >

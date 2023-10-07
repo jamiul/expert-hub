@@ -368,7 +368,7 @@
                                 @foreach ($user->userPortfolios as $key => $portfolio)
                                 <div class="col-xxl-3 col-lg-4 col-sm-6">
                                     <div class="card position-relative text-reset mb-3 rounded-1 border-gray-light">
-                                        <img class="img-fit mw-100" src="{{ custom_asset($portfolio->photo) }}" height="240">
+                                        <img class="img-fit mw-100" src="{{ customAsset($portfolio->photo) }}" height="240">
                                         <div class="card-body border-top p-3">
                                             <h2 class="h6 text-truncate">{{ $portfolio->name }}</h2>
                                             <small class="d-block text-secondary">{{ $portfolio->type }}</small>
@@ -448,34 +448,34 @@
                         @if (count($user->workExperiences) > 0)
                         <div class="border-bottom mb-4">
                             <div class="row gutters-10">
-                                @foreach ($user->workExperiences as $key => $work_experience)
+                                @foreach ($user->workExperiences as $key => $workExperience)
                                 <div class="col-md-6">
                                     <div class="card rounded-1 border-gray-light">
                                         <div class="card-body">
                                             <div class="absolute-top-right pr-3 pt-3">
-                                                <a href="{{ route('user_profile.work_experience_edit', encrypt($work_experience->id)) }}" type="button" class="btn btn-sm btn-icon btn-outline-primary rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                                <a href="{{ route('user_profile.work_experience_edit', encrypt($workExperience->id)) }}" type="button" class="btn btn-sm btn-icon btn-outline-primary rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                                                     <span class="las la-pen"></span>
                                                 </a>
-                                                <a href="{{ route('user_profile.work_experience_destroy', encrypt($work_experience->id)) }}" type="button" class="btn btn-sm btn-icon btn-outline-danger rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                                <a href="{{ route('user_profile.work_experience_destroy', encrypt($workExperience->id)) }}" type="button" class="btn btn-sm btn-icon btn-outline-danger rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                                                     <span class="las la-trash"></span>
                                                 </a>
                                             </div>
-                                            <h4 class="h6 mb-1">{{ $work_experience->designation }}
+                                            <h4 class="h6 mb-1">{{ $workExperience->designation }}
                                             </h4>
                                             <ul class="list-unstyled text-secondary mb-0">
                                                 <li class="text-primary">
-                                                    {{ $work_experience->company_name }}
+                                                    {{ $workExperience->company_name }}
                                                 </li>
-                                                @if ($work_experience->present == '1')
-                                                <li>{{ Carbon\Carbon::parse($work_experience->start)->toFormattedDateString() }}
+                                                @if ($workExperience->present == '1')
+                                                <li>{{ Carbon\Carbon::parse($workExperience->start)->toFormattedDateString() }}
                                                     - {{ translate('Present') }}</li>
                                                 @else
-                                                <li>{{ Carbon\Carbon::parse($work_experience->start)->toFormattedDateString() }}
+                                                <li>{{ Carbon\Carbon::parse($workExperience->start)->toFormattedDateString() }}
                                                     -
-                                                    {{ Carbon\Carbon::parse($work_experience->end)->toFormattedDateString() }}
+                                                    {{ Carbon\Carbon::parse($workExperience->end)->toFormattedDateString() }}
                                                 </li>
                                                 @endif
-                                                <li>{{ $work_experience->location }}</li>
+                                                <li>{{ $workExperience->location }}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -631,7 +631,7 @@
         }
     });
 
-    function get_city_by_country() {
+    function getCityByCountry() {
         var country_id = $('#country_id').val();
         $.post('{{ route('cities.get_city_by_country')}}', {
                 _token: '{{ csrf_token() }}',

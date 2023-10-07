@@ -13,12 +13,12 @@
           <div class="form-group">
             <label for="types">{{translate('Frontend Website Name')}}</label>
             <input type="text" name="website_name" class="form-control" placeholder="{{ translate('EduExHub') }}"
-              value="{{ get_setting('website_name') }}">
+              value="{{ getSetting('website_name') }}">
           </div>
           <div class="form-group">
             <label for="types">{{translate('Site Motto')}}</label>
             <input type="text" name="site_motto" class="form-control"
-              placeholder="{{ translate('Best Expert Marketplace') }}" value="{{  get_setting('site_motto') }}">
+              placeholder="{{ translate('Best Expert Marketplace') }}" value="{{  getSetting('site_motto') }}">
           </div>
           <div class="form-group">
             <label class="form-label" for="signinSrEmail">{{ translate('Site Icon') }}</label>
@@ -27,7 +27,7 @@
                 <div class="input-group-text bg-soft-secondary">{{ translate('Browse') }}</div>
               </div>
               <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-              <input type="hidden" name="site_icon" value="{{ get_setting('site_icon') }}" class="selected-files">
+              <input type="hidden" name="site_icon" value="{{ getSetting('site_icon') }}" class="selected-files">
             </div>
             <div class="file-preview box"></div>
             <small class="text-muted">{{ translate('Website favicon. 32x32 .png') }}</small>
@@ -35,13 +35,13 @@
           <div class="form-group">
             <label for="types">{{translate('Website Base Color')}}</label>
             <input type="text" name="base_color" class="form-control" placeholder="#377dff"
-              value="{{ get_setting('base_color') }}">
+              value="{{ getSetting('base_color') }}">
             <small class="text-muted">{{ translate('Hex Color Code') }}</small>
           </div>
           <div class="form-group">
             <label for="types">{{translate('Website Base Hover Color')}}</label>
             <input type="text" name="base_hov_color" class="form-control" placeholder="#377dff"
-              value="{{  get_setting('base_hov_color') }}">
+              value="{{  getSetting('base_hov_color') }}">
             <small class="text-muted">{{ translate('Hex Color Code') }}</small>
           </div>
           <div class="text-right">
@@ -61,19 +61,19 @@
             <label>{{ translate('Meta Title') }}</label>
             <input type="hidden" name="types[]" value="meta_title">
             <input type="text" class="form-control" placeholder="{{ translate('Title') }}" name="meta_title"
-              value="{{ get_setting('meta_title') }}">
+              value="{{ getSetting('meta_title') }}">
           </div>
           <div class="form-group">
             <label>{{ translate('Meta description') }}</label>
             <input type="hidden" name="types[]" value="meta_description">
             <textarea class="resize-off form-control" placeholder="{{ translate('Description') }}"
-              name="meta_description">{{  get_setting('meta_description') }}</textarea>
+              name="meta_description">{{  getSetting('meta_description') }}</textarea>
           </div>
           <div class="form-group">
             <label>{{ translate('Keywords') }}</label>
             <input type="hidden" name="types[]" value="meta_keywords">
             <textarea class="resize-off form-control" placeholder="{{ translate('Keyword, Keyword') }}"
-              name="meta_keywords">{{ get_setting('meta_keywords') }}</textarea>
+              name="meta_keywords">{{ getSetting('meta_keywords') }}</textarea>
             <small class="text-muted">{{ translate('Separate with coma') }}</small>
           </div>
           <div class="form-group">
@@ -84,7 +84,7 @@
               </div>
               <div class="form-control file-amount">{{ translate('Choose File') }}</div>
               <input type="hidden" name="types[]" value="meta_image">
-              <input type="hidden" name="meta_image" value="{{ get_setting('meta_image') }}" class="selected-files">
+              <input type="hidden" name="meta_image" value="{{ getSetting('meta_image') }}" class="selected-files">
             </div>
             <div class="file-preview box"></div>
           </div>
@@ -106,7 +106,7 @@
             <div class="col-md-8">
               <label class="aiz-switch aiz-switch-success mb-0">
                 <input type="hidden" name="types[]" value="show_website_popup">
-                <input type="checkbox" name="show_website_popup" @if( get_setting('show_website_popup')=='on' ) checked
+                <input type="checkbox" name="show_website_popup" @if( getSetting('show_website_popup')=='on' ) checked
                   @endif>
                 <span></span>
               </label>
@@ -117,7 +117,7 @@
             <div class="col-md-8">
               <input type="hidden" name="types[]" value="website_popup_content">
               <textarea name="website_popup_content" rows="4"
-                class="aiz-text-editor form-control">{{ get_setting('website_popup_content') }}</textarea>
+                class="aiz-text-editor form-control">{{ getSetting('website_popup_content') }}</textarea>
             </div>
           </div>
           <div class="form-group row">
@@ -125,7 +125,7 @@
             <div class="col-md-8">
               <label class="aiz-switch aiz-switch-success mb-0">
                 <input type="hidden" name="types[]" value="show_subscribe_form">
-                <input type="checkbox" name="show_subscribe_form" @if( get_setting('show_subscribe_form')=='on' )
+                <input type="checkbox" name="show_subscribe_form" @if( getSetting('show_subscribe_form')=='on' )
                   checked @endif>
                 <span></span>
               </label>

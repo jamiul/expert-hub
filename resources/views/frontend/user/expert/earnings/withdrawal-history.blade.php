@@ -34,24 +34,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($withdraw_requests as $key => $withdraw_request)
+                                        @foreach ($withdrawRequests as $key => $withdrawRequest)
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td>{{ single_price($withdraw_request->requested_amount) }}</td>
-                                                <td>{{ single_price($withdraw_request->paid_amount) }}</td>
-                                                <td>{{ $withdraw_request->payment_method }}</td>
-                                                <td>{{ $withdraw_request->created_at }}</td>
+                                                <td>{{ singlePrice($withdrawRequest->requested_amount) }}</td>
+                                                <td>{{ singlePrice($withdrawRequest->paid_amount) }}</td>
+                                                <td>{{ $withdrawRequest->payment_method }}</td>
+                                                <td>{{ $withdrawRequest->created_at }}</td>
                                                 <td>
-                                                    @if ($withdraw_request->reciept != null)
-                                                        <a href="{{ custom_asset($withdraw_request->reciept) }}" target="_blank" class="text-secondary">{{ translate('Show Reciept') }}</a>
-                                                    @elseif(!$withdraw_request->paid_status)
+                                                    @if ($withdrawRequest->reciept != null)
+                                                        <a href="{{ customAsset($withdrawRequest->reciept) }}" target="_blank" class="text-secondary">{{ translate('Show Reciept') }}</a>
+                                                    @elseif(!$withdrawRequest->paid_status)
                                                         <span class="badge badge-inline badge-info">{{ translate('N/A') }}</span>
                                                     @else
                                                         <span class="badge badge-inline badge-info">{{ translate('No Reciept') }}</span>
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if ($withdraw_request->paid_status != 0)
+                                                    @if ($withdrawRequest->paid_status != 0)
                                                         <span class="badge badge-inline badge-success">{{ translate('Paid') }}</span>
                                                     @else
                                                         <span class="badge badge-inline badge-danger">{{ translate('Pending') }}</span>
@@ -61,7 +61,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $withdraw_requests->links() }}
+                                {{ $withdrawRequests->links() }}
                             </div>
                         </div>
                 </div>

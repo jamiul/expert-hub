@@ -34,13 +34,13 @@
                             <td>
                                 @php
                                 $results = DB::select( DB::raw("select version()") );
-                                $mysql_version =  $results[0]->{'version()'};
+                                $mysqlVersion =  $results[0]->{'version()'};
                                 @endphp
-                                {{ $mysql_version }}
+                                {{ $mysqlVersion }}
                             </td>
                             <td>5.6+</td>
                             <td>
-                                @if ($mysql_version >= 5.6)
+                                @if ($mysqlVersion >= 5.6)
                                 <i class="las la-check text-success"></i>
                                 @else
                                 <i class="las la-times text-danger"></i>
@@ -206,18 +206,18 @@
                             <td>256M+</td>
                             <td>
                                 @php
-                                    $memory_limit = ini_get('memory_limit');
-                                    if (preg_match('/^(\d+)(.)$/', $memory_limit, $matches)) {
+                                    $memoryLimit = ini_get('memory_limit');
+                                    if (preg_match('/^(\d+)(.)$/', $memoryLimit, $matches)) {
                                         if ($matches[2] == 'G') {
-                                            $memory_limit = $matches[1] * 1024 * 1024 * 1024; // nnnM -> nnn GB
+                                            $memoryLimit = $matches[1] * 1024 * 1024 * 1024; // nnnM -> nnn GB
                                         } else if ($matches[2] == 'M') {
-                                            $memory_limit = $matches[1] * 1024 * 1024; // nnnM -> nnn MB
+                                            $memoryLimit = $matches[1] * 1024 * 1024; // nnnM -> nnn MB
                                         } else if ($matches[2] == 'K') {
-                                            $memory_limit = $matches[1] * 1024; // nnnK -> nnn KB
+                                            $memoryLimit = $matches[1] * 1024; // nnnK -> nnn KB
                                         }
                                     }
                                 @endphp
-                                @if (ini_get('memory_limit') == -1 || $memory_limit >= (256 * 1024 * 1024))
+                                @if (ini_get('memory_limit') == -1 || $memoryLimit >= (256 * 1024 * 1024))
                                 <i class="las la-check text-success"></i>
                                 @else
                                 <i class="las la-times text-danger"></i>
@@ -241,15 +241,15 @@
                         </tr>
                     </thead>
                     @php
-                    $loaded_extensions = get_loaded_extensions();
-                    $required_extensions = ['bcmath', 'ctype', 'json', 'mbstring', 'zip', 'zlib', 'openssl', 'tokenizer', 'xml', 'dom',  'curl', 'fileinfo', 'gd', 'pdo_mysql']
+                    $loadedExtensions = get_loaded_extensions();
+                    $requiredExtensions = ['bcmath', 'ctype', 'json', 'mbstring', 'zip', 'zlib', 'openssl', 'tokenizer', 'xml', 'dom',  'curl', 'fileinfo', 'gd', 'pdo_mysql']
                     @endphp
                     <tbody>
-                        @foreach ($required_extensions as $extension)
+                        @foreach ($requiredExtensions as $extension)
                         <tr>
                             <td>{{ $extension }}</td>
                             <td>
-                                @if(in_array($extension, $loaded_extensions))
+                                @if(in_array($extension, $loadedExtensions))
                                 <i class="las la-check text-success"></i>
                                 @else
                                 <i class="las la-times text-danger"></i>
@@ -274,10 +274,10 @@
                         </tr>
                     </thead>
                     @php
-                    $required_paths = ['.env', 'public', 'app/Providers', 'app/Http/Controllers', 'storage', 'resources/views']
+                    $requiredPaths = ['.env', 'public', 'app/Providers', 'app/Http/Controllers', 'storage', 'resources/views']
                     @endphp
                     <tbody>
-                        @foreach ($required_paths as $path)
+                        @foreach ($requiredPaths as $path)
                         <tr>
                             <td>{{ $path }}</td>
                             <td>

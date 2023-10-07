@@ -62,8 +62,8 @@
                                 @endforeach
 
                                 <!-- hourly rate badge  -->
-                                @if (count($hourly_rate) > 0)
-                                    @foreach ($hourly_rate as $rate)
+                                @if (count($hourlyRate) > 0)
+                                    @foreach ($hourlyRate as $rate)
                                         @if ($rate != 'all')
                                             <span id="hourlyRate_{{ $rate }}"
                                                 class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
@@ -76,11 +76,11 @@
                                 @endif
 
                                 <!-- country badge  -->
-                                @if (!empty($country_id))
-                                    <span id="countryID_{{ $country_id }}"
+                                @if (!empty($countryId))
+                                    <span id="countryID_{{ $countryId }}"
                                         class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
-                                        {{ getCountryName($country_id) }}
-                                        <p onclick="removeCountryName({{ $country_id }})" class="m-0 d-inline fw-700"
+                                        {{ getCountryName($countryId) }}
+                                        <p onclick="removeCountryName({{ $countryId }})" class="m-0 d-inline fw-700"
                                             style="cursor: pointer;">X</p>
                                     </span>
                                 @endif
@@ -127,11 +127,11 @@
                                         <div class="mb-2 mt-3">
                                             <select class="select2 form-control site-font aiz-selectpicker rounded-1"
                                                 onchange="applyFilter()" data-live-search="true" name="hourly_rate[]">
-                                                <option value="all" @if (in_array('all', $hourly_rate)) selected @endif>
+                                                <option value="all" @if (in_array('all', $hourlyRate)) selected @endif>
                                                     {{ translate('Any hourly rate') }}</option>
                                                 @foreach (getHourlyRate() as $key => $rate)
                                                     <option value="{{ $key }}"
-                                                        @if (in_array($key, $hourly_rate)) selected @endif>
+                                                        @if (in_array($key, $hourlyRate)) selected @endif>
                                                         {{ $rate }} </option>
                                                 @endforeach
                                             </select>
@@ -189,7 +189,7 @@
                                             <a href="{{ route('expert.details', $expert->user->user_name) }}">
                                                 <span class="avatar flex-shrink-0 mr-4">
                                                     @if ($expert->user->photo != null)
-                                                        <img src="{{ custom_asset($expert->user->photo) }}"
+                                                        <img src="{{ customAsset($expert->user->photo) }}"
                                                             alt="{{ $expert->user->name }}">
                                                     @else
                                                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
@@ -238,7 +238,7 @@
                                                         </span>
 
                                                         <span>
-                                                            {{ single_price($expert->hourly_rate) }} USD per hour
+                                                            {{ singlePrice($expert->hourly_rate) }} USD per hour
                                                         </span>
 
                                                     </div>
@@ -249,9 +249,9 @@
                                                 </div>
                                                 @if ($expert->skills != null)
                                                     <div>
-                                                        @foreach (json_decode($expert->skills) as $key => $skill_id)
+                                                        @foreach (json_decode($expert->skills) as $key => $skillId)
                                                             @php
-                                                                $skill = getSkillsByID($skill_id);
+                                                                $skill = getSkillsByID($skillId);
                                                             @endphp
                                                             @if ($skill != null)
                                                                 <span

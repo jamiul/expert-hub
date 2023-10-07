@@ -18,15 +18,15 @@
         </div>
     </div>
     <div class="row ">
-        @foreach ($expert->userPortfolios as $user_portfolio)
+        @foreach ($expert->userPortfolios as $userPortfolio)
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="caorusel-box">
                     <a href="" class="text-dark">
                         <div class="portfolios">
                             <div class="">
                                 <div class=" ">
-                                    @if ($user_portfolio->photo != null)
-                                        <img src="{{ custom_asset($user_portfolio->photo) }}"
+                                    @if ($userPortfolio->photo != null)
+                                        <img src="{{ customAsset($userPortfolio->photo) }}"
                                             class="card-img-top rounded" alt="service_image" height="212">
                                     @else
                                         <img src="{{ asset('assets/home/find-scholarship/portfolio-1.png') }}"
@@ -35,11 +35,11 @@
                                 </div>
                                 <div class="py-3">
                                     <div>
-                                        <p class="  fw-600 fs-16 portfolio-name">{{ $user_portfolio->name }}</p>
+                                        <p class="  fw-600 fs-16 portfolio-name">{{ $userPortfolio->name }}</p>
 
                                         <div class="mt-3">
                                             <span
-                                                class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary ">{{ $user_portfolio->type }}</span>
+                                                class="fs-14 text-primary border rounded-2 py-1 px-2 border-primary ">{{ $userPortfolio->type }}</span>
                                         </div>
                                     </div>
                                 </div>

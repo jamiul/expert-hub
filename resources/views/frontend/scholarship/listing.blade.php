@@ -265,7 +265,7 @@
                         <div class="col-lg-2 ">
                             <div class="d-flex justify-content-center w-100">
 
-                                <img src="{{ custom_asset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-3">
+                                <img src="{{ customAsset($scholarship->banner) }}" alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-3">
                             </div>
 
                             <a href="{{$scholarship->website_link}}" class="d-flex justify-content-center text-white btn c-pointer px-4  py-1" style="background: #275846;" target="_blank">

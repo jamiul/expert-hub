@@ -72,7 +72,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-function update_review_published(el){
+function updateReviewPublished(el){
         if(el.checked){
             var status = 1;
         }

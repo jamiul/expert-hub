@@ -20,7 +20,7 @@
 							<div class="card project-card rounded-2 border-gray-light">
 								<div class="card-header border-bottom-0">
 									<div>
-										<span class="badge badge-primary badge-inline badge-md">{{ single_price($project->price) }}</span>
+										<span class="badge badge-primary badge-inline badge-md">{{ singlePrice($project->price) }}</span>
 									</div>
 									<div>
 										@if($project->private == 1)
@@ -54,9 +54,9 @@
 										<p>{{ $project->excerpt }}</p>
 									</div>
 									<div>
-                                        @foreach (json_decode($project->skills) as $key => $skill_id)
+                                        @foreach (json_decode($project->skills) as $key => $skillId)
                                             @php
-                                                $skill = \App\Models\Skill::find($skill_id);
+                                                $skill = \App\Models\Skill::find($skillId);
                                             @endphp
                                             @if ($skill != null)
                                                 <span class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2">{{ $skill->name }}</span>

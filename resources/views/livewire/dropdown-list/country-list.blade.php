@@ -10,7 +10,7 @@
                 <option value="" class="site-font">
                     {{ translate('Select Location') }}</option>
                 @foreach ($countries as $country)
-                    <option value="{{ $country->id }}" @if (isset($country_id) && $country_id == $country->id) selected @endif>
+                    <option value="{{ $country->id }}" @if (isset($countryId) && $countryId == $country->id) selected @endif>
                         {{ $country->name }}</option>
                 @endforeach
             </select>

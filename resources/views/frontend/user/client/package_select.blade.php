@@ -23,7 +23,7 @@
                             <span class="absolute-top-right recommended-ribbon bg-success">{{ translate('Recommended') }}</span>
                             @endif
                             <div class="text-center mb-4 mt-3">
-                                <img class="mw-100 mx-auto mb-4" src="{{ custom_asset($package->photo) }}" height="100">
+                                <img class="mw-100 mx-auto mb-4" src="{{ customAsset($package->photo) }}" height="100">
                                 <h5 class="mb-3 h5 fw-600">{{$package->name}}</h5>
                             </div>
                             <ul class="list-group list-group-raw fs-15 mb-5">
@@ -57,7 +57,7 @@
                                 @if ($package->price == '0.00')
                                     <span class="display-4 fw-600 lh-1 mb-0">{{ translate('Free') }}</span>
                                 @else
-                                    <span class="display-4 fw-600 lh-1 mb-0">{{single_price($package->price)}}</span>
+                                    <span class="display-4 fw-600 lh-1 mb-0">{{singlePrice($package->price)}}</span>
                                 @endif
                                 @if ($package->number_of_days == '0')
                                     <span class="text-secondary border-left ml-2 pl-2">{{translate('Life')}}<br>{{translate('Time')}}</span>
@@ -103,12 +103,12 @@
 @section('script')
     <script type="text/javascript">
 
-        function select_payment_type(id) {
+        function selectPaymentType(id) {
             $('input[name=package_id]').val(id);
             $('#select_payment_type_modal').modal('show');
         }
 
-        function payment_type(type) {
+        function paymentType(type) {
             var package_id = $('#package_id').val();
             if (type == 'online') {
                 $("#select_type_cancel").click();
@@ -125,7 +125,7 @@
             }
         }
 
-        function online_payment(id){
+        function onlinePayment(id){
             $.post('{{ route('get_package_purchase_modal') }}', { _token: '{{ csrf_token() }}', id:id }, function(data){
                 $('#purchase_package_modal').modal('show');
                 $('#purchase_package_modal_body').html(data);

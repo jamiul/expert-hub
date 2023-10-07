@@ -7,7 +7,7 @@
         <div class="row justify-content-between align-items-center mb-4">
             <!-- Title -->
             <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-                <h2 class="h6 fw-700 mb-0">{{ count($total_clients) }} {{ translate('members found') }}</h2>
+                <h2 class="h6 fw-700 mb-0">{{ count($totalClients) }} {{ translate('members found') }}</h2>
             </div>
             <!-- End Title -->
 
@@ -28,7 +28,7 @@
         </div>
 
         <div class="row">
-            @if (count($total_clients) > 0)
+            @if (count($totalClients) > 0)
                 @foreach ($clients as $key => $client)
                     <div class="col-xl-3 col-lg-4 col-6">
                         <div class="card text-center mb-5 rounded-2 border-gray-light">
@@ -37,7 +37,7 @@
                                 <div class="mb-3">
                                     <div class="position-relative u-lg-avatar mx-auto mb-3">
                                         @if($client->user->photo != null)
-                                            <img src="{{ custom_asset($client->user->photo) }}">
+                                            <img src="{{ customAsset($client->user->photo) }}">
                                         @else
                                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                         @endif
@@ -80,7 +80,7 @@
             <nav aria-label="Page navigation">
                 {{ $clients->links() }}
             </nav>
-            <small class="d-none d-sm-inline-block text-secondary">{{ translate('Showing') }} {{ count($clients) }} {{ translate('out of') }} {{ count($total_clients) }}</small>
+            <small class="d-none d-sm-inline-block text-secondary">{{ translate('Showing') }} {{ count($clients) }} {{ translate('out of') }} {{ count($totalClients) }}</small>
         </div>
         <!-- End Pagination -->
     </div>

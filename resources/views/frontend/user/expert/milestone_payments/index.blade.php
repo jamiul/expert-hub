@@ -44,7 +44,7 @@
                                             </td>
                                             <td>{{ $milestone->created_at }}</td>
                                             <td>
-                                                {{ single_price($milestone->amount) }}
+                                                {{ singlePrice($milestone->amount) }}
                                             </td>
                                             <td>
                                                 @if($milestone->client_seen == 1)
@@ -78,7 +78,7 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        function request_message_show_modal(id){
+        function requestMessageShowModal(id){
             $.post('{{ route('milestone_request_message_show_modal') }}',{_token:'{{ csrf_token() }}', id:id}, function(data){
                 $('#request_message_show_modal').modal('show');
                 $('#request_message_show_modal_body').html(data);

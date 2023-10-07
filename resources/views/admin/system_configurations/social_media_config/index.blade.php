@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox" @if (get_setting('facebook_login_activation_checkbox') == 1) checked @endif name="facebook_login_activation_checkbox">
+                                        <input type="checkbox" @if (getSetting('facebook_login_activation_checkbox') == 1) checked @endif name="facebook_login_activation_checkbox">
                                         <span></span>
                                     </label>
                                 </div>
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox"  @if (get_setting('google_login_activation_checkbox') == 1) checked @endif name="google_login_activation_checkbox">
+                                        <input type="checkbox"  @if (getSetting('google_login_activation_checkbox') == 1) checked @endif name="google_login_activation_checkbox">
                                         <span></span>
                                     </label>
                                 </div>
@@ -123,7 +123,7 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox"  @if (get_setting('twitter_login_activation_checkbox') == 1) checked @endif name="twitter_login_activation_checkbox">
+                                        <input type="checkbox"  @if (getSetting('twitter_login_activation_checkbox') == 1) checked @endif name="twitter_login_activation_checkbox">
                                         <span></span>
                                     </label>
                                 </div>
@@ -169,7 +169,7 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox"  @if (get_setting('linkedin_login_activation_checkbox') == 1) checked @endif name="linkedin_login_activation_checkbox">
+                                        <input type="checkbox"  @if (getSetting('linkedin_login_activation_checkbox') == 1) checked @endif name="linkedin_login_activation_checkbox">
                                         <span></span>
                                     </label>
                                 </div>
@@ -215,7 +215,7 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox"  @if (get_setting('google_analytics_activation_checkbox') == 1) checked @endif name="google_analytics_activation_checkbox">
+                                        <input type="checkbox"  @if (getSetting('google_analytics_activation_checkbox') == 1) checked @endif name="google_analytics_activation_checkbox">
                                         <span></span>
                                     </label>
                                 </div>
@@ -255,7 +255,7 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox"  @if (get_setting('google_recaptcha_activation_checkbox') == 1) checked @endif name="google_recaptcha_activation_checkbox">
+                                        <input type="checkbox"  @if (getSetting('google_recaptcha_activation_checkbox') == 1) checked @endif name="google_recaptcha_activation_checkbox">
                                         <span></span>
                                     </label>
                                 </div>
@@ -302,7 +302,7 @@
                                   <div class="row">
                                       <div class="col-2">
                                           <label class="aiz-switch aiz-switch-success mb-0">
-                                              <input type="checkbox"  @if (get_setting('facebook_chat_activation_checkbox') == 1) checked @endif name="facebook_chat_activation_checkbox">
+                                              <input type="checkbox"  @if (getSetting('facebook_chat_activation_checkbox') == 1) checked @endif name="facebook_chat_activation_checkbox">
                                               <span></span>
                                           </label>
                                       </div>
@@ -370,7 +370,7 @@
                                   <div class="row">
                                       <div class="col-2">
                                           <label class="aiz-switch aiz-switch-success mb-0">
-                                              <input type="checkbox"  @if (get_setting('fb_pixel_activation_checkbox') == 1) checked @endif name="fb_pixel_activation_checkbox">
+                                              <input type="checkbox"  @if (getSetting('fb_pixel_activation_checkbox') == 1) checked @endif name="fb_pixel_activation_checkbox">
                                               <span></span>
                                           </label>
                                       </div>
@@ -435,7 +435,7 @@
                                   <div class="row">
                                       <div class="col-2">
                                           <label class="aiz-switch aiz-switch-success mb-0">
-                                              <input type="checkbox"  @if (get_setting('fb_comment_activation_checkbox') == 1) checked @endif name="fb_comment_activation_checkbox">
+                                              <input type="checkbox"  @if (getSetting('fb_comment_activation_checkbox') == 1) checked @endif name="fb_comment_activation_checkbox">
                                               <span></span>
                                           </label>
                                       </div>

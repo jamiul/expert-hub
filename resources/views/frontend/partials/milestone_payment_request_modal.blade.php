@@ -1,8 +1,8 @@
 
 <form class="form-horizontal" action="{{ route('partial_payment_request') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    <input type="hidden" class="form-control form-control-sm" name="project_id" value="{{ $project_id }}">
-    <input type="hidden" class="form-control form-control-sm" name="client_id" value="{{ $client_id }}">
+    <input type="hidden" class="form-control form-control-sm" name="project_id" value="{{ $projectId }}">
+    <input type="hidden" class="form-control form-control-sm" name="client_id" value="{{ $clientId }}">
 
     <div class="form-group">
         <label class="form-label">

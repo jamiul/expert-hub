@@ -9,7 +9,7 @@ class MilestonePayPayment extends Model
 {
     use SoftDeletes;
 
-    public function milestone_request()
+    public function milestoneRequest()
     {
         return $this->belongsTo(MilestonePayment::class, 'milestone_payment_id');
     }

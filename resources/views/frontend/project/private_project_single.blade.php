@@ -31,7 +31,7 @@
                             <!-- budget -->
                             <div class="position-relative d-inline-block mr-2">
                                 <small class="fas fa-dollar-sign text-secondary align-middle mr-1"></small>
-                                <span class="align-middle font-size-2 font-weight-medium">{{ single_price($project->price) }}</span>
+                                <span class="align-middle font-size-2 font-weight-medium">{{ singlePrice($project->price) }}</span>
                             </div>
                             <!-- End budget -->
                         </div>
@@ -74,9 +74,9 @@
                         <h2 class="h5">{{ translate('Attachment') }}</h2>
                     </div>
                     <div class="file-preview">
-                        @foreach (json_decode($project->attachment) as $key => $attachment_id)
+                        @foreach (json_decode($project->attachment) as $key => $attachmentId)
                             @php
-                                $attachment = \App\Models\Upload::find($attachment_id);
+                                $attachment = \App\Models\Upload::find($attachmentId);
                             @endphp
                             @if ($attachment != null)
                             <div class="d-flex justify-content-between align-items-center mt-2 file-preview-item" data-id="29" title="fsfhjllz_vegetables-banner.png">
@@ -112,9 +112,9 @@
                             <a class="btn btn-block btn-sm btn-primary transition-3d-hover" onclick="confirm_invite_modal({{ $project->id }})">{{ translate('Invitation Reply') }}</a>
                         </div>
                     @endif
-                    @if ($chat_thread != null)
+                    @if ($chatThread != null)
                         <div class="mb-5 text-center">
-                            <a class="btn btn-block btn-sm btn-primary transition-3d-hover" href="{{ route('chat_view', $chat_thread->id) }}">{{ translate('Go for Chat') }}</a>
+                            <a class="btn btn-block btn-sm btn-primary transition-3d-hover" href="{{ route('chat_view', $chatThread->id) }}">{{ translate('Go for Chat') }}</a>
                         </div>
                     @endif
                     <!-- Sidebar Info -->
@@ -133,7 +133,7 @@
                             <a href="{{ route('client.details', $project->client->user_name) }}" class="d-flex align-items-center py-4 text-dark">
                                 <span class="u-avatar u-avatar--bordered rounded-circle">
                                     @if($project->client->photo != null)
-                                        <img src="{{ custom_asset($project->client->photo) }}">
+                                        <img src="{{ customAsset($project->client->photo) }}">
                                     @else
                                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                     @endif
@@ -224,7 +224,7 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        function confirm_invite_modal(id){
+        function confirmInviteModal(id){
             $.post('{{ route('get_invitation_reply_modal') }}', { _token: '{{ csrf_token() }}', id:id }, function(data){
                 $('#invitation_reply').modal('show');
                 $('#invitation_reply_modal_body').html(data);

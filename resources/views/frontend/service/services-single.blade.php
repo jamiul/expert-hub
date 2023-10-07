@@ -15,7 +15,7 @@
                             <h5 class="my-3 lh-1-5">{{ $service->title }}</h5>
 
                             <div class="row align-items-center no-gutters">
-                                <img src="{{ custom_asset($service->user->photo)}}" alt="" height="35"
+                                <img src="{{ customAsset($service->user->photo)}}" alt="" height="35"
                                      class="rounded-circle">
                                 <span class="ml-2">{{ $service->user->name }}</span>
                                 <span class="ml-2 text-muted"> |</span>
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="service-image mt-3">
-                                <img src="{{ custom_asset($service->image) }}" alt="" class="w-100">
+                                <img src="{{ customAsset($service->image) }}" alt="" class="w-100">
                             </div>
                             <div class="about-service">
                                 <h6 class="separator mb-4 mt-4"><span
@@ -58,46 +58,46 @@
                         <div class="card overflow-hidden rounded-2 border-gray-light">
                             <div class="card-header p-0" style="min-height: 0px;">
                                 <ul class="nav nav-pills nav-fill flex-grow-1" id="myTab" role="tablist">
-                                    @foreach($service_packages as $service_package)
+                                    @foreach($servicePackages as $servicePackage)
                                         <li class="nav-item">
                                             <a class="nav-link @if($loop->iteration == 1) active @endif p-3 rounded-0"
-                                               id="{{ $service_package->service_type }}-tab" data-toggle="tab"
-                                               href="#{{ $service_package->service_type }}" role="tab"
-                                               aria-controls="{{ $service_package->service_type }}"
-                                               aria-selected="@if($loop->iteration == 1) true @else false @endif">{{ ucfirst($service_package->service_type) }}</a>
+                                               id="{{ $servicePackage->service_type }}-tab" data-toggle="tab"
+                                               href="#{{ $servicePackage->service_type }}" role="tab"
+                                               aria-controls="{{ $servicePackage->service_type }}"
+                                               aria-selected="@if($loop->iteration == 1) true @else false @endif">{{ ucfirst($servicePackage->service_type) }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
                             <div id="myTabContent" class="card-body tab-content">
-                                @foreach($service_packages as $service_package)
+                                @foreach($servicePackages as $servicePackage)
                                     <div class="tab-pane show @if($loop->iteration == 1) active @endif p-2"
-                                         id="{{ $service_package->service_type }}" role="tabpanel"
-                                         aria-labelledby="{{ $service_package->service_type }}-tab">
+                                         id="{{ $servicePackage->service_type }}" role="tabpanel"
+                                         aria-labelledby="{{ $servicePackage->service_type }}-tab">
                                         <div class="d-flex justify-content-between">
                                             <span class="">
-                                            @if($service_package->service_type == 'basic')
+                                            @if($servicePackage->service_type == 'basic')
                                                     {{ translate('BASIC Package - Popular') }}
-                                                @elseif($service_package->service_type == 'standard')
+                                                @elseif($servicePackage->service_type == 'standard')
                                                     {{ translate('STANDARD Package - Recommended') }}
-                                                @elseif($service_package->service_type == 'premium')
+                                                @elseif($servicePackage->service_type == 'premium')
                                                     {{ translate('PREMIUM Package - Must for Pro') }}
                                                 @endif
                                             </span>
-                                            <span class="font-weight-bold">{{ single_price($service_package->service_price) }}</span>
+                                            <span class="font-weight-bold">{{ singlePrice($servicePackage->service_price) }}</span>
                                         </div>
                                         <div class="d-flex align-items-center mt-3">
                                             <span class="mr-3">
                                                 <i class="la la-clock"></i>
-                                                {{ $service_package->delivery_time }} {{ translate('Days Delivery') }}
+                                                {{ $servicePackage->delivery_time }} {{ translate('Days Delivery') }}
                                             </span>
 
                                             <span>
                                                 <i class="las la-sync-alt"></i>
-                                                @if($service_package->revision_limit < 0)
+                                                @if($servicePackage->revision_limit < 0)
                                                     {{ translate('Unlimited Revisions') }}
                                                 @else
-                                                    {{ $service_package->revision_limit }} {{ translate('Revisions') }}
+                                                    {{ $servicePackage->revision_limit }} {{ translate('Revisions') }}
                                                 @endif
                                             </span>
                                         </div>
@@ -111,7 +111,7 @@
                                                 </button>
                                             </h5>
                                             <ul class="list-unstyled ml-4 mt-3">
-                                                @foreach(json_decode($service_package->feature_description) as $features)
+                                                @foreach(json_decode($servicePackage->feature_description) as $features)
                                                     <li class="mb-2">
                                                         <i class="la la-check text-success mr-2" aria-hidden="true"></i>
                                                         {{ $features }}
@@ -124,12 +124,12 @@
                                             <button
                                                 class="btn btn-primary btn-block mt-4"
                                                 @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated )
-                                                    onclick="select_payment_type({{ $service_package->id }})"
+                                                    onclick="select_payment_type({{ $servicePackage->id }})"
                                                 @else
-                                                    onclick="show_online_purchase_service_modal({{ $service_package->id }})"
+                                                    onclick="show_online_purchase_service_modal({{ $servicePackage->id }})"
                                                 @endif
                                                 >
-                                                {{ translate('Continue') }} ({{ single_price($service_package->service_price) }})
+                                                {{ translate('Continue') }} ({{ singlePrice($servicePackage->service_price) }})
                                             </button>
                                         @elseif (auth::check())
                                             <div class="alert alert-warning rounded-1 mt-4">
@@ -144,20 +144,20 @@
                                 <div class="tab-pane p-2" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="d-flex justify-content-between">
                                         <span class="">{{ translate('STANDARD Package - Recommended') }}</span>
-                                        <span class="">{{ single_price($service_package->service_price) }}</span>
+                                        <span class="">{{ singlePrice($servicePackage->service_price) }}</span>
                                     </div>
                                     <div class="d-flex align-items-center mt-3 font-weight-bold">
                                         <span class="mr-3">
                                             <i class="la la-clock"></i>
-                                            {{ $service_package->delivery_time }} {{ translate('Days Delivery') }}
+                                            {{ $servicePackage->delivery_time }} {{ translate('Days Delivery') }}
                                         </span>
 
                                         <span>
                                             <i class="las la-sync-alt"></i>
-                                            @if($service_package->revision_limit < 0)
+                                            @if($servicePackage->revision_limit < 0)
                                                 {{ translate('Unlimited Revisions') }}
                                             @else
-                                                {{ $service_package->revision_limit }} {{ translate('Revisions') }}
+                                                {{ $servicePackage->revision_limit }} {{ translate('Revisions') }}
                                             @endif
                                         </span>
                                     </div>
@@ -172,7 +172,7 @@
 
                                         </h5>
                                         <ul class="list-unstyled ml-4 mt-3">
-                                            @foreach(json_decode($service_package->feature_description) as $features)
+                                            @foreach(json_decode($servicePackage->feature_description) as $features)
                                                 <li class="mb-2">
                                                     <i class="la la-check text-success mr-2" aria-hidden="true"></i>
                                                     {{ $features }}
@@ -182,26 +182,26 @@
                                     </div>
 
                                     <button class="btn btn-primary btn-block mt-4">{{ translate('Continue') }}
-                                        ({{ single_price($service_package->service_price) }})
+                                        ({{ singlePrice($servicePackage->service_price) }})
                                     </button>
                                 </div>
                                 <div class="tab-pane p-2" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                     <div class="d-flex justify-content-between">
                                         <span class="font-weight-bold">{{ translate('PREMIUM Package - Must for PRO') }}</span>
-                                        <span class="font-weight-bold">{{ single_price($service_package->service_price) }}</span>
+                                        <span class="font-weight-bold">{{ singlePrice($servicePackage->service_price) }}</span>
                                     </div>
                                     <div class="d-flex align-items-center mt-3 font-weight-bold">
                                         <span class="mr-3">
                                             <i class="la la-clock"></i>
-                                            {{ $service_package->delivery_time }} {{ translate('Days Delivery') }}
+                                            {{ $servicePackage->delivery_time }} {{ translate('Days Delivery') }}
                                         </span>
 
                                         <span>
                                             <i class="las la-sync-alt"></i>
-                                            @if($service_package->revision_limit < 0)
+                                            @if($servicePackage->revision_limit < 0)
                                                 {{ translate('Unlimited Revisions') }}
                                             @else
-                                                {{ $service_package->revision_limit }} {{ translate('Revisions') }}
+                                                {{ $servicePackage->revision_limit }} {{ translate('Revisions') }}
                                             @endif
                                         </span>
                                     </div>
@@ -216,7 +216,7 @@
 
                                         </h5>
                                         <ul class="list-unstyled ml-4 mt-3">
-                                            @foreach(json_decode($service_package->feature_description) as $features)
+                                            @foreach(json_decode($servicePackage->feature_description) as $features)
                                                 <li class="mb-2">
                                                     <i class="la la-check text-success mr-2" aria-hidden="true"></i>
                                                     {{ $features }}
@@ -226,7 +226,7 @@
                                     </div>
 
                                     <button class="btn btn-primary btn-block mt-4">{{ translate('Continue') }}
-                                        ({{ single_price($service_package->service_price) }})
+                                        ({{ singlePrice($servicePackage->service_price) }})
                                     </button>
 
                                 </div>
@@ -247,13 +247,13 @@
 				<div class="col-12">
 					<h5 class="mb-4 fs-16 fw-700">{{ translate('Suggested Services') }}</h5>
 					<div class="aiz-carousel gutters-10 half-outside-arrow" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1" data-arrows='true'>
-                        @foreach ($similar_sevices = $service->user->services->where('id', '!=', $service_package->id)->take(6) as $similar_type_sevice)
-                            @if (count($similar_sevices) > 0)
+                        @foreach ($similarSevices = $service->user->services->where('id', '!=', $servicePackage->id)->take(6) as $similarTypeSevice)
+                            @if (count($similarSevices) > 0)
         						<div class="caorusel-box">
         							<div class="card bg-transparent rounded-2 border-gray-light">
-                                        <a href="{{ route('service.show', $similar_type_sevice->slug) }}">
-                                            @if($similar_type_sevice->image != null)
-                                                <img src="{{ custom_asset($similar_type_sevice->image) }}" class="card-img-top" alt="service_image" height="212" style="border-radius: 16px 16px 0px 0px;">
+                                        <a href="{{ route('service.show', $similarTypeSevice->slug) }}">
+                                            @if($similarTypeSevice->image != null)
+                                                <img src="{{ customAsset($similarTypeSevice->image) }}" class="card-img-top" alt="service_image" height="212" style="border-radius: 16px 16px 0px 0px;">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212" style="border-radius: 16px 16px 0px 0px;">
                                             @endif
@@ -261,23 +261,23 @@
                                         <div class="card-body">
                                             <div class="d-flex mb-2">
                                                 <span class="mr-2">
-                                                    @if ($similar_type_sevice->user->photo != null)
-                                                        <img src="{{ custom_asset($similar_type_sevice->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                    @if ($similarTypeSevice->user->photo != null)
+                                                        <img src="{{ customAsset($similarTypeSevice->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                     @else
                                                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                     @endif
                                                 </span>
                                                 <span class="d-flex flex-column justify-content-center">
-                                                    <a href="{{ route('expert.details', $similar_type_sevice->user->user_name) }}" class="text-secondary fs-14"><span class="font-weight-bold">{{ $similar_type_sevice->user->name }}</span></a>
+                                                    <a href="{{ route('expert.details', $similarTypeSevice->user->user_name) }}" class="text-secondary fs-14"><span class="font-weight-bold">{{ $similarTypeSevice->user->name }}</span></a>
                                                 </span>
                                             </div>
 
-                                            <a href="{{ route('service.show', $similar_type_sevice->slug) }}" class="text-dark">
-                                                <h5 class="card-title fs-16 fw-700">{{ \Illuminate\Support\Str::limit($similar_type_sevice->title, 45, $end='...') }}</h5>
+                                            <a href="{{ route('service.show', $similarTypeSevice->slug) }}" class="text-dark">
+                                                <h5 class="card-title fs-16 fw-700">{{ \Illuminate\Support\Str::limit($similarTypeSevice->title, 45, $end='...') }}</h5>
                                             </a>
                                             <div class="text-warning">
                                                 <span class="rating rating-lg rating-mr-1">
-                                                    {{ renderStarRating(getAverageRating($similar_type_sevice->user->id)) }}
+                                                    {{ renderStarRating(getAverageRating($similarTypeSevice->user->id)) }}
                                                 </span>
                                             </div>
                                         </div>
@@ -361,12 +361,12 @@
 @section('script')
     <script>
 
-        function select_payment_type(id) {
+        function selectPaymentType(id) {
             $('input[name=service_package_id]').val(id);
             $('#select_payment_type_modal').modal('show');
         }
 
-        function payment_type(type) {
+        function paymentType(type) {
             var service_package_id = $('#service_package_id').val();
             if (type == 'online') {
                 $("#select_type_cancel").click();
@@ -384,7 +384,7 @@
             }
         }
 
-        function show_online_purchase_service_modal(id) {
+        function showOnlinePurchaseServiceModal(id) {
             $.post('{{ route('get_package_service_modal') }}', {_token: '{{ csrf_token() }}', id: id}, function (data) {
                 $('#online_purchase_service_package_modal').modal('show');
                 $('#online_purchase_service_package_modal_body').html(data);

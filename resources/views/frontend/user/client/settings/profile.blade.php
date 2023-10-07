@@ -352,7 +352,7 @@
 
 @section('script')
     <script type="text/javascript">
-        function get_city_by_country() {
+        function getCityByCountry() {
             var country_id = $('#country_id').val();
             $.post('{{ route('cities.get_city_by_country') }}', {
                 _token: '{{ csrf_token() }}',

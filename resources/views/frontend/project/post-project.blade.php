@@ -113,7 +113,7 @@
                                     </div class="aiz-radio-inline">
                                     <div class="row px-3">
                                         <div class="col-lg-4 card py-3 px-2 pr-0">
-                                            @if ($client_package->fixed_limit > 0)
+                                            @if ($clientPackage->fixed_limit > 0)
                                                 <div class="custom-control custom-radio custom-control-inline ">
                                                     <input type="radio" id="projectTypeFixed" name="projectType"
                                                         class="custom-control-input" value="Fixed" checked>
@@ -133,7 +133,7 @@
                                         </div>
                                         <div class="col-lg-1"></div>
                                         <div class="col-lg-4 card py-3 px-2 pl-0">
-                                            @if ($client_package->long_term_limit > 0)
+                                            @if ($clientPackage->long_term_limit > 0)
                                                 <div class="custom-control custom-radio custom-control-inline ">
                                                     <input type="radio" id="projectTypeLong" name="projectType"
                                                         class="custom-control-input" value="hourly">
@@ -258,7 +258,7 @@
                                     <div class="file-preview"></div>
                                 </div> --}}
                                 <div class="text-right">
-                                    @if ($client_package->fixed_limit > 0 || $client_package->fixed_limit > 0)
+                                    @if ($clientPackage->fixed_limit > 0 || $clientPackage->fixed_limit > 0)
                                         <button type="submit"
                                             class="btn btn-primary transition-3d-hover mr-1 rounded-1">{{ translate('Post Project') }}</button>
                                     @else

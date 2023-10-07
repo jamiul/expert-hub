@@ -46,8 +46,8 @@
                                         <td><a target="_blank" href="{{ route('service.show', $purchasedService->servicePackage->service->slug) }}">{{ \Illuminate\Support\Str::limit($purchasedService->servicePackage->service->title, 15, $end='...') }}</a></td>
                                         <td><a target="_blank" href="{{ route('expert.details', $purchasedService->expert->user_name) }}">{{ $purchasedService->expert->name }}</a></td>
                                         <td>{{ ucfirst($purchasedService->servicePackage->service_type) }}</td>
-                                        <td>{{ single_price($purchasedService->amount) }}</td>
-                                        <td>{{ single_price(($purchasedService->amount*$purchasedService->refund_percentage)/100) }}</td>
+                                        <td>{{ singlePrice($purchasedService->amount) }}</td>
+                                        <td>{{ singlePrice(($purchasedService->amount*$purchasedService->refund_percentage)/100) }}</td>
                                         @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
                                           <td>
                                                 @if($purchasedService->offline_payment == 1)

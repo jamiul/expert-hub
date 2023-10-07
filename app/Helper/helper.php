@@ -9,12 +9,13 @@ use App\Models\Language;
 use App\Models\PageOptimization;
 use App\Models\ParentSkill;
 use App\Models\ProjectCategory;
-use App\Models\TrainingMode;
-use App\Models\TrainingSoftware;
 use App\Models\SitePage;
 use App\Models\Skill;
 use App\Models\SystemConfiguration;
+use App\Models\TrainingMode;
+use App\Models\TrainingSoftware;
 use App\Models\Translation;
+use App\Models\Upload;
 use App\Models\User;
 
 if (!function_exists('areActiveRoutes')) {
@@ -47,31 +48,31 @@ function openJSONFile($code)
 
 
 //formats currency
-if (!function_exists('format_price')) {
-    function format_price($price)
+if (!function_exists('formatPrice')) {
+    function formatPrice($price)
     {
         if (SystemConfiguration::where('type', 'symbol_format')->first()->value == 1) {
-            return currency_symbol() . number_format($price, SystemConfiguration::where('type', 'no_of_decimals')->first()->value);
+            return currencySymbol() . number_format($price, SystemConfiguration::where('type', 'no_of_decimals')->first()->value);
         }
-        return number_format($price, SystemConfiguration::where('type', 'no_of_decimals')->first()->value) . currency_symbol();
+        return number_format($price, SystemConfiguration::where('type', 'no_of_decimals')->first()->value) . currencySymbol();
     }
 }
 
 //formats price to home default price with convertion
-if (!function_exists('single_price')) {
-    function single_price($price)
+if (!function_exists('singlePrice')) {
+    function singlePrice($price)
     {
-        return format_price(convert_price($price));
+        return formatPrice(convertPrice($price));
     }
 }
 
 //converts currency to home default currency
-if (!function_exists('convert_price')) {
-    function convert_price($price)
+if (!function_exists('convertPrice')) {
+    function convertPrice($price)
     {
-        $business_settings = SystemConfiguration::where('type', 'system_default_currency')->first();
-        if ($business_settings != null) {
-            $currency = Currency::find($business_settings->value);
+        $businessSettings = SystemConfiguration::where('type', 'system_default_currency')->first();
+        if ($businessSettings != null) {
+            $currency = Currency::find($businessSettings->value);
             $price = floatval($price) / floatval($currency->exchange_rate);
         }
 
@@ -81,8 +82,8 @@ if (!function_exists('convert_price')) {
     }
 }
 
-if (!function_exists('currency_symbol')) {
-    function currency_symbol()
+if (!function_exists('currencySymbol')) {
+    function currencySymbol()
     {
         $code = Currency::findOrFail(SystemConfiguration::where('type', 'system_default_currency')->first()->value)->code;
         $currency = Currency::where('code', $code)->first();
@@ -187,21 +188,21 @@ function translate($key, $lang = null)
         $lang = App::getLocale();
     }
 
-    $translation_def = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'))->where('lang_key', $key)->first();
-    if ($translation_def == null) {
-        $translation_def = new Translation;
-        $translation_def->lang = env('DEFAULT_LANGUAGE', 'en');
-        $translation_def->lang_key = $key;
-        $translation_def->lang_value = $key;
-        $translation_def->save();
+    $translationDef = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'))->where('lang_key', $key)->first();
+    if ($translationDef == null) {
+        $translationDef = new Translation;
+        $translationDef->lang = env('DEFAULT_LANGUAGE', 'en');
+        $translationDef->lang_key = $key;
+        $translationDef->lang_value = $key;
+        $translationDef->save();
     }
 
     //Check for session lang
-    $translation_locale = Translation::where('lang_key', $key)->where('lang', $lang)->first();
-    if ($translation_locale != null) {
-        return $translation_locale->lang_value;
+    $translationLocale = Translation::where('lang_key', $key)->where('lang', $lang)->first();
+    if ($translationLocale != null) {
+        return $translationLocale->lang_value;
     } else {
-        return $translation_def->lang_value;
+        return $translationDef->lang_value;
     }
 }
 
@@ -216,47 +217,25 @@ function getCompletedProjectsByExpert($id)
 }
 
 //return file uploaded via uploader
-if (!function_exists('custom_asset')) {
-    function custom_asset($id)
+if (!function_exists('customAsset')) {
+    function customAsset($id)
     {
-        if (\App\Models\Upload::find($id) != null) {
-            return asset(\App\Models\Upload::find($id)->file_name);
+        if (Upload::find($id) != null) {
+            return asset(Upload::find($id)->file_name);
         }
         return null;
     }
 }
 
-if (!function_exists('getBaseURL')) {
-    function getBaseURL()
-    {
-        $root = '//' . $_SERVER['HTTP_HOST'];
-        $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-
-        return $root;
-    }
-}
-
-
-if (!function_exists('getFileBaseURL')) {
-    function getFileBaseURL()
-    {
-        if (env('FILESYSTEM_DRIVER') == 's3') {
-            return env('AWS_URL') . '/';
-        } else {
-            return getBaseURL() . 'public/';
-        }
-    }
-}
-
-if (!function_exists('system_email')) {
-    function system_email()
+if (!function_exists('systemEmail')) {
+    function systemEmail()
     {
         return User::first()->email;
     }
 }
 
-if (!function_exists('get_email_by_user_id')) {
-    function get_email_by_user_id($id)
+if (!function_exists('getEmailByUserId')) {
+    function getEmailByUserId($id)
     {
         $email = "";
         $user = User::find($id);
@@ -268,22 +247,22 @@ if (!function_exists('get_email_by_user_id')) {
 }
 
 
-if (!function_exists('email_footer_text')) {
-    function email_footer_text()
+if (!function_exists('emailFooterText')) {
+    function emailFooterText()
     {
         return env('APP_NAME') . " © 2020 All rights reserved";
     }
 }
 
-if (!function_exists('email_logo')) {
-    function email_logo()
+if (!function_exists('emailLogo')) {
+    function emailLogo()
     {
-        return custom_asset(App\Models\SystemConfiguration::where('type', 'header_logo')->first()->value);
+        return customAsset(App\Models\SystemConfiguration::where('type', 'header_logo')->first()->value);
     }
 }
 
-if (!function_exists('send_email_verification_email')) {
-    function send_email_verification_email()
+if (!function_exists('sendEmailVerificationEmail')) {
+    function sendEmailVerificationEmail()
     {
         $user = Auth::user();
         $user->verification_code = encrypt($user->id);
@@ -457,21 +436,21 @@ function timezones()
     return $timezones;
 }
 
-if (!function_exists('app_timezone')) {
-    function app_timezone()
+if (!function_exists('appTimezone')) {
+    function appTimezone()
     {
         return config('app.timezone');
     }
 }
 
-if (!function_exists('chat_threads')) {
-    function chat_threads()
+if (!function_exists('chatThreads')) {
+    function chatThreads()
     {
         $data = array();
         if (Auth::check()) {
-            foreach (ChatThread::where('sender_user_id', Auth::user()->id)->orWhere('receiver_user_id', Auth::user()->id)->get() as $key => $chat_thread) {
-                if (count($chat_thread->chats()->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)->get()) > 0) {
-                    $data[] = $chat_thread->id;
+            foreach (ChatThread::where('sender_user_id', Auth::user()->id)->orWhere('receiver_user_id', Auth::user()->id)->get() as $key => $chatThread) {
+                if (count($chatThread->chats()->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)->get()) > 0) {
+                    $data[] = $chatThread->id;
                 }
             }
         }
@@ -480,10 +459,10 @@ if (!function_exists('chat_threads')) {
     }
 }
 
-if (!function_exists('get_setting')) {
-    function get_setting($key, $default = "")
+if (!function_exists('getSetting')) {
+    function getSetting($key, $default = "")
     {
-        $setting = \App\Utility\SettingsUtility::get_settings_value($key);
+        $setting = \App\Utility\SettingsUtility::getSettingsValue($key);
         return $setting == "" ? $default : $setting;
     }
 }
@@ -562,8 +541,8 @@ function getCustomEnv($envKey)
 
 function convertSlug($name)
 {
-    $lower_case = strtolower($name);
-    $slug = str_replace(' ', '-', $lower_case);
+    $lowerCase = strtolower($name);
+    $slug = str_replace(' ', '-', $lowerCase);
 
     return $slug;
 }
@@ -601,17 +580,17 @@ function isRoleAdmin()
 // get training mode name
 function getTrainingModeName($id)
 {
-    $training_mode = TrainingMode::where('id', $id)->first();
+    $trainingMode = TrainingMode::where('id', $id)->first();
 
-    return $training_mode['name'];
+    return $trainingMode['name'];
 }
 
 function getSoftwarePackageName($id)
 {
-    $software_package = TrainingSoftware::where('id', $id)->first();
-    // return  $software_package['name'];
-    if ($software_package) {
-        return $software_package->name;
+    $softwarePackage = TrainingSoftware::where('id', $id)->first();
+    // return  $softwarePackage['name'];
+    if ($softwarePackage) {
+        return $softwarePackage->name;
     } else {
         return 'software_package not found';
     }
@@ -684,12 +663,12 @@ function getSkillsByID($id): array
 
 function getParentSkills(): array
 {
-    return ParentSkill::all()->sortByDesc("id")->toArray();
+    return Skill::whereNull('parent_id')->sortByDesc("id")->get()->toArray();
 }
 
 function getSubSkills($id): object
 {
-    return Skill::where('parent_skill_id', $id)->get();
+    return Skill::where('parent_id', $id)->get();
 }
 
 function getCountry(): \Illuminate\Support\Collection
@@ -712,18 +691,18 @@ if (!function_exists('formatTrainingDate')) {
 
 function getExpertPhoto($expert)
 {
-    $img_url = asset('assets/frontend/default/img/avatar-place.png'); // Default image URL
+    $imgUrl = asset('assets/frontend/default/img/avatar-place.png'); // Default image URL
 
     if ($expert && $expert->user && $expert->user->address && $expert->user->address->country) {
         // Check if each level exists before accessing 'photo'
         $country = $expert->user->address->country;
 
         if ($country->photo != null) {
-            $img_url = $country->photo;
+            $imgUrl = $country->photo;
         }
     }
 
-    return $img_url;
+    return $imgUrl;
 }
 
 if (!function_exists('getCurrentUrl')) {
@@ -732,7 +711,8 @@ if (!function_exists('getCurrentUrl')) {
         return request()->fullUrl();
     }
 }
-function GetUrls()
+
+function getUrls()
 {
     $data = array();
     $remainingUrl = '';
@@ -747,6 +727,7 @@ function GetUrls()
             $remainingUrl = str_replace($baseParts['path'], '', $remainingUrl);
         }
     }
+
     if ($remainingUrl == '') {
         $defaultdata = PageOptimization::where('id', 1)->get();
         if ($defaultdata->isNotEmpty()) {
@@ -767,7 +748,7 @@ function GetUrls()
             if ($pageoptimizations[0]->description->isNotEmpty()) {
                 $data['title'] = $pageoptimizations[0]->description->title;
                 $data['keyword'] = $pageoptimizations[0]->description->keyword;
-                $data['description'] = $pageoptimizations[0]->$description->description;
+                $data['description'] = $pageoptimizations[0]->description->description;
             } else {
                 $defaultdata = PageOptimization::where('id', 1)->get();
                 if ($defaultdata->isNotEmpty()) {
@@ -778,5 +759,6 @@ function GetUrls()
             }
         }
     }
+
     return $data;
 }

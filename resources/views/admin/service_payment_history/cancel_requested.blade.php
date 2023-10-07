@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search by project name" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="Search by project name" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -44,30 +44,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($service_payments as $key => $service_payment)
+                        @foreach($servicePayments as $key => $servicePayment)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td><a target="_blank" href="{{ route('service.show', $service_payment->servicePackage->service->slug) }}">{{ $service_payment->servicePackage->service->title }}</a></td>
-                                <td>{{ ucfirst($service_payment->servicePackage->service_type) }}</td>
-                                <td>{{ $service_payment->user->name }}</td>
-                                <td>{{ $service_payment->expert->name }}</td>
-                                <td>{{ single_price($service_payment->amount) }}</td>
-                                <td>{{ single_price($service_payment->admin_profit) }}</td>
-                                <td>{{ single_price($service_payment->expert_profit) }}</td>
+                                <td><a target="_blank" href="{{ route('service.show', $servicePayment->servicePackage->service->slug) }}">{{ $servicePayment->servicePackage->service->title }}</a></td>
+                                <td>{{ ucfirst($servicePayment->servicePackage->service_type) }}</td>
+                                <td>{{ $servicePayment->user->name }}</td>
+                                <td>{{ $servicePayment->expert->name }}</td>
+                                <td>{{ singlePrice($servicePayment->amount) }}</td>
+                                <td>{{ singlePrice($servicePayment->admin_profit) }}</td>
+                                <td>{{ singlePrice($servicePayment->expert_profit) }}</td>
                                 <td>
-                                    <span class="badge badge-inline badge-success">{{ translate('Paid via') }} {{ $service_payment->payment_method }}</span>
+                                    <span class="badge badge-inline badge-success">{{ translate('Paid via') }} {{ $servicePayment->payment_method }}</span>
                                 </td>
                                 @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
                                     <td>
-                                      @if($service_payment->offline_payment == 1)
+                                      @if($servicePayment->offline_payment == 1)
                                           <span class="badge badge-inline badge-info">{{ translate('Manual') }}</span>
                                       @else
                                           <span class="badge badge-inline badge-success">{{ translate('Online') }}</span>
                                       @endif
                                     </td>
-                                    @if($service_payment->offline_payment == 1)
+                                    @if($servicePayment->offline_payment == 1)
                                       <td>
-                                          @if($service_payment->approval == 1)
+                                          @if($servicePayment->approval == 1)
                                             <span class="badge badge-inline badge-success">{{ translate('Approved') }}</span>
                                           @else
                                             <span class="badge badge-inline badge-info">{{ translate('Pending') }}</span>
@@ -77,12 +77,12 @@
                                       <td></td>
                                     @endif
                                 @endif
-                                <td class="text-right">{{ $service_payment->created_at }}</td>
+                                <td class="text-right">{{ $servicePayment->created_at }}</td>
                                 <td class="text-right">
-                                    <a href="javascript:void(0)" onclick="show_cancel_request_modal('{{ $service_payment->id }}')" class="btn btn-soft-primary btn-icon btn-circle btn-sm" title="{{translate('Show')}}">
+                                    <a href="javascript:void(0)" onclick="show_cancel_request_modal('{{ $servicePayment->id }}')" class="btn btn-soft-primary btn-icon btn-circle btn-sm" title="{{translate('Show')}}">
                                         <i class="las la-eye"></i>
                                     </a>
-                                    <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-service-request.delete', $service_payment->id) }}" title="{{translate('Delete')}}">
+                                    <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-service-request.delete', $servicePayment->id) }}" title="{{translate('Delete')}}">
                                         <i class="las la-trash"></i>
                                     </a>
                                 </td>
@@ -91,7 +91,7 @@
                     </tbody>
                 </table>
                 <div class="aiz-pagination aiz-pagination-center">
-                    {{ $service_payments->links() }}
+                    {{ $servicePayments->links() }}
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
 
 @section('script')
 <script type="text/javascript">
-    function show_cancel_request_modal(id){
+    function showCancelRequestModal(id){
         $.post('{{ route('cancel-service-request.show') }}', { _token: '{{ csrf_token() }}', id:id }, function(data){
             $('#cancel-service-request').modal('show');
             $('#cancel-service-request_body').html(data);

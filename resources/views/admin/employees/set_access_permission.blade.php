@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-        $permissions = json_decode($user_role->permissions);
+        $permissions = json_decode($userRole->permissions);
     @endphp
 
     <div class="aiz-titlebar mt-2 mb-3">
@@ -12,13 +12,13 @@
             </div>
         </div>
     </div>
-    <form class="form-horizontal" action="{{ route('permissions.update', $user_role->id) }}" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" action="{{ route('permissions.update', $userRole->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0 h6">{{ $user_role->user->name }}</h5>
+                    <h5 class="mb-0 h6">{{ $userRole->user->name }}</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">

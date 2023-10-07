@@ -8,7 +8,7 @@
         <h1>Expert meeting page</h1>
         <span class="avatar avatar-xxl mb-3">
           @if ($user->photo != null)
-          <img src="{{ custom_asset($user->photo)}}">
+          <img src="{{ customAsset($user->photo)}}">
           @else
           <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
           @endif
@@ -20,15 +20,15 @@
         <h1 class="h5 mb-1">{{ $user->name }}</h1>
         <h5 class="mb-3 fs-12 opacity-60">{{ '@' . $user->user_name }}</h5>
         <div class="text-center">
-          @if ($user_profile->package != null)
-          <span class="avatar avatar-square avatar-xxs" title="{{ $user_profile->package->name }}">
-            <img src="{{ custom_asset($user_profile->package->badge) }}">
+          @if ($userProfile->package != null)
+          <span class="avatar avatar-square avatar-xxs" title="{{ $userProfile->package->name }}">
+            <img src="{{ customAsset($userProfile->package->badge) }}">
           </span>
           @endif
-          @foreach ($user->badges as $key => $user_badge)
-          @if ($user_badge->badge != null)
-          <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img
-              src="{{ asset($user_badge->badge->icon) }}"></span>
+          @foreach ($user->badges as $key => $userBadge)
+          @if ($userBadge->badge != null)
+          <span class="avatar avatar-square avatar-xxs" title="{{ $userBadge->badge->name }}"><img
+              src="{{ asset($userBadge->badge->icon) }}"></span>
           @endif
           @endforeach
         </div>
@@ -73,7 +73,7 @@
           </p>
           <p class="text-muted">
             <strong>{{ translate('Gender') }} :</strong>
-            <span class="ml-2">{{ $user_profile->gender }}</span>
+            <span class="ml-2">{{ $userProfile->gender }}</span>
           </p>
           <p class="text-muted">
             <strong>{{ translate('Mobile') }} :</strong>
@@ -100,10 +100,10 @@
           <p class="text-muted">
             <strong>{{ translate('Skills') }} :</strong>
             <span class="ml-2">
-              @if ($user_profile->skills != null)
-              @foreach (json_decode($user_profile->skills) as $key => $skill_id)
+              @if ($userProfile->skills != null)
+              @foreach (json_decode($userProfile->skills) as $key => $skillId)
               @php
-              $skill = \App\Models\Skill::find($skill_id);
+              $skill = \App\Models\Skill::find($skillId);
               @endphp
               @if ($skill != null)
               <span class="badge badge-inline badge-secondary">{{ $skill->name }}</span>
@@ -115,8 +115,8 @@
           <p class="text-muted">
             <strong>{{ translate('Running Package') }} :</strong>
             <span class="ml-2">
-              @if ($user_profile->user->userPackage != null && $user_profile->user->userPackage->package != null)
-              {{$user_profile->user->userPackage->package->name}}
+              @if ($userProfile->user->userPackage != null && $userProfile->user->userPackage->package != null)
+              {{$userProfile->user->userPackage->package->name}}
               @else
               {{translate('Package Removed')}}
               @endif
@@ -124,7 +124,7 @@
           </p>
           <p class="text-muted"><strong>{{ translate('Balance') }} :</strong>
             <span class="ml-2">
-              {{ single_price($user_profile->balance) }}
+              {{ singlePrice($userProfile->balance) }}
             </span>
           </p>
 
@@ -134,17 +134,17 @@
   </div>
   <div class="col-xl-8">
 
-    @if ($user_profile->bio != null)
+    @if ($userProfile->bio != null)
     <div class="card">
       <div class="card-header">
         <h6 class="mb-0">{{ translate('Bio') }}</h6>
       </div>
       <div class="card-body">
-        {{ $user_profile->bio }}
+        {{ $userProfile->bio }}
       </div>
     </div>
     @endif
-    @if ($user_account != null)
+    @if ($userAccount != null)
     <div class="card">
       <div class="card-header">
         <h5 class="mb-0 h6">{{ $user->name }} {{ translate('Account Information') }}</h5>
@@ -152,19 +152,19 @@
       <div class="card-body">
         <div class="text-left">
           <p class="text-muted"><strong>{{ translate('Bank Name') }} :</strong> <span
-              class="ml-2">{{ $user_account->bank_name }}</span></p>
+              class="ml-2">{{ $userAccount->bank_name }}</span></p>
 
           <p class="text-muted"><strong>{{ translate('Bank Account Name') }} :</strong><span
-              class="ml-2">{{ $user_account->bank_account_name }}</span></p>
+              class="ml-2">{{ $userAccount->bank_account_name }}</span></p>
 
           <p class="text-muted"><strong>{{ translate('Bank Account Number') }} :</strong><span
-              class="ml-2">{{ $user_account->bank_account_number }}</span></p>
+              class="ml-2">{{ $userAccount->bank_account_number }}</span></p>
 
           <p class="text-muted"><strong>{{ translate('Paypal Account') }} :</strong> <span
-              class="ml-2">{{ $user_account->paypal_acc_name }}</span></p>
+              class="ml-2">{{ $userAccount->paypal_acc_name }}</span></p>
 
           <p class="text-muted"><strong>{{ translate('Paypal Email') }} :</strong> <span
-              class="ml-2">{{ $user_account->paypal_email }}</span></p>
+              class="ml-2">{{ $userAccount->paypal_email }}</span></p>
 
         </div>
       </div>
@@ -176,31 +176,31 @@
         <h5 class="mb-0 h6">{{ translate('Work experiences') }}</h5>
       </div>
       <div class="card-body">
-        @foreach ($user->workExperiences as $key => $user_work_exp)
+        @foreach ($user->workExperiences as $key => $userWorkExp)
         <div class="text-left">
           <p class="text-muted text-capitalize"><strong>{{ translate('Company Name') }} :</strong>
-            <span class="ml-2">{{ $user_work_exp->company_name }}</span>
+            <span class="ml-2">{{ $userWorkExp->company_name }}</span>
           </p>
           <p class="text-muted text-capitalize"><strong>{{ translate('Company Website') }} :</strong>
-            <span class="ml-0"><a href="{{ $user_work_exp->company_website }}"
-                target="_blank">{{ $user_work_exp->company_website }}</a></span>
+            <span class="ml-0"><a href="{{ $userWorkExp->company_website }}"
+                target="_blank">{{ $userWorkExp->company_website }}</a></span>
           </p>
           <p class="text-muted text-capitalize"><strong>{{ translate('Designation') }} :</strong>
-            <span class="ml-2">{{ $user_work_exp->designation }}</span>
+            <span class="ml-2">{{ $userWorkExp->designation }}</span>
           </p>
           <p class="text-muted text-capitalize"><strong>{{ translate('Location') }} :</strong>
-            <span class="ml-2">{{ $user_work_exp->location }}</span>
+            <span class="ml-2">{{ $userWorkExp->location }}</span>
           </p>
           <p class="text-muted text-capitalize"><strong>{{ translate('Joining Date') }} :</strong>
-            <span class="ml-2">{{ $user_work_exp->start }}</span>
+            <span class="ml-2">{{ $userWorkExp->start }}</span>
           </p>
-          @if ($user_work_exp->present == '1')
+          @if ($userWorkExp->present == '1')
           <p class="text-muted text-capitalize"><strong>{{ translate('Leaving Date') }} :</strong>
             <span class="ml-2">{{ translate('Present') }}</span>
           </p>
           @else
           <p class="text-muted text-capitalize"><strong>{{ translate('Leaving Date') }} :</strong>
-            <span class="ml-2">{{ $user_work_exp->end }}</span>
+            <span class="ml-2">{{ $userWorkExp->end }}</span>
           </p>
           @endif
           <hr />

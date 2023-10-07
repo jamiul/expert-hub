@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Models\Page;
 use App\Models\Permission;
 
 class PermissionRepository

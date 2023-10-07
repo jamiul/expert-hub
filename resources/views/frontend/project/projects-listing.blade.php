@@ -76,7 +76,7 @@
                                                 <label class="aiz-checkbox w-100 site-font">
                                                     <input type="checkbox" class="" name="category_id[]"
                                                         onchange="applyFilter()" value="{{ $category->id }}"
-                                                        @if (in_array($category->id, $category_ids)) checked @endif>
+                                                        @if (in_array($category->id, $categoryIds)) checked @endif>
                                                     {{ $category->name }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right  fs-lg-16 "></span>
@@ -106,7 +106,7 @@
                                                             @foreach ($skills as $key => $skill)
                                                                 @foreach ($skill->childrens as $subSkill)
                                                                     <option class="site-font" value="{{ $subSkill->id }}"
-                                                                        @if (in_array($subSkill->id, (array) $skill_ids)) selected @endif>
+                                                                        @if (in_array($subSkill->id, (array) $skillIds)) selected @endif>
                                                                         {{ $subSkill->name }}</option>
                                                                 @endforeach
                                                             @endforeach
@@ -175,14 +175,14 @@
                                                 <input class="p-2 site-font project-page-fixed-price-right"
                                                 placeholder="Min"
                                                  name="fixed_min"
-                                                 value="{{ $fixed_min ? $fixed_min : '' }}" type="number">
+                                                 value="{{ $fixedMin ? $fixedMin : '' }}" type="number">
                                             </div>
                                             <p class="site-font  mb-0 d-flex justify-content-center align-items-center">to
                                             </p>
                                             <div>
                                                 <input onchange="applyFilter()" class="p-2 site-font  project-page-fixed-price-left" placeholder="Max"
                                                     name="fixed_max"
-                                                    value="{{ $fixed_max ? $fixed_max : '' }}" type="number">
+                                                    value="{{ $fixedMax ? $fixedMax : '' }}" type="number">
                                             </div>
                                         </div>
                                         <!-- Hourly Projects -->
@@ -198,7 +198,7 @@
                                         <div class="d-flex">
                                             <div>
                                                 <input class="p-2 project-page-fixed-price-right" name="hourly_min"
-                                                    value="{{ $hourly_min ? $hourly_min : '' }}" placeholder="Min"
+                                                    value="{{ $hourlyMin ? $hourlyMin : '' }}" placeholder="Min"
 
                                                     type="number">
                                             </div>
@@ -206,7 +206,7 @@
                                                 to</p>
                                             <div>
                                                 <input onchange="applyFilter()" name="hourly_max"
-                                                    value="{{ $hourly_max ? $hourly_max : '' }}" class="p-2 project-page-fixed-price-left"
+                                                    value="{{ $hourlyMax ? $hourlyMax : '' }}" class="p-2 project-page-fixed-price-left"
                                                     placeholder="Max"
                                                     type="number">
                                             </div>
@@ -240,7 +240,7 @@
                                                     {{ translate('Search countries') }}</option>
                                                 @foreach ($countries as $key => $country)
                                                     <option value="{{ $country->id }}"
-                                                        @if (isset($country_id) && $country_id == $country->id) selected @endif>
+                                                        @if (isset($countryId) && $countryId == $country->id) selected @endif>
                                                         {{ $country->name }}</option>
                                                 @endforeach
                                             </select>
@@ -293,7 +293,7 @@
                                         <div class="col-lg-1 p-0">
                                             <span class="avatar avatar-xs mb-lg-2" style="width:70px; height: 70px;">
                                                 @if ($project->image != null)
-                                                    <img src="{{ custom_asset($project->client->photo) }}">
+                                                    <img src="{{ customAsset($project->client->photo) }}">
                                                 @else
                                                     <a href="{{ route('project.details', $project->slug) }}"><img
                                                             src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"></a>
@@ -378,9 +378,9 @@
                                                 </p>
                                             </div>
                                             <div>
-                                                @foreach ($project->skills as $key => $skill_id)
+                                                @foreach ($project->skills as $key => $skillId)
                                                     @php
-                                                        $skill = \App\Models\Skill::find($skill_id);
+                                                        $skill = \App\Models\Skill::find($skillId);
                                                     @endphp
                                                     @if ($skill != null)
                                                         <span
@@ -398,7 +398,7 @@
                                                 <img class=" px-1  "
                                                     src=" {{ asset('/assets/find-consultant/budget.png') }}"
                                                     alt="Image" style="width:30px; " />
-                                                {{ single_price($project->price) }}
+                                                {{ singlePrice($project->price) }}
 
                                             </div>
 

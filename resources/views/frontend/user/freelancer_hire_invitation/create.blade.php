@@ -3,7 +3,7 @@
 @section('content')
 <div class="h-250px">
     @if ($expert->cover_photo != null)
-        <img src="{{ custom_asset($expert->cover_photo) }}" alt="{{ $expert->name }}"class="img-fit h-250px">
+        <img src="{{ customAsset($expert->cover_photo) }}" alt="{{ $expert->name }}"class="img-fit h-250px">
     @else
         <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $expert->name }}"class="img-fit h-250px">
     @endif
@@ -16,7 +16,7 @@
                     <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
                         <span class="avatar avatar-xxl">
                             @if($expert->photo != null)
-                                <img src="{{ custom_asset($expert->photo) }}">
+                                <img src="{{ customAsset($expert->photo) }}">
                             @else
                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                             @endif
@@ -55,7 +55,7 @@
 
                         <div class="text-lg-right d-flex justify-content-between align-items-end d-lg-block">
                             <div class="mb-lg-4">
-                                <h4 class="mb-0">{{ single_price($expert->profile->hourly_rate) }}</h4>
+                                <h4 class="mb-0">{{ singlePrice($expert->profile->hourly_rate) }}</h4>
                                 <div class="small text-secondary">
                                     <span>{{ translate('per Hour') }}</span>
                                 </div>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-label mb-2">{{ translate('Project type') }}<span class="text-danger">*</span></div>
-                                @if ($client_package->fixed_limit > 0)
+                                @if ($clientPackage->fixed_limit > 0)
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" id="projectTypeFixed" name="projectType" class="custom-control-input" value="Fixed" checked>
                                         <label class="custom-control-label" for="projectTypeFixed">{{ translate('Fixed') }}</label>
@@ -100,7 +100,7 @@
                                         {{ translate('Your fixed type project post limit is over.') }}
                                     </div>
                                 @endif
-                                @if ($client_package->long_term_limit > 0)
+                                @if ($clientPackage->long_term_limit > 0)
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" id="projectTypeLong" name="projectType" class="custom-control-input" value="Long Term">
                                         <label class="custom-control-label" for="projectTypeLong">{{ translate('Long term') }}</label>
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="file-preview box"></div>
                             </div>
-                            @if ($client_package->long_term_limit > 0|| $client_package->fixed_limit > 0)
+                            @if ($clientPackage->long_term_limit > 0|| $clientPackage->fixed_limit > 0)
                                 <button type="submit" class="btn btn-primary transition-3d-hover mr-1 rounded-1">{{ translate('Send Invitation') }}</button>
                             @else
                                 <div class="alert alert-info custom-control-inline mb-0" role="alert">

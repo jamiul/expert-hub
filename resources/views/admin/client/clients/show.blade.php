@@ -7,7 +7,7 @@
             <div class="card-body text-center">
                 <span class="avatar avatar-xxl mb-3">
                     @if($user->photo != null)
-                        <img src="{{ custom_asset($user->photo) }}">
+                        <img src="{{ customAsset($user->photo) }}">
                     @else
                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
@@ -19,14 +19,14 @@
                 <h1 class="h5 mb-1">{{ $user->name }}</h1>
                 <h5 class="mb-3 fs-12 opacity-60">{{ '@' . $user->user_name }}</h5>
                 <div class="text-center">
-                    @if ($user_profile->package != null)
-                    <span class="avatar avatar-square avatar-xxs" title="{{ $user_profile->package->name }}">
-                        <img src="{{ asset($user_profile->package->badge) }}">
+                    @if ($userProfile->package != null)
+                    <span class="avatar avatar-square avatar-xxs" title="{{ $userProfile->package->name }}">
+                        <img src="{{ asset($userProfile->package->badge) }}">
                     </span>
                     @endif
-                    @foreach ($user->badges as $key => $user_badge)
-                        @if ($user_badge->badge != null)
-                            <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ asset($user_badge->badge->icon) }}"></span>
+                    @foreach ($user->badges as $key => $userBadge)
+                        @if ($userBadge->badge != null)
+                            <span class="avatar avatar-square avatar-xxs" title="{{ $userBadge->badge->name }}"><img src="{{ asset($userBadge->badge->icon) }}"></span>
                         @endif
                     @endforeach
                 </div>
@@ -70,7 +70,7 @@
                     </p>
                     <p class="text-muted">
                         <strong>{{ translate('Gender') }} :</strong>
-                        <span class="ml-2">{{ $user_profile->gender }}</span>
+                        <span class="ml-2">{{ $userProfile->gender }}</span>
                     </p>
                     <p class="text-muted">
                         <strong>{{ translate('Mobile') }} :</strong>
@@ -106,7 +106,7 @@
                     </p>
                     <p class="text-muted"><strong>{{ translate('Total Spent') }} :</strong>
                         <span class="ml-2">
-                            {{ single_price(\App\Models\MilestonePayment::where('client_user_id', $user->id)->where('paid_status', 1)->sum('amount')) }}
+                            {{ singlePrice(\App\Models\MilestonePayment::where('client_user_id', $user->id)->where('paid_status', 1)->sum('amount')) }}
                         </span>
                     </p>
 
@@ -137,8 +137,8 @@
                             <td>{{ ($key+1) + ($projects->currentPage() - 1)*$projects->perPage() }}</td>
                             <td>{{ $project->name }}</td>
                             <td>{{ translate($project->type) }}</td>
-                            <td>{{ single_price($project->price) }}</td>
-                            <td>{{ single_price($project->budget) }}</td>
+                            <td>{{ singlePrice($project->price) }}</td>
+                            <td>{{ singlePrice($project->budget) }}</td>
                             <td>
                                 @if( $project->cancel_status == 1)
                                     <span class="badge badge-inline badge-danger">{{ translate('Canceled') }}</span>

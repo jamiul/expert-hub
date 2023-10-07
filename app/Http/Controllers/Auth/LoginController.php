@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\Controller;
 use App\Models\Address;
 use App\Models\User;
 use App\Models\UserProfile;
@@ -72,7 +72,7 @@ class LoginController extends Controller
             // log them in
             auth()->login($existingUser, true);
 
-            $user_profile = UserProfile::where('user_id', auth()->user()->id)->first();
+            $userProfile = UserProfile::where('user_id', auth()->user()->id)->first();
         } else {
             // create a new user
             $newUser = new User;
@@ -85,9 +85,9 @@ class LoginController extends Controller
             $newUser->save();
             Session::put('new_user', true);
 
-            $user_profile = new UserProfile;
-            $user_profile->user_id = $newUser->id;
-            $user_profile->save();
+            $userProfile = new UserProfile;
+            $userProfile->user_id = $newUser->id;
+            $userProfile->save();
 
             $address = new Address;
             $newUser->address()->save($address);
@@ -125,15 +125,15 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         if (auth()->user() != null && (auth()->user()->user_type != null && auth()->user()->user_type == "admin" || auth()->user()->user_type == "staff")) {
-            $redirect_route = 'admin.login';
+            $redirectRoute = 'admin.login';
         } else {
-            $redirect_route = 'dashboard';
+            $redirectRoute = 'dashboard';
         }
 
         $this->guard()->logout();
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect()->route($redirect_route);
+        return $this->loggedOut($request) ?: redirect()->route($redirectRoute);
     }
 }

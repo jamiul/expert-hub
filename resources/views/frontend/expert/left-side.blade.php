@@ -5,7 +5,7 @@
         <div class="justify-content-center text-center mt-4">
             <span class=" flex-shrink-0 mr-4">
                 @if ($expert->photo != null)
-                    <img src="{{ custom_asset($expert->photo) }}" alt="{{ $expert->name }} "
+                    <img src="{{ customAsset($expert->photo) }}" alt="{{ $expert->name }} "
                          class="expert-name">
                 @else
                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
@@ -90,9 +90,9 @@
                     {{-- skills  --}}
                     @if ($expert->profile->skills != null)
                         <section>
-                            @foreach (json_decode($expert->profile->skills) as $skill_id)
+                            @foreach (json_decode($expert->profile->skills) as $skillId)
                                 @php
-                                    $skill = \App\Models\Skill::find($skill_id);
+                                    $skill = \App\Models\Skill::find($skillId);
                                 @endphp
                                 @if ($skill != null)
                                     <span

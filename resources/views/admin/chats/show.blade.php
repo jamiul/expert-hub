@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h6 class="mb-0">{{ translate('Chats Between') }} {{ $chat_thread->sender->name }} & {{ $chat_thread->receiver->name }}</h6>
+        <h6 class="mb-0">{{ translate('Chats Between') }} {{ $chatThread->sender->name }} & {{ $chatThread->receiver->name }}</h6>
     </div>
     <div class="card-body">
         <div class="border-0 shadow-none aiz-chat">
@@ -13,13 +13,13 @@
                 </div>
                 <div class="chat-list">
                     @foreach ($chats as $key => $chat)
-                        @if ( $chat->sender_user_id == $chat_thread->sender_user_id)
+                        @if ( $chat->sender_user_id == $chatThread->sender_user_id)
                             @if ($chat->message != null)
                                 <div class="chat-coversation d-inline-flex">
                                     <div class="media">
                                         <span class="avatar avatar-xs flex-shrink-0" data-toggle="tooltip" title="{{ $chat->sender->name }}">
                                             @if ($chat->sender->photo != null)
-                                                <img src="{{ custom_asset($chat->sender->photo)}}">
+                                                <img src="{{ customAsset($chat->sender->photo)}}">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
@@ -38,16 +38,16 @@
                                     <div class="media">
                                         <span class="avatar avatar-xs flex-shrink-0">
                                             @if ($chat->sender->photo != null)
-                                                <img src="{{ custom_asset($chat->sender->photo)}}">
+                                                <img src="{{ customAsset($chat->sender->photo)}}">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                         </span>
                                         <div class="media-body">
                                             <div class="file-preview box sm pl-2 pt-2 bg-light rounded">
-                                                @foreach (json_decode($chat->attachment) as $key => $attachment_id)
+                                                @foreach (json_decode($chat->attachment) as $key => $attachmentId)
                                                     @php
-                                                        $attachment = \App\Models\Upload::find($attachment_id);
+                                                        $attachment = \App\Models\Upload::find($attachmentId);
                                                     @endphp
                                                     @if ($attachment != null)
                                                         @if ($attachment->type == 'image')
@@ -103,7 +103,7 @@
                                         </div>
                                         <span class="avatar avatar-xs flex-shrink-0" data-toggle="tooltip" title="{{$chat->sender->name}}">
                                             @if ($chat->sender->photo != null)
-                                                <img src="{{ custom_asset($chat->sender->photo)}}">
+                                                <img src="{{ customAsset($chat->sender->photo)}}">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
@@ -116,9 +116,9 @@
                                     <div class="media">
                                         <div class="media-body">
                                             <div class="file-preview box sm pr-2 pt-2 bg-primary rounded">
-                                                @foreach (json_decode($chat->attachment) as $key => $attachment_id)
+                                                @foreach (json_decode($chat->attachment) as $key => $attachmentId)
                                                     @php
-                                                        $attachment = \App\Models\Upload::find($attachment_id);
+                                                        $attachment = \App\Models\Upload::find($attachmentId);
                                                     @endphp
                                                     @if ($attachment != null)
                                                         @if ($attachment->type == 'image')
@@ -163,7 +163,7 @@
                                         </div>
                                         <span class="avatar avatar-xs flex-shrink-0" data-toggle="tooltip" title="{{$chat->sender->name}}">
                                             @if ($chat->sender->photo != null)
-                                                <img src="{{ custom_asset($chat->sender->photo)}}">
+                                                <img src="{{ customAsset($chat->sender->photo)}}">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif

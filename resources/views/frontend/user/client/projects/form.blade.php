@@ -73,7 +73,7 @@
     </div class="aiz-radio-inline">
     <div class="row">
         <div class="col-lg-4 card py-3 px-2 pr-0">
-            @if ($client_package->fixed_limit > 0)
+            @if ($clientPackage->fixed_limit > 0)
                 <div class="custom-control custom-radio custom-control-inline ">
                     <input  type="radio" id="projectTypeFixed"
                         name="type" class="custom-control-input" value="Fixed"
@@ -94,7 +94,7 @@
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-4 card py-3 px-2 pl-0">
-            @if ($client_package->long_term_limit > 0)
+            @if ($clientPackage->long_term_limit > 0)
                 <div class="custom-control custom-radio custom-control-inline ">
                     <input type="radio" id="projectTypeLong" name="type"
                         class="custom-control-input" value="hourly"
@@ -145,12 +145,12 @@
         <div class="col-lg-1 px-0"></div>
         <select class="col-lg-9 px-0 form-control aiz-selectpicker" name="budget" id="choices" >
             @if(old('currency', $project->currency) == 'AUD' || old('currency', $project->currency) == null)
-                @foreach ($budget_aud as $budget)
+                @foreach ($budgetAud as $budget)
                     <option value="{{ $budget }}" @if(old('budget', $project->budget) == $budget) selected @endif>{{ $budget }}</option>
                 @endforeach
             @endif
             @if(old('currency', $project->currency) == 'USD')
-                @foreach ($budget_usd as $budget)
+                @foreach ($budgetUsd as $budget)
                     <option value="{{ $budget }}" @if(old('budget', $project->budget) == $budget) selected @endif>{{ $budget }}</option>
                 @endforeach
             @endif
@@ -180,7 +180,7 @@
     @enderror
 </div>
 <div class="text-right">
-    @if ($client_package->fixed_limit > 0 || $client_package->fixed_limit > 0)
+    @if ($clientPackage->fixed_limit > 0 || $clientPackage->fixed_limit > 0)
         <button type="submit"
             class="btn btn-primary transition-3d-hover mr-1 rounded-1">{{ translate($buttonText) }}</button>
     @else
@@ -194,8 +194,8 @@
     <script>
         // Map your choices to your option value
         var lookup = {
-            'AUD': {!! json_encode($budget_aud) !!},
-            'USD': {!! json_encode($budget_usd) !!},
+            'AUD': {!! json_encode($budgetAud) !!},
+            'USD': {!! json_encode($budgetUsd) !!},
         };
 
         // When an option is changed, search the above for matching choices

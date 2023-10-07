@@ -45,7 +45,7 @@
                                             </td>
                                             <td>{{ $milestone->created_at }}</td>
                                             <td>
-                                                {{ single_price($milestone->amount) }}
+                                                {{ singlePrice($milestone->amount) }}
                                             </td>
                                             <td>
                                                 @if($milestone->paid_status == 1)
@@ -99,19 +99,19 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        function request_message_show_modal(id){
+        function requestMessageShowModal(id){
             $.post('{{ route('milestone_request_message_show_modal') }}',{_token:'{{ csrf_token() }}', id:id}, function(data){
                 $('#request_message_show_modal').modal('show');
                 $('#request_message_show_modal_body').html(data);
     		});
         }
 
-        function select_payment_type(id) {
+        function selectPaymentType(id) {
             $('input[name=milestone_payment_id]').val(id);
             $('#select_payment_type_modal').modal('show');
         }
 
-        function payment_type(type) {
+        function paymentType(type) {
             var milestone_payment_id = $('#milestone_payment_id').val();
             if (type == 'online') {
                 $("#select_type_cancel").click();
@@ -128,7 +128,7 @@
             }
         }
 
-        function show_online_payment_modal(id){
+        function showOnlinePaymentModal(id){
             $.post('{{ route('show_payment_select_modal') }}',{_token:'{{ csrf_token() }}', id:id}, function(data){
                 $('#show_online_payment_select_modal').modal('show');
                 $('#show_online_payment_select_modal_body').html(data);

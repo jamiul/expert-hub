@@ -25,7 +25,7 @@
 <body>
     @extends('frontend.layouts.app')
     @section('content')
-        @if (get_setting('slider_section_show') == 'on')
+        @if (getSetting('slider_section_show') == 'on')
             <section>
                 <section class=" hero-section " id="frontHomeTab">
                     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -102,7 +102,7 @@
 
         <!-- explore services -->
         <!-- explore services -->
-        @if (get_setting('how_it_works_show') == 'on')
+        @if (getSetting('how_it_works_show') == 'on')
             <div class="border-top pb-2 " style="background-color:#275846;">
                 <div class="mt-5 pb-2">
                     <div class="">
@@ -222,19 +222,18 @@
             </div>
         @endif
 
-
         <!-- Consultant Service Category -->
-        @if (get_setting('featured_category_show') == 'on')
+        @if (getSetting('featured_category_show') == 'on')
             <form id=" consultant-filter-form" action="" method="GET">
                 <section class="bg-white border-top">
                     <div class="container-home">
 
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75w-lg-75 lh-1-8 content-title ">
-                                <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+                                <!-- <h2 class="fw-700 fs-40">{{ getSetting('service_section_title') }}</h2> -->
                                 <h2 class="fw-700 fre-small-font text-success">Browse academic consultants by category.
                                 </h2>
-                                <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
+                                <!-- <p class="fs-18">{{ getSetting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
                                 <a href="search?keyword=&type=expert"
@@ -248,11 +247,11 @@
                         </div>
 
                         <div class="row gutters-10">
-                            @if (get_setting('featured_category_list') != null)
-                                @foreach ($consultant_categories as $category)
+                            @if (getSetting('featured_category_list') != null)
+                                @foreach ($consultantCategories as $category)
                                     <div class="col-md-3">
                                         <div class="card" style="height:350px;">
-                                            <img class="w-100 h-170px" src=" {{ custom_asset($category->photo) }}"
+                                            <img class="w-100 h-170px" src=" {{ customAsset($category->photo) }}"
                                                 alt="Image" />
                                             <div class="card-body" style=" padding:13px;">
                                                 <a class=" featured_category text-dark" onclick="applyFilter()"
@@ -284,18 +283,16 @@
             </form>
         @endif
 
-
-
         <!-- Find academic jobs Category -->
-        @if (get_setting('featured_category_show') == 'on')
+        @if (getSetting('featured_category_show') == 'on')
             <form id=" consultant-filter-form" action="" method="GET">
                 <section class="bg-white border-top">
                     <div class="container-home">
                         <div class="d-flex justify-content-between ">
                             <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
-                                <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+                                <!-- <h2 class="fw-700 fs-40">{{ getSetting('service_section_title') }}</h2> -->
                                 <h2 class="fw-700 fre-small-font text-success">Explore academic projects by category</h2>
-                                <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
+                                <!-- <p class="fs-18">{{ getSetting('service_section_subtitle') }}</p> -->
                             </div>
                             <div>
                                 <a href="{{ route('search') }}?category="
@@ -313,7 +310,7 @@
                                 <div class="col-lg-3">
                                     <a href="{{ route('projects.category', $category->slug) }} " class="text-dark">
                                         <div class=" card" style="height:283px;">
-                                            <img class="w-100 h-200px" src=" {{ custom_asset($category->photo) }}"
+                                            <img class="w-100 h-200px" src=" {{ customAsset($category->photo) }}"
                                                 alt="Image" />
                                             <div class="card-body" style=" padding:13px;">
 
@@ -354,7 +351,7 @@
 
 
         <!-- Join us -->
-        @if (get_setting('latest_project_show') == 'on')
+        @if (getSetting('latest_project_show') == 'on')
             <section class="border-top bg-white">
 
 
@@ -827,7 +824,7 @@
         @endif
 
         <!--Find scholarship by category -->
-        @if (get_setting('latest_project_show') == 'on')
+        @if (getSetting('latest_project_show') == 'on')
             <section class="border-top" style="background-color:#FBF7ED; padding-bottom:10px;">
                 <div class="container-home" style=" ">
 
@@ -1157,14 +1154,14 @@
         @endif
 
         <!-- Academic training -->
-        @if (get_setting('latest_project_show') == 'on')
+        @if (getSetting('latest_project_show') == 'on')
             <section class="border-top bg-white" style=" padding-bottom:10px;">
                 <div class="container-home">
                     <div class="d-flex justify-content-between ">
                         <div class="w-lg-75 w-xl-50 lh-1-8 content-title ">
-                            <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+                            <!-- <h2 class="fw-700 fs-40">{{ getSetting('service_section_title') }}</h2> -->
                             <h2 class="fw-700 fre-small-font text-success">Explore academic training by category</h2>
-                            <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
+                            <!-- <p class="fs-18">{{ getSetting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
                             <a href="{{ asset('/search?keyword=&type=training') }}"
@@ -1181,7 +1178,7 @@
                         @foreach ($trainings as $training)
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
-                                    <img class="w-100 h-190px" src=" {{ custom_asset($training->attachment) }}"
+                                    <img class="w-100 h-190px" src=" {{ customAsset($training->attachment) }}"
                                         alt="Image" />
                                     <div class="p-3">
                                         <h5 class="card-title fs-20 mt-2 training-home-content"> {{ $training->title }}
@@ -1215,7 +1212,7 @@
 
 
         <!-- learn with scholarship australia -->
-        @if (get_setting('latest_project_show') == 'on')
+        @if (getSetting('latest_project_show') == 'on')
             <section class="border-bottom" style="background-color:#FBF7ED; padding-top:10px;">
                 <div class=" container-home">
                     <div class="content-title">
@@ -1322,7 +1319,7 @@
         @endif
         <!-- skills section  -->
 
-        @if (get_setting('latest_project_show') == 'on')
+        @if (getSetting('latest_project_show') == 'on')
             <div class="container-home ">
                 <div class="content-title">
                     <h2 class="fw-700 fre-small-font text-success">

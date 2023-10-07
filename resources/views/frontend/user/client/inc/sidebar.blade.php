@@ -8,7 +8,7 @@
         <div class="px-4 text-center mb-4">
             <span class="avatar avatar-md mb-3">
                 @if (Auth::user()->photo != null)
-                <img src="{{ custom_asset(Auth::user()->photo) }}">
+                <img src="{{ customAsset(Auth::user()->photo) }}">
                 @else
                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                 @endif
@@ -21,9 +21,9 @@
             <h4 class="h5 fs-16 fw-700">{{ Auth::user()->name }}</h4>
             <h6 class="h5 fs-12 text-secondary">{{ Auth::user()->email }}</h6>
             <div class="text-center my-3">
-                @foreach (Auth::user()->badges as $key => $user_badge)
-                    @if ($user_badge->badge != null)
-                        <span class="avatar avatar-square avatar-xxs mr-1" title="{{ $user_badge->badge->name }}"><img src="{{ custom_asset($user_badge->badge->icon) }}"></span>
+                @foreach (Auth::user()->badges as $key => $userBadge)
+                    @if ($userBadge->badge != null)
+                        <span class="avatar avatar-square avatar-xxs mr-1" title="{{ $userBadge->badge->name }}"><img src="{{ customAsset($userBadge->badge->icon) }}"></span>
                     @endif
                 @endforeach
             </div>
@@ -136,7 +136,7 @@
                 </li>
                 @endif
                 @php
-                    $total_mile_request = count(\App\Models\MilestonePayment::where('client_user_id', Auth::user()->id)->where('client_seen', 0)->get());
+                    $totalMileRequest = count(\App\Models\MilestonePayment::where('client_user_id', Auth::user()->id)->where('client_seen', 0)->get());
                 @endphp
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('milestone-requests.all') }}" class="aiz-side-nav-link d-flex align-items-center {{ areActiveRoutes(['milestone-requests.all'])}}">
@@ -145,14 +145,14 @@
                             <path id="Layer_2" data-name="Layer 2" d="M15.872,2.33A.75.75,0,0,0,15.249,2H4.75A.75.75,0,0,0,4,2.75v10.5a.75.75,0,1,0,1.5,0V11h9.749a.75.75,0,0,0,.7-1.027L14.559,6.5l1.387-3.472a.75.75,0,0,0-.075-.7Zm-3.84,3.2-3,3a.75.75,0,0,1-1.057,0l-1.5-1.5A.75.75,0,1,1,7.532,5.967l.967.975,2.467-2.467a.75.75,0,0,1,1.057,1.057Z" transform="translate(-4 -2)" fill="#989ea8"/>
                         </svg>
                         <span class="aiz-side-nav-text ml-2">{{ translate('Milestone Request') }}</span>
-                        @if ($total_mile_request > 0)
-                            <span class="badge badge-primary badge-circle">{{$total_mile_request}}</span>
+                        @if ($totalMileRequest > 0)
+                            <span class="badge badge-primary badge-circle">{{$totalMileRequest}}</span>
                         @endif
                     </a>
                 </li>
                 @php
-                    $unseen_chat_threads = chat_threads();
-                    $unseen_chat_thread_count = count($unseen_chat_threads);
+                    $unseenChatThreads = chatThreads();
+                    $unseenChatThreadCount = count($unseenChatThreads);
                 @endphp
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('all.messages') }}" class="aiz-side-nav-link d-flex align-items-center {{ areActiveRoutes(['all.messages', 'chat_view'])}}">
@@ -163,7 +163,7 @@
                             </g>
                         </svg>
                         <span class="aiz-side-nav-text ml-2">{{ translate('Message') }}</span>
-                        <span class="badge badge-primary badge-circle">{{ $unseen_chat_thread_count }}</span>
+                        <span class="badge badge-primary badge-circle">{{ $unseenChatThreadCount }}</span>
                     </a>
                 </li>
                 <li class="aiz-side-nav-item">

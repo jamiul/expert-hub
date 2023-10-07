@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ translate('Search by project name') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="{{ translate('Search by project name') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>

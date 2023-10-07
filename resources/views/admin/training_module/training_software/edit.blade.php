@@ -8,14 +8,14 @@
                 <h5 class="mb-0 h6">{{translate('Scholarship City Information')}}</h5>
             </div>
             <div class="card-body">
-                <form id="add_form" class="form-horizontal" action="{{ route('training-software.update', $training_software->id) }}" method="POST">
+                <form id="add_form" class="form-horizontal" action="{{ route('training-software.update', $trainingSoftware->id) }}" method="POST">
                     @csrf
                     @method('PATCH')
 
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Name')}}</label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Name')}}" id="name" name="name" value="{{ $training_software->name }}" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Name')}}" id="name" name="name" value="{{ $trainingSoftware->name }}" class="form-control" required>
                         </div>
                     </div>
 

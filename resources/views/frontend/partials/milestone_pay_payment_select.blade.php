@@ -17,7 +17,7 @@
         </label>
         <div class="form-group">
             <div class="row">
-                @if(get_setting('paypal_activation_checkbox'))
+                @if(getSetting('paypal_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="paypal" id="payment_option" type="radio" name="payment_option" checked>
@@ -30,7 +30,7 @@
                         </label>
                     </div>
                 @endif
-                @if(get_setting('stripe_activation_checkbox'))
+                @if(getSetting('stripe_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="stripe" id="payment_option" type="radio" name="payment_option" checked>
@@ -43,7 +43,7 @@
                         </label>
                     </div>
                 @endif
-                @if(get_setting('escrow_activation_checkbox'))
+                @if(getSetting('escrow_activation_checkbox'))
                 <div class="col-6 col-md-4">
                     <label class="aiz-megabox d-block mb-3">
                         <input value="escrow" id="payment_option" type="radio" name="payment_option" checked>
@@ -56,7 +56,7 @@
                     </label>
                 </div>
             @endif
-                @if(get_setting('sslcommerz_activation_checkbox'))
+                @if(getSetting('sslcommerz_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="sslcommerz" id="payment_option" type="radio" name="payment_option" checked>
@@ -69,7 +69,7 @@
                         </label>
                     </div>
                 @endif
-                @if(get_setting('paystack_activation_checkbox'))
+                @if(getSetting('paystack_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="paystack" id="payment_option" type="radio" name="payment_option" checked>
@@ -82,7 +82,7 @@
                         </label>
                     </div>
                 @endif
-                @if(get_setting('instamojo_activation_checkbox'))
+                @if(getSetting('instamojo_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="instamojo" id="payment_option" type="radio" name="payment_option" checked>
@@ -95,7 +95,7 @@
                         </label>
                     </div>
                 @endif
-                @if(get_setting('paytm_activation_checkbox'))
+                @if(getSetting('paytm_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="paytm" id="payment_option" type="radio" name="payment_option" checked>
@@ -108,7 +108,7 @@
                         </label>
                     </div>
                 @endif
-                @if(get_setting('flutterwave_activation_checkbox'))
+                @if(getSetting('flutterwave_activation_checkbox'))
                     <div class="col-6 col-md-4">
                         <label class="aiz-megabox d-block mb-3">
                             <input value="flutterwave" id="payment_option" type="radio" name="payment_option" checked>

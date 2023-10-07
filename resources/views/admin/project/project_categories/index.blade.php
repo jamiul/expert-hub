@@ -20,12 +20,12 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($project_categories as $key => $project_category)
+            @foreach($projectCategories as $key => $projectCategory)
             <tr>
-              <td>{{ ($key+1) + ($project_categories->currentPage() - 1)*$project_categories->perPage() }}</td>
-              <td>{{$project_category->name}}</td>
+              <td>{{ ($key+1) + ($projectCategories->currentPage() - 1)*$projectCategories->perPage() }}</td>
+              <td>{{$projectCategory->name}}</td>
               @php
-              $parent = \App\Models\ProjectCategory::where('id', $project_category->parent_id)->first();
+              $parent = \App\Models\ProjectCategory::where('id', $projectCategory->parent_id)->first();
               @endphp
               <td>
                 @if ($parent != null)
@@ -35,26 +35,26 @@
                 @endif
               </td>
               <td>
-                {{$project_category->description}}
+                {{$projectCategory->description}}
               </td>
               <td>
                 <div class="p-2 bg-secondary" style="width: fit-content;">
                   <span class="avatar avatar-square avatar-xs">
-                    <img src="{{ custom_asset($project_category->photo) }}">
+                    <img src="{{ customAsset($projectCategory->photo) }}">
                   </span>
                 </div>
               </td>
               <td class="text-right">
                 @can('project cat edit')
                 <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                  href="{{ route('project-categories.edit', encrypt($project_category->id)) }}"
+                  href="{{ route('project-categories.edit', encrypt($projectCategory->id)) }}"
                   title="{{ translate('Edit') }}">
                   <i class="las la-edit"></i>
                 </a>
                 @endcan
                 @can('project cat delete')
                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                  data-href="{{route('project-categories.delete', encrypt($project_category->id))}}"
+                  data-href="{{route('project-categories.delete', encrypt($projectCategory->id))}}"
                   title="{{ translate('Delete') }}">
                   <i class="las la-trash"></i>
                 </a>
@@ -63,7 +63,7 @@
             </tr>
             @endforeach
           </tbody>
-          {{ $project_categories->links() }}
+          {{ $projectCategories->links() }}
         </table>
       </div>
     </div>
@@ -87,8 +87,8 @@
             <select class="select2 form-control aiz-selectpicker" name="parent_id" data-toggle="select2"
               data-placeholder="Choose ..." data-live-search="true">
               <option value="0">{{ translate('No Parent') }}</option>
-              @foreach(\App\Models\ProjectCategory::all() as $project_cat)
-              <option value="{{$project_cat->id}}">{{$project_cat->name}}</option>
+              @foreach(\App\Models\ProjectCategory::all() as $projectCat)
+              <option value="{{$projectCat->id}}">{{$projectCat->name}}</option>
               @endforeach
             </select>
           </div>

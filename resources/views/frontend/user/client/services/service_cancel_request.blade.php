@@ -10,7 +10,7 @@
                 <div class="aiz-titlebar mb-4">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h1 class="fs-16 fw-700">{{ translate('Cancel Service') }} - {{ $purchased_service->servicePackage->service->title }}</h1>
+                            <h1 class="fs-16 fw-700">{{ translate('Cancel Service') }} - {{ $purchasedService->servicePackage->service->title }}</h1>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <form class="form-horizontal" action="{{ route('services.cancel.store') }}" method="POST">
                             @csrf
-                            <input type="hidden" name="purchased_service_id" value="{{ $purchased_service->id }}">
+                            <input type="hidden" name="purchased_service_id" value="{{ $purchasedService->id }}">
                             <div class="form-group">
                                 <label class="form-label">
                                     {{translate('Why do you want to Cancel?')}}

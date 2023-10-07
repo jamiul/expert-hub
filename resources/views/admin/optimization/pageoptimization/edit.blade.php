@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     <form id="add_form" class="form-horizontal"
-                          action="{{ route('page-optimization.update', $page_optimization->id) }}"
+                          action="{{ route('page-optimization.update', $pageOptimization->id) }}"
                           method="POST">
                         @csrf
                         @method('PATCH')
@@ -19,7 +19,7 @@
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
-                                <input type="text" value="{{ $page_optimization->title }}"
+                                <input type="text" value="{{ $pageOptimization->title }}"
                                        id="title" name="title" class="form-control"
                                        required>
                             </div>
@@ -29,7 +29,7 @@
                                 {{ translate('Keywords') }}
                             </label>
                             <div class="col-md-9">
-                                <input type="text" value="{{ $page_optimization->keyword }}"
+                                <input type="text" value="{{ $pageOptimization->keyword }}"
                                        id="keyword" name="keyword" class="form-control"
                                        required>
                             </div>
@@ -43,7 +43,7 @@
                                         data-live-search="true" title="{{ translate('Select Page') }}">
                                     @foreach ($sitepages as $sitepage)
                                         <option
-                                            value="{{ $sitepage['id'] }}" {{ $sitepage['id'] == $page_optimization->page_id ? 'selected' : '' }}>
+                                            value="{{ $sitepage['id'] }}" {{ $sitepage['id'] == $pageOptimization->page_id ? 'selected' : '' }}>
                                             {{ $sitepage['title'] }}
                                         </option>
                                     @endforeach
@@ -57,7 +57,7 @@
                             <div class="col-md-9">
 
                                 <textarea name="description" rows="5"
-                                          class="form-control">{{ $page_optimization->description }}</textarea>
+                                          class="form-control">{{ $pageOptimization->description }}</textarea>
                             </div>
                         </div>
                         <div class="form-group mb-0 text-right">

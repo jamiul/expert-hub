@@ -41,7 +41,7 @@
                                     {{$wallet->created_at}}
                                 </td>
                                 <td>
-                                    {{single_price($wallet->amount)}}
+                                    {{singlePrice($wallet->amount)}}
                                 </td>
                             </tr>
                         @endforeach

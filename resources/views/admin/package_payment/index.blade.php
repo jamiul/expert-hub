@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="aiz-date-range form-control" @isset($sort_search) value="{{ $sort_search }}" @endisset name="date" placeholder="{{ translate('Select time and Search') }}" data-advanced-range="true" autocomplete="off"/>
+                            <input type="text" class="aiz-date-range form-control" @isset($sortSearch) value="{{ $sortSearch }}" @endisset name="date" placeholder="{{ translate('Select time and Search') }}" data-advanced-range="true" autocomplete="off"/>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach( $package_payments as $key => $payment )
+                        @foreach( $packagePayments as $key => $payment )
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>
@@ -56,7 +56,7 @@
                                   @else
                                     {{translate('Not Found')}}
                                   @endif
-                                <td>{{single_price($payment->amount)}}</td>
+                                <td>{{singlePrice($payment->amount)}}</td>
                                 <td>
                                     <span class="badge badge-inline badge-success">
                                       {{ translate('Paid by') }} {{ $payment->payment_method }}
@@ -89,7 +89,7 @@
                             </tr>
                         @endforeach
                     </tbody>
-                    {{ $package_payments->appends(request()->input())->links() }}
+                    {{ $packagePayments->appends(request()->input())->links() }}
                 </table>
             </div>
         </div>

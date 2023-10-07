@@ -12,7 +12,7 @@ use App\Models\SystemConfiguration;
 
 class SettingsUtility
 {
-    public static function get_settings_value($type)
+    public static function getSettingsValue($type)
     {
         $value = '';
         $settings = SystemConfiguration::where('type', $type)->first();
@@ -29,7 +29,7 @@ class SettingsUtility
         return $value;
     }
 
-    public static function save_settings($type, $value)
+    public static function saveSettings($type, $value)
     {
         $settings = SystemConfiguration::where('type', $type)->first();
         if (is_null($settings)) {

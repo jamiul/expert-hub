@@ -197,7 +197,7 @@
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-                                    @foreach ($training_category as $category)
+                                    @foreach ($trainingCategory as $category)
                                         <span id="trainingCategory_{{ $category->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                                             {{ $category->name }} |<p class="m-0  d-inline fw-700"
@@ -205,7 +205,7 @@
                                                 X</p>
                                         </span>
                                     @endforeach
-                                    @foreach ($training_modes as $mode)
+                                    @foreach ($trainingModes as $mode)
                                         <span id="trainingMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                                             {{ $mode->name }} |<p class="m-0  d-inline fw-700"
@@ -265,7 +265,7 @@
                                                 <label class="aiz-checkbox w-100">
                                                     <input type="checkbox" name="category_id[]"
                                                         value="{{ $category['id'] }}" onchange="applyFilter()"
-                                                        @if (in_array($category['id'], $category_ids)) checked @endif>
+                                                        @if (in_array($category['id'], $categoryIds)) checked @endif>
                                                     {{ $category['name'] }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -284,7 +284,7 @@
                                                 </option>
                                                 @foreach (getTrainingSoftwares() as $software)
                                                     <option value="{{ $software['id'] }}"
-                                                        @if (in_array($software['id'], $training_software_ids)) selected @endif>
+                                                        @if (in_array($software['id'], $trainingSoftwareIds)) selected @endif>
                                                         {{ $software['name'] }}</option>
                                                 @endforeach
                                             </select>
@@ -299,7 +299,7 @@
                                                     <label class="aiz-checkbox">
                                                         <input type="checkbox" name="training_mode_id[]"
                                                             value="{{ $mode['id'] }}" onchange="applyFilter()"
-                                                            @if (in_array($mode['id'], $training_mode_ids)) checked @endif>{{ $mode['name'] }}
+                                                            @if (in_array($mode['id'], $trainingModeIds)) checked @endif>{{ $mode['name'] }}
                                                         <span class="aiz-square-check"></span>
                                                         <span class="float-right text-secondary fs-12"></span>
                                                     </label>
@@ -328,7 +328,7 @@
                                                     <label class="aiz-checkbox">
                                                         <input type="checkbox" name="language_id[]"
                                                             value="{{ $lang['id'] }}" onchange="applyFilter()"
-                                                            @if (in_array($lang['id'], $language_ids)) checked @endif>
+                                                            @if (in_array($lang['id'], $languageIds)) checked @endif>
                                                         {{ $lang['name'] }}
                                                         <span class="aiz-square-check"></span>
                                                         <span class="float-right text-secondary fs-12"></span>
@@ -946,7 +946,7 @@
 
             // Hide and show training software
             function showTrainingSoftwate() {
-                let trainingSoftware = {!! json_encode($category_ids) !!};
+                let trainingSoftware = {!! json_encode($categoryIds) !!};
                 for (let i = 0; i < trainingSoftware.length; i++) {
                     // When category "Research and Analysis"
                     // then show training software

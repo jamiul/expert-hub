@@ -108,9 +108,9 @@
 	                                        <i class="las la-pen"></i>
 	                                    </a>
 										@php
-											$system_default_currency = \App\Utility\SettingsUtility::get_settings_value('system_default_currency');
+											$systemDefaultCurrency = \App\Utility\SettingsUtility::getSettingsValue('system_default_currency');
 										@endphp
-										@if($system_default_currency != $currency->id)
+										@if($systemDefaultCurrency != $currency->id)
 		                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('currencies.delete', $currency->id)}}" title="{{translate('Delete')}}">
 		                                        <i class="las la-trash"></i>
 		                                    </a>

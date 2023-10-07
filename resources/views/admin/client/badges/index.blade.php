@@ -29,12 +29,12 @@
                                     @if($badge->type == 'project_badge')
                                         {{$badge->value}} {{translate('Projects')}}
                                     @elseif($badge->type == 'spent_badge')
-                                        {{single_price($badge->value)}} {{translate('Spent')}}
+                                        {{singlePrice($badge->value)}} {{translate('Spent')}}
                                     @else
                                         {{$badge->value}} {{translate('Days')}}
                                     @endif
                                 </td>
-                                <td><img class="img-md" src="{{ custom_asset($badge->icon) }}" height="50px" alt="{{translate('icon')}}"></td>
+                                <td><img class="img-md" src="{{ customAsset($badge->icon) }}" height="50px" alt="{{translate('icon')}}"></td>
                                 <td class="text-right">
                                     <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('client_badges_edit', encrypt($badge->id)) }}" title="{{ translate('Edit') }}">
                                             <i class="las la-edit"></i>

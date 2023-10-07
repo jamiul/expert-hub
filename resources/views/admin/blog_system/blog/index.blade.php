@@ -24,7 +24,7 @@
 
             <div class="col-md-2">
                 <div class="form-group mb-0">
-                    <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($sort_search) value="{{ $sort_search }}" @endisset placeholder="{{ translate('Type & Enter') }}">
+                    <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($sortSearch) value="{{ $sortSearch }}" @endisset placeholder="{{ translate('Type & Enter') }}">
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
 @section('script')
 
     <script type="text/javascript">
-        function change_status(el){
+        function changeStatus(el){
             var status = 0;
             if(el.checked){
                 var status = 1;

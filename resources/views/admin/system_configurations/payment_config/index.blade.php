@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-4">
                                 <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" @if(\App\Utility\SettingsUtility::get_settings_value('stripe_activation_checkbox') == 1) checked @endif name="stripe_activation_checkbox">
+                                    <input type="checkbox" @if(\App\Utility\SettingsUtility::getSettingsValue('stripe_activation_checkbox') == 1) checked @endif name="stripe_activation_checkbox">
                                     <span></span>
                                 </label>
                             </div>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-4">
                                 <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" @if(\App\Utility\SettingsUtility::get_settings_value('stripe_sandbox_checkbox') == 1) checked @endif name="stripe_sandbox_checkbox">
+                                    <input type="checkbox" @if(\App\Utility\SettingsUtility::getSettingsValue('stripe_sandbox_checkbox') == 1) checked @endif name="stripe_sandbox_checkbox">
                                     <span></span>
                                 </label>
                             </div>

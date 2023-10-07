@@ -142,7 +142,7 @@
 @section('script')
     <script type="text/javascript">
 
-        function update_language_status(el){
+        function updateLanguageStatus(el){
             if(el.checked){
                 var status = 1;
             }

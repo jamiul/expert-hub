@@ -28,8 +28,8 @@
                             <table class="table table-borderless mb-0" id="trainingDateTable">
                                 <tbody>
                                     @if (!$training->training_dates->isEmpty())
-                                        @foreach ($training->training_dates as $training_date)
-                                            {{-- @dd($training_date->training_date); --}}
+                                        @foreach ($training->training_dates as $trainingDate)
+                                            {{-- @dd($trainingDate->training_date); --}}
                                             <tr>
                                                 <td>
                                                     <div class="form-group row">
@@ -39,7 +39,7 @@
                                                         </label>
                                                         <div class="col-md-9">
                                                             <input type="text"
-                                                                value="{{ \Carbon\Carbon::parse($training_date->training_date)->format('Y/m/d') }}"
+                                                                value="{{ \Carbon\Carbon::parse($trainingDate->training_date)->format('Y/m/d') }}"
                                                                 name="training_date[]" class="form-control"
                                                                 onfocus="(this.type='date')" onblur="(this.type='text')">
                                                         </div>
@@ -49,7 +49,7 @@
                                                             {{ translate('Training Date Description') }}
                                                         </label>
                                                         <div class="col-md-9">
-                                                            <textarea name="date_description[]" rows="5" class="form-control">{{ $training_date->descriptions }}</textarea>
+                                                            <textarea name="date_description[]" rows="5" class="form-control">{{ $trainingDate->descriptions }}</textarea>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -91,10 +91,10 @@
                             <div class="col-md-9">
                                 <select class="form-control" name="training_mode_id" id="training_mode_id"
                                     data-live-search="true">
-                                    @foreach (getTrainingModes() as $training_mode)
-                                        <option value="{{ $training_mode['id'] }}"
-                                            {{ $training_mode['id'] == $training->training_mode_id ? 'selected' : '' }}>
-                                            {{ $training_mode['name'] }}
+                                    @foreach (getTrainingModes() as $trainingMode)
+                                        <option value="{{ $trainingMode['id'] }}"
+                                            {{ $trainingMode['id'] == $training->training_mode_id ? 'selected' : '' }}>
+                                            {{ $trainingMode['name'] }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -110,10 +110,10 @@
                             <div class="col-md-9">
                                 <select class="form-control" name="training_software_id" id="training_software_id"
                                     data-live-search="true" title="{{ translate('Select Software Package') }}">
-                                    @foreach (getTrainingSoftwares() as $training_software)
-                                        <option value="{{ $training_software['id'] }}"
-                                            {{ $training_software['id'] == $training->training_software_id ? 'selected' : '' }}>
-                                            {{ $training_software['name'] }}
+                                    @foreach (getTrainingSoftwares() as $trainingSoftware)
+                                        <option value="{{ $trainingSoftware['id'] }}"
+                                            {{ $trainingSoftware['id'] == $training->training_software_id ? 'selected' : '' }}>
+                                            {{ $trainingSoftware['name'] }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -159,7 +159,7 @@
                         </div>
                         {{-- @dd($training->training_instructors); --}}
                             <!--Course Instructors -->
-                            @foreach ($training->training_instructors as $training_instructor)
+                            @foreach ($training->training_instructors as $trainingInstructor)
                                 <div class="form-group row" id="country">
                                     <label class="col-md-3 col-from-label">
                                         {{ translate('Course Instructor') }} {{ $loop->iteration }}
@@ -171,7 +171,7 @@
                                             <option value="">Select Training Instructor</option>
                                             @foreach (getCourseInstructors() as $instructor)
                                                 <option value="{{ $instructor['id'] }}"
-                                                    {{ $instructor['id'] == $training_instructor['user_id'] ? 'selected' : '' }}>
+                                                    {{ $instructor['id'] == $trainingInstructor['user_id'] ? 'selected' : '' }}>
                                                     {{ $instructor['name'] }}
                                                 </option>
                                             @endforeach

@@ -17,15 +17,15 @@
 </div>
 
 
-@if (get_setting('show_website_popup') == 'on')
+@if (getSetting('show_website_popup') == 'on')
     <div class="modal website-popup removable-session d-none" data-key="website-popup" data-value="removed">
         <div class="absolute-full bg-black opacity-60"></div>
         <div class="modal-dialog modal-dialog-centered modal-dialog-zoom modal-md">
             <div class="modal-content position-relative border-0 rounded-0">
                 <div class="aiz-editor-data">
-                    {!! get_setting('website_popup_content') !!}
+                    {!! getSetting('website_popup_content') !!}
                 </div>
-                @if (get_setting('show_subscribe_form') == 'on')
+                @if (getSetting('show_subscribe_form') == 'on')
                     <div class="pb-5 pt-4 px-5">
                         <form class="" method="POST" action="{{ route('subscribers.store') }}">
                             @csrf
@@ -51,7 +51,7 @@
 
 @yield('modal')
 
-@if (get_setting('facebook_chat_activation_checkbox') == 1)
+@if (getSetting('facebook_chat_activation_checkbox') == 1)
     <script type="text/javascript">
         window.fbAsyncInit = function () {
             FB.init({

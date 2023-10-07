@@ -12,13 +12,13 @@
                     <div class="col-md-3 ml-auto">
                         <select class="form-control aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_clients()">
                             <option value="">{{ translate('Sort by') }}</option>
-                            <option value="created_at,asc" @isset($col_name , $query) @if($col_name == 'created_at' && $query == 'asc') selected @endif @endisset>{{translate('Time (Old > New)')}}</option>
-                            <option value="created_at,desc" @isset($col_name , $query) @if($col_name == 'created_at' && $query == 'desc') selected @endif @endisset>{{translate('Time (New > Old)')}}</option>
+                            <option value="created_at,asc" @isset($colName , $query) @if($colName == 'created_at' && $query == 'asc') selected @endif @endisset>{{translate('Time (Old > New)')}}</option>
+                            <option value="created_at,desc" @isset($colName , $query) @if($colName == 'created_at' && $query == 'desc') selected @endif @endisset>{{translate('Time (New > Old)')}}</option>
                         </select>
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ translate('Search by Name') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="{{ translate('Search by Name') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -73,10 +73,10 @@
                                         @endif
                                     </td>
                                     <td>
-                                        {{ single_price(\App\Models\MilestonePayment::where('client_user_id', $client->user->id)->where('paid_status', 1)->sum('amount')) }}
+                                        {{ singlePrice(\App\Models\MilestonePayment::where('client_user_id', $client->user->id)->where('paid_status', 1)->sum('amount')) }}
                                     </td>
                                     <td>
-                                        {{single_price($client->balance)}}
+                                        {{singlePrice($client->balance)}}
                                     </td>
                                     <td class="text-right">
                                         @if ($client->user != null)
@@ -122,10 +122,10 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    function sort_clients(el){
+    function sortClients(el){
         $('#sort_clients').submit();
     }
-    function show_wallet_modal(user_id){
+    function showWalletModal(user_id){
         $('#wallet_user_id').val(user_id);
         console.log(user_id);
         $('#wallet_modal_admin').modal('show');

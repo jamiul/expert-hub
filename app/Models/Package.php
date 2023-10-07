@@ -24,7 +24,7 @@ class Package extends Model
         return $query->where('active', 1);
     }
 
-    public function package_payments()
+    public function packagePayments()
     {
         return $this->hasMany(PackagePayment::class);
     }

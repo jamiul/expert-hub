@@ -13,7 +13,7 @@
         <div class="aiz-sidebar left c-scrollbar">
             <div class="aiz-side-nav-logo-wrap">
                 <a href="{{ route('admin.dashboard') }}" class="d-block">
-                    <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_white')) }}"
+                    <img src="{{ customAsset(\App\Utility\SettingsUtility::getSettingsValue('system_logo_white')) }}"
                         class="img-fluid">
                 </a>
             </div>

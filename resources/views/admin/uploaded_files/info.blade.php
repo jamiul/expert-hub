@@ -22,11 +22,11 @@
 	<div class="form-group text-center">
 		@php
 			if($file->file_original_name == null){
-			    $file_name = translate('Unknown');
+			    $fileName = translate('Unknown');
 			}else{
-				$file_name = $file->file_original_name;
+				$fileName = $file->file_original_name;
 			}
 		@endphp
-		<a class="btn btn-secondary" href="{{ asset($file->file_name) }}" target="_blank" download="{{ $file_name }}.{{ $file->extension }}">{{ translate('Download') }}</a>
+		<a class="btn btn-secondary" href="{{ asset($file->file_name) }}" target="_blank" download="{{ $fileName }}.{{ $file->extension }}">{{ translate('Download') }}</a>
 	</div>
 </div>

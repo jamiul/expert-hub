@@ -28,7 +28,7 @@
                         </label>
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="category_id" id="category_id" data-live-search="true" title="{{ translate('Select category') }}">
-                                @foreach ($scholarship_categories as $category)
+                                @foreach ($scholarshipCategories as $category)
                                 <option value="{{ $category->id }}">
                                     {{ $category->category_name }}
                                 </option>
@@ -45,7 +45,7 @@
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="level_id" id="level_id" data-live-search="true" title="{{ translate('Select Level') }}">
 
-                                @foreach ($scholarship_levels as $level)
+                                @foreach ($scholarshipLevels as $level)
                                 <option value="{{ $level->id }}">
                                     {{$level->level_name }}
                                 </option>
@@ -62,7 +62,7 @@
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="university_id" id="university_id" data-live-search="true" title="{{ translate('Select university') }}">
 
-                                @foreach ($scholarship_universities as $university)
+                                @foreach ($scholarshipUniversities as $university)
                                 <option value="{{ $level->id }}">
                                     {{$university->university_name }}
                                 </option>
@@ -88,7 +88,7 @@
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="country_id" id="country_id" data-live-search="true" title="{{ translate('Select Country') }}" required>
 
-                                @foreach ($scholarship_country as $country)
+                                @foreach ($scholarshipCountry as $country)
                                 <option value="{{ $level->id }}">
                                     {{$country->country_name }}
                                 </option>
@@ -105,7 +105,7 @@
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="city_id" id="city_id" data-live-search="true" title="{{ translate('Select City') }}" required>
 
-                                @foreach ($scholarship_city as $city)
+                                @foreach ($scholarshipCity as $city)
                                 <option value="{{ $level->id }}">
                                     {{$city->city_name }}
                                 </option>
@@ -122,7 +122,7 @@
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="whoCanApply_id" id="whoCanApply_id" data-live-search="true" title="{{ translate('Who can apply') }}" required>
 
-                                @foreach ($scholarship_whoCanApply as $title)
+                                @foreach ($scholarshipWhoCanApply as $title)
 
                                 <option value="{{ $level->id }}">
                                     {{$title->title }}
@@ -140,7 +140,7 @@
                         <div class="col-md-9">
                             <select class="form-control aiz-selectpicker" name="qualification_id" id="qualification_id" data-live-search="true" title="{{ translate('Select Qualification') }}" required>
 
-                                @foreach ($scholarship_qualification as $qualification)
+                                @foreach ($scholarshipQualification as $qualification)
                                 <option value="{{ $level->id }}">
                                     {{$qualification->qualification_name }}
                                 </option>
@@ -156,7 +156,7 @@
                         </label>
                         <div class="col-md-9">
                             <select multiple class="form-control aiz-selectpicker" name="fieldStudy_id[]"data-live-search="true" title="{{ translate('Select Field Of study') }}" data-placeholder="Select Field Of study" data-selected-text-format="count" required>
-                                @foreach ($scholarship_fieldStudy as $fieldStudy)
+                                @foreach ($scholarshipFieldStudy as $fieldStudy)
                                 <option value="{{ $fieldStudy->id }}">
                                     {{$fieldStudy->name }}
                                 </option>

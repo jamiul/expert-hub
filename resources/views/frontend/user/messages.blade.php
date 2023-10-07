@@ -24,72 +24,72 @@
                                         <button class="btn btn-icon d-lg-none" data-toggle="class-toggle" data-target=".chat-user-list-wrap"><i class="las la-times"></i></button>
                                     </div>
                                     <div class="chat-user-list border-right py-3 c-scrollbar-light">
-                                        @forelse ($chat_threads as $key => $single_chat_thread)
+                                        @forelse ($chatThreads as $key => $singleChatThread)
                                             @php
-                                                $num_of_message = $single_chat_thread->chats->where('seen', 0)->count();
+                                                $numOfMessage = $singleChatThread->chats->where('seen', 0)->count();
                                             @endphp
-                                            @if ($single_chat_thread->receiver != null && $single_chat_thread->sender != null)
+                                            @if ($singleChatThread->receiver != null && $singleChatThread->sender != null)
                                                 @if (isClient())
-                                                    <a href="javascript:void(0)" class="chat-user-item p-3 d-block text-inherit" data-url="{{ route('chat_view', $single_chat_thread->id) }}" data-refresh="{{ route('chat_refresh', $single_chat_thread->id) }}" onclick="loadChats(this)">
+                                                    <a href="javascript:void(0)" class="chat-user-item p-3 d-block text-inherit" data-url="{{ route('chat_view', $singleChatThread->id) }}" data-refresh="{{ route('chat_refresh', $singleChatThread->id) }}" onclick="loadChats(this)">
                                                         <div class="media">
                                                             <span class="avatar avatar-sm mr-3 flex-shrink-0">
-                                                                @if ($single_chat_thread->sender->photo != null)
-                                                                <img src="{{ custom_asset($single_chat_thread->receiver->photo) }}">
+                                                                @if ($singleChatThread->sender->photo != null)
+                                                                <img src="{{ customAsset($singleChatThread->receiver->photo) }}">
                                                                 @else
                                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                                 @endif
 
-                                                                @if(Cache::has('user-is-online-' . $single_chat_thread->receiver->id))
+                                                                @if(Cache::has('user-is-online-' . $singleChatThread->receiver->id))
                                                                     <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
                                                                 @else
                                                                     <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                                                                 @endif
                                                             </span>
                                                             <div class="media-body minw-0">
-                                                                <h6 class="mt-0 mb-1 fs-14 text-truncate">{{ $single_chat_thread->receiver->name }}</h6>
-                                                                @if ($single_chat_thread->chats->last() != null)
-                                                                    @if ($single_chat_thread->chats->last()->message != null)
-                                                                        <div class="fs-12 text-truncate opacity-60">{{ $single_chat_thread->chats->last()->message }}</div>
+                                                                <h6 class="mt-0 mb-1 fs-14 text-truncate">{{ $singleChatThread->receiver->name }}</h6>
+                                                                @if ($singleChatThread->chats->last() != null)
+                                                                    @if ($singleChatThread->chats->last()->message != null)
+                                                                        <div class="fs-12 text-truncate opacity-60">{{ $singleChatThread->chats->last()->message }}</div>
                                                                     @else
                                                                         <div class="fs-12 text-truncate opacity-60">{{ translate('Attachments')}}</div>
                                                                     @endif
                                                                 @endif
                                                             </div>
                                                             <div class="ml-2 text-right">
-                                                                @if ($single_chat_thread->chats->last() != null)
-                                                                    <div class="opacity-60 fs-10 mb-1">{{ Carbon\Carbon::parse($single_chat_thread->chats->last()->created_at)->diffForHumans() }}</div>
+                                                                @if ($singleChatThread->chats->last() != null)
+                                                                    <div class="opacity-60 fs-10 mb-1">{{ Carbon\Carbon::parse($singleChatThread->chats->last()->created_at)->diffForHumans() }}</div>
                                                                 @endif
-                                                                <span class="badge badge-primary badge-circle flex-shrink-0 ml-4">{{ count($single_chat_thread->chats->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)) }}</span>
+                                                                <span class="badge badge-primary badge-circle flex-shrink-0 ml-4">{{ count($singleChatThread->chats->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)) }}</span>
                                                             </div>
                                                         </div>
                                                     </a>
                                                 @else
-                                                    <a href="javascript:void(0)" class="chat-user-item p-3 d-block text-inherit" data-url="{{ route('chat_view', $single_chat_thread->id) }}" data-refresh="{{ route('chat_refresh', $single_chat_thread->id) }}" onclick="loadChats(this)">
+                                                    <a href="javascript:void(0)" class="chat-user-item p-3 d-block text-inherit" data-url="{{ route('chat_view', $singleChatThread->id) }}" data-refresh="{{ route('chat_refresh', $singleChatThread->id) }}" onclick="loadChats(this)">
                                                         <div class="media">
                                                             <span class="avatar avatar-sm mr-3 flex-shrink-0">
-                                                                @if ($single_chat_thread->sender->photo != null)
-                                                                <img src="{{ custom_asset($single_chat_thread->sender->photo) }}">
+                                                                @if ($singleChatThread->sender->photo != null)
+                                                                <img src="{{ customAsset($singleChatThread->sender->photo) }}">
                                                                 @else
                                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                                 @endif
 
-                                                                @if(Cache::has('user-is-online-' . $single_chat_thread->sender->id))
+                                                                @if(Cache::has('user-is-online-' . $singleChatThread->sender->id))
                                                                     <span class="badge badge-dot badge-circle badge-success badge-status badge-md"></span>
                                                                 @else
                                                                     <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                                                                 @endif
                                                             </span>
                                                             <div class="media-body minw-0">
-                                                                <h6 class="mt-0 mb-1 fs-14 text-truncate">{{ $single_chat_thread->sender->name }}</h6>
-                                                                @if ($single_chat_thread->chats->last() != null)
-                                                                    <div class="fs-12 text-truncate opacity-60">{{ $single_chat_thread->chats->last()->message }}</div>
+                                                                <h6 class="mt-0 mb-1 fs-14 text-truncate">{{ $singleChatThread->sender->name }}</h6>
+                                                                @if ($singleChatThread->chats->last() != null)
+                                                                    <div class="fs-12 text-truncate opacity-60">{{ $singleChatThread->chats->last()->message }}</div>
                                                                 @endif
                                                             </div>
                                                             <div class="ml-2 text-right">
-                                                                @if ($single_chat_thread->chats->last() != null)
-                                                                    <div class="opacity-60 fs-10 mb-1">{{ Carbon\Carbon::parse($single_chat_thread->chats->last()->created_at)->diffForHumans() }}</div>
+                                                                @if ($singleChatThread->chats->last() != null)
+                                                                    <div class="opacity-60 fs-10 mb-1">{{ Carbon\Carbon::parse($singleChatThread->chats->last()->created_at)->diffForHumans() }}</div>
                                                                 @endif
-                                                                <span class="badge badge-primary badge-circle flex-shrink-0 ml-4">{{ count($single_chat_thread->chats->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)) }}</span>
+                                                                <span class="badge badge-primary badge-circle flex-shrink-0 ml-4">{{ count($singleChatThread->chats->where('sender_user_id', '!=', Auth::user()->id)->where('seen', 0)) }}</span>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -152,7 +152,7 @@
             });
         }
 
-        function send_reply(){
+        function sendReply(){
             var chat_thread_id = $('#chat_thread_id').val();
             var message = $('#message').val();
             var attachment = $('#attachment').val();

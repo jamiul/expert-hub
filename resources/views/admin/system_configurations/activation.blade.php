@@ -20,7 +20,7 @@
                         <label>{{ translate('Enable project approval feature?') }}</label>
                         <div>
                             <label class="aiz-switch aiz-switch-success mb-0">
-                                <input type="checkbox" onchange="updateSettings(this, 'project_approval')" @if(get_setting('project_approval') == 1) checked @endif>
+                                <input type="checkbox" onchange="updateSettings(this, 'project_approval')" @if(getSetting('project_approval') == 1) checked @endif>
                                 <span></span>
                             </label>
                         </div>
@@ -64,7 +64,7 @@
                         <label>{{ translate('Enable Email Verification?') }}</label>
                         <div>
                             <label class="aiz-switch aiz-switch-success mb-0">
-                               <input type="checkbox" onchange="updateSettings(this, 'email_verification')" @if(get_setting('email_verification') == 1) checked @endif>
+                               <input type="checkbox" onchange="updateSettings(this, 'email_verification')" @if(getSetting('email_verification') == 1) checked @endif>
                                 <span></span>
                             </label>
                         </div>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="card-body text-center">
                     <label class="aiz-switch aiz-switch-success mb-0">
-                        <input type="checkbox" onchange="updateSettings(this, 'maintenance_mode')" <?php if(get_setting('maintenance_mode') == 1) echo "checked";?>>
+                        <input type="checkbox" onchange="updateSettings(this, 'maintenance_mode')" <?php if(getSetting('maintenance_mode') == 1) echo "checked";?>>
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="card-body text-center">
                     <label class="aiz-switch aiz-switch-success mb-0">
-                        <input type="checkbox" onchange="updateSettings(this, 'disable_image_optimization')" <?php if(get_setting('disable_image_optimization') == 1) echo "checked";?>>
+                        <input type="checkbox" onchange="updateSettings(this, 'disable_image_optimization')" <?php if(getSetting('disable_image_optimization') == 1) echo "checked";?>>
                         <span class="slider round"></span>
                     </label>
                 </div>

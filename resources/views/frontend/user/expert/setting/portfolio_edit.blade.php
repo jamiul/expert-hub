@@ -21,22 +21,22 @@
                         <h4 class="h6 font-weight-medium mb-0">{{ translate('Portfolio') }}</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('user_profile.portfolio_update', $user_portfolio->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('user_profile.portfolio_update', $userPortfolio->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label id="usernameLabel" class="form-label">{{ translate('Title') }}<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="portfolio_name" value="{{ $user_portfolio->name }}" placeholder="{{ translate('Portfolio title') }}">
+                                <input type="text" class="form-control" name="portfolio_name" value="{{ $userPortfolio->name }}" placeholder="{{ translate('Portfolio title') }}">
                             </div>
                             <div class="form-group">
                                 <label id="usernameLabel" class="form-label">{{ translate('Category') }}<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="portfolio_category" value="{{ $user_portfolio->type }}" placeholder="{{ translate('Portfolio category') }}">
+                                <input type="text" class="form-control" name="portfolio_category" value="{{ $userPortfolio->type }}" placeholder="{{ translate('Portfolio category') }}">
                             </div>
                             <div class="form-group">
                                 <label id="usernameLabel" class="form-label">
                                     {{ translate('Details') }}
                                     <span class="text-danger">*</span>
                                 </label>
-                                <textarea class="form-control" rows="3" name="portfolio_details" required>{{ $user_portfolio->description }}</textarea>
+                                <textarea class="form-control" rows="3" name="portfolio_details" required>{{ $userPortfolio->description }}</textarea>
                             </div>
 
                             <div class="form-group">
@@ -47,7 +47,7 @@
                                             <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
                                         </div>
                                         <div class="form-control file-amount">{{ translate('Choose File') }}</div>
-                                        <input type="hidden" name="portfolio_img" class="selected-files" value="{{ $user_portfolio->photo }}">
+                                        <input type="hidden" name="portfolio_img" class="selected-files" value="{{ $userPortfolio->photo }}">
                                     </div>
                                     <div class="file-preview"></div>
                                 </div>

@@ -22,7 +22,7 @@ class Service extends Model
         return $this->belongsTo(ProjectCategory::class, 'project_cat_id')->withTrashed();
     }
 
-    public function service_packages()
+    public function servicePackages()
     {
         return $this->hasMany(ServicePackage::class)->withTrashed();
     }

@@ -24,7 +24,7 @@ class Review extends Model
         return $this->belongsTo(User::class, 'reviewed_user_id');
     }
 
-    public function reviewed_role()
+    public function reviewedRole()
     {
         return $this->belongsTo(Role::class, 'reviewed_user_role_id');
     }

@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ translate('Search by project name') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="{{ translate('Search by project name') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -41,29 +41,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($milestone_payments as $key => $milestone_payment_id)
+                        @foreach($milestonePayments as $key => $milestonePaymentId)
                             @php
-                                $milestone_payment = \App\Models\MilestonePayment::find($milestone_payment_id->id);
+                                $milestonePayment = \App\Models\MilestonePayment::find($milestonePaymentId->id);
                             @endphp
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $milestone_payment->project->name }}</td>
-                                <td>{{ $milestone_payment->client->name }}</td>
-                                <td>{{ $milestone_payment->expert->name }}</td>
-                                <td>{{ single_price($milestone_payment->amount) }}</td>
-                                <td>{{ single_price($milestone_payment->admin_profit) }}</td>
-                                <td>{{ single_price($milestone_payment->expert_profit) }}</td>
+                                <td>{{ $milestonePayment->project->name }}</td>
+                                <td>{{ $milestonePayment->client->name }}</td>
+                                <td>{{ $milestonePayment->expert->name }}</td>
+                                <td>{{ singlePrice($milestonePayment->amount) }}</td>
+                                <td>{{ singlePrice($milestonePayment->admin_profit) }}</td>
+                                <td>{{ singlePrice($milestonePayment->expert_profit) }}</td>
                                 <td>
-                                    @if( $milestone_payment->paid_status == 1 )
-                                        <span class="badge badge-inline badge-success">{{ translate('Paid via') }} {{ $milestone_payment->payment_method }}</span>
+                                    @if( $milestonePayment->paid_status == 1 )
+                                        <span class="badge badge-inline badge-success">{{ translate('Paid via') }} {{ $milestonePayment->payment_method }}</span>
                                     @else
                                         <span class="badge badge-inline badge-secondary">{{ translate('Unpaid') }}</span>
                                     @endif
                                 </td>
                                 @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
-                                    @if($milestone_payment->offline_payment == 1)
+                                    @if($milestonePayment->offline_payment == 1)
                                       <td>
-                                          @if($milestone_payment->approval == 1)
+                                          @if($milestonePayment->approval == 1)
                                             <span class="badge badge-inline badge-success">{{ translate('Approved') }}</span>
                                           @else
                                             <span class="badge badge-inline badge-info">{{ translate('Pending') }}</span>
@@ -73,13 +73,13 @@
                                       <td></td>
                                     @endif
                                 @endif
-                                <td class="text-right">{{ $milestone_payment->created_at }}</td>
+                                <td class="text-right">{{ $milestonePayment->created_at }}</td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <div class="aiz-pagination aiz-pagination-center">
-                    {{ $milestone_payments->appends(request()->input())->links() }}
+                    {{ $milestonePayments->appends(request()->input())->links() }}
                 </div>
             </div>
         </div>

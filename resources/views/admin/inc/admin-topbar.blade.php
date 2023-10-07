@@ -7,7 +7,7 @@
         </div>
         <div class="aiz-topbar-logo-wrap d-flex align-items-center justify-content-start">
             <a href="index.html" class="d-block">
-                <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}" class="img-fluid" height="45">
+                <img src="{{ customAsset(\App\Utility\SettingsUtility::getSettingsValue('system_logo_black')) }}" class="img-fluid" height="45">
             </a>
         </div>
     </div>
@@ -35,7 +35,7 @@
                             <i class="las la-bell la-2x"></i>
                             <span class="badge badge-circle badge-primary position-absolute absolute-top-right">
                                 {{--get numbers of unseen notification --}}
-                                {{  \App\Utility\NotificationUtility::get_my_notifications(10,true,true) }}
+                                {{  \App\Utility\NotificationUtility::getMyNotifications(10,true,true) }}
                             </span>
                         </span>
                     </a>
@@ -45,20 +45,20 @@
                         </div>
                         <ul class="list-group list-group-raw c-scrollbar-light overflow-auto" style="max-height:300px;">
                             {{--get 10 unseen notifications as array --}}
-                            @php $notification_list = \App\Utility\NotificationUtility::get_my_notifications(10,true,false,false); @endphp
-                            @foreach ($notification_list as $notification_item)
+                            @php $notificationList = \App\Utility\NotificationUtility::getMyNotifications(10,true,false,false); @endphp
+                            @foreach ($notificationList as $notificationItem)
                             <li class="list-group-item d-flex justify-content-between align-items-start hov-bg-soft-primary">
-                                <a href="{{ $notification_item['link'] }}" class="media text-inherit">
+                                <a href="{{ $notificationItem['link'] }}" class="media text-inherit">
                                     <span class="avatar avatar-sm mr-3">
-                                        <img src="{{ $notification_item['sender_photo'] }}">
+                                        <img src="{{ $notificationItem['sender_photo'] }}">
                                     </span>
                                     <div class="media-body">
-                                        <p class="mb-1">{{ $notification_item['message'].' '.$notification_item['sender_name'] }}</p>
-                                        <small class="text-muted">{{ $notification_item['date']  }}</small>
+                                        <p class="mb-1">{{ $notificationItem['message'].' '.$notificationItem['sender_name'] }}</p>
+                                        <small class="text-muted">{{ $notificationItem['date']  }}</small>
                                     </div>
                                 </a>
-                                <button class="btn p-0" data-toggle="tooltip" data-title="@if($notification_item['seen'] == true) {{ translate('Seen') }} @else {{ translate('Mark as read') }} @endif">
-                                    <span class="badge badge-md @if($notification_item['seen'] == false) badge-dot  @endif badge-circle badge-primary"></span>
+                                <button class="btn p-0" data-toggle="tooltip" data-title="@if($notificationItem['seen'] == true) {{ translate('Seen') }} @else {{ translate('Mark as read') }} @endif">
+                                    <span class="badge badge-md @if($notificationItem['seen'] == false) badge-dot  @endif badge-circle badge-primary"></span>
                                 </button>
                             </li>
                             @endforeach
@@ -102,7 +102,7 @@
                         <span class="d-flex align-items-center">
                             <span class="avatar avatar-sm mr-md-2 border">
                                 @if (Auth::user()->photo != null)
-                                    <img src="{{custom_asset(Auth::user()->photo)}}">
+                                    <img src="{{customAsset(Auth::user()->photo)}}">
                                 @else
                                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                 @endif

@@ -15,40 +15,40 @@
                     </div>
                 </div>
                 <div class="">
-                    @forelse ($bid_users as $key => $bid_user)
+                    @forelse ($bidUsers as $key => $bidUser)
                         <div class="card rounded-2 border-gray-light">
                             <div class="card-body d-lg-flex">
                                 <div class="flex-grow-1">
                                     <div class="d-flex">
                                         <a href="" target="_blank" class="avatar flex-shrink-0 mr-4">
-                                            @if($bid_user->expert->photo != null)
-                                                <img src="{{ custom_asset($bid_user->expert->photo) }}">
+                                            @if($bidUser->expert->photo != null)
+                                                <img src="{{ customAsset($bidUser->expert->photo) }}">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                             @endif
                                             <span class="badge badge-dot badge-circle badge-secondary badge-status badge-md"></span>
                                         </a>
                                         <div class="flex-grow-1">
-                                            <h5 class="fw-600 mb-1"><a href="" target="_blank" class="text-inherit">{{ $bid_user->expert->name }}</a></h5>
-                                            @if($bid_user->expert->profile->specialist != null )
-                                            <p class="opacity-50 mb-2">{{ $bid_user->expert->profile->specialistAt->name }}</p>
+                                            <h5 class="fw-600 mb-1"><a href="" target="_blank" class="text-inherit">{{ $bidUser->expert->name }}</a></h5>
+                                            @if($bidUser->expert->profile->specialist != null )
+                                            <p class="opacity-50 mb-2">{{ $bidUser->expert->profile->specialistAt->name }}</p>
                                             @endif
                                             <div class="d-flex text-secondary fs-12 mb-3">
                                                 <div class="mr-2">
                                                     <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                                        {{ max(0, \App\Models\Review::where('published', 1)->where('reviewed_user_id', $bid_user->bid_by_user_id)->avg('rating')) }}
+                                                        {{ max(0, \App\Models\Review::where('published', 1)->where('reviewed_user_id', $bidUser->bid_by_user_id)->avg('rating')) }}
                                                     </span>
                                                     <span class="rating rating-sm">
-                                                        {{ renderStarRating(max(0, \App\Models\Review::where('published', 1)->where('reviewed_user_id', $bid_user->bid_by_user_id)->avg('rating'))) }}
+                                                        {{ renderStarRating(max(0, \App\Models\Review::where('published', 1)->where('reviewed_user_id', $bidUser->bid_by_user_id)->avg('rating'))) }}
                                                     </span>
                                                     <span>
-                                                        ({{ getNumberOfReview($bid_user->bid_by_user_id) }} {{ translate('Reviews') }})
+                                                        ({{ getNumberOfReview($bidUser->bid_by_user_id) }} {{ translate('Reviews') }})
                                                     </span>
                                                 </div>
                                                 <div>
                                                     <i class="las la-map-marker opacity-50"></i>
-                                                        @if ($bid_user->expert->address != null && $bid_user->expert->address->city != null && $bid_user->expert->address->country != null)
-                                                            <span>{{ $bid_user->expert->address->city->name }}, {{ $bid_user->expert->address->country->name }}</span>
+                                                        @if ($bidUser->expert->address != null && $bidUser->expert->address->city != null && $bidUser->expert->address->country != null)
+                                                            <span>{{ $bidUser->expert->address->city->name }}, {{ $bidUser->expert->address->country->name }}</span>
                                                         @endif
                                                 </div>
                                             </div>
@@ -56,26 +56,26 @@
                                     </div>
 
                                     <div class="text-muted lh-1-8">
-                                        <p class="">{{ $bid_user->message }}</p>
+                                        <p class="">{{ $bidUser->message }}</p>
                                     </div>
                                 </div>
                                 <div class="flex-shrink-0 pt-4 pt-xl-0 pl-xl-5 d-flex flex-row flex-xl-column justify-content-between">
                                     <div class="text-right">
-                                        <h4 class="mb-0">{{ single_price($bid_user->amount) }}</h4>
+                                        <h4 class="mb-0">{{ singlePrice($bidUser->amount) }}</h4>
                                         <div class="mt-xl-2 small text-secondary">
                                             <span>{{ translate('Bidded Amount') }}</span>
                                         </div>
                                     </div>
                                     <div>
                                         @if ($project->biddable == 1)
-                                            <button onclick="hiring_modal({{ $project->id }}, {{ $bid_user->bid_by_user_id }})" type="button" class="btn btn-outline-secondary btn-sm btn-block">Hire now</button>
+                                            <button onclick="hiring_modal({{ $project->id }}, {{ $bidUser->bid_by_user_id }})" type="button" class="btn btn-outline-secondary btn-sm btn-block">Hire now</button>
                                             <form class="mt-2" action="{{ route('call_for_interview') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" id="project_id" name="project_id" value="{{ $project->id }}">
-                                                <input type="hidden" id="user_name" name="user_name" value="{{ $bid_user->expert->user_name }}">
+                                                <input type="hidden" id="user_name" name="user_name" value="{{ $bidUser->expert->user_name }}">
                                                 <button type="submit" class="btn btn-primary btn-sm btn-block rounded-1">{{ translate('Call for Interview') }}</button>
                                             </form>
-                                        @elseif($project->project_user != null && $project->project_user->user_id == $bid_user->bid_by_user_id)
+                                        @elseif($project->project_user != null && $project->project_user->user_id == $bidUser->bid_by_user_id)
                                             <button type="button" class="btn btn-primary btn-sm btn-block rounded-1">{{ translate('Hired') }}</a>
                                         @endif
                                     </div>
@@ -92,7 +92,7 @@
                     @endforelse
 
                     <div class="aiz-pagination aiz-pagination-center mt-4">
-                        {{ $bid_users->links() }}
+                        {{ $bidUsers->links() }}
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
 
 @section('script')
     <script type="text/javascript">
-        function hiring_modal(project_id, user_id){
+        function hiringModal(project_id, user_id){
             $('input[name=project_id]').val(project_id);
             $('input[name=user_id]').val(user_id);
             $('#hiring_modal').modal('show');

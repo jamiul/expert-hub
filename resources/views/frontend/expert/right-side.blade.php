@@ -7,7 +7,7 @@
                  aria-labelledby="list-home-list">
                 <div class="d-flex justify-content-between mt-3 ">
                     <h4 class="fw-700 fs-23 text-black  ">Biography </h4>
-                    <h4 class="fw-700 fs-16 text-black">{{ single_price($expert->profile->hourly_rate) }}/hr</h4>
+                    <h4 class="fw-700 fs-16 text-black">{{ singlePrice($expert->profile->hourly_rate) }}/hr</h4>
                 </div>
                 <div class="mt-3">
                     <p class="fs-16  biography-info">{{ $expert->profile->bio }}</p>

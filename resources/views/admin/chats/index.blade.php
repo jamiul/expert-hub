@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ translate('Search by Name') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="{{ translate('Search by Name') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -35,12 +35,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($chat_threads as $key => $chat_thread)
+                        @foreach($chatThreads as $key => $chatThread)
                             <tr>
-                                <td>{{ ($key+1) + ($chat_threads->currentPage() - 1)*$chat_threads->perPage() }}</td>
-                                @if ($chat_thread->sender != null)
+                                <td>{{ ($key+1) + ($chatThreads->currentPage() - 1)*$chatThreads->perPage() }}</td>
+                                @if ($chatThread->sender != null)
                                     <td>
-                                        {{$chat_thread->sender->name}}
+                                        {{$chatThread->sender->name}}
                                     </td>
                                 @else
                                     <td>
@@ -48,16 +48,16 @@
                                     </td>
                                 @endif
 
-                                @if ($chat_thread->receiver != null)
+                                @if ($chatThread->receiver != null)
                                     <td>
-                                        {{$chat_thread->receiver->name}}
+                                        {{$chatThread->receiver->name}}
                                     </td>
                                 @else
                                     <td>
                                         {{translate('Not Found')}}
                                     </td>
                                 @endif
-                                <!-- @if ($chat_thread->active != 0)
+                                <!-- @if ($chatThread->active != 0)
                                     <td>
                                         <span class="badge badge-primary badge-inline">{{translate('Active')}}</span>
                                     </td>
@@ -66,9 +66,9 @@
                                         <span class="badge badge-danger badge-inline">{{translate('Blocked')}}</span>
                                     </td>
                                 @endif -->
-                                <!-- @if ($chat_thread->blocked_by_user != null)
+                                <!-- @if ($chatThread->blocked_by_user != null)
                                     <td>
-                                        {{$chat_thread->blocked_by->name}}
+                                        {{$chatThread->blocked_by->name}}
                                     </td>
                                 @else
                                     <td>
@@ -76,11 +76,11 @@
                                     </td>
                                 @endif -->
                                 <td>
-                                    {{$chat_thread->created_at}}
+                                    {{$chatThread->created_at}}
                                 </td>
                                 <td class="text-right">
                                     @can ('single user chat details')
-                                        <a href="{{ route('chat_details_for_admin', encrypt($chat_thread->id)) }}" class="btn btn-sm btn-icon btn-circle btn-soft-primary" title="{{ translate('Edit') }}">
+                                        <a href="{{ route('chat_details_for_admin', encrypt($chatThread->id)) }}" class="btn btn-sm btn-icon btn-circle btn-soft-primary" title="{{ translate('Edit') }}">
                                             <i class="las la-eye"></i>
                                         </a>
                                     @endcan
@@ -90,7 +90,7 @@
                     </tbody>
                 </table>
                 <div class="aiz-pagination aiz-pagination-center">
-                    {{ $chat_threads->appends(request()->input())->links() }}
+                    {{ $chatThreads->appends(request()->input())->links() }}
                 </div>
             </div>
         </div>

@@ -8,8 +8,8 @@
             <div class="aiz-user-panel">
             	<h5 class="mb-4 fs-16 fw-700">{{ translate('Bookmarked Projects') }}</h5>
                 <div class="row gutters-10">
-                    @forelse ($bookmarked_projects as $key => $bookmarked_project)
-                        @if (($project = $bookmarked_project->project) != null)
+                    @forelse ($bookmarkedProjects as $key => $bookmarkedProject)
+                        @if (($project = $bookmarkedProject->project) != null)
                             <div class="col-lg-6">
                                 <div class="card rounded-2 border-gray-light">
                                     <div class="card-header border-bottom-0 pt-4 pb-0 align-items-start minw-0">
@@ -18,7 +18,7 @@
                                         </h5>
                                         <div class="text-right flex-shrink-0 pl-3">
                                             <span class="small">{{ translate('Budget') }}</span>
-                                            <h4 class="mb-0">{{ single_price($project->price) }}</h4>
+                                            <h4 class="mb-0">{{ singlePrice($project->price) }}</h4>
                                         </div>
                                     </div>
                                     <div class="card-body pt-1">
@@ -47,7 +47,7 @@
                                         <div class="d-flex align-items-center">
                                             <a href="{{ route('client.details', $project->client->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
                                                 <span class="avatar avatar-xs">
-                                                    <img class="img-fluid rounded-circle" alt="" src="{{ custom_asset($project->client->photo) }}">
+                                                    <img class="img-fluid rounded-circle" alt="" src="{{ customAsset($project->client->photo) }}">
                                                 </span>
                                                 <div class="pl-2">
                                                     <h4 class="h6 mb-0">{{ $project->client->name }}</h4>
@@ -64,7 +64,7 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="d-inline-block confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.delete', $bookmarked_project->id) }}" data-toggle="tooltip" title="{{ translate('Remove from bookmark') }}" data-target="#bookmark-remove-modal">
+                                            <a class="d-inline-block confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.delete', $bookmarkedProject->id) }}" data-toggle="tooltip" title="{{ translate('Remove from bookmark') }}" data-target="#bookmark-remove-modal">
                                                 <i class="las la-bookmark la-2x"></i>
                                             </a>
                                         </div>
@@ -82,7 +82,7 @@
                     @endforelse
                 </div>
                 <div class="aiz-pagination mt-4">
-                    {{ $bookmarked_projects->links() }}
+                    {{ $bookmarkedProjects->links() }}
                 </div>
             </div>
         </div>

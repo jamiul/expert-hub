@@ -3,16 +3,16 @@
         <div class="media align-items-center">
             @if (isClient())
                 <span class="avatar avatar-sm mr-3 flex-shrink-0">
-                    @if ($chat_thread->receiver->photo != null)
-                        <img src="{{ custom_asset($chat_thread->receiver->photo) }}">
+                    @if ($chatThread->receiver->photo != null)
+                        <img src="{{ customAsset($chatThread->receiver->photo) }}">
                     @else
                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
                 </span>
                 <div class="media-body">
                     <h6 class="fs-15 mb-1">
-                        {{ $chat_thread->receiver->name }}
-                        @if(Cache::has('user-is-online-' . $chat_thread->receiver->id))
+                        {{ $chatThread->receiver->name }}
+                        @if(Cache::has('user-is-online-' . $chatThread->receiver->id))
                             <span class="badge badge-dot badge-success badge-circle"></span>
                         @else
                             <span class="badge badge-dot badge-secondary badge-circle"></span>
@@ -21,16 +21,16 @@
                 </div>
             @else
                 <span class="avatar avatar-sm mr-3 flex-shrink-0">
-                    @if ($chat_thread->sender->photo != null)
-                        <img src="{{ custom_asset($chat_thread->sender->photo) }}">
+                    @if ($chatThread->sender->photo != null)
+                        <img src="{{ customAsset($chatThread->sender->photo) }}">
                     @else
                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
                 </span>
                 <div class="media-body">
                     <h6 class="fs-15 mb-1">
-                        {{ $chat_thread->sender->name }}
-                        @if(Cache::has('user-is-online-' . $chat_thread->sender->id))
+                        {{ $chatThread->sender->name }}
+                        @if(Cache::has('user-is-online-' . $chatThread->sender->id))
                             <span class="badge badge-dot badge-success badge-circle"></span>
                         @else
                             <span class="badge badge-dot badge-secondary badge-circle"></span>
@@ -59,7 +59,7 @@
     <div class="chat-footer border-top p-3 attached-bottom bg-white">
         <form id="send-mesaage">
             <div class="input-group">
-                <input type="hidden" id="chat_thread_id" name="chat_thread_id" value="{{ $chat_thread->id }}">
+                <input type="hidden" id="chat_thread_id" name="chat_thread_id" value="{{ $chatThread->id }}">
                 <input type="text" class="form-control" name="message" id="message" placeholder="{{ translate('Your Message..') }}" autocomplete="off">
                 <input type="hidden" class="" name="attachment" id="attachment">
                 <div class="input-group-append">
@@ -79,8 +79,8 @@
             <div class="chat-info c-scrollbar-light p-4 z-1">
                 <div class="px-4 text-center mb-3">
                     <span class="avatar avatar-md mb-3">
-                        @if ($chat_thread->receiver->photo != null)
-                            <img src="{{ custom_asset($chat_thread->receiver->photo) }}">
+                        @if ($chatThread->receiver->photo != null)
+                            <img src="{{ customAsset($chatThread->receiver->photo) }}">
                         @else
                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                         @endif
@@ -89,26 +89,26 @@
                     <div class="text-secondary fs-10 mb-1">
                         <i class="las la-star text-warning"></i>
                         <span class="fw-600">
-                            {{ formatRating(getAverageRating($chat_thread->receiver->id)) }}
+                            {{ formatRating(getAverageRating($chatThread->receiver->id)) }}
                         </span>
                         <span>
-                            ({{ getNumberOfReview($chat_thread->receiver->id) }} {{ translate('Reviews') }})
+                            ({{ getNumberOfReview($chatThread->receiver->id) }} {{ translate('Reviews') }})
                         </span>
                     </div>
-                    <h4 class="h5 mb-2 fw-600">{{ $chat_thread->receiver->name }}</h4>
+                    <h4 class="h5 mb-2 fw-600">{{ $chatThread->receiver->name }}</h4>
                     <div class="text-center">
-                        @foreach ($chat_thread->receiver->badges as $key => $user_badge)
-                            @if ($user_badge->badge != null)
-                                <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ asset($user_badge->badge->icon) }}"></span>
+                        @foreach ($chatThread->receiver->badges as $key => $userBadge)
+                            @if ($userBadge->badge != null)
+                                <span class="avatar avatar-square avatar-xxs" title="{{ $userBadge->badge->name }}"><img src="{{ asset($userBadge->badge->icon) }}"></span>
                             @endif
                         @endforeach
                     </div>
                 </div>
-                @if($chat_thread->receiver->profile->skills != null)
+                @if($chatThread->receiver->profile->skills != null)
                 <div class="mb-3 text-center">
-                    @foreach (json_decode($chat_thread->receiver->profile->skills, true) as $key => $skill_id)
+                    @foreach (json_decode($chatThread->receiver->profile->skills, true) as $key => $skillId)
                         @php
-                            $skill = \App\Models\Skill::find($skill_id);
+                            $skill = \App\Models\Skill::find($skillId);
                         @endphp
                         @if ($skill)
                             <span class="btn btn-light btn-xs mb-1">{{ $skill->name }}</span>
@@ -120,23 +120,23 @@
                 <div class="">
                     <ul class="list-group">
                         @php
-                            $running_projects = DB::table('projects')
+                            $runningProjects = DB::table('projects')
                                                 ->where('projects.client_user_id', auth()->user()->id)
                                                 ->where('projects.biddable', 0)
                                                 ->where('projects.closed', 0)
                                                 ->where('projects.cancel_status', 0)
                                                 ->join('project_users', 'projects.id', '=', 'project_users.project_id')
-                                                ->where('project_users.user_id', $chat_thread->receiver_user_id)
+                                                ->where('project_users.user_id', $chatThread->receiver_user_id)
                                                 ->select('project_users.id')
                                                 ->get();
                         @endphp
-                        @foreach ($running_projects as $key => $running_project_id)
+                        @foreach ($runningProjects as $key => $runningProjectId)
                             @php
-                                $project_user = \App\Models\ProjectUser::find($running_project_id->id);
+                                $projectUser = \App\Models\ProjectUser::find($runningProjectId->id);
                             @endphp
-                            @if ($project_user->project != null)
+                            @if ($projectUser->project != null)
                                 <li class="list-group-item">
-                                    <a href="{{ route('project.details', $project_user->project->slug) }}" target="_blank" class="text-body">{{ $project_user->project->name }}</a>
+                                    <a href="{{ route('project.details', $projectUser->project->slug) }}" target="_blank" class="text-body">{{ $projectUser->project->name }}</a>
                                 </li>
                             @endif
                         @endforeach
@@ -146,23 +146,23 @@
                 <div class="">
                     <ul class="list-group">
                         @php
-                            $completed_projects = DB::table('projects')
+                            $completedProjects = DB::table('projects')
                                                 ->where('projects.client_user_id', auth()->user()->id)
                                                 ->where('projects.biddable', 0)
                                                 ->where('projects.closed', 1)
                                                 ->where('projects.cancel_status', 0)
                                                 ->join('project_users', 'projects.id', '=', 'project_users.project_id')
-                                                ->where('project_users.user_id', $chat_thread->receiver_user_id)
+                                                ->where('project_users.user_id', $chatThread->receiver_user_id)
                                                 ->select('project_users.id')
                                                 ->get();
                         @endphp
-                        @foreach ($completed_projects as $key => $completed_project_id)
+                        @foreach ($completedProjects as $key => $completedProjectId)
                             @php
-                                $project_user = \App\Models\ProjectUser::find($completed_project_id->id);
+                                $projectUser = \App\Models\ProjectUser::find($completedProjectId->id);
                             @endphp
-                            @if ($project_user->project != null)
+                            @if ($projectUser->project != null)
                                 <li class="list-group-item">
-                                    <a href="{{ route('project.details', $project_user->project->slug) }}" target="_blank" class="text-body">{{ $project_user->project->name }}</a>
+                                    <a href="{{ route('project.details', $projectUser->project->slug) }}" target="_blank" class="text-body">{{ $projectUser->project->name }}</a>
                                 </li>
                             @endif
                         @endforeach
@@ -173,8 +173,8 @@
             <div class="chat-info c-scrollbar-light p-4 z-1">
                 <div class="px-4 text-center mb-3">
                     <span class="avatar avatar-md mb-3">
-                        @if ($chat_thread->sender->photo != null)
-                            <img src="{{ custom_asset($chat_thread->sender->photo) }}">
+                        @if ($chatThread->sender->photo != null)
+                            <img src="{{ customAsset($chatThread->sender->photo) }}">
                         @else
                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                         @endif
@@ -183,17 +183,17 @@
                     <div class="text-secondary fs-10 mb-1">
                         <i class="las la-star text-warning"></i>
                         <span class="fw-600">
-                            {{ formatRating(getAverageRating($chat_thread->sender->id)) }}
+                            {{ formatRating(getAverageRating($chatThread->sender->id)) }}
                         </span>
                         <span>
-                            ({{ getNumberOfReview($chat_thread->receiver->id) }} {{ translate('Reviews') }})
+                            ({{ getNumberOfReview($chatThread->receiver->id) }} {{ translate('Reviews') }})
                         </span>
                     </div>
-                    <h4 class="h5 mb-2 fw-600">{{ $chat_thread->sender->name }}</h4>
+                    <h4 class="h5 mb-2 fw-600">{{ $chatThread->sender->name }}</h4>
                     <div class="text-center">
-                        @foreach ($chat_thread->sender->badges as $key => $user_badge)
-                            @if ($user_badge->badge != null)
-                                <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ asset($user_badge->badge->icon) }}"></span>
+                        @foreach ($chatThread->sender->badges as $key => $userBadge)
+                            @if ($userBadge->badge != null)
+                                <span class="avatar avatar-square avatar-xxs" title="{{ $userBadge->badge->name }}"><img src="{{ asset($userBadge->badge->icon) }}"></span>
                             @endif
                         @endforeach
                     </div>
@@ -202,8 +202,8 @@
                 <div class="">
                     <ul class="list-group">
                         @php
-                            $running_projects = DB::table('projects')
-                                                ->where('projects.client_user_id', $chat_thread->sender_user_id)
+                            $runningProjects = DB::table('projects')
+                                                ->where('projects.client_user_id', $chatThread->sender_user_id)
                                                 ->where('projects.biddable', 0)
                                                 ->where('projects.closed', 0)
                                                 ->where('projects.cancel_status', 0)
@@ -212,13 +212,13 @@
                                                 ->select('project_users.id')
                                                 ->get();
                         @endphp
-                        @foreach ($running_projects as $key => $running_project_id)
+                        @foreach ($runningProjects as $key => $runningProjectId)
                             @php
-                                $project_user = \App\Models\ProjectUser::find($running_project_id->id);
+                                $projectUser = \App\Models\ProjectUser::find($runningProjectId->id);
                             @endphp
-                            @if ($project_user->project != null)
+                            @if ($projectUser->project != null)
                                 <li class="list-group-item">
-                                    <a href="{{ route('project.details', $project_user->project->slug) }}" target="_blank" class="text-body">{{ $project_user->project->name }}</a>
+                                    <a href="{{ route('project.details', $projectUser->project->slug) }}" target="_blank" class="text-body">{{ $projectUser->project->name }}</a>
                                 </li>
                             @endif
                         @endforeach
@@ -228,8 +228,8 @@
                 <div class="">
                     <ul class="list-group">
                         @php
-                            $completed_projects = DB::table('projects')
-                                                ->where('projects.client_user_id', $chat_thread->sender_user_id)
+                            $completedProjects = DB::table('projects')
+                                                ->where('projects.client_user_id', $chatThread->sender_user_id)
                                                 ->where('projects.biddable', 0)
                                                 ->where('projects.closed', 1)
                                                 ->where('projects.cancel_status', 0)
@@ -238,13 +238,13 @@
                                                 ->select('project_users.id')
                                                 ->get();
                         @endphp
-                        @foreach ($completed_projects as $key => $completed_project_id)
+                        @foreach ($completedProjects as $key => $completedProjectId)
                             @php
-                                $project_user = \App\Models\ProjectUser::find($completed_project_id->id);
+                                $projectUser = \App\Models\ProjectUser::find($completedProjectId->id);
                             @endphp
-                            @if ($project_user->project != null)
+                            @if ($projectUser->project != null)
                                 <li class="list-group-item">
-                                    <a href="{{ route('project.details', $project_user->project->slug) }}" target="_blank" class="text-body">{{ $project_user->project->name }}</a>
+                                    <a href="{{ route('project.details', $projectUser->project->slug) }}" target="_blank" class="text-body">{{ $projectUser->project->name }}</a>
                                 </li>
                             @endif
                         @endforeach

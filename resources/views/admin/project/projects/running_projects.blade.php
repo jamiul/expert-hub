@@ -22,14 +22,14 @@
     							<option value="">{{ translate('Filter by Client') }}</option>
                                 @foreach (App\Models\User::where('user_type', 'client')->get() as $key => $client)
                                     @if ($client != null)
-                                        <option value="{{ $client->id }}" @if ($client->id == $client_id) selected @endif>{{ $client->name }}</option>
+                                        <option value="{{ $client->id }}" @if ($client->id == $clientId) selected @endif>{{ $client->name }}</option>
                                     @endif
                                 @endforeach
     						</select>
     					</div>
     					<div class="col-md-3">
     						<div class="input-group">
-    							<input type="text" class="form-control" placeholder="{{ translate('Type and Hit Enter') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+    							<input type="text" class="form-control" placeholder="{{ translate('Type and Hit Enter') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
     							<div class="input-group-append">
     								<button class="btn btn-light" type="submit">
     									<i class="las la-search la-rotate-270"></i>
@@ -76,7 +76,7 @@
                                     </td>
                                     <td>
                                         @if ($project->project_user != null)
-                                            {{ single_price($project->project_user->hired_at) }}
+                                            {{ singlePrice($project->project_user->hired_at) }}
                                         @endif
                                     </td>
                                     <td>
@@ -101,7 +101,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    function sort_projects(el){
+    function sortProjects(el){
         $('#sort_projects').submit();
     }
 </script>

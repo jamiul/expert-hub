@@ -24,26 +24,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($cancel_projects as $key => $cancel_project)
+                            @foreach($cancelProjects as $key => $cancelProject)
                                 <tr>
-                                    <td>{{ ($key+1) + ($cancel_projects->currentPage() - 1)*$cancel_projects->perPage() }}</td>
-                                    @if ($cancel_project->project != null)
+                                    <td>{{ ($key+1) + ($cancelProjects->currentPage() - 1)*$cancelProjects->perPage() }}</td>
+                                    @if ($cancelProject->project != null)
                                     <td>
-                                        {{$cancel_project->project->name}}
+                                        {{$cancelProject->project->name}}
                                     </td>
                                     <td>
-                                        {{$cancel_project->project->type}}
+                                        {{$cancelProject->project->type}}
                                     </td>
                                     <td>
-                                        {{single_price($cancel_project->project->price)}}
+                                        {{singlePrice($cancelProject->project->price)}}
                                     </td>
                                     @endif
-                                    @if ($cancel_project->requested_user != null)
+                                    @if ($cancelProject->requested_user != null)
                                         <td>
-                                            {{$cancel_project->requested_user->name}}
+                                            {{$cancelProject->requested_user->name}}
                                         </td>
                                     @endif
-                                    @if ($cancel_project->project->cancel_by_user_id == null)
+                                    @if ($cancelProject->project->cancel_by_user_id == null)
                                         <td>
                                             <span class="badge badge-inline badge-warning">{{ translate('Pending') }}</span>
                                         </td>
@@ -53,17 +53,17 @@
                                         </td>
                                     @endif
                                     <td class="text-right">
-                                        <a href="javascript:void(0)" onclick="show_cancel_request_modal('{{ $cancel_project->id }}')" class="btn btn-soft-primary btn-icon btn-circle btn-sm" title="{{translate('Show')}}">
+                                        <a href="javascript:void(0)" onclick="show_cancel_request_modal('{{ $cancelProject->id }}')" class="btn btn-soft-primary btn-icon btn-circle btn-sm" title="{{translate('Show')}}">
                                             <i class="las la-eye"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-project-request.delete', $cancel_project->id) }}" title="{{translate('Delete')}}">
+                                        <a href="javascript:void(0)" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('cancel-project-request.delete', $cancelProject->id) }}" title="{{translate('Delete')}}">
                                             <i class="las la-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
-                        {{ $cancel_projects->appends(request()->input())->links() }}
+                        {{ $cancelProjects->appends(request()->input())->links() }}
                     </table>
                 </div>
             </div>
@@ -90,13 +90,13 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    function show_cancel_request_modal(id){
+    function showCancelRequestModal(id){
         $.post('{{ route('cancel-project-request.show') }}', { _token: '{{ csrf_token() }}', id:id }, function(data){
             $('#cancel-project-request').modal('show');
             $('#cancel-project-request_body').html(data);
         })
     }
-    function sort_cancel_projects(el){
+    function sortCancelProjects(el){
         $('#sort_cancel_projects').submit();
     }
 </script>

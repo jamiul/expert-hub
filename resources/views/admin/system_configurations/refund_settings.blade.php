@@ -15,7 +15,7 @@
                             <label>{{ translate('Project Cancellation Percentage') }}</label>
                             <div class="input-group mb-1">
                                 <input type="hidden" name="types[]" value="refund_percentage_on_project_cancellation">
-                                <input type="number" min="1" max="100" step="0.01" name="refund_percentage_on_project_cancellation" value="{{ get_setting('refund_percentage_on_project_cancellation') }}" class="form-control" placeholder="Ex: 100">
+                                <input type="number" min="1" max="100" step="0.01" name="refund_percentage_on_project_cancellation" value="{{ getSetting('refund_percentage_on_project_cancellation') }}" class="form-control" placeholder="Ex: 100">
                                 <div class="input-group-append">
                                     <span class="input-group-text">%</span>
                                 </div>
@@ -28,7 +28,7 @@
                             <label>{{ translate('Service Cancellation Percentage') }}</label>
                             <div class="input-group mb-1">
                                 <input type="hidden" name="types[]" value="refund_percentage_on_service_cancellation">
-                                <input type="number" min="1" max="100" step="0.01" name="refund_percentage_on_service_cancellation" value="{{ get_setting('refund_percentage_on_service_cancellation') }}" class="form-control" placeholder="Ex: 100">
+                                <input type="number" min="1" max="100" step="0.01" name="refund_percentage_on_service_cancellation" value="{{ getSetting('refund_percentage_on_service_cancellation') }}" class="form-control" placeholder="Ex: 100">
                                 <div class="input-group-append">
                                     <span class="input-group-text">%</span>
                                 </div>

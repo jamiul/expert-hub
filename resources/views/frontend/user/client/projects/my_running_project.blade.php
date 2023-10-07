@@ -21,7 +21,7 @@
     							<div class="card project-card rounded-2 border-gray-light">
     								<div class="card-header border-bottom-0">
     									<div>
-    										<span class="badge badge-primary badge-inline badge-md">{{ single_price($project->project_user->hired_at) }}</span>
+    										<span class="badge badge-primary badge-inline badge-md">{{ singlePrice($project->project_user->hired_at) }}</span>
     									</div>
     									<div>
     										<span class="badge badge-success badge-inline badge-md">{{ translate('Running') }}</span>
@@ -51,9 +51,9 @@
     										<p>{{ $project->excerpt }}</p>
     									</div>
     									<div>
-                                            @foreach (json_decode($project->skills) as $key => $skill_id)
+                                            @foreach (json_decode($project->skills) as $key => $skillId)
                                                 @php
-                                                    $skill = \App\Models\Skill::find($skill_id);
+                                                    $skill = \App\Models\Skill::find($skillId);
                                                 @endphp
                                                 @if ($skill != null)
                                                     <span class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2">{{ $skill->name }}</span>
@@ -65,7 +65,7 @@
                                         <div class="d-flex align-items-center">
                                             <a href="{{ route('expert.details', $project->project_user->user->user_name) }}" class="d-flex mr-3 align-items-center text-reset">
                                                 <span class="avatar avatar-xs">
-                                                    <img class="img-fluid rounded-circle" src="{{ custom_asset($project->project_user->user->photo) }}">
+                                                    <img class="img-fluid rounded-circle" src="{{ customAsset($project->project_user->user->photo) }}">
                                                 </span>
                                                 <div class="pl-2">
                                                     <h4 class="fs-14 mb-1">{{ $project->project_user->user->name }}</h4>

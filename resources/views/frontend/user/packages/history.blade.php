@@ -42,27 +42,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($package_payments as $key => $package_payment)
+                                    @foreach ($packagePayments as $key => $packagePayment)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>
-                                              @if ($package_payment->package != null)
-                                                  {{$package_payment->package->name}}
+                                              @if ($packagePayment->package != null)
+                                                  {{$packagePayment->package->name}}
                                               @else
                                                   {{translate('Not Found')}}
                                               @endif
                                             </td>
                                             @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
                                               <td>
-                                                @if($package_payment->offline_payment == 1)
+                                                @if($packagePayment->offline_payment == 1)
                                                     <span class="badge badge-inline badge-info">{{ translate('Manual Payment') }}</span>
                                                 @else
                                                     <span class="badge badge-inline badge-success">{{ translate('Online Payment') }}</span>
                                                 @endif
                                               </td>
-                                              @if($package_payment->offline_payment == 1)
+                                              @if($packagePayment->offline_payment == 1)
                                                 <td>
-                                                    @if($package_payment->approval == 1)
+                                                    @if($packagePayment->approval == 1)
                                                       <span class="badge badge-inline badge-success">{{ translate('Approved') }}</span>
                                                     @else
                                                       <span class="badge badge-inline badge-info">{{ translate('Pending') }}</span>
@@ -73,14 +73,14 @@
                                               @endif
                                             @endif
 
-                                            <td>{{ single_price($package_payment->amount) }}</td>
-                                            <td>{{ ucfirst(str_replace('_', ' ', $package_payment->payment_method)) }}</td>
-                                            <td>{{ $package_payment->created_at }}</td>
+                                            <td>{{ singlePrice($packagePayment->amount) }}</td>
+                                            <td>{{ ucfirst(str_replace('_', ' ', $packagePayment->payment_method)) }}</td>
+                                            <td>{{ $packagePayment->created_at }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $package_payments->links() }}
+                            {{ $packagePayments->links() }}
                         </div>
                     </div>
                 </div>

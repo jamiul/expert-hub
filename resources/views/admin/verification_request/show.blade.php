@@ -15,7 +15,7 @@
             <div class="card-body text-center">
                 <span class="avatar avatar-xxl mb-3">
                     @if($user->photo != null)
-                        <img src="{{ custom_asset($user->photo) }}">
+                        <img src="{{ customAsset($user->photo) }}">
                     @else
                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
@@ -29,12 +29,12 @@
                 <div class="text-center">
                     @if ($user->userPackage != null && $user->userPackage->package != null)
                     <span class="avatar avatar-square avatar-xxs" title="{{ $user->userPackage->package->name }}">
-                        <img src="{{ custom_asset($user->userPackage->package->badge) }}">
+                        <img src="{{ customAsset($user->userPackage->package->badge) }}">
                     </span>
                     @endif
-                    @foreach ($user->badges as $key => $user_badge)
-                        @if ($user_badge->badge != null)
-                            <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ custom_asset($user_badge->badge->icon) }}"></span>
+                    @foreach ($user->badges as $key => $userBadge)
+                        @if ($userBadge->badge != null)
+                            <span class="avatar avatar-square avatar-xxs" title="{{ $userBadge->badge->name }}"><img src="{{ customAsset($userBadge->badge->icon) }}"></span>
                         @endif
                     @endforeach
                 </div>
@@ -106,9 +106,9 @@
                         <strong>{{ translate('Skills') }} :</strong>
                         <span class="ml-2">
                             @if ($user->profile->skills != null)
-                                @foreach (json_decode($user->profile->skills) as $key => $skill_id)
+                                @foreach (json_decode($user->profile->skills) as $key => $skillId)
                                     @php
-                                        $skill = \App\Models\Skill::find($skill_id);
+                                        $skill = \App\Models\Skill::find($skillId);
                                     @endphp
                                     @if ($skill != null)
                                         <span class="badge badge-inline badge-secondary">{{ $skill->name }}</span>
@@ -129,7 +129,7 @@
                     </p>
                     <p class="text-muted"><strong>{{ translate('Wallet Balance') }} :</strong>
                         <span class="ml-2">
-                            {{ single_price($user->profile->wallet_balance) }}
+                            {{ singlePrice($user->profile->wallet_balance) }}
                         </span>
                     </p>
 
@@ -155,24 +155,24 @@
             </div>
             <div class="card-body">
 
-                @foreach ($user->userVerifications as $key => $verification_request)
+                @foreach ($user->userVerifications as $key => $verificationRequest)
                     <div class="row mb-3">
                         <div class="col-6">
                             <p class="text-muted text-capitalize fw-600">
-                                {{ str_replace('_', ' ', $verification_request->type) }} :
+                                {{ str_replace('_', ' ', $verificationRequest->type) }} :
                             </p>
 
-                            @if ($verification_request->verified == 1)
-                                <a onclick="reject('{{ $verification_request->id }}')" class="btn btn-sm btn-outline-danger">{{translate('Reject')}}</a>
+                            @if ($verificationRequest->verified == 1)
+                                <a onclick="reject('{{ $verificationRequest->id }}')" class="btn btn-sm btn-outline-danger">{{translate('Reject')}}</a>
                             @else
-                                <a onclick="accept('{{ $verification_request->id }}')" class="btn btn-sm btn-outline-primary">{{translate('Accept')}}</a>
-                                <a onclick="reject('{{ $verification_request->id }}')" class="btn btn-sm btn-outline-danger">{{translate('Reject')}}</a>
+                                <a onclick="accept('{{ $verificationRequest->id }}')" class="btn btn-sm btn-outline-primary">{{translate('Accept')}}</a>
+                                <a onclick="reject('{{ $verificationRequest->id }}')" class="btn btn-sm btn-outline-danger">{{translate('Reject')}}</a>
                             @endif
                         </div>
                         <div class="col-6">
                             <div class="file-preview">
                                 @php
-                                    $attachment = \App\Models\Upload::find($verification_request->attachment);
+                                    $attachment = \App\Models\Upload::find($verificationRequest->attachment);
                                 @endphp
                                 @if ($attachment != null)
                                 <a class="d-flex justify-content-between align-items-center mt-2 file-preview-item text-reset" href="{{ asset($attachment->file_name)}}" target="_blank" download>

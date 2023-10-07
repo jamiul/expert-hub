@@ -28,7 +28,7 @@
                     <div class="bg-primary text-white mb-4 overflow-hidden rounded-2 d-flex flex-column justify-content-between">
                         <div class="px-4 pt-4">
                             <div class="fs-14">{{ translate('Balance') }}</div>
-                            <div class="h3 fw-700">{{ single_price(Auth::user()->profile->balance) }}</div>
+                            <div class="h3 fw-700">{{ singlePrice(Auth::user()->profile->balance) }}</div>
                         </div>
                         <div class="text-right px-4 pb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="109.746" height="106.086" viewBox="0 0 109.746 106.086">
@@ -116,11 +116,11 @@
                         <div class="col-md-4">
                             <div class="rounded-1 p-4 mb-4 d-flex flex-column justify-content-center" style="min-height: 116px;background: #45b5aa;">
                                 <div class="text-white">{{ translate('This Month Earnings') }}</div>
-                                <div class="h4 fw-700 text-white">{{ single_price(\App\Models\MilestonePayment::where('paid_status', 1)->where('expert_user_id', Auth::user()->id)->whereBetween('updated_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('expert_profit')) }}</div>
+                                <div class="h4 fw-700 text-white">{{ singlePrice(\App\Models\MilestonePayment::where('paid_status', 1)->where('expert_user_id', Auth::user()->id)->whereBetween('updated_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('expert_profit')) }}</div>
                             </div>
                             <div class="rounded-1 p-4 bg-dark d-flex flex-column justify-content-center" style="min-height: 116px;background: #45b5aa;">
                                 <div class="text-white">{{ translate('Total Earnings') }}</div>
-                                <div class="h4 fw-700 text-white">{{ single_price(\App\Models\MilestonePayment::where('paid_status', 1)->where('expert_user_id', Auth::user()->id)->sum('expert_profit')) }}</div>
+                                <div class="h4 fw-700 text-white">{{ singlePrice(\App\Models\MilestonePayment::where('paid_status', 1)->where('expert_user_id', Auth::user()->id)->sum('expert_profit')) }}</div>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -157,7 +157,7 @@
                                         <a href="{{ route('project.details', $projectUser->project->slug) }}" class="text-inherit d-flex align-items-center">
                                             <span class="avatar avatar-sm flex-shrink-0 bg-soft-primary mr-3">
                                                 @if($projectUser->project->client->photo != null)
-                                                <img src="{{ custom_asset($projectUser->project->client->photo) }}">
+                                                <img src="{{ customAsset($projectUser->project->client->photo) }}">
                                                 @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
@@ -185,7 +185,7 @@
                                         <a href="{{ route('project.details', $project->slug) }}" class="text-inherit d-flex align-items-center">
                                             <span class="avatar avatar-sm flex-shrink-0 bg-soft-primary mr-3">
                                                 @if($project->client->photo != null)
-                                                <img src="{{ custom_asset($project->client->photo) }}">
+                                                <img src="{{ customAsset($project->client->photo) }}">
                                                 @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
@@ -193,7 +193,7 @@
                                             <span class="flex-grow-1 text-truncate-2">{{ $project->name }}</span>
                                             <span class="flex-shrink-0 ml-3">
                                                 <span class="d-block opacity-50 fs-10">{{ translate('Budget') }}</span>
-                                                <span class="fs-15">{{ single_price($project->price) }}</span>
+                                                <span class="fs-15">{{ singlePrice($project->price) }}</span>
                                             </span>
                                         </a>
                                     </li>
@@ -211,7 +211,7 @@
                             <h6 class="mb-0 fs-16 fw-700">{{ translate('Current Package') }}</h6>
                         </div>
                         <div class="card-body pt-3">
-                            <img src="{{ custom_asset(Auth::user()->userPackage->package->badge) }}" class="img-fluid mb-4 h-70px">
+                            <img src="{{ customAsset(Auth::user()->userPackage->package->badge) }}" class="img-fluid mb-4 h-70px">
                             <h4 class="fw-700 mb-3 text-primary fs-21">{{ Auth::user()->userPackage->package->name }}</h4>
                             <p class="mb-1 fs-13 pb-2">{{ translate('Remaining Fixed Projects bids') }} - <strong>{{ Auth::user()->userPackage->fixed_limit }}</strong></p>
                             <p class="mb-1 fs-13 pb-2">{{ translate('Remaining Long Term Projects bids') }} - <strong>{{ Auth::user()->userPackage->long_term_limit }}</strong></p>
@@ -349,10 +349,10 @@
                                 @foreach (\App\Models\Package::expert()->active()->get()->except(Auth::user()->profile->package_id) as $key => $package)
                                 <li class="list-group-item mb-3 rounded-1 bg-hov-soft-primary">
                                     <a href="{{ route('select_package') }}" class="d-flex align-items-center text-inherit">
-                                        <img src="{{ custom_asset($package->badge) }}" class="img-fluid mr-4 h-60px">
+                                        <img src="{{ customAsset($package->badge) }}" class="img-fluid mr-4 h-60px">
                                         <span class="">
                                             <h4 class="h6 mb-0 fs-14 fw-700">{{ $package->name }}</h4>
-                                            <span class="fs-14 fw-700 text-primary">{{ single_price($package->price) }}</span>
+                                            <span class="fs-14 fw-700 text-primary">{{ singlePrice($package->price) }}</span>
                                             <span class="fs-13 text-secondary">/{{ $package->number_of_days }} {{ translate('days') }}</span>
                                         </span>
                                     </a>

@@ -10,7 +10,7 @@
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="{{ $scholarship->meta_title }}">
     <meta itemprop="description" content="{{ $scholarship->meta_description }}">
-    <meta itemprop="image" content="{{ custom_asset($scholarship->meta_img) }}">
+    <meta itemprop="image" content="{{ customAsset($scholarship->meta_img) }}">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
@@ -18,13 +18,13 @@
     <meta name="twitter:title" content="{{ $scholarship->meta_title }}">
     <meta name="twitter:description" content="{{ $scholarship->meta_description }}">
     <meta name="twitter:creator" content="@author_handle">
-    <meta name="twitter:image" content="{{ custom_asset($scholarship->meta_img) }}">
+    <meta name="twitter:image" content="{{ customAsset($scholarship->meta_img) }}">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="{{ $scholarship->meta_title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ route('scholarship', $scholarship->slug) }}" />
-    <meta property="og:image" content="{{ custom_asset($scholarship->meta_img) }}" />
+    <meta property="og:image" content="{{ customAsset($scholarship->meta_img) }}" />
     <meta property="og:description" content="{{ $scholarship->meta_description }}" />
     <meta property="og:site_name" content="{{ env('APP_NAME') }}" />
 @endsection
@@ -35,7 +35,7 @@
     <div class="container">
         <div class="mb-4">
             <img
-                src="{{ custom_asset($scholarship->banner) }}"
+                src="{{ customAsset($scholarship->banner) }}"
                 alt="{{ $scholarship->title }}"
                 class="img-fluid lazyload w-100"
             >
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    @if (get_setting('fb_comment_activation_checkbox') == 1)
+                    @if (getSetting('fb_comment_activation_checkbox') == 1)
                     <div>
                         <div class="fb-comments" data-href="{{ route("scholarship",$scholarship->slug) }}" data-width="" data-numposts="5"></div>
                     </div>
@@ -82,7 +82,7 @@
 
 
 @section('script')
-    @if (get_setting('fb_comment_activation_checkbox') == 1)
+    @if (getSetting('fb_comment_activation_checkbox') == 1)
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId={{ env('FACEBOOK_COMMENT_APP_ID') }}&autoLogAppEvents=1" nonce="ji6tXwgZ"></script>
     @endif

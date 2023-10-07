@@ -23,45 +23,45 @@
             <meta name="description" content="{{$data['description']}}"/>
             <meta name="csrf-token" content="{{ csrf_token() }}">
             @php } @endphp
-            <meta name="app-url" content="{{ getBaseURL() }}">
-            <meta name="file-base-url" content="{{ getFileBaseURL() }}">
+            <meta name="app-url" content="{{ config('app.url') }}">
+            <meta name="file-base-url" content="{{ config('app.url'). '/public' }}">
 
             <!-- Title -->
-            <!-- <title>@yield('meta_title', get_setting('website_name').' | '.get_setting('site_motto'))</title> -->
+            <!-- <title>@yield('meta_title', getSetting('website_name').' | '.getSetting('site_motto'))</title> -->
 
             <!-- Required Meta Tags Always Come First -->
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <!-- <meta name="description" content="@yield('meta_description', get_setting('meta_description'))" />
-    <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords'))"> -->
+            <!-- <meta name="description" content="@yield('meta_description', getSetting('meta_description'))" />
+    <meta name="keywords" content="@yield('meta_keywords', getSetting('meta_keywords'))"> -->
 
             @yield('meta')
 
             @if(!isset($page))
                 <!-- Schema.org markup for Google+ -->
                 <meta itemprop="name" content="{{ config('app.name', env('APP_NAME')) }}">
-                <meta itemprop="description" content="{{ get_setting('meta_description') }}">
-                <meta itemprop="image" content="{{ custom_asset( get_setting('meta_image') ) }}">
+                <meta itemprop="description" content="{{ getSetting('meta_description') }}">
+                <meta itemprop="image" content="{{ customAsset( getSetting('meta_image') ) }}">
 
                 <!-- Twitter Card data -->
                 <meta name="twitter:card" content="product">
                 <meta name="twitter:site" content="@publisher_handle">
                 <meta name="twitter:title" content="{{ config('app.name', env('APP_NAME')) }}">
-                <meta name="twitter:description" content="{{ get_setting('meta_description') }}">
+                <meta name="twitter:description" content="{{ getSetting('meta_description') }}">
                 <meta name="twitter:creator" content="@author_handle">
-                <meta name="twitter:image" content="{{ custom_asset( get_setting('meta_image')) }}">
+                <meta name="twitter:image" content="{{ customAsset( getSetting('meta_image')) }}">
 
                 <!-- Open Graph data -->
                 <meta property="og:title" content="{{ config('app.name', env('APP_NAME')) }}"/>
                 <meta property="og:type" content="Business Site"/>
                 <meta property="og:url" content="{{ env('APP_URL') }}"/>
-                <meta property="og:image" content="{{ custom_asset(get_setting('meta_image')) }}"/>
-                <meta property="og:description" content="{{ get_setting('meta_description') }}"/>
-                <meta property="og:site_name" content="{{ get_setting('website_name') }}"/>
+                <meta property="og:image" content="{{ customAsset(getSetting('meta_image')) }}"/>
+                <meta property="og:description" content="{{ getSetting('meta_description') }}"/>
+                <meta property="og:site_name" content="{{ getSetting('website_name') }}"/>
             @endif
 
             <!-- Favicon -->
-            <link rel="icon" href="{{ custom_asset(get_setting('site_icon')) }}">
+            <link rel="icon" href="{{ customAsset(getSetting('site_icon')) }}">
 
             <!-- CSS -->
             <link rel="stylesheet"
@@ -111,14 +111,14 @@
                 }
 
                 :root {
-                    --primary: {{ get_setting('base_color', '#377dff') }};
-                    --hov-primary: {{ get_setting('base_hov_color', '#0069d9') }};
-                    --soft-primary: {{ hex2rgba(get_setting('base_hov_color','#377dff'),.15) }};
-                    --soft-hov-primary: {{ hex2rgba(get_setting('base_hov_color','#0069d9'),.06) }};
+                    --primary: {{ getSetting('base_color', '#377dff') }};
+                    --hov-primary: {{ getSetting('base_hov_color', '#0069d9') }};
+                    --soft-primary: {{ hex2rgba(getSetting('base_hov_color','#377dff'),.15) }};
+                    --soft-hov-primary: {{ hex2rgba(getSetting('base_hov_color','#0069d9'),.06) }};
                 }
             </style>
 
-            @if (get_setting('google_analytics_activation_checkbox') == 1)
+            @if (getSetting('google_analytics_activation_checkbox') == 1)
                 <!-- Global site tag (gtag.js) - Google Analytics -->
                 <script async
                         src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_TRACKING_ID') }}"></script>
@@ -135,7 +135,7 @@
                 </script>
             @endif
 
-            @if (get_setting('fb_pixel_activation_checkbox') == 1)
+            @if (getSetting('fb_pixel_activation_checkbox') == 1)
                 <!-- Facebook Pixel Code -->
                 <script>
                     !function (f, b, e, v, n, t, s) {

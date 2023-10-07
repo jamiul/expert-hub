@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ translate('Search by project name') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="{{ translate('Search by project name') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -39,7 +39,7 @@
                                 <td>{{ $key+1 }}</td>
                                 <td><a target="_blank" href="{{ route('service.show', $service->slug) }}">{{ $service->title }}</a></td>
                                 <td><a target="_blank" href="{{ route('expert.details', $service->user->user_name) }}">{{ $service->user->name }}</a></td>
-                                <td>{{ count($service->service_packages) > 0 ? single_price($service->service_packages[0]->service_price) : single_price(0)}}</td>
+                                <td>{{ count($service->service_packages) > 0 ? singlePrice($service->service_packages[0]->service_price) : singlePrice(0)}}</td>
                                 <td>{{ $service->created_at }}</td>
                             </tr>
                         @endforeach

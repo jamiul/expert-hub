@@ -69,8 +69,8 @@
                                     @endforeach
 
                                     <!-- hourly rate badge  -->
-                                    @if (count($hourly_rate) > 0)
-                                        @foreach ($hourly_rate as $rate)
+                                    @if (count($hourlyRate) > 0)
+                                        @foreach ($hourlyRate as $rate)
                                             @if ($rate != 'all')
                                                 <span id="hourlyRate_{{ $rate }}"
                                                     class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
@@ -83,11 +83,11 @@
                                     @endif
 
                                     <!-- country badge  -->
-                                    @if (!empty($country_id))
-                                        <span id="countryID_{{ $country_id }}"
+                                    @if (!empty($countryId))
+                                        <span id="countryID_{{ $countryId }}"
                                             class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
-                                            {{ getCountryName($country_id) }}
-                                            <p onclick="removeCountryName({{ $country_id }})" class="m-0 d-inline fw-700"
+                                            {{ getCountryName($countryId) }}
+                                            <p onclick="removeCountryName({{ $countryId }})" class="m-0 d-inline fw-700"
                                                 style="cursor: pointer;">X</p>
                                         </span>
                                     @endif
@@ -122,7 +122,7 @@
                                             <label class="aiz-checkbox site-font w-100">
                                                 <input type="checkbox" name="category_id[]" value="{{ $category->id }}"
                                                     onchange="applyFilter()"
-                                                    @if (in_array($category->id, $category_ids)) checked @endif>
+                                                    @if (in_array($category->id, $categoryIds)) checked @endif>
                                                 {{ $category->name }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -150,7 +150,7 @@
                                                             @foreach ($skills as $key => $skill)
                                                                 @foreach ($skill->childrens as $subSkill)
                                                                     <option class="site-font" value="{{ $subSkill->id }}"
-                                                                        @if (in_array($subSkill->id, (array) $skill_ids)) selected @endif>
+                                                                        @if (in_array($subSkill->id, (array) $skillIds)) selected @endif>
                                                                         {{ $subSkill->name }}</option>
                                                                 @endforeach
                                                             @endforeach
@@ -207,12 +207,12 @@
                                                     onchange="applyFilter()" data-live-search="true"
                                                     name="hourly_rate[]">
                                                     <option value="all"
-                                                        @if (in_array('all', $hourly_rate)) selected @endif>
+                                                        @if (in_array('all', $hourlyRate)) selected @endif>
                                                         {{ translate('Any hourly rate') }}</option>
 
                                                     @foreach (getHourlyRate() as $key => $rate)
                                                         <option value="{{ $key }}"
-                                                            @if (in_array($key, $hourly_rate)) selected @endif>
+                                                            @if (in_array($key, $hourlyRate)) selected @endif>
                                                             {{ $rate }} </option>
                                                     @endforeach
                                                 </select>
@@ -224,7 +224,7 @@
                                             <label class="aiz-checkbox site-font w-100 fw-700">
                                                 <input type="checkbox" name="available_interview" value="interview"
                                                     onchange="applyFilter()" class=" "
-                                                    @if ($available_interview) checked @endif>
+                                                    @if ($availableInterview) checked @endif>
                                                     {{ __('Available for Media Interview') }}
                                                 <span class="aiz-square-check"></span>
                                                 <span class="float-right text-secondary fs-lg-16 fs-14"></span>
@@ -253,7 +253,7 @@
                                                         {{ translate('Select Location') }}</option>
                                                     @foreach (\App\Models\Country::all() as $country)
                                                         <option value="{{ $country->id }}"
-                                                            @if (isset($country_id) && $country_id == $country->id) selected @endif>
+                                                            @if (isset($countryId) && $countryId == $country->id) selected @endif>
                                                             {{ $country->name }}</option>
                                                     @endforeach
                                                 </select>
@@ -315,7 +315,7 @@
                                                 <a href="{{ route('expert.details', $expert->user->user_name) }}">
                                                     <span class="avatar flex-shrink-0 mr-4">
                                                         @if ($expert->user->photo != null)
-                                                            <img src="{{ custom_asset($expert->user->photo) }}"
+                                                            <img src="{{ customAsset($expert->user->photo) }}"
                                                                 alt="{{ $expert->user->name }}">
                                                         @else
                                                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
@@ -367,7 +367,7 @@
                                                             </span>
 
                                                             <span>
-                                                                {{ single_price($expert->hourly_rate) }} USD per hour
+                                                                {{ singlePrice($expert->hourly_rate) }} USD per hour
                                                             </span>
 
                                                         </div>
@@ -378,9 +378,9 @@
                                                     </div>
                                                     @if ($expert->skills != null)
                                                         <div>
-                                                            @foreach (json_decode($expert->skills) as $key => $skill_id)
+                                                            @foreach (json_decode($expert->skills) as $key => $skillId)
                                                                 @php
-                                                                    $skill = \App\Models\Skill::find($skill_id);
+                                                                    $skill = \App\Models\Skill::find($skillId);
                                                                 @endphp
                                                                 @if ($skill != null)
                                                                     <span

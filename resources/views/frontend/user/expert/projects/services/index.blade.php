@@ -23,7 +23,7 @@
                             <div class="card overflow-hidden rounded-2 border-gray-light hov-box">
                                 <a href="{{ route('service.show', $service->slug) }}">
                                     @if($service->image != null)
-                                        <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
+                                        <img src="{{ customAsset($service->image) }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                     @else
                                         <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                     @endif
@@ -32,7 +32,7 @@
                                     <div class="d-flex mb-2">
                                         <span class="mr-2">
                                             @if (Auth::user()->photo != null)
-                                                <img src="{{ custom_asset(Auth::user()->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                <img src="{{ customAsset(Auth::user()->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                             @else
                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                             @endif

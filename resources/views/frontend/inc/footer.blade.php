@@ -3,23 +3,23 @@
         <div class="aiz-footer-widget">
             <div class="container mt-xl-5 mt-5" class="margin-top">
                 {{-- <div class="aiz-front-widget ">
-                    <img src="{{ custom_asset(get_setting('footer_logo')) }}" height="40" class="mb-4">
+                    <img src="{{ customAsset(getSetting('footer_logo')) }}" height="40" class="mb-4">
                     <div class="fs-14 text-white">
                         @php
-                            echo get_setting('about_description_footer');
+                            echo getSetting('about_description_footer');
                         @endphp
                     </div>
                 </div> --}}
                 <div class="row">
                     <div class="col-xl-3 col-sm-6">
                         <div class="aiz-front-widget mb-5">
-                            <h4 class="title text-white">{{ get_setting('widget_one') }}</h4>
+                            <h4 class="title text-white">{{ getSetting('widget_one') }}</h4>
                             <ul class="menu">
-                                @if (!empty(get_setting('widget_one_labels')))
-                                    @foreach (json_decode(get_setting('widget_one_labels'), true) as $key => $value)
+                                @if (!empty(getSetting('widget_one_labels')))
+                                    @foreach (json_decode(getSetting('widget_one_labels'), true) as $key => $value)
                                         <li>
                                             <a class="text-white"
-                                                href="{{ json_decode(get_setting('widget_one_links'), true)[$key] }}">{{ $value }}</a>
+                                                href="{{ json_decode(getSetting('widget_one_links'), true)[$key] }}">{{ $value }}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -28,13 +28,13 @@
                     </div>
                     <div class="col-xl-3 col-sm-12">
                         <div class="aiz-front-widget mb-5">
-                            <h4 class="title text-white">{{ get_setting('widget_two') }}</h4>
+                            <h4 class="title text-white">{{ getSetting('widget_two') }}</h4>
                             <ul class="menu">
-                                @if (!empty(get_setting('widget_two_labels')))
-                                    @foreach (json_decode(get_setting('widget_two_labels'), true) as $key => $value)
+                                @if (!empty(getSetting('widget_two_labels')))
+                                    @foreach (json_decode(getSetting('widget_two_labels'), true) as $key => $value)
                                         <li>
                                             <a class="text-white"
-                                                href="{{ json_decode(get_setting('widget_two_links'), true)[$key] }}">{{ $value }}</a>
+                                                href="{{ json_decode(getSetting('widget_two_links'), true)[$key] }}">{{ $value }}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -43,13 +43,13 @@
                     </div>
                     <div class="col-xl-3 col-sm-6">
                         <div class="aiz-front-widget mb-5">
-                            <h4 class="title text-white">{{ get_setting('widget_three') }}</h4>
+                            <h4 class="title text-white">{{ getSetting('widget_three') }}</h4>
                             <ul class="menu text-white">
-                                @if (!empty(get_setting('widget_three_labels')))
-                                    @foreach (json_decode(get_setting('widget_three_labels'), true) as $key => $value)
+                                @if (!empty(getSetting('widget_three_labels')))
+                                    @foreach (json_decode(getSetting('widget_three_labels'), true) as $key => $value)
                                         <li>
                                             <a class="text-white"
-                                                href="{{ json_decode(get_setting('widget_three_links'), true)[$key] }}">{{ $value }}</a>
+                                                href="{{ json_decode(getSetting('widget_three_links'), true)[$key] }}">{{ $value }}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -58,13 +58,13 @@
                     </div>
                     <div class="col-xl-3 col-sm-6">
                         <div class="aiz-front-widget mb-5">
-                            <h4 class="title text-white">{{ get_setting('widget_four') }}</h4>
+                            <h4 class="title text-white">{{ getSetting('widget_four') }}</h4>
                             <ul class="menu">
-                                @if (!empty(get_setting('widget_four_labels')))
-                                    @foreach (json_decode(get_setting('widget_four_labels'), true) as $key => $value)
+                                @if (!empty(getSetting('widget_four_labels')))
+                                    @foreach (json_decode(getSetting('widget_four_labels'), true) as $key => $value)
                                         <li>
                                             <a class="text-white"
-                                                href="{{ json_decode(get_setting('widget_four_links'), true)[$key] }}">{{ $value }}</a>
+                                                href="{{ json_decode(getSetting('widget_four_links'), true)[$key] }}">{{ $value }}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -84,69 +84,69 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center gutters-3">
                     <div class="col-xl-4 col-sm-6">
-                        @if (get_setting('language_switcher') == 'on')
+                        @if (getSetting('language_switcher') == 'on')
                             <div class=" col-lg-12 col-12 fs-16 p-0 text-white">
-                                {!! get_setting('copyright_text') !!}
+                                {!! getSetting('copyright_text') !!}
                             </div>
                         @else
                             <div class="col text-secondary">
-                                {!! get_setting('copyright_text') !!}
+                                {!! getSetting('copyright_text') !!}
                             </div>
                         @endif
                     </div>
                     <div class="col-xl-4 col-sm-6 p-0">
                         <div class="aiz-front-widget d-lg-flex px-3 align-items-center">
-                            <h5 class="text-white fs-16 mr-lg-2">{{ get_setting('social_widget_title') }}</h5>
+                            <h5 class="text-white fs-16 mr-lg-2">{{ getSetting('social_widget_title') }}</h5>
 
                             <ul class="list-inline apps">
 
-                                 @if (!empty(get_setting('facebook_link')))
+                                 @if (!empty(getSetting('facebook_link')))
                                     <li class="list-inline-item">
-                                        <a href="{{ get_setting('facebook_link') }}" target="_blank"
+                                        <a href="{{ getSetting('facebook_link') }}" target="_blank"
                                             class="facebook"><i class="lab la-facebook-f"></i></a>
                                     </li>
                                 @endif
-                                @if (!empty(get_setting('twitter_link')))
+                                @if (!empty(getSetting('twitter_link')))
                                     <li class="list-inline-item">
-                                        <a href="{{ get_setting('twitter_link') }}" target="_blank" class="twitter"><i
+                                        <a href="{{ getSetting('twitter_link') }}" target="_blank" class="twitter"><i
                                                 class="lab la-twitter"></i></a>
                                     </li>
                                 @endif
-                                @if (!empty(get_setting('instagram_link')))
+                                @if (!empty(getSetting('instagram_link')))
                                     <li class="list-inline-item">
-                                        <a href="{{ get_setting('instagram_link') }}" target="_blank"
+                                        <a href="{{ getSetting('instagram_link') }}" target="_blank"
                                             class="instagram"><i class="lab la-instagram"></i></a>
                                     </li>
                                 @endif
-                                @if (!empty(get_setting('youtube_link')))
+                                @if (!empty(getSetting('youtube_link')))
                                     <li class="list-inline-item">
-                                        <a href="{{ get_setting('youtube_link') }}" target="_blank" class="youtube"><i
+                                        <a href="{{ getSetting('youtube_link') }}" target="_blank" class="youtube"><i
                                                 class="lab la-youtube"></i></a>
                                     </li>
                                 @endif
-                                @if (!empty(get_setting('linkedin_link')))
+                                @if (!empty(getSetting('linkedin_link')))
                                     <li class="list-inline-item">
-                                        <a href="{{ get_setting('linkedin_link') }}" target="_blank"
+                                        <a href="{{ getSetting('linkedin_link') }}" target="_blank"
                                             class="linkedin"><i class="lab la-linkedin-in"></i></a>
                                     </li>
                                 @endif
                             </ul>
                         </div>
                     </div>
-                    @if (get_setting('app_link_section_show') == 'on')
+                    @if (getSetting('app_link_section_show') == 'on')
                         <div class="col-xl-4 col-sm-12">
                             <div class="aiz-front-widget d-lg-flex ml-lg-2  align-items-center ">
                                 <h5 class="fs-16 text-white mr-lg-2">{{ translate('Mobile Apps') }}</h5>
                                 <ul class="list-inline apps">
-                                    @if (!empty(get_setting('app_link_android')))
+                                    @if (!empty(getSetting('app_link_android')))
                                         <li class="list-inline-item">
-                                            <a href="{{ get_setting('app_link_android') }}" target="_blank"
+                                            <a href="{{ getSetting('app_link_android') }}" target="_blank"
                                                 class="facebook"><i class="lab la-android"></i></a>
                                         </li>
                                     @endif
-                                    @if (!empty(get_setting('app_link_apple')))
+                                    @if (!empty(getSetting('app_link_apple')))
                                         <li class="list-inline-item">
-                                            <a href="{{ get_setting('app_link_apple') }}" target="_blank"
+                                            <a href="{{ getSetting('app_link_apple') }}" target="_blank"
                                                 class="twitter"><i class="lab la-apple"></i></a>
                                         </li>
                                     @endif
@@ -171,10 +171,10 @@
             <span class="d-inline-block position-relative px-2">
                 <i
                     class="las la-bell fs-20 {{ areActiveRoutes(['frontend.notifications'], 'opacity-100 text-primary') }} opacity-60"></i>
-                @php $noti_num = \App\Utility\NotificationUtility::get_my_notifications(10,true,true); @endphp
-                @if ($noti_num > 0)
+                @php $notiNum = \App\Utility\NotificationUtility::getMyNotifications(10,true,true); @endphp
+                @if ($notiNum > 0)
                     <span
-                        class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ $noti_num }}</span>
+                        class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ $notiNum }}</span>
                 @endif
             </span>
             <span
@@ -185,12 +185,12 @@
                 <i
                     class="las la-comment-dots fs-20 {{ areActiveRoutes(['all.messages'], 'opacity-100 text-primary') }} opacity-60"></i>
                 @php
-                    $unseen_chat_threads = chat_threads();
-                    $unseen_chat_thread_count = count($unseen_chat_threads);
+                    $unseenChatThreads = chatThreads();
+                    $unseenChatThreadCount = count($unseenChatThreads);
                 @endphp
-                @if ($unseen_chat_thread_count > 0)
+                @if ($unseenChatThreadCount > 0)
                     <span
-                        class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ $unseen_chat_thread_count }}</span>
+                        class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ $unseenChatThreadCount }}</span>
                 @endif
             </span>
             <span
@@ -203,7 +203,7 @@
                     data-toggle="class-toggle" data-target=".aiz-mobile-side-nav">
                     <span class="d-block mx-auto">
                         @if (Auth::user()->photo != null)
-                            <img src="{{ custom_asset(Auth::user()->photo) }}" class="rounded-circle size-20px">
+                            <img src="{{ customAsset(Auth::user()->photo) }}" class="rounded-circle size-20px">
                         @else
                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                 class="rounded-circle size-20px">
@@ -220,7 +220,7 @@
                 <a href="{{ route('admin.dashboard') }}" class="text-reset flex-grow-1 pb-2 pt-3 text-center">
                     <span class="d-block mx-auto">
                         @if (Auth::user()->photo != null)
-                            <img src="{{ custom_asset(Auth::user()->photo) }}" class="rounded-circle size-20px">
+                            <img src="{{ customAsset(Auth::user()->photo) }}" class="rounded-circle size-20px">
                         @else
                             <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}"
                                 class="rounded-circle size-20px">

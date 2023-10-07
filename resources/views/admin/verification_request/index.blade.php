@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group ">
-                            <input type="text" class="form-control" placeholder="{{ translate('User Name') }}" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset>
+                            <input type="text" class="form-control" placeholder="{{ translate('User Name') }}" name="search" @isset($sortSearch) value="{{ $sortSearch }}" @endisset>
                             <div class="input-group-append">
                                 <button class="btn btn-light" type="submit">
                                     <i class="las la-search la-rotate-270"></i>
@@ -113,7 +113,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    function show_verification_request_modal(id){
+    function showVerificationRequestModal(id){
         $.post('{{ route('cancel-project-request.show') }}', { _token: '{{ csrf_token() }}', id:id }, function(data){
             $('#cancel-project-request').modal('show');
             $('#cancel-project-request_body').html(data);

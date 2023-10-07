@@ -12,7 +12,7 @@
                             <span class="fs-12 d-block">{{ translate('Total Earnings From') }}</span>
                             {{ translate('Client Subscription') }}
                         </div>
-                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::client()->sum('amount')) }}</div>
+                        <div class="h3 fw-700 mb-3">{{ singlePrice(\App\Models\PackagePayment::client()->sum('amount')) }}</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="rgba(255,255,255,0.3)" fill-opacity="1" d="M0,128L34.3,112C68.6,96,137,64,206,96C274.3,128,343,224,411,250.7C480,277,549,235,617,213.3C685.7,192,754,192,823,181.3C891.4,171,960,149,1029,117.3C1097.1,85,1166,43,1234,58.7C1302.9,75,1371,149,1406,186.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -26,7 +26,7 @@
                             <span class="fs-12 d-block">{{ translate('Total Earnings From') }}</span>
                             {{ translate('Expert Subscription') }}
                         </div>
-                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::expert()->sum('amount')) }}</div>
+                        <div class="h3 fw-700 mb-3">{{ singlePrice(\App\Models\PackagePayment::expert()->sum('amount')) }}</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="rgba(255,255,255,0.3)" fill-opacity="1" d="M0,128L34.3,112C68.6,96,137,64,206,96C274.3,128,343,224,411,250.7C480,277,549,235,617,213.3C685.7,192,754,192,823,181.3C891.4,171,960,149,1029,117.3C1097.1,85,1166,43,1234,58.7C1302.9,75,1371,149,1406,186.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -40,7 +40,7 @@
                             <span class="fs-12 d-block">{{ translate('Total Earnings From') }}</span>
                             {{ translate('Project Commission') }}
                         </div>
-                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\MilestonePayment::sum('admin_profit')) }}</div>
+                        <div class="h3 fw-700 mb-3">{{ singlePrice(\App\Models\MilestonePayment::sum('admin_profit')) }}</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="rgba(255,255,255,0.3)" fill-opacity="1" d="M0,128L34.3,112C68.6,96,137,64,206,96C274.3,128,343,224,411,250.7C480,277,549,235,617,213.3C685.7,192,754,192,823,181.3C891.4,171,960,149,1029,117.3C1097.1,85,1166,43,1234,58.7C1302.9,75,1371,149,1406,186.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -54,7 +54,7 @@
                             <span class="fs-12 d-block">{{ translate('Total Earnings of') }}</span>
                             {{ translate('All Time') }}
                         </div>
-                        <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::client()->sum('amount') + \App\Models\PackagePayment::expert()->sum('amount') + \App\Models\MilestonePayment::sum('admin_profit')) }}</div>
+                        <div class="h3 fw-700 mb-3">{{ singlePrice(\App\Models\PackagePayment::client()->sum('amount') + \App\Models\PackagePayment::expert()->sum('amount') + \App\Models\MilestonePayment::sum('admin_profit')) }}</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="rgba(255,255,255,0.3)" fill-opacity="1" d="M0,128L34.3,112C68.6,96,137,64,206,96C274.3,128,343,224,411,250.7C480,277,549,235,617,213.3C685.7,192,754,192,823,181.3C891.4,171,960,149,1029,117.3C1097.1,85,1166,43,1234,58.7C1302.9,75,1371,149,1406,186.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -134,38 +134,38 @@
     </div>
     <div class="card-body">
         <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="4" data-xl-items="3" data-md-items="2" data-sm-items="1" data-arrows='true'>
-            @foreach (\App\Models\ProjectUser::latest()->limit(10)->get() as $key => $project_user)
+            @foreach (\App\Models\ProjectUser::latest()->limit(10)->get() as $key => $projectUser)
                 <div class="caorusel-box">
-                    <a class="card text-inherit" href="{{ route('project.details', $project_user->project->slug) }}" target="_blank">
+                    <a class="card text-inherit" href="{{ route('project.details', $projectUser->project->slug) }}" target="_blank">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-3">
                                 <div class="d-flex mr-3 align-items-center text-inherit">
                                     <span class="avatar avatar-sm">
-                                        @if($project_user->user->photo != null)
-                                            <img class="img-fluid rounded-circle" src="{{ custom_asset($project_user->user->photo) }}">
+                                        @if($projectUser->user->photo != null)
+                                            <img class="img-fluid rounded-circle" src="{{ customAsset($projectUser->user->photo) }}">
                                         @else
                                             <img class="img-fluid rounded-circle" src="{{ asset('assets/backend/default/img/avatar-place.png') }}">
                                         @endif
                                     </span>
                                     <div class="pl-2">
-                                        <h4 class="fs-14 mb-1">{{ $project_user->user->name }}</h4>
+                                        <h4 class="fs-14 mb-1">{{ $projectUser->user->name }}</h4>
                                         <div class="text-secondary fs-10">
                                             <span class="bg-rating rounded text-white px-1 mr-1 fs-10">
-                                                {{ formatRating(getAverageRating($project_user->user_id)) }}
+                                                {{ formatRating(getAverageRating($projectUser->user_id)) }}
                                             </span>
                                             <span>
-                                                ({{ getNumberOfReview($project_user->user_id) }} {{ translate('Reviews') }})
+                                                ({{ getNumberOfReview($projectUser->user_id) }} {{ translate('Reviews') }})
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text-right flex-shrink-0 pl-3">
                                     <span class="small">Hired at</span>
-                                    <h4 class="mb-0">{{ single_price($project_user->hired_at) }}</h4>
+                                    <h4 class="mb-0">{{ singlePrice($projectUser->hired_at) }}</h4>
                                 </div>
                             </div>
                             <h5 class="fs-14 fw-600 lh-1-5 text-truncate-2">
-                                {{ $project_user->project->excerpt }}
+                                {{ $projectUser->project->excerpt }}
                             </h5>
                         </div>
                     </a>
@@ -176,16 +176,18 @@
 </div>
 
 @php
+    $expertPackageHistory = [];
+    $clientPackageHistory = [];
     $expertPackageNames = \App\Models\Package::expert()->pluck('name');
-    $expertPackageHistory = array();
+
     foreach (\App\Models\Package::expert()->get() as $key => $expertPackage) {
-        array_push($expertPackageHistory, count($expertPackage->package_payments));
+        array_push($expertPackageHistory, count($expertPackage->packagePayments));
     }
 
     $clientPackageNames = \App\Models\Package::client()->pluck('name');
-    $clientPackageHistory = array();
+
     foreach (\App\Models\Package::client()->get() as $key => $clientPackage) {
-        array_push($clientPackageHistory, count($clientPackage->package_payments));
+        array_push($clientPackageHistory, count($clientPackage->packagePayments));
     }
 @endphp
 

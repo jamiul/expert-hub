@@ -1,5 +1,5 @@
 
-<h5>{{ $project->name }} ({{ single_price($project->price) }})</h5>
+<h5>{{ $project->name }} ({{ singlePrice($project->price) }})</h5>
 <form class="form-horizontal" action="{{ route('bids.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="hidden" class="form-control form-control-sm" name="project_id" value="{{ $project->id }}" placeholder="{{ translate('Enter project title') }}">

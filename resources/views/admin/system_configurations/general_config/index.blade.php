@@ -14,7 +14,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="types">{{translate('System Name')}}</label>
-                            <input type="text" name="site_name" class="form-control" value="{{ get_setting('site_name') }}">
+                            <input type="text" name="site_name" class="form-control" value="{{ getSetting('site_name') }}">
                         </div>
                         <div class="form-group">
                             <label for="types">{{translate('System Logo - White')}}</label>
@@ -23,7 +23,7 @@
                                     <div class="input-group-text bg-soft-secondary">{{ translate('Browse') }}</div>
                                 </div>
                                 <div class="form-control file-amount">{{ translate('Choose Files') }}</div>
-                                <input type="hidden" name="system_logo_white" value="{{ get_setting('system_logo_white') }}" class="selected-files">
+                                <input type="hidden" name="system_logo_white" value="{{ getSetting('system_logo_white') }}" class="selected-files">
                             </div>
                             <div class="file-preview box sm"></div>
                             <small>{{ translate('Will be used in admin panel side menu') }}</small>
@@ -35,7 +35,7 @@
                                     <div class="input-group-text bg-soft-secondary">{{ translate('Browse') }}</div>
                                 </div>
                                 <div class="form-control file-amount">{{ translate('Choose Files') }}</div>
-                                <input type="hidden" name="system_logo_black" value="{{ get_setting('system_logo_black') }}" class="selected-files">
+                                <input type="hidden" name="system_logo_black" value="{{ getSetting('system_logo_black') }}" class="selected-files">
                             </div>
                             <div class="file-preview box sm"></div>
                             <small>{{ translate('Will be used in admin panel topbar in mobile + Admin login page') }}</small>
@@ -44,7 +44,7 @@
                             <label>{{translate('System Timezone')}}</label>
                             <select name="timezone" class="form-control aiz-selectpicker" data-live-search="true">
                                 @foreach (timezones() as $key => $value)
-                                    <option value="{{ $value }}" @if (app_timezone() == $value)
+                                    <option value="{{ $value }}" @if (appTimezone() == $value)
                                         selected
                                     @endif>{{ $key }}</option>
                                 @endforeach
@@ -57,7 +57,7 @@
                                     <div class="input-group-text bg-soft-secondary">{{ translate('Browse') }}</div>
                                 </div>
                                 <div class="form-control file-amount">{{ translate('Choose Files') }}</div>
-                                <input type="hidden" name="admin_login_background" value="{{\App\Utility\SettingsUtility::get_settings_value('admin_login_background')}}" class="selected-files">
+                                <input type="hidden" name="admin_login_background" value="{{\App\Utility\SettingsUtility::getSettingsValue('admin_login_background')}}" class="selected-files">
                             </div>
                             <div class="file-preview box sm"></div>
                         </div>

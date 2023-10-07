@@ -33,7 +33,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($user_roles as $key => $employee)
+                            @foreach($userRoles as $key => $employee)
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$employee->user->name}}</td>
@@ -53,7 +53,7 @@
                         </tbody>
                     </table>
                     <div class="mt-2">
-                        {{ $user_roles->links() }}
+                        {{ $userRoles->links() }}
                     </div>
                 </div>
             </div>

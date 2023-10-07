@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\Controller;
 use App\Models\Address;
 use App\Models\User;
 use App\Models\UserProfile;
@@ -61,7 +61,7 @@ class RegisterController extends Controller
         $this->guard()->login($user);
 
         if ($user->email != null) {
-            if (get_setting('email_verification') != 1) {
+            if (getSetting('email_verification') != 1) {
                 $user->email_verified_at = date('Y-m-d H:m:s');
                 $user->save();
                 flash(translate('Registration successful.'))->success();
@@ -82,7 +82,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
@@ -90,10 +90,10 @@ class RegisterController extends Controller
         // dd($data);
         $user = User::create(
             [
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'user_name' => Str::slug($data['name'], '-') . date('Ymd-his'),
-            'password' => Hash::make($data['password']),
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'user_name' => Str::slug($data['name'], '-') . date('Ymd-his'),
+                'password' => Hash::make($data['password']),
             ]
         );
 
@@ -110,9 +110,9 @@ class RegisterController extends Controller
         $user->address()->save($address);
 
 
-        $user_profile = new UserProfile;
-        $user_profile->user_id = $user->id;
-        $user_profile->save();
+        $userProfile = new UserProfile;
+        $userProfile->user_id = $user->id;
+        $userProfile->save();
 
         return $user;
     }
@@ -120,7 +120,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -128,9 +128,9 @@ class RegisterController extends Controller
         return Validator::make(
             $data,
             [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:6', 'confirmed'],
             ]
         );
     }

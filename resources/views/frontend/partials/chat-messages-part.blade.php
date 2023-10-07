@@ -8,7 +8,7 @@
                         <span class="time">{{ Carbon\Carbon::parse($chat->created_at)->diffForHumans() }}</span>
                     </div>
                     <span class="avatar avatar-xs flex-shrink-0">
-                        <img @if ($chat->sender->photo != null) src="{{ custom_asset(($chat->sender->photo))}}" @endif>
+                        <img @if ($chat->sender->photo != null) src="{{ customAsset(($chat->sender->photo))}}" @endif>
                     </span>
                 </div>
             </div>
@@ -18,9 +18,9 @@
                 <div class="media">
                     <div class="media-body">
                         <div class="file-preview box sm">
-                            @foreach (json_decode($chat->attachment) as $key => $attachment_id)
+                            @foreach (json_decode($chat->attachment) as $key => $attachmentId)
                                 @php
-                                    $attachment = \App\Models\Upload::find($attachment_id);
+                                    $attachment = \App\Models\Upload::find($attachmentId);
                                 @endphp
                                 @if ($attachment != null)
                                     @if ($attachment->type == 'image')
@@ -64,7 +64,7 @@
                         <span class="time">{{ Carbon\Carbon::parse($chat->created_at)->diffForHumans() }}</span>
                     </div>
                     <span class="avatar avatar-xs flex-shrink-0">
-                        <img @if ($chat->sender->photo != null) src="{{ custom_asset(($chat->sender->photo))}}" @endif>
+                        <img @if ($chat->sender->photo != null) src="{{ customAsset(($chat->sender->photo))}}" @endif>
                     </span>
                 </div>
             </div>
@@ -74,7 +74,7 @@
             <div class="chat-coversation">
                 <div class="media">
                     <span class="avatar avatar-xs flex-shrink-0">
-                        <img @if ($chat->sender->photo != null) src="{{ custom_asset(($chat->sender->photo))}}" @endif>
+                        <img @if ($chat->sender->photo != null) src="{{ customAsset(($chat->sender->photo))}}" @endif>
                     </span>
                     <div class="media-body">
                         <div class="text">{{ $chat->message }}</div>
@@ -87,13 +87,13 @@
             <div class="chat-coversation">
                 <div class="media">
                     <span class="avatar avatar-xs flex-shrink-0">
-                        <img @if ($chat->sender->photo != null) src="{{ custom_asset(($chat->sender->photo))}}" @endif>
+                        <img @if ($chat->sender->photo != null) src="{{ customAsset(($chat->sender->photo))}}" @endif>
                     </span>
                     <div class="media-body">
                         <div class="file-preview box sm">
-                            @foreach (json_decode($chat->attachment) as $key => $attachment_id)
+                            @foreach (json_decode($chat->attachment) as $key => $attachmentId)
                                 @php
-                                    $attachment = \App\Models\Upload::find($attachment_id);
+                                    $attachment = \App\Models\Upload::find($attachmentId);
                                 @endphp
                                 @if ($attachment != null)
                                     @if ($attachment->type == 'image')

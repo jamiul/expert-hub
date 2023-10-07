@@ -26,7 +26,7 @@
                             <i class="las la-dollar-sign la-2x text-white"></i>
                         </span>
                         <div class="px-3 pt-3 pb-3">
-                            <div class="h4 fw-700 text-center">{{ single_price(Auth::user()->profile->balance) }}</div>
+                            <div class="h4 fw-700 text-center">{{ singlePrice(Auth::user()->profile->balance) }}</div>
                             <div class="opacity-50 text-center">{{ translate('Wallet Balance') }}</div>
                         </div>
                       </div>
@@ -63,7 +63,7 @@
                                   <tr>
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ date('d-m-Y', strtotime($wallet->created_at)) }}</td>
-                                        <td>{{ single_price($wallet->amount) }}</td>
+                                        <td>{{ singlePrice($wallet->amount) }}</td>
                                         <td>{{ ucfirst(str_replace('_', ' ', $wallet ->payment_method)) }}</td>
                                         @if(Auth::user()->user_type == 'client')
                                             <td>{{ translate($wallet->type) }}</td>
@@ -107,7 +107,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            @if(get_setting('paypal_activation_checkbox'))
+                            @if(getSetting('paypal_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="paypal" id="payment_option" type="radio" name="payment_option" checked>
@@ -120,7 +120,7 @@
                                     </label>
                                 </div>
                             @endif
-                            @if(get_setting('stripe_activation_checkbox'))
+                            @if(getSetting('stripe_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="stripe" id="payment_option" type="radio" name="payment_option" checked>
@@ -133,7 +133,7 @@
                                     </label>
                                 </div>
                             @endif
-                            @if(get_setting('sslcommerz_activation_checkbox'))
+                            @if(getSetting('sslcommerz_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="sslcommerz" id="payment_option" type="radio" name="payment_option" checked>
@@ -146,7 +146,7 @@
                                     </label>
                                 </div>
                             @endif
-                            @if(get_setting('paystack_activation_checkbox'))
+                            @if(getSetting('paystack_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="paystack" id="payment_option" type="radio" name="payment_option" checked>
@@ -159,7 +159,7 @@
                                     </label>
                                 </div>
                             @endif
-                            @if(get_setting('instamojo_activation_checkbox'))
+                            @if(getSetting('instamojo_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="instamojo" id="payment_option" type="radio" name="payment_option" checked>
@@ -172,7 +172,7 @@
                                     </label>
                                 </div>
                             @endif
-                            @if(get_setting('paytm_activation_checkbox'))
+                            @if(getSetting('paytm_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="paytm" id="payment_option" type="radio" name="payment_option" checked>
@@ -185,7 +185,7 @@
                                     </label>
                                 </div>
                             @endif
-                            @if(get_setting('flutterwave_activation_checkbox'))
+                            @if(getSetting('flutterwave_activation_checkbox'))
                                 <div class="col-6 col-md-4">
                                     <label class="aiz-megabox d-block mb-3">
                                         <input value="flutterwave" id="payment_option" type="radio" name="payment_option" checked>
@@ -212,7 +212,7 @@
 
 @section('script')
     <script type="text/javascript">
-        function show_wallet_modal(){
+        function showWalletModal(){
             $('#wallet_modal').modal('show');
         }
     </script>

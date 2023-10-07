@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 text-center">
                         <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ __('ScholarshipTotal') }} <span
-                                class="fw-600">{{ $ScholarshipTotal }}</span>
+                                class="fw-600">{{ $scholarshipTotal }}</span>
                             {{ t('experts found for') }} <span class="fw-600">{{ $keyword }}</span>
                         </h1>
                     </div>
@@ -41,8 +41,8 @@
                             <div class="rounded-0 border-0 collapse-sidebar c-scrollbar-light ">
                                 <div class=" border-0 pl-lg-0">
                                     <h5 class="mb-0 fs-21 fw-700">
-                                        @if ($country_name != null)
-                                            Scholarship for in {{ $country_name }}
+                                        @if ($countryName != null)
+                                            Scholarship for in {{ $countryName }}
                                         @else
                                             {{ __('Filter By') }}
                                     </h5>
@@ -106,7 +106,7 @@
                                                 <label class="aiz-checkbox">
                                                     <input type="checkbox" name="level_id[]" value="{{ $level->id }}"
                                                         onchange="applyFilter()"
-                                                        @if (in_array($level->id, $level_id)) checked @endif>
+                                                        @if (in_array($level->id, $levelId)) checked @endif>
                                                     {{ $level->level_name }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
@@ -122,7 +122,7 @@
                                                 <label class="aiz-checkbox">
                                                     <input type="checkbox" name="fieldStudy_id[]"
                                                         value="{{ $fieldStudy->id }}" onchange="applyFilter()"
-                                                        @if (in_array($fieldStudy->id, $fieldStudy_ids)) checked @endif>
+                                                        @if (in_array($fieldStudy->id, $fieldStudyIds)) checked @endif>
                                                     {{ $fieldStudy->name }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
@@ -138,7 +138,7 @@
                                                 <label class="aiz-checkbox">
                                                     <input type="checkbox" name="whoCanApply_id[]"
                                                         value="{{ $whoCanApply->id }}" onchange="applyFilter()"
-                                                        @if (in_array($whoCanApply->id, $whoCanApply_ids)) checked @endif>
+                                                        @if (in_array($whoCanApply->id, $whoCanApplyIds)) checked @endif>
                                                     {{ $whoCanApply->title }}
                                                     <span class="aiz-square-check"></span>
                                                     <span class="float-right text-secondary fs-12"></span>
@@ -159,7 +159,7 @@
                                                         {{ translate('Search countries') }}</option>
                                                     @foreach ($scholarshipCountry as $key => $country)
                                                         <option  value="{{ $country->id }}"
-                                                            @if (in_array($country->id, $country_id)) selected @endif>
+                                                            @if (in_array($country->id, $countryId)) selected @endif>
                                                             {{ $country->name }}</option>
                                                     @endforeach
                                                 </select>
@@ -177,7 +177,7 @@
                                                 data-placeholder="Choose ..." data-live-search="true">
                                                 @foreach (\App\Models\Skill::all() as $skill)
                                                     <option value="{{ $skill->id }}"
-                                                        @if (in_array($skill->id, $skill_ids)) selected @endif>
+                                                        @if (in_array($skill->id, $skillIds)) selected @endif>
                                                         {{ $skill->name }}
                                                     </option>
                                                 @endforeach
@@ -200,7 +200,7 @@
                                 <div class="col-lg-2 col-12">
                                     <div class="d-flex justify-content-center w-100 mb-1" style="border:1px solid #ddd">
 
-                                        <img src="{{ custom_asset($scholarship->banner) }}"
+                                        <img src="{{ customAsset($scholarship->banner) }}"
                                             alt="{{ $scholarship->title }}" class="img-fluid lazyload mb-1 p-1">
                                     </div>
 
@@ -309,10 +309,10 @@
                                                 <!-- <img src="{{ asset('assets/frontend/default/img/scholarship/heart.png') }}" alt=""> -->
 
                                                 @if (Auth::check() &&
-                                                        ($bookmarked_scholarship = \App\Models\BookmarkedScholarship::where('user_id', auth()->user()->id)->where('scholarship_id', $scholarship->id)->first()) != null)
+                                                        ($bookmarkedScholarship = \App\Models\BookmarkedScholarship::where('user_id', auth()->user()->id)->where('scholarship_id', $scholarship->id)->first()) != null)
                                                     <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert"
                                                         href="javascript:void(0)"
-                                                        data-href="{{ route('bookmarked-scholarships.delete', $bookmarked_scholarship->id) }}"
+                                                        data-href="{{ route('bookmarked-scholarships.delete', $bookmarkedScholarship->id) }}"
                                                         data-target="#bookmark-remove-modal">
                                                         <i class="las la-bookmark fs-16 fw-700"></i>
                                                         <span>{{ t('Remove Bookmark') }}</span>

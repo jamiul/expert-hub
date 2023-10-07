@@ -94,9 +94,9 @@
                             <div class="col-md-9">
                                 <select class="form-control aiz-selectpicker" name="training_mode_id" id="training_mode_id"
                                     data-live-search="true" title="{{ translate('Select training Mode') }}">
-                                    @foreach ($training_modes as $training_mode)
-                                        <option value="{{ $training_mode->id }}">
-                                            {{ $training_mode->name }}
+                                    @foreach ($trainingModes as $trainingMode)
+                                        <option value="{{ $trainingMode->id }}">
+                                            {{ $trainingMode->name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -114,9 +114,9 @@
                                     id="training_software_id" data-live-search="true"
                                     title="{{ translate('Select Software Package') }}">
 
-                                    @foreach ($training_softwares as $training_software)
-                                        <option value="{{ $training_software->id }}">
-                                            {{ $training_software->name }}
+                                    @foreach ($trainingSoftwares as $trainingSoftware)
+                                        <option value="{{ $trainingSoftware->id }}">
+                                            {{ $trainingSoftware->name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -168,9 +168,9 @@
                             <div class="col-md-9">
                                 <select class="form-control aiz-selectpicker" name="training_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 1') }}">
-                                    @foreach ($course_instructors as $course_instructor)
-                                        <option value="{{ $course_instructor['id'] }}">
-                                            {{ $course_instructor['name'] }}
+                                    @foreach ($courseInstructors as $courseInstructor)
+                                        <option value="{{ $courseInstructor['id'] }}">
+                                            {{ $courseInstructor['name'] }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -184,9 +184,9 @@
                             <div class="col-md-9">
                                 <select class="form-control aiz-selectpicker" name="training_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 2') }}">
-                                    @foreach ($course_instructors as $course_instructor)
-                                        <option value="{{ $course_instructor['id'] }}">
-                                            {{ $course_instructor['name'] }}
+                                    @foreach ($courseInstructors as $courseInstructor)
+                                        <option value="{{ $courseInstructor['id'] }}">
+                                            {{ $courseInstructor['name'] }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -200,9 +200,9 @@
                             <div class="col-md-9">
                                 <select class="form-control aiz-selectpicker" name="training_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 3') }}">
-                                    @foreach ($course_instructors as $course_instructor)
-                                        <option value="{{ $course_instructor['id'] }}">
-                                            {{ $course_instructor['name'] }}
+                                    @foreach ($courseInstructors as $courseInstructor)
+                                        <option value="{{ $courseInstructor['id'] }}">
+                                            {{ $courseInstructor['name'] }}
                                         </option>
                                     @endforeach
                                 </select>

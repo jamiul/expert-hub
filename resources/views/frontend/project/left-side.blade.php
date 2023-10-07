@@ -41,9 +41,9 @@
             <h6 class="text-left mb-3"><span class=" fs-16 fw-700">{{ translate('Skills Required') }}</span></h6>
             <div class="mb-5">
                 <div>
-                    @foreach ($project->skills as $key => $skill_id)
+                    @foreach ($project->skills as $key => $skillId)
                         @if ($skill != null)
-                            <a href="{{ route('search.skill', ['skill' => $skill_id, 'type' => 'projects']) }}"
+                            <a href="{{ route('search.skill', ['skill' => $skillId, 'type' => 'projects']) }}"
                                 class="btn fs-14 job-details fw-700 text-primary border rounded-2 py-0 px-2 border-primary  mb-1">{{ $skill->name }}</a>
                         @endif
                     @endforeach
@@ -52,7 +52,7 @@
             <h6 class="text-left mb-3"><span
                     class=" pr-3 fs-16 fw-700 job-details">{{ translate('Attachments') }}</span></h6>
             <div class="row ">
-                @foreach (explode(',', $project->attachments) as $key => $attachment_id)
+                @foreach (explode(',', $project->attachments) as $key => $attachmentId)
                     <div class="col-lg-4 col-md-6 col-12">
                         @if ($attachment != null)
                             @if ($attachment->type == 'image')

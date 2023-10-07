@@ -67,9 +67,9 @@
 										<p>{{ $project->excerpt }}</p>
 									</div>
 									<div>
-                                        @foreach ($project->skills as $key => $skill_id)
+                                        @foreach ($project->skills as $key => $skillId)
                                             @php
-                                                $skill = \App\Models\Skill::find($skill_id);
+                                                $skill = \App\Models\Skill::find($skillId);
                                             @endphp
                                             @if ($skill != null)
                                                 <span class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2">{{ $skill->name }}</span>
@@ -83,7 +83,7 @@
                                 			<a href="{{ route('expert.details', $project->hire_invitation->expert->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 			                                    <span class="avatar avatar-xs">
 	                                                @if($project->hire_invitation->expert->photo != null)
-	                                                    <img src="{{ custom_asset($project->hire_invitation->expert->photo) }}">
+	                                                    <img src="{{ customAsset($project->hire_invitation->expert->photo) }}">
 	                                                @else
 	                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 	                                                @endif
@@ -125,7 +125,7 @@
 											<a href="{{ route('expert.details', $project->project_user->user->user_name) }}" target="_blank" class="d-md-flex mr-3 align-items-center text-inherit" tabindex="0">
 			                                    <span class="avatar avatar-xs">
 	                                                @if($project->project_user->user->photo != null)
-	                                                    <img src="{{ custom_asset($project->project_user->user->photo) }}">
+	                                                    <img src="{{ customAsset($project->project_user->user->photo) }}">
 	                                                @else
 	                                                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
 	                                                @endif
@@ -143,7 +143,7 @@
 			                                    </div>
 			                                </a>
 			                                <span class="border-md-left ml-2 pl-2">
-                                                <h4 class="mb-0 h6 fs-13">{{ single_price($project->project_user->hired_at) }}</h4>
+                                                <h4 class="mb-0 h6 fs-13">{{ singlePrice($project->project_user->hired_at) }}</h4>
                                                 <span class="small text-secondary">{{ translate('Hired At') }}</span>
                                             </span>
 										</div>
@@ -156,7 +156,7 @@
 	                                    <a href="{{ route('expert.details', $project->hire_invitation->expert->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 		                                    <span class="avatar avatar-xs">
                                                 @if($project->hire_invitation->expert->photo != null)
-                                                    <img src="{{ custom_asset($project->hire_invitation->expert->photo) }}">
+                                                    <img src="{{ customAsset($project->hire_invitation->expert->photo) }}">
                                                 @else
                                                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif
@@ -185,7 +185,7 @@
 										<a href="{{ route('expert.details', $project->project_user->user->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 		                                    <span class="avatar avatar-xs">
                                                 @if($project->project_user->user->photo != null)
-                                                    <img src="{{ custom_asset($project->project_user->user->photo) }}">
+                                                    <img src="{{ customAsset($project->project_user->user->photo) }}">
                                                 @else
                                                     <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                                 @endif

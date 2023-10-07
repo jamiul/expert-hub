@@ -10,7 +10,7 @@
    <div class="col-md-4">
      <form class="" id="sort_keys" action="" method="GET">
        <div class="input-group input-group-sm">
-           <input type="text" class="form-control" id="search" name="search"@isset($sort_search) value="{{ $sort_search }}" @endisset placeholder="{{ translate('Type key & Enter') }}">
+           <input type="text" class="form-control" id="search" name="search"@isset($sortSearch) value="{{ $sortSearch }}" @endisset placeholder="{{ translate('Type key & Enter') }}">
        </div>
      </form>
    </div>
@@ -31,13 +31,13 @@
                   @php
                       $i = 1;
                   @endphp
-                  @foreach ($lang_keys as $key => $translation)
+                  @foreach ($langKeys as $key => $translation)
                       <tr>
                           <td>{{ $i }}</td>
                           <td class="key">{{ $translation->lang_key }}</td>
                           <td>
-                              <input type="text" class="form-control value" style="width:100%" name="values[{{ $translation->lang_key }}]" @if (($traslate_lang = \App\Models\Translation::where('lang', $language->code)->where('lang_key', $translation->lang_key)->first()) != null)
-                                  value="{{ $traslate_lang->lang_value }}"
+                              <input type="text" class="form-control value" style="width:100%" name="values[{{ $translation->lang_key }}]" @if (($traslateLang = \App\Models\Translation::where('lang', $language->code)->where('lang_key', $translation->lang_key)->first()) != null)
+                                  value="{{ $traslateLang->lang_value }}"
                               @endif>
                           </td>
                       </tr>
@@ -48,7 +48,7 @@
               </tbody>
           </table>
           <div class="aiz-pagination">
-             {{ $lang_keys->appends(request()->input())->links() }}
+             {{ $langKeys->appends(request()->input())->links() }}
           </div>
 
           <div class="form-group mb-0 text-right">
@@ -70,7 +70,7 @@
       });
   }
 
-  function sort_keys(el){
+  function sortKeys(el){
       $('#sort_keys').submit();
   }
 </script>

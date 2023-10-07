@@ -102,7 +102,7 @@
                                             <select class="form-control aiz-selectpicker" name="training_mode_id"
                                                 id="training_mode_id" data-live-search="true"
                                                 title="{{ translate('Select Training Mode') }}">
-                                                @foreach ($training_mode as $mode)
+                                                @foreach ($trainingMode as $mode)
                                                     <option value="{{ $mode['id'] }}">
                                                         {{ $mode['name'] }}
                                                     </option>
@@ -120,7 +120,7 @@
                                             <select class="form-control aiz-selectpicker" name="software_id"
                                                 id="software_id" data-live-search="true"
                                                 title="{{ translate('Select Software Package') }}">
-                                                @foreach ($training_software as $software)
+                                                @foreach ($trainingSoftware as $software)
                                                     <option value="{{ $software->id }}">
                                                         {{ $software->name }}
                                                     </option>

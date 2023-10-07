@@ -24,7 +24,7 @@ class ChatThread extends Model
         return $this->belongsTo(User::class, 'receiver_user_id');
     }
 
-    public function blocked_by()
+    public function blockedBy()
     {
         return $this->belongsTo(User::class, 'blocked_by_user');
     }

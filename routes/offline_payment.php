@@ -12,9 +12,9 @@
 */
 
 //Admin
-use App\Http\Controllers\MilestonePaymentController;
-use App\Http\Controllers\PackagePaymentController;
-use App\Http\Controllers\ServicePaymentController;
+use App\Http\Controllers\Frontend\MilestonePaymentController;
+use App\Http\Controllers\Frontend\PackagePaymentController;
+use App\Http\Controllers\Frontend\ServicePaymentController;
 
 Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function(){
 

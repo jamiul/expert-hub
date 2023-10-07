@@ -28,7 +28,7 @@
                         </h6>
                         <div class="aiz-radio-list">
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="1" onchange="applyFilter()" @if ($delivery_time=="Express 24H" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="1" onchange="applyFilter()" @if ($deliveryTime=="Express 24H" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Express 24H') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -37,7 +37,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="3" onchange="applyFilter()" @if ($delivery_time=="3" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="3" onchange="applyFilter()" @if ($deliveryTime=="3" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Up to 3 days') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -46,7 +46,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="7" onchange="applyFilter()" @if($delivery_time=="7" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="7" onchange="applyFilter()" @if($deliveryTime=="7" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Up to 7 days') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -55,7 +55,7 @@
                                 <span class="float-right text-secondary fs-12"></span>
                             </label>
                             <label class="aiz-radio">
-                                <input type="radio" name="delivery_time" value="Anytime" onchange="applyFilter()" @if ($delivery_time=="Anytime" ) checked @endif>
+                                <input type="radio" name="delivery_time" value="Anytime" onchange="applyFilter()" @if ($deliveryTime=="Anytime" ) checked @endif>
                                 <div class="w-100 d-flex justify-content-between align-content-center  service-toggle-list">
                                     <span>{{ translate('Anytime') }}</span>
                                     <span class="text-muted">(1000)</span>
@@ -98,7 +98,7 @@
                                 @foreach(\App\Models\ProjectCategory::all() as $category)
 
                                 <label class="aiz-checkbox">
-                                    <input type="checkbox" name="category_id[]" value="{{ $category->id }}"" onchange=" applyFilter()" @if(in_array($category->id, $category_id)) checked @endif > {{$category->name}}
+                                    <input type="checkbox" name="category_id[]" value="{{ $category->id }}"" onchange=" applyFilter()" @if(in_array($category->id, $categoryId)) checked @endif > {{$category->name}}
                                     <span class="aiz-square-check"></span>
                                     <span class="float-right text-secondary fs-12"></span>
                                 </label>
@@ -113,11 +113,11 @@
                         <div class="mb-5">
 
                             <select multiple class="select2 form-control aiz-selectpicker rounded-1" name="country_id[]" onchange="applyFilter()" data-toggle="select2" data-live-search="true">
-                                <option value="0" @if (in_array (0,$country_id) || $country_id[0]=='' ) selected @endif>
+                                <option value="0" @if (in_array (0,$countryId) || $countryId[0]=='' ) selected @endif>
                                     {{ translate('All Countries') }}
                                 </option>
                                 @foreach(\App\Models\ScholarshipCountry:: all() as $country)
-                                <option value="{{ $country->id }}" @if (in_array($country->id,$country_id) ) selected
+                                <option value="{{ $country->id }}" @if (in_array($country->id,$countryId) ) selected
                                     @endif>{{ $country->country_name }}</option>
                                 @endforeach
                             </select>
@@ -277,7 +277,7 @@
                                                 <div class="card bg-transparent  border-gray-light  overflow-hidden hov-box ">
                                                     <a href="{{ route('service.show', $service->slug) }}">
                                                         @if($service->image != null)
-                                                        <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
+                                                        <img src="{{ customAsset($service->image) }}" class="card-img-top" alt="service_image" height="212">
                                                         @else
                                                         <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                                         @endif
@@ -286,7 +286,7 @@
                                                         <div class="d-flex mb-2">
                                                             <span class="mr-2">
                                                                 @if ($service->user->photo != null)
-                                                                <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                                <img src="{{ customAsset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                                 @else
                                                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                                 @endif
@@ -349,7 +349,7 @@
                                         <div class="card bg-transparent position-relative border-gray-light overflow-hidden hov-box">
                                             <a href="{{ route('service.show', $service->slug) }}">
                                                 @if($service->image != null)
-                                                <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="service_image" height="212">
+                                                <img src="{{ customAsset($service->image) }}" class="card-img-top" alt="service_image" height="212">
                                                 @else
                                                 <img src="{{ asset('assets/frontend/default/img/placeholder-service.jpg') }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                                 @endif
@@ -358,7 +358,7 @@
                                                 <div class="d-flex mb-2">
                                                     <span class="mr-2">
                                                         @if ($service->user->photo != null)
-                                                        <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                        <img src="{{ customAsset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @else
                                                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @endif
@@ -381,9 +381,9 @@
                                             </div>
                                         </div>
                                         <div class=" position-absolute bg-white rounded-circle" style="top:15px; right:30px">
-                                            @if (Auth::check() && ($bookmarked_service = \App\Models\BookmarkedService::where('user_id', auth()->user()->id)->where('service_id', $service->id)->first()) != null)
+                                            @if (Auth::check() && ($bookmarkedService = \App\Models\BookmarkedService::where('user_id', auth()->user()->id)->where('service_id', $service->id)->first()) != null)
 
-                                            <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.delete', $bookmarked_service->id) }}" data-target="#bookmark-remove-modal">
+                                            <a class="confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-services.delete', $bookmarkedService->id) }}" data-target="#bookmark-remove-modal">
                                                 <img class=" p-2 center d-block c-pointer" src="{{asset('assets/frontend/default/img/scholarship/fillupheart.png')}}" alt="">
                                             </a>
                                             @else
@@ -431,7 +431,7 @@
                                                 <div class="d-flex mb-2">
                                                     <span class="mr-2">
                                                         @if ($service->user->photo != null)
-                                                        <img src="{{ custom_asset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
+                                                        <img src="{{ customAsset($service->user->photo) }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @else
                                                         <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}" alt="{{ translate('image') }}" height="35" width="35" class="rounded-circle">
                                                         @endif

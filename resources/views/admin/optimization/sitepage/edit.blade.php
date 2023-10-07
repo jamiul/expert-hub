@@ -8,7 +8,7 @@
                     <h5 class="mb-0 h6">{{ translate('Update Site Page') }}</h5>
                 </div>
                 <div class="card-body">
-                    <form id="add_form" class="form-horizontal" action="{{ route('site-page.update', $site_page->id) }}"
+                    <form id="add_form" class="form-horizontal" action="{{ route('site-page.update', $sitePage->id) }}"
                         method="POST">
                         @csrf
                         @method('PATCH')
@@ -19,7 +19,7 @@
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
-                                <input type="text" value="{{ $site_page->title }}"
+                                <input type="text" value="{{ $sitePage->title }}"
                                     id="title" name="title" class="form-control" required>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                             {{ translate('Page url') }}
                         </label>
                         <div class="col-md-9">
-                        <input type="text" value="{{ $site_page->url }}"
+                        <input type="text" value="{{ $sitePage->url }}"
                             id="url" name="url" class="form-control"
                             required>
                         </div>

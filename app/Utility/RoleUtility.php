@@ -10,7 +10,7 @@ namespace App\Utility;
 
 class RoleUtility
 {
-    public static function is_office_user()
+    public static function isOfficeUser()
     {
         return auth()->user()->userRoles->first()->role->name == "Admin" || auth()->user()->userRoles->first()->role->role_type == "employee";
     }

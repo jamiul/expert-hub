@@ -35,7 +35,7 @@
                                 required
                                 data-selected="{{ optional($blog->category)->id }}"
                             >
-                                @foreach ($blog_categories as $category)
+                                @foreach ($blogCategories as $category)
                                 <option value="{{ $category->id }}">
                                     {{ $category->category_name }}
                                 </option>

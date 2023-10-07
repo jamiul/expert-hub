@@ -41,29 +41,29 @@
                                 <button type="submit" class="btn btn-block btn-primary rounded-1">{{ translate('Login to your Account') }}</button>
                             </div>
 
-                            @if(\App\Utility\SettingsUtility::get_settings_value('facebook_login_activation_checkbox') == 1 || \App\Utility\SettingsUtility::get_settings_value('twitter_login_activation_checkbox') == 1 || \App\Utility\SettingsUtility::get_settings_value('google_login_activation_checkbox') == 1 || \App\Utility\SettingsUtility::get_settings_value('linkedin_login_activation_checkbox') == 1)
+                            @if(\App\Utility\SettingsUtility::getSettingsValue('facebook_login_activation_checkbox') == 1 || \App\Utility\SettingsUtility::getSettingsValue('twitter_login_activation_checkbox') == 1 || \App\Utility\SettingsUtility::getSettingsValue('google_login_activation_checkbox') == 1 || \App\Utility\SettingsUtility::getSettingsValue('linkedin_login_activation_checkbox') == 1)
                             <div class="mb-5">
                                 <div class="separator mb-3">
                                     <span class="bg-white px-3">{{ translate('Or Login With') }}</span>
                                 </div>
 
                                 <ul class="list-inline social colored text-center">
-                                    @if (\App\Utility\SettingsUtility::get_settings_value('facebook_login_activation_checkbox') == 1)
+                                    @if (\App\Utility\SettingsUtility::getSettingsValue('facebook_login_activation_checkbox') == 1)
                                         <li class="list-inline-item">
                                             <a href="{{ route('social.login', ['provider' => 'facebook']) }}" class="facebook" title="Facebook"><i class="lab la-facebook-f"></i></a>
                                         </li>
                                     @endif
-                                    @if (\App\Utility\SettingsUtility::get_settings_value('twitter_login_activation_checkbox') == 1)
+                                    @if (\App\Utility\SettingsUtility::getSettingsValue('twitter_login_activation_checkbox') == 1)
                                         <li class="list-inline-item">
                                             <a href="{{ route('social.login', ['provider' => 'twitter']) }}" class="twitter" title="Twitter"><i class="lab la-twitter"></i></a>
                                         </li>
                                     @endif
-                                    @if (\App\Utility\SettingsUtility::get_settings_value('google_login_activation_checkbox') == 1)
+                                    @if (\App\Utility\SettingsUtility::getSettingsValue('google_login_activation_checkbox') == 1)
                                         <li class="list-inline-item">
                                             <a href="{{ route('social.login', ['provider' => 'google']) }}" class="google" title="Google"><i class="lab la-google"></i></a>
                                         </li>
                                     @endif
-                                    @if (\App\Utility\SettingsUtility::get_settings_value('linkedin_login_activation_checkbox') == 1)
+                                    @if (\App\Utility\SettingsUtility::getSettingsValue('linkedin_login_activation_checkbox') == 1)
                                         <li class="list-inline-item">
                                             <a href="{{ route('social.login', ['provider' => 'linkedin']) }}" class="linkedin" title="Linkedin"><i class="lab la-linkedin-in"></i></a>
                                         </li>

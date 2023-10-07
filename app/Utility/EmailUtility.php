@@ -13,7 +13,7 @@ use Mail;
 
 class EmailUtility
 {
-    public static function send_email($subject, $content, $email, $link = "")
+    public static function sendEmail($subject, $content, $email, $link = "")
     {
         if (empty($email)) {
             return false;

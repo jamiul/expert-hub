@@ -1,11 +1,11 @@
-@if (get_setting('featured_category_show') == 'on')
+@if (getSetting('featured_category_show') == 'on')
     <form id=" EduExpert-filter-form" action="" method="GET">
         <section class="">
             <div class="whyFreeEdu-container-main">
 
                 <div class="d-flex justify-content-between ">
                     <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
-                        <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
+                        <!-- <h2 class="fw-700 fs-40">{{ getSetting('service_section_title') }}</h2> -->
                         <p class=" mt-5 text-success fw-700 frequently-qsn-title">About {{ config('app.name') }}</p>
                         <p class=" fw-500 seminar-objective-details">Welcome to {{ config('app.name') }}, your premier
                             destination for connecting with top academic experts across a diverse spectrum of
@@ -31,18 +31,18 @@
                             securely holding payments in escrow until project completion, ensuring satisfaction
                             in every collaboration.</p>
 
-                        <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
+                        <!-- <p class="fs-18">{{ getSetting('service_section_subtitle') }}</p> -->
                     </div>
 
                 </div>
 
                 <div class="row gutters-10 ">
-                    @if (get_setting('featured_category_list') != null)
-                        @foreach (json_decode(get_setting('featured_category_list'), true) as $key => $category_id)
-                            @if (($category = \App\Models\ProjectCategory::find($category_id)) != null)
+                    @if (getSetting('featured_category_list') != null)
+                        @foreach (json_decode(getSetting('featured_category_list'), true) as $key => $categoryId)
+                            @if (($category = \App\Models\ProjectCategory::find($categoryId)) != null)
                                 <div class="col-md-6 col-lg-3 ">
                                     <div class="card" style="height:320px;">
-                                        <img class="w-100 h-170px" src=" {{ custom_asset($category->photo) }}"
+                                        <img class="w-100 h-170px" src=" {{ customAsset($category->photo) }}"
                                              alt="Image" />
                                         <div class="card-body" style=" padding:13px;">
 

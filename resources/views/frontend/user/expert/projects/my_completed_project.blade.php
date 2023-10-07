@@ -16,14 +16,14 @@
                         </div>
                     </div>
                     <div class="">
-                        @forelse ($completed_projects as $key => $completed_project)
+                        @forelse ($completedProjects as $key => $completedProject)
                         @php
-                            $project = \App\Models\Project::find($completed_project->id);
+                            $project = \App\Models\Project::find($completedProject->id);
                         @endphp
                             <div class="card project-card rounded-2 border-gray-light">
                                 <div class="card-header border-bottom-0">
                                     <div>
-                                        <span class="badge badge-primary badge-inline badge-md">{{ single_price($project->project_user->hired_at) }}</span>
+                                        <span class="badge badge-primary badge-inline badge-md">{{ singlePrice($project->project_user->hired_at) }}</span>
                                     </div>
                                     <div>
                                         <span class="badge badge-success badge-inline badge-md">{{ translate('Completed') }}</span>
@@ -53,9 +53,9 @@
                                         <p>{{ $project->excerpt }}</p>
                                     </div>
                                     <div>
-                                        @foreach (json_decode($project->skills) as $key => $skill_id)
+                                        @foreach (json_decode($project->skills) as $key => $skillId)
                                             @php
-                                                $skill = \App\Models\Skill::find($skill_id);
+                                                $skill = \App\Models\Skill::find($skillId);
                                             @endphp
                                             @if ($skill != null)
                                                 <span class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2">{{ $skill->name }}</span>
@@ -67,7 +67,7 @@
                                     <div class="d-flex align-items-center">
                                         <a href="{{ route('client.details', $project->client->user_name) }}" class="d-flex mr-3 align-items-center text-reset">
                                             <span class="avatar avatar-xs overflow-hidden">
-                                                <img class="img-fluid rounded-circle" src="{{ custom_asset($project->client->photo) }}">
+                                                <img class="img-fluid rounded-circle" src="{{ customAsset($project->client->photo) }}">
                                             </span>
                                             <div class="pl-2">
                                                 <h4 class="fs-14 mb-1">{{ $project->client->name }}</h4>
@@ -99,7 +99,7 @@
                         @endforelse
                     </div>
                     <div class="aiz-pagination aiz-pagination-center">
-                        {{ $completed_projects->links() }}
+                        {{ $completedProjects->links() }}
                     </div>
                 </div>
             </div>

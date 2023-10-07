@@ -32,21 +32,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($training_softwares as $key => $training_software)
+                            @foreach ($trainingSoftwares as $key => $trainingSoftware)
                             {{-- @dd($key); --}}
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $training_software->name }}</td>
+                                    <td>{{ $trainingSoftware->name }}</td>
                                     <td class="text-right">
                                         <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                                            href="{{ url('admin/training-software/' . $training_software->id . '/edit') }}"
+                                            href="{{ url('admin/training-software/' . $trainingSoftware->id . '/edit') }}"
                                             title="{{ translate('Edit') }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
                                         title="{{ translate('Delete') }}" onclick="$(this).find('form').submit();">
                                             <i class="las la-trash"></i>
-                                            <form action="{{ route('training-software.delete', $training_software->id) }}" method="POST">
+                                            <form action="{{ route('training-software.delete', $trainingSoftware->id) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>

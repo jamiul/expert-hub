@@ -3,7 +3,7 @@
 @section('content')
 <div class="h-250px">
     @if ($client->cover_photo != null)
-        <img src="{{ custom_asset($client->cover_photo) }}" alt="{{ $client->name }}"class="img-fit h-250px">
+        <img src="{{ customAsset($client->cover_photo) }}" alt="{{ $client->name }}"class="img-fit h-250px">
     @else
         <img src="{{ asset('assets/frontend/default/img/cover-place.jpg') }}" alt="{{ $client->name }}"class="img-fit h-250px">
     @endif
@@ -16,7 +16,7 @@
                     <div class="mr-5 text-center text-md-left mb-4 mb-md-0">
                         <span class="avatar avatar-xxl">
                             @if($client->photo != null)
-                                <img src="{{ custom_asset($client->photo) }}">
+                                <img src="{{ customAsset($client->photo) }}">
                             @else
                                 <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                             @endif
@@ -59,8 +59,8 @@
                         </div>
 
                         <div class="text-lg-right text-center">
-                            @if (Auth::check() && ($bookmarked_client = \App\Models\BookmarkedClient::where('user_id', auth()->user()->id)->where('client_user_id', $client->id)->first()) != null)
-                                <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.delete', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
+                            @if (Auth::check() && ($bookmarkedClient = \App\Models\BookmarkedClient::where('user_id', auth()->user()->id)->where('client_user_id', $client->id)->first()) != null)
+                                <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.delete', $bookmarkedClient->id) }}" data-target="#unfollow-modal">Unfollow</a>
                             @else
                                 <a class="btn btn-primary" href="{{ route('bookmarked-clients.store', encrypt($client->id)) }}">{{ translate('Follow') }}</a>
                             @endif
@@ -94,15 +94,15 @@
                     </div>
                     <div class="card-body px-0">
 
-                        @if (count($open_projects) > 0)
+                        @if (count($openProjects) > 0)
                         <div class="mb-4">
                             <ul class="list-group list-group-flush">
-                                @foreach ($open_projects as $key => $open_project)
+                                @foreach ($openProjects as $key => $openProject)
                                 <li class="list-group-item px-4 py-3 hov-bg-soft-primary" style="transition: 0.5s">
                                     <div class="row">
                                         <div class="col-8">
                                             <h5 class="fs-15 fw-600 lh-1-5">
-                                                <a href="{{ route('project.details', $open_project->slug) }}" class="text-inherit">{{ $open_project->name }}</a>
+                                                <a href="{{ route('project.details', $openProject->slug) }}" class="text-inherit">{{ $openProject->name }}</a>
                                             </h5>
                                             <ul class="list-inline opacity-70 fs-12">
                                                 <li class="list-inline-item">
@@ -111,7 +111,7 @@
                                                           <path id="Subtraction_5" data-name="Subtraction 5" d="M-13,12a6.007,6.007,0,0,1-6-6,6.007,6.007,0,0,1,6-6A6.007,6.007,0,0,1-7,6,6.006,6.006,0,0,1-13,12Zm-.5-9V7h.013l2.109,2.109.707-.706L-12.5,6.572V3Z" transform="translate(384 1963)" fill="#989ea8"/>
                                                         </g>
                                                     </svg>
-                                                    <span class="ml-1">{{ Carbon\Carbon::parse($open_project->created_at)->diffForHumans() }} </span>
+                                                    <span class="ml-1">{{ Carbon\Carbon::parse($openProject->created_at)->diffForHumans() }} </span>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11">
@@ -121,7 +121,7 @@
                                                         <path id="Subtraction_3" data-name="Subtraction 3" d="M1.5,0h7a1.5,1.5,0,0,1,0,3h-7a1.5,1.5,0,0,1,0-3Z" transform="translate(500 1967)" fill="#989ea8"/>
                                                         </g>
                                                     </svg>
-                                                    <span class="ml-1">{{ $open_project->project_category->name }}</span>
+                                                    <span class="ml-1">{{ $openProject->project_category->name }}</span>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="7.643" height="12" viewBox="0 0 7.643 12">
@@ -131,12 +131,12 @@
                                                         <path id="Path_11" data-name="Path 11" d="M199.1,61.179l.4-1.379h-3.7l.449,1.351Z" transform="translate(-62.819)" fill="#989ea8"/>
                                                         </g>
                                                     </svg>
-                                                    <span class="ml-1">{{ $open_project->type }}</span>
+                                                    <span class="ml-1">{{ $openProject->type }}</span>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-4 text-right">
-                                            <span class="h5">{{ single_price($open_project->price) }}</span>
+                                            <span class="h5">{{ singlePrice($openProject->price) }}</span>
                                         </div>
                                     </div>
                                 </li>
@@ -170,7 +170,7 @@
                                         <div class="media">
                                             <div class="mr-3">
                                                 <span class="avatar avatar-md m-3">
-                                                    <img src="{{ custom_asset(\App\Models\User::find($review->reviewer_user_id)->photo) }}">
+                                                    <img src="{{ customAsset(\App\Models\User::find($review->reviewer_user_id)->photo) }}">
                                                 </span>
                                             </div>
                                             <div class="media-body">
@@ -214,9 +214,9 @@
                         <div class="mb-5">
                             <h6 class="text-left mb-3 h6 fw-700"><span class="bg-white pr-3">{{ translate('Badges') }}</span></h6>
                             <div class="">
-                                @foreach ($client->badges as $key => $user_badge)
-                                    @if ($user_badge->badge != null)
-                                        <span class="avatar avatar-square avatar-xxs" title="{{ $user_badge->badge->name }}"><img src="{{ custom_asset($user_badge->badge->icon) }}"></span>
+                                @foreach ($client->badges as $key => $userBadge)
+                                    @if ($userBadge->badge != null)
+                                        <span class="avatar avatar-square avatar-xxs" title="{{ $userBadge->badge->name }}"><img src="{{ customAsset($userBadge->badge->icon) }}"></span>
                                     @endif
                                 @endforeach
                             </div>

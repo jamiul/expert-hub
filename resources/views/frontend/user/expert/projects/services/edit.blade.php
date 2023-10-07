@@ -61,40 +61,40 @@
                             </div>
                             <h5>{{ translate('Packages') }}</h5>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                @foreach($service_packages as $service_package)
+                                @foreach($servicePackages as $servicePackage)
                                 <li class="nav-item">
-                                    <a class="nav-link @if($loop->iteration == 1) active @endif" id="{{ $service_package->service_type }}-tab" data-toggle="tab" href="#{{ $service_package->service_type }}" role="tab" aria-controls="{{ $service_package->service_type }}" aria-selected="@if($loop->iteration == 1) true @else false @endif">{{ ucfirst($service_package->service_type) }}</a>
+                                    <a class="nav-link @if($loop->iteration == 1) active @endif" id="{{ $servicePackage->service_type }}-tab" data-toggle="tab" href="#{{ $servicePackage->service_type }}" role="tab" aria-controls="{{ $servicePackage->service_type }}" aria-selected="@if($loop->iteration == 1) true @else false @endif">{{ ucfirst($servicePackage->service_type) }}</a>
                                 </li>
                                 @endforeach
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                @foreach($service_packages as $service_package)
-                                <div class="tab-pane show @if($loop->iteration == 1) active @endif" id="{{ $service_package->service_type }}" role="tabpanel" aria-labelledby="{{ $service_package->service_type }}-tab">
-                                    <h5 class="mt-3">{{ ucfirst($service_package->service_type) }} {{ translate('Package') }}</h5>
+                                @foreach($servicePackages as $servicePackage)
+                                <div class="tab-pane show @if($loop->iteration == 1) active @endif" id="{{ $servicePackage->service_type }}" role="tabpanel" aria-labelledby="{{ $servicePackage->service_type }}-tab">
+                                    <h5 class="mt-3">{{ ucfirst($servicePackage->service_type) }} {{ translate('Package') }}</h5>
                                     <div class="form-group">
                                         <label class="form-label">{{ translate('Price') }}</label>
-                                        <input type="text" class="form-control " name="{{ $service_package->service_type }}_price" placeholder="{{ translate('Enter Basic Package Price') }}" aria-label="Enter Basic Package Price" required aria-describedby="nameLabel" data-msg="Enter Basic Package Price" data-error-class="u-has-error" data-success-class="u-has-success" value="{{ $service_package->service_price }}">
+                                        <input type="text" class="form-control " name="{{ $servicePackage->service_type }}_price" placeholder="{{ translate('Enter Basic Package Price') }}" aria-label="Enter Basic Package Price" required aria-describedby="nameLabel" data-msg="Enter Basic Package Price" data-error-class="u-has-error" data-success-class="u-has-success" value="{{ $servicePackage->service_price }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label">{{ translate('Devilery Within') }}</label>
-                                        <input type="number" class="form-control " name="{{ $service_package->service_type }}_delivery_time" placeholder="{{ translate('Enter Devilery Within') }}" aria-label="Enter Basic Package Price" required aria-describedby="nameLabel" data-msg="Enter Basic Package Price" data-error-class="u-has-error" data-success-class="u-has-success" value="{{ $service_package->delivery_time }}">
+                                        <input type="number" class="form-control " name="{{ $servicePackage->service_type }}_delivery_time" placeholder="{{ translate('Enter Devilery Within') }}" aria-label="Enter Basic Package Price" required aria-describedby="nameLabel" data-msg="Enter Basic Package Price" data-error-class="u-has-error" data-success-class="u-has-success" value="{{ $servicePackage->delivery_time }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label">{{ translate('Revision Limit') }}</label>
-                                        <input type="text" class="form-control " name="{{ $service_package->service_type }}_revision_limit" placeholder="{{ translate('Enter Revision Limit') }}" aria-label="Enter Basic Package Price" required aria-describedby="nameLabel" data-msg="Enter Basic Package Price" data-error-class="u-has-error" data-success-class="u-has-success"  value="{{ $service_package->revision_limit }}">
+                                        <input type="text" class="form-control " name="{{ $servicePackage->service_type }}_revision_limit" placeholder="{{ translate('Enter Revision Limit') }}" aria-label="Enter Basic Package Price" required aria-describedby="nameLabel" data-msg="Enter Basic Package Price" data-error-class="u-has-error" data-success-class="u-has-success"  value="{{ $servicePackage->revision_limit }}">
                                     </div>
 
-                                    <div class="whats-included-{{ $service_package->service_type }}">
+                                    <div class="whats-included-{{ $servicePackage->service_type }}">
                                         <div class="form-group">
                                             <label class="form-label">{{ translate('What is included section') }}</label>
-                                            @if ($service_package->feature_description != null)
-                                                @foreach (json_decode($service_package->feature_description) as $key => $value)
+                                            @if ($servicePackage->feature_description != null)
+                                                @foreach (json_decode($servicePackage->feature_description) as $key => $value)
                                                 <div class="row gutters-5">
                                                     <div class="col">
                                                         <div class="form-group d-flex">
-                                                            <input id="include_description" type="text" class="form-control" value="{{ $value }}" placeholder="http://" name="{{ $service_package->service_type }}_included_description[]">
+                                                            <input id="include_description" type="text" class="form-control" value="{{ $value }}" placeholder="http://" name="{{ $servicePackage->service_type }}_included_description[]">
                                                         </div>
                                                     </div>
 
@@ -116,7 +116,7 @@
                                         data-content='<div class="row gutters-5">
                                             <div class="col">
                                                 <div class="form-group d-flex">
-                                                    <input id="include_description" type="text" class="form-control" placeholder="" name="{{ $service_package->service_type }}_included_description[]">
+                                                    <input id="include_description" type="text" class="form-control" placeholder="" name="{{ $servicePackage->service_type }}_included_description[]">
                                                 </div>
                                             </div>
                                             <div class="col-auto">
@@ -125,7 +125,7 @@
                                                 </button>
                                             </div>
                                         </div>'
-                                        data-target=".whats-included-{{ $service_package->service_type }}">
+                                        data-target=".whats-included-{{ $servicePackage->service_type }}">
                                         {{ translate('Add New') }}
                                     </button>
                                 </div>

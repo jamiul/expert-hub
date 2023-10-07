@@ -19,7 +19,7 @@
                             <h4 class="h6 font-weight-medium mb-0">{{ translate('Bank Info') }}</h4>
                         </div>
                         <div class="card-body">
-                            @if ($expert_account != null)
+                            @if ($expertAccount != null)
                                 <form class="js-validate" action="{{ route('expert_account.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="js-form-message">
@@ -28,7 +28,7 @@
                                                 {{ translate('Bank Name') }}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control " name="bank_name" value="{{ $expert_account->bank_name }}"  placeholder="{{ translate('Enter Bank Name') }}" aria-label="Enter Bank Name" required aria-describedby="nameLabel" data-msg="Please Enter Bank Name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" class="form-control " name="bank_name" value="{{ $expertAccount->bank_name }}"  placeholder="{{ translate('Enter Bank Name') }}" aria-label="Enter Bank Name" required aria-describedby="nameLabel" data-msg="Please Enter Bank Name." data-error-class="u-has-error" data-success-class="u-has-success">
 
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                                 {{ translate('Bank Account Name') }}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control " name="bank_account_name" value="{{ $expert_account->bank_account_name }}"  placeholder="{{ translate('Enter Bank Account Name') }}" aria-label="Enter Bank Account Name" required aria-describedby="nameLabel" data-msg="Please Enter Bank Account Name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" class="form-control " name="bank_account_name" value="{{ $expertAccount->bank_account_name }}"  placeholder="{{ translate('Enter Bank Account Name') }}" aria-label="Enter Bank Account Name" required aria-describedby="nameLabel" data-msg="Please Enter Bank Account Name." data-error-class="u-has-error" data-success-class="u-has-success">
 
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                                 {{ translate('Bank Account Number') }}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control " name="bank_account_number" value="{{ $expert_account->bank_account_number }}" placeholder="{{ translate('Enter Bank Account Number') }}" aria-label="Enter Bank Account Number" required aria-describedby="nameLabel" data-msg="Please Enter Bank Account Number." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" class="form-control " name="bank_account_number" value="{{ $expertAccount->bank_account_number }}" placeholder="{{ translate('Enter Bank Account Number') }}" aria-label="Enter Bank Account Number" required aria-describedby="nameLabel" data-msg="Please Enter Bank Account Number." data-error-class="u-has-error" data-success-class="u-has-success">
 
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                             {{ translate('Routing/IBAN/SWIFT/BIC number') }}
                                             <span class="text-danger">*</span>
                                         </label>
-                                        <input type="text" class="form-control " name="bank_routing_number" value="{{ $expert_account->bank_routing_number }}" placeholder="{{ translate('Enter Routing/IBAN/SWIFT/BIC number') }}" aria-label="Enter Bank Account Number" required aria-describedby="nameLabel" data-msg="Please Enter Bank Account Number." data-error-class="u-has-error" data-success-class="u-has-success">
+                                        <input type="text" class="form-control " name="bank_routing_number" value="{{ $expertAccount->bank_routing_number }}" placeholder="{{ translate('Enter Routing/IBAN/SWIFT/BIC number') }}" aria-label="Enter Bank Account Number" required aria-describedby="nameLabel" data-msg="Please Enter Bank Account Number." data-error-class="u-has-error" data-success-class="u-has-success">
 
                                     </div>
                                     <!-- Buttons -->
@@ -118,7 +118,7 @@
                             <h4 class="h6 font-weight-medium mb-0">{{ translate('Paypal Info') }}</h4>
                         </div>
                         <div class="card-body">
-                            @if ($expert_account != null)
+                            @if ($expertAccount != null)
                                 <form class="js-validate" action="{{ route('expert_account.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="js-form-message">
@@ -127,7 +127,7 @@
                                                 {{ translate('Account Name') }}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control " name="paypal_acc_name" value="{{ $expert_account->paypal_acc_name }}" placeholder="{{ translate('Enter Your Account Name') }}" aria-label="Enter your name" required aria-describedby="nameLabel" data-msg="Please enter your name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" class="form-control " name="paypal_acc_name" value="{{ $expertAccount->paypal_acc_name }}" placeholder="{{ translate('Enter Your Account Name') }}" aria-label="Enter your name" required aria-describedby="nameLabel" data-msg="Please enter your name." data-error-class="u-has-error" data-success-class="u-has-success">
 
                                         </div>
                                     </div>
@@ -137,7 +137,7 @@
                                                 {{ translate('Account Email') }}
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control" name="paypal_acc_email" value="{{ $expert_account->paypal_email }}" placeholder="{{ translate('Enter Your Account Email') }}" aria-label="Enter your name" required aria-describedby="nameLabel" data-msg="Please enter your name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                            <input type="text" class="form-control" name="paypal_acc_email" value="{{ $expertAccount->paypal_email }}" placeholder="{{ translate('Enter Your Account Email') }}" aria-label="Enter your name" required aria-describedby="nameLabel" data-msg="Please enter your name." data-error-class="u-has-error" data-success-class="u-has-success">
                                         </div>
                                     </div>
                                     <!-- Buttons -->

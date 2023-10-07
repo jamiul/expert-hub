@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\Controller;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\VerifiesEmails;

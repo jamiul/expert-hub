@@ -34,12 +34,12 @@ class Training extends Model
         'project_category_id'
     ];
 
-    public function training_dates()
+    public function trainingDates()
     {
         return $this->hasMany(TrainingDate::class);
     }
 
-    public function training_instructors()
+    public function trainingInstructors()
     {
         return $this->hasMany(TrainingInstructor::class);
     }

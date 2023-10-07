@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <header class="aiz-header bg-white @if (get_setting('header_stikcy') == 'on') sticky-top @endif">
+    <header class="aiz-header bg-white @if (getSetting('header_stikcy') == 'on') sticky-top @endif">
         <div class="aiz-navbar me-auto ps-lg-0 py-0px fs-15 position-relative" style="margin-bottom:-1px;">
             <div class="container-fluid py-5px px-lg-5 d-none d-md-block">
                 <div class="d-flex align-items-center justify-content-between">
@@ -21,7 +21,7 @@
                     @else
                         <div class="logo ml-4 ">
                             <a href="{{ route('home') }}" class="d-inline-block">
-                                <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}"
+                                <img src="{{ customAsset(\App\Utility\SettingsUtility::getSettingsValue('system_logo_black')) }}"
                                     height="" class="  w-100" style="max-height:30px;">
                             </a>
                         </div>
@@ -115,12 +115,12 @@
                                                     </g>
                                                 </svg>
 
-                                                @php $noti_num = \App\Utility\NotificationUtility::get_my_notifications(10,true,true); @endphp
-                                                @if ($noti_num != 0)
+                                                @php $notiNum = \App\Utility\NotificationUtility::getMyNotifications(10,true,true); @endphp
+                                                @if ($notiNum != 0)
                                                     <span
                                                         class="badge badge-circle badge-primary position-absolute absolute-top-right">
                                                         {{-- get numbers of unseen notification --}}
-                                                        {{ $noti_num }}
+                                                        {{ $notiNum }}
                                                     </span>
                                                 @endif
 
@@ -133,25 +133,25 @@
                                                 <ul class="list-group list-group-raw c-scrollbar-light"
                                                     style="overflow-y:auto;max-height:300px;">
                                                     {{-- get 10 unseen notifications as array --}}
-                                                    @php $notification_list = \App\Utility\NotificationUtility::get_my_notifications(10, false, false, false); @endphp
-                                                    @forelse ($notification_list as $notification_item)
+                                                    @php $notificationList = \App\Utility\NotificationUtility::getMyNotifications(10, false, false, false); @endphp
+                                                    @forelse ($notificationList as $notificationItem)
                                                         <li
                                                             class="list-group-item d-flex justify-content-between align-items-start hov-bg-soft-primary">
-                                                            <a href="{{ $notification_item['link'] }}"
+                                                            <a href="{{ $notificationItem['link'] }}"
                                                                 class="media text-inherit">
                                                                 <span class="avatar avatar-sm mr-3">
                                                                     <img
-                                                                        src="{{ $notification_item['sender_photo'] }}">
+                                                                        src="{{ $notificationItem['sender_photo'] }}">
                                                                 </span>
                                                                 <div class="media-body">
                                                                     <p class="mb-1">
-                                                                        {{ $notification_item['message'] . ' ' . $notification_item['sender_name'] }}
+                                                                        {{ $notificationItem['message'] . ' ' . $notificationItem['sender_name'] }}
                                                                     </p>
                                                                     <small
-                                                                        class="text-muted">{{ $notification_item['date'] }}</small>
+                                                                        class="text-muted">{{ $notificationItem['date'] }}</small>
                                                                 </div>
                                                             </a>
-                                                            @if ($notification_item['seen'] == false)
+                                                            @if ($notificationItem['seen'] == false)
                                                                 <button class="btn p-0" data-toggle="tooltip"
                                                                     data-title="{{ translate('New') }}">
                                                                     <span
@@ -176,8 +176,8 @@
                                             </div>
                                         </li>
                                         @php
-                                            $unseen_chat_threads = chat_threads();
-                                            $unseen_chat_thread_count = count($unseen_chat_threads);
+                                            $unseenChatThreads = chatThreads();
+                                            $unseenChatThreadCount = count($unseenChatThreads);
                                         @endphp
                                         <li class="dropdown d-none d-lg-block ml-2 mr-2">
                                             <a class="dropdown-toggle no-arrow position-relative p-2"
@@ -201,9 +201,9 @@
                                                         </g>
                                                     </g>
                                                 </svg>
-                                                @if ($unseen_chat_thread_count > 0)
+                                                @if ($unseenChatThreadCount > 0)
                                                     <span
-                                                        class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ $unseen_chat_thread_count }}</span>
+                                                        class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ $unseenChatThreadCount }}</span>
                                                 @endif
                                             </a>
                                             <div
@@ -214,9 +214,9 @@
 
                                                 <div class="c-scrollbar-light"
                                                     style="overflow-y:auto;max-height:300px;">
-                                                    @forelse ($unseen_chat_threads as $key => $chat_thread_id)
+                                                    @forelse ($unseenChatThreads as $key => $chatThreadId)
                                                         @php
-                                                            $chat = \App\Models\Chat::where('chat_thread_id', $chat_thread_id)
+                                                            $chat = \App\Models\Chat::where('chat_thread_id', $chatThreadId)
                                                                 ->latest()
                                                                 ->first();
                                                         @endphp
@@ -228,7 +228,7 @@
                                                                         @if (isClient())
                                                                             @if ($chat->chatThread->receiver->photo != null)
                                                                                 <img
-                                                                                    src="{{ custom_asset($chat->chatThread->receiver->photo) }}">
+                                                                                    src="{{ customAsset($chat->chatThread->receiver->photo) }}">
                                                                             @else
                                                                                 <img
                                                                                     src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
@@ -243,7 +243,7 @@
                                                                         @else
                                                                             @if ($chat->chatThread->sender->photo != null)
                                                                                 <img
-                                                                                    src="{{ custom_asset($chat->chatThread->sender->photo) }}">
+                                                                                    src="{{ customAsset($chat->chatThread->sender->photo) }}">
                                                                             @else
                                                                                 <img
                                                                                     src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
@@ -303,7 +303,7 @@
                                                 data-toggle="dropdown">
                                                 <span class="avatar avatar-sm border">
                                                     @if (Auth::user()->photo != null)
-                                                        <img src="{{ custom_asset(Auth::user()->photo) }}">
+                                                        <img src="{{ customAsset(Auth::user()->photo) }}">
                                                     @else
                                                         <img
                                                             src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
@@ -313,7 +313,7 @@
                                                     <span class="h6 d-block mb-0">{{ Auth::user()->name }}</span>
                                                     @if (Auth::check() && isExpert())
                                                         <span
-                                                            class="small fw-500 text-muted">{{ single_price(Auth::user()->profile->balance) }}</span>
+                                                            class="small fw-500 text-muted">{{ singlePrice(Auth::user()->profile->balance) }}</span>
                                                     @endif
                                                 </span>
                                             </button>
@@ -351,7 +351,7 @@
                     <div class="container-fluid ml-3">
                         <div class="logo">
                             <a href="{{ route('home') }}" class="d-inline-block p-1">
-                                <img src="{{ custom_asset(get_setting('header_logo')) }}" height=""
+                                <img src="{{ customAsset(getSetting('header_logo')) }}" height=""
                                     class="mh-40px w-100 logo-for-small-responsive">
                             </a>
                         </div>
