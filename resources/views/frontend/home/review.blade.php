@@ -21,7 +21,7 @@
                     <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Join scholarship</button>
                 </div>
                 <div class="col-lg-6  py-2 px-5">
-                    <img src="{{asset('review-banner.jpeg')}}" class="w-100 h-100 rounded-2" alt="">
+                    <img src="{{asset('home/review-banner.jpeg')}}" class="w-100 h-100 rounded-2" alt="">
                 </div>
             </div>
         </div>
@@ -180,23 +180,23 @@
                                 <h4 class="trusted "> Used by </h4>
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
+                                <img class=" " src="{{asset('home/microsoft.svg')}}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
+                                <img class=" " src="{{asset('home/airbnb.svg')}}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-6 ">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('automatic.svg')}}" alt="">
+                                <img class=" " src="{{asset('home/automatic.svg')}}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('Bissell.svg')}}" alt="">
+                                <img class=" " src="{{asset('home/bissell.svg')}}" alt="">
                             </div>
                             <div class="col-lg-4 col-sm-12">
-                                <img class=" pt-2" src="{{asset('NASDAQ.svg')}}" alt="">
+                                <img class=" pt-2" src="{{asset('home/nasdaq.svg')}}" alt="">
                             </div>
                         </div>
 
@@ -283,7 +283,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
-                                        <img class="mx-auto d-block w-50" src="{{asset('Post-A-Job.png')}}" alt="">
+                                        <img class="mx-auto d-block w-50" src="{{asset('home/post-a-job.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Post a job (it’s free)</h5>
                                     <p class="fre-review-hf-card-text">Tell us what you need. Provide as many details as possible, but don’t worry about getting it perfect.</p>
@@ -309,7 +309,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-block w-50" src="{{asset('How_it_Works_1.png')}}" alt="">
+                                        <img class="mx-auto d-block w-50" src="{{asset('home/how_it_works_1.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Collaborate easily</h5>
                                     <p class="fre-review-hf-card-text">Use scholarship australia to chat or video call, share files, and track project progress right from the app.</p>
@@ -322,7 +322,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-flex w-50 " src="{{asset('How_it_Works_2.png')}}" alt="">
+                                        <img class="mx-auto d-flex w-50 " src="{{asset('home/how_it_works_2.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Payment simplified</h5>
                                     <p class="fre-review-hf-card-text">Receive invoices and make payments through scholarship australia. Only pay for work you authorize.</p>
@@ -345,7 +345,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-block  w-50" src="{{asset('Post-A-Job.png')}}" alt="">
+                                        <img class="mx-auto d-block  w-50" src="{{asset('home/post-a-job.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Create your profile (it’s free)</h5>
                                     <p class="fre-review-hf-card-text">An eye-catching title and client-focused overview help us match you to the work you want. Include your work history, your skills, and your photo. Add more, like an introduction video, to create a profile that really stands out.</p>
@@ -359,7 +359,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3; ">
-                                        <img class="mx-auto d-block  w-50" src="{{asset('How_it_Works_1.png')}}" alt="">
+                                        <img class="mx-auto d-block  w-50" src="{{asset('home/how_it_works_1.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Explore ways to earn</h5>
                                     <p class="fre-review-hf-card-text">Work and earn in different ways. Bid for jobs. Pitch your projects. Discuss your in-demand skills with our recruiters so they can find opportunities aligned with your passions and career goals. Do all three. Create a predictable pipeline and build your network.</p>
@@ -372,7 +372,7 @@
                                 <div class="px-3 py-2">
 
                                     <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-120px" style="background: #91E6B3;">
-                                        <img class="mx-auto d-block w-50" src="{{asset('How_it_Works_2.png')}}" alt="">
+                                        <img class="mx-auto d-block w-50" src="{{asset('home/how_it_works_2.png')}}" alt="">
                                     </div>
                                     <h5 class="fre-review-hf-card-title">Get paid securely</h5>
                                     <p class="fre-review-hf-card-text">{{translate('Choose how you get paid. Our fixed-price protection releases client payments at project milestones. Hourly protection bills clients every week. However you work, our service fees are the same. Spend less time chasing, more earning.')}}</p>
@@ -419,9 +419,9 @@
                             <p>
                                 contracts within that same 14-day feedback period. The review will be public once both of you leave one for each other or the 14-day period ends.
                             </p>
-                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""> </label>
+                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""> </label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-contest">
@@ -433,10 +433,10 @@
                             <p>
                                 will show up on your public profile. You can also work directly with your client or talent to enable feedback changes and revise the review. If you feel the review violates scholarship australia’s terms of service and you would like to dispute a review, scholarship australia’s customer service team is there to help.
                             </p>
-                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom content-blog">
                         <input type="checkbox" id="fre-ch">
@@ -447,9 +447,9 @@
                             Seeing your reviews is easy on scholarship australia, simply visit your profile and all your public reviews will be there. If your contract just ended, it can take up to 14 days for your review to become public. You can also find your feedback for specific contracts in your contracts dashboard.
                         </p>
                         <div class="fre-content ">
-                            <label class="fre-expand-icon" for="fre-ch">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-ch">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-ch">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-ch">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
                 </div>
             </div>
@@ -461,7 +461,7 @@
         <div class="fre-container-main-powerful  rounded-2" style="background: #1F57C3;">
             <div class="row mx-2 py-3">
                 <div class="col-lg-5 col-sm-12">
-                    <img class="img-fluid rounded-1" src="{{asset('powerful-relationship.jpg')}}" alt="">
+                    <img class="img-fluid rounded-1" src="{{asset('home/powerful-relationship.jpg')}}" alt="">
                 </div>
                 <div class="col-lg-7 col-sm-12 lg-position-relative ">
                     <h1 class="fw-700 text-white fs-30px">Build powerful relationships, one review at a time</h1>

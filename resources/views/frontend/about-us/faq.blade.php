@@ -48,11 +48,11 @@
                                 crowd.
                             </p>
                             <label class="fre-expand-icon" for="fre-leave">Show less <img
-                                    class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                    class="w-15px h-15px arrow-icon " src="{{ asset('home/upload.png') }}"
                                     alt=""></label>
                         </div>
                         <label class="fre-expand-icon" for="fre-leave">Read more <img
-                                class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                class="w-15px h-15px arrow-icon " src="{{ asset('home/down-chevron.png') }}"
                                 alt=""> </label>
 
                     </div>
@@ -70,12 +70,12 @@
                                 career.
                             </p>
                             <label class="fre-expand-icon" for="fre-contest">Show less <img
-                                    class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                    class="w-15px h-15px arrow-icon " src="{{ asset('home/upload.png') }}"
                                     alt=""></label>
                         </div>
 
                         <label class="fre-expand-icon" for="fre-contest">Read more <img
-                                class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                class="w-15px h-15px arrow-icon " src="{{ asset('home/down-chevron.png') }}"
                                 alt=""></label>
                     </div>
                     <div class=" border-bottom ">
@@ -92,11 +92,11 @@
                                 resources.
                             </p>
                             <label class="fre-expand-icon" for="fre-freelancing">Show less <img
-                                    class="w-15px h-15px arrow-icon " src="{{ asset('upload.png') }}"
+                                    class="w-15px h-15px arrow-icon " src="{{ asset('home/upload.png') }}"
                                     alt=""></label>
                         </div>
                         <label class="fre-expand-icon" for="fre-freelancing">Read more <img
-                                class="w-15px h-15px arrow-icon " src="{{ asset('down-chevron.png') }}"
+                                class="w-15px h-15px arrow-icon " src="{{ asset('home/down-chevron.png') }}"
                                 alt=""></label>
                     </div>
 

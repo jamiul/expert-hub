@@ -114,7 +114,7 @@
         </p>
       </div>
       <div class=" col-lg-4  ml-lg-5 col-sm-12">
-        <img class="img-fluid rounded-1" src="{{asset('powerful-relationship.jpg')}}" alt="">
+        <img class="img-fluid rounded-1" src="{{asset('home/powerful-relationship.jpg')}}" alt="">
       </div>
     </div>
   </div>

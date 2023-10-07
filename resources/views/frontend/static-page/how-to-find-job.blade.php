@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 py-2 px-5 ">
-                    <img src="{{asset('how-tohire-banar.png')}}" class="rounded-2 img-fluid" alt="" style="">
+                    <img src="{{asset('home/how-tohire-banar.png')}}" class="rounded-2 img-fluid" alt="" style="">
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <div cass="row ">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
-                            <img class="mx-auto d-block w-50" src="{{asset('Post-A-Job.png')}}" alt="">
+                            <img class="mx-auto d-block w-50" src="{{asset('home/post-a-job.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-9 col-sm-12 my-auto">
@@ -74,7 +74,7 @@
                 <div class="row mt-4">
                     <div class="col-lg-3 col-sm-12 ">
                         <div class="my-2 d-flex justify-content-center align-items-center  rounded-1 h-170px w-240px" style="background: #91E6B3; ">
-                            <img class="mx-auto d-block w-50" src="{{asset('How_it_Works_2.png')}}" alt="">
+                            <img class="mx-auto d-block w-50" src="{{asset('home/how_it_works_2.png')}}" alt="">
                         </div>
 
                     </div>
@@ -96,23 +96,23 @@
                             <h4 class="trusted "> Used by </h4>
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
+                            <img class=" " src="{{asset('home/microsoft.svg')}}" alt="">
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
+                            <img class=" " src="{{asset('home/airbnb.svg')}}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-6 ">
                     <div class="row">
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{asset('automatic.svg')}}" alt="">
+                            <img class=" " src="{{asset('home/automatic.svg')}}" alt="">
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{asset('Bissell.svg')}}" alt="">
+                            <img class=" " src="{{asset('home/bissell.svg')}}" alt="">
                         </div>
                         <div class="col-lg-4 col-sm-12">
-                            <img class=" " src="{{asset('NASDAQ.svg')}}" alt="">
+                            <img class=" " src="{{asset('home/nasdaq.svg')}}" alt="">
                         </div>
                     </div>
 
@@ -280,9 +280,9 @@
                             <p>
                                 You can upgrade to Expert Plus to more effectively market your services, submit proposals and stand out from the crowd.
                             </p>
-                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-leave">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""> </label>
+                        <label class="fre-expand-icon" for="fre-leave">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""> </label>
 
                     </div>
                     <div class=" border-bottom">
@@ -295,10 +295,10 @@
                             <p>
                                 complete guide shares our step-by-step tips for building your expert career.
                             </p>
-                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-contest">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-contest">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom ">
                         <input type="checkbox" id="fre-freelancing">
@@ -310,9 +310,9 @@
                             <p>
                                 work with great clients and well-known brands. Many choose EduExHub because we help them do it well. How to Succeed as a Expert gives you a taste of the support we offer to boost your success.
                             </p>
-                            <label class="fre-expand-icon" for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-freelancing">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
-                        <label class="fre-expand-icon" for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-freelancing">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-buildingBusiness">
@@ -324,10 +324,10 @@
                             <p>
                                 owner is a big transition, but it might be the right one for you.
                             </p>
-                            <label class="fre-expand-icon" for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-buildingBusiness">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-buildingBusiness">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <h4 class="frequently-qsn-title">What projects can I find on EduExHub?</h4>
@@ -345,10 +345,10 @@
                             <p>
                                 Expert accounts receive free Connects every month. You can buy bundles of them. And experts and agencies earn Connects by winning client interviews, getting great reviews, and demonstrating their skills.
                             </p>
-                            <label class="fre-expand-icon" for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-Connects">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-Connects">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
                     <div class=" border-bottom">
                         <input type="checkbox" id="fre-badges">
@@ -360,10 +360,10 @@
                             <p>
                                 badge. Top Rated Plus shows you have a proven history of success on large and long-term contracts. And Expert Vetted means you’ve gone through our rigorous pre-screening to match your high-demand skills with the right clients. Get the feedback, wear the badge , hit your goals.
                             </p>
-                            <label class="fre-expand-icon" for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('upload.png')}}" alt=""></label>
+                            <label class="fre-expand-icon" for="fre-badges">Show less <img class="w-15px h-15px arrow-icon " src="{{asset('home/upload.png')}}" alt=""></label>
                         </div>
 
-                        <label class="fre-expand-icon" for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png')}}" alt=""></label>
+                        <label class="fre-expand-icon" for="fre-badges">Read more <img class="w-15px h-15px arrow-icon " src="{{asset('home/down-chevron.png')}}" alt=""></label>
                     </div>
 
                 </div>

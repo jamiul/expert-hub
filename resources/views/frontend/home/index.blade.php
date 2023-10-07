@@ -64,42 +64,6 @@
                 </section>
         @endif
         <!--  Used by -->
-        {{-- <section class="">
-            <div class=" home-slider">
-                <div class="row ">
-                    <div class="col-lg-6 col-sm-12">
-                        <div class=" row ">
-                            <div class=" col-lg-4 col-sm-12">
-                                <h4 class="trusted heading-title fw-700" style="font-size:19px; color:#5ABC76;"> Used by
-                                </h4>
-                            </div>
-                            <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('Microsoft.svg') }}" alt="">
-                            </div>
-                            <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('Airbnb.svg') }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 ">
-                        <div class="row">
-                            <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('automatic.svg') }}" alt="">
-                            </div>
-                            <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('Bissell.svg') }}" alt="">
-                            </div>
-                            <div class="col-lg-4 col-sm-12">
-                                <img class=" " src="{{asset('NASDAQ.svg') }}" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section> --}}
-
         <!-- explore services -->
         <!-- explore services -->
         @if (getSetting('how_it_works_show') == 'on')
@@ -394,7 +358,7 @@
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -415,11 +379,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-leave">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-leave">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -427,7 +391,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -448,11 +412,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-contest">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-contest">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -460,7 +424,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -482,11 +446,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-freelancing">Show less
                                                             <img class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-freelancing">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -494,7 +458,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -515,48 +479,19 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="row mt-1">
-                                            <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
-                                            </div>
-                                            <div class="col-11 pl-0">
-                                                <div class=" border-bottom">
-                                                    <input type="checkbox" id="fre-aliored">
-
-                                                        <h4 class="make-impressive-title ml-1 text-success">
-                                                            Tailored Expert Selection</h4>
-                                                    <p class="frequently-qsn-details text-justify">
-                                                        Security is paramount atEduExHub. To guarantee peace of mind for both users and experts, we hold payments in escrow until
-
-                                                    </p>
-                                                    <div class="fre-content text-justify">
-                                                        <p>
-                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
-                                                        </p>
-                                                        <label class="fre-expand-icon" for="fre-aliored">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{asset('upload.png') }}"
-                                                                alt=""></label>
-                                                    </div>
-                                                    <label class="fre-expand-icon" for="fre-aliored">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png') }}"
-                                                            alt=""> </label>
-
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -576,11 +511,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-secure">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-secure">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -610,7 +545,7 @@
                                     <div class="col-lg-6 col-sm-12 py-3">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -631,11 +566,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-leave">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-leave">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -643,7 +578,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -664,11 +599,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-contest">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-contest">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -676,7 +611,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -698,11 +633,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-freelancing">Show less
                                                             <img class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-freelancing">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
@@ -710,7 +645,7 @@
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -731,48 +666,19 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-Intuitive">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-Intuitive">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="row mt-1">
-                                            <div class="col-1">
-                                                <img src="{{my_asset('tick.png')}}" alt="" height="22">
-                                            </div>
-                                            <div class="col-11 pl-0">
-                                                <div class=" border-bottom">
-                                                    <input type="checkbox" id="fre-aliored">
-
-                                                        <h4 class="make-impressive-title ml-1 text-success">
-                                                            Tailored Expert Selection</h4>
-                                                    <p class="frequently-qsn-details text-justify">
-                                                        Security is paramount atEduExHub. To guarantee peace of mind for both users and experts, we hold payments in escrow until
-
-                                                    </p>
-                                                    <div class="fre-content text-justify">
-                                                        <p>
-                                                            project completion, ensuring that satisfaction is paramount in every collaboration.
-                                                        </p>
-                                                        <label class="fre-expand-icon" for="fre-aliored">Show less <img
-                                                                class="w-15px h-15px arrow-icon " src="{{asset('upload.png') }}"
-                                                                alt=""></label>
-                                                    </div>
-                                                    <label class="fre-expand-icon" for="fre-aliored">Read more <img
-                                                            class="w-15px h-15px arrow-icon " src="{{asset('down-chevron.png') }}"
-                                                            alt=""> </label>
-
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                         <div class="row mt-1">
                                             <div class="col-1">
-                                                <img src="{{ asset('tick.png') }}" alt="" height="22">
+                                                <img src="{{ asset('home/tick.png') }}" alt="" height="22">
                                             </div>
                                             <div class="col-11 pl-0">
                                                 <div class=" border-bottom">
@@ -792,11 +698,11 @@
                                                         </p>
                                                         <label class="fre-expand-icon" for="fre-secure">Show less <img
                                                                 class="w-15px h-15px arrow-icon "
-                                                                src="{{ asset('upload.png') }}" alt=""></label>
+                                                                src="{{ asset('home/upload.png') }}" alt=""></label>
                                                     </div>
                                                     <label class="fre-expand-icon" for="fre-secure">Read more <img
                                                             class="w-15px h-15px arrow-icon "
-                                                            src="{{ asset('down-chevron.png') }}" alt="">
+                                                            src="{{ asset('home/down-chevron.png') }}" alt="">
                                                     </label>
 
                                                 </div>

@@ -27,7 +27,7 @@
 
         </div>
         <div class="col-lg-6 py-2 px-5 ">
-          <img src="{{asset('how-tohire-banar.png')}}" class="rounded-2 " alt="" style="">
+          <img src="{{asset('home/how-tohire-banar.png')}}" class="rounded-2 " alt="" style="">
         </div>
       </div>
     </div>
@@ -234,20 +234,20 @@
             <h4 class="trusted "> Used by </h4>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
+            <img class=" " src="{{asset('home/microsoft.svg')}}" alt="">
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
+            <img class=" " src="{{asset('home/airbnb.svg')}}" alt="">
           </div>
         </div>
       </div>
       <div class="col-6 ">
         <div class="row">
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{asset('automatic.svg')}}" alt="">
+            <img class=" " src="{{asset('home/automatic.svg')}}" alt="">
           </div>
           <div class="col-lg-4 col-sm-12">
-            <img class=" " src="{{asset('Bissell.svg')}}" alt="">
+            <img class=" " src="{{asset('home/bissell.svg')}}" alt="">
           </div>
           <div class="col-lg-4 col-sm-12">
             <img class=" " src="{{asset('NASDAQ.svg')}}" alt="">

@@ -7,7 +7,7 @@
             <div class="col-lg-2 col-sm-12 pr-0">
                 <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                     style="background: #91E6B3; width:90% !important;">
-                    <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
+                    <img class="mx-auto d-block w-50" src="{{ asset('home/post-a-job.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -24,7 +24,7 @@
             <div class="col-lg-2 col-sm-12 pr-0">
                 <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                     style="background: #91E6B3; width:90% !important;">
-                    <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
+                    <img class="mx-auto d-block w-50" src="{{ asset('home/post-a-job.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -39,7 +39,7 @@
             <div class="col-lg-2 col-sm-12 pr-0">
                 <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                     style="background: #91E6B3; width:90% !important;">
-                    <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
+                    <img class="mx-auto d-block w-50" src="{{ asset('home/post-a-job.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">
@@ -54,7 +54,7 @@
             <div class="col-lg-2 col-sm-12 pr-0">
                 <div class="my-2 mr-5 d-flex justify-content-center align-items-center  rounded-1   w-100 w-lg-75"
                     style="background: #91E6B3; width:90% !important;">
-                    <img class="mx-auto d-block w-50" src="{{ asset('Post-A-Job.png') }}" alt="">
+                    <img class="mx-auto d-block w-50" src="{{ asset('home/post-a-job.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-10 col-sm-12 my-auto pl-lg-0">

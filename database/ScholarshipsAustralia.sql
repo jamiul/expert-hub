@@ -6605,7 +6605,7 @@ CREATE TABLE `uploads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `uploads` (`id`, `file_original_name`, `file_name`, `user_id`, `file_size`, `extension`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1,	'Layer 2',	'assets/category_image_for_install.png',	1,	392,	'png',	'image',	'2022-11-15 00:13:40',	'2022-11-15 00:13:40',	NULL),
+(1,	'Layer 2',	'assets/home/category_image_for_install.png',	1,	392,	'png',	'image',	'2022-11-15 00:13:40',	'2022-11-15 00:13:40',	NULL),
 (2,	'WhatsApp Image 2023-03-11 at 12.12.38 PM',	'uploads/all/PbnqGdKWeyLNi6cgHClJqQ2u54dpE829ohtDrQLt.jpg',	1,	36353,	'jpeg',	'image',	'2023-04-04 13:13:24',	'2023-04-04 13:13:24',	NULL),
 (3,	'scholarships-australia-logo',	'uploads/all/qj9rddcpbAu8xm97AVTvt57ATBHQVODeibGRSZRh.png',	1,	37865,	'png',	'image',	'2023-04-05 00:11:13',	'2023-04-05 00:11:13',	NULL),
 (4,	'scholarships-australia-logo-bg-white',	'uploads/all/STvKe3KeGJTamEEbugR4HNzbnXy9y4TgzZe01Ih9.png',	1,	44150,	'png',	'image',	'2023-04-05 00:14:29',	'2023-04-05 00:14:29',	NULL),

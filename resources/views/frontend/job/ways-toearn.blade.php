@@ -40,13 +40,13 @@
           <div class="col-10">
             <div class="row">
               <div class="mr-5">
-                <img class=" " src="{{asset('Microsoft.svg')}}" alt="">
+                <img class=" " src="{{asset('home/microsoft.svg')}}" alt="">
               </div>
               <div class="mr-5">
-                <img class=" " src="{{asset('Airbnb.svg')}}" alt="">
+                <img class=" " src="{{asset('home/airbnb.svg')}}" alt="">
               </div>
               <div class="mr-5">
-                <img class="" src="{{asset('automatic.svg')}}" alt="">
+                <img class="" src="{{asset('home/automatic.svg')}}" alt="">
               </div>
             </div>
           </div>
