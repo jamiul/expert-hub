@@ -17,7 +17,7 @@ class NotificationController extends Controller
         NotificationUtility::make_my_notifications_seen();
         $notifications = NotificationUtility::get_my_notifications(10, false, 0, true);
 
-        return view('admin.notifications', compact('notifications'));
+        return view('admin.dashboard.notifications', compact('notifications'));
     }
 
     public function frontendListing()
