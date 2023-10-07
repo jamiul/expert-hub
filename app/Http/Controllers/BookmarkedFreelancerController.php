@@ -16,7 +16,7 @@ class BookmarkedFreelancerController extends Controller
     public function index()
     {
         $bookmarked_freelancers = BookmarkedFreelancer::where('user_id', Auth::user()->id)->paginate(8);
-        return view('frontend.default.user.client.bookmarked-freelancers', compact('bookmarked_freelancers'));
+        return view('frontend.user.client.bookmarked-freelancers', compact('bookmarked_freelancers'));
     }
 
     /**

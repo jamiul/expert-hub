@@ -55,7 +55,7 @@ class LanguageController extends Controller
     public function index()
     {
         $languages = Language::paginate(10);
-        return view('admin.default.system_configurations.languages.index', compact('languages'));
+        return view('admin.system_configurations.languages.index', compact('languages'));
     }
 
     public function changeLanguage($locale)
@@ -126,7 +126,7 @@ class LanguageController extends Controller
             $lang_keys = $lang_keys->where('lang_key', 'like', '%' . $sort_search . '%');
         }
         $lang_keys = $lang_keys->paginate(50);
-        return view('admin.default.system_configurations.languages.language_view', compact('language', 'lang_keys', 'sort_search'));
+        return view('admin.system_configurations.languages.language_view', compact('language', 'lang_keys', 'sort_search'));
     }
 
     /**
@@ -138,7 +138,7 @@ class LanguageController extends Controller
     public function edit($id)
     {
         $language = Language::findOrFail(decrypt($id));
-        return view('admin.default.system_configurations.languages.edit', compact('language'));
+        return view('admin.system_configurations.languages.edit', compact('language'));
     }
 
     /**

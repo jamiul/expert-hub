@@ -1,4 +1,4 @@
-@extends('admin.default.layouts.blank')
+@extends('admin.layouts.blank')
 
 @section('content')
 <div class="h-100 bg-cover bg-center py-5 d-flex align-items-center" style="background-image: url({{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('adminLogin')) }})">

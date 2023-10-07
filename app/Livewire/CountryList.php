@@ -16,6 +16,6 @@ class CountryList extends Component
 
     public function render()
     {
-        return view('livewire.country-list');
+        return view('livewire.dropdown-list.country-list');
     }
 }

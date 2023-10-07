@@ -22,7 +22,7 @@ class ProjectCategoryController extends Controller
     public function index()
     {
         $project_categories = ProjectCategory::first()->paginate(10);
-        return view('admin.default.project.project_categories.index', compact('project_categories'));
+        return view('admin.project.project_categories.index', compact('project_categories'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ProjectCategoryController extends Controller
     {
         $project_category = ProjectCategory::findOrFail(decrypt($id));
         $project_categories = ProjectCategory::whereNotIn('id', CategoryUtility::children_ids($project_category->id, true))->where('id', '!=', $project_category->id)->get();
-        return view('admin.default.project.project_categories.edit', compact('project_category', 'project_categories'));
+        return view('admin.project.project_categories.edit', compact('project_category', 'project_categories'));
     }
 
     /**

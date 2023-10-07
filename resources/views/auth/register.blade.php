@@ -1,4 +1,4 @@
-@extends('admin.default.layouts.blank')
+@extends('admin.layouts.blank')
 
 @section('content')
 <div class="container">

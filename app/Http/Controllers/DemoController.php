@@ -63,97 +63,97 @@ class DemoController extends Controller
 
     public function consultantLogin()
     {
-        return view('frontend.default.consultantlogin');
+        return view('frontend.consultantlogin');
     }
 
     public function consultantSignup()
     {
-        return view('frontend.default.consultantsignup');
+        return view('frontend.consultantsignup');
     }
 
     public function consultantVerifyEmail()
     {
-        return view('frontend.default.consultantverifyemail');
+        return view('frontend.consultantverifyemail');
     }
 
     public function consultantVerifyYourEmail()
     {
-        return view('frontend.default.consultantverifyyouremail');
+        return view('frontend.consultantverifyyouremail');
     }
 
     public function profileSetup()
     {
-        return view('frontend.default.profilesetup');
+        return view('frontend.profilesetup');
     }
 
     public function profileDetails()
     {
-        return view('frontend.default.profiledetails');
+        return view('frontend.profiledetails');
     }
 
     public function profileExpertises()
     {
-        return view('frontend.default.profileexpertises');
+        return view('frontend.profileexpertises');
     }
 
     public function profileEducation()
     {
-        return view('frontend.default.profileeducation');
+        return view('frontend.profileeducation');
     }
 
     public function profileConsultation()
     {
-        return view('frontend.default.profileconsultation');
+        return view('frontend.profileconsultation');
     }
 
     public function profileExpertisesPopup()
     {
-        return view('frontend.default.profileexpertisespopup');
+        return view('frontend.profileexpertisespopup');
     }
 
     public function profileConsultationBooks()
     {
-        return view('frontend.default.profileconsultationbooks');
+        return view('frontend.profileconsultationbooks');
     }
 
     public function profileConsultationInterview()
     {
-        return view('frontend.default.profileconsultationinterview');
+        return view('frontend.profileconsultationinterview');
     }
 
     public function profileBiography()
     {
-        return view('frontend.default.profilebiography');
+        return view('frontend.profilebiography');
     }
 
     public function profilePicture()
     {
-        return view('frontend.default.profilepicture');
+        return view('frontend.profilepicture');
     }
 
     public function profileCompleted()
     {
-        return view('frontend.default.profilecompleted');
+        return view('frontend.profilecompleted');
     }
 
     // -------- Client Registration pages------------
     public function clientLogin()
     {
-        return view('frontend.default.clientlogin');
+        return view('frontend.clientlogin');
     }
 
     public function clientSignup()
     {
-        return view('frontend.default.clientsignup');
+        return view('frontend.clientsignup');
     }
 
     public function clientVerifyEmail()
     {
-        return view('frontend.default.clientverifyemail');
+        return view('frontend.clientverifyemail');
     }
 
     public function clientVerifyYourEmail()
     {
-        return view('frontend.default.clientverifyyouremail');
+        return view('frontend.clientverifyyouremail');
     }
 }

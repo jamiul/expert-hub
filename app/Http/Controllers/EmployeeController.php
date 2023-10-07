@@ -15,24 +15,24 @@ class EmployeeController extends Controller
     {
         $role = Role::where('name', $type)->first();
         $user_roles = UserRole::where('role_id', $role->id)->paginate(10);
-        return view('admin.default.employees.index', compact('user_roles', 'role'));
+        return view('admin.employees.index', compact('user_roles', 'role'));
     }
 
     public function create()
     {
-        return view('admin.default.employees.create');
+        return view('admin.employees.create');
     }
 
     public function show($id)
     {
         $user_role = UserRole::findOrFail(decrypt($id));
-        return view('admin.default.employees.set_access_permission', compact('user_role'));
+        return view('admin.employees.set_access_permission', compact('user_role'));
     }
 
     public function edit($id)
     {
         $user = User::findOrFail(decrypt($id));
-        return view('admin.default.employees.edit', compact('user'));
+        return view('admin.employees.edit', compact('user'));
     }
 
     public function update(Request $request, $id)

@@ -17,7 +17,7 @@ class CityController extends Controller
     {
         if (Gate::allows('state_index')) {
             $cities = City::paginate(10);
-            return view('admin.default.system_configurations.cities.index', compact('cities'));
+            return view('admin.system_configurations.cities.index', compact('cities'));
         } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
@@ -75,7 +75,7 @@ class CityController extends Controller
     {
         if (Gate::allows('state_edit')) {
             $city = City::findOrFail(decrypt($id));
-            return view('admin.default.system_configurations.cities.edit', compact('city'));
+            return view('admin.system_configurations.cities.edit', compact('city'));
         } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();

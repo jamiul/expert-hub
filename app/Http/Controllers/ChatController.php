@@ -33,7 +33,7 @@ class ChatController extends Controller
     public function chatIndex()
     {
         $chat_threads = ChatThread::where('sender_user_id', Auth::user()->id)->orWhere('receiver_user_id', Auth::user()->id)->get();
-        return view('frontend.default.user.messages', compact('chat_threads'));
+        return view('frontend.user.messages', compact('chat_threads'));
     }
 
     public function adminChatIndex(Request $request)
@@ -58,14 +58,14 @@ class ChatController extends Controller
         }
 
 
-        return view('admin.default.chats.index', compact('chat_threads', 'sort_search'));
+        return view('admin.chats.index', compact('chat_threads', 'sort_search'));
     }
 
     public function adminChatDetails($id)
     {
         $chat_thread = ChatThread::findOrFail(decrypt($id));
         $chats = $chat_thread->chats;
-        return view('admin.default.chats.show', compact('chats', 'chat_thread'));
+        return view('admin.chats.show', compact('chats', 'chat_thread'));
     }
 
     public function chatView($id)
@@ -79,7 +79,7 @@ class ChatController extends Controller
         }
         $chats = $chat_thread->chats()->latest()->limit(20)->get();
 
-        return view('frontend.default.partials.chat-messages', compact('chats', 'chat_thread'));
+        return view('frontend.partials.chat-messages', compact('chats', 'chat_thread'));
     }
 
     public function getOldMessages(Request $request)
@@ -87,7 +87,7 @@ class ChatController extends Controller
         $chat = Chat::findOrFail($request->first_message_id);
         $chats = Chat::where('id', '<', $chat->id)->where('chat_thread_id', $chat->chat_thread_id)->latest()->limit(20)->get();
         if (count($chats) > 0) {
-            return array('messages' => view('frontend.default.partials.chat-messages-part', compact('chats'))->render(),
+            return array('messages' => view('frontend.partials.chat-messages-part', compact('chats'))->render(),
                 'first_message_id' => $chats->last()->id);
         } else {
             return array('messages' => "",
@@ -104,7 +104,7 @@ class ChatController extends Controller
             $value->save();
         }
 
-        return array('messages' => view('frontend.default.partials.chat-messages-left-single', compact('chats'))->render(),
+        return array('messages' => view('frontend.partials.chat-messages-left-single', compact('chats'))->render(),
             'count' => count($chats));
     }
 
@@ -119,7 +119,7 @@ class ChatController extends Controller
             $chat->attachment = json_encode(explode(',', $request->attachment));
         }
         $chat->save();
-        return view('frontend.default.partials.chat-messages-right-single', compact('chat'));
+        return view('frontend.partials.chat-messages-right-single', compact('chat'));
     }
 
     public function interview_status(Request $request)

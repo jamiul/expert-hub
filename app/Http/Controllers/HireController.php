@@ -20,7 +20,7 @@ class HireController extends Controller
     public function privateProjects()
     {
         $private_projects = HireInvitation::where('sent_to_user_id', Auth::user()->id)->where('status', '=', 'pending')->paginate(8);
-        return view('frontend.default.user.freelancer.projects.private', compact('private_projects'));
+        return view('frontend.user.freelancer.projects.private', compact('private_projects'));
     }
 
     //freelancer invition sending page
@@ -29,7 +29,7 @@ class HireController extends Controller
         $freelancer = User::where('user_name', $username)->first();
         $categories = ProjectCategory::all();
         $client_package = Auth::user()->userPackage;
-        return view('frontend.default.user.freelancer_hire_invitation.create', compact('freelancer', 'categories', 'client_package'));
+        return view('frontend.user.freelancer_hire_invitation.create', compact('freelancer', 'categories', 'client_package'));
     }
 
     //Store sent info for hiring freelancers

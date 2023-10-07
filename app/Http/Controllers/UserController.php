@@ -62,7 +62,7 @@ class UserController extends Controller
             $freelancers = $freelancers->orderBy('created_at', 'desc')->paginate(10);
         }
 
-        return view('admin.default.freelancer.freelancers.index', compact('freelancers', 'sort_search', 'col_name', 'query'));
+        return view('admin.freelancer.freelancers.index', compact('freelancers', 'sort_search', 'col_name', 'query'));
     }
 
     public function login($id)
@@ -118,7 +118,7 @@ class UserController extends Controller
         } else {
             $clients = $clients->orderBy('created_at', 'desc')->paginate(10);
         }
-        return view('admin.default.client.clients.index', compact('clients', 'sort_search', 'col_name', 'query'));
+        return view('admin.client.clients.index', compact('clients', 'sort_search', 'col_name', 'query'));
     }
 
     public function freelancerDetails($user_name)
@@ -126,7 +126,7 @@ class UserController extends Controller
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
         $user_account = FreelancerAccount::where('user_id', $user->id)->first();
-        return view('admin.default.freelancer.freelancers.show', compact('user', 'user_profile', 'user_account'));
+        return view('admin.freelancer.freelancers.show', compact('user', 'user_profile', 'user_account'));
     }
 
     public function clientDetails($user_name)
@@ -135,7 +135,7 @@ class UserController extends Controller
         $user_profile = UserProfile::where('user_id', $user->id)->first();
         $user_account = FreelancerAccount::where('user_id', $user->id)->first();
         $projects = $user->number_of_projects()->paginate(10);
-        return view('admin.default.client.clients.show', compact('user', 'user_profile', 'user_account', 'projects'));
+        return view('admin.client.clients.show', compact('user', 'user_profile', 'user_account', 'projects'));
     }
 
     public function userOnlineStatus()

@@ -30,7 +30,7 @@ class ScholarshipCityController extends Controller
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.city_name.index', compact('categories', 'sort_search'));
+        return view('admin.scholarship_module.city_name.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ScholarshipCityController extends Controller
         $level = ScholarshipCity::find($id);
         // $all_categories = ScholarshipCity::all();
 
-        return view('admin.default.scholarship_module.city_name.edit', compact('level'));
+        return view('admin.scholarship_module.city_name.edit', compact('level'));
     }
 
     /**

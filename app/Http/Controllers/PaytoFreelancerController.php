@@ -49,7 +49,7 @@ class PaytoFreelancerController extends Controller
             $pay_to_freelancers = $pay_to_freelancers->paginate(12);
         }
 
-        return view('admin.default.pay_to_freelancer.index', compact('pay_to_freelancers', 'sort_search', 'sort_search_by_date'));
+        return view('admin.pay_to_freelancer.index', compact('pay_to_freelancers', 'sort_search', 'sort_search_by_date'));
     }
 
     public function payToFreelancer($id)
@@ -59,7 +59,7 @@ class PaytoFreelancerController extends Controller
         $user_profile = UserProfile::where('user_id', $user->id)->first();
 
         $user_account = FreelancerAccount::where('user_id', $user->id)->first();
-        return view('admin.default.withdraw_request.pay', compact('user', 'user_profile', 'user_account', 'withdraw_request'));
+        return view('admin.withdraw_request.pay', compact('user', 'user_profile', 'user_account', 'withdraw_request'));
     }
 
     public function pay(Request $request)
@@ -110,13 +110,13 @@ class PaytoFreelancerController extends Controller
     public function sendWithdrawalRequestIndex()
     {
         $profile = UserProfile::where('user_id', Auth::user()->id)->first();
-        return view('frontend.default.user.freelancer.earnings.withdrawal-make', compact('profile'));
+        return view('frontend.user.freelancer.earnings.withdrawal-make', compact('profile'));
     }
 
     public function withdrawalHistoryIndex()
     {
         $withdraw_requests = PayToFreelancer::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
-        return view('frontend.default.user.freelancer.earnings.withdrawal-history', compact('withdraw_requests'));
+        return view('frontend.user.freelancer.earnings.withdrawal-history', compact('withdraw_requests'));
     }
 
     public function withdrawRequests(Request $request)
@@ -151,7 +151,7 @@ class PaytoFreelancerController extends Controller
             $withdraw_requests = $withdraw_requests->orderBy('created_at', 'desc')->paginate(10);
         }
 
-        return view('admin.default.withdraw_request.index', compact('withdraw_requests', 'sort_search', 'col_name', 'query'));
+        return view('admin.withdraw_request.index', compact('withdraw_requests', 'sort_search', 'col_name', 'query'));
     }
 
     public function sendWithdrawalRequestStore(Request $request)

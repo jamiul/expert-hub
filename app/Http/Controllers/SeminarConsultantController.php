@@ -40,7 +40,7 @@ class SeminarConsultantController extends Controller
         }
         // $services = Auth::user()->services()->paginate(12);
 
-        return view('frontend.default.user.freelancer.projects.seminars.index', compact('seminars', 'search'));
+        return view('frontend.user.freelancer.projects.seminars.index', compact('seminars', 'search'));
     }
 
     /**
@@ -118,7 +118,7 @@ class SeminarConsultantController extends Controller
         $users = $all_users->where('user_type', "freelancer")->all();
 
         if (ServicesUtility::can_create_service() == 1) {
-            return view('frontend.default.user.freelancer.projects.seminars.create', compact('seminar_mode', 'seminar_software', 'languages', 'users'));
+            return view('frontend.user.freelancer.projects.seminars.create', compact('seminar_mode', 'seminar_software', 'languages', 'users'));
         }
 
         flash(translate('Sorry! Your service creation limit is over.'))->warning();
@@ -136,7 +136,7 @@ class SeminarConsultantController extends Controller
     {
         $seminar = Seminar::with('seminar_dates')->find($id);
 
-        return view('frontend.default.user.freelancer.projects.seminars.edit', compact('seminar'));
+        return view('frontend.user.freelancer.projects.seminars.edit', compact('seminar'));
     }
 
     /**

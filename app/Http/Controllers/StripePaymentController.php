@@ -15,7 +15,7 @@ class StripePaymentController extends Controller
      */
     public function index()
     {
-        return view('frontend.default.stripe.stripe');
+        return view('frontend.stripe.stripe');
     }
 
     public function createCheckoutSession(Request $request)

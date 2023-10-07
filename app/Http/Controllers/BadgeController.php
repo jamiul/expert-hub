@@ -18,13 +18,13 @@ class BadgeController extends Controller
     public function index()
     {
         list($badges, $role) = $this->repository->getBadgesAndRole('freelancer');
-        return view('admin.default.freelancer.badges.index', compact('badges', 'role'));
+        return view('admin.freelancer.badges.index', compact('badges', 'role'));
     }
 
     public function clientBadgesIndex()
     {
         list($badges, $role) = $this->repository->getBadgesAndRole('client');
-        return view('admin.default.client.badges.index', compact('badges', 'role'));
+        return view('admin.client.badges.index', compact('badges', 'role'));
     }
 
     public function store(Request $request)
@@ -54,13 +54,13 @@ class BadgeController extends Controller
     public function edit($id)
     {
         $badge = Badge::findOrFail(decrypt($id));
-        return view('admin.default.freelancer.badges.edit', compact('badge'));
+        return view('admin.freelancer.badges.edit', compact('badge'));
     }
 
     public function clientBadgesEdit($id)
     {
         $badge = Badge::findOrFail(decrypt($id));
-        return view('admin.default.client.badges.edit', compact('badge'));
+        return view('admin.client.badges.edit', compact('badge'));
     }
 
     public function update(Request $request, $id)

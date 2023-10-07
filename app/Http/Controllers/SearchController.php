@@ -145,7 +145,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.freelancers-listing', compact(
+            return view('frontend.freelancers-listing', compact(
                 'freelancers',
                 'total',
                 'keyword',
@@ -257,7 +257,7 @@ class SearchController extends Controller
             $total = $seminars->count();
             $seminars = $seminars->paginate(8)->appends($request->query());
 
-            return view('frontend.default.seminar-listing', compact(
+            return view('frontend.seminar-listing', compact(
                 'seminars',
                 'total',
                 'keyword',
@@ -306,7 +306,7 @@ class SearchController extends Controller
 
             $total = $services->count();
             $services = $services->paginate(9)->appends($request->query());
-            return view('frontend.default.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level', 'category_id'));
+            return view('frontend.services-listing', compact('services', 'total', 'keyword', 'type', 'rating', 'delivery_time', 'budget', 'country_id', 'speaks', 'level', 'category_id'));
         } elseif ($request->type == 'media-expert') {
             $type = 'media-expert';
             $keyword = $request->keyword;
@@ -424,7 +424,7 @@ class SearchController extends Controller
             $total = $freelancers->count();
             $freelancers = $freelancers->paginate(8)->appends($request->query());
 
-            return view('frontend.default.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'expertises'));
+            return view('frontend.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'expertises'));
         } else {
             $type = 'project';
             $keyword = $request->keyword;
@@ -571,7 +571,7 @@ class SearchController extends Controller
 
             $total = $projects->count();
             $projects = $projects->paginate(8)->appends($request->query());
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations', 'projectCategory', 'all_skills', 'countries', 'country_id'));
+            return view('frontend.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort', 'category_id', 'min_price', 'max_price', 'categories', 'categoryIds', 'category_ids', 'skills', 'skill_ids', 'fixed_min', 'fixed_max', 'hourly_min', 'hourly_max', 'selectedDurations', 'projectCategory', 'all_skills', 'countries', 'country_id'));
         }
     }
 
@@ -596,7 +596,7 @@ class SearchController extends Controller
             $total = count($projects->get());
             $projects = $projects->paginate(8)->appends($request->query());
 
-            return view('frontend.default.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
+            return view('frontend.projects-listing', compact('projects', 'keyword', 'total', 'type', 'projectType', 'bids', 'sort'));
         }
     }
 }

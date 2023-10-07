@@ -28,7 +28,7 @@ class BlogCategoryController extends Controller
         }
 
         $categories = $categories->paginate(15);
-        return view('admin.default.blog_system.category.index', compact('categories', 'sort_search'));
+        return view('admin.blog_system.category.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -89,7 +89,7 @@ class BlogCategoryController extends Controller
         $cateogry = BlogCategory::find($id);
         $all_categories = BlogCategory::all();
 
-        return view('admin.default.blog_system.category.edit', compact('cateogry', 'all_categories'));
+        return view('admin.blog_system.category.edit', compact('cateogry', 'all_categories'));
     }
 
     /**

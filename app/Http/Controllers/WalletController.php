@@ -18,7 +18,7 @@ class WalletController extends Controller
     public function adminIndex()
     {
         $wallets = Wallet::latest()->paginate(10);
-        return view('admin.default.wallet_recharge_history.index', compact('wallets'));
+        return view('admin.wallet_recharge_history.index', compact('wallets'));
     }
 
     public function rechage(Request $request)
@@ -60,7 +60,7 @@ class WalletController extends Controller
     public function index()
     {
         $wallets = Wallet::where('user_id', Auth::user()->id)->latest()->paginate(10);
-        return view('frontend.default.user.wallet.index', compact('wallets'));
+        return view('frontend.user.wallet.index', compact('wallets'));
     }
 
     public function wallet_payment_done($payment_data, $payment_details)

@@ -24,7 +24,7 @@ class AddonController extends Controller
      */
     public function index()
     {
-        return view('admin.default.addons.index');
+        return view('admin.addons.index');
     }
 
     /**
@@ -34,7 +34,7 @@ class AddonController extends Controller
      */
     public function create()
     {
-        return view('admin.default.addons.create');
+        return view('admin.addons.create');
     }
 
     /**

@@ -38,7 +38,7 @@ class MilestonePaymentController extends Controller
 
         $milestone_payments = $milestone_payments->whereNull('milestone_payments.deleted_at')->orderBy('milestone_payments.created_at', 'desc')->select('milestone_payments.id')->paginate(20);
 
-        return view('admin.default.payment_history.index', compact('milestone_payments', 'sort_search'));
+        return view('admin.payment_history.index', compact('milestone_payments', 'sort_search'));
     }
 
     // Offline payment history
@@ -278,25 +278,25 @@ class MilestonePaymentController extends Controller
     {
         $project_id = $request->project_id;
         $client_id = $request->client_id;
-        return view('frontend.default.partials.milestone_payment_request_modal', compact('project_id', 'client_id'));
+        return view('frontend.partials.milestone_payment_request_modal', compact('project_id', 'client_id'));
     }
 
     public function recievedMilestoneRequestIndex()
     {
         $milestones = MilestonePayment::where('client_user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
-        return view('frontend.default.user.client.milestone_payments.index', compact('milestones'));
+        return view('frontend.user.client.milestone_payments.index', compact('milestones'));
     }
 
     public function sentMilestoneRequestIndex()
     {
         $milestones = MilestonePayment::where('freelancer_user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
-        return view('frontend.default.user.freelancer.milestone_payments.index', compact('milestones'));
+        return view('frontend.user.freelancer.milestone_payments.index', compact('milestones'));
     }
 
     public function recievedMilestonePaymentIndex()
     {
         $milestones = MilestonePayment::where('freelancer_user_id', Auth::user()->id)->where('paid_status', 1)->orderBy('created_at', 'desc')->paginate(12);
-        return view('frontend.default.user.freelancer.earnings.history', compact('milestones'));
+        return view('frontend.user.freelancer.earnings.history', compact('milestones'));
     }
 
     public function requestStore(Request $request)
@@ -351,7 +351,7 @@ class MilestonePaymentController extends Controller
     public function milestoneRequestDetails($id)
     {
         $milestone_payment = MilestonePayment::findOrFail(decrypt($id));
-        return view('admin.default.milestone_payments.show', compact('milestone_payment'));
+        return view('admin.milestone_payments.show', compact('milestone_payment'));
     }
 
     public function milestoneRequestMessage(Request $request)
@@ -362,12 +362,12 @@ class MilestonePaymentController extends Controller
             $milestone->client_seen = 1;
             $milestone->save();
         }
-        return view('frontend.default.partials.milestone_request_message_show_modal', compact('milestone'));
+        return view('frontend.partials.milestone_request_message_show_modal', compact('milestone'));
     }
 
     public function showPaymentSelectModal(Request $request)
     {
         $milestone = MilestonePayment::findOrFail($request->id);
-        return view('frontend.default.partials.milestone_pay_payment_select', compact('milestone'));
+        return view('frontend.partials.milestone_pay_payment_select', compact('milestone'));
     }
 }

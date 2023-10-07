@@ -28,7 +28,7 @@ class ScholarshipCategoryController extends Controller
         }
 
         $categories = $categories->paginate(15);
-        return view('admin.default.scholarship_module.category.index', compact('categories', 'sort_search'));
+        return view('admin.scholarship_module.category.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -89,7 +89,7 @@ class ScholarshipCategoryController extends Controller
         $cateogry = ScholarshipCategory::find($id);
         $all_categories = ScholarshipCategory::all();
 
-        return view('admin.default.scholarship_module.category.edit', compact('cateogry', 'all_categories'));
+        return view('admin.scholarship_module.category.edit', compact('cateogry', 'all_categories'));
     }
 
     /**

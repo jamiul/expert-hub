@@ -19,7 +19,7 @@ class GeneralConfigurationController extends Controller
      */
     public function index()
     {
-        return view('admin.default.system_configurations.general_config.index');
+        return view('admin.system_configurations.general_config.index');
     }
 
     /**

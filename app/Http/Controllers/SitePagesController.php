@@ -36,7 +36,7 @@ class SitePagesController extends Controller
         }
 
 
-        return view('admin.default.optimization.sitepage.index', compact('sitepages', 'search'));
+        return view('admin.optimization.sitepage.index', compact('sitepages', 'search'));
     }
 
     /**
@@ -70,7 +70,7 @@ class SitePagesController extends Controller
     {
 
 
-        return view('admin.default.optimization.sitepage.create');
+        return view('admin.optimization.sitepage.create');
     }
 
     /**
@@ -91,7 +91,7 @@ class SitePagesController extends Controller
      */
     public function edit(SitePage $site_page)
     {
-        return view('admin.default.optimization.sitepage.edit', compact('site_page'));
+        return view('admin.optimization.sitepage.edit', compact('site_page'));
     }
 
     /**

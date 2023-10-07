@@ -30,7 +30,7 @@ class ScholarshipLevelController extends Controller
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.study_level.index', compact('categories', 'sort_search'));
+        return view('admin.scholarship_module.study_level.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ScholarshipLevelController extends Controller
         $level = ScholarshipLevel::find($id);
         // $all_categories = ScholarshipLevel::all();
 
-        return view('admin.default.scholarship_module.study_level.edit', compact('level'));
+        return view('admin.scholarship_module.study_level.edit', compact('level'));
     }
 
     /**

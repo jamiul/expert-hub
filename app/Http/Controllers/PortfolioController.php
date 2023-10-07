@@ -34,7 +34,7 @@ class PortfolioController extends Controller
     {
         $user_portfolio = Portfolio::findOrFail(decrypt($id));
         if (isFreelancer()) {
-            return view('frontend.default.user.freelancer.setting.portfolio_edit', compact('user_portfolio'));
+            return view('frontend.user.freelancer.setting.portfolio_edit', compact('user_portfolio'));
         }
     }
 

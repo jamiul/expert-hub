@@ -19,7 +19,7 @@ class NewsletterController extends Controller
     {
         $users = User::all();
         $subscribers = Subscriber::all();
-        return view('admin.default.marketing.newsletters.index', compact('users', 'subscribers'));
+        return view('admin.marketing.newsletters.index', compact('users', 'subscribers'));
     }
 
     public function send(Request $request)
@@ -31,7 +31,7 @@ class NewsletterController extends Controller
                     $array['view'] = 'emails.newsletter';
                     $array['subject'] = $request->subject;
                     $array['from'] = env('MAIL_FROM_ADDRESS');
-                    $array['content'] = $request->content;
+                    $array['content'] = $request->get('content');
 
                     try {
                         Mail::to($email)->queue(new EmailManager($array));
@@ -47,7 +47,7 @@ class NewsletterController extends Controller
                     $array['view'] = 'emails.newsletter';
                     $array['subject'] = $request->subject;
                     $array['from'] = env('MAIL_FROM_ADDRESS');
-                    $array['content'] = $request->content;
+                    $array['content'] = $request->get('content');
 
                     try {
                         Mail::to($email)->queue(new EmailManager($array));

@@ -30,7 +30,7 @@ class ScholarshipCountryController extends Controller
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.country_name.index', compact('categories', 'sort_search'));
+        return view('admin.scholarship_module.country_name.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ScholarshipCountryController extends Controller
         $level = ScholarshipCountry::find($id);
         // $all_categories = ScholarshipCountry::all();
 
-        return view('admin.default.scholarship_module.country_name.edit', compact('level'));
+        return view('admin.scholarship_module.country_name.edit', compact('level'));
     }
 
     /**

@@ -38,7 +38,7 @@ class PackagePaymentController extends Controller
             $package_payments = $package_payments->paginate(12);
         }
 
-        return view('admin.default.package_payment.index', compact('package_payments', 'sort_search'));
+        return view('admin.package_payment.index', compact('package_payments', 'sort_search'));
     }
 
     //admin Offline package payment history
@@ -245,6 +245,6 @@ class PackagePaymentController extends Controller
     public function freelancerPackagePurchaseHistoryIndex()
     {
         $package_payments = PackagePayment::where('user_id', Auth::user()->id)->latest()->paginate(12);
-        return view('frontend.default.user.packages.history', compact('package_payments'));
+        return view('frontend.user.packages.history', compact('package_payments'));
     }
 }

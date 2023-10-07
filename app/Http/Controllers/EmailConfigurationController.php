@@ -20,7 +20,7 @@ class EmailConfigurationController extends Controller
      */
     public function index()
     {
-        return view('admin.default.system_configurations.email_config.index');
+        return view('admin.system_configurations.email_config.index');
     }
 
     public function testEmail(Request $request)

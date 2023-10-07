@@ -1,4 +1,4 @@
-@extends('frontend.default.layouts.app')
+@extends('frontend.layouts.app')
 
 @section('content')
 <section class="pt-7 pb-6">

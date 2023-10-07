@@ -18,17 +18,17 @@ class SystemConfigurationController extends Controller
 
     public function activationView()
     {
-        return view('admin.default.system_configurations.activation');
+        return view('admin.system_configurations.activation');
     }
 
     public function freelancerPaymentConfig()
     {
-        return view('admin.default.system_configurations.freelancer_payment_config');
+        return view('admin.system_configurations.freelancer_payment_config');
     }
 
     public function refundSettings()
     {
-        return view('admin.default.system_configurations.refund_settings');
+        return view('admin.system_configurations.refund_settings');
     }
 
     public function envKeyUpdate(Request $request)
@@ -147,7 +147,7 @@ class SystemConfigurationController extends Controller
 
     public function homeSettings(Request $request)
     {
-        return view('admin.default.website.home');
+        return view('admin.website.home');
     }
 
     public function slider_setion(Request $request)
@@ -160,7 +160,7 @@ class SystemConfigurationController extends Controller
     public function policyIndex($type)
     {
         $policy = SystemConfiguration::where('type', $type)->first();
-        return view('admin.default.policies.index', compact('policy'));
+        return view('admin.policies.index', compact('policy'));
     }
 
     //policy info update

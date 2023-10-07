@@ -37,7 +37,7 @@ class PageOptimizationController extends Controller
         }
 
         // dd($pageoptimizations);
-        return view('admin.default.optimization.pageoptimization.index', compact('pageoptimizations', 'search'));
+        return view('admin.optimization.pageoptimization.index', compact('pageoptimizations', 'search'));
     }
 
     /**
@@ -71,7 +71,7 @@ class PageOptimizationController extends Controller
     {
         $sitepages = SitePage::all();
 
-        return view('admin.default.optimization.pageoptimization.create', compact('sitepages'));
+        return view('admin.optimization.pageoptimization.create', compact('sitepages'));
     }
 
     /**
@@ -93,7 +93,7 @@ class PageOptimizationController extends Controller
     public function edit(PageOptimization $page_optimization)
     {
         $sitepages = SitePage::all();
-        return view('admin.default.optimization.pageoptimization.edit', compact('page_optimization', 'sitepages'));
+        return view('admin.optimization.pageoptimization.edit', compact('page_optimization', 'sitepages'));
     }
 
     /**

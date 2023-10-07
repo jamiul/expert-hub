@@ -34,7 +34,7 @@ class SeminarSoftwareController extends Controller
         }
 
         // $seminar_software = $seminar_software->paginate(15);
-        return view('admin.default.seminar_module.seminar_software.index', compact('seminar_softwares', 'search'));
+        return view('admin.seminar_module.seminar_software.index', compact('seminar_softwares', 'search'));
     }
 
     /**
@@ -92,7 +92,7 @@ class SeminarSoftwareController extends Controller
      */
     public function edit(SeminarSoftware $seminar_software)
     {
-        return view('admin.default.seminar_module.seminar_software.edit', compact('seminar_software'));
+        return view('admin.seminar_module.seminar_software.edit', compact('seminar_software'));
     }
 
     /**

@@ -42,7 +42,7 @@ class WorkExperienceController extends Controller
     {
         $work_exp = WorkExperience::findOrFail(decrypt($id));
         if (isFreelancer()) {
-            return view('frontend.default.user.freelancer.setting.work_experience_edit', compact('work_exp'));
+            return view('frontend.user.freelancer.setting.work_experience_edit', compact('work_exp'));
         }
     }
 

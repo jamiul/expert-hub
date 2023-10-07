@@ -54,7 +54,7 @@ class HomeController extends Controller
             $subjectCounts[$subject] += $scholarship->available_slots;
         }
 
-        return view('frontend.default.index', compact('subjectCounts', 'seminars', 'scholarships', 'services', 'consultant_categories', 'skills'));
+        return view('frontend.index', compact('subjectCounts', 'seminars', 'scholarships', 'services', 'consultant_categories', 'skills'));
     }
 
     //Admin login
@@ -72,12 +72,12 @@ class HomeController extends Controller
         if (Auth::check()) {
             return redirect()->route('home');
         }
-        return view('frontend.default.user_login');
+        return view('frontend.user_login');
     }
 
     public function adminDashboard()
     {
-        return view('admin.default.dashboard');
+        return view('admin.dashboard.dashboard');
     }
 
     //Redirect user-based dashboard
@@ -86,9 +86,9 @@ class HomeController extends Controller
         $user_profile = UserProfile::where('user_id', Auth::user()->id)->first();
 
         if (isFreelancer()) {
-            return view('frontend.default.user.freelancer.dashboard');
+            return view('frontend.user.freelancer.dashboard');
         } elseif (isClient()) {
-            return view('frontend.default.user.client.dashboard');
+            return view('frontend.user.client.dashboard');
         } else {
             abort(404);
         }
@@ -107,7 +107,7 @@ class HomeController extends Controller
         foreach (explode(',', $project->attachments) as $attachment_id) {
             $attachment = Upload::find($attachment_id);
         }
-        return view('frontend.default.project-details.project-single', compact('project', 'jobPosted', 'jobOpen', 'similar_types', 'skill', 'attachment'));
+        return view('frontend.project-details.project-single', compact('project', 'jobPosted', 'jobOpen', 'similar_types', 'skill', 'attachment'));
     }
 
     //Show details info of specific project
@@ -128,14 +128,14 @@ class HomeController extends Controller
                 }
             )->first();
         }
-        return view('frontend.default.private_project_single', compact('project', 'chat_thread'));
+        return view('frontend.private_project_single', compact('project', 'chat_thread'));
     }
 
     public function clientDetails($username)
     {
         $client = User::where('user_name', $username)->first();
         $open_projects = Project::where('client_user_id', $client->id)->biddable()->open()->notcancel()->latest()->get();
-        return view('frontend.default.client-single', compact('client', 'open_projects'));
+        return view('frontend.client-single', compact('client', 'open_projects'));
     }
 
     //Show all client's list to user
@@ -143,7 +143,7 @@ class HomeController extends Controller
     {
         $clients = UserProfile::where('user_role_id', '3')->paginate(8);
         $total_clients = UserProfile::where('user_role_id', '3')->get();
-        return view('frontend.default.clients-listing', compact('clients', 'total_clients'));
+        return view('frontend.clients-listing', compact('clients', 'total_clients'));
     }
 
     //Show all freelancer's list to user
@@ -151,7 +151,7 @@ class HomeController extends Controller
     {
         $freelancers = UserProfile::where('user_role_id', '2')->paginate(8);
         $total_freelancers = UserProfile::where('user_role_id', '2')->get();
-        return view('frontend.default.freelancers-listing', compact('freelancers', 'total_freelancers'));
+        return view('frontend.freelancers-listing', compact('freelancers', 'total_freelancers'));
     }
 
     /**
@@ -172,7 +172,7 @@ class HomeController extends Controller
             abort(404);
         }
 
-        return view('frontend.default.freelancer.freelancer-single', compact('freelancer'));
+        return view('frontend.freelancer.freelancer-single', compact('freelancer'));
     }
 
     // Freelancer meeting arrange
@@ -181,7 +181,7 @@ class HomeController extends Controller
         $user = User::where('user_name', $user_name)->first();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
         $user_account = FreelancerAccount::where('user_id', $user->id)->first();
-        return view('frontend.default.freelancer-details', compact('user', 'user_profile', 'user_account'));
+        return view('frontend.freelancer-details', compact('user', 'user_profile', 'user_account'));
     }
 
     //check if username exists

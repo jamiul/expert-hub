@@ -51,7 +51,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('frontend.default.user_sign_up');
+        return view('frontend.user_sign_up');
     }
 
     public function register(Request $request)

@@ -17,7 +17,7 @@ class CountryController extends Controller
     {
         if (Gate::allows('country_index')) {
             $countries = Country::paginate(10);
-            return view('admin.default.system_configurations.countries.index', compact('countries'));
+            return view('admin.system_configurations.countries.index', compact('countries'));
         } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();
@@ -55,7 +55,7 @@ class CountryController extends Controller
     {
         if (Gate::allows('country_edit')) {
             $country = Country::findOrFail(decrypt($id));
-            return view('admin.default.system_configurations.countries.edit', compact('country'));
+            return view('admin.system_configurations.countries.edit', compact('country'));
         } else {
             flash(translate('You do not have access permission!'))->warning();
             return back();

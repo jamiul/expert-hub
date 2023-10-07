@@ -20,7 +20,7 @@ class CurrencyController extends Controller
     public function index()
     {
         $currencies = Currency::all();
-        return view('admin.default.system_configurations.currencies.index', compact('currencies'));
+        return view('admin.system_configurations.currencies.index', compact('currencies'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CurrencyController extends Controller
      */
     public function create()
     {
-        return view('admin.default.system_configurations.currencies.create');
+        return view('admin.system_configurations.currencies.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class CurrencyController extends Controller
     public function edit($id)
     {
         $currency = Currency::findOrFail(decrypt($id));
-        return view('admin.default.system_configurations.currencies.edit', compact('currency'));
+        return view('admin.system_configurations.currencies.edit', compact('currency'));
     }
 
     /**
@@ -122,6 +122,6 @@ class CurrencyController extends Controller
     public function setCurrency()
     {
         $currencies = Currency::all();
-        return view('admin.default.system_configurations.currencies.set_currency', compact('currencies'));
+        return view('admin.system_configurations.currencies.set_currency', compact('currencies'));
     }
 }

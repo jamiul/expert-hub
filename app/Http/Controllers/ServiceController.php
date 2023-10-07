@@ -27,7 +27,7 @@ class ServiceController extends Controller
     public function freelancerIndex()
     {
         $services = Auth::user()->services()->paginate(12);
-        return view('frontend.default.user.freelancer.projects.services.index', compact('services'));
+        return view('frontend.user.freelancer.projects.services.index', compact('services'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ServiceController extends Controller
     public function create()
     {
         if (ServicesUtility::can_create_service() == 1) {
-            return view('frontend.default.user.freelancer.projects.services.create');
+            return view('frontend.user.freelancer.projects.services.create');
         }
 
         flash(translate('Sorry! Your service creation limit is over.'))->warning();
@@ -100,7 +100,7 @@ class ServiceController extends Controller
         if ($service != null) {
             $service_packages = $service->service_packages;
 
-            return view('frontend.default.services-single', compact('service', 'service_packages'));
+            return view('frontend.services-single', compact('service', 'service_packages'));
         }
 
         abort(404);
@@ -117,7 +117,7 @@ class ServiceController extends Controller
         $service = Service::where('slug', $slug)->first();
         $service_packages = $service->service_packages;
 
-        return view('frontend.default.user.freelancer.projects.services.edit', compact('service', 'service_packages'));
+        return view('frontend.user.freelancer.projects.services.edit', compact('service', 'service_packages'));
     }
 
     /**
@@ -224,34 +224,34 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('frontend.default.user.freelancer.projects.services.index');
+        return view('frontend.user.freelancer.projects.services.index');
     }
 
     public function soldServices()
     {
         $this->middleware('freelancer');
         $purchasedServices = ServicePackagePayment::where('service_owner_id', Auth::user()->id)->latest()->paginate(12);
-        return view('frontend.default.user.freelancer.projects.services.purchased', compact('purchasedServices'));
+        return view('frontend.user.freelancer.projects.services.purchased', compact('purchasedServices'));
     }
 
     public function clientPurchasedServices()
     {
         $this->middleware('client');
         $purchasedServices = ServicePackagePayment::where('user_id', Auth::user()->id)->latest()->paginate(12);
-        return view('frontend.default.user.client.services.purchased', compact('purchasedServices'));
+        return view('frontend.user.client.services.purchased', compact('purchasedServices'));
     }
 
     public function adminAllServices()
     {
         $this->middleware('admin');
         $services = Service::latest()->paginate(12);
-        return view('admin.default.services.index', compact('services'));
+        return view('admin.services.index', compact('services'));
     }
 
     public function cancelService($id)
     {
         $purchased_service = ServicePackagePayment::findOrFail($id);
-        return view('frontend.default.user.client.services.service_cancel_request', compact('purchased_service'));
+        return view('frontend.user.client.services.service_cancel_request', compact('purchased_service'));
     }
 
     public function cancelServiceStore(Request $request)
@@ -270,19 +270,19 @@ class ServiceController extends Controller
     {
         $this->middleware('client');
         $purchasedServices = ServicePackagePayment::where('user_id', Auth::user()->id)->where('cancel_requested', 1)->latest()->paginate(12);
-        return view('frontend.default.user.client.services.cancel_requested', compact('purchasedServices'));
+        return view('frontend.user.client.services.cancel_requested', compact('purchasedServices'));
     }
 
     public function adminRequestedServicesForCancellation()
     {
         $service_payments = ServicePackagePayment::orderBy('id', 'desc')->where('cancel_requested', 1)->where('cancel_status', 0)->paginate(12);
-        return view('admin.default.service_payment_history.cancel_requested', compact('service_payments'));
+        return view('admin.service_payment_history.cancel_requested', compact('service_payments'));
     }
 
     public function cancelServiceRequestShow(Request $request)
     {
         $requested_cancel_service = ServicePackagePayment::findOrFail($request->id);
-        return view('admin.default.service_payment_history.cancel_requested_show_modal', compact('requested_cancel_service'));
+        return view('admin.service_payment_history.cancel_requested_show_modal', compact('requested_cancel_service'));
     }
 
     public function cancelServiceRequestAccepted(Request $request)
@@ -371,13 +371,13 @@ class ServiceController extends Controller
     {
         $this->middleware('admin');
         $service_payments = ServicePackagePayment::orderBy('id', 'desc')->where('cancel_status', 1)->paginate(12);
-        return view('admin.default.service_payment_history.cancelled_services', compact('service_payments'));
+        return view('admin.service_payment_history.cancelled_services', compact('service_payments'));
     }
 
     public function clientCancelledServices()
     {
         $this->middleware('client');
         $purchasedServices = ServicePackagePayment::where('user_id', Auth::user()->id)->where('cancel_status', 1)->latest()->paginate(12);
-        return view('frontend.default.user.client.services.cancelled', compact('purchasedServices'));
+        return view('frontend.user.client.services.cancelled', compact('purchasedServices'));
     }
 }

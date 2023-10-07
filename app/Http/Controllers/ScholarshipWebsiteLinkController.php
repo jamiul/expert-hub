@@ -31,7 +31,7 @@ class ScholarshipWebsiteLinkController extends Controller
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.who_can_apply.index', compact('categories', 'sort_search'));
+        return view('admin.scholarship_module.who_can_apply.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ScholarshipWebsiteLinkController extends Controller
     {
         $level = ScholarshipWebsiteLink::find($id);
 
-        return view('admin.default.scholarship_module.who_can_apply.edit', compact('level'));
+        return view('admin.scholarship_module.who_can_apply.edit', compact('level'));
     }
 
     /**

@@ -16,7 +16,7 @@ class ProfileController extends Controller
     // Show admin profile
     public function adminProfile()
     {
-        return view('admin.default.profiles.index');
+        return view('admin.profiles.index');
     }
 
     // Update admin profile
@@ -58,9 +58,9 @@ class ProfileController extends Controller
             $verification = $user->verifications()->where('type', 'identity_verification')->first();
 
             if (isClient()) {
-                return view('frontend.default.user.client.settings.profile', compact('user', 'verification'));
+                return view('frontend.user.client.settings.profile', compact('user', 'verification'));
             } elseif (isFreelancer()) {
-                return view('frontend.default.user.freelancer.setting.profile', compact('user', 'verification'));
+                return view('frontend.user.freelancer.setting.profile', compact('user', 'verification'));
             } else {
                 flash(translate('Sorry! Something went wrong.'))->error();
                 return back();
@@ -73,7 +73,7 @@ class ProfileController extends Controller
     public function userAccount()
     {
         $freelancer_account = FreelancerAccount::where('user_id', Auth::user()->id)->first();
-        return view('frontend.default.user.freelancer.setting.account', compact('freelancer_account'));
+        return view('frontend.user.freelancer.setting.account', compact('freelancer_account'));
     }
 
     public function basicInfoUpdate(Request $request)

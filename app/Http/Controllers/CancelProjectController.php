@@ -31,7 +31,7 @@ class CancelProjectController extends Controller
         } else {
             $cancel_projects = CancelProject::orderBy('created_at', 'desc')->paginate(10);
         }
-        return view('admin.default.project.project_cancel_request.request_lists', compact('cancel_projects', 'client_id'));
+        return view('admin.project.project_cancel_request.request_lists', compact('cancel_projects', 'client_id'));
     }
 
     //Send Cancel Request by user
@@ -72,7 +72,7 @@ class CancelProjectController extends Controller
         $cancel_project = CancelProject::findOrFail($request->id);
         $cancel_project->viewed = 1;
         $cancel_project->save();
-        return view('admin.default.project.project_cancel_request.request_details_modal', compact('cancel_project'));
+        return view('admin.project.project_cancel_request.request_details_modal', compact('cancel_project'));
     }
 
     //Cancel Request accepted by admin

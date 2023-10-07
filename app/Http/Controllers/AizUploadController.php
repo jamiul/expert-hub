@@ -49,12 +49,12 @@ class AizUploadController extends Controller
 
         $all_uploads = $all_uploads->paginate(60)->appends(request()->query());
 
-        return view('admin.default.uploaded_files.index', compact('all_uploads', 'search', 'sort_by'));
+        return view('admin.uploaded_files.index', compact('all_uploads', 'search', 'sort_by'));
     }
 
     public function create()
     {
-        return view('admin.default.uploaded_files.create');
+        return view('admin.uploaded_files.create');
     }
 
     public function showUploader(Request $request)
@@ -254,6 +254,6 @@ class AizUploadController extends Controller
     public function file_info(Request $request)
     {
         $file = Upload::findOrFail($request['id']);
-        return view('admin.default.uploaded_files.info', compact('file'));
+        return view('admin.uploaded_files.info', compact('file'));
     }
 }

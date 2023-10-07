@@ -24,7 +24,7 @@ class StaffController extends Controller
     public function index()
     {
         $staffs = Staff::all();
-        return view('admin.default.staffs.index', compact('staffs'));
+        return view('admin.staffs.index', compact('staffs'));
     }
 
     /**
@@ -35,7 +35,7 @@ class StaffController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('admin.default.staffs.create', compact('roles'));
+        return view('admin.staffs.create', compact('roles'));
     }
 
     /**
@@ -87,7 +87,7 @@ class StaffController extends Controller
     {
         $staff = Staff::findOrFail(decrypt($id));
         $roles = Role::all();
-        return view('admin.default.staffs.edit', compact('staff', 'roles'));
+        return view('admin.staffs.edit', compact('staff', 'roles'));
     }
 
     /**

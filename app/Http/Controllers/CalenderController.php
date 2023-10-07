@@ -40,7 +40,7 @@ class CalenderController extends Controller
         // $scholarships = $scholarships->paginate(15);
         // dd($scholarships);
 
-        return view('admin.default.seminar_module.calender.index', compact('scholarships', 'sort_search'));
+        return view('admin.seminar_module.calender.index', compact('scholarships', 'sort_search'));
     }
 
     /**
@@ -59,7 +59,7 @@ class CalenderController extends Controller
         $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
         $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories', "scholarship_levels", 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
+        return view('admin.scholarship_module.scholarship.create', compact('scholarship_categories', "scholarship_levels", 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
     }
 
     /**
@@ -157,7 +157,7 @@ class CalenderController extends Controller
         $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
         $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship', 'scholarship_categories', 'scholarship_levels', 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
+        return view('admin.scholarship_module.scholarship.edit', compact('scholarship', 'scholarship_categories', 'scholarship_levels', 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
     }
 
     /**
@@ -231,12 +231,12 @@ class CalenderController extends Controller
     {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
-        return view("frontend.default.find-scholarship.listing", compact('scholarships'));
+        return view("frontend.find-scholarship.listing", compact('scholarships'));
     }
 
     public function scholarship_details($slug)
     {
         $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.default.find-scholarship.details", compact('scholarship'));
+        return view("frontend.find-scholarship.details", compact('scholarship'));
     }
 }

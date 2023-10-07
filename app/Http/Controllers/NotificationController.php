@@ -17,7 +17,7 @@ class NotificationController extends Controller
         NotificationUtility::make_my_notifications_seen();
         $notifications = NotificationUtility::get_my_notifications(10, false, 0, true);
 
-        return view('admin.default.notifications', compact('notifications'));
+        return view('admin.notifications', compact('notifications'));
     }
 
     public function frontendListing()
@@ -25,7 +25,7 @@ class NotificationController extends Controller
         NotificationUtility::make_my_notifications_seen();
         $notifications = NotificationUtility::get_my_notifications(5, false, 0, true);
 
-        return view('frontend.default.user.notifications', compact('notifications'));
+        return view('frontend.user.notifications', compact('notifications'));
     }
 
     /**

@@ -21,7 +21,7 @@ class ServicePaymentController extends Controller
     public function adminIndex()
     {
         $service_payments = ServicePackagePayment::orderBy('id', 'desc')->paginate(12);
-        return view('admin.default.service_payment_history.index', compact('service_payments'));
+        return view('admin.service_payment_history.index', compact('service_payments'));
     }
 
     // Offline Service Payment history

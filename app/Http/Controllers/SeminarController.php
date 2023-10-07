@@ -44,7 +44,7 @@ class SeminarController extends Controller
         }
 
 
-        return view('admin.default.seminar_module.seminar.index', compact('seminars', 'search'));
+        return view('admin.seminar_module.seminar.index', compact('seminars', 'search'));
     }
 
     /**
@@ -103,7 +103,7 @@ class SeminarController extends Controller
         $languages = Language::all();
         $course_instructors = getConsultants();
 
-        return view('admin.default.seminar_module.seminar.create', compact('seminar_modes', 'seminar_softwares', 'languages', 'course_instructors'));
+        return view('admin.seminar_module.seminar.create', compact('seminar_modes', 'seminar_softwares', 'languages', 'course_instructors'));
     }
 
     /**
@@ -124,7 +124,7 @@ class SeminarController extends Controller
      */
     public function edit(Seminar $seminar)
     {
-        return view('admin.default.seminar_module.seminar.edit', compact('seminar'));
+        return view('admin.seminar_module.seminar.edit', compact('seminar'));
     }
 
     /**

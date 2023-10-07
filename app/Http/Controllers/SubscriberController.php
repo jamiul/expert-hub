@@ -20,7 +20,7 @@ class SubscriberController extends Controller
     public function index()
     {
         $subscribers = Subscriber::orderBy('created_at', 'desc')->paginate(15);
-        return view('admin.default.marketing.subscribers.index', compact('subscribers'));
+        return view('admin.marketing.subscribers.index', compact('subscribers'));
     }
 
     /**

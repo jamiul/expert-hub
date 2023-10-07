@@ -31,20 +31,20 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::where('client_user_id', Auth::user()->id)->latest()->paginate(10);
-        return view('frontend.default.user.client.projects.list', compact('projects'));
+        return view('frontend.user.client.projects.list', compact('projects'));
     }
 
     public function myOpenProject()
     {
         $projects = Project::where('client_user_id', Auth::user()->id)->open()->biddable()->notcancel()->latest()->paginate(10);
-        return view('frontend.default.user.client.projects.my_open_projects', compact('projects'));
+        return view('frontend.user.client.projects.my_open_projects', compact('projects'));
     }
 
     public function myRunningProject()
     {
         if (isClient()) {
             $projects = Project::where('client_user_id', Auth::user()->id)->where('biddable', '0')->open()->notcancel()->latest()->paginate(10);
-            return view('frontend.default.user.client.projects.my_running_project', compact('projects'));
+            return view('frontend.user.client.projects.my_running_project', compact('projects'));
         } elseif (isFreelancer()) {
             $running_projects = DB::table('projects')
                 ->join('project_users', 'projects.id', '=', 'project_users.project_id')
@@ -54,7 +54,7 @@ class ProjectController extends Controller
                 ->select('projects.id', 'project_users.hired_at')
                 ->distinct()
                 ->paginate(10);
-            return view('frontend.default.user.freelancer.projects.my_running_project', compact('running_projects'));
+            return view('frontend.user.freelancer.projects.my_running_project', compact('running_projects'));
         }
     }
 
@@ -62,14 +62,14 @@ class ProjectController extends Controller
     {
         $bidded_projects = ProjectBid::where('bid_by_user_id', Auth::user()->id)->paginate(10);
         $total_bidded_projects = ProjectBid::where('bid_by_user_id', Auth::user()->id)->get();
-        return view('frontend.default.user.freelancer.projects.bidded', compact('bidded_projects', 'total_bidded_projects'));
+        return view('frontend.user.freelancer.projects.bidded', compact('bidded_projects', 'total_bidded_projects'));
     }
 
     public function myCancelledProject()
     {
         if (isClient()) {
             $projects = Project::where('client_user_id', Auth::user()->id)->where('cancel_status', '1')->latest()->paginate(10);
-            return view('frontend.default.user.client.projects.my_cancelled_project', compact('projects'));
+            return view('frontend.user.client.projects.my_cancelled_project', compact('projects'));
         } elseif (isFreelancer()) {
             $cancelled_projects = DB::table('projects')
                 ->orderBy('projects.created_at', 'desc')
@@ -80,7 +80,7 @@ class ProjectController extends Controller
                 ->distinct()
                 ->paginate(10);
 
-            return view('frontend.default.user.freelancer.projects.my_cancelled_project', compact('cancelled_projects'));
+            return view('frontend.user.freelancer.projects.my_cancelled_project', compact('cancelled_projects'));
         }
     }
 
@@ -88,10 +88,10 @@ class ProjectController extends Controller
     {
         if (isClient()) {
             $projects = Project::where('client_user_id', Auth::user()->id)->closed()->latest()->paginate(10);
-            return view('frontend.default.user.client.projects.my_completed_project', compact('projects'));
+            return view('frontend.user.client.projects.my_completed_project', compact('projects'));
         } elseif (isFreelancer()) {
             $completed_projects = getCompletedProjectsByFreelancer(Auth::user()->id)->paginate(10);
-            return view('frontend.default.user.freelancer.projects.my_completed_project', compact('completed_projects'));
+            return view('frontend.user.freelancer.projects.my_completed_project', compact('completed_projects'));
         }
     }
 
@@ -100,7 +100,7 @@ class ProjectController extends Controller
         $project = Project::where('slug', $slug)->first();
         $project_bids = $project->bids;
         $bid_users = ProjectBid::where('project_id', $project->id)->latest()->paginate(10);
-        return view('frontend.default.user.client.projects.bids', compact('project', 'project_bids', 'bid_users'));
+        return view('frontend.user.client.projects.bids', compact('project', 'project_bids', 'bid_users'));
     }
 
     /**
@@ -116,7 +116,7 @@ class ProjectController extends Controller
         $skills = Skill::all();
         $client_package = Auth::user()->userPackage;
 
-        return view('frontend.default.user.client.projects.create', compact('categories', 'skills', 'client_package', 'budget_aud', 'budget_usd'));
+        return view('frontend.user.client.projects.create', compact('categories', 'skills', 'client_package', 'budget_aud', 'budget_usd'));
     }
 
     /**
@@ -212,7 +212,7 @@ class ProjectController extends Controller
         $skills = Skill::all();
         $client_package = Auth::user()->userPackage;
         if ($project->closed == '0') {
-            return view('frontend.default.user.client.projects.edit', compact('categories', 'skills', 'project', 'client_package', 'budget_aud', 'budget_usd'));
+            return view('frontend.user.client.projects.edit', compact('categories', 'skills', 'project', 'client_package', 'budget_aud', 'budget_usd'));
         } else {
             return redirect()->back();
         }
@@ -266,7 +266,7 @@ class ProjectController extends Controller
             flash(translate('Project has been cancelled successfully'))->success();
             return redirect()->back();
         } elseif ($active_project != null) {
-            return view('frontend.default.user.projects.project_cancel_request', compact('project'));
+            return view('frontend.user.projects.project_cancel_request', compact('project'));
         } else {
             flash(translate('Something went wrong'))->error();
             return back();

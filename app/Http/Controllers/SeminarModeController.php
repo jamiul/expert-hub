@@ -35,7 +35,7 @@ class SeminarModeController extends Controller
 
         // $seminar_modes = $seminar_modes->paginate(15);
 
-        return view('admin.default.seminar_module.seminar_mode.index', compact('search', 'seminar_modes'));
+        return view('admin.seminar_module.seminar_mode.index', compact('search', 'seminar_modes'));
     }
 
     /**
@@ -92,7 +92,7 @@ class SeminarModeController extends Controller
      */
     public function edit(SeminarMode $seminar_mode)
     {
-        return view('admin.default.seminar_module.seminar_mode.edit', compact('seminar_mode'));
+        return view('admin.seminar_module.seminar_mode.edit', compact('seminar_mode'));
     }
 
     /**

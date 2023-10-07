@@ -20,18 +20,18 @@ class PackageController extends Controller
     {
         $packages = Package::latest()->where('type', $type)->paginate(10);
         if ($type == 'freelancer') {
-            return view('admin.default.freelancer.packages.index', compact('packages'));
+            return view('admin.freelancer.packages.index', compact('packages'));
         } elseif ($type == 'client') {
-            return view('admin.default.client.packages.index', compact('packages'));
+            return view('admin.client.packages.index', compact('packages'));
         }
     }
 
     public function create($type)
     {
         if ($type == 'freelancer') {
-            return view('admin.default.freelancer.packages.create');
+            return view('admin.freelancer.packages.create');
         } elseif ($type == 'client') {
-            return view('admin.default.client.packages.create');
+            return view('admin.client.packages.create');
         }
     }
 
@@ -87,7 +87,7 @@ class PackageController extends Controller
     public function edit($id)
     {
         $package = Package::findOrFail(decrypt($id));
-        return view('admin.default.' . $package->type . '.' . 'packages.edit', compact('package'));
+        return view('admin.' . $package->type . '.' . 'packages.edit', compact('package'));
     }
 
     public function update(Request $request, $id)
@@ -157,10 +157,10 @@ class PackageController extends Controller
         if (Auth::check()) {
             if (isClient()) {
                 $packages = Package::where('type', 'client')->where('active', '1')->get();
-                return view('frontend.default.user.client.package_select', compact('packages'));
+                return view('frontend.user.client.package_select', compact('packages'));
             } elseif (isFreelancer()) {
                 $packages = Package::where('type', 'freelancer')->where('active', '1')->get();
-                return view('frontend.default.user.freelancer.package_select', compact('packages'));
+                return view('frontend.user.freelancer.package_select', compact('packages'));
             }
         } else {
             abort(404);
@@ -170,7 +170,7 @@ class PackageController extends Controller
     public function getPackagePurchaseModal(Request $request)
     {
         $package = Package::findOrFail($request->id);
-        return view('frontend.default.partials.package_purchase_modal', compact('package'));
+        return view('frontend.partials.package_purchase_modal', compact('package'));
     }
 
     public function packagePurchaseFree($id)
@@ -219,6 +219,6 @@ class PackageController extends Controller
     public function getBidModal(Request $request)
     {
         $project = Project::findOrFail($request->id);
-        return view('frontend.default.partials.bid_for_project_modal', compact('project'));
+        return view('frontend.partials.bid_for_project_modal', compact('project'));
     }
 }

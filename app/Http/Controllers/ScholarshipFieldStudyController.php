@@ -31,7 +31,7 @@ class ScholarshipFieldStudyController extends Controller
 
         $categories = $categories->paginate(15);
         // dd($categories);
-        return view('admin.default.scholarship_module.FieldOfStudy.index', compact('categories', 'sort_search'));
+        return view('admin.scholarship_module.FieldOfStudy.index', compact('categories', 'sort_search'));
     }
 
     /**
@@ -92,7 +92,7 @@ class ScholarshipFieldStudyController extends Controller
         $studyField = ScholarshipFieldStudy::find($id);
         // $all_categories = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.FieldOfStudy.edit', compact('studyField'));
+        return view('admin.scholarship_module.FieldOfStudy.edit', compact('studyField'));
     }
 
     /**

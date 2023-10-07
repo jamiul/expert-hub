@@ -24,7 +24,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.default.website.pages-new');
+        return view('admin.website.pages-new');
     }
 
     /**
@@ -70,7 +70,7 @@ class PageController extends Controller
     {
         $page = Page::where('slug', $id)->first();
         if ($page != null) {
-            return view('admin.default.website.pages-edit', compact('page'));
+            return view('admin.website.pages-edit', compact('page'));
         }
         abort(404);
     }
@@ -117,7 +117,7 @@ class PageController extends Controller
     {
         $page = Page::where('slug', $slug)->first();
         if ($page != null) {
-            return view('frontend.default.custom_page', compact('page'));
+            return view('frontend.custom_page', compact('page'));
         }
         abort(404);
     }

@@ -19,7 +19,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\EmailConfigurationController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\ExpertsController;
+use App\Http\Controllers\ExpertiseController;
 use App\Http\Controllers\GeneralConfigurationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
@@ -73,8 +73,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('skills', SkillController::class);
     Route::get('/skills/destroy/{id}', [SkillController::class, 'destroy'])->name('skills.delete');
 
-    Route::resource('experts', ExpertsController::class);
-    Route::get('/experts/destroy/{id}', [ExpertsController::class, 'destroy'])->name('experts.delete');
+    Route::resource('expertise', ExpertiseController::class);
+    Route::get('/expertise/destroy/{id}', [ExpertiseController::class, 'destroy'])->name('expertise.delete');
 
     Route::resource('consultant-categories', ConsultantCategoryController::class);
     Route::get('/consultant-categories/destroy/{id}', [ConsultantCategoryController::class, 'destroy'])->name('consultant-categories.delete');

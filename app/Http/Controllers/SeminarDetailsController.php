@@ -40,14 +40,14 @@ class SeminarDetailsController extends Controller
         $scholarships = $scholarships->paginate(15);
         // dd($scholarships);
 
-        return view('admin.default.seminar_module.seminar.index', compact('scholarships', 'sort_search'));
+        return view('admin.seminar_module.seminar.index', compact('scholarships', 'sort_search'));
     }
 
     public function details()
     {
 
 
-        return view('frontend.default.seminar-details');
+        return view('frontend.seminar-details');
     }
 
     /**
@@ -66,7 +66,7 @@ class SeminarDetailsController extends Controller
         $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
         $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.create', compact('scholarship_categories', "scholarship_levels", 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
+        return view('admin.scholarship_module.scholarship.create', compact('scholarship_categories', "scholarship_levels", 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
     }
 
     /**
@@ -164,7 +164,7 @@ class SeminarDetailsController extends Controller
         $scholarship_whoCanApply = ScholarshipWhoCanApply::all();
         $scholarship_fieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.default.scholarship_module.scholarship.edit', compact('scholarship', 'scholarship_categories', 'scholarship_levels', 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
+        return view('admin.scholarship_module.scholarship.edit', compact('scholarship', 'scholarship_categories', 'scholarship_levels', 'scholarship_universities', 'scholarship_country', 'scholarship_city', 'scholarship_qualification', 'scholarship_whoCanApply', 'scholarship_fieldStudy'));
     }
 
     /**
@@ -237,12 +237,12 @@ class SeminarDetailsController extends Controller
     {
         $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
         dd($scholarships);
-        return view("frontend.default.find-scholarship.listing", compact('scholarships'));
+        return view("frontend.find-scholarship.listing", compact('scholarships'));
     }
 
     public function seminarDetails($id)
     {
         $seminar = Seminar::where('id', $id)->first();
-        return view("frontend.default.seminar-details", compact('seminar'));
+        return view("frontend.seminar-details", compact('seminar'));
     }
 }

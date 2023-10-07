@@ -27,7 +27,7 @@ class VerificationController extends Controller
         }
 
         $users = $users->paginate(10);
-        return view('admin.default.verification_request.index', compact('users', 'sort_search'));
+        return view('admin.verification_request.index', compact('users', 'sort_search'));
     }
 
     //Verification Info sent to admin
@@ -55,7 +55,7 @@ class VerificationController extends Controller
     public function show($username)
     {
         $user = User::where('user_name', $username)->first();
-        return view('admin.default.verification_request.show', compact('user'));
+        return view('admin.verification_request.show', compact('user'));
     }
 
     public function verificationAccept(Request $request)

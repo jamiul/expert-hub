@@ -20,7 +20,7 @@ class SocialMediaConfigurationController extends Controller
     public function index()
     {
 
-        return view('admin.default.system_configurations.social_media_config.index');
+        return view('admin.system_configurations.social_media_config.index');
     }
 
 

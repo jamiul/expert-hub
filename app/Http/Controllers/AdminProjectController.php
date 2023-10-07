@@ -42,7 +42,7 @@ class AdminProjectController extends Controller
         } else {
             $projects = Project::latest()->paginate(12);
         }
-        return view('admin.default.project.projects.index', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
+        return view('admin.project.projects.index', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
     }
 
     //Admin can see all running projects in admin panel
@@ -64,7 +64,7 @@ class AdminProjectController extends Controller
 
         $projects = $projects->paginate(12);
 
-        return view('admin.default.project.projects.running_projects', compact('projects', 'sort_search', 'client_id'));
+        return view('admin.project.projects.running_projects', compact('projects', 'sort_search', 'client_id'));
     }
 
     //Admin can see all open projects in admin panel
@@ -94,7 +94,7 @@ class AdminProjectController extends Controller
         } else {
             $projects = Project::biddable()->open()->notcancel()->latest()->paginate(12);
         }
-        return view('admin.default.project.projects.open_projects', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
+        return view('admin.project.projects.open_projects', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
     }
 
     //Admin can see all cancelled projects in admin panel
@@ -125,7 +125,7 @@ class AdminProjectController extends Controller
             $projects = Project::where('cancel_status', '1')->latest()->paginate(12);
         }
 
-        return view('admin.default.project.projects.cancelled_projects', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
+        return view('admin.project.projects.cancelled_projects', compact('projects', 'col_name', 'query', 'sort_search', 'client_id'));
     }
 
     public function projectApproval(Request $request)

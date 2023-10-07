@@ -29,7 +29,7 @@ class FreelancerEducationController extends Controller
     {
         $education = EducationDetail::findOrFail(decrypt($id));
         if (isFreelancer()) {
-            return view('frontend.default.user.freelancer.setting.education_edit', compact('education'));
+            return view('frontend.user.freelancer.setting.education_edit', compact('education'));
         }
     }
 

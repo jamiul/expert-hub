@@ -21,7 +21,7 @@ class SkillController extends Controller
     public function index()
     {
         $skills = Skill::latest()->paginate(15);
-        return view('admin.default.freelancer.skills.index', compact('skills'));
+        return view('admin.freelancer.skills.index', compact('skills'));
     }
 
     /**
@@ -74,7 +74,7 @@ class SkillController extends Controller
     public function edit($id)
     {
         $skill = Skill::findOrFail(decrypt($id));
-        return view('admin.default.freelancer.skills.edit', compact('skill'));
+        return view('admin.freelancer.skills.edit', compact('skill'));
     }
 
     /**
