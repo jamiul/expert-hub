@@ -80,7 +80,7 @@
                                 <div class="card-footer">
                                 	@if ($project->cancel_status == 1)
                                 		@if($project->private == 1)
-                                			<a href="{{ route('freelancer.details', $project->hire_invitation->freelancer->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
+                                			<a href="{{ route('expert.details', $project->hire_invitation->freelancer->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 			                                    <span class="avatar avatar-xs">
 	                                                @if($project->hire_invitation->freelancer->photo != null)
 	                                                    <img src="{{ custom_asset($project->hire_invitation->freelancer->photo) }}">
@@ -122,7 +122,7 @@
 	                                    </span>
                                 	@elseif ($project->closed == 1)
 	                                	<div class="d-md-flex align-items-center">
-											<a href="{{ route('freelancer.details', $project->project_user->user->user_name) }}" target="_blank" class="d-md-flex mr-3 align-items-center text-inherit" tabindex="0">
+											<a href="{{ route('expert.details', $project->project_user->user->user_name) }}" target="_blank" class="d-md-flex mr-3 align-items-center text-inherit" tabindex="0">
 			                                    <span class="avatar avatar-xs">
 	                                                @if($project->project_user->user->photo != null)
 	                                                    <img src="{{ custom_asset($project->project_user->user->photo) }}">
@@ -153,7 +153,7 @@
 	                                        <span class="badge badge-inline badge-soft-secondary">{{ translate('You Already rated this client') }}</span>
 	                                    @endif
 									@elseif($project->private == 1)
-	                                    <a href="{{ route('freelancer.details', $project->hire_invitation->freelancer->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
+	                                    <a href="{{ route('expert.details', $project->hire_invitation->freelancer->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 		                                    <span class="avatar avatar-xs">
                                                 @if($project->hire_invitation->freelancer->photo != null)
                                                     <img src="{{ custom_asset($project->hire_invitation->freelancer->photo) }}">
@@ -182,7 +182,7 @@
 	                                        @endif
 										</div>
 									@elseif ($project->biddable == 0)
-										<a href="{{ route('freelancer.details', $project->project_user->user->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
+										<a href="{{ route('expert.details', $project->project_user->user->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 		                                    <span class="avatar avatar-xs">
                                                 @if($project->project_user->user->photo != null)
                                                     <img src="{{ custom_asset($project->project_user->user->photo) }}">

@@ -30,7 +30,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackagePaymentController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PageOptimizationController;
-use App\Http\Controllers\PaytoFreelancerController;
+use App\Http\Controllers\PaytoExpertController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectCategoryController;
 use App\Http\Controllers\ProjectController;
@@ -91,18 +91,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     // wallet balance add by admin
     Route::post('/wallet-balance-by-admin', [WalletController::class, 'walletPaymentByAdmin'])->name('admin_wallet.store');
 
-    //PackageController for Freelancer and Client
-    Route::get('/freelancer-package-index/{type}', [PackageController::class, 'index'])->name('freelancer_package.index');
-    Route::get('/freelancer-package-create/{type}', [PackageController::class, 'create'])->name('freelancer_package.create');
+    //PackageController for Expert and Client
+    Route::get('/expert-package-index/{type}', [PackageController::class, 'index'])->name('expert_package.index');
+    Route::get('/expert-package-create/{type}', [PackageController::class, 'create'])->name('expert_package.create');
     Route::post('/package-store', [PackageController::class, 'store'])->name('package.store');
     Route::post('/package-update/{id}', [PackageController::class, 'update'])->name('package.update');
     Route::get('/package-destroy/{id}', [PackageController::class, 'destroy'])->name('package.delete');
-    Route::get('/freelancer-package-edit/{id}', [PackageController::class, 'edit'])->name('freelancer_package.edit');
+    Route::get('/expert-package-edit/{id}', [PackageController::class, 'edit'])->name('expert_package.edit');
     Route::get('/client-package-index/{type}', [PackageController::class, 'index'])->name('client_package.index');
     Route::get('/client-package-create/{type}', [PackageController::class, 'create'])->name('client_package.create');
     Route::get('/client-package-edit/{id}', [PackageController::class, 'edit'])->name('client_package.edit');
 
-    //LanguageController for Freelancer and Client
+    //LanguageController for Expert and Client
     Route::resource('/languages', LanguageController::class);
 
     Route::group(['prefix' => 'languages'], function () {
@@ -152,9 +152,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::get('/general-configuration', [SystemConfigurationController::class, 'activationView'])->name('general_configuration');
     Route::post('/general-configuration-update', [SystemConfigurationController::class, 'updateActivation'])->name('system_configuration.update.activation');
-    Route::post('/freelancer-payment-configuration-update', [SystemConfigurationController::class, 'update'])->name('freelancer_payment_config_update');
+    Route::post('/expert-payment-configuration-update', [SystemConfigurationController::class, 'update'])->name('expert_payment_config_update');
 
-    Route::get('/freelancer-payment-configuration', [SystemConfigurationController::class, 'freelancerPaymentConfig'])->name('freelancer_payment_settings');
+    Route::get('/expert-payment-configuration', [SystemConfigurationController::class, 'expertPaymentConfig'])->name('expert_payment_settings');
     Route::get('/refund-settings', [SystemConfigurationController::class, 'refundSettings'])->name('refund_settings');
 
     Route::get('cancel-project-request/index', )->name('cancel-project-request.index');
@@ -174,13 +174,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     //Social Media config
     Route::resource('social-media-config', \App\Http\Controllers\SocialMediaConfigurationController::class);
 
-    Route::get('/all-freelancers', [UserController::class, 'allFreelancers'])->name('all_freelancers');
-    Route::get('/freelancer-info/{user_name}', [UserController::class, 'freelancerDetails'])->name('freelancer_info_show');
+    Route::get('/all-experts', [UserController::class, 'allExperts'])->name('all_experts');
+    Route::get('/expert-info/{user_name}', [UserController::class, 'expertDetails'])->name('expert_info_show');
 
     Route::get('/all-clients', [UserController::class, 'allClients'])->name('all_clients');
     Route::get('/client-info/{user_name}', [UserController::class, 'clientDetails'])->name('client_info_show');
     Route::get('user/ban/{id}', [UserController::class, 'destroy'])->name('user.ban');
-    Route::get('/user/login/{id}', [UserController::class, 'login'])->name('freelancers_clients.login');
+    Route::get('/user/login/{id}', [UserController::class, 'login'])->name('experts_clients.login');
 
     Route::get('/verification-requests', [VerificationController::class, 'index'])->name('verification_requests');
     Route::get('/verification-request/details/{username}', [VerificationController::class, 'show'])->name('verification_request_details');
@@ -265,12 +265,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     // Milestone payment History
     Route::get('/all-project-payments', [MilestonePaymentController::class, 'adminIndex'])->name('payment_history_for_admin');
 
-    // Milestone payment to freelancer
-    Route::get('/pay-to-user/{id}', [PaytoFreelancerController::class, 'payToFreelancer'])->name('pay_to_freelancer');
-    Route::get('/pay_to_freelancer/cancel/{id}', [PaytoFreelancerController::class, 'cancelRequest'])->name('pay_to_freelancer.cancel');
-    Route::get('/freelancer-payments', [PaytoFreelancerController::class, 'index'])->name('freelancer_payment.index');
-    Route::post('/pay-to-user/pay-store', [PaytoFreelancerController::class, 'pay'])->name('project_milestone_pay_from_admin');
-    Route::get('/withdraw-requests', [PaytoFreelancerController::class, 'withdrawRequests'])->name('withdraw_request.index');
+    // Milestone payment to expert
+    Route::get('/pay-to-user/{id}', [PaytoExpertController::class, 'payToExpert'])->name('pay_to_expert');
+    Route::get('/pay_to_expert/cancel/{id}', [PaytoExpertController::class, 'cancelRequest'])->name('pay_to_expert.cancel');
+    Route::get('/expert-payments', [PaytoExpertController::class, 'index'])->name('expert_payment.index');
+    Route::post('/pay-to-user/pay-store', [PaytoExpertController::class, 'pay'])->name('project_milestone_pay_from_admin');
+    Route::get('/withdraw-requests', [PaytoExpertController::class, 'withdrawRequests'])->name('withdraw_request.index');
 
     // Package payment History
     Route::get('/all-package-payments', [PackagePaymentController::class, 'adminIndex'])->name('package_payment_history_for_admin');
@@ -297,9 +297,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('addons', AddonController::class);
     Route::post('/addons/activation', [AddonController::class, 'activation'])->name('addons.activation');
 
-    //Freelancer Review
+    // Review
     Route::group(['prefix' => 'reviews'], function () {
-        Route::get('/freelancer', [ReviewController::class, 'freelancerReviewIndex'])->name('reviews.freelancer');
+        Route::get('/expert', [ReviewController::class, 'expertReviewIndex'])->name('reviews.expert');
         Route::get('/client', [ReviewController::class, 'clientReviewIndex'])->name('reviews.client');
         Route::post('/published', [ReviewController::class, 'updateReviewPublished'])->name('reviews.published');
     });

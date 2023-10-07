@@ -38,7 +38,7 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td><a target="_blank" href="{{ route('service.show', $service->slug) }}">{{ $service->title }}</a></td>
-                                <td><a target="_blank" href="{{ route('freelancer.details', $service->user->user_name) }}">{{ $service->user->name }}</a></td>
+                                <td><a target="_blank" href="{{ route('expert.details', $service->user->user_name) }}">{{ $service->user->name }}</a></td>
                                 <td>{{ count($service->service_packages) > 0 ? single_price($service->service_packages[0]->service_price) : single_price(0)}}</td>
                                 <td>{{ $service->created_at }}</td>
                             </tr>

@@ -47,7 +47,7 @@
                                                     <div class="card-body" style=" padding:13px;">
 
                                                         <a class=" featured_category text-dark" onclick="applyFilter()"
-                                                            href="{{ route('freelancer.category', $category->id) }}">
+                                                            href="{{ route('expert.category', $category->id) }}">
                                                             <p class="fs-20 fw-600 " style="height:25px; line-height:23px;">
                                                                 {{ $category->name }}
                                                             </p>
@@ -56,7 +56,7 @@
                                                         <div class="frequently-qsn-details text-normal "
                                                             style=" line-height:22px;">
                                                             {{ $category->description }}
-                                                            <a href="{{ route('freelancer.category', $category->id) }}"
+                                                            <a href="{{ route('expert.category', $category->id) }}"
                                                                 class="nav-toggle "style="color:#6560E6;">Find
                                                                 EduExpert</a>
                                                         </div>

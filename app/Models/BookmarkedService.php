@@ -7,7 +7,7 @@ use Scholarships;
 
 class BookmarkedService extends Model
 {
-    public function freelancer()
+    public function expert()
     {
         return $this->belongsTo(Service::class);
     }

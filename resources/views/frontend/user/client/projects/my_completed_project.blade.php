@@ -62,7 +62,7 @@
 								</div>
 								<div class="card-footer">
                                     <div class="d-flex align-items-center">
-										<a href="{{ route('freelancer.details', $project->project_user->user->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
+										<a href="{{ route('expert.details', $project->project_user->user->user_name) }}" target="_blank" class="d-flex mr-3 align-items-center text-inherit" tabindex="0">
 		                                    <span class="avatar avatar-xs">
                                                 @if($project->project_user->user->photo != null)
                                                     <img src="{{ custom_asset($project->project_user->user->photo) }}">

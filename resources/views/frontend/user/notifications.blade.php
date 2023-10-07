@@ -7,7 +7,7 @@
                 @if (isClient())
                     @include('frontend.user.client.inc.sidebar')
                 @else
-                    @include('frontend.user.freelancer.inc.sidebar')
+                    @include('frontend.user.expert.inc.sidebar')
                 @endif
                 <div class="aiz-user-panel">
                     <div class="card rounded-2 border-gray-light">

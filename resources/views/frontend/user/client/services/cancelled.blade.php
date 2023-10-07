@@ -44,7 +44,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a target="_blank" href="{{ route('service.show', $purchasedService->servicePackage->service->slug) }}">{{ \Illuminate\Support\Str::limit($purchasedService->servicePackage->service->title, 15, $end='...') }}</a></td>
-                                        <td><a target="_blank" href="{{ route('freelancer.details', $purchasedService->freelancer->user_name) }}">{{ $purchasedService->freelancer->name }}</a></td>
+                                        <td><a target="_blank" href="{{ route('expert.details', $purchasedService->freelancer->user_name) }}">{{ $purchasedService->freelancer->name }}</a></td>
                                         <td>{{ ucfirst($purchasedService->servicePackage->service_type) }}</td>
                                         <td>{{ single_price($purchasedService->amount) }}</td>
                                         <td>{{ single_price(($purchasedService->amount*$purchasedService->refund_percentage)/100) }}</td>

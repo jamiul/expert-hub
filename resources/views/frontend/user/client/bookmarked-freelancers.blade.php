@@ -19,7 +19,7 @@
                                         </a>
                                     </div>
                                     <div class="card-body">
-                                        <a href="{{ route('freelancer.details', $bookmarked_freelancer->freelancer->user_name) }}" class="text-inherit">
+                                        <a href="{{ route('expert.details', $bookmarked_freelancer->freelancer->user_name) }}" class="text-inherit">
                                            <div class="px-4 text-center mb-3">
                                                 <span class="avatar avatar-md mb-3">
                                                     @if($bookmarked_freelancer->freelancer->photo != null)
@@ -85,7 +85,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <a href="{{ route('freelancer.details', $bookmarked_freelancer->freelancer->user_name) }}" class="btn btn-primary btn-sm rounded-1">{{ translate('Hire Me') }}</a>
+                                                <a href="{{ route('expert.details', $bookmarked_freelancer->freelancer->user_name) }}" class="btn btn-primary btn-sm rounded-1">{{ translate('Hire Me') }}</a>
                                             </div>
                                         </div>
                                     </div>

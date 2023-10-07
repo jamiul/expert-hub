@@ -310,9 +310,9 @@ class ServiceController extends Controller
             $deduct_freelancer_amount = ($requested_cancel_service->freelancer_profit * $request->refund_percentage) / 100;
             $refund_to_client_amount = ($requested_cancel_service->amount * $request->refund_percentage) / 100;
 
-            $freelancer_profile = $requested_cancel_service->freelancer->profile;
-            $freelancer_profile->balance = $freelancer_profile->balance - $deduct_freelancer_amount;
-            $freelancer_profile->save();
+            $expert_profile = $requested_cancel_service->freelancer->profile;
+            $expert_profile->balance = $expert_profile->balance - $deduct_freelancer_amount;
+            $expert_profile->save();
 
             $client_profile = $requested_cancel_service->user->profile;
             $client_profile->balance = $client_profile->balance + $refund_to_client_amount;

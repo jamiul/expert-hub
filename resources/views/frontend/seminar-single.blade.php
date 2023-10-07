@@ -229,7 +229,7 @@
                                                 alt="{{ $service->user->name }}" height="35" width="35"
                                                 class="rounded-circle"></span>
                                                     <span class="d-flex flex-column justify-content-center">
-                          <a href="{{ route('freelancer.details', $freelancer->user_name) }}"
+                          <a href="{{ route('expert.details', $freelancer->user_name) }}"
                              class="text-secondary"><span class="font-weight-bold">{{ $freelancer->name }}</span></a>
                         </span>
                                                 </div>

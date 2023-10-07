@@ -22,7 +22,7 @@ class ConsultantCategoryController extends Controller
     public function index()
     {
         $consultant_categories = ConsultantCategory::orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.freelancer.consultant_categories.index', compact('consultant_categories'));
+        return view('admin.expert.consultant_categories.index', compact('consultant_categories'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ConsultantCategoryController extends Controller
     {
         $consultant_category = ConsultantCategory::findOrFail(decrypt($id));
         $consultant_categories = ConsultantCategory::whereNotIn('id', CategoryUtility::children_ids($consultant_category->id, true))->where('id', '!=', $consultant_category->id)->get();
-        return view('admin.freelancer.consultant_categories.edit', compact('consultant_category', 'consultant_categories'));
+        return view('admin.expert.consultant_categories.edit', compact('consultant_category', 'consultant_categories'));
     }
 
     /**

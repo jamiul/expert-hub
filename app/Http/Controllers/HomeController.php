@@ -165,7 +165,7 @@ class HomeController extends Controller
     {
         try {
             //TODO:: if freelancer set profile as private, do not display
-            $freelancer = User::where('user_name', $username)
+            $expert = User::where('user_name', $username)
                 ->where('user_type', 'freelancer')
                 ->where('banned', 0)
                 ->firstOrFail();

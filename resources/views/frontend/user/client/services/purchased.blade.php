@@ -53,7 +53,7 @@
                                                 @endif
                                             </a>
                                         </td>
-                                        <td><a target="_blank" href="{{ route('freelancer.details', $purchasedService->freelancer->user_name) }}">{{ $purchasedService->freelancer->name }}</a></td>
+                                        <td><a target="_blank" href="{{ route('expert.details', $purchasedService->freelancer->user_name) }}">{{ $purchasedService->freelancer->name }}</a></td>
                                         <td>{{ ucfirst($purchasedService->servicePackage->service_type) }}</td>
                                         <td>{{ single_price($purchasedService->amount) }}</td>
                                         @if (\App\Models\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Models\Addon::where('unique_identifier', 'offline_payment')->first()->activated)

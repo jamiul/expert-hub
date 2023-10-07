@@ -63,7 +63,7 @@
     								</div>
     								<div class="card-footer">
                                         <div class="d-flex align-items-center">
-                                            <a href="{{ route('freelancer.details', $project->project_user->user->user_name) }}" class="d-flex mr-3 align-items-center text-reset">
+                                            <a href="{{ route('expert.details', $project->project_user->user->user_name) }}" class="d-flex mr-3 align-items-center text-reset">
                                                 <span class="avatar avatar-xs">
                                                     <img class="img-fluid rounded-circle" src="{{ custom_asset($project->project_user->user->photo) }}">
                                                 </span>

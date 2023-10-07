@@ -40,7 +40,7 @@ class SearchController extends Controller
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
-            $freelancers = UserProfile::query();
+            $experts = UserProfile::query();
             $categories = [];
             $category_ids = [];
             $skills = [];
@@ -60,29 +60,29 @@ class SearchController extends Controller
                     ->whereIn('user_id', $user_ids)
                     ->pluck('user_id');
 
-                $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
+                $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             } else {
                 $user_ids = User::where('user_type', 'freelancer')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
                     ->pluck('user_id');
-                $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
+                $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             }
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ConsultantCategory::whereIn('id', $category_ids)->get();
-                $freelancers = $freelancers->whereIn('specialist', $category_ids);
+                $experts = $experts->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {
                 $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
-                $freelancers = $freelancers->whereIn('user_id', $user_ids);
+                $experts = $experts->whereIn('user_id', $user_ids);
             }
 
             if ($request->skill_id != null) {
                 $skill_ids = $request->skill_id;
                 $skills = Skill::whereIn('id', $skill_ids)->get();
-                $freelancers = $freelancers->where(function ($query) use ($skill_ids) {
+                $experts = $experts->where(function ($query) use ($skill_ids) {
                     foreach ($skill_ids as $skill_id) {
                         $query->orWhere('skills', 'like', '%' . $skill_id . '%');
                     }
@@ -92,7 +92,7 @@ class SearchController extends Controller
             if ($request->childSkill_id != null) {
                 $childSkill_ids = $request->childSkill_id;
                 $childSkills = Skill::whereIn('id', $childSkill_ids)->get();
-                $freelancers = $freelancers->where(function ($query) use ($childSkill_ids) {
+                $experts = $experts->where(function ($query) use ($childSkill_ids) {
                     foreach ($childSkill_ids as $childSkill_id) {
                         $query->orWhere('skills', 'like', '%' . $childSkill_id . '%');
                     }
@@ -131,22 +131,22 @@ class SearchController extends Controller
                     $userProfiles = UserProfile::where('hourly_rate', '>', $maxHourlyRate)->pluck('user_id')->toArray();
                 }
 
-                $freelancers = $freelancers->whereIn('user_id', $userProfiles);
+                $experts = $experts->whereIn('user_id', $userProfiles);
             }
 
             if ($request->rating != null) {
                 if ($rating == "5") {
-                    $freelancers = $freelancers->where('rating', '>', 4);
+                    $experts = $experts->where('rating', '>', 4);
                 } else {
-                    $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
+                    $experts = $experts->whereIn('rating', explode('-', $rating));
                 }
             }
 
-            $total = $freelancers->count();
-            $freelancers = $freelancers->paginate(8)->appends($request->query());
+            $total = $experts->count();
+            $experts = $experts->paginate(8)->appends($request->query());
 
-            return view('frontend.expert.listing', compact(
-                'freelancers',
+            return view('frontend.expert.expert-listing', compact(
+                'experts',
                 'total',
                 'keyword',
                 'type',
@@ -319,7 +319,7 @@ class SearchController extends Controller
             $min_price = $request->min_price;
             $max_price = $request->max_price;
             $skill_ids = $request->skill_ids ?? [];
-            $freelancers = UserProfile::query();
+            $experts = UserProfile::query();
             $categories = [];
             $category_ids = [];
             $skills = [];
@@ -339,29 +339,29 @@ class SearchController extends Controller
                     ->whereIn('user_id', $user_ids)
                     ->pluck('user_id');
 
-                $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
+                $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             } else {
                 $user_ids = User::where('user_type', 'freelancer')->pluck('id');
                 $user_with_pkg_ids = UserPackage::where('package_invalid_at', '!=', null)
                     ->where('package_invalid_at', '>', Carbon::now()->format('Y-m-d'))
                     ->whereIn('user_id', $user_ids)
                     ->pluck('user_id');
-                $freelancers = $freelancers->whereIn('user_id', $user_with_pkg_ids);
+                $experts = $experts->whereIn('user_id', $user_with_pkg_ids);
             }
             if ($request->category_id != null) {
                 $category_ids = $request->category_id;
                 $categories = ConsultantCategory::whereIn('id', $category_ids)->get();
-                $freelancers = $freelancers->whereIn('specialist', $category_ids);
+                $experts = $experts->whereIn('specialist', $category_ids);
             }
             if ($country_id != null) {
                 $user_ids = Address::where('country_id', $country_id)->pluck('addressable_id')->toArray();
-                $freelancers = $freelancers->whereIn('user_id', $user_ids);
+                $experts = $experts->whereIn('user_id', $user_ids);
             }
 
             if ($request->skill_id != null) {
                 $skill_ids = $request->skill_id;
                 $skills = Skill::whereIn('id', $skill_ids)->get();
-                $freelancers = $freelancers->where(function ($query) use ($skill_ids) {
+                $experts = $experts->where(function ($query) use ($skill_ids) {
                     foreach ($skill_ids as $skill_id) {
                         $query->orWhere('skills', 'like', '%' . $skill_id . '%');
                     }
@@ -371,7 +371,7 @@ class SearchController extends Controller
             if ($request->childSkill_id != null) {
                 $childSkill_ids = $request->childSkill_id;
                 $childSkills = Skill::whereIn('id', $childSkill_ids)->get();
-                $freelancers = $freelancers->where(function ($query) use ($childSkill_ids) {
+                $experts = $experts->where(function ($query) use ($childSkill_ids) {
                     foreach ($childSkill_ids as $childSkill_id) {
                         $query->orWhere('skills', 'like', '%' . $childSkill_id . '%');
                     }
@@ -410,19 +410,19 @@ class SearchController extends Controller
                     $userProfiles = UserProfile::where('hourly_rate', '>', $maxHourlyRate)->pluck('user_id')->toArray();
                 }
 
-                $freelancers = $freelancers->whereIn('user_id', $userProfiles);
+                $experts = $experts->whereIn('user_id', $userProfiles);
             }
 
             if ($request->rating != null) {
                 if ($rating == "5") {
-                    $freelancers = $freelancers->where('rating', '>', 4);
+                    $experts = $experts->where('rating', '>', 4);
                 } else {
-                    $freelancers = $freelancers->whereIn('rating', explode('-', $rating));
+                    $experts = $experts->whereIn('rating', explode('-', $rating));
                 }
             }
 
-            $total = $freelancers->count();
-            $freelancers = $freelancers->paginate(8)->appends($request->query());
+            $total = $experts->count();
+            $experts = $experts->paginate(8)->appends($request->query());
 
             return view('frontend.media-expert', compact('freelancers', 'total', 'keyword', 'type', 'rating', 'skill_ids', 'country_id', 'min_price', 'max_price', 'categories', 'category_id', "category_ids", 'hourly_rate', 'consultantions', 'available_interview', 'skills', 'expertises'));
         } else {

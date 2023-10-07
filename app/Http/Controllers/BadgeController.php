@@ -17,8 +17,8 @@ class BadgeController extends Controller
 
     public function index()
     {
-        list($badges, $role) = $this->repository->getBadgesAndRole('freelancer');
-        return view('admin.freelancer.badges.index', compact('badges', 'role'));
+        list($badges, $role) = $this->repository->getBadgesAndRole('expert');
+        return view('admin.expert.badges.index', compact('badges', 'role'));
     }
 
     public function clientBadgesIndex()
@@ -38,7 +38,7 @@ class BadgeController extends Controller
         $badge->save();
 
         flash(translate('New Badge has been updated successfully!'))->success();
-        if ($request->role_id == "freelancer") {
+        if ($request->role_id == "expert") {
             return redirect()->route('badges.index');
         }
         if ($request->role_id == "client") {
@@ -54,7 +54,7 @@ class BadgeController extends Controller
     public function edit($id)
     {
         $badge = Badge::findOrFail(decrypt($id));
-        return view('admin.freelancer.badges.edit', compact('badge'));
+        return view('admin.expert.badges.edit', compact('badge'));
     }
 
     public function clientBadgesEdit($id)
@@ -73,7 +73,7 @@ class BadgeController extends Controller
         $badge->save();
 
         flash(translate('New Badge has been updated successfully!'))->success();
-        if ($request->role_id == "freelancer") {
+        if ($request->role_id == "expert") {
             return redirect()->route('badges.index');
         }
         if ($request->role_id == "client") {

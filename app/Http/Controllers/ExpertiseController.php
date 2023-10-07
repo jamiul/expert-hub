@@ -20,7 +20,7 @@ class ExpertiseController extends Controller
 
         // $allExpertLists = Experts->where('parent_id',"id")->get();
         // dd($allExpertList);
-        return view('admin.freelancer.Experts.index', compact('experts', 'allExpertList'));
+        return view('admin.expert.Experts.index', compact('experts', 'allExpertList'));
     }
 
     public function store(Request $request)
@@ -40,14 +40,14 @@ class ExpertiseController extends Controller
     public function create()
     {
         // Logic for showing the Experts creation form
-        return view('admin.freelancer.create');
+        return view('admin.expert.create');
     }
 
     public function edit($id)
     {
         $experts = Expertise::with('childrens')->whereNull('parent_id')->paginate(10);
         $expert = Expertise::findOrFail($id);
-        return view('admin.freelancer.Experts.edit', compact('expert', 'experts'));
+        return view('admin.expert.Experts.edit', compact('expert', 'experts'));
     }
 
     public function update(Request $request, $id)

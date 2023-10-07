@@ -10,7 +10,7 @@
                 @if (isClient())
                     @include('frontend.user.client.inc.sidebar')
                 @elseif (isFreelancer())
-                    @include('frontend.user.freelancer.inc.sidebar')
+                    @include('frontend.user.expert.inc.sidebar')
                 @endif
 
                 <div class="aiz-user-panel">

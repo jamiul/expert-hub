@@ -254,7 +254,7 @@
             <div class="overlay dark c-pointer overlay-fixed" data-toggle="class-toggle"
                 data-target=".aiz-mobile-side-nav" data-same=".mobile-side-nav-thumb"></div>
             <div class="collapse-sidebar bg-white">
-                @include('frontend.user.freelancer.inc.sidebar')
+                @include('frontend.user.expert.inc.sidebar')
             </div>
         </div>
     @endif

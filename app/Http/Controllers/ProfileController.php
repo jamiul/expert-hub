@@ -72,7 +72,7 @@ class ProfileController extends Controller
 
     public function userAccount()
     {
-        $freelancer_account = FreelancerAccount::where('user_id', Auth::user()->id)->first();
+        $expert_account = FreelancerAccount::where('user_id', Auth::user()->id)->first();
         return view('frontend.user.freelancer.setting.account', compact('freelancer_account'));
     }
 

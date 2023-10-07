@@ -174,10 +174,10 @@ if (!function_exists('isClient')) {
     }
 }
 
-if (!function_exists('isFreelancer')) {
-    function isFreelancer()
+if (!function_exists('isExpert')) {
+    function isExpert()
     {
-        return getUserRole() == "freelancer" ? 1 : 0;
+        return getUserRole() == "expert" ? 1 : 0;
     }
 }
 

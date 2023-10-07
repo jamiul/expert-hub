@@ -77,7 +77,7 @@
                                         <a class="btn btn-soft-primary btn-icon btn-circle btn-sm btn icon" href="{{ route('pay_to_freelancer', encrypt($withdraw_request->id)) }}" title="{{translate('Pay Now')}}">
                                             <i class="las la-money-check"></i>
                                         </a>
-                                        <a href="{{ route('pay_to_freelancer.cancel', encrypt($withdraw_request->id)) }}" class="btn btn-soft-danger btn-icon btn-circle btn-sm"  title="{{translate('Delete')}}">
+                                        <a href="{{ route('pay_to_expert.cancel', encrypt($withdraw_request->id)) }}" class="btn btn-soft-danger btn-icon btn-circle btn-sm"  title="{{translate('Delete')}}">
                                             <i class="las la-trash"></i>
                                         </a>
                                     </td>

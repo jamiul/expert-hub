@@ -292,7 +292,7 @@
                                                                 @endif
                                                             </span>
                                                             <span class="d-flex flex-column justify-content-center">
-                                                                <a href="{{ route('freelancer.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
+                                                                <a href="{{ route('expert.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
 
                                                             </span>
                                                         </div>
@@ -364,7 +364,7 @@
                                                         @endif
                                                     </span>
                                                     <span class="d-flex flex-column justify-content-center">
-                                                        <a href="{{ route('freelancer.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
+                                                        <a href="{{ route('expert.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
 
                                                     </span>
                                                 </div>
@@ -437,7 +437,7 @@
                                                         @endif
                                                     </span>
                                                     <span class="d-flex flex-column justify-content-center">
-                                                        <a href="{{ route('freelancer.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
+                                                        <a href="{{ route('expert.details', $service->user->user_name) }}" class="text-primary fs-14"><span class="font-weight-bold">{{ $service->user->name }}</span></a>
                                                     </span>
                                                 </div>
                                             </div>

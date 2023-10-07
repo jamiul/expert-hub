@@ -14,8 +14,8 @@ use App\Http\Controllers\CancelProjectController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DemoController;
-use App\Http\Controllers\FreelancerAccountController;
-use App\Http\Controllers\FreelancerEducationController;
+use App\Http\Controllers\ExpertAccountController;
+use App\Http\Controllers\ExpertEducationController;
 use App\Http\Controllers\HireController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
@@ -24,7 +24,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackagePaymentController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\PaytoFreelancerController;
+use App\Http\Controllers\PaytoExpertController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -129,7 +129,7 @@ Route::get('/blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.d
 
 //why scholarships
 Route::get('/review', [WhyScholarshipController::class, 'whyScholarshipReview'])->name('review');
-Route::get('/about-us', [WhyScholarshipController::class, 'whyFreelancerEdu'])->name('about-us');
+Route::get('/about-us', [WhyScholarshipController::class, 'whyExpertEdu'])->name('about-us');
 Route::get('/how-to-hire', [WhyScholarshipController::class, 'whyScholarshipHowToHire'])->name('how-to-hire');
 Route::get('/how-to-find-job', [WhyScholarshipController::class, 'whyScholarshipHowToFindJob'])->name('how-to-find-job');
 
@@ -185,8 +185,8 @@ Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], functio
     Route::resource('wallet', WalletController::class);
     Route::post('wallet-recharge', [WalletController::class, 'rechage'])->name('wallet.recharge');
 
-    Route::get('/freelancer/packages/history', [PackagePaymentController::class, 'freelancerPackagePurchaseHistoryIndex'])->name('freelancer.packages.history');
-    Route::get('/client/packages/history', [PackagePaymentController::class, 'freelancerPackagePurchaseHistoryIndex'])->name('client.packages.history');
+    Route::get('/expert/packages/history', [PackagePaymentController::class, 'expertPackagePurchaseHistoryIndex'])->name('expert.packages.history');
+    Route::get('/client/packages/history', [PackagePaymentController::class, 'expertPackagePurchaseHistoryIndex'])->name('client.packages.history');
 
     Route::get('/user-reviews/{type}', [ReviewController::class, 'reviewIndex'])->name('user_review');
 
@@ -200,8 +200,8 @@ Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']
     Route::resource('/projects', ProjectController::class);
     Route::get('/my-open-projects', [ProjectController::class, 'myOpenProject'])->name('projects.my_open_project');
     Route::get('/project-bids/{slug}', [ProjectController::class, 'projectBids'])->name('project.bids');
-    Route::get('/invition-for-hire-freelancer/{username}', [HireController::class, 'freelancerInvitation'])->name('invition_for_hire_freelancer');
-    Route::post('/invition-for-hire-freelancer/store', [HireController::class, 'store'])->name('invition_for_hire_freelancer_sent');
+    Route::get('/invition-for-hire-expert/{username}', [HireController::class, 'expertInvitation'])->name('invition_for_hire_expert');
+    Route::post('/invition-for-hire-expert/store', [HireController::class, 'store'])->name('invition_for_hire_expert_sent');
 
     //Milestone payment
     Route::get('/recieved-milestone-requests', [MilestonePaymentController::class, 'recievedMilestoneRequestIndex'])->name('milestone-requests.all');
@@ -210,7 +210,7 @@ Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']
 
     //project completed
     Route::get('/project-done/{id}', [ProjectController::class, 'projectDone'])->name('projects.complete');
-    Route::resource('bookmarked-freelancers', BookmarkedExpertController::class);
+    Route::resource('bookmarked-experts', BookmarkedExpertController::class);
     Route::get('/client/purchased-services', [ServiceController::class, 'clientPurchasedServices'])->name('client.purchased.services');
 
     Route::get('/service/{id}/cancel', [ServiceController::class, 'cancelService'])->name('services.cancel');
@@ -229,8 +229,8 @@ Route::group(['prefix' => 'service'], function () {
     Route::post('/package-purchase', [ServiceController::class, 'purchaseServicePackage'])->name('purchase_service_package');
 });
 
-// Freelancer middleware
-Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchased']], function () {
+// Expert middleware
+Route::group(['middleware' => ['auth', 'verified', 'expert', 'packagePurchased']], function () {
     Route::post('/bids/store', [BiddingController::class, 'store'])->name('bids.store');
     Route::get('/account-settings', [ProfileController::class, 'userAccount'])->name('user.account');
 
@@ -243,10 +243,10 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
         Route::get('/work-experience-edit/{id}', [WorkExperienceController::class, 'edit'])->name('user_profile.work_experience_edit');
         Route::post('/work-experience-update/{id}', [WorkExperienceController::class, 'update'])->name('user_profile.work_experience_update');
         Route::get('/work-experience-delete/{id}', [WorkExperienceController::class, 'destroy'])->name('user_profile.work_experience_destroy');
-        Route::post('/education-info-add', [FreelancerEducationController::class, 'store'])->name('user_profile.education_info_add');
-        Route::get('/education-info-edit/{id}', [FreelancerEducationController::class, 'edit'])->name('user_profile.education_info_edit');
-        Route::post('/education-info-update/{id}', [FreelancerEducationController::class, 'update'])->name('user_profile.education_info_update');
-        Route::get('/education-info-delete/{id}', [FreelancerEducationController::class, 'destroy'])->name('user_profile.education_info_destroy');
+        Route::post('/education-info-add', [ExpertEducationController::class, 'store'])->name('user_profile.education_info_add');
+        Route::get('/education-info-edit/{id}', [ExpertEducationController::class, 'edit'])->name('user_profile.education_info_edit');
+        Route::post('/education-info-update/{id}', [ExpertEducationController::class, 'update'])->name('user_profile.education_info_update');
+        Route::get('/education-info-delete/{id}', [ExpertEducationController::class, 'destroy'])->name('user_profile.education_info_destroy');
     });
 
     Route::group(['prefix' => 'service'], function () {
@@ -257,7 +257,7 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
         Route::get('/destroy/{slug}', [ServiceController::class, 'destroy'])->name('service.destroy');
     });
 
-    Route::post('/freelancer-account-info/store', [FreelancerAccountController::class, 'store'])->name('freelancer_account.store');
+    Route::post('/expert-account-info/store', [ExpertAccountController::class, 'store'])->name('expert_account.store');
     Route::get('/bidded-projects', [ProjectController::class, 'biddedProjects'])->name('bidded_projects');
     Route::get('/private-projects', [HireController::class, 'privateProjects'])->name('private_projects');
 
@@ -268,15 +268,15 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
     Route::get('/recieved-milestone-payment', [MilestonePaymentController::class, 'recievedMilestonePaymentIndex'])->name('recieved_milestone_payment_index');
 
     //payment history
-    Route::get('/send-withdrawal-request', [PaytoFreelancerController::class, 'sendWithdrawalRequestIndex'])->name('send_withdrawal_request_to_admin');
-    Route::get('/withdrawal-history', [PaytoFreelancerController::class, 'withdrawalHistoryIndex'])->name('withdrawal_history_index');
-    Route::post('/send-withdrawal-request/store', [PaytoFreelancerController::class, 'sendWithdrawalRequestStore'])->name('store_withdrawal_request_to_admin');
+    Route::get('/send-withdrawal-request', [PaytoExpertController::class, 'sendWithdrawalRequestIndex'])->name('send_withdrawal_request_to_admin');
+    Route::get('/withdrawal-history', [PaytoExpertController::class, 'withdrawalHistoryIndex'])->name('withdrawal_history_index');
+    Route::post('/send-withdrawal-request/store', [PaytoExpertController::class, 'sendWithdrawalRequestStore'])->name('store_withdrawal_request_to_admin');
 
     Route::resource('bookmarked-projects', BookmarkedProjectController::class);
     Route::get('/following-clients', [BookmarkedClientController::class, 'index'])->name('bookmarked-clients.index');
     Route::get('/following-clients/store/{id}', [BookmarkedClientController::class, 'store'])->name('bookmarked-clients.store');
     Route::get('/following-clients/destroy/{id}', [BookmarkedClientController::class, 'destroy'])->name('bookmarked-clients.destroy');
-    Route::get('/services', [ServiceController::class, 'freelancerIndex'])->name('service.freelancer_index');
+    Route::get('/services', [ServiceController::class, 'expertIndex'])->name('service.expert_index');
     Route::get('services/purchased', [ServiceController::class, 'soldServices'])->name('service.sold');
 });
 
@@ -287,7 +287,7 @@ Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/search?category_id[]={id}&type=project', [SearchController::class, 'index'])->name('projects.category');
 Route::get('/skill/{skill}/{type}', [SearchController::class, 'searchBySkill'])->name('search.skill');
 Route::get('/search?category={category_slug}&type=service', [SearchController::class, 'index'])->name('search.category');
-Route::get('/search?category_id[]={category_id}&type=freelancer', [SearchController::class, 'index'])->name('freelancer.category');
+Route::get('/search?category_id[]={category_id}&type=expert', [SearchController::class, 'index'])->name('expert.category');
 
 //scholarship list
 Route::get('/scholarship-search', [SearchScholarshipController::class, 'index'])->name('scholarship-search');
@@ -299,8 +299,8 @@ Route::get('/private-project-details/{slug}', [HomeController::class, 'privatePr
 Route::get('/client/{user_name}', [HomeController::class, 'clientDetails'])->name('client.details');
 Route::get('/client-lists', [HomeController::class, 'clientList'])->name('client.lists');
 
-Route::get('/freelancer-lists', [HomeController::class, 'freelancerList'])->name('freelancer.lists');
-Route::get('/freelancer/{user_name}', [HomeController::class, 'freelancerDetails'])->name('freelancer.details');
+Route::get('/expert-lists', [HomeController::class, 'expertList'])->name('expert.lists');
+Route::get('/expert/{user_name}', [HomeController::class, 'expertDetails'])->name('expert.details');
 
 //seminars
 Route::get('seminar/{id}', [SeminarDetailsController::class, 'seminarDetails'])->name('seminar.details');

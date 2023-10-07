@@ -7,10 +7,10 @@
                  aria-labelledby="list-home-list">
                 <div class="d-flex justify-content-between mt-3 ">
                     <h4 class="fw-700 fs-23 text-black  ">Biography </h4>
-                    <h4 class="fw-700 fs-16 text-black">{{ single_price($freelancer->profile->hourly_rate) }}/hr</h4>
+                    <h4 class="fw-700 fs-16 text-black">{{ single_price($expert->profile->hourly_rate) }}/hr</h4>
                 </div>
                 <div class="mt-3">
-                    <p class="fs-16  biography-info">{{ $freelancer->profile->bio }}</p>
+                    <p class="fs-16  biography-info">{{ $expert->profile->bio }}</p>
                 </div>
             </div>
         </div>
@@ -19,14 +19,14 @@
         @include('frontend.expert.consultation')
     </div>
 
-    @if ($freelancer->workExperiences != null)
+    @if ($expert->workExperiences != null)
         @include('frontend.expert.work-experience')
     @endif
 
     {{-- //todo: add current and finished projects --}}
     @include('frontend.expert.projects')
 
-    @if ($freelancer->userPortfolios != null)
+    @if ($expert->userPortfolios != null)
         @include('frontend.expert.portfolio')
     @endif
 

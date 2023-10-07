@@ -21,7 +21,7 @@ class UserController extends Controller
         $sort_search = null;
         $col_name = null;
         $query = null;
-        $freelancers = UserProfile::query();
+        $experts = UserProfile::query();
 
         $user_ids = User::where(
             function ($user) use ($sort_search) {
@@ -29,9 +29,9 @@ class UserController extends Controller
             }
         )->pluck('id')->toArray();
 
-        $freelancers = $freelancers->where(
-            function ($freelancer) use ($user_ids) {
-                $freelancer->whereIn('user_id', $user_ids);
+        $experts = $experts->where(
+            function ($expert) use ($user_ids) {
+                $expert->whereIn('user_id', $user_ids);
             }
         );
 
@@ -44,9 +44,9 @@ class UserController extends Controller
                     }
                 )->pluck('id')->toArray();
 
-                $freelancers = $freelancers->where(
-                    function ($freelancer) use ($user_ids) {
-                        $freelancer->whereIn('user_id', $user_ids);
+                $experts = $experts->where(
+                    function ($expert) use ($user_ids) {
+                        $expert->whereIn('user_id', $user_ids);
                     }
                 );
             }
@@ -54,12 +54,12 @@ class UserController extends Controller
                 $var = explode(",", $request->type);
                 $col_name = $var[0];
                 $query = $var[1];
-                $freelancers = $freelancers->orderBy($col_name, $query);
+                $experts = $experts->orderBy($col_name, $query);
             }
 
-            $freelancers = $freelancers->paginate(10);
+            $experts = $experts->paginate(10);
         } else {
-            $freelancers = $freelancers->orderBy('created_at', 'desc')->paginate(10);
+            $experts = $experts->orderBy('created_at', 'desc')->paginate(10);
         }
 
         return view('admin.freelancer.freelancers.index', compact('freelancers', 'sort_search', 'col_name', 'query'));
@@ -87,9 +87,9 @@ class UserController extends Controller
             }
         )->pluck('id')->toArray();
 
-        $freelancers = $clients->where(
-            function ($freelancer) use ($user_ids) {
-                $freelancer->whereIn('user_id', $user_ids);
+        $experts = $clients->where(
+            function ($expert) use ($user_ids) {
+                $expert->whereIn('user_id', $user_ids);
             }
         );
 

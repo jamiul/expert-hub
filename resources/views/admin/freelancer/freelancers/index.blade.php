@@ -44,7 +44,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($freelancers as $key => $freelancer)
+                        @foreach($freelancers as $key => $expert)
                             <tr>
                                 <td>{{ ($key+1) + ($freelancers->currentPage() - 1)*$freelancers->perPage() }}</td>
                                 @if ($freelancer->user != null)

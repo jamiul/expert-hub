@@ -44,7 +44,7 @@ class BookmarkedExpertController extends Controller
             $bookmarked_freelancer->freelancer_user_id = decrypt($id);
             $bookmarked_freelancer->save();
         } else {
-            flash(translate('Freelancer following option is not available on your package.'))->warning();
+            flash(translate('Expert following option is not available on your package.'))->warning();
         }
 
         return back();

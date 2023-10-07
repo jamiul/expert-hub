@@ -268,7 +268,7 @@
                                                     @endif
                                                 </span>
                                                 <span class="d-flex flex-column justify-content-center">
-                                                    <a href="{{ route('freelancer.details', $similar_type_sevice->user->user_name) }}" class="text-secondary fs-14"><span class="font-weight-bold">{{ $similar_type_sevice->user->name }}</span></a>
+                                                    <a href="{{ route('expert.details', $similar_type_sevice->user->user_name) }}" class="text-secondary fs-14"><span class="font-weight-bold">{{ $similar_type_sevice->user->name }}</span></a>
                                                 </span>
                                             </div>
 

@@ -312,7 +312,7 @@
                                         @if ($freelancer->user != null)
                                             <div
                                                 class="d-block site-font d-xl-flex site-font text-inherit all-scholarship-list px-3 py-4 border-bottom">
-                                                <a href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
+                                                <a href="{{ route('expert.details', $freelancer->user->user_name) }}">
                                                     <span class="avatar flex-shrink-0 mr-4">
                                                         @if ($freelancer->user->photo != null)
                                                             <img src="{{ custom_asset($freelancer->user->photo) }}"
@@ -332,7 +332,7 @@
                                                 </a>
                                                 <div class="flex-grow-1 ">
                                                     <a
-                                                        href="{{ route('freelancer.details', $freelancer->user->user_name) }}">
+                                                        href="{{ route('expert.details', $freelancer->user->user_name) }}">
                                                         <div class="d-flex">
                                                             <h5 class=" fs-18 fw-700 mb-1">{{ $freelancer->user->name }}
                                                             </h5>
