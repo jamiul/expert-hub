@@ -523,29 +523,29 @@
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
                                 <i class="las la-blog aiz-side-nav-icon"></i>
-                                <span class="aiz-side-nav-text">{{ translate('Seminars') }}</span>
+                                <span class="aiz-side-nav-text">{{ translate('Trainings') }}</span>
                                 <span class="aiz-side-nav-arrow"></span>
                             </a>
                             <ul class="aiz-side-nav-list level-2">
                                 @can('show all blogs')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('seminar.index') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['seminar.create', 'seminar.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('All Seminars') }}</span>
+                                        <a href="{{ route('training.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['training.create', 'training.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('All Trainings') }}</span>
                                         </a>
                                     </li>
                                 @endcan
                                 @can('show blog category')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('seminar-mode.index') }}" class="aiz-side-nav-link">
-                                            <span class="aiz-side-nav-text">{{ translate('Seminar Mode') }}</span>
+                                        <a href="{{ route('training-mode.index') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Training Mode') }}</span>
                                         </a>
                                     </li>
                                 @endcan
                                 @can('show blog category')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('seminar-software.index') }}" class="aiz-side-nav-link">
-                                            <span class="aiz-side-nav-text">{{ translate('Seminar Software') }}</span>
+                                        <a href="{{ route('training-software.index') }}" class="aiz-side-nav-link">
+                                            <span class="aiz-side-nav-text">{{ translate('Training Software') }}</span>
                                         </a>
                                     </li>
                                 @endcan
@@ -850,7 +850,7 @@
                                 @can('show all site pages')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('site-page.index') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['seminar.create', 'seminar.edit']) }}">
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['training.create', 'training.edit']) }}">
                                             <span class="aiz-side-nav-text">{{ translate('Site Pages') }}</span>
                                         </a>
                                     </li>

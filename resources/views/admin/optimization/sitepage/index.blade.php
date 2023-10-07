@@ -85,7 +85,7 @@
                 </tbody>
             </table>
 
-            {{-- @dd(route('seminar.delete', $seminar->id)); --}}
+            {{-- @dd(route('training.delete', $training->id)); --}}
             <div class="aiz-pagination">
                 {{-- {{ $scholarships->links() }} --}}
             </div>

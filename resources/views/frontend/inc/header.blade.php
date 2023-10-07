@@ -390,7 +390,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
-                                        href="{{ url('/search?keyword=&type=seminar') }}">{{ __('Find Trainings ') }}</a>
+                                        href="{{ url('/search?keyword=&type=training') }}">{{ __('Find Trainings ') }}</a>
                                 </li>
                                 <li class="nav-item dropdown  text-white">
                                     <a class="nav-link " href="{{ route('about-us') }}">

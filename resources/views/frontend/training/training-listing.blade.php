@@ -156,7 +156,7 @@
                     <div class="col-lg-6 col-sm-12 my-auto">
                         <h3 class="text-white fw-700 fs-30  site-font mt-3">Training and Expert Support Hub</h3>
                         <p class="fw-400 text-white site-font fs-18 mb-2">Learn a wide variety of the latest statistical
-                            methods by participating in expert-led seminars. Our instructors are a recognised experts in
+                            methods by participating in expert-led trainings. Our instructors are a recognised experts in
                             their respective fields. With their talent and experience, they make statistics engaging and
                             comprehensible for researchers from diverse backgrounds.</p>
                         <a href="register?type=2"
@@ -178,12 +178,12 @@
                         <div class="col-xl-8 offset-xl-2 text-center">
                             <h1 class="h5 mt-3 mt-lg-0 mb-5 fw-400">{{ translate('Total') }} <span
                                     class="fw-600">{{ $total }}</span>
-                                {{ translate('seminar found for') }} <span class="fw-600">{{ $keyword }}</span>
+                                {{ translate('training found for') }} <span class="fw-600">{{ $keyword }}</span>
                             </h1>
                         </div>
                     </div>
                 @endif
-                <form id="seminar-filter-form" action="" method="GET">
+                <form id="training-filter-form" action="" method="GET">
                     <div class="row gutters-10">
                         <!-- Sidebar -->
                         <div class=" col-xs-3 col-sm-12 col-md-12 col-lg-3 mb-5">
@@ -191,47 +191,47 @@
                                 <div class=" rounded-0 border-0 collapse-sidebar c-scrollbar-light p-10px"
                                     style="background: #F2F7F2;">
                                     <div class=" border-0 pl-lg-0">
-                                        <h5 class="my-3 fs-16 fw-700">{{ translate('Search Seminars') }}</h5>
+                                        <h5 class="my-3 fs-16 fw-700">{{ translate('Search Trainings') }}</h5>
                                         {{-- <button type="submit"  class="btn btn-sm p-2 d-lg-none filter-sidebar-thumb"
                                             >
                                             <i class="las la-times la-2x"></i>
                                         </button> --}}
                                     </div>
-                                    @foreach ($seminar_category as $category)
-                                        <span id="seminarCategory_{{ $category->id }}"
+                                    @foreach ($training_category as $category)
+                                        <span id="trainingCategory_{{ $category->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                                             {{ $category->name }} |<p class="m-0  d-inline fw-700"
-                                                onclick="removeSeminarCategory({{ $category->id }})">
+                                                onclick="removeTrainingCategory({{ $category->id }})">
                                                 X</p>
                                         </span>
                                     @endforeach
-                                    @foreach ($seminar_modes as $mode)
-                                        <span id="seminarMode_{{ $mode->id }}"
+                                    @foreach ($training_modes as $mode)
+                                        <span id="trainingMode_{{ $mode->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                                             {{ $mode->name }} |<p class="m-0  d-inline fw-700"
-                                                onclick="removeSeminarMode({{ $mode->id }})">
+                                                onclick="removeTrainingMode({{ $mode->id }})">
                                                 X</p>
                                         </span>
                                     @endforeach
                                     @foreach ($languages as $language)
-                                        <span id="seminarLanguage_{{ $language->id }}"
+                                        <span id="trainingLanguage_{{ $language->id }}"
                                             class=" btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0 ">
                                             {{ $language->name }} |<p class="m-0  d-inline fw-700"
                                                 onclick="removeLanguage({{ $language->id }})">
                                                 X</p>
                                         </span>
                                     @endforeach
-                                    <!-- Seminar Software Badges -->
-                                    @foreach ($seminarSoftware as $software)
-                                        <span id="seminarSoftware_{{ $software->id }}"
+                                    <!-- Training Software Badges -->
+                                    @foreach ($trainingSoftware as $software)
+                                        <span id="trainingSoftware_{{ $software->id }}"
                                             class="btn btn-light btn-xs mb-1 ml-1 bg-soft-info-light rounded-2 border-0">
                                             {{ $software->name }}
-                                            <p onclick="removeSeminarSoftware({{ $software->id }})"
+                                            <p onclick="removeTrainingSoftware({{ $software->id }})"
                                                 class="m-0 d-inline fw-700" style="cursor: pointer;">X</p>
                                         </span>
                                     @endforeach
                                     <!-- search bar  -->
-                                    <input type="hidden" name="type" value="seminar">
+                                    <input type="hidden" name="type" value="training">
                                     <div class="">
                                         <div class="d-flex align-items-center w-100">
                                             <button
@@ -241,7 +241,7 @@
                                             </button>
                                             <div class="input-group rounded-2">
                                                 <input type="text" class="form-control fs-14 rounded  "
-                                                    placeholder="{{ translate('Search for seminar') }}" name="keyword"
+                                                    placeholder="{{ translate('Search for training') }}" name="keyword"
                                                     value="{{ $keyword }}">
                                                 <div class="input-group-prepend rounded">
                                                     <button type="submit" style="border: none;">
@@ -272,50 +272,50 @@
                                                 </label>
                                             @endforeach
                                         </div>
-                                        <!-- Seminar software -->
-                                        <div class="mt-2" id="seminar-software" style="display: none">
+                                        <!-- Training software -->
+                                        <div class="mt-2" id="training-software" style="display: none">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
-                                                <span class=" pr-3">{{ translate('Seminar Software') }}</span>
+                                                <span class=" pr-3">{{ translate('Training Software') }}</span>
                                             </h6>
-                                            <select class="select2 form-control rounded-1" name="seminar_software_id"
+                                            <select class="select2 form-control rounded-1" name="training_software_id"
                                                 onchange="applyFilter()" data-toggle="select2" data-live-search="true">
                                                 <option value="" class="fs-16">
-                                                    {{ translate('Search seminar software') }}
+                                                    {{ translate('Search training software') }}
                                                 </option>
-                                                @foreach (getSeminarSoftwares() as $software)
+                                                @foreach (getTrainingSoftwares() as $software)
                                                     <option value="{{ $software['id'] }}"
-                                                        @if (in_array($software['id'], $seminar_software_ids)) selected @endif>
+                                                        @if (in_array($software['id'], $training_software_ids)) selected @endif>
                                                         {{ $software['name'] }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <!-- Seminar Mode -->
+                                        <!-- Training Mode -->
                                         <div class="mt-2">
                                             <h6 class="text-left mb-3 mt-3  fs-16 fw-700">
-                                                <span class=" pr-3">{{ translate('Seminar Mode') }}</span>
+                                                <span class=" pr-3">{{ translate('Training Mode') }}</span>
                                             </h6>
                                             <div class="aiz-checkbox-list">
-                                                @foreach (getSeminarModes() as $mode)
+                                                @foreach (getTrainingModes() as $mode)
                                                     <label class="aiz-checkbox">
-                                                        <input type="checkbox" name="seminar_mode_id[]"
+                                                        <input type="checkbox" name="training_mode_id[]"
                                                             value="{{ $mode['id'] }}" onchange="applyFilter()"
-                                                            @if (in_array($mode['id'], $seminar_mode_ids)) checked @endif>{{ $mode['name'] }}
+                                                            @if (in_array($mode['id'], $training_mode_ids)) checked @endif>{{ $mode['name'] }}
                                                         <span class="aiz-square-check"></span>
                                                         <span class="float-right text-secondary fs-12"></span>
                                                     </label>
                                                 @endforeach
                                             </div>
                                         </div>
-                                        <!-- Seminar date -->
+                                        <!-- Training date -->
                                         <div class="mt-2">
                                             <h6 class="text-left fs-16 py-2 fw-700">
-                                                <span class="fs-16 pr-3">{{ translate('Seminar date') }}</span>
+                                                <span class="fs-16 pr-3">{{ translate('Training date') }}</span>
                                             </h6>
                                             <div class="">
                                                 <input type="text" id="dp1"
                                                     class="form-control fs-14 datepicker mr-2"
-                                                    placeholder="{{ 'Select Date' }}" name="seminar_date"
-                                                    value="{{ $seminarDate ? $seminarDate : '' }}"><br>
+                                                    placeholder="{{ 'Select Date' }}" name="training_date"
+                                                    value="{{ $trainingDate ? $trainingDate : '' }}"><br>
                                             </div>
                                         </div>
                                         <!-- Languages -->
@@ -337,25 +337,25 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Seminar Topics -->
+                                    <!-- Training Topics -->
                                 </div>
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                             </div>
                         </div>
-                        <!-- seminar List -->
+                        <!-- Training List -->
                         <div class="col-xs-9 col-sm-12 col-md-12 col-lg-9   ">
                             <div class="row" style="background: #F2F7F2;">
                                 <div class="col-lg-12">
                                     <div class="mb-4 mt-2">
                                         <div class="row ">
-                                            @foreach ($seminars as $seminar)
+                                            @foreach ($trainings as $training)
                                                 <div class="d-lg-flex border-bottom my-2 all-scholarship-list ">
                                                     <div class="col-lg-10 col-12 ">
 
-                                                        <a href="{{ route('seminar.details', $seminar->id) }}"
+                                                        <a href="{{ route('training.details', $training->id) }}"
                                                             class=" fw-700"style="color:#5ABC76;">
-                                                            <u class="seminar-title seminar-heading mx-1">{{ $seminar->title }}
+                                                            <u class="training-title training-heading mx-1">{{ $training->title }}
                                                             </u>
                                                         </a>
                                                         <div class="d-flex justify-content-between">
@@ -366,14 +366,14 @@
                                                         <div class="row mb-2 mx-1">
                                                             <div class="col-lg-3 col-12 p-0">
                                                                 <p class="fre-scsh-left-side-title mb-0">
-                                                                    Seminar Dates:
+                                                                    Training Dates:
                                                                 </p>
                                                             </div>
                                                             <div class="col-lg-9 col-12 pl-0">
 
                                                                 <p
-                                                                    class="seminar-small-device-font fre-scsh-right-side-details pb-0  mb-0">
-                                                                    {{ $seminar->seminar_date ? formatSeminarDate($seminar->seminar_date) : 'date not set' }}
+                                                                    class="training-small-device-font fre-scsh-right-side-details pb-0  mb-0">
+                                                                    {{ $training->training_date ? formattrainingDate($training->training_date) : 'date not set' }}
                                                                 </p>
 
                                                             </div>
@@ -381,15 +381,15 @@
                                                         <div class="row mx-1 ">
                                                             <div class="col-12 col-lg-3 p-0 ">
                                                                 <p class="fre-scsh-left-side-title mb-0 p-0">
-                                                                    Seminar Summary:
+                                                                    Training Summary:
                                                                 </p>
                                                             </div>
                                                             <div class="col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify  pb-0 mb-0 p-0">
+                                                                    class="fre-scsh-right-side-details training-small-device-font text-justify  pb-0 mb-0 p-0">
                                                                     This
-                                                                    seminar will give you a strong working understanding of
+                                                                    training will give you a strong working understanding of
                                                                     methods
                                                                     used
                                                                     to design and analyse single-case experimental design
@@ -418,12 +418,12 @@
                                                                     certificate of completion is provided at the conclusion
                                                                     of
                                                                     the
-                                                                    seminar. For European PhD students, each seminar offers
+                                                                    training. For European PhD students, each training offers
                                                                     2
                                                                     ECTS..
                                                                     <a
-                                                                        href="{{ route('seminar.details', $seminar->id) }}"><u
-                                                                            class="seminar-more">Read More</u></a>
+                                                                        href="{{ route('training.details', $training->id) }}"><u
+                                                                            class="training-more">Read More</u></a>
                                                                 </p>
 
                                                             </div>
@@ -435,11 +435,11 @@
                                                                 </p>
                                                             </div>
                                                             <div
-                                                                class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details seminar-small-device-font  mb-1 p-0">
-                                                                <span class="fw-500 seminar-more">
-                                                                    <u>{{ getInstructorName($seminar->user_id) }}</u> |
+                                                                class="col-lg-9 col-12  pl-0 fre-scsh-right-side-details training-small-device-font  mb-1 p-0">
+                                                                <span class="fw-500 training-more">
+                                                                    <u>{{ getInstructorName($training->user_id) }}</u> |
                                                                 </span>
-                                                                <span class="fw-500 seminar-more">
+                                                                <span class="fw-500 training-more">
                                                                     <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                                                 </span>
                                                             </div>
@@ -448,15 +448,15 @@
                                                         <div class="row mx-1">
                                                             <div class=" col-12 col-lg-3 p-0  pr-0">
                                                                 <p class=" fre-scsh-left-side-title ">
-                                                                    Seminar Mode:
+                                                                    Training Mode:
                                                                 </p>
                                                             </div>
                                                             <div class="col-12 col-lg-9  pl-0">
 
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                                    {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                                                                    class="fre-scsh-right-side-details training-small-device-font text-justify mb-1 pr-4 p-0">
+                                                                    {{ getTrainingModeName($training->training_mode_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -470,8 +470,8 @@
                                                             <div class=" col-12 col-lg-9  pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                                    {{ getSoftwarePackageName($seminar->seminar_software_id) }}
+                                                                    class="fre-scsh-right-side-details training-small-device-font text-justify mb-1 pr-4 p-0">
+                                                                    {{ getSoftwarePackageName($training->training_software_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -484,22 +484,22 @@
                                                             <div class=" col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                                    {{ getLanguageName($seminar->language_id) }}
+                                                                    class="fre-scsh-right-side-details training-small-device-font text-justify mb-1 pr-4 p-0">
+                                                                    {{ getLanguageName($training->language_id) }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="row mx-1">
                                                             <div class="col-12 col-lg-3 p-0 pr-0">
                                                                 <p class=" fre-scsh-left-side-title ">
-                                                                    Seminar Category:
+                                                                    Training Category:
                                                                 </p>
                                                             </div>
                                                             <div class=" col-12 col-lg-9 pl-0">
 
                                                                 <p
-                                                                    class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                                                    {{ $seminar->project_category_id ? getSeminarCategory($seminar->project_category_id) : '' }}
+                                                                    class="fre-scsh-right-side-details training-small-device-font text-justify mb-1 pr-4 p-0">
+                                                                    {{ $training->project_category_id ? gettrainingCategory($training->project_category_id) : '' }}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -510,13 +510,13 @@
                                                                 <p class="btn btn-primary btn-sm fs-14  w-100  fw-700">
 
                                                                     <img class=" px-1  "
-                                                                        src=" {{ asset('/assets/seminar/register.png') }}"
+                                                                        src=" {{ asset('/assets/training/register.png') }}"
                                                                         alt="Image" style="width:25px; " />
                                                                     {{ translate('Register now') }}
 
                                                                 </p>
                                                             </a>
-                                                            <a href="{{ $seminar->zoom_link }}" target="_blank">
+                                                            <a href="{{ $training->zoom_link }}" target="_blank">
                                                                 <p class="btn btn-primary btn-sm  fs-14 w-100  fw-700">
 
                                                                     <img class=" px-1  "
@@ -534,10 +534,10 @@
                                     </div>
                                 </div>
                             </div>
-                            @if (!is_array($seminars))
+                            @if (!is_array($trainings))
                                 <div class="aiz-pagination aiz-pagination-center flex-grow-1 mt-4">
                                     <ul class="pagination">
-                                        {{ $seminars->links() }}
+                                        {{ $trainings->links() }}
                                     </ul>
                                 </div>
                             @endif
@@ -670,25 +670,25 @@
             });
         </script>
         <script>
-            function removeSeminarMode(Id) {
+            function removeTrainingMode(Id) {
 
-                var seminarModeElement = document.getElementById('seminarMode_' + Id);
-                if (seminarModeElement) {
-                    seminarModeElement.parentNode.removeChild(seminarModeElement);
+                var trainingModeElement = document.getElementById('trainingMode_' + Id);
+                if (trainingModeElement) {
+                    trainingModeElement.parentNode.removeChild(trainingModeElement);
 
                     // Uncheck the corresponding checkbox
-                    var checkbox = document.querySelector('input[name="seminar_mode_id[]"][value="' + Id + '"]');
+                    var checkbox = document.querySelector('input[name="training_mode_id[]"][value="' + Id + '"]');
                     if (checkbox) {
                         checkbox.checked = false;
                     }
                 }
-                $('#seminar-filter-form').submit();
+                $('#training-filter-form').submit();
             }
 
             function removeLanguage(Id) {
-                var seminarLanguageElement = document.getElementById('seminarLanguage_' + Id);
-                if (seminarLanguageElement) {
-                    seminarLanguageElement.parentNode.removeChild(seminarLanguageElement);
+                var trainingLanguageElement = document.getElementById('trainingLanguage_' + Id);
+                if (trainingLanguageElement) {
+                    trainingLanguageElement.parentNode.removeChild(trainingLanguageElement);
 
                     // Uncheck the corresponding checkbox
                     var checkbox = document.querySelector('input[name="language_id[]"][value="' + Id + '"]');
@@ -696,13 +696,13 @@
                         checkbox.checked = false;
                     }
                 }
-                $('#seminar-filter-form').submit();
+                $('#training-filter-form').submit();
             }
 
-            function removeSeminarCategory(Id) {
-                var seminarCategory = document.getElementById('seminarCategory_' + Id);
-                if (seminarCategory) {
-                    seminarCategory.parentNode.removeChild(seminarCategory);
+            function removeTrainingCategory(Id) {
+                var trainingCategory = document.getElementById('trainingCategory_' + Id);
+                if (trainingCategory) {
+                    trainingCategory.parentNode.removeChild(trainingCategory);
 
                     // Uncheck the corresponding checkbox
                     var checkbox = document.querySelector('input[name="category_id[]"][value="' + Id + '"]');
@@ -710,17 +710,17 @@
                         checkbox.checked = false;
                     }
                 }
-                $('#seminar-filter-form').submit();
+                $('#training-filter-form').submit();
             }
 
-            function removeSeminarSoftware(Id) {
-                let getSeminarSoftware = document.getElementById('seminarSoftware_' + Id);
+            function removeTrainingSoftware(Id) {
+                let getTrainingSoftware = document.getElementById('trainingSoftware_' + Id);
 
-                if (getSeminarSoftware) {
-                    getSeminarSoftware.parentNode.removeChild(getSeminarSoftware);
+                if (getTrainingSoftware) {
+                    getTrainingSoftware.parentNode.removeChild(getTrainingSoftware);
 
                     // Unselect the corresponding option
-                    let selectElement = document.querySelector('select[name="seminar_software_id"]');
+                    let selectElement = document.querySelector('select[name="training_software_id"]');
                     if (selectElement) {
                         var optionElement = selectElement.querySelector('option[value="' + Id + '"]');
                         if (optionElement) {
@@ -728,7 +728,7 @@
                         }
                     }
                 }
-                $('#seminar-filter-form').submit();
+                $('#training-filter-form').submit();
             }
         </script>
 
@@ -815,7 +815,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -825,7 +825,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -835,7 +835,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -845,7 +845,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -855,7 +855,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -865,7 +865,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -875,7 +875,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -886,7 +886,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -896,7 +896,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
 
@@ -907,7 +907,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
 
@@ -918,7 +918,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -928,7 +928,7 @@
                                     hilightedDays)) {
                                 return {
                                     classes: 'highlight',
-                                    tooltip: 'Seminar'
+                                    tooltip: 'Training'
                                 }
                             }
                         }
@@ -944,27 +944,27 @@
                 showSemianrSoftwate();
             });
 
-            // Hide and show seminar software
-            function showSemianrSoftwate() {
-                let seminarSoftware = {!! json_encode($category_ids) !!};
-                for (let i = 0; i < seminarSoftware.length; i++) {
+            // Hide and show training software
+            function showTrainingSoftwate() {
+                let trainingSoftware = {!! json_encode($category_ids) !!};
+                for (let i = 0; i < trainingSoftware.length; i++) {
                     // When category "Research and Analysis"
-                    // then show seminar software
-                    if (seminarSoftware[i] == 12) {
-                        $("#seminar-software").show();
+                    // then show training software
+                    if (trainingSoftware[i] == 12) {
+                        $("#training-software").show();
                     }
                 }
             }
 
             function applyFilter() {
-                $('#seminar-filter-form').submit();
+                $('#training-filter-form').submit();
             }
         </script>
     @endsection
 
     <script type="text/javascript">
         function applyFilter() {
-            $('#seminar-filter-form').submit();
+            $('#training-filter-form').submit();
         }
 
         function rangefilter(arg) {

@@ -3,7 +3,7 @@
     <div class="aiz-titlebar text-left mt-2 mb-3">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h1 class="h3">{{ translate('All Seminar Software') }}</h1>
+                <h1 class="h3">{{ translate('All Training Software') }}</h1>
             </div>
         </div>
     </div>
@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-header d-block d-md-flex">
                     <h5 class="mb-0 h6">{{ translate('Software name') }}</h5>
-                    <form class="" id="sort_seminars" action="" method="GET">
+                    <form class="" id="sort_trainings" action="" method="GET">
                         <div class="box-inline pad-rgt pull-left">
                             <div class="" style="min-width: 200px;">
                                 <input type="text" class="form-control" id="search"
@@ -32,21 +32,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($seminar_softwares as $key => $seminar_software)
+                            @foreach ($training_softwares as $key => $training_software)
                             {{-- @dd($key); --}}
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $seminar_software->name }}</td>
+                                    <td>{{ $training_software->name }}</td>
                                     <td class="text-right">
                                         <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                                            href="{{ url('admin/seminar-software/' . $seminar_software->id . '/edit') }}"
+                                            href="{{ url('admin/training-software/' . $training_software->id . '/edit') }}"
                                             title="{{ translate('Edit') }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
                                         title="{{ translate('Delete') }}" onclick="$(this).find('form').submit();">
                                             <i class="las la-trash"></i>
-                                            <form action="{{ route('seminar-software.delete', $seminar_software->id) }}" method="POST">
+                                            <form action="{{ route('training-software.delete', $training_software->id) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>
@@ -68,19 +68,19 @@
                     <h5 class="mb-0 h6">{{ translate('Add New Software') }}</h5>
                 </div>
                 <div class="card-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('seminar-software.store') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('training-software.store') }}">
                         @csrf
                         <div class="form-group mb-3">
                             <label for="name">{{ translate('Name') }}</label>
                             <input type="text" id="name" name="name"
-                                placeholder="{{ translate('Seminar Software') }}" class="form-control" required>
+                                placeholder="{{ translate('Training Software') }}" class="form-control" required>
                         </div>
                         <div class="form-group mb-3 text-right">
                             <button type="submit"
                                 class="btn btn-primary">{{ translate('Save New Software') }}</button>
                         </div>
                     </form>
-                    {{-- {{ $seminars->links() }} --}}
+                    {{-- {{ $trainings->links() }} --}}
                 </div>
             </div>
         </div>

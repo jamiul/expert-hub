@@ -29,7 +29,7 @@
 
             </p>
             <p class="fs-14 mt-1 mb-0 ">To schedule a
-                consultation, <span class="fs-14 fw-700  seminar-more expertise "><u>Book a time</u></span>
+                consultation, <span class="fs-14 fw-700  training-more expertise "><u>Book a time</u></span>
             </p>
         </div>
     </div>
@@ -60,7 +60,7 @@
 
             </p>
             <p class="fs-14 mt-1 mb-0 ">To schedule a
-                consultation, <span class="fs-14 fw-700 expertise seminar-more "><u>Book
+                consultation, <span class="fs-14 fw-700 expertise training-more "><u>Book
                         a time</u></span>
             </p>
         </div>

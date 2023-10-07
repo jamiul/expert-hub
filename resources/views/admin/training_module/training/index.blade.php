@@ -4,11 +4,11 @@
 <div class="aiz-titlebar text-left mt-2 mb-3">
     <div class="row align-items-center">
         <div class="col-auto">
-            <h1 class="h3">{{translate('All Seminar')}}</h1>
+            <h1 class="h3">{{translate('All Training')}}</h1>
         </div>
         <div class="col text-right">
-            <a href="{{ url('/admin/seminar/create') }}" class="btn btn-circle btn-info">
-                <span>{{translate('Add New Seminar')}}</span>
+            <a href="{{ url('/admin/training/create') }}" class="btn btn-circle btn-info">
+                <span>{{translate('Add New Training')}}</span>
             </a>
         </div>
     </div>
@@ -18,7 +18,7 @@
     <form class="" id="sort_blogs" action="" method="GET">
         <div class="card-header row gutters-5">
             <div class="col text-center text-md-left">
-                <h5 class="mb-md-0 h6">{{ translate('All Seminar posts') }}</h5>
+                <h5 class="mb-md-0 h6">{{ translate('All Training posts') }}</h5>
             </div>
 
 
@@ -35,8 +35,8 @@
                     <tr>
                         <th>#</th>
                         <th>{{translate('Title')}}</th>
-                        {{-- <th data-breakpoints="lg">{{translate('Seminar Date')}}</th> --}}
-                        <th data-breakpoints="lg">{{translate('Seminar Mode')}}</th>
+                        {{-- <th data-breakpoints="lg">{{translate('Training Date')}}</th> --}}
+                        <th data-breakpoints="lg">{{translate('Training Mode')}}</th>
                         <th data-breakpoints="lg">{{translate('Software Package')}}</th>
                         <th data-breakpoints="lg">{{translate('Language')}}</th>
                         <th data-breakpoints="lg">{{translate('Instructor')}}</th>
@@ -45,47 +45,47 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($seminars as $key => $seminar)
+                    @foreach($trainings as $key => $training)
                     <tr>
                         <td>
                             {{ $loop->iteration }}
                         </td>
                         <td>
-                            {{ $seminar->title }}
+                            {{ $training->title }}
                         </td>
                         {{-- <td>
-                            @dd($seminar->seminar_dates);
+                            @dd($training->training_dates);
                             @php
-                                $seminar->seminar_dates;
+                                $training->training_dates;
                             @endphp
                         </td> --}}
                         <td>
-                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                            {{ getTrainingModeName($training->training_mode_id) }}
                         </td>
                         <td>
-                            {{ getSoftwarePackageName($seminar->seminar_software_id) }}
+                            {{ getSoftwarePackageName($training->training_software_id) }}
                         </td>
                         <td>
-                            {{ getLanguageName($seminar->language_id) }}
+                            {{ getLanguageName($training->language_id) }}
                         </td>
                         <td>
-                            {{ getInstructorName($seminar->user_id) }}
+                            {{ getInstructorName($training->user_id) }}
                         </td>
                         <td>
-                            {{ $seminar->status }}
+                            {{ $training->status }}
                         </td>
                         <td class="text-right">
-                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('seminar.edit',$seminar->id)}}" title="{{ translate('Edit') }}">
+                            <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{ route('training.edit',$training->id)}}" title="{{ translate('Edit') }}">
                                 <i class="las la-pen"></i>
                             </a>
 
-                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-toggle="modal" data-target="#delete-modal_{{$seminar->id}}" data-id={{$seminar->id}}>
+                            <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-toggle="modal" data-target="#delete-modal_{{$training->id}}" data-id={{$training->id}}>
                                 <i class="las la-trash"></i>
                             </a>
                         </td>
                     </tr>
                     <!-- delete Modal -->
-                    <div id="delete-modal_{{$seminar->id}}" class="modal fade">
+                    <div id="delete-modal_{{$training->id}}" class="modal fade">
                         <div class="modal-dialog modal-sm modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="modal-body text-center">
                                     <p class="mt-1">{{translate('Are you sure to delete this?')}}</p>
-                                    <form action="{{ route('seminar.delete', $seminar->id) }}" method="POST">
+                                    <form action="{{ route('training.delete', $training->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-link mt-2" data-dismiss="modal">{{translate('Cancel')}}</button>
@@ -108,7 +108,7 @@
                 </tbody>
             </table>
 
-            {{-- @dd(route('seminar.delete', $seminar->id)); --}}
+            {{-- @dd(route('training.delete', $training->id)); --}}
             <div class="aiz-pagination">
                 {{-- {{ $scholarships->links() }} --}}
             </div>

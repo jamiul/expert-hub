@@ -1168,9 +1168,9 @@
                             <!-- <p class="fs-18">{{ get_setting('service_section_subtitle') }}</p> -->
                         </div>
                         <div>
-                            <a href="{{ asset('/search?keyword=&type=seminar') }}"
+                            <a href="{{ asset('/search?keyword=&type=training') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
-                                <span>All seminars</span>
+                                <span>All trainings</span>
                                 <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
@@ -1179,25 +1179,25 @@
 
                     <div class="row">
 
-                        @foreach ($seminars as $seminar)
+                        @foreach ($trainings as $training)
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
                                 <div class="card border-1" style="height:350px;">
-                                    <img class="w-100 h-190px" src=" {{ custom_asset($seminar->attachment) }}"
+                                    <img class="w-100 h-190px" src=" {{ custom_asset($training->attachment) }}"
                                         alt="Image" />
                                     <div class="p-3">
-                                        <h5 class="card-title fs-20 mt-2 seminar-home-content"> {{ $seminar->title }}
+                                        <h5 class="card-title fs-20 mt-2 training-home-content"> {{ $training->title }}
                                         </h5>
                                         <p style="line-height:16px;">
-                                            <span class="fw-500 fs-16 seminar-more">
-                                                <u>{{ getInstructorName($seminar->user_id) }}</u> |
+                                            <span class="fw-500 fs-16 training-more">
+                                                <u>{{ getInstructorName($training->user_id) }}</u> |
                                             </span>
-                                            <span class="fw-500 seminar-more">
+                                            <span class="fw-500 training-more">
                                                 <u>{{ getInstructorName(rand(10, 14)) }}</u>
                                             </span>
                                         </p>
                                         <p
-                                            class="fre-scsh-right-side-details seminar-small-device-font text-justify mb-1 pr-4 p-0">
-                                            {{ getSeminarModeName($seminar->seminar_mode_id) }}
+                                            class="fre-scsh-right-side-details training-small-device-font text-justify mb-1 pr-4 p-0">
+                                            {{ getTrainingModeName($training->training_mode_id) }}
                                         </p>
                                     </div>
                                 </div>
@@ -1205,8 +1205,8 @@
                         @endforeach
                     </div>
                     <h5 class="fre-button-show">
-                        <a href="{{ asset('/search?keyword=&type=seminar') }}" class="fs-16 text-dark  "><span>All
-                                seminars</span></a>
+                        <a href="{{ asset('/search?keyword=&type=training') }}" class="fs-16 text-dark  "><span>All
+                                trainings</span></a>
                         <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>

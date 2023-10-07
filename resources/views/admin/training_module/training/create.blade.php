@@ -6,7 +6,7 @@
         <div class="col-lg-8 mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0 h6">{{ translate('Seminar Information') }}</h5>
+                    <h5 class="mb-0 h6">{{ translate('Training Information') }}</h5>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -18,39 +18,39 @@
                     @endif
                 </div>
                 <div class="card-body">
-                    <form id="add_form" class="form-horizontal" action="{{ route('seminar.store') }}" method="POST">
+                    <form id="add_form" class="form-horizontal" action="{{ route('training.store') }}" method="POST">
                         @csrf
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">
-                                {{ translate('Seminar Title') }}
+                                {{ translate('Training Title') }}
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
-                                <input type="text" placeholder="{{ translate('Seminar Title') }}"
+                                <input type="text" placeholder="{{ translate('Training Title') }}"
                                     onkeyup="makeSlug(this.value)" id="title" name="title" class="form-control"
                                     required>
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <table class="table table-borderless mb-0" id="seminarDateTable">
+                            <table class="table table-borderless mb-0" id="trainingDateTable">
                                 <tbody>
                                     <tr>
                                         <td>
                                             <div class="form-group row">
                                                 <label class="col-md-3 col-form-label">
-                                                    {{ translate('Seminar Date') }}
+                                                    {{ translate('Training Date') }}
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-md-9">
                                                     <input type="text" placeholder="{{ translate('Select Date') }}"
-                                                        name="seminar_date[]" class="form-control"
+                                                        name="training_date[]" class="form-control"
                                                         onfocus="(this.type='date')" {{-- onblur="(this.type='text')" --}}>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-3 col-form-label">
-                                                    {{ translate('Seminar Date Description') }}
+                                                    {{ translate('Training Date Description') }}
                                                 </label>
                                                 <div class="col-md-9">
                                                     <textarea name="date_description[]" rows="5" class="form-control"></textarea>
@@ -67,15 +67,15 @@
                                 {{ translate('Add Date') }}
                             </button>
                         </div>
-                        <!-- Seminar Category -->
+                        <!-- Training Category -->
                         <div class="form-group row">
                             <label class="col-md-3 col-from-label">
-                                {{ translate('Seminar Category') }}
+                                {{ translate('Training Category') }}
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="seminar_category"
-                                    data-live-search="true" title="{{ translate('Select Seminar Category') }}">
+                                <select class="form-control aiz-selectpicker" name="training_category"
+                                    data-live-search="true" title="{{ translate('Select Training Category') }}">
                                     @foreach (getProjectCategory() as $category)
                                         <option value="{{ $category['id'] }}">
                                             {{ $category['name'] }}
@@ -84,45 +84,45 @@
                                 </select>
                             </div>
                         </div>
-                        <!-- Seminar Mode -->
-                        <div class="form-group row" id="seminar_mode">
+                        <!-- training Mode -->
+                        <div class="form-group row" id="training_mode">
                             <label class="col-md-3 col-from-label">
-                                {{ translate('Seminar Mode') }}
+                                {{ translate('Training Mode') }}
                                 <span class="text-danger">*</span>
 
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="seminar_mode_id" id="seminar_mode_id"
-                                    data-live-search="true" title="{{ translate('Select Seminar Mode') }}">
-                                    @foreach ($seminar_modes as $seminar_mode)
-                                        <option value="{{ $seminar_mode->id }}">
-                                            {{ $seminar_mode->name }}
+                                <select class="form-control aiz-selectpicker" name="training_mode_id" id="training_mode_id"
+                                    data-live-search="true" title="{{ translate('Select training Mode') }}">
+                                    @foreach ($training_modes as $training_mode)
+                                        <option value="{{ $training_mode->id }}">
+                                            {{ $training_mode->name }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
-                        <!-- Seminar Software Package-->
-                        <div class="form-group row" id="seminar_software">
+                        <!-- Training Software Package-->
+                        <div class="form-group row" id="training_software">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Software Package') }}
                                 <span class="text-danger">*</span>
 
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="seminar_software_id"
-                                    id="seminar_software_id" data-live-search="true"
+                                <select class="form-control aiz-selectpicker" name="training_software_id"
+                                    id="training_software_id" data-live-search="true"
                                     title="{{ translate('Select Software Package') }}">
 
-                                    @foreach ($seminar_softwares as $seminar_software)
-                                        <option value="{{ $seminar_software->id }}">
-                                            {{ $seminar_software->name }}
+                                    @foreach ($training_softwares as $training_software)
+                                        <option value="{{ $training_software->id }}">
+                                            {{ $training_software->name }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
-                        <!-- Seminar Software Description -->
+                        <!-- Training Software Description -->
                         <div class="form-group row">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Software Description') }}
@@ -131,7 +131,7 @@
                                 <textarea class="aiz-text-editor" name="software_description"></textarea>
                             </div>
                         </div>
-                        <!-- Seminar Language -->
+                        <!-- Training Language -->
                         <div class="form-group row" id="language">
                             <label class="col-md-3 col-from-label">
                                 {{ translate('Language') }}
@@ -166,7 +166,7 @@
                                 {{ translate('Course Instructor 1') }}
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]" id="user_id"
+                                <select class="form-control aiz-selectpicker" name="training_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 1') }}">
                                     @foreach ($course_instructors as $course_instructor)
                                         <option value="{{ $course_instructor['id'] }}">
@@ -182,7 +182,7 @@
                                 {{ translate('Course Instructor 2') }}
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]" id="user_id"
+                                <select class="form-control aiz-selectpicker" name="training_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 2') }}">
                                     @foreach ($course_instructors as $course_instructor)
                                         <option value="{{ $course_instructor['id'] }}">
@@ -198,7 +198,7 @@
                                 {{ translate('Course Instructor 3') }}
                             </label>
                             <div class="col-md-9">
-                                <select class="form-control aiz-selectpicker" name="seminar_instructors[]" id="user_id"
+                                <select class="form-control aiz-selectpicker" name="training_instructors[]" id="user_id"
                                     data-live-search="true" title="{{ translate('Course Instructor 3') }}">
                                     @foreach ($course_instructors as $course_instructor)
                                         <option value="{{ $course_instructor['id'] }}">
@@ -219,7 +219,7 @@
                         </div>
                          {{-- attachments --}}
                          <div class="form-group row">
-                            <label class="form-label col-md-3">{{ translate('Seminar Image') }}
+                            <label class="form-label col-md-3">{{ translate('Training Image') }}
                             <span class="text-danger">*</span></label>
                             <div class="col-md-9">
                                 <div class="input-group " data-toggle="aizuploader" data-type="image">
@@ -234,7 +234,7 @@
 
                         </div>
 
-                        <!-- Seminar Slug -->
+                        <!-- Training Slug -->
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">{{ translate('Slug') }}
                                 <span class="text-danger">*</span></label>
@@ -281,10 +281,10 @@
                                 <textarea class="aiz-text-editor" name="teaching_resources"></textarea>
                             </div>
                         </div>
-                        <!-- Seminar Seat -->
+                        <!-- Training Seat -->
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">
-                                {{ translate('Seminar Seat') }}
+                                {{ translate('Training Seat') }}
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
@@ -292,16 +292,16 @@
                                     class="form-control" required>
                             </div>
                         </div>
-                        <!-- Seminar Status -->
+                        <!-- Training Status -->
                         <div class="form-group row" id="status">
                             <label class="col-md-3 col-from-label">
-                                {{ translate('Seminar Status') }}
+                                {{ translate('Training Status') }}
                                 <span class="text-danger">*</span>
 
                             </label>
                             <div class="col-md-9">
                                 <select class="form-control aiz-selectpicker" name="status" id="status"
-                                    data-live-search="true" title="{{ translate('Seminar Status') }}" required>
+                                    data-live-search="true" title="{{ translate('Training Status') }}" required>
                                     <option value="private">Private</option>
                                     <option value="public">Public</option>
                                 </select>
@@ -343,8 +343,8 @@
         let add_date = 0;
         $('#addDate').click(function() {
             ++add_date;
-            $('#seminarDateTable').append(
-                '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="seminar_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Seminar Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
+            $('#trainingDateTable').append(
+                '<tr><td><div class="form-group row"><label class="col-md-3 col-form-label">Training Date</label><div class="col-md-8"><input type="date" placeholder="Select Date" name="training_date[]" class="form-control"></div><div class="col-md"> <button type="button" class="btn btn-circle btn-danger" id="removeDate">X</button></div></div><div class="form-group row"><label class="col-md-3 col-form-label">Training Date Description</label><div class="col-md-9"><textarea name="date_description[]" rows="5"class="form-control"></textarea></div></div></td></tr>'
             );
         });
 

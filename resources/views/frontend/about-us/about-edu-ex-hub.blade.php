@@ -7,7 +7,7 @@
                                 <div class="w-lg-100 w-lg-100 lh-1-8 content-title ">
                                     <!-- <h2 class="fw-700 fs-40">{{ get_setting('service_section_title') }}</h2> -->
                                     <p class=" mt-5 text-success fw-700 frequently-qsn-title">About {{ config('app.name') }}</p>
-                                    <p class=" fw-500 seminar-objective-details">Welcome to {{ config('app.name') }}, your premier
+                                    <p class=" fw-500 training-objective-details">Welcome to {{ config('app.name') }}, your premier
                                         destination for connecting with top academic experts across a diverse spectrum of
                                         fields and disciplines. Whether you represent a higher education institution, a
                                         media organisation, or are an individual seeking expert guidance for your academic
@@ -15,13 +15,13 @@
 
 
                                     </p>
-                                    <p class=" fw-500 seminar-objective-details">At {{ config('app.name') }}, we proudly provide an
+                                    <p class=" fw-500 training-objective-details">At {{ config('app.name') }}, we proudly provide an
                                         extensive and diverse network of distinguished academic professionals, ensuring that
                                         you have access to highly qualified experts with specialised knowledge tailored to
                                         your unique requirements. Our global platform transcends borders, providing you with
                                         an international perspective that proves invaluable when addressing global or
                                         cross-cultural educational challenges and opportunities.</p>
-                                    <p class=" fw-500 seminar-objective-details">
+                                    <p class=" fw-500 training-objective-details">
                                         Our comprehensive suite of services caters to a wide spectrum of needs, including
                                         but not limited to course accreditations, curriculum development, program design,
                                         policy formulation, scholarship advice, and complete educational project management.

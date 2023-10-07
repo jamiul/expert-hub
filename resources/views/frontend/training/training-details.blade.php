@@ -8,19 +8,19 @@
 <body>
     @extends('frontend.layouts.app')
     @section('content')
-        <div class="seminar-content mx-auto shadow-lg my-5">
+        <div class="training-content mx-auto shadow-lg my-5">
             <div class="row pt-5 mx-1" style="background: #fff;">
-                <div class="col-lg-12 col-12 seminar-details mx-sm-2 mx-lg-0  px-lg-5 ">
+                <div class="col-lg-12 col-12 training-details mx-sm-2 mx-lg-0  px-lg-5 ">
                     <div class=" mb-4 mt-3">
                         <div class="row ">
                             <div class="col-10">
                                 <p class="fs-24 mx-lg-1 fw-700"style="color:#5ABC76;">
-                                    <u>{{ $seminar['title'] }}</u>
+                                    <u>{{ $training['title'] }}</u>
                                 </p>
                             </div>
                             <div class="col-lg-10 col-12 ">
                                 <p class="fs-22 mx-lg-1 fw-700"style="color:#5ABC76;">
-                                    Seminar overview
+                                    Training overview
                                 </p>
                             </div>
                             <div class="col-lg-10 col-12 ">
@@ -32,13 +32,13 @@
                                 <div class="row mb-2 mx-1">
                                     <div class="col-lg-3 col-12 p-0">
                                         <p class="fre-scsh-left-side-title mb-0">
-                                            Seminar dates:
+                                            Training dates:
                                         </p>
                                     </div>
                                     <div class="col-lg-9 col-12 pl-0">
 
                                         <p class="fre-scsh-right-side-details pb-0 mb-0 p-0">
-                                            {{ $seminar['seminar_date'] ? formatSeminarDate($seminar['seminar_date']) : 'date not set' }}
+                                            {{ $training['training_date'] ? formatTrainingDate($training['training_date']) : 'date not set' }}
                                         </p>
 
                                     </div>
@@ -46,13 +46,13 @@
                                 <div class="row mb-2 mx-1">
                                     <div class="col-lg-3 col-12 p-0">
                                         <p class="fre-scsh-left-side-title mb-0">
-                                            Seminar Mode:
+                                            Training Mode:
                                         </p>
                                     </div>
                                     <div class="col-lg-9 col-12 pl-0 p-0">
 
                                         <p class="fre-scsh-right-side-details pb-0 mb-0">
-                                            {{ $seminar['seminar_mode_id'] ? getSeminarModeName($seminar['seminar_mode_id']): '' }}
+                                            {{ $training['training_mode_id'] ? getTrainingModeName($training['training_mode_id']): '' }}
                                         </p>
 
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="col-lg-9 col-12 pl-0">
 
                                         <p class="fre-scsh-right-side-details p-0 pb-0 mb-0">
-                                            {{ getSoftwarePackageName($seminar['seminar_software_id']) }}
+                                            {{ getSoftwarePackageName($training['training_software_id']) }}
                                         </p>
 
                                     </div>
@@ -81,7 +81,7 @@
                                     <div class="col-lg-9 col-12  pl-0">
 
                                         <p class="fre-scsh-right-side-details p-0  mb-1">
-                                            {{ getLanguageName($seminar['language_id']) }}</p>
+                                            {{ getLanguageName($training['language_id']) }}</p>
 
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                     <div class="col-lg-9 col-12  pl-0">
 
                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-4 p-0">
-                                            {{ $seminar['organiser_certificate'] }}
+                                            {{ $training['organiser_certificate'] }}
                                         </p>
                                     </div>
                                 </div>
@@ -109,10 +109,10 @@
 
                                         <p class="fre-scsh-right-side-details text-justify mb-1 pr-lg-4 p-0">
                                         <p>
-                                            <span class="fw-500 seminar-more fre-scsh-right-side-details">
-                                                <u class="">{{ getInstructorName($seminar['user_id']) }}</u> |
+                                            <span class="fw-500 training-more fre-scsh-right-side-details">
+                                                <u class="">{{ getInstructorName($training['user_id']) }}</u> |
                                             </span>
-                                            <span class="fw-500 fre-scsh-right-side-details seminar-more">
+                                            <span class="fw-500 fre-scsh-right-side-details training-more">
                                                 <u class="">{{ getInstructorName(rand(10, 14)) }}</u>
                                             </span>
                                         </p>
@@ -167,22 +167,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" mx-2 mx-lg-0 seminar-details px-lg-0 ">
+                    <div class=" mx-2 mx-lg-0 training-details px-lg-0 ">
                         <div class="">
-                            <h5 class="seminar-objective  fw-700"style="color:#5ABC76;">
+                            <h5 class="training-objective  fw-700"style="color:#5ABC76;">
                                 Course objectives
                             </h5>
                             <div>
-                                <p class="text-justify seminar-objective-details">
-                                    {!! $seminar['course_objectives'] !!}</p>
+                                <p class="text-justify training-objective-details">
+                                    {!! $training['course_objectives'] !!}</p>
                             </div>
                             <hr>
                         </div>
                         <div class="pt-2">
                             <h5 class="fs-22 fw-700 "style="color:#5ABC76;">Learning outcomes</h5>
                             <div>
-                                <p class="text-justify seminar-objective-details">
-                                    {!! $seminar['learning_outcomes'] !!}
+                                <p class="text-justify training-objective-details">
+                                    {!! $training['learning_outcomes'] !!}
                                 </p>
                             </div>
                         </div>
@@ -191,8 +191,8 @@
                             <h5 class="fs-22 fw-700"style="color:#5ABC76;">Teaching and learning methods
                             </h5>
                             <div>
-                                <p class="text-justify seminar-objective-details">
-                                    {!! $seminar['teaching_learning_methods'] !!}
+                                <p class="text-justify training-objective-details">
+                                    {!! $training['teaching_learning_methods'] !!}
                                 </p>
                             </div>
                             <hr>
@@ -200,21 +200,21 @@
                         <div class="pt-2">
                             <h5 class="fs-22 fw-700"style="color:#5ABC76;">Instructors</h5>
                             <p>
-                                {!! $seminar['instructor_descriptions'] !!}
+                                {!! $training['instructor_descriptions'] !!}
                             </p>
                             <hr>
                         </div>
                         <div class="pt-2">
                             <h5 class="fs-22 fw-700 mt-2"style="color:#5ABC76;">Teaching Resources</h5>
                             <p>
-                                {!! $seminar['teaching_resources'] !!}
+                                {!! $training['teaching_resources'] !!}
                             </p>
                             <hr>
                         </div>
                         <div class="pt-2">
                             <h6 class="fs-22 fw-700 mt-2"style="color:#5ABC76;">Software</h6>
-                            <p class="text-justify seminar-objective-details">
-                                {!! $seminar['software_description'] !!}
+                            <p class="text-justify training-objective-details">
+                                {!! $training['software_description'] !!}
                             </p>
                         </div>
                         <div>

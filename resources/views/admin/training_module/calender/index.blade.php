@@ -3,7 +3,7 @@
 <div class="aiz-titlebar text-left mt-2 mb-3">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h1 class="h3">{{translate('All seminar dates')}}</h1>
+      <h1 class="h3">{{translate('All training dates')}}</h1>
     </div>
   </div>
 </div>
@@ -11,7 +11,7 @@
   <div class="col-lg-7">
     <div class="card">
       <div class="card-header d-block d-md-flex">
-        <h5 class="mb-0 h6">{{ translate('Available seminar dates ') }}</h5>
+        <h5 class="mb-0 h6">{{ translate('Available training dates ') }}</h5>
         <form class="" id="sort_categories" action="" method="GET">
           <div class="box-inline pad-rgt pull-left">
             <div class="" style="min-width: 200px;">
@@ -36,7 +36,7 @@
 
             <tr>
               {{-- <td>{{ ($key+1) + ($categories->currentPage() - 1)*$categories->perPage() }}</td> --}}
-              <td>{{ $category->seminarMode_name }}</td>
+              <td>{{ $category->trainingMode_name }}</td>
 
               <td class="text-right">
                 <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
@@ -44,7 +44,7 @@
                   <i class="las la-edit"></i>
                 </a>
                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                  data-href="{{route('seminar-mode.delete', $category->id)}}"
+                  data-href="{{route('training-mode.delete', $category->id)}}"
                   title="{{ translate('Delete') }}">
                   <i class="las la-trash"></i>
                 </a>
@@ -62,18 +62,18 @@
   <div class="col-lg-5">
     <div class="card">
       <div class="card-header">
-        <h5 class="mb-0 h6">{{ translate('Add Seminar Mode') }}</h5>
+        <h5 class="mb-0 h6">{{ translate('Add Training Mode') }}</h5>
       </div>
       <div class="card-body">
-        <form class="form-horizontal" method="POST" action="{{ route('seminar-mode.store') }}">
+        <form class="form-horizontal" method="POST" action="{{ route('training-mode.store') }}">
           @csrf
           <div class="form-group mb-3">
             <label for="name">{{translate('Name')}}</label>
-            <input type="text" id="seminarMode_name" name="seminarMode_name" placeholder="{{ translate('Seminar Mode Name') }}"
+            <input type="text" id="trainingMode_name" name="trainingMode_name" placeholder="{{ translate('Training Mode Name') }}"
               class="form-control" required>
           </div>
           <div class="form-group mb-3 text-right">
-            <button type="submit" class="btn btn-primary">{{translate('Save  New seminar Mode')}}</button>
+            <button type="submit" class="btn btn-primary">{{translate('Save  New Training Mode')}}</button>
           </div>
         </form>
 

@@ -89,19 +89,19 @@ h4.view-profile {
     font-weight: bold;
 }
 @media only screen and (max-width: 991px) {
-    .freelancer-profile-main-section {
+    .expert-profile-main-section {
         margin-top: 25px;
     }
 
-    .freelancer-profile-main-section .container-home {
+    .expert-profile-main-section .container-home {
         width: 98%;
         margin: 0 1%;
     }
-    .frePage-freelancer-name {
+    .frePage-expert-name {
         font-size: 30px;
         font-weight: 700;
         color:#5ABC76 !important;
-        
+
     }
     .hire-me-button-res-frePage {
         display: none !important;
@@ -125,7 +125,7 @@ h4.view-profile {
         height: 85px;
         background: white;
     }
-    .freelancer-user-identity-profile-section {
+    .expert-user-identity-profile-section {
         margin: 10px 10px !important;
     }
     .profile-identity .avatar img {

@@ -322,7 +322,7 @@
                                                                         <span class="">Category: <span
                                                                                 class="fw-700">
                                                                                 @if ($similar_type_project->project_category_id != null)
-                                                                                    {{ getSeminarCategory($similar_type_project->project_category_id) }}
+                                                                                    {{ getTrainingCategory($similar_type_project->project_category_id) }}
                                                                                 @endif
                                                                             </span></span>
                                                                     </a>
