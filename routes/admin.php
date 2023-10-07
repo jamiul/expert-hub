@@ -245,10 +245,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     // website setting
     Route::group(['prefix' => 'website'], function () {
         Route::get('/home', [SystemConfigurationController::class, 'homeSettings'])->name('website.home');
-        Route::view('/header', 'admin.default.website.header')->name('website.header')->middleware(['permission:show header']);
-        Route::view('/footer', 'admin.default.website.footer')->name('website.footer')->middleware(['permission:show footer']);
-        Route::view('/pages', 'admin.default.website.pages')->name('website.pages')->middleware(['permission:show pages']);
-        Route::view('/appearance', 'admin.default.website.appearance')->name('website.appearance')->middleware(['permission:show apperance']);
+        Route::view('/header', 'admin.website.header')->name('website.header')->middleware(['permission:show header']);
+        Route::view('/footer', 'admin.website.footer')->name('website.footer')->middleware(['permission:show footer']);
+        Route::view('/pages', 'admin.website.pages')->name('website.pages')->middleware(['permission:show pages']);
+        Route::view('/appearance', 'admin.website.appearance')->name('website.appearance')->middleware(['permission:show apperance']);
 
         Route::resource('custom-pages', PageController::class);
         Route::get('/custom-pages/destroy/{id}', [PageController::class, 'destroy'])->name('custom-pages.delete');
@@ -309,8 +309,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('staffs', StaffController::class);
     Route::get('/staffs/delete/{id}', [StaffController::class, 'destroy'])->name('staffs.delete');
 
-    Route::view('/system/update', 'admin.default.system.update')->name('system_update');
-    Route::view('/system/server-status', 'admin.default.system.server_status')->name('system_server');
+    Route::view('/system/update', 'admin.system.update')->name('system_update');
+    Route::view('/system/server-status', 'admin.system.server_status')->name('system_server');
 
     // uploaded files
     Route::resource('/uploaded-files', AizUploadController::class);

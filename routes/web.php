@@ -129,7 +129,7 @@ Route::get('/blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.d
 
 //why scholarships
 Route::get('/review', [WhyScholarshipController::class, 'whyScholarshipReview'])->name('review');
-Route::get('/about-us', [WhyScholarshipController::class, 'whyExpertEdu'])->name('about-us');
+Route::get('/about-us', [WhyScholarshipController::class, 'whyEduExHub'])->name('about-us');
 Route::get('/how-to-hire', [WhyScholarshipController::class, 'whyScholarshipHowToHire'])->name('how-to-hire');
 Route::get('/how-to-find-job', [WhyScholarshipController::class, 'whyScholarshipHowToFindJob'])->name('how-to-find-job');
 

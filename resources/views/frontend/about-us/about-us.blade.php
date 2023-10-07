@@ -30,16 +30,16 @@
     </div>
     <div class="whyFreeEdu-container-main mb-5 " style="background-color:#F2F7F2">
         <section>
-            @include('frontend.aboutUs.about-eduExHub')
+            @include('frontend.about-us.about-edu-ex-hub')
         </section>
         <hr>
         <section class="">
-            @include('frontend.aboutUs.make-impressive')
+            @include('frontend.about-us.make-impressive')
         </section>
         <hr>
         {{-- EduExperts – find the right work for you --}}
         <section>
-            @include('frontend.aboutUs.edu-expert-steps')
+            @include('frontend.about-us.edu-expert-steps')
         </section>
         {{-- Clients – find the best client for you --}}
         @include('frontend.about-us.client-steps')

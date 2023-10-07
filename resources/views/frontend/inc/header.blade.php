@@ -433,7 +433,6 @@
 
 
                                                         <div id="successStories" class="w-75 mega-menu-item">
-
                                                             <a class="dropdown-item succes-dmenu"
                                                                 href="{{ route('success-stories') }}">{{ translate('Success Stories') }}
                                                             </a>
@@ -446,8 +445,6 @@
                                                             <p>{{ translate('Explore the kind of work available in your field.') }}
                                                             </p>
                                                         </div>
-
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -500,33 +497,19 @@
         </div>
     </header>
 
-
     <script>
         document.getElementById('review').addEventListener('click', function() {
             window.location.href = " {{ route('review') }}";
         });
-    </script>
-    <script>
         document.getElementById('howToFindJob').addEventListener('click', function() {
             window.location.href = "{{ route('how-to-find-job') }}";
         });
-    </script>
-    <script>
         document.getElementById('howToHire').addEventListener('click', function() {
             window.location.href = "{{ route('how-to-hire') }}";
         });
-    </script>
-    <script>
         document.getElementById('successStories').addEventListener('click', function() {
             window.location.href = "{{ route('success-stories') }}";
         });
-    </script>
-    <script>
-        document.getElementById('findSkills').addEventListener('click', function() {
-            window.location.href = "{{ route('skills') }}?keyword=&type=project";
-        });
-    </script>
-    <script>
         document.getElementById('promoteYourself').addEventListener('click', function() {
             window.location.href = "{{ route('promote') }}";
         });
