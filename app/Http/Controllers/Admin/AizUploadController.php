@@ -66,7 +66,6 @@ class AizUploadController extends Controller
 
     public function upload(Request $request)
     {
-
         $type = array(
             "jpg" => "image",
             "jpeg" => "image",

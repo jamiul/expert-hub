@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\PackagePaymentController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PageOptimizationController;
+use App\Http\Controllers\Admin\PaymentConfigurationController;
 use App\Http\Controllers\Admin\PaytoExpertController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectCategoryController;
@@ -49,6 +50,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServicePaymentController;
 use App\Http\Controllers\Admin\SitePagesController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\SocialMediaConfigurationController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\SystemConfigurationController;
 use App\Http\Controllers\Admin\TrainingController;
@@ -169,10 +171,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('email-config', EmailConfigurationController::class);
 
     //payment config
-    Route::resource('payment-config', \App\Http\Controllers\Admin\PaymentConfigurationController::class);
+    Route::resource('payment-config', PaymentConfigurationController::class);
 
     //Social Media config
-    Route::resource('social-media-config', \App\Http\Controllers\Admin\SocialMediaConfigurationController::class);
+    Route::resource('social-media-config', SocialMediaConfigurationController::class);
 
     Route::get('/all-experts', [UserController::class, 'allExperts'])->name('all_experts');
     Route::get('/expert-info/{user_name}', [UserController::class, 'expertDetails'])->name('expert_info_show');

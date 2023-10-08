@@ -26,7 +26,7 @@
             </button>
           </div>
           <div class="d-flex ml-5">
-            <div><img src="{{asset('/assets/findJob/video.png')}}" alt="Image" class=" mr-3 rounded-2"
+            <div><img src="{{asset('/assets/find-job/video.png')}}" alt="Image" class=" mr-3 rounded-2"
                 style=" width:15px; height:15px; color:#4FA808; background-color:#58B38E;">
             </div>
             <div><span class="fs-16" style="color:#5ABC76;"> Watch a demo</span></div>
@@ -115,62 +115,31 @@
               Search
             </button>
           </div>
-
-
-          <!-- <div class="container-fluid position-relative">
-            <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
-
-              <div class="col-md-8">
-                <div class="d-flex form-inputs">
-                  <input class="form-control" type="text" placeholder="Search any product...">
-                  <img src=" {{asset('/assets/findJob/00.png')}}" alt="Image"
-                    class=" position-absolute bottom-0 start-0 d-flex align-items-center"
-                    style="width:14px; justify:center; align-items:center;  " />
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <div class=" row mt-lg-5">
-
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
-
               <p class="skills">
                 Academic mentoring</p>
-              <p class="skills">
-                Copywriting</p>
-
-
+              <p class="skills">Copywriting</p>
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
-              <p class="skills">
-                Curriculum development</p>
+              <p class="skills">Curriculum development</p>
               <p class="skills">Data analysis and interpretation</p>
-
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
               <p class="skills">Content creation</p>
-
               <p class="skills">Research writing</p>
-
             </div>
-
           </div>
-
           <div class=" row">
-
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
-
               <p class="skills">Statistical analysis</p>
               <p class="skills">Tutoring and Instruction</p>
               <p class="skills">Research proposal writing</p>
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
               <p class="skills">Proofreading and editing</p>
-
               <p class="skills">
                 Transcribing audio or video recordings</p>
-
             </div>
             <div class=" col-lg-4  fs-16 cursor-pointer " style=" color:#5E6D55;">
               <p class="skills">Transcribing audio or video recordings</p>

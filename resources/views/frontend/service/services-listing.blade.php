@@ -262,8 +262,8 @@
                                     <p class="fs-15 fw-400 mb-0">Most viewed and all-time top-selling services</p>
                                 </div>
                                 <div class="d-flex">
-                                    <!-- <img class="text-black c-pointer preBtn" src=" {{asset('/assets/findJob/left-arrow.png')}}" alt="Image" style="width:18px;" />
-                                    <img class=" text-black c-pointer nexBtn" src=" {{asset('/assets/findJob/right-arrows.png')}}" alt="Image" style="width:18px;" /> -->
+                                    <!-- <img class="text-black c-pointer preBtn" src=" {{asset('/assets/find-job/left-arrow.png')}}" alt="Image" style="width:18px;" />
+                                    <img class=" text-black c-pointer nexBtn" src=" {{asset('/assets/find-job/right-arrows.png')}}" alt="Image" style="width:18px;" /> -->
 
                                 </div>
 

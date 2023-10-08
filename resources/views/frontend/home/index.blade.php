@@ -204,7 +204,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Consultants</span>
-                                    <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -263,7 +263,7 @@
                                     class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                     <span>All
                                         Projects</span>
-                                    <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
+                                    <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}"
                                         alt="Image" style="width:18px;" />
                                 </a>
                             </div>
@@ -295,21 +295,11 @@
                             class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category fre-button-show">
                             <span>All
                                 Projects</span>
-                            <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}" alt="Image"
+                            <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}" alt="Image"
                                 style="width:18px;" />
                         </a>
-                        <!-- <h5 class="mx-3 fre-button-show">
-                                                                                                <a href="{{ route('search') }}?keyword=&type=service" class="fs-16 text-dark ">
-                                                                                                    <span>All
-                                                                                                        Jobs</span>
-                                                                                                </a>
-                                                                                                <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}" alt="Image" style="width:18px;" />
-                                                                                                </a>
-                                                                                            </h5> -->
                     </div>
-
                 </section>
-
             </form>
         @endif
 
@@ -746,7 +736,7 @@
                             <a href="{{ route('scholarship-search') }}?keyword=&type=scholarships"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All Scholarships</span>
-                                <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -1053,7 +1043,7 @@
                     <h5 class=" fre-button-show">
                         <a href="" class="fs-16 text-dark  "><span>All Scholarships
                             </span></a>
-                        <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}" alt="Image"
+                        <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
             </section>
@@ -1073,7 +1063,7 @@
                             <a href="{{ asset('/search?keyword=&type=training') }}"
                                 class=" fs-16 text-dark btn rounded-1 border pt-2 text-center fre-consultant-category">
                                 <span>All trainings</span>
-                                <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}"
+                                <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}"
                                     alt="Image" style="width:18px;" />
                             </a>
                         </div>
@@ -1109,7 +1099,7 @@
                     <h5 class="fre-button-show">
                         <a href="{{ asset('/search?keyword=&type=training') }}" class="fs-16 text-dark  "><span>All
                                 trainings</span></a>
-                        <img class=" category-list " src=" {{ asset('assets/findJob/right.png') }}" alt="Image"
+                        <img class=" category-list " src=" {{ asset('assets/find-job/right.png') }}" alt="Image"
                             style="width:18px;" />
                     </h5>
                 </div>

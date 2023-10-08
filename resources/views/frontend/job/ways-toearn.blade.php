@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="col-lg-6  pt-lg-2  px-5" style="height:400px;">
-        <img src=" {{asset('/assets/findJob/waystoEarn .png')}}" alt="Image" class=" w-100 rounded-2 h-100" />
+        <img src=" {{asset('/assets/find-job/waystoEarn .png')}}" alt="Image" class=" w-100 rounded-2 h-100" />
       </div>
     </div>
   </div>
@@ -84,7 +84,7 @@
             <div class="">
               <div class="">
                 <div class="d-flex justify-items-center">
-                  <img class="mx-auto d-block" src=" {{asset('/assets/findJob/image-1.png')}}" alt="Image"
+                  <img class="mx-auto d-block" src=" {{asset('/assets/find-job/image-1.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
                 <h5 class="text-center">1. Create a project
@@ -98,7 +98,7 @@
             <div class="">
               <div class="">
                 <div class="d-flex justify-items-center">
-                  <img class="mx-auto d-block" src=" {{asset('/assets/findJob/image-2.png')}}" alt="Image"
+                  <img class="mx-auto d-block" src=" {{asset('/assets/find-job/image-2.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
                 <h5 class="text-center">2. Project is reviewed</h5>
@@ -113,7 +113,7 @@
             <div class="">
               <div class="">
                 <div class="d-flex justify-items-center">
-                  <img class="mx-auto d-block" src=" {{asset('/assets/findJob/image-3.png')}}" alt="Image"
+                  <img class="mx-auto d-block" src=" {{asset('/assets/find-job/image-3.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
                 <h5 class="text-center">3. Get an order</h5>
@@ -126,7 +126,7 @@
             <div class="">
               <div class="">
                 <div class="d-flex justify-items-center">
-                  <img class="mx-auto d-block" src=" {{asset('/assets/findJob/image-4.png')}}" alt="Image"
+                  <img class="mx-auto d-block" src=" {{asset('/assets/find-job/image-4.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
                 <h5 class="text-center">4. Get contract</h5>
@@ -140,7 +140,7 @@
             <div class="">
               <div class="">
                 <div class="d-flex justify-items-center">
-                  <img class="mx-auto d-block" src=" {{asset('/assets/findJob/image-5.png')}}" alt="Image"
+                  <img class="mx-auto d-block" src=" {{asset('/assets/find-job/image-5.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
                 <h5 class="text-center">5. Complete the work</h5>
@@ -154,7 +154,7 @@
             <div class="">
               <div class="">
                 <div class="d-flex justify-items-center">
-                  <img class="mx-auto d-block" src=" {{asset('/assets/findJob/image-6.png')}}" alt="Image"
+                  <img class="mx-auto d-block" src=" {{asset('/assets/find-job/image-6.png')}}" alt="Image"
                     style="width:80px; align-items:center;" />
                 </div>
                 <h5 class="text-center">6. Get paid securely</h5>
@@ -174,7 +174,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/catalog-1.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/catalog-1.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">1. Create a project
@@ -187,7 +187,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/catalog-2.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/catalog-2.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">2. Project is reviewed</h5>
@@ -202,7 +202,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/catalog-3.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/catalog-3.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">3. Get an order</h5>
@@ -214,7 +214,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/catalog-4.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/catalog-4.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">4. Complete the work</h5>
@@ -227,7 +227,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/catalog-5.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/catalog-5.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">5. Get paid securely</h5>
@@ -249,7 +249,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/talent-1.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/talent-1.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">1. Apply for Talent Scout™
@@ -264,7 +264,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/talent-2.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/talent-2.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">2. Application is reviewed</h5>
@@ -279,7 +279,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/talent-3.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/talent-3.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">3. Complete Assessments</h5>
@@ -293,7 +293,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/talent-4.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/talent-4.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">4. Recruiters find clients</h5>
@@ -306,7 +306,7 @@
               <div class="">
                 <div class="">
                   <div class="d-flex justify-items-center">
-                    <img class="mx-auto d-block" src=" {{asset('/assets/findJob/talent-5.png')}}" alt="Image"
+                    <img class="mx-auto d-block" src=" {{asset('/assets/find-job/talent-5.png')}}" alt="Image"
                       style="width:80px; align-items:center;" />
                   </div>
                   <h5 class="text-center">5. Connect with client</h5>
@@ -332,7 +332,7 @@
           <div class="">
             <div class="d-flex ">
               <div>
-                <img class="mr-2" src="{{asset('/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+                <img class="mr-2" src="{{asset('/assets/find-job/check.png')}}" alt="Image" style="width:15px;" />
               </div>
               <div>
                 <p class="fs-16 "><span class="fw-700"> Take control. </span> Find work that hits your financial goals
@@ -345,7 +345,7 @@
               </div>
             </div>
             <div class="d-flex align-items-center my-2">
-              <img class="" src="{{asset('/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+              <img class="" src="{{asset('/assets/find-job/check.png')}}" alt="Image" style="width:15px;" />
               <p class="h6 m-2">
                 <span class="fw-700 mt-2">Create lasting relationships.</span>
                 Build a predictable pipeline of projects, big and small, through strong
@@ -356,14 +356,14 @@
 
             </div>
             <div class="d-flex align-items-center mb-2">
-              <img class="" src="{{asset('/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+              <img class="" src="{{asset('/assets/find-job/check.png')}}" alt="Image" style="width:15px;" />
               <p class="h6 m-2 "> <span class="fw-700">Work and earn your way.</span> Search for jobs or have clients
                 come to you. The
                 opportunities
                 are endless.</p>
             </div>
             <div class="d-flex align-items-center ">
-              <img class="" src=" {{asset('/assets/findJob/check.png')}}" alt="Image" style="width:15px;" />
+              <img class="" src=" {{asset('/assets/find-job/check.png')}}" alt="Image" style="width:15px;" />
               <p class="h6 m-2 "><span class="fw-700">Connect & engage.</span> Learn, share information, and build
                 your
                 community
@@ -386,7 +386,7 @@
               <div class="col-lg-6 ">
                 <div class=" border-top border-success text-lg ">
                   <div class="d-flex align-items-center g-5 mt-2">
-                    <img class="text-center h4" src="{{asset('/assets/findJob/star.png')}}" alt="Image"
+                    <img class="text-center h4" src="{{asset('/assets/find-job/star.png')}}" alt="Image"
                       style="width:20px;" />
                     <p class="text-center m-0 h4 ">4.9/5</p>
                   </div>
@@ -396,7 +396,7 @@
                 </div>
                 <div class=" border-top border-success text-lg ">
                   <div class="d-flex align-items-center gap-5 mt-2">
-                    <img class="text-center h4" src="{{asset('/assets/findJob/star.png')}}" alt="Image"
+                    <img class="text-center h4" src="{{asset('/assets/find-job/star.png')}}" alt="Image"
                       style="width:20px;" />
                     <p class="text-center m-0 h4 ">4.9/5</p>
                   </div>
@@ -407,7 +407,7 @@
               <div class="col-lg-6 ">
                 <div class=" border-top border-success text-lg ">
                   <div class="d-flex align-items-center gap-5 mt-2">
-                    <img class="text-center h4" src="{{asset('/assets/findJob/star.png')}}" alt="Image"
+                    <img class="text-center h4" src="{{asset('/assets/find-job/star.png')}}" alt="Image"
                       style="width:20px;" />
                     <p class="text-center m-0 h4 ">4.9/5</p>
                   </div>
@@ -418,7 +418,7 @@
                 <div class=" border-top border-success text-lg ">
 
                   <div class="d-flex align-items-center gap-5 mt-2">
-                    <img class="text-center h4" src="{{asset('/assets/findJob/star.png')}}" alt="Image"
+                    <img class="text-center h4" src="{{asset('/assets/find-job/star.png')}}" alt="Image"
                       style="width:20px;" />
                     <p class="text-center m-0 h4 ">4.9/5</p>
                   </div>
@@ -449,7 +449,7 @@
             <div class=" card-body">
 
               <div class="card-body  " style="background-color:#91E6B3;"><img class="mx-auto d-block rounded-2"
-                  src=" {{asset('/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
+                  src=" {{asset('/assets/find-job/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
                   " /></div>
               <p class="card-title fw-600 text-dark mt-3 fs-20">Create your free profile</p>
               <p class="card-text fs-16">Highlight your skills and experience, show your portfolio, and set your ideal
@@ -463,7 +463,7 @@
           <div class=" card bg-light rounded-1" style="height:320px;">
             <div class=" card-body">
               <div class="card-body  " style="background-color:#91E6B3;"><img class="mx-auto rounded-2 d-block"
-                  src=" {{asset('/assets/findJob/jobs-2.png')}}" alt="Image" style="width:80px; align-items:center;
+                  src=" {{asset('/assets/find-job/jobs-2.png')}}" alt="Image" style="width:80px; align-items:center;
                   " /></div>
               <h5 class="card-title fw-600 text-dark mt-3 fs-20">Work the way you want</h5>
               <p class="card-text fs-16">Apply for jobs, create easy-to-buy projects, or access exclusive
@@ -478,7 +478,7 @@
           <div class="card bg-light rounded-1" style="height:320px;">
             <div class="card-body">
               <div class="card-body " style="background-color:#91E6B3;"><img class="mx-auto rounded-1 d-block"
-                  src=" {{asset('/assets/findJob/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
+                  src=" {{asset('/assets/find-job/jobs-1.png')}}" alt="Image" style="width:80px; align-items:center;
                   " /></div>
               <h5 class="card-title fw-600 text-dark mt-3 fs-20">Get paid securely</h5>
               <p class="card-text fs-16">From contract to payment, we help you work safely and get paid securely.</p>
@@ -491,7 +491,7 @@
       <p class="mt-3 fs-16">Want to know more?
         <span class="fs-16 fw-700" style="color:#534D9D;">
           Here’s how it works
-          <img class="" src=" {{asset('/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
+          <img class="" src=" {{asset('/assets/find-job/right.png')}}" alt="Image" style="width:12px; " />
         </span>
       </p>
     </div>
@@ -508,7 +508,7 @@
             <div class="card rounded bg-light">
               <div class="card-body d-flex items-center">
                 <div>
-                  <img class="mr-2" src=" {{asset('/assets/findJob/01.png')}}" alt="Image"
+                  <img class="mr-2" src=" {{asset('/assets/find-job/01.png')}}" alt="Image"
                     style="width:70px;  align-items:center;" />
                 </div>
                 <div>
@@ -525,7 +525,7 @@
             <div class="card bg-light">
 
               <div class="card-body d-flex">
-                <img class="" src=" {{asset('/assets/findJob/02.png')}}" alt="Image"
+                <img class="" src=" {{asset('/assets/find-job/02.png')}}" alt="Image"
                   style="width:80px; align-items:center; " />
                 <div>
                   <h5 class="card-title">Sales Icon
@@ -540,7 +540,7 @@
           <div class="col-sm-6">
             <div class="card bg-light">
               <div class="card-body d-flex">
-                <img class="" src=" {{asset('/assets/findJob/03.png')}}" alt="Image"
+                <img class="" src=" {{asset('/assets/find-job/03.png')}}" alt="Image"
                   style="width:80px; align-items:center; " />
                 <div>
                   <h5 class="card-title">Writing Icon
@@ -555,7 +555,7 @@
           <div class="col-sm-6">
             <div class="card bg-light">
               <div class="card-body d-flex">
-                <img class="mr-2" src=" {{asset('/assets/findJob/05.png')}}" alt="Image"
+                <img class="mr-2" src=" {{asset('/assets/find-job/05.png')}}" alt="Image"
                   style="width:80px; align-items:center; " />
                 <div>
                   <h5 class="card-title">Customer Service Icon
@@ -570,7 +570,7 @@
           <div class="col-sm-6">
             <div class="card bg-light">
               <div class="card-body d-flex">
-                <img class="" src=" {{asset('/assets/findJob/04.png')}}" alt="Image"
+                <img class="" src=" {{asset('/assets/find-job/04.png')}}" alt="Image"
                   style="width:80px; align-items:center; " />
                 <div>
                   <h5 class="card-title">Customer Service Icon
@@ -585,7 +585,7 @@
           <div class="col-sm-6">
             <div class="card bg-light">
               <div class="card-body d-flex">
-                <img class="" src=" {{asset('/assets/findJob/06.png')}}" alt="Image"
+                <img class="" src=" {{asset('/assets/find-job/06.png')}}" alt="Image"
                   style="width:80px; align-items:center;" />
                 <div>
                   <h5 class="card-title"> Finance & Accounting
@@ -598,7 +598,7 @@
         </div>
         <p class=" text-primary" style="text-decoration:underline;"><span class="fs-16" style="color:#534D9D;">Browse
             more</span>
-          <img class="" src=" {{asset('/assets/findJob/right.png')}}" alt="Image" style="width:12px; " />
+          <img class="" src=" {{asset('/assets/find-job/right.png')}}" alt="Image" style="width:12px; " />
         </p>
         <button type="button" class="mt-3 text-white p-2 btn fs-16 px-4" style=" background-color:#275846;">Create
           your
@@ -685,7 +685,7 @@
   <div class="container mb-5 rounded-1" style="background-color:#055846; margin-top:100px; padding-bottom:50px; ">
     <div class=" d-flex p-3">
       <div class=" bg-light  rounded-1">
-        <img src="{{asset('/assets/findJob/image-7.png')}}" alt="Image" class=" w-full" />
+        <img src="{{asset('/assets/find-job/image-7.png')}}" alt="Image" class=" w-full" />
       </div>
       <div>
         <h3 class=" ml-5 text-white fs-38">Ready to start</h3>

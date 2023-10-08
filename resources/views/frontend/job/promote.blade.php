@@ -22,7 +22,7 @@
         <button class="  text-white fs-16 btn btn-primary  px-3 py-2">Find work</button>
       </div>
       <div class="col-lg-6  py-2 px-5">
-        <img src=" {{asset('/assets/findJob/promote-1.jpg')}}" alt="Image" class=" image-fluid w-100 p-2 rounded-2"
+        <img src=" {{asset('/assets/find-job/promote-1.jpg')}}" alt="Image" class=" image-fluid w-100 p-2 rounded-2"
           style=" height:350px;" />
       </div>
     </div>
@@ -63,7 +63,7 @@
             <div class="card-body">
 
               <div class="card-body rounded-2 " style="background-color:#91E6B3"><img class="mx-auto d-block "
-                  src=" {{asset('/assets/findJob/jobs-1.png')}}" alt="Image" style="width:120px; align-items:center;
+                  src=" {{asset('/assets/find-job/jobs-1.png')}}" alt="Image" style="width:120px; align-items:center;
                   " /></div>
               <h5 class="card-title mt-3 fs-30" style="color:#091F00;">Availability badge</h5>
               <p class="card-text fs-16">Let clients know you’re ready to work and available now with a bold, blue badge
@@ -79,7 +79,7 @@
           <div class="card bg-white h-100 rounded-2">
             <div class="card-body">
               <div class="card-body  rounded-2" style="background-color:#91E6B3"><img class="mx-auto d-block"
-                  src=" {{asset('/assets/findJob/jobs-2.png')}}" alt="Image" style="width:120px; align-items:center;
+                  src=" {{asset('/assets/find-job/jobs-2.png')}}" alt="Image" style="width:120px; align-items:center;
                   " /></div>
               <h5 class="card-title mt-3 fs-30" style="color:#091F00;">Boost your proposals</h5>
               <p class="card-text fs-16">Increase your chances of getting the jobs you’re really interested in by
