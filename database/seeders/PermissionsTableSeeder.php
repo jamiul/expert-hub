@@ -85,7 +85,7 @@ class PermissionsTableSeeder extends Seeder
             8 =>
                 array(
                     'id' => 66,
-                    'name' => 'show all freelancers',
+                    'name' => 'show all experts',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:05',
                     'updated_at' => '2021-04-10 22:06:05',
@@ -93,7 +93,7 @@ class PermissionsTableSeeder extends Seeder
             9 =>
                 array(
                     'id' => 67,
-                    'name' => 'show freelancer packages',
+                    'name' => 'show expert packages',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:05',
                     'updated_at' => '2021-04-10 22:06:05',
@@ -101,7 +101,7 @@ class PermissionsTableSeeder extends Seeder
             10 =>
                 array(
                     'id' => 68,
-                    'name' => 'show freelancer skills',
+                    'name' => 'show expert skills',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:05',
                     'updated_at' => '2021-04-10 22:06:05',
@@ -109,7 +109,7 @@ class PermissionsTableSeeder extends Seeder
             11 =>
                 array(
                     'id' => 69,
-                    'name' => 'show freelancer badges',
+                    'name' => 'show expert badges',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:05',
                     'updated_at' => '2021-04-10 22:06:05',
@@ -141,7 +141,7 @@ class PermissionsTableSeeder extends Seeder
             15 =>
                 array(
                     'id' => 73,
-                    'name' => 'show freelancers reviews',
+                    'name' => 'show experts reviews',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:05',
                     'updated_at' => '2021-04-10 22:06:05',
@@ -221,7 +221,7 @@ class PermissionsTableSeeder extends Seeder
             25 =>
                 array(
                     'id' => 83,
-                    'name' => 'show freelancer withdraw requests',
+                    'name' => 'show expert withdraw requests',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:06',
                     'updated_at' => '2021-04-10 22:06:06',
@@ -229,7 +229,7 @@ class PermissionsTableSeeder extends Seeder
             26 =>
                 array(
                     'id' => 84,
-                    'name' => 'show freelancer payouts',
+                    'name' => 'show expert payouts',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:06',
                     'updated_at' => '2021-04-10 22:06:06',
@@ -341,7 +341,7 @@ class PermissionsTableSeeder extends Seeder
             40 =>
                 array(
                     'id' => 98,
-                    'name' => 'show freelancer payment',
+                    'name' => 'show expert payment',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:06',
                     'updated_at' => '2021-04-10 22:06:06',
@@ -397,7 +397,7 @@ class PermissionsTableSeeder extends Seeder
             47 =>
                 array(
                     'id' => 105,
-                    'name' => 'create new freelancer package',
+                    'name' => 'create new expert package',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:07',
                     'updated_at' => '2021-04-10 22:06:07',
@@ -437,7 +437,7 @@ class PermissionsTableSeeder extends Seeder
             52 =>
                 array(
                     'id' => 110,
-                    'name' => 'freelancer delete',
+                    'name' => 'expert delete',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:07',
                     'updated_at' => '2021-04-10 22:06:07',
@@ -541,7 +541,7 @@ class PermissionsTableSeeder extends Seeder
             65 =>
                 array(
                     'id' => 123,
-                    'name' => 'show freelancer parent skills',
+                    'name' => 'show expert parent skills',
                     'guard_name' => 'web',
                     'created_at' => '2021-04-10 22:06:06',
                     'updated_at' => '2021-04-10 22:06:06',

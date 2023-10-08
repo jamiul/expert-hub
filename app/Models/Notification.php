@@ -8,11 +8,13 @@ class Notification extends Model
 {
     protected $fillable = ['seen_by_receiver'];
 
-    public function sender(){
+    public function sender()
+    {
         return $this->belongsTo(User::class, 'sender_id');
     }
 
-    public function receiver(){
+    public function receiver()
+    {
         return $this->belongsTo(User::class, 'receiver_id');
     }
 }

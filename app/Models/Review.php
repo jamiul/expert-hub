@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Review extends Model
 {
     use SoftDeletes;
+
     public function project()
     {
         return $this->belongsTo(Project::class);
@@ -23,7 +24,7 @@ class Review extends Model
         return $this->belongsTo(User::class, 'reviewed_user_id');
     }
 
-    public function reviewed_role()
+    public function reviewedRole()
     {
         return $this->belongsTo(Role::class, 'reviewed_user_role_id');
     }

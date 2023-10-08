@@ -21,7 +21,7 @@ class PackagesTableSeeder extends Seeder
             0 =>
                 array(
                     'id' => 1,
-                    'type' => 'freelancer',
+                    'type' => 'expert',
                     'name' => 'Regular',
                     'price' => 0.0,
                     'number_of_days' => 180,
@@ -102,7 +102,7 @@ class PackagesTableSeeder extends Seeder
             3 =>
                 array(
                     'id' => 4,
-                    'type' => 'freelancer',
+                    'type' => 'expert',
                     'name' => 'Gold',
                     'price' => 20.0,
                     'number_of_days' => 365,

@@ -234,7 +234,7 @@ body {
 .project-save{
     border-color:#275846;
     outline-color: #275846;
-    
+
 }
 .project-save-img{
     width: 18px;
@@ -249,7 +249,7 @@ body {
 .p-payment{
     width: 20px;
     height: 20px;
-    
+
 }
 .payment-para{
     line-height: 21px;
@@ -271,7 +271,7 @@ body {
     line-height:26px;
 }
 .p-icon{
-    height:24px; 
+    height:24px;
     width:24px;
 }
 .p-button{
@@ -301,7 +301,7 @@ body {
     background: #0059C9;
 }
 .expert-interview{
-    color: #0059C9; 
+    color: #0059C9;
     border-color:#0059C9;
 }
 .expert-skills{
@@ -314,8 +314,8 @@ body {
     color:#0059C9 !important;
 }
 .breadcrumb-icon{
-    width:35px; 
-    height:35px; 
+    width:35px;
+    height:35px;
     border:1px solid #FFFFFF;
 }
 .breadcrumb-btn{
@@ -620,7 +620,7 @@ body {
     .fre-button-show {
         display: none !important;
     }
-  
+
 }
 
 @media (min-width: 1100px) {
@@ -716,18 +716,18 @@ div.scroll h6 a {
     display: block; /* or "none" if you want it to be initially hidden */
     /* Add any other styles you want */
 }
-/* seminar page  */
+/* training page  */
 
-.seminar-content {
+.training-content {
     width: 70%;
     margin: 0 15%;
 }
 
-.seminar-details {
+.training-details {
     margin-left: 100px;
     margin-right: 100px;
 }
-.details-seminar {
+.details-training {
     margin-left: 120px;
     margin-right: 120px;
 }

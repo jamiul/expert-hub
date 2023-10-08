@@ -3,9 +3,7 @@
 
 namespace App\Repositories\Badge;
 
-
 use App\Models\Badge;
-use App\Models\Role;
 use App\Repositories\AbstractRepository;
 use Illuminate\Http\Request;
 
@@ -28,7 +26,6 @@ class BadgeRepository extends AbstractRepository implements BadgeInterface
 
     public function createBadge(Request $request)
     {
-
     }
 
     public function delete($id)

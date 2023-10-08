@@ -3,14 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Service;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ServicePackage extends Model
 {
     use SoftDeletes;
+
     protected $guarded = [];
-    protected $table = 'freelancer_services_packages';
+    protected $table = 'expert_services_packages';
 
     public function service()
     {
@@ -31,5 +31,4 @@ class ServicePackage extends Model
     {
         return $query->where('service_type', 'premium');
     }
-
 }

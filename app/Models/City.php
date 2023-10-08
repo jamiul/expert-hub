@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class City extends Model
 {
     use SoftDeletes;
+
     public function country()
     {
         return $this->belongsTo(Country::class);

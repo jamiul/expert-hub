@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookmarkedClient extends Model
 {
-    public function client(){
+    public function client()
+    {
         return $this->belongsTo(User::class, 'client_user_id');
     }
 }

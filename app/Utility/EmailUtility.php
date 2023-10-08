@@ -9,14 +9,11 @@
 namespace App\Utility;
 
 use App\Mail\EmailManager;
-use App\Models\Notification;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 use Mail;
 
 class EmailUtility
 {
-    public static function send_email($subject, $content, $email, $link = "")
+    public static function sendEmail($subject, $content, $email, $link = "")
     {
         if (empty($email)) {
             return false;

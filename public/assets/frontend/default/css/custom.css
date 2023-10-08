@@ -905,18 +905,18 @@ div.scroll h6 a {
     background: #c6c5c5;
 }
 
-.seminar-more {
+.training-more {
     color: rgb(77, 95, 230);
 }
-.seminar-title {
+.training-title {
     letter-spacing: -0.02em;
     font-family: Neuemontreal, sans-serif;
     font-size: 24px;
 }
-.seminar-objective {
+.training-objective {
     font-size: 22px;
 }
-.seminar-objective-details {
+.training-objective-details {
     font-size: 16px;
     font-family: Neuemontreal, sans-serif;
     text-align: justify;
@@ -936,7 +936,7 @@ div.scroll h6 a {
     font-family: Neuemontreal, sans-serif !important;
 }
 @media (min-width: 425px) {
-    .seminar-banner {
+    .training-banner {
         max-width: 250px !important;
         font-size: 18px !important;
     }
@@ -948,7 +948,7 @@ div.scroll h6 a {
         margin-top: 25px;
         width: 100%;
     }
-    .seminar-details {
+    .training-details {
         margin-left: 0;
         margin-right: 0;
     }
@@ -956,7 +956,7 @@ div.scroll h6 a {
         margin-right: 100px !important;
     }
 
-    .seminar-content {
+    .training-content {
         width: 100%;
         margin: 0 0%;
     }
@@ -967,16 +967,16 @@ div.scroll h6 a {
         width: 300px;
     }
 
-    .seminar-heading {
+    .training-heading {
         font-size: 20px;
     }
-    .seminar-small-device-font {
+    .training-small-device-font {
         font-size: 13px !important;
     }
     .consultant-banner-device-style {
         font-size: 13px !important;
     }
-    .seminar-home-content {
+    .training-home-content {
         font-size: 16px !important;
         font-weight: 500;
     }

@@ -1,14 +1,14 @@
-@extends('admin.default.layouts.blank')
+@extends('admin.layouts.blank')
 
 @section('content')
-<div class="h-100 bg-cover bg-center py-5 d-flex align-items-center" style="background-image: url({{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('admin_login_background')) }})">
+<div class="h-100 bg-cover bg-center py-5 d-flex align-items-center" style="background-image: url({{ customAsset(\App\Utility\SettingsUtility::getSettingsValue('adminLogin')) }})">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xl-4 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-5 text-center">
-                            <img src="{{ custom_asset(\App\Utility\SettingsUtility::get_settings_value('system_logo_black')) }}" class="mw-100 mb-4" height="40">
+                            <img src="{{ customAsset(\App\Utility\SettingsUtility::getSettingsValue('system_logo_black')) }}" class="mw-100 mb-4" height="40">
                             <h1 class="h3 text-primary mb-0">{{ translate('Welcome to') }} {{ env('APP_NAME') }}</h1>
                             <p>{{ translate('Login to your account.') }}</p>
                         </div>

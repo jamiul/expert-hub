@@ -1,4 +1,4 @@
-@extends('frontend.default.layouts.app')
+@extends('frontend.layouts.app')
 
 @section('content')
 <section class="align-items-center d-flex h-100 bg-white">

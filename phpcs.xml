@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="My Standard">
+    <description>My coding standard.</description>
+    <rule ref="PSR2">
+        <value>PSR2</value>
+    </rule>
+</ruleset>

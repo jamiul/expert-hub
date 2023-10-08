@@ -3,7 +3,6 @@
 
 namespace App\Repositories\Badge;
 
-
 use Illuminate\Http\Request;
 
 interface BadgeInterface

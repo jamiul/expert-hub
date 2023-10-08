@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\ProjectCategory;
 
 class Service extends Model
 {
     use SoftDeletes;
+
     protected $guarded = [];
-    protected $table = 'freelancer_services';
+    protected $table = 'expert_services';
 
     public function user()
     {
@@ -22,7 +22,7 @@ class Service extends Model
         return $this->belongsTo(ProjectCategory::class, 'project_cat_id')->withTrashed();
     }
 
-    public function service_packages()
+    public function servicePackages()
     {
         return $this->hasMany(ServicePackage::class)->withTrashed();
     }

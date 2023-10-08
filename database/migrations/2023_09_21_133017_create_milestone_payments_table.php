@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->integer('project_id');
             $table->integer('client_user_id');
-            $table->integer('freelancer_user_id');
+            $table->integer('expert_user_id');
             $table->double('amount', 8, 2);
             $table->text('message')->nullable();
             $table->integer('paid_status')->default(0);
             $table->integer('client_seen')->default(0);
             $table->double('admin_profit', 8, 2)->default(0);
-            $table->double('freelancer_profit', 8, 2)->default(0);
+            $table->double('expert_profit', 8, 2)->default(0);
             $table->text('payment_details')->nullable();
             $table->string('payment_method')->nullable();
             $table->timestamps();

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ChatThread extends Model
 {
     use SoftDeletes;
+
     public function chats()
     {
         return $this->hasMany(Chat::class);
@@ -23,7 +24,7 @@ class ChatThread extends Model
         return $this->belongsTo(User::class, 'receiver_user_id');
     }
 
-    public function blocked_by()
+    public function blockedBy()
     {
         return $this->belongsTo(User::class, 'blocked_by_user');
     }

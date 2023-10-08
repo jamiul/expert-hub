@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Builder;
 
 class Country extends Model
 {
@@ -14,9 +14,12 @@ class Country extends Model
     {
         parent::boot();
 
-        static::addGlobalScope('alphabetical', function (Builder $builder) {
-            $builder->orderBy('name', 'asc');
-        });
+        static::addGlobalScope(
+            'alphabetical',
+            function (Builder $builder) {
+                $builder->orderBy('name', 'asc');
+            }
+        );
     }
 
     public function cities()

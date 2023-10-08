@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
+use App\Http\Controllers\Frontend\Controller;
 use App\Models\Address;
+use App\Models\User;
 use App\Models\UserProfile;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class RegisterController extends Controller
@@ -51,58 +51,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('frontend.default.user_sign_up');
-    }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        // dd($data);
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'user_name' =>Str::slug($data['name'], '-').date('Ymd-his'),
-            'password' => Hash::make($data['password']),
-        ]);
-
-        if (in_array('freelancer', $data['user_types'])) {
-            $user->user_type = 'freelancer';
-        }
-        if(in_array('client', $data['user_types'])) {
-            $user->user_type = 'client';
-        }
-
-        $user->save();
-
-        $address = new Address;
-        $user->address()->save($address);
-
-
-        $user_profile = new UserProfile;
-        $user_profile->user_id = $user->id;
-        $user_profile->save();
-
-        return $user;
+        return view('frontend.home.user_sign_up');
     }
 
     public function register(Request $request)
@@ -111,13 +60,12 @@ class RegisterController extends Controller
 
         $this->guard()->login($user);
 
-        if($user->email != null){
-            if(get_setting('email_verification') != 1){
+        if ($user->email != null) {
+            if (getSetting('email_verification') != 1) {
                 $user->email_verified_at = date('Y-m-d H:m:s');
                 $user->save();
                 flash(translate('Registration successful.'))->success();
-            }
-            else {
+            } else {
                 try {
                     $user->sendEmailVerificationNotification();
                     flash(translate('Registration successful. Please verify your email.'))->success();
@@ -128,8 +76,62 @@ class RegisterController extends Controller
             }
         }
 
-        return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+        return $this->registered($request, $user) ?: redirect($this->redirectPath());
     }
 
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param array $data
+     * @return \App\Models\User
+     */
+    protected function create(array $data)
+    {
+        // dd($data);
+        $user = User::create(
+            [
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'user_name' => Str::slug($data['name'], '-') . date('Ymd-his'),
+                'password' => Hash::make($data['password']),
+            ]
+        );
+
+        if (in_array('expert', $data['user_types'])) {
+            $user->user_type = 'expert';
+        }
+        if (in_array('client', $data['user_types'])) {
+            $user->user_type = 'client';
+        }
+
+        $user->save();
+
+        $address = new Address;
+        $user->address()->save($address);
+
+
+        $userProfile = new UserProfile;
+        $userProfile->user_id = $user->id;
+        $userProfile->save();
+
+        return $user;
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param array $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make(
+            $data,
+            [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:6', 'confirmed'],
+            ]
+        );
+    }
 }

@@ -8,19 +8,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ServicePackagePayment extends Model
 {
     use SoftDeletes;
+
     protected $guarded = [];
     protected $table = 'service_payments';
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function servicePackage(){
+    public function servicePackage()
+    {
         return $this->belongsTo(ServicePackage::class)->withTrashed();
     }
 
-    public function freelancer() {
+    public function expert()
+    {
         return $this->belongsTo(User::class, 'service_owner_id');
     }
-
 }

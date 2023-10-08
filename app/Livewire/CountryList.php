@@ -13,8 +13,9 @@ class CountryList extends Component
     {
         $this->countries = Country::all();
     }
+
     public function render()
     {
-        return view('livewire.country-list');
+        return view('livewire.dropdown-list.country-list');
     }
 }

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class CancelProject extends Model
 {
     use SoftDeletes;
-    public function requested_user()
+
+    public function requestedUser()
     {
         return $this->belongsTo(User::class, 'requested_user_id');
     }

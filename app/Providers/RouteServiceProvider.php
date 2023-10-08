@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -35,82 +35,17 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        $this->mapFigmaRoutes();
+        $this->mapTestRoutes();
 
         $this->mapAdminRoutes();
-
-        $this->mapSupportTicketRoutes();
-
         $this->mapWebRoutes();
 
-        $this->mapOfflinePaymentRoutes();
-
+        //$this->mapApiRoutes();
+        //$this->mapSupportTicketRoutes();
+        //$this->mapOfflinePaymentRoutes();
         //$this->mapInstallRoutes();
-
         //$this->mapUpdateRoutes();
-    }
-
-    /**
-   * Define the "updating" routes for the application.
-   *
-   * These routes all receive session state, CSRF protection, etc.
-   *
-   * @return void
-   */
-   protected function mapUpdateRoutes()
-   {
-      Route::middleware('web')
-        ->namespace($this->namespace)
-        ->group(base_path('routes/update.php'));
-   }
-
-  /**
-   * Define the "installation" routes for the application.
-   *
-   * These routes all receive session state, CSRF protection, etc.
-   *
-   * @return void
-   */
-   protected function mapInstallRoutes()
-   {
-      Route::middleware('web')
-        ->namespace($this->namespace)
-        ->group(base_path('routes/install.php'));
-   }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
-    }
-
-    protected function mapAdminRoutes()
-    {
-        Route::middleware('web')
-           ->namespace($this->namespace)
-           ->group(base_path('routes/admin.php'));
-    }
-
-    protected function mapSupportTicketRoutes()
-    {
-        Route::middleware('web')
-           ->namespace($this->namespace)
-           ->group(base_path('routes/support_tickets.php'));
-    }
-
-    protected function mapOfflinePaymentRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/offline_payment.php'));
     }
 
     /**
@@ -123,8 +58,85 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/admin.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the "updating" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapUpdateRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/update.php'));
+    }
+
+    /**
+     * Define the "installation" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapInstallRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/install.php'));
+    }
+
+    protected function mapSupportTicketRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/support_tickets.php'));
+    }
+
+    protected function mapOfflinePaymentRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/offline_payment.php'));
+    }
+
+    protected function mapFigmaRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/figma.php'));
+    }
+
+    protected function mapTestRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/test.php'));
     }
 }

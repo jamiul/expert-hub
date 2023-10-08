@@ -50,7 +50,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 3,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 12,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -64,7 +64,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 4,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 6,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -78,7 +78,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 5,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 14,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -92,7 +92,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 6,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 20,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -106,7 +106,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 7,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 21,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -120,7 +120,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 8,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 22,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -148,7 +148,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 10,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 13,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -162,7 +162,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 11,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 8,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -176,7 +176,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 12,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 4,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -190,7 +190,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 13,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 22,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -204,7 +204,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 14,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 12,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -218,7 +218,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 15,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 16,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',
@@ -232,7 +232,7 @@ class PackagePaymentsTableSeeder extends Seeder
                 array(
                     'id' => 16,
                     'package_id' => 4,
-                    'package_type' => 'freelancer',
+                    'package_type' => 'expert',
                     'user_id' => 21,
                     'amount' => 20.0,
                     'payment_type' => 'package_payment',

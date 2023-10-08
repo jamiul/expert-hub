@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(BlogCategoriesTableSeeder::class);
         $this->call(BlogsTableSeeder::class);
         $this->call(BookmarkedClientsTableSeeder::class);
-        $this->call(BookmarkedFreelancersTableSeeder::class);
+        $this->call(BookmarkedExpertsTableSeeder::class);
         $this->call(BookmarkedProjectsTableSeeder::class);
         $this->call(BookmarkedScholarshipsTableSeeder::class);
         $this->call(BookmarkedServicesTableSeeder::class);
@@ -35,9 +35,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ConsultantCategoriesTableSeeder::class);
         $this->call(DocumentsTableSeeder::class);
         $this->call(EducationDetailsTableSeeder::class);
-        $this->call(FreelancerAccountsTableSeeder::class);
-        $this->call(FreelancerServicesTableSeeder::class);
-        $this->call(FreelancerServicesPackagesTableSeeder::class);
+        $this->call(ExpertAccountsTableSeeder::class);
+        $this->call(ExpertServicesTableSeeder::class);
+        $this->call(ExpertServicesPackagesTableSeeder::class);
         $this->call(HireInvitationsTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
         $this->call(MilestonePaymentsTableSeeder::class);
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PageOptimizationsTableSeeder::class);
         $this->call(PagesTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
-        $this->call(PayToFreelancersTableSeeder::class);
+        $this->call(PayToExpertsTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
         $this->call(PersonalAccessTokensTableSeeder::class);
         $this->call(PortfoliosTableSeeder::class);
@@ -68,11 +68,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ScholarshipUniversitiesTableSeeder::class);
         $this->call(ScholarshipWhoCanAppliesTableSeeder::class);
         $this->call(ScholarshipsTableSeeder::class);
-        $this->call(SeminarModesTableSeeder::class);
-        $this->call(SeminarSoftwareTableSeeder::class);
-        $this->call(SeminarsTableSeeder::class);
-        $this->call(SeminarDatesTableSeeder::class);
-        $this->call(SeminarInstructorsTableSeeder::class);
+        $this->call(TrainingModesTableSeeder::class);
+        $this->call(TrainingSoftwareTableSeeder::class);
+        $this->call(TrainingsTableSeeder::class);
+        $this->call(TrainingDatesTableSeeder::class);
+        $this->call(TrainingInstructorsTableSeeder::class);
         $this->call(ServicePaymentsTableSeeder::class);
         $this->call(SitePagesTableSeeder::class);
         $this->call(StaffTableSeeder::class);
@@ -89,6 +89,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WorkExperiencesTableSeeder::class);
         $this->call(CountryFlagSeederUpdate::class);
         $this->call(OptionSeeder::class);
-        $this->call(ExpertsTableSeeder::class);
+        $this->call(ExpertiseTableSeeder::class);
     }
 }

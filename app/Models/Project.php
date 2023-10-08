@@ -13,7 +13,7 @@ class Project extends Model
         'skills' => 'array',
     ];
 
-    public function project_category()
+    public function projectCategory()
     {
         return $this->belongsTo(ProjectCategory::class);
     }
@@ -23,7 +23,7 @@ class Project extends Model
         return $this->belongsTo(User::class, 'client_user_id');
     }
 
-    public function cancel_by_user()
+    public function cancelByUser()
     {
         return $this->belongsTo(User::class, 'cancel_by_user_id');
     }
@@ -48,17 +48,17 @@ class Project extends Model
         return $this->hasMany(ProjectBid::class);
     }
 
-    public function project_user()
+    public function projectUser()
     {
         return $this->hasOne(ProjectUser::class);
     }
 
-    public function cancel_project()
+    public function cancelProject()
     {
         return $this->hasOne(CancelProject::class);
     }
 
-    public function hire_invitation()
+    public function hireInvitation()
     {
         return $this->hasOne(HireInvitation::class);
     }

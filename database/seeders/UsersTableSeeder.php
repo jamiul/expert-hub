@@ -79,9 +79,9 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 4,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
-                    'name' => 'Mohammad Raihanul Islam',
-                    'user_name' => 'mr-consultant20230405-091010',
+                    'user_type' => 'expert',
+                    'name' => 'Professor Michael Kassiou',
+                    'user_name' => 'prof-michael-kassiou',
                     'email' => 'consultant@gmail.com',
                     'email_verified_at' => '2023-04-05 09:04:10',
                     'password' => '$2y$10$8oT15ZF3ZT/wUjX3eHjyjevq4PT6blBITeqMYZyshsU.6dzOgZBCq',
@@ -117,10 +117,10 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 6,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
-                    'name' => 'MD Masum Rana',
-                    'user_name' => 'md-masum-rana20230406-010905',
-                    'email' => 'masum@gmail.com',
+                    'user_type' => 'expert',
+                    'name' => 'Eror Tarpis',
+                    'user_name' => 'erol-tarpis',
+                    'email' => 'erol@gmail.com',
                     'email_verified_at' => '2023-04-06 13:04:05',
                     'password' => '$2y$10$Ds7gZpVNF71ornoz6Sm/p.zcL5T6y8AkY8ypBwD1cxH9NeJ.9yZaa',
                     'remember_token' => NULL,
@@ -155,9 +155,9 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 8,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
-                    'name' => 'Mohammad Raihanul Islam',
-                    'user_name' => 'mohammad-raihanul-islam20230406-054915',
+                    'user_type' => 'expert',
+                    'name' => 'Jhon Richardson',
+                    'user_name' => 'jhon-richardson',
                     'email' => 'raihanul@gmail.com',
                     'email_verified_at' => '2023-04-06 17:04:15',
                     'password' => '$2y$10$r50Ba3y./ixCkCcia/.j7eJSA8OU613u61CGwoBhWjrbkpyS2qIhC',
@@ -193,9 +193,9 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 10,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
-                    'name' => 'M',
-                    'user_name' => 'm20230406-065603',
+                    'user_type' => 'expert',
+                    'name' => 'Gray Vee',
+                    'user_name' => 'gray-vee',
                     'email' => 'reazwsu@gmaail.com',
                     'email_verified_at' => '2023-04-06 18:04:03',
                     'password' => '$2y$10$MX.WIJUu9IussLsNlv5xE.qObYXhl2iegZDVlhwBbhrdWzAr8VhwG',
@@ -212,7 +212,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 11,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'Reaz',
                     'user_name' => 'reazwsu',
                     'email' => 'reazwsu@gmail.com',
@@ -231,7 +231,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 12,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'Mohammad Raihanul Islam',
                     'user_name' => 'islam20230413-061427',
                     'email' => 'islam@gmail.com',
@@ -250,7 +250,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 13,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'masum1',
                     'user_name' => 'masum120230414-112549',
                     'email' => 'masum1@gmail.com',
@@ -269,7 +269,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 14,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'Hanan Ashrabi',
                     'user_name' => 'hanan20230414-115559',
                     'email' => 'hanan@gmail.com',
@@ -307,7 +307,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 16,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'MD RAJU AHMED',
                     'user_name' => 'md-raju-ahmed20230415-121520',
                     'email' => 'raju@gmail.com',
@@ -326,7 +326,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 17,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'Karim Jannat',
                     'user_name' => 'karim-jannat20230415-020635',
                     'email' => 'karim@gmail.com',
@@ -364,7 +364,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 19,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'MahinIslam',
                     'user_name' => 'mahin-islam20230415-053740',
                     'email' => 'Mahin@gmail.com',
@@ -383,7 +383,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 20,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'Rahman',
                     'user_name' => 'rahman20230511-114344',
                     'email' => 'rahman@gmail.com',
@@ -402,7 +402,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 21,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'masum1',
                     'user_name' => 'masum120230521-065752',
                     'email' => 'mms@gmail.com',
@@ -421,7 +421,7 @@ class UsersTableSeeder extends Seeder
                 array(
                     'id' => 22,
                     'provider_id' => NULL,
-                    'user_type' => 'freelancer',
+                    'user_type' => 'expert',
                     'name' => 'Mr. Brown',
                     'user_name' => 'mr-brown20230605-090658',
                     'email' => 'Brown@gmail.com',

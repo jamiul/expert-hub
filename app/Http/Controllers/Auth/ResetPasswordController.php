@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 
@@ -41,20 +41,20 @@ class ResetPasswordController extends Controller
     /**
      * Get the response for a successful password reset.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $response
+     * @param \Illuminate\Http\Request $request
+     * @param string $response
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
     protected function sendResetResponse(Request $request, $response)
     {
         try {
-            $role_id = auth()->user()->userRoles->first()->role_id;
-            $request->session()->put('role_id', $role_id);
+            $roleId = auth()->user()->userRoles->first()->role_id;
+            $request->session()->put('role_id', $roleId);
         } catch (\Throwable $th) {
             //throw $th;
         }
 
         return redirect()->route('home')
-                            ->with('status', trans($response));
+            ->with('status', trans($response));
     }
 }

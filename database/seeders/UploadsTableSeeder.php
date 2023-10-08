@@ -22,7 +22,7 @@ class UploadsTableSeeder extends Seeder
                 array(
                     'id' => 1,
                     'file_original_name' => 'Layer 2',
-                    'file_name' => 'assets/category_image_for_install.png',
+                    'file_name' => 'assets/home/category_image_for_install.png',
                     'user_id' => 1,
                     'file_size' => 392,
                     'extension' => 'png',
