@@ -1,4 +1,69 @@
-## সূচীপত্র
+EduExHub - Developers coding guideline and standards
+————————————————————————————————————————
+
+PHP 
+————————————————————
+Methods (camelCase)
+Method names MUST be declared in camelCase(). e.g: function sampleFunction() instead of sample_function()
+Function parameters names (camelCase)
+ function(string $paramName1) instead of function(string $param_name1)
+ $firstName instead of $fName
+Must be defined parameter types
+Must be defined function/methods return type
+Variable names (camelCase)
+ $myVariable instead of $my_variable
+ $firstName instead of $fName
+Class names (PascalCase)
+ $MyClassName instead of $my_class_name
+ $MyClassName instead of $myClassName
+ Array Index (snake_case)
+ $array[‘first_name’] instead of $array[‘firstName’]
+View File names (snake_case)
+ dashboard.blade.php instead of dash.blade.php
+ client_details.blade.php instead of clientDetails.blade.php or client-details.blade.php
+Partial view file and modal file names (user _ as prefix)
+ _delete_modal.blade.php instead of delete_modal.blade.php 
+ _product_list.blade.php instead of product_list.blade.php
+Request params names
+ user_id instead of userId 
+ category_id instead of categoryId
+Add blank lines for following cases
+Between to separate blocks
+before return statement
+Use object notation in the .blade file instead of array
+$row->usernames    instead of      $row['username']
+Do not use CDN url for assets, instead download it and put in into our assets directory
+Routes name use dash instead of underscore for two words
+CSS class names, `dashboard-filters` instead of `dashboard_filters`
+CSS ID names, `dashboard-container` instead of `dashboard_container`
+Javascript variable names camelCase
+Use $request->get(‘param_name’) instead of $request->param_name
+
+GITHUB
+——————————————————————
+Branch name should be yourname/feature-name
+e.g: `masum/signup-page-api` 
+Add assignee while send Pull request
+Add Reviewer for that PR, who will review it, so reviewer will get notified from github
+Do not PUSH any code directly into `dev`, `main`, `master` branch
+
+
+MySQL
+———————————————————————
+Mysql table name should be plural most of the cases e.g:
+users, transactions, projects etc
+Use lower case letters with underscore to separate words. e.g:  user_id, project_id, profile_id
+Start with the parent table name for child tables. As an example, “user_login_logs” table contains login logs of the “users” table.
+
+
+For more refs go 
+https://github.com/alexeymezenin/laravel-best-practices/blob/master/bangla.md#%E0%A6%B8%E0%A7%82%E0%A6%9A%E0%A7%80%E0%A6%AA%E0%A6%A4%E0%A7%8D%E0%A6%B0 
+https://www.tutorialspoint.com/laravel/laravel_application_structure.htm
+https://www.php-fig.org/psr/
+https://marketplace.visualstudio.com/items?itemName=Sophisticode.php-formatter 
+https://medium.com/@centizennationwide/mysql-naming-conventions-e3a6f6219efe 
+
+## Coding Guide Line
 
 [সিঙ্গেল রেস্পন্সিবিলিটি প্রিন্সিপল বা একক দায়িত্ব নীতি](#সিঙ্গেল-রেস্পন্সিবিলিটি-প্রিন্সিপল-বা-একক-দায়িত্ব-নীতি)
 
