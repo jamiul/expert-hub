@@ -14,7 +14,6 @@ use App\Http\Controllers\Frontend\BookmarkedServiceController;
 use App\Http\Controllers\Frontend\CancelProjectController;
 use App\Http\Controllers\Frontend\ChatController;
 use App\Http\Controllers\Frontend\CityController;
-use App\Http\Controllers\Frontend\DemoController;
 use App\Http\Controllers\Frontend\ExpertAccountController;
 use App\Http\Controllers\Frontend\ExpertEducationController;
 use App\Http\Controllers\Frontend\HireController;
@@ -58,29 +57,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes(['verify' => true]);
-
-//consultant Registration
-Route::get('/consultant-login', [DemoController::class, 'consultantLogin']);
-Route::get('/consultant-signup', [DemoController::class, 'consultantSignup']);
-Route::get('/verify-email', [DemoController::class, 'consultantVerifyEmail']);
-Route::get('/verify-your-email', [DemoController::class, 'consultantVerifyYourEmail']);
-Route::get('/profile-setup', [DemoController::class, 'profileSetup']);
-Route::get('/profile-details', [DemoController::class, 'profileDetails']);
-Route::get('/profile-expertises', [DemoController::class, 'profileExpertises']);
-Route::get('/profile-education', [DemoController::class, 'profileEducation']);
-Route::get('/profile-consultation', [DemoController::class, 'profileConsultation']);
-Route::get('/profile-consultation-books', [DemoController::class, 'profileConsultationBooks']);
-Route::get('/profile-consultation-interview', [DemoController::class, 'profileConsultationInterview']);
-Route::get('/profile-biography', [DemoController::class, 'profileBiography']);
-Route::get('/profile-picture', [DemoController::class, 'profilePicture']);
-Route::get('/profile-completed', [DemoController::class, 'profileCompleted']);
-Route::get('/profile-expertises-popup', [DemoController::class, 'profileExpertisesPopup']);
-
-//client Registration
-Route::get('/client-login', [DemoController::class, 'clientLogin']);
-Route::get('/client-signup', [DemoController::class, 'clientSignup']);
-Route::get('/client-verify-email', [DemoController::class, 'clientVerifyEmail']);
-Route::get('/client-verify-your-email', [DemoController::class, 'clientVerifyYourEmail']);
 
 Route::group(['prefix' => 'aiz-uploader'], function () {
     Route::post('/', [AizUploadController::class, 'showUploader']);
@@ -165,7 +141,6 @@ Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], functio
     });
 
     Route::post('cancel-project-request/store', [CancelProjectController::class, 'store'])->name('cancel-project-request.store');
-
 
     Route::post('/interview-chat', [ChatController::class, 'index'])->name('call_for_interview');
     Route::post('/chat-reply', [ChatController::class, 'chatReply'])->name('chat.reply');
@@ -311,5 +286,4 @@ Route::post('/stripe/create-checkout-session', [StripePaymentController::class, 
 Route::any('/stripe/payment/callback', [StripePaymentController::class, 'callback'])->name('stripe.callback');
 Route::get('/stripe/success', [StripePaymentController::class, 'success'])->name('stripe.success');
 Route::get('/stripe/cancel', [StripePaymentController::class, 'cancel'])->name('stripe.cancel');
-
 Route::get('/{slug}', [PageController::class, 'showCustomPage'])->name('custom-pages.show_custom_page');

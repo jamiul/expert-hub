@@ -18,7 +18,9 @@ class ChatController extends Controller
     public function index(Request $request)
     {
         $bidder = User::where('user_name', $request->user_name)->first();
-        $existingChatThread = ChatThread::where('sender_user_id', Auth::user()->id)->where('receiver_user_id', $bidder->id)->first();
+        $existingChatThread = ChatThread::where('sender_user_id', Auth::user()->id)
+            ->where('receiver_user_id', $bidder->id)
+            ->first();
 
         if ($existingChatThread == null) {
             $existingChatThread = new ChatThread;
@@ -33,7 +35,9 @@ class ChatController extends Controller
 
     public function chatIndex()
     {
-        $chatThreads = ChatThread::where('sender_user_id', Auth::user()->id)->orWhere('receiver_user_id', Auth::user()->id)->get();
+        $chatThreads = ChatThread::where('sender_user_id', Auth::user()->id)
+            ->orWhere('receiver_user_id', Auth::user()->id)
+            ->get();
 
         return view('frontend.user.messages', compact('chatThreads'));
     }
@@ -42,6 +46,7 @@ class ChatController extends Controller
     {
         $sortSearch = null;
         $chatThreads = ChatThread::orderBy('created_at', 'desc');
+
         if ($request->has('search')) {
             $sortSearch = $request->search;
             $userIds = User::where(
@@ -58,7 +63,6 @@ class ChatController extends Controller
         } else {
             $chatThreads = $chatThreads->paginate(12);
         }
-
 
         return view('admin.chats.index', compact('chatThreads', 'sortSearch'));
     }
@@ -89,6 +93,7 @@ class ChatController extends Controller
     {
         $chat = Chat::findOrFail($request->first_message_id);
         $chats = Chat::where('id', '<', $chat->id)->where('chat_thread_id', $chat->chat_thread_id)->latest()->limit(20)->get();
+
         if (count($chats) > 0) {
             return array('messages' => view('frontend.partials.chat-messages-part', compact('chats'))->render(),
                 'first_message_id' => $chats->last()->id);
@@ -107,7 +112,8 @@ class ChatController extends Controller
             $value->save();
         }
 
-        return array('messages' => view('frontend.partials.chat-messages-left-single', compact('chats'))->render(),
+        return array('messages' => view('frontend.partials.chat-messages-left-single', compact('chats'))
+            ->render(),
             'count' => count($chats));
     }
 
@@ -122,6 +128,7 @@ class ChatController extends Controller
             $chat->attachment = json_encode(explode(',', $request->attachment));
         }
         $chat->save();
+
         return view('frontend.partials.chat-messages-right-single', compact('chat'));
     }
 

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\ExpertAccount;
 
-class FreelancerAccountRepository
+class ExpertAccountRepository
 {
     public ExpertAccount $model;
 

@@ -15,9 +15,9 @@ class ExpertiseTableSeeder extends Seeder
 
     public function run()
     {
-        DB::table('expertise')->delete();
+        DB::table('expertises')->delete();
 
-        $feed = public_path("experts.csv");
+        $feed = public_path("data/expertise.csv");
 
         // Read the CSV and return as an array
         $data = array_map('str_getcsv', file($feed));

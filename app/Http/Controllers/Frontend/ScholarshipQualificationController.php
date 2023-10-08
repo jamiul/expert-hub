@@ -58,7 +58,7 @@ class ScholarshipQualificationController extends Controller
         );
 
         $category = new ScholarshipQualification;
-        // dd($category);
+
         $category->qualification_name = $request->qualification_name;
         $category->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->qualification_name));
 

@@ -35,18 +35,16 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        $this->mapFigmaRoutes();
+        $this->mapTestRoutes();
 
         $this->mapAdminRoutes();
-
         $this->mapWebRoutes();
 
+        //$this->mapApiRoutes();
         //$this->mapSupportTicketRoutes();
-
         //$this->mapOfflinePaymentRoutes();
-
         //$this->mapInstallRoutes();
-
         //$this->mapUpdateRoutes();
     }
 
@@ -126,5 +124,19 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/offline_payment.php'));
+    }
+
+    protected function mapFigmaRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/figma.php'));
+    }
+
+    protected function mapTestRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/test.php'));
     }
 }

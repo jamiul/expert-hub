@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Figma;
 
-class DemoController extends Controller
+use App\Http\Controllers\Frontend\Controller;
+
+class FigmaController extends Controller
 {
     // -------- Consultant Registration pages------------
 

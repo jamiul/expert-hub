@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\BookmarkedProject;
+use App\Repositories\BookmarkedProjectRepository;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,9 @@ class BookmarkedProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(BookmarkedProjectRepository $bookmarkedProjectRepository)
     {
-        $bookmarkedProjects = BookmarkedProject::where('user_id', Auth::user()->id)->paginate(8);
+        $bookmarkedProjects = $bookmarkedProjectRepository->getBookmarkedProjectsByUserId(Auth::user()->id);
 
         return view('frontend.user.expert.bookmarked-projects', compact('bookmarkedProjects'));
     }
