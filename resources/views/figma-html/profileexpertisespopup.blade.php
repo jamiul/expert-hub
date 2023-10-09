@@ -182,7 +182,8 @@
                                                     <button class="btn btn-primary ff-colfax" type="button">Architecture
                                                         2</button>
                                                     <button class="btn btngray ff-colfax" type="button">LMS 1</button>
-                                                    <button class="btn btn-primary ff-colfax" type="button">LMS 2</button>
+                                                    <button class="btn btn-primary ff-colfax" type="button">LMS
+                                                        2</button>
                                                 </div>
                                                 <div class="custom-input-group my-4">
                                                     <div class="textOnInput">

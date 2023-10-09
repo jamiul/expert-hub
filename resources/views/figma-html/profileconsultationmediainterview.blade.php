@@ -55,7 +55,7 @@
                                             </div>
                                             <div class="col">
                                                 <div class="timeline-item-content ps-6">
-                                                    <h5>Education</h5>
+                                                    <h5>Education</h5> 
                                                     <p>Education details</p>
                                                 </div>
                                             </div>

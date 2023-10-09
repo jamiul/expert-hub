@@ -21,7 +21,7 @@
                                         <div class="col">
                                             <div class="timeline-item-content ps-6">
                                                 <h5>General Information</h5>
-                                                <p>Profile details</p>
+                                                <p>Profile details</p> 
                                             </div>
                                         </div>
                                     </div>

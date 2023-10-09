@@ -135,21 +135,23 @@
                             </div>
                             <div class="row popup-questions">
                                 <div class="row pr-0">
-                                <div class="col-md-12 my-4">
-                                    <p class="">In which of your areas of expertise would you like to offer consultation service?</p>
-                                    <div class="form-group has-search position-relative">
-                                        <span class="las la-search la-2x inputsearch-icon-right"></span>
-                                        <input type="text" class="form-control" placeholder="Search skills...">
+                                    <div class="col-md-12 my-4">
+                                        <p class="">In which of your areas of expertise would you like to offer
+                                            consultation service?</p>
+                                        <div class="form-group has-search position-relative">
+                                            <span class="las la-search la-2x inputsearch-icon-right"></span>
+                                            <input type="text" class="form-control" placeholder="Search skills...">
+                                        </div>
+                                        <div class="btntags">
+                                            <button class="btn btngray ff-colfax" type="button">Architecture
+                                                1</button>
+                                            <button class="btn btn-primary ff-colfax" type="button">Architecture
+                                                2</button>
+                                            <button class="btn btngray ff-colfax" type="button">LMS 1</button>
+                                            <button class="btn btn-primary ff-colfax" type="button">LMS 2</button>
+                                        </div>
                                     </div>
-                                    <div class="btntags">
-                                        <button class="btn btngray ff-colfax" type="button">Architecture
-                                            1</button>
-                                        <button class="btn btn-primary ff-colfax" type="button">Architecture
-                                            2</button>
-                                        <button class="btn btngray ff-colfax" type="button">LMS 1</button>
-                                        <button class="btn btn-primary ff-colfax" type="button">LMS 2</button>
-                                    </div>
-                                </div></div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-6 mt-2 pr-0">
                                         <div class="custom-input-group">

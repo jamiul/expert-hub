@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-12 mb-2">
                                 <div class="textOnInput">
-                                    <label for="password">Password</label>
+                                    <label for="password">Password</label> 
                                     <input class="form-control py-4 mt-3 " placeholder="password" type="password"
                                         name="password" id="password">
                                 </div>
