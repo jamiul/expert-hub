@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="col-lg-8 col-md-7">
-                <h5 class="text-bold">Write a brief biography</h5>
+                <h5 class="text-bold">Biography</h5>
                 <p>Please provide a brief biography, limited to 300 words, which will be used in your public profile. Ensure
                     that it conveys meaningful information you would like the client to know about you before engaging in
                     your project</p>

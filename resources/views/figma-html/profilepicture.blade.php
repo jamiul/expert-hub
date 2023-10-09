@@ -120,17 +120,17 @@
                     <div class="col-md-7 col-lg-8">
                         <div class="row avatar-area">
                             <div class="col-md-12">
-                                <h4 class="text-bold">Upload your profile picture</h4>
+                                <h4 class="fw-bold">Upload your profile picture</h4>
                                 <p>Please upload the image you would like to appear in your profile</p>
                             </div>
                             <div class="user-avatar">
                                 <img src="../assets/frontend/default/img/user-avatar.jpg" class="avatar-picture" />
-                                <p class="text-center mt-2">Max 2MB 500px 500px</p>
+                                <p class="text-center mt-2 fst-italic">Max 2MB 500px 500px</p>
                                 <button class="w-100 border btn btn-lg border-all-5 border-green-2 user-avatar">
                                     <i class="las la-upload fs-4"></i> Upload Profile
                                 </button>
                                 <div class="col-md-12 text-center mt-3 mb-4 user-avatar">
-                                    <a href="#"  class="exp-signuplink">Remove Profile</a>
+                                    <a href="#"  class="fw-bold">Remove Profile</a>
                                 </div>
                             </div>
                         </div>

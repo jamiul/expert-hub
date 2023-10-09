@@ -112,10 +112,10 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-8 ps-md-5">
-                    <h2 class="text-bold">Tell us About Your Expertise</h2>
+                    <h3 class="fw-bold">Tell us About Your Expertise</h2>
                     <p>This helps in finding the right protect for you</p>
                     <br>
-                    <h3 class="text-bold">What languages do you speak?</h3>
+                    <h4 class="fw-bold">What languages do you speak?</h3>
                     <p>We will use this to help match you with clients whio are fluent in their language</p>
 
                     <div class="row gy-3">

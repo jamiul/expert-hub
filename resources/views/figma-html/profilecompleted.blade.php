@@ -2,8 +2,8 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
-    <section class="exp-completed-my">
-        <div class="py-4 py-lg-5">
+    <section class="exp-my2">
+        <div class="py-4 py-lg-4">
             <div class="container">
                 <div class="row prcomplete">
                     <div class="col-xl-5 col-lg-6 col-md-8 mx-auto">
@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="card-body my-auto">
                                     <div>
-                                        <h4 class="mt-3">Dear Professor Michael</h4>
+                                        <h4 class="mt-3 fw-bold">Dear Professor Michael</h4>
                                     </div>
                                     <p class="mt-3">Thank you for taking the time to complete your EduExHub profile. Since
                                         we only list

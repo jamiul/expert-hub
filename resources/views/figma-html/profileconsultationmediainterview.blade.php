@@ -118,49 +118,51 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-8">
-
-                        <div class="border p-3 rounded mb-5">
-                            <h4 class="mb-4">Book Expert for TV Interview</h4>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="../assets/frontend/default/img/tv_interview.jpg" alt="Image"
-                                        class="img-fluid">
-                                    <p class="mb-0 p-2 fw-bold">Prof. Michael</p>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-lg-4 order-lg-last text-right">
-                                            <p class="pr-4"><b>$120/30mins</b></p>
-                                        </div>
-                                        <div class="col-md-8 mb-3 fs-4">
-                                            Expertise:
-                                            <button class="btn-tags-outline">Architecture1</button>
-                                            <button class="btn-tags-outline">LMS2</button>
-                                        </div>
-
-                                    </div>
-
-                                    <p><b>Prof. Michael</b> offers consultation services to educational
-                                        institutions,
-                                        businesses,and individuals seeking expertise in <b>Architecture</b> and
-                                        <b>Biology</b>.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-body my-auto">
-                            <h4 class="text-bold mt-4">Would you like offer<span class="text-style"> TV interview
-                                </span>services?</h4>
+                            <h4 class="text-bold">Would you like offer<span class="text-style"> media interview</span>
+                                services?
+                            </h4>
                             <div class="w-100">
                                 <div class="row ">
                                     <div class="col-md-4 d-flex">
                                         <button class="w-100 btn btn-primary m-2 border-all-5" type="submit">Yes</button>
                                         <button class="w-100 m-2 btn border-all-5  btn-outline-primary">No</button>
-                                        </button>
                                     </div>
                                     <div class="col-md-8"></div>
                                 </div>
                             </div>
+                                <div class="row">                                    
+                                    <div class="col-md-12 my-4">
+                                        <div class="modal-body">
+                                            <p class="fs-6">In which of your areas of expertise would you like to offer TV interview
+                                                service?</p>
+                                                <div class="form-group has-search">
+                                                    <span class="las la-search la-2x form-control-feedback"></span>
+                                                    <input type="text" class="form-control" placeholder="Search skills...">
+                                                </div>
+                                            <div class="my-4">
+                                                <button class="btn btngray ff-colfax" type="button">Architecture
+                                                    1</button>
+                                                <button class="btn btn-primary ff-colfax" type="button">Architecture
+                                                    2</button>
+                                                <button class="btn btngray ff-colfax" type="button">LMS 1</button>
+                                                <button class="btn btn-primary ff-colfax" type="button">LMS 2</button>
+                                            </div>
+                                            <div class="custom-input-group my-4">
+                                                <div class="textOnInput">
+                                                    <label for="inputText">Value / 30 mins</label>
+                                                    <input class="form-control mt-3 py-2"
+                                                        placeholder="eg. $120 / 30 min" type="text">
+                                                </div>
+                                            </div>
+                                            <button type="button"
+                                                class="w-100 btn btn-primary btn-lg border-all-5 btn-lg ff-colfax">Create
+                                                Consultant</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             <div class="row">
                                 <div class="col">
                                     <div class="w-100">
