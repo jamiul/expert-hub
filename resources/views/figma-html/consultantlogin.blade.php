@@ -34,7 +34,8 @@
                                             I'm a Client
                                         </label>
                                     </div>
-                                    <button type="button" class="w-100 btn btn-lg btn-primary mt-3 btn-join ff-colfax">Create Account</button>
+                                    <button type="button"
+                                        class="w-100 btn btn-lg btn-primary mt-3 btn-join ff-colfax">Create Account</button>
                                 </div>
                                 <div class="text-center">
                                     <p class="text-muted mb-0">Already have an account, <a class="exp-signuplink"

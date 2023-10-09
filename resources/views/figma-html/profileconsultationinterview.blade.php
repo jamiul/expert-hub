@@ -120,12 +120,12 @@
                     <div class="col-md-7 col-lg-8">
 
                         <div class="border p-3 rounded mb-5">
-                            <h4 class="mb-4">Book Expert for TV Interview</h4>
+                            <h4 class="fw-bold mb-4">Book Expert for TV Interview</h4>
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="../assets/frontend/default/img/tv_interview.jpg" alt="Image"
                                         class="img-fluid">
-                                    <p class="mb-0 p-2 fw-bold">Prof. Michael</p>
+                                    <p class="mb-0 p-2 fw-bold text-center">Prof. Michael</p>
                                 </div>
                                 <div class="col-md-9">
                                     <div class="row">
@@ -133,14 +133,14 @@
                                             <p class="pr-4"><b>$120/30mins</b></p>
                                         </div>
                                         <div class="col-md-8 mb-3 fs-4">
-                                            Expertise:
+                                            <span class="exp-heading">Expertise:</span>
                                             <button class="btn-tags-outline">Architecture1</button>
                                             <button class="btn-tags-outline">LMS2</button>
                                         </div>
 
                                     </div>
 
-                                    <p><b>Prof. Michael</b> offers consultation services to educational
+                                    <p class="exp-text"><b>Prof. Michael</b> offers consultation services to educational
                                         institutions,
                                         businesses,and individuals seeking expertise in <b>Architecture</b> and
                                         <b>Biology</b>.

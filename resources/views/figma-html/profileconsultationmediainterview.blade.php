@@ -119,49 +119,61 @@
                     </div>
                     <div class="col-md-7 col-lg-8">
                         <div class="card-body my-auto">
-                            <h4 class="text-bold">Would you like offer<span class="text-style"> media interview</span>
+                            <h5 class="text-bold">Would you like offer <span class="text-style">media interview</span>
                                 services?
-                            </h4>
+                            </h5>
                             <div class="w-100">
                                 <div class="row ">
                                     <div class="col-md-4 d-flex">
-                                        <button class="w-100 btn btn-primary m-2 border-all-5" type="submit">Yes</button>
-                                        <button class="w-100 m-2 btn border-all-5  btn-outline-primary">No</button>
+                                        <button id="btnyes" class="w-100 btn btn-primary m-2 border-all-5"
+                                            type="submit">Yes</button>
+                                        <button id="btnno"
+                                            class="w-100 m-2 btn border-all-5  btn-outline-primary">No</button>
                                     </div>
                                     <div class="col-md-8"></div>
                                 </div>
                             </div>
-                                <div class="row">                                    
-                                    <div class="col-md-12 my-4">
-                                        <div class="modal-body">
-                                            <p class="fs-6">In which of your areas of expertise would you like to offer TV interview
-                                                service?</p>
-                                                <div class="form-group has-search">
-                                                    <span class="las la-search la-2x form-control-feedback"></span>
-                                                    <input type="text" class="form-control" placeholder="Search skills...">
-                                                </div>
-                                            <div class="my-4">
-                                                <button class="btn btngray ff-colfax" type="button">Architecture
-                                                    1</button>
-                                                <button class="btn btn-primary ff-colfax" type="button">Architecture
-                                                    2</button>
-                                                <button class="btn btngray ff-colfax" type="button">LMS 1</button>
-                                                <button class="btn btn-primary ff-colfax" type="button">LMS 2</button>
+                            <div class="row popup-questions">
+                                <div class="row pr-0">
+                                <div class="col-md-12 my-4">
+                                    <p class="">In which of your areas of expertise would you like to offer media interview service?</p>
+                                    <div class="form-group has-search position-relative">
+                                        <span class="las la-search la-2x inputsearch-icon-right"></span>
+                                        <input type="text" class="form-control" placeholder="Search skills...">
+                                    </div>
+                                    <div class="btntags">
+                                        <button class="btn btngray ff-colfax" type="button">Architecture
+                                            1</button>
+                                        <button class="btn btn-primary ff-colfax" type="button">Architecture
+                                            2</button>
+                                        <button class="btn btngray ff-colfax" type="button">LMS 1</button>
+                                        <button class="btn btn-primary ff-colfax" type="button">LMS 2</button>
+                                    </div>
+                                </div></div>
+                                <div class="row">
+                                    <div class="col-md-6 mt-2 pr-0">
+                                        <div class="custom-input-group">
+                                            <div class="textOnInput">
+                                                <label for="inputText">Value / 30 mins</label>
+                                                <input class="form-control textlable-rate" placeholder="eg. $120 / 30 min"
+                                                    type="text">
                                             </div>
-                                            <div class="custom-input-group my-4">
-                                                <div class="textOnInput">
-                                                    <label for="inputText">Value / 30 mins</label>
-                                                    <input class="form-control mt-3 py-2"
-                                                        placeholder="eg. $120 / 30 min" type="text">
-                                                </div>
-                                            </div>
-                                            <button type="button"
-                                                class="w-100 btn btn-primary btn-lg border-all-5 btn-lg ff-colfax">Create
-                                                Consultant</button>
                                         </div>
-
+                                    </div>
+                                    <div class="col-md-6 mt-2 pr-0">
+                                        <button class="w-100 border btn btn-lg border-all-5 border-green-2">
+                                            <i class="las la-upload fs-4"></i> Upload Profile
+                                        </button>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-4 pr-0">
+                                        <button type="button"
+                                            class="w-100 btn btn-primary btn-lg border-all-5 btn-lg ff-colfax">Create
+                                            Consultant</button>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col">
