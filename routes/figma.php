@@ -15,6 +15,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/profile-consultation', [FigmaController::class, 'profileConsultation']);
     Route::get('/profile-consultation-books', [FigmaController::class, 'profileConsultationBooks']);
     Route::get('/profile-consultation-interview', [FigmaController::class, 'profileConsultationInterview']);
+    Route::get('/profile-consultation-media-interview', [FigmaController::class, 'profileConsultationMediaInterview']);
     Route::get('/profile-biography', [FigmaController::class, 'profileBiography']);
     Route::get('/profile-picture', [FigmaController::class, 'profilePicture']);
     Route::get('/profile-completed', [FigmaController::class, 'profileCompleted']);

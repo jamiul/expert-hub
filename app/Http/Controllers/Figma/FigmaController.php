@@ -68,6 +68,10 @@ class FigmaController extends Controller
         return view('figma-html.profileconsultationinterview');
     }
 
+    public function profileConsultationMediaInterview()
+    {
+        return view('figma-html.profileconsultationmediainterview');
+    }
     public function profileBiography()
     {
         return view('figma-html.profilebiography');

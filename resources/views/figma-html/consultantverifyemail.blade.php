@@ -2,8 +2,8 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
-    <section class="exp-my">
-        <div class="py-4 py-lg-5">
+    <section class="exp-my2 ff-colfax">
+        <div class="py-4 py-lg-4">
             <div class="container">
                 <div class="row cvemail">
                     <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">

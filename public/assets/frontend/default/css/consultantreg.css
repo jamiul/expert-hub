@@ -24,10 +24,18 @@
     background-color: #0059c9;
     color: #ffffff !important;
 }
+h1, h2, h3, h4, h5, h6{
+    color: #303744;
+    font-family: "colfax";
+}
 a{
     color: #303744;
     font-family: colfax;
     text-decoration: underline;
+}
+.form-select, .form-control {
+    border: 2px solid #0000001A;
+    border-radius: 4px;
 }
 .form-check-input[type=checkbox] {
     width: 18px;
@@ -36,6 +44,9 @@ a{
 }
 label.form-check-label {
     padding-left: 8px;
+}
+.card{
+    border:0px;
 }
 .card-shadow {
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
@@ -50,12 +61,12 @@ label.form-check-label {
     border-radius: 4px !important;
 }
 .border-green-2 {
-    border: 2px solid #275846 !important;
+    border: 2px solid #0059C9 !important;
 }
 .btn-back {
     background-color: transparent;
-    border: 2px solid #27584633 !important;
-    color: #275846;
+    border: 2px solid #0059C933 !important;
+    color: #0059C9;
 }
 section.exp-my {
     margin: 80px auto;
@@ -66,8 +77,9 @@ section.exp-my2 {
     min-height: 720px;
 }
 a.exp-signuplink {
-    color: #275846;
-    font-family: colfaxbold;
+    color: #0059C9;
+    font-family: colfax;
+    font-weight: 500;
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 0em;
@@ -79,11 +91,31 @@ a.exp-signuplink {
     min-width: 280px;
 }
 /*-----login page-----*/
-section.exp-login {
-    margin: 80px auto;
+
+label.typelabel {
+    font-family: "colfax";
+    border: 1px solid #0000001a;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 12px 16px 12px 52px;
+    background-image: url('../img/badge.png');
+    background-repeat: no-repeat;
+    background-size: 36px;
+    background-position: 8px;
+    margin-bottom: 10px;
+  }
+  input.typebtn {
+    position: absolute;
+    top: 15px;
+    right: 12px;
 }
+input.typebtn:checked+label {
+    background-color: #0059c90d;
+    border: 1px solid #0059c9;
+  }
 .clogin .card {
-    padding: 60px 12px 60px 12px !important;
+    padding: 40px 12px 50px 12px !important;
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
 }
 .clogin .logo {
@@ -136,6 +168,10 @@ section.exp-login {
 }
 
 /*-----signup page-----*/
+section.exp-my.csignup {
+    margin-top: 40px;
+    min-height: 800px;
+}
 .csignup {
     margin-left: 10px;
     margin-right: 10px;
@@ -148,6 +184,7 @@ section.exp-login {
     margin: 0 auto 100px;
     padding: 45px;
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
+    border: 0px !important;
 }
 .csignup .sign-up-form {
     text-align: center;
@@ -163,10 +200,14 @@ section.exp-login {
 .csignup .textOnInput label {
     position: absolute !important;
     top: -12px !important;
-    left: 23px !important;
-    padding: 2px !important;
+    left: 12px !important;
+    padding: 2px  10px !important;
     z-index: 1 !important;
     background-color: white !important;
+    font-family: 'colfax';
+    font-size: 14px;
+    font-weight: 600;
+
 }
 .csignup .form-select {
     padding: 12px;
@@ -175,16 +216,17 @@ section.exp-login {
     text-align: left;
     padding-left: 8px;
     margin-top: 10px;
+    border: 2px solid #0000001A !important;
 }
 .csignup .google-icon-img img {
     margin-right: 12px !important;
 }
 /* .csignup .text-center p a {
-    color: #275846;
+    color: #0059C9;
 } */
 /*-----Email Verify--------*/
 .cvemail .card {
-    padding: 60px 12px 60px 12px !important;
+    padding: 60px 26px 60px 26px !important;
 }
 .cvemail h4 {
     font-family: Public Sans;
@@ -217,6 +259,29 @@ section.exp-login {
     font-weight: 700;
     line-height: 23px;
 }
+.cvyemail .card {
+    padding: 50px 26px 50px 26px !important;
+}
+.cvyemail .logo {
+    width: 180px !important;
+}
+.cvyemail h3 {
+    font-family: Public Sans;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.cvyemail p {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+
+
 /*-----Profile setup--------*/
 .psetup .input-field {
     width: 100%;
@@ -227,12 +292,15 @@ section.exp-login {
     height: 40px;
     background-size: contain;
 }
+.col-profile-pic {
+    max-width: 320px;
+}
 .profile-pic {
     max-width: 220px;
 }
 .psetup .input-icons {
-    margin-bottom: 30px;
-    height: 60px;
+    margin-bottom: 14px;
+    height: 62px;
 }
 .psetup p.card-text {
     font-size: 14px;
@@ -242,6 +310,12 @@ section.exp-login {
     color: #5abc76;
 }
 /*-----Profile Details--------*/
+.cprofiled h5 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 23px;
+    margin-bottom: 2px;
+}
 .cprofiled h5 {
     font-size: 19px;
     font-weight: 600;
@@ -301,7 +375,7 @@ section.exp-login {
     border-color: #e2e5ec;
 }
 .tick-bar {
-    border: 2px solid #5abc76;
+    border: 2px solid #0059C9;
 }
 /*-----Profile expertises--------*/
 .prexpertise .col .card {
@@ -331,7 +405,7 @@ section.exp-login {
 .dropdown-item.active,
 .dropdown-item:hover,
 .dropdown-item:active {
-    color: #275846 !important;
+    color: #0059C9 !important;
     background-color: #5abc761a;
 }
 .dropdown-item a {
@@ -423,20 +497,20 @@ section.exp-login {
 }
 /*-----Profile Consultation--------*/
 .pconsult .text-style {
-    color: #57b572;
+    color: #0059C9;
     font-weight: bold;
 }
 .pconsult .text-style-button {
-    color: #275846;
+    color: #0059C9;
     font-weight: bold;
 }
 .btn-tags-outline {
     background-color: transparent;
-    color: #4caf50;
+    color: #0059C9;
     padding: 2px 12px;
     margin-right: 5px;
     border-radius: 20px !important;
-    border: 1px solid #4caf50;
+    border: 1px solid #0059C9;
     font-size: 14px;
 }
 .avatar-picture {
@@ -445,6 +519,9 @@ section.exp-login {
 .user-avatar,
 .btn-avatar-upload {
     width: 265px !important;
+}
+button.user-avatar {
+    color: #0059C9;
 }
 /*-----Modal--------*/
 .modal {
@@ -460,8 +537,8 @@ section.exp-login {
     padding: 0px 50px 40px;
 }
 .btngreen {
-    background-color: #5abc76 !important;
-    border-color: #4f9869;
+    background-color: #0059C9 !important;
+    border-color: #013e88;
 }
 .btngray {
     background-color: #f9f9f9 !important;
