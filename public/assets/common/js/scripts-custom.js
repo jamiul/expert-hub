@@ -5,4 +5,4 @@ $(document).ready(function () {
     $("#btnyes").click(function () {
         $(".popup-questions").slideDown("slow");
     });
-});
+}); 
