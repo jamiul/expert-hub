@@ -112,36 +112,37 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-8 ps-md-5">
-                    <h3 class="fw-bold">Tell us About Your Expertise</h2>
+                    <h3 class="fw-bold">Tell us About Your Expertise</h3> 
                     <p>This helps in finding the right protect for you</p>
                     <br>
                     <h4 class="fw-bold">What languages do you speak?</h3>
-                    <p>We will use this to help match you with clients whio are fluent in their language</p>
+                        <p>We will use this to help match you with clients whio are fluent in their language</p>
 
-                    <div class="row gy-3">
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="cc-name" placeholder="eg. English " required>
+                        <div class="row gy-3">
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="cc-name" placeholder="eg. English "
+                                    required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="w-100">
-                                <hr class="my-4">
-                                <div class="row gy-3">
-                                    <div class="col-lg-4 col-md-5">
-                                        <button class="w-100 border btn-lg border-all-5 btn-outline-primary">
-                                            <i class="las la-arrow-left la-lg"></i> Back
-                                        </button>
-                                    </div>
-                                    <div class="col-lg-4 col-md-2"></div>
-                                    <div class="col-lg-4 col-md-5">
-                                        <button class="w-100 btn btn-primary btn-lg border-all-5"
-                                            type="submit">Next</button>
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-100">
+                                    <hr class="my-4">
+                                    <div class="row gy-3">
+                                        <div class="col-lg-4 col-md-5">
+                                            <button class="w-100 border btn-lg border-all-5 btn-outline-primary">
+                                                <i class="las la-arrow-left la-lg"></i> Back
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-4 col-md-2"></div>
+                                        <div class="col-lg-4 col-md-5">
+                                            <button class="w-100 btn btn-primary btn-lg border-all-5"
+                                                type="submit">Next</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -24,20 +24,27 @@
     background-color: #0059c9;
     color: #ffffff !important;
 }
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, p {
     color: #303744;
     font-family: "colfax";
 }
-a{
+a {
     color: #303744;
     font-family: colfax;
     text-decoration: underline;
 }
-.form-select, .form-control {
-    border: 2px solid #0000001A;
+.form-select,
+.form-control {
+    border: 2px solid #0000001a;
     border-radius: 4px;
+    color: #303744;
 }
-.form-check-input[type=checkbox] {
+.form-check-input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin-top: 0px;
@@ -45,8 +52,8 @@ a{
 label.form-check-label {
     padding-left: 8px;
 }
-.card{
-    border:0px;
+.card {
+    border: 0px;
 }
 .card-shadow {
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
@@ -56,17 +63,21 @@ label.form-check-label {
 }
 .card button.btn-join {
     border-radius: 4px;
+    font-size: 16px !important;
+    font-weight: 600;
 }
 .border-all-5 {
     border-radius: 4px !important;
 }
 .border-green-2 {
-    border: 2px solid #0059C9 !important;
+    border: 2px solid #0059c9 !important;
+    color: #0059C9;
+    ;
 }
 .btn-back {
     background-color: transparent;
-    border: 2px solid #0059C933 !important;
-    color: #0059C9;
+    border: 2px solid #0059c933 !important;
+    color: #0059c9;
 }
 section.exp-my {
     margin: 80px auto;
@@ -77,9 +88,9 @@ section.exp-my2 {
     min-height: 720px;
 }
 a.exp-signuplink {
-    color: #0059C9;
+    color: #0059c9;
     font-family: colfax;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 0em;
@@ -94,26 +105,28 @@ a.exp-signuplink {
 
 label.typelabel {
     font-family: "colfax";
-    border: 1px solid #0000001a;
+    font-weight: 600;
+    border: 1px solid #e5e5e5;
     border-radius: 5px;
     font-size: 19px;
     font-weight: 500;
     padding: 12px 16px 12px 52px;
-    background-image: url('../img/badge.png');
+    background-image: url("../img/badge.png");
     background-repeat: no-repeat;
     background-size: 36px;
     background-position: 8px;
     margin-bottom: 10px;
-  }
-  input.typebtn {
+}
+input.typebtn {
     position: absolute;
     top: 15px;
     right: 12px;
+    border: 1px solid #303744;
 }
-input.typebtn:checked+label {
+input.typebtn:checked + label {
     background-color: #0059c90d;
     border: 1px solid #0059c9;
-  }
+}
 .clogin .card {
     padding: 40px 12px 50px 12px !important;
     box-shadow: 10px 10px 20px 0px #0e00621f !important;
@@ -176,6 +189,9 @@ section.exp-my.csignup {
     margin-left: 10px;
     margin-right: 10px;
 }
+.csignup h3.fw-bold {
+    font-family: Public sans;
+}
 .csignup .form {
     position: relative;
     z-index: 1;
@@ -201,29 +217,29 @@ section.exp-my.csignup {
     position: absolute !important;
     top: -12px !important;
     left: 12px !important;
-    padding: 2px  10px !important;
+    padding: 2px 10px !important;
     z-index: 1 !important;
     background-color: white !important;
-    font-family: 'colfax';
+    font-family: "colfax";
     font-size: 14px;
     font-weight: 600;
-
 }
 .csignup .form-select {
     padding: 12px;
+}
+.form-select,
+.form-control {
+    border: 2px solid #e5e5e5;
 }
 .csignup button.btn.border {
     text-align: left;
     padding-left: 8px;
     margin-top: 10px;
-    border: 2px solid #0000001A !important;
+    border: 2px solid #e5e5e5 !important;
 }
 .csignup .google-icon-img img {
     margin-right: 12px !important;
 }
-/* .csignup .text-center p a {
-    color: #0059C9;
-} */
 /*-----Email Verify--------*/
 .cvemail .card {
     padding: 60px 26px 60px 26px !important;
@@ -275,12 +291,12 @@ section.exp-my.csignup {
 }
 .cvyemail p {
     font-family: Colfax;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 26px;
     text-align: left;
+    color: #303744;
 }
-
 
 /*-----Profile setup--------*/
 .psetup .input-field {
@@ -350,6 +366,7 @@ section.exp-my.csignup {
 }
 .timeline-bar {
     border: 2px solid #e4e7ec;
+    border-radius: 5px;
 }
 .bg-primary-100 {
     background-image: url("../img/consultantreg/step-icon.png");
@@ -375,11 +392,14 @@ section.exp-my.csignup {
     border-color: #e2e5ec;
 }
 .tick-bar {
-    border: 2px solid #0059C9;
+    border: 2px solid #0059c9;
 }
 /*-----Profile expertises--------*/
 .prexpertise .col .card {
     height: 550px;
+}
+.cate-col{
+    border: 1px solid #dedede;
 }
 .prexpertise
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
@@ -405,7 +425,7 @@ section.exp-my.csignup {
 .dropdown-item.active,
 .dropdown-item:hover,
 .dropdown-item:active {
-    color: #0059C9 !important;
+    color: #0059c9 !important;
     background-color: #5abc761a;
 }
 .dropdown-item a {
@@ -464,6 +484,12 @@ section.exp-my.csignup {
 .badge i.lar.la-times-circle {
     color: #3037447d;
 }
+.inputsearch-icon-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #3037444d;
+}
 /*-----Profile Education--------*/
 .cpeducation .form-control {
     padding: 1rem 1rem;
@@ -476,7 +502,7 @@ section.exp-my.csignup {
     position: absolute;
     top: -10px;
     left: 15px;
-    padding: 2px;
+    padding: 2px 10px !important; 
     z-index: 1;
     background-color: #ffffff;
 }
@@ -488,7 +514,7 @@ section.exp-my.csignup {
     position: absolute;
     top: -10px;
     left: 15px;
-    padding: 2px;
+    padding: 2px 10px !important;
     z-index: 1;
     background-color: #ffffff;
 }
@@ -496,32 +522,65 @@ section.exp-my.csignup {
     min-height: 134px;
 }
 /*-----Profile Consultation--------*/
+.pconsult h5 {
+    font-family: colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+}
+.pconsult p {
+    font-family: colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+}
 .pconsult .text-style {
-    color: #0059C9;
+    color: #0059c9;
     font-weight: bold;
 }
 .pconsult .text-style-button {
-    color: #0059C9;
+    color: #0059c9;
     font-weight: bold;
+}
+.exp-heading {
+    font-size: 16px !important;
+    font-weight: 700;
+}
+p.exp-text{
+    font-size: 16px;
+    font-weight: 400;
+    color:#6e737c;
+}
+p.exp-text b{
+    color:#000000;
+    font-weight: 500;
 }
 .btn-tags-outline {
     background-color: transparent;
-    color: #0059C9;
+    color: #0059c9;
     padding: 2px 12px;
     margin-right: 5px;
     border-radius: 20px !important;
-    border: 1px solid #0059C9;
+    border: 1px solid #0059c9;
     font-size: 14px;
 }
 .avatar-picture {
     width: 265px;
+}
+input.form-control.textlable-rate {
+    min-height: 56px;
 }
 .user-avatar,
 .btn-avatar-upload {
     width: 265px !important;
 }
 button.user-avatar {
-    color: #0059C9;
+    color: #0059c9;
+}
+.popup-questions{
+    display: none;
 }
 /*-----Modal--------*/
 .modal {
@@ -537,25 +596,35 @@ button.user-avatar {
     padding: 0px 50px 40px;
 }
 .btngreen {
-    background-color: #0059C9 !important;
+    background-color: #0059c9 !important;
     border-color: #013e88;
 }
+
 .btngray {
     background-color: #f9f9f9 !important;
     border-color: #c3c5c8;
     color: #000000;
 }
 .btngray,
-.btngreen {
+.btngreen,
+.btntags .btn-primary {
     font-size: 14px;
     margin: 4px 5px 4px 0;
-    text-align: left;
+    width: Hug (105px);
+    height: Hug (32px);
+    padding: 6px 8px 4px 8px;
+    border-radius: 4px;
+    gap: 8px;
+    font-family: "Colfax";
+    font-weight: 500;
+    line-height: 22px;
 }
+
 .modal .textOnInput label {
     position: absolute;
     top: -10px;
     left: 45px;
-    padding: 2px;
+    padding: 2px 10px !important;
     z-index: 1;
     background-color: #ffffff;
 }

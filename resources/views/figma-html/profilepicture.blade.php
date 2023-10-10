@@ -130,7 +130,7 @@
                                     <i class="las la-upload fs-4"></i> Upload Profile
                                 </button>
                                 <div class="col-md-12 text-center mt-3 mb-4 user-avatar">
-                                    <a href="#"  class="fw-bold">Remove Profile</a>
+                                    <a href="#" class="fw-bold">Remove Profile</a>
                                 </div>
                             </div>
                         </div>

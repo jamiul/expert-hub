@@ -45,8 +45,10 @@
                     </div>
                     <div class="row gy-3">
                         <div class="col-md-7">
-                            <p class="mt-5">Create your profile takes a few minutes and you have the option to edit it later</p>
-                            <button class="w-100 btn btn-primary btn-lg border-all-5 ff-colfax" type="submit">Get Started</button>
+                            <p class="mt-5">Create your profile takes a few minutes and you have the option to edit it
+                                later</p>
+                            <button class="w-100 btn btn-primary btn-lg border-all-5 ff-colfax" type="submit">Get
+                                Started</button>
                         </div>
                         <div class="col-md-4"></div>
                     </div>
