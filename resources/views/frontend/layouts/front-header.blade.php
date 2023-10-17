@@ -20,14 +20,10 @@
     <meta name="app-url" content="{{ config('app.url') }}">
     <meta name="file-base-url" content="{{ config('app.url'). '/public' }}">
 
-    <!-- Title -->
-    <!-- <title>@yield('meta_title', getSetting('website_name').' | '.getSetting('site_motto'))</title> -->
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <meta name="description" content="@yield('meta_description', getSetting('meta_description'))" />
-    <meta name="keywords" content="@yield('meta_keywords', getSetting('meta_keywords'))"> -->
 
     @yield('meta')
 
