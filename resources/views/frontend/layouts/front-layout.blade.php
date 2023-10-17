@@ -9,6 +9,8 @@
 
         @include('frontend.layouts.front-footer')
 
+        @yield('modal')
+
         @include('frontend.layouts.front-js')
     </body>
 </html>
