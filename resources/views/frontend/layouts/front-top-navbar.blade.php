@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md-3 col-sm-4 padding">
                     <div class="header-post">
-                        <a href="{{ route('register') }}">{{ __('Post your Project') }}</a>
+                        <a href="{{ route('projects.create') }}">{{ __('Post your Project') }}</a>
                         <a href="{{ route('register') }}?type=1">{{ __('Become an Expert') }}</a>
                     </div>
                 </div>
