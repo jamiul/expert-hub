@@ -120,13 +120,13 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $budgetAud = Option::where('group', OptionGroupEnum::BudgetAUD)->where('status', 1)->pluck('value')->toArray();
+/*        $budgetAud = Option::where('group', OptionGroupEnum::BudgetAUD)->where('status', 1)->pluck('value')->toArray();
         $budgetUsd = Option::where('group', OptionGroupEnum::BudgetUSD)->where('status', 1)->pluck('value')->toArray();
         $categories = ProjectCategory::all();
         $skills = Skill::all();
-        $clientPackage = Auth::user()->userPackage;
+        $clientPackage = Auth::user()->userPackage;*/
 
-        return view('frontend.user.client.projects.create', compact('categories', 'skills', 'clientPackage', 'budgetAud', 'budgetUsd'));
+        return view('frontend.user.client.projects.create');
     }
 
     /**
