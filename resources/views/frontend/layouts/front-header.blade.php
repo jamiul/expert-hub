@@ -1,4 +1,6 @@
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @php
         if(Session::has('locale')) {
             $locale = Session::get('locale', Config::get('app.locale'));
@@ -19,11 +21,6 @@
 
     <meta name="app-url" content="{{ config('app.url') }}">
     <meta name="file-base-url" content="{{ config('app.url'). '/public' }}">
-
-
-    <!-- Required Meta Tags Always Come First -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     @yield('meta')
 
