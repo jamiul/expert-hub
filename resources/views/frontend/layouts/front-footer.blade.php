@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <div class="footer-left">
-                        <p>© 2023 Sydney IBS Pty Ltd</p>
+                        <p>© {{ date('Y') }} Sydney IBS Pty Ltd</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
