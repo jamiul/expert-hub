@@ -174,7 +174,7 @@ Route::get('/projects/create', [ProjectController::class, 'create'])->name('proj
 
 // Client middleware
 Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']], function () {
-//    Route::resource('/projects', ProjectController::class);
+    //Route::resource('/projects', ProjectController::class);
     Route::get('/my-open-projects', [ProjectController::class, 'myOpenProject'])->name('projects.my_open_project');
     Route::get('/project-bids/{slug}', [ProjectController::class, 'projectBids'])->name('project.bids');
     Route::get('/invition-for-hire-expert/{username}', [HireController::class, 'expertInvitation'])->name('invition_for_hire_expert');
