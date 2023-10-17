@@ -6,11 +6,6 @@
                     <div class="post-shadow-box">
                         <div class="job-post-header">
                             <div class="col-12 p-0">
-                                <div class="consult-logo">
-                                    <img src="{{ asset('assets/frontend/img/consult-logo.png') }}"/>
-                                </div>
-                            </div>
-                            <div class="col-12 p-0">
                                 <div class="row m-0 align-items-center">
                                     <div class="col-md-8 col-12 p-0">
                                         <div class="post-header-content">
