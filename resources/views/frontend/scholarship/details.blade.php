@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 
 @section('meta_title'){{ $scholarship->meta_title }}@stop
 

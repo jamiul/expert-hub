@@ -3,7 +3,7 @@
     <section class="py-4 py-lg-5">
         <div class="container">
             <div class="row mb-5">
-                @extends('frontend.layouts.app')
+                @extends('frontend.layouts.front-layout')
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap" rel="stylesheet">

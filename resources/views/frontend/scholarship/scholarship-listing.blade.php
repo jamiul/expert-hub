@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 
 @section('content')
     <div class="container-main-projects-banner">

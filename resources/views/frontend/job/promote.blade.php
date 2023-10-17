@@ -7,7 +7,7 @@
 </head>
 
 <body class="bg-white">
-  @extends('frontend.layouts.app')
+  @extends('frontend.layouts.front-layout')
   @section('content')
 
   <!-- review banner -->

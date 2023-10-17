@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
@@ -12,7 +12,7 @@
                                 <div class="col-lg-2 pl-5">
                                     <img class="mb-4logo"
                                         src="{{ asset('assets/frontend/default/img/consultantreg/letter.png') }}"
-                                        alt="Edu Expert Hub" /> 
+                                        alt="Edu Expert Hub" />
                                 </div>
                                 <div class="card-body my-auto">
                                     <div>

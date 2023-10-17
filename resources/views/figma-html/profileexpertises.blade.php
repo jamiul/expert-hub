@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
@@ -21,7 +21,7 @@
                                         <div class="col">
                                             <div class="timeline-item-content ps-6">
                                                 <h5>General Information</h5>
-                                                <p>Profile details</p> 
+                                                <p>Profile details</p>
                                             </div>
                                         </div>
                                     </div>

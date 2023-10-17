@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 @push('top_styles')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/aboutUs.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">

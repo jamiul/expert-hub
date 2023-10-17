@@ -21,7 +21,7 @@
 </style> -->
 
 <body class="bg-white">
-  @extends('frontend.layouts.app')
+  @extends('frontend.layouts.front-layout')
   @section('content')
   <div class="mx-3 rounded-md my-2 rounded-1 " style="background: #F2F7F2;">
     <div class="row py-2">

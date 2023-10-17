@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    @extends('frontend.layouts.app')
+    @extends('frontend.layouts.front-layout')
     @section('content')
         <div class="training-content mx-auto shadow-lg my-5">
             <div class="row pt-5 mx-1" style="background: #fff;">

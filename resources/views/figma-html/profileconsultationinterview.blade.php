@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
@@ -133,7 +133,7 @@
                                             <p class="pr-4"><b>$120/30mins</b></p>
                                         </div>
                                         <div class="col-md-8 mb-3 fs-4">
-                                            <span class="exp-heading">Expertise:</span> 
+                                            <span class="exp-heading">Expertise:</span>
                                             <button class="btn-tags-outline">Architecture1</button>
                                             <button class="btn-tags-outline">LMS2</button>
                                         </div>

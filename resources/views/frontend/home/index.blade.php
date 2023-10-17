@@ -23,7 +23,7 @@
 </style>
 
 <body>
-    @extends('frontend.layouts.app')
+    @extends('frontend.layouts.front-layout')
     @section('content')
         @if (getSetting('slider_section_show') == 'on')
             <section>

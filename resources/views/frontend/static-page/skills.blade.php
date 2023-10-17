@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  @extends('frontend.layouts.app')
+  @extends('frontend.layouts.front-layout')
 
   @section('content')
   <section class="py-4 py-lg-5">

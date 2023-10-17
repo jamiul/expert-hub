@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
@@ -18,7 +18,7 @@
                                     </div>
                                     <div class="custom-input-group first-input my-auto">
                                         <div>
-                                            <p class="pt-4">Hi Michael.</p> 
+                                            <p class="pt-4">Hi Michael.</p>
                                         </div>
                                         <div>
                                             <p>Thanks for your interest in joining EduExHub! To complete your registration,

@@ -148,7 +148,7 @@
 </head>
 
 <body>
-    @extends('frontend.layouts.app')
+    @extends('frontend.layouts.front-layout')
     @section('content')
         <div class="container-main-projects-banner">
             <div class="mb-4 pb-lg-4" style="background:#275846">

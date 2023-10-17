@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 @push('top_styles')
     <link rel="stylesheet" href="{{ asset('assets/frontend/default/css/home.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

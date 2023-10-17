@@ -1,9 +1,4 @@
-@push('top_scripts')
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-@endpush()
-
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-layout')
 @section('content')
     <div class="container-main-projects-banner">
         <div class="mb-4 pb-lg-4" style="background:#275846">
@@ -307,7 +302,10 @@
         </div>
     </section>
 
-
+    @push('bottom_scripts')
+        <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/home.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    @endpush
 
     <!--  this script to handle the "Hide All" button click -->
     <script>
