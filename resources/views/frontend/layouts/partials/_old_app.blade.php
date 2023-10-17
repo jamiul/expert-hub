@@ -1,4 +1,4 @@
-@include('frontend.layouts.partials.head')
+@include('frontend.layouts.partials.__old_head')
 
 <div class="aiz-main-wrapper d-flex flex-column">
 
@@ -77,4 +77,4 @@
     </div>
 @endif
 
-@include('frontend.layouts.partials.footer-scripts')
+@include('frontend.layouts.partials.__old_footer-scripts')
