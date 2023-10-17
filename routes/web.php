@@ -225,7 +225,7 @@ Route::group(['middleware' => ['auth', 'verified', 'expert', 'packagePurchased']
     });
 
     Route::group(['prefix' => 'service'], function () {
-        Route::get('//create', [ServiceController::class, 'create'])->name('service.create');
+        Route::get('/create', [ServiceController::class, 'create'])->name('service.create');
         Route::post('/store', [ServiceController::class, 'store'])->name('service.store');
         Route::get('/edit/{slug}', [ServiceController::class, 'edit'])->name('service.edit');
         Route::post('/update/{slug}', [ServiceController::class, 'update'])->name('service.update');
