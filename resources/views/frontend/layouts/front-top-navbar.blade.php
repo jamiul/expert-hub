@@ -17,8 +17,8 @@
                 </div>
                 <div class="col-md-3 col-sm-4 padding">
                     <div class="header-post">
-                        <a href="#">Post your Project</a>
-                        <a href="#">Become an Expert</a>
+                        <a href="{{ route('register') }}">{{ __('Post your Project') }}</a>
+                        <a href="{{ route('register') }}?type=1">{{ __('Become an Expert') }}</a>
                     </div>
                 </div>
             </div>
@@ -36,22 +36,22 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Find Consultants</a>
+                                        <a class="nav-link" href="{{ url('/search?keyword=&type=expert') }}">{{ __('Find Experts') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Find Projects</a>
+                                        <a class="nav-link" href="{{ url('/search?keyword=&type=project') }}">{{ __('Find Projects') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Find Training</a>
+                                        <a class="nav-link" href="{{ url('/search?keyword=&type=training') }}">{{ __('Find Trainings ') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Scholarships Database</a>
+                                        <a class="nav-link" href="{{ route('scholarship-search') }}?keyword=&type=scholarships">{{ __('Scholarships Database') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Experts Database</a>
+                                        <a class="nav-link" href="{{ url('/search?keyword=&type=media-expert') }}">{{ __('Experts Database for Media') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">About Us</a>
+                                        <a class="nav-link" href="{{ route('about-us') }}">{{ __('About Us') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -60,8 +60,8 @@
                 </div>
                 <div class="col-md-3 col-sm-3">
                     <div class="login-block">
-                        <a href="#"><i class="fa-sharp fa-solid fa-user-large"></i>Login</a>
-                        <a href="#">Register</a>
+                        <a href="{{ route('login') }}"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
+                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
                     </div>
                 </div>
             </div>
