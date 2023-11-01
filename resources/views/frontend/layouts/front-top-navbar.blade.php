@@ -48,7 +48,7 @@
                                         <a class="nav-link" href="{{ route('scholarship-search') }}?keyword=&type=scholarships">{{ __('Scholarships Database') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/search?keyword=&type=media-expert') }}">{{ __('Experts Database') }}</a>
+                                        <a class="nav-link" href="{{ url('/expert-database') }}">{{ __('Experts Database') }}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('about-us') }}">{{ __('About Us') }}</a>
