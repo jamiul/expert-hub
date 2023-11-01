@@ -722,7 +722,7 @@
                                     <img src="{{ asset('assets/frontend/img/consultant1.png') }}">
                                 </div>
                                 <div class="database-text">
-                                    <h4><a href="#">Professor Michael Kassiou</a></h4>
+                                    <h4><a href="{{ route('consultant.details') }}">Professor Michael Kassiou</a></h4>
                                     <span>Curriculum Expert</span>
                                     <span>Public Health</span>
                                     <span>Australia</span>

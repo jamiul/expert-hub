@@ -58,6 +58,8 @@ use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
+Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');
+
 Auth::routes(['verify' => true]);
 
 Route::group(['prefix' => 'aiz-uploader'], function () {

@@ -10,4 +10,9 @@ class ConsultantController extends Controller
     {
         return view('frontend.consultant.landing-page');
     }
+
+    public function view()
+    {
+        return view('frontend.consultant.details');
+    }
 }
