@@ -425,4 +425,7 @@ class ProjectController extends Controller
             }
         }
     }
+    public function findProject(){
+        return view('frontend.project.projects-listing');
+    }
 }

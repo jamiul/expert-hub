@@ -58,6 +58,7 @@ use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
+Route::get('/find-project', [ProjectController::class, 'findProject'])->name('project');
 Auth::routes(['verify' => true]);
 
 Route::group(['prefix' => 'aiz-uploader'], function () {
