@@ -31,9 +31,13 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::where('client_user_id', Auth::user()->id)->latest()->paginate(10);
+        // $projects = Project::where('client_user_id', Auth::user()->id)->latest()->paginate(10);
 
-        return view('frontend.user.client.projects.list', compact('projects'));
+        // return view('frontend.user.client.projects.list', compact('projects'));
+        return view('frontend.project.find-projects');
+    }
+    public function projectDetails(){
+        return view('frontend.project.find-projects-details');
     }
 
     public function myOpenProject()
@@ -425,7 +429,5 @@ class ProjectController extends Controller
             }
         }
     }
-    public function findProject(){
-        return view('frontend.project.projects-listing');
-    }
+
 }

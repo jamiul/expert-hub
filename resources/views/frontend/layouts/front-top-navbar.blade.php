@@ -39,13 +39,13 @@
                                         <a class="nav-link" href="{{ url('/find-consultant') }}">{{ __('Find Consultants') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/find-project') }}>{{ __('Find Projects') }}</a>
+                                        <a class="nav-link" href="{{ url('find-projects') }}">{{ __('Find Projects') }}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/search?keyword=&type=training') }}">{{ __('Find Training') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('scholarship-search') }}?keyword=&type=scholarships">{{ __('Scholarships Database') }}</a>
+                                        <a class="nav-link" href="{{ url('scholarship-database')}}">{{ __('Scholarships Database') }}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/search?keyword=&type=media-expert') }}">{{ __('Experts Database') }}</a>

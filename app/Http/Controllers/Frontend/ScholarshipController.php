@@ -15,16 +15,20 @@ use Illuminate\Http\Request;
 
 class ScholarshipController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['permission:show all blogs'])->only('index');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['permission:show all blogs'])->only('index');
+    // }
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function scholarshipDatabase(){
+        return view('frontend.scholarship.scholarship-database');
+     }
     public function index(Request $request)
     {
         $sortSearch = null;
@@ -37,9 +41,10 @@ class ScholarshipController extends Controller
         }
 
         $scholarships = $scholarships->paginate(15);
-        // dd($scholarships);
 
         return view('admin.scholarship_module.scholarship.index', compact('scholarships', 'sortSearch'));
+
+
     }
 
     /**
