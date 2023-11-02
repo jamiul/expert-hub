@@ -61,7 +61,7 @@
                 <div class="col-md-3 col-sm-3">
                     <div class="login-block">
                         <a href="#"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
-                        <a href="#">{{ __('Register') }}</a>
+                        <a href="{{url('register-option')}}">{{ __('Register') }}</a>
                     </div>
                 </div>
             </div>

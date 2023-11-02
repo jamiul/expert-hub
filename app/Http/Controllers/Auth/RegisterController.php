@@ -51,7 +51,38 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('frontend.home.user_sign_up');
+        // return view('frontend.home.user_sign_up');
+        return view('frontend.home.register.sign-up');
+    }
+    public function registrationOptionForm()
+    {
+
+        return view('frontend.home.register.user-option');
+    }
+    public function registrationEmailVerify()
+    {
+
+        return view('frontend.home.register.verify-email');
+    }
+    public function registrationEmailVerifyComplete()
+    {
+
+        return view('frontend.home.register.verify-complete');
+    }
+    public function registerProfile()
+    {
+
+        return view('frontend.home.register.register-profile');
+    }
+    public function registerDetails()
+    {
+
+        return view('frontend.home.register.register-general-info');
+    }
+    public function registerExpertise()
+    {
+
+        return view('frontend.home.register.register-expertise');
     }
 
     public function register(Request $request)

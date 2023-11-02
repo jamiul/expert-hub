@@ -63,6 +63,7 @@ Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('co
 Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
 Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
 Route::get('/scholarship-database', [ScholarshipController::class, 'scholarshipDatabase'])->name('scholarship-database');
+// Route::get('/register', [RegisterController::class, 'registrationForm'])->name('register');
 
 Auth::routes(['verify' => true]);
 
@@ -76,7 +77,14 @@ Route::group(['prefix' => 'aiz-uploader'], function () {
 });
 
 // Registration with mail
+Route::get('/register-option', [RegisterController::class, 'registrationOptionForm']);
 Route::get('/register/{code}', [RegisterController::class, 'showRegistrationForm']);
+Route::get('/verify-email', [RegisterController::class, 'registrationEmailVerify']);
+Route::get('/verify-complete', [RegisterController::class, 'registrationEmailVerifyComplete']);
+Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
+Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
+Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
+
 
 // Subscribe
 Route::resource('subscribers', SubscriberController::class);
