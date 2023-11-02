@@ -108,4 +108,9 @@ class FigmaController extends Controller
     {
         return view('figma-html.clientverifyyouremail');
     }
+
+    public function expertdashboard()
+    {
+        return view('figma-html.expertdashboard');
+    }
 }

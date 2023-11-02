@@ -26,4 +26,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/client-signup', [FigmaController::class, 'clientSignup']);
     Route::get('/client-verify-email', [FigmaController::class, 'clientVerifyEmail']);
     Route::get('/client-verify-your-email', [FigmaController::class, 'clientVerifyYourEmail']);
+
+    //expert dashboard
+    Route::get('/expert-dashboard', [FigmaController::class, 'expertdashboard']);
 });

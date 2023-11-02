@@ -49,7 +49,6 @@
 
     <!-- Favicon -->
     <link rel="icon" href="{{ customAsset(getSetting('site_icon')) }}">
-
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/font-awesome_6.4.2_css_all.min.css') }}">
