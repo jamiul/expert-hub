@@ -58,6 +58,7 @@ use App\Http\Controllers\Frontend\ExpertController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about-us');
 Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
 Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');
 Route::get('/expert-database', [ExpertController::class, 'index'])->name('expert.database');
@@ -112,7 +113,7 @@ Route::get('/blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.d
 
 //why scholarships
 Route::get('/review', [WhyScholarshipController::class, 'whyScholarshipReview'])->name('review');
-Route::get('/about-us', [WhyScholarshipController::class, 'whyEduExHub'])->name('about-us');
+// Route::get('/about-us', [WhyScholarshipController::class, 'whyEduExHub'])->name('about-us');
 Route::get('/how-to-hire', [WhyScholarshipController::class, 'whyScholarshipHowToHire'])->name('how-to-hire');
 Route::get('/how-to-find-job', [WhyScholarshipController::class, 'whyScholarshipHowToFindJob'])->name('how-to-find-job');
 
