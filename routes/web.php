@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\HireController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\WalletController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Frontend\LanguageController;
+use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\AizUploadController;
 use App\Http\Controllers\Frontend\PortfolioController;
 use App\Http\Controllers\Frontend\ConsultantController;
@@ -44,7 +46,6 @@ use App\Http\Controllers\Frontend\BookmarkedServiceController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingConsultantController;
 use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
-use App\Http\Controllers\Frontend\ExpertController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,8 @@ Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('co
 Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');
 Route::get('/expert-database', [ExpertController::class, 'index'])->name('expert.database');
 Route::get('/expert-database/professor-michael-kassiou', [ExpertController::class, 'view'])->name('expert-database.details');
+Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
+Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
 
 Auth::routes(['verify' => true]);
 

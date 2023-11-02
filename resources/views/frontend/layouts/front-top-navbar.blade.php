@@ -42,7 +42,7 @@
                                         <a class="nav-link" href="{{ url('/search?keyword=&type=project') }}">{{ __('Find Projects') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/search?keyword=&type=training') }}">{{ __('Find Training') }}</a>
+                                        <a class="nav-link" href="{{ url('/find-training') }}">{{ __('Find Training') }}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('scholarship-search') }}?keyword=&type=scholarships">{{ __('Scholarships Database') }}</a>
