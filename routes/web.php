@@ -1,6 +1,4 @@
 <?php
-
-
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
@@ -84,7 +82,6 @@ Route::get('/verify-complete', [RegisterController::class, 'registrationEmailVer
 Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
 Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
 Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
-
 
 // Subscribe
 Route::resource('subscribers', SubscriberController::class);

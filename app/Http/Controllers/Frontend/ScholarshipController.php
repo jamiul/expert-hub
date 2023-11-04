@@ -43,8 +43,6 @@ class ScholarshipController extends Controller
         $scholarships = $scholarships->paginate(15);
 
         return view('admin.scholarship_module.scholarship.index', compact('scholarships', 'sortSearch'));
-
-
     }
 
     /**

@@ -902,7 +902,7 @@
                 <div class="curriculum-right">
                   <ul>
                     <li>Hourly: <span>$200.00</span></li>
-                    <li><a class="data-icon"href="#"><img src="images/like-icon.png"></a></li>
+                    <li><a class="data-icon"href="#"><img src="{{asset('assets/frontend/img/like-icon.png')}}"></a></li>
                   </ul>
                 </div>
               </div>
@@ -960,7 +960,7 @@
                     </select>
                   </div>
                   <ul>
-                    <li><a href="#"><img src="{{asset('assets/frontend/img/pagination-left.png')}}"></img><img class="hover-icon"src="{{asset('images/pagination-left-hover.png')}}"></img></a></li>
+                    <li><a href="#"><img src="{{asset('assets/frontend/img/pagination-left.png')}}"></img><img class="hover-icon"src="{{asset('assets/frontend/img/pagination-left-hover.png')}}"></img></a></li>
                     <li><a href="#"><i class="fa fa-caret-left"></i></a></li>
                     <li><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
