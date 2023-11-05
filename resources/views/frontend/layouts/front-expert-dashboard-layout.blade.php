@@ -3,7 +3,6 @@
     @include('frontend.layouts.front-header')
 
     <body>
-        <!-- @include('frontend.layouts.front-top-navbar') -->
         @include('frontend.layouts.front-top-expert-dashboard-navbar')
 
         @yield('content')

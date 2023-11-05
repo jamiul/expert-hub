@@ -29,4 +29,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     //expert dashboard
     Route::get('/expert-dashboard', [FigmaController::class, 'expertdashboard']);
+
+    //expert profile
+    Route::get('/expert-profile', [FigmaController::class, 'expertprofile']);
 });

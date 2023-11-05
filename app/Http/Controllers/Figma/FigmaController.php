@@ -111,6 +111,11 @@ class FigmaController extends Controller
 
     public function expertdashboard()
     {
-        return view('figma-html.expertdashboard');
+        return view('figma-html.expert-dashboard');
+    }
+
+    public function expertprofile()
+    {
+        return view('figma-html.expert-profile');
     }
 }
