@@ -44,6 +44,7 @@ use App\Http\Controllers\Frontend\BookmarkedServiceController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingConsultantController;
 use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
+use App\Http\Controllers\Frontend\ExpertController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,8 @@ use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
 Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');
+Route::get('/expert-database', [ExpertController::class, 'index'])->name('expert.database');
+Route::get('/expert-database/professor-michael-kassiou', [ExpertController::class, 'view'])->name('expert-database.details');
 
 Auth::routes(['verify' => true]);
 
