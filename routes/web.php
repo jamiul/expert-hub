@@ -1,7 +1,4 @@
 <?php
-
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Frontend\BlogController;
@@ -24,28 +21,31 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\AizUploadController;
-use App\Http\Controllers\Frontend\PortfolioController;
-use App\Http\Controllers\Frontend\ConsultantController;
-use App\Http\Controllers\Frontend\StaticPageController;
-use App\Http\Controllers\Frontend\SubscriberController;
-use App\Http\Controllers\Frontend\PaytoExpertController;
-use App\Http\Controllers\Frontend\NotificationController;
-use App\Http\Controllers\Frontend\CancelProjectController;
-use App\Http\Controllers\Frontend\ExpertAccountController;
-use App\Http\Controllers\Frontend\StripePaymentController;
-use App\Http\Controllers\Frontend\PackagePaymentController;
-use App\Http\Controllers\Frontend\WhyScholarshipController;
-use App\Http\Controllers\Frontend\WorkExperienceController;
-use App\Http\Controllers\Frontend\ExpertEducationController;
-use App\Http\Controllers\Frontend\TrainingDetailsController;
 use App\Http\Controllers\Frontend\BookmarkedClientController;
 use App\Http\Controllers\Frontend\BookmarkedExpertController;
-use App\Http\Controllers\Frontend\MilestonePaymentController;
 use App\Http\Controllers\Frontend\BookmarkedProjectController;
-use App\Http\Controllers\Frontend\BookmarkedServiceController;
-use App\Http\Controllers\Frontend\SearchScholarshipController;
-use App\Http\Controllers\Frontend\TrainingConsultantController;
 use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
+use App\Http\Controllers\Frontend\BookmarkedServiceController;
+use App\Http\Controllers\Frontend\CancelProjectController;
+use App\Http\Controllers\Frontend\ConsultantController;
+use App\Http\Controllers\Frontend\ExpertAccountController;
+use App\Http\Controllers\Frontend\ExpertEducationController;
+use App\Http\Controllers\Frontend\MilestonePaymentController;
+use App\Http\Controllers\Frontend\NotificationController;
+use App\Http\Controllers\Frontend\PackagePaymentController;
+use App\Http\Controllers\Frontend\PaytoExpertController;
+use App\Http\Controllers\Frontend\PortfolioController;
+use App\Http\Controllers\Frontend\ScholarshipController;
+use App\Http\Controllers\Frontend\SearchScholarshipController;
+use App\Http\Controllers\Frontend\StaticPageController;
+use App\Http\Controllers\Frontend\StripePaymentController;
+use App\Http\Controllers\Frontend\SubscriberController;
+use App\Http\Controllers\Frontend\TrainingConsultantController;
+use App\Http\Controllers\Frontend\TrainingDetailsController;
+use App\Http\Controllers\Frontend\WhyScholarshipController;
+use App\Http\Controllers\Frontend\WorkExperienceController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +67,9 @@ Route::get('/expert-database', [ExpertController::class, 'index'])->name('expert
 Route::get('/expert-database/professor-michael-kassiou', [ExpertController::class, 'view'])->name('expert-database.details');//@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
+Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
+Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
+Route::get('/scholarship-database', [ScholarshipController::class, 'scholarshipDatabase'])->name('scholarship-database');
 
 Auth::routes(['verify' => true]);
 
@@ -80,7 +83,13 @@ Route::group(['prefix' => 'aiz-uploader'], function () {
 });
 
 // Registration with mail
+Route::get('/register-option', [RegisterController::class, 'registrationOptionForm']);
 Route::get('/register/{code}', [RegisterController::class, 'showRegistrationForm']);
+Route::get('/verify-email', [RegisterController::class, 'registrationEmailVerify']);
+Route::get('/verify-complete', [RegisterController::class, 'registrationEmailVerifyComplete']);
+Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
+Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
+Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
 
 // Subscribe
 Route::resource('subscribers', SubscriberController::class);
