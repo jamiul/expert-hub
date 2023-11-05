@@ -15,25 +15,18 @@ use Illuminate\Http\Request;
 
 class ScholarshipController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware(['permission:show all blogs'])->only('index');
-    // }
+    public function __construct()
+    {
+    }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-     public function scholarshipDatabase(){
+    public function scholarshipDatabase()
+    {
         return view('frontend.scholarship.scholarship-database');
-     }
+    }
     public function index(Request $request)
     {
         $sortSearch = null;
         $scholarships = Scholarship::orderBy('created_at', 'desc');
-
 
         if ($request->search != null) {
             $scholarships = $scholarships->where('title', 'like', '%' . $request->search . '%');
@@ -61,16 +54,7 @@ class ScholarshipController extends Controller
         $scholarshipWhoCanApply = ScholarshipWhoCanApply::all();
         $scholarshipFieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.scholarship_module.scholarship.create', compact(
-            'scholarshipCategories',
-            'scholarshipLevels',
-            'scholarshipUniversities',
-            'scholarshipCountry',
-            'scholarshipCity',
-            'scholarshipQualification',
-            'scholarshipWhoCanApply',
-            'scholarshipFieldStudy'
-        ));
+        return view('admin.scholarship_module.scholarship.create', compact('scholarshipCategories', 'scholarshipLevels', 'scholarshipUniversities', 'scholarshipCountry', 'scholarshipCity', 'scholarshipQualification', 'scholarshipWhoCanApply', 'scholarshipFieldStudy'));
     }
 
     /**
@@ -81,38 +65,28 @@ class ScholarshipController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
-                'category_id' => 'required',
-                'title' => 'required|max:255',
-            ]
-        );
-        $request->validate(
-            [
-                'level_id' => 'required',
-                'title' => 'required|max:255',
-            ]
-        );
-        $request->validate(
-            [
-                'country_id' => 'required',
-                'title' => 'required|max:255',
-            ]
-        );
-        $request->validate(
-            [
-                'city_id' => 'required',
-                'title' => 'required|max:255',
-            ]
-        );
-        $request->validate(
-            [
-                'qualification_id' => 'required',
-                'title' => 'required|max:255',
-            ]
-        );
+        $request->validate([
+            'category_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'level_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'country_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'city_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
+        $request->validate([
+            'qualification_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
 
-        $scholarship = new Scholarship;
+        $scholarship = new Scholarship();
 
         $scholarship->category_id = $request->category_id;
         $scholarship->level_id = $request->level_id;
@@ -168,17 +142,7 @@ class ScholarshipController extends Controller
         $scholarshipWhoCanApply = ScholarshipWhoCanApply::all();
         $scholarshipFieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.scholarship_module.scholarship.edit', compact(
-            'scholarship',
-            'scholarshipCategories',
-            'scholarshipLevels',
-            'scholarshipUniversities',
-            'scholarshipCountry',
-            'scholarshipCity',
-            'scholarshipQualification',
-            'scholarshipWhoCanApply',
-            'scholarshipFieldStudy'
-        ));
+        return view('admin.scholarship_module.scholarship.edit', compact('scholarship', 'scholarshipCategories', 'scholarshipLevels', 'scholarshipUniversities', 'scholarshipCountry', 'scholarshipCity', 'scholarshipQualification', 'scholarshipWhoCanApply', 'scholarshipFieldStudy'));
     }
 
     /**
@@ -190,12 +154,10 @@ class ScholarshipController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(
-            [
-                'category_id' => 'required',
-                'title' => 'required|max:255',
-            ]
-        );
+        $request->validate([
+            'category_id' => 'required',
+            'title' => 'required|max:255',
+        ]);
 
         $scholarship = Scholarship::find($id);
 
@@ -247,17 +209,18 @@ class ScholarshipController extends Controller
         return redirect('admin/scholarship');
     }
 
-
     public function allScholarship()
     {
-        $scholarships = Scholarship::where('status', 1)->orderBy('created_at', 'asc')->paginate(12);
+        $scholarships = Scholarship::where('status', 1)
+            ->orderBy('created_at', 'asc')
+            ->paginate(12);
         dd($scholarships);
-        return view("frontend.scholarship.listing", compact('scholarships'));
+        return view('frontend.scholarship.listing', compact('scholarships'));
     }
 
     public function scholarshipDetails($slug)
     {
         $scholarship = Scholarship::where('slug', $slug)->first();
-        return view("frontend.scholarship.details", compact('scholarship'));
+        return view('frontend.scholarship.details', compact('scholarship'));
     }
 }
