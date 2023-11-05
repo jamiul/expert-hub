@@ -63,8 +63,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="model-message">
-                                                    <img
-                                                        src="{{ asset('assets/frontend/img/message-icon.png') }}"></img>
+                                                    <img src="{{ asset('assets/frontend/img/message-icon.png') }}"></img>
                                                     <p>You can share custom requirements and message the freelancer
                                                         after checkout</p>
                                                 </div>
@@ -72,18 +71,67 @@
                                         </div>
                                         <div class="modal-footer">
                                             <ul>
-                                                <li><a href="#"><img
-                                                            src="{{ asset('assets/frontend/img/like-icon.png') }}"></img>Save</a>
+                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></img>Save</a>
                                                 </li>
-                                                <li><a href="#"><img
-                                                            src="{{ asset('assets/frontend/img/share-icon.png') }}"></img>Share</a>
+                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></img>Share</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="#">Book a TV Interview</a></li>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Book a TV Interview
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Schedule your
+                                                consultation</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="calendar-box">
+                                                <input type="text" id="dateInput" placeholder="Search by Date">
+                                                <div class="calendar" id="calendar">
+                                                    <div class="header">
+                                                        <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
+                                                        <h2 id="monthYear">Month Year</h2>
+                                                        <button id="nextBtn"><i
+                                                                class="fa fa-angle-right"></i></button>
+                                                    </div>
+                                                    <div class="days" id="daysContainer"></div>
+                                                </div>
+                                            </div>
+                                            <div class="calendar-wed">
+                                                <h3>Wednesday, 15th Oct</h3>
+                                                <ul>
+                                                    <li><input type="text" placeholder="1:00 AM" name="fname"></li>
+                                                    <li>
+                                                        <input type="text" placeholder="2:00 AM" name="fname">
+                                                        <a href="#">Confirm</a>
+                                                    </li>
+                                                    <li><input type="text" placeholder="3:00 AM" name="fname">
+                                                    </li>
+                                                    <li><input type="text" placeholder="4:00 AM" name="fname">
+                                                    </li>
+                                                    <li><input type="text" placeholder="4:00 AM" name="fname">
+                                                    </li>
+                                                    <li><input type="text" placeholder="4:00 AM" name="fname">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <li><a href="#">Invite to Project</a></li>
                         </ul>
                     </div>
@@ -158,8 +206,7 @@
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to
                                             educational institutions, businesses and individuals seeking expertise in
-                                            <span>curriculum development.</span>
-                                        </div>
+                                            <span>curriculum development.</span></div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a
                                                 time</a></div>
                                     </div>
@@ -187,8 +234,7 @@
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to
                                             educational institutions, businesses and individuals seeking expertise in
-                                            <span>curriculum development.</span>
-                                        </div>
+                                            <span>curriculum development.</span></div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a
                                                 time</a></div>
                                     </div>
@@ -216,8 +262,7 @@
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to
                                             educational institutions, businesses and individuals seeking expertise in
-                                            <span>curriculum development.</span>
-                                        </div>
+                                            <span>curriculum development.</span></div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a
                                                 time</a></div>
                                     </div>
@@ -265,7 +310,7 @@
                     </div>
                     <div class="consultant-tab">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <img src="{{ asset('assets/frontend/img/abclient3.png') }}"></img>
+                            <img src="{{ asset('assets/frontend/img/abclient3.png') }}" >
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                     data-bs-target="#home-tab-pane" type="button" role="tab"
@@ -330,7 +375,7 @@
                         </div>
                     </div>
                     <div class="consultant-testimonial">
-                        <h3><img src="{{ asset('assets/frontend/img/testimonial.png') }}"></img>Testimonials</h3>
+                        <h3><img src="{{ asset('assets/frontend/img/testimonial.png') }}">Testimonials</h3>
                         <div class="testimonial-text">
                             <p>Prof. Michael Kassiou played a pivotal role in the development of our university
                                 curriculum. His expertise, creativity, and dedication to ensuring our program met the
