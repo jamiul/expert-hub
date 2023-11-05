@@ -24,7 +24,6 @@ use function App\Http\Controllers\get_email_by_user_id;
 
 class ProjectController extends Controller
 {
-
     public function index()
     {
         return view('frontend.project.find-projects');
@@ -422,5 +421,4 @@ class ProjectController extends Controller
             }
         }
     }
-
 }

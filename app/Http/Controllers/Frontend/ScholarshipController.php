@@ -54,7 +54,16 @@ class ScholarshipController extends Controller
         $scholarshipWhoCanApply = ScholarshipWhoCanApply::all();
         $scholarshipFieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.scholarship_module.scholarship.create', compact('scholarshipCategories', 'scholarshipLevels', 'scholarshipUniversities', 'scholarshipCountry', 'scholarshipCity', 'scholarshipQualification', 'scholarshipWhoCanApply', 'scholarshipFieldStudy'));
+        return view('admin.scholarship_module.scholarship.create', compact(
+            'scholarshipCategories',
+            'scholarshipLevels',
+            'scholarshipUniversities',
+            'scholarshipCountry',
+            'scholarshipCity',
+            'scholarshipQualification',
+            'scholarshipWhoCanApply',
+            'scholarshipFieldStudy'
+        ));
     }
 
     /**
@@ -142,7 +151,17 @@ class ScholarshipController extends Controller
         $scholarshipWhoCanApply = ScholarshipWhoCanApply::all();
         $scholarshipFieldStudy = ScholarshipFieldStudy::all();
 
-        return view('admin.scholarship_module.scholarship.edit', compact('scholarship', 'scholarshipCategories', 'scholarshipLevels', 'scholarshipUniversities', 'scholarshipCountry', 'scholarshipCity', 'scholarshipQualification', 'scholarshipWhoCanApply', 'scholarshipFieldStudy'));
+        return view('admin.scholarship_module.scholarship.edit', compact(
+            'scholarship',
+            'scholarshipCategories',
+            'scholarshipLevels',
+            'scholarshipUniversities',
+            'scholarshipCountry',
+            'scholarshipCity',
+            'scholarshipQualification',
+            'scholarshipWhoCanApply',
+            'scholarshipFieldStudy'
+        ));
     }
 
     /**
