@@ -6,4 +6,5 @@
 @endsection
 
 @push('bottom_scripts')
+    <script src="{{ asset('assets/frontend/js/consultant-details.js') }}"></script>
 @endpush
