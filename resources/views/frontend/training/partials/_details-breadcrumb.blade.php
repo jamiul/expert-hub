@@ -7,9 +7,9 @@
                         <li><a href="#"><img src="{{ asset('assets/frontend/img/breadcrumb-icon.png') }}"></img></a>
                         </li>
                         <li><i class="fa fa-angle-right"></i></li>
-                        <li>Find Consultants</li>
+                        <li><a href="#">Find Training</a></li>
                         <li><i class="fa fa-angle-right"></i></li>
-                        <li>Details</li>
+                        <li>Training Details</li>
                     </ul>
                 </div>
             </div>

@@ -11,22 +11,5 @@
 @endsection
 
 @push('bottom_scripts')
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 6
-                }
-            }
-        })
-    </script>
+    <script src="{{ asset('assets/frontend/js/about-us.js') }}"></script>
 @endpush

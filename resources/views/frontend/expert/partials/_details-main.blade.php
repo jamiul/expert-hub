@@ -63,7 +63,8 @@
                                                     </ul>
                                                 </div>
                                                 <div class="model-message">
-                                                    <img src="{{ asset('assets/frontend/img/message-icon.png') }}"></img>
+                                                    <img
+                                                        src="{{ asset('assets/frontend/img/message-icon.png') }}"></img>
                                                     <p>You can share custom requirements and message the freelancer
                                                         after checkout</p>
                                                 </div>
@@ -71,9 +72,11 @@
                                         </div>
                                         <div class="modal-footer">
                                             <ul>
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></img>Save</a>
+                                                <li><a href="#"><img
+                                                            src="{{ asset('assets/frontend/img/like-icon.png') }}"></img>Save</a>
                                                 </li>
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></img>Share</a>
+                                                <li><a href="#"><img
+                                                            src="{{ asset('assets/frontend/img/share-icon.png') }}"></img>Share</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -155,7 +158,8 @@
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to
                                             educational institutions, businesses and individuals seeking expertise in
-                                            <span>curriculum development.</span></div>
+                                            <span>curriculum development.</span>
+                                        </div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a
                                                 time</a></div>
                                     </div>
@@ -183,7 +187,8 @@
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to
                                             educational institutions, businesses and individuals seeking expertise in
-                                            <span>curriculum development.</span></div>
+                                            <span>curriculum development.</span>
+                                        </div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a
                                                 time</a></div>
                                     </div>
@@ -211,7 +216,8 @@
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to
                                             educational institutions, businesses and individuals seeking expertise in
-                                            <span>curriculum development.</span></div>
+                                            <span>curriculum development.</span>
+                                        </div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a
                                                 time</a></div>
                                     </div>
