@@ -375,9 +375,9 @@ body, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, div, strong, span, b {
    .left-sidebar .day {padding: 0;text-align: center;border-radius: 5px;cursor: pointer;font-size: 12px;width: 24px;height: 24px;line-height: 24px;color: #5C5C5C;float: left;margin: 8px 7px;font-weight: 500;}
    .left-sidebar .day.current {background-color: #0036E3;color: #fff;border-radius: 100%;}
    .left-sidebar .day.selected {background-color: #0036E3;color: #fff;border-radius: 100%;}
-   .left-sidebar #dateInput {width: 100%;padding: 10px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;color: #303744B2;font-size: 16px;font-weight: 400;appearance: none;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;}
-   .left-sidebar #dateInput:focus {background: url(../images/arrow-icon-hover.png) no-repeat;background-position: right 20px center;}
-   .left-sidebar .study-level select {width: 100%;padding: 0 10px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;font-size: 16px;font-weight: 400;appearance: none;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;color: #303744;}
+   .left-sidebar #dateInput {width: 100%;padding: 10px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;color: #303744B2;font-size: 16px;font-weight: 400;appearance: none;background: url(../img/arrow-icon.png) no-repeat;background-position: right 20px center;}
+   .left-sidebar #dateInput:focus {background: url(../img/arrow-icon-hover.png) no-repeat;background-position: right 20px center;}
+   .left-sidebar .study-level select {width: 100%;padding: 0 10px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;font-size: 16px;font-weight: 400;appearance: none;background: url(../img/arrow-icon.png) no-repeat;background-position: right 20px center;color: #303744;}
    .left-sidebar #dateInput::placeholder {color: #303744B2;}
    .left-sidebar #daysContainer {padding: 0 10px;display: inline-block;width: 100%;}
 
@@ -420,7 +420,7 @@ body, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, div, strong, span, b {
    .pagination .row {display: flex;align-items: center;padding: 0 30px;}
    .pagination .pagination-right .results {display: flex;align-items: center;margin-right: 15px;}
    .pagination .pagination-right .results p {font-size: 14px;margin: 0 15px 0 0;color: #303744;}
-   .pagination .pagination-right .results select {border: solid 2px #0000001A;width: 70px;height: 40px;padding: 0 12px;outline: none;border-radius: 4px;appearance: none;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;}
+   .pagination .pagination-right .results select {border: solid 2px #0000001A;width: 70px;height: 40px;padding: 0 12px;outline: none;border-radius: 4px;appearance: none;background: url(../img/arrow-icon.png) no-repeat;background-position: right 20px center;}
    .pagination .pagination-right {display: flex;justify-content: end;}
    .pagination .pagination-right ul li a:hover .hover-icon {opacity: 1;}
    .pagination .pagination-right ul li a .hover-icon {position: absolute;opacity: 0;}
@@ -880,7 +880,7 @@ body, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, div, strong, span, b {
 
    .client-job-post .client-budget {margin-top: 40px;}
    .client-job-post .client-budget h3 {margin: 0;font-size: 19px;font-weight: 500;color: #303744;}
-   .client-job-post .client-budget select {appearance: none;border: solid 2px #0E00624D;border-radius: 4px;height: 55px;padding: 0 10px;margin-top: 15px;outline: none;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;}
+   .client-job-post .client-budget select {appearance: none;border: solid 2px #0E00624D;border-radius: 4px;height: 55px;padding: 0 10px;margin-top: 15px;outline: none;background: url(../img/arrow-icon.png) no-repeat;background-position: right 20px center;}
    .client-job-post .client-budget .select1 {width: 150px;margin-right: 15px;}
    .client-job-post .client-budget .select2 {width: 78%;}
    .client-job-post .client-budget select:focus {border-color: #0036E3;}
@@ -1070,7 +1070,7 @@ body, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, div, strong, span, b {
    .register-timeline-3 .timeline-form .form-group {position: relative;margin-bottom: 22px;}
    .register-timeline-3 .timeline-form .form-group label {z-index: 1;font-size: 14px;font-weight: 500;color: #303744;position: absolute;top: -9px;background: #fff;padding: 0 10px;left: 15px;}
    .register-timeline-3 .timeline-form .form-group input[type="text"] {border: solid 2px #0000001A;height: 55px;width:560px;border-radius: 4px;padding: 0 15px;outline: none;font-size: 15px;color: #303744B2;}
-   .register-timeline-3 .timeline-form .form-group select {border: solid 2px #0000001A;height: 55px;width: 560px;border-radius: 4px;padding: 0 15px;outline: none;font-size: 15px;color: #303744B2;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;appearance: none;}
+   .register-timeline-3 .timeline-form .form-group select {border: solid 2px #0000001A;height: 55px;width: 560px;border-radius: 4px;padding: 0 15px;outline: none;font-size: 15px;color: #303744B2;background: url(../img/arrow-icon.png) no-repeat;background-position: right 20px center;appearance: none;}
    .register-timeline-3 .timeline-right .timeline-tell h3 {font-size: 23px;font-weight: 500;color: #303744;}
    .register-timeline-3 .timeline-right .timeline-tell p {color: #303744;font-size: 16px;margin: 0;}
    .register-timeline-3 .timeline-right .timeline-tell {margin-bottom: 30px;}

@@ -61,9 +61,10 @@ use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about-us');
 Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
-Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');
+
+Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');//@TODO remove the name
 Route::get('/expert-database', [ExpertController::class, 'index'])->name('expert.database');
-Route::get('/expert-database/professor-michael-kassiou', [ExpertController::class, 'view'])->name('expert-database.details');
+Route::get('/expert-database/professor-michael-kassiou', [ExpertController::class, 'view'])->name('expert-database.details');//@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
 
@@ -116,7 +117,6 @@ Route::get('/blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.d
 
 //why scholarships
 Route::get('/review', [WhyScholarshipController::class, 'whyScholarshipReview'])->name('review');
-// Route::get('/about-us', [WhyScholarshipController::class, 'whyEduExHub'])->name('about-us');
 Route::get('/how-to-hire', [WhyScholarshipController::class, 'whyScholarshipHowToHire'])->name('how-to-hire');
 Route::get('/how-to-find-job', [WhyScholarshipController::class, 'whyScholarshipHowToFindJob'])->name('how-to-find-job');
 

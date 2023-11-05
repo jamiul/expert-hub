@@ -851,15 +851,18 @@
                                     <img src="{{ asset('assets/frontend/img/consultant1.png') }}">
                                 </div>
                                 <div class="database-text">
-                                    <h4><a href="{{ route('expert-database.details') }}">Professor Michael Kassiou</a></h4>
+                                    <h4><a href="{{ route('expert-database.details') }}">Professor Michael Kassiou</a>
+                                    </h4>
                                     <span>Agricultural Engineering Expert</span>
                                     <span>University of Sydney</span>
                                     <span>Australia</span>
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="consultant-reviw">
@@ -885,11 +888,15 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview
+                                        </h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="2" aria-label="Slide 3">
@@ -935,8 +942,10 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="consultant-reviw">
@@ -962,11 +971,15 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview
+                                        </h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="2" aria-label="Slide 3">
@@ -1012,8 +1025,10 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="consultant-reviw">
@@ -1039,84 +1054,9 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4>Media Interview</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-sidebar">
-                    <div class="right-database">
-                        <div class="database-block">
-                            <div class="database-contant">
-                                <div class="database-img">
-                                    <img src="{{ asset('assets/frontend/img/consultant1.png') }}">
-                                </div>
-                                <div class="database-text">
-                                    <h4><a href="#">Professor Miles Esther</a></h4>
-                                    <span>Communication Studies Expert</span>
-                                    <span>University of New South Wales</span>
-                                    <span>Australia</span>
-                                </div>
-                            </div>
-                            <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
-                            </div>
-                        </div>
-                        <div class="consultant-reviw">
-                            <ul>
-                                <li><strong>$300</strong> / hr</li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="database-p">
-                            <p>Prof. Miles esther is an accomplished Curriculum Development Specialist with a
-                                distinguished career in education and a track record of providing consultation services
-                                ... <a href="#">more</a></p>
-                        </div>
-                        <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="1" aria-label="Slide 2">
@@ -1166,8 +1106,10 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="consultant-reviw">
@@ -1193,7 +1135,90 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="1" aria-label="Slide 2">
+                                        <h4>Media Interview</h4>
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 3">
+                                        <h4>Curriculum Development</h4>
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 4">
+                                        <h4>Communication Skills</h4>
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 5">
+                                        <h4>Scholarships</h4>
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 6">
+                                        <h4>Communication Skills</h4>
+                                    </button>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <i class="fa-solid fa-angle-left"></i>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-sidebar">
+                    <div class="right-database">
+                        <div class="database-block">
+                            <div class="database-contant">
+                                <div class="database-img">
+                                    <img src="{{ asset('assets/frontend/img/consultant1.png') }}">
+                                </div>
+                                <div class="database-text">
+                                    <h4><a href="#">Professor Miles Esther</a></h4>
+                                    <span>Communication Studies Expert</span>
+                                    <span>University of New South Wales</span>
+                                    <span>Australia</span>
+                                </div>
+                            </div>
+                            <div class="database-right">
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                            </div>
+                        </div>
+                        <div class="consultant-reviw">
+                            <ul>
+                                <li><strong>$300</strong> / hr</li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="database-p">
+                            <p>Prof. Miles esther is an accomplished Curriculum Development Specialist with a
+                                distinguished career in education and a track record of providing consultation services
+                                ... <a href="#">more</a></p>
+                        </div>
+                        <div class="projects-slider">
+                            <div id="carouselExampleIndicators" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1">
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="1" aria-label="Slide 2">
@@ -1243,8 +1268,10 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="consultant-reviw">
@@ -1270,11 +1297,15 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview
+                                        </h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="2" aria-label="Slide 3">
@@ -1320,8 +1351,10 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon" href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="consultant-reviw">
@@ -1347,11 +1380,15 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer Consultationss</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
+                                            Consultationss</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4 class="btbg"><img src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview</h4>
+                                        <h4 class="btbg"><img
+                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Media
+                                            Interview</h4>
                                     </button>
                                     <button type="button" data-bs-target="#carouselExampleIndicators"
                                         data-bs-slide-to="2" aria-label="Slide 3">
@@ -1401,16 +1438,20 @@
                                     </select>
                                 </div>
                                 <ul>
-                                    <li><a href="#"><img src="{{ asset('assets/frontend/img/pagination-left.png') }}"><img
-                                                class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}"></img></a>
+                                    <li><a href="#"><img
+                                                src="{{ asset('assets/frontend/img/pagination-left.png') }}"><img
+                                                class="hover-icon"
+                                                src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}"></img></a>
                                     </li>
                                     <li><a href="#"><i class="fa fa-caret-left"></i></a></li>
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-                                    <li><a href="#"><img src="{{ asset('assets/frontend/img/pagination-right.png') }}"><img
-                                                class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}"></img></a>
+                                    <li><a href="#"><img
+                                                src="{{ asset('assets/frontend/img/pagination-right.png') }}"><img
+                                                class="hover-icon"
+                                                src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}"></img></a>
                                     </li>
                                 </ul>
                             </div>

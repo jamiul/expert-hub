@@ -442,15 +442,19 @@
                                     <img src="{{ asset('assets/frontend/img/find-training.png') }}"></img>
                                 </div>
                                 <div class="database-text">
-                                    <h4><a href="{{ route('find-training.details', 'foundations-of-pls-sem-using-smartpls-4') }}">Foundations of PLS-SEM Using SmartPLS 4</a></h4>
+                                    <h4><a
+                                            href="{{ route('find-training.details', 'foundations-of-pls-sem-using-smartpls-4') }}">Foundations
+                                            of PLS-SEM Using SmartPLS 4</a></h4>
                                     <span>Australian Eastern Daylight Time (GMT +11)</span>
                                     <span>Australia</span>
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="database-button"href="#">Registration</a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="database-button" href="#">Registration</a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="database-p">
@@ -467,7 +471,8 @@
                                 <li><a href="#">Prof. Michel jhon</a> | <a href="#">Dr. Nathon rainbot</a>
                                 </li>
                                 <li>Training Mode</li>
-                                <li class="textnone"><a href="#"><img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
+                                <li class="textnone"><a href="#"><img
+                                            src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
                                         Zoom</a></li>
                                 <li>Language</li>
                                 <li>French</li>
@@ -494,9 +499,11 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="database-button"href="#">Registration</a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="database-button" href="#">Registration</a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="database-p">
@@ -512,7 +519,8 @@
                                 <li><a href="#">Prof. Michel jhon</a> | <a href="#">Dr. Nathon rainbot</a>
                                 </li>
                                 <li>Training Mode</li>
-                                <li class="textnone"><a href="#"><img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
+                                <li class="textnone"><a href="#"><img
+                                            src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
                                         Zoom</a></li>
                                 <li>Language</li>
                                 <li>French</li>
@@ -539,9 +547,11 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="database-button"href="#">Registration</a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="database-button" href="#">Registration</a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="database-p">
@@ -557,7 +567,8 @@
                                 <li><a href="#">Prof. Michel jhon</a> | <a href="#">Dr. Nathon rainbot</a>
                                 </li>
                                 <li>Training Mode</li>
-                                <li class="textnone"><a href="#"><img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
+                                <li class="textnone"><a href="#"><img
+                                            src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
                                         Zoom</a></li>
                                 <li>Language</li>
                                 <li>French</li>
@@ -584,9 +595,11 @@
                                 </div>
                             </div>
                             <div class="database-right">
-                                <a class="database-button"href="#">Registration</a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                                <a class="data-icon"href="#"><img src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                                <a class="database-button" href="#">Registration</a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                                <a class="data-icon" href="#"><img
+                                        src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                             </div>
                         </div>
                         <div class="database-p">
@@ -602,7 +615,8 @@
                                 <li><a href="#">Prof. Michel jhon</a> | <a href="#">Dr. Nathon rainbot</a>
                                 </li>
                                 <li>Training Mode</li>
-                                <li class="textnone"><a href="#"><img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
+                                <li class="textnone"><a href="#"><img
+                                            src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>Live via
                                         Zoom</a></li>
                                 <li>Language</li>
                                 <li>French</li>
@@ -634,16 +648,20 @@
                                     </select>
                                 </div>
                                 <ul>
-                                    <li><a href="#"><img src="{{ asset('assets/frontend/img/pagination-left.png') }}"></img><img
-                                                class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}"></img></a>
+                                    <li><a href="#"><img
+                                                src="{{ asset('assets/frontend/img/pagination-left.png') }}"></img><img
+                                                class="hover-icon"
+                                                src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}"></img></a>
                                     </li>
                                     <li><a href="#"><i class="fa fa-caret-left"></i></a></li>
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-                                    <li><a href="#"><img src="{{ asset('assets/frontend/img/pagination-right.png') }}"></img><img
-                                                class="hover-icon"src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}"></img></a>
+                                    <li><a href="#"><img
+                                                src="{{ asset('assets/frontend/img/pagination-right.png') }}"></img><img
+                                                class="hover-icon"
+                                                src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}"></img></a>
                                     </li>
                                 </ul>
                             </div>
