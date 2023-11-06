@@ -30,10 +30,10 @@
                </li>
                <li>
                   <a href="#">Find Project</a>
-                  <span class="material-symbols-outlined"> expand_more </span>
                </li>
                <li>
                   <a href="#">Settings</a>
+                  <span class="material-symbols-outlined"> expand_more </span>
                </li>
             </ul>
          </nav>

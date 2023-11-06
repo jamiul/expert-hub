@@ -305,6 +305,10 @@ ul li {
   padding: 0;
   border-bottom: 1px solid #0E00621A;
 }
+.expert__dashboad .main__content__wrapp .aside__wrapp{
+  background: #FCFCFF;
+  border-left: 2px solid rgba(14, 0, 98, 0.10);
+}
 .expert__dashboad .main__content__wrapp .aside__wrapp .thumbnail__box {
   width: 5.5rem;
   height: 5.5rem;

@@ -223,7 +223,13 @@ ul li {
     margin: 0;
     display: flex;
 }
-.consultant-left {padding: 30px;  height: 100%;  border-right: solid 1px #0E00621A;background-color: #FCFCFF;border-top-left-radius:7px;border-bottom-left-radius:7px;}
+.consultant-left {
+  padding: 30px;
+  height: 100%;
+  background-color: #FCFCFF;
+  border-radius: 7px 0px 0px 7px;
+  border-right: 2px solid rgba(14, 0, 98, 0.10);
+}
 .consultant-left .consultant-left-block {text-align: center;margin-bottom: 25px;}
 .consultant-left .consultant-left-block img{
     width: 168px;
@@ -239,7 +245,7 @@ ul li {
 
 .consultant-right{
   margin-top: 30px;
-  padding-left: 41px;
+  padding-left: 24px;
   padding-right: 41px;
 }
 .consultant-right .consultant-d .consultant-d-left {display: flex;align-items: center;}
@@ -267,7 +273,15 @@ ul li {
 .consultant-l.education p {font-size: 14px;color: #303744;line-height: 22px;margin-bottom: 10px;font-weight: 500;}
 .consultant-l.education p span {display: block;font-weight: 400;}
 .consultant-l.profile p {margin-bottom: 0;}
-.consultant-l.profile p a {color: #303744;font-size: 14px;line-height: 22px;}
+.consultant-l.profile p a {
+font-family: Public Sans;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
+text-decoration-line: underline;
+color: #303744;
+font-size: 14px;
+}
 .consultant-l {margin-bottom: 25px;}
 .consultant-l:last-child {margin-bottom: 0;}
 .consultant-l.profile p a:hover {color: #0036E3;}

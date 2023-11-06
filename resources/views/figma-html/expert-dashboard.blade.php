@@ -5,7 +5,7 @@
     <div class="container">
         <div class="main__content__wrapp">
             <div class="row g-0">
-                <div class="col-lg-8 col-xxl-9 border-end">
+                <div class="col-lg-8 col-xxl-9">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs px-4 pt-4" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation"> <button class="nav-link active" id="feedTab-tab" data-bs-toggle="tab" data-bs-target="#feedTab" type="button" role="tab" aria-controls="feedTab" aria-selected="true">My Feed</button> </li>
