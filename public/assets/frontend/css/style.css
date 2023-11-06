@@ -9182,3 +9182,38 @@ footer .footer-bottom .footer-icon ul li a:hover {
     }
 }
 /** End Job Post */
+
+
+/** Form Error validation and button styling */
+
+.sign-up .register-form .register-sign-up .form-group input.err{
+border: 2px solid #C00000;
+box-shadow: 0px 0px 8px 4px rgba(255, 0, 0, 0.10);
+}
+
+.sign-up .register-form .register-sign-up .form-group .err-msg{
+color: #FF0000;
+font-size: 14px;
+margin-top: 8px;
+}
+
+.register .register-form .creat-button button {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    transition: all 500ms;
+    background: #0036e3;
+    width: 100%;
+    display: inline-table;
+    text-align: center;
+    border-radius: 4px;
+    height: 53px;
+    line-height: 55px;
+    border: solid 2px #0036e3;
+}
+
+.register .register-form .creat-button button:hover {
+    background: #fff;
+    color: #0036e3;
+}

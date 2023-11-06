@@ -35,7 +35,8 @@
                 <div class="sign-up2">
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="text" placeholder="name@gmail.com" name="fname">
+                        <input class="err" type="text" placeholder="name@gmail.com" name="fname">
+                        <div class="err-msg">This email address is not a valid email</div>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -65,7 +66,7 @@
                 </div>
             </div>
             <div class="creat-button">
-                <a href="{{url('verify-email')}}">Join as an Expert</a>
+                <button href="{{url('verify-email')}}">Join as an Expert</button>
             </div>
             <div class="singup">
                 <p>Already have an account, <a href="#">Sign In</a></p>
