@@ -32,4 +32,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     //expert profile
     Route::get('/expert-profile', [FigmaController::class, 'expertprofile']);
+
+    //expert status
+    Route::get('/expert-status', [FigmaController::class, 'expertstatus']);
 });

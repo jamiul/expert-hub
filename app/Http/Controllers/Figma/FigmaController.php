@@ -118,4 +118,9 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-profile');
     }
+
+    public function expertstatus()
+    {
+        return view('figma-html.expert-status');
+    }
 }
