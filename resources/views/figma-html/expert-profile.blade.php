@@ -2,12 +2,12 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-profile.css') }}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
-<div class="find-consultant-details">
+
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><div class="find-consultant-details">
       <div class="container">
-        <div class="row">
+        <div class="row g-0">
           <div class="col-md-4 ps-0">
-            <div class="consultant-left">
+            <div class="consultant-left shadow-none">
               <div class="consultant-left-block">
                 <div class="profile__box rounded-circle overflow-hidden mx-auto position-relative">
                   <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}" class="rounded-circle img-fluid"></img> 
@@ -112,9 +112,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 ps-0">
             <div class="consultant-right">
-              <div class="consultant-d">
+              <div class="consultant-d border-0 p-0 shadow-none">
                 <div class="consultant-d-left"> 
                   <h3 class="d-inline-flex align-items-center">
                     <span>Biography</span> 

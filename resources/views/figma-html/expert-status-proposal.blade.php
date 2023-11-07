@@ -132,8 +132,8 @@
 
                             <div class="border-top pt-4 mb-4 mb-md-5"> 
                                 <h2 class="text-black lead fw-medium mb-3">Communication</h2>
-                                <p class="text-dark small fw-medium mb-1">You replied to 9 of 9 invitations to apply in the past 90 days:</p> 
-                                <p class="text-dark small fw-normal">Your responsiveness will be determined after you receive and respond to a few more job invitations. Top freelancers accept or decline all invitations within 24 hours.</p> 
+                                <p class="text-black small fw-medium mb-1">You replied to 9 of 9 invitations to apply in the past 90 days:</p> 
+                                <p class="text-black small fw-normal">Your responsiveness will be determined after you receive and respond to a few more job invitations. Top freelancers accept or decline all invitations within 24 hours.</p> 
                                 <div class="col-lg-8">
                                     <p class="text-dark small fw-medium mb-0">You reply within a day</p> 
                                     <div class="d-flex align-items-center"> 
