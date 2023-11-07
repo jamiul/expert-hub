@@ -241,4 +241,9 @@ class HomeController extends Controller
         flash(translate('Cache cleared successfully'))->success();
         return back();
     }
+
+    public function aboutUs()
+    {
+        return view('frontend.about-us.landing-page');
+    }
 }

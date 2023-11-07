@@ -24,16 +24,12 @@ use function App\Http\Controllers\get_email_by_user_id;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $projects = Project::where('client_user_id', Auth::user()->id)->latest()->paginate(10);
-
-        return view('frontend.user.client.projects.list', compact('projects'));
+        return view('frontend.project.find-projects');
+    }
+    public function projectDetails(){
+        return view('frontend.project.find-projects-details');
     }
 
     public function myOpenProject()

@@ -1,44 +1,47 @@
 <?php
-
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\VerificationController;
-use App\Http\Controllers\Frontend\AizUploadController;
-use App\Http\Controllers\Frontend\BiddingController;
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\ChatController;
+use App\Http\Controllers\Frontend\CityController;
+use App\Http\Controllers\Frontend\HireController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PageController;
+use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\ExpertController;
+use App\Http\Controllers\Frontend\ReviewController;
+use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\Frontend\WalletController;
+use App\Http\Controllers\Frontend\BiddingController;
+use App\Http\Controllers\Frontend\PackageController;
+use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\ProjectController;
+use App\Http\Controllers\Frontend\ServiceController;
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Frontend\LanguageController;
+use App\Http\Controllers\Frontend\TrainingController;
+use App\Http\Controllers\Frontend\AizUploadController;
 use App\Http\Controllers\Frontend\BookmarkedClientController;
 use App\Http\Controllers\Frontend\BookmarkedExpertController;
 use App\Http\Controllers\Frontend\BookmarkedProjectController;
 use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
 use App\Http\Controllers\Frontend\BookmarkedServiceController;
 use App\Http\Controllers\Frontend\CancelProjectController;
-use App\Http\Controllers\Frontend\ChatController;
-use App\Http\Controllers\Frontend\CityController;
+use App\Http\Controllers\Frontend\ConsultantController;
 use App\Http\Controllers\Frontend\ExpertAccountController;
 use App\Http\Controllers\Frontend\ExpertEducationController;
-use App\Http\Controllers\Frontend\HireController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\MilestonePaymentController;
 use App\Http\Controllers\Frontend\NotificationController;
-use App\Http\Controllers\Frontend\PackageController;
 use App\Http\Controllers\Frontend\PackagePaymentController;
-use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\PaytoExpertController;
 use App\Http\Controllers\Frontend\PortfolioController;
-use App\Http\Controllers\Frontend\ProfileController;
-use App\Http\Controllers\Frontend\ProjectController;
-use App\Http\Controllers\Frontend\ReviewController;
-use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
-use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\StaticPageController;
 use App\Http\Controllers\Frontend\StripePaymentController;
 use App\Http\Controllers\Frontend\SubscriberController;
 use App\Http\Controllers\Frontend\TrainingConsultantController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
-use App\Http\Controllers\Frontend\UserController;
-use App\Http\Controllers\Frontend\WalletController;
 use App\Http\Controllers\Frontend\WhyScholarshipController;
 use App\Http\Controllers\Frontend\WorkExperienceController;
 use Illuminate\Support\Facades\Auth;
@@ -56,6 +59,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about-us');
+Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
+
+Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details');//@TODO remove the name
+Route::get('/expert-database', [ExpertController::class, 'index'])->name('expert.database');
+Route::get('/expert-database/professor-michael-kassiou', [ExpertController::class, 'view'])->name('expert-database.details');//@TODO remove the name
+Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
+Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
+Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
+Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
+Route::get('/scholarship-database', [ScholarshipController::class, 'scholarshipDatabase'])->name('scholarship-database');
+
 Auth::routes(['verify' => true]);
 
 Route::group(['prefix' => 'aiz-uploader'], function () {
@@ -68,7 +83,13 @@ Route::group(['prefix' => 'aiz-uploader'], function () {
 });
 
 // Registration with mail
+Route::get('/register-option', [RegisterController::class, 'registrationOptionForm']);
 Route::get('/register/{code}', [RegisterController::class, 'showRegistrationForm']);
+Route::get('/verify-email', [RegisterController::class, 'registrationEmailVerify']);
+Route::get('/verify-complete', [RegisterController::class, 'registrationEmailVerifyComplete']);
+Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
+Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
+Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
 
 // Subscribe
 Route::resource('subscribers', SubscriberController::class);
@@ -105,7 +126,6 @@ Route::get('/blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.d
 
 //why scholarships
 Route::get('/review', [WhyScholarshipController::class, 'whyScholarshipReview'])->name('review');
-Route::get('/about-us', [WhyScholarshipController::class, 'whyEduExHub'])->name('about-us');
 Route::get('/how-to-hire', [WhyScholarshipController::class, 'whyScholarshipHowToHire'])->name('how-to-hire');
 Route::get('/how-to-find-job', [WhyScholarshipController::class, 'whyScholarshipHowToFindJob'])->name('how-to-find-job');
 

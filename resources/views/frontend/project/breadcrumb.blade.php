@@ -1,22 +1,20 @@
-<nav class="justify-content-between d-lg-flex d-md-flex d-xl-flex   " style="--bs-breadcrumb-divider: '>';"
-    aria-label="breadcrumb">
-    <ol class="breadcrumb d-flex align-items-center">
-        <li class="breadcrumb-item"><a href="#"> <img class="p-2 center d-block c-pointe home-iconr"
-                    src="{{ asset('/assets/home/find-scholarship/home.png') }}" alt=""></a>
-        </li>
-        <li class="breadcrumb-item "><a href="#" class="text-muted  fw-600 fs-14 job-details">Find Projects</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page"><span
-                class="text-black fs-14 fw-600 job-details">{{ $project->name }}</span></li>
-    </ol>
-    <div class="d-flex mx-4 ">
-        <div>
-            <img class="p-2 center d-block c-pointer mr-1 project-details-breadcrumb"
-                src="{{ asset('/assets/home/find-scholarship/love.png') }}" alt="">
+<div class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="breadcrumb-left">
+            <ul>
+              <li><a href="#"><img src="images/breadcrumb-icon.png"></img></a></li>
+              <li><i class="fa fa-angle-right"></i></li>
+              <li>Find Projects</li>
+            </ul>
+          </div>
         </div>
-        <div class="rounded">
-            <img class="p-2 center d-block c-pointer project-details-breadcrumb"
-                src="{{ asset('/assets/home/find-scholarship/share.png') }}" alt="">
+        <div class="col-md-6 col-sm-6">
+          <div class="breadcrumb-right">
+            <a href="#"><img src="images/share-icon.png"></img></a>
+          </div>
         </div>
+      </div>
     </div>
-</nav>
+  </div>
