@@ -9,7 +9,7 @@
             <div class="main__content__wrapp">
                 <div class="row g-0">
                     <div class="col-lg-4 col-xxl-3 aside__wrapp">
-                        <div class="px-3 px-sm-4 pt-5 pb-4  border-bottom">
+                        <div class="px-3 px-sm-4 pt-5 pb-4 bg-white border-bottom">
                             <figure class="thumbnail__box rounded-circle mx-auto position-relative mb-2">
                                 <img 
                                     src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" 
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="px-3 px-sm-4 py-4 border-bottom">
-                            <p class="lead-sm fw-medium text-black mb-0">Available for Projects</p>
+                            <p class="lead fw-medium text-black mb-0">Available for Projects</p>
                             <p class="text-black mt-1 mb-2">Have time for a project? Turn on your project availability to let potential clients know you're available for work.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted fw-medium">Available Now</small> 
@@ -59,7 +59,7 @@
                             </div>
                         </div><!--.//item-->
                         <div class="px-3 px-sm-4 py-4">
-                            <p class="lead-sm fw-medium text-black mb-2">Project Success Score</p>
+                            <p class="lead fw-medium text-black mb-2">Project Success Score</p>
                             <p class="text-black">Your Project Success reflects how well you deliver great results for Your clients. This score updates about every 2 weeks</p>
                         </div><!--.//item-->
                          
@@ -70,7 +70,7 @@
                         <div class="px-4 px-xl-5 pt-4 pt-md-5"> 
                             <h2 class="text-black lead fw-medium mb-2">Analytics</h2>
                             <div class="d-flex align-items-center justify-content-between">
-                                <p class="mb-0 small fw-medium text-black">Profile View</p>
+                                <p class="mb-0 small fw-medium text-black">Impression <br> & Clicks</p>
                                 <div class="d-inline-flex">
                                     <div class="d-inline-block">
                                         <p class="text-black small fw-medium">
@@ -79,8 +79,10 @@
                                         </p>
                                     </div>
                                     <div class="px-3">
-                                        <select name="profile_view" id="profile_view" class="form-select">
-                                            <option value="Profile Views">Profile Views</option>
+                                        <select name="profile_view" id="profile_view" class="form-select" style="max-width: 15rem;">
+                                            <option value="Impression & Clicks">Impression & Clicks</option>
+                                            <option value="Impression">Impression</option>
+                                            <option value="Clicks">Clicks</option>
                                         </select>
                                     </div>
                                     <div class="">
@@ -97,43 +99,12 @@
                             <div id="chart"></div>
                         </div><!--.//chart-->
 
-                        <div class="px-4 px-xl-5 pt-4 pt-md-5"> 
-                            <!-- <hr class="mt-0 opacity-100" style="border-color: #0E00621A;"> -->
-                            <div class="border-top pt-4 mb-4 mb-md-5"> 
-                                <h2 class="text-black lead fw-medium mb-3">Client satisfaction</h2>
-                                <div class="col-lg-8">
-                                    <p class="text-dark small fw-medium mb-0">Project Success Score</p> 
-                                    <div class="d-flex align-items-center"> 
-                                        <div class="progress" style="width: calc(100% - 3rem);"> 
-                                        <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 60%;"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="small fw-medium text-dark text-end" style="width: 3rem;">60%</div>
-                                    </div>
-                                </div>
-                                <table class="table table-reposive small fw-medium mt-2" style="max-width: 500px;">
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-muted border-0 py-1 ps-0">Last 12-month earnings</td>
-                                            <td class="text-black border-0 py-1">$26,190.83</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted border-0 py-1 ps-0">Clients who would recommend you</td>
-                                            <td class="text-black border-0 py-1">90%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted border-0 py-1 ps-0">Long-term clients</td>
-                                            <td class="text-black border-0 py-1">100%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
+                        <div class="px-4 px-xl-5 pt-4 pt-md-5">  
                             <div class="border-top pt-4 mb-4 mb-md-5"> 
                                 <h2 class="text-black lead fw-medium mb-3">Communication</h2>
-                                <p class="text-dark small fw-medium mb-1">You replied to 9 of 9 invitations to apply in the past 90 days:</p> 
-                                <p class="text-dark small fw-normal">Your responsiveness will be determined after you receive and respond to a few more job invitations. Top freelancers accept or decline all invitations within 24 hours.</p> 
-                                <div class="col-lg-8">
+                                <p class="text-black small fw-medium mb-2">You replied to 9 of 9 invitations to apply in the past 90 days:</p> 
+                                <p class="text-black small">Your responsiveness will be determined after you receive and respond to a few more job invitations. Top freelancers accept or decline all invitations within 24 hours.</p> 
+                                <div class="col-lg-8 mt-4">
                                     <p class="text-dark small fw-medium mb-0">You reply within a day</p> 
                                     <div class="d-flex align-items-center"> 
                                         <div class="progress" style="width: calc(100% - 3rem);"> 
@@ -152,8 +123,8 @@
                                         <div class="small fw-medium text-dark text-end" style="width: 3rem;">60%</div>
                                     </div>
                                 </div>
-                                
                             </div>
+ 
                         </div><!--.//item-->
                          
                          
@@ -163,13 +134,14 @@
             </div><!--.//main__content-->
         </div><!--.//container-->
     </main>
+
 @endsection
 
 @push('js')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
         var options = {
-            colors: ["#0036E3"],
+            colors: ["#5ABC76", "#0036E3"],
         chart: {
             height: 320,
             type: "area"
@@ -179,18 +151,21 @@
         },
         series: [
             {
-                name: "Total View",
+                name: "Impression",
+                data: [6, 24, 56, 33, 15, 24, 35]
+            },
+            {
+                name: "Clicked",
                 data: [7, 35, 16, 30, 8, 38, 23]
-            }
+            },
         ],
         fill: {
             type: "gradient",
             gradient: {
                 shadeIntensity: 1, 
-                opacityFrom: 0.7,
-                opacityTo: 0.9,
-                stops: [0, 99, 100]
-               
+                opacityFrom: 0.5,
+                opacityTo: 0.1,
+                stops: [0, 99, 100] 
             }
         },
         xaxis: {
@@ -203,22 +178,13 @@
             "06 Jan",
             "07 Jan"
             ]
-        },
-        tooltip: {
-  custom: function({series, seriesIndex, dataPointIndex, w}) {
-    return '<div class="status-tooltip">' +
-      '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
-      '<p>' + 'Total View' + '</p>' +
-      '</div>'
-  }
-}
+        }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
 
-        
-
         chart.render();
 
     </script>
+  
 @endpush

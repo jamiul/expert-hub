@@ -11,6 +11,9 @@
 
         @yield('modal')
 
+        <!-- dashbaord -->
         @include('frontend.layouts.front-js')
+
+        @stack('js')
     </body>
 </html>

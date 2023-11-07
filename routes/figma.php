@@ -35,4 +35,6 @@ Route::group(['prefix' => 'figma'], function () {
 
     //expert status
     Route::get('/expert-status', [FigmaController::class, 'expertstatus']);
+    Route::get('/expert-status-proposal', [FigmaController::class, 'expertstatusproposal']);
+    Route::get('/expert-status-analytics', [FigmaController::class, 'expertstatusanalytics']);
 });

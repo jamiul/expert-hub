@@ -123,4 +123,12 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-status');
     }
+    public function expertstatusproposal()
+    {
+        return view('figma-html.expert-status-proposal');
+    }
+    public function expertstatusanalytics()
+    {
+        return view('figma-html.expert-status-analytics');
+    }
 }

@@ -4,12 +4,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
 
+
 <main class="expert__dashboad status__page py-5">
         <div class="container">
             <div class="main__content__wrapp">
                 <div class="row g-0">
                     <div class="col-lg-4 col-xxl-3 aside__wrapp">
-                        <div class="px-3 px-sm-4 pt-5 pb-4  border-bottom">
+                        <div class="px-3 px-sm-4 pt-5 pb-4 bg-white border-bottom">
                             <figure class="thumbnail__box rounded-circle mx-auto position-relative mb-2">
                                 <img 
                                     src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" 
@@ -40,7 +41,7 @@
                             </div>
                         </div>
                         <div class="px-3 px-sm-4 py-4 border-bottom">
-                            <p class="lead-sm fw-medium text-black mb-0">Available for Projects</p>
+                            <p class="lead fw-medium text-black mb-0">Available for Projects</p>
                             <p class="text-black mt-1 mb-2">Have time for a project? Turn on your project availability to let potential clients know you're available for work.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted fw-medium">Available Now</small> 
@@ -59,7 +60,7 @@
                             </div>
                         </div><!--.//item-->
                         <div class="px-3 px-sm-4 py-4">
-                            <p class="lead-sm fw-medium text-black mb-2">Project Success Score</p>
+                            <p class="lead fw-medium text-black mb-2">Project Success Score</p>
                             <p class="text-black">Your Project Success reflects how well you deliver great results for Your clients. This score updates about every 2 weeks</p>
                         </div><!--.//item-->
                          
@@ -70,7 +71,7 @@
                         <div class="px-4 px-xl-5 pt-4 pt-md-5"> 
                             <h2 class="text-black lead fw-medium mb-2">Analytics</h2>
                             <div class="d-flex align-items-center justify-content-between">
-                                <p class="mb-0 small fw-medium text-black">Profile View</p>
+                                <p class="mb-0 small fw-medium text-black">Proposals</p>
                                 <div class="d-inline-flex">
                                     <div class="d-inline-block">
                                         <p class="text-black small fw-medium">
@@ -80,7 +81,7 @@
                                     </div>
                                     <div class="px-3">
                                         <select name="profile_view" id="profile_view" class="form-select">
-                                            <option value="Profile Views">Profile Views</option>
+                                            <option value="Proposals">Proposals</option>
                                         </select>
                                     </div>
                                     <div class="">
@@ -111,7 +112,7 @@
                                         <div class="small fw-medium text-dark text-end" style="width: 3rem;">60%</div>
                                     </div>
                                 </div>
-                                <table class="table table-reposive small fw-medium mt-2" style="max-width: 500px;">
+                                <table class="table table-reposive fw-medium mt-2" style="max-width: 500px;">
                                     <tbody>
                                         <tr>
                                             <td class="text-muted border-0 py-1 ps-0">Last 12-month earnings</td>
@@ -163,61 +164,71 @@
             </div><!--.//main__content-->
         </div><!--.//container-->
     </main>
+
+
 @endsection
 
 @push('js')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
         var options = {
-            colors: ["#0036E3"],
+          series: [
+            {
+                name: 'Sent',
+                data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+            }, {
+                name: 'Interviewed',
+                data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+            }, {
+                name: 'Viewed',
+                data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+            }, {
+                name: 'Hired',
+                data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+            }, 
+        ],
+        colors: ["#AEBFE2", "#E9B911", "#0036E3", "#76BD8A"],
         chart: {
-            height: 320,
-            type: "area"
+          type: 'bar',
+          height: 350
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: '55%',
+            endingShape: 'rounded',
+            borderRadius: 4,
+          },
         },
         dataLabels: {
-            enabled: false
+          enabled: false
         },
-        series: [
-            {
-                name: "Total View",
-                data: [7, 35, 16, 30, 8, 38, 23]
-            }
-        ],
-        fill: {
-            type: "gradient",
-            gradient: {
-                shadeIntensity: 1, 
-                opacityFrom: 0.7,
-                opacityTo: 0.9,
-                stops: [0, 99, 100]
-               
-            }
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ['transparent']
         },
         xaxis: {
-            categories: [
-            "01 Jan",
-            "02 Jan",
-            "03 Jan",
-            "04 Jan",
-            "05 Jan",
-            "06 Jan",
-            "07 Jan"
-            ]
+          categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+        },
+        yaxis: {
+          title: {
+            text: ''
+          }
+        },
+        fill: {
+          opacity: 1
         },
         tooltip: {
-  custom: function({series, seriesIndex, dataPointIndex, w}) {
-    return '<div class="status-tooltip">' +
-      '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
-      '<p>' + 'Total View' + '</p>' +
-      '</div>'
-  }
-}
+          y: {
+            formatter: function (val) {
+              return "$ " + val + " thousands"
+            }
+          }
+        }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-        
-
         chart.render();
 
     </script>
