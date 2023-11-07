@@ -108,4 +108,27 @@ class FigmaController extends Controller
     {
         return view('figma-html.clientverifyyouremail');
     }
+
+    public function expertdashboard()
+    {
+        return view('figma-html.expert-dashboard');
+    }
+
+    public function expertprofile()
+    {
+        return view('figma-html.expert-profile');
+    }
+
+    public function expertstatus()
+    {
+        return view('figma-html.expert-status');
+    }
+    public function expertstatusproposal()
+    {
+        return view('figma-html.expert-status-proposal');
+    }
+    public function expertstatusanalytics()
+    {
+        return view('figma-html.expert-status-analytics');
+    }
 }

@@ -1,0 +1,556 @@
+:root {
+  --primary: #0036E3;
+  --success: #369450;
+  --white: #ffffff;
+  --heading-color: #303744;
+  --dark: #191D24;
+  --border-color: rgba(14, 0, 98, 0.10);
+  --white: #ffffff;
+}
+ 
+.lead {
+  font-size: 1.1875rem ;
+}
+
+.lead-lg {
+  font-size: 1.375rem;
+}
+
+.lead-sm {
+  font-size: 1.125rem;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-15 {
+  font-size: 0.937rem;
+}
+ 
+
+.bg-primary {
+  background-color: var(--primary) !important;
+} 
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-dark {
+  color: var(--heading-color) !important;
+}
+
+.text-black {
+  color: var(--dark) !important;
+}
+
+.text-muted {
+  color: rgba(25, 29, 36, 0.7) !important;
+}
+
+ 
+.text-justify {
+  text-align: justify;
+}
+
+.bgi {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+ 
+
+.link {
+  color: var(--primary);
+  cursor: pointer;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--dark);
+}
+ 
+
+ 
+.btn:focus, .form-control:focus, .form-select:focus, .form-check-input:focus {
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white) !important;
+}
+
+.btn-outline-white {
+  border-color: var(--white);
+  color: var(--white);
+}
+.btn-outline-white:hover, .btn-outline-white:focus, .btn-outline-white:active {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--primary) !important;
+}
+
+.btn-outline-dark {
+  border-color: var(--btn-bg);
+  color: var(--white);
+  background-color: var(--btn-bg);
+}
+.btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active {
+  background-color: var(--white);
+  border-color: var(--btn-bg);
+  color: var(--primary) !important;
+}
+
+.btn-white {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--dark);
+}
+.btn-white:hover, .btn-white:focus {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+.btn-white:hover svg, .btn-white:focus svg {
+  color: var(--white);
+}
+
+.expert__dashboad .progress {
+  --bs-progress-bar-bg: var(--primary);
+  height: 3px;
+  border-radius: 10px;
+}
+.expert__dashboad .main__content__wrapp {
+  border-radius: 8px;
+  border: 1px solid rgba(14, 0, 98, 0.1);
+  background: #FFF;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+  overflow: hidden;
+}
+.expert__dashboad .main__content__wrapp .nav-tabs .nav-link {
+  color: var(--heading-color);
+  font-weight: 500;
+  margin: 0%;
+  font-size: 0.937rem;
+  border: 0;
+  position: relative;
+}
+.expert__dashboad .main__content__wrapp .nav-tabs .nav-link.active {
+  color: var(--primary);
+}
+.expert__dashboad .main__content__wrapp .nav-tabs .nav-link.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  display: block;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: -2px;
+  left: 0%;
+  border-radius: 3px;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card {
+  padding: 2rem 2.625rem;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card:not(:last-child) {
+  border-bottom: 1px solid rgba(14, 0, 98, 0.1019607843);
+}
+.expert__dashboad .main__content__wrapp .feed__list .title img {
+  margin-top: -10px;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .info__list {
+  color: rgba(25, 29, 36, 0.6);
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .info__list img{
+  margin-top: -3px;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .info__list .like__btn {
+  position: relative;
+  margin-top: -3px;
+  color: var(--primary);
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .info__list .like__btn.active {
+ color: var(--primary);
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list li {
+  margin: 0 0.35rem 0.35rem 0;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a {
+  color: rgba(48, 55, 68, 0.8);
+  padding: 0.25rem 0.75rem;
+  background-color: #EBEFF7;
+  margin: 0 0.35rem 0.35rem 0;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a:hover, .expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a:focus {
+  background-color: #dde9ff;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a.collapse__btn {
+  border: 2px solid rgba(48, 55, 68, 0.46);
+  background: var(--white);
+  line-height: 1;
+  padding: 0.35rem 0.75rem 0.3rem 0.75rem;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a.collapse__btn:hover, .expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a.collapse__btn:focus {
+  background-color: #dde9ff;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a.collapse__btn .count {
+  display: none;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a.collapse__btn.collapsed .less {
+  display: none;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card .tag__list a.collapse__btn.collapsed .count {
+  display: block;
+}
+.expert__dashboad .main__content__wrapp .feed__list .feed__card:hover {
+  background: rgba(0, 54, 227, 0.03);
+}
+.expert__dashboad .main__content__wrapp ul.feed__list{
+  padding: 0;
+  border-bottom: 1px solid #0E00621A;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp{
+  background: #FCFCFF;
+  border-left: 2px solid rgba(14, 0, 98, 0.10);
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .thumbnail__box {
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: rgba(0, 54, 227, 0.1411764706);
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .thumbnail__box img {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .thumbnail__box .status {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  bottom: 0%;
+  right: 6px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .thumbnail__box .status::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  border-radius: 50%;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .thumbnail__box .status.active::after {
+  background-color: var(--success);
+}
+
+.expert__dashboad .main__content__wrapp .aside__wrapp .toggle-button-cover {
+  position: relative;
+  width: 60px;
+  height: 26px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button-cover {
+  height: 26px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button-cover,
+.expert__dashboad .main__content__wrapp .aside__wrapp .knobs,
+.expert__dashboad .main__content__wrapp .aside__wrapp .layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 26px;
+  width: 60px;
+  border-radius: 30px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button.r,
+.expert__dashboad .main__content__wrapp .aside__wrapp .button.r .layer {
+  border-radius: 30px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button.b2 {
+  border-radius: 2px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .checkbox {
+  position: relative;
+  width: 60px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .knobs {
+  z-index: 2;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .layer {
+  width: 100%;
+  background-color: var(--success);
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs:before,
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs:after,
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs span {
+  position: absolute;
+  top: 4px;
+  width: 20px !important;
+  height: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+  border-radius: 50%;
+  top: 8px;
+  transition: 0.3s ease all;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs span {
+  top: 3px;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs:before,
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs:after {
+  color: #4e4e4e;
+  z-index: 1;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs:before {
+  content: "ON";
+  left: 10px;
+  color: var(--white);
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs:after {
+  content: "OFF";
+  right: 5px;
+  width: auto !important;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .knobs span {
+  width: 20px;
+  left: 37px;
+  background-color: var(--white);
+  z-index: 2;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .checkbox:checked + .knobs span {
+  left: 4px;
+  background-color: #333;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .checkbox:checked + .knobs::before {
+  opacity: 0;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .checkbox:not(:checked) + .knobs::after {
+  opacity: 0;
+}
+.expert__dashboad .main__content__wrapp .aside__wrapp .button .checkbox:checked ~ .layer {
+  background-color: #e8e8e8;
+}
+
+.expert__dashboad .main__content__wrapp .pagination {
+  width: 100%;
+  margin: 25px 0 30px;
+  display: block;
+}
+.expert__dashboad .main__content__wrapp .pagination .row {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-left {
+  color: #303744;
+  font-size: 14px;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right {
+  display: flex;
+  justify-content: end;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right .results {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right .results p {
+  font-size: 14px;
+  margin: 0 15px 0 0;
+  color: #303744;
+}
+.expert__dashboad .main__content__wrapp .pagination .pagination-right .results select {
+  border: solid 2px #0000001A;
+  width: 70px;
+  height: 40px;
+  padding: 0 12px;
+  outline: none;
+  border-radius: 4px;
+  appearance: none;
+  background-position: right 12px center;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul li {
+  margin-left: 2px;
+  display: inline-block;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a {
+  border: 2px solid #00000017;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: #303744;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 500ms;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a .hover-icon {
+  position: absolute;
+  opacity: 0;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a:hover {
+  background: #0036E3;
+  color: #fff;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a .hover-icon {
+  position: absolute;
+  opacity: 0;
+}
+
+.expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a:hover .hover-icon {
+  opacity: 1;
+}
+
+.expert__dashboad .main__content__wrapp .link__list li {
+  margin-bottom: 0.25rem;
+}
+.expert__dashboad .main__content__wrapp .link__list li a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0036E3;
+  text-decoration: underline;
+}
+.expert__dashboad .main__content__wrapp .link_list li a:hover, .linklist li a:focus, .link_list li a:active {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+/*---- Expert Status page styling --*/
+
+.expert__dashboad.status__page .main__content__wrapp .aside__wrapp { border-left: 0; }
+.expert__dashboad.status__page .main__content__wrapp .border-start { border-width: 2px !important; }
+.expert__dashboad.status__page .main__content__wrapp .form-select {
+  border-radius: 4px;
+  max-width: 11rem;
+  border: 2px solid rgba(14, 0, 98, 0.3);
+}
+.expert__dashboad.status__page .main__content__wrapp .apexcharts-toolbar {
+  display: none;
+}
+.expert__dashboad.status__page .main__content__wrapp .table .text-muted {
+  color: rgba(48, 55, 68, 0.70) !important;
+}
+.expert__dashboad.status__page .main__content__wrapp .progress {
+  height: 6px;
+}
+.expert__dashboad.status__page .main__content__wrapp .ff-public-sans {
+  font-family: "Public Sans", sans-serif;
+}
+.expert__dashboad.status__page .main__content__wrapp .btn-outline-primary {
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 0.937rem;
+  padding-top: 0.25rem;
+}
+
+.status-tooltip{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+width: 120px;
+height: 54px;
+border-radius: 8px;
+background: rgba(255, 255, 255, 0.39);
+box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.15);
+backdrop-filter: blur(10px);
+font-family: 'Colfax'!important;
+color: #191D24;
+text-align: center;
+font-family: Colfax;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height:  19px
+}
+.status-tooltip p{
+  margin: 0;
+  color: #191D24;
+text-align: center;
+font-family: Colfax;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 19px;
+}
+/*---- Expert STatus page styling --*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -26,4 +26,15 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/client-signup', [FigmaController::class, 'clientSignup']);
     Route::get('/client-verify-email', [FigmaController::class, 'clientVerifyEmail']);
     Route::get('/client-verify-your-email', [FigmaController::class, 'clientVerifyYourEmail']);
+
+    //expert dashboard
+    Route::get('/expert-dashboard', [FigmaController::class, 'expertdashboard']);
+
+    //expert profile
+    Route::get('/expert-profile', [FigmaController::class, 'expertprofile']);
+
+    //expert status
+    Route::get('/expert-status', [FigmaController::class, 'expertstatus']);
+    Route::get('/expert-status-proposal', [FigmaController::class, 'expertstatusproposal']);
+    Route::get('/expert-status-analytics', [FigmaController::class, 'expertstatusanalytics']);
 });

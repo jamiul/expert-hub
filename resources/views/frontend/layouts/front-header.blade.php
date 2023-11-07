@@ -56,5 +56,6 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.theme.default.css') }}">
 
-        @stack('top_styles')
+
+   @stack('top_styles')
 </head>
