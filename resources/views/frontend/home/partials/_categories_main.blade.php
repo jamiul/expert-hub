@@ -23,11 +23,13 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
-                        <div class="available-text">+ 120 Available</div>
+                        <div class="available-text d-none">+ 120 Available</div>
                     </div>
                 </div>
             </div>
@@ -49,11 +51,13 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
-                        <div class="available-text">+ 120 Available</div>
+                        <div class="available-text d-none">+ 120 Available</div>
                     </div>
                 </div>
             </div>
@@ -75,11 +79,13 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
-                        <div class="available-text">+ 120 Available</div>
+                        <div class="available-text d-none">+ 120 Available</div>
                     </div>
                 </div>
             </div>
@@ -101,11 +107,13 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
-                        <div class="available-text">+ 120 Available</div>
+                        <div class="available-text d-none">+ 120 Available</div>
                     </div>
                 </div>
             </div>
@@ -127,9 +135,11 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
                         <div class="available-text">+ 120 Available</div>
                     </div>
@@ -153,9 +163,11 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
                         <div class="available-text">+ 120 Available</div>
                     </div>
@@ -179,9 +191,11 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
                         <div class="available-text">+ 120 Available</div>
                     </div>
@@ -205,9 +219,11 @@
                             <div class="review-text">45 Review</div>
                         </div>
                     </div>
-                    <div class="categories-available">
-                        <div class="available-img">
-                            <img src="{{ asset('assets/frontend/img/available-img.png') }}"/>
+                    <div class="categories-available d-flex align-items-start position-relative">
+                        <div class="available-img d-flex justify-content-start">
+                            <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"/>
+                            <img  class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"/>
+                            <img  class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"/>
                         </div>
                         <div class="available-text">+ 120 Available</div>
                     </div>
