@@ -675,14 +675,23 @@
                     </div>
                     <div class="study-level">
                         <h3>Location</h3>
-                        <div class="custom-select">
-                            <select>
-                                <option>Search by Country</option>
-                                <option>Australia</option>
-                                <option>United States</option>
-                                <option>Germany</option>
-                            </select>
-                        </div>
+                        <div class="location-select position-relative scroller">
+                  <div class="position-relative">
+                    <input type="text" placeholder="Search Country" id="locationInput" class="form-control locationInput" required>
+
+                  </div>
+                  
+                  <div class="tags pt-3 pb-1">
+                    <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">
+                      <span>Bangladesh</span>
+                      <button class="btn p-0 border-0 rounded-circle">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.79989 13.9904L4.00952 13.2L8.20952 9.00001L4.00952 4.80001L4.79989 4.00964L8.99989 8.20964L13.1999 4.00964L13.9903 4.80001L9.79026 9.00001L13.9903 13.2L13.1999 13.9904L8.99989 9.79038L4.79989 13.9904Z" fill="white"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
                     </div>
                     <div class="study-level rating">
                         <h3>Rating</h3>
@@ -751,48 +760,22 @@
                             <p>Prof. Miles esther is an accomplished Curriculum Development Specialist with a
                                 distinguished career in education and a track record of providing consultation services
                                 ... <a href="#">more</a></p>
-                        </div>
+                        </div>                
                         <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}"></img>Offer
-                                            Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Media Interview
-                                        </h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Research & Analysis</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="tag__list d-flex flex-wrap mt-3">
+                                <a href="#" class="cons-vid fs-13 fw-medium rounded-pill"> <img src="{{ asset('assets/frontend/img/offer-img.png') }}" />Offer Consultationss </a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Curriculum Development</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Education Research</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Research & Analysis</a>
+                                <span class="collapse" id="contentTag1">
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                </span>
+                                <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag1" aria-expanded="false" aria-controls="contentTag1">
+                                    <span class="count">+12 More</span>
+                                    <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -836,44 +819,20 @@
                                 ... <a href="#">more</a></p>
                         </div>
                         <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
-                                            Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Education Research</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Research & Analysis</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="tag__list d-flex flex-wrap mt-3">
+                                <a href="#" class="cons-vid fs-13 fw-medium rounded-pill"> <img src="{{ asset('assets/frontend/img/offer-img.png') }}" />Offer Consultationss </a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Curriculum Development</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Education Research</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Research & Analysis</a>
+                                <span class="collapse" id="contentTag2">
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                </span>
+                                <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag2" aria-expanded="false" aria-controls="contentTag1">
+                                    <span class="count">+12 More</span>
+                                    <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -917,44 +876,20 @@
                                 ... <a href="#">more</a></p>
                         </div>
                         <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
-                                            Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Education Research</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Research & Analysis</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="tag__list d-flex flex-wrap mt-3">
+                                <a href="#" class="cons-vid fs-13 fw-medium rounded-pill"> <img src="{{ asset('assets/frontend/img/offer-img.png') }}" />Offer Consultationss </a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Curriculum Development</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Education Research</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Research & Analysis</a>
+                                <span class="collapse" id="contentTag3">
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                </span>
+                                <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag3" aria-expanded="false" aria-controls="contentTag1">
+                                    <span class="count">+12 More</span>
+                                    <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -998,44 +933,20 @@
                                 ... <a href="#">more</a></p>
                         </div>
                         <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
-                                            Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Education Research</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Research & Analysis</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="tag__list d-flex flex-wrap mt-3">
+                                <a href="#" class="cons-vid fs-13 fw-medium rounded-pill"> <img src="{{ asset('assets/frontend/img/offer-img.png') }}" />Offer Consultationss </a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Curriculum Development</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Education Research</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Research & Analysis</a>
+                                <span class="collapse" id="contentTag4">
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                </span>
+                                <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag4" aria-expanded="false" aria-controls="contentTag1">
+                                    <span class="count">+12 More</span>
+                                    <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1079,44 +990,20 @@
                                 ... <a href="#">more</a></p>
                         </div>
                         <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
-                                            Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Education Research</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Research & Analysis</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="tag__list d-flex flex-wrap mt-3">
+                                <a href="#" class="cons-vid fs-13 fw-medium rounded-pill"> <img src="{{ asset('assets/frontend/img/offer-img.png') }}" />Offer Consultationss </a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Curriculum Development</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Education Research</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Research & Analysis</a>
+                                <span class="collapse" id="contentTag5">
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                </span>
+                                <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag5" aria-expanded="false" aria-controls="contentTag1">
+                                    <span class="count">+12 More</span>
+                                    <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1160,44 +1047,20 @@
                                 ... <a href="#">more</a></p>
                         </div>
                         <div class="projects-slider">
-                            <div id="carouselExampleIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"
-                                        aria-label="Slide 1">
-                                        <h4 class="btbg"><img
-                                                src="{{ asset('assets/frontend/img/offer-img.png') }}">Offer
-                                            Consultationss</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1" aria-label="Slide 2">
-                                        <h4>Curriculum Development</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 3">
-                                        <h4>Education Research</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 4">
-                                        <h4>Research & Analysis</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 5">
-                                        <h4>Scholarships</h4>
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="2" aria-label="Slide 6">
-                                        <h4>Communication Skills</h4>
-                                    </button>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="tag__list d-flex flex-wrap mt-3">
+                                <a href="#" class="cons-vid fs-13 fw-medium rounded-pill"> <img src="{{ asset('assets/frontend/img/offer-img.png') }}" />Offer Consultationss </a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Curriculum Development</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Education Research</a>
+                                <a href="#" class="fs-13 fw-medium rounded-pill">Research & Analysis</a>
+                                <span class="collapse" id="contentTag6">
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                    <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a>
+                                </span>
+                                <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag6" aria-expanded="false" aria-controls="contentTag1">
+                                    <span class="count">+12 More</span>
+                                    <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+                                </a>
                             </div>
                         </div>
                     </div>

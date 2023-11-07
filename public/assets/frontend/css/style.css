@@ -3722,6 +3722,123 @@ footer .footer-bottom .footer-icon ul li a:hover {
     padding: 0 20px 0 85px;
 }
 
+/*---updated taglist styling 06 Nov 2023 --*/
+.find-consultant .projects-slider .cons-vid{
+    display: flex;
+    align-items: center;
+}
+.find-consultant .projects-slider a.cons-vid{
+    color: #0036e3;
+    background: #e5effb;
+    border-color: #a9c7ed;
+}
+.find-consultant .projects-slider .cons-vid img{
+    margin-right: 10px;
+}
+.tag__list a {
+    display: inline-block;
+    color: rgba(48, 55, 68, 0.8);
+    padding: 0.25rem 0.75rem;
+    background-color: #EBEFF7;
+    margin: 0 0.35rem 0.35rem 0;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .tag__list a:hover, .tag__list a:focus {
+    background-color: #dde9ff;
+  }
+  .tag__list a.collapse__btn {
+    border: 2px solid rgba(48, 55, 68, 0.46);
+    background: var(--white);
+    line-height: 1;
+    padding: 0.35rem 0.75rem 0.3rem 0.75rem;
+  }
+  .tag__list a.collapse__btn:hover, .tag__list a.collapse__btn:focus {
+    background-color: #dde9ff;
+  }
+  .tag__list a.collapse__btn .count {
+    display: none;
+  }
+  .tag__list a.collapse__btn.collapsed .less {
+    display: none;
+  }
+  .tag__list a.collapse__btn.collapsed .count {
+    display: block;
+  }
+/*---updated taglist styling --*/
+
+
+/*---updated Location search styling 06 Nov 2023--*/
+.scroller * { scrollbar-width: thin;scrollbar-color: #ddd #eee; }
+      .scroller *::-webkit-scrollbar { width: 12px; height: 60px;} 
+      .scroller *::-webkit-scrollbar-track { background: #eee; }
+      .scroller *::-webkit-scrollbar-thumb { background-color: #ddd;border-radius: 20px;border: 3px solid #eee; }
+      .location-select .form-control {
+        width: 100%;
+        padding: 4px 12px 2px 12px;
+        border: 2px solid #0000001A;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        height: 40px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 40px;
+        color: #303744;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9InNlYXJjaF9GSUxMMF93Z2h0NDAwX0dSQUQwX29wc3oyNCAxIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTE5LjYgMjFMMTMuMyAxNC43QzEyLjggMTUuMSAxMi4yMjUgMTUuNDE2NyAxMS41NzUgMTUuNjVDMTAuOTI1IDE1Ljg4MzMgMTAuMjMzMyAxNiA5LjUgMTZDNy42ODMzMyAxNiA2LjE0NTgzIDE1LjM3MDggNC44ODc1IDE0LjExMjVDMy42MjkxNyAxMi44NTQyIDMgMTEuMzE2NyAzIDkuNUMzIDcuNjgzMzMgMy42MjkxNyA2LjE0NTgzIDQuODg3NSA0Ljg4NzVDNi4xNDU4MyAzLjYyOTE3IDcuNjgzMzMgMyA5LjUgM0MxMS4zMTY3IDMgMTIuODU0MiAzLjYyOTE3IDE0LjExMjUgNC44ODc1QzE1LjM3MDggNi4xNDU4MyAxNiA3LjY4MzMzIDE2IDkuNUMxNiAxMC4yMzMzIDE1Ljg4MzMgMTAuOTI1IDE1LjY1IDExLjU3NUMxNS40MTY3IDEyLjIyNSAxNS4xIDEyLjggMTQuNyAxMy4zTDIxIDE5LjZMMTkuNiAyMVpNOS41IDE0QzEwLjc1IDE0IDExLjgxMjUgMTMuNTYyNSAxMi42ODc1IDEyLjY4NzVDMTMuNTYyNSAxMS44MTI1IDE0IDEwLjc1IDE0IDkuNUMxNCA4LjI1IDEzLjU2MjUgNy4xODc1IDEyLjY4NzUgNi4zMTI1QzExLjgxMjUgNS40Mzc1IDEwLjc1IDUgOS41IDVDOC4yNSA1IDcuMTg3NSA1LjQzNzUgNi4zMTI1IDYuMzEyNUM1LjQzNzUgNy4xODc1IDUgOC4yNSA1IDkuNUM1IDEwLjc1IDUuNDM3NSAxMS44MTI1IDYuMzEyNSAxMi42ODc1QzcuMTg3NSAxMy41NjI1IDguMjUgMTQgOS41IDE0WiIgZmlsbD0iIzMwMzc0NCIvPgo8L2c+Cjwvc3ZnPgo=');
+        background-repeat: no-repeat;
+        background-position: center right 1rem;
+        background-size: 1.5rem;
+      }
+      .location-select .form-control::placeholder { 
+        color: #303744;
+      }
+      .location-select .form-control:focus {
+        box-shadow: none;
+      }
+       
+      .location-select .tags .tag { 
+        background-color: #0036E3;
+      }
+      .location-select .tags .tag .btn { 
+        position: relative;top: -2px;margin-left: 4px;
+      }
+
+      
+
+    /*the container must be positioned relative:*/
+    .autocomplete {
+      position: relative;
+      display: inline-block;
+    }
+ 
+
+    .autocomplete-items {
+      position: static;border-radius: 4px;
+      border-bottom: none;
+      border-top: none;
+      max-height: 160px;
+      overflow-y: auto;
+      box-shadow: 0px 3px 6px 0px rgba(14, 0, 98, 0.10);
+    }
+
+    .autocomplete-items div {
+      padding: 7px 12px;color: #191D24;line-height: 160%;cursor: pointer;transition: all .3s ease-in-out;
+    }
+
+    /*when hovering an item:*/
+    .autocomplete-items div:hover {
+      color: #0036E3;font-weight: 500;background: rgba(0, 89, 201, 0.08);
+    }
+
+    /*when navigating through the items using the arrow keys:*/
+    .autocomplete-active {
+      background-color: DodgerBlue !important; 
+      color: #ffffff; 
+    }
+/*---updated Location search styling --*/
+  
+
 .find-consultant .consultant-reviw ul li .fa {
     color: #e9b911;
     font-size: 13px;
