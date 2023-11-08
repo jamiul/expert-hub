@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary: #0036E3;
   --success: #369450;
   --white: #ffffff;
@@ -12,9 +12,9 @@
   font-size: 2.875rem;
   font-weight: 600;
   color: var(--heading-color);
-}
+} */
 
-h2, .h2 {
+/* h2, .h2 {
   font-size: 2.25rem;
   font-weight: 600;
   color: var(--heading-color);
@@ -210,7 +210,7 @@ ul li {
 }
 .btn-white:hover svg, .btn-white:focus svg {
   color: var(--white);
-}
+} */
 
 .find-consultant-details {margin-top:50px; margin-bottom: 100px;}
 .find-consultant-details > .container > .row .col-md-4 {width: 32%;}
@@ -244,8 +244,8 @@ ul li {
 .consultant-left .consultant-left-block h5 {margin: 0;font-size: 16px;font-weight: 400;color: #0036E3;}
 
 .consultant-right{
-  margin-top: 30px;
-  padding-left: 24px;
+  margin-top: 57px;
+  padding-left: 41px;
   padding-right: 41px;
 }
 .consultant-right .consultant-d .consultant-d-left {display: flex;align-items: center;}
@@ -263,15 +263,16 @@ ul li {
 .consultant-d, .consultant-work, .consultant-tab, .consultant-testimonial {padding: 24px 0px;}
 .consultant-right .consultant-d .consultant-d-left h3 {font-size: 20px;}
 
-.consultant-l h3 {color: #303744;font-size: 16px;font-weight: 500;}
+.consultant-l h3 {color: #303744;font-size: 16px;font-weight: 700;font-family: 'Public Sans', sans-serif;}      
+.consultant-l h3 span {font-family: 'Public Sans', sans-serif;}      
 .consultant-l.languages p {margin-bottom: 0;display: flex;align-items: center;font-size: 14px;font-weight: 500;color: #303744;}
 .consultant-l.languages img {margin-right: 7px;}
 .consultant-l.expertise ul {padding: 0;margin: 0;}
 .consultant-l.expertise ul li {display: inline-block;}
 .consultant-l.expertise ul li a {font-size: 14px;font-weight: 500;color: #0036E3;text-decoration: none;border: solid 1px #0036E3;border-radius: 50px;padding: 0 12px;display: inline-block;margin: 0 3px 6px 0;transition: all 500ms;height: 26px;line-height: 26px;}
 .consultant-l.expertise ul li a:hover {background:#0036E3;color: #fff;}
-.consultant-l.education p {font-size: 14px;color: #303744;line-height: 22px;margin-bottom: 10px;font-weight: 500;}
-.consultant-l.education p span {display: block;font-weight: 400;}
+.consultant-l.education p {font-size: 14px;color: #303744;line-height: 22px;margin-bottom: 10px;font-weight: 600;font-family: 'Public Sans', sans-serif;}
+.consultant-l.education p span {display: block;font-weight: 400;font-style: italic;}
 .consultant-l.profile p {margin-bottom: 0;}
 .consultant-l.profile p a {
 font-family: Public Sans;
