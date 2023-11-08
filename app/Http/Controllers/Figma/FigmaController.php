@@ -131,4 +131,86 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-status-analytics');
     }
+
+
+
+    //Client Dashboard
+
+    public function clientdashboard()
+    {
+        return view('figma-html.clientdashboard');
+    }
+
+    public function clientdashboardhome()
+    {
+        return view('figma-html.clientdashboardhome');
+    }
+
+    public function clientdashboardallcontact()
+    {
+        return view('figma-html.clientdashboardallcontact');
+    }
+
+    public function clientdashboardexperthire()
+    {
+        return view('figma-html.clientdashboardexperthire');
+    }
+
+    public function clientdashboardexpertconsultant()
+    {
+        return view('figma-html.clientdashboardexpertconsultant');
+    }
+
+    public function clientdashboardexpertconsultantteam()
+    {
+        return view('figma-html.clientdashboardexpertconsultantteam');
+    }
+
+    public function clientdashboardexpertsave()
+    {
+        return view('figma-html.clientdashboardexpertsave');
+    }
+
+    public function clientaddpayment()
+    {
+        return view('figma-html.clientaddpayment');
+    }
+
+    public function clientvisapaypalpayment()
+    {
+        return view('figma-html.clientvisapaypalpayment');
+    }
+
+    public function clientaddpaymentdouable()
+    {
+        return view('figma-html.clientaddpaymentdouable');
+    }
+
+    public function clientweeklyreport()
+    {
+        return view('figma-html.clientweeklyreport');
+    }
+
+    public function clientweeklytotalreport()
+    {
+        return view('figma-html.clientweeklytotalreport');
+    }
+
+    public function clientdashboardallport()
+    {
+        return view('figma-html.clientdashboardallport');
+    }
+
+    public function clientweeklyreporttwo()
+    {
+        return view('figma-html.clientweeklyreporttwo');
+    }
+
+    public function clientweeklyreporttwobud()
+    {
+        return view('figma-html.clientweeklyreporttwobud');
+    }
+    //End Client Dashboard
+
+
 }

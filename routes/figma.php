@@ -37,4 +37,21 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/expert-status', [FigmaController::class, 'expertstatus']);
     Route::get('/expert-status-proposal', [FigmaController::class, 'expertstatusproposal']);
     Route::get('/expert-status-analytics', [FigmaController::class, 'expertstatusanalytics']);
+
+    //Client Dashboard
+    Route::get('/client-dashboard', [FigmaController::class, 'clientdashboard']);
+    Route::get('/client-dashboardhome', [FigmaController::class, 'clientdashboardhome']);
+    Route::get('/client-dashboardallcontact', [FigmaController::class, 'clientdashboardallcontact']);
+    Route::get('/client-dashboardexperthire', [FigmaController::class, 'clientdashboardexperthire']);
+    Route::get('/client-dashboardexpertconsultant', [FigmaController::class, 'clientdashboardexpertconsultant']);
+    Route::get('/client-dashboardexpertconsultantteam', [FigmaController::class, 'clientdashboardexpertconsultantteam']);
+    Route::get('/client-clientdashboardexpertsave', [FigmaController::class, 'clientdashboardexpertsave']);
+    Route::get('/client-clientaddpayment', [FigmaController::class, 'clientaddpayment']);
+    Route::get('/client-clientvisapaypal', [FigmaController::class, 'clientvisapaypalpayment']);
+    Route::get('/client-addpaymentdouable', [FigmaController::class, 'clientaddpaymentdouable']);
+    Route::get('/client-weeklyreport', [FigmaController::class, 'clientweeklyreport']);
+    Route::get('/client-weeklyreporttwo', [FigmaController::class, 'clientweeklyreporttwo']);
+    Route::get('/client-weeklyreporttwobud', [FigmaController::class, 'clientweeklyreporttwobud']);
+
+
 });
