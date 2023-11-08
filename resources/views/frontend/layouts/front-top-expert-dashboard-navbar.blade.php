@@ -273,29 +273,3 @@
       </div>
    </div><!--.//container-->
 </nav>
-
-
-
- <!-- sub menu start -->
- <!-- <nav class="bg-primary sub__nav">
-      <div class="container">
-         <ul class="d-flex ps-0 list-unstyled mb-0">
-               <li class="me-3">
-                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Active Contracts</a>
-               </li>
-               <li class="me-3">
-                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">All Contracts</a>
-               </li>
-               <li class="me-3">
-                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Work Diary</a>
-               </li>
-               <li class="me-3">
-                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Job Offers</a>
-               </li>
-               <li class="me-3">
-                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Saved Jobs</a>
-               </li>
-         </ul>
-      </div>
-   </nav> -->
-   <!-- sub menu end -->

@@ -37,4 +37,9 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/expert-status', [FigmaController::class, 'expertstatus']);
     Route::get('/expert-status-proposal', [FigmaController::class, 'expertstatusproposal']);
     Route::get('/expert-status-analytics', [FigmaController::class, 'expertstatusanalytics']);
+
+    //expert contract
+    Route::get('/expert-active-contract', [FigmaController::class, 'expertactivecontract']);
+    Route::get('/expert-all-contract', [FigmaController::class, 'expertallcontract']);
+    Route::get('/expert-services', [FigmaController::class, 'expertservices']);
 });
