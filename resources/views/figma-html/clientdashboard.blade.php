@@ -497,6 +497,126 @@
 
 
 
+
+          <div class="modal fade" id="editpostingcustomize" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-body">
+                 <div class="container  p-0">
+                  <div class="row">
+                    <div class="col-md-8  p-0">
+
+                    <div class="health-unit-area d-flex flex-column">
+                        <div class="health-unit-top-area d-flex flex-column">
+                            <div class="heath-unit-title d-flex flex-row flex-wrap align-content-center">
+                            <img class="health-img" src="{{ asset('assets/frontend/img/toppayment.png') }}" alt="client health">
+                              <h4>Developing curriculum for Postgraduate public health unit</h4>
+                            </div>
+                            <div class="globe-area  d-flex flex-row align-content-center">
+                              <p class="d-flex flex-row align-items-center align-content-center"> <img src="{{ asset('assets/frontend/img/time.png') }}" alt="client health"> <span>2 weeks ago</span>  </p>
+                              <p class="d-flex flex-row align-content-center  align-items-center"> <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="client health"><span> Curriculum development</span>  </p>
+                            </div>
+                        </div>
+                        <div class="health-unit-bottom-area">
+                          <div class="helth-text-area">
+                              <p>Seeking an experienced Curriculum Developer to create a cutting-edge curriculum for our postgraduate public health unit. You will collaborate with our team to design a comprehensive curriculum that aligns with industry trends and academic standards. Your role involves conducting research, developing course materials, and crafting assessments that foster critical thinking and practical skills. The ideal candidate will have a strong background in public health education, and curriculum design. and a passion for advanced higher education. join us in shaping the future of public health education and making a lasting impact on students' careers.</p>
+                          </div>
+                          <div class="health-tab-area">
+                            <h5>Required Skills</h5>
+                              <div class="health-tab d-flex flex-row  flex-wrap ">
+                                <span>Curriculum Editor</span>
+                                <span>Assessment Specialist</span>
+                                <span>E-Learning Developer</span>
+                                <span>Curriculum Writer</span>
+                                <span>Public Health Expertise</span>
+                                <span>Curriculum Design</span>
+                                <span>Research and Analysis</span>
+                                <span>Policy Development</span>
+                              </div>
+                          </div>
+
+                          <div class="attachment-area d-flex flex-column">
+                              <h5>Attachments</h5>
+                              <div class="attachment-name  d-flex flex-row">
+                                <div class="single-name-attachment d-flex flex-column">
+                                  <img src=" {{ asset('assets/frontend/img/attachment1.png') }} " alt="attachment">
+                                  <h6>File name.jpg</h6>
+                                  <p>1.3 MB</p>
+                                </div>
+                                <div class="single-name-attachment">
+                                  <img src=" {{ asset('assets/frontend/img/attachment2.png') }} " alt="attachment">
+                                  <h6>File name.jpg</h6>
+                                  <p>1.3 MB</p>
+                                </div>
+                              </div>
+                          </div>
+
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="col-md-4">
+                      <div class="attachment-right-bar d-flex flex-column">
+                        <div class="close-btn d-flex justify-content-end"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                          <div class="attament-fixed">
+                            <h4><span>Fixed:</span>$200.00</h4>
+                          </div>
+
+                            <div class="about-free-all d-flex flex-column">
+                                 <div class="single-all">
+                                    <h5>About the client</h5>
+                                 </div>
+
+                                 <div class="single-all d-flex flex-row align-items-center  justify-content-start">
+                                    <img src="{{ asset('assets/frontend/img/ester.png') }}" alt="">
+                                    <p class="miles-all">Dr Miles Esther</p>
+                                 </div> 
+                              
+                                 <div class="single-all d-flex flex-row ">
+                                        <img src="{{ asset('assets/frontend/img/institution.png') }}" alt="">
+                                        <div class="institution  d-flex flex-column">
+                                          <h6>Institution</h6>
+                                          <p>Sydney Islami business school </p>
+                                      </div>
+                                     
+                                 </div> 
+                             
+                                 <div class="single-all d-flex flex-row">
+                                    <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="">
+                                      <div class="institution d-flex flex-column">
+                                        <h6>Austria</h6>
+                                        <p>Sydney 9:20 pm</p>
+                                      </div>
+                                 </div> 
+                                 
+                                 <div class="single-all d-flex flex-row">
+                                    <img src="{{ asset('assets/frontend/img/bag.png') }}" alt="">
+                                      <div class="institution d-flex flex-column">
+                                        <h6>7 jobs posted</h6>
+                                        <p>100% hire rate, 4 open jobs</p>
+                                      </div>
+                                 </div> 
+
+                                 <div class="chat-with-client">
+                                  <button> <span> <img src=" {{ asset('assets/frontend/img/message-img.png') }} " alt="message"></span> Chat with Client</button>
+                                 </div>
+
+                            </div>
+                      </div>
+                    </div>
+                                    
+                 </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <!-- Edit Option Modal End -->
+  </div>
+
+
+
     <div class="modal fade" id="editposting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
@@ -613,126 +733,6 @@
 
     <!-- Edit Option Modal End -->
   </div>
-
-
-
-  <div class="modal fade" id="editpostingcustomize" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-                <div class="modal-body">
-                 <div class="container  p-0">
-                  <div class="row">
-                    <div class="col-md-8  p-0">
-
-                    <div class="health-unit-area d-flex flex-column">
-                        <div class="health-unit-top-area d-flex flex-column">
-                            <div class="heath-unit-title d-flex flex-row flex-wrap align-content-center">
-                            <img class="health-img" src="{{ asset('assets/frontend/img/toppayment.png') }}" alt="client health">
-                              <h4>Developing curriculum for Postgraduate public health unit</h4>
-                            </div>
-                            <div class="globe-area  d-flex flex-row align-content-center">
-                              <p class="d-flex flex-row align-items-center align-content-center"> <img src="{{ asset('assets/frontend/img/time.png') }}" alt="client health"> <span>2 weeks ago</span>  </p>
-                              <p class="d-flex flex-row align-content-center  align-items-center"> <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="client health"><span> Curriculum development</span>  </p>
-                            </div>
-                        </div>
-                        <div class="health-unit-bottom-area">
-                          <div class="helth-text-area">
-                              <p>Seeking an experienced Curriculum Developer to create a cutting-edge curriculum for our postgraduate public health unit. You will collaborate with our team to design a comprehensive curriculum that aligns with industry trends and academic standards. Your role involves conducting research, developing course materials, and crafting assessments that foster critical thinking and practical skills. The ideal candidate will have a strong background in public health education, and curriculum design. and a passion for advanced higher education. join us in shaping the future of public health education and making a lasting impact on students' careers.</p>
-                          </div>
-                          <div class="health-tab-area">
-                            <h5>Required Skills</h5>
-                              <div class="health-tab d-flex flex-row  flex-wrap ">
-                                <span>Curriculum Editor</span>
-                                <span>Assessment Specialist</span>
-                                <span>E-Learning Developer</span>
-                                <span>Curriculum Writer</span>
-                                <span>Public Health Expertise</span>
-                                <span>Curriculum Design</span>
-                                <span>Research and Analysis</span>
-                                <span>Policy Development</span>
-                              </div>
-                          </div>
-
-                          <div class="attachment-area d-flex flex-column">
-                              <h5>Attachments</h5>
-                              <div class="attachment-name  d-flex flex-row">
-                                <div class="single-name-attachment d-flex flex-column">
-                                  <img src=" {{ asset('assets/frontend/img/attachment1.png') }} " alt="attachment">
-                                  <h6>File name.jpg</h6>
-                                  <p>1.3 MB</p>
-                                </div>
-                                <div class="single-name-attachment">
-                                  <img src=" {{ asset('assets/frontend/img/attachment2.png') }} " alt="attachment">
-                                  <h6>File name.jpg</h6>
-                                  <p>1.3 MB</p>
-                                </div>
-                              </div>
-                          </div>
-
-                        </div>
-                    </div>
-
-                    </div>
-                    <div class="col-md-4">
-                      <div class="attachment-right-bar d-flex flex-column">
-                        <div class="close-btn d-flex justify-content-end"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                          <div class="attament-fixed">
-                            <h4><span>Fixed:</span>$200.00</h4>
-                          </div>
-
-                            <div class="about-free-all d-flex flex-column">
-                                 <div class="single-all">
-                                    <h5>About the client</h5>
-                                 </div>
-
-                                 <div class="single-all d-flex flex-row align-items-center  justify-content-start">
-                                    <img src="{{ asset('assets/frontend/img/ester.png') }}" alt="">
-                                    <p class="miles-all">Dr Miles Esther</p>
-                                 </div> 
-                              
-                                 <div class="single-all d-flex flex-row ">
-                                        <img src="{{ asset('assets/frontend/img/institution.png') }}" alt="">
-                                        <div class="institution  d-flex flex-column">
-                                          <h6>Institution</h6>
-                                          <p>Sydney Islami business school </p>
-                                      </div>
-                                     
-                                 </div> 
-                             
-                                 <div class="single-all d-flex flex-row">
-                                    <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="">
-                                      <div class="institution d-flex flex-column">
-                                        <h6>Austria</h6>
-                                        <p>Sydney 9:20 pm</p>
-                                      </div>
-                                 </div> 
-                                 
-                                 <div class="single-all d-flex flex-row">
-                                    <img src="{{ asset('assets/frontend/img/bag.png') }}" alt="">
-                                      <div class="institution d-flex flex-column">
-                                        <h6>7 jobs posted</h6>
-                                        <p>100% hire rate, 4 open jobs</p>
-                                      </div>
-                                 </div> 
-
-                                 <div class="chat-with-client">
-                                  <button> <span> <img src=" {{ asset('assets/frontend/img/message-img.png') }} " alt="message"></span> Chat with Client</button>
-                                 </div>
-
-                            </div>
-                      </div>
-                    </div>
-                                    
-                 </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-    <!-- Edit Option Modal End -->
-  </div>
-
 
 
 
