@@ -272,6 +272,7 @@
         </div>
       </div>
     </div>
+
     <!-- Pagination start Here -->
     <div class="row pagination-padding">
       <div class="pagination-area">
@@ -331,7 +332,7 @@
         </div>
       </div>
     </div>
-    <!-- Pagination start Here -->
+    <!-- Pagination end Here -->
   </div>
   <!-- edit draft area end Here -->
   </div>

@@ -237,9 +237,25 @@ class FigmaController extends Controller
         return view('figma-html.clientdashboardpasswordsecurity');
     }
 
+    
+
     public function clientdashboardnotificationsettting()
     {
         return view('figma-html.clientdashboardnotificationsettting');
+    }
+
+// Admin dashboard
+
+
+    public function admindashboardhome()
+    {
+        return view('figma-html.admindashboardhome');
+    }
+
+
+    public function admindashboardclient()
+    {
+        return view('figma-html.admindashboardclient');
     }
 
 

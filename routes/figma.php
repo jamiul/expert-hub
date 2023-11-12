@@ -56,6 +56,9 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/client-dashboardatimesheet', [FigmaController::class, 'clientdashboardatimesheet']);
     Route::get('/client-passwordsecurity', [FigmaController::class, 'clientdashboardpasswordsecurity']);
     Route::get('/client-notificationsettting', [FigmaController::class, 'clientdashboardnotificationsettting']);
+    // Admin dashboard
+    Route::get('/admin-dashboardhome', [FigmaController::class, 'admindashboardhome']);
+    Route::get('/admin-admindashboardclient', [FigmaController::class, 'admindashboardclient']);
 
 
 });
