@@ -1128,13 +1128,64 @@ span.material-symbols-outlined.active {
     letter-spacing: 0em;
     text-align: left;
     color: #191D24;
-    margin-bottom: 0;
+}
+
+.all-project-weekly h2 {
+    font-family: Colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
+.project-time-sheet h2 {
+    font-family: Colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    padding-left: 15px;
+}
+
+.history-report h2 {
+    margin-bottom: 0px;
 }
 
 .post-job .btn-postjob {
     width: auto;
     height: auto;
-    padding: 11px 70px 11px 70px;
+    padding: 11px 15px 11px;
+    border-radius: 4px;
+    gap: 10px;
+    background: #0036E3;
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 152px;
+}
+
+.btn-postjob-dashboard{
+    min-width: 203px;
+}
+.post-job .btn-postjob:active{
+    width: auto;
+    height: auto;
+    padding: 11px 15px 11px;
     border-radius: 4px;
     gap: 10px;
     background: #0036E3;
@@ -1149,23 +1200,10 @@ span.material-symbols-outlined.active {
     align-items: center;
     justify-content: center;
 }
-.post-job .btn-postjob:active{
-    width: auto;
-    height: auto;
-    padding: 11px 70px 11px 70px;
-    border-radius: 4px;
-    gap: 10px;
-    background: #0036E3;
-    font-family: Colfax;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #fff;
+
+.edit-active {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 span.addall {
@@ -1346,6 +1384,32 @@ td.health-budget{
     box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
 }
 
+.report-area-border-summary {
+    padding: 24px;
+    gap: 16px;
+    flex: 1 0 0;
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
+    min-height: 244px;
+}
+
+.report-hour-top{
+    color:#191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.report-currency-top{
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
 .single-hourly-rate  .report-hour{
     color:  #191D24;
     font-family: Colfax;
@@ -1469,8 +1533,29 @@ td.health-budget{
     width: 40%;
 }
 
-.all-job-area{
-    padding: 34px 30px 0px;
+.all-job-area {
+    padding: 34px 30px 24px;
+}
+
+.all-job-area-board {
+    padding: 25px 30px 10px;
+}
+
+.job-area-top {
+    padding: 20px 30px 15px;
+    border: 1px solid #E7E5EF;
+}
+
+.contact-project-area {
+    padding: 20px 30px 0px;
+}
+
+ul.homedropdown{
+    position: absolute !important;
+    left: 0px !important;
+}
+.btn-getstart{
+    min-width: 218px;
 }
 
 /* ============== Draft and edit Modal start here ============ */
@@ -1565,6 +1650,38 @@ line-height: 159.5%;
     font-weight: 500;
 }
 
+.health-tab-edit{
+    gap: 4px;
+}
+
+.health-tab-edit p{
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.health-tab-edit span {
+    display: flex;
+    padding: 2px 12px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: center;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 36px;
+    border: 1px solid  #E7E5EF;
+    background: rgba(48, 55, 68, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .health-tab-area h5{
     color:  #303744;
     font-family: Colfax;
@@ -1586,13 +1703,51 @@ margin: 40px 0px 16px;
 .attachment-name {
     gap: 24px;
 }
-.single-name-attachment h6{
-color:  #303744;
-font-family: Colfax;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
+
+
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  background: #000000;
+  cursor: pointer;
 }
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    display: flex;
+}
+
+.overlay-content a img {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.overlay-edit:hover .overlay{
+
+    opacity: 0.4;
+}
+
+.single-name-attachment h6 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 11px;
+}
+
+
 .single-name-attachment p{
 color: rgba(48, 55, 68, 0.72);
 font-family: Colfax;
@@ -1630,13 +1785,16 @@ font-weight: 500;
     padding: 0px 21px;
 }
 
-.attament-fixed h4{
+
+
+.attament-fixed h4 {
 color: #303744;
 font-family: Colfax;
 font-size: 23px;
 font-style: normal;
 font-weight: 500;
 margin-bottom: 48px;
+align-items: center;
 }
 
 .attament-fixed h4 span{
@@ -1680,6 +1838,187 @@ margin-top: 48px;
 .health-unit-area{
 border-right: 1px solid rgba(14, 0, 98, 0.10);
 }
+
+
+/* *** modal 2 *** */
+.health-text-area-border h4{
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    top: -10px;
+    background-color: #fff;
+}
+
+.health-text-area-border {
+    border-radius: 4px;
+    border: 2px solid  #E7E5EF;
+    padding: 12px 16px;
+}
+
+.skill-all-tag-edit{
+border-radius: 4px;
+border: 2px solid rgba(0, 0, 0, 0.10);
+padding: 15px;
+}
+
+.modal-all-button {
+    gap: 16px;
+
+}
+
+span.currency-edit {
+    display: flex;
+    border-radius: 4px;
+    border: 2px solid  #E7E5EF;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 5px 15px;
+}
+
+.space-rate {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 10px;
+}
+.modal-all-button {
+    gap: 10px;
+    padding: 23px 31px 10px;
+}
+
+.edit-active span{
+    color: #FFF;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 63px;
+    background:  #369450;
+    display: flex;
+    padding: 4px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .justify-content-between {
+    min-width: 590px;
+    align-items: center;
+} */
+
+span.text-count{
+    right: 10px;
+    bottom: 0px;
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.justify-content-between h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    }
+
+ button.btn-cancel{
+    border-radius: 4px;
+    border: 2px solid  #0036E3;
+    display: flex;
+    padding: 11px 40px;
+    justify-content: center;
+    align-items: center;
+    color: #0036E3;
+    background: transparent;
+
+
+}
+
+ button.btn-update{
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 11px 40px;
+    border:none;
+}
+
+.m-border-bottom
+{
+    border-bottom: 1px solid #E7E5EF;;
+}
+
+/* *** single contact hours  start*** */
+
+.single-contact-hours-title{
+    border-top: 1px solid  #E7E5EF;
+    border-bottom: 1px solid #E7E5EF;
+    background: rgba(0, 54, 227, 0.03);
+    display: flex;
+    padding: 19px 8px 17px 8px;
+    align-items: flex-start;
+}
+
+.single-contact-hours{
+    border-bottom: 1px solid  #E7E5EF;
+    background: #F9F9F9;
+    display: flex;
+    padding: 8px 0px 8px 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+h5.single-contact-title{
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.contact-hours-ara{
+    margin-top: 16px;
+}
+
+.contact-area {
+    min-width: 629px;
+}
+
+.contact-hours {
+    min-width: 221px;
+}
+.contact-amount {
+    min-width: 234px;
+}
+
+.contact-payment img{
+    max-width: 22px;
+    max-height: 23px;
+}
+.contact-amount p.mt-0{
+    color:  #369450;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* *** single contact hours end *** */
+
+/* *** modal 2 *** */
+
 /* ============== Draft and edit Modal End Here here ============ */
 /* ============== Draft and edit start here ============ */
 .edit-draft-left {
@@ -1687,6 +2026,31 @@ border-right: 1px solid rgba(14, 0, 98, 0.10);
     flex-direction: column;
     align-items: flex-start;
     /* text-align: left; */
+}
+
+.edit-title {
+    align-items: center;
+    border-radius: 4px;
+    padding: 14px 15px;
+    border-radius: 4px;
+    border: 2px solid  #E7E5EF;
+    min-width: 600px;
+}
+p.suggest-text {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+span.suggest-skill{
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
 }
 .edit-draft-left h6{
     font-family: Colfax;
@@ -1893,8 +2257,20 @@ td.balance-text {
     max-width: 240px;
 }
 
-.balance-table-area{
+.balance-table-area {
     margin-top: 20px;
+    padding: 0px 15px;
+}
+.select-report-budget {
+    padding: 0px 27px;
+}
+span.budget-green{
+color: #369450;
+font-family: Colfax;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+text-transform: capitalize;
 }
 
 /*  =================== Table History end ================== */
@@ -1976,7 +2352,11 @@ li.page-item.active a {
 .all-contact-profile-policy{
     padding: 32px 28px;
     border-bottom: 1px solid #0E00621A
+}
 
+.all-contact-profile-policy-time{
+    padding: 15px 28px;
+    border-bottom: 1px solid #0E00621A
 }
 
 .contact-m-rating {
@@ -1988,8 +2368,46 @@ li.page-item.active a {
     padding: 32px 28px;
 }
 
-.contact-project-area {
-    padding: 32px 28px 0px;
+.all-project-area {
+    padding: 32px 28px;
+}
+
+.all-project-area-budget {
+    padding: 32px 28px;
+}
+
+.all-project-budget h2{
+color:#191D24;
+font-family: Colfax;
+font-size: 23px;
+font-style: normal;
+font-weight: 500;
+}
+
+.balance-area {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    padding-left: 28px;
+}
+
+.balance-area span {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+span.available-currency{
+color:  #0036E3;
+font-family: Colfax;
+font-size: 19px;
+font-style: normal;
+font-weight: 500;
+}
+
+.history-report-area {
+    padding: 20px 28px 10px;
 }
 
 .search-by button.btn-download {
@@ -2005,6 +2423,7 @@ li.page-item.active a {
     font-weight: 500;
     line-height: 24px;
     background: transparent !important;
+    min-height: 47px;
 }
 
 .profile-policy-img img{
@@ -2169,12 +2588,12 @@ span.payment-currency{
     padding: 57px 29px;
 }
 
-button.btn-with-draw{
+button.btn-with-draw {
     background: #0036E3;
-    padding: 8px 34px;
+    padding: 12px 34px;
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 button.btn-with-draw-icon {
@@ -2271,6 +2690,387 @@ color:#191D24;
 }
 
 /* ============== Add Payment End Here ============ */
+/* ============== On off switch css ============ */
+
+  .switch-button {
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #b3b3b3;
+    width: 60px;
+    height: 27px;
+    padding: 4px;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  .switch-button input[type=checkbox] {
+    display: none;
+  }
+  .switch-button label {
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 1px 1px #fff inset;
+    box-shadow: 0 0 1px 1px #FFF inset;
+    background-color: #fff;
+    margin: 0;
+    height: 19px;
+    width: 19px;
+    z-index: 1;
+    display: inline-block;
+    cursor: pointer;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+}
+.switch-button label:before {
+    position: absolute;
+    font-size: 0.8462rem;
+    font-weight: 600;
+    z-index: 0;
+    content: "OFF";
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 27px;
+    top: 0;
+    text-align: right;
+    padding-right: 10px;
+    color: #ffffff;
+    color: #FFF;
+    font-family: Colfax;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+  .switch-button input[type=checkbox]:checked + span {
+    background-color: #369450;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+  }
+  .switch-button input[type=checkbox]:checked + span label {
+    float: right;
+    border-color: #fff;
+    background: #fff;
+}
+
+  .switch-button input[type=checkbox]:checked + span label:before {
+    position: absolute;
+    font-size: 0.8462rem;
+    font-weight: 600;
+    z-index: 0;
+    content: "ON";
+    color: #ffffff;
+    left: 0;
+    text-align: left;
+    padding-left: 10px;
+    border-radius: 25px;
+}
+  .switch-button.switch-button-yesno label:before {
+    content: "NO";
+  }
+  .switch-button.switch-button-yesno input[type=checkbox]:checked + span label:before {
+    content: "YES";
+  }
+  .switch-button.switch-button-xs {
+    height: 20px;
+    width: 53px;
+    line-height: 16px;
+    width: 50px;
+  }
+  .switch-button.switch-button-xs label {
+    height: 12px;
+    width: 12px;
+  }
+  .switch-button.switch-button-xs label:before {
+    line-height: 21px;
+  }
+  .switch-button.switch-button-sm {
+    height: 24px;
+    width: 57px;
+    line-height: 20px;
+  }
+  .switch-button.switch-button-sm label {
+    height: 16px;
+    width: 16px;
+  }
+  .switch-button.switch-button-sm label:before {
+    line-height: 25px;
+  }
+  .switch-button.switch-button-lg {
+    height: 30px;
+    width: 63px;
+    line-height: 26px;
+    width: 65px;
+  }
+  .switch-button.switch-button-lg label {
+    height: 22px;
+    width: 22px;
+  }
+  .switch-button.switch-button-lg label:before {
+    line-height: 31px;
+  }
+  .switch-button.switch-button-success {
+    background-color: #b3b3b3;
+  }
+  .switch-button.switch-button-success label {
+    border-color: #ababab;
+  }
+  .switch-button.switch-button-success input[type=checkbox]:checked + span {
+    background-color: #34a853;
+  }
+  .switch-button.switch-button-success input[type=checkbox]:checked + span label {
+    border-color: #2e9549;
+  }
+  .switch-button.switch-button-warning {
+    background-color: #b3b3b3;
+  }
+  .switch-button.switch-button-warning label {
+    border-color: #ababab;
+  }
+  .switch-button.switch-button-warning input[type=checkbox]:checked + span {
+    background-color: #fbbc05;
+  }
+  .switch-button.switch-button-warning input[type=checkbox]:checked + span label {
+    border-color: #e3aa04;
+  }
+  .switch-button.switch-button-danger {
+    background-color: #b3b3b3;
+  }
+  .switch-button.switch-button-danger label {
+    border-color: #ababab;
+  }
+  .switch-button.switch-button-danger input[type=checkbox]:checked + span {
+    background-color: #ea4335;
+  }
+  .switch-button.switch-button-danger input[type=checkbox]:checked + span label {
+    border-color: #e82e1e;
+  }
+
+
+  /* ********  password ************ */
+
+.password-what h6 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    align-items: center;
+    gap: 6px;
+}
+
+span.what-icon {
+    margin-top: -5px;
+}
+
+  .password-what p{
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .password-area {
+    border-bottom: 1px solid  rgba(14, 0, 98, 0.10);
+    padding: 24px;
+}
+
+.password-area-message {
+    border-bottom: 1px solid  rgba(14, 0, 98, 0.10);
+    padding: 24px;
+    padding-bottom: 0px;
+}
+
+
+.password-padding {
+    padding: 0px 28px 32px;
+}
+
+.total-area-password {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    padding: 0px 24px 24px;
+}
+
+.email-setting-area{
+    padding-top: 24px;
+}
+
+.all-project-area-password {
+    padding: 32px 28px 0px;
+}
+
+.notification-area-password{
+    padding: 32px 28px 30px;
+}
+
+.change-option a{
+    color: #0036E3;
+    text-align: right;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+.password-noborder{
+    border-bottom: none;
+}
+
+.email-update-area h4{
+color: #191D24;
+font-family: Colfax;
+font-size: 19px;
+font-style: normal;
+font-weight: 500;
+
+}
+
+.email-update-area p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 24px;
+    margin-top: 5px;
+}
+
+.email-contact-area h4{
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.contact-checkbox{
+    gap: 12px;
+}
+
+
+.form-check {
+    position: relative;
+  }
+  
+  input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+  }
+  
+  input[type=checkbox]:checked+label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 5px;
+    background-color: #369450;
+    font-family: "Montserrat";
+    border-radius: 2px;
+    border: 1px solid rgb(150 150 150 / 30%);
+    
+  }
+  
+  input[type=checkbox]:checked+label::after {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+  }
+
+  .form-check-input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-check-password {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-password label {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 3px;
+}
+.email-contact-area {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+}
+
+.email-membership-area {
+    padding: 24px 0px;
+    border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.email-communication-area{
+    padding: 24px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+  /* ********  Password ************ */
+
+/* ============== On off switch css ============ */
+/* ============== Form validation ============ */
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    /* height: 13px; */
+}
+/* ============== Form validation ============ */
 
 
 

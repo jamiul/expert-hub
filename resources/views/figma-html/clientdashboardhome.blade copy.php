@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-client-dashboard-layout')
+@extends('frontend.layouts.front-client-dashboard-layoutmain')
 
 @section('content')
 
@@ -6,18 +6,15 @@
 
 <div class="container">
 <div class="row">
-      <div class="job-area-top d-flex justify-content-between">
+      <div class="all-job-area d-flex justify-content-between">
         <div class="all-project">
           <h2>Your workspace</h2>
         </div>
         <div class="post-job">
-          <button class="btn btn-postjob"> <span class="addall"><span class="material-symbols-outlined">add</span></span> Post a Job</button>
+          <button class="btn btn-postjob"> <span class="addall">+</span> Post a Job</button>
         </div>
       </div>
   </div>
-
-
-
 
   <div class="row alljob-short">
     <div class="col">
@@ -32,7 +29,7 @@
     </div>
     <div class="col">
       <div class="shorting-area">
-        <p class="short-title">Short by :</p>
+        <p class="short-title">short by</p>
         <div class="short-option">
           <select class="form-select" aria-label="Default select example">
             <option selected>All</option>
@@ -46,14 +43,15 @@
 
   </div>
 
-  <div class="row owlp-bottom">
+  <div class="row">
 
       <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     
-        <!-- <div class="row"> -->
-        <div class="owl-carousel owl-theme client-home-carousel">
-          <div class="item">
+        <div class="row">
+        <div class="owl-carousel owl-theme">
+
+          <div class="col item">
             <div class="single-card-area">
               <div class="inprogress-area">
                 <button class="btn-inprogress">In Progress</button>
@@ -101,421 +99,7 @@
             </div>
           </div>
 
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <button class="btn-hiring">Hiring</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Review Proposal</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <button class="btn-onhold">On hold</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk3.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Restart Contract</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="single-card-area card-with-gradient">
-              <div class="inprogress-area">
-                <button class="btn-complated">Completed</button>
-                <div class="draft-options">
-                    <div class="dropdown position-relative">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show homedropdown">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk4.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                  <div class="rating-area">
-                        <div class="profile-feedback">
-                        <h6>Feedback given</h6>
-                      </div>
-                      <div class="rating-area">
-                        <ul>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star default-star"></i></a></li>
-                        </ul>
-                      </div>
-                  </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Rehire</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-         
-
-          
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <button class="btn-inprogress">In Progress</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk1.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Fund & activate milestone</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <button class="btn-hiring">Hiring</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Review Proposal</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <button class="btn-onhold">On hold</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk3.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Restart Contract</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="single-card-area card-with-gradient">
-              <div class="inprogress-area">
-                <button class="btn-complated">Completed</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk4.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                  <div class="rating-area">
-                        <div class="profile-feedback">
-                        <h6>Feedback given</h6>
-                      </div>
-                      <div class="rating-area">
-                        <ul>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                          <li><a href="#"><i class="fa-solid fa-star default-star"></i></a></li>
-                        </ul>
-                      </div>
-                  </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Rehire</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- </div> -->
-        </div>
-
-      </div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <div class="owl-carousel owl-theme client-home-carousel">
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <button class="btn-inprogress">In Progress</button>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person"> 
-                    <img src="{{ asset('assets/frontend/img/kk1.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-                  
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Fund & activate milestone</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area">
               <div class="inprogress-area">
                 <button class="btn-hiring">Hiring</button>
@@ -563,7 +147,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area">
               <div class="inprogress-area">
                 <button class="btn-onhold">On hold</button>
@@ -611,7 +195,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area card-with-gradient">
               <div class="inprogress-area">
                 <button class="btn-complated">Completed</button>
@@ -667,7 +251,9 @@
               </div>
             </div>
           </div>
-          <div class="item">
+
+          
+          <div class="col item">
             <div class="single-card-area">
               <div class="inprogress-area">
                 <button class="btn-inprogress">In Progress</button>
@@ -715,7 +301,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area">
               <div class="inprogress-area">
                 <button class="btn-hiring">Hiring</button>
@@ -763,7 +349,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area">
               <div class="inprogress-area">
                 <button class="btn-onhold">On hold</button>
@@ -811,7 +397,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area card-with-gradient">
               <div class="inprogress-area">
                 <button class="btn-complated">Completed</button>
@@ -858,10 +444,24 @@
               </div>
             </div>
           </div>
+          
         </div>
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="row">
+              <div class="col">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div>
+              <div class="col">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div>
+              <div class="col">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div>
+              <div class="col">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div>
+            </div>
       </div>
     </div>
   </div>
+
+
+
   <div class="row">
       <div class="all-job-area d-flex justify-content-between">
         <div class="all-project">
@@ -872,10 +472,12 @@
         </div>
       </div>
   </div>
+
   <!-- owl carousel 2  Start Here -->
-  <div class="row owlp-bottom">
-        <div class="owl-carousel owl-theme rate-caurasel discover-carousel">
-          <div class="item">
+
+  <div class="row">
+        <div class="owl-carousel owl-theme rate-caurasel">
+          <div class="col item">
             <div class="single-card-area discover-gradient">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -903,7 +505,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -931,7 +533,7 @@
             </div>
           </div>
 
-          <div class="item">
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -958,7 +560,8 @@
               </div>
             </div>
           </div>
-          <div class="item">
+
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -985,7 +588,9 @@
               </div>
             </div>
           </div>
-          <div class="item">
+
+          
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -1012,7 +617,8 @@
               </div>
             </div>
           </div>
-          <div class="item">
+
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -1039,7 +645,8 @@
               </div>
             </div>
           </div>
-          <div class="item">
+
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -1066,7 +673,8 @@
               </div>
             </div>
           </div>
-          <div class="item">
+
+          <div class="col item">
             <div class="single-card-area">
               <div class="developing-area">
                 <div class="discover-single-area">
@@ -1093,10 +701,13 @@
               </div>
             </div>
           </div>
+          
         </div>
         </div>
+
   </div>
   <!-- owl carousel 2  Edn Here -->
+
 </div>
 
 </section>
@@ -1110,7 +721,7 @@
           <h3>Build on Demand Teams for your Education Institution</h3>
           <p class="hire-details">Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time. Hire in unde</p>
           <div class="post-job">
-            <button class="btn btn-postjob  btn-getstart">Get Started</button>
+            <button class="btn btn-postjob">Get Started</button>
         </div>
         </div>
       </div>
@@ -1129,7 +740,7 @@
           </div>
           <div class="single-team-member">
             <div class="single-person-deniyel">
-              <img src="{{ asset('assets/frontend/img/img4.png') }}" alt="person">
+              <img src="{{ asset('assets/frontend/img/img6.png') }}" alt="person">
             </div>
             <div class="person-details">
               <h3>Darrell Steward</h3>
@@ -1138,7 +749,7 @@
           </div>
           <div class="single-team-member">
             <div class="single-person-deniyel">
-              <img src="{{ asset('assets/frontend/img/img5.png') }}" alt="person">
+              <img src="{{ asset('assets/frontend/img/img6.png') }}" alt="person">
             </div>
             <div class="person-details">
               <h3>Darrell Steward</h3>
@@ -1150,7 +761,7 @@
 
         <div class="single-team-member">
             <div class="single-person-deniyel">
-              <img src="{{ asset('assets/frontend/img/img7.png') }}" alt="person">
+              <img src="{{ asset('assets/frontend/img/img6.png') }}" alt="person">
             </div>
             <div class="person-details">
               <h3>Darrell Steward</h3>
@@ -1159,7 +770,7 @@
           </div>
           <div class="single-team-member">
             <div class="single-person-deniyel">
-              <img src="{{ asset('assets/frontend/img/img5.png') }}" alt="person">
+              <img src="{{ asset('assets/frontend/img/img6.png') }}" alt="person">
             </div>
             <div class="person-details">
               <h3>Darrell Steward</h3>
@@ -1168,13 +779,14 @@
           </div>
           <div class="single-team-member">
             <div class="single-person-deniyel">
-              <img src="{{ asset('assets/frontend/img/img8.png') }}" alt="person">
+              <img src="{{ asset('assets/frontend/img/img6.png') }}" alt="person">
             </div>
             <div class="person-details">
               <h3>Darrell Steward</h3>
               <p>Accreditation Specialist</p>
             </div>
           </div>
+
         </div>
       </div>
       </div>

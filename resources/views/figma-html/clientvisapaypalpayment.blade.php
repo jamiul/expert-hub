@@ -13,7 +13,6 @@
                     </div>
               </div>
           </div>
-
         <div class="border-full">
           <div class="col-md-12">
             <div class="d-flex justify-content-between justify-content-center visa-credit">
@@ -35,17 +34,17 @@
                 </div>
             </div>
           </div>
-
-
-
           <div class="col-md-12">
             <div class="payment-form-area">
-                <form class="">
+            <div class="container">
+                <form id="form" action="/">
+
                     <div class="row g-3  m-top">
-                          <div class="col  my-0">
-                            <input type="text" class="form-control p-input" placeholder="First name" aria-label="First name">
+                          <div class="col  my-0 input-control">
+                            <input   type="text" class="form-control p-input" placeholder="First name" aria-label="First name">
+                            <div class="error"></div>
                           </div>
-                          <div class="col my-0">
+                          <div class="col my-0 input-control">
                             <input type="text" class="form-control p-input" placeholder="Last name" aria-label="Last name">
                           </div>
                     </div>
@@ -71,9 +70,10 @@
                     </div>
 
                     <div class="without-draw-button">
-                        <button class="btn-with-draw-paypal d-flex justify-content-center align-items-center  gap-2" ><span></span> Add My  Card</button>
+                        <button type="submit" class="btn-with-draw-paypal d-flex justify-content-center align-items-center  gap-2" > Add My  Card</button>
                       </div>
                 </form>
+            </div>
           </div>
           </div>
 
@@ -106,4 +106,9 @@
       </div>
 </div>
 
+
+
+
+
 @endsection
+

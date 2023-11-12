@@ -44,7 +44,8 @@
         <meta property="og:url" content="{{ env('APP_URL') }}"/>
         <meta property="og:image" content="{{ customAsset(getSetting('meta_image')) }}"/>
         <meta property="og:description" content="{{ getSetting('meta_description') }}"/>
-        <meta property="og:site_name" content="{{ getSetting('website_name') }}"/> @endif
+        <meta property="og:site_name" content="{{ getSetting('website_name') }}"/>
+         @endif
 
     <!-- Favicon -->
     <link rel="icon"

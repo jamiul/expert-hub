@@ -420,12 +420,33 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
     cursor: pointer;
     height: 40px;
     color: #303744B2;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     appearance: none;
     background: url(../images/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     min-width: 252px;
+    min-height: 46px;
+    margin-top:0px;
+}
+
+
+
+#dateInputsheet {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #0000001A;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    height: 40px;
+    color: #303744B2;
+    font-size: 16px;
+    font-weight: 400;
+    appearance: none;
+    background: url(../images/arrow-icon.png) no-repeat;
+    background-position: right 20px center;
+    min-width: 310px;
     min-height: 46px;
     margin-top:0px;
 }

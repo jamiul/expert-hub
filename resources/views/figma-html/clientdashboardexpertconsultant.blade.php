@@ -1088,7 +1088,7 @@
           <h3>Build on Demand Teams for your Education Institution</h3>
           <p class="hire-details">Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time. Hire in unde</p>
           <div class="post-job">
-            <button class="btn btn-postjob">Get Started</button>
+            <button class="btn btn-postjob btn-getstart">Get Started</button>
         </div>
         </div>
       </div>

@@ -186,10 +186,21 @@ class FigmaController extends Controller
         return view('figma-html.clientaddpaymentdouable');
     }
 
-    public function clientweeklyreport()
+
+
+    public function clientweeklyreportsummary()
     {
-        return view('figma-html.clientweeklyreport');
+        return view('figma-html.clientweeklyreportsummary');
     }
+
+
+    public function clientweeklyreportsummarydate()
+    {
+        return view('figma-html.clientweeklyreportsummarydate');
+    }
+
+
+
 
     public function clientweeklytotalreport()
     {
@@ -201,15 +212,38 @@ class FigmaController extends Controller
         return view('figma-html.clientdashboardallport');
     }
 
-    public function clientweeklyreporttwo()
+    public function clientweeklyreporttransaction()
     {
-        return view('figma-html.clientweeklyreporttwo');
+        return view('figma-html.clientweeklyreporttransaction');
     }
 
-    public function clientweeklyreporttwobud()
+    
+
+    public function clientweeklyreporttwobudget()
     {
-        return view('figma-html.clientweeklyreporttwobud');
+        return view('figma-html.clientweeklyreporttwobudget');
     }
+
+
+
+    public function clientdashboardatimesheet()
+    {
+        return view('figma-html.clientdashboardatimesheet');
+    }
+
+
+    public function clientdashboardpasswordsecurity()
+    {
+        return view('figma-html.clientdashboardpasswordsecurity');
+    }
+
+    public function clientdashboardnotificationsettting()
+    {
+        return view('figma-html.clientdashboardnotificationsettting');
+    }
+
+
+
     //End Client Dashboard
 
 

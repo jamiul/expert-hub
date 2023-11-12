@@ -10,8 +10,8 @@
         @include('frontend.layouts.front-footer')
 
         @yield('modal')
-
-        @include('frontend.layouts.front-js')
         @include('frontend.layouts.clientdashboard-front-js')
+        @include('frontend.layouts.front-js')
+
     </body>
 </html>
