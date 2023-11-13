@@ -297,6 +297,10 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-get-paid');
     }
+    public function expertpasswordsecurity()
+    {
+        return view('figma-html.expert-password-security');
+    }
     public function expertidverify()
     {
         return view('figma-html.expert-id-verify');
@@ -304,6 +308,10 @@ class FigmaController extends Controller
     public function expertnotificationsettings()
     {
         return view('figma-html.expert-notification-settings');
+    }
+    public function expertsavedjobs()
+    {
+        return view('figma-html.expert-saved-jobs');
     }
     // -------- Expert Dashboard pages------------
 }

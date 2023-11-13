@@ -81,7 +81,7 @@
                             <span class="small text-black">5:30 AM - 6:00 AM (0:10 hrs)</span>
                         </div>
                     </div>
-                    <p class="small text-black mt-2">Memo missing. Add it to get payment protection and let client know what you worked on. <a href="#" class="link fw-medium">Learn more</a> </p>
+                    <p class="small text-black mt-2 mb-3">Memo missing. Add it to get payment protection and let client know what you worked on. <a href="#" class="link fw-medium">Learn more</a> </p>
 
                     <div class="diaryCarousel owl-carousel">
                         <div class="diary__item">
@@ -343,7 +343,7 @@
                         </div>
                          
                     </div>
-                    <p class="small text-black mt-2">Memo missing. Add it to get payment protection and let client know what you worked on. <a href="#" class="link fw-medium">Learn more</a> </p>
+                    <p class="small text-black mt-2 mb-3">Memo missing. Add it to get payment protection and let client know what you worked on. <a href="#" class="link fw-medium">Learn more</a> </p>
 
                     <div class="diaryCarousel owl-carousel">
                         <div class="diary__item">
@@ -748,7 +748,7 @@
                         </table>
                          
                         <div class="border-top pt-4 text-end">
-                            <button type="button" class="btn btn-primary fw-medium px-4" data-bs-dismiss="modal">Cancel</button> 
+                            <button type="button" class="btn btn-primary fw-medium px-4" data-bs-dismiss="modal">Close</button> 
                         </div>
                         
                     </div>

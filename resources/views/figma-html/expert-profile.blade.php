@@ -29,7 +29,7 @@
                   </button>
                 </div> 
               </div>
-              <div class="consultant-left-sydney pb-3 mb-4" style="border-bottom: 1px solid rgba(14, 0, 98, 0.10);">
+              <div class="consultant-left-sydney pb-3 mb-4 border-bottom-line position-relative">
                 <ul>
                   <li>
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@
               </div>
                
               <div class="consultant-l languages">
-                <h3 class="d-flex align-items-center">
+                <h3 class="d-flex align-items-center mb-2">
                   Languages 
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@
                 <p><img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/language.svg') }}"></img>Proficient in English</p>
               </div>
               <div class="consultant-l expertise">
-                <h3 class="d-flex align-items-center">
+                <h3 class="d-flex align-items-center mb-2">
                   <span>Expertise</span> 
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@
                 </ul>
               </div>
               <div class="consultant-l education">
-                <h3 class="d-flex align-items-center">
+                <h3 class="d-flex align-items-center mb-2">
                   <span>Education</span>
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@
                 <p>Bachelor in Public Health <span>EduExHub University</span> 1989 - 1993</p>
               </div>
               <div class="consultant-l profile">
-                <h3 class="d-flex align-items-center">
+                <h3 class="d-flex align-items-center mb-2">
                   <span>University Profile</span>
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
                 <p><a href="#">http://consultantedu.com/freelancer/mr-consultant20230405-091010</a></p>
               </div>
               <div class="consultant-l profile">
-                <h3 class="d-flex align-items-center">
+                <h3 class="d-flex align-items-center mb-2">
                   <span>Research Profile</span>
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">

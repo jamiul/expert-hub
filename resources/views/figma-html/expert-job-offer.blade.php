@@ -30,7 +30,7 @@
                         <ul class="feed__list">
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-10 col-lg-11"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -40,7 +40,7 @@
                                             12 hours ago
                                         </p> 
                                     </div>
-                                    <div class="col-md-3 col-lg-2">
+                                    <div class="col-md-2 col-lg-1 text-start">
                                         <p class="fw-medium small text-black mb-0">
                                             Hourly
                                         </p>
@@ -50,7 +50,7 @@
                             </li> 
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-10 col-lg-11"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -60,7 +60,7 @@
                                             12 hours ago
                                         </p> 
                                     </div>
-                                    <div class="col-md-3 col-lg-2">
+                                    <div class="col-md-2 col-lg-1 text-start">
                                         <p class="fw-medium small text-black mb-0">
                                             Hourly
                                         </p>
@@ -70,7 +70,7 @@
                             </li> 
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-10 col-lg-11"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -80,7 +80,7 @@
                                             12 hours ago
                                         </p> 
                                     </div>
-                                    <div class="col-md-3 col-lg-2">
+                                    <div class="col-md-2 col-lg-1 text-start">
                                         <p class="fw-medium small text-black mb-0">
                                             Hourly
                                         </p>
@@ -91,6 +91,36 @@
                            
                         </ul><!--./ul-->
  
+                        <!--.pagination-->
+                        <div class="pagination">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="pagination-left"> Showing 1 to 8 of 100 entries </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="pagination-right">
+                                        <div class="results">
+                                            <p>Results per page</p> <select class="form-select" aria-label="Default select example">
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                        <ul>
+                                            <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left-hover.png') }}"> </a> </li>
+                                            <li> <a href="#"> <i class="fa fa-caret-left"></i> </a> </li>
+                                            <li> <a href="#" class="active">1</a> </li>
+                                            <li> <a href="#">2</a> </li>
+                                            <li> <a href="#">3</a> </li>
+                                            <li> <a href="#"> <i class="fa fa-caret-right"></i> </a> </li>
+                                            <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-right.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-right-hover.png') }}"> </a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--.//pagination-->
                     </div><!--.//activeTab-->
 
 
@@ -98,7 +128,7 @@
                         <ul class="feed__list">
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-8 col-lg-10"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -121,7 +151,7 @@
                             </li> 
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-8 col-lg-10"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -144,7 +174,7 @@
                             </li> 
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-8 col-lg-10"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -167,7 +197,7 @@
                             </li> 
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
-                                    <div class="col-md-9 col-lg-10"> 
+                                    <div class="col-md-8 col-lg-10"> 
                                         <h2 class="title fs-6 fw-medium"> 
                                             <a href="#">
                                                 LMS Expert required for Business Administration
@@ -191,6 +221,36 @@
                            
                         </ul><!--./ul-->
  
+                       <!--.pagination-->
+                       <div class="pagination">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="pagination-left"> Showing 1 to 8 of 100 entries </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="pagination-right">
+                                        <div class="results">
+                                            <p>Results per page</p> <select class="form-select" aria-label="Default select example">
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                        <ul>
+                                            <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left-hover.png') }}"> </a> </li>
+                                            <li> <a href="#"> <i class="fa fa-caret-left"></i> </a> </li>
+                                            <li> <a href="#" class="active">1</a> </li>
+                                            <li> <a href="#">2</a> </li>
+                                            <li> <a href="#">3</a> </li>
+                                            <li> <a href="#"> <i class="fa fa-caret-right"></i> </a> </li>
+                                            <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-right.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-right-hover.png') }}"> </a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--.//pagination-->
                     </div><!--.//Hourly-->
 
 
@@ -259,7 +319,36 @@
                            
                         </ul><!--./ul-->
 
-                         
+                        <!--.pagination-->
+                        <div class="pagination">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="pagination-left"> Showing 1 to 8 of 100 entries </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="pagination-right">
+                                        <div class="results">
+                                            <p>Results per page</p> <select class="form-select" aria-label="Default select example">
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                        <ul>
+                                            <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left-hover.png') }}"> </a> </li>
+                                            <li> <a href="#"> <i class="fa fa-caret-left"></i> </a> </li>
+                                            <li> <a href="#" class="active">1</a> </li>
+                                            <li> <a href="#">2</a> </li>
+                                            <li> <a href="#">3</a> </li>
+                                            <li> <a href="#"> <i class="fa fa-caret-right"></i> </a> </li>
+                                            <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-right.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-right-hover.png') }}"> </a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--.//pagination-->
                     </div><!--.//Invitation for meet-->
 
                     

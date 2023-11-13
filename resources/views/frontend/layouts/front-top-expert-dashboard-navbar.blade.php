@@ -54,6 +54,9 @@
                   <li> 
                      <a class="dropdown-item" href="/figma/expert-job-offer">Job Offers</a>
                   </li> 
+                  <li> 
+                     <a class="dropdown-item" href="/figma/expert-saved-jobs">Saved Jobs</a>
+                  </li> 
                </ul>
             </li>
             <li class="nav-item dropdown">
@@ -86,6 +89,9 @@
                   Settings
                </a>
                <ul class="dropdown-menu" aria-labelledby="serviceDrop">
+                  <li>
+                     <a class="dropdown-item" href="/figma/expert-password-security">Password Security</a>
+                  </li>
                   <li>
                      <a class="dropdown-item" href="/figma/expert-id-verify">Id Verification</a>
                   </li>

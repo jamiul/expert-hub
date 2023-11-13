@@ -23,7 +23,7 @@
                                 <p class="mb-0 title text-primary fw-medium">$2000</p>
                             </div>
                             <div class="col-4 text-end">
-                                <button class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#modalGetPaid">Get Paid Now</button>
+                                <button class="btn btn-primary fs-15 fw-medium large__btn" data-bs-toggle="modal" data-bs-target="#modalGetPaid">Get Paid Now</button>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <form action="#" name="withdrawalForm" class="mt-4">
                                 <div class="mb-4"> 
                                     <label for="withdrawal__method" class="text-black small fw-medium">Withdrawal Method</label> 
-                                    <div class="custom-select">
+                                    <div class="custom-selec">
                                         <select name="withdrawal__method" id="withdrawal__method" class="form-select">
                                             <option value="Select withdrawal method" selected disabled>Select withdrawal method</option>
                                             <option value="PayPal">PayPal</option>
@@ -130,8 +130,8 @@
                             </form>
                             
                             <div class="mt-4 pt-3 border-top text-end">
-                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-primary px-4 me-2">Cancel</button>
-                                <button class="btn btn-primary px-4">Get Paid</button>
+                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-primary fw-medium px-4 me-2">Cancel</button>
+                                <button class="btn btn-primary fw-medium px-4">Get Paid</button>
                             </div>
                         </div><!--.//modal-body-->
                     </div>

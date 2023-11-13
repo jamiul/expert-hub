@@ -70,6 +70,8 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/expert-proposal', [FigmaController::class, 'expertproposal']);
     Route::get('/expert-job-offer', [FigmaController::class, 'expertjoboffer']);
     Route::get('/expert-get-paid', [FigmaController::class, 'expertgetpaid']);
+    Route::get('/expert-password-security', [FigmaController::class, 'expertpasswordsecurity']);
     Route::get('/expert-id-verify', [FigmaController::class, 'expertidverify']);
     Route::get('/expert-notification-settings', [FigmaController::class, 'expertnotificationsettings']);
+    Route::get('/expert-saved-jobs', [FigmaController::class, 'expertsavedjobs']);
 });
