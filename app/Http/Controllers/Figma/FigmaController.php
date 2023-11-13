@@ -108,7 +108,7 @@ class FigmaController extends Controller
     {
         return view('figma-html.clientverifyyouremail');
     }
-
+// -------- Expert Dashboard pages------------
     public function expertdashboard()
     {
         return view('figma-html.expert-dashboard');
@@ -131,4 +131,17 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-status-analytics');
     }
+    public function expertactivecontract()
+    {
+        return view('figma-html.expert-active-contract');
+    }
+    public function expertallcontract()
+    {
+        return view('figma-html.expert-all-contract');
+    }
+    public function expertservices()
+    {
+        return view('figma-html.expert-services');
+    }
+    // -------- Expert Dashboard pages------------
 }

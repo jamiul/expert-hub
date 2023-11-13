@@ -11,7 +11,7 @@
   
 .lead { font-size: 19px !important; }
 .lead-lg {
-  font-size: 1.375rem;
+  font-size: 1.438rem;
 }
 
 .lead-sm {
@@ -154,8 +154,6 @@ ul li {
   border-color: var(--white);
   color: var(--primary) !important;
 }
-
-  
 
 .btn-white {
   background-color: #fff;
@@ -566,3 +564,139 @@ font-weight: 400;
 line-height: 19px;
 }
 /*---- Expert STatus page styling --*/ 
+
+/*--------------------- Contract page styling -------------------------*/
+.expert__dashboad.contract__page .main__content__wrapp {
+  position: relative;
+}
+.expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link {
+  border-radius: 4px; border: 2px solid rgba(14, 0, 98, 0.10); margin-right: 4px;
+  font-size: 0.875rem;
+}
+.expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link.active::after {
+  content: none;
+}
+.expert__dashboad.contract__page .main__content__wrapp .tab-content {
+  border-top: 1px solid var(--border-color);
+}
+.expert__dashboad.contract__page .main__content__wrapp .btn-outline-primary {
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 0.938rem;
+  padding:0;
+  width: 138px;
+  height: 32px;
+  line-height: 30px;
+}
+.expert__dashboad.contract__page .main__content__wrapp .drop__btn {
+  width: 2rem;
+  height: 2rem;
+  color: var(--heading-color);
+  border: 1px solid rgba(14, 0, 98, 0.1);
+}
+.expert__dashboad.contract__page .main__content__wrapp .drop__btn.show {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.expert__dashboad.contract__page .main__content__wrapp .drop__btn.show svg path {
+  fill: var(--white);
+}
+.expert__dashboad.contract__page .main__content__wrapp .contract__drop__menu {
+  border-radius: 4px;
+  background: #FFF;
+  width: 12rem;
+  box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.1);
+  left: -10rem !important;
+}
+.expert__dashboad.contract__page .main__content__wrapp .contract__drop__menu .dropdown-item {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.expert__dashboad.contract__page .main__content__wrapp .contract__drop__menu .dropdown-item:hover {
+  background: rgba(0, 54, 227, 0.05);
+  color: var(--primary);
+  font-weight: 500;
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .sort__wrapp .label {
+  width: 5rem;
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .sort__wrapp .select__wrapp {
+  width: calc(100% - 5rem);
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .form-select {
+  border-radius: 4px;
+  height: 3rem;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .form-control {
+  border-radius: 4px 0 0 4px;
+  height: 3rem;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+  font-size: 0.937rem;
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .form-control::-moz-placeholder {
+  color: rgba(48, 55, 68, 0.7);
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .form-control::placeholder {
+  color: rgba(48, 55, 68, 0.7);
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .btn-primary {
+  width: 3rem;
+  border-radius: 0 4px 4px 0;
+}
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .btn-primary:hover, .expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .btn-primary:focus, .expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .btn-primary:active {
+  background-color: var(--heading-color);
+  border-color: var(--heading-color);
+}
+.expert__dashboad.contract__page .main__content__wrapp .ratings {
+  padding-left: 1rem;
+}
+.expert__dashboad.contract__page .main__content__wrapp .ratings i {
+  font-size: 0.937rem;
+  color: #E9B911;
+}
+.expert__dashboad.contract__page .main__content__wrapp button.contract-btn {
+  width: 265px;
+  height: 46px;
+  color: #fff;
+}
+.expert__dashboad.contract__page .main__content__wrapp button.contract-btn:hover{
+  color: var(--primary)
+}
+
+.expert__dashboad.contract__page .main__content__wrapp button.prop-btn {
+  width: 186px;
+  height: 32px;
+  /* color: #fff; */
+}
+.expert__dashboad.contract__page .main__content__wrapp button.prop-btn:hover{
+  /* color: var(--primary) */
+}
+/*--------------------- Contract page styling -------------------------*/
+
+/*--------------------- Services page styling -------------------------*/
+.my-services h3 {font-size: 19px;font-weight: 500;color: #303744;margin-bottom: 15px;}
+.my-services .prof-img {text-align: center;}
+.my-services .prof-img img {width: 100%;}
+.my-services .prof-img h4 {font-family: 'Public Sans', sans-serif;margin: 12px 0 0;font-size: 16px;font-weight: 600;color: #000000;}
+.my-services .prof-text .prof-expart {display: flex;}
+.my-services .prof-text .prof-expart ul {flex-grow: 1;padding: 0;margin: 0;}
+.my-services .prof-text .prof-expart ul li {display: inline-block;color: #303744;font-family: 'Public Sans', sans-serif;font-size: 16px;font-weight: 700;}
+.my-services .prof-text .prof-expart ul li a {font-family: 'Public Sans', sans-serif; font-size: 14px;font-weight: 600;color: #0036E3;text-decoration: none;border: solid 1px #0036E3;border-radius: 50px;padding: 0 12px;display: inline-block;margin: 0 0 0 2px;transition: all 500ms;height: 26px;line-height: 26px;}
+.my-services .prof-text .prof-expart ul li a:hover {background:#0036E3;color: #fff;}
+.my-services .prof-text .prof-expart p {font-family: 'Public Sans', sans-serif; margin: 0;color: #303744;font-size: 14px;font-weight: 700;}
+.my-services .prof-text .profp1 {color: rgba(48, 55, 68, 0.70);font-size: 16px;line-height: 25px;margin: 15px 0;}
+.my-services .prof-text .profp1 span {color: #000000;}
+.my-services .prof-text .profip2 {font-family: 'Public Sans', sans-serif;font-size: 14px;color: #303744;}
+.my-services .prof-text .profip2 a {color: #0036E3;font-weight: 500;}
+.my-services .prof-text .profip2 a:hover {color: #303744;}
+.my-services .my-services-list {border: solid 1px #0000001A;border-radius: 8px;padding: 22px;margin-bottom: 25px;}
+.my-services .my-services-list:last-child {margin-bottom: 0;}
+.my-services {margin: 40px 0;}
+.my-services .edit__fab__btn { width: 2rem;height: 2rem;border: 2px solid #0E00621A;background-color: #fff; }
+.my-services .edit__fab__btn:hover, .edit__fab__btn:focus, .edit__fab__btn:active { border-color: 2px solid #0E00621A;background-color: #0E00621A; }
+/*--------------------- Services page styling -------------------------*/
