@@ -836,7 +836,7 @@
                     <input type="text" placeholder="Search Country" id="locationInput" class="form-control locationInput" required>
 
                   </div>
-                  
+
                   <div class="tags pt-3 pb-1">
                     <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">
                       <span>Bangladesh</span>
@@ -860,7 +860,7 @@
                                     <img src="{{ asset('assets/frontend/img/consultant1.png') }}">
                                 </div>
                                 <div class="database-text">
-                                    <h4><a href="{{ route('expert-database.details') }}">Professor Michael Kassiou</a>
+                                    <h4><a href="{{ route('find-experts.details') }}">Professor Michael Kassiou</a>
                                     </h4>
                                     <span>Agricultural Engineering Expert</span>
                                     <span>University of Sydney</span>
