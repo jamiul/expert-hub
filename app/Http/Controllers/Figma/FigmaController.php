@@ -259,6 +259,12 @@ class FigmaController extends Controller
     }
 
 
+    public function admindashboardexpert()
+    {
+        return view('figma-html.admindashboardexpert');
+    }
+
+
 
     //End Client Dashboard
 

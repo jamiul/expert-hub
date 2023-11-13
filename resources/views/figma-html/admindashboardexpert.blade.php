@@ -12,7 +12,7 @@
                   <div class="admin-tab-nav-area-admin d-flex flex-row justify-content-between">
 
                   <div class="admin-client-title">
-                    <h4>Clients</h4>
+                    <h4>Experts</h4>
                   </div>
                        
                           <div class="short-by-area all-padding-admin">
@@ -65,7 +65,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Date</th>
                     <th scope="col">Project Status</th>
-                    <th scope="col">Total Spent</th>
+                    <th scope="col">Total Earned</th>
                     <th scope="col">Balance</th>
                     <th scope="col"></th>
                   </tr>

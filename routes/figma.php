@@ -59,6 +59,7 @@ Route::group(['prefix' => 'figma'], function () {
     // Admin dashboard
     Route::get('/admin-dashboardhome', [FigmaController::class, 'admindashboardhome']);
     Route::get('/admin-admindashboardclient', [FigmaController::class, 'admindashboardclient']);
+    Route::get('/admin-admindashboardexpert', [FigmaController::class, 'admindashboardexpert']);
 
 
 });

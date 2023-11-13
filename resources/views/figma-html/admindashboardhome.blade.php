@@ -1,10 +1,6 @@
-@extends('frontend.layouts.front-client-dashboard-layoutmain')
+@extends('frontend.layouts.front-admin-dashboard-layout')
 
 @section('content')
-
-
-
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2"></div>

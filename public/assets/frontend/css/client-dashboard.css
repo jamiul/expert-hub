@@ -3406,6 +3406,48 @@ input.admin-all-checkbox {
     /* border: 1px solid #E7E5EF; */
     margin: 24px 0px;
 }
+
+.admin-user-title h5{
+    color:#191D24;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+.admin-user-title h6{
+    color: #A2A3B7;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.admin-avatar-area {
+    gap: 7px;
+}
+
+.top-nav-area-admin{
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    gap: 63px;
+}
+
+header.admin-header {
+    margin-top: 0px;
+    display: flex;
+    width: 100%;
+    min-width: 1920px;
+    justify-content: space-between;
+    padding: 26px 50px 26px 0px;
+}
+
+.logo-area-admin .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
 /*  ========================= Admin dashboard  start here ================================================ */
 
 
