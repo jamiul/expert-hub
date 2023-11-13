@@ -66,4 +66,10 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/expert-active-contract', [FigmaController::class, 'expertactivecontract']);
     Route::get('/expert-all-contract', [FigmaController::class, 'expertallcontract']);
     Route::get('/expert-services', [FigmaController::class, 'expertservices']);
+    Route::get('/expert-work-diray', [FigmaController::class, 'expertworkdiry']);
+    Route::get('/expert-proposal', [FigmaController::class, 'expertproposal']);
+    Route::get('/expert-job-offer', [FigmaController::class, 'expertjoboffer']);
+    Route::get('/expert-get-paid', [FigmaController::class, 'expertgetpaid']);
+    Route::get('/expert-id-verify', [FigmaController::class, 'expertidverify']);
+    Route::get('/expert-notification-settings', [FigmaController::class, 'expertnotificationsettings']);
 });

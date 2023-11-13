@@ -1,7 +1,7 @@
 /*---- Global styling --*/
 :root {
   --primary: #0036E3;
-  --success: #5ABC76;
+  --success: #369450;
   --white: #ffffff;
   --heading-color: #303744;
   --dark: #191D24;
@@ -123,10 +123,11 @@ ul li {
 .btn:focus, .form-control:focus, .form-select:focus, .form-check-input:focus {
   box-shadow: none;
 }
+.mb-12 { margin-bottom: 12px !important; }
 
 .btn-primary {
   background-color: var(--primary);
-  color: var(--primary);
+  color: var(--white);
   border: 2px solid var(--primary);
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
@@ -700,3 +701,526 @@ line-height: 19px;
 .my-services .edit__fab__btn { width: 2rem;height: 2rem;border: 2px solid #0E00621A;background-color: #fff; }
 .my-services .edit__fab__btn:hover, .edit__fab__btn:focus, .edit__fab__btn:active { border-color: 2px solid #0E00621A;background-color: #0E00621A; }
 /*--------------------- Services page styling -------------------------*/
+
+
+
+
+
+/* --------------- Get Paid Pages CSS --------------------------------- */
+.setting__modal .modal-body {
+  padding: 3rem 2.5rem 1.5rem 2.5rem;
+}
+.setting__modal .modal-body .btn-close {
+  top: 0.875rem;
+  right: 0.75rem;
+}
+.setting__modal .modal-body .form-control {
+  border-radius: 4px;
+  border: 2px solid #E7E5EF;
+  color: var(--dark);
+}
+.setting__modal .modal-body .form-control.title__box {
+  height: 57px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.setting__modal .modal-body .form-control.search {
+  font-size: 0.937rem;
+  height: 40px;
+}
+.setting__modal .modal-body .form-control.search::-moz-placeholder {
+  color: rgba(48, 55, 68, 0.7);
+  font-weight: 400;
+}
+.setting__modal .modal-body .form-control.search::placeholder {
+  color: rgba(48, 55, 68, 0.7);
+  font-weight: 400;
+}
+.setting__modal .modal-body .skill__box .skill__list .item {
+  background-color: #EBEFF7;
+  padding: 0.5rem;
+  color: #303744;
+  cursor: pointer;
+}
+.setting__modal .modal-body .skill__box .skill__list .item .btn {
+  opacity: 0.49;
+  transition: all 0.3s ease-in-out;
+}
+.setting__modal .modal-body .skill__box .skill__list .item:hover .btn {
+  opacity: 1;
+}
+.setting__modal .modal-body .floating__box {
+  border-radius: 4px;
+  border: 2px solid #E7E5EF;
+}
+.setting__modal .modal-body .floating__box .label {
+  top: -0.75rem;
+  left: 1rem;
+}
+.setting__modal .modal-body .attachment__item label {
+  background: rgba(48, 55, 68, 0.9);
+  color: var(--white);
+  cursor: pointer;
+}
+.setting__modal .modal-body .attachment__item label:hover {
+  background: rgba(48, 55, 68, 0.98);
+}
+.setting__modal .modal-body .attachment__item img {
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  border-radius: 4px;
+}
+.expert__dashboad.get__paid .form-select, .expert__dashboad.get__paid .form-control { 
+  border-color: #E7E5EF !important;
+}
+.get__paid .btn__fab {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: #FFF;
+  border: 2px solid rgba(14, 0, 98, 0.1);
+}
+.get__paid .btn__fab:hover, .get__paid .btn__fab:focus, .get__paid .btn__fab:active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.get__paid .btn__fab:hover svg path, .get__paid .btn__fab:focus svg path, .get__paid .btn__fab:active svg path {
+  fill: var(--white);
+}
+.get__paid .custom-select .select-items {
+  padding: 0.75rem;
+}
+.get__paid .custom-select .select-items > div {
+  color: rgba(48, 55, 68, 0.7);
+  font-weight: 500;
+  padding-left: 2rem;
+  position: relative;
+}
+.get__paid .custom-select .select-items > div:hover, .get__paid .custom-select .select-items > div:focus {
+  color: var(--primary);
+  background-color: inherit;
+}
+.get__paid .custom-select .select-items > div.same-as-selected {
+  background-color: #fff;
+  color: var(--primary);
+}
+.get__paid .custom-select .select-items > div.same-as-selected::before {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--done-icon) no-repeat center center/1.5rem;
+  display: inline-block;
+  position: absolute;
+  top: 0.4rem;
+  left: 0%;
+}
+.get__paid input[type=radio] {
+  border: 2px solid rgba(0, 0, 0, 0.31);
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  margin-right: 6px;
+}
+.get__paid input[type=radio]:checked {
+  background: var(--radio-checked) no-repeat center center/20px;
+  background-color: rgba(255, 255, 255, 0.82);
+  border-color: #d1dbfa;
+}
+
+/*------------ Verificaion Page Styles ------------*/
+.verification__page .verification__list > li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.verification__page .verification__list > li .icon {
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid rgba(0, 54, 227, 0.1);
+}
+.verification__page .verification__list > li .caption {
+  width: calc(100% - 5rem);
+  padding-left: 2.5rem;
+}
+.verification__page .verification__list > li .caption .disc__list li {
+  margin-bottom: 0.25rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+.verification__page .verification__list > li .caption .disc__list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  position: absolute;
+  top: 0.35rem;
+  left: 0%;
+}
+.verification__page .verification__list > li:not(:last-child) {
+  border-bottom: 1px solid #E7E5EF;
+}
+.verification__page .notification__list > li {
+  position: relative;
+}
+.verification__page .notification__list > li:not(:first-child):after {
+  content: "";
+  width: calc(100% - 3rem);
+  height: 1px;
+  background-color: rgba(14, 0, 98, 0.1019607843);
+  position: absolute;
+  top: 0%;
+  left: 1.5rem;
+}
+.verification__page .notification__list > li ul li {
+  margin-bottom: 12px;
+}
+.verification__page .notification__list > li ul li .form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.31);
+}
+.verification__page .notification__list > li ul li .form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.verification__page .notification__list > li ul li input[type=checkbox]:checked+label::before,
+.verification__page .notification__list > li ul li input[type=checkbox]:checked+label::after { content: none; }
+.verification__page .notification__list > li ul li .form-check-label {
+  color: #303744;
+  font-size: 0.937rem;
+} 
+.info__icon { color: #BABABA;margin-left:6px; }
+/* --------------- Get Paid Pages CSS --------------------------------- */
+
+
+
+/* ------------------ Work Diray Page Styles ------------------------ */
+
+.expert__dashboad.diary__page .px-40 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.expert__dashboad.diary__page .py-50 {
+  padding-top: 3.125rem;
+  padding-bottom: 3.125rem;
+}
+.expert__dashboad.diary__page .mb-32 {
+  margin-bottom: 32px;
+}
+.expert__dashboad.diary__page .title {
+  font-size: 1.437rem;
+}
+.expert__dashboad.diary__page .form-select, .expert__dashboad.diary__page .form-control {
+  border-radius: 4px;height: 48px;
+  border: 2px solid rgba(14, 0, 98, 0.3);
+}
+.expert__dashboad.diary__page .datepicker {
+  background-repeat: no-repeat;
+  background-position: center right 1rem;
+  background-size: 1.5rem;
+}
+.expert__dashboad.diary__page input[type=date]::-webkit-inner-spin-button,
+.expert__dashboad.diary__page input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.expert__dashboad.diary__page input[type=time]::-webkit-inner-spin-button,
+.expert__dashboad.diary__page input[type=time]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.expert__dashboad.diary__page .main__content__wrapp .add__manual__btn:hover svg path, .expert__dashboad.diary__page .main__content__wrapp .add__manual__btn:focus svg path, .expert__dashboad.diary__page .main__content__wrapp .add__manual__btn:active svg path {
+  fill: var(--primary);
+}
+.expert__dashboad.diary__page .main__content__wrapp .tracked__dot {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+.expert__dashboad.diary__page .main__content__wrapp .tracked__dot.success {
+  background-color: #369450;
+}
+.expert__dashboad.diary__page .main__content__wrapp .tracked__dot.warn {
+  background-color: #E9B911;
+}
+.expert__dashboad.diary__page .main__content__wrapp .link {
+  color: var(--primary);
+}
+.expert__dashboad.diary__page .main__content__wrapp .link:hover {
+  text-decoration: underline;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item {
+  border-radius: 4px;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box {
+  border-radius: 4px;
+  margin-bottom: 0;
+  background: #D9D9D9;
+  box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.1);
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box img {
+  width: 100%;
+  height: 108px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption {
+  background-color: rgba(0, 0, 0, 0.3803921569);
+  opacity: 0;
+  visibility: hidden;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab {
+  border-radius: 28px;
+  width: 2rem;
+  height: 2rem;
+  background: #FFF;
+  box-shadow: 2px 2px 13px 0px rgba(14, 0, 98, 0.04);
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab:hover, .expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab:focus, .expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab:active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab:hover svg path, .expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab:focus svg path, .expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box .hover__caption .btn__fab:active svg path {
+  fill: var(--white);
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .thumbnail__box:hover .hover__caption {
+  opacity: 1;
+  visibility: visible;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .time {
+  color: rgba(48, 55, 68, 0.7);
+  line-height: 160%;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .minits_tags span {
+  width: 11px;
+  height: 5px;
+  background-color: #D9D9D9;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .minits_tags span:not(:last-child) {
+  margin-right: 4px;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__item .minits_tags span.active {
+  background-color: #5ABC76;
+}
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-prev,
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 0.875rem !important;
+  border: 2px solid rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease-in-out;
+  background: #fff !important;
+  color: #000000 !important;
+  box-shadow: 4.39333px 4.39333px 17.57333px 0px rgba(14, 0, 98, 0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 1rem));
+}
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-prev {
+  left: -1.25rem;
+}
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-next {
+  right: -1.25rem;
+}
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-prev:hover,
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-next:hover {
+  background: #0036E3 !important;
+  color: #fff !important;
+}
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-prev.disabled,
+.expert__dashboad.diary__page .main__content__wrapp .owl-nav .owl-next.disabled {
+  background: #fff !important;
+  color: #000000 !important;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__row {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.expert__dashboad.diary__page .main__content__wrapp .diary__row:not(:last-child) {
+  border-bottom: 1px solid var(--bs-border-color);
+}
+.expert__dashboad.diary__page .manual__time__modal .modal-content {
+  padding: 3rem 2.5rem 1.5rem 2.5rem;
+}
+.expert__dashboad.diary__page .manual__time__modal .modal-content .btn-close {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+.expert__dashboad.diary__page .calendar {
+  max-width: 294px;
+  z-index: 1050;
+}
+.expert__dashboad.diary__page .calendar-box {
+  position: relative;
+}
+.expert__dashboad.diary__page .calendar-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.expert__dashboad.diary__page .calendar {
+  background-color: white;
+  border-radius: 4px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  left: 0 !important;
+  border: solid 2px #0036e3;
+  top: 45px !important;    z-index: 999;
+}
+.expert__dashboad.diary__page .header {
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 10px;
+  padding: 15px 25px 10px;
+}
+.expert__dashboad.diary__page #prevBtn2,
+.expert__dashboad.diary__page #nextBtn2 {
+  background: none;
+  border: none;
+  color: #5c5c5c;
+  cursor: pointer;
+  font-size: 13px;
+}
+.expert__dashboad.diary__page #monthYear2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+.expert__dashboad.diary__page .day {
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #5c5c5c;
+  float: left;
+  margin: 8px 7px;
+  font-weight: 500;
+}
+.expert__dashboad.diary__page .day.current {
+  background-color: #0036e3;
+  color: #fff;
+  border-radius: 100%;
+}
+.expert__dashboad.diary__page .day.selected {
+  background-color: #0036e3;
+  color: #fff;
+  border-radius: 100%;
+}
+.expert__dashboad.diary__page .study-level select {
+  width: 100%;
+  padding: 0 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1019607843);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url(../images/arrow-icon.png) no-repeat;
+  background-position: right 20px center;
+  color: #303744;
+}
+.expert__dashboad.diary__page #dateInput2::-moz-placeholder {
+  color: rgba(48, 55, 68, 0.6980392157);
+}
+.expert__dashboad.diary__page #dateInput2::placeholder {
+  color: rgba(48, 55, 68, 0.6980392157);
+}
+.expert__dashboad.diary__page #daysContainer2 {
+  padding: 0 10px;
+  display: inline-block;
+  width: 100%;
+}
+.expert__dashboad.diary__page .text-success {
+  color: #5ABC76 !important;
+}
+.expert__dashboad.diary__page .diary__detail__modal .table > :not(caption) > * > * {
+  padding: 0.5rem 1rem;
+}
+.expert__dashboad.diary__page .diary__detail__modal .minits_tags span {
+  width: 24px;
+  height: 8px;
+  background-color: #D9D9D9;
+}
+.expert__dashboad.diary__page .diary__detail__modal .minits_tags span:not(:last-child) {
+  margin-right: 4px;
+}
+.expert__dashboad.diary__page .diary__detail__modal .minits_tags span.active {
+  background-color: #5ABC76;
+}
+.expert__dashboad.diary__page .diary__detail__modal .table th {
+  border-top: 1px solid rgba(14, 0, 98, 0.1);
+  border-bottom: 1px solid rgba(14, 0, 98, 0.1);
+  background: rgba(48, 55, 68, 0.04);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  color: #191D24;
+  font-weight: 500;
+}
+.expert__dashboad.diary__page .diary__detail__modal .table td {
+  color: #191D24;
+  border-color: rgba(14, 0, 98, 0.1);
+}
+
+.active__tab::after {
+  content: "";
+  border: 10px solid transparent;
+  border-bottom-color: #000000;
+}
+
+.fs-23 {
+  font-size: 23px;
+}
+/* ------------------ Work Diray Page Styles ------------------------ */
+
+/* --------------------- Proposal Page Styles ----------------------- */
+ 
+.expert__dashboad.proposal__page .px-40 {
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+}
+.expert__dashboad.proposal__page .py-50 {
+  padding-top: 3.125rem;
+  padding-bottom: 3.125rem;
+}
+.expert__dashboad.proposal__page .mb-32 {
+  margin-bottom: 32px;
+}
+.expert__dashboad.proposal__page .bg-success {
+  background-color: #369450 !important;
+}
+.expert__dashboad.proposal__page .feed__list .feed__card {
+  padding: 1.5rem 2.5rem;
+}
+.expert__dashboad.proposal__page .feed__list .feed__card .title a {
+  color: var(--primary);
+}
+.expert__dashboad.proposal__page .feed__list .feed__card .title a:hover {
+  color: var(--dark);
+}
+.expert__dashboad.proposal__page .feed__list .feed__card .viewed__badge {
+  padding: 4px 10px;
+}
+.pt-37 { padding-top: 37px; }
+/* --------------------- Proposal Page Styles ----------------------- */

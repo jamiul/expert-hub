@@ -281,5 +281,29 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-services');
     }
+    public function expertworkdiry()
+    {
+        return view('figma-html.expert-work-dairy');
+    }
+    public function expertproposal()
+    {
+        return view('figma-html.expert-proposals');
+    }
+    public function expertjoboffer()
+    {
+        return view('figma-html.expert-job-offer');
+    }
+    public function expertgetpaid()
+    {
+        return view('figma-html.expert-get-paid');
+    }
+    public function expertidverify()
+    {
+        return view('figma-html.expert-id-verify');
+    }
+    public function expertnotificationsettings()
+    {
+        return view('figma-html.expert-notification-settings');
+    }
     // -------- Expert Dashboard pages------------
 }
