@@ -39,8 +39,12 @@
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link"
-                                            href="{{ url('/find-consultant') }}">{{ __('Find Consultants') }}</a>
+                                            href="{{ url('/find-experts') }}">{{ __('Find Experts') }}</a>
                                     </li>
+                                    {{-- <li class="nav-item">
+                                        <a class="nav-link"
+                                            href="{{ url('/find-consultant') }}">{{ __('Find Consultants') }}</a>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             href="{{ url('find-projects') }}">{{ __('Find Projects') }}</a>
@@ -52,10 +56,6 @@
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             href="{{ url('scholarship-database') }}">{{ __('Scholarships Database') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="{{ url('/expert-database') }}">{{ __('Experts Database') }}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('about-us') }}">{{ __('About Us') }}</a>
