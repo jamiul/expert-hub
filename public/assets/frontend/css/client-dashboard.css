@@ -3257,40 +3257,8 @@ span.admin-currency{
 .admin-m-bottom{
     border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
 }
-/* 
-#admin-dateInput {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #0000001A;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    height: 40px;
-    color: #303744B2;
-    font-size: 15px;
-    font-weight: 400;
-    appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
-    background-position: right 20px center;
-    min-width: 252px;
-    min-height: 40px;
-    margin-top: 0px;
-}
 
-.search-by-admin form input[type=text] {
-    outline: none;
-    padding: 0 15px;
-    font-size: 16px;
-    border: 2px solid #e2e2e4;
-    float: left;
-    width: 100%;
-    background: #fff;
-    min-height: 40px;
-    color: #303744B2;
-    border-radius: 4px 0 0 4px;
-    border-right: 0;
-    margin-top: 0px;
-} */
+
 
 
 p.dispute-reason{
@@ -3448,7 +3416,215 @@ header.admin-header {
     align-items: center;
     gap: 15px;
 }
-/*  ========================= Admin dashboard  start here ================================================ */
+/*  ========================= Admin dashboard  End here ================================================ */
+/*  ========================= Expert Login Start here ================================================ */
+
+.expert-login-area{
+    width: 1320px;
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+}
+
+header.expert-login {
+    margin-top: 0px;
+    display: flex;
+    width: 100%;
+    min-width: 1920px;
+    justify-content: space-between;
+    padding: 20px 64px;
+}
+
+.or-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 32px;
+}
+
+.or-area p{
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.register .register-form .singup p a {
+    color: #0036E3;
+    font-weight: 500;
+    color:  #0036E3;
+    font-family: Public Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+.g-login-text{
+    color:#303744;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.google-login {
+    gap: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 16px;
+}
+
+.apple-login {
+    gap: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 16px;
+}
+
+.linked-login {
+    gap: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 16px;
+}
+
+.default-login-area{
+    gap: 8px;
+}
+
+.forget-password a{
+    color:#0036E3;
+    font-family: Colfax;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+
+}
+
+.kip-login{
+    color: #303744;
+    font-family: Colfax;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 5px;
+
+}
+
+label.email-level {
+    top: -11px;
+    left: 15px;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    background: #fff;
+}
+
+label.password-level {
+    top: -11px;
+    left: 15px;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    background: #fff;
+}
+
+.input-control-password{
+    margin-top: 24px;
+}
+
+.login-input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+    min-height: 56px;
+}
+
+a.eye-off{
+    right: 16px;
+    top: 17px;
+    color: #000;
+}
+
+.register .register-form h3 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #303744;
+    margin: 0 0 37px;
+    color:  #303744;
+    font-family: Public Sans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.register .register-form {
+    box-shadow: 12px 12px 48px 0px #0e006221;
+    padding: 40px 40px;
+    border-radius: 12px;
+}
+
+.academic-block-client {
+    background: #E8EBF699;
+    padding: 38px 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.client-heading h2 {
+    margin: 0px 10px 20px !important;
+    font-weight: 500 !important;
+    line-height: 48px !important;
+    color: #191D24 !important;
+    text-align: left !important;
+    font-family: Colfax !important;
+    font-size: 23px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+
+.training-button  a.training-registered{
+    /* display: flex !important; */
+    width: 180px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 4px !important;
+    background:  #369450 !important;
+    color: #FFF !important;
+    text-align: center !important;
+    font-family: Colfax !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    border-color:  #369450 !important;
+}
+
+.academic-block.academic-block-client .row {
+    display: flex;
+    align-items: center;
+    border-top: solid 1px #d9dbea;
+    padding: 25px 15px;
+}
+
+
+/*  ========================= Expert Login End here ================================================ */
 
 
 /**** ============================================== Client Dashboard End Here ================================= ***/

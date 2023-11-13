@@ -269,6 +269,28 @@ class FigmaController extends Controller
     //End Client Dashboard
 
 
+    //Start  Expert Login 
+
+    public function experthboardlogin()
+    {
+        return view('figma-html.experthboardlogin');
+    }
+
+    public function experthboardloginform()
+    {
+        return view('figma-html.experthboardloginform');
+    }
+
+    public function clientdashboardloginform()
+    {
+        return view('figma-html.clientdashboardloginform');
+    }
+
+
+    //End  Expert Login 
+
+
+
     public function expertactivecontract()
     {
         return view('figma-html.expert-active-contract');
