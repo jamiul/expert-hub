@@ -38,6 +38,30 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/expert-status-proposal', [FigmaController::class, 'expertstatusproposal']);
     Route::get('/expert-status-analytics', [FigmaController::class, 'expertstatusanalytics']);
 
+    //Client Dashboard
+    Route::get('/client-dashboardhome', [FigmaController::class, 'clientdashboardhome']);
+    Route::get('/client-dashboard', [FigmaController::class, 'clientdashboard']);
+    Route::get('/client-dashboardexpertconsultant', [FigmaController::class, 'clientdashboardexpertconsultant']);
+    Route::get('/client-dashboardexpertconsultantteam', [FigmaController::class, 'clientdashboardexpertconsultantteam']);
+    Route::get('/client-dashboardallcontact', [FigmaController::class, 'clientdashboardallcontact']);
+    Route::get('/client-dashboardexperthire', [FigmaController::class, 'clientdashboardexperthire']);
+    Route::get('/client-clientdashboardexpertsave', [FigmaController::class, 'clientdashboardexpertsave']);
+    Route::get('/client-clientaddpayment', [FigmaController::class, 'clientaddpayment']);
+    Route::get('/client-clientvisapaypal', [FigmaController::class, 'clientvisapaypalpayment']);
+    Route::get('/client-addpaymentdouable', [FigmaController::class, 'clientaddpaymentdouable']);
+    Route::get('/client-weeklyreportsummary', [FigmaController::class, 'clientweeklyreportsummary']);
+    Route::get('/client-weeklyreportsummarydate', [FigmaController::class, 'clientweeklyreportsummarydate']);
+    Route::get('/client-weeklyreporttransction', [FigmaController::class, 'clientweeklyreporttransaction']);
+    Route::get('/client-weeklyreporttwobudget', [FigmaController::class, 'clientweeklyreporttwobudget']);
+    Route::get('/client-dashboardatimesheet', [FigmaController::class, 'clientdashboardatimesheet']);
+    Route::get('/client-passwordsecurity', [FigmaController::class, 'clientdashboardpasswordsecurity']);
+    Route::get('/client-notificationsettting', [FigmaController::class, 'clientdashboardnotificationsettting']);
+    // Admin dashboard
+    Route::get('/admin-dashboardhome', [FigmaController::class, 'admindashboardhome']);
+    Route::get('/admin-admindashboardclient', [FigmaController::class, 'admindashboardclient']);
+    Route::get('/admin-admindashboardexpert', [FigmaController::class, 'admindashboardexpert']);
+
+
     //expert contract
     Route::get('/expert-active-contract', [FigmaController::class, 'expertactivecontract']);
     Route::get('/expert-all-contract', [FigmaController::class, 'expertallcontract']);

@@ -72,7 +72,7 @@ class FigmaController extends Controller
     {
         return view('figma-html.profileconsultationmediainterview');
     }
-    
+
     public function profileBiography()
     {
         return view('figma-html.profilebiography');
@@ -131,6 +131,144 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-status-analytics');
     }
+
+
+
+    //Client Dashboard
+
+    public function clientdashboard()
+    {
+        return view('figma-html.clientdashboard');
+    }
+
+    public function clientdashboardhome()
+    {
+        return view('figma-html.clientdashboardhome');
+    }
+
+    public function clientdashboardallcontact()
+    {
+        return view('figma-html.clientdashboardallcontact');
+    }
+
+    public function clientdashboardexperthire()
+    {
+        return view('figma-html.clientdashboardexperthire');
+    }
+
+    public function clientdashboardexpertconsultant()
+    {
+        return view('figma-html.clientdashboardexpertconsultant');
+    }
+
+    public function clientdashboardexpertconsultantteam()
+    {
+        return view('figma-html.clientdashboardexpertconsultantteam');
+    }
+
+    public function clientdashboardexpertsave()
+    {
+        return view('figma-html.clientdashboardexpertsave');
+    }
+
+    public function clientaddpayment()
+    {
+        return view('figma-html.clientaddpayment');
+    }
+
+    public function clientvisapaypalpayment()
+    {
+        return view('figma-html.clientvisapaypalpayment');
+    }
+
+    public function clientaddpaymentdouable()
+    {
+        return view('figma-html.clientaddpaymentdouable');
+    }
+
+
+
+    public function clientweeklyreportsummary()
+    {
+        return view('figma-html.clientweeklyreportsummary');
+    }
+
+
+    public function clientweeklyreportsummarydate()
+    {
+        return view('figma-html.clientweeklyreportsummarydate');
+    }
+
+
+
+
+    public function clientweeklytotalreport()
+    {
+        return view('figma-html.clientweeklytotalreport');
+    }
+
+    public function clientdashboardallport()
+    {
+        return view('figma-html.clientdashboardallport');
+    }
+
+    public function clientweeklyreporttransaction()
+    {
+        return view('figma-html.clientweeklyreporttransaction');
+    }
+
+
+
+    public function clientweeklyreporttwobudget()
+    {
+        return view('figma-html.clientweeklyreporttwobudget');
+    }
+
+
+
+    public function clientdashboardatimesheet()
+    {
+        return view('figma-html.clientdashboardatimesheet');
+    }
+
+
+    public function clientdashboardpasswordsecurity()
+    {
+        return view('figma-html.clientdashboardpasswordsecurity');
+    }
+
+
+
+    public function clientdashboardnotificationsettting()
+    {
+        return view('figma-html.clientdashboardnotificationsettting');
+    }
+
+// Admin dashboard
+
+
+    public function admindashboardhome()
+    {
+        return view('figma-html.admindashboardhome');
+    }
+
+
+    public function admindashboardclient()
+    {
+        return view('figma-html.admindashboardclient');
+    }
+
+
+    public function admindashboardexpert()
+    {
+        return view('figma-html.admindashboardexpert');
+    }
+
+
+
+    //End Client Dashboard
+
+
     public function expertactivecontract()
     {
         return view('figma-html.expert-active-contract');

@@ -44,7 +44,8 @@
         <meta property="og:url" content="{{ env('APP_URL') }}"/>
         <meta property="og:image" content="{{ customAsset(getSetting('meta_image')) }}"/>
         <meta property="og:description" content="{{ getSetting('meta_description') }}"/>
-        <meta property="og:site_name" content="{{ getSetting('website_name') }}"/> @endif
+        <meta property="og:site_name" content="{{ getSetting('website_name') }}"/>
+         @endif
 
     <!-- Favicon -->
     <link rel="icon"
@@ -56,6 +57,10 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.theme.default.css') }}">
 
-
+    <!-- Client Dashboard Css -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/client-dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/experthire.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/font-awesome_6.4.2_css_all.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
    @stack('top_styles')
 </head>
