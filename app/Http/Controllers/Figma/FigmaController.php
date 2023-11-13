@@ -72,7 +72,7 @@ class FigmaController extends Controller
     {
         return view('figma-html.profileconsultationmediainterview');
     }
-    
+
     public function profileBiography()
     {
         return view('figma-html.profilebiography');
@@ -108,7 +108,7 @@ class FigmaController extends Controller
     {
         return view('figma-html.clientverifyyouremail');
     }
-
+// -------- Expert Dashboard pages------------
     public function expertdashboard()
     {
         return view('figma-html.expert-dashboard');
@@ -217,7 +217,7 @@ class FigmaController extends Controller
         return view('figma-html.clientweeklyreporttransaction');
     }
 
-    
+
 
     public function clientweeklyreporttwobudget()
     {
@@ -237,7 +237,7 @@ class FigmaController extends Controller
         return view('figma-html.clientdashboardpasswordsecurity');
     }
 
-    
+
 
     public function clientdashboardnotificationsettting()
     {
@@ -269,4 +269,17 @@ class FigmaController extends Controller
     //End Client Dashboard
 
 
+    public function expertactivecontract()
+    {
+        return view('figma-html.expert-active-contract');
+    }
+    public function expertallcontract()
+    {
+        return view('figma-html.expert-all-contract');
+    }
+    public function expertservices()
+    {
+        return view('figma-html.expert-services');
+    }
+    // -------- Expert Dashboard pages------------
 }
