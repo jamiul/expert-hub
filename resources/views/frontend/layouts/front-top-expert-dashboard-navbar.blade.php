@@ -240,8 +240,8 @@
 
                   <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}" class="rounded-circle mx-auto object-fit-cover profile__thumbnail" alt="">
                </div>
-              <p class="mb-0 lead fw-medium text-black text-center mt-3">Dr. Darrell Steward</p>
-              <p class="text-center small ff-public text-muted mb-0">Sydney Islamic business school</p>
+              <p class="mb-0 lead fw-medium text-black text-center mt-3">Professor Michael Kassiou</p>
+              <p class="text-center small ff-public text-muted mb-0">Curriculum Expert</p>
 
               <div class="d-flex status_box my-4">
                <div class="position-relative col-6">
