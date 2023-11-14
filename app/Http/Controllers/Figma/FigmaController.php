@@ -108,29 +108,6 @@ class FigmaController extends Controller
     {
         return view('figma-html.clientverifyyouremail');
     }
-// -------- Expert Dashboard pages------------
-    public function expertdashboard()
-    {
-        return view('figma-html.expert-dashboard');
-    }
-
-    public function expertprofile()
-    {
-        return view('figma-html.expert-profile');
-    }
-
-    public function expertstatus()
-    {
-        return view('figma-html.expert-status');
-    }
-    public function expertstatusproposal()
-    {
-        return view('figma-html.expert-status-proposal');
-    }
-    public function expertstatusanalytics()
-    {
-        return view('figma-html.expert-status-analytics');
-    }
 
 
 
@@ -268,7 +245,30 @@ class FigmaController extends Controller
 
     //End Client Dashboard
 
+    // -------- Expert Dashboard pages------------
 
+    public function expertdashboard()
+    {
+        return view('figma-html.expert-dashboard');
+    }
+
+    public function expertprofile()
+    {
+        return view('figma-html.expert-profile');
+    }
+
+    public function expertstatus()
+    {
+        return view('figma-html.expert-status');
+    }
+    public function expertstatusproposal()
+    {
+        return view('figma-html.expert-status-proposal');
+    }
+    public function expertstatusanalytics()
+    {
+        return view('figma-html.expert-status-analytics');
+    }
     public function expertactivecontract()
     {
         return view('figma-html.expert-active-contract');
