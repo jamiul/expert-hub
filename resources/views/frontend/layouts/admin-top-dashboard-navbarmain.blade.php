@@ -3,9 +3,7 @@
     <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-10">
-
 <div class="admin-nav-bar-area d-flex justify-content-between align-content-center">
-
         <div class="top-nav-area-admin">
           <div class="logo-area-admin">
             <div class="logo">
