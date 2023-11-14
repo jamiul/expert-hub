@@ -22,19 +22,40 @@
                </a>
                <ul class="dropdown-menu" aria-labelledby="projectDrop">
                   <li>
-                     <a class="dropdown-item" href="#">My Projects</a>
+                     <a class="dropdown-item" href="/figma/expert-dashboard">Dashboard</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="#">Proposals</a>
+                     <a class="dropdown-item" href="/figma/expert-profile">Profile</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="#">All Contracts</a>
+                     <a class="dropdown-item" href="/figma/expert-status">Status</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="#">Save jobs</a>
+                     <a class="dropdown-item" href="/figma/expert-status-proposal">Status Proposals</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="#">Work Diary</a>
+                     <a class="dropdown-item" href="/figma/expert-status-analytics">Status Analytics</a>
+                  </li> 
+                  <li>
+                     <a class="dropdown-item" href="/figma/expert-services">Service</a>
+                  </li> 
+                  <li>
+                     <a class="dropdown-item" href="/figma/expert-active-contract">Active Contracts</a>
+                  </li> 
+                  <li>
+                     <a class="dropdown-item" href="/figma/expert-all-contract">All Contracts</a>
+                  </li> 
+                  <li>
+                     <a class="dropdown-item" href="/figma/expert-work-diray">Work Diray</a> 
+                  </li> 
+                  <li> 
+                     <a class="dropdown-item" href="/figma/expert-proposal">Proposals</a>
+                  </li> 
+                  <li> 
+                     <a class="dropdown-item" href="/figma/expert-job-offer">Job Offers</a>
+                  </li> 
+                  <li> 
+                     <a class="dropdown-item" href="/figma/expert-saved-jobs">Saved Jobs</a>
                   </li> 
                </ul>
             </li>
@@ -44,9 +65,9 @@
                </a>
                <ul class="dropdown-menu" aria-labelledby="billingDrop">
                   <li>
-                     <a class="dropdown-item" href="#">My Projects</a>
+                     <a class="dropdown-item" href="/figma/expert-get-paid">Get Paid</a>
                   </li>
-                  <li>
+                  <!-- <li>
                      <a class="dropdown-item" href="#">Proposals</a>
                   </li>
                   <li>
@@ -57,32 +78,27 @@
                   </li>
                   <li>
                      <a class="dropdown-item" href="#">Work Diary</a>
-                  </li> 
+                  </li>  -->
                </ul>
             </li>
             <li class="nav-item">
                <a class="nav-link disabled" href="#">Find Project</a>
             </li>
             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="serviceDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <a class="nav-link dropdown-toggle active" href="#" id="serviceDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Settings
                </a>
                <ul class="dropdown-menu" aria-labelledby="serviceDrop">
                   <li>
-                     <a class="dropdown-item" href="#">My Projects</a>
+                     <a class="dropdown-item" href="/figma/expert-password-security">Password Security</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="#">Proposals</a>
+                     <a class="dropdown-item" href="/figma/expert-id-verify">Id Verification</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="#">All Contracts</a>
+                     <a class="dropdown-item" href="/figma/expert-notification-settings">Notification Settings</a>
                   </li>
-                  <li>
-                     <a class="dropdown-item" href="#">Save jobs</a>
-                  </li>
-                  <li>
-                     <a class="dropdown-item" href="#">Work Diary</a>
-                  </li> 
+                  
                </ul>
             </li>
          </ul>

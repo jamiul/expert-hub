@@ -81,7 +81,7 @@
                                 <p class="text-black small mt-2 mb-0">
                                     Sep 23 2023 - Oct 10 2023
                                 </p>
-                                <p class="text-black small mt-2 text-muted fw-medium">
+                                <p class="text-black small mt-2 text-muted fw-medium mb-4">
                                     Successfully Completed
                                     <span class="ratings d-inline-flex">
                                         <i class="fa-solid fa-star"></i>
@@ -98,7 +98,7 @@
                                     Hourly
                                 </p>
                                 <p class="mb-0 small text-dark">$15.00/hr, 20 hrs weekly limit</p>
-                                <div class="mt-3">
+                                <div class="mt-4">
                                     <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
                                     <p class="mb-0 small text-dark">EduExHub</p>
                                 </div>
@@ -129,7 +129,7 @@
                                 <p class="text-black small mt-2">
                                     Sep 23 2023 - Oct 10 2023
                                 </p>
-                                <p class="text-black small mt-2 text-muted fw-medium">
+                                <p class="text-black small mt-2 text-muted fw-medium mb-4">
                                     Successfully Completed
                                     <span class="ratings d-inline-flex">
                                         <i class="fa-solid fa-star"></i>
@@ -178,7 +178,7 @@
                                 <p class="text-black small mt-2 mb-0">
                                     Sep 23 2023 - Oct 10 2023
                                 </p>
-                                <p class="text-black small mt-2 text-muted fw-medium">
+                                <p class="text-black small mt-2 text-muted fw-medium mb-4">
                                     Successfully Completed
                                     <span class="ratings d-inline-flex">
                                         <i class="fa-solid fa-star"></i>
@@ -195,7 +195,7 @@
                                     Hourly
                                 </p>
                                 <p class="mb-0 small text-dark">$15.00/hr, 20 hrs weekly limit</p>
-                                <div class="mt-3">
+                                <div class="mt-4">
                                     <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
                                     <p class="mb-0 small text-dark">EduExHub</p>
                                 </div>
@@ -226,7 +226,7 @@
                                 <p class="text-black small mt-2">
                                     Sep 23 2023 - Oct 10 2023
                                 </p>
-                                <p class="text-black small mt-2 text-muted fw-medium">
+                                <p class="text-black small mt-2 text-muted fw-medium mb-4">
                                     Successfully Completed
                                     <span class="ratings d-inline-flex">
                                         <i class="fa-solid fa-star"></i>
@@ -275,7 +275,7 @@
                                 <p class="text-black small mt-2 mb-0">
                                     Sep 23 2023 - Oct 10 2023
                                 </p>
-                                <p class="text-black small mt-2 text-muted fw-medium">
+                                <p class="text-black small mt-2 text-muted fw-medium mb-4">
                                     Successfully Completed
                                     <span class="ratings d-inline-flex">
                                         <i class="fa-solid fa-star"></i>
@@ -292,7 +292,7 @@
                                     Hourly
                                 </p>
                                 <p class="mb-0 small text-dark">$15.00/hr, 20 hrs weekly limit</p>
-                                <div class="mt-3">
+                                <div class="mt-4">
                                     <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
                                     <p class="mb-0 small text-dark">EduExHub</p>
                                 </div>
@@ -323,7 +323,7 @@
                                 <p class="text-black small mt-2">
                                     Sep 23 2023 - Oct 10 2023
                                 </p>
-                                <p class="text-black small mt-2 text-muted fw-medium">
+                                <p class="text-black small mt-2 text-muted fw-medium mb-4">
                                     Successfully Completed
                                     <span class="ratings d-inline-flex">
                                         <i class="fa-solid fa-star"></i>
