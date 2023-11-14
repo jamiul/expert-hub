@@ -67,8 +67,10 @@
                 </div>
                 <div class="col-md-3 col-sm-3">
                     <div class="login-block">
-                        <a href="#"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
-                        <a href="{{ url('register-option') }}">{{ __('Register') }}</a>
+                        @guest
+                            <a href="{{ route('auth.login') }}"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
+                            <a href="{{ route('auth.registration') }}">{{ __('Register') }}</a>
+                        @endguest
                     </div>
                 </div>
             </div>
