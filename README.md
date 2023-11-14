@@ -1,6 +1,3 @@
-# Please use this link to check setup and other details:
-https://docs.google.com/document/d/1hy9c-uJpdXr7-y2PNT4Q0V2hDsiUvzp-/edit
-
 # How to Setup EduExHub in Local
 
 - `git clone “https://github.com/Sydney-IBS/EduExHub.git”`
@@ -9,6 +6,8 @@ https://docs.google.com/document/d/1hy9c-uJpdXr7-y2PNT4Q0V2hDsiUvzp-/edit
 - `php artisan migrate:fresh --seed`
 - `php artisan optimize:clear`
 - `chmod 777 storage/logs`
+
+  More details on this link : https://docs.google.com/document/d/1hy9c-uJpdXr7-y2PNT4Q0V2hDsiUvzp-/edit
 
 ![Developer-Guide-Google-Docs](https://github.com/Sydney-IBS/EduExHub/assets/125943355/c511a0fa-ea14-426b-be2a-ecc4be1ba710)
 ![EduExHub-Project-Architecture-Google-Docs](https://github.com/Sydney-IBS/EduExHub/assets/125943355/e21adb04-7ab9-438e-9617-081c8ebfe7b6)
