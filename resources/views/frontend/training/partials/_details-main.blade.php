@@ -302,7 +302,7 @@
                 <div class="left-sidebar">
                     <div class="find-detail">
                         <ul class="find-messge">
-                            <li><a href="#">Register Now</a></li>
+                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Register Now</a></li>
                             <li><a href="#"><img
                                         src="{{ asset('assets/frontend/img/message-img.png') }}"></img>Message Now</a>
                             </li>
@@ -341,4 +341,97 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-registraion-content">
+
+      <div class="modal-header modal-header-registration">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-header modal-header-register">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Training registration</h1>
+        
+      </div>
+      <div class="modal-body">
+            <div class="registration-modal-area d-flex flex-row">
+                <img src="{{ asset('assets/frontend/img/foundation.png') }} " alt="fundation">
+                <div class="foundation-text d-flex flex-column">
+                    <div class="foundation-title"> <h4>Foundations of PLS-SEM Using SmartPLS 4</h4> </div>
+                    <div class="foundation-border d-flex justify-content-between flex-row">
+                            <h6>Australian Eastern Daylight Time (GMT +11)</h6>
+                            <h6 class="foundation-border"></h6>
+                            <h6>Australia</h6>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="all-registration-modal d-flex flex-column">
+                <div class="single-modal-registraion d-flex flex-row justify-content-between">
+                    <p class="donas-text">Seminar Dates</p>
+                    <p class="donax-date-journy wetern-ui-width">23 January 2024 - 28 April 2024</p>
+                </div>
+                
+
+                <div class="single-modal-registraion d-flex flex-row justify-content-between">
+                    <p class="donas-text">Instructors</p>
+                    <p class="donax-date-donal d-flex flex-row gap-2 wetern-ui-width"> <span>Prof. Michel jhon </span>  <span></span>|<span> Dr. Nathon rainbot</span></p>
+                </div>
+
+                <div class="single-modal-registraion d-flex flex-row justify-content-between">
+                    <p class="donas-text">Training Mode</p>
+                    <p class="donax-date-zoom wetern-ui-width"> <span> <img src="{{ asset('assets/frontend/img/zoom-icon.png') }} " alt="fundation"> </span> <span>Live via Zoom</span></p>
+                </div>
+
+                <div class="single-modal-registraion d-flex flex-row justify-content-between">
+                    <p class="donas-text">Language</p>
+                    <p class="donax-date donax-date-journy wetern-ui-width">French</p>
+                </div>
+
+                <div class="single-modal-registraion d-flex flex-row justify-content-between">
+                    <p class="donas-text">Training Category:</p>
+                    <p class="donax-date donax-date-journy wetern-ui-width">Research and Analysis</p>
+                </div>
+
+                <div class="single-modal-registraion d-flex flex-row justify-content-between">
+                    <p class="donas-text">Partner Institute</p>
+                    <div class="wetern-ui d-flex flex-row justify-content-between wetern-ui-width">
+                        <p class="donax-date donax-date-zoom "> Western Sydney University </p>  <p>| </p>  <p>Oxford University</p>
+                    </div>
+                </div>
+
+                <div class="sendme-checkbox-area d-flex flex-row justify-content-between">
+
+                    <div class="form-check">
+                        <input class="form-check-input registration-check" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Yes, I’m joining
+                        </label>
+                    </div>
+
+                    <div class="form-check wetern-ui-width">
+                        <input class="form-check-input  registration-check" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Send me Newsletter 
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+      </div>
+      <div class="modal-footer footer-registration">
+        <button type="button" class="btn btn-secondary btn-reg-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-reg-checkout ">Checkout</button>
+      </div>
+    </div>
+  </div>
 </div>

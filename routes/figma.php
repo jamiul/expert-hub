@@ -65,6 +65,10 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/admin-expertlogin', [FigmaController::class, 'experthboardlogin']);
     Route::get('/admin-expertloginform', [FigmaController::class, 'experthboardloginform']);
     Route::get('/admin-clientloginform', [FigmaController::class, 'clientdashboardloginform']);
+
+    // Training Checkout 
+    Route::get('/training-checkout', [FigmaController::class, 'trainingcheckout']);
+    
     
 
 
