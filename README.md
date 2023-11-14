@@ -1,11 +1,11 @@
 # How to Setup EduExHub in Local
 
-- `git clone gh repo clone Sydney-IBS/EduExHub`
+- `git clone “https://github.com/Sydney-IBS/EduExHub.git”`
 - `git fetcht --all`
 - `composer install`
 - `php artisan migrate:fresh --seed`
 - `php artisan optimize:clear`
-- `chmod 0777 storage/logs`
+- `chmod 777 storage/logs`
 
 ![Developer-Guide-Google-Docs](https://github.com/Sydney-IBS/EduExHub/assets/125943355/c511a0fa-ea14-426b-be2a-ecc4be1ba710)
 ![EduExHub-Project-Architecture-Google-Docs](https://github.com/Sydney-IBS/EduExHub/assets/125943355/e21adb04-7ab9-438e-9617-081c8ebfe7b6)
