@@ -1,3 +1,6 @@
+# Please use this link to check setup and other details:
+https://docs.google.com/document/d/1hy9c-uJpdXr7-y2PNT4Q0V2hDsiUvzp-/edit
+
 # How to Setup EduExHub in Local
 
 - `git clone “https://github.com/Sydney-IBS/EduExHub.git”`
