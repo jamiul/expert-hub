@@ -13,7 +13,7 @@ use Livewire\Component;
 
 class Registration extends Component
 {
-    protected array $availableTypes = ['Consultant', 'Expert', 'Client'];
+    protected array $availableTypes = ['Expert', 'Client'];
 
     public int $currentStep = 1;
 

@@ -36,11 +36,11 @@
                         <input type="radio" wire:model="type" value="Client">
                     </div>
                 </label>
-                <div class="creat-button">
-                    <button wire:click="typeSelected" type="button">Create Account</button>
+                <div class="mt-3">
+                    <button class="py-3 button button-block button-primary" wire:click="typeSelected" type="button">Create Account</button>
                 </div>
                 <div class="singup">
-                    <p>Already have an account, <a href="#">Sign In</a></p>
+                    <p>Already have an account, <a href="{{ route('auth.login') }}">Sign In</a></p>
                 </div>
             </div>
         </div>

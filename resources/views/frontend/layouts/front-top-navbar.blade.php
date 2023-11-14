@@ -71,6 +71,12 @@
                             <a href="{{ route('auth.login') }}"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
                             <a href="{{ route('auth.registration') }}">{{ __('Register') }}</a>
                         @endguest
+                        @auth
+                            <form method="POST" action="{{ route('auth.logout') }}">
+                                @csrf
+                                <button class="button button-xs button-primary" type="submit">Logout</button>
+                            </form>
+                        @endauth
                     </div>
                 </div>
             </div>

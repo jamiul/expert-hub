@@ -12,4 +12,14 @@ class AuthenticatedSessionController extends Controller
     {
         return view('frontend.auth.login');
     }
+
+    public function logout()
+    {
+        auth()->guard('web')->logout();
+
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return redirect()->route('home');
+    }
 }

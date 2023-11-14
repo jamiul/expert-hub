@@ -21,6 +21,9 @@
 .button-lg{
     width: 350px;
 }
+.button-block{
+    width: 100%;
+}
 .button.button-primary{
     background: #0036E3;
     color: #fff;
