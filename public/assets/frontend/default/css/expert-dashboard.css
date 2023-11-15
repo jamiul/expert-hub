@@ -740,13 +740,15 @@ line-height: 19px;
 }
 .setting__modal .modal-body .skill__box .skill__list .item {
   background-color: #EBEFF7;
-  padding: 0.5rem;
+  padding: 0.5rem 0.6rem;
   color: #303744;
   cursor: pointer;
+  font-size: 14px;
 }
 .setting__modal .modal-body .skill__box .skill__list .item .btn {
   opacity: 0.49;
   transition: all 0.3s ease-in-out;
+  margin-top: -6px;
 }
 .setting__modal .modal-body .skill__box .skill__list .item:hover .btn {
   opacity: 1;

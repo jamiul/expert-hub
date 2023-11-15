@@ -34,7 +34,7 @@
                     <ul class="verification__list">
                         <li class="d-flex">
                             <figure class="mb-0 icon d-flex align-items-center justify-content-center rounded-circle">
-                                <img src="assets/images/id-verify.svg" width="40" height="40" alt="id">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/id.svg') }}" width="40" height="40" alt="id">
                             </figure>
                             <div class="caption">
                                 <h2 class="lead fw-medium text-black mb-2">ID verification<i class="fa-solid fa-circle-question info__icon"></i></h2>
@@ -49,7 +49,7 @@
                         </li>
                         <li class="d-flex">
                             <figure class="mb-0 icon d-flex align-items-center justify-content-center rounded-circle">
-                                <img src="assets/images/location.svg" width="40" height="40" alt="id">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/location.svg') }}" width="40" height="40" alt="id">
                             </figure>
                             <div class="caption">
                                 <h2 class="lead fw-medium text-black mb-2">Location verification<i class="fa-solid fa-circle-question info__icon"></i></h2>
@@ -64,7 +64,7 @@
                         </li>
                         <li class="d-flex">
                             <figure class="mb-0 icon d-flex align-items-center justify-content-center rounded-circle">
-                                <img src="assets/images/eye.svg" width="40" height="40" alt="id">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/eye.svg') }}" width="40" height="40" alt="id">
                             </figure>
                             <div class="caption">
                                 <h2 class="lead fw-medium text-black mb-2">Visual verification<i class="fa-solid fa-circle-question info__icon"></i></h2>
