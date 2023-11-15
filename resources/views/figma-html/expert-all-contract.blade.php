@@ -382,7 +382,7 @@
                                             <ul>
                                                 <li> <a href="#"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left.png') }}"> <img class="hover-icon" src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/pagination-left-hover.png') }}"> </a> </li>
                                                 <li> <a href="#"> <i class="fa fa-caret-left"></i> </a> </li>
-                                                <li> <a href="#">1</a> </li>
+                                                <li> <a href="#" class="active">1</a> </li>
                                                 <li> <a href="#">2</a> </li>
                                                 <li> <a href="#">3</a> </li>
                                                 <li> <a href="#"> <i class="fa fa-caret-right"></i> </a> </li>
