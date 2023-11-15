@@ -41,4 +41,4 @@ jobs:
 
       - name: Copy and Override Files to /var/www/html
         run: |
-          rsync -a * /var/www/html/EduExHub    
+          sudo rsync -a * /var/www/html/EduExHub    
