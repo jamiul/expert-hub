@@ -862,6 +862,105 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+
+
+  <div class="academic-block academic-block-client">
+      <div class="container">
+        <div class="heading client-heading">
+          <h2>Upcoming Academic Training</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="live-zoom">
+              <div class="zoom-icon">
+                <img src="{{ asset('assets/frontend/img/zoom-icon.png') }} " ></img>
+                <h4>Live via Zoom</h4>
+              </div>
+              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="training">
+              <h3>Statistics with R*</h3>
+              <div class="training-text">
+                <span>Instructor:</span>
+                <a href="#">Cameron Williamson</a>
+                <a href="#">Guy Hawkins</a>
+              </div>
+              <h6>Language: <span>French</span></h6>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="training-button">
+              <a href="#" class="training-registered">Registered</a>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="live-zoom">
+              <div class="zoom-icon">
+                <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>
+                <h4>Live via Zoom</h4>
+              </div>
+              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="training">
+              <h3>Longitudinal Data Analysis Using Stata</h3>
+              <div class="training-text">
+                <span>Instructor:</span>
+                <a href="#">Marvin McKinney</a>
+                <a href="#">Wade Warren</a>
+              </div>
+              <h6>Language: <span>French</span></h6>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="training-button">
+              <a href="#">Registration</a>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="live-zoom">
+              <div class="zoom-icon">
+                <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>
+                <h4>Live via Zoom</h4>
+              </div>
+              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="training">
+              <h3>Multilevel and Mixed Models Using Stata</h3>
+              <div class="training-text">
+                <span>Instructor:</span>
+                <a href="#">Leslie Alexander</a>
+                <a href="#">Jacob Jones</a>
+              </div>
+              <h6>Language: <span>French</span></h6>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="training-button">
+              <a href="#">Registration</a>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
   <div class="row">
       <div class="all-job-area d-flex justify-content-between">
         <div class="all-project">
