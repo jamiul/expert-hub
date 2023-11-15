@@ -35,3 +35,7 @@ jobs:
 
       - name: Clear PHP Cache
         run: php artisan optimize:clear
+
+      - name: Copy and Override Files to /var/www/html
+        run: |
+          rsync -a * /var/www/html/EduExHub    
