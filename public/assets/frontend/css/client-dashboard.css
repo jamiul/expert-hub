@@ -3628,4 +3628,425 @@ a.eye-off{
 
 
 /**** ============================================== Client Dashboard End Here ================================= ***/
+/**** ============================================== Registration  Modal start Here  ================================= ***/
+
+.modal-registraion-content {
+    padding: 30px;
+    min-width: 584px;
+}
+
+.foundation-title h4{
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.foundation-border h6{
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+h6.foundation-border{
+    border: 1px solid rgba(48, 55, 68, 0.50);
+    height: 20px;
+}
+.modal-registraion-content {
+    padding: 30px 30px 15px;
+}
+p.donas-text{
+    color:  #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+p.donax-date-journy{
+    color:  #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+p.donax-date-donal{
+    color:  #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+p.donax-date-zoom{
+    color:  #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.wetern-ui-width {
+    min-width: 316px;
+}
+
+.all-registration-modal {
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.registration-modal-area {
+    padding: 10px 0px;
+    border-bottom: 1px solid  #E7E5EF;
+    gap: 20px;
+}
+
+.btn-reg-cancel{
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid  #0036E3;
+    background-color: transparent;
+    color:  #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+.btn-reg-cancel:hover{
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid  #0036E3;
+    background-color: transparent;
+    color:  #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.btn-reg-checkout{
+    display: flex;
+    padding: 9px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+input.registration-check[type=checkbox]:checked+label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 5px;
+    background-color: #0036E3;
+    font-family: "Montserrat";
+    border-radius: 2px;
+    border: 1px solid rgb(150 150 150 / 30%);
+}
+
+.sendme-checkbox-area {
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.modal-header-registration {
+    border-bottom: none;
+}
+
+.modal-header.modal-header-registration {
+    padding: 0px;
+}
+.footer-registration {
+    padding-top: 25px;
+}
+
+.modal-header-register h1 {
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 23px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+.modal-header-register {
+    padding-top: 0px;
+}
+
+/**** ============================================== Registration  Modal End Here  ================================= ***/
+/**** ============================================== Checkout Payment start Here  ================================= ***/
+
+.checkout-billing-content {
+    max-width: 608px;
+}
+.checkout-billing-content h3 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.checkout-billing-content p{
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
+.paypal-icon-email {
+    align-items: center;
+    gap: 8px;
+}
+
+.paypal-icon-email span {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.check-input-paypal{
+    width: 20px;
+    height: 20px;
+}
+
+.check-input-paypal:checked {
+    border-radius: 39px !important;
+    border: 4px solid #5FA6FF !important;
+    background:  #0036E3 !important;
+    border-color: #0d6efd !important;
+}
+
+.paypal-primary-btn button{
+    display: flex;
+    padding: 2px 16px 1px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 23px;
+    border: 2px solid  #0036E3;
+    color:  #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.billing-button button{
+    display: flex;
+    width: 265px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color:  #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid  #0036E3;
+    align-items: center;
+}
+
+.checkout-billing-method {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 89, 201, 0.30);
+    background: rgba(0, 89, 201, 0.05);
+    max-width: 648px;
+    padding: 16px 24px;
+    gap: 10px;
+    margin-bottom: 40px;
+    margin-top: 32px;
+}
+
+.paypal-check{
+    gap: 16px;
+}
+
+.checkout-billing-stripe{
+    gap: 16px;
+}
+
+.checkout-border-bottom{
+    display: flex;
+    border-bottom: 1px solid   rgba(0, 0, 0, 0.11);
+    max-width: 648px;
+    margin-bottom: 40px;
+}
+
+.checkout-right-sidebar-area {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+    width: 386px;
+    min-height: 685px;
+    flex-shrink: 0;
+    padding: 34px 32px;
+}
+
+.registration-modal-area img.img-sidebar {
+    width: 72px;
+    height: 71px;
+}
+
+.light-single {
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.light-single span {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.checkout-journey p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 24px 0px;
+}
+
+.checkout-journey h5 {
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.single-subtotal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-check-fund-area button{
+    display: flex;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 4px;
+    background:  #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    min-width: 328px;
+}
+
+.checkout-journey h5{
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.checkout-code span{
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.checkout-code {
+    min-width: 321px;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    padding: 7px 15px;
+    margin-top: 6px;
+}
+.checkout-subtotal {
+    gap: 16px;
+    padding: 24px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.promocode-area {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+.single-subtotal.estimate-total span {
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.checkout-learn span {
+    color:  #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+span.checkout-about, span.checkout-extend {
+    color:  #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+
+}
+.checkout-learn {
+    padding: 12px 0px 32px;
+}
+
+.databasepading-checkout{
+        margin: 50px 0px;
+}
+.checkout-bit {
+    padding-left: 60px;
+}
+/**** ============================================== Checkout Payment End Here  ================================= ***/
 

@@ -281,9 +281,17 @@ class FigmaController extends Controller
         return view('figma-html.experthboardloginform');
     }
 
+    
+
     public function clientdashboardloginform()
     {
         return view('figma-html.clientdashboardloginform');
+    }
+
+
+    public function trainingcheckout()
+    {
+        return view('figma-html.trainingcheckout');
     }
 
 
