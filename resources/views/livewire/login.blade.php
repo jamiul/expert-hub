@@ -4,6 +4,9 @@
             <div class="container">
                 <div class="register-form">
                     <h3>Log in to EduExHub</h3>
+                    @error('type')
+                        <div class="error-message">{{ $message }}</div>
+                    @enderror
                     <div class="{{ $currentStep != 1 ? 'd-none' : '' }}">
                         <label class="register-ac">
                             <div class="register-img">

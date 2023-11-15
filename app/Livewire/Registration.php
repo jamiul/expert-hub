@@ -8,12 +8,12 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Livewire\Attributes\Rule;
+use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
 class Registration extends Component
 {
-    protected array $availableTypes = ['Expert', 'Client'];
+    protected array $availableTypes = ['expert', 'client'];
 
     public int $currentStep = 1;
 
@@ -22,35 +22,40 @@ class Registration extends Component
     public array $countries;
 
     public string $type;
-
-    #[Rule('required')]
-    public string $title = '';
-
-    #[Rule('required')]
-    public string $first_name = '';
-
-    #[Rule('required')]
-    public string $last_name = '';
-
-    #[Rule('required')]
-    public string $email = '';
-
-    #[Rule('required')]
-    public string $password = '';
-
-    #[Rule('required')]
-    public string $country_id = '';
-
-    #[Rule('nullable')]
-    public ?bool $newsletter = null;
-
-    #[Rule('required')]
-    public bool $terms;
+    public string $title;
+    public string $first_name;
+    public string $last_name;
+    public string $email;
+    public string $password;
+    public string $country_id;
+    public ?bool $newsletter = false;
+    public ?bool $terms;
 
     public function mount()
     {
         $this->titles = ['Mr', 'Mrs'];
         $this->countries = Country::pluck('name', 'id')->toArray();
+    }
+
+    public function rules()
+    {
+        return [
+            'title' => ['required'],
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'email' => ['required','email'],
+            'password' => ['required', Password::min(8)],
+            'country_id' => ['required'],
+            'newsletter' => ['nullable'],
+            'terms' => ['required'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'type.required' => 'Please select a type',
+        ];
     }
 
     public function save()
@@ -69,7 +74,10 @@ class Registration extends Component
             'terms' => $this->terms,
         ]);
         event(new Registered($user));
-        Profile::create(['user_id' => $user->id]);
+        Profile::create([
+            'user_id' => $user->id,
+            'type' => $this->type,
+        ]);
         Auth::login($user);
         return redirect()->route('verification.notice');
         // dd(auth()->user());

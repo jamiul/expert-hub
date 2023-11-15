@@ -21,7 +21,7 @@
             <div class="shadow bg-white position-absolute" style="width: 598px; top:55px;">
                 <ul class="list-style-none py-2 mb-0 ps-3">
                     @forelse ($availableLanguages as $availableLanguage)
-                        <li class="py-2" wire:click="addLanguage({{ $availableLanguage->id }})" wire:key="{{ $availableLanguage->id }}">{{$availableLanguage->name}}</li>
+                        <li class="py-2 cursor-pointer" wire:click="addLanguage({{ $availableLanguage->id }})" wire:key="{{ $availableLanguage->id }}">{{$availableLanguage->name}}</li>
                     @empty
                         <li>No results</li>
                     @endforelse

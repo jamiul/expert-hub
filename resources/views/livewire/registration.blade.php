@@ -3,6 +3,9 @@
         <div class="container">
             <div class="register-form">
                 <h3>Join as an Expert or Client</h3>
+                @error('type')
+                    <div class="error-message">{{ $message }}</div>
+                @enderror
                 {{-- <label class="register-ac">
                     <div class="register-img">
                         <div class="register-icon">
@@ -22,7 +25,7 @@
                         <h4>I’m an Expert</h4>
                     </div>
                     <div class="register-radio">
-                        <input type="radio" wire:model="type" value="Expert">
+                        <input type="radio" wire:model="type" value="expert">
                     </div>
                 </label>
                 <label class="register-ac">
@@ -33,7 +36,7 @@
                         <h4>I’m a Client</h4>
                     </div>
                     <div class="register-radio">
-                        <input type="radio" wire:model="type" value="Client">
+                        <input type="radio" wire:model="type" value="client">
                     </div>
                 </label>
                 <div class="mt-3">
@@ -65,58 +68,58 @@
                             <div class="form-group">
                                 <label>Title</label>
                                 <div class="custom-selectx">
-                                    <select class="@error('title') err @enderror" style="background:transparent" wire:model="title">
+                                    <select class="@error('title') has-error @enderror" style="background:transparent" wire:model="title">
                                         <option value="">Your title</option>
                                         @foreach ($titles as $title)
                                             <option value="{{ $title }}">{{ $title }}</option>
                                         @endforeach
                                     </select>
                                     @error('title')
-                                        <div class="err-msg">{{ $message }}</div>
+                                        <div class="error-message">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>First Name</label>
-                                <input class="@error('first_name') err @enderror" type="text" placeholder="Your first name" wire:model="first_name">
+                                <input class="@error('first_name') has-error @enderror" type="text" placeholder="Your first name" wire:model="first_name">
                                 @error('first_name')
-                                    <div class="err-msg">{{ $message }}</div>
+                                    <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>Last Name</label>
-                                <input class="@error('last_name') err @enderror" type="text" placeholder="Your last name" wire:model="last_name">
+                                <input class="@error('last_name') has-error @enderror" type="text" placeholder="Your last name" wire:model="last_name">
                                 @error('last_name')
-                                    <div class="err-msg">{{ $message }}</div>
+                                    <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
                         <div class="sign-up2">
                             <div class="form-group">
                                 <label>Email Address</label>
-                                <input class="@error('email') err @enderror" type="email" placeholder="name@example.com" wire:model="email">
+                                <input class="@error('email') has-error @enderror" type="email" placeholder="name@example.com" wire:model="email">
                                 @error('email')
-                                    <div class="err-msg">{{ $message }}</div>
+                                    <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input class="@error('password') err @enderror" type="password" placeholder="Your password (8 or more characters)" wire:model="password">
+                                <input class="@error('password') has-error @enderror" type="password" placeholder="Your password (8 or more characters)" wire:model="password">
                                 @error('password')
-                                    <div class="err-msg">{{ $message }}</div>
+                                    <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>Country</label>
                                 <div class="custom-selectx">
-                                    <select class="@error('country_id') err @enderror" style="background:transparent" wire:model="country_id">
+                                    <select class="@error('country_id') has-error @enderror" style="background:transparent" wire:model="country_id">
                                         <option value="">Select country</option>
                                         @foreach ($countries as $id => $country)
                                             <option value="{{ $id }}">{{ $country }}</option>
                                         @endforeach
                                     </select>
                                     @error('country_id')
-                                        <div class="err-msg">{{ $message }}</div>
+                                        <div class="error-message">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -127,14 +130,14 @@
                             <input type="checkbox" wire:model="newsletter">
                             <p>Send me emails with tips on how to find projects that fit my expertise.</p>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-3">
                             <div class="sendemaicheck">
-                                <input class="@error('terms') err @enderror" type="checkbox" wire:model="terms">
+                                <input class="@error('terms') has-error @enderror" type="checkbox" wire:model="terms">
                                 <p>Yes, I understand and agree to the <a href="#">EduEXHub Terms of Service</a> ,including the
                                     <a href="#">User Agreement</a> and <a href="#">Privacy Policy .</a></p>
                             </div>
                             @error('terms')
-                                <div class="err-msg">{{ $message }}</div>
+                                <div class="error-message">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>

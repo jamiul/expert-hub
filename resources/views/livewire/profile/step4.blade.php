@@ -76,7 +76,7 @@
                 <div class="shadow bg-white position-absolute z-1" style="width: 560px; top:75px;">
                     <ul class="list-style-none py-2 mb-0 ps-3">
                         @forelse ($availableSkills as $id => $name)
-                            <li class="py-2" wire:click="addSkill({{ $id }})" wire:key="{{ $id }}">{{$name}}</li>
+                            <li class="py-2 cursor-pointer" wire:click="addSkill({{ $id }})" wire:key="{{ $id }}">{{$name}}</li>
                         @empty
                             <li>No results</li>
                         @endforelse

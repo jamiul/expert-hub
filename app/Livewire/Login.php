@@ -17,14 +17,24 @@ class Login extends Component
 
     public int $currentStep = 1;
 
-    #[Rule(['required', 'string', 'email'])]
     public string $email = '';
-
-    #[Rule(['required', 'string'])]
     public string $password = '';
-
-    #[Rule(['boolean'])]
     public bool $remember = false;
+
+    public function rules()
+    {
+        return [
+            'email' => ['required', 'email'],
+            'password' => ['required', 'string'],
+            'remember' => ['boolean'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'type.required' => 'Please select a type',
+        ];
+    }
 
     public function render()
     {

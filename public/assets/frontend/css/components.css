@@ -72,3 +72,9 @@
         margin-top: 8px;
     }
 /*Form error Styles End*/
+
+/*Utility*/
+.cursor-pointer{
+    cursor: pointer;
+}
+/*Utility End*/
