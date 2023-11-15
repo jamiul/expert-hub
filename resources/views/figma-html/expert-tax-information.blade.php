@@ -103,8 +103,14 @@
                                 <div class="col-12">
                                     <div class="d-flex flex-column">
                                         <div class="prof-expart">
-                                            <p class="fw-medium">Address</p>
-                                            <p>4/181-187 Hay St<br/>Sydney, New South Wales<br/>Australia</p>
+                                            <p class="fw-medium">Legal name of taxpayer</p>
+                                            <p>Michel Jhon</p>
+                                            <p class="fw-medium mt-3">Federal tax classification</p>
+                                            <p>Individual</p>
+                                            <p class="fw-medium mt-3">Country of citizenship</p>
+                                            <p>Australia</p>
+                                            <p class="fw-medium mt-3">Date of birth</p>
+                                            <p>10/30/1989</p>
                                         </div>
                                     </div>
                                 </div>
