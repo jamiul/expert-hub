@@ -17,8 +17,15 @@ class User extends Authenticatable implements MustVerifyEmail
 
     protected $fillable = [
         'name',
+        'title',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'user_type',
+        'country_id',
+        'newsletter',
+        'terms',
         'user_name',
         'confirmation_code'
     ];
@@ -29,14 +36,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function sendEmailVerificationNotification()
-    {
-        try {
-            $this->notify(new EmailVerificationNotification());
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
-    }
+    // public function sendEmailVerificationNotification()
+    // {
+    //     try {
+    //         $this->notify(new EmailVerificationNotification());
+    //     } catch (\Throwable $th) {
+    //         //throw $th;
+    //     }
+    // }
 
     public function address()
     {
@@ -116,5 +123,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function purchasedServices()
     {
         return $this->hasMany(ServicePackagePayment::class);
+    }
+
+    public function userProfile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }
