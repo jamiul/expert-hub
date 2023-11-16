@@ -52,28 +52,27 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="input-group" wire:ignore>
-                                            <input type="file" 
-                                                class="filepond"
-                                                wire:model="filepond" 
-                                                id="filepond" 
-                                                multiple 
-                                                data-allow-reorder="true"
-                                                data-max-file-size="3MB"
-                                                data-max-files="3"
-                                            >
-                                            <div class="form-control-wrap">
-                                                <div class="input-imagesx">
-                                                    <div class="image-uploader">
-                                                        <input type="file" id="gallery_images-1700106619699" name="gallery_images[]" accept=".jpg,.jpeg,.png,.gif,.svg" multiple="multiple">
-                                                        <div class="uploaded"></div>
-                                                        <div class="upload-text">
-                                                            <i class="iui-cloud-upload" style="bac"></i>
-                                                            <span>Drag &amp; drop any images or documents that might be helpful in explaining your brief here</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div
+                                            wire:ignore
+                                            x-data
+                                            x-init="
+                                                FilePond.setOptions({
+                                                    allowMultiple: true,
+                                                    server: {
+                                                        process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                                                            @this.upload('attachments', file, load, error, progress)
+                                                        },
+                                                        revert: (fileName, load) => {
+                                                            @this.removeUpload('attachments', fileName, load)
+                                                        },
+                                                    },
+                                                    credits: {},
+                                                    labelIdle: '<strong>Clik to upload or drag & drop</strong> <br> Drag & drop any images or documents that might be helpful in explaining your brief here'
+                                                });
+                                                FilePond.create($refs.input);
+                                            "
+                                        >
+                                            <input type="file" x-ref="input">
                                         </div>
                                     </div>
                                 </div>
@@ -81,24 +80,6 @@
                                 @if($currentStep > 2)
                                 <div class="step step-3">
                                     <div class="main-form">
-                                        <div class="input-group">
-                                            <div class="customer-file">
-                                                <div class="file-name">
-                                                    <div class="file-image">
-                                                        <img src="{{ asset('assets/frontend/img/file-image.png') }}"/>
-                                                    </div>
-                                                    <div class="file-extension">
-                                                        <h3>Customer_file.png</h3>
-                                                        <p>456 KB    -   <span>21 second left</span></p>
-                                                    </div>
-                                                </div>
-                                                <div class="del-file" class="delete-button">
-                                                    <a href="#" class="delete-button">
-                                                        <img src="{{ asset('assets/frontend/img/delete.png') }}"/>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="skills">
                                             <h3>What academic skills is required for this project?</h3>
                                             <p>List up to 5 key skills that represent your project. Academic experts will use these skills to match with projects aligned to their interests and expertise.</p>

@@ -73,8 +73,36 @@
     }
 /*Form error Styles End*/
 
+/*FilePond*/
+.filepond--root .filepond--panel-root {
+    background-color: transparent;
+}
+.filepond--root {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+}
+.filepond--drop-label label{
+    font-size: 14px !important;
+}
+.filepond--root .filepond--item-panel {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 89, 201, 0.3);
+}
+.filepond--root .filepond--file {
+    color: #303744;
+}
+.filepond--root [data-filepond-item-state='processing-complete'] .filepond--item-panel {
+    background-color: #F2F6FC;
+}
+.filepond--root .filepond--item-panel {
+    background-color: #ccc;
+}
+/*FilePond end*/
 /*Utility*/
 .cursor-pointer{
     cursor: pointer;
+}
+.border-dashed{
+    border-style: dashed!important;
 }
 /*Utility End*/

@@ -15,10 +15,11 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    public int $currentStep = 6;
+    public int $currentStep = 1;
 
     public $name;
     public $description;
+    public $attachments = [];
 
     public $availableSkills = [];
     public $selectedSkills = [];
@@ -38,17 +39,24 @@ class Create extends Component
     public function save()
     {
         $data = $this->validate();
-        Project::create([
+        $attachments = [];
+        foreach($this->attachments as $attachment){
+            $fileName = $attachment->getClientOriginalName() . '-' . time() . '.' . $attachment->extension();
+            $attachment->storeAs('project', $fileName);
+            $attachments[] = $fileName;
+            // show attachment asset('storage/project/' . $project->attachments[0])
+        }
+        $project = Project::create([
             'name' => $data['name'],
             'description' => $data['description'],
-            'attachments' => null,
+            'attachments' => $attachments,
             'skills' => array_values($data['selectedSkills']),
             'type' => $data['type'],
             'currency' => $data['currency'],
             'budget' => $data['budget'],
             'project_category_id' => 1,
             'client_user_id' => Auth::user()->id,
-            'slug' => Str::slug($this->name, '-') . date('Ymd-his'),
+            'slug' => Str::slug($data['name'], '-') . date('Ymd-his'),
         ]);
 
         return redirect()->to('/');
