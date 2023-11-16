@@ -43,7 +43,7 @@ class Registration extends Component
             'title' => ['required'],
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'email' => ['required','email'],
+            'email' => ['required','email', 'unique:users'],
             'password' => ['required', Password::min(8)],
             'country_id' => ['required'],
             'newsletter' => ['nullable'],
