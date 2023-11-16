@@ -2479,5 +2479,9 @@ class CountriesTableSeeder extends Seeder
                     'deleted_at' => NULL,
                 ),
         ));
+
+        DB::table('countries')->where('id', 13)->update([
+            'timezone' => 'GMT+11'
+        ]);
     }
 }

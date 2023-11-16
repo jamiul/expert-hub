@@ -48,4 +48,26 @@ class Scholarship extends Model
     {
         return $this->belongsTo(ScholarshipCity::class, 'city_id');
     }
+
+    public function applicationDeadline()
+    {
+        return $this->hasMany(ApplicationDeadline::class);
+    }
+
+    /**
+     * Get all of the training's favorites.
+     */
+    public function favorites()
+    {
+        return $this->morphMany(UserFavorite::class, 'favoriteable');
+    }
+
+    /**
+     * Get all of the training's favorites.
+     */
+    public function userFavorite()
+    {
+        return $this->morphOne(UserFavorite::class, 'favoriteable')
+            ->where('user_id', auth()->id());
+    }
 }

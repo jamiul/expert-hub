@@ -16,18 +16,18 @@ $(".owl-carousel").owlCarousel({
     },
 });
 $(document).ready(function () {
-    $(".at-title").click(function () {
-        $(this)
-            .toggleClass("active")
-            .next(".at-tab")
-            .slideToggle()
-            .parent()
-            .siblings()
-            .find(".at-tab")
-            .slideUp()
-            .prev()
-            .removeClass("active");
-    });
+    // $(".at-title").click(function () {
+    //     $(this)
+    //         .toggleClass("active")
+    //         .next(".at-tab")
+    //         .slideToggle()
+    //         .parent()
+    //         .siblings()
+    //         .find(".at-tab")
+    //         .slideUp()
+    //         .prev()
+    //         .removeClass("active");
+    // });
 
     $(".carousel-inner .thumb").click(function () {
         if (!$(this).hasClass("active")) {
@@ -35,107 +35,182 @@ $(document).ready(function () {
             $(this).addClass("active");
         }
     });
+
+    $(document).on('click', '.read-more-text', function() {
+        $(this).closest('.right-database').find('.text-truncate-3').css('display', 'block');
+        $(this).hide();
+    });
+
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: "click",
+    });
+
+    // Copy current page
+    $(document).on("click", ".btnShareCurrentPage", function (e) {
+        var url = window.location.href;
+        $('#shareModel .facebook').attr('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`);
+        $('#shareModel .twitter').attr('href', `https://twitter.com/intent/tweet?&url=${url}`);
+        $('#shareModel .linkedin').attr('href', `https://linkedin.com/shareArticle?url=${url}`);
+    });
+
+    // Copy detail page
+    $(document).on("click", ".btnShareDetailTraining", function (e) {
+        var url = $(this).closest('.right-sidebar').find('.trainingDetailUrl').val();
+        $('#shareModel .facebook').attr('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`);
+        $('#shareModel .twitter').attr('href', `https://twitter.com/intent/tweet?&url=${url}`);
+        $('#shareModel .linkedin').attr('href', `https://linkedin.com/shareArticle?url=${url}`);
+    });
 });
 
 // Calendar funtionality
-const daysContainer = document.getElementById("daysContainer");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const monthYear = document.getElementById("monthYear");
 const dateInput = document.getElementById("dateInput");
 const calendar = document.getElementById("calendar");
 
-let currentDate = new Date();
+const currentDate = new Date();
 let selectedDate = null;
 
-function handleDayClick(day) {
+function handleDayClick(_this) {
+    let calendar_box = $(_this).closest('.calendar-box');
+    let currentDate = calendar_box.find('.dateInput').attr('current_date');
+    currentDate = new Date(currentDate);
+
+    let day = _this.innerText;
     selectedDate = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth(),
         day
     );
+    let dateInput = calendar_box.find('.dateInput')[0];
+    let calendar = calendar_box.find('.calendar')[0];
     dateInput.value = selectedDate.toLocaleDateString("en-US");
     calendar.style.display = "none";
-    renderCalendar();
+    renderCalendar(calendar_box);
 }
 
-function createDayElement(day) {
+let loadedDateSelect = false;
+function createDayElement(day, daysContainer, currentDate, _this) {
     const date = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth(),
         day
     );
+
+    var newSelectDate = null;
+    if (!loadedDateSelect && $(_this).attr('id') == 'filterTrainingDateWrap') {
+        newSelectDate = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            currentDate.getDate(),
+        );
+    } else {
+        newSelectDate = selectedDate;
+    }
+
     const dayElement = document.createElement("div");
     dayElement.classList.add("day");
 
-    if (date.toDateString() === new Date().toDateString()) {
+    if (!newSelectDate && date.toDateString() === new Date().toDateString()) {
         dayElement.classList.add("current");
     }
-    if (selectedDate && date.toDateString() === selectedDate.toDateString()) {
+    if (newSelectDate && date.toDateString() === newSelectDate.toDateString()) {
         dayElement.classList.add("selected");
+        loadedDateSelect = true;
     }
 
     dayElement.textContent = day;
-    dayElement.addEventListener("click", () => {
-        handleDayClick(day);
-    });
     daysContainer.appendChild(dayElement);
 }
 
-function renderCalendar() {
+$(document).on('click', '.day', function() {
+    handleDayClick(this);
+});
+
+function renderCalendar(_this) {
+    let daysContainer = $(_this).find(".daysContainer")[0];
     daysContainer.innerHTML = "";
+
+    let dateInputEl = $(_this).find('.dateInput');
+    let currentInput = dateInputEl.val();
+    let newDate = currentDate;
+
+    if (currentInput && !dateInputEl.attr('current_date')) {
+        currentInput = new Date(currentInput);
+        newDate = currentInput;
+    } else if (dateInputEl.attr('current_date')) {
+        currentInput = new Date(dateInputEl.attr('current_date'));
+        newDate = currentInput;
+    }
+
+    if (!dateInputEl.attr('current_date')) {
+        dateInputEl.attr('current_date', newDate);
+    }
+
     const firstDay = new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth(),
+        newDate.getFullYear(),
+        newDate.getMonth(),
         1
     );
     const lastDay = new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth() + 1,
+        newDate.getFullYear(),
+        newDate.getMonth() + 1,
         0
     );
 
-    monthYear.textContent = `${currentDate.toLocaleString("default", {
+    $(_this).find('.monthYear').text(`${newDate.toLocaleString("default", {
         month: "long",
-    })} ${currentDate.getFullYear()}`;
+    })} ${newDate.getFullYear()}`);
 
     for (let day = 1; day <= lastDay.getDate(); day++) {
-        createDayElement(day);
+        createDayElement(day, daysContainer, newDate, _this);
     }
 }
 
-prevBtn.addEventListener("click", () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
-    renderCalendar();
+$(document).on('click', '.prevBtn', function() {
+    newDate = $(this).closest('.calendar-box').find('.dateInput').attr('current_date');
+    newDate = new Date(newDate);
+    newDate.setMonth(newDate.getMonth() - 1);
+    $(this).closest('.calendar-box').find('.dateInput').attr('current_date', newDate);
+
+    renderCalendar($(this).closest('.calendar-box'));
 });
 
-nextBtn.addEventListener("click", () => {
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar();
+$(document).on('click', '.nextBtn', function() {
+    newDate = $(this).closest('.calendar-box').find('.dateInput').attr('current_date');
+    newDate = new Date(newDate);
+    newDate.setMonth(newDate.getMonth() + 1);
+    $(this).closest('.calendar-box').find('.dateInput').attr('current_date', newDate);
+
+    renderCalendar($(this).closest('.calendar-box'));
 });
 
-dateInput.addEventListener("click", () => {
-    calendar.style.display = "block";
-    positionCalendar();
+
+$(document).on('click', '.dateInput', function() {
+    this.nextElementSibling.style.display = "block";
+    positionCalendar(this, this.nextElementSibling);
 });
 
 document.addEventListener("click", (event) => {
-    if (!dateInput.contains(event.target) && !calendar.contains(event.target)) {
-        calendar.style.display = "none";
+    var calendars = document.getElementsByClassName("calendar");
+    for (var i = 0; i < calendars.length; i++) {
+        if (!event.target.classList.contains('dateInput') && !calendars[i].contains(event.target)) {
+            calendars[i].style.display = "none";
+        }
     }
 });
 
-function positionCalendar() {
-    const inputRect = dateInput.getBoundingClientRect();
+function positionCalendar(_this, calendar) {
+    const inputRect = _this.getBoundingClientRect();
     calendar.style.top = inputRect.bottom + "px";
     calendar.style.left = inputRect.left + "px";
 }
 
 window.addEventListener("resize", positionCalendar);
-
-renderCalendar();
-
-//
+$(".calendar-box").each(function() {
+    renderCalendar(this);
+})
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
@@ -157,6 +232,7 @@ for (i = 0; i < l; i++) {
         create a new DIV that will act as an option item:*/
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
+        c.setAttribute('data-value', selElmnt.options[j].value);
         c.addEventListener("click", function (e) {
             /*when an item is clicked, update the original select box,
             and the selected item:*/
@@ -238,27 +314,30 @@ function showList(inp, arr, val) {
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
           /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          if (arr[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
             /*make the matching letters bold:*/
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-            b.innerHTML += arr[i].substr(val.length);
+            b.innerHTML = "<strong>" + arr[i].name.substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].name.substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            b.innerHTML += "<input type='hidden' data-id='" + arr[i].id + "' value='" + arr[i].name + "'>";
             /*execute a function when someone clicks on the item value (DIV element):*/
             b.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/
                 inp.value = this.getElementsByTagName("input")[0].value;
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
-                closeAllLists();
+                // closeAllLists();
             });
             a.appendChild(b);
           }
         }
   }
   function autocomplete(inp, arr) {
+    if (!inp) {
+        return;
+    }
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
@@ -334,7 +413,7 @@ function showList(inp, arr, val) {
   }
   
   /*An array containing all the country names in the world:*/
-  var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+  var countries = JSON.parse($('#locationInput').attr('data-list'));
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("locationInput"), countries);
