@@ -21,10 +21,14 @@ li{
     list-style: none;
 }
 
-.form-select, select.form-control:focus{
-        border-color: #86b7fe;
-        outline: 0;
-        box-shadow:none !important
+
+
+.form-select, select.form-control:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none !important;
+    border-radius: 4px;
+    border: 2px solid rgba(14, 0, 98, 0.15);
 }
 
 /* ================ Header start Here =========== */
@@ -78,7 +82,7 @@ header.client-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 .top-search-area {
     display: flex;
@@ -161,7 +165,7 @@ button.search-select {
     min-height: 432px;
     box-shadow: 8px 8px 32px 0px #0E00621A;
     border: none;
-    transform: translate(20px, 45px) !important;
+    transform: translate(10px, 53px) !important;
 }
 
 /* ========================== Messenger setting start here ============== */
@@ -180,14 +184,14 @@ span.profile-bell::after {
     background: #EBEFF7;
 }
 
-.message-setting-area{
+.message-setting-area {
     border-radius: 8px;
     background: #FFF;
     min-width: 385px;
     min-height: 428px;
     box-shadow: 8px 8px 32px 0px #0E00621A;
     border: none;
-    transform: translate(20px, 45px) !important;
+    transform: translate(15px, 52px) !important;
 }
 
 span.indicator {
@@ -291,13 +295,36 @@ font-style: normal;
 font-weight: 500;
 }
 
+span.profile-bell {
+    border: 2px solid  #E7E5EF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+span.profile-bell a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
 span.profile-bell img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* span.profile-bell img {
     min-width: 20px;
     min-height: 20px;
-    padding: 5px;
-    border: 2px solid var(--color-border-color-solid, #E7E5EF);
+    padding: 12px;
+    border: 2px solid  #E7E5EF;
     border-radius: 50%;
-}
+} */
 
 .top-batch {
     color: #FFF;
@@ -430,13 +457,21 @@ li.active, a.active{
 .avatar img {
     border: 2px solid #D9D9D9;
     border-radius: 50px;
-    width: 32px;
-    height: 32px;
+    width: 46px;
+    height: 45px;
 }
 
 button.top-search {
-    background: #0036E3;
-    color: #fff;
+    background: #EBEFF7;
+    color: #000;
+    font-size: 14px;
+    min-width: 52px;
+    border: none !important;
+}
+
+button.top-search:hover{
+    background: #EBEFF7;
+    color: #000;
     font-size: 14px;
     min-width: 52px;
     border: none !important;
@@ -498,17 +533,16 @@ button.no-hover::after{
     margin-bottom: 24px;
 }
 
-.btn-inprogress{
+.btn-inprogress {
     font-family: Colfax;
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
     color: #191D24;
     background: #E9B911;
-    Padding: 4px 10px 2px 10px;
+    Padding: 2px 10px 2px 10px;
     border: none;
-    border-radius:63px;
-
+    border-radius: 63px;
 }
 
 .btn-hiring{
@@ -518,7 +552,7 @@ button.no-hover::after{
     line-height: 17px;
     color: #fff;
     background: #0036E3;
-    Padding: 4px 10px 2px 10px;
+    Padding: 2px 10px 2px 10px;
     border: none;
     border-radius:63px;
 
@@ -531,7 +565,7 @@ button.no-hover::after{
     line-height: 17px;
     color: #fff;
     background: #9CA5C2;
-    Padding: 4px 10px 2px 10px;
+    Padding: 2px 10px 2px 10px;
     border: none;
     border-radius:63px;
 
@@ -544,7 +578,7 @@ button.no-hover::after{
     line-height: 17px;
     color: #fff;
     background: #369450;
-    Padding: 4px 10px 2px 10px;
+    Padding: 2px 10px 2px 10px;
     border: none;
     border-radius:63px;
 
@@ -615,6 +649,11 @@ button.no-hover::after{
     left: 95px;
     padding: 5px;
     border: 3px solid #fff;
+}
+
+.client-home-carousel .owl-stage-outer .owl-stage .owl-item  {
+    border-radius: 8px;
+
 }
 
 .notify-point-gray {
@@ -886,16 +925,25 @@ section.team-area {
 }
 .single-team-member {
     display: flex;
-    background: #C8E0FD;
+    /* background: #C8E0FD; */
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-radius: 6.21px 6.21px  0px 0px;
+    border-radius: 6.21px 6.21px  6.21px 6.21px;
     box-shadow: 14.755319595336914px 13.202128410339355px 37.27659606933594px 0px #0E00621F;
     position: relative;
     min-height: 220px;
 }
+
+.single-person-deniyel {
+    border-radius: 6.213px 6.213px 0px 0px;
+    background: #C8E0FD;
+    display: flex;
+    width: 100%;
+    height: 156px;
+}
+
 .single-person-deniyel img {
     max-width: 160px;
     max-height: 185px;
@@ -904,15 +952,24 @@ section.team-area {
     left: 50px;
 }
 
-
 .person-details {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
-    background: #fff
+    background: #fff;
+    border-radius: 0px 0px 6.241px 6.241px;
+    border-radius: 0px 0px 6.213px 6.213px;
+    border-top: 0.777px solid  rgba(14, 0, 98, 0.10);
+    background: #FFF;
+    box-shadow: 14.75532px 13.20213px 37.2766px 0px rgba(14, 0, 98, 0.12);
+    height: 65px;
 }
+
+
+
+
 
 .person-details h3 {
     font-family: Colfax;
@@ -944,7 +1001,7 @@ section.team-area {
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color: #0036E3;
 
 }
@@ -968,7 +1025,7 @@ section.team-area {
     text-align: left;
     color: #000000;
     max-width:482px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-bottom: 40px;
 }
 
@@ -1134,6 +1191,12 @@ span.material-symbols-outlined.active {
     color: #191D24;
 }
 
+.all-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .all-project-weekly h2 {
     font-family: Colfax;
     font-size: 23px;
@@ -1163,24 +1226,19 @@ span.material-symbols-outlined.active {
     margin-bottom: 0px;
 }
 
-.post-job .btn-postjob {
-    width: auto;
-    height: auto;
-    padding: 11px 15px 11px;
+
+
+button.btn.btn-postjob {
     border-radius: 4px;
-    gap: 10px;
-    background: #0036E3;
+    background:  #0036E3;
+    gap: 8px;
+    color: #FFF;
+    text-align: center;
     font-family: Colfax;
     font-size: 15px;
+    font-style: normal;
     font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 152px;
+    min-width: 152px;
 }
 
 .btn-postjob-dashboard{
@@ -1538,11 +1596,13 @@ td.health-budget{
 }
 
 .all-job-area {
-    padding: 34px 30px 24px;
+    padding: 48px 30px 24px;
+    border-top: 1px solid #E7E5EF;
 }
 
 .all-job-area-board {
     padding: 25px 30px 10px;
+    border-top: none;
 }
 
 .job-area-top {
@@ -2210,9 +2270,34 @@ span.hourly-color {
     ;
     
 }
+
+
+.paypal-check .form-check-input{
+    width: 20px;
+    height: 20px;
+    border-radius: 39px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+
+.paypal-check .form-check-label {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.form-check.paypal-check {
+    display: flex;
+}
+
 .all-border-bottom {
     border-bottom: 1px solid #0E00621A;
     padding: 34px 25px;
+    align-items: center;
+    justify-content: center;
 }
 
 .all-padding-bottom {
@@ -2437,7 +2522,7 @@ font-weight: 500;
 }
 
 .profile-policy-area {
-    min-width: 640px;
+    max-width: 430px;
     gap: 12px;
 }
 
@@ -2476,11 +2561,11 @@ font-weight: 500;
 .range-active{
     color: #303744B2;
 }
-p.currency{
+p.currency {
     font-family: Colfax;
     font-size: 14px;
     font-weight: 500;
-    color:#369450 !important;
+    color: #0036E3!important;
 }
 
 p.escrow{
@@ -2489,6 +2574,14 @@ p.escrow{
     font-weight: 400;
     color:#191D24;
 
+}
+
+span.more-expand{
+    color:#191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
 }
 
 .present-date p {
@@ -2678,7 +2771,7 @@ input.form-control.p-input {
 }
 
 .chard-title {
-    margin-left: 24px;
+    margin-left: 35px;
 }
 
 .chard-title p{
@@ -2692,6 +2785,20 @@ color:#191D24;
     max-width: 275px;
     max-height: 52px;
 }
+
+
+.check-debit .form-check-input:checked {
+    border-radius: 39px;
+    border: 4px solid rgba(255, 255, 255, 0.82);
+    background: #0036E3;
+    width: 20px;
+    height: 20px;
+}
+
+.form-check.check-debit label {
+    margin: 5px 11px 0px;
+}
+
 
 /* ============== Add Payment End Here ============ */
 /* ============== On off switch css ============ */
@@ -3583,10 +3690,12 @@ a.eye-off{
 }
 
 .academic-block-client {
-    background: #E8EBF699;
+    background: transparent !important;
     padding: 38px 0 !important;
     margin-bottom: 10px !important;
 }
+
+
 
 .client-heading h2 {
     margin: 0px 10px 20px !important;
@@ -4048,5 +4157,44 @@ span.checkout-about, span.checkout-extend {
 .checkout-bit {
     padding-left: 60px;
 }
+
+.owl-carouselfive .owl-item {
+    max-width: 219px;
+    max-height: 256px;
+    margin-left: 16px;
+}
 /**** ============================================== Checkout Payment End Here  ================================= ***/
+/**** ============================================== Frontend Dashboard stat here  ================================= ***/
+
+.frontend-dashboard-area {
+    border: 1px solid rgba(14, 0, 98, 0.1) !important;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+    /* border: 1px solid #E7E5EF; */
+    margin: 32px 0px;
+}
+
+
+.frontend-title-area {
+    height: 80px;
+}
+
+.frontend-left-title {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.frontend-left-title h4{
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+/**** ============================================== Frontend Dashboard end here  ================================= ***/
+
 
