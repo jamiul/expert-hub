@@ -53,6 +53,15 @@
                                             </div>
                                         </div>
                                         <div class="input-group" wire:ignore>
+                                            <input type="file" 
+                                                class="filepond"
+                                                wire:model="filepond" 
+                                                id="filepond" 
+                                                multiple 
+                                                data-allow-reorder="true"
+                                                data-max-file-size="3MB"
+                                                data-max-files="3"
+                                            >
                                             <div class="form-control-wrap">
                                                 <div class="input-imagesx">
                                                     <div class="image-uploader">

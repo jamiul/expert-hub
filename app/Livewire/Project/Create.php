@@ -15,7 +15,7 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    public int $currentStep = 1;
+    public int $currentStep = 6;
 
     public $name;
     public $description;
