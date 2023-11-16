@@ -241,6 +241,11 @@ class FigmaController extends Controller
         return view('figma-html.admindashboardexpert');
     }
 
+    public function frontentdashboardhome()
+    {
+        return view('figma-html.frontentdashboardhome');
+    }
+
 
 
     //End Client Dashboard
