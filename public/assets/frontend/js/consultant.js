@@ -110,6 +110,7 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
 
+
 /*For location selector*/
 
 

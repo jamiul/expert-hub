@@ -1,9 +1,6 @@
-@extends('frontend.layouts.front-client-dashboard-layout')
-
+@extends('frontend.layouts.front-client-dashboard-layoutmain')
 @section('content')
-
 <section class="client-dashboard mx-auto my-5">
-
 <div class="container">
 <div class="row">
       <div class="job-area-top d-flex justify-content-between">
@@ -11,14 +8,13 @@
           <h2>Your workspace</h2>
         </div>
         <div class="post-job">
-          <button class="btn btn-postjob"> <span class="addall"><span class="material-symbols-outlined">add</span></span> Post a Job</button>
+          <button class="btn btn-postjob d-flex justify-content-center  align-items-center"> 
+            <span class="material-symbols-outlined">add</span>
+            <span>Post a Job</span> 
+          </button>
         </div>
       </div>
   </div>
-
-
-
-
   <div class="row alljob-short">
     <div class="col">
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -52,11 +48,13 @@
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     
         <!-- <div class="row"> -->
-        <div class="owl-carousel owl-theme client-home-carousel">
+        <div class="owl-carousel owl-carouselfour owl-theme client-home-carousel">
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-inprogress">In Progress</button>
+                  <div class="in-progress">
+                    <p class="btn-inprogress">In Progress</p>
+                  </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,7 +102,9 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-hiring">Hiring</button>
+                  <div class="in-hiring">
+                  <p class="btn-hiring">Hiring</p>
+                  </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -152,7 +152,9 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-onhold">On hold</button>
+                <div class="on-hold">
+                <p class="btn-onhold">On hold</p>
+                </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -200,7 +202,7 @@
           <div class="item">
             <div class="single-card-area card-with-gradient">
               <div class="inprogress-area">
-                <button class="btn-complated">Completed</button>
+                  <div class="completed"><p class="btn-complated">Completed</p></div>
                 <div class="draft-options">
                     <div class="dropdown position-relative">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -262,7 +264,7 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-inprogress">In Progress</button>
+                <div class="in-progress"><p class="btn-inprogress">In Progress</p></div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -310,7 +312,9 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-hiring">Hiring</button>
+                <div class="in-hiring">
+                 <p class="btn-hiring">Hiring</p>
+                </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -358,7 +362,7 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-onhold">On hold</button>
+                    <div class="on-hold"><p class="btn-onhold">On hold</p></div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -406,7 +410,7 @@
           <div class="item">
             <div class="single-card-area card-with-gradient">
               <div class="inprogress-area">
-                <button class="btn-complated">Completed</button>
+                <div class="completed"><p class="btn-complated">Completed</p></div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -466,11 +470,14 @@
 
       </div>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <div class="owl-carousel owl-theme client-home-carousel">
+
+      <div class="owl-carousel owl-carouselfour owl-theme client-home-carousel">
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-inprogress">In Progress</button>
+                  <div class="in-progress">
+                    <p class="btn-inprogress">In Progress</p>
+                  </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -518,7 +525,9 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-hiring">Hiring</button>
+                  <div class="in-hiring">
+                  <p class="btn-hiring">Hiring</p>
+                  </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -554,7 +563,7 @@
                   <h3>Developing curriculum for Postgraduate...</h3>
                 </div>
                 <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
+                  <p>You have 35 new proposal</p>
                 </div>
                 <div class="profile-single-button">
                   <button class="btn-fundmilestone">Review Proposal</button>
@@ -566,7 +575,9 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-onhold">On hold</button>
+                <div class="on-hold">
+                <p class="btn-onhold">On hold</p>
+                </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -602,7 +613,7 @@
                   <h3>Developing curriculum for Postgraduate...</h3>
                 </div>
                 <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
+                  <p>You have 35 new proposal</p>
                 </div>
                 <div class="profile-single-button">
                   <button class="btn-fundmilestone">Restart Contract</button>
@@ -614,13 +625,13 @@
           <div class="item">
             <div class="single-card-area card-with-gradient">
               <div class="inprogress-area">
-                <button class="btn-complated">Completed</button>
+                  <div class="completed"><p class="btn-complated">Completed</p></div>
                 <div class="draft-options">
-                    <div class="dropdown">
+                    <div class="dropdown position-relative">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                       </a>
-                      <ul class="dropdown-menu dropdown-show">
+                      <ul class="dropdown-menu dropdown-show homedropdown">
                         <li>
                           <a class="dropdown-item " href="#">Invite Experts</a>
                         </li>
@@ -649,28 +660,34 @@
                 <div class="profile-single-title">
                   <h3>Developing curriculum for Postgraduate...</h3>
                 </div>
-                <div class="profile-single-text">
-                  <h6>Feedback given</h6>
-                </div>
-                <div class="rating-area">
-                  <ul>
-                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-star default-star"></i></a></li>
-                  </ul>
-                </div>
+                  <div class="rating-area">
+                        <div class="profile-feedback">
+                        <h6>Feedback given</h6>
+                      </div>
+                      <div class="rating-area">
+                        <ul>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star default-star"></i></a></li>
+                        </ul>
+                      </div>
+                  </div>
                 <div class="profile-single-button">
                   <button class="btn-fundmilestone">Rehire</button>
                 </div>
               </div>
             </div>
           </div>
+
+         
+
+          
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-inprogress">In Progress</button>
+                <div class="in-progress"><p class="btn-inprogress">In Progress</p></div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -718,7 +735,9 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-hiring">Hiring</button>
+                <div class="in-hiring">
+                 <p class="btn-hiring">Hiring</p>
+                </div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -754,7 +773,7 @@
                   <h3>Developing curriculum for Postgraduate...</h3>
                 </div>
                 <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
+                  <p>You have 35 new proposal</p>
                 </div>
                 <div class="profile-single-button">
                   <button class="btn-fundmilestone">Review Proposal</button>
@@ -766,7 +785,7 @@
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
-                <button class="btn-onhold">On hold</button>
+                    <div class="on-hold"><p class="btn-onhold">On hold</p></div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -802,7 +821,7 @@
                   <h3>Developing curriculum for Postgraduate...</h3>
                 </div>
                 <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
+                  <p>You have 35 new proposal</p>
                 </div>
                 <div class="profile-single-button">
                   <button class="btn-fundmilestone">Restart Contract</button>
@@ -814,7 +833,7 @@
           <div class="item">
             <div class="single-card-area card-with-gradient">
               <div class="inprogress-area">
-                <button class="btn-complated">Completed</button>
+                <div class="completed"><p class="btn-complated">Completed</p></div>
                 <div class="draft-options">
                     <div class="dropdown">
                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -849,16 +868,29 @@
                 <div class="profile-single-title">
                   <h3>Developing curriculum for Postgraduate...</h3>
                 </div>
-                <div class="profile-single-text">
-                  <p>Fund a new milestone for Paras to keep working</p>
-                </div>
+                  <div class="rating-area">
+                        <div class="profile-feedback">
+                        <h6>Feedback given</h6>
+                      </div>
+                      <div class="rating-area">
+                        <ul>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                          <li><a href="#"><i class="fa-solid fa-star default-star"></i></a></li>
+                        </ul>
+                      </div>
+                  </div>
                 <div class="profile-single-button">
                   <button class="btn-fundmilestone">Rehire</button>
                 </div>
               </div>
             </div>
           </div>
+        <!-- </div> -->
         </div>
+
       </div>
     </div>
   </div>
@@ -973,7 +1005,7 @@
   </div>
   <!-- owl carousel 2  Start Here -->
   <div class="row owlp-bottom">
-        <div class="owl-carousel owl-theme rate-caurasel discover-carousel">
+        <div class="owl-carousel owl-carouselfour  owl-theme rate-caurasel discover-carousel">
           <div class="item">
             <div class="single-card-area discover-gradient">
               <div class="developing-area">

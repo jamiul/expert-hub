@@ -1,0 +1,80 @@
+/*Button Styles*/
+.button{
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 500ms;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.button-xs {
+    height: 35px;
+}
+.button-sm{
+    width: 250px;
+}
+.button-lg{
+    width: 350px;
+}
+.button-block{
+    width: 100%;
+}
+.button.button-primary{
+    background: #0036E3;
+    color: #fff;
+    border: solid 2px #0036E3;
+}
+
+.button.button-primary:hover{
+    background: #fff;
+    color: #0036E3;
+}
+
+.button.button-outline-primary{
+    background: #fff;
+    color: #0036E3;
+    border: solid 2px #0036E3;
+}
+
+.button.button-outline-primary:hover{
+    background: #0036E3;
+    color: #fff;
+}
+
+.link-button{
+    background: transparent;
+    color: #303744;
+    border: none;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.link-button:hover{
+    color: #0036E3;
+}
+/*Button Styles End*/
+
+/*Form error Styles*/
+    .has-error{
+        border: 2px solid #FF0000!important;
+        box-shadow: 0 0 0 .25rem rgba(255, 0, 0, .1);
+    }
+
+    .error-message{
+        color: #FF0000;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+/*Form error Styles End*/
+
+/*Utility*/
+.cursor-pointer{
+    cursor: pointer;
+}
+/*Utility End*/
