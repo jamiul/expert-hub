@@ -23,7 +23,7 @@ class ScholarshipsTableSeeder extends Seeder
                 array(
                     'id' => 1,
                     'category_id' => 5,
-                    'level_id' => 6,
+                    'level_id' => 1,
                     'university_id' => 6,
                     'website_link' => 'https://www.vu.edu.au/vu-sydney',
                     'country_id' => 5,
@@ -57,7 +57,7 @@ class ScholarshipsTableSeeder extends Seeder
                 array(
                     'id' => 2,
                     'category_id' => 7,
-                    'level_id' => 4,
+                    'level_id' => 2,
                     'university_id' => 1,
                     'website_link' => 'https://www.vu.edu.au/vu-sydney',
                     'country_id' => 5,
@@ -91,7 +91,7 @@ class ScholarshipsTableSeeder extends Seeder
                 array(
                     'id' => 3,
                     'category_id' => 7,
-                    'level_id' => 4,
+                    'level_id' => 3,
                     'university_id' => 2,
                     'website_link' => 'https://www.vu.edu.au/vu-sydney',
                     'country_id' => 38,
@@ -125,7 +125,7 @@ class ScholarshipsTableSeeder extends Seeder
                 array(
                     'id' => 4,
                     'category_id' => 6,
-                    'level_id' => 5,
+                    'level_id' => 4,
                     'university_id' => 2,
                     'website_link' => 'https://www.vu.edu.au/vu-sydney',
                     'country_id' => 37,
