@@ -21,7 +21,7 @@
                     <img src="{{ asset('assets/frontend/img/greencheck.png') }}" alt="green-check">
                   </div>
                   <div class="chard-icon">
-                  <img src="{{ asset('assets/frontend/img/visacard.png') }}" alt="card">
+                  <img src="{{ asset('assets/frontend/img/stripe-add.png') }}" alt="card">
                   </div>
                   <div class="chard-number d-flex flex-column">
                     <h6>Personal Account</h6>

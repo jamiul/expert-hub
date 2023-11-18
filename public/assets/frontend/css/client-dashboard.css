@@ -656,6 +656,11 @@ button.no-hover::after{
 
 }
 
+.client-home-carousel .owl-stage-outer .owl-stage .owl-item  {
+    border-radius: 8px;
+
+}
+
 .notify-point-gray {
   position: absolute;
   width: 12px;
@@ -1195,6 +1200,12 @@ span.material-symbols-outlined.active {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.all-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .all-project-weekly h2 {

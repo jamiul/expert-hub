@@ -832,17 +832,26 @@
                   </select>
                 </div>
               </div>
-              <div class="study-level">
-                <h3>Location</h3>
-                <div class="custom-select">
-                  <select>
-                    <option>Search location</option>
-                    <option>Australia</option>
-                    <option>United States</option>
-                    <option>Germany</option>
-                  </select>
-                </div>
-              </div>
+
+                    <div class="study-level">
+                        <h3>Location</h3>
+                        <div class="location-select position-relative scroller">
+                        <div class="position-relative">
+                            <input type="text" placeholder="Search Country" id="locationInput" class="form-control locationInput" required>
+                        </div>
+                        <div class="tags pt-3 pb-1">
+                            <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">
+                            <span>Bangladesh</span>
+                            <button class="btn p-0 border-0 rounded-circle">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.79989 13.9904L4.00952 13.2L8.20952 9.00001L4.00952 4.80001L4.79989 4.00964L8.99989 8.20964L13.1999 4.00964L13.9903 4.80001L9.79026 9.00001L13.9903 13.2L13.1999 13.9904L8.99989 9.79038L4.79989 13.9904Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
             </div>
           </div>
         
@@ -1378,7 +1387,7 @@
           <h4>Instructor</h4>
           <h2>Meet Our Experts for Consultation</h2>
         </div>
-        <div id="owl-carousel" class="owl-carousel owl-theme">
+        <div id="owl-carousel " class="owl-carousel  owl-carouselfive  owl-theme">
           <div class="item">
             <div class="carousel-img">
               <img src="{{ asset('assets/frontend/img/find-trad1.png') }}">
