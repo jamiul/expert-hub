@@ -7,7 +7,7 @@
             <div class="right-database">
                 <div class="database-block">
                     <div class="database-contant">
-                        <div class="database-img">
+                        <div class="database-img circle-img">
                             @if ($scholarship->university?->logo)
                                 <img src="{{ asset($scholarship->university?->logo) }}"></img>
                             @else

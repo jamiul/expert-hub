@@ -9481,3 +9481,6 @@ margin-top: 8px;
     background: #fff;
     color: #0036e3;
 }
+.circle-img img {
+    border-radius: 50px;
+}
