@@ -18,6 +18,8 @@ $(".owl-carousel").owlCarousel({
 $(document).ready(function () {
     $(document).on("click", "#reset-filter", function (e) {
         $('.left-sidebar #dateInput').val('');
+        $('.left-sidebar #locationInput').val('');
+        $('.left-sidebar #filterUniversityWrap .select-selected').text('');
     });
     
     // Copy current page
