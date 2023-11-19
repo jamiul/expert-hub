@@ -16,6 +16,11 @@ $(".owl-carousel").owlCarousel({
     },
 });
 $(document).ready(function () {
+    $(document).on("click", ".reset-filter", function (e) {
+        $('.left-sidebar #dateInput, .left-sidebar .dateInput').val('');
+        $('.left-sidebar #locationInput').val('');
+        $('.left-sidebar #filterLanguageWrap .select-selected').text('');
+    });
     // $(".at-title").click(function () {
     //     $(this)
     //         .toggleClass("active")

@@ -2,7 +2,7 @@
     <div class="left-sidebar">
         <div class="filter">
             <h5>{{ __('Filter') }}</h5>
-            <a href="javascript:void(0)" wire:click="resetFilter" id="resetFilter">{{ __('Clear filters') }}</a>
+            <a href="javascript:void(0)" wire:click="resetFilter" class="reset-filter" id="resetFilter">{{ __('Clear filters') }}</a>
         </div>
         <div class="search-block">
             <form class="example" wire:submit.prevent="filter">
