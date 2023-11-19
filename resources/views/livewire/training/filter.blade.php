@@ -78,7 +78,7 @@
                     <option value="{{ $language->id }}">{{ $language->name }}</option>
                 @endforeach
             </select>
-            <div class="custom-select" id="filterLanguageWrap" wire:ignore>
+            <div class="custom-select" id="filterLanguageWrap" data-placeholder="{{ __('Search language') }}" wire:ignore>
                 <select>
                     <option>{{ __('Search language') }}</option>
                     @foreach ($languages as $language)
@@ -99,7 +99,7 @@
             </select>
             <div class="location-select position-relative scroller" id="filterLocationWrap">
                 <div class="position-relative">
-                    <input type="text" placeholder="{{__('Search Country') }}" id="locationInput" class="form-control locationInput" data-list="{{ json_encode($countries) }}">
+                    <input type="text" autocomplete="off" placeholder="{{__('Search Country') }}" id="locationInput" class="form-control locationInput" data-list="{{ json_encode($countries) }}">
                 </div>
                 <div class="tags pt-3 pb-1">
                     @foreach ($countries as $country)
@@ -148,7 +148,7 @@
                 var vals = $("#selectLocationFilter").val();
                 vals.push($(this).find('input').attr('data-id'));
                 $("#selectLocationFilter").val(vals);
-
+                $("#locationInput").val("")
                 reloadLocationSelected();
             });
 
@@ -156,7 +156,7 @@
                 var vals = $("#selectLocationFilter").val();
                 vals = vals.filter((item) => item != $(this).attr('data-id'));
                 $("#selectLocationFilter").val(vals);
-
+                $("#locationInput").val("")
                 reloadLocationSelected();
             });
 
@@ -183,7 +183,7 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('filterStore', () => ({
                 currentTabActive: '',
-                handleActiveTab(data) {
+                                handleActiveTab(data) {
                     if (data !== this.currentTabActive) {
                         this.currentTabActive = data
                     } else {
