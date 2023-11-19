@@ -183,7 +183,7 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('filterStore', () => ({
                 currentTabActive: '',
-                                handleActiveTab(data) {
+                handleActiveTab(data) {
                     if (data !== this.currentTabActive) {
                         this.currentTabActive = data
                     } else {
