@@ -9,6 +9,11 @@ class ProjectCategory extends Model
 {
     use SoftDeletes;
 
+    public function children()
+    {
+        return $this->hasMany(ProjectCategory::class, 'parent_id', 'id');
+    }
+
     public function projects()
     {
         return $this->hasMany(Project::class, 'project_category_id');
@@ -17,5 +22,10 @@ class ProjectCategory extends Model
     public function services()
     {
         return $this->hasMany(Service::class, 'project_cat_id');
+    }
+
+    public function scopeIsParent($query)
+    {
+        return $query->where('parent_id', 0);
     }
 }
