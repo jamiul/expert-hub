@@ -1,7 +1,7 @@
 @extends('frontend.layouts.front-layout')
 
 @push('top_styles')
-    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <link rel='stylesheet' href="{{ asset('assets/frontend/css/filepond.css') }}">
 @endpush
 
 @section('content')
@@ -10,5 +10,5 @@
 @endsection
 
 @push('bottom_scripts')
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script src="{{ asset('assets/frontend/js/filepond.js') }}"></script>
 @endpush
