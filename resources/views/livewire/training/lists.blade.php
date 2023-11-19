@@ -14,7 +14,7 @@
                                 <a href="{{ route('find-training.details', $training->slug) }}">{{ $training->title }}</a>
                             </h4>
                             <span>Time in {{ $training->country?->name }} ({{ $training->country?->timezone }})</span>
-                            <span>{{ $training->country?->code }}</span>
+                            <span>{{ $training->country?->name }}</span>
                         </div>
                     </div>
                     <div class="database-right">

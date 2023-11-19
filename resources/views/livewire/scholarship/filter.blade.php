@@ -8,7 +8,7 @@
       </div>
       <div class="filter">
         <h5>{{ __('Filter') }}</h5>
-        <a href="javascript:void(0)" wire:click="resetFilter">{{ __('Clear filters') }}</a>
+        <a href="javascript:void(0)" wire:click="resetFilter" class="reset-filter">{{ __('Clear filters') }}</a>
       </div>
       <div class="study-level study-level-media">
         <h3>{{ __('Study Level') }}</h3>
