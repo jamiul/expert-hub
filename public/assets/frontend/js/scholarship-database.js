@@ -16,6 +16,10 @@ $(".owl-carousel").owlCarousel({
 });
 
 $(document).ready(function () {
+    $(document).on("click", "#reset-filter", function (e) {
+        $('.left-sidebar #dateInput').val('');
+    });
+    
     // Copy current page
     $(document).on("click", ".btnShareCurrentPage", function (e) {
         var url = window.location.href;
