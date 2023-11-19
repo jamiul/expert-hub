@@ -25,7 +25,7 @@ $(document).ready(function () {
     });
 
     // Copy detail page
-    $(document).on("click", ".btnShareDetailTraining", function (e) {
+    $(document).on("click", ".btnShareDetailPage", function (e) {
         var url = $(this).closest('.right-sidebar').find('.pageDetailUrl').val();
         $('#shareModel .facebook').attr('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`);
         $('#shareModel .twitter').attr('href', `https://twitter.com/intent/tweet?&url=${url}`);

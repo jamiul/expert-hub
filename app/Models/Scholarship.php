@@ -55,7 +55,7 @@ class Scholarship extends Model
     }
 
     /**
-     * Get all of the training's favorites.
+     * Get all of the scholarship's favorites.
      */
     public function favorites()
     {
@@ -63,7 +63,7 @@ class Scholarship extends Model
     }
 
     /**
-     * Get all of the training's favorites.
+     * Get all of the scholarship's favorites of user.
      */
     public function userFavorite()
     {

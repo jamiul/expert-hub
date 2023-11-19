@@ -26,7 +26,7 @@
                                 <img src="{{ asset('assets/frontend/img/like-icon.png') }}">
                             </a>    
                         @endauth
-                        <a class="data-icon btnShareDetailTraining" href="javascript:void(0)" wire:ignore data-bs-toggle="modal" data-bs-target="#shareModel">
+                        <a class="data-icon btnShareDetailPage" href="javascript:void(0)" wire:ignore data-bs-toggle="modal" data-bs-target="#shareModel">
                             <img src="{{ asset('assets/frontend/img/share-icon.png') }}">
                         </a>
                     </div>

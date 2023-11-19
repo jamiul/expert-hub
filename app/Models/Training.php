@@ -91,7 +91,7 @@ class Training extends Model
     }
 
     /**
-     * Get all of the training's favorites.
+     * Get all of the training's favorites of user.
      */
     public function userFavorite()
     {
