@@ -2476,6 +2476,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .right-sidebar .database-block .database-contant .database-img {
     margin-right: 12px;
 }
+.right-sidebar .database-block .database-contant .database-img > img {
+    max-width: 72px;
+}
 
 .right-sidebar .database-block .database-contant .database-text h4 {
     margin: 0 0 5px;
