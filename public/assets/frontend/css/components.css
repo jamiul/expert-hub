@@ -83,6 +83,7 @@
 }
 .filepond--drop-label label{
     font-size: 14px !important;
+    cursor: pointer!important;
 }
 .filepond--root .filepond--item-panel {
     border-radius: 5px;
