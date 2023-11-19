@@ -26,7 +26,7 @@
                                 <img src="{{ asset('assets/frontend/img/like-icon.png') }}">
                             </a>    
                         @endauth
-                        <a class="data-icon btnShareDetailTraining" href="javascript:void(0)" wire:ignore data-toggle="tooltip" title="{{ __('coppied') }}">
+                        <a class="data-icon btnShareDetailTraining" href="javascript:void(0)" wire:ignore data-bs-toggle="modal" data-bs-target="#shareModel">
                             <img src="{{ asset('assets/frontend/img/share-icon.png') }}">
                         </a>
                     </div>
@@ -68,5 +68,38 @@
     @endforeach
 
     {{ $scholarships->links() }}
+
+    <!-- Modal share -->
+    <div class="consultant-left-button">
+        <div class="modal fade" id="shareModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="shareModelLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="share-links">
+                            <li>
+                                <a class="facebook" data-href="https://www.facebook.com/sharer/sharer.php?u={url}" target="blank">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="twitter" data-href="https://twitter.com/intent/tweet?&url={url}" target="blank">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linkedin" data-href="http://www.linkedin.com/shareArticle?mini=true&url={url}" target="blank">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

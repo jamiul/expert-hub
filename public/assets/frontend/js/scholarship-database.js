@@ -15,6 +15,24 @@ $(".owl-carousel").owlCarousel({
     },
 });
 
+$(document).ready(function () {
+    // Copy current page
+    $(document).on("click", ".btnShareCurrentPage", function (e) {
+        var url = window.location.href;
+        $('#shareModel .facebook').attr('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`);
+        $('#shareModel .twitter').attr('href', `https://twitter.com/intent/tweet?&url=${url}`);
+        $('#shareModel .linkedin').attr('href', `https://linkedin.com/shareArticle?url=${url}`);
+    });
+
+    // Copy detail page
+    $(document).on("click", ".btnShareDetailTraining", function (e) {
+        var url = $(this).closest('.right-sidebar').find('.pageDetailUrl').val();
+        $('#shareModel .facebook').attr('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`);
+        $('#shareModel .twitter').attr('href', `https://twitter.com/intent/tweet?&url=${url}`);
+        $('#shareModel .linkedin').attr('href', `https://linkedin.com/shareArticle?url=${url}`);
+    });
+});
+
 const daysContainer = document.getElementById("daysContainer");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
