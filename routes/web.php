@@ -95,7 +95,6 @@ Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
 Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
 Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
 
-Route::mailPreview();
 Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
 Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');
 Route::post('/auth/logout', [AuthenticatedSessionController::class, 'logout'])->middleware('auth')->name('auth.logout');

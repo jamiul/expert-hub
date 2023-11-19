@@ -43,7 +43,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\LastUserActivity::class,
             \App\Http\Middleware\HttpsProtocol::class,
             \App\Http\Middleware\CheckForMaintenanceMode::class,
-            \Spatie\MailPreview\Http\Middleware\AddMailPreviewOverlayToResponse::class,
         ],
 
         'api' => [
