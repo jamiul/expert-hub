@@ -2483,5 +2483,8 @@ class CountriesTableSeeder extends Seeder
         DB::table('countries')->where('id', 13)->update([
             'timezone' => 'GMT+11'
         ]);
+        DB::table('countries')->where('id', 231)->update([
+            'timezone' => 'GMT+5'
+        ]);
     }
 }
