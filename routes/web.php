@@ -205,7 +205,7 @@ Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], functio
     Route::get('/notifications', [NotificationController::class, 'frontendListing'])->name('frontend.notifications');
 });
 
-Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
 
 // Client middleware
 Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']], function () {
