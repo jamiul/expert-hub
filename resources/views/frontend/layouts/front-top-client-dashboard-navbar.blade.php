@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/client-dashboard.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/experthire.css') }}">
 <header class="client-header">
   <div class="top-nav-area">
     <div class="logo-area">
