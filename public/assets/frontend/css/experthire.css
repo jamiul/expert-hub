@@ -137,7 +137,7 @@ header .header-menu .login-block i {margin-right: 10px;}
 .categories-main .categories-block .categories-text .review .fa {color: #DB9E00;font-size: 13px;}
 .categories-main .categories-block .categories-text .categories-review .review-text {margin-left: 10px;font-size: 12px;color: #303744B2;}
 .categories-main .categories-block .categories-available {display: flex;align-items: center;margin-top: 10px;}
-.categories-main .categories-block .categories-available .available-text {color: #303744CC;font-size: 14px;font-weight: 500;margin-left: 10px;}
+.categories-main .categories-block .categories-available .available-text {color: #303744CC !important;  font-size: 14px !important ;font-weight: 500 !important; margin-left: 10px !important;}
 .categories-main .categories-button {text-align: center;}
 .categories-main .categories-button a {transition: all 500ms;color: #0036E3;font-size: 15px;font-weight: 500;border: solid 2px #0036E3;width: 235px;height: 45px;display: inline-table;line-height: 45px;text-decoration: none;border-radius: 4px;}
 .categories-main .categories-button a:hover {color: #fff;background:#0036E3;}

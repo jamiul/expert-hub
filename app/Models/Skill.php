@@ -17,4 +17,9 @@ class Skill extends Model
     {
         return $this->hasMany(Skill::class, 'parent_id', 'id');
     }
+
+    public function scopeIsParent($query)
+    {
+        return $query->whereNull('parent_id');
+    }
 }

@@ -15,5 +15,6 @@ return [
 
     'previous' => '&laquo; Previous',
     'next' => 'Next &raquo;',
+    'showing_from_to_of_entries' => 'Showing :from to :to of :total entries',
 
 ];
