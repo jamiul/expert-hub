@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
 
-    runs-on: [self-hosted, staging-vm]
+    runs-on: [self-hosted,  staging-ec2]
     steps:
       - name: Pulling Latest Code
         uses: actions/checkout@v3
