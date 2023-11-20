@@ -18,6 +18,6 @@ class ApplicationDeadline extends Model
 
     public function scholarship()
     {
-        return $this->belongsTo(Scholarship::class);
+        return $this->belongsTo(Scholarship::class, 'scholarship_id');
     }
 }

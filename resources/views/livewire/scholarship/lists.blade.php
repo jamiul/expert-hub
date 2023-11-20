@@ -42,7 +42,7 @@
                 <div class="deta-list">
                     <ul>
                         <li>{{ __('Application Deadline') }}</li>
-                        <li>{{ $scholarship->application_deadline }}&nbsp;</li>
+                        <li>{{ Carbon::parse($scholarship->applicationDeadline[0]->end_date)->format('d-m-Y')}}&nbsp;</li>
                         <li>{{ __('Study area') }}</li>
                         <li>{{ $scholarship->study_area }}&nbsp;</li>
                         <li>{{ __('Study Level') }}</li>

@@ -2,15 +2,16 @@
 
 namespace Database\Seeders;
 
+use DB;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+
 
 class ApplicationDeadlineTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+     public function run(): void
     {
         DB::table('application_deadlines')->delete();
 
