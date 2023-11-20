@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\BookmarkedServiceController;
 use App\Http\Controllers\Frontend\CancelProjectController;
 use App\Http\Controllers\Frontend\ChatController;
 use App\Http\Controllers\Frontend\CityController;
+use App\Http\Controllers\Frontend\ClientController;
 use App\Http\Controllers\Frontend\ConsultantController;
 use App\Http\Controllers\Frontend\ExpertAccountController;
 use App\Http\Controllers\Frontend\ExpertController;
@@ -118,7 +119,7 @@ Route::get('/social-login/{provider}/callback', [LoginController::class, 'handle
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/language/{locale}', [LanguageController::class, 'changeLanguage'])->name('language.change');
-Route::get('/package-select', [PackageController::class, 'selectPackage'])->name('select_package');
+// Route::get('/package-select', [PackageController::class, 'selectPackage'])->name('select_package');
 Route::get('/check', [UserController::class, 'userOnlineStatus']);
 
 Route::post('/user-name-check', [HomeController::class, 'userNameCheck'])->name('user_name_check');
@@ -156,7 +157,7 @@ Route::group(['middleware' => ['user']], function () {
     Route::get('verification-confirmation/{code}', [HomeController::class, 'verificationConfirmation'])->name('email.verification.confirmation');
 });
 
-Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], function () {
+Route::group(['middleware' => ['user']], function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::group(['prefix' => 'projects'], function () {

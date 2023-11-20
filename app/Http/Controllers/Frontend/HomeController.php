@@ -90,7 +90,7 @@ class HomeController extends Controller
         if (isExpert()) {
             return view('frontend.user.expert.dashboard');
         } elseif (isClient()) {
-            return view('frontend.user.client.dashboard');
+            return view('frontend.user.client.dashboard.landing-page');
         } else {
             abort(404);
         }
