@@ -2136,7 +2136,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .left-sidebar #prevBtn,
-.left-sidebar #nextBtn {
+.left-sidebar #nextBtn,
+.left-sidebar .prevBtn,
+.left-sidebar .nextBtn {
     background: none;
     border: none;
     color: #5c5c5c;
@@ -2144,7 +2146,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 13px;
 }
 
-.left-sidebar #monthYear {
+.left-sidebar #monthYear,
+.left-sidebar .monthYear {
     font-size: 18px;
     font-weight: 500;
     margin: 0;
@@ -2177,7 +2180,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     border-radius: 100%;
 }
 
-.left-sidebar #dateInput {
+.left-sidebar #dateInput,
+.left-sidebar .dateInput {
     width: 100%;
     padding: 10px;
     border: 2px solid #0000001a;
@@ -2193,7 +2197,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     background-position: right 20px center;
 }
 
-.left-sidebar #dateInput:focus {
+.left-sidebar #dateInput:focus,
+.left-sidebar .dateInput:focus {
     background: url(../images/arrow-icon-hover.png) no-repeat;
     background-position: right 20px center;
 }
@@ -2214,11 +2219,13 @@ footer .footer-bottom .footer-icon ul li a:hover {
     color: #303744;
 }
 
-.left-sidebar #dateInput::placeholder {
+.left-sidebar #dateInput::placeholder,
+.left-sidebar .dateInput::placeholder {
     color: #303744b2;
 }
 
-.left-sidebar #daysContainer {
+.left-sidebar #daysContainer,
+.left-sidebar .daysContainer {
     padding: 0 10px;
     display: inline-block;
     width: 100%;
@@ -2259,7 +2266,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .consultant-left-button .modal .modal-content #prevBtn,
-.consultant-left-button .modal .modal-content #nextBtn {
+.consultant-left-button .modal .modal-content #nextBtn,
+.consultant-left-button .modal .modal-content .prevBtn,
+.consultant-left-button .modal .modal-content .nextBtn {
     background: none;
     border: none;
     color: #5c5c5c;
@@ -2267,7 +2276,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 13px;
 }
 
-.consultant-left-button .modal .modal-content #monthYear {
+.consultant-left-button .modal .modal-content #monthYear,
+    .consultant-left-button .modal .modal-content .monthYear {
     font-size: 18px;
     font-weight: 500;
     margin: 0;
@@ -2300,7 +2310,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     border-radius: 100%;
 }
 
-.consultant-left-button .modal .modal-content #dateInput {
+.consultant-left-button .modal .modal-content #dateInput,
+.consultant-left-button .modal .modal-content .dateInput {
     width: 100%;
     padding: 10px;
     border: 2px solid #0000001a;
@@ -2400,16 +2411,16 @@ footer .footer-bottom .footer-icon ul li a:hover {
     grid-gap: 10px;
 }
 
-.consultant-left-button #staticBackdrop #calendar {
+.consultant-left-button #staticBackdrop .calendar {
     border: none;
 }
 
-.consultant-left-button #staticBackdrop #calendar {
+.consultant-left-button #staticBackdrop .calendar {
     border: none;
     position: inherit;
 }
 
-.consultant-left-button #staticBackdrop #dateInput {
+.consultant-left-button #staticBackdrop .dateInput {
     position: absolute;
 }
 
@@ -2420,7 +2431,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     margin-bottom: 17px;
 }
 
-.consultant-left-button .modal .modal-content #dateInput:focus {
+.consultant-left-button .modal .modal-content .dateInput:focus {
     background: url(../images/arrow-icon-hover.png) no-repeat;
     background-position: right 20px center;
 }
@@ -2441,11 +2452,11 @@ footer .footer-bottom .footer-icon ul li a:hover {
     color: #303744;
 }
 
-.consultant-left-button .modal .modal-content #dateInput::placeholder {
+.consultant-left-button .modal .modal-content .dateInput::placeholder {
     color: #303744b2;
 }
 
-.consultant-left-button .modal .modal-content #daysContainer {
+.consultant-left-button .modal .modal-content .daysContainer {
     padding: 0 10px;
     display: inline-block;
     width: 100%;
@@ -2526,12 +2537,14 @@ footer .footer-bottom .footer-icon ul li a:hover {
     margin-left: 8px;
 }
 
-.right-sidebar .database-block .database-right .data-icon:hover {
+.right-sidebar .database-block .database-right .data-icon:hover,
+.right-sidebar .database-block .database-right .data-icon.active {
     background: #0036e3;
     border-color: #0036e3;
 }
 
-.right-sidebar .database-block .database-right .data-icon:hover img {
+.right-sidebar .database-block .database-right .data-icon:hover img,
+    .right-sidebar .database-block .database-right .data-icon.active img {
     filter: brightness(0) invert(1);
 }
 
@@ -2658,6 +2671,10 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .pagination .pagination-right ul li a:hover {
     background: #0036e3;
     color: #fff;
+}
+.pagination .pagination-right ul li a.active {
+    background: #0036e3;
+    color: #fff !important;
 }
 
 .pagination .pagination-right ul li a {
@@ -4024,6 +4041,14 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .find-training-2 .right-sidebar .database-p,
 .find-training-2 .right-sidebar .deta-list ul {
     padding-left: 77px;
+}
+
+ul.share-links {
+    text-align: center;
+}
+ul.share-links > li {
+    display: inline-block;
+    width: 50px;
 }
 
 .consultant-left {
@@ -9357,6 +9382,14 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .team-review p {
     color: rgba(48, 55, 68, 0.7);
 }
+
+.text-truncate-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 /****MEDIA QUERY***/
 
 @media screen and (max-width: 767px) {
@@ -9454,3 +9487,6 @@ margin-top: 8px;
     .btn-link:hover { color: #000;
      }
 /* More link styling */
+.circle-img img {
+    border-radius: 50px;
+}

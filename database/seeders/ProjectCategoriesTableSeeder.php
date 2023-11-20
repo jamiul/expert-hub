@@ -234,6 +234,78 @@ class ProjectCategoriesTableSeeder extends Seeder
                     'updated_at' => '2023-09-17 15:55:44',
                     'deleted_at' => '2023-09-17 15:55:44',
                 ),
+            18 =>
+                array(
+                    'id' => 19,
+                    'name' => 'Scholarships',
+                    'parent_id' => 0,
+                    'photo' => '205',
+                    'description' => 'Scholarships',
+                    'slug' => 'scholarships',
+                    'created_at' => '2023-11-13 15:55:08',
+                    'updated_at' => '2023-11-13 15:55:44',
+                    'deleted_at' => NULL,
+                ),
+            19 =>
+                array(
+                    'id' => 20,
+                    'name' => 'SmartPLS',
+                    'parent_id' => 12,
+                    'photo' => '205',
+                    'description' => 'SmartPLS',
+                    'slug' => 'smart-pls',
+                    'created_at' => '2023-11-13 15:55:08',
+                    'updated_at' => '2023-11-13 15:55:44',
+                    'deleted_at' => NULL,
+                ),
+            20 =>
+                array(
+                    'id' => 21,
+                    'name' => 'SPSS',
+                    'parent_id' => 12,
+                    'photo' => '205',
+                    'description' => 'SPSS',
+                    'slug' => 'spss',
+                    'created_at' => '2023-11-13 15:55:08',
+                    'updated_at' => '2023-11-13 15:55:44',
+                    'deleted_at' => NULL,
+                ),
+            21 =>
+                array(
+                    'id' => 22,
+                    'name' => 'LMS Administration',
+                    'parent_id' => 12,
+                    'photo' => '205',
+                    'description' => 'LMS Administration',
+                    'slug' => 'lms-administration',
+                    'created_at' => '2023-11-13 15:55:08',
+                    'updated_at' => '2023-11-13 15:55:44',
+                    'deleted_at' => NULL,
+                ),
+            22 =>
+                array(
+                    'id' => 23,
+                    'name' => 'HDR Thesis Writing',
+                    'parent_id' => 13,
+                    'photo' => '205',
+                    'description' => 'HDR Thesis Writing',
+                    'slug' => 'lms-administration',
+                    'created_at' => '2023-11-13 15:55:08',
+                    'updated_at' => '2023-11-13 15:55:44',
+                    'deleted_at' => NULL,
+                ),
+            23 =>
+                array(
+                    'id' => 24,
+                    'name' => 'HDR Scholarships',
+                    'parent_id' => 19,
+                    'photo' => '205',
+                    'description' => 'HDR Scholarships',
+                    'slug' => 'hdr-scholarships',
+                    'created_at' => '2023-11-13 15:55:08',
+                    'updated_at' => '2023-11-13 15:55:44',
+                    'deleted_at' => NULL,
+                ),
         ));
     }
 }

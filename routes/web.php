@@ -95,7 +95,6 @@ Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
 Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
 Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
 
-Route::mailPreview();
 Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
 Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');
 Route::post('/auth/logout', [AuthenticatedSessionController::class, 'logout'])->middleware('auth')->name('auth.logout');
@@ -205,7 +204,7 @@ Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], functio
     Route::get('/notifications', [NotificationController::class, 'frontendListing'])->name('frontend.notifications');
 });
 
-Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
 
 // Client middleware
 Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']], function () {
