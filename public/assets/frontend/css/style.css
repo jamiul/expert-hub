@@ -2476,6 +2476,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .right-sidebar .database-block .database-contant .database-img {
     margin-right: 12px;
 }
+.right-sidebar .database-block .database-contant .database-img > img {
+    max-width: 72px;
+}
 
 .right-sidebar .database-block .database-contant .database-text h4 {
     margin: 0 0 5px;
@@ -9480,4 +9483,13 @@ margin-top: 8px;
 .register .register-form .creat-button button:hover {
     background: #fff;
     color: #0036e3;
+}
+
+/* More link styling */
+.btn-link { color: #0036E3;font-size: .875rem;text-decoration: none; }
+    .btn-link:hover { color: #000;
+     }
+/* More link styling */
+.circle-img img {
+    border-radius: 50px;
 }

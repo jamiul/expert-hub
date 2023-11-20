@@ -7,7 +7,7 @@
             <div class="right-database">
                 <div class="database-block">
                     <div class="database-contant">
-                        <div class="database-img">
+                        <div class="database-img circle-img">
                             @if ($scholarship->university?->logo)
                                 <img src="{{ asset($scholarship->university?->logo) }}"></img>
                             @else
@@ -16,7 +16,12 @@
                         </div>
                         <div class="database-text">
                             <h4>{{ $scholarship->title }}</h4>
-                            <span>{{ $scholarship->university?->university_name }}</span>
+                            @if (isset($scholarship->university->university_name))
+                                <span>{{ $scholarship->university?->university_name }}</span>
+                            @endif
+                            @if (isset($scholarship->country->country_name))
+                                <span>{{ $scholarship->country?->country_name }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="database-right">
