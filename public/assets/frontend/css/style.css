@@ -9481,6 +9481,12 @@ margin-top: 8px;
     background: #fff;
     color: #0036e3;
 }
+
+/* More link styling */
+.btn-link { color: #0036E3;font-size: .875rem;text-decoration: none; }
+    .btn-link:hover { color: #000;
+     }
+/* More link styling */
 .circle-img img {
     border-radius: 50px;
 }
