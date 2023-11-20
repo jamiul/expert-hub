@@ -33,3 +33,11 @@ jobs:
       - name: Copy and Override Files to /var/www/html
         run: |
           sudo rsync -av . /var/www/html/EduExHub    
+          
+      - name: Adjusting permissions for storage directory
+        run: |
+          sudo chmod -R 775 /var/www/html/EduExHub/storage
+
+      - name: Verifying user and group ownership
+        run: | 
+          sudo chown -R www-data:www-data /var/www/html/EduExHub/storage
