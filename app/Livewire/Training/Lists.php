@@ -80,7 +80,10 @@ class Lists extends Component
                 ->whereIn('training_modes.name', $this->filtersArray['trainingMode']);
         }
         if (isset($this->filtersArray['language']) && $this->filtersArray['language']) {
-            $trainings = $trainings->where('language_id', $this->filtersArray['language']);
+            $trainings = $trainings
+            ->select('trainings.*')
+            ->join('languages', 'trainings.language_id', '=', 'languages.id')
+            ->where('languages.name', $this->filtersArray['language']);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
             $trainings = $trainings

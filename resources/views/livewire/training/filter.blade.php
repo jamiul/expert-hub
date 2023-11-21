@@ -75,14 +75,14 @@
             <select wire:change="filter" wire:model="language" hidden id="selectLanguageFilter">
                 <option>{{ __('Search language') }}</option>
                 @foreach ($languages as $language)
-                    <option value="{{ $language->id }}">{{ $language->name }}</option>
+                    <option value="{{ $language->name }}">{{ $language->name }}</option>
                 @endforeach
             </select>
             <div class="custom-select" id="filterLanguageWrap" data-placeholder="{{ __('Search language') }}" wire:ignore>
                 <select>
                     <option>{{ __('Search language') }}</option>
                     @foreach ($languages as $language)
-                        <option value="{{ $language->id }}" {{ request()->get('language') == $language->id ? 'selected' : '' }}>
+                        <option value="{{ $language->name }}" {{ request()->get('language') == $language->name ? 'selected' : '' }}>
                             {{ $language->name }}
                         </option>
                     @endforeach
@@ -94,7 +94,7 @@
             <h3>{{ __('Location') }}</h3>
             <select wire:change="filter" wire:model="country" hidden id="selectLocationFilter" multiple>
                 @foreach ($countries as $country)
-                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                    <option value="{{ $country->name }}">{{ $country->name }}</option>
                 @endforeach
             </select>
             <div class="location-select position-relative scroller" id="filterLocationWrap">
@@ -103,10 +103,10 @@
                 </div>
                 <div class="tags pt-3 pb-1">
                     @foreach ($countries as $country)
-                        @if ($this->country && in_array($country->id, $this->country))
+                        @if ($this->country && in_array($country->name, $this->country))
                             <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">
                                 <span>{{ $country->name }}</span>
-                                <button class="btn p-0 border-0 rounded-circle" data-id="{{ $country->id }}">
+                                <button class="btn p-0 border-0 rounded-circle" data-id="{{ $country->id }}" data-name="{{ $country->name }}">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.79989 13.9904L4.00952 13.2L8.20952 9.00001L4.00952 4.80001L4.79989 4.00964L8.99989 8.20964L13.1999 4.00964L13.9903 4.80001L9.79026 9.00001L13.9903 13.2L13.1999 13.9904L8.99989 9.79038L4.79989 13.9904Z" fill="white"/>
                                     </svg>
@@ -137,7 +137,6 @@
 
             $(document).on('click', '#filterLanguageWrap .select-items div', function(e) {
                 let selectedVal = $(this).attr('data-value');
-
                 var selectElement = document.getElementById('selectLanguageFilter');
                 selectElement.value = selectedVal;
                 var event = new Event('change');
@@ -146,7 +145,7 @@
 
             $(document).on('click', '#filterLocationWrap .autocomplete-items > div', function(e) {
                 var vals = $("#selectLocationFilter").val();
-                vals.push($(this).find('input').attr('data-id'));
+                vals.push($(this).find('input').attr('data-name'));
                 $("#selectLocationFilter").val(vals);
                 $("#locationInput").val("")
                 reloadLocationSelected();
@@ -154,7 +153,7 @@
 
             $(document).on('click', '#filterLocationWrap .rounded-circle', function(e) {
                 var vals = $("#selectLocationFilter").val();
-                vals = vals.filter((item) => item != $(this).attr('data-id'));
+                vals = vals.filter((item) => item != $(this).attr('data-name'));
                 $("#selectLocationFilter").val(vals);
                 $("#locationInput").val("")
                 reloadLocationSelected();
@@ -166,7 +165,7 @@
                     $('#filterLocationWrap .tags').append('\
                         <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">\
                             <span>' + $(el).text() + '</span>\
-                            <button class="btn p-0 border-0 rounded-circle" data-id="' + $(el).val() + '">\
+                            <button class="btn p-0 border-0 rounded-circle" data-id="' + $(el).val() + '" data-name="' + $(el).text() + '">\
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">\
                                     <path d="M4.79989 13.9904L4.00952 13.2L8.20952 9.00001L4.00952 4.80001L4.79989 4.00964L8.99989 8.20964L13.1999 4.00964L13.9903 4.80001L9.79026 9.00001L13.9903 13.2L13.1999 13.9904L8.99989 9.79038L4.79989 13.9904Z" fill="white"></path>\
                                 </svg>\
