@@ -157,7 +157,7 @@ Route::group(['middleware' => ['user']], function () {
     Route::get('verification-confirmation/{code}', [HomeController::class, 'verificationConfirmation'])->name('email.verification.confirmation');
 });
 
-Route::group(['middleware' => ['user']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::group(['prefix' => 'projects'], function () {

@@ -31,6 +31,9 @@
                     <li>
                         <a href="#">Settings</a>
                     </li>
+                    @auth
+                    <livewire:logout />
+                    @endauth
                 </ul>
             </nav>
         </div>
@@ -153,7 +156,8 @@
                                     <div class="message-profile position-relative">
                                         <a href="#"><img
                                                 src="{{ asset('assets/frontend/img/message-profile4.png') }}"
-                                                alt="message profile"> <span class="indicator position-absolute"></span>
+                                                alt="message profile"> <span
+                                                class="indicator position-absolute"></span>
                                         </a>
                                     </div>
                                     <div class="message-text d-flex flex-column">
@@ -176,7 +180,8 @@
                                         <a href="#"><img
                                                 src="{{ asset('assets/frontend/img/message-profile5.png') }}"
                                                 alt="message profile"> <span
-                                                class="indicator position-absolute"></span> </a>
+                                                class="indicator position-absolute"></span>
+                                        </a>
                                     </div>
                                     <div class="message-text d-flex flex-column">
                                         <h5>Floyd Miles</h5>
@@ -229,12 +234,20 @@
                             </div>
                         </div>
                         <div class="single-option d-flex flex-column">
-                            <h6><a href="#"><span> <img src="{{ asset('assets/frontend/img/user.png') }}"
-                                            alt=""> </span> <span class="s-profile">Profile</span></a> </h6>
+                            <h6>
+                                <a href="#">
+                                    <span>
+                                        <img src="{{ asset('assets/frontend/img/user.png') }}" alt="">
+                                    </span>
+                                    <span class="s-profile">Profile</span>
+                                </a>
+                            </h6>
                             <h6><a href="#"><span> <img src="{{ asset('assets/frontend/img/setting.png') }}"
-                                            alt=""> </span> <span class="s-setting">Setting</span></a> </h6>
+                                            alt="">
+                                    </span> <span class="s-setting">Setting</span></a> </h6>
                             <h6><a href="#"><span> <img src="{{ asset('assets/frontend/img/logout.png') }}"
-                                            alt=""> </span> <span class="s-logout">Logout</span></a> </h6>
+                                            alt="">
+                                    </span> <span class="s-logout">Logout</span></a> </h6>
                         </div>
                     </div>
                 </div>

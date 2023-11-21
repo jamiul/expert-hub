@@ -88,7 +88,7 @@ class HomeController extends Controller
     public function dashboard()
     {
         if (isExpert()) {
-            return view('frontend.user.expert.dashboard');
+            return view('frontend.user.expert.dashboard.landing-page');
         } elseif (isClient()) {
             return view('frontend.user.client.dashboard.landing-page');
         } else {
