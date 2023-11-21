@@ -64,7 +64,7 @@
             <ul>
                 @foreach ($trainingModes as $trainingMode)
                     <li>
-                        <input wire:change="filter" wire:model="trainingMode" type="checkbox" id="trainingMode_{{ $trainingMode->id }}" value="{{ $trainingMode->id }}">
+                        <input wire:change="filter" wire:model="trainingMode" type="checkbox" id="trainingMode_{{ $trainingMode->id }}" value="{{ $trainingMode->name }}">
                         <label for="trainingMode_{{ $trainingMode->id }}">{{ $trainingMode->name }}</label>
                     </li>
                 @endforeach

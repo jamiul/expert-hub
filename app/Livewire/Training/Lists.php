@@ -74,13 +74,19 @@ class Lists extends Component
             });
         }
         if (isset($this->filtersArray['trainingMode']) && $this->filtersArray['trainingMode']) {
-            $trainings = $trainings->whereIn('training_mode_id', $this->filtersArray['trainingMode']);
+            $trainings = $trainings
+                ->select('trainings.*')
+                ->join('training_modes', 'trainings.training_mode_id', '=', 'training_modes.id')
+                ->whereIn('training_modes.name', $this->filtersArray['trainingMode']);
         }
         if (isset($this->filtersArray['language']) && $this->filtersArray['language']) {
             $trainings = $trainings->where('language_id', $this->filtersArray['language']);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
-            $trainings = $trainings->whereIn('country_id', $this->filtersArray['country']);
+            $trainings = $trainings
+            ->select('trainings.*')
+            ->join('countries', 'trainings.country_id', '=', 'countries.id')
+            ->whereIn('countries.name', $this->filtersArray['country']);
         }
 
         $trainings = $trainings->paginate($this->limit);
