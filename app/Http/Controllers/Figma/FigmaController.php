@@ -269,6 +269,11 @@ class FigmaController extends Controller
         return view('figma-html.frontentdashboardhome');
     }
 
+    public function frontentdashboardabout()
+    {
+        return view('figma-html.frontentdashboardabout');
+    }
+
 
 
     //End Client Dashboard

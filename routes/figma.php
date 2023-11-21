@@ -66,6 +66,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/admin-expertloginform', [FigmaController::class, 'experthboardloginform']);
     Route::get('/admin-clientloginform', [FigmaController::class, 'clientdashboardloginform']);
     Route::get('/admin-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
+    Route::get('/admin-frontend-about', [FigmaController::class, 'frontentdashboardabout']);
 
     // Training Checkout 
     Route::get('/training-checkout', [FigmaController::class, 'trainingcheckout']);
