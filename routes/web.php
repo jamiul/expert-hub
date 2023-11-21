@@ -1,47 +1,52 @@
 <?php
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Frontend\BlogController;
-use App\Http\Controllers\Frontend\ChatController;
-use App\Http\Controllers\Frontend\CityController;
-use App\Http\Controllers\Frontend\HireController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\PageController;
-use App\Http\Controllers\Frontend\UserController;
-use App\Http\Controllers\Frontend\ExpertController;
-use App\Http\Controllers\Frontend\ReviewController;
-use App\Http\Controllers\Frontend\SearchController;
-use App\Http\Controllers\Frontend\WalletController;
-use App\Http\Controllers\Frontend\BiddingController;
-use App\Http\Controllers\Frontend\PackageController;
-use App\Http\Controllers\Frontend\ProfileController;
-use App\Http\Controllers\Frontend\ProjectController;
-use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Auth\VerificationController;
-use App\Http\Controllers\Frontend\LanguageController;
-use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\AizUploadController;
+use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
+use App\Http\Controllers\Frontend\Auth\RegistrationController;
+use App\Http\Controllers\Frontend\BiddingController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\BookmarkedClientController;
 use App\Http\Controllers\Frontend\BookmarkedExpertController;
 use App\Http\Controllers\Frontend\BookmarkedProjectController;
 use App\Http\Controllers\Frontend\BookmarkedScholarshipController;
 use App\Http\Controllers\Frontend\BookmarkedServiceController;
 use App\Http\Controllers\Frontend\CancelProjectController;
+use App\Http\Controllers\Frontend\ChatController;
+use App\Http\Controllers\Frontend\CityController;
+use App\Http\Controllers\Frontend\ClientController;
 use App\Http\Controllers\Frontend\ConsultantController;
 use App\Http\Controllers\Frontend\ExpertAccountController;
+use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertEducationController;
+use App\Http\Controllers\Frontend\HireController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\MilestonePaymentController;
 use App\Http\Controllers\Frontend\NotificationController;
+use App\Http\Controllers\Frontend\PackageController;
 use App\Http\Controllers\Frontend\PackagePaymentController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\PaytoExpertController;
 use App\Http\Controllers\Frontend\PortfolioController;
+use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\ProjectController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\ScholarshipController;
+use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
+use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\StaticPageController;
 use App\Http\Controllers\Frontend\StripePaymentController;
 use App\Http\Controllers\Frontend\SubscriberController;
 use App\Http\Controllers\Frontend\TrainingConsultantController;
+use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
+use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\UserProfileController;
+use App\Http\Controllers\Frontend\WalletController;
 use App\Http\Controllers\Frontend\WhyScholarshipController;
 use App\Http\Controllers\Frontend\WorkExperienceController;
 use Illuminate\Support\Facades\Auth;
@@ -91,6 +96,16 @@ Route::get('/register-profile', [RegisterController::class, 'registerProfile']);
 Route::get('/register-general-info', [RegisterController::class, 'registerDetails']);
 Route::get('/register-expertise', [RegisterController::class, 'registerExpertise']);
 
+Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
+Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');
+Route::post('/auth/logout', [AuthenticatedSessionController::class, 'logout'])->middleware('auth')->name('auth.logout');
+Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
+Route::get('/profile', [UserProfileController::class, 'index'])->middleware(['auth'])->name('profile.index');
+Route::get('/profile/create', [UserProfileController::class, 'create'])->middleware(['auth'])->name('profile.create');
+
 // Subscribe
 Route::resource('subscribers', SubscriberController::class);
 Route::get('/verification-confirmation/{code}', [VerificationController::class, 'verificationConfirmation'])->name('email.verification.confirmation');
@@ -104,7 +119,7 @@ Route::get('/social-login/{provider}/callback', [LoginController::class, 'handle
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/language/{locale}', [LanguageController::class, 'changeLanguage'])->name('language.change');
-Route::get('/package-select', [PackageController::class, 'selectPackage'])->name('select_package');
+// Route::get('/package-select', [PackageController::class, 'selectPackage'])->name('select_package');
 Route::get('/check', [UserController::class, 'userOnlineStatus']);
 
 Route::post('/user-name-check', [HomeController::class, 'userNameCheck'])->name('user_name_check');
@@ -142,7 +157,7 @@ Route::group(['middleware' => ['user']], function () {
     Route::get('verification-confirmation/{code}', [HomeController::class, 'verificationConfirmation'])->name('email.verification.confirmation');
 });
 
-Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::group(['prefix' => 'projects'], function () {
@@ -190,7 +205,7 @@ Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], functio
     Route::get('/notifications', [NotificationController::class, 'frontendListing'])->name('frontend.notifications');
 });
 
-Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
 
 // Client middleware
 Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']], function () {

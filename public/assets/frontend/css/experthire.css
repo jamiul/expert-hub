@@ -187,7 +187,10 @@ header .header-menu .login-block i {margin-right: 10px;}
 .academic-block .heading h2 {margin-bottom: 40px;}
 .academic-block .row {display: flex;align-items: center;border-top: solid 1px #d9dbea;padding: 25px 0;}
 .academic-block .academic-border {border-bottom: solid 1px #d9dbea;}
-.academic-block .live-zoom {border-right: solid 1px #d9dbea;}
+.academic-block .live-zoom {
+    border-right: solid 1px #d9dbea;
+    width: 274px;
+}
 .academic-block .live-zoom .zoom-icon {display: flex;align-items: center;}
 .academic-block .live-zoom .zoom-icon img {height: 10px;margin-right: 11px;}
 .academic-block .live-zoom .zoom-icon h4 {margin: 0;font-size: 14px;color: #303744;font-weight: 500;}
@@ -516,7 +519,13 @@ top: 0 !important;
 .right-sidebar .database-block .database-right .data-icon:hover {background: #0036E3;border-color: #0036E3;}
 .right-sidebar .database-block .database-right .data-icon:hover img{filter: brightness(0) invert(1);}
 .right-sidebar .database-block .database-right {display: flex;}
-.right-sidebar .database-p p {color: #303744;font-size: 16px;font-weight: 400;line-height: 25px;}
+.right-sidebar .database-p p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
 .right-sidebar .database-p {margin:18px 0;padding-left: 85px;}
 .databasepading {
     margin: 50px 0px;

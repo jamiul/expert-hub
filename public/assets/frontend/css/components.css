@@ -73,8 +73,97 @@
     }
 /*Form error Styles End*/
 
+/*FilePond*/
+.filepond--root .filepond--panel-root {
+    background-color: transparent;
+}
+.filepond--root {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+}
+.filepond--drop-label label{
+    font-size: 14px !important;
+    cursor: pointer!important;
+}
+.filepond--root .filepond--item-panel {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 89, 201, 0.3);
+}
+.filepond--root .filepond--file {
+    color: #303744;
+}
+.filepond--root [data-filepond-item-state='processing-complete'] .filepond--item-panel {
+    background-color: #F2F6FC;
+}
+.filepond--root .filepond--item-panel {
+    background-color: #ccc;
+}
+/*FilePond end*/
 /*Utility*/
 .cursor-pointer{
     cursor: pointer;
+}
+/*Utility End*/
+
+/*Star Rating style*/
+.rating-group {
+    display: inline-flex; position: relative;left: -7px;
+    }
+ 
+    .rating__icon {
+    pointer-events: none;
+    } 
+    .rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+    }
+ 
+    .rating__label {
+    cursor: pointer; 
+    padding: 0 0.1em;
+    font-size: 1rem;
+    }
+ 
+    .rating__label--half {
+    padding-right: 0;
+    margin-right: -20px;
+    z-index: 2;
+    } 
+    .rating__icon--star {
+    color: #E9B911;
+    }
+ 
+    .rating__icon--none {
+    color: #eee;
+    }
+ 
+    .rating__input--none:checked + .rating__label .rating__icon--none {
+    color: red;
+    }
+ 
+    .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+    }
+ 
+    .rating-group:hover .rating__label .rating__icon--star,
+    .rating-group:hover .rating__label--half .rating__icon--star {
+    color: #E9B911;
+    }
+ 
+    .rating__input:hover ~ .rating__label .rating__icon--star,
+    .rating__input:hover ~ .rating__label--half .rating__icon--star {
+    color: #ddd;
+    }
+ 
+    .rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+    color: #eee;
+    }
+ 
+    .rating__input--none:hover + .rating__label .rating__icon--none {
+    color: red;
+    }
+/*Star Rating style*/
+.border-dashed{
+    border-style: dashed!important;
 }
 /*Utility End*/

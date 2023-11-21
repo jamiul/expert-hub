@@ -2136,7 +2136,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .left-sidebar #prevBtn,
-.left-sidebar #nextBtn {
+.left-sidebar #nextBtn,
+.left-sidebar .prevBtn,
+.left-sidebar .nextBtn {
     background: none;
     border: none;
     color: #5c5c5c;
@@ -2144,7 +2146,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 13px;
 }
 
-.left-sidebar #monthYear {
+.left-sidebar #monthYear,
+.left-sidebar .monthYear {
     font-size: 18px;
     font-weight: 500;
     margin: 0;
@@ -2177,7 +2180,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     border-radius: 100%;
 }
 
-.left-sidebar #dateInput {
+.left-sidebar #dateInput,
+.left-sidebar .dateInput {
     width: 100%;
     padding: 10px;
     border: 2px solid #0000001a;
@@ -2189,12 +2193,13 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
 }
 
-.left-sidebar #dateInput:focus {
-    background: url(../images/arrow-icon-hover.png) no-repeat;
+.left-sidebar #dateInput:focus,
+.left-sidebar .dateInput:focus {
+    background: url(../img/arrow-icon-hover.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -2209,16 +2214,18 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     color: #303744;
 }
 
-.left-sidebar #dateInput::placeholder {
+.left-sidebar #dateInput::placeholder,
+.left-sidebar .dateInput::placeholder {
     color: #303744b2;
 }
 
-.left-sidebar #daysContainer {
+.left-sidebar #daysContainer,
+.left-sidebar .daysContainer {
     padding: 0 10px;
     display: inline-block;
     width: 100%;
@@ -2259,7 +2266,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .consultant-left-button .modal .modal-content #prevBtn,
-.consultant-left-button .modal .modal-content #nextBtn {
+.consultant-left-button .modal .modal-content #nextBtn,
+.consultant-left-button .modal .modal-content .prevBtn,
+.consultant-left-button .modal .modal-content .nextBtn {
     background: none;
     border: none;
     color: #5c5c5c;
@@ -2267,7 +2276,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 13px;
 }
 
-.consultant-left-button .modal .modal-content #monthYear {
+.consultant-left-button .modal .modal-content #monthYear,
+    .consultant-left-button .modal .modal-content .monthYear {
     font-size: 18px;
     font-weight: 500;
     margin: 0;
@@ -2300,7 +2310,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     border-radius: 100%;
 }
 
-.consultant-left-button .modal .modal-content #dateInput {
+.consultant-left-button .modal .modal-content #dateInput,
+.consultant-left-button .modal .modal-content .dateInput {
     width: 100%;
     padding: 10px;
     border: 2px solid #0000001a;
@@ -2312,7 +2323,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     opacity: 0;
 }
@@ -2400,16 +2411,16 @@ footer .footer-bottom .footer-icon ul li a:hover {
     grid-gap: 10px;
 }
 
-.consultant-left-button #staticBackdrop #calendar {
+.consultant-left-button #staticBackdrop .calendar {
     border: none;
 }
 
-.consultant-left-button #staticBackdrop #calendar {
+.consultant-left-button #staticBackdrop .calendar {
     border: none;
     position: inherit;
 }
 
-.consultant-left-button #staticBackdrop #dateInput {
+.consultant-left-button #staticBackdrop .dateInput {
     position: absolute;
 }
 
@@ -2420,8 +2431,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
     margin-bottom: 17px;
 }
 
-.consultant-left-button .modal .modal-content #dateInput:focus {
-    background: url(../images/arrow-icon-hover.png) no-repeat;
+.consultant-left-button .modal .modal-content .dateInput:focus {
+    background: url(../img/arrow-icon-hover.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -2436,16 +2447,16 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     color: #303744;
 }
 
-.consultant-left-button .modal .modal-content #dateInput::placeholder {
+.consultant-left-button .modal .modal-content .dateInput::placeholder {
     color: #303744b2;
 }
 
-.consultant-left-button .modal .modal-content #daysContainer {
+.consultant-left-button .modal .modal-content .daysContainer {
     padding: 0 10px;
     display: inline-block;
     width: 100%;
@@ -2464,6 +2475,9 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
 .right-sidebar .database-block .database-contant .database-img {
     margin-right: 12px;
+}
+.right-sidebar .database-block .database-contant .database-img > img {
+    max-width: 72px;
 }
 
 .right-sidebar .database-block .database-contant .database-text h4 {
@@ -2526,12 +2540,14 @@ footer .footer-bottom .footer-icon ul li a:hover {
     margin-left: 8px;
 }
 
-.right-sidebar .database-block .database-right .data-icon:hover {
+.right-sidebar .database-block .database-right .data-icon:hover,
+.right-sidebar .database-block .database-right .data-icon.active {
     background: #0036e3;
     border-color: #0036e3;
 }
 
-.right-sidebar .database-block .database-right .data-icon:hover img {
+.right-sidebar .database-block .database-right .data-icon:hover img,
+    .right-sidebar .database-block .database-right .data-icon.active img {
     filter: brightness(0) invert(1);
 }
 
@@ -2659,6 +2675,10 @@ footer .footer-bottom .footer-icon ul li a:hover {
     background: #0036e3;
     color: #fff;
 }
+.pagination .pagination-right ul li a.active {
+    background: #0036e3;
+    color: #fff !important;
+}
 
 .pagination .pagination-right ul li a {
     border: 2px solid #00000017;
@@ -2701,7 +2721,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     outline: none;
     border-radius: 4px;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -3884,7 +3904,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
 /*---updated Location search styling 06 Nov 2023--*/
 .scroller * { scrollbar-width: thin;scrollbar-color: #ddd #eee; }
-      .scroller *::-webkit-scrollbar { width: 12px; height: 60px;} 
+      .scroller *::-webkit-scrollbar { width: 12px; height: 60px;}
       .scroller *::-webkit-scrollbar-track { background: #eee; }
       .scroller *::-webkit-scrollbar-thumb { background-color: #ddd;border-radius: 20px;border: 3px solid #eee; }
       .location-select .form-control {
@@ -3904,28 +3924,28 @@ footer .footer-bottom .footer-icon ul li a:hover {
         background-position: center right 1rem;
         background-size: 1.5rem;
       }
-      .location-select .form-control::placeholder { 
+      .location-select .form-control::placeholder {
         color: #303744;
       }
       .location-select .form-control:focus {
         box-shadow: none;
       }
-       
-      .location-select .tags .tag { 
+
+      .location-select .tags .tag {
         background-color: #0036E3;
       }
-      .location-select .tags .tag .btn { 
+      .location-select .tags .tag .btn {
         position: relative;top: -2px;margin-left: 4px;
       }
 
-      
+
 
     /*the container must be positioned relative:*/
     .autocomplete {
       position: relative;
       display: inline-block;
     }
- 
+
 
     .autocomplete-items {
       position: static;border-radius: 4px;
@@ -3947,11 +3967,11 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
     /*when navigating through the items using the arrow keys:*/
     .autocomplete-active {
-      background-color: DodgerBlue !important; 
-      color: #ffffff; 
+      background-color: DodgerBlue !important;
+      color: #ffffff;
     }
 /*---updated Location search styling --*/
-  
+
 
 .find-consultant .consultant-reviw ul li .fa {
     color: #e9b911;
@@ -4024,6 +4044,14 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .find-training-2 .right-sidebar .database-p,
 .find-training-2 .right-sidebar .deta-list ul {
     padding-left: 77px;
+}
+
+ul.share-links {
+    text-align: center;
+}
+ul.share-links > li {
+    display: inline-block;
+    width: 50px;
 }
 
 .consultant-left {
@@ -5396,7 +5424,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     padding: 0 10px;
     margin-top: 15px;
     outline: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -6585,7 +6613,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     outline: none;
     font-size: 15px;
     color: #303744b2;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     appearance: none;
 }
@@ -9357,6 +9385,14 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .team-review p {
     color: rgba(48, 55, 68, 0.7);
 }
+
+.text-truncate-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 /****MEDIA QUERY***/
 
 @media screen and (max-width: 767px) {
@@ -9447,4 +9483,13 @@ margin-top: 8px;
 .register .register-form .creat-button button:hover {
     background: #fff;
     color: #0036e3;
+}
+
+/* More link styling */
+.btn-link { color: #0036E3;font-size: .875rem;text-decoration: none; }
+    .btn-link:hover { color: #000;
+     }
+/* More link styling */
+.circle-img img {
+    border-radius: 50px;
 }

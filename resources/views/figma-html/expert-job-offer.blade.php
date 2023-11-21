@@ -3,7 +3,29 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-dashboard.css') }}"> 
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-
+<!-- sub menu start -->
+<nav class="bg-primary sub__nav">
+      <div class="container">
+         <ul class="d-flex ps-0 list-unstyled mb-0">
+               <li class="me-3">
+                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Active Contracts</a>
+               </li>
+               <li class="me-3">
+                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">All Contracts</a>
+               </li>
+               <li class="me-3">
+                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Work Diary</a>
+               </li>
+               <li class="me-3">
+                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block active">Job Offers</a>
+               </li>
+               <li class="me-3">
+                  <a href="#" class="text-white fw-medium px-2 py-3 d-inline-block">Saved Jobs</a>
+               </li>
+         </ul>
+      </div>
+   </nav>
+   <!-- sub menu start -->
 <main class="expert__dashboad contract__page proposal__page py-5">
         <div class="container">
             <div class="main__content__wrapp">

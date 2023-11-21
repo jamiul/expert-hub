@@ -9,8 +9,11 @@ class Project extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected $casts = [
         'skills' => 'array',
+        'attachments' => 'array',
     ];
 
     public function projectCategory()

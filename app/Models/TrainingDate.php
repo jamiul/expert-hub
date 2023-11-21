@@ -12,7 +12,9 @@ class TrainingDate extends Model
 
     protected $fillable = [
         'training_id',
+        'date_start',
         'training_date',
+        'date_end',
         'descriptions'
     ];
 

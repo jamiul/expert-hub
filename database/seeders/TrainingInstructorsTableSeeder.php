@@ -68,37 +68,13 @@ class TrainingInstructorsTableSeeder extends Seeder
                 ),
             6 =>
                 array(
-                    'id' => 9,
-                    'user_id' => 6,
-                    'training_id' => 6,
-                    'created_at' => '2023-09-05 11:46:05',
-                    'updated_at' => '2023-09-05 11:46:05',
-                ),
-            7 =>
-                array(
-                    'id' => 10,
-                    'user_id' => 14,
-                    'training_id' => 6,
-                    'created_at' => '2023-09-05 11:46:05',
-                    'updated_at' => '2023-09-05 11:46:05',
-                ),
-            8 =>
-                array(
-                    'id' => 11,
-                    'user_id' => 11,
-                    'training_id' => 6,
-                    'created_at' => '2023-09-05 11:46:05',
-                    'updated_at' => '2023-09-05 11:46:05',
-                ),
-            9 =>
-                array(
                     'id' => 30,
                     'user_id' => 4,
                     'training_id' => 1,
                     'created_at' => '2023-09-18 20:12:20',
                     'updated_at' => '2023-09-18 20:12:20',
                 ),
-            10 =>
+            7 =>
                 array(
                     'id' => 31,
                     'user_id' => 6,
