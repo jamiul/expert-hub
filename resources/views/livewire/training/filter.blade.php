@@ -30,7 +30,7 @@
                                 @foreach ($projectCategory->childrens as $categoryChild)
                                     <li>
                                         <input type="checkbox" wire:change="filter" wire:model="skillCategories"
-                                            name="categories" value="{{ $categoryChild->id }}"
+                                            name="categories" value="{{ $categoryChild->name }}"
                                             id="category_{{ $projectCategory->id }}_{{ $categoryChild->id }}">
                                         <label
                                             for="category_{{ $projectCategory->id }}_{{ $categoryChild->id }}">{{ $categoryChild->name }}</label>

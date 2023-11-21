@@ -15,7 +15,7 @@
       <ul>
         @foreach ($levels as $level)
           <li>
-            <input type="checkbox" wire:change="filter" wire:model="level" id="level_{{ $level->id }}" value="{{ $level->id }}">
+            <input type="checkbox" wire:change="filter" wire:model="level" id="level_{{ $level->id }}" value="{{ $level->level_name }}">
             <label for="level_{{ $level->id }}">{{ $level->level_name }}</label>
           </li>
         @endforeach

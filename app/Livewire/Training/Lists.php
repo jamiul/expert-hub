@@ -59,7 +59,10 @@ class Lists extends Component
             $trainings = $trainings->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
         }
         if (isset($this->filtersArray['skillCategories']) && $this->filtersArray['skillCategories']) {
-            $trainings = $trainings->whereIn('skill_id', $this->filtersArray['skillCategories']);
+            $trainings = $trainings
+                ->select('trainings.*')
+                ->join('skills', 'trainings.skill_id', '=', 'skills.id')
+                ->whereIn('skills.name', $this->filtersArray['skillCategories']);
         }
         if (isset($this->filtersArray['trainingDate']) && $this->filtersArray['trainingDate']) {
             $trainingDate = $this->filtersArray['trainingDate'];
