@@ -2,7 +2,7 @@
   <div class="left-sidebar">
     <div class="search-block">
       <form class="example" wire:submit.prevent="filter">
-        <input type="text" wire:model="search" placeholder="Search expert..." name="search">
+        <input type="text" wire:model="search" placeholder="Find scholarship..." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
@@ -132,7 +132,7 @@
         inputElement.dispatchEvent(new Event('change'));
       }
     });
-      
+
     $(document).on('click', '#filterUniversityWrap .select-items div', function(e) {
       let selectedVal = $(this).attr('data-value');
 
@@ -156,7 +156,7 @@
       vals = vals.filter((item) => item != $(this).attr('data-id'));
       $("#selectLocationFilter").val(vals);
       $("#locationInput").val("")
-       
+
       reloadLocationSelected();
     });
 

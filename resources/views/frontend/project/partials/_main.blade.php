@@ -9,7 +9,7 @@
             </div>
             <div class="search-block">
               <form class="example">
-                <input type="text" placeholder="Search expert..." name="search">
+                <input type="text" placeholder="Find projects..." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </form>
             </div>
@@ -624,7 +624,7 @@
                     <input type="text" placeholder="Search Country" id="locationInput" class="form-control locationInput" required>
 
                   </div>
-                  
+
                   <div class="tags pt-3 pb-1">
                     <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">
                       <span>Bangladesh</span>

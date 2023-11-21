@@ -5,7 +5,7 @@
                 <div class="left-sidebar">
                     <div class="search-block">
                         <form class="example">
-                            <input type="text" placeholder="Search expert..." name="search">
+                            <input type="text" placeholder="Find expert..." name="search">
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
@@ -276,7 +276,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="collapse" id="collapse01"> 
+                            <div class="collapse" id="collapse01">
                                 <div class="at-item">
                                     <div class="at-title">
                                         <h2>
@@ -798,7 +798,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <a class="btn-link fw-medium text-primary" data-bs-toggle="collapse" href="#collapse01" role="button" aria-expanded="false" aria-controls="collapse01">
                                 More...
                               </a>
@@ -824,7 +824,7 @@
                                         <li>
                                             <input type="checkbox" id="2">
                                             <label for="2">Accreditation Process</label>
-                                        </li> 
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -844,7 +844,7 @@
                                         <li>
                                             <input type="checkbox" id="12">
                                             <label for="12">Curriculum Experts</label>
-                                        </li> 
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -865,7 +865,7 @@
                                             <input type="checkbox" id="22">
                                             <label for="22">Accreditation Process</label>
                                         </li>
-                                         
+
                                     </ul>
                                 </div>
                             </div>
@@ -973,7 +973,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="collapse" id="collapse02"> 
+                            <div class="collapse" id="collapse02">
                                 <div class="at-item">
                                     <div class="at-title">
                                         <h2>
@@ -1181,15 +1181,15 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
-                            
+
                             <a class="btn-link fw-medium text-primary" data-bs-toggle="collapse" href="#collapse02" role="button" aria-expanded="false" aria-controls="collapse02">
                                 More...
                               </a>
                         </div>
                     </div>
-                     
+
                     <div class="study-level study-level-media">
                         <h3>Available for</h3>
                         <ul>
@@ -1267,8 +1267,8 @@
                             <input class="rating__input" name="rating2" id="rating2-45" value="4.5" type="radio">
                             <label aria-label="5 stars" class="rating__label" for="rating2-50"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
                             <input class="rating__input" name="rating2" id="rating2-50" value="5" type="radio">
-                        </div> 
-                         
+                        </div>
+
                     </div>
                 </div><!--.//div-->
 
