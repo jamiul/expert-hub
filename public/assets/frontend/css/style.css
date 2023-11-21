@@ -2193,13 +2193,13 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
 }
 
 .left-sidebar #dateInput:focus,
 .left-sidebar .dateInput:focus {
-    background: url(../images/arrow-icon-hover.png) no-repeat;
+    background: url(../img/arrow-icon-hover.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -2214,7 +2214,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     color: #303744;
 }
@@ -2323,7 +2323,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     opacity: 0;
 }
@@ -2432,7 +2432,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .consultant-left-button .modal .modal-content .dateInput:focus {
-    background: url(../images/arrow-icon-hover.png) no-repeat;
+    background: url(../img/arrow-icon-hover.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -2447,7 +2447,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-size: 16px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     color: #303744;
 }
@@ -2721,7 +2721,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     outline: none;
     border-radius: 4px;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -3904,7 +3904,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
 /*---updated Location search styling 06 Nov 2023--*/
 .scroller * { scrollbar-width: thin;scrollbar-color: #ddd #eee; }
-      .scroller *::-webkit-scrollbar { width: 12px; height: 60px;} 
+      .scroller *::-webkit-scrollbar { width: 12px; height: 60px;}
       .scroller *::-webkit-scrollbar-track { background: #eee; }
       .scroller *::-webkit-scrollbar-thumb { background-color: #ddd;border-radius: 20px;border: 3px solid #eee; }
       .location-select .form-control {
@@ -3924,28 +3924,28 @@ footer .footer-bottom .footer-icon ul li a:hover {
         background-position: center right 1rem;
         background-size: 1.5rem;
       }
-      .location-select .form-control::placeholder { 
+      .location-select .form-control::placeholder {
         color: #303744;
       }
       .location-select .form-control:focus {
         box-shadow: none;
       }
-       
-      .location-select .tags .tag { 
+
+      .location-select .tags .tag {
         background-color: #0036E3;
       }
-      .location-select .tags .tag .btn { 
+      .location-select .tags .tag .btn {
         position: relative;top: -2px;margin-left: 4px;
       }
 
-      
+
 
     /*the container must be positioned relative:*/
     .autocomplete {
       position: relative;
       display: inline-block;
     }
- 
+
 
     .autocomplete-items {
       position: static;border-radius: 4px;
@@ -3967,11 +3967,11 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
     /*when navigating through the items using the arrow keys:*/
     .autocomplete-active {
-      background-color: DodgerBlue !important; 
-      color: #ffffff; 
+      background-color: DodgerBlue !important;
+      color: #ffffff;
     }
 /*---updated Location search styling --*/
-  
+
 
 .find-consultant .consultant-reviw ul li .fa {
     color: #e9b911;
@@ -5424,7 +5424,7 @@ ul.share-links > li {
     padding: 0 10px;
     margin-top: 15px;
     outline: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
 }
 
@@ -6613,7 +6613,7 @@ ul.share-links > li {
     outline: none;
     font-size: 15px;
     color: #303744b2;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/arrow-icon.png) no-repeat;
     background-position: right 20px center;
     appearance: none;
 }
