@@ -49,11 +49,6 @@ class Scholarship extends Model
         return $this->belongsTo(ScholarshipCity::class, 'city_id');
     }
 
-    public function applicationDeadline()
-    {
-        return $this->hasMany(ApplicationDeadline::class);
-    }
-
     /**
      * Get all of the scholarship's favorites.
      */
