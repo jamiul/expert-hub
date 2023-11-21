@@ -64,7 +64,7 @@ class Lists extends Component
         }
         if (isset($this->filtersArray['studyArea']) && $this->filtersArray['studyArea']) {
             $studyAreas = $this->filtersArray['studyArea'];
-            $scholarships = $scholarships->where(function($q) use ($studyAreas) {
+            $scholarships = $scholarships->where(function ($q) use ($studyAreas) {
                 foreach ($studyAreas as $value) {
                     $q->orWhere('study_area', 'like', '%' . $value . '%');
                 }
@@ -72,7 +72,7 @@ class Lists extends Component
         }
         if (isset($this->filtersArray['studentType']) && $this->filtersArray['studentType']) {
             $studentTypes = $this->filtersArray['studentType'];
-            $scholarships = $scholarships->where(function($q) use ($studentTypes) {
+            $scholarships = $scholarships->where(function ($q) use ($studentTypes) {
                 foreach ($studentTypes as $value) {
                     $q->orWhere('student_type', 'like', '%' . $value . '%');
                 }
@@ -80,7 +80,7 @@ class Lists extends Component
         }
         if (isset($this->filtersArray['scholarshipType']) && $this->filtersArray['scholarshipType']) {
             $scholarshipTypes = $this->filtersArray['scholarshipType'];
-            $scholarships = $scholarships->where(function($q) use ($scholarshipTypes) {
+            $scholarships = $scholarships->where(function ($q) use ($scholarshipTypes) {
                 foreach ($scholarshipTypes as $value) {
                     $q->orWhere('scholarship_type', 'like', '%' . $value . '%');
                 }
@@ -90,10 +90,9 @@ class Lists extends Component
             $applicationDeadline = $this->filtersArray['applicationDeadline'];
             $applicationDeadline = Carbon::parse($applicationDeadline)->format('Y-m-d');
 
-            $scholarships = $scholarships->whereHas('applicationDeadline', function ($q) use ($applicationDeadline) {
-                $q->whereDate('start_date', '<=', $applicationDeadline)
-                    ->whereDate('end_date', '>=', $applicationDeadline);
-            });
+            $scholarships = $scholarships
+                ->whereDate('start_date', '<=', $applicationDeadline)
+                ->whereDate('end_date', '>=', $applicationDeadline);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
             $scholarships = $scholarships->whereIn('country_id', $this->filtersArray['country']);

@@ -42,7 +42,11 @@
                 <div class="deta-list">
                     <ul>
                         <li>{{ __('Application Deadline') }}</li>
-                        <li>{{ $scholarship->application_deadline }}&nbsp;</li>
+                        <li>
+                            {{ date('d F Y', strtotime($scholarship->start_date)) }}
+                            -
+                            {{ date('d F Y', strtotime($scholarship->end_date)) }}
+                        </li>
                         <li>{{ __('Study area') }}</li>
                         <li>{{ $scholarship->study_area }}&nbsp;</li>
                         <li>{{ __('Study Level') }}</li>
