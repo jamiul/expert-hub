@@ -7,18 +7,12 @@ on:
 jobs:
   deploy:
 
-    runs-on: [self-hosted, staging-vm]
+    runs-on: [self-hosted, staging-ec2]
     steps:
       - name: Pulling Latest Code
         uses: actions/checkout@v3
         with:
           clean: 'false'
-
-        
-      - name: Use PHP 8
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1.2'         
 
       - name: Cache Composer dependencies
         uses: actions/cache@v2
@@ -32,13 +26,18 @@ jobs:
         run: |
           composer update && composer install
 
-      - name: Generate Application Key
-        run: |
-          php artisan key:generate
-
+          
       - name: Clear PHP Cache
         run: php artisan optimize:clear
 
       - name: Copy and Override Files to /var/www/html
         run: |
-          sudo rsync -a * /var/www/html/EduExHub    
+          sudo rsync -av . /var/www/html/EduExHub    
+          
+      - name: Adjusting permissions for storage directory
+        run: |
+          sudo chmod -R 775 /var/www/html/EduExHub/storage
+
+      - name: Verifying user and group ownership
+        run: | 
+          sudo chown -R www-data:www-data /var/www/html/EduExHub/storage
