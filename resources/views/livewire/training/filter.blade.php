@@ -6,7 +6,7 @@
         </div>
         <div class="search-block">
             <form class="example" wire:submit.prevent="filter">
-                <input type="text" wire:model="search" placeholder="{{ __('Search expert...') }}" name="search">
+                <input type="text" wire:model="search" placeholder="{{ __('Find training...') }}" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -30,7 +30,7 @@
                                 @foreach ($projectCategory->childrens as $categoryChild)
                                     <li>
                                         <input type="checkbox" wire:change="filter" wire:model="skillCategories"
-                                            name="categories" value="{{ $categoryChild->id }}"
+                                            name="categories" value="{{ $categoryChild->name }}"
                                             id="category_{{ $projectCategory->id }}_{{ $categoryChild->id }}">
                                         <label
                                             for="category_{{ $projectCategory->id }}_{{ $categoryChild->id }}">{{ $categoryChild->name }}</label>
@@ -42,7 +42,7 @@
                 @endforeach
             </div>
         </div>
-        
+
         <div class="study-level">
             <h3>{{ __('Training Date') }}</h3>
             <input type="text" wire:change="filter" wire:model="trainingDate" hidden id="inputDateFilter">
@@ -134,7 +134,7 @@
                     inputElement.dispatchEvent(new Event('change'));
                 }
             });
-            
+
             $(document).on('click', '#filterLanguageWrap .select-items div', function(e) {
                 let selectedVal = $(this).attr('data-value');
 

@@ -2,7 +2,7 @@
   <div class="left-sidebar">
     <div class="search-block">
       <form class="example" wire:submit.prevent="filter">
-        <input type="text" wire:model="search" placeholder="Search expert..." name="search">
+        <input type="text" wire:model="search" placeholder="Find scholarship..." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
@@ -15,7 +15,7 @@
       <ul>
         @foreach ($levels as $level)
           <li>
-            <input type="checkbox" wire:change="filter" wire:model="level" id="level_{{ $level->id }}" value="{{ $level->id }}">
+            <input type="checkbox" wire:change="filter" wire:model="level" id="level_{{ $level->id }}" value="{{ $level->level_name }}">
             <label for="level_{{ $level->id }}">{{ $level->level_name }}</label>
           </li>
         @endforeach
@@ -56,9 +56,9 @@
     </div>
     <div class="study-level">
       <h3>{{ __('Application Deadline') }}</h3>
-      <input type="text" wire:change="filter" wire:model="applicationDeadline" hidden id="inputDateFilter">
+      <input autocomplete="off" type="text" wire:change="filter" wire:model="applicationDeadline" hidden id="inputDateFilter">
       <div class="calendar-box" id="filterApplicationDeadlineWrap" wire:ignore>
-        <input type="text" id="dateInput" placeholder="{{ __('Search by Date') }}" value="{{ request()->get('applicationDeadline') }}">
+        <input autocomplete="off" type="text" id="dateInput" placeholder="{{ __('Search by Date') }}" value="{{ request()->get('applicationDeadline') }}">
         <div class="calendar" id="calendar">
           <div class="header">
             <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
@@ -132,7 +132,7 @@
         inputElement.dispatchEvent(new Event('change'));
       }
     });
-      
+
     $(document).on('click', '#filterUniversityWrap .select-items div', function(e) {
       let selectedVal = $(this).attr('data-value');
 
@@ -156,7 +156,7 @@
       vals = vals.filter((item) => item != $(this).attr('data-id'));
       $("#selectLocationFilter").val(vals);
       $("#locationInput").val("")
-       
+
       reloadLocationSelected();
     });
 

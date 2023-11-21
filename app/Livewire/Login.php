@@ -68,7 +68,7 @@ class Login extends Component
         session()->regenerate();
 
         $this->redirect(
-            session('url.intended', '/'),
+            session('url.intended', '/dashboard'),
             navigate: true
         );
     }
@@ -95,5 +95,5 @@ class Login extends Component
     {
         return Str::transliterate(Str::lower($this->email) . '|' . request()->ip());
     }
-    
+
 }
