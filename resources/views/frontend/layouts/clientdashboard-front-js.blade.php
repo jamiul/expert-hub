@@ -1,44 +1,10 @@
 
-
-
-<script>
-
-$(document).ready(function() {
-              $('.owl-carouselfive').owlCarousel({
-                loop: true,
-                margin: 10,
-                responsiveClass: true,
-                responsive: {
-                  0: {
-                    items: 1,
-                    nav: true
-                  },
-                  600: {
-                    items: 3,
-                    nav: false
-                  },
-                  1000: {
-                    items: 5,
-                    nav: true,
-                    dots: false,
-                    loop: false,
-                    margin:0,
-                    autoWidth:false,
-                  }
-                }
-              })
-            });
-
-</script>
-
-
-
 <script type="text/javascript">
     // common js if required
 
     // Owl Caurasel Start Here
     $(document).ready(function() {
-              $('.owl-carouselfour').owlCarousel({
+              $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
                 responsiveClass: true,
@@ -62,10 +28,8 @@ $(document).ready(function() {
                 }
               })
             });
+
 </script>
-
-
-
 
 
 <script>
