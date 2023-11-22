@@ -95,9 +95,4 @@ class Login extends Component
     {
         return Str::transliterate(Str::lower($this->email) . '|' . request()->ip());
     }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 857788eb327b646ddefce64c019537ab37ee95ca
 }
