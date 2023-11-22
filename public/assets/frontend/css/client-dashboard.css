@@ -921,7 +921,7 @@ button.owl-next span {
 }
 
 .discover-gradient{
-  background: linear-gradient(90deg, rgba(10, 9, 9, 0.15) 21.15%, rgba(255, 255, 255, 0) 96.15%);
+  background: linear-gradient(90deg, rgba(10, 9, 9, 0.15) 21.15%, rgba(255, 255, 255, 0) 50%);
 
 }
 
@@ -1012,6 +1012,7 @@ section.team-area {
   flex-direction: column;
   justify-content: space-between;
   height: auto;
+  margin-top: 45px;
 }
 
 .single-team-text p{
@@ -1385,6 +1386,7 @@ span.addall {
   width: 100%;
   flex-direction: row;
   justify-content: flex-end;
+  min-width: 252px;
 }
 
 .short-by-select-reverse {
@@ -1406,7 +1408,7 @@ span.addall {
   flex-direction: row;
   justify-content: flex-start;
 }
-}
+
 .select-report select{
   border: 2px solid #0000001A;
   min-height: 46px;
@@ -2157,7 +2159,7 @@ span.suggest-skill{
   color: #0036E3;
   border: 2px solid #0036E3;
   background: no-repeat;
-  width: 100px;
+  min-width: 100px;
   height: 32px;
 }
 .edit-draft-right {
@@ -2223,11 +2225,26 @@ a.draft-option-toggle.show i {
   color: #fff;
 }
 
-.dropdown-show{
+.draft-options ul.dropdown-show a:hover {
+  background: #0036E30D;
+  font-size: 16px;
+  font-weight: 500 !important;
+  color: #0036E3;
+  font-family: Colfax;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.draft-options ul.dropdown-show {
   position: absolute;
   inset: 0px auto auto 0px;
   margin: 0px;
   transform: translate(-140px, 34px) !important;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+  border: none;
 }
 
 a.dropdown-heading {
