@@ -7,9 +7,9 @@
 <main class="expert__dashboad status__page py-5">
         <div class="container">
             <div class="main__content__wrapp">
-                <div class="row g-0">
-                    <div class="col-lg-4 col-xxl-3 aside__wrapp">
-                        <div class="px-3 px-sm-4 pt-5 pb-4 bg-white border-bottom">
+                <div class="d-flex">
+                    <div class="aside__wrapp">
+                        <div class="pb-4 border-bottom">
                             <figure class="thumbnail__box rounded-circle mx-auto position-relative mb-2">
                                 <img 
                                     src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" 
@@ -39,9 +39,9 @@
                                  
                             </div>
                         </div>
-                        <div class="px-3 px-sm-4 py-4 border-bottom">
+                        <div class="pt-32 mb-40">
                             <p class="lead fw-medium text-black mb-0">Available for Projects</p>
-                            <p class="text-black mt-1 mb-2">Have time for a project? Turn on your project availability to let potential clients know you're available for work.</p>
+                            <p class="text-black mt-1 mb-3">Have time for a project? Turn on your project availability to let potential clients know you're available for work.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted fw-medium">Available Now</small> 
                                 
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div><!--.//item-->
-                        <div class="px-3 px-sm-4 py-4">
+                        <div class="pb-4">
                             <p class="lead fw-medium text-black mb-2">Project Success Score</p>
                             <p class="text-black">Your Project Success reflects how well you deliver great results for Your clients. This score updates about every 2 weeks</p>
                         </div><!--.//item-->
@@ -66,7 +66,7 @@
                     </div><!--.//col-->
 
 
-                    <div class="col-lg-8 col-xxl-9 border-start">
+                    <div class="col border-start">
                         <div class="px-4 px-xl-5 pt-4 pt-md-5"> 
                             <h2 class="text-black lead fw-medium mb-2">Analytics</h2>
                             <div class="d-flex align-items-center justify-content-between">
