@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
-<nav class="navbar navbar-expand-xxl expert__dashboard__nav">
+<nav class="navbar navbar-expand-lg expert__dashboard__nav">
    <div class="container-fluid algin-items-center mx-auto position-relative">
       <a class="navbar-brand" href="#">
          <img src="{{ asset('assets/frontend/img/logo.png') }}" />
