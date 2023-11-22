@@ -48,7 +48,7 @@
                         <div class="col-md-5">
                             <div class="left-sidebar p-0"> 
                                 <div class="calendar-box">
-                                    <input type="text" id="dateInput" placeholder="Search by Date" class="datepicker"
+                                    <input type="text" id="dateInput" placeholder="Today" class="datepicker form-control"
                                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9ImV2ZW50X0ZJTEwwX3dnaHQ0MDBfR1JBRDBfb3BzejI0IDEiPgo8cGF0aCBpZD0iVmVjdG9yIiBkPSJNMTQuNSAxOEMxMy44IDE4IDEzLjIwODMgMTcuNzU4MyAxMi43MjUgMTcuMjc1QzEyLjI0MTcgMTYuNzkxNyAxMiAxNi4yIDEyIDE1LjVDMTIgMTQuOCAxMi4yNDE3IDE0LjIwODMgMTIuNzI1IDEzLjcyNUMxMy4yMDgzIDEzLjI0MTcgMTMuOCAxMyAxNC41IDEzQzE1LjIgMTMgMTUuNzkxNyAxMy4yNDE3IDE2LjI3NSAxMy43MjVDMTYuNzU4MyAxNC4yMDgzIDE3IDE0LjggMTcgMTUuNUMxNyAxNi4yIDE2Ljc1ODMgMTYuNzkxNyAxNi4yNzUgMTcuMjc1QzE1Ljc5MTcgMTcuNzU4MyAxNS4yIDE4IDE0LjUgMThaTTUgMjJDNC40NSAyMiAzLjk3OTE3IDIxLjgwNDIgMy41ODc1IDIxLjQxMjVDMy4xOTU4MyAyMS4wMjA4IDMgMjAuNTUgMyAyMFY2QzMgNS40NSAzLjE5NTgzIDQuOTc5MTcgMy41ODc1IDQuNTg3NUMzLjk3OTE3IDQuMTk1ODMgNC40NSA0IDUgNEg2VjJIOFY0SDE2VjJIMThWNEgxOUMxOS41NSA0IDIwLjAyMDggNC4xOTU4MyAyMC40MTI1IDQuNTg3NUMyMC44MDQyIDQuOTc5MTcgMjEgNS40NSAyMSA2VjIwQzIxIDIwLjU1IDIwLjgwNDIgMjEuMDIwOCAyMC40MTI1IDIxLjQxMjVDMjAuMDIwOCAyMS44MDQyIDE5LjU1IDIyIDE5IDIySDVaTTUgMjBIMTlWMTBINVYyMFpNNSA4SDE5VjZINVY4WiIgZmlsbD0iIzMwMzc0NCIvPgo8L2c+Cjwvc3ZnPgo=') ;" 
                                     >
                                     <div class="calendar" id="calendar">

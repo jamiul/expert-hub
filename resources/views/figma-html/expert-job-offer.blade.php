@@ -30,7 +30,7 @@
         <div class="container">
             <div class="main__content__wrapp">
                 <div class="px-40 py-4 pt-md-5 pb-4"> 
-                    <h1 class="fs-23 fw-medium text-black mb-3">Jobs offer</h1>
+                    <h1 class="fs-23 fw-medium text-black mb-21">Jobs offer</h1>
     
                     
                     <ul class="nav nav-tabs border-0" id="myTab" role="tablist">

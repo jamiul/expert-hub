@@ -37,36 +37,71 @@
           </div>
 
           <div class="col-md-12">
-            <div class="card-area d-flex justify-content-between align-content-center">
-              <div class="payment-card d-flex flex-row flex-wrap align-items-center justify-content- gap-4">
-                    <div class="chard-check">
-                    <img src="{{ asset('assets/frontend/img/greencheck.png') }}" alt="green-check">
-                  </div>
-                  <div class="chard-icon">
-                  <img src="{{ asset('assets/frontend/img/visacard.png') }}" alt="card">
-                  </div>
-                  <div class="chard-number d-flex flex-column">
-                    <h6>Personal Account</h6>
-                    <p>card ends: ****1234    exp.Date: 12/19</p>
-                  </div>
-                </div>
+                <div class="card-area d-flex justify-content-between align-content-center">
+                    <div class="payment-card d-flex flex-row flex-wrap align-items-center">
+                        <div class="chard-check me-3">
+                        <img src="{{ asset('assets/frontend/img/greencheck.png') }}" alt="green-check">
+                    </div>
+                    <div class="chard-icon me-4">
+                        <img src="{{ asset('assets/frontend/img/visacard.png') }}" alt="card">
+                    </div>
+                    <div class="chard-number d-flex flex-column">
+                        <h6>Personal Account</h6>
+                        <p class="mb-0">card ends: ****1234    exp.Date: 12/19</p>
+                    </div>
+                    </div>
 
-                <div class="card-option d-flex justify-content-md-end gap-4 align-items-center ">
-                  <a href="#" class="card-edit"><span class="material-symbols-outlined">edit</span></a>
-                  <a href="#" class="card-delete"><span class="material-symbols-outlined">delete</span></a>
+                    <div class="card-option d-flex justify-content-md-end gap-3 align-items-center ">
+                        <a href="#" class="card-edit d-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M5.1562 19.4465H6.39272L15.6524 10.1869L14.4159 8.95034L5.1562 18.21V19.4465ZM18.86 9.10229L15.4851 5.75812L16.7889 4.45429C17.0825 4.16071 17.4395 4.01392 17.86 4.01392C18.2806 4.01392 18.6376 4.16071 18.9312 4.45429L20.1485 5.67157C20.4421 5.96515 20.594 6.31707 20.6042 6.72732C20.6145 7.13757 20.4728 7.48948 20.1792 7.78307L18.86 9.10229ZM17.7754 10.2023L7.03118 20.9465H3.65625V17.5716L14.4005 6.82732L17.7754 10.2023ZM15.0293 9.56382L14.4159 8.95034L15.6524 10.1869L15.0293 9.56382Z" fill="#191D24"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="card-delete d-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M7.3077 20.9466C6.80898 20.9466 6.38302 20.77 6.02982 20.4167C5.67661 20.0635 5.5 19.6376 5.5 19.1389V6.44659H4.5V4.94661H8.99997V4.06201H15V4.94661H19.5V6.44659H18.5V19.1389C18.5 19.644 18.325 20.0716 17.975 20.4216C17.625 20.7716 17.1974 20.9466 16.6922 20.9466H7.3077ZM17 6.44659H6.99997V19.1389C6.99997 19.2286 7.02883 19.3023 7.08652 19.36C7.14423 19.4177 7.21795 19.4466 7.3077 19.4466H16.6922C16.7692 19.4466 16.8397 19.4145 16.9038 19.3504C16.9679 19.2863 17 19.2158 17 19.1389V6.44659ZM9.40385 17.4466H10.9038V8.44659H9.40385V17.4466ZM13.0961 17.4466H14.5961V8.44659H13.0961V17.4466Z" fill="#191D24"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-              </div>
+                <div class="card-area d-flex justify-content-between align-content-center">
+                    <div class="payment-card d-flex flex-row flex-wrap align-items-center">
+                        <div class="chard-check me-3">
+                        <img src="{{ asset('assets/frontend/img/greencheck.png') }}" alt="green-check">
+                    </div>
+                    <div class="chard-icon me-4">
+                        <img src="{{ asset('assets/frontend/img/visacard.png') }}" alt="card">
+                    </div>
+                    <div class="chard-number d-flex flex-column">
+                        <h6>Personal Account</h6>
+                        <p class="mb-0">card ends: ****1234    exp.Date: 12/19</p>
+                    </div>
+                    </div>
+
+                    <div class="card-option d-flex justify-content-md-end gap-3 align-items-center ">
+                        <a href="#" class="card-edit d-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M5.1562 19.4465H6.39272L15.6524 10.1869L14.4159 8.95034L5.1562 18.21V19.4465ZM18.86 9.10229L15.4851 5.75812L16.7889 4.45429C17.0825 4.16071 17.4395 4.01392 17.86 4.01392C18.2806 4.01392 18.6376 4.16071 18.9312 4.45429L20.1485 5.67157C20.4421 5.96515 20.594 6.31707 20.6042 6.72732C20.6145 7.13757 20.4728 7.48948 20.1792 7.78307L18.86 9.10229ZM17.7754 10.2023L7.03118 20.9465H3.65625V17.5716L14.4005 6.82732L17.7754 10.2023ZM15.0293 9.56382L14.4159 8.95034L15.6524 10.1869L15.0293 9.56382Z" fill="#191D24"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="card-delete d-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M7.3077 20.9466C6.80898 20.9466 6.38302 20.77 6.02982 20.4167C5.67661 20.0635 5.5 19.6376 5.5 19.1389V6.44659H4.5V4.94661H8.99997V4.06201H15V4.94661H19.5V6.44659H18.5V19.1389C18.5 19.644 18.325 20.0716 17.975 20.4216C17.625 20.7716 17.1974 20.9466 16.6922 20.9466H7.3077ZM17 6.44659H6.99997V19.1389C6.99997 19.2286 7.02883 19.3023 7.08652 19.36C7.14423 19.4177 7.21795 19.4466 7.3077 19.4466H16.6922C16.7692 19.4466 16.8397 19.4145 16.9038 19.3504C16.9679 19.2863 17 19.2158 17 19.1389V6.44659ZM9.40385 17.4466H10.9038V8.44659H9.40385V17.4466ZM13.0961 17.4466H14.5961V8.44659H13.0961V17.4466Z" fill="#191D24"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
           </div>
 
             <div class="col-md-12">
                 <div class="withdraw-area d-flex justify-content-between align-content-center">
                     <div class="without-method">
-                        <h5>Withdrawal Methods</h5>
-                        <p>Add your preferred payment method</p>
+                        <h5 class="lead fw-medium text-dark mb-1">Withdrawal Methods</h5>
+                        <p class="mb-0 text-black">Add your preferred payment method</p>
                     </div>
                     <div class="without-draw-button">
-                        <button class="btn-with-draw d-flex justify-content-center align-items-center gap-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><span><span class="material-symbols-outlined d-flex justify-content-center align-items-center">add</span></span> Add Payment Method</button>
+                        <button class="btn-with-draw d-flex justify-content-center align-items-center gap-2 fw-medium" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><span><span class="material-symbols-outlined d-flex justify-content-center align-items-center">add</span></span> Add Payment Method</button>
                     </div>
                 </div>
             </div>

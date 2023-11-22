@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="px-40 pb-5 aside__wrapp border-0 bg-white">
-                    <ul class="notification__list border rounded-4">
+                    <ul class="notification__list border rounded-3">
                         <li class="p-4">
                             <p class="lead fw-medium mb-4">Message</p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -101,7 +101,7 @@
                     </ul>
                     
 
-                    <div class=" border rounded-4 mt-4">
+                    <div class=" border rounded-3 mt-4">
                         <div class="px-4 pt-4"> 
                             <p class="lead fw-medium text-black mb-1">Email Updates</p>
                             <p class="text-black mb-4">(sending to e******pl@gmail.com)</p>

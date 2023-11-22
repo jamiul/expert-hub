@@ -51,10 +51,20 @@
                                 <div class="ps-3 select__wrapp">
                                     <div class="row g-3">
                                         <div class="col-6">
-                                            <select name="start_date" id="start_date" class="form-select">
-                                                <option value="Start Date">Start Date</option>
-                                                <option value="End Date">End Date</option>
-                                            </select>
+                                            <div class="left-sidebar p-0"> 
+                                                <div class="calendar-box">
+                                                    <input type="text" id="dateInput2" placeholder="Start Date" class="datepicker form-select"
+                                                    >
+                                                    <div class="calendar" id="calendar">
+                                                    <div class="header">
+                                                        <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
+                                                        <h2 id="monthYear">Month Year</h2>
+                                                        <button id="nextBtn"><i class="fa fa-angle-right"></i></button>
+                                                    </div>
+                                                    <div class="days" id="daysContainer"></div>
+                                                    </div>
+                                                </div>
+                                            </div> 
                                         </div>
                                         <div class="col-6">
                                             <select name="sort" id="sort" class="form-select">
@@ -72,7 +82,7 @@
                 
                 <ul class="feed__list border-top">
                     <li class="feed__card tranisition">
-                        <div class="row gx-4 gy-4 gy-lg-0">
+                        <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                             <div class="col-md-6"> 
                                 <h2 class="title lead fw-medium"> 
                                     <a href="#">Policy Development Assistance Required for Chemical 
@@ -121,7 +131,7 @@
                          
                     </li> 
                     <li class="feed__card tranisition">
-                        <div class="row gx-4 gy-4 gy-lg-0">
+                        <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                             <div class="col-md-6"> 
                                 <h2 class="title lead fw-medium"> 
                                     <a href="#">LMS Expert required for Business Administration</a>
@@ -169,7 +179,7 @@
                          
                     </li>  
                     <li class="feed__card tranisition">
-                        <div class="row gx-4 gy-4 gy-lg-0">
+                        <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                             <div class="col-md-6"> 
                                 <h2 class="title lead fw-medium"> 
                                     <a href="#">Policy Development Assistance Required for Chemical 
@@ -218,7 +228,7 @@
                          
                     </li> 
                     <li class="feed__card tranisition">
-                        <div class="row gx-4 gy-4 gy-lg-0">
+                        <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                             <div class="col-md-6"> 
                                 <h2 class="title lead fw-medium"> 
                                     <a href="#">LMS Expert required for Business Administration</a>
@@ -266,7 +276,7 @@
                          
                     </li>  
                     <li class="feed__card tranisition">
-                        <div class="row gx-4 gy-4 gy-lg-0">
+                        <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                             <div class="col-md-6"> 
                                 <h2 class="title lead fw-medium"> 
                                     <a href="#">Policy Development Assistance Required for Chemical 
@@ -315,7 +325,7 @@
                          
                     </li> 
                     <li class="feed__card tranisition">
-                        <div class="row gx-4 gy-4 gy-lg-0">
+                        <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                             <div class="col-md-6"> 
                                 <h2 class="title lead fw-medium"> 
                                     <a href="#">LMS Expert required for Business Administration</a>
@@ -398,3 +408,102 @@
     </main>
 @endsection
 
+@push('js')
+    
+<script>
+const daysContainer = document.getElementById("daysContainer");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const monthYear = document.getElementById("monthYear");
+const dateInput = document.getElementById("dateInput2");
+const calendar = document.getElementById("calendar");
+
+let currentDate = new Date();
+let selectedDate = null;
+
+function handleDayClick(day) {
+  selectedDate = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    day
+  );
+  dateInput.value = selectedDate.toLocaleDateString("en-US");
+  calendar.style.display = "none";
+  renderCalendar();
+}
+
+function createDayElement(day) {
+  const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+  const dayElement = document.createElement("div");
+  dayElement.classList.add("day");
+
+  if (date.toDateString() === new Date().toDateString()) {
+    dayElement.classList.add("current");
+  }
+  if (selectedDate && date.toDateString() === selectedDate.toDateString()) {
+    dayElement.classList.add("selected");
+  }
+
+  dayElement.textContent = day;
+  dayElement.addEventListener("click", () => {
+    handleDayClick(day);
+  });
+  daysContainer.appendChild(dayElement);
+}
+
+function renderCalendar() {
+  daysContainer.innerHTML = "";
+  const firstDay = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+  );
+  const lastDay = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+  );
+
+  monthYear.textContent = `${currentDate.toLocaleString("default", {
+    month: "long"
+  })} ${currentDate.getFullYear()}`;
+
+  for (let day = 1; day <= lastDay.getDate(); day++) {
+    createDayElement(day);
+  }
+}
+
+prevBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
+});
+
+dateInput.addEventListener("click", () => {
+  calendar.style.display = "block";
+  positionCalendar();
+});
+
+document.addEventListener("click", (event) => {
+  if (!dateInput.contains(event.target) && !calendar.contains(event.target)) {
+    calendar.style.display = "none";
+  }
+});
+
+function positionCalendar() {
+  const inputRect = dateInput.getBoundingClientRect();
+  calendar.style.top = inputRect.bottom + "px";
+  calendar.style.left = inputRect.left + "px";
+}
+
+window.addEventListener("resize", positionCalendar);
+
+renderCalendar();
+    
+</script>
+
+@endpush

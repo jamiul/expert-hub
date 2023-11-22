@@ -32,7 +32,7 @@
             <div class="main__content__wrapp">
                 <div class=" px-4 px-md-5 py-4 pt-md-5 pb-4">
 
-                    <h1 class="lead-lg fw-medium text-black mb-3">Active Contracts</h1>
+                    <h1 class="lead-lg fw-medium text-black mb-21">Active Contracts</h1>
     
                     
                     <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
@@ -53,7 +53,7 @@
                     <div class="tab-pane active" id="activeTab" role="tabpanel" aria-labelledby="activeTab-tab">
                         <ul class="feed__list">
                             <li class="feed__card tranisition">
-                                <div class="row gx-4 gy-4 gy-lg-0">
+                                <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                                     <div class="col-md-6"> 
                                         <h2 class="title lead fw-medium"> 
                                             <a href="#">Policy Development Assistance Required for Chemical 
@@ -92,7 +92,7 @@
                                  
                             </li> 
                             <li class="feed__card tranisition">
-                                <div class="row gx-4 gy-4 gy-lg-0">
+                                <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                                     <div class="col-md-6"> 
                                         <h2 class="title lead fw-medium"> 
                                             <a href="#">LMS Expert required for Business Administration</a>
@@ -134,7 +134,7 @@
                                  
                             </li>
                             <li class="feed__card tranisition">
-                                <div class="row gx-4 gy-4 gy-lg-0">
+                                <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                                     <div class="col-md-6"> 
                                         <h2 class="title lead fw-medium"> 
                                             <a href="#">Policy Development Assistance Required for Chemical 
@@ -173,7 +173,7 @@
                                  
                             </li> 
                             <li class="feed__card tranisition">
-                                <div class="row gx-4 gy-4 gy-lg-0">
+                                <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                                     <div class="col-md-6"> 
                                         <h2 class="title lead fw-medium"> 
                                             <a href="#">LMS Expert required for Business Administration</a>
@@ -215,7 +215,7 @@
                                  
                             </li>
                             <li class="feed__card tranisition">
-                                <div class="row gx-4 gy-4 gy-lg-0">
+                                <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                                     <div class="col-md-6"> 
                                         <h2 class="title lead fw-medium"> 
                                             <a href="#">Policy Development Assistance Required for Chemical 
@@ -254,7 +254,7 @@
                                  
                             </li> 
                             <li class="feed__card tranisition">
-                                <div class="row gx-4 gy-4 gy-lg-0">
+                                <div class="row gx-4 gy-4 gy-lg-0 align-items-center">
                                     <div class="col-md-6"> 
                                         <h2 class="title lead fw-medium"> 
                                             <a href="#">LMS Expert required for Business Administration</a>
