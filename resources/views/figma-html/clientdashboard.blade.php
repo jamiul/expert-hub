@@ -375,10 +375,6 @@
   </div>
   <!-- edit draft area end Here -->
 
-
-
-
-
     <!-- Edit Option Modal start  -->
 
     <div class="modal fade" id="editposting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
