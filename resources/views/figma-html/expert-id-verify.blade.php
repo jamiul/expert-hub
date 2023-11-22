@@ -30,7 +30,7 @@
                         <button class="btn btn-primary px-4">Get started Verify</button>
                     </div>
                 </div>
-                <div class="px-40 pt-4 pb-5">
+                <div class="px-40 pt-4">
                     <ul class="verification__list">
                         <li class="d-flex">
                             <figure class="mb-0 icon d-flex align-items-center justify-content-center rounded-circle">

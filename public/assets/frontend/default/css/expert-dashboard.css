@@ -7,6 +7,7 @@
   --dark: #191D24;
   --border-color: rgba(14, 0, 98, 0.10);
   --white: #ffffff;
+  --bs-border-color: #E7E5EF;
 }
   
 .lead { font-size: 19px !important; }
@@ -224,8 +225,8 @@ ul li {
   margin-top: -3px;
 }
 .expert__dashboad .main__content__wrapp .feed__list .feed__card .info__list .like__btn {
-  position: relative;
-  margin-top: -3px;
+  position: relative;line-height: 1;font-size: 20px;
+  /* margin-top: -3px; */
   color: var(--primary);
 }
 .expert__dashboad .main__content__wrapp .feed__list .feed__card .info__list .like__btn.active {
@@ -330,9 +331,10 @@ ul li {
   border-radius: 2px;
 }
 .expert__dashboad .main__content__wrapp .aside__wrapp .checkbox {
-  position: relative;
+  position: absolute;top: 0%;left: 0
+  ;
   width: 60px;
-  height: 26px;
+  height: 50px;
   padding: 0;
   margin: 0;
   opacity: 0;
@@ -509,8 +511,9 @@ ul li {
 /*---- Expert Dashboard page styling --*/
 
 /*---- Expert Status page styling --*/
-
-.expert__dashboad.status__page .main__content__wrapp .aside__wrapp { border-left: 0; }
+.pt-32 { padding-top: 32px; }
+.mb-40 { margin-bottom: 40px; }
+.expert__dashboad.status__page .main__content__wrapp .aside__wrapp { border-left: 0;padding: 31px;width: 348px; }
 .expert__dashboad.status__page .main__content__wrapp .border-start { border-width: 2px !important; }
 .expert__dashboad.status__page .main__content__wrapp .form-select {
   border-radius: 4px;
@@ -569,12 +572,17 @@ line-height: 19px;
 /*---- Expert STatus page styling --*/ 
 
 /*--------------------- Contract page styling -------------------------*/
+.mb-21 { margin-bottom: 21px; }
 .expert__dashboad.contract__page .main__content__wrapp {
   position: relative;
 }
+ 
 .expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link {
   border-radius: 4px; border: 2px solid rgba(14, 0, 98, 0.10); margin-right: 4px;
-  font-size: 0.875rem;
+  font-size: 0.875rem;color: var(--dark);line-height: 120%;padding: 0rem 1rem;display: inline-flex;align-items: center;height: 2rem;
+}
+.expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link:hover {
+  border-color: var(--primary);color: var(--primary);
 }
 .expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link.active {
   background-color: var(--primary);
@@ -630,9 +638,10 @@ line-height: 19px;
 .expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .sort__wrapp .select__wrapp {
   width: calc(100% - 5rem);
 }
-.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .form-select {
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .form-select,
+.expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .form-control {
   border-radius: 4px;
-  height: 3rem;
+  height: 3rem;    color: var(--dark);
   border: 2px solid rgba(14, 0, 98, 0.15);
 }
 .expert__dashboad.contract__page .main__content__wrapp .filter__wrapp .input-group .form-control {
@@ -839,6 +848,9 @@ line-height: 19px;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.verification__page .verification__list > li:last-child{
+  padding-bottom: 0;
+}
 .verification__page .verification__list > li .icon {
   width: 5rem;
   height: 5rem;
@@ -923,10 +935,11 @@ line-height: 19px;
 .expert__dashboad.diary__page .title {
   font-size: 1.437rem;
 }
-.expert__dashboad.diary__page .form-select, .expert__dashboad.diary__page .form-control {
-  border-radius: 4px;height: 48px;
-  border: 2px solid rgba(14, 0, 98, 0.3);
+.expert__dashboad.diary__page .form-select, .expert__dashboad.diary__page .form-control, .expert__dashboad.diary__page .form-control.dateInput {
+  border-radius: 4px;height: 48px !important;color: var(--dark);
+  border: 2px solid rgba(14, 0, 98, 0.3) !important;    padding: 0.5rem 2.5rem 0.5rem 1rem !important;
 }
+.expert__dashboad.diary__page .form-control.dateInput::placeholder,.expert__dashboad.diary__page .form-control::placeholder {color: var(--dark) !important;}
 .expert__dashboad.diary__page .datepicker {
   background-repeat: no-repeat;
   background-position: center right 1rem;
@@ -1233,8 +1246,137 @@ line-height: 19px;
   padding: 4px 10px;
 }
 .pt-37 { padding-top: 37px; }
+
 /* --------------------- Proposal Page Styles ----------------------- */
 .large__btn { padding: 12px 50px; }
 .pt-52 { padding-top: 52px; }
 .py-11 { padding-top: 11px !important;padding-bottom: 11px !important; }
 .pagination .pagination-right ul li a.active { background-color: var(--primary);color: var(--white) !important; } 
+/* --------------------- Proposal Page Styles ----------------------- */
+
+/* --------------------- Add payment page Styles ----------------------- */
+
+.payment-title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payment-title h4{
+  font-family: Colfax;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #191D24;
+}
+.area-padding {
+  padding: 57px 42px;
+}
+.card-area {
+  border: 1px solid rgba(0, 54, 227, 0.12);
+  background: rgba(0, 54, 227, 0.05);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0px 32px;
+}
+.payment-txt p{
+  font-family: Colfax;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  color:#191D24;
+
+}
+span.payment-currency{
+  color:#0036E3;
+}
+
+.chard-icon img {
+  max-width: 89px;
+  max-height: 49px;
+
+}
+
+.chard-number h6{ 
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  color: #303744;
+  margin-bottom: 0;
+}
+
+.chard-number p{ 
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: var(--dark);
+}
+
+/* .card-option a{
+  color:#191D24;
+  max-width: 17px;
+  max-height: 17px;
+} */
+
+.withdraw-area {
+  border: 1px solid #0000001A;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 24px;
+}
+button.btn-with-draw {
+  background: #0036E3;
+  padding: 12px 34px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+button.btn-with-draw-icon {
+  background: transparent;
+  padding: 8px 34px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+button.btn-with-draw-paypal{
+display: flex;
+width: 265px;
+padding: 11px 70px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 4px;
+background: #0036E3;
+color: #FFF;
+text-align: center;
+font-family: Colfax;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+border: none;
+margin-bottom: 24px;}
+
+/* Find Projects Styles  */
+.left-sidebar .search-block .text-black::placeholder { color: var(--dark); }
+.search__suggestions__box { margin-top: 32px; } 
+.search__suggestions__box .search__item { padding: 2px 6px 0 10px;line-height: 160%; }
+.search__suggestions__box .btn { top: -2px;margin-left: .5rem; }
+.btn-link.clear__btn { color: var(--dark);text-decoration: underline; }
+.btn-link.clear__btn:hover,.btn-link.clear__btn:focus,.btn-link.clear__btn:active { color: var(--primary);text-decoration: none; }
+
+.find-training.find-projects.databasepading .right-sidebar .database-block .database-contant .database-img { margin-right: 10px; }
+.find-training.find-projects.databasepading .right-sidebar .database-block { margin-bottom: 8px; }
+.find-training.find-projects.databasepading .right-sidebar .database-block .database-contant .database-img > img {  position: relative;top: -5px; }
+.find-projects.find-projects.databasepading .right-sidebar .database-block .database-contant .database-text h4 a { color: var(--dark); }
+.find-projects.find-projects.databasepading .right-sidebar .database-block .database-contant .database-text h4 a:hover { color: var(--primary); }
+.find-projects.find-projects.databasepading .right-sidebar .database-p p { color: var(--dark); }
+.find-projects.find-projects.databasepading .find-projects-time .curriculum li { color: rgba(25, 29, 36, 0.60);font-size: 13px; }
+.find-training.find-projects.databasepading .find-projects-time .curriculum-right li a {   border: 0; width: 24px;height: 24px; margin-left: 12px;    padding: 0 !important;justify-content: center;display: inline-flex; }
+.find-training.find-projects.databasepading .find-projects-time .curriculum-right li a:hover {  background-color: #fff; }
+.find-training.find-projects.databasepading .find-projects-time .curriculum-right li a.share { margin-left: 16px; }
+.find-training.find-projects.databasepading .database-p { padding: 16px 0 0 !important;margin: 16px 0 0 0 !important; }
+.find-training.find-projects.databasepading .right-sidebar { padding: 2rem 2.625rem; }
+.find-training.find-projects.databasepading .right-sidebar:first-child { margin-top: 1.067rem; }
+.find-training.find-projects.databasepading .find-projects-time .curriculum-right li,
+.find-training.find-projects.databasepading .find-projects-time .curriculum-right li span { font-size: 13px; }

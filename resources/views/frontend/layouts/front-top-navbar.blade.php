@@ -67,16 +67,8 @@
                 </div>
                 <div class="col-md-3 col-sm-3">
                     <div class="login-block">
-                        @guest
-                            <a href="{{ route('auth.login') }}"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
-                            <a href="{{ route('auth.registration') }}">{{ __('Register') }}</a>
-                        @endguest
-                        @auth
-                            <form method="POST" action="{{ route('auth.logout') }}">
-                                @csrf
-                                <button class="button button-xs button-primary" type="submit">Logout</button>
-                            </form>
-                        @endauth
+                        <a href="#"><i class="fa-sharp fa-solid fa-user-large"></i>{{ __('Login') }}</a>
+                        <a href="{{ url('register-option') }}">{{ __('Register') }}</a>
                     </div>
                 </div>
             </div>

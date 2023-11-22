@@ -18,7 +18,7 @@
                 </div>
                 <h3>Professor Michael Kassiou</h3>
                 <div class="d-flex justify-content-center align-items-center">
-                  <div class="pe-2">
+                  <div class="pe-3">
                     <p>Curriculum Expert</p>
                     <h5>Public Health</h5>
                   </div>

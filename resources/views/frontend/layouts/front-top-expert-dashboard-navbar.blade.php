@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
-<nav class="navbar navbar-expand-xxl expert__dashboard__nav">
+<nav class="navbar navbar-expand-lg expert__dashboard__nav">
    <div class="container-fluid algin-items-center mx-auto position-relative">
       <a class="navbar-brand" href="#">
          <img src="{{ asset('assets/frontend/img/logo.png') }}" />
@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">Profile</a>
+               <a class="nav-link" aria-current="page" href="#">Profile</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="#">Analytics</a>
@@ -85,7 +85,7 @@
                <a class="nav-link disabled" href="#">Find Project</a>
             </li>
             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle active" href="#" id="serviceDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <a class="nav-link dropdown-toggle activ" href="#" id="serviceDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Settings
                </a>
                <ul class="dropdown-menu" aria-labelledby="serviceDrop">
@@ -232,7 +232,7 @@
             
          </div>
          <div class="dropdown">
-            <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false" >
                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="rounded-circle" alt="avatar">
             </a> 
             <div class="dropdown-menu profile__dropdown bg-white border-0" aria-labelledby="dropdownMenuLink">
@@ -240,8 +240,8 @@
 
                   <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}" class="rounded-circle mx-auto object-fit-cover profile__thumbnail" alt="">
                </div>
-              <p class="mb-0 lead fw-medium text-black text-center mt-3">Professor Michael Kassiou</p>
-              <p class="text-center small ff-public text-muted mb-0">Curriculum Expert</p>
+              <p class="mb-0 lead fw-medium text-black text-center mt-3">Dr. Darrell Steward</p>
+              <p class="text-center small ff-public text-muted mb-0">Sydney Islamic business school</p>
 
               <div class="d-flex status_box my-4">
                <div class="position-relative col-6">

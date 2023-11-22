@@ -246,7 +246,7 @@ function showList(inp, arr, val) {
             b.innerHTML = "<strong>" + arr[i].country_name.substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].country_name.substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' data-id='" + arr[i].id + "' value='" + arr[i].country_name + "'>";
+            b.innerHTML += "<input type='hidden' data-id='" + arr[i].id + "' data-name='" + arr[i].country_name + "' value='" + arr[i].country_name + "'>";
             /*execute a function when someone clicks on the item value (DIV element):*/
             b.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/

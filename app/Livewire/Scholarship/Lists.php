@@ -95,10 +95,16 @@ class Lists extends Component
                 ->whereDate('end_date', '>=', $applicationDeadline);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
-            $scholarships = $scholarships->whereIn('country_id', $this->filtersArray['country']);
+            $scholarships = $scholarships
+            ->select('scholarships.*')
+            ->join('scholarship_countries', 'scholarships.country_id', '=', 'scholarship_countries.id')
+            ->whereIn('scholarship_countries.country_name', $this->filtersArray['country']);
         }
         if (isset($this->filtersArray['university']) && $this->filtersArray['university']) {
-            $scholarships = $scholarships->where('university_id', $this->filtersArray['university']);
+            $scholarships = $scholarships
+                ->select('scholarships.*')
+                ->join('scholarship_universities', 'scholarships.university_id', '=', 'scholarship_universities.id')
+                ->where('scholarship_universities.university_name', $this->filtersArray['university']);
         }
 
         $scholarships = $scholarships->paginate($this->limit);
