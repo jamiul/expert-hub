@@ -1,6 +1,5 @@
-@extends('frontend.layouts.front-admin-dashboard-layout') @section('content') 
-
-
+@extends('frontend.layouts.front-admin-dashboard-layout') 
+@section('content') 
 <main class="main__layout d-flex">
         <!-- start left sidebar -->
         <div class="left__sidebar"> 
@@ -116,7 +115,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                 <path d="M7.5 6H10.5V4.875C10.5 3.42525 11.6753 2.25 13.125 2.25C14.5747 2.25 15.75 3.42525 15.75 4.875C15.75 6.32475 14.5747 7.5 13.125 7.5H12V10.5H13.125C14.5747 10.5 15.75 11.6753 15.75 13.125C15.75 14.5747 14.5747 15.75 13.125 15.75C11.6753 15.75 10.5 14.5747 10.5 13.125V12H7.5V13.125C7.5 14.5747 6.32475 15.75 4.875 15.75C3.42525 15.75 2.25 14.5747 2.25 13.125C2.25 11.6753 3.42525 10.5 4.875 10.5H6V7.5H4.875C3.42525 7.5 2.25 6.32475 2.25 4.875C2.25 3.42525 3.42525 2.25 4.875 2.25C6.32475 2.25 7.5 3.42525 7.5 4.875V6ZM6 6V4.875C6 4.25368 5.49632 3.75 4.875 3.75C4.25368 3.75 3.75 4.25368 3.75 4.875C3.75 5.49632 4.25368 6 4.875 6H6ZM6 12H4.875C4.25368 12 3.75 12.5037 3.75 13.125C3.75 13.7463 4.25368 14.25 4.875 14.25C5.49632 14.25 6 13.7463 6 13.125V12ZM12 6H13.125C13.7463 6 14.25 5.49632 14.25 4.875C14.25 4.25368 13.7463 3.75 13.125 3.75C12.5037 3.75 12 4.25368 12 4.875V6ZM12 12V13.125C12 13.7463 12.5037 14.25 13.125 14.25C13.7463 14.25 14.25 13.7463 14.25 13.125C14.25 12.5037 13.7463 12 13.125 12H12ZM7.5 7.5V10.5H10.5V7.5H7.5Z" fill="white" fill-opacity="0.8"/>
                             </svg>
-                            <span>Resources</span>
+                            <span>Tech</span>
                         </a>
                         
                         <ul class="collapse" id="content08">
@@ -139,7 +138,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                 <path d="M4.50001 14.25H7.00964V9.79325H10.9904V14.25H13.5V7.49998L9.00001 4.11056L4.50001 7.49998V14.25ZM3.37503 15.375V6.9375L9.00001 2.70435L14.625 6.9375V15.375H9.8654V10.9182H8.13462V15.375H3.37503Z" fill="white" fill-opacity="0.8"/>
                             </svg>
-                            <span>Tech</span>
+                            <span>Resources</span>
                         </a>
                         
                         <ul class="collapse" id="content09">
@@ -192,9 +191,11 @@
             <!-- end header -->
 
 <div class="content__wrapper">
-
 <div class="container-fluid">
     <div class="row">
+        <!-- <div class="col-md-2">
+                   
+        </div> -->
         <div class="col-md-12">
             <section class="frontend-dashboard-area  mx-auto ">
                 <!-- <div class="container-fluid"> -->
@@ -202,7 +203,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="frontend-left-title">
-                                <h4>Home</h4>
+                                <h4>About page</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -210,54 +211,13 @@
                         </div>
                     </div>
                 </div>
+                
+
                 <div class="academic-seller-area">
                     <div class="row">
                         <div class="col-12">
                             <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Top academic experts slider</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="academic-content-area  d-flex flex-row">
-                            <div class="academic-single-item d-flex flex-column">
-                                <div class="img-area position-relative"> <img src="{{ asset('assets/frontend/img/blog-admin/admin-person2.png') }}" alt="person"> <a class=" position-absolute blog-close"> <img src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                <div class="text-area d-flex flex-column">
-                                    <h4>Dr. Jane Cooper</h4>
-                                    <h5>Curriculum Expert</h5>
-                                    <h6>Public Health</h6>
-                                    <p>Australia</p>
-                                </div>
-                            </div>
-                            <div class="academic-single-item d-flex flex-column">
-                                <div class="img-area position-relative"> <img src="{{ asset('assets/frontend/img/blog-admin/admin-person3.png') }}" alt="person"> <a class=" position-absolute blog-close"> <img src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                <div class="text-area d-flex flex-column">
-                                    <h4>Kristin Watson</h4>
-                                    <h5>Curriculum Expert</h5>
-                                    <h6>Public Health</h6>
-                                    <p>Australia</p>
-                                </div>
-                            </div>
-                            <div class="academic-single-item d-flex flex-column">
-                                <div class="img-area position-relative"> <img src="{{ asset('assets/frontend/img/blog-admin/admin-person.png') }}" alt="person"> <a class=" position-absolute blog-close"> <img src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                <div class="text-area d-flex flex-column">
-                                    <h4>Jenny Wilson</h4>
-                                    <h5>Curriculum Expert</h5>
-                                    <h6>Public Health</h6>
-                                    <p>Australia</p>
-                                </div>
-                            </div>
-                            <div class="academic-single-item d-flex flex-column">
-                                <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#expireSlider">add</span> </a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="academic-seller-area">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Search Academic Expert Made Easy</h3>
+                                <h3 class="seller-title">Page title</h3>
                             </div>
                         </div>
                     </div>
@@ -272,7 +232,7 @@
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-floating admin-text-area position-relative"> <textarea class="form-control admin-area" placeholder="Leave a comment here" id="floatingTextarea">We are the largest, globally connected network of top academic talent, and we're prepared to tackle your most critical projects.</textarea> <label for="floatingTextarea" class=" admin-text-area-level position-absolute">Paragraph</label> </div>
@@ -284,52 +244,15 @@
                         </div>
                         <div class="col-md-4"></div>
                     </div>
-                    <div class="require-main admin-require-main">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="require-block">
-                                        <div class="require-img position-relative"> <span class="require-count position-absolute">1</span> <img src="{{ asset('assets/frontend/img/require1.png') }}" alt="person"> </div>
-                                        <div class="require-text">
-                                            <h3>Post Academic <br> Projects </h3>
-                                            <p>Whether it is a personal, institutional project, or media interviews, our pool of top academic experts are here to assist.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="require-block">
-                                        <div class="require-img position-relative"> <span class="require-count position-absolute">2</span> <img src="{{ asset('assets/frontend/img/require2.png') }}" alt="person"> </div>
-                                        <div class="require-text">
-                                            <h3>Receive Project <br> Interest </h3>
-                                            <p>Review expressions of interest from our network of academic experts who are interested in working on your project.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="require-block">
-                                        <div class="require-img position-relative"> <span class="require-count position-absolute">3</span> <img src="{{ asset('assets/frontend/img/require1.png') }}" alt="person"> </div>
-                                        <div class="require-text">
-                                            <h3>Select the Best <br> Match for you </h3>
-                                            <p>Make an informed decision to choose the academic expert who best matches your project needs and objectives.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="require-block">
-                                        <div class="academic-single-item d-flex flex-column academic-add">
-                                            <div class="admin-add-more "> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#searchacademicModal">add</span> </a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
+
                 </div>
+
                 <div class="academic-seller-area">
                     <div class="row">
                         <div class="col-12">
                             <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Search expert by field</h3>
+                                <h3 class="seller-title">About area</h3>
                             </div>
                         </div>
                     </div>
@@ -344,7 +267,11 @@
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-floating admin-text-area position-relative"> <textarea class="form-control admin-area" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.</textarea> <label for="floatingTextarea" class=" admin-text-area-level position-absolute">Paragraph</label> </div>
                                             </div>
                                         </div>
                                     </form>
@@ -353,52 +280,13 @@
                         </div>
                         <div class="col-md-4"></div>
                     </div>
-                    <div class="experts-main experts-main-blog">
-                        <div class="container p-1">
-                            <div class="row">
-                                <div class="col field-search">
-                                    <div class="experts-block">
-                                        <div class="experts-img position-relative"> <a href="#"> <img src=" {{ asset('assets/frontend/img/experts1.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                        <div class="experts-text">
-                                            <h3>Agriculture</h3>
-                                            <p>I am ready to serve you anything course related academics help. Don't hesitate me to contact.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col field-search">
-                                    <div class="experts-block">
-                                        <div class="experts-img position-relative"> <a href="#"> <img src=" {{ asset('assets/frontend/img/experts2.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                        <div class="experts-text">
-                                            <h3> <a href="#">Architecture</a> </h3>
-                                            <p>I am ready to serve you anything course related academics help. Don't hesitate me to contact.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col field-search">
-                                    <div class="experts-block">
-                                        <div class="experts-img position-relative"> <a href="#"> <img src=" {{ asset('assets/frontend/img/experts3.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                        <div class="experts-text">
-                                            <h3> <a href="#">Business</a> </h3>
-                                            <p>I am ready to serve you anything course related academics help. Don't hesitate me to contact.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col field-search">
-                                    <div class="require-block require-add-item">
-                                        <div class="academic-single-item d-flex flex-column">
-                                            <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#addCategoryModal">add</span> </a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+
                 <div class="academic-seller-area">
                     <div class="row">
                         <div class="col-12">
                             <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Browse Experts by Category of Expertise</h3>
+                                <h3 class="seller-title">Meet Our Experts</h3>
                             </div>
                         </div>
                     </div>
@@ -413,99 +301,7 @@
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="categories-main categories-main-blog">
-                            <div class="container p-1">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="categories-block">
-                                            <div class="categories-img position-relative"> <a href="#"> <img src="{{ asset('assets/frontend/img/categories1.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                            <div class="categories-text b-expert-text">
-                                                <h3>Accreditation Specialist</h3>
-                                                <div class="categories-review">
-                                                    <div class="review"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                                                    <div class="review-text">45 Review</div>
-                                                </div>
-                                            </div>
-                                            <div class="categories-available d-flex align-items-start position-relative">
-                                                <div class="available-img d-flex justify-content-start"> <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"> <img class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"> <img class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"> </div>
-                                                <div class="available-text">+ 120 Available</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="categories-block">
-                                            <div class="categories-img position-relative"> <a href="#"> <img src="{{ asset('assets/frontend/img/categories2.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                            <div class="categories-text b-expert-text">
-                                                <h3>Curriculum Experts </h3>
-                                                <div class="categories-review">
-                                                    <div class="review"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                                                    <div class="review-text">45 Review</div>
-                                                </div>
-                                            </div>
-                                            <div class="categories-available d-flex align-items-start position-relative">
-                                                <div class="available-img d-flex justify-content-start"> <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"> <img class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"> <img class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"> </div>
-                                                <div class="available-text">+ 120 Available</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="categories-block">
-                                            <div class="categories-img position-relative"> <a href="#"> <img src="{{ asset('assets/frontend/img/categories3.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                            <div class="categories-text b-expert-text">
-                                                <h3>Program Designers </h3>
-                                                <div class="categories-review">
-                                                    <div class="review"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                                                    <div class="review-text">45 Review</div>
-                                                </div>
-                                            </div>
-                                            <div class="categories-available d-flex align-items-start position-relative">
-                                                <div class="available-img d-flex justify-content-start"> <img class=" position-absolute exp-category" src="{{ asset('assets/frontend/img/available-img1.png') }}"> <img class=" position-absolute exp-categorym" src="{{ asset('assets/frontend/img/available-img2.png') }}"> <img class=" position-absolute exp-categoryl" src="{{ asset('assets/frontend/img/available-img3.png') }}"> </div>
-                                                <div class="available-text">+ 120 Available</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col field-search">
-                                        <div class="require-block require-add-item">
-                                            <div class="academic-single-item d-flex flex-column">
-                                                <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#addCategoryExpireModal">add</span> </a> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="academic-seller-area">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Build on Demand Teams for your Education Institution</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="admin-blog-form-area d-flex flex-row">
-                                <div class="admin-form-title">
-                                    <h5>Section title</h5>
-                                </div>
-                                <div class="admin-form-content">
-                                    <form action="">
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
                                         </div>
                                     </form>
@@ -566,6 +362,54 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="academic-seller-area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="academic-bar d-flex">
+                                <h3 class="seller-title">Our Mission</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="admin-blog-form-area d-flex flex-row">
+                                <div class="admin-form-title">
+                                    <h5>Section title</h5>
+                                </div>
+                                <div class="admin-form-content">
+                                    <form action="">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input  admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-floating admin-text-area position-relative"> <textarea class="form-control admin-area" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.</textarea> <label for="floatingTextarea" class=" admin-text-area-level position-absolute">Paragraph</label> </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="mission-img overlay-edit position-relative">
+                                 <img src="{{ asset('assets/frontend/img/mission-img.jpg') }}">
+                                 <div class="overlay">
+                                      <div class="overlay-content admin-about-img">
+                                            <a><img src="{{ asset('assets/frontend/img/admin/admin-edit.png') }}" alt=""></a>
+                                      </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
                 <div class="academic-seller-area">
                     <div class="row">
                         <div class="col-12">
@@ -585,7 +429,7 @@
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
                                         </div>
                                     </form>
@@ -716,11 +560,109 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="academic-seller-area">
                     <div class="row">
                         <div class="col-12">
                             <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Explore Research Scholarships 2024</h3>
+                                <h3 class="seller-title">Build on Demand Teams for your Education Institution</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+
+                    <div class="col-md-8">
+                            <div class="admin-blog-form-area d-flex flex-row">
+                                <div class="admin-form-title">
+                                    <h5>Section title</h5>
+                                </div>
+                                <div class="admin-form-content">
+                                    <form action="">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-floating admin-text-area position-relative"> <textarea class="form-control admin-area" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.</textarea> <label for="floatingTextarea" class=" admin-text-area-level position-absolute">Paragraph</label> </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="team  team-blog">
+                        <div class="team-hire">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-1.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Darrell Steward</h4>
+                                                    <p>Accreditation Specialist</p>
+                                                </div>
+                                            </a> </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-2.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Theresa Webb</h4>
+                                                    <p>Industry Expert</p>
+                                                </div>
+                                            </a> </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-3.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Marvin McKinney</h4>
+                                                    <p>Policy Expert</p>
+                                                </div>
+                                            </a> </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-4.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Marvin McKinney</h4>
+                                                    <p>Curriculum Expert</p>
+                                                </div>
+                                            </a> </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block">
+                                            <div class="academic-single-item d-flex flex-column">
+                                                <div class="admin-add-more"> <a href="#" > <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#buildondemand">add</span> </a> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+   
+
+
+
+                <div class="academic-seller-area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="academic-bar d-flex">
+                                <h3 class="seller-title">Search expert by field</h3>
                             </div>
                         </div>
                     </div>
@@ -735,7 +677,7 @@
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
                                         </div>
                                     </form>
@@ -744,37 +686,40 @@
                         </div>
                         <div class="col-md-4"></div>
                     </div>
-                    <div class="scholarship scholarship-blog">
+                    <div class="experts-main experts-main-blog">
                         <div class="container p-1">
                             <div class="row">
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="scholarship-block shipment-explore">
-                                        <div class="scholarship-img   position-relative"> <a href="#"> <img class="university-img" src="{{ asset('assets/frontend/img/scholarship1.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                        <div class="scholarship-text"> <a href="#">Melbourne University | Australia</a>
-                                            <h4>Open for International &amp; Domestic</h4>
+                                <div class="col field-search">
+                                    <div class="experts-block">
+                                        <div class="experts-img position-relative"> <a href="#"> <img src=" {{ asset('assets/frontend/img/experts1.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                        <div class="experts-text">
+                                            <h3>Agriculture</h3>
+                                            <p>I am ready to serve you anything course related academics help. Don't hesitate me to contact.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="scholarship-block shipment-explore">
-                                        <div class="scholarship-img position-relative"> <a href="#"> <img class="university-img" src="{{ asset('assets/frontend/img/scholarship3.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                        <div class="scholarship-text"> <a href="#">University of Toronto | Canada</a>
-                                            <h4>Open for International &amp; Domestic</h4>
+                                <div class="col field-search">
+                                    <div class="experts-block">
+                                        <div class="experts-img position-relative"> <a href="#"> <img src=" {{ asset('assets/frontend/img/experts2.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                        <div class="experts-text">
+                                            <h3> <a href="#">Architecture</a> </h3>
+                                            <p>I am ready to serve you anything course related academics help. Don't hesitate me to contact.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="scholarship-block shipment-explore">
-                                        <div class="scholarship-img position-relative"> <a href="#"> <img class="university-img" src="{{ asset('assets/frontend/img/admin/scholarship4.png') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
-                                        <div class="scholarship-text"> <a href="#">University of California | USA</a>
-                                            <h4>Open for International &amp; Domestic</h4>
+                                <div class="col field-search">
+                                    <div class="experts-block">
+                                        <div class="experts-img position-relative"> <a href="#"> <img src=" {{ asset('assets/frontend/img/experts3.jpg') }}"> </a> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                        <div class="experts-text">
+                                            <h3> <a href="#">Business</a> </h3>
+                                            <p>I am ready to serve you anything course related academics help. Don't hesitate me to contact.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <div class="require-block">
+                                <div class="col field-search">
+                                    <div class="require-block require-add-item">
                                         <div class="academic-single-item d-flex flex-column">
-                                            <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#exploreResearchSlider">add</span> </a> </div>
+                                            <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#addCategoryModal">add</span> </a> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -782,11 +727,14 @@
                         </div>
                     </div>
                 </div>
+
+               
+
                 <div class="academic-seller-area">
                     <div class="row">
                         <div class="col-12">
                             <div class="academic-bar d-flex">
-                                <h3 class="seller-title">Upcoming Academic Training</h3>
+                                <h3 class="seller-title">Build on Demand Teams for your Education Institution</h3>
                             </div>
                         </div>
                     </div>
@@ -801,7 +749,7 @@
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input " placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
                                         </div>
                                     </form>
@@ -810,66 +758,51 @@
                         </div>
                         <div class="col-md-4"></div>
                     </div>
-                    <div class="academic-block  academic-blog">
-                        <div class="container">
-                            <div class="row border-0">
-                                <div class="col-md-8 blog-border">
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-6 zoom-border-right">
-                                            <div class="live-zoom">
-                                                <div class="zoom-icon"> <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}">
-                                                    <h4>Live via Zoom</h4>
+                    <div class="team  team-blog">
+                        <div class="team-hire">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-1.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Darrell Steward</h4>
+                                                    <p>Accreditation Specialist</p>
                                                 </div>
-                                                <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="training">
-                                                <h3>Statistics with R*</h3>
-                                                <div class="training-text"> <span>Instructor:</span> <a href="#">Cameron Williamson</a> <a href="#">Guy Hawkins</a> </div>
-                                                <h6>Language: <span>French</span> </h6>
-                                            </div>
-                                        </div>
+                                            </a> </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-6 zoom-border-right">
-                                            <div class="live-zoom">
-                                                <div class="zoom-icon"> <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}">
-                                                    <h4>Live via Zoom</h4>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-2.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Theresa Webb</h4>
+                                                    <p>Industry Expert</p>
                                                 </div>
-                                                <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="training">
-                                                <h3>Longitudinal Data Analysis Using Stata</h3>
-                                                <div class="training-text"> <span>Instructor:</span> <a href="#">Marvin McKinney</a> <a href="#">Wade Warren</a> </div>
-                                                <h6>Language: <span>French</span> </h6>
-                                            </div>
-                                        </div>
+                                            </a> </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-6 zoom-border-right">
-                                            <div class="live-zoom">
-                                                <div class="zoom-icon"> <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}">
-                                                    <h4>Live via Zoom</h4>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-3.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Marvin McKinney</h4>
+                                                    <p>Policy Expert</p>
                                                 </div>
-                                                <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="training">
-                                                <h3>Multilevel and Mixed Models Using Stata</h3>
-                                                <div class="training-text"> <span>Instructor:</span> <a href="#">Leslie Alexander</a> <a href="#">Jacob Jones</a> </div>
-                                                <h6>Language: <span>French</span> </h6>
-                                            </div>
-                                        </div>
+                                            </a> </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="require-block">
-                                        <div class="academic-single-item d-flex flex-column">
-                                            <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#upcomingSlider">add</span> </a> </div>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block"> <a href="#">
+                                                <div class="team-img position-relative"> <img src=" {{ asset('assets/frontend/img/team-4.png') }}"> <a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}" alt="close"> </a> </div>
+                                                <div class="hire-text">
+                                                    <h4>Marvin McKinney</h4>
+                                                    <p>Curriculum Expert</p>
+                                                </div>
+                                            </a> </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6">
+                                        <div class="team-block">
+                                            <div class="academic-single-item d-flex flex-column">
+                                                <div class="admin-add-more"> <a href="#" > <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#buildondemand">add</span> </a> </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -877,7 +810,61 @@
                         </div>
                     </div>
                 </div>
-        </div> <!-- Pagination start Here -->
+
+
+
+                <div class="academic-seller-area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="academic-bar d-flex">
+                                <h3 class="seller-title">Our Mission</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="admin-blog-form-area d-flex flex-row">
+                                <div class="admin-form-title">
+                                    <h5>Section title</h5>
+                                </div>
+                                <div class="admin-form-content">
+                                    <form action="">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-floating admin-text-area position-relative"> <textarea class="form-control admin-area" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.</textarea> <label for="floatingTextarea" class=" admin-text-area-level position-absolute">Paragraph</label> </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="mission-img overlay-edit position-relative">
+                                 <img src="{{ asset('assets/frontend/img/story-img.jpg') }}">
+                                 <div class="overlay">
+                                      <div class="overlay-content admin-about-img">
+                                            <a><img src="{{ asset('assets/frontend/img/admin/admin-edit.png') }}" alt=""></a>
+                                      </div>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+        </div> 
+        
+        <!-- Pagination start Here -->
         <div class="row pagination-padding">
             <div class="pagination-area">
                 <div class="pagination-left">
@@ -918,8 +905,6 @@
     </div>
         <!-- end body content -->
 </main><!--.//main_layout-->
-
-
 
 
 
@@ -2155,5 +2140,4 @@
             </div>
         </div>
     </div>
-    <!--======================================= Add this category End Here =================================-->
-     @endsection
+    <!--======================================= Add this category End Here =================================--> @endsection
