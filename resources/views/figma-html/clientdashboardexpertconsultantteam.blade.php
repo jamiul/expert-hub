@@ -1372,13 +1372,13 @@
 
 
 
-    <div class="about-slider about-slider-experts-database">
+    <div class="about-slider about-slider-experts-database mt-4">
       <div class="container">
         <div class="heading">
           <h4>Instructor</h4>
           <h2>Meet Our Experts for Consultation</h2>
         </div>
-        <div id="owl-carousel" class="owl-carousel owl-theme">
+        <div id="owl-carousel" class="owl-carousel owl-carouselfive owl-theme">
           <div class="item">
             <div class="carousel-img">
               <img src="{{ asset('assets/frontend/img/find-trad1.png') }}">

@@ -2486,6 +2486,15 @@ li.page-item.active a {
 .contact-m-rating {
   align-items: flex-start!important;
   min-width: 307px;
+  justify-content: center;
+}
+
+.all-contact-rating-price.d-flex.flex-column.align-items-start {
+  justify-content: center;
+}
+
+.btn-download .material-symbols-outlined {
+    margin-top: -4px;
 }
 
 .all-project-area {
