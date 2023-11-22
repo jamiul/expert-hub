@@ -68,8 +68,7 @@
     </div>
     <div class="setting-area">
   <div class="dropdown">
-    <span class="profile-bell position-relative dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><a href="#"><img src="{{ asset('assets/frontend/img/profile-messanger.png') }}" alt="message"> </a> 
-    <span class="position-absolute  translate-middle p-1 bg-danger border-light rounded-circle top-batch">1</span></span>
+    <span class="profile-bell position-relative dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><a href="#"><img src="{{ asset('assets/frontend/img/profile-messanger.png') }}" alt="message"> </a> <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border-light rounded-circle top-batch">1</span></span>
         <div class="dropdown-menu dropdown-menu-end message-setting-area">
         <span class="material-symbols-outlined active m-top-arrow-message"> arrow_drop_up </span>
 
@@ -142,8 +141,7 @@
               <div class="single-message-item d-flex flex-row justify-content-between">
               <div class="profile-message-area d-flex flex-row align-items-center justify-content-center gap-2">
                   <div class="message-profile position-relative">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/message-profile5.png') }}" alt="message profile" >
-                         <span class="indicator position-absolute"></span> </a>
+                        <a href="#"><img src="{{ asset('assets/frontend/img/message-profile5.png') }}" alt="message profile" > <span class="indicator position-absolute"></span> </a>
                     </div>
                     <div class="message-text d-flex flex-column">
                       <h5>Floyd Miles</h5>
@@ -167,10 +165,7 @@
 
     </div>
 
-    <span class="profile-bell position-relative"> <img src="{{ asset('assets/frontend/img/profile-ring.png') }}" alt=""> 
-
-    <span class="position-absolute translate-middle p-1 bg-danger border border-5 border-light rounded-circle top-batch-more">9+</span>
-  </span>
+    <span class="profile-bell position-relative">  <a href="#"><img src="{{ asset('assets/frontend/img/profile-ring.png') }}" alt=""></a>  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-5 border-light rounded-circle top-batch">9+</span></span>
 
       <div class="dropdown">
             <span class="avatar dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
