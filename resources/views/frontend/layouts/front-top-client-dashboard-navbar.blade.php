@@ -165,7 +165,7 @@
 
     </div>
 
-    <span class="profile-bell position-relative"> <img src="{{ asset('assets/frontend/img/profile-ring.png') }}" alt=""> <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-5 border-light rounded-circle top-batch">9+</span></span>
+    <span class="profile-bell position-relative">  <a href="#"><img src="{{ asset('assets/frontend/img/profile-ring.png') }}" alt=""></a>  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-5 border-light rounded-circle top-batch">9+</span></span>
 
       <div class="dropdown">
             <span class="avatar dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
