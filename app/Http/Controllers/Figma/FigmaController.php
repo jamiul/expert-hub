@@ -321,9 +321,9 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-services');
     }
-    public function expertworkdiry()
+    public function expertworkdiary()
     {
-        return view('figma-html.expert-work-dairy');
+        return view('figma-html.expert-work-diary');
     }
     public function expertproposal()
     {

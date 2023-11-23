@@ -825,7 +825,7 @@ height: 248px;
 
 .border-bottom-line::after { background-color: rgba(14, 0, 98, 0.10);content: '';width: 80%;height: 1px;display: block;position: absolute;bottom: 0%;left: 50%;transform: translateX(-50%); }
 
-
+@media (min-width: 990px){
 /* profile page box width set */
 .find-consultant-details > .container.profile__page > .row .col-md-4 {
   width: 348px;
@@ -833,3 +833,4 @@ height: 248px;
 .find-consultant-details > .container.profile__page > .row .col-md-8 {
   width: calc(100% - 348px);
 }  
+}
