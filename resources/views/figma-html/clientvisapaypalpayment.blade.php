@@ -18,7 +18,7 @@
             <div class="d-flex justify-content-between justify-content-center visa-credit">
                 <div class="credit-card-check d-flex justify-content-center flex-column">
                     <div class="chard-checkbox d-flex align-content-center">
-                      <div class="form-check check-debit">
+                      <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                         <label class="form-check-label check-label" for="exampleRadios1">
                         Credit / Debit Card
@@ -83,8 +83,8 @@
           <div class="d-flex justify-content-between align-content-center">
           <div class="credit-card-check d-flex justify-content-center flex-column">
                     <div class="chard-checkbox d-flex align-content-center">
-                      <div class="form-check paypal-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                         <label class="form-check-label check-label" for="exampleRadios1">
                            Paypal
                         </label>

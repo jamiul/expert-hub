@@ -46,7 +46,20 @@
                         </div>
                         <hr>
                         <div class="desc text-dark fs-15"> Our organisation is seeking a Scholarship Development Consultant to lead a project focused on improving access to higher education for students from rural communities...... <span class="collapse" id="contentId"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi laudantium accusantium ut, cumque assumenda deleniti! </span> <a class="link" data-bs-toggle="collapse" href="#contentId" aria-expanded="false" aria-controls="contentId"> More </a> </div>
-                        <div class="tag__list d-flex flex-wrap mt-3"> <a href="#" class="fs-13 fw-medium rounded-pill">Communication Skills</a> <a href="#" class="fs-13 fw-medium rounded-pill">Industry Trends Awareness</a> <a href="#" class="fs-13 fw-medium rounded-pill">Educational Research</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> <span class="collapse" id="contentTag1"> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> </span> <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag1" aria-expanded="false" aria-controls="contentTag1"> <span class="count">+12 More</span> <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span> </a> </div>
+
+                        <div class="tag__list d-flex flex-wrap mt-3"> 
+                            <a href="#" class="fs-13 fw-medium rounded-pill">Communication Skills</a> 
+                            <a href="#" class="fs-13 fw-medium rounded-pill">Industry Trends Awareness</a> 
+                            <a href="#" class="fs-13 fw-medium rounded-pill">Educational Research</a> 
+                            <a href="#" class="fs-13 fw-medium rounded-pill">System Development</a> 
+                            <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> 
+                            <a href="#" class="fs-13 fw-medium rounded-pill">Research Development</a> 
+                            <span class="collapse" id="contentTag1"> 
+                                <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> 
+                            </span> <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag1" aria-expanded="false" aria-controls="contentTag1"> 
+                                <span class="count">+12 More</span> <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span> 
+                            </a> 
+                        </div>
                     </li>
                     <li class="feed__card tranisition">
                         <h2 class="title lead fw-medium"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/bag.svg') }}" width="24" height="24" alt="bag"> <a href="#">Policy development assistance required for chemical engineering industry</a> </h2>
@@ -60,7 +73,7 @@
                         </div>
                         <hr>
                         <div class="desc text-dark fs-15"> Our organisation is seeking a Scholarship Development Consultant to lead a project focused on improving access to higher education for students from rural communities...... <span class="collapse" id="contentId"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi laudantium accusantium ut, cumque assumenda deleniti! </span> <a class="link" data-bs-toggle="collapse" href="#contentId" aria-expanded="false" aria-controls="contentId"> More </a> </div>
-                        <div class="tag__list d-flex flex-wrap mt-3"> <a href="#" class="fs-13 fw-medium rounded-pill">Communication Skills</a> <a href="#" class="fs-13 fw-medium rounded-pill">Industry Trends Awareness</a> <a href="#" class="fs-13 fw-medium rounded-pill">Educational Research</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> <span class="collapse" id="contentTag2"> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> </span> <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag2" aria-expanded="false" aria-controls="contentTag2"> <span class="count">+12 More</span> <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span> </a> </div>
+                        <div class="tag__list d-flex flex-wrap mt-3"> <a href="#" class="fs-13 fw-medium rounded-pill">Communication Skills</a> <a href="#" class="fs-13 fw-medium rounded-pill">Industry Trends Awareness</a> <a href="#" class="fs-13 fw-medium rounded-pill">Educational Research</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a><a href="#" class="fs-13 fw-medium rounded-pill">System Development</a> <a href="#" class="fs-13 fw-medium rounded-pill">System Research</a> <span class="collapse" id="contentTag2">  <a href="#" class="fs-13 fw-medium rounded-pill">System Research Development</a> </span> <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#contentTag2" aria-expanded="false" aria-controls="contentTag2"> <span class="count">+12 More</span> <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span> </a> </div>
                     </li>
                     <li class="feed__card tranisition">
                         <h2 class="title lead fw-medium"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/bag.svg') }}" width="24" height="24" alt="bag"> <a href="#">LMS expert required for business administration</a> </h2>

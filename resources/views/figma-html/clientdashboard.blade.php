@@ -112,7 +112,7 @@
       <div class="col-7">
         <div class="edit-draft-left">
           <h6>LMS Expert required for Business Administration</h6>
-          <button class="btn-edit-draft">Edit Draft</button>
+          <button class="btn-edit-draft">View Proposal</button>
         </div>
       </div>
       <div class="col-5">
@@ -143,7 +143,7 @@
       <div class="col-7">
         <div class="edit-draft-left">
           <h6>LMS Expert required for Business Administration</h6>
-          <button class="btn-edit-draft">Edit Draft</button>
+          <button class="btn-edit-draft">View Proposal</button>
         </div>
       </div>
       <div class="col-5">
@@ -174,7 +174,7 @@
       <div class="col-7">
         <div class="edit-draft-left">
           <h6>LMS Expert required for Business Administration</h6>
-          <button class="btn-edit-draft">Edit Draft</button>
+          <button class="btn-edit-draft">View Proposal</button>
         </div>
       </div>
       <div class="col-5">
@@ -223,7 +223,7 @@
       <div class="col-7">
         <div class="edit-draft-left">
           <h6>LMS Expert required for Business Administration</h6>
-          <button class="btn-edit-draft">Edit Draft</button>
+          <button class="btn-edit-draft">View Proposal</button>
         </div>
       </div>
       <div class="col-5">
@@ -254,7 +254,7 @@
       <div class="col-7">
         <div class="edit-draft-left">
           <h6>LMS Expert required for Business Administration</h6>
-          <button class="btn-edit-draft">Edit Draft</button>
+          <button class="btn-edit-draft">View Proposal</button>
         </div>
       </div>
       <div class="col-5">
@@ -285,7 +285,7 @@
       <div class="col-7">
         <div class="edit-draft-left">
           <h6>LMS Expert required for Business Administration</h6>
-          <button class="btn-edit-draft">Edit Draft</button>
+          <button class="btn-edit-draft">View Proposal</button>
         </div>
       </div>
       <div class="col-5">
@@ -374,10 +374,6 @@
     <!-- Pagination start Here -->
   </div>
   <!-- edit draft area end Here -->
-
-
-
-
 
     <!-- Edit Option Modal start  -->
 
