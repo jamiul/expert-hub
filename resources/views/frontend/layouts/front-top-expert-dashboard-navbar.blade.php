@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
-<nav class="navbar navbar-expand-lg expert__dashboard__nav">
-   <div class="container-fluid algin-items-center mx-auto position-relative">
+<nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
+   <div class="container-fluid algin-items-center mx-auto">
       <a class="navbar-brand" href="#">
          <img src="{{ asset('assets/frontend/img/logo.png') }}" />
       </a>
@@ -8,13 +8,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-               <a class="nav-link" aria-current="page" href="#">Profile</a>
+               <a class="nav-link {{ request()->is('figma/expert-profile') ? 'active' : '' }}" aria-current="page" href="/figma/expert-profile">Profile</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#">Analytics</a>
+               <a class="nav-link {{ request()->is('figma/expert-status-analytics') ? 'active' : '' }}" href="/figma/expert-status-analytics">Analytics</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#">My Services</a>
+               <a class="nav-link {{ request()->is('figma/expert-services') ? 'active' : '' }}" href="/figma/expert-services">My Services</a>
             </li> 
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="projectDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,10 +23,7 @@
                <ul class="dropdown-menu" aria-labelledby="projectDrop">
                   <li>
                      <a class="dropdown-item" href="/figma/expert-dashboard">Dashboard</a>
-                  </li>
-                  <li>
-                     <a class="dropdown-item" href="/figma/expert-profile">Profile</a>
-                  </li>
+                  </li> 
                   <li>
                      <a class="dropdown-item" href="/figma/expert-status">Status</a>
                   </li>
@@ -35,10 +32,7 @@
                   </li>
                   <li>
                      <a class="dropdown-item" href="/figma/expert-status-analytics">Status Analytics</a>
-                  </li> 
-                  <li>
-                     <a class="dropdown-item" href="/figma/expert-services">Service</a>
-                  </li> 
+                  </li>  
                   <li>
                      <a class="dropdown-item" href="/figma/expert-active-contract">Active Contracts</a>
                   </li> 
@@ -232,10 +226,11 @@
             
          </div>
          <div class="dropdown">
-            <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false" >
+            <!-- data-bs-auto-close="false" -->
+            <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false"  >
                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="rounded-circle" alt="avatar">
             </a> 
-            <div class="dropdown-menu profile__dropdown bg-white border-0" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu profile__dropdown bg-white border-0" aria-labelledby="dropdownMenuLink" onclick="stopPropagation(event)">
                <div class="text-center">
 
                   <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}" class="rounded-circle mx-auto object-fit-cover profile__thumbnail" alt="">
@@ -282,6 +277,7 @@
               </ul>
 
             </div>
+            
          </div><!--.//dropdown-->
          <button class="navbar-toggler border-0 rounded-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -289,3 +285,9 @@
       </div>
    </div><!--.//container-->
 </nav>
+<script>
+   // Stop dropdown close option when click inside the menu 
+   function stopPropagation(event) {
+      event.stopPropagation();
+   }
+</script>
