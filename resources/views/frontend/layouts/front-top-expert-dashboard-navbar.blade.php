@@ -40,7 +40,7 @@
                      <a class="dropdown-item" href="/figma/expert-all-contract">All Contracts</a>
                   </li> 
                   <li>
-                     <a class="dropdown-item" href="/figma/expert-work-diray">Work Diray</a> 
+                     <a class="dropdown-item" href="/figma/expert-work-diary">Work Diray</a> 
                   </li> 
                   <li> 
                      <a class="dropdown-item" href="/figma/expert-proposal">Proposals</a>
