@@ -341,10 +341,19 @@ table.dataTable > tbody > tr.child span.dtr-data {
 .left__sidebar .link__box li.active > a {
   color: var(--white) !important;
 }
+
 .left__sidebar .copy__right {
   padding: 19px 10px 27px 10px;
   border-color: rgba(255, 255, 255, 0.1) !important;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  max-width: 265px;
+  width: 100%;
 }
+
 .left__sidebar.compact-nav {
   width: 66px;
   transition: 0.5s all;
