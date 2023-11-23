@@ -2294,6 +2294,22 @@ span.draft-color {
   color: #303744;    
 }
 
+.paypal-check .form-check-label {
+    color: #191D24 !important;
+    font-family: Colfax !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    margin-top: 5px !important;
+}
+
+.paypal-check .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 39px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
 span.hourly-color {
   font-family: Colfax;
   font-size: 14px;
