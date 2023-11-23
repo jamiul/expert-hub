@@ -60,25 +60,23 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/admin-dashboardhome', [FigmaController::class, 'admindashboardhome']);
     Route::get('/admin-admindashboardclient', [FigmaController::class, 'admindashboardclient']);
     Route::get('/admin-admindashboardexpert', [FigmaController::class, 'admindashboardexpert']);
+    Route::get('/admin-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
 
     //Expert Dashboard Login
-    Route::get('/admin-expertlogin', [FigmaController::class, 'experthboardlogin']);
-    Route::get('/admin-expertloginform', [FigmaController::class, 'experthboardloginform']);
-    Route::get('/admin-clientloginform', [FigmaController::class, 'clientdashboardloginform']);
-    Route::get('/admin-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
-    Route::get('/admin-frontend-about', [FigmaController::class, 'frontentdashboardabout']);
+    Route::get('/expert-expertlogin', [FigmaController::class, 'experthboardlogin']);
+    Route::get('/expert-expertloginform', [FigmaController::class, 'experthboardloginform']);
+    Route::get('/expert-clientloginform', [FigmaController::class, 'clientdashboardloginform']);
+    Route::get('/expert-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
+    Route::get('/expert-frontend-about', [FigmaController::class, 'frontentdashboardabout']);
 
-    // Training Checkout 
+    // Training Checkout
     Route::get('/training-checkout', [FigmaController::class, 'trainingcheckout']);
-    
-    
-
 
     //expert contract
     Route::get('/expert-active-contract', [FigmaController::class, 'expertactivecontract']);
     Route::get('/expert-all-contract', [FigmaController::class, 'expertallcontract']);
     Route::get('/expert-services', [FigmaController::class, 'expertservices']);
-    Route::get('/expert-work-diray', [FigmaController::class, 'expertworkdiry']);
+    Route::get('/expert-work-diary', [FigmaController::class, 'expertworkdiary']);
     Route::get('/expert-proposal', [FigmaController::class, 'expertproposal']);
     Route::get('/expert-job-offer', [FigmaController::class, 'expertjoboffer']);
     Route::get('/expert-get-paid', [FigmaController::class, 'expertgetpaid']);
@@ -86,4 +84,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/expert-id-verify', [FigmaController::class, 'expertidverify']);
     Route::get('/expert-notification-settings', [FigmaController::class, 'expertnotificationsettings']);
     Route::get('/expert-saved-jobs', [FigmaController::class, 'expertsavedjobs']);
+    Route::get('/expert-add-payment-method', [FigmaController::class, 'expertaddpaymentmethod']);
+    Route::get('/expert-tax-information', [FigmaController::class, 'experttaxinformation']);
+    Route::get('/expert-find-project', [FigmaController::class, 'expertfindprojects']);
 });
