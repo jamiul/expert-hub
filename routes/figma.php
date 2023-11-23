@@ -63,16 +63,14 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/admin-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
 
     //Expert Dashboard Login
-    Route::get('/admin-expertlogin', [FigmaController::class, 'experthboardlogin']);
-    Route::get('/admin-expertloginform', [FigmaController::class, 'experthboardloginform']);
-    Route::get('/admin-clientloginform', [FigmaController::class, 'clientdashboardloginform']);
-    Route::get('/admin-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
+    Route::get('/expert-expertlogin', [FigmaController::class, 'experthboardlogin']);
+    Route::get('/expert-expertloginform', [FigmaController::class, 'experthboardloginform']);
+    Route::get('/expert-clientloginform', [FigmaController::class, 'clientdashboardloginform']);
+    Route::get('/expert-frontend-home', [FigmaController::class, 'frontentdashboardhome']);
+    Route::get('/expert-frontend-about', [FigmaController::class, 'frontentdashboardabout']);
 
-    // Training Checkout 
+    // Training Checkout
     Route::get('/training-checkout', [FigmaController::class, 'trainingcheckout']);
-    
-    
-
 
     //expert contract
     Route::get('/expert-active-contract', [FigmaController::class, 'expertactivecontract']);
