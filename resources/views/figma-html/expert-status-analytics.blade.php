@@ -168,6 +168,14 @@
                 stops: [0, 99, 100] 
             }
         },
+        stroke: {
+    show: true,
+    curve: 'smooth',
+    lineCap: 'butt',
+    colors: undefined,
+    width: 2,
+    dashArray: 0, 
+},
         xaxis: {
             categories: [
             "01 Jan",
