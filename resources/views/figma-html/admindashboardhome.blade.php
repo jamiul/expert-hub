@@ -96,7 +96,7 @@
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"> 
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom ">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>
@@ -513,7 +513,7 @@
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>
@@ -936,7 +936,7 @@
                         </div>
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                               
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>
@@ -1358,7 +1358,7 @@
                         </div>
                         <div class="tab-pane fade" id="pills-contact-complete2" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>
@@ -1781,7 +1781,7 @@
                         </div>
                         <div class="tab-pane fade" id="pills-contact-complete" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>

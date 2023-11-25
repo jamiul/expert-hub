@@ -22,6 +22,7 @@
   --color-theme-color-2:#0036E3;
   --color-border-color-solid: #E7E5EF;
   --color-red: #C00000;
+  --color-yellow: #E9B911;
 }
 
 /*  default css */
@@ -543,11 +544,13 @@ button.no-hover::after{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  min-width: 291px;
+  max-width: 301px;
   min-height: 320px;
   border-radius: 8px;
   justify-content: space-evenly;
   padding: 24px;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.08);
+  margin-right: 24px;
 }
 
 .card-with-gradient{
@@ -775,6 +778,7 @@ i.default-star {
   margin-top: 15px;
 }
 
+
 .btn-fundmilestone {
   padding: 11px 10px;
   border: 2px;
@@ -785,9 +789,9 @@ i.default-star {
   font-size: 15px;
   font-weight: 500;
   background: transparent;
-  min-width: 237px;
+  max-width: 237px;
   min-height: 37px;
-  
+  width: 100%;
 }
 
 
@@ -807,7 +811,7 @@ button.btn.btn-xs.btn-success.btn-preview.active {
 }
 
 .btn-viewprofile {
-  padding: 11px 70px;
+  padding: 11px 10px;
   border: 2px;
   gap: 10px;
   color: #0036E3;
@@ -817,15 +821,17 @@ button.btn.btn-xs.btn-success.btn-preview.active {
   font-weight: 500;
   background: transparent;
   margin-top: 32px;
+  width: 100%;
+  max-width: 237px;
 }
 
 /* === owl theme design end === */
 
-.client-home-carousel .owl-item {
+/* .client-home-carousel .owl-item {
   width: 291px !important;
   margin-right: 32px !important;
   box-shadow: 8px 8px 32px 0px #0E006214;
-}
+} */
 
 .client-home-carousel .owl-stage-outer {
   max-width: 1263px;
@@ -904,11 +910,11 @@ button.owl-next span {
   margin: 0 auto;
 }
 
-.discover-carousel .owl-item {
+/* .discover-carousel .owl-item {
   width: 291px !important;
   margin-right: 32px !important;
   box-shadow: 8px 8px 32px 0px #0E006214;
-}
+} */
 
 /* === owl theme design end === */
 
@@ -1206,12 +1212,12 @@ span.material-symbols-outlined.active {
 .client-dashboard{
   border: 1px solid rgba(14, 0, 98, 0.1) !important;
   box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
-  width: 1320px;
-  /* height: 1147px; */
   border-radius: 8px;
   border: 1px;
   border-radius: 8px;
   background: #FFF;
+  max-width: 1320px;
+  width: 100%;
 
 
 }
@@ -1643,7 +1649,7 @@ td.health-budget{
 
 .job-area-top {
   padding: 20px 30px 15px;
-  border: 1px solid #E7E5EF;
+  border-bottom: 1px solid #E7E5EF;
 }
 
 .contact-project-area {
@@ -2440,8 +2446,17 @@ p.short-by-date {
 
 td.balance-text {
   max-width: 240px;
+  vertical-align: middle;
 }
 
+span.discord-reason {
+  color: var(--color-red-2, #F00);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}
 .balance-table-area {
   margin-top: 20px;
   padding: 0px 15px;
@@ -3344,8 +3359,8 @@ input[type=checkbox]:checked+label::after {
   line-height: normal;
 }
 
-.all-padding-admin{
-  padding: 16px 30px;
+.all-padding-admin-client{
+  padding: 16px;
 }
 .policy-content h6{
   color: #191D24;
@@ -3415,12 +3430,16 @@ ul.admin-d-item{
 }
 
 ul.admin-d-item li a.dropdown-item {
-  color: var(--color-heading-color) !important;
+  color: var(--color-heading-color);
   font-family: Poppins !important;
   font-size: 14px !important;
   font-style: normal !important;
   font-weight: 400 !important;
 
+}
+
+.hold-danger {
+  color: #ff0000 !important;
 }
 
 ul.admin-d-item li:hover a.dropdown-item{
@@ -3433,7 +3452,12 @@ ul.admin-d-item li:hover a.dropdown-item{
 }
 
 .admin-policy-area {
-  padding: 24px 40px;
+  padding: 24px 10px;
+}
+
+.policy-option {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .policy-content {
@@ -3586,6 +3610,16 @@ span.ac-completed {
   line-height: normal;
 }
 
+.ac-new{
+  border-radius: 63px;
+  background: var(--color-yellow);
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 10px;
+}
+
 span.ac-progress {
   padding: 2px 10px;
   border-radius: 63px;
@@ -3654,11 +3688,61 @@ input.admin-all-checkbox {
   padding: 0px 15px;
 }
 
+th.th-heading {
+  display: flex;
+  align-items: center;
+  min-height: 99px;
+  gap: 10px;
+}
+
+
+span.fixed-screw {
+  display: flex;
+  padding: 3px 0px;
+  border-radius: 29px;
+  background: var(--color-gray, #EBEFF7);
+  border: none;
+  justify-content: center;
+  color: var(--color-heading-color, #191D24);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 13px 0px;
+  width: 100%; 
+  max-width: 100px;
+}
+
+
+span.hourly-screw{
+  display: flex;
+  padding: 3px 0px;
+  border-radius: 29px;
+  background: var(--color-gray, #EBEFF7);
+  border: none;
+  justify-content: center;
+  color: var(--color-heading-color, #191D24);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 13px 0px;
+  width: 100%; 
+  max-width: 60px;
+}
+
 .admin-tab-nav-area-admin {
   background-color: transparent;
   align-items: center;
   max-height: 70px;
   padding: 0px 25px;
+}
+
+.admin-tab-nav-area-client {
+  background-color: transparent;
+  align-items: center;
+  max-height: 70px;
+  padding: 0px 0px 0px 25px;
 }
 
 .admin-tab-nav-area-payment {

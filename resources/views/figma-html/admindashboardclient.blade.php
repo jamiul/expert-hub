@@ -28,13 +28,13 @@
 
           <div class="dashboard-inprogress-area">
                 <div class="dashboard-inprogress">
-                  <div class="admin-tab-nav-area-admin d-flex flex-row justify-content-between">
+                  <div class="admin-tab-nav-area-client d-flex flex-row justify-content-between">
 
                   <div class="admin-client-title">
                     <h4>Clients</h4>
                   </div>
                        
-                          <div class="short-by-area all-padding-admin">
+                          <div class="short-by-area all-padding-admin-client">
                             <div class="select-date">
                               <div class="date-item">
                                 <div class="study-level">
@@ -73,7 +73,7 @@
 
                 </div>
 
-                <div class="row">
+          <div class="row">
       <div class="col-12">
         <div class="balance-table-area-admin d-flex flex-column">
             <table class="table table-hover transaction-all">
@@ -95,7 +95,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed" ac-completed>Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-new" ac-completed>New</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -137,7 +137,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-progress">In-Progress</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-completed">Active</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -223,7 +223,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-hiring">Hiring</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -266,7 +266,50 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-new">New</span></td>
+                  <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
+                  <td style="vertical-align: middle;">$69787.00</td>
+                  <td style="vertical-align: middle;">
+                  <div class="policy-option">
+                      <div class="draft-options">
+                      <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu admin-d-item">
+                          <li>
+                            <a class="dropdown-item " href="#">View time sheet</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Message to client</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">View profile</a>
+                          </li>
+
+                          <li>
+                            <a class="dropdown-item" href="#">Contact expert</a>
+                          </li>
+
+                          <li>
+                            <a class="dropdown-item" href="#">Send to review team</a>
+                          </li>
+
+                        </ul>
+                      </div>
+                      </div>
+
+                      </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                  <td style="vertical-align: middle;"><input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> #04947352 </td>
+                  <td style="vertical-align: middle;">Michel Jhon</td>
+                  <td class="balance-text">mmichel@gmail.com</td>
+                  <td style="vertical-align: middle;">12/10/2023</td>
+                  <td style="vertical-align: middle;"><span class="ac-completed">Active</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -331,49 +374,6 @@
                           </li>
 
                           <li>
-                            <a class="dropdown-item" href="#">Contact expert</a>
-                          </li>
-
-                          <li>
-                            <a class="dropdown-item" href="#">Send to review team</a>
-                          </li>
-
-                        </ul>
-                      </div>
-                      </div>
-
-                      </div>
-                    </td>
-                </tr>
-
-
-                <tr>
-                  <td style="vertical-align: middle;"><input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> #04947352 </td>
-                  <td style="vertical-align: middle;">Michel Jhon</td>
-                  <td class="balance-text">mmichel@gmail.com</td>
-                  <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
-                  <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
-                  <td style="vertical-align: middle;">$69787.00</td>
-                  <td style="vertical-align: middle;">
-                  <div class="policy-option">
-                      <div class="draft-options">
-                      <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                        </a>
-                        <ul class="dropdown-menu admin-d-item">
-                          <li>
-                            <a class="dropdown-item " href="#">View time sheet</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Message to client</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">View profile</a>
-                          </li>
-
-                          <li>
                             <a class="dropdown-item ad-unhold" href="#" >Hold</a>
                           </li>
 
@@ -395,7 +395,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -437,7 +437,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -479,7 +479,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -521,7 +521,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-hiring">Hiring</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -563,7 +563,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -605,7 +605,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -647,7 +647,7 @@
                   <td style="vertical-align: middle;">Michel Jhon</td>
                   <td class="balance-text">mmichel@gmail.com</td>
                   <td style="vertical-align: middle;">12/10/2023</td>
-                  <td style="vertical-align: middle;"><span class="ac-completed">Completed</span></td>
+                  <td style="vertical-align: middle;"><span class="ac-hiring">Inactive</span></td>
                   <td style="vertical-align: middle;"><span class="spent-price">$67.00 </span></td>
                   <td style="vertical-align: middle;">$69787.00</td>
                   <td style="vertical-align: middle;">
@@ -690,11 +690,7 @@
       </div>
     </div>
 
-
-
-                    
-
-                </div>
+</div>
 
 
                     

@@ -49,6 +49,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/client-clientaddpayment', [FigmaController::class, 'clientaddpayment']);
     Route::get('/client-clientvisapaypal', [FigmaController::class, 'clientvisapaypalpayment']);
     Route::get('/client-addpaymentdouable', [FigmaController::class, 'clientaddpaymentdouable']);
+    
     Route::get('/client-weeklyreportsummary', [FigmaController::class, 'clientweeklyreportsummary']);
     Route::get('/client-weeklyreportsummarydate', [FigmaController::class, 'clientweeklyreportsummarydate']); 
 

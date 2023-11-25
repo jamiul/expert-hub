@@ -83,7 +83,7 @@
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"> 
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
 
                             <div class="policy-content">
@@ -156,16 +156,13 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -242,18 +239,15 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -326,18 +320,15 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -410,18 +401,15 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -494,18 +482,15 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -578,18 +563,15 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -662,18 +644,15 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -686,7 +665,7 @@
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>
@@ -756,19 +735,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -846,19 +836,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -931,19 +932,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -1016,19 +1028,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -1101,19 +1124,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -1186,19 +1220,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -1271,19 +1316,30 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work diary</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+                                    
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Comment hold</a>
                                     </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Comment remove</a>
+                                    </li>
+                                    
+                                    <li>
+                                      <a class="dropdown-item" href="#">Approve</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -1297,7 +1353,7 @@
 
                         <div class="tab-pane fade" id="pills-contact-complete" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
 
-                        <div class="row px-0 mx-0 admin-m-bottom admin-m-top">
+                        <div class="row px-0 mx-0 admin-m-bottom">
                           <div class="admin-policy-area d-flex flex-row justify-content-between">
                             <div class="policy-content">
                                 <h6>ID: 7557uy8675656</h6>
@@ -1362,7 +1418,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1382,7 +1438,7 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
 
                             </div>
 
@@ -1450,7 +1506,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1470,7 +1526,8 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
+
                             </div>
                           </div>
                         </div>
@@ -1534,7 +1591,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1554,7 +1611,7 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
                         </div>
@@ -1618,7 +1675,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1638,7 +1695,8 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
+
                             </div>
                           </div>
                         </div>
@@ -1705,7 +1763,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1725,7 +1783,8 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
+                              
                             </div>
                           </div>
                         </div>
@@ -1789,7 +1848,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1809,7 +1868,8 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
+
                             </div>
                           </div>
                         </div>
@@ -1873,7 +1933,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <div class="draft-options">
+                                <!-- <div class="draft-options">
                                 <div class="dropdown">
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -1893,7 +1953,8 @@
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> -->
+
                             </div>
                           </div>
                         </div>

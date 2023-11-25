@@ -82,7 +82,9 @@
                                           <thead class="t-history">
                                             <tr>
                                               <th scope="col" class="th-heading">
-                                                <input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> <span class="th-date">Date</span> <span class="material-symbols-outlined th-arrow">unfold_more </span>
+                                                <span><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"></span>
+                                                 <span class="th-date">Date</span> 
+                                                 <span class="material-symbols-outlined th-arrow">unfold_more </span>
                                               </th>
                                               <th scope="col">Project <br>ID</th>
                                               <th scope="col">Expert <br>  ID</th>
@@ -115,7 +117,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="fixed-screw">Fixed escrow</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -126,20 +128,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -164,7 +161,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -175,20 +172,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -212,7 +204,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -223,20 +215,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -260,7 +247,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -271,20 +258,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -308,7 +290,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -319,20 +301,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -356,7 +333,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -367,20 +344,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -404,7 +376,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -415,20 +387,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -452,7 +419,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -463,20 +430,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -500,7 +462,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -511,20 +473,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -548,7 +505,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"> <span class="fixed-screw">Fixed escrow</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -559,20 +516,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -596,7 +548,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;"> <span class="hourly-screw">Hourly</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -607,20 +559,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -644,7 +591,7 @@
                                               <td style="vertical-align: middle;">$50</td>
                                               <td style="vertical-align: middle;">$25</td>
                                               <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td style="vertical-align: middle;" > <span class="fixed-screw">Fixed escrow</span></td>
 
                                               <td style="vertical-align: middle;">
                                                 <div class="policy-option">
@@ -655,30 +602,21 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
                                                 </div>
                                               </td>
                                             </tr>
-                                            
-
-
-
                                           </tbody>
                                         </table>
                                       </div>
@@ -751,9 +689,10 @@
                                               <th scope="col">Project <br>ID</th>
                                               <th scope="col">Expert <br>  ID</th>
                                               <th scope="col">Client <br> ID</th>
+                                              <th scope="col">Reason</th>
                                               <th scope="col" class="th-project-value">Project <br> value</th>
                                               <th scope="col">GST</th>
-                                              <th scope="col" class="th-project-expert">Expert <br> Income</th>
+                                              <th scope="col" class="th-project-expert">Expert <br> Fees</th>
                                               <th scope="col" >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
                                               <th scope="col"> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
                                               <th scope="col">Client contract <br> initiation fee <br> (fixed) </th>
@@ -769,6 +708,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -790,20 +730,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -818,6 +753,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span  class="spent-price">$500</span>
                                               </td>
@@ -839,20 +775,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -866,6 +797,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span  class="spent-price">$500</span>
                                               </td>
@@ -887,20 +819,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -914,6 +841,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span  class="spent-price">$500</span>
                                               </td>
@@ -935,20 +863,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -962,6 +885,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -983,20 +907,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1010,6 +929,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -1031,20 +951,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1058,6 +973,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -1079,20 +995,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1106,6 +1017,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -1127,20 +1039,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1154,6 +1061,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span  class="spent-price">$500</span>
                                               </td>
@@ -1175,20 +1083,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1202,6 +1105,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                               <span class="spent-price">$500</span>
                                               </td>
@@ -1223,20 +1127,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1250,6 +1149,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -1271,20 +1171,15 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
@@ -1298,6 +1193,7 @@
                                               <td style="vertical-align: middle;">1009871</td>
                                               <td class="balance-text">13617</td>
                                               <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
                                               <td style="vertical-align: middle;">
                                                 <span class="spent-price">$500</span>
                                               </td>
@@ -1319,30 +1215,21 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
+                                                          <a class="dropdown-item " href="#">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
+                                                          <a class="dropdown-item" href="#">Release</a>
                                                         </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
+                                                        
                                                       </ul>
                                                     </div>
                                                   </div>
                                                 </div>
                                               </td>
                                             </tr>
-                                            
-
-
-
                                           </tbody>
                                         </table>
                                       </div>
@@ -1421,7 +1308,7 @@
                                               <th scope="col">Client <br> ID</th>
                                               <th scope="col" class="th-project-value">Project <br> value</th>
                                               <th scope="col">GST</th>
-                                              <th scope="col" class="th-project-expert">Expert <br> Income</th>
+                                              <th scope="col" class="th-project-expert">Expert <br> Fees</th>
                                               <th scope="col" >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
                                               <th scope="col"> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
                                               <th scope="col">Client contract <br> initiation fee <br> (fixed) </th>
@@ -1454,25 +1341,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                        <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                      
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1503,25 +1374,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1551,25 +1406,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1599,25 +1438,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1647,25 +1470,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1695,25 +1502,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                      
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1743,25 +1534,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1791,25 +1566,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1839,25 +1598,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                    
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1887,25 +1630,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1935,25 +1662,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1983,25 +1694,9 @@
                                                   <div class="draft-options">
                                                     <div class="dropdown">
                                                       <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      <img src="{{ asset('assets/frontend/img/admin/more.png') }}" alt="">
                                                       </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">View time sheet</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Message to client</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">View profile</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Contact expert</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Send to review team</a>
-                                                        </li>
-                                                      </ul>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
