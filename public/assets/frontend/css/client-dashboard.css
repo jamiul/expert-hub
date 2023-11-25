@@ -20,6 +20,8 @@
   --white: #ffffff;
   --bs-border-color: #E7E5EF;
   --color-theme-color-2:#0036E3;
+  --color-border-color-solid: #E7E5EF;
+  --color-red: #C00000;
 }
 
 /*  default css */
@@ -2396,6 +2398,27 @@ p.short-by-date {
   padding: 13px 8px;
 }
 
+.transaction-all-payment  thead th {
+
+  background: rgba(0, 54, 227, 0.03);
+  color: rgba(48, 55, 68, 0.80);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 13px 8px;
+  vertical-align: middle;
+}
+
+/* th.th-heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 108px;
+  padding: 13px 8px;
+  gap: 10px;
+} */
+
 .transaction-all  tbody tr td {
   border-top: 1px solid  #E7E5EF;
   border-bottom: 1px solid  #E7E5EF;
@@ -2405,6 +2428,14 @@ p.short-by-date {
   font-style: normal;
   font-weight: 400;
   /* padding: 19px 8px; */
+}
+
+.th-project-value {
+  min-width: 90px;
+}
+
+.th-project-expert{
+  min-width: 120px;
 }
 
 td.balance-text {
@@ -3409,9 +3440,63 @@ ul.admin-d-item li:hover a.dropdown-item{
   display: flex;
   flex-direction: column;
   max-width: 490px;
+  justify-content: center;
 }
+
+.rating-comments a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.rating-comments {
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.rating-comments a p{
+  color: var(--color-theme-color-2);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+a.danger-comments span p {
+  color: var(--color-red);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  border-bottom: 2px solid C00000;
+}
+
+a.success-comments:hover {
+  border-bottom: 2px solid var(--color-theme-color-2);
+}
+
+a.danger-comments:hover {
+  border-bottom: 2px solid var(--color-red);
+}
+
 .policy-price {
   min-width: 332px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.policy-price-comment{
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3574,6 +3659,13 @@ input.admin-all-checkbox {
   align-items: center;
   max-height: 70px;
   padding: 0px 25px;
+}
+
+.admin-tab-nav-area-payment {
+  background-color: transparent;
+  align-items: center;
+  max-height: 70px;
+  padding: 20px 15px;
 }
 
 .admin-dashboard-area-client {
@@ -5310,6 +5402,85 @@ select.top-input-control option::hover{
 }
 
 /**** ============================================== Frontend Dashboard end here  ================================= ***/
+
+/**** ============================================== Super Admin Payment start Here ================================= ***/
+.dropdown-comments {
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+  border: none;
+  min-width: 603px;
+  height: 396px;
+  display: flex;
+  padding: 15px;
+}
+
+.dropdown-comments-dispute{
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+  display: flex;
+  padding: 15px;
+  min-width: 358px;
+  height: 91px;
+}
+
+.comment-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h5.comment-title {
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h5.comment-title-dispute {
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  /* margin-bottom: 10px; */
+  line-height: 10px;
+}
+
+p.c-rating-title{
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.consultant-reviw ul li a i{
+ color:  #E9B911;
+}
+
+.comment-text p {
+  color: var(--color-heading);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.comments-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 22px;
+}
+
+.comment-border{
+  border-bottom: 1px solid var(--color-border-color-solid);
+}
+
+/**** ============================================== Super Admin Payment end Here ================================= ***/
 
 
 
