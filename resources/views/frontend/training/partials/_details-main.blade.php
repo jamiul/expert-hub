@@ -5,11 +5,16 @@
                 <div class="right-sidebar">
                     <div class="right-database">
                         <div class="database-block">
-                            <div class="database-contant">
+                            <div class="database-contant justify-content-between">
                                 <div class="database-text">
                                     <h4>Foundations of PLS-SEM Using SmartPLS 4</h4>
                                     <span>Australian Eastern Daylight Time (GMT +11)</span>
                                     <span>Australia</span>
+                                </div>
+                                <div class="database-right">
+                                    <a class="data-icon btnShareDetailTraining me-3" href="javascript:void(0)">
+                                        <img src="{{ asset('assets/frontend/img/printer.svg') }}">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -33,9 +38,16 @@
                                         University</a></li>
                             </ul>
                         </div>
-                        <div class="course-objectives">
-                            <h3>Course objectives</h3>
-                            <p>This two-day online course introduces participants to the state-of-the-art of partial
+                        <div class="accordion accordion-flush course-objectives" id="accordionFlushExample">
+                            <div class="accordion-item course-objectives">
+                                <h3 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Course objectives
+                                </button>
+                                </h3>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                <p>This two-day online course introduces participants to the state-of-the-art of partial
                                 least squares structural equation modeling (PLS-SEM) using the SmartPLS 4 software. PLS
                                 is a composite-based approach to SEM. Compared to other SEM techniques, PLS-SEM allows
                                 researchers to estimate very complex models with many constructs and indicators.
@@ -65,10 +77,18 @@
                                 measurement and structural models, including recent developments in model evaluation.
                                 The instructors will make use of several examples and hands-on exercises using the
                                 SmartPLS 4 software.</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Learning outcomes</h3>
-                            <p>This course has been designed to familiarize participants with the potential of using the
+                                </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Learning outcomes
+                                </button>
+                                </h3>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                <p>This course has been designed to familiarize participants with the potential of using the
                                 multivariate analysis method PLS-SEM in their research. The objectives of this course
                                 are to provide (1) an in-depth methodological introduction to the PLS-SEM approach (the
                                 nature of causal modeling, analytical objectives, and some statistics), (2) the
@@ -90,10 +110,18 @@
                                 <li>Outlook on advanced techniques</li>
                             </ul>
                             <p>Participants will receive a certificate of attendance, issued by the EduExHub.</p>
-                        </div>
-                        <div class="course-objectives coursepadding">
-                            <h3>Teaching and learning methods</h3>
-                            <p>The course is based on the PLS-SEM textbook by Hair, J. F., Hult, G. T. M., Ringle, C.
+                                </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Teaching and learning methods
+                                </button>
+                                </h3>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                <p>The course is based on the PLS-SEM textbook by Hair, J. F., Hult, G. T. M., Ringle, C.
                                 M., & Sarstedt, M. (2022). A Primer on Partial Least Squares Structural Equation
                                 Modeling (PLS-SEM) (3rd edition). Thousand Oaks, CA: Sage.</p>
                             <p><strong>Presentations:</strong>The session will cover theory and its application.</p>
@@ -102,15 +130,20 @@
                             <p><strong>Software:</strong>Computer exercises use the latest SmartPLS 4 version. Course
                                 participants will receive a 90-days fully functional version of the software SmartPLS 4.
                             </p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Instructors</h3>
-                            <p>This course will be taught by three leading academics in the PLS-SEM field: Marko
+                                </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="flush-heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                                Training Instructors
+                                </button>
+                                </h3>
+                                <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body"><p>This course will be taught by three leading academics in the PLS-SEM field: Marko
                                 Sarstedt, Christian M. Ringle, and Jan-Michael Becker.</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Prof. Dr. Dr. h.c. Marko Sarstedt</h3>
-                            <p>Marko Sarstedt is a chaired professor of marketing at the Ludwig-Maximilians-University
+                                <h3>Prof. Dr. Dr. h.c. Marko Sarstedt</h3>
+                                <p>Marko Sarstedt is a chaired professor of marketing at the Ludwig-Maximilians-University
                                 Munich (Germany) and an adjunct research professor at Babeș-Bolyai-University
                                 Cluj-Napoca (Romania). His main research interest is the advancement of research methods
                                 to further the understanding of consumer behavior. His research has been published in
@@ -121,10 +154,48 @@
                                 impactful scientific researchers.” In March 2022, he was awarded an honorary doctorate
                                 from Babeș-Bolyai-University Cluj-Napoca for his research achievements and contributions
                                 to international exchange. More information...</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Selected publications</h3>
-                            <p>Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
+                                <h3>Selected publications</h3>
+                                <p>Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and Component-based Structural</p>
+                                        <p>Equation Modelling Approaches Under (In)correct Construct Representations. British
+                                            Journal of Mathematical and Statistical Psychology, 43(1), 115-135.</p>
+                                        <p>Hair, J.F., Hult, G.T.M., Ringle, C.M., & Sarstedt, M. (2022). A Primer on Partial Least
+                                            Squares Structural Equation Modeling. 3rd Ed. Thousand Oaks: Sage.</p>
+                                        <p>Rigdon, E. E., Becker, J. M., & Sarstedt, M. (2019). Parceling Cannot Reduce Factor
+                                            Indeterminacy in Factor Analysis: A Research Note. Psychometrika, 84(3), 772-780</p>
+                                        <p>Sarstedt, M., Hair, J.F., Cheah, J.-H., Becker, J.-M., & Ringle, C.M. (2019). How to
+                                            Specify, Estimate, and Validate Higher-order Constructs in PLS-SEM. Australasian
+                                            Marketing Journal, 27(3), 197-211.</p>
+                                        <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
+                                            Analyses. Journal of Marketing Analytics, Advance online publication</p>
+                                        <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
+                                            Analyses. Journal of Marketing Analytics, Advance online publication</p>
+                                        <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
+                                            Analyses. Journal of Marketing Analytics, Advance online publication</p>
+                                        <p>Sharma, P. M., Liengaard, B. D., Hair, J. F., Sarstedt, M., & Ringle, C. M. (2023).
+                                            Predictive Model Assessment and Selection in Composite-based Modeling Using PLS-SEM:
+                                            Extensions and Guidelines for Using CVPAT. European Journal of Marketing, 57(6), 1662-
+                                            1677.</p>
+                                        <p>Sharma, P. N., Sarstedt, M., Shmueli, G. Kim, K. H. & Thiele, K. O. (2019). PLS-Based
+                                            Model Selection: The Role of Alternative Explanations in Information Systems
+                                            Research.Journal of the Association for Information Systems, 20(4), 346-397.</p>
+                                        <p>Sharma, P. N., Shmueli, G., Sarstedt, M., Danks, N. & Ray, S. (2021). Prediction-oriented
+                                            Model Selection in Partial Least Squares Path Modeling. Decision Sciences, 52(3),
+                                            567-607.
+                                        </p>
+                                        <h3>Prof. Dr. Christian M. Ringle</h3>
+                                        <p>Christian M. Ringle is a Professor of Management and the Director of the Institute for
+                                        Human Resource Management and Organizations at the Hamburg University of Technology
+                                        (TUHH). He holds a Ph.D. from the University of Hamburg, Faculty of Business and
+                                        Economics. His research has been published in well-known journals such as Information
+                                        Systems Research (ISR), International Journal of Research in Marketing (IJRM), Journal
+                                        of Business Research (JBR), Journal of Service Research (JSR), Journal of the Academy of
+                                        Marketing Science (JAMS), Long Range Planning (LRP), MIS Quarterly (MISQ), and
+                                        Organizational Research Methods (ORM). Dr. Ringle has been included in the Clarivate
+                                        Analytics' Highly Researchers list. He co-authored the textbook on PLS-SEM and is a
+                                        co-founder of SmartPLS, a software tool with a graphical user interface for the
+                                        application of the PLS-SEM method. More information...</p>
+                                        <h3>Selected publications</h3>
+                                        <p>Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
                                 Component-based Structural</p>
                             <p>Equation Modelling Approaches Under (In)correct Construct Representations. British
                                 Journal of Mathematical and Statistical Psychology, 43(1), 115-135.</p>
@@ -137,10 +208,6 @@
                                 Marketing Journal, 27(3), 197-211.</p>
                             <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
                                 Analyses. Journal of Marketing Analytics, Advance online publication</p>
-                            <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
-                                Analyses. Journal of Marketing Analytics, Advance online publication</p>
-                            <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
-                                Analyses. Journal of Marketing Analytics, Advance online publication</p>
                             <p>Sharma, P. M., Liengaard, B. D., Hair, J. F., Sarstedt, M., & Ringle, C. M. (2023).
                                 Predictive Model Assessment and Selection in Composite-based Modeling Using PLS-SEM:
                                 Extensions and Guidelines for Using CVPAT. European Journal of Marketing, 57(6), 1662-
@@ -151,49 +218,7 @@
                             <p>Sharma, P. N., Shmueli, G., Sarstedt, M., Danks, N. & Ray, S. (2021). Prediction-oriented
                                 Model Selection in Partial Least Squares Path Modeling. Decision Sciences, 52(3),
                                 567-607.</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Prof. Dr. Christian M. Ringle</h3>
-                            <p>Christian M. Ringle is a Professor of Management and the Director of the Institute for
-                                Human Resource Management and Organizations at the Hamburg University of Technology
-                                (TUHH). He holds a Ph.D. from the University of Hamburg, Faculty of Business and
-                                Economics. His research has been published in well-known journals such as Information
-                                Systems Research (ISR), International Journal of Research in Marketing (IJRM), Journal
-                                of Business Research (JBR), Journal of Service Research (JSR), Journal of the Academy of
-                                Marketing Science (JAMS), Long Range Planning (LRP), MIS Quarterly (MISQ), and
-                                Organizational Research Methods (ORM). Dr. Ringle has been included in the Clarivate
-                                Analytics' Highly Researchers list. He co-authored the textbook on PLS-SEM and is a
-                                co-founder of SmartPLS, a software tool with a graphical user interface for the
-                                application of the PLS-SEM method. More information...</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Selected publications</h3>
-                            <p>Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
-                                Component-based Structural</p>
-                            <p>Equation Modelling Approaches Under (In)correct Construct Representations. British
-                                Journal of Mathematical and Statistical Psychology, 43(1), 115-135.</p>
-                            <p>Hair, J.F., Hult, G.T.M., Ringle, C.M., & Sarstedt, M. (2022). A Primer on Partial Least
-                                Squares Structural Equation Modeling. 3rd Ed. Thousand Oaks: Sage.</p>
-                            <p>Rigdon, E. E., Becker, J. M., & Sarstedt, M. (2019). Parceling Cannot Reduce Factor
-                                Indeterminacy in Factor Analysis: A Research Note. Psychometrika, 84(3), 772-780</p>
-                            <p>Sarstedt, M., Hair, J.F., Cheah, J.-H., Becker, J.-M., & Ringle, C.M. (2019). How to
-                                Specify, Estimate, and Validate Higher-order Constructs in PLS-SEM. Australasian
-                                Marketing Journal, 27(3), 197-211.</p>
-                            <p>arstedt, M., & Moisescu, O. I. (2023). Quantifying Uncertainty in PLS-SEM-based Mediation
-                                Analyses. Journal of Marketing Analytics, Advance online publication</p>
-                            <p>Sharma, P. M., Liengaard, B. D., Hair, J. F., Sarstedt, M., & Ringle, C. M. (2023).
-                                Predictive Model Assessment and Selection in Composite-based Modeling Using PLS-SEM:
-                                Extensions and Guidelines for Using CVPAT. European Journal of Marketing, 57(6), 1662-
-                                1677.</p>
-                            <p>Sharma, P. N., Sarstedt, M., Shmueli, G. Kim, K. H. & Thiele, K. O. (2019). PLS-Based
-                                Model Selection: The Role of Alternative Explanations in Information Systems
-                                Research.Journal of the Association for Information Systems, 20(4), 346-397.</p>
-                            <p>Sharma, P. N., Shmueli, G., Sarstedt, M., Danks, N. & Ray, S. (2021). Prediction-oriented
-                                Model Selection in Partial Least Squares Path Modeling. Decision Sciences, 52(3),
-                                567-607.</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Prof. Dr. Jan-Michael Becker</h3>
+                                <h3>Prof. Dr. Jan-Michael Becker</h3>
                             <p>Jan-Michael Becker is an Associate Professor in the Department of Marketing at the BI
                                 Norwegian Business School. He received his doctorate degree from the University of
                                 Cologne in Germany, where he also worked as a postdoctoral researcher and lecturer in
@@ -206,9 +231,7 @@
                                 Academy of Marketing Science, International Journal of Research in Marketing,
                                 Psychometrika, Multivariate Behavioral Research, and Nature Human Behaviour. He is a
                                 co-founder of the SmartPLS software application. More information...</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Selected publications</h3>
+                                <h3>Selected publications</h3>
                             <p>Cho, G., Sarstedt, M., & Hwang, H. (2021). A Comparative Evaluation of Factor- and
                                 Component-based Structural</p>
                             <p>Equation Modelling Approaches Under (In)correct Construct Representations. British
@@ -232,10 +255,18 @@
                             <p>Sharma, P. N., Shmueli, G., Sarstedt, M., Danks, N. & Ray, S. (2021). Prediction-oriented
                                 Model Selection in Partial Least Squares Path Modeling. Decision Sciences, 52(3),
                                 567-607.</p>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Teaching Resources</h3>
-                            <h4>Textbooks on PLS-SEM:</h4>
+                            </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="flush-heading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                                Teaching Resources
+                                </button>
+                                </h3>
+                                <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                <h4>Textbooks on PLS-SEM:</h4>
                             <ul>
                                 <li>Hair, J.F., Hult, G.T.M., Ringle, C. M., & Sarstedt, M. (2022). A Primer on Partial
                                     Least Squares Structural Equation Modeling (PLS- SEM) (3rd edition). Thousand Oaks,
@@ -244,8 +275,6 @@
                                     in Partial Least Squares Structural Equation Modeling (PLS-SEM) (2nd edition).
                                     Thousand Oaks, CA: Sage.</li>
                             </ul>
-                        </div>
-                        <div class="course-objectives">
                             <h4>Textbooks on PLS-SEM:</h4>
                             <ul>
                                 <li>Becker, J.-M. and Ismail, I. R. (2016), Accounting for Sampling Weights in PLS Path
@@ -282,10 +311,18 @@
                                     (2019). Predictive model assessment in PLS-SEM: Guidelines for using PLSpredict.
                                     European Journal of Marketing, 53(11), 2322-2347.</li>
                             </ul>
-                        </div>
-                        <div class="course-objectives">
-                            <h3>Software</h3>
-                            <p>This training will give you a strong working understanding of methods used to design and
+                            </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="flush-heading6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+                                    Training Software
+                                    </button>
+                                </h3>
+                                <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                    <p>This training will give you a strong working understanding of methods used to design and
                                 analyse single-case experimental design studies (i.e., n-of-1 trials, personalised
                                 trials, intrasubject, single-subjects, etc.) , including the assumptions underlying
                                 these methods and their limitations as well as their benefits. Demonstrations using real
@@ -294,6 +331,9 @@
                                 In-depth interpretation of the obtained results will be made. An official ConsultantEdu,
                                 certificate of completion is provided at the conclusion of the training. For European
                                 PhD students, each training offers 2 ECTS</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,20 +359,19 @@
                         </div>
                         <div class="find-t">
                             <h3>Seminar Information</h3>
-                            <p>Wednesday, October 11,Thursday, October 12 &Saturday, October 14, 2023</p>
-                            <p>Daily Schedule: All sessions are held live via Zoom. All times are ET (New York time).
+                            <p>Wednesday, October 11,Thursday, October 12 & Saturday, October 14, 2023</p>
+                            <p><span>Daily Schedule:</span> All sessions are held live via Zoom. All times are ET (New York time).
                             </p>
-                            <p>10:00am-12:30pm (<span>convert</span> to your local ime) 1:30pm-3:30pm</p>
+                            <p>10:00am-12:30pm (<span class="blue">convert</span> to your local ime) 1:30pm-3:30pm</p>
                         </div>
                         <div class="find-t">
                             <h3>Payment Information</h3>
-                            <p>The fee of $995 includes all course materials.</p>
+                            <p>The fee of <span class="blue">$995</span> includes all course materials.</p>
                             <p>PayPal and all major credit cards are accepted.</p>
                         </div>
                         <div class="find-t">
                             <h3>Contact information</h3>
                             <ul class="icons">
-                                <li><i class="fa-solid fa-phone"></i>+2093485789345</li>
                                 <li><i class="fa-regular fa-envelope"></i>example@mail.com</li>
                             </ul>
                         </div>
@@ -347,90 +386,94 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade registration__modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content modal-registraion-content">
-
-      <div class="modal-header modal-header-registration">
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-header modal-header-register">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Training registration</h1>
-        
-      </div>
-      <div class="modal-body">
-            <div class="registration-modal-area d-flex flex-row">
-                <img src="{{ asset('assets/frontend/img/foundation.png') }} " alt="fundation">
-                <div class="foundation-text d-flex flex-column">
-                    <div class="foundation-title"> <h4>Foundations of PLS-SEM Using SmartPLS 4</h4> </div>
-                    <div class="foundation-border d-flex justify-content-between flex-row">
-                            <h6>Australian Eastern Daylight Time (GMT +11)</h6>
-                            <h6 class="foundation-border"></h6>
-                            <h6>Australia</h6>
+    <div class="modal-content modal-registraion-content"> 
+        <div class="modal-body position-relative">
+            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+            <p class="modal-title fw-medium mb-3" id="exampleModalLabel">Training registration</p>
+            <div class="border-bottom d-flex flex-row">
+                <figure class="mb-0 icon__box"> 
+                    <img src="{{ asset('assets/frontend/img/foundation.png') }} " alt="fundation">
+                </figure>
+                <div class="caption pt-1">
+                    <h4 class="title fw-medium">Foundations of PLS-SEM Using SmartPLS 4</h4> 
+                    <div class="desc small fw-medium d-flex gap-3 flex-row">
+                        <span>Australian Eastern Daylight Time (GMT +11)</span>
+                        <span class="">|</span>
+                        <span>Australia</span>
                     </div>
                 </div>
             
             </div>
 
-            <div class="all-registration-modal d-flex flex-column">
+            <div class="all-registration-modal d-flex flex-column small mt-4">
                 <div class="single-modal-registraion d-flex flex-row justify-content-between">
-                    <p class="donas-text">Seminar Dates</p>
-                    <p class="donax-date-journy wetern-ui-width">23 January 2024 - 28 April 2024</p>
+                    <p class="donas-text mb-2">Seminar Dates</p>
+                    <p class="caption donax-date-journy wetern-ui-width mb-2 fw-medium text-black">23 January 2024 - 28 April 2024</p>
                 </div>
                 
 
                 <div class="single-modal-registraion d-flex flex-row justify-content-between">
-                    <p class="donas-text">Instructors</p>
-                    <p class="donax-date-donal d-flex flex-row gap-2 wetern-ui-width"> <span>Prof. Michel jhon </span>  <span></span>|<span> Dr. Nathon rainbot</span></p>
+                    <p class="donas-text mb-2">Instructors</p>
+                    <p class="caption donax-date-donal d-flex flex-row gap-2 wetern-ui-width mb-2 fw-medium text-primary text-decoration-underline"> 
+                        <span>Prof. Michel jhon </span><span class="text-muted">|</span><span> Dr. Nathon rainbot</span>
+                    </p>
                 </div>
 
                 <div class="single-modal-registraion d-flex flex-row justify-content-between">
-                    <p class="donas-text">Training Mode</p>
-                    <p class="donax-date-zoom wetern-ui-width"> <span> <img src="{{ asset('assets/frontend/img/zoom-icon.png') }} " alt="fundation"> </span> <span>Live via Zoom</span></p>
+                    <p class="donas-text mb-2">Training Mode</p>
+                    <p class="caption donax-date-zoom wetern-ui-width fw-medium text-primary align-items-center"> <span> <img src="{{ asset('assets/frontend/img/zoom-icon.png') }} " alt="fundation"> </span> <span>Live via Zoom</span></p>
                 </div>
 
                 <div class="single-modal-registraion d-flex flex-row justify-content-between">
-                    <p class="donas-text">Language</p>
-                    <p class="donax-date donax-date-journy wetern-ui-width">French</p>
+                    <p class="donas-text mb-2">Language</p>
+                    <p class="caption donax-date donax-date-journy wetern-ui-width text-black fw-medium mb-2">French</p>
                 </div>
 
                 <div class="single-modal-registraion d-flex flex-row justify-content-between">
-                    <p class="donas-text">Training Category:</p>
-                    <p class="donax-date donax-date-journy wetern-ui-width">Research and Analysis</p>
+                    <p class="donas-text mb-2">Training Category:</p>
+                    <p class="caption donax-date donax-date-journy wetern-ui-width text-black fw-medium mb-2">Research and Analysis</p>
                 </div>
 
                 <div class="single-modal-registraion d-flex flex-row justify-content-between">
-                    <p class="donas-text">Partner Institute</p>
-                    <div class="wetern-ui d-flex flex-row justify-content-between wetern-ui-width">
-                        <p class="donax-date donax-date-zoom "> Western Sydney University </p>  <p>| </p>  <p>Oxford University</p>
+                    <p class="donas-text mb-2">Partner Institute</p>
+                    <div class="caption wetern-ui d-flex flex-row justify-content-between wetern-ui-width text-primary fw-medium mb-2">
+                        <p class="donax-date donax-date-zoom mb-2"> 
+                            <a href="#" class="link">Western Sydney University</a>    
+                        </p>  
+                        <p class="mb-2 text-muted">| </p>  
+                        <p class="mb-2">
+                            <a href="#" class="link">Oxford University</a>
+                        </p>
                     </div>
                 </div>
 
-                <div class="sendme-checkbox-area d-flex flex-row justify-content-between">
+                <div class="sendme-checkbox-area d-flex flex-row gap-3 my-3">
 
-                    <div class="form-check">
+                    <div class="form-check me-4">
                         <input class="form-check-input registration-check" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label pt-1 ps-3" for="flexCheckDefault">
                         Yes, I’m joining
                         </label>
                     </div>
 
                     <div class="form-check wetern-ui-width">
                         <input class="form-check-input  registration-check" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label pt-1 ps-3" for="flexCheckChecked">
                             Send me Newsletter 
                         </label>
                     </div>
 
                 </div>
 
+                <div class="border-top d-flex gap-2 justify-content-end pt-4">
+                  <button type="button" class="btn btn-outline-primary btn-reg-cancel" data-bs-dismiss="modal">Cancel</button>
+                  <a href="/figma/training-checkout" class="btn btn-primary btn-reg-checkout ">Checkout</a>
+                </div>
             </div>
 
 
-      </div>
-      <div class="modal-footer footer-registration">
-        <button type="button" class="btn btn-secondary btn-reg-cancel" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary btn-reg-checkout ">Checkout</button>
       </div>
     </div>
   </div>

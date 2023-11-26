@@ -18,15 +18,38 @@
                         </div>
                     </div>
                     <div class="database-right">
-                        <a class="database-button" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{ __('Registration') }}</a>
                         @auth
                             <a class="data-icon {{ $training->userFavorite ? 'active' : '' }}" href="javascript:void(0)" wire:click="updateFavorite({{ $training->id }}, {{ $training->userFavorite ? 0 : 1 }})">
                                 <img src="{{ asset('assets/frontend/img/like-icon.png') }}">
                             </a>    
                         @endauth
-                        <a class="data-icon btnShareDetailTraining" href="javascript:void(0)" wire:ignore data-bs-toggle="modal" data-bs-target="#shareModel">
-                            <img src="{{ asset('assets/frontend/img/share-icon.png') }}">
-                        </a>
+                        <div class="dopdown d-inline-block">
+                            <!--  data-bs-toggle="modal" data-bs-target="#shareModel" -->
+                            <a class="data-icon btnShareDetailTraining me-3" wire:ignore  href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('assets/frontend/img/share-icon.png') }}">
+                            </a>
+                            <ul class="dropdown-menu share__drop__menu" aria-labelledby="dropdownMenuLink">
+                                <li>
+                                    <a class="facebook d-flex gap-2 py-2 px-3 align-items-center" data-href="https://www.facebook.com/sharer/sharer.php?u={url}" target="blank">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="twitter d-flex gap-2 py-2 px-3 align-items-center" data-href="https://twitter.com/intent/tweet?&url={url}" target="blank">
+                                        <i class="fa-brands fa-twitter"></i>
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="linkedin d-flex gap-2 py-2 px-3 align-items-center" data-href="http://www.linkedin.com/shareArticle?mini=true&url={url}" target="blank">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                        <span>Linkedin</span>
+                                    </a>
+                                </li> 
+                            </ul>
+                        </div>
+                        <a class="database-button" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{ __('Registration') }}</a>
                     </div>
                 </div>
                 <div class="database-p">
@@ -64,8 +87,8 @@
                         </li>
                         <li>{{ __('Training Mode') }}</li>
                         <li class="textnone">
-                            <a href="javascript:void(0)">
-                                <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>
+                            <a class="zoomcall" href="javascript:void(0)">
+                                <img src="{{ asset('assets/frontend/img/zoom-icon.svg') }}"></img>
                                 {{ $training->trainingMode?->name }}
                                 </a>
                             </li>
@@ -75,11 +98,11 @@
                         <li>{{ $training->projectCategory?->name }}&nbsp;</li>
                         <li>{{ __('Partner Institute') }}</li>
                         <li>
-                            @foreach (explode('|', $training->partner_institute) as $index => $partner)
+                            @foreach (explode(' | ', $training->partner_institute) as $index => $partner)
                                 @if ($index > 0)
                                 |
                                 @endif
-                                <a href="{{ route('expert.details', $partner) }}">{{ $partner }} </a>
+                                <a href="{{ route('expert.details', $partner) }}">{{ $partner }}</a>
                             @endforeach
                         </li>
                     </ul>
@@ -141,7 +164,7 @@
     </div>
 
     <!-- Modal share -->
-    <div class="consultant-left-button">
+    <!-- <div class="consultant-left-button">
         <div class="modal fade" id="shareModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="shareModelLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -171,6 +194,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>

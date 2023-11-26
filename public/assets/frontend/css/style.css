@@ -1,3 +1,9 @@
+
+:root {
+    --primary: #0036E3;
+    --dark: #191D24;
+    --white: #ffffff;
+}
 body,
 h1,
 h2,
@@ -2487,6 +2493,11 @@ footer .footer-bottom .footer-icon ul li a:hover {
     font-weight: 500;
 }
 
+/* color update as per figma on find training page */
+.right-sidebar .database-block .database-contant .database-text h4 a{
+    color: #191D24;
+}
+
 .right-sidebar .database-block .database-contant .database-text span {
     margin-right: 8px;
     padding-right: 10px;
@@ -2612,7 +2623,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     float: left;
     line-height: 32px;
     margin-bottom: 0;
-    color: #0036e3;
+    color: #191D24; /* color update as per figma on find training page */
     font-size: 14px;
     font-weight: 400;
 }
@@ -2628,6 +2639,11 @@ footer .footer-bottom .footer-icon ul li a:hover {
     color: #0036e3;
     font-weight: 500;
     text-decoration: underline;
+}
+
+/* color update as per figma on find training page */
+.right-sidebar .deta-list ul li a.zoomcall {
+    color: #191D24;
 }
 
 .right-sidebar .deta-list ul li a:hover {
@@ -2893,7 +2909,8 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .find-training-detail .find-detail .findnote p {
     margin: 0;
     font-weight: 400;
-    color: #303744;
+    font-size: 14px;
+    color: #191D24;
 }
 
 .find-training-detail .find-detail .findnote p strong {
@@ -2907,7 +2924,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .find-training-detail .find-detail .find-t h3 {
-    color: #303744;
+    color: #191D24;
     font-size: 19px;
     margin: 0 0 10px;
     font-weight: 500;
@@ -2917,6 +2934,15 @@ footer .footer-bottom .footer-icon ul li a:hover {
     color: #303744;
     font-size: 14px;
     line-height: 22px;
+}
+
+.find-training-detail .find-detail .find-t p span.blue{
+    color:#0036E3;
+}
+.find-training-detail .find-detail .find-t p span{
+    color: rgba(48, 55, 68, 0.70);
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .find-training-detail .find-detail .find-t {
@@ -9493,3 +9519,78 @@ margin-top: 8px;
 .circle-img img {
     border-radius: 50px;
 }
+
+/* accordian styling for training page */
+.find-training-detail .right-sidebar .accordion-flush .accordion-item{
+    box-shadow: 4px -4px 16px 0px rgba(14, 0, 98, 0.09);
+    margin-bottom: 8px;
+    border:none;
+    }
+
+.find-training-detail .right-sidebar .accordion-flush .accordion-item .accordion-button:not(.collapsed)::after{
+    background-color: blue;
+    background-image: url(../img/arrow-white.svg);
+    transform: rotate(0deg);
+}
+.find-training-detail .right-sidebar .accordion-flush .accordion-item .accordion-button:not(.collapsed){
+    background-color: transparent;
+    box-shadow: none;
+    padding: 24px 32px 0 24px;
+}
+.find-training-detail .right-sidebar .accordion-header .accordion-button::after{
+    border-radius: 31px;
+    box-shadow: 2px 2px 8px 0px rgba(0, 16, 74, 0.16);
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+    background-size: 24px;
+    background-position: center;
+    background-image: url(../img/arrow-blue.svg);
+}
+.find-training-detail .right-sidebar .accordion-header .accordion-button{
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22.8px;
+    padding: 24px 32px;
+    }
+/* accordian styling for training page */
+
+/* Share dropdown menu styles */
+.share__drop__menu {
+    border-radius: 4px;background: #FFF;box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);cursor: pointer;border: 0;
+}
+.share__drop__menu a { color: var(--dark);text-decoration: none;transition: all .3s ease-in-out; }
+.share__drop__menu a:hover,.share__drop__menu a:focus, .share__drop__menu a:active { color: var(--primary);background: rgba(0, 54, 227, 0.05);font-weight: 500; }
+
+.registration__modal .modal-dialog { max-width: 584px; }
+.registration__modal .modal-dialog .modal-body { padding: 40px 40px 32px 40px; }
+.registration__modal .modal-dialog .modal-body .btn-close { top: .75rem;right: 2.25rem; }
+.registration__modal .modal-dialog .modal-body .border-bottom { border-color: #E7E5EF !important; }
+.registration__modal .modal-dialog .modal-title { font-size: 23px;color: var(--dark); }
+.registration__modal .modal-dialog .icon__box { width: 71px;height: 72px; }
+.registration__modal .modal-dialog .caption { width: calc(100% - 71px); }
+.registration__modal .modal-dialog .caption .title { font-size: 19px;color: var(--dark);margin-bottom: 2px; }
+.registration__modal .modal-dialog .caption .desc { color: rgba(48, 55, 68, 0.70); }
+.registration__modal .all-registration-modal .donas-text { width: 190px; }
+.registration__modal .all-registration-modal .caption { width: calc(100% - 190px); }
+
+.text-black { color: #303744 !important; }
+.text-primary { color: var(--primary) !important; }
+.text-muted { color: rgba(48, 55, 68, 0.60) !important; }
+.link { color: var(--primary);text-decoration: underline; }
+.link:hover { color: var(--dark);text-decoration: none; }
+.form-check-input {
+    width: 20px;height: 20px;border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+.form-check-input:checked {
+    border-color: var(--primary);background-color: var(--primary);
+}
+
+.btn-outline-primary, .btn-primary { border: 2px solid var(--primary);color: var(--primary) !important;font-weight: 500;padding: .5rem 2rem; } 
+.btn-primary { border: 2px solid var(--primary);color: var(--white) !important;background-color: var(--primary);} 
+.btn-outline-primary:hover,.btn-outline-primary:focus,.btn-outline-primary:active { color: var(--white) !important;background-color: var(--primary); } 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {  color: var(--white) !important;background-color: var(--dark);border-color: var(--dark); }
