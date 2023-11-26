@@ -8,6 +8,23 @@
 
 /**** ================================== Client Dashboard Start Here ===================================***/
 
+:root {
+  --color-heading-color: #191D24;
+  --color-heading: #303744;
+  --primary: #0036E3;
+  --success: #369450;
+  --white: #ffffff;
+  --heading-color: #303744;
+  --dark: #191D24;
+  --border-color: rgba(14, 0, 98, 0.10);
+  --white: #ffffff;
+  --bs-border-color: #E7E5EF;
+  --color-theme-color-2:#0036E3;
+  --color-border-color-solid: #E7E5EF;
+  --color-red: #C00000;
+  --color-yellow: #E9B911;
+}
+
 /*  default css */
 
 h1, h2, h3, h4, h5, h6, p, ul, ol{
@@ -527,11 +544,13 @@ button.no-hover::after{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  min-width: 291px;
+  max-width: 301px;
   min-height: 320px;
   border-radius: 8px;
   justify-content: space-evenly;
   padding: 24px;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.08);
+  margin-right: 24px;
 }
 
 .card-with-gradient{
@@ -759,6 +778,7 @@ i.default-star {
   margin-top: 15px;
 }
 
+
 .btn-fundmilestone {
   padding: 11px 10px;
   border: 2px;
@@ -769,9 +789,9 @@ i.default-star {
   font-size: 15px;
   font-weight: 500;
   background: transparent;
-  min-width: 237px;
+  max-width: 237px;
   min-height: 37px;
-  
+  width: 100%;
 }
 
 
@@ -791,7 +811,7 @@ button.btn.btn-xs.btn-success.btn-preview.active {
 }
 
 .btn-viewprofile {
-  padding: 11px 70px;
+  padding: 11px 10px;
   border: 2px;
   gap: 10px;
   color: #0036E3;
@@ -801,15 +821,17 @@ button.btn.btn-xs.btn-success.btn-preview.active {
   font-weight: 500;
   background: transparent;
   margin-top: 32px;
+  width: 100%;
+  max-width: 237px;
 }
 
 /* === owl theme design end === */
 
-.client-home-carousel .owl-item {
+/* .client-home-carousel .owl-item {
   width: 291px !important;
   margin-right: 32px !important;
   box-shadow: 8px 8px 32px 0px #0E006214;
-}
+} */
 
 .client-home-carousel .owl-stage-outer {
   max-width: 1263px;
@@ -888,11 +910,11 @@ button.owl-next span {
   margin: 0 auto;
 }
 
-.discover-carousel .owl-item {
+/* .discover-carousel .owl-item {
   width: 291px !important;
   margin-right: 32px !important;
   box-shadow: 8px 8px 32px 0px #0E006214;
-}
+} */
 
 /* === owl theme design end === */
 
@@ -1190,12 +1212,12 @@ span.material-symbols-outlined.active {
 .client-dashboard{
   border: 1px solid rgba(14, 0, 98, 0.1) !important;
   box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
-  width: 1320px;
-  /* height: 1147px; */
   border-radius: 8px;
   border: 1px;
   border-radius: 8px;
   background: #FFF;
+  max-width: 1320px;
+  width: 100%;
 
 
 }
@@ -1627,7 +1649,7 @@ td.health-budget{
 
 .job-area-top {
   padding: 20px 30px 15px;
-  border: 1px solid #E7E5EF;
+  border-bottom: 1px solid #E7E5EF;
 }
 
 .contact-project-area {
@@ -2382,6 +2404,27 @@ p.short-by-date {
   padding: 13px 8px;
 }
 
+.transaction-all-payment  thead th {
+
+  background: rgba(0, 54, 227, 0.03);
+  color: rgba(48, 55, 68, 0.80);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 13px 8px;
+  vertical-align: middle;
+}
+
+/* th.th-heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 108px;
+  padding: 13px 8px;
+  gap: 10px;
+} */
+
 .transaction-all  tbody tr td {
   border-top: 1px solid  #E7E5EF;
   border-bottom: 1px solid  #E7E5EF;
@@ -2393,10 +2436,27 @@ p.short-by-date {
   /* padding: 19px 8px; */
 }
 
-td.balance-text {
-  max-width: 240px;
+.th-project-value {
+  min-width: 90px;
 }
 
+.th-project-expert{
+  min-width: 120px;
+}
+
+td.balance-text {
+  max-width: 240px;
+  vertical-align: middle;
+}
+
+span.discord-reason {
+  color: var(--color-red-2, #F00);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}
 .balance-table-area {
   margin-top: 20px;
   padding: 0px 15px;
@@ -2788,7 +2848,7 @@ margin-bottom: 24px;
 }
 .border-full{
   border-radius: 8px;
-  border: 2px solid var(--color-theme-color-2, #0036E3);
+  border: 2px solid var(--color-theme-color-2);
   background: #FFF;
   margin-top: 24px;
 }
@@ -3260,8 +3320,8 @@ input[type=checkbox]:checked+label::after {
 }
 
 .admin-dashboard-area {
-  border: 1px solid rgba(14, 0, 98, 0.1) !important;
-  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+  /* border: 1px solid rgba(14, 0, 98, 0.1) !important;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1); */
   border-radius: 8px;
   border: 1px;
   border-radius: 8px;
@@ -3299,8 +3359,8 @@ input[type=checkbox]:checked+label::after {
   line-height: normal;
 }
 
-.all-padding-admin{
-  padding: 16px 30px;
+.all-padding-admin-client{
+  padding: 16px;
 }
 .policy-content h6{
   color: #191D24;
@@ -3362,38 +3422,129 @@ span.admin-fixed{
   gap: 22px;
 }
 
-ul.admin-d-item li a.dropdown-item{
-  color:  #191D24;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
+ul.admin-d-item{
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+  border: none;
 }
 
-ul.admin-d-item li a.dropdown-item:hover {
-  background: rgba(0, 54, 227, 0.05);
-  color: #0036E3;
+ul.admin-d-item li a.dropdown-item {
+  color: var(--color-heading-color);
+  font-family: Poppins !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+
+}
+
+.hold-danger {
+  color: #ff0000 !important;
+}
+
+ul.admin-d-item li:hover a.dropdown-item{
+  background: rgba(0, 54, 227, 0.05) !important;
+  color: var(--color-theme-color-2) !important;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500 !important ;
 }
 
 .admin-policy-area {
-  padding: 24px 40px;
+  padding: 24px 10px;
+}
+
+.policy-option {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .policy-content {
   display: flex;
   flex-direction: column;
   max-width: 490px;
+  justify-content: center;
 }
+
+.rating-comments a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.rating-comments {
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.rating-comments a p{
+  color: var(--color-theme-color-2);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+a.danger-comments span p {
+  color: var(--color-red);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  border-bottom: 2px solid C00000;
+}
+
+a.success-comments:hover {
+  border-bottom: 2px solid var(--color-theme-color-2);
+}
+
+a.danger-comments:hover {
+  border-bottom: 2px solid var(--color-red);
+}
+
 .policy-price {
   min-width: 332px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+.policy-price-comment{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.consultant-reviw ul li a i {
+    font-size: 12px;
+}
+
+.escrow-text{
+  color: var(--color-heading-color);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+}
+
+.policy-price-text{
+  color: var(--color-heading);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
 }
 
 policy-price p{
@@ -3457,6 +3608,16 @@ span.ac-completed {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.ac-new{
+  border-radius: 63px;
+  background: var(--color-yellow);
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 10px;
 }
 
 span.ac-progress {
@@ -3527,11 +3688,68 @@ input.admin-all-checkbox {
   padding: 0px 15px;
 }
 
+th.th-heading {
+  display: flex;
+  align-items: center;
+  min-height: 99px;
+  gap: 10px;
+}
+
+
+span.fixed-screw {
+  display: flex;
+  padding: 3px 0px;
+  border-radius: 29px;
+  background: var(--color-gray, #EBEFF7);
+  border: none;
+  justify-content: center;
+  color: var(--color-heading-color, #191D24);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 13px 0px;
+  width: 100%; 
+  max-width: 100px;
+}
+
+
+span.hourly-screw{
+  display: flex;
+  padding: 3px 0px;
+  border-radius: 29px;
+  background: var(--color-gray, #EBEFF7);
+  border: none;
+  justify-content: center;
+  color: var(--color-heading-color, #191D24);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 13px 0px;
+  width: 100%; 
+  max-width: 60px;
+}
+
 .admin-tab-nav-area-admin {
   background-color: transparent;
   align-items: center;
   max-height: 70px;
   padding: 0px 25px;
+}
+
+.admin-tab-nav-area-client {
+  background-color: transparent;
+  align-items: center;
+  max-height: 70px;
+  padding: 0px 0px 0px 25px;
+}
+
+.admin-tab-nav-area-payment {
+  background-color: transparent;
+  align-items: center;
+  max-height: 70px;
+  padding: 20px 15px;
 }
 
 .admin-dashboard-area-client {
@@ -5268,6 +5486,85 @@ select.top-input-control option::hover{
 }
 
 /**** ============================================== Frontend Dashboard end here  ================================= ***/
+
+/**** ============================================== Super Admin Payment start Here ================================= ***/
+.dropdown-comments {
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+  border: none;
+  min-width: 603px;
+  height: 396px;
+  display: flex;
+  padding: 15px;
+}
+
+.dropdown-comments-dispute{
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+  display: flex;
+  padding: 15px;
+  min-width: 358px;
+  height: 91px;
+}
+
+.comment-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h5.comment-title {
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h5.comment-title-dispute {
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  /* margin-bottom: 10px; */
+  line-height: 10px;
+}
+
+p.c-rating-title{
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.consultant-reviw ul li a i{
+ color:  #E9B911;
+}
+
+.comment-text p {
+  color: var(--color-heading);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.comments-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 22px;
+}
+
+.comment-border{
+  border-bottom: 1px solid var(--color-border-color-solid);
+}
+
+/**** ============================================== Super Admin Payment end Here ================================= ***/
 
 
 
