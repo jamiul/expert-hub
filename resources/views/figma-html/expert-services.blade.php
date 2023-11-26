@@ -64,9 +64,8 @@
                                             <ul>
                                                 <li>Expertise:</li>
                                                 <li><a href="#">Public Health</a></li>
-                                                <!-- <li><a href="#">Curriculum Development</a></li> -->
                                             </ul>
-                                            <!-- <p>$120/30mins</p> -->
+                                            <p>$120/30mins</p>
                                         </div>
                                         <div class="profp1"><span>Prof. Michael</span> offers consultation services to educational institutions, businesses and individuals seeking expertise in <span>curriculum development.</span>offers consultation services to educational institutions, businesses and individuals seeking expertise in  offers consultation services to educational institutions, businesses and individuals seeking expertise in</div>
                                         <div class="profip2">To schedule a consultation, <a href="#">Book a time</a></div>

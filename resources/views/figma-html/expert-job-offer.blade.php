@@ -38,10 +38,10 @@
                         <button class="nav-link active" id="activeTab-tab" data-bs-toggle="tab" data-bs-target="#activeTab" type="button" role="tab" aria-controls="activeTab" aria-selected="true">All</button>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="hourlyTab-tab" data-bs-toggle="tab" data-bs-target="#hourlyTab" type="button" role="tab" aria-controls="hourlyTab" aria-selected="false">Hourly (4)</button>
+                        <button class="nav-link" id="hourlyTab-tab" data-bs-toggle="tab" data-bs-target="#hourlyTab" type="button" role="tab" aria-controls="hourlyTab" aria-selected="false">Hourly (5)</button>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="inviteMeetTab-tab" data-bs-toggle="tab" data-bs-target="#inviteMeetTab" type="button" role="tab" aria-controls="inviteMeetTab" aria-selected="false">Fixed (2)</button>
+                        <button class="nav-link" id="inviteMeetTab-tab" data-bs-toggle="tab" data-bs-target="#inviteMeetTab" type="button" role="tab" aria-controls="inviteMeetTab" aria-selected="false">Fixed (4)</button>
                       </li> 
                     </ul> 
                 </div><!--.//tab__btns-->
@@ -50,6 +50,106 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="activeTab" role="tabpanel" aria-labelledby="activeTab-tab">
                         <ul class="feed__list">
+                            <li class="feed__card tranisition">
+                                <div class="row gx-4 gy-4 gy-lg-0">
+                                    <div class="col-md-10 col-lg-11"> 
+                                        <h2 class="title fs-6 fw-medium"> 
+                                            <a href="#">
+                                                LMS Expert required for Business Administration
+                                            </a>
+                                        </h2>
+                                        <p class="text-black small mt-2 mb-0">
+                                            12 hours ago
+                                        </p> 
+                                    </div>
+                                    <div class="col-md-2 col-lg-1 text-start">
+                                        <p class="fw-medium small text-black mb-0">
+                                            Hourly
+                                        </p>
+                                        <p class="mb-0 small text-dark">$200</p> 
+                                    </div> 
+                                </div> 
+                            </li> 
+                            <li class="feed__card tranisition">
+                                <div class="row gx-4 gy-4 gy-lg-0">
+                                    <div class="col-md-10 col-lg-11"> 
+                                        <h2 class="title fs-6 fw-medium"> 
+                                            <a href="#">
+                                                LMS Expert required for Business Administration
+                                            </a>
+                                        </h2>
+                                        <p class="text-black small mt-2 mb-0">
+                                            12 hours ago
+                                        </p> 
+                                    </div>
+                                    <div class="col-md-2 col-lg-1 text-start">
+                                        <p class="fw-medium small text-black mb-0">
+                                            Hourly
+                                        </p>
+                                        <p class="mb-0 small text-dark">$200</p> 
+                                    </div> 
+                                </div> 
+                            </li> 
+                            <li class="feed__card tranisition">
+                                <div class="row gx-4 gy-4 gy-lg-0">
+                                    <div class="col-md-10 col-lg-11"> 
+                                        <h2 class="title fs-6 fw-medium"> 
+                                            <a href="#">
+                                                LMS Expert required for Business Administration
+                                            </a>
+                                        </h2>
+                                        <p class="text-black small mt-2 mb-0">
+                                            12 hours ago
+                                        </p> 
+                                    </div>
+                                    <div class="col-md-2 col-lg-1 text-start">
+                                        <p class="fw-medium small text-black mb-0">
+                                            Hourly
+                                        </p>
+                                        <p class="mb-0 small text-dark">$200</p> 
+                                    </div> 
+                                </div> 
+                            </li> 
+                            <li class="feed__card tranisition">
+                                <div class="row gx-4 gy-4 gy-lg-0">
+                                    <div class="col-md-10 col-lg-11"> 
+                                        <h2 class="title fs-6 fw-medium"> 
+                                            <a href="#">
+                                                LMS Expert required for Business Administration
+                                            </a>
+                                        </h2>
+                                        <p class="text-black small mt-2 mb-0">
+                                            12 hours ago
+                                        </p> 
+                                    </div>
+                                    <div class="col-md-2 col-lg-1 text-start">
+                                        <p class="fw-medium small text-black mb-0">
+                                            Hourly
+                                        </p>
+                                        <p class="mb-0 small text-dark">$200</p> 
+                                    </div> 
+                                </div> 
+                            </li> 
+                            <li class="feed__card tranisition">
+                                <div class="row gx-4 gy-4 gy-lg-0">
+                                    <div class="col-md-10 col-lg-11"> 
+                                        <h2 class="title fs-6 fw-medium"> 
+                                            <a href="#">
+                                                LMS Expert required for Business Administration
+                                            </a>
+                                        </h2>
+                                        <p class="text-black small mt-2 mb-0">
+                                            12 hours ago
+                                        </p> 
+                                    </div>
+                                    <div class="col-md-2 col-lg-1 text-start">
+                                        <p class="fw-medium small text-black mb-0">
+                                            Hourly
+                                        </p>
+                                        <p class="mb-0 small text-dark">$200</p> 
+                                    </div> 
+                                </div> 
+                            </li> 
                             <li class="feed__card tranisition">
                                 <div class="row gx-4 gy-4 gy-lg-0">
                                     <div class="col-md-10 col-lg-11"> 

@@ -6,7 +6,7 @@
         @include('frontend.layouts.admin-top-dashboard-navbarmain')
         @yield('content')
 
-        @include('frontend.layouts.front-footer')
+        <!-- @include('frontend.layouts.front-footer') -->
 
         @yield('modal')
         @include('frontend.layouts.clientdashboard-front-js')
