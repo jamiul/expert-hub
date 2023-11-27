@@ -1380,3 +1380,13 @@ margin-bottom: 24px;}
 .find-training.find-projects.databasepading .right-sidebar:first-child { margin-top: 1.067rem; }
 .find-training.find-projects.databasepading .find-projects-time .curriculum-right li,
 .find-training.find-projects.databasepading .find-projects-time .curriculum-right li span { font-size: 13px; }
+
+@media (min-width: 990px){
+  /* profile page box width set */
+  .expert__dashboad .main__content__wrapp .row .col-lg-4 {
+    width: 348px!important;
+  }  
+  .expert__dashboad .main__content__wrapp .row .col-lg-8 {
+    width: calc(100% - 348px)!important;
+  }  
+  }

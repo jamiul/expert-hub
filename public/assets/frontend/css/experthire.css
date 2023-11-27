@@ -190,10 +190,12 @@ header .header-menu .login-block i {margin-right: 10px;}
 
 .academic-block .live-zoom {
     border-right: solid 1px #d9dbea;
+    width: 274px;
     display: flex;
     flex-direction: column;
     min-width: 274px;
 }
+
 
 .academic-block .live-zoom .zoom-icon {display: flex;align-items: center;}
 .academic-block .live-zoom .zoom-icon img {height: 10px;margin-right: 11px;}
