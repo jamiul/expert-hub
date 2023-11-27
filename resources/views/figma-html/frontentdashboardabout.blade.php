@@ -677,8 +677,8 @@
                             <div class="mission-img overlay-edit position-relative">
                                  <img src="{{ asset('assets/frontend/img/story-img.jpg') }}">
                                  <div class="overlay">
-                                      <div class="overlay-content admin-about-img">
-                                            <a><img src="{{ asset('assets/frontend/img/admin/admin-edit.png') }}" alt=""></a>
+                                      <div class="overlay-content">
+                                            <a ><img class="admin-about-img" src="{{ asset('assets/frontend/img/admin/admin-edit.png') }}" alt=""></a>
                                       </div>
                                     </div>
                             </div>

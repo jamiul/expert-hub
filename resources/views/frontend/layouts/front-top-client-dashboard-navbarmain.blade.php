@@ -66,7 +66,7 @@
         </button>
       </div>
     </div>
-    <div class="setting-area">
+<div class="setting-area">
   <div class="dropdown">
     <span class="profile-bell position-relative dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><a href="#"><img src="{{ asset('assets/frontend/img/profile-messanger.png') }}" alt="message"> </a> 
     <span class="position-absolute  translate-middle p-1 bg-danger border-light rounded-circle top-batch">1</span></span>

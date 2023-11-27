@@ -1,4 +1,4 @@
-
+@import url('href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"');
 
 
 body, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, div, strong, span, b {
@@ -432,12 +432,13 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
     font-size: 15px;
     font-weight: 400;
     appearance: none;
-    background: url(../images/arrow-icon.png) no-repeat;
+    background: url(../img/date.png) no-repeat;
     background-position: right 20px center;
     min-width: 252px;
     min-height: 46px;
     margin-top:0px;
 }
+
 
 
 
@@ -462,7 +463,9 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
 
 
 
-#dateInput:focus {background: url(../images/arrow-icon-hover.png) no-repeat;background-position: right 20px center;}
+#dateInput:focus {background: url(../img/date.png) no-repeat;background-position: right 20px center;}
+
+
 .study-level select {width: 100%;padding: 0 10px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;font-size: 16px;font-weight: 400;appearance: none;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;color: #303744;}
  #dateInput::placeholder {color: #303744B2;}
  #daysContainer {padding: 0 10px;display: inline-block;width: 100%;}

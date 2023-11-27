@@ -46,9 +46,7 @@
                                           <div class="study-level">
                                             <div class="calendar-box position-relative">
                                               <input type="text" id="dateInput" placeholder="Oct 23 2023">
-                                              <p class=" position-absolute short-by-date">
-                                                <span class="material-symbols-outlined">calendar_today</span>
-                                              </p>
+                                              
                                               <div class="calendar" id="calendar">
                                                 <div class="header">
                                                   <button id="prevBtn">
@@ -648,9 +646,7 @@
                                           <div class="study-level">
                                             <div class="calendar-box position-relative">
                                               <input type="text" id="dateInput" placeholder="Oct 23 2023">
-                                              <p class=" position-absolute short-by-date">
-                                                <span class="material-symbols-outlined">calendar_today</span>
-                                              </p>
+                                              
                                               <div class="calendar" id="calendar">
                                                 <div class="header">
                                                   <button id="prevBtn">
@@ -729,9 +725,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                        
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -774,9 +768,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                        
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -818,9 +810,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                       
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -863,8 +853,47 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
+                                                        <li>
+                                                          <a class="dropdown-item" href="#">Release</a>
+                                                        </li>
+                                                        
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td style="vertical-align: middle;">
+                                                <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
+                                              </td>
+                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td class="balance-text">13617</td>
+                                              <td style="vertical-align: middle;">345785</td>
+                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
+                                              <td style="vertical-align: middle;">
+                                                <span class="spent-price">$500</span>
+                                              </td>
+                                              <td style="vertical-align: middle;">
+                                                <span >$50</span>
+                                              </td>
+                                              <td style="vertical-align: middle;">$450</td>
+                                              <td style="vertical-align: middle;">$50</td>
+                                              <td style="vertical-align: middle;">$25</td>
+                                              <td style="vertical-align: middle;">$3</td>
+                                              <td style="vertical-align: middle;">Fixed escrow</td>
+
+                                              <td style="vertical-align: middle;">
+                                                <div class="policy-option">
+                                                  <div class="draft-options">
+                                                    <div class="dropdown">
+                                                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                      </a>
+                                                      <ul class="dropdown-menu admin-d-item">
+                                                        
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -906,53 +935,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
-                                                        </li>
-                                                        <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
-                                                        </li>
-                                                        
-                                                      </ul>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td style="vertical-align: middle;">
-                                                <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
-                                              </td>
-                                              <td style="vertical-align: middle;">1009871</td>
-                                              <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
-                                                <span class="spent-price">$500</span>
-                                              </td>
-                                              <td style="vertical-align: middle;">
-                                                <span >$50</span>
-                                              </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
-
-                                              <td style="vertical-align: middle;">
-                                                <div class="policy-option">
-                                                  <div class="draft-options">
-                                                    <div class="dropdown">
-                                                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                                      </a>
-                                                      <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                      
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -994,9 +977,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                       
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -1038,9 +1019,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                        
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -1082,9 +1061,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                        
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -1126,9 +1103,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                      
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -1170,9 +1145,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                       
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -1214,9 +1187,7 @@
                                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
-                                                        <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
-                                                        </li>
+                                                       
                                                         <li>
                                                           <a class="dropdown-item" href="#">Re-fund</a>
                                                         </li>
@@ -1265,9 +1236,7 @@
                                           <div class="study-level">
                                             <div class="calendar-box position-relative">
                                               <input type="text" id="dateInput" placeholder="Oct 23 2023">
-                                              <p class=" position-absolute short-by-date">
-                                                <span class="material-symbols-outlined">calendar_today</span>
-                                              </p>
+                                              
                                               <div class="calendar" id="calendar">
                                                 <div class="header">
                                                   <button id="prevBtn">
