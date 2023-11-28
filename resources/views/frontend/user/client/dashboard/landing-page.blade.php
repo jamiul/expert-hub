@@ -1063,7 +1063,7 @@
                 </div>
             </div>
             <!-- owl carousel 2  Start Here -->
-            <div class="row owlp-bottom">
+            <div class="row">
                 <div class="owl-carousel owl-carouselfour  owl-theme rate-caurasel discover-carousel">
                     <div class="item">
                         <div class="single-card-area discover-gradient">

@@ -279,7 +279,7 @@ class FigmaController extends Controller
     //End Client Dashboard
 
 
-    //Start  Expert Login 
+    //Start  Expert Login
 
     public function experthboardlogin()
     {
@@ -291,7 +291,7 @@ class FigmaController extends Controller
         return view('figma-html.experthboardloginform');
     }
 
-    
+
 
     public function clientdashboardloginform()
     {
@@ -316,7 +316,7 @@ class FigmaController extends Controller
     }
 
 
-    //End  Expert Login 
+    //End  Expert Login
 
 
 
@@ -332,9 +332,9 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-services');
     }
-    public function expertworkdiry()
+    public function expertworkdiary()
     {
-        return view('figma-html.expert-work-dairy');
+        return view('figma-html.expert-work-diary');
     }
     public function expertproposal()
     {
