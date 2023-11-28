@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="en">
-    @include('frontend.layouts.front-header')
+@include('frontend.layouts.front-header')
 
-    <body>
-        @include('frontend.user.expert.partials._navbar')
+<body>
+    @include('frontend.user.expert.partials._navbar')
 
-        @yield('content')
+    @yield('content')
 
-        @include('frontend.layouts.front-footer')
+    @include('frontend.layouts.front-footer')
 
-        @yield('modal')
+    @yield('modal')
 
-        <!-- dashbaord -->
-        @include('frontend.layouts.front-js')
+    <!-- dashbaord -->
+    @include('frontend.layouts.front-js')
 
-        @stack('js')
-    </body>
+    @stack('js')
+
+
+</body>
+
 </html>

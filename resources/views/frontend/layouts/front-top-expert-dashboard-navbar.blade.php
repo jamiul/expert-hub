@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
 <nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
    <div class="container-fluid algin-items-center mx-auto">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{{ route('dashboard') }}">
          <img src="{{ asset('assets/frontend/img/logo.png') }}" />
       </a>
-      
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav align-items-center">
             <li class="nav-item">
@@ -15,7 +15,7 @@
             </li>
             <li class="nav-item">
                <a class="nav-link {{ request()->is('figma/expert-services') ? 'active' : '' }}" href="/figma/expert-services">My Services</a>
-            </li> 
+            </li>
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="projectDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   My Projects
@@ -23,7 +23,7 @@
                <ul class="dropdown-menu" aria-labelledby="projectDrop">
                   <li>
                      <a class="dropdown-item" href="/figma/expert-dashboard">Dashboard</a>
-                  </li> 
+                  </li>
                   <li>
                      <a class="dropdown-item" href="/figma/expert-status">Status</a>
                   </li>
@@ -32,25 +32,25 @@
                   </li>
                   <li>
                      <a class="dropdown-item" href="/figma/expert-status-analytics">Status Analytics</a>
-                  </li>  
+                  </li>
                   <li>
                      <a class="dropdown-item" href="/figma/expert-active-contract">Active Contracts</a>
-                  </li> 
+                  </li>
                   <li>
                      <a class="dropdown-item" href="/figma/expert-all-contract">All Contracts</a>
-                  </li> 
+                  </li>
                   <li>
-                     <a class="dropdown-item" href="/figma/expert-work-diary">Work Diray</a> 
-                  </li> 
-                  <li> 
+                     <a class="dropdown-item" href="/figma/expert-work-diary">Work Diray</a>
+                  </li>
+                  <li>
                      <a class="dropdown-item" href="/figma/expert-proposal">Proposals</a>
-                  </li> 
-                  <li> 
+                  </li>
+                  <li>
                      <a class="dropdown-item" href="/figma/expert-job-offer">Job Offers</a>
-                  </li> 
-                  <li> 
+                  </li>
+                  <li>
                      <a class="dropdown-item" href="/figma/expert-saved-jobs">Saved Jobs</a>
-                  </li> 
+                  </li>
                </ul>
             </li>
             <li class="nav-item dropdown">
@@ -92,11 +92,11 @@
                   <li>
                      <a class="dropdown-item" href="/figma/expert-notification-settings">Notification Settings</a>
                   </li>
-                  
+
                </ul>
             </li>
          </ul>
-          
+
       </div>
 
       <div class="input-group search__box align-items-center">
@@ -119,20 +119,20 @@
             </li>
             <li>
                <a class="dropdown-item" href="#">Work Diary</a>
-            </li> 
+            </li>
 
          </ul>
          <button class="btn search__btn d-inline-flex justify-content-center align-items-center" type="button" id="button-addon2">
-            <i class="fa fa-search small"></i> 
+            <i class="fa fa-search small"></i>
          </button>
       </div>
-      
-      <div class="setting-area d-inline-flex ps-3"> 
+
+      <div class="setting-area d-inline-flex ps-3">
          <div class="dropdown me-3">
             <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center position-relative" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false">
                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/message.svg') }}" alt="message">
                <span class="badge rounded-pill text-white fw-bold position-absolute d-flex justify-content-center align-items-center">1 </span>
-            </a> 
+            </a>
             <div class="dropdown-menu message__dropdown bg-white border-0" aria-labelledby="messageDrop">
                <ul class="list-unstyled ps-0 mb-0 mess__list">
                   <li class="d-flex align-items-center">
@@ -208,7 +208,7 @@
                      </div>
                   </li>
                </ul>
-               <div class="text-center border-top footer__link"> 
+               <div class="text-center border-top footer__link">
                   <a href="#" class="d-inline-flex align-items-center small fw-medium text-decoration-none">
                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                      <path d="M7.61543 17.1153C7.36478 17.1153 7.15468 17.0305 6.98513 16.861C6.81558 16.6914 6.73081 16.4813 6.73081 16.2307V14.7307H19.1058L19.4231 15.0481V5.99998H20.9231C21.1737 5.99998 21.3838 6.08475 21.5534 6.2543C21.7229 6.42385 21.8077 6.63394 21.8077 6.88457V20.6537L18.2693 17.1153H7.61543ZM3.19238 16.2691V3.38463C3.19238 3.13398 3.27716 2.92388 3.44671 2.75433C3.61626 2.58478 3.82636 2.5 4.07701 2.5H16.5385C16.7891 2.5 16.9992 2.58478 17.1688 2.75433C17.3383 2.92388 17.4231 3.13398 17.4231 3.38463V11.8461C17.4231 12.0968 17.3383 12.3069 17.1688 12.4764C16.9992 12.646 16.7891 12.7307 16.5385 12.7307H6.73081L3.19238 16.2691ZM15.9231 11.2308V3.99998H4.69236V11.9231L5.38471 11.2308H15.9231Z" fill="#A1A0A5"/>
@@ -222,14 +222,14 @@
             <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center position-relative" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false">
                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/notification.svg') }}" alt="notification">
                <span class="badge rounded-pill text-white fw-bold position-absolute d-flex justify-content-center align-items-center">9+ </span>
-            </a> 
-            
+            </a>
+
          </div>
          <div class="dropdown">
             <!-- data-bs-auto-close="false" -->
             <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false"  >
                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="rounded-circle" alt="avatar">
-            </a> 
+            </a>
             <div class="dropdown-menu profile__dropdown bg-white border-0" aria-labelledby="dropdownMenuLink" onclick="stopPropagation(event)">
                <div class="text-center">
 
@@ -277,7 +277,7 @@
               </ul>
 
             </div>
-            
+
          </div><!--.//dropdown-->
          <button class="navbar-toggler border-0 rounded-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -286,7 +286,7 @@
    </div><!--.//container-->
 </nav>
 <script>
-   // Stop dropdown close option when click inside the menu 
+   // Stop dropdown close option when click inside the menu
    function stopPropagation(event) {
       event.stopPropagation();
    }
