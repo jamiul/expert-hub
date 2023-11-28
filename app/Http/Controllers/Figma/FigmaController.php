@@ -305,6 +305,17 @@ class FigmaController extends Controller
     }
 
 
+    public function adminpayment()
+    {
+        return view('figma-html.adminpayment');
+    }
+
+    public function adminpaymentprogress()
+    {
+        return view('figma-html.adminpaymentprogress');
+    }
+
+
     //End  Expert Login 
 
 
@@ -321,9 +332,9 @@ class FigmaController extends Controller
     {
         return view('figma-html.expert-services');
     }
-    public function expertworkdiary()
+    public function expertworkdiry()
     {
-        return view('figma-html.expert-work-diary');
+        return view('figma-html.expert-work-dairy');
     }
     public function expertproposal()
     {

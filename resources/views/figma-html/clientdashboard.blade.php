@@ -22,7 +22,7 @@
             <div class="study-level">
                 <div class="calendar-box position-relative">
                   <input type="text" id="dateInput" placeholder="Start Date">
-                    <p class=" position-absolute short-by-date"><span class="material-symbols-outlined">calendar_today</span></p>
+                    <!-- <p class=" position-absolute short-by-date"><span class="material-symbols-outlined">calendar_today</span></p> -->
                   <div class="calendar" id="calendar">
                     <div class="header">
                       <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
@@ -88,18 +88,14 @@
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
               </a>
               <ul class="dropdown-menu dropdown-show">
-                <li>
-                  <a class="dropdown-item dropdown-heading" data-bs-toggle="modal" data-bs-target="#editposting" href="#">View Job Posting</a>
-                </li>
+                
                 <li>
                   <a class="dropdown-item dropdown-heading " data-bs-toggle="modal" data-bs-target="#editpostingcustomize" href="#">Edit Posting</a>
                 </li>
                 <li>
                   <a class="dropdown-item dropdown-heading "data-bs-toggle="modal" data-bs-target="#removeposting" href="#">Remove Posting   </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#">Invite Experts</a>
-                </li>
+               
 
               </ul>
             </div>

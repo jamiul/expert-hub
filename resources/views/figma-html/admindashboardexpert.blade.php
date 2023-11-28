@@ -36,9 +36,6 @@
                                 <div class="study-level">
                                   <div class="calendar-box position-relative">
                                     <input type="text" id="dateInput" placeholder="Oct 23 2023">
-                                    <p class=" position-absolute short-by-date">
-                                      <span class="material-symbols-outlined">calendar_today</span>
-                                    </p>
                                     <div class="calendar" id="calendar">
                                       <div class="header">
                                         <button id="prevBtn">
@@ -601,6 +598,9 @@
 
                           <li>
                             <a class="dropdown-item hold-danger" href="#">Hold</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item"  href="#">Un-Hold</a>
                           </li>
 
                         </ul>

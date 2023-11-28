@@ -57,9 +57,6 @@
                                 <div class="study-level">
                                   <div class="calendar-box position-relative">
                                     <input type="text" id="dateInput" placeholder="Oct 23 2023">
-                                    <p class=" position-absolute short-by-date">
-                                      <span class="material-symbols-outlined">calendar_today</span>
-                                    </p>
                                     <div class="calendar" id="calendar">
                                       <div class="header">
                                         <button id="prevBtn">
@@ -140,16 +137,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Hold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -199,18 +196,18 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Hold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -257,18 +254,18 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Hold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -315,76 +312,18 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row px-0 mx-0 admin-m-bottom ">
-                          <div class="admin-policy-area d-flex flex-row justify-content-between">
-                            <div class="policy-content">
-                                <h6>ID: 7557uy8675656</h6>
-                                <h4>Policy Development Assistance Required for Chemical Engineering Industry</h4>
-                                <p> <span class="spec-admin-form">From:</span> Sep 23 to Present</p>
-                            </div>
-                            <div class="policy-price">
-                              <p  class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
-                              <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                            </div>
-                            <div class="policy-person d-flex flex-column">
-                                <div class="policy-single d-flex flex-row">
-                                    <div class="admin-img-policy">
-                                      <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                                    </div>
-                                    <div class="admin-img-policy">
-                                      <h4>Client: Dr Mohammad Riyadh </h4>
-                                      <p>EduExHub</p>
-                                    </div>
-                                </div>
-                                <div class="policy-single d-flex flex-row">
-                                    <div class="admin-img-policy">
-                                    <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                                    </div>
-                                    <div class="admin-img-policy">
-                                      <h4>Client: Dr Mohammad Riyadh </h4>
-                                      <p>EduExHub</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="policy-option">
-
-                                <div class="draft-options">
-                                <div class="dropdown">
-                                  <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                  </a>
-                                  <ul class="dropdown-menu admin-d-item">
-                                    <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Hold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -431,18 +370,18 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Hold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -489,18 +428,76 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Hold</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row px-0 mx-0 admin-m-bottom ">
+                          <div class="admin-policy-area d-flex flex-row justify-content-between">
+                            <div class="policy-content">
+                                <h6>ID: 7557uy8675656</h6>
+                                <h4>Policy Development Assistance Required for Chemical Engineering Industry</h4>
+                                <p> <span class="spec-admin-form">From:</span> Sep 23 to Present</p>
+                            </div>
+                            <div class="policy-price">
+                              <p  class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
+                              <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
+                            </div>
+                            <div class="policy-person d-flex flex-column">
+                                <div class="policy-single d-flex flex-row">
+                                    <div class="admin-img-policy">
+                                      <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                                    </div>
+                                    <div class="admin-img-policy">
+                                      <h4>Client: Dr Mohammad Riyadh </h4>
+                                      <p>EduExHub</p>
+                                    </div>
+                                </div>
+                                <div class="policy-single d-flex flex-row">
+                                    <div class="admin-img-policy">
+                                    <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                                    </div>
+                                    <div class="admin-img-policy">
+                                      <h4>Client: Dr Mohammad Riyadh </h4>
+                                      <p>EduExHub</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="policy-option">
+
+                                <div class="draft-options">
+                                <div class="dropdown">
+                                  <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                  </a>
+                                  <ul class="dropdown-menu admin-d-item ">
+                                    <li>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#">Contact client</a>
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#">Hold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -522,7 +519,9 @@
                             </div>
                             <div class="policy-price">
                               <p class="policy-price-text"> <span class="admin-fixed">Fixed:</span>$100.00</p>
-                              <p class="dispute-reason escrow-text">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
+
+                              
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -555,19 +554,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -588,7 +593,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -617,19 +622,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -647,7 +658,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -676,19 +687,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -706,7 +723,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -735,19 +752,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -765,7 +788,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -794,19 +817,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -824,7 +853,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -853,19 +882,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -883,7 +918,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for dispute</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#adminHomeComment"><p class="dispute-reason escrow-text">Reason for dispute</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -912,19 +947,25 @@
                                   <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                   </a>
-                                  <ul class="dropdown-menu admin-d-item">
+                                  <ul class="dropdown-menu admin-d-item ">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
+
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Approve</a>
                                     </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#">Decline</a>
+                                    </li>
+
                                   </ul>
                                 </div>
                               </div>
@@ -945,7 +986,8 @@
                             </div>
                             <div class="policy-price">
                               <p> <span class="admin-fixed">Fixed:</span>$100.00</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
+                              
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -980,17 +1022,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1011,7 +1051,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1042,17 +1082,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1070,7 +1108,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1101,17 +1139,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1129,7 +1165,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1160,17 +1196,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1188,7 +1222,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1219,17 +1253,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1247,7 +1279,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1278,17 +1310,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1306,7 +1336,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForCancel"><p class="dispute-reason escrow-text">Reason for cancel</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1337,17 +1367,15 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View work dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -1367,7 +1395,7 @@
                             </div>
                             <div class="policy-price">
                               <p> <span class="admin-fixed">Fixed:</span>$100.00</p>
-                              <p class="dispute-reason">Reason for on-hold</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1402,16 +1430,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -1433,7 +1461,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1464,16 +1492,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -1492,7 +1520,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1523,16 +1551,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -1551,7 +1579,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1582,16 +1610,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -1610,7 +1638,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1641,16 +1669,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -1669,7 +1697,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1700,16 +1728,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -1728,7 +1756,7 @@
                             <div class="policy-price">
                               <p class="escrow-text">Total: <span class="">1:40 hrs</span>  earned <span class="">$140</span></p>
                               <p class="policy-price-text">$100.00/hr, 25 hrs weekly limit</p>
-                              <p class="dispute-reason">Reason for cancel</p>
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#reasonForOnHold"><p class="dispute-reason escrow-text">Reason for On-hold</p></a>
                             </div>
                             <div class="policy-person d-flex flex-column">
                                 <div class="policy-single d-flex flex-row">
@@ -1759,16 +1787,16 @@
                                   </a>
                                   <ul class="dropdown-menu admin-d-item">
                                     <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
+                                      <a class="dropdown-item " href="#">View Work Dairy</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
+                                      <a class="dropdown-item" href="#">Contact client</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
+                                      <a class="dropdown-item" href="#">Contact Expert</a>
                                     </li>
                                     <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
+                                      <a class="dropdown-item" href="#">Unhold</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -2281,8 +2309,72 @@
 
                 </div>
 
+<!-- Modal Start here -->
+                          
+      <div class="modal fade" id="adminHomeComment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+          <div class="modal-content dropdown-comments-dispute ">
+            <div class="modal-header border-0 p-0 ">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0 py-0">
+            
+                <div class="comments-content">
+                <h5 class="modal-title fs-5 comment-title-dispute" id="exampleModalLabel">Reasons dispute</h5>
 
-                    
+                        <div class="comment-text">
+                          <p>I don’t agree with client / expert </p>
+                        </div>
+                    </div>
+            </div>
+
+          </div>
+        </div>
+      </div>   
+
+                          
+      <div class="modal fade" id="reasonForCancel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+          <div class="modal-content dropdown-comments-dispute ">
+            <div class="modal-header border-0 p-0 ">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0 py-0">
+            
+                <div class="comments-content">
+                <h5 class="modal-title fs-5 comment-title-dispute" id="exampleModalLabel">Reasons cancel</h5>
+
+                        <div class="comment-text">
+                          <p>I don’t agree with client / expert </p>
+                        </div>
+                    </div>
+            </div>
+
+          </div>
+        </div>
+      </div>   
+
+                          
+      <div class="modal fade" id="reasonForOnHold" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+          <div class="modal-content dropdown-comments-dispute ">
+            <div class="modal-header border-0 p-0 ">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0 py-0">
+            
+                <div class="comments-content">
+                <h5 class="modal-title fs-5 comment-title-dispute" id="exampleModalLabel">Reasons On-hold</h5>
+
+                        <div class="comment-text">
+                          <p>I don’t agree with client / expert </p>
+                        </div>
+                    </div>
+            </div>
+
+          </div>
+        </div>
+      </div>   
 
      
 <!-- Pagination start Here -->
