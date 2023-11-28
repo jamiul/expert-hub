@@ -26,6 +26,13 @@ class AdminUserSeeder extends Seeder
                 'user_name' => 'mr-client',
                 'email' => 'client@gmail.com',
                 'password' => bcrypt('client123')
+            ],
+            [
+                'name' => 'Mr. Expert',
+                'user_type' => 'expert',
+                'user_name' => 'mr-expert',
+                'email' => 'expert@gmail.com',
+                'password' => bcrypt('expert123')
             ]
         ];
 
