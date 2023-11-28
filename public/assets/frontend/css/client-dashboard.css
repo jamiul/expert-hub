@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"');
+
 
 
 /**** ================================== Client Dashboard Start Here ===================================***/
@@ -183,6 +185,16 @@ button.search-select {
   box-shadow: 8px 8px 32px 0px #0E00621A;
   border: none;
   transform: translate(10px, 53px) !important;
+}
+
+.top-profile-setting-avatar {
+  border-radius: 8px;
+  background: #FFF;
+  min-width: 304px;
+  min-height: 432px;
+  box-shadow: 8px 8px 32px 0px #0E00621A;
+  border: none;
+  transform: translate(-115px, 53px) !important;
 }
 
 /* ========================== Messenger setting start here ============== */
@@ -2471,6 +2483,12 @@ font-weight: 500;
 text-transform: capitalize;
 }
 
+a.li-avatar-area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 /*  =================== Table History end ================== */
 
 /* ============== Draft and edit start here ============ */
@@ -3401,13 +3419,15 @@ input[type=checkbox]:checked+label::after {
   font-weight: 400;
 }
 .policy-content h4{
-  color: #191D24;
-  font-family: Colfax;
-  font-size: 16px;
+  color: var(--color-heading-color);
+  font-family: Poppins;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  margin: 8px 0px 3px;
+
 }
+
+
 .policy-content  p{
   color:#191D24;
   font-family: Colfax;
@@ -3494,7 +3514,7 @@ ul.admin-d-item li:hover a.dropdown-item{
 .policy-content {
   display: flex;
   flex-direction: column;
-  max-width: 490px;
+  max-width: 468px;
   justify-content: center;
 }
 
@@ -3610,15 +3630,14 @@ span.admin-currency{
   border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
 }
 
-
-
-
-p.dispute-reason{
-  color: #F00;
+p.dispute-reason {
+  font-weight: 500;
+  color: var(--color-theme-color-2);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+  text-decoration-line: underline;
 }
 
 .policy-price .consultant-reviw ul {

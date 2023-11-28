@@ -41,13 +41,11 @@ Route::group(['prefix' => 'figma'], function () {
     //Client Dashboard
     Route::get('/client-dashboardhome', [FigmaController::class, 'clientdashboardhome']);
     Route::get('/client-dashboard', [FigmaController::class, 'clientdashboard']);
-    
     Route::get('/client-dashboardexpertconsultant', [FigmaController::class, 'clientdashboardexpertconsultant']);
     Route::get('/client-dashboardexpertconsultantteam', [FigmaController::class, 'clientdashboardexpertconsultantteam']);
     Route::get('/client-dashboardallcontact', [FigmaController::class, 'clientdashboardallcontact']);
     Route::get('/client-dashboardexperthire', [FigmaController::class, 'clientdashboardexperthire']);
     Route::get('/client-clientdashboardexpertsave', [FigmaController::class, 'clientdashboardexpertsave']);
-
     Route::get('/client-clientaddpayment', [FigmaController::class, 'clientaddpayment']);
     Route::get('/client-clientvisapaypal', [FigmaController::class, 'clientvisapaypalpayment']);
     Route::get('/client-addpaymentdouable', [FigmaController::class, 'clientaddpaymentdouable']);
@@ -67,7 +65,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::get('/super-admin-dashboardexpert', [FigmaController::class, 'admindashboardexpert']);
 
     Route::get('/super-admin-payment', [FigmaController::class, 'adminpayment']);
-    Route::get('/super-admin-progress', [FigmaController::class, 'adminpaymentprogress']);
+    Route::get('/super-admin-review', [FigmaController::class, 'adminpaymentprogress']);
 
     //Expert Dashboard Login
     Route::get('/super-admin-expertlogin', [FigmaController::class, 'experthboardlogin']);

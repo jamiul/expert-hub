@@ -48,9 +48,7 @@
                                 <div class="study-level">
                                   <div class="calendar-box position-relative">
                                     <input type="text" id="dateInput" placeholder="Oct 23 2023">
-                                    <p class=" position-absolute short-by-date">
-                                      <span class="material-symbols-outlined">calendar_today</span>
-                                    </p>
+                                    
                                     <div class="calendar" id="calendar">
                                       <div class="header">
                                         <button id="prevBtn">
@@ -1848,27 +1846,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <!-- <div class="draft-options">
-                                <div class="dropdown">
-                                  <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                  </a>
-                                  <ul class="dropdown-menu admin-d-item">
-                                    <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div> -->
+                               
 
                             </div>
                           </div>
@@ -1933,27 +1911,7 @@
                             </div>
                             <div class="policy-option">
 
-                                <!-- <div class="draft-options">
-                                <div class="dropdown">
-                                  <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                  </a>
-                                  <ul class="dropdown-menu admin-d-item">
-                                    <li>
-                                      <a class="dropdown-item " href="#">Invite Experts</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">View Job Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Edit Posting</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" href="#">Remove Posting</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div> -->
+                              
 
                             </div>
                           </div>
