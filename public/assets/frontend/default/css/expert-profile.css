@@ -223,7 +223,7 @@ ul li {
   --white: #ffffff;
   --bs-border-color: #E7E5EF;
 }
-  
+
 .lead { font-size: 19px !important; }
 .lead-lg {
   font-size: 1.438rem;
@@ -284,7 +284,7 @@ ul li {
 }
 .consultant-right .consultant-d .consultant-d-left {display: flex;align-items: center;}
 .consultant-right .consultant-d .consultant-d-left h3 {margin: 0;flex-grow: 1;font-size: 23px;font-weight: 500;}
-.consultant-right .consultant-d .consultant-d-left p {margin: 0;color: #303744;font-size: 16px;font-weight: 500;} 
+.consultant-right .consultant-d .consultant-d-left p {margin: 0;color: #303744;font-size: 16px;font-weight: 500;}
 .consultant-right .consultant-d .consultant-d-left {display: flex;align-items: center;margin-bottom: 20px;}
 .consultant-right .consultant-d p {color: #303744;font-size: 16px;line-height: 25px;margin-bottom: 0;}
 
@@ -297,8 +297,8 @@ ul li {
 .consultant-d, .consultant-work, .consultant-tab, .consultant-testimonial {padding: 24px 0px;}
 .consultant-right .consultant-d .consultant-d-left h3 {font-size: 20px;}
 
-.consultant-l h3 {color: #303744;font-size: 16px;font-weight: 700;font-family: 'Public Sans', sans-serif;}      
-.consultant-l h3 span {font-family: 'Public Sans', sans-serif;}      
+.consultant-l h3 {color: #303744;font-size: 16px;font-weight: 700;font-family: 'Public Sans', sans-serif;}
+.consultant-l h3 span {font-family: 'Public Sans', sans-serif;}
 .consultant-l.languages p {margin-bottom: 0;display: flex;align-items: center;font-size: 14px;font-weight: 500;color: #303744;}
 .consultant-l.languages img {margin-right: 7px;}
 .consultant-l.expertise ul {padding: 0;margin: 0;}
@@ -323,7 +323,7 @@ font-size: 14px;
 
 
 .profile__box {
-  width: 10rem;height: 10rem; 
+  width: 10rem;height: 10rem;
   background: rgba(0, 54, 227, 0.14);
 }
 
@@ -368,9 +368,11 @@ height: 248px;
 .consultant-work {border: solid 1px #0000001A;border-radius: 8px;padding: 24px 32px;}
 .consultant-work h3 {display: flex;align-items: center;margin: 0 0 20px;color: #303744;font-size: 23px;font-weight: 500;}
 .consultant-work h3 img {margin-right: 10px;}
-.consultant-work button i.fa-plus{
+
+.consultant-work button i.fa-plus {
   color: #0036E3;
   font-size: 20px;
+  font-weight: 400;
 }
 .consultant-work-b h4 {color: #303744;font-size: 19px;font-weight: 500;}
 .consultant-work-b h5 {font-family: 'Public Sans', sans-serif;color: #303744B2;font-weight: 400;font-size: 16px;margin: 0 0 20px; font-style: italic;}
@@ -397,7 +399,7 @@ height: 248px;
 .consultant-testimonial .testimonial-block p {font-family: 'Public Sans', sans-serif;color: #303744B5;font-size: 14px;font-style: normal;}
 .consultant-testimonial .testimonial-text {border-bottom: solid 1px #00000017;padding-bottom: 30px;margin-bottom: 30px;margin-top: 18px;}
 .consultant-testimonial .testimonial-block .testimonial-img {margin-right: 15px;}
-.consultant-testimonial .testimonialnone {margin: 0;padding: 0;border: none;} 
+.consultant-testimonial .testimonialnone {margin: 0;padding: 0;border: none;}
 .consultant-testimonial .testimonial-text .testimonial-block {display: flex;align-items: center;margin-top: 18px;}
 .consultant-testimonial .testimonial-button {text-align: center;margin-top: 20px;}
 .consultant-testimonial .testimonial-button a {font-family: 'Public Sans', sans-serif;font-size: 16px;color: #0036E3;font-weight: 600;display: inline-block;text-decoration: none;line-height: normal;border-bottom: solid 1px #275846;padding-bottom: 2px;}
@@ -471,8 +473,8 @@ height: 248px;
 .client-job-post .next-button a:hover {color: #0036E3;background: #fff;}
 
 .client-job-post .form-group2 img {position: absolute;top: 18px;right: 15px;cursor: pointer;}
-.client-job-post .client-form .form-new {margin-top: 30px;position: relative;}  
-.client-job-post .client-job-post .client-form .form-new {margin-top: 30px;} 
+.client-job-post .client-form .form-new {margin-top: 30px;position: relative;}
+.client-job-post .client-job-post .client-form .form-new {margin-top: 30px;}
 .client-job-post .client-form .form-new label {position: absolute;margin: 0;left: 15px;color: #303744;font-size: 15px;font-weight: 500;top: -9px;background: #fff;padding: 0 10px;}
 .client-job-post .client-form .form-new textarea {width: 100%;padding: 15px;border: solid 2px #0000001A;border-radius: 4px;color: #303744B2;font-size: 15px;height: 120px;outline: none;}
 .client-job-post .client-form .upload-file {text-align: center;border: dashed 2px #0000001A;border-radius: 4px;padding: 23px 15px;margin-top: 20px;}
@@ -511,8 +513,8 @@ height: 248px;
 .client-job-post .client-job-col .client-job-hourly .hourly-img {width: 18%;}
 .client-job-post .client-job-col .client-job-hourly .hourly-text {width: 77%;margin-left: 20px;}
 .client-job-post .client-job-col h3 {margin: 0;font-size: 19px;font-weight: 500;color: #303744;}
- 
-.client-job-post .client-budget {margin-top: 40px;} 
+
+.client-job-post .client-budget {margin-top: 40px;}
 .client-job-post .client-budget h3 {margin: 0;font-size: 19px;font-weight: 500;color: #303744;}
 .client-job-post .client-budget select {appearance: none;border: solid 2px #0E00624D;border-radius: 4px;height: 55px;padding: 0 10px;margin-top: 15px;outline: none;background: url(../images/arrow-icon.png) no-repeat;background-position: right 20px center;}
 .client-job-post .client-budget .select1 {width: 150px;margin-right: 15px;}
@@ -584,7 +586,7 @@ height: 248px;
 .verify-email .verify-link ul {padding: 0;margin: 25px 0 30px;text-align: center;}
 .verify-email .verify-link ul li {display: inline-block;margin: 0 6px;}
 .verify-email .verify-link ul li a {font-size: 16px;font-weight: 500;color: #0036E3;}
-.verify-email .verify-link ul li a:hover {color: #303744;} 
+.verify-email .verify-link ul li a:hover {color: #303744;}
 
 .verify-complete .register-form .verify-complete-text h3 {text-align: left !important;font-family: Colfax;font-size: 19px;font-weight: 500;margin: 30px 0;}
 .verify-complete .register-form .verify-complete-text p {margin: 20px 0 0;color: #303744;font-size: 16px;font-weight: 400;line-height: 28px;text-align: left;}
@@ -601,7 +603,7 @@ height: 248px;
 .register-profile .expert-left ul li p {margin: 0;color: #303744;font-size: 18px;font-weight: 400;}
 .register-profile .expert-left ul li {margin-bottom: 17px;}
 .register-profile .expert-left .profile-edit-latter p {margin: 0;font-size: 14px;font-weight: 400;}
-.register-profile .expert-left .profile-edit-latter {margin: 40px 0 20px;} 
+.register-profile .expert-left .profile-edit-latter {margin: 40px 0 20px;}
 .register-profile .expert-left .profile-button a {background: #0036E3;color: #fff;font-weight: 500;text-decoration: none;border-radius: 4px;width: 525px;height: 55px;display: inline-table;text-align: center;line-height: 55px;border: solid 2px #0036E3;transition: all 500ms;}
 .register-profile .expert-left .profile-button a:hover {background: #fff;color: #0036E3;}
 .register-profile {margin-bottom: 80px;}
@@ -668,7 +670,7 @@ height: 248px;
 .register-timeline-11 .timeline-left ul:after {height: 385px;}
 .register-timeline-11 .timeline-left ul li:nth-child(2):after, .register-timeline-11 .timeline-left ul li:nth-child(3):after, .register-timeline-11 .timeline-left ul li:nth-child(4):after, .register-timeline-11 .timeline-left ul li:nth-child(5):after, .register-timeline-11 .timeline-left ul li:first-child:after, .register-timeline-10 .timeline-left ul li:nth-child(2):after, .register-timeline-10 .timeline-left ul li:nth-child(3):after, .register-timeline-10 .timeline-left ul li:nth-child(4):after, .register-timeline-10 .timeline-left ul li:first-child:after, .register-timeline-5 .timeline-left ul li:nth-child(2):after, .register-timeline-5 .timeline-left ul li:nth-child(3):after, .register-timeline-5 .timeline-left ul li:first-child:after, .register-timeline-4 .timeline-left ul li:nth-child(2):after, .register-timeline-4 .timeline-left ul li:nth-child(3):after, .register-timeline-4 .timeline-left ul li:first-child:after, .register-timeline-3 .timeline-left ul li:nth-child(2):after, .register-timeline-3 .timeline-left ul li:nth-child(1):after, .register-timeline-2 .timeline-left ul li:first-child:after {content: "\f00c";font-size: 12px;font-family: fontawesome;color: #fff;background: #0036E3;text-align: center;line-height: 10px;border-color: #0036E3;}
 .register-timeline-11 .timeline-left ul li:nth-child(6):after, .register-timeline-10 .timeline-left ul li:nth-child(5):after, .register-timeline-5 .timeline-left ul li:nth-child(4):after, .register-timeline-4 .timeline-left ul li:nth-child(4):after, .register-timeline-2 .timeline-left ul li:nth-child(2):after, .register-timeline .timeline-left ul li:first-child:after, .register-timeline-3 .timeline-left ul li:nth-child(3):after {border-color: #0036E3;}
- 
+
 .register-timeline .timeline-right .timeline-text h2 {color: #303744;font-size: 23px;font-weight: 500;}
 .register-timeline .timeline-right .timeline-text  p {margin: 0;font-size: 16px;font-weight: 400;color: #303744;}
 .register-timeline .timeline-right .timeline-text2 h2 {font-size: 19px;font-weight: 500;color: #303744;}
@@ -811,11 +813,11 @@ height: 248px;
 }
 .portfolioCaousel .owl-nav .owl-prev { margin-right: 4px; }
 .portfolioCaousel .owl-nav .owl-prev:hover,
-.portfolioCaousel .owl-nav .owl-next:hover { 
+.portfolioCaousel .owl-nav .owl-next:hover {
   background: #0036E3 !important;color: #fff !important;
 }
 .portfolioCaousel .owl-nav .owl-prev.disabled,
-.portfolioCaousel .owl-nav .owl-next.disabled { 
+.portfolioCaousel .owl-nav .owl-next.disabled {
   background: #fff !important;color: #000000 !important;
 }
 
@@ -825,12 +827,291 @@ height: 248px;
 
 .border-bottom-line::after { background-color: rgba(14, 0, 98, 0.10);content: '';width: 80%;height: 1px;display: block;position: absolute;bottom: 0%;left: 50%;transform: translateX(-50%); }
 
+
+
+
+/* =============================== Expert Profile Update css start Here ========================================== */
+
+
+
+.modal-dialog-add-expert {
+  width: 800px;
+  height: 955px;
+  box-shadow: 8px 8px 32px 0px #0E00622E;
+  max-width: 100%;
+}
+
+.consultant-work-add h3 {
+  display: flex;
+  align-items: center;
+  color: #303744;
+  font-size: 23px;
+  font-family: Colfax;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+  gap: 10px;
+}
+span.add-exp-text {
+  margin-top: 10px;
+}
+
+.modal-content-expert {
+  padding: 10px 24px 24px 24px;
+}
+
+.expert-for-label {
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+
+select.add-expert-select {
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+}
+
+select.add-expert-select:focus{
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+  box-shadow: none;
+}
+
+
+input.add-expert-select {
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+  min-height: 48px;
+}
+
+input.add-expert-select:focus{
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+  box-shadow: none;
+  min-height: 48px;
+}
+
+
+.start-end{
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.form-check-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #303744;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+
+}
+
+.textarea-for-label{
+  color:  #191D24;
+font-family: Colfax;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+
+}
+
+.expert-text-area {
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  padding: 15px;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  width: 720px;
+  height: 134px;
+  max-width: 100%;
+}
+
+.expert-text-area:focus {
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  padding: 15px;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  width: 720px;
+  height: 134px;
+  max-width: 100%;
+}
+
+.btn-cancel{
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid  #0036E3;
+  color:  #0036E3;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  background: transparent;
+}
+
+.btn-cancel:hover{
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid  #0036E3;
+  color:  #0036E3;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  background: transparent;
+}
+
+.btn-exp-save{
+  border-radius: 4px;
+  background: #0036E3;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  border: 2px solid  #0036E3;
+
+}
+
+.btn-exp-save:hover{
+  border-radius: 4px;
+  background: #0036E3;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  border: 2px solid  #0036E3;
+}
+
+.btn-exp-save:active{
+  border-radius: 4px;
+  background: #0036E3;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  border: 2px solid  #0036E3;
+}
+
+.upload-area {
+  display: flex;
+  padding: 25px 24px;
+  flex-direction: column;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 2px dashed rgba(48, 55, 68, 0.25);
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.upload-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.category-label {
+  position: absolute;
+  top: -11px;
+  left: 15px;
+  background: #fff;
+  color:  #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.add-title-label {
+  position: absolute;
+  top: -11px;
+  left: 15px;
+  background: #fff;
+  color:  #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.suggestion-area p {
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}
+
+.suggestion-area span.suggestion-skill {
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* =============================== Expert Profile Update css End Here ========================================== */
+
+
 @media (min-width: 990px){
 /* profile page box width set */
 .find-consultant-details > .container.profile__page > .row .col-md-4 {
   width: 348px;
-}  
+}
 .find-consultant-details > .container.profile__page > .row .col-md-8 {
   width: calc(100% - 348px);
-}  
+}
 }
