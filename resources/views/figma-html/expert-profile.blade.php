@@ -10,7 +10,7 @@
             <div class="consultant-left shadow-none">
               <div class="consultant-left-block">
                 <div class="profile__box rounded-circle overflow-hidden mx-auto position-relative">
-                  <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}" class="rounded-circle img-fluid"></img> 
+                  <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}" class="rounded-circle img-fluid"></img>
                   <label for="editProfilePic" class="position-absolute bottom-0 start-0 w-100 p-2 text-white fw-medium upload__btn">
                     <span>Edit</span>
                     <input type="file" name="editProfilePic" id="editProfilePic" class="opacity-0 w-0 h-0 position-absolute top-0 left-0">
@@ -27,7 +27,7 @@
                       <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
                     </svg>
                   </button>
-                </div> 
+                </div>
               </div>
               <div class="consultant-left-sydney pb-3 mb-4 border-bottom-line position-relative">
                 <ul>
@@ -45,10 +45,10 @@
                   </li>
                 </ul>
               </div>
-               
+
               <div class="consultant-l languages">
                 <h3 class="d-flex align-items-center mb-2">
-                  Languages 
+                  Languages
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -59,7 +59,7 @@
               </div>
               <div class="consultant-l expertise">
                 <h3 class="d-flex align-items-center mb-2">
-                  <span>Expertise</span> 
+                  <span>Expertise</span>
                   <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -88,45 +88,23 @@
                 <p>Master’s in Public Health <span>EduExHub University</span> 1993 - 1995</p>
                 <p>Bachelor in Public Health <span>EduExHub University</span> 1989 - 1993</p>
               </div>
-              <div class="consultant-l profile">
-                <h3 class="d-flex align-items-center mb-2">
-                  <span>University Profile</span>
-                  <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                    </svg>
-                  </button>
-                </h3>
-                <p><a href="#">http://consultantedu.com/freelancer/mr-consultant20230405-091010</a></p>
-              </div>
-              <div class="consultant-l profile">
-                <h3 class="d-flex align-items-center mb-2">
-                  <span>Research Profile</span>
-                  <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                    </svg>
-                  </button>
-                </h3>
-                <p><a href="#">http://consultantedu.com/freelancer/mr-consultant20230405-091010</a></p>
-              </div>
             </div>
           </div>
           <div class="col-md-8 ps-0">
             <div class="consultant-right">
               <div class="consultant-d border-0 p-0 shadow-none">
-                <div class="consultant-d-left"> 
+                <div class="consultant-d-left">
                   <h3 class="d-inline-flex align-items-center">
-                    <span>Biography</span> 
+                    <span>Biography</span>
                     <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                       <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
                       </svg>
                     </button>
                   </h3>
-                 
+
                   <p class="d-inline-flex align-items-center">
-                    <span>$200/hour</span> 
+                    <span>$200/hour</span>
                     <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                       <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -138,9 +116,9 @@
               </div>
               <div class="consultant-prof">
                 <div class="consultant-prof1">
-                  <div class="row"> 
+                  <div class="row">
                     <h3 class="d-flex align-items-center">
-                      <span>Book Expert for Consultation</span> 
+                      <span>Book Expert for Consultation</span>
                       <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -170,9 +148,9 @@
                   </div>
                 </div>
                 <div class="consultant-prof1">
-                  <div class="row"> 
+                  <div class="row">
                     <h3 class="d-flex align-items-center">
-                      <span>Book Expert for Consultation</span> 
+                      <span>Book Expert for Consultation</span>
                       <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -202,9 +180,9 @@
                   </div>
                 </div>
                 <div class="consultant-prof1">
-                  <div class="row"> 
+                  <div class="row">
                     <h3 class="d-flex align-items-center">
-                      <span>Book Expert for TV Interview</span> 
+                      <span>Book Expert for TV Interview</span>
                       <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -238,13 +216,13 @@
                 <h3>
                   <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img>
                   <span>Work Experience</span>
-                  <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                  <i class="fa-solid fa-plus"></i>
-                  </button> 
+                  <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#WorkExperienceForm" data-bs-whatever="@mdo">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
                 </h3>
-                <div class="consultant-work-b"> 
+                <div class="consultant-work-b">
                   <h4 class="d-flex align-items-center">
-                    <span>Director of Curriculum Development</span> 
+                    <span>Director of Curriculum Development</span>
                     <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                       <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -257,9 +235,9 @@
                   <p>Conducting ongoing research to identify emerging trends and best practices in public health education.</p>
                   <p>Overseeing the development of assessment tools and methodologies to evaluate student learning outcomes.</p>
                 </div>
-                <div class="consultant-work-b"> 
+                <div class="consultant-work-b">
                   <h4 class="d-flex align-items-center">
-                    <span>Lead Researcher in Public Health Education</span> 
+                    <span>Lead Researcher in Public Health Education</span>
                     <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                       <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -271,9 +249,9 @@
                   <p>Leading research projects focused on identifying key factors contributing to student engagement and success in public health programs.</p>
                   <p>Collaborating with international partners to conduct comparative studies on  curriculum design and its impact on educational outcomes.</p>
                 </div>
-                <div class="consultant-work-b"> 
+                <div class="consultant-work-b">
                   <h3 class="d-flex align-items-center">
-                    <span>Consultant for Educational Institutions</span> 
+                    <span>Consultant for Educational Institutions</span>
                     <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
                       <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
@@ -330,12 +308,12 @@
               <div class="consultant-work mb-5">
                 <h3>
                   <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img>
-                  <span>Portfolio</span>
-                  <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
+                  <span>Portfolio </span>
+                  <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#addPortfolio" data-bs-whatever="@mdo">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.37504 10.625H4.58337V9.37504H9.37504V4.58337H10.625V9.37504H15.4167V10.625H10.625V15.4167H9.37504V10.625Z" fill="#0036E3"/>
                     </svg>
-                  </button> 
+                  </button>
                 </h3>
                 <div class="mt-4">
                   <div class="owl-carousel portfolioCaousel">
@@ -498,7 +476,203 @@
         </div>
       </div>
     </div>
+        <div class="consultant-work">
+            <h3>
+              <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img>
+              <span>Work Experience</span>
+              <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#WorkExperienceForm" data-bs-whatever="@mdo">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </h3>
+        </div>
+
+
+<!-- ===================== Work Experience Modal start Here ====================== -->
+
+        <div class="modal fade" id="WorkExperienceForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-add-expert">
+            <div class="modal-content modal-content-expert">
+              <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body border-0 pt-0">
+
+              <div class="consultant-work-add">
+                  <h3>
+                   <span class="add-exp-img"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img></span>
+                    <span class="add-exp-text">Add Work Experience</span>
+                  </h3>
+                </div>
+
+                <form>
+                  <div class="mb-4">
+                    <label for="recipient-name" class="col-form-label expert-for-label">Name of institution</label>
+                      <select class="form-select form-select-lg mb-3 add-expert-select" aria-label=".form-select-lg example">
+                        <option selected>Select an institution</option>
+                        <option value="1">Select an institution</option>
+                        <option value="2">Select an institution</option>
+                        <option value="3">Select an institution</option>
+                      </select>
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="recipient-name" class="col-form-label expert-for-label pt-0">Role / Job title</label>
+                      <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                        <option selected>Select an institution</option>
+                        <option value="1">Select an institution</option>
+                        <option value="2">Select an institution</option>
+                        <option value="3">Select an institution</option>
+                      </select>
+                  </div>
+                    <div class="row mb-2">
+                      <h3 class="start-end">Start date</h3>
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label expert-for-label">Month</label>
+                            <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                              <option selected>Select month</option>
+                              <option value="1">Select month</option>
+                              <option value="2">Select month</option>
+                              <option value="3">Select month</option>
+                            </select>
+                        </div>
+                      <div class="col-md-6">
+                        <label for="recipient-name" class="col-form-label expert-for-label">Year</label>
+                        <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                          <option selected>Select Year</option>
+                          <option value="1">Select Year</option>
+                          <option value="2">Select Year</option>
+                          <option value="3">Select Year</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <h3 class="start-end">End date</h3>
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label expert-for-label">Month</label>
+                            <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                              <option selected>Select month</option>
+                              <option value="1">Select month</option>
+                              <option value="2">Select month</option>
+                              <option value="3">Select month</option>
+                            </select>
+                        </div>
+                      <div class="col-md-6">
+                        <label for="recipient-name" class="col-form-label expert-for-label">Year</label>
+                        <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                          <option selected>Select Year</option>
+                          <option value="1">Select Year</option>
+                          <option value="2">Select Year</option>
+                          <option value="3">Select Year</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12">
+                            <div class="form-check form-check-all">
+                              <input class="form-check-input" type="checkbox" id="gridCheck">
+                              <label class="form-check-label expert-for-label" for="gridCheck">
+                              I currently work here
+                              </label>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="row mt-4">
+                    <h3 class="start-end">Description</h3>
+                        <div class="mb-3">
+                          <label for="exampleFormControlTextarea1" class="form-label textarea-for-label">Add a simple description of your responsibilities and achievements in this role.</label>
+                          <textarea class="form-control expert-text-area" id="exampleFormControlTextarea1" rows="3">Include a few brief details about what you did in this role.
+                          </textarea>
+                        </div>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn btn-primary btn-exp-save">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ===================== Work Experience Modal start Here ====================== -->
+
+
+
+
+<!-- ===================== Work Experience Modal start Here ====================== -->
+
+        <div class="modal fade" id="addPortfolio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-add-expert">
+            <div class="modal-content modal-content-expert">
+              <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body border-0 pt-0">
+              <div class="consultant-work-add">
+                  <h3>
+                   <span class="add-exp-img"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img></span>
+                    <span class="add-exp-text">Add Portfolio</span>
+                  </h3>
+                </div>
+                <form>
+                <div class="row mt-4">
+                  <div class="col-md-12">
+                      <div class="upload-area">
+                      <label>
+                         <div class="upload-item">
+                            <img src="{{ asset('/assets/frontend/img/upload.png') }}"></img>
+                            <h4>Clik to upload or drag & drop</h4>
+                            <p>Drag & drop any images or documents that might be helpful in explaining your brief here</p>
+                         </div>
+                          <input type="file" style="visibility: hidden;"/>
+                      </label>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="mb-4 position-relative">
+                        <label for="exampleInputEmail1" class="form-label position-absolute add-title-label">Title of the project</label>
+                        <input type="text" class="form-control add-expert-select" id="" aria-describedby="emailHelp" placeholder="Type project title">
+                       </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="mb-3 position-relative">
+                        <label for="exampleInputEmail1" class="form-label position-absolute category-label">Category</label>
+                        <input type="text" class="form-control add-expert-select" id="" aria-describedby="emailHelp" placeholder="Type the skills & hit enter">
+                       </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="suggestion-area">
+                      <p><span class="suggestion-skill">Suggestion skills: </span> Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</p>
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn btn-primary btn-exp-save">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ===================== Work Experience Modal start Here ====================== -->
+
+
+
 @endsection
+
+
+
+
 
 @push('js')
 <!-- Expert profile Portfolio slide -->
@@ -508,14 +682,14 @@
         items: 3,
         autoplay:false,
         autoplayTimeout: 5500,
-        autoplayHoverPause: true, 
+        autoplayHoverPause: true,
         smartSpeed: 550,
         loop: false,
-        margin: 20,  
+        margin: 20,
         nav: true,
         dots: true,
-        responsiveClass: true, 
-        responsive: { 
+        responsiveClass: true,
+        responsive: {
             0: { items: 1 },
             600: { items: 2 },
             992: { items: 3 },
@@ -525,7 +699,7 @@
           '<i class="fa-solid fa-chevron-left"></i>',
           '<i class="fa-solid fa-chevron-right"></i>'
         ]
-      });   
-      
+      });
+
     </script>
 @endpush
