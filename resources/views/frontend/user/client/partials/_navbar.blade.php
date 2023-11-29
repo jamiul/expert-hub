@@ -5,7 +5,7 @@
     <div class="top-nav-area">
         <div class="logo-area">
             <div class="logo">
-                <a href="/">
+                <a href="{{ route('dashboard') }}">
                     <img src="{{ asset('assets/frontend/img/logo.png') }}" />
                 </a>
             </div>
@@ -31,9 +31,6 @@
                     <li>
                         <a href="#">Settings</a>
                     </li>
-                    @auth
-                    <livewire:logout />
-                    @endauth
                 </ul>
             </nav>
         </div>
@@ -76,8 +73,9 @@
             <div class="dropdown">
                 <span class="profile-bell position-relative dropdown-toggle" data-bs-toggle="dropdown"
                     aria-expanded="false"><a href="#"><img
-                            src="{{ asset('assets/frontend/img/profile-messanger.png') }}" alt="message"> </a> <span
-                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border-light rounded-circle top-batch">1</span></span>
+                            src="{{ asset('assets/frontend/img/profile-messanger.png') }}" alt="message"> </a>
+                    <span
+                        class="position-absolute  translate-middle p-1 bg-danger border-light rounded-circle top-batch">1</span></span>
                 <div class="dropdown-menu dropdown-menu-end message-setting-area">
                     <span class="material-symbols-outlined active m-top-arrow-message"> arrow_drop_up </span>
 
@@ -156,8 +154,7 @@
                                     <div class="message-profile position-relative">
                                         <a href="#"><img
                                                 src="{{ asset('assets/frontend/img/message-profile4.png') }}"
-                                                alt="message profile"> <span
-                                                class="indicator position-absolute"></span>
+                                                alt="message profile"> <span class="indicator position-absolute"></span>
                                         </a>
                                     </div>
                                     <div class="message-text d-flex flex-column">
@@ -179,9 +176,8 @@
                                     <div class="message-profile position-relative">
                                         <a href="#"><img
                                                 src="{{ asset('assets/frontend/img/message-profile5.png') }}"
-                                                alt="message profile"> <span
-                                                class="indicator position-absolute"></span>
-                                        </a>
+                                                alt="message profile">
+                                            <span class="indicator position-absolute"></span> </a>
                                     </div>
                                     <div class="message-text d-flex flex-column">
                                         <h5>Floyd Miles</h5>
@@ -208,9 +204,12 @@
 
             </div>
 
-            <span class="profile-bell position-relative"> <a href="#"><img
-                        src="{{ asset('assets/frontend/img/profile-ring.png') }}" alt=""></a> <span
-                    class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-5 border-light rounded-circle top-batch">9+</span></span>
+            <span class="profile-bell position-relative"> <img
+                    src="{{ asset('assets/frontend/img/profile-ring.png') }}" alt="">
+
+                <span
+                    class="position-absolute translate-middle p-1 bg-danger border border-5 border-light rounded-circle top-batch-more">9+</span>
+            </span>
 
             <div class="dropdown">
                 <span class="avatar dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -234,24 +233,18 @@
                             </div>
                         </div>
                         <div class="single-option d-flex flex-column">
-                            <h6>
-                                <a href="#">
-                                    <span>
-                                        <img src="{{ asset('assets/frontend/img/user.png') }}" alt="">
-                                    </span>
-                                    <span class="s-profile">Profile</span>
-                                </a>
-                            </h6>
+                            <h6><a href="#"><span> <img src="{{ asset('assets/frontend/img/user.png') }}"
+                                            alt=""> </span> <span class="s-profile">Profile</span></a> </h6>
                             <h6><a href="#"><span> <img src="{{ asset('assets/frontend/img/setting.png') }}"
-                                            alt="">
-                                    </span> <span class="s-setting">Setting</span></a> </h6>
-                            <h6><a href="#"><span> <img src="{{ asset('assets/frontend/img/logout.png') }}"
-                                            alt="">
-                                    </span> <span class="s-logout">Logout</span></a> </h6>
+                                            alt=""> </span> <span class="s-setting">Setting</span></a> </h6>
+                            @auth
+                                <livewire:logout />
+                            @endauth
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </header>

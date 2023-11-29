@@ -1,20 +1,23 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
-<nav class="navbar navbar-expand-xxl expert__dashboard__nav">
-    <div class="container-fluid algin-items-center mx-auto position-relative">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
+    <div class="container-fluid algin-items-center mx-auto">
+        <a class="navbar-brand" href="{{ route('dashboard') }}">
             <img src="{{ asset('assets/frontend/img/logo.png') }}" />
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                    <a class="nav-link {{ request()->is('figma/expert-profile') ? 'active' : '' }}" aria-current="page"
+                        href="/figma/expert-profile">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Analytics</a>
+                    <a class="nav-link {{ request()->is('figma/expert-status-analytics') ? 'active' : '' }}"
+                        href="/figma/expert-status-analytics">Analytics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Services</a>
+                    <a class="nav-link {{ request()->is('figma/expert-services') ? 'active' : '' }}"
+                        href="/figma/expert-services">My Services</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="projectDrop" role="button"
@@ -26,9 +29,6 @@
                             <a class="dropdown-item" href="/figma/expert-dashboard">Dashboard</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/figma/expert-profile">Profile</a>
-                        </li>
-                        <li>
                             <a class="dropdown-item" href="/figma/expert-status">Status</a>
                         </li>
                         <li>
@@ -38,16 +38,13 @@
                             <a class="dropdown-item" href="/figma/expert-status-analytics">Status Analytics</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/figma/expert-services">Service</a>
-                        </li>
-                        <li>
                             <a class="dropdown-item" href="/figma/expert-active-contract">Active Contracts</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="/figma/expert-all-contract">All Contracts</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/figma/expert-work-diray">Work Diray</a>
+                            <a class="dropdown-item" href="/figma/expert-work-diary">Work Diray</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="/figma/expert-proposal">Proposals</a>
@@ -87,7 +84,7 @@
                     <a class="nav-link disabled" href="#">Find Project</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="serviceDrop" role="button"
+                    <a class="nav-link dropdown-toggle activ" href="#" id="serviceDrop" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Settings
                     </a>
@@ -104,9 +101,6 @@
                         </li>
 
                     </ul>
-                </li>
-                <li>
-                    <livewire:logout />
                 </li>
             </ul>
 
@@ -266,12 +260,14 @@
 
             </div>
             <div class="dropdown">
+                <!-- data-bs-auto-close="false" -->
                 <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden"
                     href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
                         class="rounded-circle" alt="avatar">
                 </a>
-                <div class="dropdown-menu profile__dropdown bg-white border-0" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-menu profile__dropdown bg-white border-0" aria-labelledby="dropdownMenuLink"
+                    onclick="stopPropagation(event)">
                     <div class="text-center">
 
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile.png') }}"
@@ -317,19 +313,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="d-inline-flex align-items-center small fw-medium">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                    viewBox="0 0 24 25" fill="none">
-                                    <path
-                                        d="M4 18.3335H6V20.3335H18V4.3335H6V6.3335H4V3.3335C4 2.78122 4.44772 2.3335 5 2.3335H19C19.5523 2.3335 20 2.78122 20 3.3335V21.3335C20 21.8858 19.5523 22.3335 19 22.3335H5C4.44772 22.3335 4 21.8858 4 21.3335V18.3335ZM6 11.3335H13V13.3335H6V16.3335L1 12.3335L6 8.3335V11.3335Z"
-                                        fill="#A1A0A5" />
-                                </svg>
-                                <span class="ps-2">Logout</span>
-                            </a>
+                            @auth
+                            <livewire:logout />
+                            @endauth
                         </li>
                     </ul>
 
                 </div>
+
             </div><!--.//dropdown-->
             <button class="navbar-toggler border-0 rounded-0 p-1" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -339,3 +330,9 @@
         </div>
     </div><!--.//container-->
 </nav>
+<script>
+    // Stop dropdown close option when click inside the menu
+    function stopPropagation(event) {
+        event.stopPropagation();
+    }
+</script>
