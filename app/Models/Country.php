@@ -10,6 +10,8 @@ class Country extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected static function boot()
     {
         parent::boot();

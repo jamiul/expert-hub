@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace {{ namespace }};
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Expertise extends Model
+class {{ class }} extends Model
 {
     use SoftDeletes;
-    
+
     protected $guarded = [];
 }
