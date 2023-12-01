@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('user_type')->nullable();
-            $table->string('title')->nullable();
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('username')->unique()->nullable();
+            $table->string('user_type');
+            $table->string('title');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('country_id')->nullable();
-            $table->boolean('send_tips')->default(false);
-            $table->boolean('terms_agreed')->default(false);
-            $table->string('status')->nullable();
+            $table->foreignId('country_id');
+            $table->boolean('send_tips')->default(1);
+            $table->boolean('terms_agreed')->default(1);
+            $table->boolean('active')->default(1);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

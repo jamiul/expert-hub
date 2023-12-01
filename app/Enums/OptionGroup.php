@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum OptionGroupEnum: string
+enum OptionGroup: string
 {
     case BudgetUSD = 'budget_usd';
     case BudgetAUD = 'budget_aud';

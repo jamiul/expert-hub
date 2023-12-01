@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum LanguageProficiencyEnum
+enum LanguageProficiency
 {
     case Basic;
     case Conversational;
