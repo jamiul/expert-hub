@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.auth')
 @section('content')
     @livewire('auth.login')
 @endsection

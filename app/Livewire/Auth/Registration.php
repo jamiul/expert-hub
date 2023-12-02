@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Auth;
 
 use App\Models\Country;
 use App\Models\Profile;
@@ -13,9 +13,9 @@ use Livewire\Component;
 
 class Registration extends Component
 {
-    protected array $availableTypes = ['expert', 'client'];
+    protected array $availableTypes = ['Expert', 'Client'];
 
-    public int $currentStep = 1;
+    public int $currentStep = 2;
 
     public array $titles;
 
@@ -28,8 +28,8 @@ class Registration extends Component
     public string $email;
     public string $password;
     public string $country_id;
-    public ?bool $newsletter = false;
-    public ?bool $terms;
+    public ?bool $send_tips = false;
+    public ?bool $terms_agreed;
 
     public function mount()
     {
@@ -43,11 +43,11 @@ class Registration extends Component
             'title' => ['required'],
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'email' => ['required','email', 'unique:users'],
+            'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', Password::min(8)],
             'country_id' => ['required'],
-            'newsletter' => ['nullable'],
-            'terms' => ['required'],
+            'send_tips' => ['nullable'],
+            'terms_agreed' => ['required'],
         ];
     }
 
@@ -82,14 +82,14 @@ class Registration extends Component
         return redirect()->route('verification.notice');
         // dd(auth()->user());
     }
-    protected function fullName():string
+    protected function fullName(): string
     {
         return $this->first_name . ' ' . $this->last_name;
     }
-    
+
     public function render()
     {
-        return view('livewire.registration');
+        return view('livewire.auth.registration');
     }
 
     public function typeSelected()

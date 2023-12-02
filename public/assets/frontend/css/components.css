@@ -1,3 +1,173 @@
+.form-input-group{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.form-input-group .form-input-field{
+    background: transparent;
+    border: solid 2px rgba(0, 0, 0, 0.1);
+    height: 55px;
+    width: 100%;
+    border-radius: 4px!important;
+    padding: 0 15px;
+    outline: none;
+    font-size: 15px;
+    color: #303744;
+}
+.form-input-group .form-input-field:focus {
+    border-color: #0036E3;
+    box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .1);
+}
+.form-input-group .form-input-label {
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #303744;
+    position: absolute;
+    top: -9px;
+    background: #fff;
+    padding: 0 10px;
+    left: 15px;
+}
+.form-input-group .form-input-field.form-textarea-field{
+    height:inherit;
+}
+.form-input-group .form-input-field.form-select-field{
+    background: url(../img/arrow-icon.png) no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-position: right 20px center;
+    appearance: none;
+}
+.form-input-group.form-multiselect{
+    background: url(../img/arrow-icon.png) no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-position: right 20px center;
+    appearance: none;
+}
+.form-input-group.form-multiselect .choices{
+    width: 100%;
+}
+.form-input-group.form-multiselect .choices:after{
+    display: none;
+}
+.form-input-group.form-multiselect .choices__list--single .choices__button{
+    display: none;
+}
+.form-input-group.form-multiselect .choices__inner{
+    min-height: 55px;
+    padding-top: 12px;
+    padding-right: 35px;
+    background: transparent;
+    border: solid 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.form-input-group.form-multiselect .is-focused .choices__inner{
+    border-color: #0036E3;
+    box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .3);
+}
+.form-input-group.form-multiselect .choices__list--dropdown{
+    margin-top: 3px;
+    z-index: 2;
+    border: none;
+    box-shadow: 0px 3px 6px 0px rgba(14, 0, 98, 0.10);
+}
+.form-input-group.form-multiselect .choices__input{
+    background: none;
+    font-size: 15px;
+    color: #303744;
+}
+.form-input-group.form-multiselect .choices__list--multiple .choices__item{
+    border-color: #0036E3;
+    background-color: #0036E3;
+}
+.form-input-group.form-multiselect .choices__placeholder{
+    font-size: 15px;
+}
+.form-input-group.form-multiselect .choices[data-type*="select-multiple"] .choices__button{
+    border-left: 1px solid rgba(255,255,255, 0.5);
+}
+.form-radio-group .form-radio-options{
+    display: flex;
+    flex-direction: column;
+}
+.form-radio-group.form-radio-inline .form-radio-options{
+    flex-direction: row;
+}
+.form-radio-group.form-radio-inline .form-radio-option{
+    margin-right: 15px;
+}
+.form-radio-group .form-radio-field{
+    background-image:none;
+    margin-top: 3px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+    width: 20px;
+    height: 20px;
+}
+.form-radio-group .form-radio-label{
+    color: #303744;
+    font-weight: 500;
+    font-size: 14px;
+}
+.form-radio-group .form-radio-title{
+    font-size: 14px;
+}
+.form-radio-group .form-radio-field:checked{
+    background-color: #0036E3;
+    border: 2px solid #0036E3;
+    box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .2);
+}
+.form-radio-group{
+    margin-bottom: 25px;
+}
+.form-check-group{
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-check-group .form-check-field{
+    margin-top: 0;
+    margin-right: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+    width: 20px;
+    height: 20px;
+}
+.form-check-group .form-check-field:checked{
+    background-color: #0036E3;
+    border: 2px solid #0036E3;
+}
+.form-check-group .form-check-label{
+    font-size: 15px;
+    flex: 1;
+}
+.form-input-group.form-input-has-icon .form-input-icon{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    border: none;
+    background: none;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.25);
+}
+.form-input-group .form-input-required{
+    color: #ff0000;
+}
+
+.form-input-group .form-input-has-error{
+    border: 2px solid #FF0000 !important;
+    box-shadow: 0 0 0 .25rem rgba(255, 0, 0, .1);
+}
+.form-input-error-message {
+    color: #FF0000;
+    font-size: 14px;
+    margin-top: 8px;
+}
 /*Button Styles*/
 .button{
     font-size: 15px;
@@ -54,7 +224,9 @@
     font-size: 14px;
     font-weight: 500;
 }
-
+.link-button{
+    color: rgba(0, 54, 227, 1);
+}
 .link-button:hover{
     color: #0036E3;
 }

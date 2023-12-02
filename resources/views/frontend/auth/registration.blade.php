@@ -1,8 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.auth')
 @section('content')
-    @include('frontend.home.register.partials._breadcrumb')
-    @livewire('registration')
+    @livewire('auth.registration')
 @endsection
-@push('bottom_scripts')
-    <script src="{{ asset('assets/frontend/js/sign-up.js') }}"></script>
-@endpush
