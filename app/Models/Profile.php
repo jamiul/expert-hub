@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Enums\ProfileStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Profile extends Model
 {
-    use HasFactory;
+    use SoftDeletes;
 
     protected $guarded = [];
 
     protected $casts = [
-        'research_profiles' => 'array'
+        'status' => ProfileStatus::class
     ];
 
     public function user()

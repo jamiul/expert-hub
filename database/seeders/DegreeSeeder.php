@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Degree;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DegreeSeeder extends Seeder
 {
@@ -12,6 +13,18 @@ class DegreeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Degree::truncate();
+
+        $feed = database_path('data/degrees.csv');
+        $data = array_map('str_getcsv', file($feed));
+
+        $degrees = [];
+        foreach ($data as $degree) {
+            $degrees[] = [
+                'name' => $degree[0],
+            ];
+        }
+
+        DB::table('degrees')->insert($degrees);
     }
 }

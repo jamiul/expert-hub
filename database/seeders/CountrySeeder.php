@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Country;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CountrySeeder extends Seeder
 {
@@ -12,6 +13,19 @@ class CountrySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Country::truncate();
+
+        $feed = database_path('data/countries.csv');
+        $data = array_map('str_getcsv', file($feed));
+
+        $countries = [];
+        foreach($data as $country){
+            $countries[] = [
+                'code' => $country[0],
+                'name' => $country[1],
+            ];
+        }
+        
+        DB::table('countries')->insert($countries);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\UserType;
 use App\Notifications\EmailVerificationNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -34,6 +35,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'type' => UserType::class
     ];
 
     public function userProfile()

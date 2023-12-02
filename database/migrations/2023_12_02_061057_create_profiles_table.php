@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('code')->unique();
-            $table->string('flag')->nullable();
+            $table->foreignId('user_id');
+            $table->decimal('hourly_rate')->nullable();
+            $table->string('picture')->nullable();
+            $table->longText('biography')->nullable();
+            $table->string('status'); //App\Enums\ProfileStatus
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('profiles');
     }
 };

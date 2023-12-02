@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Auth;
 
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\RateLimiter;
@@ -25,7 +25,7 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.login');
+        return view('livewire.auth.login');
     }
 
     public function login()
@@ -74,5 +74,4 @@ class Login extends Component
     {
         return Str::transliterate(Str::lower($this->email) . '|' . request()->ip());
     }
-
 }
