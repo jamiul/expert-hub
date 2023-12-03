@@ -1,8 +1,34 @@
 {
+  "resources/css/app.css": {
+    "file": "assets/app-41b1ce0f.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
   "resources/css/auth.css": {
-    "file": "assets/auth-07f0cc4c.css",
+    "file": "assets/auth-ce1c2d59.css",
     "isEntry": true,
     "src": "resources/css/auth.css"
+  },
+  "resources/css/components.css": {
+    "file": "assets/components-64e28e2c.css",
+    "isEntry": true,
+    "src": "resources/css/components.css"
+  },
+  "resources/fonts/Colfax-Medium.woff": {
+    "file": "assets/Colfax-Medium-2286e489.woff",
+    "src": "resources/fonts/Colfax-Medium.woff"
+  },
+  "resources/fonts/Colfax-Medium.woff2": {
+    "file": "assets/Colfax-Medium-2af5e5ae.woff2",
+    "src": "resources/fonts/Colfax-Medium.woff2"
+  },
+  "resources/fonts/Colfax-Regular.woff": {
+    "file": "assets/Colfax-Regular-e83cb22c.woff",
+    "src": "resources/fonts/Colfax-Regular.woff"
+  },
+  "resources/fonts/Colfax-Regular.woff2": {
+    "file": "assets/Colfax-Regular-cb1494e1.woff2",
+    "src": "resources/fonts/Colfax-Regular.woff2"
   },
   "resources/js/app.js": {
     "file": "assets/app-39dcccdc.js",
@@ -10,7 +36,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/bootstrap.scss": {
-    "file": "assets/bootstrap-ad882f37.css",
+    "file": "assets/bootstrap-4c3504b5.css",
     "isEntry": true,
     "src": "resources/sass/bootstrap.scss"
   }

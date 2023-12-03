@@ -11,7 +11,7 @@
                         <div class="usertype-icon">
                             <img src="{{ asset('assets/frontend/img/register1.png') }}">
                         </div>
-                        <h4>I’m an Expert</h4>
+                        <p>I’m an Expert</p>
                     </div>
                     <input class="form-check-input" type="radio" wire:model="type" value="Expert">
                 </label>
@@ -20,7 +20,7 @@
                         <div class="usertype-icon">
                             <img src="{{ asset('assets/frontend/img/register2.png') }}">
                         </div>
-                        <h4>I’m an Client</h4>
+                        <p>I’m an Client</p>
                     </div>
                     <input class="form-check-input" type="radio" wire:model="type" value="Client">
                 </label>
