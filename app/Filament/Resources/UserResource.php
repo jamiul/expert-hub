@@ -23,7 +23,39 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('type')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('first_name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('last_name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('username')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\DatePicker::make('email_verified_at'),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('country_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\Toggle::make('send_tips')
+                    ->required(),
+                Forms\Components\Toggle::make('terms_agreed')
+                    ->required(),
+                Forms\Components\Toggle::make('active')
+                    ->required(),
             ]);
     }
 
@@ -31,7 +63,42 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('type')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('first_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('last_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('username')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email_verified_at')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('country_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('send_tips')
+                    ->boolean(),
+                Tables\Columns\IconColumn::make('terms_agreed')
+                    ->boolean(),
+                Tables\Columns\IconColumn::make('active')
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
