@@ -1,0 +1,6355 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"');
+
+
+
+/**** ================================== Client Dashboard Start Here ===================================***/
+
+:root {
+    --color-heading-color: #191D24;
+    --color-heading: #303744;
+    --primary: #0036E3;
+    --success: #369450;
+    --white: #ffffff;
+    --heading-color: #303744;
+    --dark: #191D24;
+    --border-color: rgba(14, 0, 98, 0.10);
+    --white: #ffffff;
+    --bs-border-color: #E7E5EF;
+    --color-theme-color-2: #0036E3;
+    --color-border-color-solid: #E7E5EF;
+    --color-red: #C00000;
+    --color-yellow: #E9B911;
+}
+
+/*  default css */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+.form-select,
+select.form-control:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none !important;
+    border-radius: 4px;
+    border: 2px solid rgba(14, 0, 98, 0.15);
+}
+
+/* ================ Header start Here =========== */
+header.client-header {
+    margin-top: 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 26px 64px;
+    flex-wrap: wrap;
+}
+
+.s-profile {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #303744;
+
+}
+
+.s-setting {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.s-logout {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.top-nav-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 63px;
+}
+
+.single-option {
+    gap: 16px;
+    padding: 32px 22px;
+}
+
+.setting-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.top-search-area {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.border-right {
+    border-left: 2px solid rgba(14, 0, 98, 0.10);
+    max-height: 26px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.header-search-group {
+    min-width: 404px;
+    min-height: 56px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+}
+
+.search-input {
+    border: none !important;
+}
+
+.search-input::focus {
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none;
+}
+
+.search-input::placeholder {
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #303744
+}
+
+
+.search-input[type="text"],
+.search-input[type="select"] {
+    font-family: Colfax !important;
+    ;
+    font-size: 16px !important;
+    ;
+    font-style: normal !important;
+    ;
+    font-weight: 400 !important;
+    ;
+    color: #303744 !important;
+    margin-top: 0px;
+}
+
+.short-by-select select.form-select {
+    max-width: 252px;
+    min-height: 48px;
+    border: 2px solid #0000001A;
+}
+
+.short-by-select select.form-select:focus {
+    border-color: #0000001A;
+    outline: 0;
+    box-shadow: none;
+}
+
+button.search-select {
+    display: flex;
+    align-items: center !important;
+    border: none !important;
+}
+
+.top-profile-setting {
+    border-radius: 8px;
+    background: #FFF;
+    min-width: 304px;
+    min-height: 432px;
+    box-shadow: 8px 8px 32px 0px #0E00621A;
+    border: none;
+    transform: translate(10px, 53px) !important;
+}
+
+.top-profile-setting-avatar {
+    border-radius: 8px;
+    background: #FFF;
+    min-width: 304px;
+    min-height: 432px;
+    box-shadow: 8px 8px 32px 0px #0E00621A;
+    border: none;
+    transform: translate(-115px, 53px) !important;
+}
+
+/* ========================== Messenger setting start here ============== */
+
+.single-message-area {
+    padding: 12px 8px;
+    margin: 0px 8px;
+}
+
+span.profile-bell::after {
+    display: none;
+}
+
+.single-message-area:hover {
+    border-radius: 6px;
+    background: #EBEFF7;
+}
+
+.message-setting-area {
+    border-radius: 8px;
+    background: #FFF;
+    min-width: 385px;
+    min-height: 428px;
+    box-shadow: 8px 8px 32px 0px #0E00621A;
+    border: none;
+    transform: translate(15px, 52px) !important;
+}
+
+span.indicator {
+    background: #369450;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #fff;
+    left: 40px;
+    top: 30px;
+}
+
+.message-text h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.message-text p {
+    color: rgba(25, 29, 36, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+p.btn-details {
+    border-radius: 37px;
+    border: 1px solid #C8C5D4;
+    background: #FFF;
+    text-align: center !important;
+    color: rgba(25, 29, 36, 0.70);
+    font-family: Colfax;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.message-count p {
+    color: rgba(25, 29, 36, 0.60);
+    text-align: right;
+    font-family: Colfax;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* ========================== Messenger setting start here ============== */
+
+span.m-top-arrow {
+    position: absolute !important;
+    top: -23px !important;
+    color: #fff !important;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    left: 250px !important;
+}
+
+span.m-top-arrow-message {
+    position: absolute !important;
+    top: -23px !important;
+    color: #fff !important;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    left: 329px !important;
+}
+
+.all-message-profile {
+    border-bottom: 1px solid #E7E5EF;
+}
+
+.tatal-message-count {
+    padding: 13px 0px;
+}
+
+.profile-bell {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+span.view-all {
+    color: #002CB9;
+    text-align: right;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+span.profile-bell {
+    border: 2px solid #E7E5EF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+}
+
+span.profile-bell a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span.profile-bell img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.top-batch {
+    color: #FFF;
+    font-family: Colfax;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
+    min-width: 18px;
+    min-height: 16px;
+    display: flex;
+    justify-content: center;
+    right: -12px;
+    top: 2px;
+}
+
+.top-batch-more {
+    color: #FFF;
+    font-family: Colfax;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
+    min-width: 18px;
+    min-height: 16px;
+    display: flex;
+    justify-content: center;
+    right: -27px;
+    top: 6px;
+}
+
+a.setting-img img {
+    width: 117.405px;
+    height: 117.405px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.profile-setting-photo h4 {
+    color: #303744;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+.profile-setting-option {
+    margin-top: 22px;
+}
+
+.preview-setting {
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+
+.btn-default.btn-preview {
+    color: rgba(25, 29, 36, 0.70) !important;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    min-height: 33px;
+}
+
+.profile-setting-photo {
+    margin-top: 18px;
+}
+
+span.avatar::after {
+    display: none;
+}
+
+.btn-preview::focus {
+    background: transparent;
+    border: none;
+}
+
+.on-off {
+    padding: 0px 24px;
+}
+
+.profile-setting-photo p {
+    color: rgba(48, 55, 68, 0.70);
+    text-align: center;
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.single-option h6 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.single-option h6 a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ================= Menu Start ============ */
+.nav-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-area ul {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    gap: 24px;
+}
+
+.nav-area ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li.active,
+a.active {
+    color: #0036E3 !important;
+}
+
+.nav-area ul li a {
+    text-decoration: none;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+
+}
+
+.avatar img {
+    border: 2px solid #D9D9D9;
+    border-radius: 50px;
+    width: 46px;
+    height: 45px;
+}
+
+button.top-search {
+    background: #EBEFF7;
+    color: #000;
+    font-size: 14px;
+    min-width: 52px;
+    border: none !important;
+}
+
+
+
+button.top-search:hover {
+    background: #EBEFF7;
+    color: #000;
+    font-size: 14px;
+    min-width: 52px;
+    border: none !important;
+}
+
+
+
+button.no-hover {
+    background: transparent !important;
+    color: #303744 !important;
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+}
+
+button.no-hover::after {
+    display: none;
+}
+
+/* ================= Menu End ============ */
+/* ================ Header end  Here =========== */
+/* ================ Main Dashboard start  Here =========== */
+.all-job-tab {
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    color: #303744;
+
+}
+
+.all-job-tab.active {
+    color: #0036E3 !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid #0036E3;
+    border-radius: 0px;
+}
+
+
+.single-card-area {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 301px;
+    min-height: 320px;
+    border-radius: 8px;
+    justify-content: space-evenly;
+    padding: 24px;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.08);
+    margin-right: 24px;
+}
+
+.card-with-gradient {
+    background: linear-gradient(270deg, rgba(10, 9, 9, 0.15) 31.57%, rgba(255, 255, 255, 0) 50%);
+}
+
+.inprogress-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.btn-inprogress {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #191D24;
+    background: #E9B911;
+    Padding: 2px 10px 2px 10px;
+    border: none;
+    border-radius: 63px;
+}
+
+.btn-hiring {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #fff;
+    background: #0036E3;
+    Padding: 2px 10px 2px 10px;
+    border: none;
+    border-radius: 63px;
+
+}
+
+.btn-onhold {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #fff;
+    background: #9CA5C2;
+    Padding: 2px 10px 2px 10px;
+    border: none;
+    border-radius: 63px;
+
+}
+
+.btn-complated {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #fff;
+    background: #369450;
+    Padding: 2px 10px 2px 10px;
+    border: none;
+    border-radius: 63px;
+
+}
+
+.single-person img {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.profile-single-area {
+    display: flex;
+    align-items: center;
+}
+
+.discover-single-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discover-single-person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.profile-single-title-vs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-single-title-vs h3 {
+    font-family: Colfax;
+    font-size: 19px;
+    font-weight: 500;
+    color: #191D24;
+    margin: 22px 0px 6px;
+}
+
+.single-designation {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #191D24;
+    margin-bottom: 6px;
+
+}
+
+.single-university {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0036E3;
+    margin-bottom: 15px;
+}
+
+
+.notify-point-green {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: green;
+    border-radius: 50px;
+    top: 95px;
+    left: 95px;
+    padding: 5px;
+    border: 3px solid #fff;
+}
+
+.client-home-carousel .owl-stage-outer .owl-stage .owl-item {
+    border-radius: 8px;
+
+}
+
+.notify-point-gray {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: gray;
+    border-radius: 50px;
+    top: 95px;
+    left: 95px;
+    padding: 5px;
+    border: 3px solid #fff;
+}
+
+.notify-point-yellow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: yellow;
+    border-radius: 50px;
+    top: 95px;
+    left: 95px;
+    padding: 5px;
+    border: 3px solid #fff;
+}
+
+.discover-single-person img {
+    max-width: 118px;
+    max-height: 118px;
+}
+
+.single-person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.single-person p {
+    margin-bottom: 0px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #191D24;
+}
+
+.profile-single-title h3 {
+    font-family: Colfax;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 23px;
+    color: #191D24;
+    margin: 8px 0px 24px;
+}
+
+.profile-single-text p {
+    margin-bottom: 0px;
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #303744;
+    margin-bottom: 24px;
+    text-decoration: underline;
+}
+
+.profile-single-text h6 {
+    margin-bottom: 0px;
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #369450;
+    /* margin-bottom: 24px; */
+}
+
+i.default-star {
+    color: #C8C5D4;
+}
+
+.rating-area ul {
+    display: flex;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.profile-single-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+
+.btn-fundmilestone {
+    padding: 11px 10px;
+    border: 2px;
+    gap: 10px;
+    color: #0036E3;
+    border: 2px solid #0036E3;
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    max-width: 237px;
+    min-height: 37px;
+    width: 100%;
+}
+
+
+
+button.btn.btn-xs.btn-success.btn-preview.active {
+    border-radius: 3px;
+    background: #369450 !important;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    min-height: 33px;
+    border: none;
+}
+
+.btn-viewprofile {
+    padding: 11px 10px;
+    border: 2px;
+    gap: 10px;
+    color: #0036E3;
+    border: 2px solid #0036E3;
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    margin-top: 32px;
+    width: 100%;
+    max-width: 237px;
+}
+
+/* === owl theme design end === */
+
+/* .client-home-carousel .owl-item {
+  width: 291px !important;
+  margin-right: 32px !important;
+  box-shadow: 8px 8px 32px 0px #0E006214;
+} */
+
+.client-home-carousel .owl-stage-outer {
+    max-width: 1263px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.08);
+}
+
+
+.owl-carouselfour {
+    margin-bottom: 50px;
+}
+
+.owlp-bottom {
+    border-bottom: 1px solid #E7E5EF
+}
+
+.owl-carousel button.owl-prev,
+button.owl-next {
+    width: 44px;
+    height: 44px;
+    border-radius: 42.84px !important;
+    background: #ddd !important;
+    color: #000 !important;
+    text-decoration: none;
+    font-size: 28px !important;
+    position: absolute;
+    top: 41%;
+}
+
+.owl-carousel button.owl-prev {
+    left: -50px;
+
+}
+
+button.owl-prev {
+    display: none !important;
+}
+
+.owl-carousel.owl-theme.rate-caurasel .owl-prev {
+    display: block !important;
+}
+
+.owl-carousel.owl-theme.rate-caurasel button.owl-prev {
+    width: 44px;
+    height: 44px;
+    border-radius: 42.84px !important;
+    background: #fff !important;
+    color: #000 !important;
+    text-decoration: none;
+    font-size: 28px !important;
+    position: absolute;
+    top: 40%;
+    left: 3% !important;
+}
+
+.owl-carousel.owl-theme.rate-caurasel .owl-next {
+    display: none !important;
+}
+
+.owl-carousel button.owl-next {
+    right: 40px;
+    background: rgba(0, 54, 227, 1) !important;
+    color: #fff !important;
+}
+
+button.owl-next span {
+    width: 44px;
+    height: 44px;
+    border-radius: 42.84px;
+}
+
+
+.discover-carousel .owl-stage-outer {
+    padding: 24px 0px 22px;
+    max-width: 1263px;
+    margin: 0 auto;
+}
+
+/* .discover-carousel .owl-item {
+  width: 291px !important;
+  margin-right: 32px !important;
+  box-shadow: 8px 8px 32px 0px #0E006214;
+} */
+
+/* === owl theme design end === */
+
+.hourly-rate-area {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+}
+
+.country-divided {
+    border-right: 1px solid #C8C5D4
+}
+
+.country-rate,
+.country-rate {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #191D24B2;
+
+}
+
+.btn.active-tab {
+    color: var(--bs-btn-active-color);
+    background-color: #369450;
+    border: none;
+}
+
+.discover-gradient {
+    background: linear-gradient(90deg, rgba(10, 9, 9, 0.15) 21.15%, rgba(255, 255, 255, 0) 50%);
+
+}
+
+section.team-area {
+    margin: 23px 0px 50px;
+}
+
+.single-team-member-area {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.single-team-member-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.single-team-member {
+    display: flex;
+    /* background: #C8E0FD; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 6.21px 6.21px 6.21px 6.21px;
+    box-shadow: 14.755319595336914px 13.202128410339355px 37.27659606933594px 0px #0E00621F;
+    position: relative;
+    min-height: 220px;
+}
+
+.single-person-deniyel {
+    border-radius: 6.213px 6.213px 0px 0px;
+    background: #C8E0FD;
+    display: flex;
+    width: 100%;
+    height: 156px;
+}
+
+.single-person-deniyel img {
+    max-width: 160px;
+    max-height: 185px;
+    position: absolute;
+    top: -25px;
+    left: 20%;
+}
+
+.person-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 0px 0px 6.241px 6.241px;
+    border-radius: 0px 0px 6.213px 6.213px;
+    border-top: 0.777px solid rgba(14, 0, 98, 0.10);
+    background: #FFF;
+    box-shadow: 14.75532px 13.20213px 37.2766px 0px rgba(14, 0, 98, 0.12);
+    height: 65px;
+}
+
+
+
+
+
+.person-details h3 {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #191D24;
+    margin: 12px 0px 3px;
+}
+
+.person-details p {
+    font-family: Colfax;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #303744B2;
+    margin-bottom: 15px;
+}
+
+.single-team-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    margin-top: 45px;
+}
+
+.single-team-text p {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    /* text-transform: uppercase; */
+    color: #0036E3;
+
+}
+
+.single-team-text h3 {
+    font-family: Colfax;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    color: #191D24;
+    max-width: 423px;
+    margin: 8px 0px 24px;
+}
+
+.single-team-text p.hire-details {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    max-width: 482px;
+    /* text-transform: capitalize; */
+    margin-bottom: 40px;
+}
+
+.shorting-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 7px;
+}
+
+.shorting-area p {
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+
+}
+
+.row.alljob-short {
+    padding: 22px 20px 24px;
+}
+
+.short-option {
+    display: flex;
+    min-width: 156px;
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.short-option select {
+    border-radius: 4px;
+    border: 2px solid rgba(14, 0, 98, 0.15);
+}
+
+/* ================ Main Dashboard End  Here =========== */
+.single-team-member-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.input-group-text-search {
+
+    background-color: #0036E3;
+
+
+}
+
+.setting-area-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 55px;
+}
+
+.search-input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    max-width: 404px !important;
+}
+
+.header-top-navbar .navbar {
+    padding: 27px 64px;
+}
+
+a.cl-nav-link {
+    color: #000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li.nav-item {
+    display: flex;
+}
+
+.form-control-search {
+    background: transparent !important;
+    border: 1px solid #ddd !important;
+}
+
+.form-control-search::placeholder {
+    color: #303744
+}
+
+.header-bar {
+    width: 100%;
+    min-width: 1920px;
+    height: 57px;
+    border: 1px, 0px, 1px, 0px;
+    background: linear-gradient(0deg, rgba(14, 0, 98, 0.1), rgba(14, 0, 98, 0.1)),
+        linear-gradient(0deg, #0036E3, #0036E3);
+    border-width: 1px, 0px, 1px, 0px;
+    border-style: solid;
+    border-color: rgba(14, 0, 98, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.header-bar nav {
+    display: flex;
+    width: 100%;
+    padding: 0px 265px;
+}
+
+.header-bar nav ul {
+    margin-bottom: 0px;
+    display: flex;
+    gap: 24px;
+    padding-left: 0px;
+}
+
+.header-bar nav ul li {
+    list-style: none;
+    position: relative;
+}
+
+a.active-icon {
+    border-bottom: 2px solid #fff;
+}
+
+span.material-symbols-outlined.active {
+    position: absolute;
+    top: -40px;
+    color: #0036E3;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    left: 10px;
+}
+
+span.material-symbols-outlined.active.expert-root {
+    position: absolute;
+    top: -40px;
+    color: #0036E3;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    left: 85px;
+}
+
+span.material-symbols-outlined.active.payment-root {
+    position: absolute;
+    top: -40px;
+    color: #0036E3;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    left: 185px;
+}
+
+span.material-symbols-outlined.active.setting-root {
+    position: absolute;
+    top: -40px;
+    color: #0036E3;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    left: 285px;
+}
+
+.header-bar nav ul li a {
+    text-decoration: none;
+    color: #fff !important;
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+
+
+}
+
+.client-dashboard {
+    border: 1px solid rgba(14, 0, 98, 0.1) !important;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+    max-width: 1320px;
+    width: 100%;
+
+
+}
+
+.all-project h2 {
+    font-family: Colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+}
+
+.all-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-project-weekly h2 {
+    font-family: Colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
+.project-time-sheet h2 {
+    font-family: Colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    padding-left: 15px;
+}
+
+.history-report h2 {
+    margin-bottom: 0px;
+}
+
+
+
+button.btn.btn-postjob {
+    border-radius: 4px;
+    background: #0036E3;
+    gap: 8px;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    min-width: 152px;
+}
+
+.btn-postjob-dashboard {
+    min-width: 203px;
+}
+
+.post-job .btn-postjob:active {
+    border-radius: 4px;
+    background: #0036E3;
+    gap: 8px;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    min-width: 152px;
+}
+
+
+.edit-active {
+    display: flex;
+    align-items: center;
+}
+
+span.addall {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.search-by form input[type=text] {
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 2px solid #e2e2e4;
+    float: left;
+    width: 100%;
+    background: #fff;
+    min-height: 47px;
+    color: #303744B2;
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+    margin-top: 0px;
+}
+
+.search-by form button {
+    float: left;
+    width: 52px;
+    background: #0036E3;
+    color: white;
+    font-size: 18px;
+    border-left: none;
+    cursor: pointer;
+    min-height: 47px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+}
+
+.input-group-append {
+    cursor: pointer;
+}
+
+
+.short-by-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.select-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* width: 100%; */
+    justify-content: space-between;
+}
+
+.date-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.date-item p {
+    display: flex;
+    min-width: 48px;
+    margin-bottom: 0px;
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.search-by {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.divided {
+    height: 46px;
+    border-right: 1px solid #0E00621A;
+}
+
+
+.short-by {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.short-by-select {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    min-width: 252px;
+}
+
+.short-by-select-reverse {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.short-by-select-reverse select {
+    min-height: 46px;
+    border: 2px solid #0000001A;
+    min-width: 252px;
+}
+
+.select-report {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.select-report select {
+    border: 2px solid #0000001A;
+    min-height: 46px;
+}
+
+
+.expert-team-carousel {
+    display: flex;
+    flex-direction: column;
+    max-width: 219px;
+}
+
+
+.select-report-budget select {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 253px;
+    min-height: 48px;
+    border-radius: 4px;
+    border: 2px solid rgba(14, 0, 98, 0.30);
+}
+
+td.health-budget {
+    max-width: 519px;
+}
+
+
+.select-date-report {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.report-wave {
+    margin-bottom: 50px;
+}
+
+.total-report-area h4 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.report-area-border {
+    padding: 24px;
+    gap: 16px;
+    flex: 1 0 0;
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
+}
+
+.report-area-border-summary {
+    padding: 24px;
+    gap: 16px;
+    flex: 1 0 0;
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
+    min-height: 244px;
+}
+
+.report-hour-top {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.report-currency-top {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.single-hourly-rate .report-hour {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.single-hourly-rate .report-currency {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.fixed-content .report-hour {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.fixed-content .report-currency {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.fixed-prise-area {
+    border-top: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+    border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+    padding: 16px 0px;
+    margin: 16px 0px;
+}
+
+.activity-content {
+    display: flex;
+    min-height: 244px;
+    padding: 24px;
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    gap: 12px;
+    /* align-self: stretch; */
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
+}
+
+.activity-title h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.activity-area {
+    margin: 16px;
+}
+
+.activity-area-fixed {
+    margin: 16px 16px 50px;
+}
+
+.activity-content h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.activity-content p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.total-report-area {
+    margin-bottom: 16px;
+}
+
+.short-report {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.padding-left {
+    padding-left: 0px;
+}
+
+.short-date {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.short-date h6 {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+
+}
+
+.short-options {
+    display: flex;
+    width: 40%;
+}
+
+.all-job-area {
+    padding: 48px 30px 24px;
+    border-top: 1px solid #E7E5EF;
+}
+
+.all-job-area-board {
+    padding: 25px 30px 10px;
+    border-top: none;
+}
+
+.job-area-top {
+    padding: 20px 30px 15px;
+    border-bottom: 1px solid #E7E5EF;
+}
+
+.contact-project-area {
+    padding: 20px 30px 0px;
+}
+
+ul.homedropdown {
+    position: absolute !important;
+    left: 0px !important;
+}
+
+.btn-getstart {
+    min-width: 218px;
+}
+
+/* ============== Draft and edit Modal start here ============ */
+
+.about-free-all {
+    gap: 16px;
+}
+
+.heath-unit-title {
+    gap: 8px;
+    align-items: center;
+    min-width: 640px;
+}
+
+.heath-unit-title h4 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.globe-area {
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.globe-area p {
+    gap: 4px;
+}
+
+.health-unit-top-area {
+    border-bottom: 1px solid #0E00621A;
+    padding: 10px 31px 35px;
+}
+
+.health-unit-bottom-area {
+    padding-top: 30px;
+    padding: 30px 31px 35px;
+}
+
+.health-unit-bottom-area p {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    max-width: 704px;
+
+}
+
+.health-tab-area h5 {
+    max-width: 704px;
+}
+
+.health-tab-area h5 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.globe-area p span {
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 159.5%;
+
+}
+
+.health-tab {
+    gap: 6px;
+}
+
+.health-tab span {
+    border-radius: 42px;
+    border: 1px solid #0036E3;
+    background: #FFF;
+    display: flex;
+    padding: 2px 12px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.health-tab-edit {
+    gap: 4px;
+}
+
+.health-tab-edit p {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.health-tab-edit span {
+    display: flex;
+    padding: 2px 12px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: center;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 36px;
+    border: 1px solid #E7E5EF;
+    background: rgba(48, 55, 68, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.health-tab-area h5 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 30px 0px 18px;
+}
+
+.attachment-area h5 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 40px 0px 16px;
+
+}
+
+.attachment-name {
+    gap: 24px;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    background: #000000;
+    cursor: pointer;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    display: flex;
+}
+
+.overlay-content a img {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.overlay-edit:hover .overlay {
+
+    opacity: 0.4;
+}
+
+.single-name-attachment h6 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 11px;
+}
+
+
+.single-name-attachment p {
+    color: rgba(48, 55, 68, 0.72);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.single-all p {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.institution h6 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+p.miles-all {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.attachment-right-bar {
+    padding: 0px 21px;
+}
+
+
+
+.attament-fixed h4 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 48px;
+    align-items: center;
+}
+
+.attament-fixed h4 span {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 6px;
+}
+
+.single-all {
+    gap: 11px;
+}
+
+.single-all img {
+    max-width: 24px;
+    max-height: 24px;
+
+}
+
+
+.chat-with-client button {
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    padding: 11px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid #0036E3;
+    background: transparent;
+    margin-top: 48px;
+}
+
+.health-unit-area {
+    border-right: 1px solid rgba(14, 0, 98, 0.10);
+}
+
+
+/* *** modal 2 *** */
+.health-text-area-border h4 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    top: -10px;
+    background-color: #fff;
+}
+
+.health-text-area-border {
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    padding: 12px 16px;
+}
+
+.skill-all-tag-edit {
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 15px;
+}
+
+.modal-all-button {
+    gap: 16px;
+
+}
+
+span.currency-edit {
+    display: flex;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 5px 15px;
+}
+
+.space-rate {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.modal-all-button {
+    gap: 10px;
+    padding: 23px 31px 10px;
+}
+
+.edit-active span {
+    color: #FFF;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 63px;
+    background: #369450;
+    display: flex;
+    padding: 4px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .justify-content-between {
+  min-width: 590px;
+  align-items: center;
+} */
+
+span.text-count {
+    right: 10px;
+    bottom: 0px;
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.justify-content-between h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+button.btn-cancel {
+    border-radius: 4px;
+    border: 2px solid #0036E3;
+    display: flex;
+    padding: 11px 40px;
+    justify-content: center;
+    align-items: center;
+    color: #0036E3;
+    background: transparent;
+
+
+}
+
+button.btn-update {
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 11px 40px;
+    border: none;
+}
+
+.m-border-bottom {
+    border-bottom: 1px solid #E7E5EF;
+    ;
+}
+
+/* *** single contact hours  start*** */
+
+.single-contact-hours-title {
+    border-top: 1px solid #E7E5EF;
+    border-bottom: 1px solid #E7E5EF;
+    background: rgba(0, 54, 227, 0.03);
+    display: flex;
+    padding: 19px 8px 17px 8px;
+    align-items: flex-start;
+}
+
+.single-contact-hours {
+    border-bottom: 1px solid #E7E5EF;
+    background: #F9F9F9;
+    display: flex;
+    padding: 8px 0px 8px 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+h5.single-contact-title {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.contact-hours-ara {
+    margin-top: 16px;
+}
+
+.contact-area {
+    min-width: 629px;
+}
+
+.contact-hours {
+    min-width: 221px;
+}
+
+.contact-amount {
+    min-width: 234px;
+}
+
+.contact-payment img {
+    max-width: 22px;
+    max-height: 23px;
+}
+
+.contact-amount p.mt-0 {
+    color: #369450;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* *** single contact hours end *** */
+
+/* *** modal 2 *** */
+
+/* ============== Draft and edit Modal End Here here ============ */
+/* ============== Draft and edit start here ============ */
+.edit-draft-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* text-align: left; */
+}
+
+.edit-title {
+    align-items: center;
+    border-radius: 4px;
+    padding: 14px 15px;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    min-width: 600px;
+}
+
+p.suggest-text {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+span.suggest-skill {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.edit-draft-left h6 {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+    margin-bottom: 12px;
+}
+
+.btn-edit-draft {
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding: 4px 16px;
+    border-radius: 4px;
+    color: #0036E3;
+    border: 2px solid #0036E3;
+    background: no-repeat;
+    /* min-width: 100px; */
+    /* height: 32px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-draft-right {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.draft-hour {
+    display: flex;
+    flex-direction: column;
+}
+
+.draft-proposal {
+    display: flex;
+    flex-direction: column;
+}
+
+.draft-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.draft-hire {
+    display: flex;
+    flex-direction: column;
+}
+
+.draft-options i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #0E00621A;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: #191D24;
+    font-size: 14px;
+    font-family: 'Font Awesome 5 Free';
+}
+
+a.draft-option-toggle {
+    background-color: transparent !important;
+    padding: 0px;
+    border: none;
+
+}
+
+a.draft-option-toggle:hover {
+    background-color: transparent !important;
+    padding: 0px;
+    border: none;
+
+}
+
+a.draft-option-toggle::after {
+    display: none !important;
+
+
+}
+
+a.draft-option-toggle.show i {
+    border: 1px solid #0E00621A;
+    box-shadow: 2px 2px 13px 0px #0E00620A;
+    background-color: #0036E3 !important;
+    color: #fff;
+}
+
+.draft-options ul.dropdown-show a:hover {
+    background: #0036E30D;
+    font-size: 16px;
+    font-weight: 500 !important;
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.draft-options ul.dropdown-show {
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate(-140px, 34px) !important;
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+    border: none;
+}
+
+a.dropdown-heading {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+a.dropdown-heading:hover {
+    background: #0036E30D;
+    font-size: 16px;
+    font-weight: 500 !important;
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.according-select option {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+ul.dropdown-show li a {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    color: #191D24;
+
+
+}
+
+span.draft-color {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #303744;
+}
+
+.paypal-check .form-check-label {
+    color: #191D24 !important;
+    font-family: Colfax !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    margin-top: 5px !important;
+}
+
+.paypal-check .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 39px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+span.hourly-color {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191D24;
+    ;
+
+}
+
+
+.paypal-check .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 39px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+
+.paypal-check .form-check-label {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.form-check.paypal-check {
+    display: flex;
+}
+
+.all-border-bottom {
+    border-bottom: 1px solid #0E00621A;
+    padding: 34px 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-padding-bottom {
+    border-bottom: 1px solid #0E00621A;
+    padding: 16px 25px;
+}
+
+.all-padding-client {
+    padding: 16px 30px;
+    border-bottom: 1px solid #0E00621A;
+}
+
+p.short-by-date {
+    top: 10px;
+    right: -10px;
+    color: #303744;
+}
+
+/*  =================== Table History start================== */
+
+.transaction-all thead th {
+    border-top: 1px solid #E7E5EF;
+    border-bottom: 1px solid #E7E5EF;
+    background: rgba(0, 54, 227, 0.03);
+    color: rgba(48, 55, 68, 0.80);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    /* min-height: 51px; */
+    padding: 13px 8px;
+}
+
+.transaction-all-payment thead th {
+
+    background: rgba(0, 54, 227, 0.03);
+    color: rgba(48, 55, 68, 0.80);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 13px 8px;
+    vertical-align: middle;
+}
+
+/* th.th-heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 108px;
+  padding: 13px 8px;
+  gap: 10px;
+} */
+
+.transaction-all tbody tr td {
+    border-top: 1px solid #E7E5EF;
+    border-bottom: 1px solid #E7E5EF;
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    /* padding: 19px 8px; */
+}
+
+.th-project-value {
+    min-width: 90px;
+}
+
+.th-project-expert {
+    min-width: 120px;
+}
+
+td.balance-text {
+    max-width: 240px;
+    vertical-align: middle;
+}
+
+span.discord-reason {
+    color: var(--color-red-2, #F00);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.balance-table-area {
+    margin-top: 20px;
+    padding: 0px 15px;
+}
+
+.select-report-budget {
+    padding: 0px 27px;
+}
+
+span.budget-green {
+    color: #369450;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+a.li-avatar-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/*  =================== Table History end ================== */
+
+/* ============== Draft and edit start here ============ */
+/* ============== Pagination  start here ============ */
+
+.pagination-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-left p {
+    margin-bottom: 0px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.pagination-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pagination-next-prev ul {
+    margin-bottom: 0px;
+}
+
+.pagination-next-prev ul.pagination {
+    display: flex;
+    gap: 4px;
+    margin: 0px;
+
+}
+
+ul.pagination li.page-item a.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: #191D24;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #0E006226;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+li.page-item.active a {
+    color: #fff !important;
+}
+
+.pagination-padding {
+    padding: 28px 25px;
+}
+
+.result-perpage {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #191D24;
+
+
+}
+
+
+/* ============== Pagination  start here ============ */
+/* ============== All Contact   start here ============ */
+
+.all-contact-profile-policy {
+    padding: 32px 28px;
+    border-bottom: 1px solid #0E00621A
+}
+
+.all-contact-profile-policy-time {
+    padding: 15px 28px;
+    border-bottom: 1px solid #0E00621A
+}
+
+.contact-m-rating {
+    align-items: flex-start !important;
+    min-width: 307px;
+    justify-content: center;
+}
+
+.all-contact-rating-price.d-flex.flex-column.align-items-start {
+    justify-content: center;
+}
+
+.btn-download .material-symbols-outlined {
+    margin-top: -4px;
+}
+
+.all-project-area {
+    padding: 32px 28px;
+}
+
+.all-project-area {
+    padding: 32px 28px;
+}
+
+.all-project-area-budget {
+    padding: 32px 28px;
+}
+
+.all-project-budget h2 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.balance-area {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    padding-left: 28px;
+}
+
+.balance-area span {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+span.available-currency {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.history-report-area {
+    padding: 20px 28px 10px;
+}
+
+.search-by button.btn-download {
+    display: flex;
+    align-items: center;
+    border: 2px solid #0036E3 !important;
+    border-radius: 4px;
+    border: 2px;
+    gap: 10px;
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    background: transparent !important;
+    min-height: 47px;
+}
+
+.profile-policy-img img {
+
+    max-width: 56px;
+    max-height: 56px;
+}
+
+.profile-policy-area {
+    max-width: 430px;
+    gap: 12px;
+}
+
+.profile-single h6 {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    color: #191D24;
+
+}
+
+.profile-single p {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    color: #303744B2;
+}
+
+.profile-single-policy {
+    margin-top: 18px;
+}
+
+.profile-single-policy h4 {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    color: #191D24;
+
+}
+
+.all-contact-rating-price p {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #303744;
+}
+
+.range-active {
+    color: #303744B2;
+}
+
+p.currency {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0036E3 !important;
+}
+
+p.escrow {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    color: #191D24;
+
+}
+
+span.more-expand {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.present-date p {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    color: #191D24;
+    margin-top: 10px;
+}
+
+button.action-milestone-btn {
+    font-family: Colfax;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    background: #0036E3;
+    padding: 3px 16px 3px 16px;
+    border-radius: 4px;
+    border: none;
+    min-width: 154px;
+}
+
+.all-project-rating li a i {
+    color: #E9B911 !important;
+}
+
+.payment-title h4 {
+    font-family: Colfax;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    color: #191D24;
+}
+
+
+
+.payment-txt p {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #191D24;
+
+}
+
+span.payment-currency {
+    color: #0036E3;
+}
+
+.chard-icon img {
+    max-width: 89px;
+    max-height: 49px;
+
+}
+
+.chard-number h6 {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #303744;
+}
+
+.chard-number p {
+    font-family: Colfax;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #303744;
+}
+
+.card-option a {
+    color: #191D24;
+    max-width: 17px;
+    max-height: 17px;
+}
+
+.payment-title-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-area {
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0px 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 54, 227, 0.12);
+    background: rgba(0, 54, 227, 0.05);
+}
+
+
+.withdraw-area {
+    border: 1px solid #0000001A;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.area-padding {
+    padding: 57px 29px;
+}
+
+button.btn-with-draw {
+    background: #0036E3;
+    padding: 12px 34px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+button.btn-with-draw-icon {
+    background: transparent;
+    padding: 8px 34px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
+button.btn-with-draw-paypal {
+    display: flex;
+    width: 265px;
+    padding: 11px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    margin-bottom: 24px;
+}
+
+/* ============== All Contact   End here ============ */
+/* ============== Add Payment Start Here ============ */
+
+.debit-credit-area {
+    border-bottom: 1px dotted #0E006240
+}
+
+.border-full {
+    border-radius: 8px;
+    border: 2px solid var(--color-theme-color-2);
+    background: #FFF;
+    margin-top: 24px;
+}
+
+input.form-control.p-input {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    min-height: 56px;
+}
+
+.visa-credit {
+    padding: 24px 0px;
+    border-bottom: 1px dotted rgba(14, 0, 98, 0.25);
+    margin-bottom: 24px;
+}
+
+.row.g-3.input-margin {
+    margin: 24px 0px;
+}
+
+.m-top {
+    margin-top: 24px;
+}
+
+.m-bottom {
+    margin-bottom: 24px;
+}
+
+.check-label {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #0036E3;
+
+}
+
+.chard-title {
+    margin-left: 35px;
+}
+
+.chard-title p {
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #191D24;
+}
+
+.credit-card-icon img {
+    max-width: 275px;
+    max-height: 52px;
+}
+
+
+.check-debit .form-check-input:checked {
+    border-radius: 39px;
+    border: 4px solid rgba(255, 255, 255, 0.82);
+    background: #0036E3;
+    width: 20px;
+    height: 20px;
+}
+
+.form-check.check-debit label {
+    margin: 5px 11px 0px;
+}
+
+
+/* ============== Add Payment End Here ============ */
+/* ============== On off switch css ============ */
+
+.switch-button {
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #b3b3b3;
+    width: 60px;
+    height: 27px;
+    padding: 4px;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.switch-button input[type=checkbox] {
+    display: none;
+}
+
+.switch-button label {
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 1px 1px #fff inset;
+    box-shadow: 0 0 1px 1px #FFF inset;
+    background-color: #fff;
+    margin: 0;
+    height: 19px;
+    width: 19px;
+    z-index: 1;
+    display: inline-block;
+    cursor: pointer;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+}
+
+.switch-button label:before {
+    position: absolute;
+    font-size: 0.8462rem;
+    font-weight: 600;
+    z-index: 0;
+    content: "OFF";
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 27px;
+    top: 0;
+    text-align: right;
+    padding-right: 10px;
+    color: #ffffff;
+    color: #FFF;
+    font-family: Colfax;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.switch-button input[type=checkbox]:checked+span {
+    background-color: #369450;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+}
+
+.switch-button input[type=checkbox]:checked+span label {
+    float: right;
+    border-color: #fff;
+    background: #fff;
+}
+
+.switch-button input[type=checkbox]:checked+span label:before {
+    position: absolute;
+    font-size: 0.8462rem;
+    font-weight: 600;
+    z-index: 0;
+    content: "ON";
+    color: #ffffff;
+    left: 0;
+    text-align: left;
+    padding-left: 10px;
+    border-radius: 25px;
+}
+
+.switch-button.switch-button-yesno label:before {
+    content: "NO";
+}
+
+.switch-button.switch-button-yesno input[type=checkbox]:checked+span label:before {
+    content: "YES";
+}
+
+.switch-button.switch-button-xs {
+    height: 20px;
+    width: 53px;
+    line-height: 16px;
+    width: 50px;
+}
+
+.switch-button.switch-button-xs label {
+    height: 12px;
+    width: 12px;
+}
+
+.switch-button.switch-button-xs label:before {
+    line-height: 21px;
+}
+
+.switch-button.switch-button-sm {
+    height: 24px;
+    width: 57px;
+    line-height: 20px;
+}
+
+.switch-button.switch-button-sm label {
+    height: 16px;
+    width: 16px;
+}
+
+.switch-button.switch-button-sm label:before {
+    line-height: 25px;
+}
+
+.switch-button.switch-button-lg {
+    height: 30px;
+    width: 63px;
+    line-height: 26px;
+    width: 65px;
+}
+
+.switch-button.switch-button-lg label {
+    height: 22px;
+    width: 22px;
+}
+
+.switch-button.switch-button-lg label:before {
+    line-height: 31px;
+}
+
+.switch-button.switch-button-success {
+    background-color: #b3b3b3;
+}
+
+.switch-button.switch-button-success label {
+    border-color: #ababab;
+}
+
+.switch-button.switch-button-success input[type=checkbox]:checked+span {
+    background-color: #34a853;
+}
+
+.switch-button.switch-button-success input[type=checkbox]:checked+span label {
+    border-color: #2e9549;
+}
+
+.switch-button.switch-button-warning {
+    background-color: #b3b3b3;
+}
+
+.switch-button.switch-button-warning label {
+    border-color: #ababab;
+}
+
+.switch-button.switch-button-warning input[type=checkbox]:checked+span {
+    background-color: #fbbc05;
+}
+
+.switch-button.switch-button-warning input[type=checkbox]:checked+span label {
+    border-color: #e3aa04;
+}
+
+.switch-button.switch-button-danger {
+    background-color: #b3b3b3;
+}
+
+.switch-button.switch-button-danger label {
+    border-color: #ababab;
+}
+
+.switch-button.switch-button-danger input[type=checkbox]:checked+span {
+    background-color: #ea4335;
+}
+
+.switch-button.switch-button-danger input[type=checkbox]:checked+span label {
+    border-color: #e82e1e;
+}
+
+
+/* ********  password ************ */
+
+.password-what h6 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    align-items: center;
+    gap: 6px;
+}
+
+span.what-icon {
+    margin-top: -5px;
+}
+
+.password-what p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.password-area {
+    border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+    padding: 24px;
+}
+
+.password-area-message {
+    border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+    padding: 24px;
+    padding-bottom: 0px;
+}
+
+
+.password-padding {
+    padding: 0px 28px 32px;
+}
+
+.total-area-password {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    padding: 0px 24px 24px;
+}
+
+.email-setting-area {
+    padding-top: 24px;
+}
+
+.all-project-area-password {
+    padding: 32px 28px 0px;
+}
+
+.notification-area-password {
+    padding: 32px 28px 30px;
+}
+
+.change-option a {
+    color: #0036E3;
+    text-align: right;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+.password-noborder {
+    border-bottom: none;
+}
+
+.email-update-area h4 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.email-update-area p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 24px;
+    margin-top: 5px;
+}
+
+.email-contact-area h4 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.contact-checkbox {
+    gap: 12px;
+}
+
+
+.form-check {
+    position: relative;
+}
+
+.paypal-input {
+    border-radius: 39px;
+    border: 4px solid rgba(255, 255, 255, 0.82);
+    background: var(--color-theme-color-2);
+    width: 20px;
+    height: 20px;
+}
+
+.paypal-input-check {
+    border-radius: 39px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+    width: 20px;
+    height: 20px;
+}
+
+.paypal-check-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.paypal-check-input label.form-check-label.check-label {
+
+    color: var(--color-heading-color, #191D24);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+input[type=checkbox]:checked+label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 5px;
+    background-color: #369450;
+    font-family: "Montserrat";
+    border-radius: 2px;
+    border: 1px solid rgb(150 150 150 / 30%);
+
+}
+
+input[type=checkbox]:checked+label::after {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+}
+
+.form-check-input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-check-password {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-password label {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+.email-contact-area {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+}
+
+.email-membership-area {
+    padding: 24px 0px;
+    border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.email-communication-area {
+    padding: 24px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* ********  Password ************ */
+
+/* ============== On off switch css ============ */
+/* ============== Form validation ============ */
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    /* height: 13px; */
+}
+
+/* ============== Form validation ============ */
+
+
+/*  ========================= Admin dashboard  start here ================================================ */
+
+.admin-tab-nav-area {
+    background-color: #F0F1F7;
+    align-items: center;
+    min-height: 70px;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.admin-tab-nav-area ul {
+    margin-bottom: 0px !important;
+    padding-top: 30px;
+}
+
+.admin-dashboard-area {
+    /* border: 1px solid rgba(14, 0, 98, 0.1) !important;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1); */
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+    /* border: 1px solid #E7E5EF; */
+    margin-bottom: 24px;
+}
+
+.search-by-admin {
+    display: flex;
+    width: auto;
+    gap: 10px;
+    min-width: 433px;
+    width: 100%;
+}
+
+.admin-nav-link.active {
+    background: #FFF !important;
+    box-shadow: 0px 2px 8px 0px rgba(14, 0, 98, 0.03);
+    color: #000 !important;
+    font-family: Inter !important;
+    font-size: 15px !important;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 0px;
+}
+
+.admin-nav-link {
+    color: #495057;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.all-padding-admin-client {
+    padding: 16px;
+}
+
+.policy-content h6 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.policy-content h4 {
+    color: var(--color-heading-color);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+
+.policy-content p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+span.spec-admin-form {
+    color: rgba(48, 55, 68, 0.67);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+span.admin-fixed {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.admin-img-policy h4 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.admin-img-policy p {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.policy-single {
+    gap: 12px;
+}
+
+.policy-person {
+    gap: 22px;
+}
+
+ul.admin-d-item {
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+    border: none;
+}
+
+ul.admin-d-item li a.dropdown-item {
+    color: var(--color-heading-color);
+    font-family: Poppins !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+
+}
+
+.hold-danger {
+    color: #ff0000 !important;
+}
+
+ul.admin-d-item li:hover a.dropdown-item {
+    background: rgba(0, 54, 227, 0.05) !important;
+    color: var(--color-theme-color-2) !important;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500 !important;
+}
+
+.admin-policy-area {
+    padding: 24px 10px;
+}
+
+.policy-option {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.policy-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 468px;
+    justify-content: center;
+}
+
+.rating-comments a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.rating-comments {
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.rating-comments a p {
+    color: var(--color-theme-color-2);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+a.danger-comments span p {
+    color: var(--color-red);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    border-bottom: 2px solid C00000;
+}
+
+a.success-comments:hover {
+    border-bottom: 2px solid var(--color-theme-color-2);
+}
+
+a.danger-comments:hover {
+    border-bottom: 2px solid var(--color-red);
+}
+
+.policy-price {
+    min-width: 332px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.policy-price-comment {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.consultant-reviw ul li a i {
+    font-size: 12px;
+}
+
+.escrow-text {
+    color: var(--color-heading-color);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.policy-price-text {
+    color: var(--color-heading);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+policy-price p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+span.admin-hours {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+span.admin-currency {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.admin-m-top {
+    border-top: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+}
+
+.admin-m-bottom {
+    border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+}
+
+p.dispute-reason {
+    font-weight: 500;
+    color: var(--color-theme-color-2);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+.policy-price .consultant-reviw ul {
+    padding-left: 0px;
+}
+
+.policy-price .consultant-reviw ul li a i {
+    color: #E9B911;
+}
+
+span.ac-completed {
+    padding: 2px 10px;
+    border-radius: 63px;
+    background: #369450;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ac-new {
+    border-radius: 63px;
+    background: var(--color-yellow);
+    color: var(--color-heading-color);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 2px 10px;
+}
+
+span.ac-progress {
+    padding: 2px 10px;
+    border-radius: 63px;
+    background: #E9B911;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+span.ac-hold {
+    padding: 2px 10px;
+    border-radius: 63px;
+    background: #9CA5C2;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+span.ac-hiring {
+    padding: 2px 10px;
+    border-radius: 63px;
+    background: #0036E3;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+span.spent-price {
+    color: #0036E3;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+
+input.admin-all-checkbox {
+    margin-right: 5px;
+}
+
+.ad-unhold {
+    color: #F00 !important;
+    font-family: Poppins !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+
+.admin-client-title h4 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.balance-table-area-admin {
+    /* margin-top: 20px; */
+    padding: 0px 15px;
+}
+
+th.th-heading {
+    display: flex;
+    align-items: center;
+    min-height: 99px;
+    gap: 10px;
+}
+
+
+span.fixed-screw {
+    display: flex;
+    padding: 3px 0px;
+    border-radius: 29px;
+    background: var(--color-gray, #EBEFF7);
+    border: none;
+    justify-content: center;
+    color: var(--color-heading-color, #191D24);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 13px 0px;
+    width: 100%;
+    max-width: 100px;
+}
+
+
+span.hourly-screw {
+    display: flex;
+    padding: 3px 0px;
+    border-radius: 29px;
+    background: var(--color-gray, #EBEFF7);
+    border: none;
+    justify-content: center;
+    color: var(--color-heading-color, #191D24);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 13px 0px;
+    width: 100%;
+    max-width: 60px;
+}
+
+.admin-tab-nav-area-admin {
+    background-color: transparent;
+    align-items: center;
+    max-height: 70px;
+    padding: 0px 25px;
+}
+
+.admin-tab-nav-area-client {
+    background-color: transparent;
+    align-items: center;
+    max-height: 70px;
+    padding: 0px 0px 0px 25px;
+}
+
+.admin-tab-nav-area-payment {
+    background-color: transparent;
+    align-items: center;
+    max-height: 70px;
+    padding: 20px 15px;
+}
+
+.admin-dashboard-area-client {
+    border: 1px solid rgba(14, 0, 98, 0.1) !important;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+    /* border: 1px solid #E7E5EF; */
+    margin: 24px 0px;
+}
+
+.admin-user-title h5 {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.admin-user-title h6 {
+    color: #A2A3B7;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.admin-avatar-area {
+    gap: 7px;
+}
+
+.top-nav-area-admin {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    gap: 63px;
+}
+
+header.admin-header {
+    margin-top: 0px;
+    display: flex;
+    width: 100%;
+    min-width: 1920px;
+    justify-content: space-between;
+    padding: 26px 50px 26px 0px;
+}
+
+.logo-area-admin .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/*  ========================= Admin dashboard  End here ================================================ */
+/*  ========================= Expert Login Start here ================================================ */
+
+.expert-login-area {
+    width: 1320px;
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+}
+
+header.expert-login {
+    margin-top: 0px;
+    display: flex;
+    width: 100%;
+    min-width: 1920px;
+    justify-content: space-between;
+    padding: 20px 64px;
+}
+
+.or-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 32px;
+}
+
+.or-area p {
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.register .register-form .singup p a {
+    color: #0036E3;
+    font-weight: 500;
+    color: #0036E3;
+    font-family: Public Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+.g-login-text {
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.google-login {
+    gap: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 16px;
+}
+
+.apple-login {
+    gap: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 16px;
+}
+
+.linked-login {
+    gap: 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.10);
+    padding: 16px;
+}
+
+.default-login-area {
+    gap: 8px;
+}
+
+.forget-password a {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+
+}
+
+.kip-login {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 5px;
+
+}
+
+label.email-level {
+    top: -11px;
+    left: 15px;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    background: #fff;
+}
+
+label.password-level {
+    top: -11px;
+    left: 15px;
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    background: #fff;
+}
+
+.input-control-password {
+    margin-top: 24px;
+}
+
+.login-input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+    min-height: 56px;
+}
+
+a.eye-off {
+    right: 16px;
+    top: 17px;
+    color: #000;
+}
+
+.register .register-form h3 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #303744;
+    margin: 0 0 37px;
+    color: #303744;
+    font-family: Public Sans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.register .register-form {
+    box-shadow: 12px 12px 48px 0px #0e006221;
+    padding: 40px 40px;
+    border-radius: 12px;
+}
+
+.academic-block-client {
+    background: transparent !important;
+    padding: 38px 0 0 !important;
+    margin-bottom: 10px !important;
+}
+
+
+.client-heading h2 {
+    margin: 0px 20px 20px !important;
+    font-weight: 500 !important;
+    line-height: 48px !important;
+    color: #191D24 !important;
+    text-align: left !important;
+    font-family: Colfax !important;
+    font-size: 23px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+
+.training-button a.training-registered {
+    /* display: flex !important; */
+    width: 180px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 4px !important;
+    background: #369450 !important;
+    color: #FFF !important;
+    text-align: center !important;
+    font-family: Colfax !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    border-color: #369450 !important;
+}
+
+.academic-block.academic-block-client .row {
+    display: flex;
+    align-items: center;
+    border-top: solid 1px #d9dbea;
+    padding: 25px 23px;
+    margin: 0px auto;
+}
+
+
+/*  ========================= Expert Login End here ================================================ */
+
+
+/**** ============================================== Client Dashboard End Here ================================= ***/
+/**** ============================================== Registration  Modal start Here  ================================= ***/
+
+.modal-registraion-content {
+    padding: 30px;
+    min-width: 584px;
+}
+
+.foundation-title h4 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.foundation-border h6 {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+h6.foundation-border {
+    border: 1px solid rgba(48, 55, 68, 0.50);
+    height: 20px;
+}
+
+.modal-registraion-content {
+    padding: 30px 30px 15px;
+}
+
+p.donas-text {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+p.donax-date-journy {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+p.donax-date-donal {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+p.donax-date-zoom {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.wetern-ui-width {
+    min-width: 316px;
+}
+
+.all-registration-modal {
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.registration-modal-area {
+    padding: 10px 0px;
+    border-bottom: 1px solid #E7E5EF;
+    gap: 20px;
+}
+
+.btn-reg-cancel {
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid #0036E3;
+    background-color: transparent;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.btn-reg-cancel:hover {
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid #0036E3;
+    background-color: transparent;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.btn-reg-checkout {
+    display: flex;
+    padding: 9px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+input.registration-check[type=checkbox]:checked+label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 5px;
+    background-color: #0036E3;
+    font-family: "Montserrat";
+    border-radius: 2px;
+    border: 1px solid rgb(150 150 150 / 30%);
+}
+
+.sendme-checkbox-area {
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+
+.modal-header-registration {
+    border-bottom: none;
+}
+
+.modal-header.modal-header-registration {
+    padding: 0px;
+}
+
+.footer-registration {
+    padding-top: 25px;
+}
+
+.modal-header-register h1 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 23px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+.modal-header-register {
+    padding-top: 0px;
+}
+
+/**** ============================================== Registration  Modal End Here  ================================= ***/
+/**** ============================================== Checkout Payment start Here  ================================= ***/
+
+.checkout-billing-content {
+    max-width: 608px;
+}
+
+.checkout-billing-content h3 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.checkout-billing-content p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
+.paypal-icon-email {
+    align-items: center;
+    gap: 8px;
+}
+
+.paypal-icon-email span {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.check-input-paypal {
+    width: 20px;
+    height: 20px;
+}
+
+.check-input-paypal:checked {
+    border-radius: 39px !important;
+    border: 4px solid #5FA6FF !important;
+    background: #0036E3 !important;
+    border-color: #0d6efd !important;
+}
+
+.paypal-primary-btn button {
+    display: flex;
+    padding: 2px 16px 1px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 23px;
+    border: 2px solid #0036E3;
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.billing-button button {
+    display: flex;
+    width: 265px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid #0036E3;
+    align-items: center;
+}
+
+.checkout-billing-method {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 89, 201, 0.30);
+    background: rgba(0, 89, 201, 0.05);
+    max-width: 648px;
+    padding: 16px 24px;
+    gap: 10px;
+    margin-bottom: 40px;
+    margin-top: 32px;
+}
+
+.paypal-check {
+    gap: 16px;
+}
+
+.checkout-billing-stripe {
+    gap: 16px;
+}
+
+.checkout-border-bottom {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+    max-width: 648px;
+    margin-bottom: 40px;
+}
+
+.checkout-right-sidebar-area {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+    width: 386px;
+    min-height: 685px;
+    flex-shrink: 0;
+    padding: 34px 32px;
+}
+
+.registration-modal-area img.img-sidebar {
+    width: 72px;
+    height: 71px;
+}
+
+.light-single {
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.light-single span {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.checkout-journey p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 24px 0px;
+}
+
+.checkout-journey h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.single-subtotal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-check-fund-area button {
+    display: flex;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    min-width: 328px;
+}
+
+.checkout-journey h5 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.checkout-code span {
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.checkout-code {
+    min-width: 321px;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    padding: 7px 15px;
+    margin-top: 6px;
+}
+
+.checkout-subtotal {
+    gap: 16px;
+    padding: 24px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.promocode-area {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.single-subtotal.estimate-total span {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.checkout-learn span {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+span.checkout-about,
+span.checkout-extend {
+    color: #0036E3;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+
+}
+
+.checkout-learn {
+    padding: 12px 0px 32px;
+}
+
+.databasepading-checkout {
+    margin: 50px 0px;
+}
+
+.checkout-bit {
+    padding-left: 60px;
+}
+
+.owl-carouselfive .owl-item {
+    max-width: 219px;
+    max-height: 256px;
+    margin-left: 16px;
+}
+
+/**** ============================================== Checkout Payment End Here  ================================= ***/
+/**** ============================================== Frontend Dashboard stat here  ================================= ***/
+
+.frontend-dashboard-area {
+    border: 1px solid rgba(14, 0, 98, 0.1) !important;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+    /* border: 1px solid #E7E5EF; */
+    margin: 32px 0px;
+}
+
+
+.frontend-title-area {
+    height: 80px;
+}
+
+.frontend-left-title {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.frontend-left-title h4 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/**** ============================================== Frontend Dashboard end here  ================================= ***/
+
+
+
+
+/**** ============================================== Frontend Dashboard stat here  ================================= ***/
+.academic-bar {
+    margin-bottom: 12px;
+}
+
+.frontend-dashboard-area {
+    border: 1px solid rgba(14, 0, 98, 0.1) !important;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    border-radius: 8px;
+    border: 1px;
+    border-radius: 8px;
+    background: #FFF;
+    margin: 32px 0px;
+
+}
+
+.frontend-title-area {
+    height: 80px;
+    border-bottom: 1px solid #EBEFF7;
+    ;
+    padding: 0px 24px;
+}
+
+.frontend-left-title {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.frontend-left-title h4 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+
+
+.frontend-right-title {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    gap: 10px;
+}
+
+button.save-as-draft {
+    display: flex;
+    padding: 11px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid #0036E3;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    background: transparent;
+}
+
+button.save-update {
+    display: flex;
+    padding: 11px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 159.5%;
+    border: none;
+}
+
+.academic-single-item {
+    width: 192px;
+    height: 278px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1.098px solid #E7E5EF;
+    background: #FFF;
+}
+
+
+.img-area {
+    width: 190.012px;
+    height: 153.767px;
+    flex-shrink: 0;
+    background: #E8EBF6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.position-absolute.blog-close {
+    right: 7px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.text-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-area h4 {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 16px 0px 8px;
+}
+
+.text-area h5,
+p {
+    color: rgba(25, 29, 36, 0.70);
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.text-area h6 {
+    color: rgba(25, 29, 36, 0.70);
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 5px 0px;
+}
+
+.academic-content-area {
+    gap: 24px;
+}
+
+h3.seller-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 137%;
+    border-left: 5px solid #0036E3;
+    padding-left: 11px;
+}
+
+.admin-add-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 278px;
+}
+
+.admin-add-more span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    background: #0036E3;
+    color: #fff;
+    font-size: 28px;
+    border-radius: 50%;
+}
+
+.academic-seller-area {
+    padding: 22px 25px 40px;
+    border-bottom: 1px solid #E7E5EF;
+}
+
+
+.admin-sub-title .admin-form-input {
+    display: flex;
+    height: 56px;
+    padding: 10px 16px;
+    align-items: center;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    max-width: 374px;
+}
+
+.admin-area {
+    display: flex;
+    padding: 10px 16px !important;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    min-width: 760px;
+    min-height: 109px !important;
+}
+
+.admin-text-area {
+    margin-top: 16px;
+}
+
+label.level-subtitle {
+    top: -11px;
+    color: var(--color-heading, #303744);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    left: 25px;
+    background: #fff;
+}
+
+label.level-title {
+    top: -11px;
+    color: var(--color-heading, #303744);
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    left: 25px;
+    background: #fff;
+}
+
+label.admin-text-area-level {
+    /* position: absolute; */
+    color: #303744 !important;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    top: -15px;
+    left: 15px;
+}
+
+.admin-form-title h5 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137%;
+    margin-right: 16px;
+}
+
+.admin-blog-form-area {
+    margin-top: 12px;
+}
+
+.admin-require-main {
+    background-color: transparent !important;
+    padding: 24px 40px !important;
+}
+
+span.require-count {
+    width: 33px;
+    height: 33px;
+    background: #0036E3;
+    border: 4px solid #fff;
+    filter: drop-shadow(4px 4px 16px rgba(14, 0, 98, 0.10));
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    top: 0px;
+    right: 0px;
+}
+
+.require-block .academic-single-item {
+    margin-left: 60px;
+}
+
+.available-text-blog {
+    color: #303744CC !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    margin-left: 10px !important;
+}
+
+.experts-main.experts-main-blog {
+    margin: 24px 0 0px;
+}
+
+.experts-main-blog .experts-block {
+    margin-bottom: 0px !important;
+}
+
+.require-add-item .academic-single-item {
+    margin-left: 0px !important;
+}
+
+.field-search .experts-block .experts-text {
+    max-width: 282px;
+}
+
+
+.field-search .experts-block .experts-text h3 {
+    font-family: Colfax;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 5px !important;
+}
+
+.field-search .experts-block .experts-text p {
+    font-family: Colfax !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 22px !important;
+    text-align: left !important;
+
+}
+
+.experts-main-blog .experts-block .experts-img img {
+    width: 100%;
+    max-height: 219px;
+}
+
+.experts-main-blog .academic-single-item {
+    width: 192px !important;
+    height: 219px !important;
+    flex-shrink: 0 !important;
+    border-radius: 4px !important;
+    border: 1.098px solid #E7E5EF !important;
+    background: #FFF !important;
+}
+
+
+.categories-main-blog {
+    background: transparent !important;
+    padding: 24px 0 40px !important;
+    margin-bottom: 0px !important;
+}
+
+.categories-main-blog .categories-block {
+    margin-bottom: 0px !important;
+}
+
+.categories-main-blog .academic-single-item {
+    width: 192px !important;
+    height: 219px !important;
+    flex-shrink: 0 !important;
+    border-radius: 4px !important;
+    border: 1.098px solid #E7E5EF !important;
+    background: #FFF !important;
+}
+
+.experts-main-blog .team-block {
+    text-align: center;
+    margin: 0px !important;
+}
+
+.team-blog {
+    margin-bottom: 0px !important;
+    padding-top: 48px !important;
+}
+
+.team-blog .team-block {
+    text-align: center;
+    margin: 0 0 0px !important;
+}
+
+.team-blog .academic-single-item {
+    width: 192px !important;
+    height: 219px !important;
+    flex-shrink: 0 !important;
+    border-radius: 4px !important;
+    border: 1.098px solid #E7E5EF !important;
+    background: #FFF !important;
+}
+
+.team-img .blog-close {
+    right: 7px !important;
+    top: 17px !important;
+    cursor: pointer;
+}
+
+.eduexhub-blog {
+    background: transparent !important;
+    padding: 24px 0 40px !important;
+    margin-bottom: 0px !important;
+}
+
+.eduexhub-blog .tabbable-panel .nav-tabs {
+    border: none;
+    justify-content: flex-start !important;
+}
+
+.tabbable-panel-blog {
+    border: 1px solid #E7E5EF;
+    padding: 10px;
+}
+
+.eduexhub-blog .academic-single-item {
+    width: 192px !important;
+    height: 219px !important;
+    flex-shrink: 0 !important;
+    border-radius: 4px !important;
+    border: 1.098px solid #E7E5EF !important;
+    background: #FFF !important;
+}
+
+.scholarship-blog {
+    margin-bottom: 0px !important;
+}
+
+.scholarship-blog .scholarship-block {
+    margin-bottom: 0px;
+}
+
+.scholarship-blog .row {
+    border: none !important;
+    padding: 20px 5px;
+    border-radius: 8px;
+}
+
+.academic-blog {
+    background: transparent !important;
+    padding: 24px 40px !important;
+    margin-bottom: 0px !important;
+}
+
+.blog-border .row {
+    display: flex;
+    align-items: center;
+    border-top: none;
+    padding: 0px;
+}
+
+
+.add-expert-modal {
+    margin: 0 auto;
+    min-width: 913px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+    display: flex;
+    flex-direction: column;
+    /* min-height:943px; */
+
+
+}
+
+
+.add-expert-modal-category {
+    margin: 0 auto;
+    min-width: 913px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+
+.add-expert-content {
+    margin: 0 auto;
+    min-width: 913px;
+    display: flex;
+    flex-direction: column;
+    /* min-height:943px; */
+
+}
+
+.modal-consultant-review ul {
+    display: flex;
+    padding-left: 0px;
+    gap: 20px;
+}
+
+.modal-consultant-review li i {
+    color: #E9B911;
+    font-size: 13px;
+}
+
+h4.light-weight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-expert-single-item:hover {
+    border-radius: 4px;
+    background: rgba(0, 54, 227, 0.07);
+    backdrop-filter: blur(1px);
+
+}
+
+.add-expert-single-item:hover .add-expert-post {
+    display: flex;
+    border-radius: 4px;
+    background: rgba(0, 54, 227, 0.07);
+    backdrop-filter: blur(1px);
+
+}
+
+.add-expert-post {
+    top: 35%;
+    left: 65%;
+    display: none;
+}
+
+.category-expire-item {
+    margin-bottom: 50px;
+}
+
+.m-expert-title {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+span.img-admin-search {
+    right: 10px;
+    top: 20%;
+}
+
+.top-input-control {
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(14, 0, 98, 0.10) !important;
+    display: flex;
+    padding: 12px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+select.top-input-control {
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+
+
+.admin-text-search {
+    margin-bottom: 12px;
+}
+
+.admin-text h4 a {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.right-sidebar .database-block .database-contant .admin-text span {
+    color: rgba(48, 55, 68, 0.60) !important;
+    font-family: Poppins !important;
+    font-size: 13px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+
+h4.light-weight p {
+    color: rgba(48, 55, 68, 0.80);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 159.5%;
+}
+
+h4.light-weight:hover {
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    border-radius: 42px !important;
+    background: rgba(0, 54, 227, 0.06) !important;
+}
+
+h4.light-weight.active {
+    color: #0036E3 !important;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    border-radius: 42px !important;
+}
+
+h4.light-weight.active p {
+    color: #0036E3 !important;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    border-radius: 42px !important;
+}
+
+h4.light-weight:hover p {
+    color: #0036E3 !important;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    border-radius: 42px !important;
+}
+
+.right-sidebar .database-blog .database-contant {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start !important;
+}
+
+.consultant-reviw.modal-consultant-review {
+    margin: 8px 0px;
+}
+
+h4.light-weight.active {
+    display: flex;
+    gap: 10px;
+}
+
+h4.more-read-blog {
+    border-radius: 18px !important;
+    border: 2px solid rgba(48, 55, 68, 0.46) !important;
+    background: #FFF !important;
+    text-align: center;
+}
+
+.more-read-blog p {
+    color: #191D24;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.btn-addexpert-cancel {
+    color: #0036E3 !important;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 2px solid #0036E3 !important;
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+.btn-addexpert-cancel:hover {
+    color: #0036E3 !important;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 2px solid #0036E3 !important;
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+.btn-expert-update {
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+
+.academic-add {
+    width: 192.208px;
+    height: 229.552px;
+
+}
+
+.add-step-modal {
+    min-width: 913px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+}
+
+.add-step-content {
+    margin: 0px 30px;
+    border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+    padding-top: 0px;
+}
+
+label.basic-file-upload {
+    border-radius: 4px;
+    border: 2px solid rgba(48, 55, 68, 0.15);
+    padding: 15px;
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+label.basic-file-upload:hover {
+    border-radius: 4px;
+    border: 2px solid rgba(48, 55, 68, 0.15);
+    padding: 15px;
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+span.blog-upload {
+    border-radius: 4px;
+    border: 2px solid rgba(48, 55, 68, 0.15);
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    /* line-height: 137%; */
+    /* background: rgba(0, 0, 0, 0.60); */
+    border-radius: 4px;
+    background: #EBEFF7;
+    padding: 0px 5px;
+}
+
+
+input.academic-title {
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    padding: 15px;
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.academic-text {
+    border-radius: 4px;
+    border: 2px solid #E7E5EF;
+    padding: 15px;
+    min-height: 134px !important;
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Colfax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.btn-search-academy {
+    border-radius: 4px;
+    background: #0036E3;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 8px 32px;
+}
+
+.add-step-footer {
+    padding: 10px 40px;
+}
+
+.admin-exp-text h3 {
+    color: #191D24;
+    text-align: left !important;
+    font-family: Poppins !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    margin-top: 18px;
+}
+
+.admin-exp-text p {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    max-width: 282px;
+    padding-bottom: 16px;
+
+}
+
+.admin-exp-text {
+    border-bottom: 1px solid #E7E5EF;
+    margin-bottom: 16px;
+
+}
+
+.add-expert-startapp {
+    padding: 0px 25px;
+}
+
+.m-top-title h1 {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.b-expert-text h3 {
+    color: #191D24 !important;
+    text-align: left;
+    font-family: Poppins;
+    font-size: 20px !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.review.browse-review i {
+    color: #DB9E00;
+    font-size: 13px;
+}
+
+
+.add-step-content h1 {
+    margin-bottom: 15px;
+}
+
+.shipment-explore {
+    margin-bottom: 0px !important;
+}
+
+.university-img {
+    max-width: 308px;
+    max-height: 277px;
+}
+
+.databasesce {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+}
+
+.trining-dateline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 700px;
+    margin-top: 19px;
+}
+
+.single-dateline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+p.p-rote {
+    display: flex;
+    min-width: 515px;
+}
+
+.scholarship-title h4 a {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.dataset-title h4 a {
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+
+.border-right-none {
+    border-right: none !important;
+}
+
+.p-rote-text {
+    color: #0036E3 !important;
+    font-family: Poppins;
+    font-size: 14px !important;
+    font-style: normal !important;
+
+}
+
+.live-zoom {
+    max-width: 220px !important;
+}
+
+.academic-block.academic-blog .live-zoom {
+    border-right: none !important
+}
+
+.zoom-border-right {
+    border-right: solid 1px #d9dbea;
+}
+
+.training {
+    margin-left: 20px;
+}
+
+.academic-block .training .training-text {
+    margin: 5px 0 10px !important;
+}
+
+
+
+
+select.top-input-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid rgba(48, 55, 68, 0.15);
+    color: rgba(48, 55, 68, 0.70);
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+
+    border-radius: 8px;
+
+    outline: none;
+    box-shadow: 0 0 20px rgba(20, 20, 30, 0.25);
+}
+
+select.top-input-control::-ms-expand {
+    display: none;
+}
+
+select.top-input-control:hover {
+    border: 2px solid rgba(48, 55, 68, 0.15);
+}
+
+
+
+select.form-select.top-input-control option {
+    border-radius: 50px !important;
+    background: #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(14, 0, 98, 0.10) !important;
+    color: #191D24;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+select.top-input-control option::hover {
+    background-color: #191D24;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #0036E3;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 7px 16px;
+}
+
+.selected {
+    display: none;
+}
+
+.mission-img.overlay-edit {
+    max-width: 538px;
+    max-height: 601px;
+}
+
+.admin-about-img img {
+    width: 62px !important;
+    height: 62px !important;
+}
+
+/**** ============================================== Frontend Dashboard end here  ================================= ***/
+
+/**** ============================================== Super Admin Payment start Here ================================= ***/
+.dropdown-comments {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+    border: none;
+    min-width: 603px;
+    height: 396px;
+    display: flex;
+    padding: 15px;
+}
+
+.dropdown-comments-dispute {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
+    display: flex;
+    padding: 15px;
+    min-width: 358px;
+    height: 91px;
+}
+
+.comment-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h5.comment-title {
+    color: var(--color-heading-color);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h5.comment-title-dispute {
+    color: var(--color-heading-color);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    /* margin-bottom: 10px; */
+    line-height: 10px;
+}
+
+p.c-rating-title {
+    color: var(--color-heading-color);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.consultant-reviw ul li a i {
+    color: #E9B911;
+}
+
+.comment-text p {
+    color: var(--color-heading);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.comments-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 22px;
+}
+
+.comment-border {
+    border-bottom: 1px solid var(--color-border-color-solid);
+}
+
+/**** ============================================== Super Admin Payment end Here ================================= ***/
+/**** ============================================== Logo area register start here ================================= ***/
+
+.main__content__wrapper_register {
+    background: #FBFBFC;
+    box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.06);
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.logo-area-register {
+    width: 100%;
+    display: flex;
+
+}
+
+/**** ============================================== Logo area register End here ================================= ***/
+
+/* =================== Notification alert  start here ======================= */
+.all-notification {
+    margin: 50px 0px 30px;
+}
+
+.all-notification h4 {
+    color: #303744;
+    font-family: Colfax;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.edux-alert-success {
+    border-radius: 4px;
+    border: 1px solid rgba(90, 188, 118, 0.25);
+    background: rgba(90, 188, 118, 0.08);
+    color: #5ABC76;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    height: 77px;
+}
+
+.edux-alert-warning {
+    color: #8E6F00;
+    ;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    height: 77px;
+    border-radius: 4px;
+    border: 1px solid rgba(233, 185, 17, 0.34);
+    background: rgba(233, 185, 17, 0.06);
+
+}
+
+.edux-alert-info {
+    color: #191D24;
+    ;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    height: 77px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 54, 227, 0.10);
+    background: rgba(0, 54, 227, 0.05);
+
+}
+
+.edux-alert-error {
+    color: #C00000;
+    ;
+    font-family: Colfax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    height: 77px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 0, 0, 0.12);
+    background: rgba(255, 0, 0, 0.06);
+
+}
+
+.alert-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+span.alert-icon {
+    display: flex;
+}
+
+button.edux-btn-close {
+    border: none;
+    background: transparent;
+}
+
+
+/* =================== Notification start here ======================= */
+
+.edux-btn-primary {
+    display: flex;
+    min-width: 265px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: var(--color-theme-color-2);
+    max-width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: transparent;
+}
+
+
+.edux-btn-primary:hover {
+    display: flex;
+    min-width: 265px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #002CB9;
+    max-width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.edux-btn-border-primary {
+    display: flex;
+    min-width: 265px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    max-width: 100%;
+    color: var(--color-theme-color-2);
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: 2px solid var(--color-theme-color-2);
+
+}
+
+
+.edux-btn-border-primary:hover {
+    display: flex;
+    min-width: 265px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: var(--color-theme-color-2);
+    max-width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: 2px solid var(--color-theme-color-2);
+}
+
+.edux-btn-border-primary:hover .arrow-left svg path {
+    fill: #fff;
+}
+
+
+
+span.arrow-left {
+    display: flex;
+    margin-right: 8px;
+}
+
+
+.edux-register-ac {
+    display: flex;
+    align-items: center;
+    border: solid 1px #0000001A;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.register-img {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.register-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: solid 1px #00000014;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    margin-right: 12px;
+}
+
+.register-img h4 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.single-batch {
+    margin-bottom: 20px;
+}
+
+
+.edux-batch-success span {
+    display: inline-flex;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 63px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FFF;
+    background: #369450;
+
+}
+
+
+.edux-batch-progress span {
+    display: inline-flex;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 63px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #191D24;
+    background: #E9B911;
+
+}
+
+
+.edux-batch-onhold span {
+    display: inline-flex;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 63px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FFF;
+    background: #9CA5C2;
+
+}
+
+.edux-batch-reject span {
+    display: inline-flex;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 63px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FFF;
+    background: #F00;
+
+}
+
+.edux-batch-draft span {
+    display: inline-flex;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 63px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #8C8C8C;
+    background: #DFDFDF;
+
+}
+
+.edux-batch-active span {
+    display: inline-flex;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 63px;
+    font-family: Colfax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #fff;
+    background: #0036E3;
+
+}
+
+.single-rate {
+    border-radius: 30px;
+    background: rgba(48, 55, 68, 0.10);
+    border: 2px solid rgba(48, 55, 68, 0.10);
+    display: inline-flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.single-rate:hover {
+    border-radius: 30px;
+    border: 2px solid rgba(0, 54, 227, 0.20);
+    background: rgba(0, 54, 227, 0.10);
+
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    fill: #0036E3;
+}
+
+.single-rate:hover svg path {
+    border-radius: 30px;
+    border: 2px solid rgba(0, 54, 227, 0.20);
+    background: rgba(0, 54, 227, 0.10);
+
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    fill: #0036E3;
+}
+
+.batch-star-area ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 0px;
+}
+
+
+
+/**** ============================================== Responsive Design Start Here  ================================= ***/
+
+@media only screen and (max-width: 1820px) {
+
+    .admin-area {
+        display: flex;
+        padding: 10px 16px !important;
+        align-items: flex-start;
+        gap: 10px;
+        flex: 1 0 0;
+        align-self: stretch;
+        border-radius: 4px;
+        border: 2px solid #E7E5EF;
+        color: #191D24;
+        font-family: Colfax;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        min-width: 700px;
+        min-height: 109px !important;
+    }
+
+}
+
+@media only screen and (max-width: 1760px) {
+
+    .admin-nav-link {
+        font-size: 12px;
+    }
+
+    .admin-nav-link.active {
+        font-size: 12px !important;
+
+    }
+
+}
+
+@media only screen and (max-width: 1720px) {
+
+    .admin-m-input {
+        margin-top: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 1662px) {
+
+    .search-by-admin {
+        min-width: 290px;
+    }
+
+}
+
+@media only screen and (max-width: 1520px) {
+
+    .search-by-admin {
+        min-width: 260px;
+    }
+
+}
+
+@media only screen and (max-width: 1460px) {
+    .admin-nav-link {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .admin-tab-nav-area ul {
+        margin-bottom: 0px !important;
+        padding-top: 30px;
+        width: 50%;
+    }
+
+    .all-padding-admin {
+        padding: 16px 10px;
+    }
+
+    .search-by-admin {
+        min-width: 235px;
+    }
+
+    .top-nav-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nav-area ul {
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        gap: 15px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 1370px) {
+
+    .top-nav-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nav-area ul {
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        gap: 13px;
+    }
+
+    header.client-header {
+        padding: 26px 7px;
+
+    }
+
+}
+
+@media only screen and (max-width: 1320px) {
+    .admin-nav-link {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .admin-tab-nav-area {
+        flex-direction: column-reverse !important;
+    }
+
+    .admin-tab-nav-area ul {
+        margin-bottom: 0px !important;
+        padding-top: 30px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .short-by-area {
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (max-width: 1248px) {
+
+    .top-nav-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+    }
+
+    header.client-header {
+
+        width: 100%;
+        justify-content: center;
+
+    }
+
+    .top-search-area {
+        display: flex;
+        /* align-items: center; */
+        gap: 24px;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    header.client-header {
+        padding: 26px 50px;
+    }
+
+}
+
+
+
+/**** ============================================== Responsive Design End Here  ================================= ***/

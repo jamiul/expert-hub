@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>EduExHub</title>
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
