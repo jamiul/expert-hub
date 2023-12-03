@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum ProfileStatus
+enum ProfileStatus: string
 {
-    case Draft;
-    case InReview;
-    case Approved;
+    case Draft = 'Draft';
+    case InReview = 'In Review';
+    case Approved = 'Approved';
 }

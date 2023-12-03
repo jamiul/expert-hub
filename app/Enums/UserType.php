@@ -2,8 +2,8 @@
 
 namespace App\Enums;
 
-enum UserType
+enum UserType: string
 {
-    case Client;
-    case Expert;
+    case Client = 'Client';
+    case Expert = 'Expert';
 }

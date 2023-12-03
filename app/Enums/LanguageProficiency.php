@@ -2,10 +2,10 @@
 
 namespace App\Enums;
 
-enum LanguageProficiency
+enum LanguageProficiency: string
 {
-    case Basic;
-    case Conversational;
-    case Fluent;
-    case Native;
+    case Basic = 'Basic';
+    case Conversational = 'Conversational';
+    case Fluent = 'Fluent';
+    case Native = 'Native';
 }
