@@ -108,7 +108,7 @@ class FigmaController extends Controller
     {
         return view('figma-html.clientverifyyouremail');
     }
-// -------- Expert Dashboard pages------------
+    // -------- Expert Dashboard pages------------
     public function expertdashboard()
     {
         return view('figma-html.expert-dashboard');
@@ -244,7 +244,7 @@ class FigmaController extends Controller
         return view('figma-html.clientdashboardnotificationsettting');
     }
 
-// Admin dashboard
+    // Admin dashboard
 
 
     public function admindashboardhome()
@@ -313,6 +313,16 @@ class FigmaController extends Controller
     public function adminpaymentprogress()
     {
         return view('figma-html.adminpaymentprogress');
+    }
+
+    public function allnotification()
+    {
+        return view('figma-html.allnotification');
+    }
+
+    public function registerprofilenotification()
+    {
+        return view('figma-html.registerprofilenotification');
     }
 
 

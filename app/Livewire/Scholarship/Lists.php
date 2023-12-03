@@ -96,9 +96,9 @@ class Lists extends Component
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
             $scholarships = $scholarships
-            ->select('scholarships.*')
-            ->join('scholarship_countries', 'scholarships.country_id', '=', 'scholarship_countries.id')
-            ->whereIn('scholarship_countries.country_name', $this->filtersArray['country']);
+                ->select('scholarships.*')
+                ->join('scholarship_countries', 'scholarships.country_id', '=', 'scholarship_countries.id')
+                ->whereIn('scholarship_countries.country_name', $this->filtersArray['country']);
         }
         if (isset($this->filtersArray['university']) && $this->filtersArray['university']) {
             $scholarships = $scholarships

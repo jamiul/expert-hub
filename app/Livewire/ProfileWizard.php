@@ -339,6 +339,6 @@ class ProfileWizard extends Component
 
     public function profile()
     {
-        return auth()->user()->userProfile;
+        return auth()->user()->profile;
     }
 }

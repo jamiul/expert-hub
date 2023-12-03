@@ -38,6 +38,6 @@ class Profile extends Model
 
     public function consultationServices()
     {
-        return $this->hasMany(ProfileConsultation::class);
+        return $this->hasMany(Consultation::class);
     }
 }

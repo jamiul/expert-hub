@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
         @vite('resources/css/auth.css')
         <link rel="stylesheet" href="{{ asset('assets/frontend/css/components.css') }}">
     </head>

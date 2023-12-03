@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/client-dashboard.css') }}">
 
     <!-- Client Dashboard Css -->
 

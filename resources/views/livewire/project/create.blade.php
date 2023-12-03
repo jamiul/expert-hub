@@ -231,12 +231,14 @@
                                 @endif
                                 @if($currentStep < 6)
                                 <div class="form-buttons">
-                                    <button wire:click="next" type="button" class="btn btn-primary next-step">Next</button>
+                                    <!-- <button wire:click="next" type="button" class="btn btn-primary next-step edux-btn-primary">Next</button> -->
+                                    <button wire:click="next" type="button" class="edux-btn-primary">Next</button>
                                 </div>
                                 @endif
                                 @if($currentStep === 6)
                                 <div class="form-buttons">
-                                    <button type="submit" class="btn btn-primary next-step">Yes Post my Project</button>
+                                    <!-- <button type="submit" class="btn btn-primary next-step">Yes Post my Project</button> -->
+                                    <button type="submit" class="edux-btn-primary">Yes Post my Project</button>
                                 </div>
                                 @endif
                             </form>

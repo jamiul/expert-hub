@@ -33,7 +33,7 @@ class Create extends Component
 
     public function mount()
     {
-        $this->availableBudgets = Option::where('group', OptionGroupEnum::BudgetUSD)->where('status', 1)->pluck('value')->toArray();
+        $this->availableBudgets = [10,20,30];
     }
 
     public function save()

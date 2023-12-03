@@ -67,7 +67,7 @@ class Lists extends Component
         if (isset($this->filtersArray['trainingDate']) && $this->filtersArray['trainingDate']) {
             $trainingDate = $this->filtersArray['trainingDate'];
             $trainingDate = Carbon::parse($trainingDate)->format('Y-m-d');
-            
+
             $trainings = $trainings->whereHas('trainingDates', function ($q) use ($trainingDate) {
                 $q->whereDate('date_start', '<=', $trainingDate);
                 $q->whereDate('date_end', '>=', $trainingDate);
@@ -81,15 +81,15 @@ class Lists extends Component
         }
         if (isset($this->filtersArray['language']) && $this->filtersArray['language']) {
             $trainings = $trainings
-            ->select('trainings.*')
-            ->join('languages', 'trainings.language_id', '=', 'languages.id')
-            ->where('languages.name', $this->filtersArray['language']);
+                ->select('trainings.*')
+                ->join('languages', 'trainings.language_id', '=', 'languages.id')
+                ->where('languages.name', $this->filtersArray['language']);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
             $trainings = $trainings
-            ->select('trainings.*')
-            ->join('countries', 'trainings.country_id', '=', 'countries.id')
-            ->whereIn('countries.name', $this->filtersArray['country']);
+                ->select('trainings.*')
+                ->join('countries', 'trainings.country_id', '=', 'countries.id')
+                ->whereIn('countries.name', $this->filtersArray['country']);
         }
 
         $trainings = $trainings->paginate($this->limit);
