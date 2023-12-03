@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Enums\ProfileStatus;
 use App\Models\Country;
 use App\Models\Profile;
 use App\Models\User;
@@ -62,29 +63,25 @@ class Registration extends Component
     {
         $this->validate();
         $user = User::create([
-            'name' => $this->fullName(),
             'title' => $this->title,
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
+            'username' => $this->first_name . '-' . $this->last_name,
             'email' => $this->email,
             'password' => Hash::make($this->password),
-            'user_type' => $this->type,
+            'type' => $this->type,
             'country_id' => $this->country_id,
-            'newsletter' => $this->newsletter,
-            'terms' => $this->terms,
+            'send_tips' => $this->send_tips,
+            'terms_agreed' => $this->terms_agreed,
         ]);
         event(new Registered($user));
         Profile::create([
             'user_id' => $user->id,
-            'type' => $this->type,
+            'status' => ProfileStatus::Draft,
         ]);
         Auth::login($user);
         return redirect()->route('verification.notice');
         // dd(auth()->user());
-    }
-    protected function fullName(): string
-    {
-        return $this->first_name . ' ' . $this->last_name;
     }
 
     public function render()
