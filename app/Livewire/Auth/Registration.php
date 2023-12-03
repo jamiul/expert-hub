@@ -15,7 +15,7 @@ class Registration extends Component
 {
     protected array $availableTypes = ['Expert', 'Client'];
 
-    public int $currentStep = 2;
+    public int $currentStep = 1;
 
     public array $titles;
 

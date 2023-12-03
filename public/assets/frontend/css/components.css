@@ -123,10 +123,10 @@
     box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .2);
 }
 .form-radio-group{
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 .form-check-group{
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;

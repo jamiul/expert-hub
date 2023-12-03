@@ -1,0 +1,17 @@
+{
+  "resources/css/auth.css": {
+    "file": "assets/auth-05cc6ce9.css",
+    "isEntry": true,
+    "src": "resources/css/auth.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-39dcccdc.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/bootstrap.scss": {
+    "file": "assets/bootstrap-ad882f37.css",
+    "isEntry": true,
+    "src": "resources/sass/bootstrap.scss"
+  }
+}
