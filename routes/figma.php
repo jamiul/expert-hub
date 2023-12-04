@@ -34,7 +34,7 @@ Route::group(['prefix' => 'figma'], function () {
     //expert status
     Route::view('/expert-status', 'figma.expert-status');
     Route::view('/expert-status-proposal', 'figma.expert-status-proposal');
-    Route::view('/expert-status-analytics', '');
+    Route::view('/expert-status-analytics', 'figma.expert-status-analytics');
 
     //Client Dashboard
     Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
@@ -55,7 +55,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     Route::view('/client-weeklyreporttransction', 'figma.clientweeklyreporttransaction');
 
-    Route::view('/client-weeklyreporttwobudview', '');
+    Route::view('/client-weeklyreporttwobudget', 'figma.clientweeklyreporttwobudget');
     Route::view('/client-dashboardatimesheet', 'figma.clientdashboardatimesheet');
     Route::view('/client-passwordsecurity', 'figma.clientdashboardpasswordsecurity');
     Route::view('/client-notificationsettting', 'figma.clientdashboardnotificationsettting');
@@ -77,7 +77,6 @@ Route::group(['prefix' => 'figma'], function () {
     // Register-profile options
     Route::view('/notification', 'figma.allnotification');
 
-
     // Training Checkout
     Route::view('/training-checkout', 'figma.trainingcheckout');
 
@@ -88,7 +87,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-work-diary', 'figma.expert-work-diary');
     Route::view('/expert-proposal', 'figma.expert-proposals');
     Route::view('/expert-job-offer', 'figma.expert-job-offer');
-    Route::view('/expert-view-paid', '');
+    Route::view('/expert-get-paid', 'figma.expert-get-paid');
     Route::view('/expert-password-security', 'figma.expert-password-security');
     Route::view('/expert-id-verify', 'figma.expert-id-verify');
     Route::view('/expert-notification-settings', 'figma.expert-notification-settings');
