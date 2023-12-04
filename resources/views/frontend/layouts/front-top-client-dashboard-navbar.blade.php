@@ -1,7 +1,5 @@
 
 @include('frontend.layouts.front-top-client-dashboard-navbarmain')
-
-
 @if (request()->is('figma/client-dashboard') or request()->is('figma/client-dashboardallcontact'))
 
 <div class="header-bar">

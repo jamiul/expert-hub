@@ -1195,7 +1195,7 @@ li.nav-item {
 .header-bar nav {
   display: flex;
   width: 100%;
-  padding: 0px 265px;
+  padding: 0px 235px;
 }
 .header-bar nav ul {
   margin-bottom: 0px;
@@ -1218,7 +1218,7 @@ span.material-symbols-outlined.active {
   width: 32px;
   height: 32px;
   font-size: 40px;
-  left: -15px;
+  left: 10px;
 }
 
 span.material-symbols-outlined.active.expert-root {
@@ -1228,7 +1228,7 @@ span.material-symbols-outlined.active.expert-root {
   width: 32px;
   height: 32px;
   font-size: 40px;
-  left: 60px;
+  left: 82px;
 }
 
 span.material-symbols-outlined.active.payment-root {
@@ -1238,7 +1238,7 @@ span.material-symbols-outlined.active.payment-root {
   width: 32px;
   height: 32px;
   font-size: 40px;
-  left: 160px;
+  left: 180px;
 }
 
 span.material-symbols-outlined.active.setting-root {
@@ -1248,7 +1248,7 @@ span.material-symbols-outlined.active.setting-root {
   width: 32px;
   height: 32px;
   font-size: 40px;
-  left: 270px;
+  left: 300px;
 }
 
 .header-bar nav ul li a{
@@ -2305,18 +2305,18 @@ span.suggest-skill{
   display: flex;
   flex-direction: column;
 }
-.draft-options i {
+
+.draft-options svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
   border: 1px solid #0E00621A;
   border-radius: 50%;
   width: 32px;
   height: 32px;
   color: #191D24;
-  font-size: 14px;
   font-family: 'Font Awesome 5 Free';
+  padding: 5px;
 }
 
 a.draft-option-toggle{
@@ -2339,11 +2339,17 @@ a.draft-option-toggle::after{
 
 }
 
-a.draft-option-toggle.show i {
+a.draft-option-toggle.show svg{
   border: 1px solid #0E00621A;
   box-shadow: 2px 2px 13px 0px #0E00620A;
   background-color: #0036E3 !important;
   color: #fff;
+  /* fill:#0036E3 !important; */
+}
+
+
+a.draft-option-toggle.show svg path{
+  fill:#fff !important;
 }
 
 .draft-options ul.dropdown-show a:hover {
