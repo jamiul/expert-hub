@@ -1,12 +1,4 @@
 /*-----common----------*/
-@font-face {
-    font-family: "colfax";
-    src: url("../../../colfax-font/Colfax-Regular.otf");
-}
-@font-face {
-    font-family: "colfaxbold";
-    src: url("../../../colfax-font/Colfax-Bold.otf");
-}
 .ff-colfax {
     font-family: "colfax";
 }

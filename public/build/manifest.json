@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-41b1ce0f.css",
+    "file": "assets/app-be2cdcaa.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -9,10 +9,129 @@
     "isEntry": true,
     "src": "resources/css/auth.css"
   },
+  "resources/css/choices.css": {
+    "file": "assets/choices-ef7b3fa8.css",
+    "isEntry": true,
+    "src": "resources/css/choices.css"
+  },
+  "resources/css/client-dashboard.css": {
+    "file": "assets/client-dashboard-83bd9883.css",
+    "isEntry": true,
+    "src": "resources/css/client-dashboard.css"
+  },
   "resources/css/components.css": {
     "file": "assets/components-64e28e2c.css",
     "isEntry": true,
     "src": "resources/css/components.css"
+  },
+  "resources/css/expert-custom.css": {
+    "file": "assets/expert-custom-9cf86994.css",
+    "isEntry": true,
+    "src": "resources/css/expert-custom.css"
+  },
+  "resources/css/experthire.css": {
+    "file": "assets/experthire-ede3bfb2.css",
+    "isEntry": true,
+    "src": "resources/css/experthire.css"
+  },
+  "resources/css/filepond.css": {
+    "file": "assets/filepond-b7f7fb3d.css",
+    "isEntry": true,
+    "src": "resources/css/filepond.css"
+  },
+  "resources/css/font-awesome_6.4.2_css_all.min.css": {
+    "file": "assets/font-awesome_6.4.2_css_all.min-f92fd9a0.css",
+    "isEntry": true,
+    "src": "resources/css/font-awesome_6.4.2_css_all.min.css"
+  },
+  "resources/css/left-sidebar.css": {
+    "file": "assets/left-sidebar-9313a49a.css",
+    "isEntry": true,
+    "src": "resources/css/left-sidebar.css"
+  },
+  "resources/css/owl.carousel.min.css": {
+    "file": "assets/owl.carousel.min-a67c730b.css",
+    "isEntry": true,
+    "src": "resources/css/owl.carousel.min.css"
+  },
+  "resources/css/owl.theme.default.css": {
+    "file": "assets/owl.theme.default-4b0bcf30.css",
+    "isEntry": true,
+    "src": "resources/css/owl.theme.default.css"
+  },
+  "resources/css/style.css": {
+    "file": "assets/style-0613f32a.css",
+    "isEntry": true,
+    "src": "resources/css/style.css"
+  },
+  "resources/default/css/aboutUs.css": {
+    "file": "assets/aboutUs-f983fbd8.css",
+    "isEntry": true,
+    "src": "resources/default/css/aboutUs.css"
+  },
+  "resources/default/css/card.css": {
+    "file": "assets/card-e6454dfa.css",
+    "isEntry": true,
+    "src": "resources/default/css/card.css"
+  },
+  "resources/default/css/consultantreg.css": {
+    "file": "assets/consultantreg-5d52cb3f.css",
+    "isEntry": true,
+    "src": "resources/default/css/consultantreg.css"
+  },
+  "resources/default/css/custom.css": {
+    "file": "assets/custom-772d2f9e.css",
+    "isEntry": true,
+    "src": "resources/default/css/custom.css"
+  },
+  "resources/default/css/expert-dashboard.css": {
+    "file": "assets/expert-dashboard-37872e9e.css",
+    "isEntry": true,
+    "src": "resources/default/css/expert-dashboard.css"
+  },
+  "resources/default/css/expert-header.css": {
+    "file": "assets/expert-header-07eb5ce3.css",
+    "isEntry": true,
+    "src": "resources/default/css/expert-header.css"
+  },
+  "resources/default/css/expert-profile.css": {
+    "file": "assets/expert-profile-8f4be54f.css",
+    "isEntry": true,
+    "src": "resources/default/css/expert-profile.css"
+  },
+  "resources/default/css/header.css": {
+    "file": "assets/header-e7835f08.css",
+    "isEntry": true,
+    "src": "resources/default/css/header.css"
+  },
+  "resources/default/css/home.css": {
+    "file": "assets/home-61c2cb09.css",
+    "isEntry": true,
+    "src": "resources/default/css/home.css"
+  },
+  "resources/default/css/project-listing.css": {
+    "file": "assets/project-listing-1f9eb8ae.css",
+    "isEntry": true,
+    "src": "resources/default/css/project-listing.css"
+  },
+  "resources/default/css/services-listing.css": {
+    "file": "assets/services-listing-6bfb3f5b.css",
+    "isEntry": true,
+    "src": "resources/default/css/services-listing.css"
+  },
+  "resources/default/css/single-profile.css": {
+    "file": "assets/single-profile-c33f5eb8.css",
+    "isEntry": true,
+    "src": "resources/default/css/single-profile.css"
+  },
+  "resources/default/css/status.css": {
+    "file": "assets/status-c907fb58.css",
+    "isEntry": true,
+    "src": "resources/default/css/status.css"
+  },
+  "resources/fonts/Colfax-Bold.otf": {
+    "file": "assets/Colfax-Bold-58a83a6a.otf",
+    "src": "resources/fonts/Colfax-Bold.otf"
   },
   "resources/fonts/Colfax-Medium.woff": {
     "file": "assets/Colfax-Medium-2286e489.woff",
@@ -34,6 +153,21 @@
     "file": "assets/app-39dcccdc.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/choices.min.js": {
+    "file": "assets/choices.min-7bd669eb.js",
+    "isEntry": true,
+    "src": "resources/js/choices.min.js"
+  },
+  "resources/js/filepond.js": {
+    "file": "assets/filepond-34080bf8.js",
+    "isEntry": true,
+    "src": "resources/js/filepond.js"
+  },
+  "resources/js/owl.carousel.min.js": {
+    "file": "assets/owl.carousel.min-9b504a53.js",
+    "isEntry": true,
+    "src": "resources/js/owl.carousel.min.js"
   },
   "resources/sass/bootstrap.scss": {
     "file": "assets/bootstrap-4c3504b5.css",
