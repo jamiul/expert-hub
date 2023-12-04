@@ -1,3 +1,3 @@
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/client-dashboard.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/experthire.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/left-sidebar.css') }}">
+@vite('resources/css/client-dashboard.css')
+@vite('resources/css/experthire.css')
+@vite('resources/css/left-sidebar.css')

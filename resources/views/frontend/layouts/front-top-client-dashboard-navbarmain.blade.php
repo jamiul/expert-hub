@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/client-dashboard.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/experthire.css') }}">
-<link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/expert-custom.css') }}">
+@vite('resources/css/client-dashboard.css')
+@vite('resources/css/experthire.css')
+@vite('resources/css/default/css/expert-header.css')
+@vite('resources/css/expert-custom.css')
 <nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
    <div class="container-fluid algin-items-center mx-auto">
       <a class="navbar-brand edux-navbar-brand" href="/figma/client-dashboardhome">

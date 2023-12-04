@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/client-dashboard.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/experthire.css') }}">
-
+@vite('resources/css/client-dashboard.css')
+@vite('resources/css/experthire.css')
 
 <header class="client-header">
   <div class="top-nav-area">
