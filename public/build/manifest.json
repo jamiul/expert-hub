@@ -144,6 +144,11 @@
     "file": "assets/Colfax-Regular-cb1494e1.woff2",
     "src": "resources/fonts/Colfax-Regular.woff2"
   },
+  "resources/js/about-us.js": {
+    "file": "assets/about-us-116d7206.js",
+    "isEntry": true,
+    "src": "resources/js/about-us.js"
+  },
   "resources/js/app.js": {
     "file": "assets/app-39dcccdc.js",
     "isEntry": true,
@@ -154,15 +159,70 @@
     "isEntry": true,
     "src": "resources/js/choices.min.js"
   },
+  "resources/js/consultant-details.js": {
+    "file": "assets/consultant-details-7d29ffc3.js",
+    "isEntry": true,
+    "src": "resources/js/consultant-details.js"
+  },
+  "resources/js/consultant.js": {
+    "file": "assets/consultant-60371abf.js",
+    "isEntry": true,
+    "src": "resources/js/consultant.js"
+  },
+  "resources/js/expert.js": {
+    "file": "assets/expert-3e55ac52.js",
+    "isEntry": true,
+    "src": "resources/js/expert.js"
+  },
   "resources/js/filepond.js": {
     "file": "assets/filepond-34080bf8.js",
     "isEntry": true,
     "src": "resources/js/filepond.js"
   },
+  "resources/js/find-project.js": {
+    "file": "assets/find-project-60371abf.js",
+    "isEntry": true,
+    "src": "resources/js/find-project.js"
+  },
+  "resources/js/jquery_3.7.1_jquery.min.js": {
+    "file": "assets/jquery_3.7.1_jquery.min-458386b8.js",
+    "isEntry": true,
+    "src": "resources/js/jquery_3.7.1_jquery.min.js"
+  },
+  "resources/js/main.js": {
+    "file": "assets/main-86143bf5.js",
+    "isEntry": true,
+    "src": "resources/js/main.js"
+  },
   "resources/js/owl.carousel.min.js": {
     "file": "assets/owl.carousel.min-9b504a53.js",
     "isEntry": true,
     "src": "resources/js/owl.carousel.min.js"
+  },
+  "resources/js/register-expertise.js": {
+    "file": "assets/register-expertise-3d6b3333.js",
+    "isEntry": true,
+    "src": "resources/js/register-expertise.js"
+  },
+  "resources/js/scholarship-database.js": {
+    "file": "assets/scholarship-database-9d8a9af3.js",
+    "isEntry": true,
+    "src": "resources/js/scholarship-database.js"
+  },
+  "resources/js/script.js": {
+    "file": "assets/script-839f1dfb.js",
+    "isEntry": true,
+    "src": "resources/js/script.js"
+  },
+  "resources/js/sign-up.js": {
+    "file": "assets/sign-up-f55dae03.js",
+    "isEntry": true,
+    "src": "resources/js/sign-up.js"
+  },
+  "resources/js/training.js": {
+    "file": "assets/training-1a3eab4f.js",
+    "isEntry": true,
+    "src": "resources/js/training.js"
   },
   "resources/sass/bootstrap.scss": {
     "file": "assets/bootstrap-4c3504b5.css",

@@ -8,6 +8,6 @@
 
 
 @push('bottom_scripts')
-    <script src="{{asset('assets/frontend/js/owl.carousel.js')}}"></script>
-    <script src="{{asset('assets/frontend/js/scholarship-database.js')}}"></script>
+@vite('resources/js/owl.carousel.js')
+@vite('resources/js/scholarship-database.js')
 @endpush

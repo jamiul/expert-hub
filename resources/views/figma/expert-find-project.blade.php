@@ -1126,5 +1126,5 @@
 
 @endsection
 @push('bottom_scripts')
-    <script src="{{asset('assets/frontend/js/find-project.js')}}"></script>
+    @vite('resources/js/find-project.js')
 @endpush
