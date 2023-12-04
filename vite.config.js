@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/css/owl.carousel.min.css',
                 'resources/css/owl.theme.default.css',
                 'resources/css/client-dashboard.css',
+                'resources/css/expert-custom.css',
                 'resources/css/filepond.css',
                 'resources/css/choices.css',
                 'resources/css/app.css',
