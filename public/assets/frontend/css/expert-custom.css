@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"');
+
+
+
+/**** ================================== Client Dashboard Start Here ===================================***/
+
+:root {
+  --color-heading-color: #191D24;
+  --color-heading: #303744;
+  --primary: #0036E3;
+  --success: #369450;
+  --white: #ffffff;
+  --heading-color: #303744;
+  --dark: #191D24;
+  --border-color: rgba(14, 0, 98, 0.10);
+  --white: #ffffff;
+  --bs-border-color: #E7E5EF;
+  --color-theme-color-2:#0036E3;
+  --color-border-color-solid: #E7E5EF;
+  --color-red: #C00000;
+  --color-yellow: #E9B911;
+}
+
+/*  default css */
+
+h1, h2, h3, h4, h5, h6, p, ul, ol{
+  margin-bottom: 0px;
+}
+
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
+.mess__list li .caption .time__box {
+    width: 6rem;
+}
+
+.expert__dashboard__nav__custom {
+    padding: 1rem 0;
+    border-bottom: none !important
+}
+
+.rounded-circle-avater{
+    border: 2px solid #E7E5EF;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.rounded-circle-avater img{
+    width: 44px;
+    height: 44px;
+
+}
+
+.profile__dropdown .status_box input[type="radio"]:checked + label {
+    background:#0036E3;
+    color: var(--white);
+    border-radius: 4px;
+}
+
+
+.expert__dashboard__nav .edux-navbar-brand {
+    margin-right:53px;
+}
+
+.mess__list li .caption .time__box .detail__link {
+  color: rgba(25, 29, 36, 0.70);
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid #C8C5D4;
+  padding: 3px 4px;
+  text-decoration: none;
+  padding: 3px 9px;
+  margin-top: 3px;
+  display: inline-block;
+  font-size: 12px;
+}

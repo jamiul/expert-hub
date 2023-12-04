@@ -32,95 +32,95 @@
               <thead class="t-history">
                   <tr>
                     <th scope="col">Budget Name</th>
-                    <th scope="col">Est</th>
+                    <th scope="col">Est. budget</th>
                     <th scope="col">Used</th>
                     <th scope="col">Balance</th>
                   </tr>
               </thead>
               <tbody class="">
-              
+
               <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;"  class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td  style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;" class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;">Developing curriculum for Postgraduate public health unit</td>
-                  <td style="vertical-align: middle;">1500</td>
+                  <td style="vertical-align: middle;" class="budget-single">$1500</td>
                   <td style="vertical-align: middle;"  class="balance-text">$400</td>
-                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span>in Budget</span></td>
+                  <td style="vertical-align: middle;" class=" d-flex flex-column justify-content-center"><span class="budget-green">$1100</span> <span class="budget-single">in Budget</span></td>
                 </tr>
               </tbody>
             </table>
@@ -130,7 +130,7 @@
     </div>
 
     <!-- edit draft area start Here -->
-    
+
     <!-- Pagination start Here -->
     <div class="row pagination-padding">
       <div class="pagination-area">

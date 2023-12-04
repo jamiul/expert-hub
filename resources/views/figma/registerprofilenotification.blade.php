@@ -3,7 +3,7 @@
 <main class="main__layout d-flex">
         <div class="main__content__wrapper_register col">
             <div class="header__wrapper py-2 bg-white">
-            @include('figma/admintopbarregister')
+            @include('figma-html/admintopbarregister')
             </div>
         </div>
 </main>

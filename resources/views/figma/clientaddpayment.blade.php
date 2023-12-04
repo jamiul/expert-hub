@@ -46,7 +46,13 @@
                 </div>
 
                 <div class="without-draw-button">
-                  <button class="btn-with-draw d-flex justify-content-center align-items-center  gap-2" ><span><span class="material-symbols-outlined d-flex justify-content-center align-items-center">add</span></span> <a class="nav-link " href="/figma/client-clientvisapaypal" >Weekly  Summery</a> </button>
+                  <button class="btn-with-draw d-flex justify-content-center align-items-center  gap-2" >
+                    <span class="payment-svg">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <path d="M11.75 13.25H6V11.75H11.75V6H13.25V11.75H19V13.25H13.25V19H11.75V13.25Z" fill="white"/>
+                    </svg>
+                  </span>
+                  <span class="payment-text"><a class="nav-link " href="/figma/client-clientvisapaypal">Add Payment Method</a> </span></button>
                 </div>
             </div>
 

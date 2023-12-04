@@ -22,7 +22,6 @@
             <div class="study-level">
                 <div class="calendar-box position-relative">
                   <input type="text" id="dateInput" placeholder="Start Date">
-                    <!-- <p class=" position-absolute short-by-date"><span class="material-symbols-outlined">calendar_today</span></p> -->
                   <div class="calendar" id="calendar">
                     <div class="header">
                       <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
@@ -88,15 +87,22 @@
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
               </a>
               <ul class="dropdown-menu dropdown-show">
-                
+
+                <li>
+                  <a class="dropdown-item dropdown-heading active" data-bs-toggle="modal" data-bs-target="#editpostingcustomize" href="#">View Job Posting</a>
+                </li>
+
                 <li>
                   <a class="dropdown-item dropdown-heading " data-bs-toggle="modal" data-bs-target="#editpostingcustomize" href="#">Edit Posting</a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading "data-bs-toggle="modal" data-bs-target="#removeposting" href="#">Remove Posting   </a>
-                </li>
-               
 
+                <li>
+                  <a class="dropdown-item dropdown-heading "data-bs-toggle="modal" data-bs-target="#removeposting" href="#">Remove Posting</a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item dropdown-heading">Invite Experts</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -198,7 +204,7 @@
               </a>
               <ul class="dropdown-menu dropdown-show">
                 <li>
-                  <a class="dropdown-item dropdown-heading" href="#">Invite Experts</a>
+                  <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
                 </li>
                 <li>
                   <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
@@ -445,32 +451,32 @@
                                  <div class="single-all d-flex flex-row align-items-center  justify-content-start">
                                     <img src="{{ asset('assets/frontend/img/ester.png') }}" alt="">
                                     <p class="miles-all">Dr Miles Esther</p>
-                                 </div> 
-                              
+                                 </div>
+
                                  <div class="single-all d-flex flex-row ">
                                         <img src="{{ asset('assets/frontend/img/institution.png') }}" alt="">
                                         <div class="institution  d-flex flex-column">
                                           <h6>Institution</h6>
                                           <p>Sydney Islami business school </p>
                                       </div>
-                                     
-                                 </div> 
-                             
+
+                                 </div>
+
                                  <div class="single-all d-flex flex-row">
                                     <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="">
                                       <div class="institution d-flex flex-column">
                                         <h6>Austria</h6>
                                         <p>Sydney 9:20 pm</p>
                                       </div>
-                                 </div> 
-                                 
+                                 </div>
+
                                  <div class="single-all d-flex flex-row">
                                     <img src="{{ asset('assets/frontend/img/bag.png') }}" alt="">
                                       <div class="institution d-flex flex-column">
                                         <h6>7 jobs posted</h6>
                                         <p>100% hire rate, 4 open jobs</p>
                                       </div>
-                                 </div> 
+                                 </div>
 
                                  <div class="chat-with-client">
                                   <button> <span> <img src=" {{ asset('assets/frontend/img/message-img.png') }} " alt="message"></span> Chat with Client</button>
@@ -479,14 +485,14 @@
                             </div>
                       </div>
                     </div>
-                                    
+
                  </div>
 
                 </div>
               </div>
             </div>
           </div>
-  </div>          
+  </div>
 
 
     <div class="modal fade" id="editpostingcustomize" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -499,7 +505,7 @@
                     <div class="health-unit-area d-flex flex-column ">
 
                         <div class="health-unit-top-eidt health-unit-top-area d-flex flex-row justify-content-between ">
-                          <div class="edit-title d-flex flex-row justify-content-between"> 
+                          <div class="edit-title d-flex flex-row justify-content-between">
                             <h5>LMS Expert required for Business Administration</h5>
                             <a href=""> <img src="{{ asset('assets/frontend/img/lastday/edit-modal.png') }}" alt=""> </a>
                           </div>
@@ -527,7 +533,7 @@
                               </div>
 
                               <p class="suggest-text"> <span class="suggest-skill">Suggestion skills:</span>  Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</p>
-                              
+
                           </div>
 
                           <div class="attachment-area d-flex flex-column">
@@ -565,32 +571,32 @@
                                  <div class="single-all d-flex flex-row align-items-center  justify-content-start">
                                     <img src="{{ asset('assets/frontend/img/ester.png') }}" alt="">
                                     <p class="miles-all">Dr Miles Esther</p>
-                                 </div> 
-                              
+                                 </div>
+
                                  <div class="single-all d-flex flex-row ">
                                         <img src="{{ asset('assets/frontend/img/institution.png') }}" alt="">
                                         <div class="institution  d-flex flex-column">
                                           <h6>Institution</h6>
                                           <p>Sydney Islami business school </p>
                                       </div>
-                                     
-                                 </div> 
-                             
+
+                                 </div>
+
                                  <div class="single-all d-flex flex-row">
                                     <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="">
                                       <div class="institution d-flex flex-column">
                                         <h6>Austria</h6>
                                         <p>Sydney 9:20 pm</p>
                                       </div>
-                                 </div> 
-                                 
+                                 </div>
+
                                  <div class="single-all d-flex flex-row">
                                     <img src="{{ asset('assets/frontend/img/bag.png') }}" alt="">
                                       <div class="institution d-flex flex-column">
                                         <h6>7 jobs posted</h6>
                                         <p>100% hire rate, 4 open jobs</p>
                                       </div>
-                                 </div> 
+                                 </div>
 
                                  <div class="chat-with-client">
                                   <button> <span> <img src=" {{ asset('assets/frontend/img/message-img.png') }} " alt="message"></span> Chat with Client</button>
@@ -599,7 +605,7 @@
                             </div>
                       </div>
                     </div>
-                                    
+
                  </div>
 
                  <div class="row">
@@ -615,8 +621,8 @@
           </div>
   </div>
 
-  
-  
+
+
   <div class="modal fade" id="removeposting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
@@ -627,7 +633,7 @@
                     <div class="health-unit-area d-flex flex-column ">
 
                         <div class="health-unit-top-eidt health-unit-top-area d-flex flex-row justify-content-between ">
-                          <div class="edit-title d-flex flex-row justify-content-between"> 
+                          <div class="edit-title d-flex flex-row justify-content-between">
                             <h5>|Academic content writer</h5>
                             <a href=""> <img src="{{ asset('assets/frontend/img/lastday/edit-modal.png') }}" alt=""> </a>
                           </div>
@@ -655,7 +661,7 @@
                               </div>
 
                               <p class="suggest-text"> <span class="suggest-skill">Suggestion skills:</span>  Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</p>
-                              
+
                           </div>
 
                           <div class="attachment-area d-flex flex-column">
@@ -712,32 +718,32 @@
                                  <div class="single-all d-flex flex-row align-items-center  justify-content-start">
                                     <img src="{{ asset('assets/frontend/img/ester.png') }}" alt="">
                                     <p class="miles-all">Dr Miles Esther</p>
-                                 </div> 
-                              
+                                 </div>
+
                                  <div class="single-all d-flex flex-row ">
                                         <img src="{{ asset('assets/frontend/img/institution.png') }}" alt="">
                                         <div class="institution  d-flex flex-column">
                                           <h6>Institution</h6>
                                           <p>Sydney Islami business school </p>
                                       </div>
-                                     
-                                 </div> 
-                             
+
+                                 </div>
+
                                  <div class="single-all d-flex flex-row">
                                     <img src="{{ asset('assets/frontend/img/globe.png') }}" alt="">
                                       <div class="institution d-flex flex-column">
                                         <h6>Austria</h6>
                                         <p>Sydney 9:20 pm</p>
                                       </div>
-                                 </div> 
-                                 
+                                 </div>
+
                                  <div class="single-all d-flex flex-row">
                                     <img src="{{ asset('assets/frontend/img/bag.png') }}" alt="">
                                       <div class="institution d-flex flex-column">
                                         <h6>7 jobs posted</h6>
                                         <p>100% hire rate, 4 open jobs</p>
                                       </div>
-                                 </div> 
+                                 </div>
 
                                  <div class="chat-with-client">
                                   <button> <span> <img src=" {{ asset('assets/frontend/img/message-img.png') }} " alt="message"></span> Chat with Client</button>
@@ -746,7 +752,7 @@
                             </div>
                       </div>
                     </div>
-                                    
+
                  </div>
 
                  <div class="row">

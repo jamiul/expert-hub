@@ -5,7 +5,7 @@
         <!-- start left sidebar -->
         <div class="left__sidebar"> 
             <div class="content"> 
-                  @include('figma/adminleftsidebar')
+                  @include('figma-html/adminleftsidebar')
             </div><!--.//content-->
         </div>
         <!-- end left sidebar -->
@@ -14,7 +14,7 @@
         <div class="main__content__wrapper col">
              <!-- start header -->
             <div class="header__wrapper py-2 bg-white"> 
-            @include('figma/admintopbar')
+            @include('figma-html/admintopbar')
             </div>
             <!-- end header -->
 

@@ -15,7 +15,7 @@
 
             <div class="study-level">
               <div class="calendar-box position-relative">
-                <input type="text" id="dateInputsheet" placeholder="Current week (oct 23 2023 -  oct ..) ">
+                <input class="timesheet-date" type="text" id="dateInput" placeholder="Current week (oct 23 2023 -  oct ..)">
 
                 <div class="calendar" id="calendar">
                   <div class="header">
@@ -42,8 +42,8 @@
 
           </div>
         </div>
-        <div class="divided"></div>
-        <div class="search-by">
+        <div class="divided d-none"></div>
+        <div class="search-by d-none">
           <form class="example search-form">
             <input type="text" placeholder="Search by contract, client, or company" name="search">
             <button type="submit">
