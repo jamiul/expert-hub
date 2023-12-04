@@ -11,5 +11,5 @@
 @endsection
 
 @push('bottom_scripts')
-    <script src="{{ asset('assets/frontend/js/about-us.js') }}"></script>
+    @vite('resources/js/about-us.js')
 @endpush

@@ -10,5 +10,5 @@
 @endsection
 
 @push('bottom_scripts')
-    <script src="{{ asset('assets/frontend/js/filepond.js') }}"></script>
+@vite('resources/js/filepond.js')
 @endpush

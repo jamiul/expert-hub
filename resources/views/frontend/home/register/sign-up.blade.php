@@ -6,5 +6,5 @@
 @endsection
 
 @push('bottom_scripts')
-    <script src="{{ asset('assets/frontend/js/sign-up.js') }}"></script>
+@vite('resources/js/sign-up.js')
 @endpush

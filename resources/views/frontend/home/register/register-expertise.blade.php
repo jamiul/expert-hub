@@ -5,5 +5,5 @@
     @include('frontend.home.register.partials._register-expertise')
 @endsection
 @push('bottom_scripts')
-    <script src="{{asset('assets/frontend/js/register-expertise.js')}}"></script>
+@vite('resources/js/register-expertise.js')
 @endpush

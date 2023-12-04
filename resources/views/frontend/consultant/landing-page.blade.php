@@ -7,5 +7,5 @@
 @endsection
 
 @push('bottom_scripts')
-    <script src="{{ asset('assets/frontend/js/consultant.js') }}"></script>
+@vite('resources/js/consultant.js')
 @endpush
