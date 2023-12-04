@@ -2,141 +2,42 @@
 
 namespace App\Providers;
 
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to your controller routes.
+     * The path to your application's "home" route.
      *
-     * In addition, it is set as the URL generator's root namespace.
+     * Typically, users are redirected here after authentication.
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    public const HOME = '/';
 
     /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @return void
+     * Define your route model bindings, pattern filters, and other route configuration.
      */
-    public function boot()
+    public function boot(): void
     {
-        //
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+        });
 
-        parent::boot();
-    }
+        $this->routes(function () {
+            Route::middleware('api')
+                ->prefix('api')
+                ->group(base_path('routes/api.php'));
 
-    /**
-     * Define the routes for the application.
-     *
-     * @return void
-     */
-    public function map()
-    {
-        $this->mapFigmaRoutes();
-        $this->mapTestRoutes();
+            Route::middleware('web')
+                ->group(base_path('routes/web.php'));
 
-        $this->mapAdminRoutes();
-        $this->mapWebRoutes();
-
-        //$this->mapApiRoutes();
-        //$this->mapSupportTicketRoutes();
-        //$this->mapOfflinePaymentRoutes();
-        //$this->mapInstallRoutes();
-        //$this->mapUpdateRoutes();
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
-    {
-        Route::prefix('api')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/api.php'));
-    }
-
-    protected function mapAdminRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/admin.php'));
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/web.php'));
-    }
-
-    /**
-     * Define the "updating" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapUpdateRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/update.php'));
-    }
-
-    /**
-     * Define the "installation" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapInstallRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/install.php'));
-    }
-
-    protected function mapSupportTicketRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/support_tickets.php'));
-    }
-
-    protected function mapOfflinePaymentRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/offline_payment.php'));
-    }
-
-    protected function mapFigmaRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/figma.php'));
-    }
-
-    protected function mapTestRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/test.php'));
+            Route::middleware('web')
+                ->group(base_path('routes/figma.php'));
+        });
     }
 }
