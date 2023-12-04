@@ -1,6 +1,6 @@
 @vite('resources/css/client-dashboard.css')
 @vite('resources/css/experthire.css')
-@vite('resources/css/default/css/expert-header.css')
+@vite('resources/default/css/expert-header.css')
 @vite('resources/css/expert-custom.css')
 <nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
    <div class="container-fluid algin-items-center mx-auto">
