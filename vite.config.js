@@ -7,7 +7,6 @@ export default defineConfig({
             input: [
                 'resources/sass/bootstrap.scss',
                 'resources/css/style.css',
-                'resources/css/font-awesome_6.4.2_css_all.min.css',
                 'resources/css/owl.carousel.min.css',
                 'resources/css/owl.theme.default.css',
                 'resources/css/client-dashboard.css',

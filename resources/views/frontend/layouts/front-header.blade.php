@@ -14,18 +14,14 @@
 
     @yield('meta')
 
-    <!-- Favicon -->
-    <link rel="icon"
-            href="">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
+    @vite('resources/css/app.css')
     @vite('resources/css/style.css')
-    @vite('resources/css/font-awesome_6.4.2_css_all.min.css')
     @vite('resources/css/owl.carousel.min.css')
     @vite('resources/css/owl.theme.default.css')
     @vite('resources/css/components.css')
     @vite('resources/css/client-dashboard.css')
 
-    <!-- Client Dashboard Css -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
    @stack('top_styles')
 </head>

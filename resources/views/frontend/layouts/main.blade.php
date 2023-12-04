@@ -6,7 +6,6 @@
         <title>EduExHub</title>
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
         @vite('resources/css/style.css')
-        @vite('resources/css/font-awesome_6.4.2_css_all.min.css')
         @vite('resources/css/owl.carousel.min.css')
         @vite('resources/css/owl.theme.default.css')
         @vite('resources/css/client-dashboard.css')

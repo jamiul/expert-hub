@@ -39,11 +39,6 @@
     "isEntry": true,
     "src": "resources/css/filepond.css"
   },
-  "resources/css/font-awesome_6.4.2_css_all.min.css": {
-    "file": "assets/font-awesome_6.4.2_css_all.min-f92fd9a0.css",
-    "isEntry": true,
-    "src": "resources/css/font-awesome_6.4.2_css_all.min.css"
-  },
   "resources/css/left-sidebar.css": {
     "file": "assets/left-sidebar-9313a49a.css",
     "isEntry": true,
