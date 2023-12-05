@@ -8,4 +8,5 @@
 
 @push('bottom_scripts')
 @vite('resources/js/expert.js')
+@vite('resources/js/find-project.js')
 @endpush

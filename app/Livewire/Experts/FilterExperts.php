@@ -58,8 +58,8 @@ class FilterExperts extends Component
     public function render()
     {
         $countries = Country::all();
-        $categories = Skill::isParent()->with('childrens')->get();
-        $expertises = Expertise::isParent()->with('childrens')->get();
+        $categories = Expertise::skill()->isParent()->with('childrens')->get();
+        $expertises = Expertise::expertise()->isParent()->with('childrens')->get();
         return view('livewire.experts.filter-experts', compact('expertises', 'categories', 'countries'));
     }
 }
