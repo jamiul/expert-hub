@@ -1851,18 +1851,23 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .custom-select .select-selected:after {
-    content: "\f107";
-    font-family: fontawesome;
+    content: "\e5cf";
+    font-family: 'Material Symbols Outlined';
     position: absolute;
     right: 15px;
     font-size: 14px;
     color: #000;
+    font-size: 20px;
 }
 
 .custom-select .select-arrow-active:after {
-    content: "\f106";
-    color: #0036e3;
+    content: "\e316";
+    font-family: 'Material Symbols Outlined';
+    color: #0036E3;
+    font-size: 20px;
 }
+
+
 
 .custom-select .select-items div {
     padding: 7px 16px;
@@ -1914,11 +1919,11 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .left-sidebar .study-level .accordion ul li label:before {
-    content: "";
+    content: '';
     -webkit-appearance: none;
     background-color: transparent;
-    border: 2px solid #3037444d;
-    display: inline-block;
+    border: 2px solid #3037444D;
+    display: flex;
     position: relative;
     vertical-align: middle;
     cursor: pointer;
@@ -1926,12 +1931,12 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     width: 20px;
     height: 20px;
     border-radius: 4px;
+    font-size: 20px;
 }
 
 .left-sidebar .study-level .accordion ul li input:checked + label:after {
-    content: "\f00c";
-    font-family: fontawesome;
-    position: absolute;
+    content: "\e876";
+    font-family: 'Material Symbols Outlined';
     left: 0;
     width: 20px;
     height: 20px;
@@ -1940,7 +1945,8 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     color: #fff;
     display: flex;
     justify-content: center;
-    font-size: 14px;
+    font-size: 23px;
+    align-items: center;
 }
 
 .left-sidebar .study-level .accordion ul li:last-child {
@@ -2086,11 +2092,11 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .left-sidebar .study-level-media ul li label:before {
-    content: "";
+    content: '';
     -webkit-appearance: none;
     background-color: transparent;
-    border: 2px solid #3037444d;
-    display: inline-block;
+    border: 2px solid #3037444D;
+    display: flex;
     position: relative;
     vertical-align: middle;
     cursor: pointer;
@@ -2098,22 +2104,25 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     width: 20px;
     height: 20px;
     border-radius: 4px;
+    font-size: 20px;
 }
 
 .left-sidebar .study-level-media ul li input:checked + label:after {
-    content: "\f00c";
-    font-family: fontawesome;
-    position: absolute;
+    content: "\e876";
+    font-family: 'Material Symbols Outlined';
     left: 0;
     width: 20px;
     height: 20px;
     border-radius: 4px;
-    background: #0036e3;
+    background: #0036E3;
     color: #fff;
     display: flex;
     justify-content: center;
-    font-size: 14px;
+    font-size: 23px;
+    align-items: center;
+    top: 4px;
 }
+
 
 .left-sidebar .study-level-media ul li:last-child {
     margin-bottom: 0;
