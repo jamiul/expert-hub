@@ -238,7 +238,7 @@ footer .footer-bottom .footer-left p {
 }
 footer .footer-bottom .footer-icon ul {margin: 0;padding: 0;text-align: right;}
 footer .footer-bottom .footer-icon ul li {display: inline-block;margin-left: 2px;}
-footer .footer-bottom .footer-icon ul li a {color: #fff;border: solid 1px #FFFFFF33;width: 40px;height: 40px;display: inline-block;line-height: 40px;text-align: center;border-radius: 100%;font-size: 16px;transition: all 500ms;}
+footer .footer-bottom .footer-icon ul li a {color: #fff;border: solid 1px #FFFFFF33;width: 40px;height: 40px;display: flex;line-height: 40px;text-align: center;border-radius: 100%;font-size: 16px;transition: all 500ms;}
 footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff;}
 
 .about-banner {position: relative;margin-bottom: 70px;}
@@ -327,7 +327,7 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
 .custom-select .select-hide {display: none;}
 .custom-select .select-items {position: absolute;background-color: #fff;top: 100%;left: 0;right: 0;z-index: 99;box-shadow: 0px 3px 6px 0px #0e00621a;border-radius: 4px;padding: 4px 0;}
 .custom-select .select-selected {width: 100%;padding: 0 12px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;font-size: 16px;font-weight: 400;line-height: 40px;color: #303744;}
-.custom-select .select-selected:after {content: "\e5cf"; font-family: 'Material Symbols Outlined'; position: absolute;right: 15px;font-size: 14px;color: #000;}
+.custom-select .select-selected:after {content: "\e5cf"; font-family: 'Material Symbols Outlined'; position: absolute;right: 15px;font-size: 20px;color: #000;}
 
 .custom-select .select-arrow-active:after {content: "\e316";color: #0036E3; font-family: 'Material Symbols Outlined';}
 .custom-select .select-items div {padding: 7px 16px;cursor: pointer;transition: all 500ms;color: #191D24;font-size: 16px;font-weight: 400;}
@@ -338,8 +338,40 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
 .left-sidebar .study-level .accordion ul li {margin-bottom: 12px;}
 .left-sidebar .study-level .accordion ul li input {padding: 0;height: initial;width: initial;margin-bottom: 0;display: none;cursor: pointer;}
 .left-sidebar .study-level .accordion ul li label {align-items: center;position: relative;cursor: pointer;display: flex;margin: 0;font-size: 14px;color: #303744;font-weight: 400;}
-.left-sidebar .study-level .accordion ul li label:before {content: '';-webkit-appearance: none;background-color: transparent;border: 2px solid #3037444D;display: inline-block;position: relative;vertical-align: middle;cursor: pointer;margin-right: 8px;width: 20px;height: 20px;border-radius: 4px;}
-.left-sidebar .study-level .accordion ul li input:checked + label:after {content: "\f00c";font-family: fontawesome;position: absolute;left: 0;width: 20px;height: 20px;border-radius: 4px;background: #0036E3;color: #fff;display: flex;justify-content: center;font-size: 14px;}
+
+.left-sidebar .study-level .accordion ul li label:before {
+    content: '';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #3037444D;
+    display: flex;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    font-size: 20px;
+
+}
+
+.left-sidebar .study-level .accordion ul li input:checked + label:after {
+    content: "\e876";
+    font-family: 'Material Symbols Outlined';
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    align-items: center;
+    top: 4px;
+}
+
 .left-sidebar .study-level .accordion ul li:last-child {margin-bottom: 0;}
 
 .left-sidebar .study-level .accordion .at-title.active h2 span, .left-sidebar .study-level .accordion .at-title h2 span:hover {color: #0036E3;}
@@ -376,7 +408,20 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
 .left-sidebar .study-level-media ul li input {padding: 0;height: initial;width: initial;margin-bottom: 0;display: none;cursor: pointer;}
 .left-sidebar .study-level-media ul li label {align-items: center;position: relative;cursor: pointer;display: flex;margin: 0;font-size: 14px;color: #303744;font-weight: 400;}
 .left-sidebar .study-level-media ul li label:before {content: '';-webkit-appearance: none;background-color: transparent;border: 2px solid #3037444D;display: inline-block;position: relative;vertical-align: middle;cursor: pointer;margin-right: 8px;width: 20px;height: 20px;border-radius: 4px;}
-.left-sidebar .study-level-media ul li input:checked + label:after {content: "\f00c";font-family: fontawesome;position: absolute;left: 0;width: 20px;height: 20px;border-radius: 4px;background: #0036E3;color: #fff;display: flex;justify-content: center;font-size: 14px;}
+
+.left-sidebar .study-level-media ul li input:checked + label:after {    content: "\e876";
+    font-family: 'Material Symbols Outlined';
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #0036E3;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    align-items: center;}
+
 .left-sidebar .study-level-media ul li:last-child {margin-bottom: 0;}
 
 .calendar-box {position: relative;}

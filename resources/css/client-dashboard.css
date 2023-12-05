@@ -2552,6 +2552,18 @@ p.short-by-date {
   font-family: Colfax;
   font-size: 14px;
   font-style: normal;
+  font-weight: 400;
+  /* padding: 19px 8px; */
+}
+
+
+.edux-transaction-all  tbody tr td {
+  border-top: 1px solid  #E7E5EF;
+  border-bottom: 1px solid  #E7E5EF;
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 500;
   /* padding: 19px 8px; */
 }

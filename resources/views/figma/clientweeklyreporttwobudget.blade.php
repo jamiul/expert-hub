@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col-12">
         <div class="balance-table-area d-flex flex-column">
-            <table class="table table-hover transaction-all">
+            <table class="table table-hover edux-transaction-all">
               <thead class="t-history">
                   <tr>
                     <th scope="col">Budget Name</th>
