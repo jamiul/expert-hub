@@ -151,10 +151,11 @@
             </div>
             <div class="carousel-control">
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <i class="fa-solid fa-angle-left"></i>
+                <span class="material-symbols-outlined">chevron_left</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <i class="fa-solid fa-angle-right"></i>
+                    <span class="material-symbols-outlined">navigate_next</span>
+
                 </button>
             </div>
         </div>
