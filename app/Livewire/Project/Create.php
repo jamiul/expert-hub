@@ -3,6 +3,7 @@
 namespace App\Livewire\Project;
 
 use App\Enums\OptionGroupEnum;
+use App\Enums\ProjectStatus;
 use App\Models\Expertise;
 use App\Models\Option;
 use App\Models\Project;
@@ -17,7 +18,7 @@ class Create extends Component
 
     public int $currentStep = 1;
 
-    public $name;
+    public $title;
     public $description;
     public $attachments = [];
 
@@ -27,37 +28,39 @@ class Create extends Component
 
     public $type = '';
 
-    public $currency = 'USD';
-    public $budget;
-    public $availableBudgets = [];
-
-    public function mount()
-    {
-        $this->availableBudgets = [10,20,30];
-    }
+    public $budget_start_amount;
+    public $budget_end_amount;
 
     public function save()
     {
         $data = $this->validate();
         $attachments = [];
-        foreach($this->attachments as $attachment){
+
+        $project = Project::create([
+            'user_id' => Auth::user()->id,
+            'title' => $data['title'],
+            'slug' => Str::slug($data['title'], '-') . date('Ymd-his'),
+            'description' => $data['description'],
+            'type' => $data['type'],
+            'currency_id' => 1,
+            'budget_start_amount' => $data['budget_start_amount'],
+            'budget_end_amount' => $data['budget_end_amount'],
+            'status' => ProjectStatus::Published,
+        ]);
+        foreach($this->selectedSkills as $id => $name){
+            $project->skills()->create([
+                'expertise_id' => $id,
+            ]);
+        }
+        foreach ($this->attachments as $attachment) {
             $fileName = $attachment->getClientOriginalName() . '-' . time() . '.' . $attachment->extension();
             $attachment->storeAs('project', $fileName);
-            $attachments[] = $fileName;
+            $project->files()->create([
+                'name' => $fileName,
+                'type' => $attachment->extension(),
+            ]);
             // show attachment asset('storage/project/' . $project->attachments[0])
         }
-        $project = Project::create([
-            'name' => $data['name'],
-            'description' => $data['description'],
-            'attachments' => $attachments,
-            'skills' => array_values($data['selectedSkills']),
-            'type' => $data['type'],
-            'currency' => $data['currency'],
-            'budget' => $data['budget'],
-            'project_category_id' => 1,
-            'client_user_id' => Auth::user()->id,
-            'slug' => Str::slug($data['name'], '-') . date('Ymd-his'),
-        ]);
 
         return redirect()->to('/');
     }
@@ -65,12 +68,12 @@ class Create extends Component
     public function rules()
     {
         return [
-            'name' => ['required', 'string'],
+            'title' => ['required', 'string'],
             'description' => ['required'],
             'selectedSkills' => ['required', 'array'],
             'type' => ['required'],
-            'currency' => ['required'],
-            'budget' => ['required'],
+            'budget_start_amount' => ['required', 'numeric'],
+            'budget_end_amount' => ['nullable', 'numeric'],
         ];
     }
 
@@ -90,7 +93,7 @@ class Create extends Component
     public function next()
     {
         if($this->currentStep === 1){
-            $this->validateOnly('name');
+            $this->validateOnly('title');
         }
         if($this->currentStep === 2){
             $this->validateOnly('description');
@@ -102,7 +105,7 @@ class Create extends Component
             $this->validateOnly('type');
         }
         if($this->currentStep === 5){
-            $this->validateOnly('budget');
+            $this->validateOnly('budget_start_amount');
         }
         $this->currentStep += 1;
     }
@@ -134,15 +137,5 @@ class Create extends Component
     public function removeSkill($id)
     {
         unset($this->selectedSkills[$id]);
-    }
-
-    public function updatedCurrency()
-    {
-        if($this->currency === 'AUD'){
-            $this->availableBudgets = Option::where('group', OptionGroupEnum::BudgetAUD)->where('status', 1)->pluck('value')->toArray();
-        }
-        if($this->currency === 'USD'){
-            $this->availableBudgets = Option::where('group', OptionGroupEnum::BudgetUSD)->where('status', 1)->pluck('value')->toArray();
-        }
     }
 }

@@ -13,8 +13,6 @@ class CountrySeeder extends Seeder
      */
     public function run(): void
     {
-        Country::truncate();
-
         $feed = database_path('data/countries.csv');
         $data = array_map('str_getcsv', file($feed));
 

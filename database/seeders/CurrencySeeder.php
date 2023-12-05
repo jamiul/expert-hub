@@ -14,8 +14,6 @@ class CurrencySeeder extends Seeder
      */
     public function run(): void
     {
-        Currency::truncate();
-
         $feed = database_path('data/currencies.csv');
         $data = array_map('str_getcsv', file($feed));
 

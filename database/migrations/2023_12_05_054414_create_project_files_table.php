@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profile_education', function (Blueprint $table) {
+        Schema::create('project_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id');
-            $table->string('institution');
-            $table->string('degree');
-            $table->string('field')->nullable();
-            $table->string('start_year')->nullable();
-            $table->string('end_year')->nullable();
+            $table->foreignId('project_id')->constrained()->cascadeOnDelete();
+            $table->string('name');
+            $table->string('type');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profile_education');
+        Schema::dropIfExists('project_files');
     }
 };

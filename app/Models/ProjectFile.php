@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ConsultationSkill extends Model
+class ProjectFile extends Model
 {
     use SoftDeletes;
 

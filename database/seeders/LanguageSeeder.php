@@ -13,8 +13,6 @@ class LanguageSeeder extends Seeder
      */
     public function run(): void
     {
-        Language::truncate();
-
         $feed = database_path('data/languages.csv');
         $data = array_map('str_getcsv', file($feed));
 

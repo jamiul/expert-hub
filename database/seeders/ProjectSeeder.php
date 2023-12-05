@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\ProjectStatus;
+use App\Models\Expertise;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -16,8 +17,6 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        Project::truncate();
-
         $feed = database_path('data/projects.csv');
         $data = array_map('str_getcsv', file($feed));
         $keys = array_shift($data);
@@ -36,12 +35,27 @@ class ProjectSeeder extends Seeder
                 'description' => $project['description'],
                 'type' => $project['type'],
                 'currency_id' => 1,
-                'budget_start_amount' => $project['budget_start_amount'],
-                'budget_end_amount' => $project['budget_end_amount'],
+                'budget_start_amount' => intval($project['budget_start_amount']),
+                'budget_end_amount' => intval($project['budget_end_amount']),
                 'status' => ProjectStatus::Published,
             ];
+            $projectSkills[] = $project['skills'];
         }
 
         DB::table('projects')->insert($projects);
+        $projectSkillsArray = [];
+        foreach($projectSkills as $key => $skills){
+            $skillArray = explode(',', $skills);
+            foreach($skillArray as $skill){
+                $expertise = Expertise::where('name', $skill)->first();
+                if($expertise){
+                    $projectSkillsArray[] = [
+                        'project_id' => $key + 1,
+                        'expertise_id' => $expertise->id,
+                    ];
+                }
+            }
+        }
+        DB::table('project_skill')->insert($projectSkillsArray);
     }
 }

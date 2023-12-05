@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultations', function (Blueprint $table) {
+        Schema::create('experiences', function (Blueprint $table) {
             $table->id();
             $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
-            $table->string('unit');
-            $table->string('value');
+            $table->string('title');
+            $table->longText('description');
+            $table->string('institute');
+            $table->string('address')->nullable();
+            $table->string('start_year')->nullable();
+            $table->string('end_year')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consultations');
+        Schema::dropIfExists('experiences');
     }
 };

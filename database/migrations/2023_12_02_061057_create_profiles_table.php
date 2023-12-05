@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->decimal('hourly_rate')->nullable();
             $table->string('picture')->nullable();
             $table->longText('biography')->nullable();
