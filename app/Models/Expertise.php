@@ -10,4 +10,29 @@ class Expertise extends Model
     use SoftDeletes;
     
     protected $guarded = [];
+
+    public function parent()
+    {
+        return $this->belongsTo(Expertise::class, 'parent_id');
+    }
+
+    public function childrens()
+    {
+        return $this->hasMany(Expertise::class, 'parent_id', 'id');
+    }
+
+    public function scopeExpertise($query)
+    {
+        return $query->where('is_skill', false);
+    }
+
+    public function scopeSkill($query)
+    {
+        return $query->where('is_skill', true);
+    }
+
+    public function scopeIsParent($query)
+    {
+        return $query->where('parent_id', null);
+    }
 }

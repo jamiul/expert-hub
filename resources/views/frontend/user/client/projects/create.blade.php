@@ -1,7 +1,7 @@
 @extends('frontend.layouts.front-layout')
 
 @push('top_styles')
-    <link rel='stylesheet' href="{{ asset('assets/frontend/css/filepond.css') }}">
+    @vite('resources/css/filepond.css')
 @endpush
 
 @section('content')
@@ -10,5 +10,5 @@
 @endsection
 
 @push('bottom_scripts')
-@vite('resources/js/filepond.js')
+    @vite('resources/js/filepond.js')
 @endpush

@@ -29,4 +29,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Profile::class);
     }
+
+    public function scopeClient($query)
+    {
+        return $query->where('type', UserType::Client);
+    }
+
+    public function scopeExpert($query)
+    {
+        return $query->where('type', UserType::Expert);
+    }
 }
