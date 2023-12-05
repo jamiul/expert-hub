@@ -158,8 +158,14 @@ header .header-menu .container-fluid {
     padding: 0;
 }
 
+/* header .header-menu .login-block {
+    text-align: right;
+} */
+
 header .header-menu .login-block {
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 header .header-menu .login-block a {
@@ -169,13 +175,24 @@ header .header-menu .login-block a {
     color: #0036e3;
     border: solid 2px #0036e3;
     border-radius: 4px;
-    display: inline-table;
+    /* display: inline-table; */
     width: 118px;
-    height: 35px;
+    min-height: 35px;
     line-height: 35px;
     text-align: center;
     text-decoration: none;
     margin-left: 4px;
+}
+
+a.eudx-login-person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+span.top-person {
+    margin-top: -3px;
 }
 
 header .header-menu .login-block a:hover {
@@ -403,7 +420,7 @@ header .header-menu .login-block i {
     border-color: #0036e3;
 }
 
-.product-slider .carousel-control button:hover i {
+.product-slider .carousel-control button:hover span {
     color: #fff;
 }
 
@@ -1362,16 +1379,23 @@ footer .footer-bottom .footer-icon ul li a {
     border: solid 1px #ffffff33;
     width: 40px;
     height: 40px;
-    display: inline-block;
+    display: inline-flex;
     line-height: 40px;
     text-align: center;
     border-radius: 100%;
     font-size: 16px;
     transition: all 500ms;
+    justify-content: center;
+    align-items: center;
 }
 
 footer .footer-bottom .footer-icon ul li a:hover {
     color: #0036e3;
+    background: #fff;
+}
+
+footer .footer-bottom .footer-icon ul li a:hover svg path {
+    fill: #0036e3;
     background: #fff;
 }
 
@@ -1999,14 +2023,20 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 .left-sidebar .study-level .accordion .at-title h2:after {
-    content: "\f107";
-    font-family: "FontAwesome";
+    content: "\e5cf";
+    font-family: 'Material Symbols Outlined';
     position: absolute;
     right: 0;
+    font-size: 20px;
 }
 
+
+
 .left-sidebar .study-level .accordion .at-title.active h2:after {
-    content: "\f106";
+    content: "\e316";
+    font-family: 'Material Symbols Outlined';
+    color: #0036E3;
+    font-size: 20px;
 }
 
 .left-sidebar .study-level .accordion ul {
@@ -9572,7 +9602,7 @@ margin-top: 8px;
     border-color: var(--primary);background-color: var(--primary);
 }
 
-.btn-outline-primary, .btn-primary { border: 2px solid var(--primary);color: var(--primary) !important;font-weight: 500;padding: .5rem 2rem; } 
-.btn-primary { border: 2px solid var(--primary);color: var(--white) !important;background-color: var(--primary);} 
-.btn-outline-primary:hover,.btn-outline-primary:focus,.btn-outline-primary:active { color: var(--white) !important;background-color: var(--primary); } 
+.btn-outline-primary, .btn-primary { border: 2px solid var(--primary);color: var(--primary) !important;font-weight: 500;padding: .5rem 2rem; }
+.btn-primary { border: 2px solid var(--primary);color: var(--white) !important;background-color: var(--primary);}
+.btn-outline-primary:hover,.btn-outline-primary:focus,.btn-outline-primary:active { color: var(--white) !important;background-color: var(--primary); }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {  color: var(--white) !important;background-color: var(--dark);border-color: var(--dark); }

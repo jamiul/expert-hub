@@ -327,8 +327,9 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
 .custom-select .select-hide {display: none;}
 .custom-select .select-items {position: absolute;background-color: #fff;top: 100%;left: 0;right: 0;z-index: 99;box-shadow: 0px 3px 6px 0px #0e00621a;border-radius: 4px;padding: 4px 0;}
 .custom-select .select-selected {width: 100%;padding: 0 12px;border: 2px solid #0000001A;border-radius: 4px;outline: none;cursor: pointer;height: 40px;font-size: 16px;font-weight: 400;line-height: 40px;color: #303744;}
-.custom-select .select-selected:after {content: "\f107";font-family: fontawesome;position: absolute;right: 15px;font-size: 14px;color: #000;}
-.custom-select .select-arrow-active:after {content: "\f106";color: #0036E3}
+.custom-select .select-selected:after {content: "\e5cf"; font-family: 'Material Symbols Outlined'; position: absolute;right: 15px;font-size: 14px;color: #000;}
+
+.custom-select .select-arrow-active:after {content: "\e316";color: #0036E3; font-family: 'Material Symbols Outlined';}
 .custom-select .select-items div {padding: 7px 16px;cursor: pointer;transition: all 500ms;color: #191D24;font-size: 16px;font-weight: 400;}
 .custom-select .select-items .same-as-selected, .custom-select .select-items div:hover {color: #0036E3;font-weight: 500;background: #0059C914;}
 .custom-select .select-arrow-active {border-color: #0036E3;}
@@ -351,8 +352,21 @@ footer .footer-bottom .footer-icon ul li a:hover {color: #0036E3;background:#fff
 .left-sidebar .study-level .accordion .at-title h2 {transition: all 500ms;align-items: center;font-size: 14px;color: #303744;font-weight: 400;cursor: pointer;position: relative;display: flex;border-bottom: solid 1px #0E00621A;padding-bottom: 10px;margin-bottom: 10px;}
 .left-sidebar .study-level .accordion .at-title h2 input {width: 20px;height: 20px;margin: 0 8px 0 0;}
 
-.left-sidebar .study-level .accordion .at-title h2:after {content: "\f107";font-family: 'FontAwesome';position: absolute;right: 0;}
-.left-sidebar .study-level .accordion .at-title.active h2:after {content: "\f106";}
+.left-sidebar .study-level .accordion .at-title h2:after {
+    content: "\e5cf";
+    position: absolute;
+    right: 0;
+    font-family: 'Material Symbols Outlined';
+    font-size: 20px;
+}
+
+
+.left-sidebar .study-level .accordion .at-title.active h2:after {
+    content: "\e316";
+    font-family: 'Material Symbols Outlined';
+    color: #0036E3;
+    font-size: 20px;
+}
 .left-sidebar .study-level .accordion ul {background: #0059C90D;padding: 14px;border-radius: 5px;margin-bottom: 20px;overflow-y: scroll;height: 170px;}
 .left-sidebar .study-level .accordion ul::-webkit-scrollbar {width: 3px;}
 .left-sidebar .study-level .accordion ul::-webkit-scrollbar-thumb {background: #0059C91A;}
@@ -804,16 +818,47 @@ top: 0 !important;
 .study-level.rating .review .fa {color: #DB9E00;font-size: 13px;}
 .study-level.rating .review ul li {display: inline-block;}
 .study-level.rating .review ul li label {position: relative;cursor: pointer;font-size: 14px;}
+
 .study-level.rating .review ul li label:before {content: "\f005";font-family: fontawesome;color:#E9B911}
+
 .study-level.rating .review ul li input:checked + label:after {content: "\f005";font-family: fontawesome;color: #0036E3;position: absolute;left: 0;}
 .study-level.rating .review ul li:hover label:after {content: "\f005";font-family: fontawesome;color: #0036E3;position: absolute;left: 0;}
 .study-level.rating .review ul li input {padding: 0;height: initial;width: initial;margin-bottom: 0;display: none;cursor: pointer;}
 
 .find-consultant .database-block .database-contant .database-text span {font-weight: 500;color: #30374499;font-size: 13px;}
-.find-consultant .consultant-reviw ul {padding: 0;margin: 0;}
-.find-consultant .consultant-reviw ul li {display: inline-block;}
-.find-consultant .consultant-reviw ul li {display: inline-block;font-size: 15px;color: #303744;font-weight: 400;margin-right: 15px;}
+.find-consultant .consultant-reviw ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.find-consultant .consultant-reviw ul li {
+    display: flex;
+    font-size: 15px;
+    color: #303744;
+    font-weight: 400;
+    margin-right:2px;
+}
+
+.find-consultant .consultant-reviw ul li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.find-consultant .consultant-reviw ul li a svg {
+    display: flex;
+    align-items: center;
+    min-width: 20px;
+    min-height: 20px;
+}
 .find-consultant .consultant-reviw {padding-left: 85px;}
+
+.consultant-reviw.review {
+    padding-left: 0px;
+}
+
 .find-consultant .consultant-reviw ul li strong {font-weight: 500;}
 .find-consultant .projects-slider {padding: 0 20px 0 85px;}
 .find-consultant .consultant-reviw ul li .fa {color: #E9B911;font-size: 13px;}
