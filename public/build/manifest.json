@@ -15,12 +15,12 @@
     "src": "resources/css/choices.css"
   },
   "resources/css/client-dashboard.css": {
-    "file": "assets/client-dashboard-83bd9883.css",
+    "file": "assets/client-dashboard-b964422e.css",
     "isEntry": true,
     "src": "resources/css/client-dashboard.css"
   },
   "resources/css/components.css": {
-    "file": "assets/components-64e28e2c.css",
+    "file": "assets/components-226c4be9.css",
     "isEntry": true,
     "src": "resources/css/components.css"
   },
@@ -30,7 +30,7 @@
     "src": "resources/css/expert-custom.css"
   },
   "resources/css/experthire.css": {
-    "file": "assets/experthire-ede3bfb2.css",
+    "file": "assets/experthire-6b451498.css",
     "isEntry": true,
     "src": "resources/css/experthire.css"
   },
@@ -55,7 +55,7 @@
     "src": "resources/css/owl.theme.default.css"
   },
   "resources/css/style.css": {
-    "file": "assets/style-0613f32a.css",
+    "file": "assets/style-4d92ae6e.css",
     "isEntry": true,
     "src": "resources/css/style.css"
   },
@@ -143,6 +143,30 @@
   "resources/fonts/Colfax-Regular.woff2": {
     "file": "assets/Colfax-Regular-cb1494e1.woff2",
     "src": "resources/fonts/Colfax-Regular.woff2"
+  },
+  "resources/img/arrow-blue.svg": {
+    "file": "assets/arrow-blue-a1d575ff.svg",
+    "src": "resources/img/arrow-blue.svg"
+  },
+  "resources/img/arrow-icon-hover.png": {
+    "file": "assets/arrow-icon-hover-635ffdec.png",
+    "src": "resources/img/arrow-icon-hover.png"
+  },
+  "resources/img/arrow-icon.png": {
+    "file": "assets/arrow-icon-6f0a599c.png",
+    "src": "resources/img/arrow-icon.png"
+  },
+  "resources/img/arrow-white.svg": {
+    "file": "assets/arrow-white-f9f03481.svg",
+    "src": "resources/img/arrow-white.svg"
+  },
+  "resources/img/cancel.png": {
+    "file": "assets/cancel-acad2f55.png",
+    "src": "resources/img/cancel.png"
+  },
+  "resources/img/date.png": {
+    "file": "assets/date-7805f46a.png",
+    "src": "resources/img/date.png"
   },
   "resources/js/about-us.js": {
     "file": "assets/about-us-116d7206.js",
