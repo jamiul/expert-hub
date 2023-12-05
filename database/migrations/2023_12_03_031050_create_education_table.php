@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profile_experiences', function (Blueprint $table) {
+        Schema::create('education', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id');
-            $table->string('title');
-            $table->longText('description');
-            $table->string('institute');
-            $table->string('address');
-            $table->string('start_year');
-            $table->string('end_year');
+            $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
+            $table->string('institution');
+            $table->string('degree');
+            $table->string('field')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profile_experiences');
+        Schema::dropIfExists('education');
     }
 };

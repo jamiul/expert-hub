@@ -16,8 +16,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::truncate();
-
         $feed = database_path('data/users.csv');
         $data = array_map('str_getcsv', file($feed));
         $keys = array_shift($data);

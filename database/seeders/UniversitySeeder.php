@@ -15,8 +15,6 @@ class UniversitySeeder extends Seeder
      */
     public function run(): void
     {
-        University::truncate();
-
         $feed = database_path('data/universities.csv');
         $data = array_map('str_getcsv', file($feed));
 

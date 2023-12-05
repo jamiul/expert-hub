@@ -13,6 +13,9 @@ class Consultation extends Model
 
     public function skills()
     {
-        return $this->hasMany(ConsultationSkill::class);
+        return $this->belongsToMany(Expertise::class, 'consultation_skill')
+            ->withPivot('active')
+            ->wherePivot('active', 1)
+            ->withTimestamps();
     }
 }

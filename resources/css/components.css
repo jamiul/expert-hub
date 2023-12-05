@@ -35,6 +35,7 @@
 }
 .form-input-group .form-input-field.form-textarea-field{
     height:inherit;
+    padding-top: 20px;
 }
 .form-input-group .form-input-field.form-select-field{
     background: url(../img/arrow-icon.png) no-repeat;

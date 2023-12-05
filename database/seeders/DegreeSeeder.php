@@ -13,8 +13,6 @@ class DegreeSeeder extends Seeder
      */
     public function run(): void
     {
-        Degree::truncate();
-
         $feed = database_path('data/degrees.csv');
         $data = array_map('str_getcsv', file($feed));
 

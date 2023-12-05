@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultations', function (Blueprint $table) {
+        Schema::create('profile_language', function (Blueprint $table) {
             $table->id();
             $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
-            $table->string('unit');
-            $table->string('value');
+            $table->foreignId('language_id')->constrained()->cascadeOnDelete();
+            $table->string('proficiency'); //App\Enums\LanguageProficiency
             $table->boolean('active')->default(1);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consultations');
+        Schema::dropIfExists('profile_language');
     }
 };

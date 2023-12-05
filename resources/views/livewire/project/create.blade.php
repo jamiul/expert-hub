@@ -28,30 +28,14 @@
                                 @if($currentStep > 0)
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
-                                        <div class="form-group">
-                                            <label for="field1" class="form-label">What is your project title?</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control @error('name') has-error @enderror" wire:model="name" placeholder="eg. Developing curriculum for Postgraduate public health unit">
-                                                @error('name')
-                                                    <div class="error-message">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
+                                        <x-form.input type="text" label="What is your project title?" name="title" placeholder="eg. Developing curriculum for Postgraduate public health unit"/>
                                     </div>
                                 </div>
                                 @endif
                                 @if($currentStep > 1)
                                 <div class="step step-2 mb-4">
                                     <div class="main-form">
-                                        <div class="input-group Project-discription">
-                                            <label for="field1" class="form-label">Project Description</label>
-                                            <div class="input-group">
-                                                <textarea wire:model="description" class="form-control @error('description') has-error @enderror"  placeholder="Describe your project here (max 200 words)"></textarea>
-                                                @error('description')
-                                                    <div class="error-message">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
+                                        <x-form.textarea label="Project Description" name="description" placeholder="Describe your project here (max 200 words)"/>
                                         <div
                                             wire:ignore
                                             x-data
@@ -166,23 +150,14 @@
                                         <div class="budget-block">
                                             <h3>What is your estimate budget?</h3>
                                             <div class="d-flex">
-                                                <div class="input-group me-3 mb-0" style="width: 120px">
+                                                <div class="input-group me-3 mb-0 d-none" style="width: 120px">
                                                     <select wire:model.change="currency" class="form-select form-control">
                                                         <option value="USD">USD</option>
                                                         <option value="AUD">AUD</option>
                                                     </select>
                                                 </div>
-                                                <div class="input-group">
-                                                    <select wire:model="budget" class="form-select form-control @error('description') has-error @enderror">
-                                                        <option selected>Select your budget</option>
-                                                        @foreach ($availableBudgets as $availableBudget)
-                                                            <option value="{{ $availableBudget }}" >{{ $availableBudget }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('budget')
-                                                        <div class="error-message">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                                                <x-form.input type="number" label="Budget start amount" name="budget_start_amount" placeholder="100"/>
+                                                <x-form.input type="number" label="Budget end amount" name="budget_end_amount" placeholder="200"/>
                                             </div>
                                         </div>
                                     </div>

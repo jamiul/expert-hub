@@ -13,8 +13,6 @@ class ExpertiseSeeder extends Seeder
      */
     public function run(): void
     {
-        Expertise::truncate();
-
         $expertise = database_path('data/expertise.csv');
         $skillset = database_path('data/skillset.csv');
 

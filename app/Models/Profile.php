@@ -23,21 +23,37 @@ class Profile extends Model
 
     public function languages()
     {
-        return $this->hasMany(ProfileLanguage::class);
+        return $this->belongsToMany(Language::class, 'profile_language')
+            ->withPivot('proficiency','active')
+            ->wherePivot('active', 1)
+            ->withTimestamps();
     }
 
     public function expertises()
     {
-        return $this->hasMany(ProfileExpertise::class);
+        return $this->belongsToMany(Expertise::class, 'profile_expertise')
+            ->withPivot('active')
+            ->wherePivot('active', 1)
+            ->withTimestamps();
     }
 
-    public function educationQualifications()
+    public function education()
     {
-        return $this->hasMany(ProfileEducation::class);
+        return $this->hasMany(Education::class);
     }
 
-    public function consultationServices()
+    public function consultation()
     {
         return $this->hasMany(Consultation::class);
+    }
+
+    public function experiences()
+    {
+        return $this->hasMany(Experience::class);
+    }
+
+    public function portfolio()
+    {
+        return $this->hasMany(Portfolio::class);
     }
 }
