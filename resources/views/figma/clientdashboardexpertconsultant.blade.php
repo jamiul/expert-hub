@@ -702,8 +702,6 @@
                     </div>
                     <div class="study-level rating">
                         <h3>Rating</h3>
-
-
                         <div class="consultant-reviw review">
                   <ul>
 
@@ -734,34 +732,6 @@
                       </li>
                   </ul>
                 </div>
-                        <!-- <div class="review">
-
-
-
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="124">
-                                    <label for="124"></label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="125">
-                                    <label for="125"></label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="126">
-                                    <label for="126"></label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="127">
-                                    <label for="127"></label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="128">
-                                    <label for="128"></label>
-                                </li>
-                            </ul>
-                        </div> -->
-
                     </div>
                 </div>
             </div>
