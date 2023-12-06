@@ -149,15 +149,15 @@
                                     <div class="main-form">
                                         <div class="budget-block">
                                             <h3>What is your estimate budget?</h3>
-                                            <div class="d-flex">
-                                                <div class="input-group me-3 mb-0 d-none" style="width: 120px">
+                                            <div class="d-flex gap-4">
+                                                <div class="input-group mb-0 d-none" style="width: 120px">
                                                     <select wire:model.change="currency" class="form-select form-control">
                                                         <option value="USD">USD</option>
                                                         <option value="AUD">AUD</option>
                                                     </select>
                                                 </div>
-                                                <x-form.input type="number" label="Budget start amount" name="budget_start_amount" placeholder="100"/>
-                                                <x-form.input type="number" label="Budget end amount" name="budget_end_amount" placeholder="200"/>
+                                                <x-form.input type="number" min="0" label="Budget start amount ($)" name="budget_start_amount" placeholder="100"/>
+                                                <x-form.input type="number" min="0" label="Budget end amount ($)" name="budget_end_amount" placeholder="200"/>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
                                                 </div>
                                                 <div class="pay-ratee">
                                                     <h4>Fixed price</h4>
-                                                    <p>{{ $budget }}</p>
+                                                    <p>${{ $budget_start_amount }} - ${{ $budget_end_amount }}</p>
                                                 </div>
                                                 @endif
                                                 @if($type === 'hourly')
@@ -196,7 +196,7 @@
                                                     </div>
                                                     <div class="pay-ratee">
                                                         <h4>Price per hour</h4>
-                                                        <p>{{ $budget }}</p>
+                                                        <p>${{ $budget_start_amount }} - ${{ $budget_end_amount }}</p>
                                                     </div>
                                                 @endif
                                             </div>
