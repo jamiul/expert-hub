@@ -48,7 +48,7 @@ class Create extends Component
             'status' => ProjectStatus::Published,
         ]);
         foreach($this->selectedSkills as $id => $name){
-            $project->skills()->create([
+            $project->skills()->attach([
                 'expertise_id' => $id,
             ]);
         }
