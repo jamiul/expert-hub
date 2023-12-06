@@ -3069,9 +3069,8 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .left-sidebar .study-level .type-min ul li input:checked + label:after {
-    content: "\f00c";
-    font-family: fontawesome;
-    position: absolute;
+    content: "\e876";
+    font-family: 'Material Symbols Outlined';
     left: 0;
     width: 20px;
     height: 20px;
@@ -3080,7 +3079,8 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     color: #fff;
     display: flex;
     justify-content: center;
-    font-size: 14px;
+    font-size: 23px;
+    align-items: center;
 }
 
 .left-sidebar .study-level .type-min ul li:last-child {
@@ -3889,6 +3889,14 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     color: #303744;
     font-weight: 400;
     margin-right: 15px;
+}
+
+.edux-review {
+    padding-left: 0px !important;
+}
+
+.edux-review ul li {
+    margin-right: 0px !important;
 }
 
 .find-consultant .consultant-reviw {
@@ -7293,9 +7301,7 @@ ul.share-links > li {
         max-width: 100%;
     }
 
-    .row > * {
-        width: 100%;
-    }
+
 
     header .header .logo {
         margin-bottom: 12px;

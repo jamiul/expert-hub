@@ -751,7 +751,7 @@
                         <h4>Educational Research</h4>
                       </button>
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 6">
-                        <h4>System Research Development</h4>
+                        <h4>System Research</h4>
                       </button>
                       </button>
 
@@ -762,37 +762,6 @@
                     </div>
 
                   </div>
-                  <!-- <div class="content-area d-flex flex-column">
-                    <div class="single-contest-top">
-                      <p>Contracts</p>
-                    </div>
-                    <div class="single-contest">
-                      <div class="content-text">
-                        <p>Policy Development Assistance Required for Chemical Engineering Industry</p>
-                        <p> <span class="fixed-price">Fixed:</span> <span class="fixed-currency">$380.00</span></p>
-                      </div>
-                      <div class="draft-options">
-                        <div class="draft-text">
-                          <span class="in-progress">In Progress</span>
-                        </div>
-
-                        <div class="dropdown">
-                          <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                          </a>
-                          <ul class="dropdown-menu dropdown-show">
-                            <li>
-                              <a class="dropdown-item dropdown-heading" href="#">Edit Posting</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">Remove Posting</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
-
                 </div>
               </div>
             </div>
@@ -843,7 +812,7 @@
                         <h4>Educational Research</h4>
                       </button>
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 6">
-                        <h4>System Research Development</h4>
+                        <h4>System Research</h4>
                       </button>
                       </button>
                       </button>
@@ -851,38 +820,7 @@
                         <h4 class="more-read">+12 More</h4>
                       </button>
                     </div>
-
                   </div>
-                  <!-- <div class="content-area d-flex flex-column">
-                    <div class="single-contest-top">
-                      <p>Contracts</p>
-                    </div>
-                    <div class="single-contest">
-                      <div class="content-text">
-                        <p>Policy Development Assistance Required for Chemical Engineering Industry</p>
-                        <p> <span class="fixed-price">Fixed:</span> <span class="fixed-currency">$380.00</span></p>
-                      </div>
-                      <div class="draft-options">
-                        <div class="draft-text">
-                          <span class="completed">Completed</span>
-                        </div>
-
-                        <div class="dropdown">
-                          <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                          </a>
-                          <ul class="dropdown-menu dropdown-show">
-                            <li>
-                              <a class="dropdown-item dropdown-heading" href="#">Edit Posting</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">Remove Posting</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
                 </div>
               </div>
             </div>
@@ -934,45 +872,14 @@
                       </button>
                       </button>
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 6">
-                        <h4>Industry Trends Awareness</h4>
+                        <h4>Industry Trends</h4>
                       </button>
                       </button>
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 6">
                         <h4 class="more-read">+12 More</h4>
                       </button>
                     </div>
-
                   </div>
-                  <!-- <div class="content-area d-flex flex-column">
-                    <div class="single-contest-top">
-                      <p>Contracts</p>
-                    </div>
-                    <div class="single-contest">
-                      <div class="content-text">
-                        <p>Policy Development Assistance Required for Chemical Engineering Industry</p>
-                        <p> <span class="fixed-price">Fixed:</span> <span class="fixed-currency">$380.00</span></p>
-                      </div>
-                      <div class="draft-options">
-                        <div class="draft-text">
-                          <span class="">Paused</span>
-                        </div>
-
-                        <div class="dropdown">
-                          <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                          </a>
-                          <ul class="dropdown-menu dropdown-show">
-                            <li>
-                              <a class="dropdown-item dropdown-heading" href="#">Edit Posting</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">Remove Posting</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
                 </div>
               </div>
             </div>
@@ -1023,7 +930,7 @@
                         <h4>Educational Research</h4>
                       </button>
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 6">
-                        <h4>System Research Development</h4>
+                        <h4>System Research</h4>
                       </button>
                       </button>
                       </button>
@@ -1031,40 +938,7 @@
                         <h4 class="more-read">+12 More</h4>
                       </button>
                     </div>
-
                   </div>
-
-                  <!-- <div class="content-area d-flex flex-column">
-                    <div class="single-contest-top">
-                      <p>Contracts</p>
-                    </div>
-                    <div class="single-contest">
-                      <div class="content-text">
-                        <p>Policy Development Assistance Required for Chemical Engineering Industry</p>
-                        <p> <span class="fixed-price">Fixed:</span> <span class="fixed-currency">$380.00</span></p>
-                      </div>
-                      <div class="draft-options">
-                        <div class="draft-text">
-                          <span class="in-progress">In Progress</span>
-                        </div>
-
-                        <div class="dropdown">
-                          <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                          </a>
-                          <ul class="dropdown-menu dropdown-show">
-                            <li>
-                              <a class="dropdown-item dropdown-heading" href="#">Edit Posting</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">Remove Posting</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
-
                 </div>
               </div>
             </div>
@@ -1115,7 +989,7 @@
                         <h4>Educational Research</h4>
                       </button>
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 6">
-                        <h4>System Research Development</h4>
+                        <h4>System Research</h4>
                       </button>
                       </button>
                       </button>
@@ -1123,44 +997,8 @@
                         <h4 class="more-read">+12 More</h4>
                       </button>
                     </div>
-
                   </div>
-
-                  <!-- <div class="content-area d-flex flex-column">
-                    <div class="single-contest-top">
-                      <p>Contracts</p>
-                    </div>
-                    <div class="single-contest">
-                      <div class="content-text">
-                        <p>Policy Development Assistance Required for Chemical Engineering Industry</p>
-                        <p> <span class="fixed-price">Fixed:</span> <span class="fixed-currency">$380.00</span></p>
-                      </div>
-                      <div class="draft-options">
-                        <div class="draft-text">
-                          <span class="completed">Completed</span>
-                        </div>
-
-                        <div class="dropdown">
-                          <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                          </a>
-                          <ul class="dropdown-menu dropdown-show">
-                            <li>
-                              <a class="dropdown-item dropdown-heading" href="#">Edit Posting</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">Remove Posting</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
-
                 </div>
-
-
-
               </div>
             </div>
             <!-- ==================  Pagination start Here ============ -->

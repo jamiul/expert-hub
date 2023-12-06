@@ -590,7 +590,20 @@ top: 0 !important;
 
 .right-sidebar .database-block .database-right .database-button {background: #0036E3;color: #fff;width: 175px;height: 45px;display: inline-table;line-height: 45px;text-align: center;border-radius: 4px;font-size: 15px;font-weight: 500;text-decoration: none;border: solid 2px #0036E3;transition: all 500ms;}
 .right-sidebar .database-block .database-right .database-button:hover {background: none;border-color: #0036E3;color: #0036E3;}
-.right-sidebar .database-block .database-right .data-icon {transition: all 500ms; border: none; width: 46px;height: 46px;display: inline-block;text-align: center;line-height: 40px;border-radius: 4px;margin-left: 8px;}
+
+.right-sidebar .database-block .database-right .data-icon {
+    transition: all 500ms;
+    border: none;
+    width: 46px;
+    height: 46px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 4px;
+    margin-left: 8px;
+    border: none !important;
+    background: transparent !important;
+}
 .right-sidebar .database-block .database-right .data-icon:hover {background: #0036E3;border-color: #0036E3;}
 .right-sidebar .database-block .database-right .data-icon:hover img{filter: brightness(0) invert(1);}
 .right-sidebar .database-block .database-right {display: flex;}
@@ -1473,6 +1486,7 @@ top: 0 !important;
     align-items: center;
     border: 1px solid #0000001A;
     padding: 19px 20px;
+    border-radius: 8px;
 }
 
 .content-text {
@@ -1577,9 +1591,7 @@ color:#303744B2
 .container {
     max-width: 100%;
 }
-.row>* {
-    width: 100%;
-}
+
 
 header .header .logo {margin-bottom: 12px;}
 header .header .header-post {text-align: center;margin-top: 10px;}
