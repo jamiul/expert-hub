@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.home.landing-page');
+        return view('frontend.home.index');
     }
 
     public function dashboard()

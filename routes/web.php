@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
@@ -26,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/components', 'components');
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about-us');
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
 
 Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details'); //@TODO remove the name

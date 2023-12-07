@@ -8,7 +8,7 @@ class ExpertController extends Controller
 {
     public function index()
     {
-        return view('frontend.expert.landing-page');
+        return view('frontend.expert.index');
     }
 
     public function view()
