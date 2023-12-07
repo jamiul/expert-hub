@@ -9,7 +9,7 @@
   --white: #ffffff;
   --bs-border-color: #E7E5EF;
 }
-  
+
 .lead { font-size: 19px !important; }
 .lead-lg {
   font-size: 1.438rem;
@@ -92,7 +92,7 @@
      object-position: center center;
 }
 
- 
+
 .link {
   color: var(--primary);
   cursor: pointer;
@@ -569,14 +569,14 @@ font-style: normal;
 font-weight: 400;
 line-height: 19px;
 }
-/*---- Expert STatus page styling --*/ 
+/*---- Expert STatus page styling --*/
 
 /*--------------------- Contract page styling -------------------------*/
 .mb-21 { margin-bottom: 21px; }
 .expert__dashboad.contract__page .main__content__wrapp {
   position: relative;
 }
- 
+
 .expert__dashboad.contract__page .main__content__wrapp .nav-tabs .nav-link {
   border-radius: 4px; border: 2px solid rgba(14, 0, 98, 0.10); margin-right: 4px;
   font-size: 0.875rem;color: var(--dark);padding: 0rem 1rem;display: inline-flex;align-items: center;height: 2rem;padding-top: 2px;
@@ -786,7 +786,7 @@ line-height: 19px;
      object-position: center center;
   border-radius: 4px;
 }
-.expert__dashboad.get__paid .form-select, .expert__dashboad.get__paid .form-control { 
+.expert__dashboad.get__paid .form-select, .expert__dashboad.get__paid .form-control {
   border-color: #E7E5EF !important;
 }
 .get__paid .btn__fab {
@@ -890,7 +890,7 @@ line-height: 19px;
   top: 0%;
   left: 1.5rem;
 }
-.verification__page.password .notification__list > li:not(:first-child):after { 
+.verification__page.password .notification__list > li:not(:first-child):after {
   width: 100%; left: 0;
 }
 .verification__page .notification__list > li ul li {
@@ -913,7 +913,7 @@ line-height: 19px;
 .verification__page .notification__list > li ul li .form-check-label {
   color: #303744;
   font-size: 0.937rem;
-} 
+}
 .info__icon { color: #BABABA;margin-left:6px; }
 /* --------------- Get Paid Pages CSS --------------------------------- */
 
@@ -1218,7 +1218,7 @@ line-height: 19px;
 /* ------------------ Work Diray Page Styles ------------------------ */
 
 /* --------------------- Proposal Page Styles ----------------------- */
- 
+
 .expert__dashboad.proposal__page .px-40 {
   padding-left: 2.5rem !important;
   padding-right: 2.5rem !important;
@@ -1251,7 +1251,7 @@ line-height: 19px;
 .large__btn { padding: 12px 50px; }
 .pt-52 { padding-top: 52px; }
 .py-11 { padding-top: 11px !important;padding-bottom: 11px !important; }
-.pagination .pagination-right ul li a.active { background-color: var(--primary);color: var(--white) !important; } 
+.pagination .pagination-right ul li a.active { background-color: var(--primary);color: var(--white) !important; }
 /* --------------------- Proposal Page Styles ----------------------- */
 
 /* --------------------- Add payment page Styles ----------------------- */
@@ -1296,7 +1296,7 @@ span.payment-currency{
 
 }
 
-.chard-number h6{ 
+.chard-number h6{
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -1304,7 +1304,7 @@ span.payment-currency{
   margin-bottom: 0;
 }
 
-.chard-number p{ 
+.chard-number p{
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
@@ -1359,7 +1359,7 @@ margin-bottom: 24px;}
 
 /* Find Projects Styles  */
 .left-sidebar .search-block .text-black::placeholder { color: var(--dark); }
-.search__suggestions__box { margin-top: 32px; } 
+.search__suggestions__box { margin-top: 32px; }
 .search__suggestions__box .search__item { padding: 2px 6px 0 10px;line-height: 160%; }
 .search__suggestions__box .btn { top: -2px;margin-left: .5rem; }
 .btn-link.clear__btn { color: var(--dark);text-decoration: underline; }
@@ -1381,12 +1381,25 @@ margin-bottom: 24px;}
 .find-training.find-projects.databasepading .find-projects-time .curriculum-right li,
 .find-training.find-projects.databasepading .find-projects-time .curriculum-right li span { font-size: 13px; }
 
+
+.edux-rating-success {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.edux-rating-success p{
+  margin-bottom:0px;
+}
+
+
 @media (min-width: 990px){
   /* profile page box width set */
   .expert__dashboad .main__content__wrapp .row .col-lg-4 {
     width: 348px!important;
-  }  
+  }
   .expert__dashboad .main__content__wrapp .row .col-lg-8 {
     width: calc(100% - 348px)!important;
-  }  
+  }
   }
