@@ -1,6 +1,6 @@
 @extends('frontend.layouts.front-expert-dashboard-layout')
 @section('content')
-<link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-dashboard.css') }}">
+@vite('resources/default/css/expert-dashboard.css')
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- sub menu start -->
