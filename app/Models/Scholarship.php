@@ -10,4 +10,22 @@ class Scholarship extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function eligibilities()
+    {
+        return $this->hasMany(ScholarshipEligibility::class);
+    }
+
+    public function areas()
+    {
+        return $this->belongsToMany(Expertise::class, 'scholarship_area')
+            ->withPivot('active')
+            ->wherePivot('active', 1)
+            ->withTimestamps();
+    }
+
+    public function funds()
+    {
+        return $this->hasMany(ScholarshipFund::class);
+    }
 }
