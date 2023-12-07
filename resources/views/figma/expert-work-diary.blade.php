@@ -53,9 +53,17 @@
                                     >
                                     <div class="calendar" id="calendar">
                                       <div class="header">
-                                        <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
+                                        <button id="prevBtn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M11.25 14L6.75 9.5L11.25 5" stroke="#5C5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
                                         <h2 id="monthYear">Month Year</h2>
-                                        <button id="nextBtn"><i class="fa fa-angle-right"></i></button>
+                                        <button id="nextBtn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                        <path d="M6.75 14L11.25 9.5L6.75 5" stroke="#5C5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </button>
                                       </div>
                                       <div class="days" id="daysContainer"></div>
                                     </div>
@@ -641,13 +649,19 @@
                                     >
                                     <div class="calendar" id="calendar2">
                                       <div class="header">
-                                        <button id="prevBtn2"><i class="fa fa-angle-left"></i></button>
+                                        <button id="prevBtn2"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M11.25 14L6.75 9.5L11.25 5" stroke="#5C5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
                                         <h2 id="monthYear2">Month Year</h2>
-                                        <button id="nextBtn2"><i class="fa fa-angle-right"></i></button>
+                                        <button id="nextBtn2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                        <path d="M6.75 14L11.25 9.5L6.75 5" stroke="#5C5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></button>
                                       </div>
                                       <div class="days" id="daysContainer2"></div>
                                     </div>
                                   </div>
+
                             </div>
                             <div class="form-group mb-32">
                                 <label for="time" class="small text-black fw-medium mb-1">Time Zone</label>
@@ -890,7 +904,7 @@
         },
         navText: [
             '<i class="fa-solid fa-chevron-left"></i>',
-            '<i class="fa-solid fa-chevron-right"></i>'
+            '<span aria-label="Next">›</span>'
         ]
     });
 </script>

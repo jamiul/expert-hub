@@ -33,8 +33,8 @@
          <input type="text" class="form-control border-0" aria-label="Text input with dropdown button" placeholder="I am looking for">
          <button class="btn border-0 border-start ps-3 pe-3 d-flex" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Project <span class="material-symbols-outlined">
-keyboard_arrow_down
-</span>
+            keyboard_arrow_down
+            </span>
          </button>
          <ul class="dropdown-menu dropdown-menu-end">
             <li>

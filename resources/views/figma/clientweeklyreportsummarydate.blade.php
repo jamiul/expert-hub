@@ -22,7 +22,7 @@
           <div class="study-level">
                 <div class="calendar-box position-relative">
                   <input type="text" id="dateInput" placeholder="Start Date">
-                    <p class=" position-absolute short-by-date"><span class="material-symbols-outlined">calendar_today</span></p>
+                    <p class=" position-absolute short-by-date"></p>
                   <div class="calendar" id="calendar">
                     <div class="header">
                       <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
@@ -101,6 +101,6 @@
   </div>
 </section>
 
-	
+
 
 @endsection
