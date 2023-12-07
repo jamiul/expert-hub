@@ -1,5 +1,5 @@
 @extends('frontend.layouts.front-expert-dashboard-layout') @section('content')
-<link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-dashboard.css') }}">
+@vite('resources/default/css/expert-dashboard.css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <main class="expert__dashboad py-5">
     <div class="container">
