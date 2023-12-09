@@ -2,12 +2,17 @@
 
 namespace App\Livewire\Scholarship;
 
+use App\Enums\Scholarship\FundType;
+use App\Enums\Scholarship\StudentType;
+use App\Enums\Scholarship\StudyLevel;
+use App\Models\Country;
+use App\Models\Expertise;
 use App\Models\ScholarshipCountry;
 use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipType;
 use App\Models\ScholarshipUniversity;
-use App\Models\StudentType;
 use App\Models\StudyArea;
+use App\Models\University;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
@@ -61,12 +66,12 @@ class Filter extends Component
 
     public function render()
     {
-        $levels = ScholarshipLevel::all();
-        $studyAreas = StudyArea::all();
-        $scholarshipTypes = ScholarshipType::all();
-        $studentTypes = StudentType::all();
-        $countries = ScholarshipCountry::all();
-        $universities = ScholarshipUniversity::all();
+        $levels = StudyLevel::cases();
+        $studyAreas = Expertise::expertise()->isParent()->get();
+        $scholarshipTypes = FundType::cases();
+        $studentTypes = StudentType::cases();
+        $countries = Country::all();
+        $universities = University::all();
 
         return view(
             'livewire.scholarship.filter',

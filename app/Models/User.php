@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\UserType;
+use App\Enums\ProfileType;
 use App\Notifications\EmailVerificationNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,21 +22,17 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'type' => UserType::class
+        'active_profile' => ProfileType::class,
     ];
 
     public function profile()
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(Profile::class)->where('profiles.type', 'users.active_profile');
     }
 
     public function scopeClient($query)
     {
-        return $query->where('type', UserType::Client);
+        return $query->where('type', ProfileType::Client);
     }
 
-    public function scopeExpert($query)
-    {
-        return $query->where('type', UserType::Expert);
-    }
 }

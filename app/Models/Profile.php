@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\ProfileStatus;
+use App\Enums\ProfileType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -13,7 +14,8 @@ class Profile extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'status' => ProfileStatus::class
+        'status' => ProfileStatus::class,
+        'type' => ProfileType::class,
     ];
 
     public function user()
@@ -55,5 +57,15 @@ class Profile extends Model
     public function portfolio()
     {
         return $this->hasMany(Portfolio::class);
+    }
+
+    public function scopeClient($query)
+    {
+        return $query->where('type', ProfileType::Client);
+    }
+
+    public function scopeExpert($query)
+    {
+        return $query->where('type', ProfileType::Expert);
     }
 }
