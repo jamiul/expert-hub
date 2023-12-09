@@ -8,6 +8,6 @@
 
 
 @push('bottom_scripts')
-@vite('resources/js/owl.carousel.js')
+@vite('resources/js/owl.carousel.min.js')
 @vite('resources/js/scholarship-database.js')
 @endpush

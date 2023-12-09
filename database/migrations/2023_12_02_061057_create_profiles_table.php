@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('type')->index(); //App\Enums\UserType
+            $table->string('type')->index(); //App\Enums\ProfileType
             $table->decimal('hourly_rate')->nullable();
             $table->string('picture')->nullable();
             $table->longText('biography')->nullable();

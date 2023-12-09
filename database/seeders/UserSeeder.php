@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\ProfileStatus;
-use App\Enums\UserType;
+use App\Enums\ProfileType;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
 
         foreach($keyedData as $user){
             $userData = [
-                'type' => $user['type'],
+                'active_profile' => $user['type'],
                 'title' => $user['title'],
                 'first_name' => $user['first_name'],
                 'last_name' => $user['last_name'],
@@ -39,6 +39,7 @@ class UserSeeder extends Seeder
             $user_id = DB::table('users')->insertGetId($userData);
             DB::table('profiles')->insert([
                 'user_id' => $user_id,
+                'type' => $user['type'],
                 'status' => ProfileStatus::Draft->name,
             ]);
         }

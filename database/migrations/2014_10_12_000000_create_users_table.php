@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->index(); //App\Enums\UserType
+            $table->string('active_profile')->index(); //App\Enums\ProfileType
             $table->string('title');
             $table->string('first_name');
             $table->string('last_name');

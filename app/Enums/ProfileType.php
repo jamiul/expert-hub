@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum UserType: string
+enum ProfileType: string
 {
     case Client = 'Client';
     case Expert = 'Expert';

@@ -16,14 +16,13 @@ return new class extends Migration
             $table->string('title', 500);
             $table->string('link');
             $table->foreignId('university_id')->constrained();
-            $table->foreignId('country_id')->constrained();
-            $table->string('student_type')->nullable(); //phpenum
+            $table->string('student_type')->nullable(); //App\Enums\Scholarship\StudentType
             $table->string('supervisor_link')->nullable();
             $table->string('application_process_link')->nullable();
             $table->boolean('automatic_consideration')->default(0);
             $table->date('deadline')->nullable();
-            $table->string('value')->nullable();
-            $table->string('status')->nullable();
+            $table->string('currency')->nullable();
+            $table->integer('value')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

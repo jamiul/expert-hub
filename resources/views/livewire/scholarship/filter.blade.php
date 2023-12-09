@@ -15,8 +15,8 @@
       <ul>
         @foreach ($levels as $level)
           <li>
-            <input type="checkbox" wire:change="filter" wire:model="level" id="level_{{ $level->id }}" value="{{ $level->level_name }}">
-            <label for="level_{{ $level->id }}">{{ $level->level_name }}</label>
+            <input type="checkbox" wire:change="filter" wire:model="level" id="level_{{ $level->value }}" value="{{ $level->value }}">
+            <label for="level_{{ $level->value }}">{{ $level->value }}</label>
           </li>
         @endforeach
       </ul>
@@ -37,8 +37,8 @@
       <ul>
         @foreach ($studentTypes as $studentType)
           <li>
-            <input type="checkbox" wire:change="filter" wire:model="studentType" id="studentType_{{ $studentType->id }}" value="{{ $studentType->name }}">
-            <label for="studentType_{{ $studentType->id }}">{{ $studentType->name }}</label>
+            <input type="checkbox" wire:change="filter" wire:model="studentType" id="studentType_{{ $studentType->value }}" value="{{ $studentType->value }}">
+            <label for="studentType_{{ $studentType->value }}">{{ $studentType->value }}</label>
           </li>
         @endforeach
       </ul>
@@ -48,8 +48,8 @@
       <ul>
         @foreach ($scholarshipTypes as $scholarshipType)
           <li>
-            <input type="checkbox" wire:change="filter" wire:model="scholarshipType" id="scholarshipType_{{ $scholarshipType->id }}" value="{{ $scholarshipType->name }}">
-            <label for="scholarshipType_{{ $scholarshipType->id }}">{{ $scholarshipType->name }}</label>
+            <input type="checkbox" wire:change="filter" wire:model="scholarshipType" id="scholarshipType_{{ $scholarshipType->value }}" value="{{ $scholarshipType->value }}">
+            <label for="scholarshipType_{{ $scholarshipType->value }}">{{ $scholarshipType->value }}</label>
           </li>
         @endforeach
       </ul>

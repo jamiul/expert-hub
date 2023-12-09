@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\ProjectStatus;
 use App\Models\Expertise;
+use App\Models\Profile;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -26,10 +27,10 @@ class ProjectSeeder extends Seeder
         }, $data);
 
         $projects = [];
-        $client = User::client()->first();
+        $client = Profile::client()->first();
         foreach ($keyedData as $project) {
             $projects[] = [
-                'user_id' => $client->id,
+                'profile_id' => $client->id,
                 'title' => $project['title'],
                 'slug' => Str::slug($project['title']) . now(),
                 'description' => $project['description'],

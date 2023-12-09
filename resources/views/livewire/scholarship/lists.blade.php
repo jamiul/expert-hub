@@ -50,7 +50,7 @@
                         <li>{{ __('Study area') }}</li>
                         <li>{{ $scholarship->study_area }}&nbsp;</li>
                         <li>{{ __('Study Level') }}</li>
-                        <li>{{ $scholarship->level?->level_name }}&nbsp;</li>
+                        {{-- <li>{{ $scholarship->level?->level_name }}&nbsp;</li> --}}
                         <li>{{ __('Student type') }}</li>
                         <li>{{ $scholarship->student_type }}&nbsp;</li>
                         <li>{{ __('Scholarship Value') }}</li>
@@ -76,7 +76,7 @@
         </div>
     @endforeach
 
-    {{ $scholarships->links() }}
+    {{-- {{ $scholarships->links() }} --}}
 
     <!-- Modal share -->
     <div class="consultant-left-button">

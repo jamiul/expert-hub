@@ -11,6 +11,11 @@ class Scholarship extends Model
 
     protected $guarded = [];
 
+    public function university()
+    {
+        return $this->belongsTo(University::class);
+    }
+
     public function eligibilities()
     {
         return $this->hasMany(ScholarshipEligibility::class);

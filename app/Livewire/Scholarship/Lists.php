@@ -51,7 +51,7 @@ class Lists extends Component
 
     public function render()
     {
-        $scholarships = Scholarship::with(['university', 'level', 'country']);
+        $scholarships = Scholarship::with(['university']);
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
             $scholarships = $scholarships->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
