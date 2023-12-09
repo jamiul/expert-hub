@@ -26,7 +26,7 @@
       <ul>
         @foreach ($studyAreas as $studyArea)
           <li>
-            <input type="checkbox" wire:change="filter" wire:model="studyArea" id="studyArea_{{ $studyArea->id }}" value="{{ $studyArea->name }}">
+            <input type="checkbox" wire:change="filter" wire:model="studyArea" id="studyArea_{{ $studyArea->id }}" value="{{ $studyArea->id }}">
             <label for="studyArea_{{ $studyArea->id }}">{{ $studyArea->name }}</label>
           </li>
         @endforeach
@@ -100,15 +100,15 @@
       <h3>{{ __('University') }}</h3>
       <select wire:change="filter" wire:model="university" hidden id="selectUniversityFilter">
         @foreach ($universities as $university)
-          <option value="{{ $university->university_name }}">{{ $university->university_name }}</option>
+          <option value="{{ $university->id }}">{{ $university->name }}</option>
         @endforeach
       </select>
       <div class="custom-select" id="filterUniversityWrap" data-placeholder="{{ __('Search by University') }}" wire:ignore>
         <select name="university">
           <option>{{__('Search by University')}}</option>
           @foreach ($universities as $university)
-              <option value="{{ $university->university_name }}" {{ request()->get('university') == $university->university_name ? 'selected' : '' }}>
-                {{ $university->university_name }}
+              <option value="{{ $university->id }}" {{ request()->get('university') == $university->name ? 'selected' : '' }}>
+                {{ $university->name }}
               </option>
           @endforeach
       </select>
