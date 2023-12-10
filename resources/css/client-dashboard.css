@@ -6165,6 +6165,506 @@ gap: 10px;
 }
 
 
+/**** ============================================== Client Chatbox start Here  ================================= ***/
+.edux-chatbox-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.edux-left-sidebar {
+  display: flex;
+  width: 100%;
+  max-width: 367px;
+  border-right: 1px solid rgba(14, 0, 98, 0.10);
+  background: #FCFCFF;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.edux-right-sidebar {
+  width: 100%;
+  display: flex;
+  max-width: 376px;
+  border-radius: 8px;
+  border: 1px solid rgba(14, 0, 98, 0.10);
+  background: #FFF;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+}
+
+.edux-main-area {
+  display: flex;
+  margin: 0 auto;
+}
+
+.edux-main-area {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1536px;
+  flex-direction: column;
+}
+
+.middle-top-area {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background: #FCFCFF;
+  box-shadow: 4px 4px 24px 0px rgba(14, 0, 98, 0.10);
+}
+
+.left-top-search-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-top-search-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 100%;
+  gap: 0px;
+  padding: 24px 0px;
+}
+
+.left-top-search-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 100%;
+  gap: 0px;
+  padding: 24px 0px;
+  border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+}
+
+.left-sidebar .search-block.edux-search-block input[type="text"] {
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+  background: #fff;
+  height: 40px;
+  color: #303744B2;
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+  border: none;
+}
+
+ul.edux-dropdown-show.show {
+  display: flex;
+  min-width: 184px;
+  padding: 8px 16px;
+  flex-direction: column;
+}
+
+
+
+.single-person-avatar img {
+  width: 56px;
+  height: 56px;
+}
+
+.edux-draft-options ul.dropdown-show {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate(-140px, 34px) !important;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+  border: none;
+}
+
+ul.dropdown-show.edux-dropdown-show a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 0px;
+}
+
+a.edux-draft-option-toggle {
+  background-color: transparent !important;
+  padding: 0px;
+  border: none;
+}
+
+a.edux-draft-option-toggle.show svg {
+  border: 1px solid #0E00621A;
+  box-shadow: 2px 2px 13px 0px #0E00620A;
+  background-color: transparent !important;
+  color: #fff;
+}
+
+a.edux-draft-option-toggle{
+  display: flex;
+  align-items: center;
+}
+
+.edux-draft-options svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #191D24;
+  background: rgba(48, 55, 68, 0.10);
+  display: flex;
+  padding: 8px;
+}
+
+ul.edux-dropdown-show svg {
+  background: no-repeat;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+}
+
+ul.edux-dropdown-show a.dropdown-heading:hover {
+  background: transparent !important;
+  font-size: 16px;
+  font-weight: 500 !important;
+  color: #0036E3;
+  font-family: Colfax;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+ul.edux-dropdown-show a.dropdown-heading:hover svg path {
+  fill: #0036E3;
+
+}
+
+ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
+  color: var(--bs-dropdown-link-active-color);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.edux-single-person {
+  display: flex;
+  flex-direction: row;
+  width: 267px;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.single-person-avatar-img {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.edux-single-person-area {
+  border-bottom: 1px solid  #E7E5EF;
+  padding: 16px 24px;
+}
+.edux-single-person-area:hover {
+  background: rgba(0, 54, 227, 0.05);
+}
+
+.avatar-title h4{
+  color: rgba(25, 29, 36, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.single-person-avatar-content p{
+  color:  #303744;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.avatar-title {
+  display: flex;
+  justify-content: space-between;
+  min-width: 270px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.message-count {
+  display: flex;
+  justify-content: space-between;
+  min-width: 260px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+p.avatar-time {
+  color: rgba(48, 55, 68, 0.50) !important;
+  font-family: Colfax !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+.edux-notify-point-green {
+  position: absolute;
+  top: -13px;
+  left: 27px;
+}
+
+p.avatar-count{
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 3px 7px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background:  #0036E3;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+
+}
+
+.middle-top-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.middle-top-text h5{
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+.middle-top-text p{
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.middle-top-right {
+  display: flex;
+  gap:8px;
+}
+
+.middle-top-right a {
+  border-radius: 4px;
+  border: 2px solid rgba(39, 88, 70, 0.20);
+  width: 46px;
+  height: 46px;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle-menu-area {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
+  background: #FBFBFC;
+  box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.06);
+}
+
+.middle-menu-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-top: 1px solid  rgba(14, 0, 98, 0.10);
+  border-bottom: 1px solid  rgba(14, 0, 98, 0.10);
+  background: #FBFBFC;
+  -webkit-box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.06);
+          box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.06);
+  height: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.middle-menu-area nav ul {
+  display: inline-flex;
+  margin-left: 0px;
+  padding-left: 0px;
+  gap:16px;
+}
+
+.middle-menu-area nav ul li a {
+  color:#0036E3;
+  font-family: Colfax;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+
+.edux-chatbox-body-ara {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.body-content {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1088px;
+  margin-top: 31px;
+  margin-bottom: 24px;
+}
+
+.ctx-title {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.ctx-text-area {
+  display: flex;
+  flex-direction: column;
+  max-width: 656px;
+}
+
+.ctx-person{
+  color:  #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.ctx-time{
+  color: rgba(48, 55, 68, 0.50);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.ctx-body p {
+  color: #303744;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 16px;
+}
+
+.ctx-body {
+  border-radius: 12px;
+  border: 1px solid  rgba(14, 0, 98, 0.10);
+  background: rgba(14, 0, 98, 0.03);
+}
+
+.body-content.edux-margin-left {
+  margin-left: 27%;
+  width: 100%;
+  max-width: 500px;
+}
+
+.ctx-img img {
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.edux-with-option {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.edux-with-option .ctx-body {
+  border-radius: 12px;
+  background: rgba(0, 89, 201, 0.08);
+  border: none;
+}
+
+
+.edux-with-option .ctx-body p{
+  color:  #303744;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+
+}
+
+.edux-message-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  /* max-width: 1088px; */
+}
+
+.edux-type-message textarea{
+  border-radius: 8px;
+  border: 2px solid rgba(14, 0, 98, 0.10);
+  background: #FFF;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+  width: 1088px;
+  height: 120px;
+}
+
+.text-body-img {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+}
+
+.edux-type-message textarea::placeholder{
+  margin-left:20px;
+  margin-top: 20px;
+}
+
+.text-area-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1088px;
+}
+
+
+
+.text-area-icon-left ul {
+  display: inline-flex;
+  position: absolute;
+  top: 80px;
+}
+
+
+.text-area-icon-right ul {
+  display: inline-flex;
+  position: absolute;
+  top: 80px;
+  right: 210px;
+}
+
+
+
+
+/**** ============================================== Client Chatbox End Here  ================================= ***/
+
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 

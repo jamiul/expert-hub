@@ -213,6 +213,7 @@
             <span class="draft-color">Hired</span>
             <span class="hourly-color">1</span>
           </div>
+
           <div class="draft-options">
             <div class="dropdown">
               <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -236,6 +237,7 @@
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </div>
