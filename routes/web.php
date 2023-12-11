@@ -4,12 +4,12 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
-use App\Http\Controllers\Frontend\ConsultantController;
+// use App\Http\Controllers\Frontend\ConsultantController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
-use App\Http\Controllers\Frontend\SearchScholarshipController;
+// use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
 use App\Http\Controllers\Frontend\UserProfileController;
@@ -29,9 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/components', 'components');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
-Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
 
-Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details'); //@TODO remove the name
 Route::get('/find-experts', [ExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
@@ -53,11 +51,3 @@ Route::get('/profile/create', [UserProfileController::class, 'create'])->middlew
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
-
-//scholarship list
-Route::get('/scholarship-search', [SearchScholarshipController::class, 'index'])->name('scholarship-search');
-Route::get('/skills/{skill}/{type}', [SearchScholarshipController::class, 'searchBySkill'])->name('scholarship-search.skill');
-Route::get('/scholarship-search?category={category_slug}&type=service', [SearchScholarshipController::class, 'index'])->name('services.category');
-
-//trainings
-Route::get('training/{id}', [TrainingDetailsController::class, 'trainingDetails'])->name('training.details');
