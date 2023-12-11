@@ -6213,6 +6213,7 @@ gap: 10px;
   align-items: center;
   background: #FCFCFF;
   box-shadow: 4px 4px 24px 0px rgba(14, 0, 98, 0.10);
+  padding: 14px 12px;
 }
 
 .left-top-search-area {
@@ -6361,6 +6362,11 @@ ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
   align-items: center;
   flex-direction: column;
 }
+
+.single-person-avatar-img img {
+  min-width: 56px;
+  min-height: 56px;
+}
 .edux-single-person-area {
   border-bottom: 1px solid  #E7E5EF;
   padding: 16px 24px;
@@ -6411,28 +6417,25 @@ p.avatar-time {
 
 .edux-notify-point-green {
   position: absolute;
-  top: -13px;
-  left: 27px;
+  top: -9px;
+  left: 40px;
 }
 
-p.avatar-count{
+p.avatar-count {
   display: flex;
-  width: 20px;
-  height: 20px;
   padding: 3px 7px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  background:  #0036E3;
+  background: #0036E3;
   color: #FFF;
   text-align: center;
   font-family: Colfax;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 15px;
   cursor: pointer;
-
 }
 
 .middle-top-left {
@@ -6440,6 +6443,11 @@ p.avatar-count{
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+.middle-top-img img {
+  max-width: 72px;
+  max-height: 72px;
 }
 
 .middle-top-text h5{
@@ -6526,7 +6534,7 @@ p.avatar-count{
   gap: 10px;
   margin: 0 auto;
   width: 100%;
-  max-width: 1088px;
+  max-width: 960px;
   margin-top: 31px;
   margin-bottom: 24px;
 }
@@ -6541,6 +6549,7 @@ p.avatar-count{
   display: flex;
   flex-direction: column;
   max-width: 656px;
+  width: 100%;
 }
 
 .ctx-person{
@@ -6617,13 +6626,15 @@ p.avatar-count{
   /* max-width: 1088px; */
 }
 
-.edux-type-message textarea{
+.edux-type-message textarea {
   border-radius: 8px;
   border: 2px solid rgba(14, 0, 98, 0.10);
   background: #FFF;
   box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
-  width: 1088px;
+  max-width: 1112px;
   height: 120px;
+  padding: 20px 45px;
+  width: 100%;
 }
 
 .text-body-img {
@@ -6648,17 +6659,227 @@ p.avatar-count{
 
 .text-area-icon-left ul {
   display: inline-flex;
+  padding-left: 13px;
+}
+
+.text-area-icon-left {
   position: absolute;
   top: 80px;
+  width: 50%;
 }
 
 
 .text-area-icon-right ul {
   display: inline-flex;
-  position: absolute;
-  top: 80px;
-  right: 210px;
+  padding-left: 0px;
+  gap: 8px;
 }
+
+.left-send {
+  display: flex;
+  min-width: 30%;
+  border-right: 1px solid rgba(14, 0, 98, 0.10);
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 15px;
+}
+.right-send {
+  display: flex;
+  justify-content: center;
+  width: 17%;
+}
+.text-area-icon-right ul li a {
+  border-radius: 30px;
+  background: rgba(48, 55, 68, 0.10);
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.edux-draft-options-all ul.dropdown-show {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate(10px, 34px) !important;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+  border: none;
+}
+
+.edux-draft-options-all {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start !important;
+  gap: 24px;
+}
+
+.edux-draft-options-all ul li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edux-draft-options-all ul li a:hover svg path {
+  fill:#0036E3;
+}
+
+.edux-draft-options-all ul li a svg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+}
+
+.ctx-with-draft {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.text-area-icon-right {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  position: absolute;
+  top: 65px;
+  right: 0%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.body-right-content {
+  display: flex;
+  width: 100%;
+  max-width: 376px;
+  border-radius: 0px 7px 7px 0px;
+  border-left: 1px solid rgba(14, 0, 98, 0.10);
+  background: #F6F5F8;
+  flex-direction: column;
+  margin: 24px 0px 24px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(14, 0, 98, 0.10);
+  background: #FFF;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+  padding: 24px;
+}
+
+.middle-top-right-sidebar {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  padding: 32px 24px 16px;
+  gap: 10px;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 1px solid  rgba(14, 0, 98, 0.10);
+}
+
+.duex-message-marketing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  max-width: 254px;
+  width: 100%;
+  gap: 12px;
+}
+
+.duex-single-file-links {
+  display: flex;
+  gap: 16px;
+  border-radius: 4px;
+  border: 1px solid  rgba(14, 0, 98, 0.10);
+  padding: 12px 8px;
+  justify-content: center;
+}
+
+.edux-message-iconic-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 312px;
+  gap: 12px;
+}
+
+.edux-message-iconic-text p a{
+  color:  #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.date-space {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.date-space span{
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+button.edux-btn-accordion {
+  background: none;
+  border: 0px;
+}
+
+button.edux-btn-accordion:focus{
+  box-shadow: none  !important;
+}
+
+.edux-accordion-item{
+  border: none !important;
+}
+
+.edux-btn-accordion:not(.collapsed) {
+  background: transparent;
+}
+
+/* .edux-accordion-item .accordion-button::after {
+  display: none;
+
+} */
+
+button.edux-btn-accordion::after{
+  content: "\e5cf";
+  position: absolute;
+  right: 0;
+  font-family: 'Material Symbols Outlined';
+  font-size: 20px;
+
+}
+
+button.edux-btn-accordion:not(.collapsed)::after {
+  content: "\e316";
+  font-family: 'Material Symbols Outlined';
+  color: #0036E3;
+  font-size: 20px;
+}
+
+button.edux-btn-accordion {
+  color: #303744;
+  font-family: Colfax;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  width: 100%;
+  padding: 16px 15px;
+  display: flex;
+  position: relative;
+}
+
+.accordion-body.single-file-links {
+  padding: 5px 0px;
+}
+
 
 
 
@@ -6760,6 +6981,42 @@ p.avatar-count{
     gap: 15px;
 }
 
+.body-content.edux-margin-left {
+  margin-left: 23%;
+}
+
+}
+
+@media only screen and (max-width: 1427px) {
+  .body-content.edux-margin-left {
+    margin-left: 20%;
+  }
+
+}
+
+@media only screen and (max-width: 1414px) {
+  .body-content.edux-margin-left {
+    margin-left: 18%;
+  }
+
+  .text-area-icon-right {
+    right: 3%;
+
+}
+
+}
+
+
+@media only screen and (max-width: 1389px) {
+  .body-content.edux-margin-left {
+    margin-left: 14%;
+  }
+
+  .text-area-icon-right {
+    right: 5%;
+
+}
+
 }
 
 
@@ -6784,6 +7041,48 @@ header.client-header {
   padding: 26px 7px;
 
 }
+
+}
+
+@media only screen and (max-width: 1361px) {
+
+  /* .body-content.edux-margin-left {
+    margin-left: 10%;
+  }
+
+  .text-area-icon-right {
+    right: 5%;
+
+} */
+
+.body-right-content {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0px 7px 7px 0px;
+  border-left: 1px solid rgba(14, 0, 98, 0.10);
+  background: #F6F5F8;
+  flex-direction: column;
+  margin: 24px 0px 24px 0px;
+  border-radius: 8px;
+  border: 1px solid rgba(14, 0, 98, 0.10);
+  background: #FFF;
+  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+  padding: 24px;
+}
+
+.edux-chatbox-body-ara {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column-reverse;
+}
+
+.body-content.edux-margin-left {
+  margin-left: 27%;
+}
+
+
 
 }
 
@@ -6957,6 +7256,23 @@ header.client-header {
 
 }
 
+
+@media only screen and (max-width: 1078px) {
+  .body-content.edux-margin-left {
+    margin-left: 10%;
+}
+
+}
+
+
+@media only screen and (max-width: 995px) {
+  .body-content.edux-margin-left {
+    margin-left: 3%;
+}
+
+}
+
+
 @media only screen and (max-width: 767px) {
 .expert__dashboard__nav {
   min-height: 5rem !important;
@@ -6995,6 +7311,29 @@ header.client-header {
   text-align: left;
   display: flex;
   flex-direction: column;
+}
+
+}
+
+@media only screen and (max-width: 730px) {
+
+  .edux-chatbox-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.edux-left-sidebar {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  border-right: 1px solid rgba(14, 0, 98, 0.10);
+  background: #FCFCFF;
+  flex-direction: column;
+  margin: 0 auto;
+  margin: 12px;
 }
 
 }

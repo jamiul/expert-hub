@@ -76,6 +76,31 @@
                   <p>A few words from the last </p>
                   <div class="message-count">
                     <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar1.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
                     <p class="avatar-count">2</p>
                   </div>
                 </div>
@@ -85,7 +110,32 @@
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#DDC700" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar3.png') }}" alt="avatar">
                     <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
                       </svg></span>
@@ -108,10 +158,12 @@
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
+                    <img src="{{ asset('assets/frontend/img/chat-avatar4.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
                 </div>
                 <div class="single-person-avatar-content">
                   <div class="avatar-title">
@@ -122,7 +174,31 @@
                   <p>A few words from the last </p>
                   <div class="message-count">
                     <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
                   </div>
                 </div>
             </div>
@@ -131,10 +207,12 @@
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
+                    <img src="{{ asset('assets/frontend/img/chat-avatar5.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
                 </div>
                 <div class="single-person-avatar-content">
                   <div class="avatar-title">
@@ -145,7 +223,7 @@
                   <p>A few words from the last </p>
                   <div class="message-count">
                     <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
+                    <p class="avatar-count d-none">2</p>
                   </div>
                 </div>
             </div>
@@ -154,10 +232,12 @@
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar6.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
+                      </svg>
+                    </span>
                 </div>
                 <div class="single-person-avatar-content">
                   <div class="avatar-title">
@@ -168,29 +248,7 @@
                   <p>A few words from the last </p>
                   <div class="message-count">
                     <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div class="edux-single-person-area">
-            <div class="edux-single-person">
-                <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
-                </div>
-                <div class="single-person-avatar-content">
-                  <div class="avatar-title">
-                    <h4>Black, Marvin</h4>
-                    <p class="avatar-time">7: 30 am</p>
-                  </div>
-
-                  <p>A few words from the last </p>
-                  <div class="message-count">
-                    <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
+                    <p class="avatar-count d-none">2</p>
                   </div>
                 </div>
             </div>
@@ -199,10 +257,12 @@
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
+                    <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#DDC700" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
                 </div>
                 <div class="single-person-avatar-content">
                   <div class="avatar-title">
@@ -213,7 +273,7 @@
                   <p>A few words from the last </p>
                   <div class="message-count">
                     <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
+                    <p class="avatar-count d-none">2</p>
                   </div>
                 </div>
             </div>
@@ -222,7 +282,7 @@
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar1.png') }}" alt="avatar">
                     <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
                       </svg></span>
@@ -236,60 +296,10 @@
                   <p>A few words from the last </p>
                   <div class="message-count">
                     <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
+                    <p class="avatar-count d-none">2</p>
                   </div>
                 </div>
             </div>
-        </div>
-
-        <div class="edux-single-person-area">
-            <div class="edux-single-person">
-                <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
-                </div>
-                <div class="single-person-avatar-content">
-                  <div class="avatar-title">
-                    <h4>Black, Marvin</h4>
-                    <p class="avatar-time">7: 30 am</p>
-                  </div>
-
-                  <p>A few words from the last </p>
-                  <div class="message-count">
-                    <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="edux-single-person-area">
-
-
-            <div class="edux-single-person">
-                <div class="single-person-avatar-img position-relative">
-                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
-                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
-                      </svg></span>
-                </div>
-                <div class="single-person-avatar-content">
-                  <div class="avatar-title">
-                    <h4>Black, Marvin</h4>
-                    <p class="avatar-time">7: 30 am</p>
-                  </div>
-
-                  <p>A few words from the last </p>
-                  <div class="message-count">
-                    <p>message sent to the partner...</p>
-                    <p class="avatar-count">2</p>
-                  </div>
-                </div>
-            </div>
-
-
         </div>
 
 
@@ -308,7 +318,6 @@
                         <p>Curriculum Expert </p>
                         <p>5:32 AM GMT+6  |  Australia</p>
                     </div>
-
                   </div>
                   <div class="middle-top-right">
                     <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -334,7 +343,6 @@
                 </nav>
               </div>
             </div>
-
           </div>
 
 
@@ -355,34 +363,45 @@
                       <span class="ctx-person">Michel Jhon</span>
                       <span class ="ctx-time">10:05 PM</span>
                   </div>
-                  <div class="ctx-body">
-                    <p>Hello! I'm looking for a freelancer to create a course plan for our upcoming university commerce conference scheduled for March 24. Can we set up a meeting to discuss this further?</p>
-                  </div>
+                  <div class="ctx-with-draft">
+                      <div class="ctx-body">
+                        <p>Hello! I'm looking for a freelancer to create a course plan for our upcoming university commerce conference scheduled for March 24. Can we set up a meeting to discuss this further?</p>
+                      </div>
+                        <div class="draft-options edux-draft-options-all">
+                        <div class="dropdown">
+                          <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24"/>
+                          </svg>
+                          </a>
+                          <ul class="dropdown-menu dropdown-show">
+                            <li>
+                              <a class="dropdown-item dropdown-heading active" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.29683 15.8334H5.32727L13.0437 8.11705L12.0132 7.08659L4.29683 14.803V15.8334ZM15.7167 7.21321L12.9042 4.4264L13.9908 3.33988C14.2354 3.09523 14.533 2.9729 14.8834 2.9729C15.2338 2.9729 15.5313 3.09523 15.776 3.33988L16.7904 4.35427C17.035 4.59893 17.1616 4.89219 17.1702 5.23407C17.1787 5.57594 17.0607 5.86921 16.816 6.11386L15.7167 7.21321ZM14.8129 8.12986L5.85931 17.0834H3.04688V14.2709L12.0004 5.3174L14.8129 8.12986ZM12.5244 7.59782L12.0132 7.08659L13.0437 8.11705L12.5244 7.59782Z" fill="#0036E3"/>
+                            </svg></span> <span>Edit</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M7.5 15.0001C7.04167 15.0001 6.64931 14.8369 6.32292 14.5105C5.99653 14.1841 5.83333 13.7917 5.83333 13.3334V3.33341C5.83333 2.87508 5.99653 2.48272 6.32292 2.15633C6.64931 1.82994 7.04167 1.66675 7.5 1.66675H15C15.4583 1.66675 15.8507 1.82994 16.1771 2.15633C16.5035 2.48272 16.6667 2.87508 16.6667 3.33341V13.3334C16.6667 13.7917 16.5035 14.1841 16.1771 14.5105C15.8507 14.8369 15.4583 15.0001 15 15.0001H7.5ZM7.5 13.3334H15V3.33341H7.5V13.3334ZM4.16667 18.3334C3.70833 18.3334 3.31597 18.1702 2.98958 17.8438C2.66319 17.5174 2.5 17.1251 2.5 16.6667V5.00008H4.16667V16.6667H13.3333V18.3334H4.16667Z" fill="#191D24"/>
+                            </svg></span> <span>Copy</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
+                            </svg></span> <span>Reply</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
+                            </svg></span> <span>Forwards</span></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                </div>
                 </div>
 
-                <div class="draft-options">
-                  <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24"/>
-                    </svg>
-                    </a>
-                    <ul class="dropdown-menu dropdown-show">
-                      <li>
-                        <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item dropdown-heading " href="#">Edit Posting</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item dropdown-heading " href="#">Remove Posting</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+
 
               </div>
 
@@ -403,7 +422,7 @@
                         <p>Hello! Of course, I'd be delighted to assist you in creating a course plan for your university commerce conference in March.</p>
                       </div>
 
-                      <div class="draft-options">
+                      <div class="draft-options  edux-draft-options-all">
                       <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -411,19 +430,27 @@
                         </svg>
                         </a>
                         <ul class="dropdown-menu dropdown-show">
-                          <li>
-                            <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Edit Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Remove Posting</a>
-                          </li>
-                        </ul>
+                            <li>
+                              <a class="dropdown-item dropdown-heading active" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.29683 15.8334H5.32727L13.0437 8.11705L12.0132 7.08659L4.29683 14.803V15.8334ZM15.7167 7.21321L12.9042 4.4264L13.9908 3.33988C14.2354 3.09523 14.533 2.9729 14.8834 2.9729C15.2338 2.9729 15.5313 3.09523 15.776 3.33988L16.7904 4.35427C17.035 4.59893 17.1616 4.89219 17.1702 5.23407C17.1787 5.57594 17.0607 5.86921 16.816 6.11386L15.7167 7.21321ZM14.8129 8.12986L5.85931 17.0834H3.04688V14.2709L12.0004 5.3174L14.8129 8.12986ZM12.5244 7.59782L12.0132 7.08659L13.0437 8.11705L12.5244 7.59782Z" fill="#0036E3"/>
+                            </svg></span> <span>Edit</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M7.5 15.0001C7.04167 15.0001 6.64931 14.8369 6.32292 14.5105C5.99653 14.1841 5.83333 13.7917 5.83333 13.3334V3.33341C5.83333 2.87508 5.99653 2.48272 6.32292 2.15633C6.64931 1.82994 7.04167 1.66675 7.5 1.66675H15C15.4583 1.66675 15.8507 1.82994 16.1771 2.15633C16.5035 2.48272 16.6667 2.87508 16.6667 3.33341V13.3334C16.6667 13.7917 16.5035 14.1841 16.1771 14.5105C15.8507 14.8369 15.4583 15.0001 15 15.0001H7.5ZM7.5 13.3334H15V3.33341H7.5V13.3334ZM4.16667 18.3334C3.70833 18.3334 3.31597 18.1702 2.98958 17.8438C2.66319 17.5174 2.5 17.1251 2.5 16.6667V5.00008H4.16667V16.6667H13.3333V18.3334H4.16667Z" fill="#191D24"/>
+                            </svg></span> <span>Copy</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
+                            </svg></span> <span>Reply</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
+                            </svg></span> <span>Forwards</span></a>
+                            </li>
+                          </ul>
                       </div>
                     </div>
                 </div>
@@ -433,7 +460,7 @@
                         <p>Hello! Of course, I'd be delighted to assist you in creating a course plan for your university commerce conference in March.</p>
                       </div>
 
-                      <div class="draft-options">
+                      <div class="draft-options  edux-draft-options-all">
                       <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -441,19 +468,27 @@
                         </svg>
                         </a>
                         <ul class="dropdown-menu dropdown-show">
-                          <li>
-                            <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Edit Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Remove Posting</a>
-                          </li>
-                        </ul>
+                            <li>
+                              <a class="dropdown-item dropdown-heading active" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.29683 15.8334H5.32727L13.0437 8.11705L12.0132 7.08659L4.29683 14.803V15.8334ZM15.7167 7.21321L12.9042 4.4264L13.9908 3.33988C14.2354 3.09523 14.533 2.9729 14.8834 2.9729C15.2338 2.9729 15.5313 3.09523 15.776 3.33988L16.7904 4.35427C17.035 4.59893 17.1616 4.89219 17.1702 5.23407C17.1787 5.57594 17.0607 5.86921 16.816 6.11386L15.7167 7.21321ZM14.8129 8.12986L5.85931 17.0834H3.04688V14.2709L12.0004 5.3174L14.8129 8.12986ZM12.5244 7.59782L12.0132 7.08659L13.0437 8.11705L12.5244 7.59782Z" fill="#0036E3"/>
+                            </svg></span> <span>Edit</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M7.5 15.0001C7.04167 15.0001 6.64931 14.8369 6.32292 14.5105C5.99653 14.1841 5.83333 13.7917 5.83333 13.3334V3.33341C5.83333 2.87508 5.99653 2.48272 6.32292 2.15633C6.64931 1.82994 7.04167 1.66675 7.5 1.66675H15C15.4583 1.66675 15.8507 1.82994 16.1771 2.15633C16.5035 2.48272 16.6667 2.87508 16.6667 3.33341V13.3334C16.6667 13.7917 16.5035 14.1841 16.1771 14.5105C15.8507 14.8369 15.4583 15.0001 15 15.0001H7.5ZM7.5 13.3334H15V3.33341H7.5V13.3334ZM4.16667 18.3334C3.70833 18.3334 3.31597 18.1702 2.98958 17.8438C2.66319 17.5174 2.5 17.1251 2.5 16.6667V5.00008H4.16667V16.6667H13.3333V18.3334H4.16667Z" fill="#191D24"/>
+                            </svg></span> <span>Copy</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
+                            </svg></span> <span>Reply</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
+                            </svg></span> <span>Forwards</span></a>
+                            </li>
+                          </ul>
                       </div>
                     </div>
                 </div>
@@ -480,12 +515,12 @@
                       <span class="ctx-person">Michel Jhon</span>
                       <span class ="ctx-time">10:05 PM</span>
                   </div>
-                  <div class="ctx-body">
-                    <p>Hello! I'm looking for a freelancer to create a course plan for our upcoming university commerce conference scheduled for March 24. Can we set up a meeting to discuss this further?</p>
-                  </div>
-                </div>
+                  <div class="ctx-with-draft">
+                    <div class="ctx-body">
+                      <p>Hello! I'm looking for a freelancer to create a course plan for our upcoming university commerce conference scheduled for March 24. Can we set up a meeting to discuss this further?</p>
+                    </div>
 
-                <div class="draft-options">
+                    <div class="draft-options  edux-draft-options-all">
                   <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -493,21 +528,34 @@
                     </svg>
                     </a>
                     <ul class="dropdown-menu dropdown-show">
-                      <li>
-                        <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item dropdown-heading " href="#">Edit Posting</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item dropdown-heading " href="#">Remove Posting</a>
-                      </li>
-                    </ul>
+                            <li>
+                              <a class="dropdown-item dropdown-heading active" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.29683 15.8334H5.32727L13.0437 8.11705L12.0132 7.08659L4.29683 14.803V15.8334ZM15.7167 7.21321L12.9042 4.4264L13.9908 3.33988C14.2354 3.09523 14.533 2.9729 14.8834 2.9729C15.2338 2.9729 15.5313 3.09523 15.776 3.33988L16.7904 4.35427C17.035 4.59893 17.1616 4.89219 17.1702 5.23407C17.1787 5.57594 17.0607 5.86921 16.816 6.11386L15.7167 7.21321ZM14.8129 8.12986L5.85931 17.0834H3.04688V14.2709L12.0004 5.3174L14.8129 8.12986ZM12.5244 7.59782L12.0132 7.08659L13.0437 8.11705L12.5244 7.59782Z" fill="#0036E3"/>
+                            </svg></span> <span>Edit</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M7.5 15.0001C7.04167 15.0001 6.64931 14.8369 6.32292 14.5105C5.99653 14.1841 5.83333 13.7917 5.83333 13.3334V3.33341C5.83333 2.87508 5.99653 2.48272 6.32292 2.15633C6.64931 1.82994 7.04167 1.66675 7.5 1.66675H15C15.4583 1.66675 15.8507 1.82994 16.1771 2.15633C16.5035 2.48272 16.6667 2.87508 16.6667 3.33341V13.3334C16.6667 13.7917 16.5035 14.1841 16.1771 14.5105C15.8507 14.8369 15.4583 15.0001 15 15.0001H7.5ZM7.5 13.3334H15V3.33341H7.5V13.3334ZM4.16667 18.3334C3.70833 18.3334 3.31597 18.1702 2.98958 17.8438C2.66319 17.5174 2.5 17.1251 2.5 16.6667V5.00008H4.16667V16.6667H13.3333V18.3334H4.16667Z" fill="#191D24"/>
+                            </svg></span> <span>Copy</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
+                            </svg></span> <span>Reply</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
+                            </svg></span> <span>Forwards</span></a>
+                            </li>
+                          </ul>
                   </div>
                 </div>
+
+                  </div>
+                </div>
+
+
 
               </div>
 
@@ -528,7 +576,7 @@
                         <p>Hello! Of course, I'd be delighted to assist you in creating a course plan for your university commerce conference in March.</p>
                       </div>
 
-                      <div class="draft-options">
+                      <div class="draft-options edux-draft-options-all">
                       <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -536,19 +584,27 @@
                         </svg>
                         </a>
                         <ul class="dropdown-menu dropdown-show">
-                          <li>
-                            <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Edit Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Remove Posting</a>
-                          </li>
-                        </ul>
+                            <li>
+                              <a class="dropdown-item dropdown-heading active" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.29683 15.8334H5.32727L13.0437 8.11705L12.0132 7.08659L4.29683 14.803V15.8334ZM15.7167 7.21321L12.9042 4.4264L13.9908 3.33988C14.2354 3.09523 14.533 2.9729 14.8834 2.9729C15.2338 2.9729 15.5313 3.09523 15.776 3.33988L16.7904 4.35427C17.035 4.59893 17.1616 4.89219 17.1702 5.23407C17.1787 5.57594 17.0607 5.86921 16.816 6.11386L15.7167 7.21321ZM14.8129 8.12986L5.85931 17.0834H3.04688V14.2709L12.0004 5.3174L14.8129 8.12986ZM12.5244 7.59782L12.0132 7.08659L13.0437 8.11705L12.5244 7.59782Z" fill="#0036E3"/>
+                            </svg></span> <span>Edit</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M7.5 15.0001C7.04167 15.0001 6.64931 14.8369 6.32292 14.5105C5.99653 14.1841 5.83333 13.7917 5.83333 13.3334V3.33341C5.83333 2.87508 5.99653 2.48272 6.32292 2.15633C6.64931 1.82994 7.04167 1.66675 7.5 1.66675H15C15.4583 1.66675 15.8507 1.82994 16.1771 2.15633C16.5035 2.48272 16.6667 2.87508 16.6667 3.33341V13.3334C16.6667 13.7917 16.5035 14.1841 16.1771 14.5105C15.8507 14.8369 15.4583 15.0001 15 15.0001H7.5ZM7.5 13.3334H15V3.33341H7.5V13.3334ZM4.16667 18.3334C3.70833 18.3334 3.31597 18.1702 2.98958 17.8438C2.66319 17.5174 2.5 17.1251 2.5 16.6667V5.00008H4.16667V16.6667H13.3333V18.3334H4.16667Z" fill="#191D24"/>
+                            </svg></span> <span>Copy</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
+                            </svg></span> <span>Reply</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
+                            </svg></span> <span>Forwards</span></a>
+                            </li>
+                          </ul>
                       </div>
                     </div>
                 </div>
@@ -558,7 +614,7 @@
                         <p>Hello! Of course, I'd be delighted to assist you in creating a course plan for your university commerce conference in March.</p>
                       </div>
 
-                      <div class="draft-options">
+                      <div class="draft-options edux-draft-options-all">
                       <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -566,27 +622,31 @@
                         </svg>
                         </a>
                         <ul class="dropdown-menu dropdown-show">
-                          <li>
-                            <a class="dropdown-item dropdown-heading active" href="#">Invite Experts</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">View Job Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Edit Posting</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item dropdown-heading " href="#">Remove Posting</a>
-                          </li>
-                        </ul>
+                            <li>
+                              <a class="dropdown-item dropdown-heading active" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.29683 15.8334H5.32727L13.0437 8.11705L12.0132 7.08659L4.29683 14.803V15.8334ZM15.7167 7.21321L12.9042 4.4264L13.9908 3.33988C14.2354 3.09523 14.533 2.9729 14.8834 2.9729C15.2338 2.9729 15.5313 3.09523 15.776 3.33988L16.7904 4.35427C17.035 4.59893 17.1616 4.89219 17.1702 5.23407C17.1787 5.57594 17.0607 5.86921 16.816 6.11386L15.7167 7.21321ZM14.8129 8.12986L5.85931 17.0834H3.04688V14.2709L12.0004 5.3174L14.8129 8.12986ZM12.5244 7.59782L12.0132 7.08659L13.0437 8.11705L12.5244 7.59782Z" fill="#0036E3"/>
+                            </svg></span> <span>Edit</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M7.5 15.0001C7.04167 15.0001 6.64931 14.8369 6.32292 14.5105C5.99653 14.1841 5.83333 13.7917 5.83333 13.3334V3.33341C5.83333 2.87508 5.99653 2.48272 6.32292 2.15633C6.64931 1.82994 7.04167 1.66675 7.5 1.66675H15C15.4583 1.66675 15.8507 1.82994 16.1771 2.15633C16.5035 2.48272 16.6667 2.87508 16.6667 3.33341V13.3334C16.6667 13.7917 16.5035 14.1841 16.1771 14.5105C15.8507 14.8369 15.4583 15.0001 15 15.0001H7.5ZM7.5 13.3334H15V3.33341H7.5V13.3334ZM4.16667 18.3334C3.70833 18.3334 3.31597 18.1702 2.98958 17.8438C2.66319 17.5174 2.5 17.1251 2.5 16.6667V5.00008H4.16667V16.6667H13.3333V18.3334H4.16667Z" fill="#191D24"/>
+                            </svg></span> <span>Copy</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
+                            </svg></span> <span>Reply</span> </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
+                            </svg></span> <span>Forwards</span></a>
+                            </li>
+                          </ul>
                       </div>
                     </div>
                 </div>
-
                 </div>
-
-
-
               </div>
 
               <div class="edux-type-message position-relative">
@@ -652,7 +712,221 @@
 
 
               <div class="body-right-content">
-                <h1>body right content</h1>
+                  <div class="middle-top-right-sidebar">
+                      <div class="middle-top-img">
+                      <img src="{{ asset('assets/frontend/img/avatar-middle.png') }}" alt="avatar">
+                      </div>
+                      <div class="middle-top-text">
+                          <h5>Miles, Esther</h5>
+                          <p>Curriculum Expert </p>
+                          <p>5:32 AM GMT+6  |  Australia</p>
+
+                          <div class="duex-message-marketing">
+                            <div class="message-iconic">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M3.99998 18.9999V7.99993V18.6922V18.5913V18.9999ZM4.3077 20.4999C3.80257 20.4999 3.375 20.3249 3.025 19.9749C2.675 19.6249 2.5 19.1973 2.5 18.6922V8.30765C2.5 7.80252 2.675 7.37495 3.025 7.02495C3.375 6.67495 3.80257 6.49995 4.3077 6.49995H8.5V4.80768C8.5 4.30256 8.675 3.875 9.025 3.525C9.375 3.175 9.80257 3 10.3077 3H13.6923C14.1974 3 14.625 3.175 14.975 3.525C15.325 3.875 15.5 4.30256 15.5 4.80768V6.49995H19.6923C20.1974 6.49995 20.625 6.67495 20.975 7.02495C21.325 7.37495 21.5 7.80252 21.5 8.30765V12.5442C21.2705 12.3852 21.0323 12.2474 20.7855 12.1307C20.5387 12.0141 20.2769 11.9102 20 11.8192V8.30765C20 8.2179 19.9711 8.14417 19.9134 8.08647C19.8557 8.02877 19.782 7.99993 19.6923 7.99993H4.3077C4.21795 7.99993 4.14423 8.02877 4.08653 8.08647C4.02883 8.14417 3.99998 8.2179 3.99998 8.30765V18.6922C3.99998 18.7819 4.02883 18.8557 4.08653 18.9134C4.14423 18.9711 4.21795 18.9999 4.3077 18.9999H11.575C11.6186 19.2666 11.676 19.5233 11.7471 19.7701C11.8183 20.0169 11.9064 20.2601 12.0116 20.4999H4.3077ZM9.99998 6.49995H14V4.80768C14 4.71793 13.9711 4.6442 13.9134 4.5865C13.8557 4.5288 13.782 4.49995 13.6923 4.49995H10.3077C10.218 4.49995 10.1442 4.5288 10.0865 4.5865C10.0288 4.6442 9.99998 4.71793 9.99998 4.80768V6.49995ZM18 22.4999C16.7513 22.4999 15.6891 22.0621 14.8135 21.1865C13.9378 20.3108 13.5 19.2486 13.5 17.9999C13.5 16.7512 13.9378 15.6891 14.8135 14.8134C15.6891 13.9378 16.7513 13.5 18 13.5C19.2487 13.5 20.3109 13.9378 21.1865 14.8134C22.0621 15.6891 22.5 16.7512 22.5 17.9999C22.5 19.2486 22.0621 20.3108 21.1865 21.1865C20.3109 22.0621 19.2487 22.4999 18 22.4999ZM18.4423 17.8191V15.0576H17.5577V18.1807L19.65 20.273L20.2731 19.6499L18.4423 17.8191Z" fill="#C8C5D4"/>
+                              </svg>
+                            </div>
+                            <div class="message-iconic-text">
+                                <p>Marketing plan for our upcoming university commerce..</p>
+                            </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+                  <div class="files-links-area">
+                      <div class="accordion" id="accordionExample">
+
+                      <div class="accordion-item edux-accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="edux-btn-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Files & Links
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z" fill="#C8C5D5"/>
+                                  </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>Yesterday</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                  <path d="M14.8828 22.6666H9.54948C7.70504 22.6666 6.13281 22.0166 4.83281 20.7166C3.53281 19.4166 2.88281 17.8444 2.88281 15.9999C2.88281 14.1555 3.53281 12.5833 4.83281 11.2833C6.13281 9.98325 7.70504 9.33325 9.54948 9.33325H14.8828V11.9999H9.54948C8.43837 11.9999 7.49392 12.3888 6.71615 13.1666C5.93837 13.9444 5.54948 14.8888 5.54948 15.9999C5.54948 17.111 5.93837 18.0555 6.71615 18.8333C7.49392 19.611 8.43837 19.9999 9.54948 19.9999H14.8828V22.6666ZM10.8828 17.3333V14.6666H21.5495V17.3333H10.8828ZM17.5495 22.6666V19.9999H22.8828C23.9939 19.9999 24.9384 19.611 25.7161 18.8333C26.4939 18.0555 26.8828 17.111 26.8828 15.9999C26.8828 14.8888 26.4939 13.9444 25.7161 13.1666C24.9384 12.3888 23.9939 11.9999 22.8828 11.9999H17.5495V9.33325H22.8828C24.7273 9.33325 26.2995 9.98325 27.5995 11.2833C28.8995 12.5833 29.5495 14.1555 29.5495 15.9999C29.5495 17.8444 28.8995 19.4166 27.5995 20.7166C26.2995 22.0166 24.7273 22.6666 22.8828 22.6666H17.5495Z" fill="#C8C5D5"/>
+                                </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>01/10/2023</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z" fill="#C8C5D5"/>
+                                  </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>30/09/2023</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                      <div class="accordion-item edux-accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="edux-btn-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          People
+                          </button>
+
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z" fill="#C8C5D5"/>
+                                  </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>Yesterday</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                  <path d="M14.8828 22.6666H9.54948C7.70504 22.6666 6.13281 22.0166 4.83281 20.7166C3.53281 19.4166 2.88281 17.8444 2.88281 15.9999C2.88281 14.1555 3.53281 12.5833 4.83281 11.2833C6.13281 9.98325 7.70504 9.33325 9.54948 9.33325H14.8828V11.9999H9.54948C8.43837 11.9999 7.49392 12.3888 6.71615 13.1666C5.93837 13.9444 5.54948 14.8888 5.54948 15.9999C5.54948 17.111 5.93837 18.0555 6.71615 18.8333C7.49392 19.611 8.43837 19.9999 9.54948 19.9999H14.8828V22.6666ZM10.8828 17.3333V14.6666H21.5495V17.3333H10.8828ZM17.5495 22.6666V19.9999H22.8828C23.9939 19.9999 24.9384 19.611 25.7161 18.8333C26.4939 18.0555 26.8828 17.111 26.8828 15.9999C26.8828 14.8888 26.4939 13.9444 25.7161 13.1666C24.9384 12.3888 23.9939 11.9999 22.8828 11.9999H17.5495V9.33325H22.8828C24.7273 9.33325 26.2995 9.98325 27.5995 11.2833C28.8995 12.5833 29.5495 14.1555 29.5495 15.9999C29.5495 17.8444 28.8995 19.4166 27.5995 20.7166C26.2995 22.0166 24.7273 22.6666 22.8828 22.6666H17.5495Z" fill="#C8C5D5"/>
+                                </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>01/10/2023</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z" fill="#C8C5D5"/>
+                                  </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>30/09/2023</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="accordion-item edux-accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="edux-btn-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Personal Note
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z" fill="#C8C5D5"/>
+                                  </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>Yesterday</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                  <path d="M14.8828 22.6666H9.54948C7.70504 22.6666 6.13281 22.0166 4.83281 20.7166C3.53281 19.4166 2.88281 17.8444 2.88281 15.9999C2.88281 14.1555 3.53281 12.5833 4.83281 11.2833C6.13281 9.98325 7.70504 9.33325 9.54948 9.33325H14.8828V11.9999H9.54948C8.43837 11.9999 7.49392 12.3888 6.71615 13.1666C5.93837 13.9444 5.54948 14.8888 5.54948 15.9999C5.54948 17.111 5.93837 18.0555 6.71615 18.8333C7.49392 19.611 8.43837 19.9999 9.54948 19.9999H14.8828V22.6666ZM10.8828 17.3333V14.6666H21.5495V17.3333H10.8828ZM17.5495 22.6666V19.9999H22.8828C23.9939 19.9999 24.9384 19.611 25.7161 18.8333C26.4939 18.0555 26.8828 17.111 26.8828 15.9999C26.8828 14.8888 26.4939 13.9444 25.7161 13.1666C24.9384 12.3888 23.9939 11.9999 22.8828 11.9999H17.5495V9.33325H22.8828C24.7273 9.33325 26.2995 9.98325 27.5995 11.2833C28.8995 12.5833 29.5495 14.1555 29.5495 15.9999C29.5495 17.8444 28.8995 19.4166 27.5995 20.7166C26.2995 22.0166 24.7273 22.6666 22.8828 22.6666H17.5495Z" fill="#C8C5D5"/>
+                                </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>01/10/2023</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="accordion-body single-file-links">
+                              <div class="duex-single-file-links">
+                                <div class="message-iconic">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z" fill="#C8C5D5"/>
+                                  </svg>
+                                </div>
+                                <div class="edux-message-iconic-text">
+                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/ a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                    <div class="date-space">
+                                      <span>40.00 KB</span>
+                                      <span>30/09/2023</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
               </div>
 
             </div>
