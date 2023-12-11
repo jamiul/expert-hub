@@ -1,2 +1,8 @@
-// Bootstrap
+// Bootstrap PGK
 @import 'bootstrap/scss/bootstrap';
+//Application variables
+@import "variables";
+//Application Global
+@import "global";
+//Application Cards
+@import 'cards';

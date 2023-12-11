@@ -1,0 +1,82 @@
+h1, h2, h3, h4, h5, h6 {
+    color: $edu-headings-color;
+}
+
+.my-60 {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.social-auth {
+    display: grid;
+    gap: 16px;
+
+    &.col-items-3 {
+        @media screen and (min-width: 500px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    div {
+        a {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 16px;
+            border: 2px solid $edu-border-color;
+            border-radius: 4px;
+            color: $edu-headings-color;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: $edu-lighter-brand-bg;
+                border-color: $edu-lighter-brand-border-color;
+            }
+        }
+    }
+}
+
+.separator {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+
+    &:before {
+        content: "";
+        background: #0000001c;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10px;
+    }
+
+    span {
+        background: #fff;
+        z-index: 999;
+        position: relative;
+        width: 85px;
+        display: inline-block;
+        color: #303744;
+        font-size: 15px;
+    }
+}
+
+.name-fields-wrapper {
+    display: grid;
+    gap: 0 16px;
+    @media screen and (min-width: 500px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+        & > div:first-child {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}
