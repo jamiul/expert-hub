@@ -57,17 +57,13 @@ class Lists extends Component
             $scholarships = $scholarships->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
         }
         if (isset($this->filtersArray['level']) && $this->filtersArray['level']) {
-            $scholarships = $scholarships
-                ->select('scholarships.*')
-                ->join('scholarship_levels', 'scholarships.level_id', '=', 'scholarship_levels.id')
-                ->whereIn('scholarship_levels.level_name', $this->filtersArray['level']);
+            $scholarships = $scholarships->whereHas('eligibilities', function($query){
+                $query->whereIn('study_level', $this->filtersArray['level']);
+            });
         }
         if (isset($this->filtersArray['studyArea']) && $this->filtersArray['studyArea']) {
-            $studyAreas = $this->filtersArray['studyArea'];
-            $scholarships = $scholarships->where(function ($q) use ($studyAreas) {
-                foreach ($studyAreas as $value) {
-                    $q->orWhere('study_area', 'like', '%' . $value . '%');
-                }
+            $scholarships = $scholarships->whereHas('areas', function ($query) {
+                $query->whereIn('expertise_id', $this->filtersArray['studyArea']);
             });
         }
         if (isset($this->filtersArray['studentType']) && $this->filtersArray['studentType']) {
@@ -79,11 +75,8 @@ class Lists extends Component
             });
         }
         if (isset($this->filtersArray['scholarshipType']) && $this->filtersArray['scholarshipType']) {
-            $scholarshipTypes = $this->filtersArray['scholarshipType'];
-            $scholarships = $scholarships->where(function ($q) use ($scholarshipTypes) {
-                foreach ($scholarshipTypes as $value) {
-                    $q->orWhere('scholarship_type', 'like', '%' . $value . '%');
-                }
+            $scholarships = $scholarships->whereHas('funds', function ($query) {
+                $query->whereIn('fund_type', $this->filtersArray['scholarshipType']);
             });
         }
         if (isset($this->filtersArray['applicationDeadline']) && $this->filtersArray['applicationDeadline']) {
@@ -101,10 +94,7 @@ class Lists extends Component
                 ->whereIn('scholarship_countries.country_name', $this->filtersArray['country']);
         }
         if (isset($this->filtersArray['university']) && $this->filtersArray['university']) {
-            $scholarships = $scholarships
-                ->select('scholarships.*')
-                ->join('scholarship_universities', 'scholarships.university_id', '=', 'scholarship_universities.id')
-                ->where('scholarship_universities.university_name', $this->filtersArray['university']);
+            $scholarships = $scholarships->where('university_id', $this->filtersArray['university']);
         }
 
         $scholarships = $scholarships->paginate($this->limit);
