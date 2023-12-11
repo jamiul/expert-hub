@@ -1,8 +1,8 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.auth')
 
 @section('content')
     {{--    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">--}}
-    <section class="exp-my">
+    <section class="">
         <div class="container">
             <div class="row">
                 <div class="col justify-content-center">
