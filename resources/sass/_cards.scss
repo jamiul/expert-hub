@@ -1,0 +1,45 @@
+.auth-card {
+    margin: auto;
+    width: 100%;
+    max-width: 640px;
+    box-shadow: 12px 12px 48px 0px #0e006221;
+    padding: 20px;
+    border-radius: 12px;
+    @media screen and (min-width: 500px) {
+        padding: 60px 40px;
+    }
+
+    .auth-card-header {
+        margin-bottom: 40px;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+
+    .form-check-group {
+        .form-check-label {
+            font-size: 0.8125rem;
+            margin-left: 4px;
+
+            a {
+                text-decoration: underline;
+                color: inherit;
+            }
+        }
+    }
+
+    .auth-card-footer {
+        margin-top: 16px;
+        text-align: center;
+
+        p {
+            a {
+                text-decoration: underline;
+                color: $edu-primary-color;
+                font-weight: 600;
+            }
+        }
+    }
+}

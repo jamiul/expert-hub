@@ -58,6 +58,7 @@
                     </div>
                     <x-form.input type="email" label="Email Address" name="email" placeholder="name@example.com"/>
                     <x-form.input type="password" label="Password" name="password" placeholder="Your password (8 or more characters)"/>
+                    <x-form.input type="password" label="Password" name="confirm_password" placeholder="Your password (8 or more characters)"/>
                     <x-form.select label="Country" name="country_id">
                         <option value="">Select country</option>
                         @foreach ($countries as $id => $country)
