@@ -27,12 +27,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function profile()
     {
-        return $this->hasOne(Profile::class)->where('profiles.type', 'users.active_profile');
+        return $this->hasOne(Profile::class)->where('profiles.type', $this->active_profile);
     }
-
-    public function scopeClient($query)
-    {
-        return $query->where('type', ProfileType::Client);
-    }
-
 }
