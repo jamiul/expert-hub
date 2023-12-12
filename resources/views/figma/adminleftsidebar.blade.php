@@ -19,7 +19,7 @@
             <p class="mb-1 fs-12 label fw-medium">Main Menu</p>
         </li>
         <li>
-            <a class="nav-link d-flex" href="{{ route('admin.dashboard') }}">
+            <a class="nav-link d-flex" href="#">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -43,7 +43,7 @@
             </a>
 
             <ul class="collapse" id="services">
-                <li><a href="#" class="inner-link">Projects</a></li>
+                <li><a href="{{ route('admin.projects') }}" class="inner-link">Projects</a></li>
                 <li><a href="#" class="inner-link">Trainings</a></li>
                 <li><a href="#" class="inner-link">Scholarsips</a></li>
             </ul>
@@ -69,7 +69,7 @@
         </li>
 
         <li>
-            <a class="nav-link d-flex" href="#">
+            <a class="nav-link d-flex" href="{{ route('admin.projectPayment') }}">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

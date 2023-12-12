@@ -5,7 +5,7 @@
         <div class="col-6">
             <div class="login-card">
                 <h3 class="text-center form-title">EduExHub Admin</h3>
-                <form action="/admin/dashboard">
+                <form action="{{ route('admin.projects') }}">
                     {{-- <x-form.input type="email" label="Email Address" name="email" placeholder="name@example.com"/> --}}
                     {{-- <x-form.input type="password" label="Password" name="password" placeholder="Your password"/> --}}
                     <div class="d-flex justify-content-between align-items-baseline">
