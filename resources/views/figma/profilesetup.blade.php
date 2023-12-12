@@ -1,7 +1,7 @@
 @extends('frontend.layouts.front-layout')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
+    @vite('resources/default/css/consultantreg.css')
     <section class="exp-my2">
         <div class="container my-5">
             <div class="row g-5 psetup">
