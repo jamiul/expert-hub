@@ -12,9 +12,9 @@ class AdminController extends Controller
         return view('admin.auth.login');
     }
 
-    public function index()
+    public function projectList()
     {
-        return view('figma.admindashboardhome');
+        return view('figma.admin-projects');
     }
 
     public function clientList()
