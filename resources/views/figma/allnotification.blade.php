@@ -8,8 +8,6 @@
         </div>
 </main>
 
-
-
 <div class="container">
   <div class="row">
     <div class="all-notification">
@@ -240,10 +238,142 @@
       </div>
 
       </div>
+  </div>
 
+  <div class="row">
+    <div class="all-notification">
+      <h4>Chip, Tab, Switcher</h4>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-2">
+        <div class="edux-single-clip">
+          <span>Sub item 2</span>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M6.3 12.75L9 10.05L11.7 12.75L12.75 11.7L10.05 9L12.75 6.3L11.7 5.25L9 7.95L6.3 5.25L5.25 6.3L7.95 9L5.25 11.7L6.3 12.75ZM9 16.5C7.9625 16.5 6.9875 16.3031 6.075 15.9094C5.1625 15.5156 4.36875 14.9813 3.69375 14.3063C3.01875 13.6313 2.48438 12.8375 2.09063 11.925C1.69688 11.0125 1.5 10.0375 1.5 9C1.5 7.9625 1.69688 6.9875 2.09063 6.075C2.48438 5.1625 3.01875 4.36875 3.69375 3.69375C4.36875 3.01875 5.1625 2.48438 6.075 2.09063C6.9875 1.69688 7.9625 1.5 9 1.5C10.0375 1.5 11.0125 1.69688 11.925 2.09063C12.8375 2.48438 13.6313 3.01875 14.3063 3.69375C14.9813 4.36875 15.5156 5.1625 15.9094 6.075C16.3031 6.9875 16.5 7.9625 16.5 9C16.5 10.0375 16.3031 11.0125 15.9094 11.925C15.5156 12.8375 14.9813 13.6313 14.3063 14.3063C13.6313 14.9813 12.8375 15.5156 11.925 15.9094C11.0125 16.3031 10.0375 16.5 9 16.5ZM9 15C10.675 15 12.0938 14.4188 13.2563 13.2563C14.4188 12.0938 15 10.675 15 9C15 7.325 14.4188 5.90625 13.2563 4.74375C12.0938 3.58125 10.675 3 9 3C7.325 3 5.90625 3.58125 4.74375 4.74375C3.58125 5.90625 3 7.325 3 9C3 10.675 3.58125 12.0938 4.74375 13.2563C5.90625 14.4188 7.325 15 9 15Z" fill="#303744" fill-opacity="0.49"/>
+          </svg></span>
+        </div>
+    </div>
+    <div class="col-md-2">
+    <div class="edux-single-clip edux-single-clip-width">
+          <span>Sub item 2</span>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M6.3 12.75L9 10.05L11.7 12.75L12.75 11.7L10.05 9L12.75 6.3L11.7 5.25L9 7.95L6.3 5.25L5.25 6.3L7.95 9L5.25 11.7L6.3 12.75ZM9 16.5C7.9625 16.5 6.9875 16.3031 6.075 15.9094C5.1625 15.5156 4.36875 14.9813 3.69375 14.3063C3.01875 13.6313 2.48438 12.8375 2.09063 11.925C1.69688 11.0125 1.5 10.0375 1.5 9C1.5 7.9625 1.69688 6.9875 2.09063 6.075C2.48438 5.1625 3.01875 4.36875 3.69375 3.69375C4.36875 3.01875 5.1625 2.48438 6.075 2.09063C6.9875 1.69688 7.9625 1.5 9 1.5C10.0375 1.5 11.0125 1.69688 11.925 2.09063C12.8375 2.48438 13.6313 3.01875 14.3063 3.69375C14.9813 4.36875 15.5156 5.1625 15.9094 6.075C16.3031 6.9875 16.5 7.9625 16.5 9C16.5 10.0375 16.3031 11.0125 15.9094 11.925C15.5156 12.8375 14.9813 13.6313 14.3063 14.3063C13.6313 14.9813 12.8375 15.5156 11.925 15.9094C11.0125 16.3031 10.0375 16.5 9 16.5ZM9 15C10.675 15 12.0938 14.4188 13.2563 13.2563C14.4188 12.0938 15 10.675 15 9C15 7.325 14.4188 5.90625 13.2563 4.74375C12.0938 3.58125 10.675 3 9 3C7.325 3 5.90625 3.58125 4.74375 4.74375C3.58125 5.90625 3 7.325 3 9C3 10.675 3.58125 12.0938 4.74375 13.2563C5.90625 14.4188 7.325 15 9 15Z" fill="#303744" fill-opacity="0.49"/>
+          </svg></span>
+        </div>
+        <div class="edux-single-clip edux-single-clip-width-top mt-2">
+          <span>Sub item 2</span>
+          <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M6.3 12.75L9 10.05L11.7 12.75L12.75 11.7L10.05 9L12.75 6.3L11.7 5.25L9 7.95L6.3 5.25L5.25 6.3L7.95 9L5.25 11.7L6.3 12.75ZM9 16.5C7.9625 16.5 6.9875 16.3031 6.075 15.9094C5.1625 15.5156 4.36875 14.9813 3.69375 14.3063C3.01875 13.6313 2.48438 12.8375 2.09063 11.925C1.69688 11.0125 1.5 10.0375 1.5 9C1.5 7.9625 1.69688 6.9875 2.09063 6.075C2.48438 5.1625 3.01875 4.36875 3.69375 3.69375C4.36875 3.01875 5.1625 2.48438 6.075 2.09063C6.9875 1.69688 7.9625 1.5 9 1.5C10.0375 1.5 11.0125 1.69688 11.925 2.09063C12.8375 2.48438 13.6313 3.01875 14.3063 3.69375C14.9813 4.36875 15.5156 5.1625 15.9094 6.075C16.3031 6.9875 16.5 7.9625 16.5 9C16.5 10.0375 16.3031 11.0125 15.9094 11.925C15.5156 12.8375 14.9813 13.6313 14.3063 14.3063C13.6313 14.9813 12.8375 15.5156 11.925 15.9094C11.0125 16.3031 10.0375 16.5 9 16.5ZM9 15C10.675 15 12.0938 14.4188 13.2563 13.2563C14.4188 12.0938 15 10.675 15 9C15 7.325 14.4188 5.90625 13.2563 4.74375C12.0938 3.58125 10.675 3 9 3C7.325 3 5.90625 3.58125 4.74375 4.74375C3.58125 5.90625 3 7.325 3 9C3 10.675 3.58125 12.0938 4.74375 13.2563C5.90625 14.4188 7.325 15 9 15Z" fill="#191D24"/>
+          </svg>
+        </span>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="edux-single-clip edux-btn-green">
+          <span>Sub item 2</span>
+              <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.79965 13.9904L4.00928 13.2L8.20928 9.00001L4.00928 4.80001L4.79965 4.00964L8.99965 8.20964L13.1996 4.00964L13.99 4.80001L9.79002 9.00001L13.99 13.2L13.1996 13.9904L8.99965 9.79038L4.79965 13.9904Z" fill="white"/>
+            </svg>
+              </span>
+        </div>
+        <div class="edux-single-clip edux-btn-green-width mt-2">
+          <span>Sub item 2</span>
+              <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.79965 13.9904L4.00928 13.2L8.20928 9.00001L4.00928 4.80001L4.79965 4.00964L8.99965 8.20964L13.1996 4.00964L13.99 4.80001L9.79002 9.00001L13.99 13.2L13.1996 13.9904L8.99965 9.79038L4.79965 13.9904Z" fill="white"/>
+            </svg>
+              </span>
+        </div>
+    </div>
+    <div class="col-md-2">
 
+    <div class="edux-all mb-2">
+          <span>All</span>
+    </div>
 
+    <div class="edux-all edux-all-bg ">
+          <span>All</span>
+    </div>
 
+    </div>
+    <div class="col-md-2">
+      <div class="edux-my-favorite mb-2">
+            <span>My Favorite </span>
+      </div>
+
+      <div class="edux-my-favorite edux-my-favorite-border ">
+            <span>My Favorite </span>
+      </div>
+    </div>
+    <div class="col-md-2">
+    <div class="check-box-option">
+              <ul>
+                <li>
+                  <div class="switch-button switch-button-sm">
+                    <input type="checkbox" name="item1" id="item1" checked>
+                    <span><label for="item1"></label></span>
+                  </div>
+                </li>
+              </ul>
+          </div>
+          <div class="check-box-option mt-2">
+              <ul>
+                <li>
+                  <div class="switch-button switch-button-sm">
+                    <input type="checkbox" name="item1" id="item1">
+                    <span><label for="item1"></label></span>
+                  </div>
+                </li>
+              </ul>
+          </div>
+    </div>
+
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md-4">
+        <div class="edux-on-off">
+          <span>Offline</span>
+          <span class="online-active">Online</span>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="edux-hourly-all">
+          <ul>
+            <li><a href=""><div class="edux-all">
+                    <span>All</span>
+              </div></a>
+            </li>
+
+            <li><a href="">
+            <div class="edux-all edux-all-bg-hourly  ">
+                  <span>Hourly (5)</span>
+            </div>
+            </a></li>
+
+            <li><a href="">
+            <div class="edux-all edux-all-bg-hourly-large  ">
+                  <span>Active Milestones (2)</span>
+            </div>
+            </a></li>
+
+            <li><a href="">
+            <div class="edux-all edux-all-bg-hourly-large  ">
+                  <span>Awaiting Milestones (2)</span>
+            </div>
+            </a></li>
+
+            <li><a href="">
+            <div class="edux-all edux-all-bg-hourly-large  ">
+                  <span>Payment Requests (0)</span>
+            </div>
+            </a></li>
+          </ul>
+        </div>
+    </div>
   </div>
 
 </div>
