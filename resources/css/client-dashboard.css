@@ -6248,6 +6248,235 @@ gap: 10px;
   padding-left: 0px;
 }
 
+.edux-single-clip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36px;
+  border: 1px solid  #E7E5EF;
+  background: rgba(48, 55, 68, 0.03);
+  width: 100%;
+  max-width: 113px;
+  gap: 8px;
+  padding: 4px 0px;
+}
+
+.edux-single-clip-width {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    border: 1px solid  #E7E5EF;
+    background: #EBEFF7;
+    width: 100%;
+    max-width: 113px;
+    gap: 8px;
+    padding: 4px 0px;
+}
+
+.edux-single-clip-width-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    border: 1px solid  #CDD6EA;
+    background: #CDD6EA;
+    width: 100%;
+    max-width: 113px;
+    gap: 8px;
+    padding: 4px 0px;
+}
+
+.edux-single-clip span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #303744;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-btn-green {
+  padding: 1px 6px 1px 6px;
+  width: 100%;
+  max-width: 130px;
+  border-radius: 25px;
+  background:  #0036E3;
+  padding: 2px 6px;
+
+}
+
+
+.edux-btn-green span{
+  color: #FFF;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+.edux-btn-green-width {
+  padding: 1px 6px 1px 6px;
+  width: 100%;
+  max-width: 130px;
+  border-radius: 25px;
+  background:  #002CB9;
+  padding: 2px 6px;
+
+}
+
+.edux-btn-green-width span{
+  color: #FFF;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+
+.edux-single-clip span svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edux-all span {
+  display: flex;
+  padding: 8px 16px 7px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: #0036E3;
+  width: 100%;
+  max-width: 50px;
+  color: #FFF;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.edux-all-bg span {
+  display: flex;
+  padding: 8px 16px 7px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: transparent;
+  width: 100%;
+  max-width: 50px;
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.10);
+}
+
+.edux-my-favorite span {
+  color: #303744;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.edux-my-favorite-border span {
+  color: #0036E3;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  border-bottom: 2px solid  #0036E3;
+}
+.edux-on-off {
+  display: flex;
+  max-width: 188px;
+  padding: 2px;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  align-items: center;
+}
+
+.edux-on-off span {
+  display: flex;
+  padding: 5px 18px 5px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+span.online-active{
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 3px;
+  background:  #0036E3;
+}
+
+.edux-hourly-all ul {
+  display: inline-flex;
+}
+
+.edux-all-bg-hourly span {
+  display: flex;
+  padding: 6px 15px 6px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: transparent;
+  width: 100%;
+  max-width: 115px;
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.10);
+}
+
+.edux-all-bg-hourly-large span {
+  display: flex;
+  padding: 6px 15px 6px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: transparent;
+  width: 100%;
+  max-width:215px;
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.10);
+}
+
 
 /**** ============================================== Client Chatbox start Here  ================================= ***/
 .edux-chatbox-area {
