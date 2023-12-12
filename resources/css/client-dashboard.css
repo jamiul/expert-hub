@@ -15,6 +15,7 @@
   --color-border-color-solid: #E7E5EF;
   --color-red: #C00000;
   --color-yellow: #E9B911;
+  --colfax:Colfax;
 }
 
 /*  default css */
@@ -4705,7 +4706,7 @@ span.checkout-about, span.checkout-extend {
 
 .frontend-title-area {
     height: 80px;
-    border-bottom: 1px solid #EBEFF7;;
+    border-bottom: 1px solid #EBEFF7;
     padding: 0px 24px;
 }
 .frontend-left-title {
@@ -4716,13 +4717,11 @@ span.checkout-about, span.checkout-extend {
 
 .frontend-left-title h4{
   color: #000;
-  font-family: Poppins;
+  font-family: Colfax;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
 }
-
-
 
 .frontend-right-title {
     display: flex;
@@ -4731,6 +4730,79 @@ span.checkout-about, span.checkout-extend {
     height: 80px;
     gap: 10px;
 }
+
+
+.edux-frontend-left-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  gap: 10px;
+}
+
+button.edux-save-update {
+  display: flex;
+  padding: 11px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: #0036E3;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 159.5%;
+  border: none;
+  opacity: 0.3;
+}
+
+button.edux-save-update-spinner {
+  display: flex;
+  padding: 11px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: #0036E3;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 159.5%;
+  border: none;
+  opacity: 0.7;
+}
+
+.edux-overlay-content a img {
+  max-width: 62px;
+  max-height: 62px;
+}
+
+h6.edux-click {
+  color: #191D24;
+  text-align: center;
+  font-family: var(--colfax);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.btn-file p{
+color: rgba(48, 55, 68, 0.70);
+text-align: center;
+font-family: var(--colfax);
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+
+}
+
+
 
 button.save-as-draft {
     display: flex;
@@ -4848,15 +4920,15 @@ h3.seller-title {
 }
 
 .admin-add-more span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 65px;
-    height: 65px;
-    background: #0036E3;
-    color: #fff;
-    font-size: 28px;
-    border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  background: #191D24;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
 }
 
 .academic-seller-area {
@@ -4865,14 +4937,14 @@ h3.seller-title {
 }
 
 
-.admin-sub-title .admin-form-input{
+.admin-sub-title .admin-form-input {
   display: flex;
   height: 56px;
   padding: 10px 16px;
   align-items: center;
   border-radius: 4px;
   border: 2px solid  #E7E5EF;
-  max-width: 374px;
+  width: 100%;
 }
 
 .admin-area {
@@ -4969,9 +5041,9 @@ span.require-count{
   top: 0px;
   right: 0px;
 }
-
-.require-block .academic-single-item{
-  margin-left: 60px;
+a.blog-close.position-absolute img {
+  max-width: 24px !important;
+  max-height: 24px !important;
 }
 
 .available-text-blog {color: #303744CC !important;  font-size: 14px !important ;font-weight: 500 !important; margin-left: 10px !important;}
@@ -5434,14 +5506,26 @@ h4.more-read-blog {
 }
 
 label.basic-file-upload {
-  border-radius: 4px;
-  border: 2px solid rgba(48, 55, 68, 0.15);
   padding: 15px;
   color: rgba(48, 55, 68, 0.70);
   font-family: Colfax;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
+  border-radius: 4px;
+  border: 2px dashed rgba(48, 55, 68, 0.25);
+}
+
+span.edux-word-count {
+  color: rgba(48, 55, 68, 0.70);
+  text-align: right;
+  font-family: var(--colfax);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+  right: 25px;
+  bottom: 5px;
 }
 
 label.basic-file-upload:hover {
@@ -7274,6 +7358,13 @@ header.client-header {
 
 
 @media only screen and (max-width: 767px) {
+
+  .team .team-block {
+    text-align: center;
+    margin: 0 0 50px;
+    margin-top: 40px !important;
+}
+
 .expert__dashboard__nav {
   min-height: 5rem !important;
   padding: 1rem 0;
