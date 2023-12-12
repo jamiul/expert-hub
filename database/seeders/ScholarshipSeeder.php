@@ -7,6 +7,7 @@ use App\Models\Scholarship;
 use App\Models\University;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class ScholarshipSeeder extends Seeder
@@ -34,7 +35,7 @@ class ScholarshipSeeder extends Seeder
                 'supervisor_link' => $scholarship['supervisor_link'],
                 'application_process_link' => $scholarship['application_process_link'],
                 'automatic_consideration' => $scholarship['automatic_consideration']  == 'FALSE' ? 0 : 1,
-                'deadline' => empty($scholarship['deadline']) ? null : $scholarship['deadline'],
+                'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('m-d-Y',$scholarship['deadline']),
                 'currency' => $scholarship['currency'],
                 'value' => empty($scholarship['value']) ? null : $scholarship['value'],
             ];

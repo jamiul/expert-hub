@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('scholarship_area', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('scholarship_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('expertise_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('scholarship_id');
+            $table->foreignId('expertise_id');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
