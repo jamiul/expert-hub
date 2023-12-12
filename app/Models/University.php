@@ -10,4 +10,9 @@ class University extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }
