@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('profile_id');
             $table->string('unit');
             $table->string('value');
             $table->boolean('active')->default(1);

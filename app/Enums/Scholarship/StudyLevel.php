@@ -10,4 +10,9 @@ enum StudyLevel: string
     case MasterOfPhilosophy = 'Master of Philosophy';
     case DoctorsOfPhilosophy = 'Doctors of Philosophy';
     case ProfessionalDoctorate = 'Professional Doctorate';
+
+    public function getLabel(): ?string
+    {
+        return $this->value;
+    }
 }

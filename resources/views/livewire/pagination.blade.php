@@ -14,7 +14,7 @@
         <div class="col-md-8">
             <div class="pagination-right">
                 <div class="results">
-                    <p>{{ translate('Results per page') }}</p>
+                    <p>{{ 'Results per page' }}</p>
                     <select class="select-page" wire:change="gotoPage($event.target.value, '{{ $paginator->getPageName() }}')">
                         @foreach ($elements as $element)
                             @if (is_array($element))

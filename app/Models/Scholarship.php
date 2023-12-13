@@ -11,6 +11,10 @@ class Scholarship extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'deadline' => 'date',
+    ];
+
     public function university()
     {
         return $this->belongsTo(University::class);

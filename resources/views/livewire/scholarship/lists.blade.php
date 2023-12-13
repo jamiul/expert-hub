@@ -2,7 +2,7 @@
     
     @foreach ($scholarships as $scholarship)
         <div class="right-sidebar">
-            <input type="hidden" class="pageDetailUrl" value="{{ route('consultant') }}"/>
+            <input type="hidden" class="pageDetailUrl" value="{{ route('find.experts') }}"/>
 
             <div class="right-database">
                 <div class="database-block">
@@ -19,13 +19,13 @@
                             @if (isset($scholarship->university->university_name))
                                 <span>{{ $scholarship->university?->university_name }}</span>
                             @endif
-                            @if (isset($scholarship->country->country_name))
-                                <span>{{ $scholarship->country?->country_name }}</span>
+                            @if (isset($scholarship->university->country->name))
+                                <span>{{ $scholarship->university->country->name }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="database-right">
-                        <a class="database-button" href="{{ route('consultant') }}">{{ __('Find Consultants') }}</a>
+                        <a class="database-button" href="{{ route('find.experts') }}">{{ __('Find Experts') }}</a>
                         @auth
                             <a class="data-icon {{ $scholarship->userFavorite ? 'active' : '' }}" href="javascript:void(0)" wire:click="updateFavorite({{ $scholarship->id }}, {{ $scholarship->userFavorite ? 0 : 1 }})">
                                 <img src="{{ asset('assets/frontend/img/like-icon.png') }}">
@@ -43,31 +43,23 @@
                     <ul>
                         <li>{{ __('Application Deadline') }}</li>
                         <li>
-                            {{ date('d F Y', strtotime($scholarship->start_date)) }}
-                            -
-                            {{ date('d F Y', strtotime($scholarship->end_date)) }}
+                            {{ $scholarship->deadline ? $scholarship->deadline->format('d F Y') : 'n/a' }}
                         </li>
                         <li>{{ __('Study area') }}</li>
-                        <li>{{ $scholarship->study_area }}&nbsp;</li>
+                        <li>{{ $scholarship->eligibilities ? $scholarship->areas->implode('name', ', ') : 'n/a' }}</li>
                         <li>{{ __('Study Level') }}</li>
-                        {{-- <li>{{ $scholarship->level?->level_name }}&nbsp;</li> --}}
+                        <li>{{ $scholarship->eligibilities ? $scholarship->eligibilities->implode('study_level', ', ') : 'n/a' }}</li>
                         <li>{{ __('Student type') }}</li>
-                        <li>{{ $scholarship->student_type }}&nbsp;</li>
+                        <li>{{ $scholarship->student_type }}</li>
                         <li>{{ __('Scholarship Value') }}</li>
-                        <li>{{ $scholarship->value }}&nbsp;</li>
+                        <li>{{ $scholarship->currency }} ${{ $scholarship->value }}</li>
                         <li>{{ __('Find supervisor') }}</li>
-                        <li><a href="{{ $scholarship->find_supervisor }}">{{ __('Click Here') }}</a>&nbsp;</li>
+                        <li><a href="{{ $scholarship->supervisor_link }}">{{ __('Click Here') }}</a>&nbsp;</li>
                         <li>{{ __('Application Process') }}</li>
-                        <li>
-                            @if ($scholarship->application_process)
-                                <a href="{{ $scholarship->application_process }}">{{ __('Click Here') }}</a>
-                            @endif
-                            &nbsp;
-                        </li>
+                        <li><a href="{{ $scholarship->application_process_link }}">{{ __('Click Here') }}</a></li>
                         <li>{{ __('Inquiry to Institution') }}</li>
                         <li>
                             <a href="mailto:{{ $scholarship->inquiry_institution }}">{{ $scholarship->inquiry_institution }}</a>
-                            &nbsp;
                         </li>
                         </li>
                     </ul>
@@ -76,7 +68,7 @@
         </div>
     @endforeach
 
-    {{-- {{ $scholarships->links() }} --}}
+    {{ $scholarships->links() }}
 
     <!-- Modal share -->
     <div class="consultant-left-button">

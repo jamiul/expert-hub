@@ -4,7 +4,6 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
-use App\Http\Controllers\Frontend\ConsultantController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProjectController;
@@ -29,9 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/components', 'components');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
-Route::get('/find-consultant', [ConsultantController::class, 'index'])->name('consultant');
 
-Route::get('/find-consultant/professor-michael-kassiou', [ConsultantController::class, 'view'])->name('consultant.details'); //@TODO remove the name
 Route::get('/find-experts', [ExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('scholarship_funds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('scholarship_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('scholarship_id');
             $table->string('fund_type'); //phpenum
             $table->boolean('active')->default(1);
             $table->timestamps();
