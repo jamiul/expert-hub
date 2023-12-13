@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('profile_language', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('language_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('profile_id');
+            $table->foreignId('language_id');
             $table->string('proficiency'); //App\Enums\LanguageProficiency
             $table->boolean('active')->default(1);
             $table->timestamps();

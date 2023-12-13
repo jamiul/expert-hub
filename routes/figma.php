@@ -61,9 +61,10 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-passwordsecurity', 'figma.clientdashboardpasswordsecurity');
     Route::view('/client-notificationsettting', 'figma.clientdashboardnotificationsettting');
     // Admin dashboard
-    Route::view('/super-admin-dashboardhome', 'figma.admindashboardhome');
+    Route::view('/super-admin-projects', 'figma.admin-projects');
     Route::view('/super-admin-dashboardclient', 'figma.admindashboardclient');
     Route::view('/super-admin-dashboardexpert', 'figma.admindashboardexpert');
+    Route::view('/super-admin-scholarship', 'figma.admindashboardscholarship');
 
     Route::view('/super-admin-payment', 'figma.adminpayment');
     Route::view('/super-admin-review', 'figma.adminpaymentprogress');

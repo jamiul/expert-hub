@@ -9,9 +9,14 @@ class Logout extends Component
 {
     public function logout()
     {
-        Auth::logout();
-        return redirect(route('auth.login'));
+        if (auth()->check()) {
+            auth()->logout();
+            return redirect()->route('auth.login');
+        }
+
+        return redirect()->route('admin.login');
     }
+
 
     public function render()
     {

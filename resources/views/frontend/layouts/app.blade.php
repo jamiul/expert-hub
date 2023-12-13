@@ -15,7 +15,7 @@
         @vite('resources/css/client-dashboard.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
-        @stack('styles')
+        @stack('top_styles')
     </head>
     <body>
         @include('frontend.layouts.partials.nav')
@@ -25,6 +25,6 @@
         @vite('resources/js/choices.min.js')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         @vite('resources/js/owl.carousel.min.js')
-        @stack('scripts')
+        @stack('bottom_scripts')
     </body>
 </html>
