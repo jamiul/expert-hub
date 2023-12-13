@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col justify-content-center">
-                    <div class="card card-60-40 auth-card my-60 mx-auto border-0">
+                    <div class="card card-60-40 card-shadow auth-card my-60 mx-auto border-0">
                         <div class="card-body">
                             <div class="auth-card-title">
                                 <h1 class="h4">Sign Up</h1>
