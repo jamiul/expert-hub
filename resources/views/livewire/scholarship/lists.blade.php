@@ -68,7 +68,7 @@
         </div>
     @endforeach
 
-    {{-- {{ $scholarships->links() }} --}}
+    {{ $scholarships->links() }}
 
     <!-- Modal share -->
     <div class="consultant-left-button">

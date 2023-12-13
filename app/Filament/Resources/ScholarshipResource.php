@@ -2,11 +2,17 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\Scholarship\FundType;
+use App\Enums\Scholarship\StudentType;
+use App\Enums\Scholarship\StudyLevel;
 use App\Filament\Resources\ScholarshipResource\Pages;
 use App\Filament\Resources\ScholarshipResource\RelationManagers;
 use App\Filament\Resources\ScholarshipResource\RelationManagers\AreasRelationManager;
 use App\Models\Scholarship;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -24,14 +30,14 @@ class ScholarshipResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('university_id')
-                    ->required()
-                    ->numeric(),
+                Select::make('university')
+                    ->relationship('university', 'name'),
                 Forms\Components\TextInput::make('title')
                     ->required(),
                 Forms\Components\TextInput::make('link')
                     ->required(),
-                Forms\Components\TextInput::make('student_type'),
+                Select::make('student_type')
+                    ->options(StudentType::class),
                 Forms\Components\TextInput::make('supervisor_link'),
                 Forms\Components\TextInput::make('application_process_link'),
                 Forms\Components\Toggle::make('automatic_consideration')
@@ -40,8 +46,25 @@ class ScholarshipResource extends Resource
                 Forms\Components\TextInput::make('currency'),
                 Forms\Components\TextInput::make('value')
                     ->numeric(),
-                Forms\Components\Toggle::make('active')
-                    ->required(),
+                Select::make('areas')
+                    ->multiple()
+                    ->relationship('areas', 'name'),
+                Grid::make(2)
+                    ->schema([
+                Repeater::make('eligibilities')
+                ->relationship()
+                ->schema([
+                    Select::make('study_level')
+                        ->options(StudyLevel::class)
+                ]),
+                Repeater::make('funds')
+                ->relationship()
+                ->schema([
+                    Select::make('fund_type')
+                        ->options(FundType::class)
+                ]),
+                    ]),
+                
             ]);
     }
 
@@ -49,21 +72,11 @@ class ScholarshipResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('university_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('university.name')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('link')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('student_type')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('supervisor_link')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('application_process_link')
-                    ->searchable(),
-                Tables\Columns\IconColumn::make('automatic_consideration')
-                    ->boolean(),
                 Tables\Columns\TextColumn::make('deadline')
                     ->date()
                     ->sortable(),
@@ -73,19 +86,7 @@ class ScholarshipResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('active')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->boolean()
             ])
             ->filters([
                 //
