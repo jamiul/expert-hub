@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('project_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('project_id');
             $table->string('name');
             $table->string('type');
             $table->boolean('active')->default(1);
