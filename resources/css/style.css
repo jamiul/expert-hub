@@ -4,32 +4,32 @@
     --dark: #191D24;
     --white: #ffffff;
 }
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-ul,
-li,
-a,
-div,
-strong,
-span,
-b {
-    font-family: "Colfax";
-}
+/*body,*/
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*h4,*/
+/*h5,*/
+/*h6,*/
+/*p,*/
+/*span,*/
+/*ul,*/
+/*li,*/
+/*a,*/
+/*div,*/
+/*strong,*/
+/*span,*/
+/*b {*/
+/*    font-family: "Colfax";*/
+/*}*/
 
-body {
-    overflow-x: hidden;
-}
+/*body {*/
+/*    overflow-x: hidden;*/
+/*}*/
 
-img {
-    max-width: 100%;
-}
+/*img {*/
+/*    max-width: 100%;*/
+/*}*/
 
 li {
     list-style: none;
@@ -9617,7 +9617,3 @@ margin-top: 8px;
     border-color: var(--primary);background-color: var(--primary);
 }
 
-.btn-outline-primary, .btn-primary { border: 2px solid var(--primary);color: var(--primary) !important;font-weight: 500;padding: .5rem 2rem; }
-.btn-primary { border: 2px solid var(--primary);color: var(--white) !important;background-color: var(--primary);}
-.btn-outline-primary:hover,.btn-outline-primary:focus,.btn-outline-primary:active { color: var(--white) !important;background-color: var(--primary); }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {  color: var(--white) !important;background-color: var(--dark);border-color: var(--dark); }

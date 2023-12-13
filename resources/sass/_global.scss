@@ -1,5 +1,107 @@
+@font-face {
+    font-family: 'Colfax';
+    src: url('/resources/fonts/Colfax-Medium.woff2') format("woff2"),
+    url('/resources/fonts/Colfax-Medium.woff') format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Colfax';
+    src: url('/resources/fonts/Colfax-Regular.woff2') format("woff2"),
+    url('/resources/fonts/Colfax-Regular.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Colfax";
+    src: url("/resources/fonts/Colfax-Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Colfax", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: $edu-headings-color;
+}
+
+h1, .h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+h2, .h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+h3, .h3 {
+    font-size: 2.0625rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+h4, .h4 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+h5, .h5 {
+    font-size: 1.4375rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+h6, .h6 {
+    font-size: 1.1875rem;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.text-primary-dark {
+    color: $edu-primary-dark-color !important;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+.my-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .my-60 {
@@ -79,4 +181,61 @@ h1, h2, h3, h4, h5, h6 {
             grid-column-end: 3;
         }
     }
+}
+
+.button-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    & > .button-list-item {
+        list-style: none;
+        display: inline-flex;
+        border-radius: 36px;
+        border: 1px solid $edu-border-color;
+        background: rgba(48, 55, 68, 0.03);
+        padding: 6px 8px 4px 8px;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+
+        .button-list-icon {
+            line-height: 100%;
+        }
+    }
+
+    & > .button-list-title {
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        padding: 6px 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid $edu-border-color;
+    background-color: white;
+}
+
+.d-grid {
+    @media screen and (min-width: 540px){
+        &.grid-cols-sm-6 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
 }

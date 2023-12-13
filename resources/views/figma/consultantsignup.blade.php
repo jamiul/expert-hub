@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.auth')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">

@@ -1,0 +1,252 @@
+section {
+    &.profile-setup {
+        padding: 50px 0;
+
+        .alert {
+            padding: .62rem 1.5rem;
+            background-color: #ffffff;
+            font-size: 1.125rem;
+            line-height: 160%;
+        }
+    }
+}
+
+.user-profile-card {
+    .user-profile-picture {
+        max-width: 167px;
+        max-height: 167px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 100%;
+        margin: 0 auto;
+
+        &:hover {
+            button {
+                bottom: 0;
+            }
+        }
+
+        button {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: $edu-headings-color;
+            bottom: -100%;
+            border: none;
+            padding: 5px 10px 10px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: 0.2s;
+        }
+    }
+
+    .user-profile-info {
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid $edu-border-color;
+        margin-bottom: 24px;
+
+        p {
+            margin-bottom: .2rem;
+        }
+    }
+
+    h4 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        li {
+            list-style: none;
+            display: inline-flex;
+            gap: 4px;
+            align-items: center;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 159.5%;
+        }
+    }
+
+    .user-profile-language {
+        margin-bottom: 24px;
+    }
+
+    .user-profile-skills {
+        ul {
+            li {
+                color: $edu-primary-color;
+                border-radius: 2.625rem;
+                border: 1px solid $edu-primary-color;
+                padding: 0.125rem 0.75rem;
+            }
+        }
+    }
+}
+
+.profile-edit-started-btn-wrapper {
+    max-width: 526px;
+}
+
+ul.profile-progress-bar-nav {
+    margin: 0;
+    padding: 0;
+    @media screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    @media screen and (max-width: 650px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        list-style: none;
+        padding: 5px 0 24px 36px;
+        position: relative;
+        @media screen and (max-width: 767px) {
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        strong {
+            display: block;
+            font-size: 1.1875rem;
+            font-weight: 500;
+            line-height: 120%;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            border: 8px solid #F2F4F7;
+            border-radius: 100%;
+            left: 0;
+            z-index: 1;
+            background-color: #fff;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: calc(100% - 32px);
+            border-left: 2px solid #E4E7EC;
+            position: absolute;
+            left: 13px;
+            bottom: 0;
+            @media screen and (max-width: 892px) {
+                display: none;
+            }
+        }
+
+        &.running-item {
+            &:before {
+                border-color: $edu-primary-color;
+            }
+        }
+
+        &.done-item {
+            &:before {
+                border: none;
+                background: $edu-primary-color url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39016L9.93602 14.3002L8.03602 12.2702C7.68602 11.9402 7.13602 11.9202 6.73602 12.2002C6.34602 12.4902 6.23602 13.0002 6.47602 13.4102L8.72602 17.0702C8.94602 17.4102 9.32601 17.6202 9.75601 17.6202C10.166 17.6202 10.556 17.4102 10.776 17.0702C11.136 16.6002 18.006 8.41016 18.006 8.41016C18.906 7.49016 17.816 6.68016 17.096 7.38016V7.39016Z" fill="white"/></svg>');
+            }
+
+            &:after {
+                border-color: $edu-primary-color;
+            }
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.progress-step-content {
+
+}
+
+.accordion-items-select-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    .accordion {
+        .accordion-button {
+            &:not(.collapsed) {
+                background-color: transparent;
+                color: $edu-primary-color;
+                box-shadow: none !important;
+            }
+
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+
+        .accordion-collapse {
+            .btn {
+                padding: 0.25rem 0rem 0.25rem 1rem;
+                text-align: left;
+                font-weight: 400;
+                margin: 1px 0;
+
+                &.btn-light {
+                    background-color: #fff;
+
+                    &.selected-skill {
+                        background: $edu-primary-light-color;
+                        color: $edu-secondary-dark-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.service-fee-input-area {
+    .service-fee-input-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        @media screen and (min-width: 1200px) {
+            .service-fee-description {
+                flex: 0 0 calc(100% - 233px);
+                max-width: calc(100% - 233px);
+            }
+            .service-fee-input {
+                flex: 0 0 203px;
+                max-width: 203px;
+            }
+        }
+
+        p {
+            max-width: 300px;
+        }
+    }
+}

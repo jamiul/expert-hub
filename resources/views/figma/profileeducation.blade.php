@@ -1,7 +1,6 @@
-@extends('frontend.layouts.front-layout')
-
+@extends('frontend.layouts.auth')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/consultantreg.css') }}">
+    @vite('resources/default/css/consultantreg.css')
     <section class="exp-my2">
         <div class="py-4 py-lg-5">
             <div class="container">

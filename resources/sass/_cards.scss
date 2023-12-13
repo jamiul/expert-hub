@@ -1,46 +1,61 @@
-.auth-card {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 640px;
-    box-shadow: 12px 12px 48px 0px #0e006221;
-    padding: 20px;
-    border-radius: 12px;
-    @media screen and (min-width: 500px) {
-        padding: 60px 40px;
+.card {
+    &.card-shadow {
+        box-shadow: 12px 12px 48px 0px #0e006221;
     }
 
-    .auth-card-header {
-        margin-bottom: 40px;
-
-        h1 {
-            text-align: center;
-        }
-    }
-
-
-    .form-check-group {
-        .form-check-label {
-            font-size: 0.8125rem;
-            margin-left: 4px;
-
-            a {
-                text-decoration: underline;
-                color: inherit;
+    &.card-60-40 {
+        .card-body {
+            padding: 20px;
+            border-radius: 12px;
+            @media screen and (min-width: 500px) {
+                padding: 60px 40px;
             }
         }
     }
 
-    .auth-card-footer {
-        margin-top: 16px;
-        text-align: center;
+    &.card-40 {
+        .card-body {
+            padding: 40px;
+            border-radius: 8px;
+            background: #FFF;
+        }
+    }
 
-        p {
-            a {
-                text-decoration: underline;
-                color: $edu-primary-color;
-                font-weight: 600;
+    &.card-40-20 {
+        .card-body {
+            padding: 40px 20px;
+            border-radius: 8px;
+            background: #FFF;
+        }
+    }
+
+    &.card-24 {
+        .card-header {
+            padding: 24px;
+        }
+
+        .card-body {
+            padding: 24px;
+            border-radius: 8px;
+            background: #FFF;
+        }
+    }
+
+    &.has-card-hover-overly {
+        &:hover {
+            .card-hover-overly-wrapper {
+                visibility: visible;
             }
         }
+    }
+
+    .card-hover-overly-wrapper {
+        background: rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(2px);
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100%;
+        visibility: hidden;
     }
 }

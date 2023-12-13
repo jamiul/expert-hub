@@ -1,8 +1,26 @@
-// Bootstrap PGK
-@import 'bootstrap/scss/bootstrap';
 //Application variables
 @import "variables";
+
+// Bootstrap PGK
+@import 'bootstrap/scss/bootstrap';
+
+// Bootstrap
+@import "bootstrap-overwrite";
+
 //Application Global
 @import "global";
+
 //Application Cards
 @import 'cards';
+
+//Application Modals
+@import 'modal';
+
+//Application Form Input
+@import 'forms';
+
+//User Auth
+@import "auth";
+
+//User Profile Setup
+@import "user-profile-setup";

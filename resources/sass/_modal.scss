@@ -1,0 +1,19 @@
+.modal {
+    .modal-md {
+        @media screen and (min-width: 668px) {
+            max-width: 668px;
+        }
+    }
+
+    .flat-modal {
+        .modal-content {
+            padding: 40px;
+        }
+
+        .modal-footer {
+            .btn {
+                padding: 0.5rem 2rem;
+            }
+        }
+    }
+}
