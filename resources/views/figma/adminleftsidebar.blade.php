@@ -45,7 +45,7 @@
             <ul class="collapse" id="services">
                 <li><a href="{{ route('admin.projects') }}" class="inner-link">Projects</a></li>
                 <li><a href="#" class="inner-link">Trainings</a></li>
-                <li><a href="#" class="inner-link">Scholarsips</a></li>
+                <li><a href="/figma/super-admin-scholarship" class="inner-link">Scholarsips</a></li>
             </ul>
         </li>
 
