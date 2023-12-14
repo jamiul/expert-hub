@@ -26,15 +26,9 @@
 }
 
 .form-input-group .form-input-label {
-    z-index: 1;
     font-size: 14px;
     font-weight: 500;
-    color: #303744;
-    position: absolute;
-    top: -9px;
-    background: #fff;
-    padding: 0 10px;
-    left: 15px;
+    padding: 6px 0;
 }
 
 .form-input-group .form-input-field.form-textarea-field {
