@@ -221,6 +221,100 @@
       </div>
    </div><!--.//container-->
 </nav>
+
+
+
+<!--======================= Mobile Menu ======================= -->
+
+<!--======================= Mobile Menu ======================= -->
+
+
+<main class="edux-mobile-menu">
+  <nav class="navbar navbar-dark bg-light" aria-label="Dark offcanvas navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand edux-navbar-brand" href="/figma/client-dashboardhome"><img src="{{ asset('assets/frontend/img/logo.png') }}" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <span class="edux-navbar-toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+         <path d="M2.5 15V13.3333H17.5V15H2.5ZM2.5 10.8333V9.16667H17.5V10.8333H2.5ZM2.5 6.66667V5H17.5V6.66667H2.5Z" fill="#303744"/>
+         </svg>
+      </span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark  edux-text-bg-dark" tabindex="-1" id="offcanvasNavbarDark" aria-labelledby="offcanvasNavbarDarkLabel">
+        <div class="offcanvas-header edux-offcanvas-header">
+         <div class="offcanvas-title edux-mobile-avatar-area" id="offcanvasNavbarDarkLabel">
+            <img src="{{ asset('assets/frontend/img/mobile-avatar.png') }}" />
+            <h6>Dr. Darrell Steward</h6>
+            <p>Sydney Islamic business school</p>
+
+         </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body edux-offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="#">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Experts</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Billing & Payments</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Settings</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Message</a>
+            </li>
+
+            <li class="nav-item edux-nav-item-count">
+              <a class="nav-link" href="#">Notification</a>
+              <a class="nav-link" href="#"> <span class="nav-link-count">9+</span> </a>
+            </li>
+          </ul>
+
+          <div class="edux-profile-dropdown">
+            <ul class="ps-0 list-unstyled links mb-0">
+                  <li class="mb-2">
+                     <a href="#" class="d-inline-flex align-items-center small fw-medium">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M2.66669 15.1667C2.66669 12.2211 5.0545 9.83334 8.00002 9.83334C10.9456 9.83334 13.3334 12.2211 13.3334 15.1667H12C12 12.9575 10.2092 11.1667 8.00002 11.1667C5.79088 11.1667 4.00002 12.9575 4.00002 15.1667H2.66669ZM8.00002 9.16667C5.79002 9.16667 4.00002 7.37667 4.00002 5.16667C4.00002 2.95667 5.79002 1.16667 8.00002 1.16667C10.21 1.16667 12 2.95667 12 5.16667C12 7.37667 10.21 9.16667 8.00002 9.16667ZM8.00002 7.83334C9.47335 7.83334 10.6667 6.64001 10.6667 5.16667C10.6667 3.69334 9.47335 2.50001 8.00002 2.50001C6.52669 2.50001 5.33335 3.69334 5.33335 5.16667C5.33335 6.64001 6.52669 7.83334 8.00002 7.83334Z" fill="white"/>
+                        </svg>
+                        <span class="ps-2">Profile</span>
+                     </a>
+                  </li>
+                  <li class="mb-2">
+                     <a href="#" class="d-inline-flex align-items-center small fw-medium">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M8.00002 1.16667L14.3334 4.83334V12.1667L8.00002 15.8333L1.66669 12.1667V4.83334L8.00002 1.16667ZM8.00002 2.70734L3.00002 5.60208V11.3979L8.00002 14.2927L13 11.3979V5.60208L8.00002 2.70734ZM8.00002 11.1667C6.52726 11.1667 5.33335 9.97274 5.33335 8.5C5.33335 7.02724 6.52726 5.83334 8.00002 5.83334C9.47275 5.83334 10.6667 7.02724 10.6667 8.5C10.6667 9.97274 9.47275 11.1667 8.00002 11.1667ZM8.00002 9.83334C8.73642 9.83334 9.33335 9.2364 9.33335 8.5C9.33335 7.7636 8.73642 7.16667 8.00002 7.16667C7.26362 7.16667 6.66669 7.7636 6.66669 8.5C6.66669 9.2364 7.26362 9.83334 8.00002 9.83334Z" fill="white"/>
+                        </svg>
+                        <span class="ps-2">Setting</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="d-inline-flex align-items-center small fw-medium">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                           <path d="M2.66669 12.5H4.00002V13.8333H12V3.16668H4.00002V4.50001H2.66669V2.50001C2.66669 2.13182 2.96517 1.83334 3.33335 1.83334H12.6667C13.0349 1.83334 13.3334 2.13182 13.3334 2.50001V14.5C13.3334 14.8682 13.0349 15.1667 12.6667 15.1667H3.33335C2.96517 15.1667 2.66669 14.8682 2.66669 14.5V12.5ZM4.00002 7.83334H8.66669V9.16668H4.00002V11.1667L0.666687 8.50001L4.00002 5.83334V7.83334Z" fill="white"/>
+                           </svg>
+                        <span class="ps-2">Logout</span>
+                     </a>
+                  </li>
+               </ul>
+   </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</main>
+
+
+
 <script>
    // Stop dropdown close option when click inside the menu
    function stopPropagation(event) {

@@ -58,7 +58,7 @@
             </div>
           </div>
         </div>
-
+        <button onclick="myFunction()" class="edux-button-click">
         <div class="edux-single-person-area">
             <div class="edux-single-person">
                 <div class="single-person-avatar-img position-relative">
@@ -81,6 +81,7 @@
                 </div>
             </div>
         </div>
+      </button>
 
         <div class="edux-single-person-area">
             <div class="edux-single-person">
@@ -346,7 +347,7 @@
           </div>
 
 
-          <div class="row p-0 m-0">
+          <div class="row p-0 m-0" id="myDIV">
             <div class="edux-chatbox-body-ara">
 
             <div class="edux-message-right">
@@ -942,3 +943,15 @@
 
 
 @endsection
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
