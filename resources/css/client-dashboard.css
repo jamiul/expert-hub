@@ -1,39 +1,37 @@
 /**** ================================== Client Dashboard Start Here ===================================***/
 
-:root {
-  --color-heading-color: #191D24;
-  --color-heading: #303744;
-  --primary: #0036E3;
-  --success: #369450;
-  --white: #ffffff;
-  --heading-color: #303744;
-  --dark: #191D24;
-  --border-color: rgba(14, 0, 98, 0.10);
-  --white: #ffffff;
-  --bs-border-color: #E7E5EF;
-  --color-theme-color-2:#0036E3;
-  --color-border-color-solid: #E7E5EF;
-  --color-red: #C00000;
-  --color-yellow: #E9B911;
-  --colfax:Colfax;
-}
+/*:root {*/
+/*  --color-heading-color: #191D24;*/
+/*  --color-heading: #303744;*/
+/*  --primary: #0036E3;*/
+/*  --success: #369450;*/
+/*  --white: #ffffff;*/
+/*  --heading-color: #303744;*/
+/*  --dark: #191D24;*/
+/*  --border-color: rgba(14, 0, 98, 0.10);*/
+/*  --white: #ffffff;*/
+/*  --bs-border-color: #E7E5EF;*/
+/*  --color-theme-color-2:#0036E3;*/
+/*  --color-border-color-solid: #E7E5EF;*/
+/*  --color-red: #C00000;*/
+/*  --color-yellow: #E9B911;*/
+/*  --colfax:Colfax;*/
+/*}*/
 
-/*  default css */
+/*body{*/
+/*  font-family: Colfax;*/
+/*}*/
 
-body{
-  font-family: Colfax;
-}
+/*h1, h2, h3, h4, h5, h6, p, ul, ol{*/
+/*  margin-bottom: 0px;*/
+/*}*/
 
-h1, h2, h3, h4, h5, h6, p, ul, ol{
-  margin-bottom: 0px;
-}
-
-a{
-  text-decoration: none;
-}
-li{
-  list-style: none;
-}
+/*a{*/
+/*  text-decoration: none;*/
+/*}*/
+/*li{*/
+/*  list-style: none;*/
+/*}*/
 
 
 

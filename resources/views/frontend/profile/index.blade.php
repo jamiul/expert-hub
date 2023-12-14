@@ -11,7 +11,7 @@
                 <li>
                   <a href="#">
                     <div class="expert-left-img">
-                        
+
                       <img src="{{ asset('assets/frontend/img/register2.png') }}">
                     </div>
                     <p>Create your consultant profile by answering a few question</p>
@@ -47,7 +47,7 @@
               <h4>Example profile</h4>
               <div class="expert-right">
                 <div class="consultant-left-block">
-                  <img src="{{ asset('assets/frontend/img/Mask-img.jpg') }}"> 
+                  <img src="{{ asset('assets/frontend/img/Mask-img.jpg') }}">
                   <h3>Michael Kassiou</h3>
                   <p>Curriculum  Specialist  | Public Health</p>
                 </div>

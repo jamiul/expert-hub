@@ -1,0 +1,79 @@
+/******************************************
+Removed Styles
+12 December 2023
+and
+13 December 2023
+***********************************************/
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li,
+a,
+div,
+strong,
+span,
+b {
+    font-family: "Colfax";
+}
+
+
+:root {
+    --color-heading-color: #191D24;
+    --color-heading: #303744;
+    --primary: #0036E3;
+    --success: #369450;
+    --white: #ffffff;
+    --heading-color: #303744;
+    --dark: #191D24;
+    --border-color: rgba(14, 0, 98, 0.10);
+    --white: #ffffff;
+    --bs-border-color: #E7E5EF;
+    --color-theme-color-2: #0036E3;
+    --color-border-color-solid: #E7E5EF;
+    --color-red: #C00000;
+    --color-yellow: #E9B911;
+    --colfax: Colfax;
+}
+
+/*  default css */
+
+body {
+    font-family: Colfax;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin-bottom: 0px;
+}
+
+
+.btn-outline-primary, .btn-primary {
+    border: 2px solid var(--primary);
+    color: var(--primary) !important;
+    font-weight: 500;
+    padding: .5rem 2rem;
+}
+
+.btn-primary {
+    border: 2px solid var(--primary);
+    color: var(--white) !important;
+    background-color: var(--primary);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    color: var(--white) !important;
+    background-color: var(--primary);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: var(--white) !important;
+    background-color: var(--dark);
+    border-color: var(--dark);
+}
