@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-8 col-md-8 ps-lg-5 mt-5 mt-lg-0">
 
-                    <div class="progress-step-content ">
+                    <div class="progress-step-content  ">
                         <h5 class="mb-2">Expert by Field</h5>
                         <x-form.select label="Expert by Field" name="title">
                             <option value="">Architecture History</option>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
 
-                    <div class="progress-step-content d-none">
+                    <div class="progress-step-content">
                         <h5 class="mb-2">Expert by Field</h5>
                         <p>Add your educational background to let employers know where you studied or are currently
                             studying. Even if you didn't finish, it's important to include it here. And if you've earned
@@ -169,34 +169,11 @@
                         <div class="d-grid grid-cols-sm-6 gap-3">
                             <div class="card">
                                 <div class="card-header bg-white">
-                                    <div class="d-flex justify-content-between align-items-center gap-2">
-                                        <div>
-                                            <p class="fw-medium mb-0"> University of California Business Studies</p>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button class="icon-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                     viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                            <button class="icon-btn" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteEducation">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <p class="fw-medium mb-0"> University of California Business Studies</p>
 
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-borderless">
+                                    <table class="table table-borderless mb-0">
                                         <tr>
                                             <td>Degree</td>
                                             <td class="fw-medium">: Bachelor</td>
@@ -211,38 +188,27 @@
                                         </tr>
 
                                     </table>
+                                </div>
+                                <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                                    <button class="icon-btn icon-btn-sm p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5.15425 19H6.39077L15.6504 9.74036L14.4139 8.50381L5.15425 17.7635V19ZM18.858 8.65576L15.4831 5.31158L16.787 4.00776C17.0806 3.71417 17.4376 3.56738 17.8581 3.56738C18.2786 3.56738 18.6356 3.71417 18.9292 4.00776L20.1465 5.22503C20.4401 5.51862 20.592 5.87053 20.6023 6.28078C20.6125 6.69103 20.4709 7.04295 20.1773 7.33653L18.858 8.65576ZM17.7735 9.75573L7.02922 20.5H3.6543V17.125L14.3985 6.38078L17.7735 9.75573ZM15.0274 9.11728L14.4139 8.50381L15.6504 9.74036L15.0274 9.11728Z" fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
+                                    <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                                            data-bs-target="#deleteEducation">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M7.3077 20.5C6.80898 20.5 6.38302 20.3234 6.02982 19.9702C5.67661 19.617 5.5 19.191 5.5 18.6923V6.00005H4.5V4.50008H8.99997V3.61548H15V4.50008H19.5V6.00005H18.5V18.6923C18.5 19.1975 18.325 19.625 17.975 19.975C17.625 20.325 17.1974 20.5 16.6922 20.5H7.3077ZM17 6.00005H6.99997V18.6923C6.99997 18.7821 7.02883 18.8558 7.08652 18.9135C7.14423 18.9712 7.21795 19.0001 7.3077 19.0001H16.6922C16.7692 19.0001 16.8397 18.968 16.9038 18.9039C16.9679 18.8398 17 18.7693 17 18.6923V6.00005ZM9.40385 17.0001H10.9038V8.00005H9.40385V17.0001ZM13.0961 17.0001H14.5961V8.00005H13.0961V17.0001Z" fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-header bg-white">
-                                    <div class="d-flex justify-content-between align-items-center gap-2">
-                                        <div>
-                                            <p class="fw-medium mb-0"> University of California Business Studies</p>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button class="icon-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                     viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                            <button class="icon-btn" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteEducation">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-
+                                    <p class="fw-medium mb-0"> University of California Business Studies</p>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-borderless">
+                                    <table class="table table-borderless  mb-0">
                                         <tr>
                                             <td>Degree</td>
                                             <td class="fw-medium">: Bachelor</td>
@@ -257,6 +223,19 @@
                                         </tr>
 
                                     </table>
+                                </div>
+                                <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                                    <button class="icon-btn icon-btn-sm p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5.15425 19H6.39077L15.6504 9.74036L14.4139 8.50381L5.15425 17.7635V19ZM18.858 8.65576L15.4831 5.31158L16.787 4.00776C17.0806 3.71417 17.4376 3.56738 17.8581 3.56738C18.2786 3.56738 18.6356 3.71417 18.9292 4.00776L20.1465 5.22503C20.4401 5.51862 20.592 5.87053 20.6023 6.28078C20.6125 6.69103 20.4709 7.04295 20.1773 7.33653L18.858 8.65576ZM17.7735 9.75573L7.02922 20.5H3.6543V17.125L14.3985 6.38078L17.7735 9.75573ZM15.0274 9.11728L14.4139 8.50381L15.6504 9.74036L15.0274 9.11728Z" fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
+                                    <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                                            data-bs-target="#deleteEducation">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M7.3077 20.5C6.80898 20.5 6.38302 20.3234 6.02982 19.9702C5.67661 19.617 5.5 19.191 5.5 18.6923V6.00005H4.5V4.50008H8.99997V3.61548H15V4.50008H19.5V6.00005H18.5V18.6923C18.5 19.1975 18.325 19.625 17.975 19.975C17.625 20.325 17.1974 20.5 16.6922 20.5H7.3077ZM17 6.00005H6.99997V18.6923C6.99997 18.7821 7.02883 18.8558 7.08652 18.9135C7.14423 18.9712 7.21795 19.0001 7.3077 19.0001H16.6922C16.7692 19.0001 16.8397 18.968 16.9038 18.9039C16.9679 18.8398 17 18.7693 17 18.6923V6.00005ZM9.40385 17.0001H10.9038V8.00005H9.40385V17.0001ZM13.0961 17.0001H14.5961V8.00005H13.0961V17.0001Z" fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -270,38 +249,14 @@
                         </button>
                     </div>
 
-                    <div class="progress-step-content d-none">
+                    <div class="progress-step-content ">
                         <h5 class="mb-2">Work Experience History</h5>
                         <p>Add your working experience.</p>
 
                         <div class="d-grid grid-cols-sm-6 gap-3">
                             <div class="card">
                                 <div class="card-header bg-white">
-                                    <div class="d-flex justify-content-between align-items-center gap-2">
-                                        <div>
-                                            <p class="fw-medium mb-0"> Director of Curriculum Development</p>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button class="icon-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                     viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                            <button class="icon-btn" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteWorkExperience">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-
+                                    <p class="fw-medium mb-0"> Director of Curriculum Development</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
@@ -311,35 +266,30 @@
                                     <p class="fst-italic"> Public Health Institute of Sydney, Sydney, Australia</p>
                                     <p>As a Director of Curriculum Development at the Public Health Institute of
                                         Sydney</p>
+                                </div>
+                                <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                                    <button class="icon-btn icon-btn-sm p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                             viewBox="0 0 18 18" fill="none">
+                                            <path
+                                                d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
+                                                fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
+                                    <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                                            data-bs-target="#deleteWorkExperience">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
+                                                fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-header bg-white">
-                                    <div class="d-flex justify-content-between align-items-center gap-2">
-                                        <div>
-                                            <p class="fw-medium mb-0"> Director of Curriculum Development</p>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button class="icon-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                     viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                            <button class="icon-btn" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteWorkExperience">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
-                                                        fill="#191D24" fill-opacity="0.7"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-
+                                    <p class="fw-medium mb-0"> Director of Curriculum Development</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
@@ -349,6 +299,25 @@
                                     <p class="fst-italic"> Public Health Institute of Sydney, Sydney, Australia</p>
                                     <p>As a Director of Curriculum Development at the Public Health Institute of
                                         Sydney</p>
+                                </div>
+                                <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                                    <button class="icon-btn icon-btn-sm p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                             viewBox="0 0 18 18" fill="none">
+                                            <path
+                                                d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
+                                                fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
+                                    <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                                            data-bs-target="#deleteWorkExperience">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
+                                                fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
 
@@ -363,33 +332,12 @@
                         </button>
                     </div>
 
-                    <div class="progress-step-content d-none">
+                    <div class="progress-step-content ">
                         <h5 class="mb-2">What languages do you speak?</h5>
                         <p>We will use this to help match you with clients who are fluent in their language.</p>
 
                         <div class="d-grid grid-cols-sm-6 gap-3">
-                            <div class="card has-card-hover-overly">
-                                <div class="card-hover-overly-wrapper d-flex justify-content-center align-items-center">
-                                    <div class="d-flex gap-2">
-                                        <button class="icon-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                 viewBox="0 0 18 18" fill="none">
-                                                <path
-                                                    d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
-                                                    fill="#191D24" fill-opacity="0.7"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon-btn" data-bs-toggle="modal"
-                                                data-bs-target="#deleteLanguage">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24" fill="none">
-                                                <path
-                                                    d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
-                                                    fill="#191D24" fill-opacity="0.7"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="card">
                                 <div class="card-body">
                                     <table class="table table-borderless">
                                         <tr>
@@ -402,42 +350,27 @@
                                         </tr>
                                     </table>
                                 </div>
-                            </div>
-                            <div class="card has-card-hover-overly">
-                                <div class="card-hover-overly-wrapper d-flex justify-content-center align-items-center">
-                                    <div class="d-flex gap-2">
-                                        <button class="icon-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                 viewBox="0 0 18 18" fill="none">
-                                                <path
-                                                    d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
-                                                    fill="#191D24" fill-opacity="0.7"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon-btn" data-bs-toggle="modal"
-                                                data-bs-target="#deleteLanguage">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24" fill="none">
-                                                <path
-                                                    d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
-                                                    fill="#191D24" fill-opacity="0.7"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-borderless">
-                                        <tr>
-                                            <td>Language</td>
-                                            <td class="fw-medium">: English</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Proficiency</td>
-                                            <td class="fw-medium">: Fluent</td>
-                                        </tr>
-                                    </table>
+                                <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                                    <button class="icon-btn icon-btn-sm p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                             viewBox="0 0 18 18" fill="none">
+                                            <path
+                                                d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
+                                                fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
+                                    <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                                            data-bs-target="#deleteLanguage">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
+                                                fill="#191D24" fill-opacity="0.7"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
+
 
                         </div>
 
@@ -451,7 +384,7 @@
                         </button>
                     </div>
 
-                    <div class="progress-step-content d-none">
+                    <div class="progress-step-content ">
                         <h5 class="mb-2">Hourly rate</h5>
                         <p>Clients will see this rate on your profile and in search results once you publish your
                             profile. You can adjust your rate every time you submit a proposal.</p>
@@ -510,7 +443,7 @@
                         </div>
                     </div>
 
-                    <div class="progress-step-content d-none">
+                    <div class="progress-step-content ">
                         <h5 class="mb-2">Biography</h5>
                         <p class="mb-5">Please provide a brief biography, limited to 300 words, which will be used in
                             your public
@@ -740,7 +673,7 @@
                                 </x-form.select>
                             </div>
                             <div class="col-md-6">
-                                <x-form.select label="End Year" name="title">
+                                <x-form.select label="Proficiency" name="title">
                                     <option value="">Select</option>
                                     <option value="Mr">Mr</option>
                                     <option value="Mrs">Mrs</option>

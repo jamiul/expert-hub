@@ -227,12 +227,18 @@ img {
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: 1px solid $edu-border-color;
     background-color: white;
+    border: 0;
+
+    &.icon-btn-sm {
+        width: 24px;
+        height: 24px;
+    }
+
 }
 
 .d-grid {
-    @media screen and (min-width: 540px){
+    @media screen and (min-width: 540px) {
         &.grid-cols-sm-6 {
             grid-template-columns: repeat(2, 1fr);
         }
