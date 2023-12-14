@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        User::truncate();
         $feed = database_path('data/users.csv');
         $data = array_map('str_getcsv', file($feed));
         $keys = array_shift($data);
@@ -37,11 +39,21 @@ class UserSeeder extends Seeder
                 'country_id' => 1,
             ];
             $user_id = DB::table('users')->insertGetId($userData);
-            DB::table('profiles')->insert([
+            $profile_id = DB::table('profiles')->insertGetId([
                 'user_id' => $user_id,
                 'type' => $user['type'],
                 'status' => ProfileStatus::Draft->name,
             ]);
+            if($user['type'] == ProfileType::Expert->value){
+                $profile = Profile::find($profile_id);
+                $imagePath = database_path('data/users/' . $user['image']);
+                $profile->addMedia($imagePath)
+                    ->usingName($user['image'])
+                    ->toMediaCollection('picture');
+                $profile->expertises()->attach([
+                    'expertise_id' => $user['expertise'],
+                ]);
+            }
         }
     }
 }
