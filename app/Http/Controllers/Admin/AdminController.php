@@ -34,7 +34,7 @@ class AdminController extends Controller
 
     public function aboutUs()
     {
-        return view('figma.frontentdashboardabout');
+        return view('admin.about-us.index');
     }
 
     public function projectPayment()
