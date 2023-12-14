@@ -5,7 +5,7 @@
       <div class="edux-left-sidebar">
         <div class="left-top-search-area">
           <div class="left-sidebar p-0">
-          <div class="search-block edux-search-block ">
+          <div class="search-block edux-search-block">
                 <form class="example">
                     <input type="text" placeholder="Search people, group etc" name="search-left">
                     <button type="submit">

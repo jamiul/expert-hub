@@ -58,7 +58,7 @@
                                                 <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="col admin-sub-title position-relative">
-                                                            <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label>
+                                                            <label for="subtitle" class="form-label  level-subtitle">subtitle</label>
                                                             <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name">
                                                         </div>
 
@@ -113,8 +113,8 @@
                                     <form action="">
                                         <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label  level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label  level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
 
                                             <div class="row">
@@ -161,8 +161,8 @@
                                         <form action="">
                                             <div class="col-md-12">
                                                 <div class="row">
-                                                    <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                    <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                    <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label  level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                    <div class="col admin-sub-title position-relative"> <label for="title" class="form-label  level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                                 </div>
                                             </div>
                                         </form>
@@ -285,8 +285,8 @@
                                     <form action="">
                                         <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input  admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label  level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label  level-title">title</label> <input id="title" type="text" class="form-control admin-form-input  admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
 
                                             <div class="row">
@@ -340,8 +340,8 @@
                                     <form action="">
                                         <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label  level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
                                         </div>
                                     </form>
@@ -500,8 +500,8 @@
                                     <form action="">
                                         <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label  level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label  level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
 
                                             <div class="row">
@@ -611,8 +611,8 @@
                                     <form action="">
                                         <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label position-absolute level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
-                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label position-absolute level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="subtitle" class="form-label  level-subtitle">subtitle</label> <input id="subtitle" type="text" class="form-control admin-form-input " placeholder="Require steps" aria-label="First name"> </div>
+                                                <div class="col admin-sub-title position-relative"> <label for="title" class="form-label  level-title">title</label> <input id="title" type="text" class="form-control admin-form-input admin-m-input" placeholder="Search Academic Expert Made Easy" aria-label="Last name"> </div>
                                             </div>
 
                                             <div class="row">
