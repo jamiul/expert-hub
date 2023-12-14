@@ -33,7 +33,8 @@
                                     </div>
                                 </div>
                             </div>
-                            @include('admin.partials._title')
+                            @livewire('admin.about.header')
+                            {{-- @include('admin.partials._title') --}}
                             @include('admin.partials._area')
                             @include('admin.partials._meet')
                             <div class="academic-seller-area">
