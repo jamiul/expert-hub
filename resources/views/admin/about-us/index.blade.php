@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('content')
-    @include('admin.partials._main')
+    @include('admin.about-us.partials._main')
     <!--.//main_layout-->
-    @include('admin.partials._modals')
+    @include('admin.about-us.partials._modals')
 @endsection

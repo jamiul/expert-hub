@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class AbousUsSeeder extends Seeder
+class AboutUsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,11 @@ class AbousUsSeeder extends Seeder
     public function run(): void
     {
         DB::table('about_us')->insert([
-            'header_title' => 'Welcome to EduExHub',
-            'header_subtitle' => NULL,
+            'header_subtitle' => 'Welcome to EduExHub',
             'header_image' => 'assets/frontend/img/about-banner.jpg',
-            'header_description' => 'Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.
+            'area_title' => 'INFO',
+            'area_subtitle' => 'About us',
+            'area_description' => 'Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.
 
             At EduExHub, we proudly provide an extensive and diverse network of distinguished academic professionals, ensuring that you have access to highly qualified experts with specialised knowledge tailored to your unique requirements. Our global platform transcends borders, providing you with an international perspective that proves invaluable when addressing global or cross-cultural educational challenges and opportunities.
 

@@ -34,9 +34,8 @@
                                 </div>
                             </div>
                             @livewire('admin.about.header')
-                            {{-- @include('admin.partials._title') --}}
-                            @include('admin.partials._area')
-                            @include('admin.partials._meet')
+                            @livewire('admin.about.area')
+                            @include('admin.about-us.partials._meet')
                             <div class="academic-seller-area">
 
                                 <div class="container">
