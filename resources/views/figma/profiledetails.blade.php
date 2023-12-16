@@ -173,7 +173,7 @@
 
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-borderless mb-0">
+                                    <table class="table table-sm table-borderless mb-0">
                                         <tr>
                                             <td>Degree</td>
                                             <td class="fw-medium">: Bachelor</td>
@@ -208,7 +208,7 @@
                                     <p class="fw-medium mb-0"> University of California Business Studies</p>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-borderless  mb-0">
+                                    <table class="table table-sm table-borderless mb-0">
                                         <tr>
                                             <td>Degree</td>
                                             <td class="fw-medium">: Bachelor</td>
@@ -339,7 +339,7 @@
                         <div class="d-grid grid-cols-sm-6 gap-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <table class="table table-borderless">
+                                    <table class="table table-sm table-borderless mb-0">
                                         <tr>
                                             <td>Language</td>
                                             <td class="fw-medium">: English</td>
