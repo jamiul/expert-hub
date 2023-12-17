@@ -104,6 +104,10 @@ img {
     margin-bottom: 40px;
 }
 
+.mb-40 {
+    margin-bottom: 40px;
+}
+
 .my-60 {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -237,11 +241,186 @@ img {
 
 }
 
+ul.progress-bar-nav-vertical {
+    margin: 0;
+    padding: 0;
+    @media screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    @media screen and (max-width: 650px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        list-style: none;
+        padding: 5px 0 24px 36px;
+        position: relative;
+        @media screen and (max-width: 767px) {
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        strong {
+            display: block;
+            font-size: 1.1875rem;
+            font-weight: 500;
+            line-height: 120%;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            border: 8px solid #F2F4F7;
+            border-radius: 100%;
+            left: 0;
+            z-index: 1;
+            background-color: #fff;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: calc(100% - 32px);
+            border-left: 2px solid #E4E7EC;
+            position: absolute;
+            left: 13px;
+            bottom: 0;
+            @media screen and (max-width: 892px) {
+                display: none;
+            }
+        }
+
+        &.running-item {
+            &:before {
+                border-color: $edu-primary-color;
+            }
+        }
+
+        &.done-item {
+            &:before {
+                border: none;
+                background: $edu-primary-color url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39016L9.93602 14.3002L8.03602 12.2702C7.68602 11.9402 7.13602 11.9202 6.73602 12.2002C6.34602 12.4902 6.23602 13.0002 6.47602 13.4102L8.72602 17.0702C8.94602 17.4102 9.32601 17.6202 9.75601 17.6202C10.166 17.6202 10.556 17.4102 10.776 17.0702C11.136 16.6002 18.006 8.41016 18.006 8.41016C18.906 7.49016 17.816 6.68016 17.096 7.38016V7.39016Z" fill="white"/></svg>');
+            }
+
+            &:after {
+                border-color: $edu-primary-color;
+            }
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+ul.progress-bar-nav-horizontal {
+    margin: 0;
+    padding: 0;
+    counter-reset: numbers;
+    display: flex;
+    flex-wrap: unset;
+    justify-content: space-between;
+
+    li {
+        list-style: none;
+        padding: 5px 0;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+
+        strong {
+            display: table;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 159.5%;
+            color: $edu-headings-color;
+
+            &:before {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                border: 2px solid $edu-border-color;
+                border-radius: 100%;
+                background-color: #fff;
+                counter-increment: numbers;
+                content: counter(numbers);
+                z-index: 2;
+                position: relative;
+                padding: 4px;
+                margin: 0 auto;
+                color: $edu-gray-color;
+            }
+        }
+
+
+        &:after {
+            content: "";
+            display: block;
+            width: calc(100% - 90px);
+            height: 2px;
+            background-color: #ccc;
+            position: absolute;
+            //left: 0;
+            right: 0;
+            top: 29px;
+        }
+
+        &.running-item {
+            strong {
+                color: $edu-primary-color;
+
+                &:before {
+                    border-color: lighten($edu-primary-color, 30%);
+                    background-color: lighten($edu-primary-color, 50%);
+                    color: $edu-primary-color;
+                }
+            }
+        }
+
+        &.done-item {
+            strong {
+                color: $edu-primary-color;
+
+                &:before {
+                    border-color: $edu-primary-color;
+                    background: $edu-primary-color url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39016L9.93602 14.3002L8.03602 12.2702C7.68602 11.9402 7.13602 11.9202 6.73602 12.2002C6.34602 12.4902 6.23602 13.0002 6.47602 13.4102L8.72602 17.0702C8.94602 17.4102 9.32601 17.6202 9.75601 17.6202C10.166 17.6202 10.556 17.4102 10.776 17.0702C11.136 16.6002 18.006 8.41016 18.006 8.41016C18.906 7.49016 17.816 6.68016 17.096 7.38016V7.39016Z" fill="white"/></svg>') no-repeat center;
+                    color: transparent;
+                }
+            }
+
+            &:after {
+                background: $edu-primary-color;
+            }
+        }
+
+        &:last-child {
+            width: auto;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+
 .d-grid {
     @media screen and (min-width: 540px) {
         &.grid-cols-sm-6 {
             grid-template-columns: repeat(2, 1fr);
         }
     }
-
 }

@@ -8,7 +8,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-4">
                     <div class="card card-40 card-shadow border-0">
                         <div class="card-body">
-                            <ul class="profile-progress-bar-nav">
+                            <ul class="progress-bar-nav-vertical profile-progress-bar-nav">
                                 <li class="done-item"><strong>Expertise</strong> Expertise area</li>
                                 <li class="running-item"><strong>Education</strong> Academic details</li>
                                 <li><strong>Work Experience</strong> Add work experience</li>
