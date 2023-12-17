@@ -46,8 +46,9 @@ class UserSeeder extends Seeder
             ]);
             if($user['type'] == ProfileType::Expert->value){
                 $profile = Profile::find($profile_id);
-                $imagePath = database_path('data/users/' . $user['image']);
+                $imagePath = database_path('/data/users/'. $user['image']);
                 $profile->addMedia($imagePath)
+                    ->preservingOriginal()
                     ->usingName($user['image'])
                     ->toMediaCollection('picture');
                 $profile->expertises()->attach([

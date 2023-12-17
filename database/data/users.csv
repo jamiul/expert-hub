@@ -1,6 +1,6 @@
 type,title,first_name,last_name,email,password,expertise,image
 Client,Mr,Taylor,Otwell,client@example.com,12345678,,
-Expert,Mr,Caleb,Porzio,expert@example.com,12345678,1,jason.jpg
+Expert,Mr,Caleb,Porzio,expert@example.com,12345678,1,jacob.jpg
 Expert,Professor,Michael,Kassiou,Kassiou@gmail.com,12345678,2,kassiou.jpg
 Expert,Dr,Sarah,Mitchell,jondoe@gmail.com,12345678,3,mitchell.jpg
 Expert,Professor,Jennifer,Martinez,martinez@gmail.com,12345678,4,martinez.jpg
