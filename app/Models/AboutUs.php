@@ -13,6 +13,10 @@ class AboutUs extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $guarded = [];
+    protected $casts = [
+        'instructor_list' => 'array',
+        'team_list' => 'array',
+    ];
 
     public function registerMediaCollections(): void
     {
@@ -21,11 +25,13 @@ class AboutUs extends Model implements HasMedia
 
         $this->addMediaCollection('mission_image')
             ->singleFile();
-    }   
+    }
 
     public function headerImage()
     {
         $mediaItems = $this->getMedia('header_image');
-        return $mediaItems[0]->getUrl();
+        if(count($mediaItems) > 0) {
+            return $mediaItems[0]->getUrl();
+        }
     }
 }
