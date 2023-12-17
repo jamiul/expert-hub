@@ -30,7 +30,7 @@ class ScholarshipResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('university')
+                Select::make('university_id')
                     ->relationship('university', 'name'),
                 Forms\Components\TextInput::make('title')
                     ->required(),
