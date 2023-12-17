@@ -6,12 +6,21 @@ use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Profile extends Model
+class Profile extends Model implements HasMedia
 {
     use SoftDeletes;
+    use InteractsWithMedia;
 
     protected $guarded = [];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('picture')
+            ->singleFile();
+    }   
 
     protected $casts = [
         'status' => ProfileStatus::class,

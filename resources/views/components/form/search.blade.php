@@ -15,7 +15,7 @@
         {{ $disabled ? 'disabled=""' : '' }} 
         {{ $readonly ? 'readonly=""' : '' }}
     >
-    <span class="form-input-icon"><i class="fa fa-search"></i></span>
+    <span class="form-input-icon"><x-icon.search fill="#ccc"/></span>
     @error($name)
         <div class="error-message">{{ $message }}</div>
     @enderror

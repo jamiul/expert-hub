@@ -1,3 +1,10 @@
-type,title,first_name,last_name,email,password
-Client,Mr,Taylor,Otwell,client@example.com,12345678
-Expert,Mr,Caleb,Porzio,expert@example.com,12345678
+type,title,first_name,last_name,email,password,expertise,image
+Client,Mr,Taylor,Otwell,client@example.com,12345678,,
+Expert,Mr,Caleb,Porzio,expert@example.com,12345678,1,jacob.jpg
+Expert,Professor,Michael,Kassiou,Kassiou@gmail.com,12345678,2,kassiou.jpg
+Expert,Dr,Sarah,Mitchell,jondoe@gmail.com,12345678,3,mitchell.jpg
+Expert,Professor,Jennifer,Martinez,martinez@gmail.com,12345678,4,martinez.jpg
+Expert,Dr,Emily,Davis,davis03@gmail.com,12345678,5,davis.jpg
+Expert,Dr,Wade,Warren,wade@gmail.com,12345678,6,wade.jpg
+Expert,Dr,Leslie,Alexander,leslie@gmail.com,12345678,7,leslie.jpg
+Expert,Professor,Eleanor,Pena,eleanor@gmail.com,12345678,8,eleanor.jpg
