@@ -590,10 +590,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
                 <div class="academic-seller-area">
                     <div class="container">
                     <div class="row">
