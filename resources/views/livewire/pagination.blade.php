@@ -1,14 +1,22 @@
-@php
-    $fromEntry = ($paginator->currentPage() - 1) * $paginator->perPage() + 1;
-    $toEntry = $paginator->perPage() * $paginator->currentPage();
-    $toEntry = $toEntry < $paginator->total() ? $toEntry : $paginator->total();
-@endphp
 
+@php
+if (! isset($scrollTo)) {
+    $scrollTo = 'body';
+}
+
+$scrollIntoViewJsSnippet = ($scrollTo !== false)
+    ? <<<JS
+       (\$el.closest('{$scrollTo}') || document.querySelector('{$scrollTo}')).scrollIntoView()
+    JS
+    : '';
+@endphp
+{{-- {{ dd($paginator) }} --}}
 <div class="pagination">
     <div class="row">
         <div class="col-md-4">
             <div class="pagination-left">
-                @lang('pagination.showing_from_to_of_entries', ['from' => $fromEntry, 'to' => $toEntry, 'total' => $paginator->total()])
+                Showing {{ max(1, 4 * ($paginator->currentPage() - 1) + 1) }} to {{ min(4 * $paginator->currentPage(), $paginator->total()) }} of
+                    {{ $paginator->total() }} experts
             </div>
         </div>
         <div class="col-md-8">
@@ -30,30 +38,15 @@
                     @if ($paginator->onFirstPage())
                         <li>
                             <a href="javascript:void(0)">
-                                <img src="{{ asset('assets/frontend/img/pagination-left.png') }}"></img>
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}"></img>
+                                <img src="{{ asset('assets/frontend/img/pagination-left.png') }}">
+                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}">
                             </a>
                         </li>
                     @else
                         <li>
-                            <a href="#" wire:click="gotoPage(1, '{{ $paginator->getPageName() }}')">
-                                <img src="{{ asset('assets/frontend/img/pagination-left.png') }}"></img>
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}"></img>
-                            </a>
-                        </li>
-                    @endif
-
-                    {{-- Previous Page Link --}}
-                    @if ($paginator->onFirstPage())
-                        <li class="disabled">
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-caret-left"></i>
-                            </a>
-                        </li>
-                    @else
-                        <li>
-                            <a href="#" dusk="previousPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" class="page-link" wire:click="previousPage('{{ $paginator->getPageName() }}')" wire:loading.attr="disabled" rel="prev">
-                                <i class="fa fa-caret-left"></i>
+                            <a href="" wire:click="gotoPage(1, '{{ $paginator->getPageName() }}')">
+                                <img src="{{ asset('assets/frontend/img/pagination-left.png') }}">
+                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}">
                             </a>
                         </li>
                     @endif
@@ -81,38 +74,22 @@
                         @endif
                     @endforeach
 
-                    {{-- Next Page Link --}}
-                    @if ($paginator->hasMorePages())
-                        <li>
-                            <a href="#" dusk="nextPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" wire:click="nextPage('{{ $paginator->getPageName() }}')" wire:loading.attr="disabled" rel="next">
-                                <i class="fa fa-caret-right"></i>
-                            </a>
-                        </li>
-                    @else
-                        <li class="disabled" aria-disabled="true">
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-caret-right"></i>
-                            </a>
-                        </li>
-                    @endif
-
                     {{-- Last Page Link --}}
-                    @if ($paginator->lastPage() == $paginator->currentPage())
+                    @if ($paginator->hasMorePages())
+                    <li>
+                        <a href="javascript:void(0)" wire:click="nextPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="next" aria-label="@lang('pagination.next')" >
+                            <img src="{{ asset('assets/frontend/img/pagination-right.png') }}">
+                            <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}">
+                        </a>
+                    </li>
+                    @else
                         <li>
                             <a href="javascript:void(0)" class="disable">
-                                <img src="{{ asset('assets/frontend/img/pagination-right.png') }}"></img>
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}"></img>
-                            </a>
-                        </li>
-                    @else
-                        <li>
-                            <a href="#" wire:click="gotoPage({{ $paginator->lastPage() }}, '{{ $paginator->getPageName() }}')">
-                                <img src="{{ asset('assets/frontend/img/pagination-right.png') }}"></img>
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}"></img>
+                                <img src="{{ asset('assets/frontend/img/pagination-right.png') }}">
+                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}">
                             </a>
                         </li>
                     @endif
-
                 </ul>
             </div>
         </div>
