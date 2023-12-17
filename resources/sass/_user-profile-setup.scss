@@ -188,6 +188,14 @@ ul.profile-progress-bar-nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        & > div {
+            &:last-child {
+                order: -1;
+            }
+        }
+    }
 
     .accordion {
         .accordion-button {
