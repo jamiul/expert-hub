@@ -6703,12 +6703,13 @@ ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
   font-weight: 500;
 }
 
-.single-person-avatar-content p{
-  color:  #303744;
+.single-person-avatar-content p {
+  color: #303744;
   font-family: Colfax;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
+  text-align: left;
 }
 
 .avatar-title {
@@ -7543,6 +7544,18 @@ p.content-no-close {
   border: none;
 }
 
+.edux-middle-area-desktop {
+  display: block;
+}
+
+.edux-middle-area-mobile{
+  display: none;
+}
+
+.edux-search-form{
+  margin-bottom: 0px;
+
+}
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
@@ -7732,7 +7745,7 @@ header.client-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .body-content.edux-margin-left {
@@ -8199,6 +8212,65 @@ padding: 5px;
   display: flex;
   padding: 8px;
 }
+
+
+button.edux-button-click {
+  width: 100%;
+}
+
+img.middle-top-avatar{
+  width: 40px;
+  height: 40px;
+
+}
+
+img.middle-top-arrow{
+  width: 18px;
+  height: 18px;
+
+}
+
+.middle-top-img {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+
+
+.body-right-content{
+  display: none;
+}
+
+
+.edux-middle-area-desktop {
+  display: none;
+}
+
+.edux-middle-area-mobile{
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+  width: 100%;
+}
+
+.middle-top-img button{
+  border: none;
+  background: transparent;
+}
+
+.avatar-title {
+  min-width: 365px;
+  width: 100%;
+}
+
 
 }
 
