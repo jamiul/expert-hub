@@ -4,13 +4,14 @@
     'id' => $name,
     'disabled' => false,
     'readonly' => false,
-    'results' => null
+    'results' => []
 ])
-<div>
+<div x-data="{ open: false }">
     <div class="form-input-group form-input-has-icon">
         <label class="form-input-label">{{ $label }}</label>
         <input 
-            wire:model.debounce.500ms="{{ $name }}" 
+            x-on:click="open = true"
+            wire:model.live.debounce.500ms="{{ $name }}" 
             name="{{ $name }}" 
             id="{{ $id }}" 
             {{ $attributes->merge(['class' => 'form-input-field ' . ($errors->has($name) ? ' has-error':'')]) }} 
@@ -21,14 +22,12 @@
         @enderror
     </div>
     <div>
-        @if($results)
-        <ul>
+        <ul class="shadow py-2" x-show="open" x-on:click.outside="open = false" x-on:keyup.escape.window="open = false">
             @forelse ($results as $result)
-                <li wire:key="{{ $result->id }}" wire:click="select{{ ucfirst($name) }}('{{ $result->name }}')"> {{ $result->name }} </li>
+                <li wire:key="{{ $result->id }}" x-on:click="open = false; $wire.select{{ ucfirst($name) }}('{{ $result->name }}')"> {{ $result->name }} </li>
             @empty
                 <li>No results found</li>
             @endforelse
         </ul>
-        @endif
     </div>
 </div>

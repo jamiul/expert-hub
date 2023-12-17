@@ -39,6 +39,12 @@ class Filter extends Component
     public $universities = null;
     public $searchUniversity = '';
 
+    public function mount()
+    {
+        $this->countries = Country::limit(5)->get();
+        $this->universities = University::limit(5)->get();
+    }
+
     public function filter()
     {
         $filters = [
@@ -73,7 +79,7 @@ class Filter extends Component
         if($this->country){
             $this->countries = Country::where('name', 'like', '%' . $this->country . '%')->limit(5)->get();
         }
-        $this->filter();
+        // $this->filter();
     }
 
     public function selectCountry($name)
@@ -81,7 +87,7 @@ class Filter extends Component
         $country = Country::where('name', $name)->first();
         $this->country = $country->name;
         $this->filter();
-        $this->countries = null;
+        // $this->countries = null;
     }
 
     public function updatedUniversity()
@@ -89,7 +95,7 @@ class Filter extends Component
         if($this->university){
             $this->universities = University::where('name', 'like', '%' . $this->university . '%')->limit(5)->get();
         }
-        $this->filter();
+        // $this->filter();
     }
 
     public function selectUniversity($name)
@@ -97,7 +103,7 @@ class Filter extends Component
         $university = University::where('name', $name)->first();
         $this->university = $university->name;
         $this->filter();
-        $this->universities = null;
+        // $this->universities = null;
     }
 
     public function render()
@@ -106,12 +112,11 @@ class Filter extends Component
         $studyAreas = Expertise::expertise()->isParent()->get();
         $scholarshipTypes = FundType::cases();
         $studentTypes = StudentType::cases();
-        $countries = null;
-        $universities = null;
+        
 
         return view(
             'livewire.scholarship.filter',
-            compact('levels', 'studyAreas', 'scholarshipTypes', 'studentTypes', 'countries', 'universities')
+            compact('levels', 'studyAreas', 'scholarshipTypes', 'studentTypes')
         );
     }
 }
