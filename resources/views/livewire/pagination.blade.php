@@ -1,4 +1,3 @@
-
 @php
 if (! isset($scrollTo)) {
     $scrollTo = 'body';
@@ -10,13 +9,12 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
     JS
     : '';
 @endphp
-{{-- {{ dd($paginator) }} --}}
 <div class="pagination">
     <div class="row">
         <div class="col-md-4">
             <div class="pagination-left">
                 Showing {{ max(1, 4 * ($paginator->currentPage() - 1) + 1) }} to {{ min(4 * $paginator->currentPage(), $paginator->total()) }} of
-                    {{ $paginator->total() }} experts
+                    {{ $paginator->total() }} results
             </div>
         </div>
         <div class="col-md-8">
@@ -37,17 +35,13 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                     {{-- First Page Link --}}
                     @if ($paginator->onFirstPage())
                         <li>
-                            <a href="javascript:void(0)">
-                                <img src="{{ asset('assets/frontend/img/pagination-left.png') }}">
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}">
-                            </a>
+                            <img src="{{ asset('assets/frontend/img/pagination-left.png') }}">
+                            <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}">
                         </li>
                     @else
-                        <li>
-                            <a href="" wire:click="gotoPage(1, '{{ $paginator->getPageName() }}')">
-                                <img src="{{ asset('assets/frontend/img/pagination-left.png') }}">
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}">
-                            </a>
+                        <li wire:click="previousPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="prev" aria-label="@lang('pagination.previous')">
+                            <img src="{{ asset('assets/frontend/img/pagination-left.png') }}">
+                            <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-left-hover.png') }}">
                         </li>
                     @endif
 
@@ -62,12 +56,12 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                         @if (is_array($element))
                             @foreach ($element as $page => $url)
                                 @if ($page == $paginator->currentPage())
-                                    <li wire:key="paginator-{{ $paginator->getPageName() }}-page-{{ $page }}" aria-current="page">
-                                        <a href="javascript:void(0)" class="active">{{ $page }}</a>
+                                    <li class="active" wire:key="paginator-{{ $paginator->getPageName() }}-page-{{ $page }}" aria-current="page">
+                                        {{ $page }}
                                     </li>
                                 @else
-                                    <li wire:key="paginator-{{ $paginator->getPageName() }}-page-{{ $page }}">
-                                        <a href="#" wire:click="gotoPage({{ $page }}, '{{ $paginator->getPageName() }}')">{{ $page }}</a>
+                                    <li wire:key="paginator-{{ $paginator->getPageName() }}-page-{{ $page }}" wire:click="gotoPage({{ $page }}, '{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}">
+                                        {{ $page }}
                                     </li>
                                 @endif
                             @endforeach
@@ -76,18 +70,14 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
 
                     {{-- Last Page Link --}}
                     @if ($paginator->hasMorePages())
-                    <li>
-                        <a href="javascript:void(0)" wire:click="nextPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="next" aria-label="@lang('pagination.next')" >
-                            <img src="{{ asset('assets/frontend/img/pagination-right.png') }}">
-                            <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}">
-                        </a>
+                    <li wire:click="nextPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="next" aria-label="@lang('pagination.next')">
+                        <img src="{{ asset('assets/frontend/img/pagination-right.png') }}">
+                        <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}">
                     </li>
                     @else
                         <li>
-                            <a href="javascript:void(0)" class="disable">
-                                <img src="{{ asset('assets/frontend/img/pagination-right.png') }}">
-                                <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}">
-                            </a>
+                            <img src="{{ asset('assets/frontend/img/pagination-right.png') }}">
+                            <img class="hover-icon" src="{{ asset('assets/frontend/img/pagination-right-hover.png') }}">
                         </li>
                     @endif
                 </ul>
