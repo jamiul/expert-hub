@@ -72,11 +72,11 @@
     </div>
     <div class="study-level">
         <h3>{{ __('Location') }}</h3>
-        <x-form.autocomplete :results="$countries" label="" name="country" wire:model.live.debounce.500ms="country" placeholder="Search by Country"/>
+        <x-form.autocomplete :results="$countries" label="" name="country" placeholder="Search by Country"/>
     </div>
     <div class="study-level">
         <h3>{{ __('University') }}</h3>
-        <x-form.autocomplete :results="$universities" label="" name="university" wire:model.live.debounce.500ms="university" placeholder="Search by University"/>
+        <x-form.autocomplete :results="$universities" label="" name="university" placeholder="Search by University"/>
     </div>
   </div>
 </div>
