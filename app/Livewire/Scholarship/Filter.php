@@ -32,8 +32,12 @@ class Filter extends Component
     public $applicationDeadline = '';
     #[Url()]
     public $country = '';
+    public $countries = null;
+    public $searchCountry = '';
     #[Url()]
     public $university = '';
+    public $universities = null;
+    public $searchUniversity = '';
 
     public function filter()
     {
@@ -64,14 +68,46 @@ class Filter extends Component
         $this->filter();
     }
 
+    public function updatedCountry()
+    {
+        if($this->country){
+            $this->countries = Country::where('name', 'like', '%' . $this->country . '%')->limit(5)->get();
+        }
+        $this->filter();
+    }
+
+    public function selectCountry($name)
+    {
+        $country = Country::where('name', $name)->first();
+        $this->country = $country->name;
+        $this->filter();
+        $this->countries = null;
+    }
+
+    public function updatedUniversity()
+    {
+        if($this->university){
+            $this->universities = University::where('name', 'like', '%' . $this->university . '%')->limit(5)->get();
+        }
+        $this->filter();
+    }
+
+    public function selectUniversity($name)
+    {
+        $university = University::where('name', $name)->first();
+        $this->university = $university->name;
+        $this->filter();
+        $this->universities = null;
+    }
+
     public function render()
     {
         $levels = StudyLevel::cases();
         $studyAreas = Expertise::expertise()->isParent()->get();
         $scholarshipTypes = FundType::cases();
         $studentTypes = StudentType::cases();
-        $countries = Country::all();
-        $universities = University::all();
+        $countries = null;
+        $universities = null;
 
         return view(
             'livewire.scholarship.filter',

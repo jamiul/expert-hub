@@ -4,7 +4,7 @@ namespace App\Livewire\Scholarship;
 
 use App\Models\Scholarship;
 use App\Repositories\ScholarshipRepository;
-use Carbon;
+use Illuminate\Support\Carbon;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -83,18 +83,19 @@ class Lists extends Component
             $applicationDeadline = $this->filtersArray['applicationDeadline'];
             $applicationDeadline = Carbon::parse($applicationDeadline)->format('Y-m-d');
 
-            $scholarships = $scholarships
-                ->whereDate('start_date', '<=', $applicationDeadline)
-                ->whereDate('end_date', '>=', $applicationDeadline);
+            $scholarships = $scholarships->whereDate('deadline', '>=', $applicationDeadline);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
-            $scholarships = $scholarships
-                ->select('scholarships.*')
-                ->join('scholarship_countries', 'scholarships.country_id', '=', 'scholarship_countries.id')
-                ->whereIn('scholarship_countries.country_name', $this->filtersArray['country']);
+            $scholarships = $scholarships->whereHas('university', function ($query) {
+                $query->whereHas('country', function($query){
+                    $query->where('name', $this->filtersArray['country']);
+                });
+            });
         }
         if (isset($this->filtersArray['university']) && $this->filtersArray['university']) {
-            $scholarships = $scholarships->where('university_id', $this->filtersArray['university']);
+            $scholarships = $scholarships->whereHas('university', function ($query) {
+                $query->where('name', $this->filtersArray['university']);
+            });
         }
 
         $scholarships = $scholarships->paginate($this->limit);
