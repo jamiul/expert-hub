@@ -56,8 +56,9 @@
     </div>
     <div class="study-level">
       <h3>{{ __('Application Deadline') }}</h3>
-      <input autocomplete="off" type="text" wire:change="filter" wire:model="applicationDeadline" hidden id="inputDateFilter">
-      <div class="calendar-box" id="filterApplicationDeadlineWrap" wire:ignore>
+      <input type="date" wire:change="filter" wire:model="applicationDeadline">
+      {{-- <input autocomplete="off" type="text" wire:change="filter" wire:model="applicationDeadline" hidden id="inputDateFilter"> --}}
+      {{-- <div class="calendar-box" id="filterApplicationDeadlineWrap" wire:ignore>
         <input autocomplete="off" type="text" id="dateInput" placeholder="{{ __('Search by Date') }}" value="{{ request()->get('applicationDeadline') }}">
         <div class="calendar" id="calendar">
           <div class="header">
@@ -67,52 +68,15 @@
           </div>
           <div class="days" id="daysContainer"></div>
         </div>
-      </div>
+      </div> --}}
     </div>
     <div class="study-level">
-      <h3>{{ __('Location') }}</h3>
-      <select wire:change="filter" wire:model="country" hidden id="selectLocationFilter" multiple>
-          @foreach ($countries as $country)
-              <option value="{{ $country->country_name }}">{{ $country->country_name }}</option>
-          @endforeach
-      </select>
-      <div class="location-select position-relative scroller" id="filterLocationWrap">
-          <div class="position-relative">
-              <input type="text" autocomplete="off" placeholder="{{__('Search Country') }}" id="locationInput" class="form-control locationInput" data-list="{{ json_encode($countries) }}">
-          </div>
-          <div class="tags pt-3 pb-1">
-              @foreach ($countries as $country)
-                  @if ($this->country && in_array($country->country_name, $this->country))
-                      <div class="tag d-inline-flex align-items-center rounded-pill ps-3 pe-2 py-1 me-2 mb-2 text-white fw-medium small lh-1">
-                          <span>{{ $country->country_name }}</span>
-                          <button class="btn p-0 border-0 rounded-circle" data-id="{{ $country->id }}" data-name="{{ $country->country_name }}">
-                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M4.79989 13.9904L4.00952 13.2L8.20952 9.00001L4.00952 4.80001L4.79989 4.00964L8.99989 8.20964L13.1999 4.00964L13.9903 4.80001L9.79026 9.00001L13.9903 13.2L13.1999 13.9904L8.99989 9.79038L4.79989 13.9904Z" fill="white"/>
-                              </svg>
-                          </button>
-                      </div>
-                  @endif
-              @endforeach
-          </div>
-      </div>
+        <h3>{{ __('Location') }}</h3>
+        <x-form.autocomplete :results="$countries" label="" name="country" wire:model.live.debounce.500ms="country" placeholder="Search by Country"/>
     </div>
     <div class="study-level">
-      <h3>{{ __('University') }}</h3>
-      <select wire:change="filter" wire:model="university" hidden id="selectUniversityFilter">
-        @foreach ($universities as $university)
-          <option value="{{ $university->id }}">{{ $university->name }}</option>
-        @endforeach
-      </select>
-      <div class="custom-select" id="filterUniversityWrap" data-placeholder="{{ __('Search by University') }}" wire:ignore>
-        <select name="university">
-          <option>{{__('Search by University')}}</option>
-          @foreach ($universities as $university)
-              <option value="{{ $university->id }}" {{ request()->get('university') == $university->name ? 'selected' : '' }}>
-                {{ $university->name }}
-              </option>
-          @endforeach
-      </select>
-      </div>
+        <h3>{{ __('University') }}</h3>
+        <x-form.autocomplete :results="$universities" label="" name="university" wire:model.live.debounce.500ms="university" placeholder="Search by University"/>
     </div>
   </div>
 </div>

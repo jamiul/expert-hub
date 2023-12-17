@@ -20,6 +20,11 @@ class Scholarship extends Model
         return $this->belongsTo(University::class);
     }
 
+    public function country()
+    {
+        return $this->belongsTo(University::class);
+    }
+
     public function eligibilities()
     {
         return $this->hasMany(ScholarshipEligibility::class);
