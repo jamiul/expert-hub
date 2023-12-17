@@ -13,7 +13,7 @@
                                 <li><strong> Availability </strong></li>
                                 <li><strong> Summery </strong></li>
                             </ul>
-                            <div class="progress-step-content">
+                            <div class="progress-step-content mt-40">
                                 <h6 class="mb-2">Expert by Field</h6>
                                 <x-form.select label="Expert by Field" name="title">
                                     <option value="">Architecture History</option>
@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="progress-step-content">
+                            <div class="progress-step-content mt-40">
                                 <div class="mb-40">
                                     <h6 class="mb-2">Expert skillset</h6>
                                     <p>Time zone for opening hours and new events. Your invitees will see your
@@ -179,12 +179,69 @@
                                     </select>
                                 </div>
                                 <div class="mb-40">
-                                    <h6 class="mb-2">Calendar</h6>
+                                    <h6 class="mb-2">Calendar
+                                        <div class="tooltip-wrapper bottom-left">
+                                            <i class="tooltip-icon"></i>
+                                            <div class="tooltip-content">Paragraph: Archetype lets designers like you
+                                                very quickly and easily create consistent typography styling and spacing
+                                                live, in the browser.
+                                            </div>
+                                        </div>
+                                    </h6>
+                                    <p><a class="fw-bold" href="">View calendar</a></p>
                                 </div>
-                                <div class="mb-40"><h6 class="mb-2">Opening hours</h6></div>
+                                <div class="mb-40">
+                                    <h6 class="mb-2">Opening hours
+                                        <div class="tooltip-wrapper bottom-left">
+                                            <i class="tooltip-icon"></i>
+                                            <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Eum, placeat!
+                                            </div>
+                                        </div>
+                                    </h6>
+                                    <p><a class="fw-bold" href="">Schedule Your Consultation</a></p>
+                                    <div class="available-schedule-input-wrapper mb-40">
+                                        <div>
+                                            <input type="date" class="input-field-control">
+                                        </div>
+                                        <div class="available-time-select-col">
+                                            <ul>
+                                                <li class="selected-date">01.00 AM</li>
+                                                <li>02.00 AM</li>
+                                                <li>03.00 AM</li>
+                                                <li>04.00 AM</li>
+                                                <li>05.00 AM</li>
+                                                <li>06.00 AM</li>
+                                                <li class="selected-date">07.00 AM</li>
+                                                <li>08.00 AM</li>
+                                                <li>09.00 AM</li>
+                                                <li>10.00 AM</li>
+                                                <li>11.00 AM</li>
+                                                <li>12.00 AM</li>
+                                                <li>01.00 PM</li>
+                                                <li>02.00 PM</li>
+                                                <li>03.00 PM</li>
+                                                <li>04.00 PM</li>
+                                                <li>05.00 PM</li>
+                                                <li>06.00 PM</li>
+                                                <li>07.00 PM</li>
+                                                <li>08.00 PM</li>
+                                                <li>09.00 PM</li>
+                                                <li>10.00 PM</li>
+                                                <li>11.00 PM</li>
+                                                <li>12.00 PM</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <x-form.check name="terms">
+                                        I you want to make same schedule for the next 15 days
+                                    </x-form.check>
+
+                                </div>
                             </div>
-                            <div class="progress-step-content ">
-                                <h5 class="mb-2">Hourly rate</h5>
+                            <div class="progress-step-content mt-40">
+                                <h6 class="mb-2">Hourly rate</h6>
                                 <p>Clients will see this rate on your profile and in search results once you publish
                                     your
                                     profile. You can adjust your rate every time you submit a proposal.</p>
@@ -244,50 +301,124 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="progress-step-content">
-                                <h5 class="mb-2">Consultation Summery</h5>
+                            <div class="progress-step-content mt-40">
+                                <h6 class="mb-2">Consultation Summery</h6>
 
                                 <textarea rows="5" cols="10" name="bio" id="bio"
                                           class="input-field-control h-auto"
                                           placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
 
-                                <h5 class="mb-2 mt-5">Upload Consultation Service Picture</h5>
-
-                                <div class="image-upload-preview">
-                                    <div class="">
-                                        <div class="uploaded-img-preview">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133"
-                                                 viewBox="0 0 132 133" fill="none">
-                                                <g clip-path="url(#clip0_38_2)">
-                                                    <path
-                                                        d="M81.048 80.678C92.1752 83.9312 101.948 90.7027 108.903 99.9778C115.858 109.253 119.62 120.532 119.625 132.125H12.375C12.3774 120.531 16.1382 109.251 23.0934 99.9753C30.0486 90.6997 39.8234 83.9288 50.952 80.678L66 103.25L81.048 80.678ZM92.8125 51.6875C92.8125 58.7986 89.9876 65.6185 84.9593 70.6468C79.931 75.6751 73.1111 78.5 66 78.5C58.8889 78.5 52.069 75.6751 47.0407 70.6468C42.0124 65.6185 39.1875 58.7986 39.1875 51.6875C39.1875 44.5764 42.0124 37.7565 47.0407 32.7282C52.069 27.6999 58.8889 24.875 66 24.875C73.1111 24.875 79.931 27.6999 84.9593 32.7282C89.9876 37.7565 92.8125 44.5764 92.8125 51.6875Z"
-                                                        fill="#B3C1CF"/>
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_38_2">
-                                                        <rect width="132" height="132" fill="white"
-                                                              transform="translate(0 0.5)"/>
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
+                                <h6 class="mb-2 mt-5">Upload Consultation Service Picture
+                                    <div class="tooltip-wrapper bottom-left">
+                                        <i class="tooltip-icon"></i>
+                                        <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Eum, placeat!
                                         </div>
-                                        <p class="text-sm fst-italic my-1">
-                                            Max 2MB 500px 500px
-                                        </p>
+                                    </div>
+                                </h6>
+
+                                <div class="image-upload-flat">
+
+
+                                    <label for="upload-file" class="text-center">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="40"
+                                                 viewBox="0 0 36 40" fill="none">
+                                                <path
+                                                    d="M2.68994 0.606754C1.54528 0.890999 0.692545 1.74373 0.385254 2.91912C0.285384 3.3186 0.27002 5.02407 0.27002 17.2082C0.27002 29.3923 0.285384 31.0978 0.385254 31.4972C0.715592 32.7571 1.6682 33.6329 2.93577 33.8403C3.32757 33.9095 14.0981 33.9556 14.0981 33.8941C14.0981 33.8787 14.0136 33.6483 13.9061 33.3717C13.2608 31.7354 13.0073 29.2771 13.2915 27.464C13.3606 27.0646 13.4298 26.6036 13.4605 26.4423L13.5066 26.158H9.51181H5.51702L5.36338 25.989C5.14059 25.7355 5.0945 25.5511 5.19437 25.2592C5.35569 24.7676 5.27119 24.7752 9.85752 24.7752H13.9906L14.2748 24.176C14.5975 23.4923 15.0738 22.678 15.4963 22.1095L15.7882 21.71L10.6795 21.687L5.5708 21.6639L5.36338 21.4565C5.07913 21.1722 5.07913 20.7728 5.36338 20.4885L5.5708 20.2811L11.3863 20.258L17.1941 20.2427L17.5475 19.9431C19.6217 18.2299 22.3643 17.2543 25.1069 17.2466H26.0825L26.0671 13.6129L26.0441 9.98683L22.9712 9.94842C20.0519 9.91001 19.8752 9.90232 19.4988 9.741C18.2543 9.23396 17.4783 8.38123 17.1634 7.16743C17.0328 6.67576 17.0174 6.29933 17.0174 3.55675V0.499203L10.0496 0.506886C4.77952 0.506886 2.98187 0.537613 2.68994 0.606754ZM15.2889 16.0558C15.5808 16.3401 15.5578 16.7857 15.2428 17.0469L15.0046 17.2466H10.3645C5.21741 17.2466 5.35569 17.262 5.19437 16.7626C5.08681 16.4476 5.17132 16.1634 5.43252 15.9867C5.58616 15.8791 6.12392 15.8638 10.3569 15.8638H15.1045L15.2889 16.0558Z"
+                                                    fill="#0059C9" fill-opacity="0.6"/>
+                                                <path
+                                                    d="M18.3997 3.85658C18.3997 5.07038 18.4381 6.29186 18.4842 6.56843C18.6148 7.39043 19.0757 8.0127 19.8209 8.35072C20.1896 8.51973 20.2895 8.52741 22.6096 8.55046C23.9232 8.56582 25.0064 8.55046 25.0064 8.52741C25.0064 8.46595 18.561 1.69785 18.4765 1.66713C18.4304 1.65176 18.3997 2.46608 18.3997 3.85658Z"
+                                                    fill="#0059C9" fill-opacity="0.6"/>
+                                                <path
+                                                    d="M24.2312 18.7143C19.522 19.1061 15.581 22.7168 14.7359 27.4184C14.5669 28.3633 14.5669 30.1149 14.7436 31.0751C15.1277 33.2108 16.1571 35.1852 17.7013 36.7139C21.0047 40.002 25.9597 40.7548 30.0698 38.5961C32.3821 37.3823 34.2336 35.2697 35.1017 32.8421C37.245 26.9037 33.7035 20.3891 27.573 18.9448C27.0122 18.8142 25.1838 18.5991 25.0071 18.6452C24.9841 18.6452 24.6384 18.6759 24.2312 18.7143ZM25.7984 22.955C26.4284 23.5926 30.8841 28.4017 30.9532 28.5169C31.0838 28.7474 31.0224 29.1699 30.8226 29.362C30.5922 29.6001 30.1466 29.6232 29.9084 29.4158C29.8239 29.3313 28.879 28.3403 27.8189 27.2033L25.8906 25.1291L25.8676 30.3223L25.8522 35.5078L25.6525 35.7152C25.3759 35.9918 24.9534 35.9918 24.6922 35.7152L24.5078 35.5155L24.4694 30.33L24.431 25.1367L22.3721 27.3416C20.3286 29.531 20.2595 29.5848 19.8216 29.5387C19.4298 29.5003 19.1456 28.9472 19.3376 28.5938C19.4221 28.4248 23.609 23.8768 24.5232 22.955C24.7997 22.6707 24.8996 22.6246 25.1608 22.6246C25.422 22.6246 25.5219 22.6707 25.7984 22.955Z"
+                                                    fill="#0059C9" fill-opacity="0.6"/>
+                                            </svg>
+                                        </span>
+                                        <span class="fw-bold">Clik to upload or drag & drop</span>
+                                        <span class="text-sm"> Drag & drop your images. </span>
+                                        <span class="text-sm">Image Recommendation : 200x200 & </span>
+                                        <span class="text-sm"> Format : jpg, png</span>
+                                    </label>
+                                    <input type="file" id="upload-file" class="d-none">
+
+                                </div>
+                            </div>
+                            <div class="progress-step-content mt-40">
+                                <div class="offered-service-card mb-40">
+                                    <div>
+                                        <img
+                                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/book-exprt2.jpg') }}"/>
                                     </div>
                                     <div>
-                                        <label for="upload-file"
-                                               class="btn btn-outline-primary d-inline-flex align-items-center">
-                                            <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
-                                                 viewBox="0 0 25 24"
-                                                 fill="none">
-                                                <path
-                                                    d="M11.5 16V7.85L8.9 10.45L7.5 9L12.5 4L17.5 9L16.1 10.45L13.5 7.85V16H11.5ZM6.5 20C5.95 20 5.47917 19.8042 5.0875 19.4125C4.69583 19.0208 4.5 18.55 4.5 18V15H6.5V18H18.5V15H20.5V18C20.5 18.55 20.3042 19.0208 19.9125 19.4125C19.5208 19.8042 19.05 20 18.5 20H6.5Z"
-                                                    fill="#0036E3"/>
-                                            </svg>
-                                            Upload Photo</label>
-                                        <input type="file" id="upload-file" class="d-none">
+                                        <div class="d-flex gap-3 justify-content-sm-between">
+                                            <h6 class="">Architecture history</h6>
+                                            <p class="h6 mb-0">$120/1 hrs</p>
+                                        </div>
+                                        <p>Prof. Jhon dowe offers consultation services to educational institutions,
+                                            businesses and individuals seeking expertise in curriculum development.</p>
+                                        <ul class="button-list">
+                                            <li class="button-list-item">
+                                                Accreditation Documentation
+                                            </li>
+                                            <li class="button-list-item">
+                                                Accreditation Process
+                                            </li>
+
+                                            <li class="button-list-item">
+                                                Educational Expertise
+                                            </li>
+                                            <li class="button-list-item">
+                                                Instructionḁl Design
+                                            </li>
+                                        </ul>
                                     </div>
+                                </div>
+                                <div class="mb-40">
+                                    <h6 class="mb-2">Opening hours
+                                        <div class="tooltip-wrapper bottom-left">
+                                            <i class="tooltip-icon"></i>
+                                            <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Eum, placeat!
+                                            </div>
+                                        </div>
+                                    </h6>
+                                    <p><a class="fw-bold" href="">Schedule Your Consultation</a></p>
+                                    <div class="available-schedule-input-wrapper mb-40">
+                                        <div>
+                                            <input type="date" class="input-field-control">
+                                        </div>
+                                        <div class="available-time-select-col">
+                                            <ul>
+                                                <li class="selected-date">01.00 AM</li>
+                                                <li>02.00 AM</li>
+                                                <li>03.00 AM</li>
+                                                <li>04.00 AM</li>
+                                                <li>05.00 AM</li>
+                                                <li>06.00 AM</li>
+                                                <li class="selected-date">07.00 AM</li>
+                                                <li>08.00 AM</li>
+                                                <li>09.00 AM</li>
+                                                <li>10.00 AM</li>
+                                                <li>11.00 AM</li>
+                                                <li>12.00 AM</li>
+                                                <li>01.00 PM</li>
+                                                <li>02.00 PM</li>
+                                                <li>03.00 PM</li>
+                                                <li>04.00 PM</li>
+                                                <li>05.00 PM</li>
+                                                <li>06.00 PM</li>
+                                                <li>07.00 PM</li>
+                                                <li>08.00 PM</li>
+                                                <li>09.00 PM</li>
+                                                <li>10.00 PM</li>
+                                                <li>11.00 PM</li>
+                                                <li>12.00 PM</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

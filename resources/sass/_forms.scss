@@ -78,3 +78,65 @@ select.input-field-control {
         }
     }
 }
+
+.image-upload-flat {
+
+
+    label {
+        border-radius: 4px;
+        border: 2px dashed rgba(48, 55, 68, 0.25);
+        padding: 25px;
+        display: block;
+
+        span {
+            display: block;
+        }
+    }
+}
+
+.name-fields-wrapper {
+    display: grid;
+    gap: 0 16px;
+    @media screen and (min-width: 500px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+        & > div:first-child {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}
+
+.available-schedule-input-wrapper {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 300px auto;
+
+    .available-time-select-col {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                border-radius: 4px;
+                border: 1px solid #DDD;
+                padding: 8px 4px;
+                width: 85px;
+                text-align: center;
+
+                &.selected-date {
+                    border-color: $edu-primary-color;
+                    color: $edu-primary-color;
+
+                }
+            }
+        }
+    }
+}
