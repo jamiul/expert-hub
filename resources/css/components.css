@@ -392,3 +392,35 @@
 }
 
 /*Utility End*/
+
+/*Pagination*/
+.pagination .pagination-right ul li {
+    border: 2px solid #00000017;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: #303744;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all .5s;
+    font-size: 14px;
+    justify-content: center;
+}
+.pagination .pagination-right ul li:hover {
+    background: #0036e3;
+    color: #fff;
+    cursor: pointer;
+}
+.pagination .pagination-right ul li.active {
+    background: #0036e3;
+    color: #fff !important;
+}
+.pagination .pagination-right ul li .hover-icon {
+    position: absolute;
+    opacity: 0;
+}
+.pagination .pagination-right ul li:hover .hover-icon {
+    opacity: 1;
+}

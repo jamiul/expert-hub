@@ -13,11 +13,16 @@ class ExpertiseSeeder extends Seeder
      */
     public function run(): void
     {
+        Expertise::truncate();
         $expertise = database_path('data/expertise.csv');
         $skillset = database_path('data/skillset.csv');
 
         foreach([$expertise, $skillset] as $feed){
             // Read the CSV and return as an array
+            $is_skill = 0;
+            if($feed == database_path('data/skillset.csv')){
+                $is_skill = 1;
+            }
             $data = array_map('str_getcsv', file($feed));
             $parentExperts = array_shift($data);
 
@@ -27,6 +32,7 @@ class ExpertiseSeeder extends Seeder
                 $parents[] = [
                     'name' => $parent,
                     'parent_id' => null,
+                    'is_skill' => $is_skill,
                 ];
             }
             DB::table('expertises')->insert($parents);
@@ -39,6 +45,7 @@ class ExpertiseSeeder extends Seeder
                         $childs[] = [
                             'name' => $name,
                             'parent_id' => $key + 1, // Use $key as the parent_id
+                            'is_skill' => $is_skill,
                         ];
                     }
                 }
