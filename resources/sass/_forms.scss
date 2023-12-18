@@ -1,3 +1,20 @@
+%input-field {
+    background: transparent;
+    border: solid 2px rgba(0, 0, 0, 0.1);
+    height: 55px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 15px;
+    color: #303744;
+
+    &:focus {
+        border-color: #0036E3;
+        box-shadow: 0 0 0 0.25rem rgba(0, 89, 201, .1);
+    }
+}
+
 .form-input-group {
     &.form-input-has-icon {
         &.input-icon-left {
@@ -22,25 +39,11 @@
 }
 
 .input-field-control {
-    background: transparent;
-    border: solid 2px rgba(0, 0, 0, 0.1);
-    height: 55px;
-    width: 100%;
-    border-radius: 4px;
-    padding: 8px 15px;
-    outline: none;
-    font-size: 15px;
-    color: #303744;
-
-    &:focus {
-        border-color: #0036E3;
-        box-shadow: 0 0 0 0.25rem rgba(0, 89, 201, .1);
-    }
+    @extend %input-field;
 }
 
 select.input-field-control {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M11.9997 15.1774C11.8791 15.1774 11.767 15.1581 11.6631 15.1197C11.5593 15.0812 11.4606 15.0152 11.367 14.9216L6.87276 10.4274C6.73429 10.2889 6.66346 10.1149 6.66026 9.90527C6.65704 9.69567 6.72788 9.51844 6.87276 9.37357C7.01763 9.22869 7.19326 9.15625 7.39966 9.15625C7.60606 9.15625 7.78169 9.22869 7.92656 9.37357L11.9997 13.4466L16.0728 9.37357C16.2112 9.23511 16.3852 9.16427 16.5949 9.16107C16.8045 9.15786 16.9817 9.22869 17.1266 9.37357C17.2714 9.51844 17.3439 9.69407 17.3439 9.90047C17.3439 10.1069 17.2714 10.2825 17.1266 10.4274L12.6323 14.9216C12.5388 15.0152 12.44 15.0812 12.3362 15.1197C12.2324 15.1581 12.1202 15.1774 11.9997 15.1774Z" fill="%23303744"/></svg>') no-repeat right 13px center;
-    //background-position: right 20px center;
     appearance: none;
 }
 
@@ -80,8 +83,6 @@ select.input-field-control {
 }
 
 .image-upload-flat {
-
-
     label {
         border-radius: 4px;
         border: 2px dashed rgba(48, 55, 68, 0.25);
@@ -112,8 +113,9 @@ select.input-field-control {
 .available-schedule-input-wrapper {
     display: grid;
     gap: 25px;
-    grid-template-columns: 300px auto;
-
+    @media screen and (min-width: 600px) {
+        grid-template-columns: 300px auto;
+    }
     .available-time-select-col {
         ul {
             margin: 0;
@@ -134,7 +136,6 @@ select.input-field-control {
                 &.selected-date {
                     border-color: $edu-primary-color;
                     color: $edu-primary-color;
-
                 }
             }
         }

@@ -107,6 +107,7 @@ img {
 .mb-40 {
     margin-bottom: 40px;
 }
+
 .mt-40 {
     margin-top: 40px;
 }
@@ -390,6 +391,7 @@ ul.progress-bar-nav-horizontal {
             line-height: 159.5%;
             color: $edu-headings-color;
 
+
             &:before {
                 display: flex;
                 align-items: center;
@@ -404,8 +406,9 @@ ul.progress-bar-nav-horizontal {
                 z-index: 2;
                 position: relative;
                 padding: 4px;
-                margin: 0 auto;
+                margin: 0 auto 8px;
                 color: $edu-gray-color;
+
             }
         }
 
