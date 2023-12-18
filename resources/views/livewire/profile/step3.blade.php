@@ -1,100 +1,82 @@
-<div class="timeline-right">
-    <div class="timeline-tell">
-        <h3>Tell us about your education qualifications</h3>
-        <p>Complete the information bellow</p>
-        @error('educationQualifications')
-            <div class="error-message">{{ $message }}</div>
-        @enderror
-    </div>
-    <div class="timeline-form">
-        <div class="form-group">
-            <label>Name of Qualification</label>
-            <input class="@error('qualification_name') has-error @enderror" type="text" placeholder="eg. PHD" wire:model="qualification_name">
-            @error('qualification_name')
-                <div class="error-message">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>Field of Study</label>
-            <div class="custom-selectx">
-                <select class="@error('field_of_study') has-error @enderror" wire:model="field_of_study">
-                    <option value="">Select Field of Study</option>
-                    <option value="Public health">Public health</option>
-                    <option value="Engineering">Engineering</option>
-                </select>
-                @error('field_of_study')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
+<div class="progress-step-content ">
+    <h5 class="mb-2">Work Experience History</h5>
+    <p>Add your working experience.</p>
+
+    <div class="d-grid grid-cols-sm-6 gap-3">
+        <div class="card">
+            <div class="card-header bg-white">
+                <p class="fw-medium mb-0"> Director of Curriculum Development</p>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div><p class="text-lg">ABB Company</p></div>
+                    <div><p class="text-sm fw-medium">2015 - 2020</p></div>
+                </div>
+                <p class="fst-italic"> Public Health Institute of Sydney, Sydney, Australia</p>
+                <p>As a Director of Curriculum Development at the Public Health Institute of
+                    Sydney</p>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                <button class="icon-btn icon-btn-sm p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
+                            fill="#191D24" fill-opacity="0.7"/>
+                    </svg>
+                </button>
+                <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                        data-bs-target="#deleteWorkExperience">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
+                            fill="#191D24" fill-opacity="0.7"/>
+                    </svg>
+                </button>
             </div>
         </div>
-        <div class="form-group">
-            <label>University</label>
-            <div class="custom-selectx">
-                <select class="@error('university') has-error @enderror" wire:model="university">
-                    <option value="">Select University</option>
-                    <option value="Lorem University">Lorem University</option>
-                    <option value="Ipsum University">Ipsum University</option>
-                </select>
-                @error('university')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
+        <div class="card">
+            <div class="card-header bg-white">
+                <p class="fw-medium mb-0"> Director of Curriculum Development</p>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div><p class="text-lg">ABB Company</p></div>
+                    <div><p class="text-sm fw-medium">2015 - 2020</p></div>
+                </div>
+                <p class="fst-italic"> Public Health Institute of Sydney, Sydney, Australia</p>
+                <p>As a Director of Curriculum Development at the Public Health Institute of
+                    Sydney</p>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-center gap-3">
+                <button class="icon-btn icon-btn-sm p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M2.15425 16H3.39077L12.6504 6.74036L11.4139 5.50381L2.15425 14.7635V16ZM15.858 5.65576L12.4831 2.31158L13.787 1.00776C14.0806 0.714174 14.4376 0.567383 14.8581 0.567383C15.2786 0.567383 15.6356 0.714174 15.9292 1.00776L17.1465 2.22503C17.4401 2.51862 17.592 2.87053 17.6023 3.28078C17.6125 3.69103 17.4709 4.04295 17.1773 4.33653L15.858 5.65576ZM14.7735 6.75573L4.02922 17.5H0.654297V14.125L11.3985 3.38078L14.7735 6.75573ZM12.0274 6.11728L11.4139 5.50381L12.6504 6.74036L12.0274 6.11728Z"
+                            fill="#191D24" fill-opacity="0.7"/>
+                    </svg>
+                </button>
+                <button class="icon-btn icon-btn-sm p-0" data-bs-toggle="modal"
+                        data-bs-target="#deleteWorkExperience">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M7.3077 20.4998C6.80898 20.4998 6.38302 20.3232 6.02982 19.97C5.67661 19.6168 5.5 19.1908 5.5 18.6921V5.99981H4.5V4.49983H8.99997V3.61523H15V4.49983H19.5V5.99981H18.5V18.6921C18.5 19.1972 18.325 19.6248 17.975 19.9748C17.625 20.3248 17.1974 20.4998 16.6922 20.4998H7.3077ZM17 5.99981H6.99997V18.6921C6.99997 18.7818 7.02883 18.8556 7.08652 18.9133C7.14423 18.971 7.21795 18.9998 7.3077 18.9998H16.6922C16.7692 18.9998 16.8397 18.9678 16.9038 18.9037C16.9679 18.8395 17 18.769 17 18.6921V5.99981ZM9.40385 16.9998H10.9038V7.99981H9.40385V16.9998ZM13.0961 16.9998H14.5961V7.99981H13.0961V16.9998Z"
+                            fill="#191D24" fill-opacity="0.7"/>
+                    </svg>
+                </button>
             </div>
         </div>
-        <div class="form-group">
-            <label>Start Year</label>
-            <div class="custom-selectx">
-                <select class="@error('start_year') has-error @enderror" wire:model="start_year">
-                    <option value="">Select start year</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                </select>
-                @error('start_year')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-        <div class="form-group">
-            <label>End Year</label>
-            <div class="custom-selectx">
-                <select class="@error('end_year') has-error @enderror" wire:model="end_year">
-                    <option value="">Select end year</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                </select>
-                @error('end_year')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
+
     </div>
-    <div class="timeline-method">
-        <button class="button button-lg button-outline-primary" wire:click="addEducationQualification"><img class="pe-2" src="{{ asset('assets/frontend/img/pay-vector.png') }}">Add Education Qualification</button>
-    </div>
-    <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name of Qualification</th>
-                    <th>Field of Study</th>
-                    <th>University</th>
-                    <th>Start year</th>
-                    <th>End Year</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($educationQualifications as $educationQualification)
-                    <tr>
-                        <td>{{ $educationQualification->qualification_name }}</td>
-                        <td>{{ $educationQualification->field_of_study }}</td>
-                        <td>{{ $educationQualification->university }}</td>
-                        <td>{{ $educationQualification->start_year }}</td>
-                        <td>{{ $educationQualification->end_year }}</td>
-                        <td><img wire:click="removeEducationQualification({{ $educationQualification->id }})" class="pb-1 btn" src="{{ asset('assets/frontend/img/close-i.png') }}"></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    @include('livewire.profile.buttons')
+    <button class="btn btn-link px-0 d-inline-flex align-items-center my-4" data-bs-toggle="modal"
+            data-bs-target="#addWorkExperience">
+        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
+            <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" fill="#0036E3"/>
+        </svg>
+        <span>Add Work Experience</span>
+    </button>
 </div>

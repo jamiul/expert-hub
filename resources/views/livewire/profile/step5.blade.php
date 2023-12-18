@@ -1,23 +1,58 @@
-<div class="timeline-right">
-    <div class="timeline-biography">
-        <h3>Biography</h3>
-        <p>Please provide a brief biography, limited to 300 words, which will be used in your public profile. Ensure that it conveys meaningful information you would like the client to know about you before engaging in your project</p>
+<div class="progress-step-content ">
+    <h5 class="mb-2">Hourly rate</h5>
+    <p>Clients will see this rate on your profile and in search results once you publish your
+        profile. You can adjust your rate every time you submit a proposal.</p>
+
+
+    <div class="service-fee-input-area">
+        <div class="service-fee-input-row">
+            <div class="service-fee-description">
+                <p class="fw-medium mb-1">Hourly Rate</p>
+                <p class="mb-1">Total amount the client will see</p>
+            </div>
+            <div class="service-fee-input">
+                <div class="d-flex gap-4 align-items-center">
+                    <div>
+                        /hr
+                    </div>
+                    <div>
+                        <input type="text" class="input-field-control" placeholder="$0.00">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-fee-input-row">
+            <div class="service-fee-description">
+                <p class="fw-medium mb-1">Platform service fee</p>
+                <p class="mb-1">The Eduexhub Service Fee Is 10% when you begin a contract with a new
+                    client. Once you will over $500 with your client, the fee will be 5%.</p>
+            </div>
+            <div class="service-fee-input">
+                <div class="d-flex gap-4 align-items-center">
+                    <div>
+                        /hr
+                    </div>
+                    <div>
+                        <input type="text" class="input-field-control" placeholder="$0.00">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-fee-input-row">
+            <div class="service-fee-description">
+                <p class="fw-medium mb-1">Hourly Rate</p>
+                <p class="mb-1">Total amount the client will see</p>
+            </div>
+            <div class="service-fee-input">
+                <div class="d-flex gap-4 align-items-center">
+                    <div>
+                        /hr
+                    </div>
+                    <div>
+                        <input type="text" class="input-field-control" placeholder="$0.00">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="timeline-form2">
-        <div class="form-group">
-            <textarea class="@error('biography') has-error @enderror" type="text" wire:model="biography" placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
-            @error('biography')
-                <div class="error-message">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>Research Profile (Optional)</label>
-            <input type="text" placeholder="eg. https://example.com/john-doe" wire:model="research_profile_1">
-        </div>
-        <div class="form-group">
-            <label>Research Profile (Optional)</label>
-            <input type="text" placeholder="eg. https://example.com/john-doe" wire:model="research_profile_2">
-        </div>
-    </div>
-    @include('livewire.profile.buttons')
 </div>

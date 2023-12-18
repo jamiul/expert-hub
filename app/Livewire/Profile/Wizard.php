@@ -56,19 +56,19 @@ class Wizard extends Component
 
     public function mount()
     {
-        $this->selectedLanguages = $this->profile()->languages()->pluck('language_id')->toArray();
-        $this->selectedExpertises = $this->profile()->expertises()->pluck('expertise_id')->toArray();
-        $this->availableExpertises = Expertise::whereNotIn('id', array_keys($this->selectedExpertises))->pluck('name', 'id')->toArray();
-        $this->educationQualifications = $this->profile()->educationQualifications;
-        $this->consultationServices = $this->profile()->consultationServices;
-        if ($this->consultationServices->count() > 0) {
-            $this->showExistingConsultationService = true;
-            $this->noConsultationService = false;
-            $this->consultationService = false;
-        }
-        $this->biography = $this->profile()->biography;
-        $this->research_profile_1 = $this->profile()->research_profiles[0] ?? '';
-        $this->research_profile_2 = $this->profile()->research_profiles[1] ?? '';
+        // $this->selectedLanguages = $this->profile()->languages()->pluck('language_id')->toArray();
+        // $this->selectedExpertises = $this->profile()->expertises()->pluck('expertise_id')->toArray();
+        // $this->availableExpertises = Expertise::whereNotIn('id', array_keys($this->selectedExpertises))->pluck('name', 'id')->toArray();
+        // $this->educationQualifications = $this->profile()->educationQualifications;
+        // $this->consultationServices = $this->profile()->consultationServices;
+        // if ($this->consultationServices->count() > 0) {
+        //     $this->showExistingConsultationService = true;
+        //     $this->noConsultationService = false;
+        //     $this->consultationService = false;
+        // }
+        // $this->biography = $this->profile()->biography;
+        // $this->research_profile_1 = $this->profile()->research_profiles[0] ?? '';
+        // $this->research_profile_2 = $this->profile()->research_profiles[1] ?? '';
     }
 
     public function render()
@@ -86,26 +86,30 @@ class Wizard extends Component
 
     public function next()
     {
-        if ($this->currentStep == 1) {
-            $this->validate([
-                'selectedLanguages' => ['required', 'array']
-            ]);
+        // if ($this->currentStep == 1) {
+        //     $this->validate([
+        //         'selectedLanguages' => ['required', 'array']
+        //     ]);
+        // }
+        // if ($this->currentStep == 2) {
+        //     $this->validate([
+        //         'selectedExpertises' => ['required', 'array']
+        //     ]);
+        // }
+        // if ($this->currentStep == 3) {
+        //     $this->validate([
+        //         'educationQualifications' => ['required', 'array']
+        //     ]);
+        // }
+        // if ($this->currentStep == 5) {
+        //     $this->saveBiography();
+        // }
+
+        if ($this->currentStep < 6) {
+            $this->currentStep += 1;
         }
-        if ($this->currentStep == 2) {
-            $this->validate([
-                'selectedExpertises' => ['required', 'array']
-            ]);
-        }
-        if ($this->currentStep == 3) {
-            $this->validate([
-                'educationQualifications' => ['required', 'array']
-            ]);
-        }
-        if ($this->currentStep == 5) {
-            $this->saveBiography();
-        }
-        $this->currentStep += 1;
-        $this->setCurrentStepClass();
+        
+        // $this->setCurrentStepClass();
     }
 
     public function messages()
