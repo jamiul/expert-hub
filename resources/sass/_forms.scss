@@ -116,6 +116,7 @@ select.input-field-control {
     @media screen and (min-width: 600px) {
         grid-template-columns: 300px auto;
     }
+
     .available-time-select-col {
         ul {
             margin: 0;
@@ -137,6 +138,39 @@ select.input-field-control {
                     border-color: $edu-primary-color;
                     color: $edu-primary-color;
                 }
+            }
+        }
+    }
+}
+
+.autocomplete-field-wrapper {
+    position: relative;
+
+    .autocomplete-field-suggestion {
+        top: 100%;
+        position: absolute;
+        border-radius: 4px;
+        background: #FFF;
+        box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                padding: 7px 16px;
+                cursor: pointer;
+
+                &:hover {
+                    background: $edu-lighter-brand-bg;
+                    color: $edu-primary-color;
+
+                }
+
             }
         }
     }
