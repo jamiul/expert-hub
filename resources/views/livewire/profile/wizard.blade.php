@@ -46,4 +46,210 @@
                 </div>
             </div>
         </div>
+        <!-- Modal : Add Education-->
+    <div class="modal fade" id="addEducation" tabindex="-1" aria-labelledby="addEducationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Education</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <form action="">
+                        <x-form.input type="text" readonly label="Name of Institution" name="type"
+                                      placeholder="Type institution name" value=""/>
+                        <x-form.input type="text" readonly label="Degree" name="type" placeholder="Ex: Bachelor"
+                                      value=""/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <x-form.select label="Start Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                            <div class="col-md-6">
+                                <x-form.select label="End Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                        </div>
+                        <x-form.check name="terms">
+                            I currently study here
+                        </x-form.check>
+                    </form>
+                </div>
+                <div class="modal-footer px-0 pb-0 pt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Delete Education-->
+    <div class="modal fade" id="deleteEducation" tabindex="-1" aria-labelledby="deleteEducationLabel"
+         aria-hidden="true">
+        <div class="modal-dialog flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Education</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
+                </div>
+                <div class="modal-footer px-0 pb-0 pt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Add Work Experience-->
+    <div class="modal fade" id="addWorkExperience" tabindex="-1" aria-labelledby="addWorkExperienceLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Work Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <form action="">
+                        <x-form.input type="text" readonly label="Job Title" name="type"
+                                      placeholder="Type Here" value=""/>
+                        <x-form.input type="text" readonly label="Institute" name="type" placeholder="Type"
+                                      value=""/>
+                        <x-form.input type="text" readonly label="Address" name="type" placeholder="Type"
+                                      value=""/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <x-form.select label="Start Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                            <div class="col-md-6">
+                                <x-form.select label="End Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                        </div>
+                        <x-form.textarea label="Description" name="bio" placeholder="Type"/>
+                        <x-form.check name="terms">
+                            I currently work here
+                        </x-form.check>
+                    </form>
+                </div>
+                <div class="modal-footer px-0 pb-0 pt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Delete Work Experience-->
+    <div class="modal fade" id="deleteWorkExperience" tabindex="-1" aria-labelledby="deleteWorkExperienceLabel"
+         aria-hidden="true">
+        <div class="modal-dialog flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Work Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
+                </div>
+                <div class="modal-footer px-0 pb-0 pt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Add Language-->
+    <div class="modal fade" id="addLanguage" tabindex="-1" aria-labelledby="addLanguageLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Language</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <form action="">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <x-form.select label="Language" name="title">
+                                    <option value="">Select</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                            <div class="col-md-6">
+                                <x-form.select label="Proficiency" name="title">
+                                    <option value="">Select</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer px-0 pb-0 pt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Delete Language-->
+    <div class="modal fade" id="deleteLanguage" tabindex="-1" aria-labelledby="deleteLanguageLabel"
+         aria-hidden="true">
+        <div class="modal-dialog flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Language</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
+                </div>
+                <div class="modal-footer px-0 pb-0 pt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
     </section>
