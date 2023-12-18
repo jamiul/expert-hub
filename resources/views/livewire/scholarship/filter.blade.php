@@ -56,7 +56,7 @@
     </div>
     <div class="study-level">
       <h3>{{ __('Application Deadline') }}</h3>
-      <input type="date" wire:change="filter" wire:model="applicationDeadline">
+      <input type="date" class="input-field-control" wire:change="filter" wire:model="applicationDeadline">
       {{-- <input autocomplete="off" type="text" wire:change="filter" wire:model="applicationDeadline" hidden id="inputDateFilter"> --}}
       {{-- <div class="calendar-box" id="filterApplicationDeadlineWrap" wire:ignore>
         <input autocomplete="off" type="text" id="dateInput" placeholder="{{ __('Search by Date') }}" value="{{ request()->get('applicationDeadline') }}">
