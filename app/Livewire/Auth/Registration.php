@@ -3,23 +3,22 @@
 namespace App\Livewire\Auth;
 
 use App\Enums\ProfileStatus;
+use App\Enums\ProfileType;
 use App\Models\Country;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
 class Registration extends Component
 {
-    protected array $availableTypes = ['Expert', 'Client'];
-
     public int $currentStep = 1;
 
     public array $titles;
-
     public array $countries;
 
     public string $type;
@@ -27,7 +26,9 @@ class Registration extends Component
     public string $first_name;
     public string $last_name;
     public string $email;
+    public string $phone;
     public string $password;
+    public string $password_confirmation;
     public string $country_id;
     public ?bool $send_tips = false;
     public ?bool $terms_agreed;
@@ -41,11 +42,13 @@ class Registration extends Component
     public function rules()
     {
         return [
+            'type' => ['required'],
             'title' => ['required'],
             'first_name' => ['required'],
             'last_name' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', Password::min(8)],
+            'phone' => ['nullable'],
+            'password' => ['required','confirmed', Password::min(8)],
             'country_id' => ['required'],
             'send_tips' => ['nullable'],
             'terms_agreed' => ['required'],
@@ -66,10 +69,11 @@ class Registration extends Component
             'title' => $this->title,
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
-            'username' => $this->first_name . '-' . $this->last_name,
+            'username' => $this->username(),
             'email' => $this->email,
+            'phone' => $this->phone,
             'password' => Hash::make($this->password),
-            'type' => $this->type,
+            'active_profile' => $this->type,
             'country_id' => $this->country_id,
             'send_tips' => $this->send_tips,
             'terms_agreed' => $this->terms_agreed,
@@ -77,6 +81,7 @@ class Registration extends Component
         event(new Registered($user));
         Profile::create([
             'user_id' => $user->id,
+            'type' => $this->type,
             'status' => ProfileStatus::Draft,
         ]);
         Auth::login($user);
@@ -89,10 +94,19 @@ class Registration extends Component
         return view('livewire.auth.registration');
     }
 
+    public function username()
+    {
+        return $this->first_name . '-' . $this->last_name;
+    }
+
     public function typeSelected()
     {
+        $availableTypes = [
+            ProfileType::Expert->value,
+            ProfileType::Client->value,
+        ];
         $this->validate([
-            'type' => ['required', \Illuminate\Validation\Rule::in($this->availableTypes)]
+            'type' => ['required', Rule::in($availableTypes)]
         ]);
         $this->currentStep = 2;
     }

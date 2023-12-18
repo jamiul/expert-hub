@@ -11,7 +11,7 @@ use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
-use App\Http\Controllers\Frontend\UserProfileController;
+use App\Http\Controllers\Frontend\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,17 +44,9 @@ Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middl
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
-Route::get('/profile', [UserProfileController::class, 'index'])->middleware(['auth'])->name('profile.index');
-Route::get('/profile/create', [UserProfileController::class, 'create'])->middleware(['auth'])->name('profile.create');
+Route::get('/profile', [ProfileController::class, 'index'])->middleware(['auth'])->name('profile.index');
+Route::get('/profile/create', [ProfileController::class, 'create'])->middleware(['auth'])->name('profile.create');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
-
-//scholarship list
-Route::get('/scholarship-search', [SearchScholarshipController::class, 'index'])->name('scholarship-search');
-Route::get('/skills/{skill}/{type}', [SearchScholarshipController::class, 'searchBySkill'])->name('scholarship-search.skill');
-Route::get('/scholarship-search?category={category_slug}&type=service', [SearchScholarshipController::class, 'index'])->name('services.category');
-
-//trainings
-Route::get('training/{id}', [TrainingDetailsController::class, 'trainingDetails'])->name('training.details');
