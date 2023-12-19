@@ -4,7 +4,8 @@
     'id' => $name,
     'disabled' => false,
     'readonly' => false,
-    'results' => []
+    'results' => [],
+    'selectedCountries' => [],
 ])
 <div class="autocomplete-field-wrapper" x-data="{ open: false }">
     <div class="form-input-group form-input-has-icon">
@@ -27,6 +28,15 @@
                 <li wire:key="{{ $result->id }}" x-on:click="open = false; $wire.select{{ ucfirst($name) }}('{{ $result->name }}')"> {{ $result->name }} </li>
             @empty
                 <li>No results found</li>
+            @endforelse
+        </ul>
+    </div>
+    <div class="autocomplete-field-results">
+        <ul>
+            @forelse ($selectedCountries as $country)
+                <li>{{$country}}</li>
+            @empty
+                
             @endforelse
         </ul>
     </div>

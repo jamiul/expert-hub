@@ -1,6 +1,6 @@
 <div class="progress-step-content  ">
     <h5 class="mb-2">Expert by Field</h5>
-    <x-form.select label="Expert by Field" name="title">
+    <x-form.select label="" name="title">
         <option value="">Architecture History</option>
         <option value="Mr">Architecture</option>
         <option value="Mrs">- Architecture History</option>
