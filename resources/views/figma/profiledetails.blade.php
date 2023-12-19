@@ -22,8 +22,8 @@
                 <div class="col-xl-6 col-lg-8 col-md-8 ps-lg-5 mt-5 mt-lg-0">
 
                     <div class="progress-step-content  ">
-                        <h5 class="mb-2">Expert by Field</h5>
-                        <x-form.select label="Expert by Field" name="title">
+                        <h6 class="mb-2">Expert by Field</h6>
+                        <x-form.select label="" name="title">
                             <option value="">Architecture History</option>
                             <option value="Mr">Architecture</option>
                             <option value="Mrs">- Architecture History</option>
@@ -32,7 +32,8 @@
                             <option value="Prof">-Art</option>
                             <option value="Prof">-Animation</option>
                         </x-form.select>
-                        <h5 class="mb-2">Expert skillset</h5>
+
+                        <h6 class="mb-2">Expert skillset</h6>
                         <div class="accordion-items-select-wrapper skillset-selection-area">
                             <div class="card card-24">
                                 <div class="card-header bg-white">

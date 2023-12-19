@@ -1,3 +1,4 @@
+
 $edu-lighter-brand-bg: rgba(0, 54, 227, 0.05);
 $edu-lighter-brand-border-color: rgba(0, 89, 201, 0.14);
 
@@ -10,3 +11,7 @@ $edu-secondary-dark-color: #275846;
 $edu-headings-color: #303744;
 $edu-border-color: rgba(0, 0, 0, 0.10);
 $edu-gray-color: #A1A0A5;
+// change the Bootstrap Variables
+$theme-colors: (
+    "primary": $edu-primary-color,
+);
