@@ -17,6 +17,7 @@
                 let choices = new Choices(element, {
                     removeItemButton:true,
                     placeholder:true,
+                    search:false,
                     placeholderValue: '{{ $placeholder }}',
                     items: $wire.{{ $name }},
                 })
