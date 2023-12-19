@@ -34,9 +34,8 @@
     <div class="autocomplete-field-results">
         <ul>
             @forelse ($selectedCountries as $country)
-                <li>{{$country}}</li>
+                <li>{{$country}} <i class="icon-item-remove"></i></li>
             @empty
-
             @endforelse
         </ul>
     </div>
