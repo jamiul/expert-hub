@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('about_aparts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('about_us_id');
-            $table->string('title')->nullable();
-            $table->string('sub_title')->nullable();
             $table->string('set_title')->nullable();
             $table->longText('description')->nullable();
             $table->string('icon')->nullable();

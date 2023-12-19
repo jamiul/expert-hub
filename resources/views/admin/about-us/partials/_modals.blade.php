@@ -1800,29 +1800,6 @@
         </div>
     </div>
     <!--======================================= Search academic Modal End here =================================-->
-    <!--======================================= Search academic Modal start here =================================-->
-    <div class="modal fade" id="searchacademicWhatModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered add-step-modal">
-            <div class="modal-content ">
-                <div class="modal-header border-0"> <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button> </div>
-                <div class="modal-body add-step-content">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add details</h1>
-                    <form>
-                        <div class="my-2"> <input type="text" class="form-control academic-title"
-                                id="recipient-name" placeholder="title"> </div>
-                        <div class="mb-3">
-                            <textarea class="form-control academic-text" id="message-text"> Description </textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer border-0 add-step-footer"> <button type="button"
-                        class="btn btn-primary btn-search-academy">Add</button> </div>
-            </div>
-        </div>
-    </div>
-    <!--======================================= Search academic Modal End here =================================-->
     <!--======================================= Add this category start Here =================================-->
     <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

@@ -15,8 +15,6 @@ class AboutApartSeeder extends Seeder
     {
         DB::table('about_aparts')->insert([
             'about_us_id' => 1,
-            'title' => 'EDUEXHUB SETS',
-            'sub_title' => 'What sets EduExHub Apart?',
             'set_title' => 'A Wealth of Expertise',
             'description' => 'EduExHub takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.',
             'icon' => 'frontend/img/tab-icon.png',

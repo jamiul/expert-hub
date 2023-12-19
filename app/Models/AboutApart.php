@@ -10,4 +10,10 @@ class AboutApart extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('icon')
+            ->singleFile();
+    }
 }

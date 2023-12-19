@@ -4,13 +4,17 @@ namespace App\Livewire\Admin\About;
 
 use App\Models\AboutUs;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Mission extends Component
 {
+    use WithFileUploads;
+
     public $missionAbout;
     public $mission_title;
     public $mission_subtitle;
     public $mission_description;
+    public $mission_image;
 
     public function rules()
     {
@@ -18,7 +22,7 @@ class Mission extends Component
             'mission_title' => ['required','string'],
             'mission_subtitle' => ['required','string'],
             'mission_description' => ['required','string'],
-            // 'mission_image' => ['required','image'],
+            'mission_image' => ['required','image'],
         ];
     }
 
@@ -43,9 +47,9 @@ class Mission extends Component
             'mission_description' => $data['mission_description'],
         ]);
 
-        // $this->missionAbout->addMedia($this->mission_image->getRealPath())
-        //     ->usingName($this->mission_image->getClientOriginalName())
-        //     ->toMediaCollection('mission_image');
+        $this->missionAbout->addMedia($this->mission_image->getRealPath())
+            ->usingName($this->mission_image->getClientOriginalName())
+            ->toMediaCollection('mission_image');
 
         return redirect()->to('/admin/about-us');
     }

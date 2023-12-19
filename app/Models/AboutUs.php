@@ -25,12 +25,31 @@ class AboutUs extends Model implements HasMedia
 
         $this->addMediaCollection('mission_image')
             ->singleFile();
+
+        $this->addMediaCollection('story_image')
+            ->singleFile();
     }
 
     public function headerImage()
     {
         $mediaItems = $this->getMedia('header_image');
-        if(count($mediaItems) > 0) {
+        if (count($mediaItems) > 0) {
+            return $mediaItems[0]->getUrl();
+        }
+    }
+
+    public function storyImage()
+    {
+        $mediaItems = $this->getMedia('story_image');
+        if (count($mediaItems) > 0) {
+            return $mediaItems[0]->getUrl();
+        }
+    }
+
+    public function missionImage()
+    {
+        $mediaItems = $this->getMedia('mission_image');
+        if (count($mediaItems) > 0) {
             return $mediaItems[0]->getUrl();
         }
     }
