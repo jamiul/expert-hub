@@ -471,3 +471,17 @@ ul.progress-bar-nav-horizontal {
         }
     }
 }
+
+.custom-table {
+    display: table;
+    width: 100%;
+
+    & > .tr {
+        display: table-row;
+
+        & > .td {
+            display: table-cell;
+            padding: 4px;
+        }
+    }
+}
