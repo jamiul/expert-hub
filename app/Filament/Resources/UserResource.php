@@ -23,7 +23,7 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('type')
+                Forms\Components\TextInput::make('active_profile')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('title')
@@ -43,10 +43,6 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('email_verified_at'),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->maxLength(255),
                 Forms\Components\TextInput::make('country_id')
                     ->required()
                     ->numeric(),
@@ -63,7 +59,7 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type')
+                Tables\Columns\TextColumn::make('active_profile')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

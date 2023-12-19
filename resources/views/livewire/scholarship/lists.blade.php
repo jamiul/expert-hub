@@ -1,6 +1,6 @@
 <div class="col-md-8">
     
-    @foreach ($scholarships as $scholarship)
+    @forelse ($scholarships as $scholarship)
         <div class="right-sidebar">
             <input type="hidden" class="pageDetailUrl" value="{{ route('find.experts') }}"/>
 
@@ -66,7 +66,9 @@
                 </div>
             </div>
         </div>
-    @endforeach
+    @empty
+        No records Found
+    @endforelse
 
     {{ $scholarships->links() }}
 

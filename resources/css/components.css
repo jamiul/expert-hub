@@ -1,6 +1,5 @@
 .form-input-group {
-    margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -409,10 +408,19 @@
     font-size: 14px;
     justify-content: center;
 }
+.pagination .pagination-right ul li svg{
+    fill: #191d24;
+}
+.pagination .pagination-right ul li:hover svg{
+    fill: #fff;
+}
 .pagination .pagination-right ul li:hover {
     background: #0036e3;
     color: #fff;
     cursor: pointer;
+}
+.pagination .pagination-right ul li.disabled:hover{
+    background:inherit;
 }
 .pagination .pagination-right ul li.active {
     background: #0036e3;
@@ -425,3 +433,4 @@
 .pagination .pagination-right ul li:hover .hover-icon {
     opacity: 1;
 }
+/*Pagination end*/
