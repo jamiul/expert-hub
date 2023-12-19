@@ -16,7 +16,7 @@
                         /hr
                     </div>
                     <div>
-                        <input type="text" class="input-field-control" placeholder="$0.00">
+                        <input type="text" class="input-field-control input-field-control-lg" placeholder="$0.00">
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         /hr
                     </div>
                     <div>
-                        <input type="text" class="input-field-control" placeholder="$0.00">
+                        <input type="text" readonly class="input-field-control input-field-control-lg" placeholder="$0.00">
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         /hr
                     </div>
                     <div>
-                        <input type="text" class="input-field-control" placeholder="$0.00">
+                        <input type="text" readonly class="input-field-control input-field-control-lg" placeholder="$0.00">
                     </div>
                 </div>
             </div>

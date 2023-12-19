@@ -1,35 +1,3 @@
-.form-input-group {
-    margin-bottom: 12px;
-    position: relative;
-}
-
-.form-input-group .form-input-field {
-    background: transparent;
-    border: solid 2px rgba(0, 0, 0, 0.1);
-    height: 55px;
-    width: 100%;
-    border-radius: 4px !important;
-    padding: 0 15px;
-    outline: none;
-    font-size: 15px;
-    color: #303744;
-}
-
-.form-input-group .form-input-field:focus {
-    border-color: #0036E3;
-    box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .1);
-}
-
-.form-input-group .form-input-label {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 6px 0;
-}
-
-.form-input-group .form-input-field.form-textarea-field {
-    height: inherit;
-    padding-top: 20px;
-}
 
 .form-input-group select {
     appearance: none;
@@ -143,33 +111,6 @@
 
 .form-radio-group {
     margin-bottom: 10px;
-}
-
-.form-check-group {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.form-check-group .form-check-field {
-    margin-top: 0;
-    margin-right: 4px;
-    border: 2px solid rgba(0, 0, 0, 0.31);
-    width: 20px;
-    height: 20px;
-}
-
-.form-check-group .form-check-field:checked {
-    background-color: #0036E3;
-    border: 2px solid #0036E3;
-}
-
-.form-check-group .form-check-label {
-    font-size: 15px;
-    flex: 1;
-
 }
 
 .form-input-group.form-input-has-icon .form-input-icon {

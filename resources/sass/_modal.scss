@@ -13,6 +13,16 @@
         .modal-footer {
             .btn {
                 padding: 0.5rem 2rem;
+
+                &.btn-outline-light {
+                    border: 2px solid $edu-border-color;
+                }
+
+                &.btn-danger {
+                    border-color: $edu-red-color;
+                    background-color: $edu-red-color;
+                    color: white;
+                }
             }
         }
     }

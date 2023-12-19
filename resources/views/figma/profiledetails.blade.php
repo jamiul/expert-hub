@@ -41,7 +41,7 @@
                                 <div class="card-header bg-white">
                                     <div class="form-input-group form-input-has-icon input-icon-left my-0">
                                         <input name="skill" id="skill" class="form-input-field"
-                                               placeholder="Search by categories....">
+                                               placeholder="Search skillsets...">
                                         <span class="form-input-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none">

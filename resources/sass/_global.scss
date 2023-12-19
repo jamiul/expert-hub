@@ -90,7 +90,10 @@ img {
     font-weight: 400;
     line-height: 160%;
 }
-
+.btn-link{
+    color: $edu-primary-color !important;
+    text-decoration: none;
+}
 .text-primary-dark {
     color: $edu-primary-dark-color !important;
 }
@@ -106,6 +109,12 @@ img {
 
 .mb-40 {
     margin-bottom: 40px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mb-20 {
+    margin-bottom: 20px;
 }
 
 .mt-40 {
@@ -238,6 +247,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    list-style: none;
 
     & > .button-list-item {
         list-style: none;

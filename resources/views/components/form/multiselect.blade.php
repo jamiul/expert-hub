@@ -28,7 +28,7 @@
         }
     }"
 >
-    <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>
+    @if($label) <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>@endif
     <div class="icon-field-wrapper">
         <select class="form-input-field" x-ref="{{ $name }}" name="{{ $name }}[]"
                 wire:model="{{ $name }}" {{ $attributes }}>
