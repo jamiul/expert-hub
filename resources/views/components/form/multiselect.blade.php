@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 @props([
-    'name',
-    'label',
-    'id' => $name,
-    'required' => false,
-    'placeholder' => 'Type here to select',
+'name',
+'label',
+'id' => $name,
+'required' => false,
+'placeholder' => 'Type here to select',
 ])
 
 <div
@@ -29,7 +29,10 @@
     }"
 >
     <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>
-    <select x-ref="{{ $name }}" name="{{ $name }}[]" wire:model="{{ $name }}" {{ $attributes }}>
-        {{ $slot }}
-    </select>
+    <div class="icon-field-wrapper">
+        <select class="form-input-field" x-ref="{{ $name }}" name="{{ $name }}[]"
+                wire:model="{{ $name }}" {{ $attributes }}>
+            {{ $slot }}
+        </select>
+    </div>
 </div>

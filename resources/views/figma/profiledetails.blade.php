@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.app')
 
 @section('content')
     {{--    @vite('resources/default/css/consultantreg.css')--}}
@@ -21,17 +21,19 @@
                 </div>
                 <div class="col-xl-6 col-lg-8 col-md-8 ps-lg-5 mt-5 mt-lg-0">
 
-                    <div class="progress-step-content  ">
+                    <div class="progress-step-content">
                         <h6 class="mb-2">Expert by Field</h6>
-                        <x-form.select label="" name="title">
-                            <option value="">Architecture History</option>
-                            <option value="Mr">Architecture</option>
-                            <option value="Mrs">- Architecture History</option>
-                            <option value="Dr">- Architectural Restoration</option>
-                            <option value="Prof">Construction</option>
-                            <option value="Prof">-Art</option>
-                            <option value="Prof">-Animation</option>
-                        </x-form.select>
+                        <x-form.multiselect name="title" label="">
+                            <option value="">Select Title</option>
+                            <optgroup label="General">
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                            </optgroup>
+                            <optgroup label="Professional">
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                            </optgroup>
+                        </x-form.multiselect>
 
                         <h6 class="mb-2">Expert skillset</h6>
                         <div class="accordion-items-select-wrapper skillset-selection-area">

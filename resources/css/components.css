@@ -1,10 +1,6 @@
 .form-input-group {
     margin-bottom: 12px;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    width: 100%;
 }
 
 .form-input-group .form-input-field {
@@ -35,21 +31,26 @@
     padding-top: 20px;
 }
 
-.form-input-group .form-input-field.form-select-field {
-    background: url(../img/arrow-icon.png) no-repeat;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-position: right 20px center;
+.form-input-group select {
     appearance: none;
 }
 
-.form-input-group.form-multiselect {
-    background: url(../img/arrow-icon.png) no-repeat;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-position: right 20px center;
-    appearance: none;
+.form-input-group .icon-field-wrapper {
+    position: relative;
 }
+
+.form-input-group .icon-field-wrapper:after {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: block;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: url(../img/arrow-icon.png) no-repeat center;
+}
+
 
 .form-input-group.form-multiselect .choices {
     width: 100%;
@@ -408,29 +409,37 @@
     font-size: 14px;
     justify-content: center;
 }
-.pagination .pagination-right ul li svg{
+
+.pagination .pagination-right ul li svg {
     fill: #191d24;
 }
-.pagination .pagination-right ul li:hover svg{
+
+.pagination .pagination-right ul li:hover svg {
     fill: #fff;
 }
+
 .pagination .pagination-right ul li:hover {
     background: #0036e3;
     color: #fff;
     cursor: pointer;
 }
-.pagination .pagination-right ul li.disabled:hover{
-    background:inherit;
+
+.pagination .pagination-right ul li.disabled:hover {
+    background: inherit;
 }
+
 .pagination .pagination-right ul li.active {
     background: #0036e3;
     color: #fff !important;
 }
+
 .pagination .pagination-right ul li .hover-icon {
     position: absolute;
     opacity: 0;
 }
+
 .pagination .pagination-right ul li:hover .hover-icon {
     opacity: 1;
 }
+
 /*Pagination end*/
