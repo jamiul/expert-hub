@@ -12,7 +12,9 @@ class Wizard extends Component
     use WithFileUploads;
 
     public int $currentStep = 1;
-    public string $currentStepClass = 'register-timeline-1';
+    
+    public $availableExpertFields = [];
+    public $expertField;
 
     public $language = '';
     public $availableLanguages = [];
