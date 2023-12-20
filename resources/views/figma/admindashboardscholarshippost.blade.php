@@ -39,7 +39,7 @@
                 </div>
                 <div class="modal-body px-0">
                     <form class="" action="">
-                        
+
                         <x-form.input type="text" label="Scholarship Title" name="type" placeholder="Enter Title"
                                       value=""/>
                         <x-form.input type="url" label="Scholarship Website" name="type" placeholder="Enter URL"
