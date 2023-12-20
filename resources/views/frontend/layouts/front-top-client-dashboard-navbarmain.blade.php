@@ -226,8 +226,6 @@
 
 <!--======================= Mobile Menu ======================= -->
 
-<!--======================= Mobile Menu ======================= -->
-
 
 <main class="edux-mobile-menu">
   <nav class="navbar navbar-dark bg-light" aria-label="Dark offcanvas navbar">
@@ -265,8 +263,8 @@
 
 
         <div class="edux-profile-dropdown">
-            <ul class="ps-0 list-unstyled links mb-0">
-                  <li class="mb-2">
+            <ul class="ps-0 list-unstyled links mb-0 edux-mobile-dropdown">
+                  <li class="">
                      <a href="#" class="d-inline-flex align-items-center small fw-medium">
                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                            <path d="M2.6665 15.1667C2.6665 12.2211 5.05432 9.83333 7.99984 9.83333C10.9454 9.83333 13.3332 12.2211 13.3332 15.1667H11.9998C11.9998 12.9575 10.209 11.1667 7.99984 11.1667C5.7907 11.1667 3.99984 12.9575 3.99984 15.1667H2.6665ZM7.99984 9.16666C5.78984 9.16666 3.99984 7.37666 3.99984 5.16666C3.99984 2.95666 5.78984 1.16666 7.99984 1.16666C10.2098 1.16666 11.9998 2.95666 11.9998 5.16666C11.9998 7.37666 10.2098 9.16666 7.99984 9.16666ZM7.99984 7.83333C9.47317 7.83333 10.6665 6.64 10.6665 5.16666C10.6665 3.69333 9.47317 2.5 7.99984 2.5C6.5265 2.5 5.33317 3.69333 5.33317 5.16666C5.33317 6.64 6.5265 7.83333 7.99984 7.83333Z" fill="#191D24"/>
@@ -274,7 +272,7 @@
                         <span class="ps-2">Profile</span>
                      </a>
                   </li>
-                  <li class="mb-2">
+                  <li class="">
                      <a href="#" class="d-inline-flex align-items-center small fw-medium">
                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                         <path d="M7.99984 1.16666L14.3332 4.83333V12.1667L7.99984 15.8333L1.6665 12.1667V4.83333L7.99984 1.16666ZM7.99984 2.70733L2.99984 5.60207V11.3979L7.99984 14.2927L12.9998 11.3979V5.60207L7.99984 2.70733ZM7.99984 11.1667C6.52708 11.1667 5.33317 9.97273 5.33317 8.5C5.33317 7.02724 6.52708 5.83333 7.99984 5.83333C9.47257 5.83333 10.6665 7.02724 10.6665 8.5C10.6665 9.97273 9.47257 11.1667 7.99984 11.1667ZM7.99984 9.83333C8.73624 9.83333 9.33317 9.2364 9.33317 8.5C9.33317 7.7636 8.73624 7.16666 7.99984 7.16666C7.26344 7.16666 6.6665 7.7636 6.6665 8.5C6.6665 9.2364 7.26344 9.83333 7.99984 9.83333Z" fill="#191D24"/>
@@ -282,9 +280,6 @@
                         <span class="ps-2">Setting</span>
                      </a>
                   </li>
-
-
-
                   <li>
                      <a href="#" class="d-inline-flex align-items-center small fw-medium">
                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
@@ -322,9 +317,6 @@
                         <p class="edux-count-point">9+</p>
                      </a>
                   </li>
-
-
-
                   <li>
                      <a href="#" class="d-inline-flex align-items-center small fw-medium">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
@@ -336,7 +328,6 @@
 
                </ul>
          </div>
-
         </div>
       </div>
     </div>

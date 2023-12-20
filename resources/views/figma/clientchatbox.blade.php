@@ -1,10 +1,10 @@
 @extends('frontend.layouts.front-client-dashboard-layoutmain')
 @section('content')
 
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 edux-no-footer">
   <div class="edux-chatbox-area">
 
-      <div class="edux-left-sidebar" id="leftSidebar">
+  <div class="edux-left-sidebar edux-left-sidebar-desktop">
         <div class="left-top-search-area">
           <div class="left-sidebar p-0">
           <div class="search-block edux-search-block">
@@ -14,7 +14,261 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="#303744" fill-opacity="0.3"/>
                     </svg>
-                      </button>
+                    </button>
+                </form>
+            </div>
+          </div>
+          <div class="search-expand">
+            <div class="edux-draft-options">
+              <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle edux-draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M6.17071 18C6.58254 16.8348 7.69378 16 9 16C10.3062 16 11.4175 16.8348 11.8293 18H22V20H11.8293C11.4175 21.1652 10.3062 22 9 22C7.69378 22 6.58254 21.1652 6.17071 20H2V18H6.17071ZM12.1707 11C12.5825 9.83481 13.6938 9 15 9C16.3062 9 17.4175 9.83481 17.8293 11H22V13H17.8293C17.4175 14.1652 16.3062 15 15 15C13.6938 15 12.5825 14.1652 12.1707 13H2V11H12.1707ZM6.17071 4C6.58254 2.83481 7.69378 2 9 2C10.3062 2 11.4175 2.83481 11.8293 4H22V6H11.8293C11.4175 7.16519 10.3062 8 9 8C7.69378 8 6.58254 7.16519 6.17071 6H2V4H6.17071ZM9 6C9.55228 6 10 5.55228 10 5C10 4.44772 9.55228 4 9 4C8.44772 4 8 4.44772 8 5C8 5.55228 8.44772 6 9 6ZM15 13C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11C14.4477 11 14 11.4477 14 12C14 12.5523 14.4477 13 15 13ZM9 20C9.55228 20 10 19.5523 10 19C10 18.4477 9.55228 18 9 18C8.44772 18 8 18.4477 8 19C8 19.5523 8.44772 20 9 20Z" fill="#303744" fill-opacity="0.5"/>
+                </svg>
+                </a>
+                <ul class="dropdown-menu dropdown-show edux-dropdown-show">
+
+                  <li>
+                    <a class="dropdown-item dropdown-heading active"  href="#">
+                      <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M7.95946 12.9295L15.1582 5.73077C15.2821 5.60684 15.4293 5.54353 15.5997 5.54085C15.7701 5.53819 15.9199 5.60149 16.0492 5.73077C16.1785 5.86003 16.2431 6.00853 16.2431 6.17627C16.2431 6.34399 16.1785 6.49249 16.0492 6.62177L8.48669 14.1842C8.33605 14.3349 8.16031 14.4102 7.95946 14.4102C7.75861 14.4102 7.58287 14.3349 7.43223 14.1842L3.95306 10.7051C3.82913 10.5812 3.76796 10.434 3.76956 10.2636C3.77117 10.0932 3.83661 9.94337 3.96587 9.8141C4.09515 9.68482 4.24365 9.62019 4.41137 9.62019C4.57911 9.62019 4.72761 9.68482 4.85687 9.8141L7.95946 12.9295Z" fill="#0036E3"/>
+                        </svg>
+                        </span>
+                        <span>All</span>
+                      </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item dropdown-heading "  href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M5.92806 14.2627C5.71919 14.2627 5.5441 14.192 5.40281 14.0507C5.26152 13.9094 5.19088 13.7344 5.19088 13.5255V12.2755H15.5034L15.7678 12.54V4.9999H17.0178C17.2266 4.9999 17.4017 5.07054 17.543 5.21184C17.6843 5.35313 17.7549 5.5282 17.7549 5.73706V17.2114L14.8062 14.2627H5.92806ZM2.24219 13.5575V2.82044C2.24219 2.61156 2.31283 2.43648 2.45412 2.29519C2.59542 2.1539 2.7705 2.08325 2.97937 2.08325H13.364C13.5728 2.08325 13.7479 2.1539 13.8892 2.29519C14.0305 2.43648 14.1011 2.61156 14.1011 2.82044V9.87169C14.1011 10.0806 14.0305 10.2556 13.8892 10.3969C13.7479 10.5382 13.5728 10.6089 13.364 10.6089H5.19088L2.24219 13.5575ZM12.8511 9.35888V3.33323H3.49217V9.93586L4.06912 9.35888H12.8511Z" fill="#A1A0A5"/>
+                    </svg></span> <span>Unread</span> </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.7513 2.5C16.2826 2.5 18.3346 4.58333 18.3346 7.5C18.3346 13.3333 12.0846 16.6667 10.0013 17.9167C7.91797 16.6667 1.66797 13.3333 1.66797 7.5C1.66797 4.58333 3.7513 2.5 6.2513 2.5C7.80128 2.5 9.16797 3.33333 10.0013 4.16667C10.8346 3.33333 12.2013 2.5 13.7513 2.5ZM10.7796 15.5032C11.5142 15.0404 12.1763 14.5796 12.7971 14.0858C15.2794 12.1108 16.668 9.95292 16.668 7.5C16.668 5.53397 15.3871 4.16667 13.7513 4.16667C12.8547 4.16667 11.8841 4.64092 11.1798 5.34517L10.0013 6.52369L8.8228 5.34517C8.11854 4.64092 7.14789 4.16667 6.2513 4.16667C4.63385 4.16667 3.33464 5.54708 3.33464 7.5C3.33464 9.95292 4.72319 12.1108 7.20559 14.0858C7.8263 14.5796 8.48839 15.0404 9.22305 15.5032C9.4718 15.6599 9.71889 15.8107 10.0013 15.9793C10.2837 15.8107 10.5308 15.6599 10.7796 15.5032Z" fill="#A1A0A5"/>
+                  </svg></span> <span>Favourites</span> </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item dropdown-heading"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M2.5013 8.33333H1.66797V3.33578C1.66797 2.87419 2.04739 2.5 2.49447 2.5H17.5081C17.9646 2.5 18.3346 2.8649 18.3346 3.33578V8.33333H17.5013V16.6679C17.5013 17.1275 17.1306 17.5 16.6735 17.5H3.32914C2.87194 17.5 2.5013 17.1271 2.5013 16.6679V8.33333ZM15.8346 8.33333H4.16797V15.8333H15.8346V8.33333ZM3.33464 4.16667V6.66667H16.668V4.16667H3.33464ZM7.5013 10H12.5013V11.6667H7.5013V10Z" fill="#A1A0A5"/>
+                  </svg></span> <span>Archive</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <button  class="edux-button-click"  onclick="hide()"> -->
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
+                      </svg></span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <!-- </button> -->
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar1.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#DDC700" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar3.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
+                      </svg></span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar4.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar5.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="7" fill="#BFBFBF" stroke="white" stroke-width="2"/>
+                    </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edux-single-person-area">
+            <div class="edux-single-person">
+                <div class="single-person-avatar-img position-relative">
+                    <img src="{{ asset('assets/frontend/img/chat-avatar6.png') }}" alt="avatar">
+                    <span class="edux-notify-point-green">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
+                      </svg>
+                    </span>
+                </div>
+                <div class="single-person-avatar-content">
+                  <div class="avatar-title">
+                    <h4>Black, Marvin</h4>
+                    <p class="avatar-time">7: 30 am</p>
+                  </div>
+
+                  <p>A few words from the last </p>
+                  <div class="message-count">
+                    <p>message sent to the partner...</p>
+                    <p class="avatar-count d-none">2</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="edux-left-sidebar edux-left-sidebar-mobile" id="leftSidebar">
+        <div class="left-top-search-area">
+          <div class="left-sidebar p-0">
+          <div class="search-block edux-search-block">
+                <form class="edux-search-form">
+                    <input type="text" placeholder="Search people, group etc" name="search-left">
+                    <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="#303744" fill-opacity="0.3"/>
+                    </svg>
+                    </button>
                 </form>
             </div>
           </div>
@@ -354,6 +608,8 @@
 </div>
 </div>
 
+<div class="edux-all-message-scroll">
+
 <div class="all-message-body">
 
 <button class="edux-button-click edux-button-click-message" onclick="myMessageFunction()">
@@ -396,11 +652,7 @@
                   <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                 </svg></span> <span>Reply</span> </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                </svg></span> <span>Forwards</span></a>
-                </li>
+
               </ul>
             </div>
 
@@ -458,11 +710,7 @@
                   <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                 </svg></span> <span>Reply</span> </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                </svg></span> <span>Forwards</span></a>
-                </li>
+
               </ul>
           </div>
         </div>
@@ -517,11 +765,7 @@
                   <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                 </svg></span> <span>Reply</span> </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                </svg></span> <span>Forwards</span></a>
-                </li>
+
               </ul>
           </div>
         </div>
@@ -575,11 +819,7 @@
                   <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                 </svg></span> <span>Reply</span> </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                </svg></span> <span>Forwards</span></a>
-                </li>
+
               </ul>
       </div>
     </div>
@@ -637,11 +877,7 @@
                   <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                 </svg></span> <span>Reply</span> </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                </svg></span> <span>Forwards</span></a>
-                </li>
+
               </ul>
           </div>
         </div>
@@ -682,17 +918,17 @@
                   <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                 </svg></span> <span>Reply</span> </a>
                 </li>
-                <li>
-                  <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                </svg></span> <span>Forwards</span></a>
-                </li>
+
               </ul>
           </div>
         </div>
     </div>
     </div>
   </div>
+
+  </div>
+  </div>
+
 
   <div class="edux-type-message position-relative mb-4">
     <textarea name="" id="" cols="30" rows="10" placeholder="Type your message..."></textarea>
@@ -771,11 +1007,6 @@
                     <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                       <path d="M13.1667 12.6667V10C13.1667 9.44446 12.9722 8.97223 12.5833 8.58334C12.1944 8.19445 11.7222 8.00001 11.1667 8.00001H5.05L7.45 10.4L6.5 11.3333L2.5 7.33334L6.5 3.33334L7.45 4.26668L5.05 6.66668H11.1667C12.0889 6.66668 12.875 6.99168 13.525 7.64168C14.175 8.29168 14.5 9.07779 14.5 10V12.6667H13.1667Z" fill="#0036E3"/>
                     </svg></span> <span>Reply</span> </a></li>
-
-                    <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path d="M11.1666 11.3333L10.2166 10.4L13.2833 7.33334L10.2166 4.26668L11.1666 3.33334L15.1666 7.33334L11.1666 11.3333ZM1.83331 12.6667V10C1.83331 9.07779 2.15831 8.29168 2.80831 7.64168C3.45831 6.99168 4.24442 6.66668 5.16665 6.66668H9.28331L6.88331 4.26668L7.83331 3.33334L11.8333 7.33334L7.83331 11.3333L6.88331 10.4L9.28331 8.00001H5.16665C4.61109 8.00001 4.13887 8.19445 3.74998 8.58334C3.36109 8.97223 3.16665 9.44446 3.16665 10V12.6667H1.83331Z" fill="#0036E3"/>
-                    </svg></span> <span>Forwards</span> </a></li>
-
                     <li>
                       <a href="#" class="dropdown-toggle" id="moreOptions" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>
@@ -797,7 +1028,8 @@
 
 
   </div>
-  </div>
+
+
   </div>
   </div>
   </div>
@@ -916,11 +1148,6 @@
                     <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                       <path d="M13.1667 12.6667V10C13.1667 9.44446 12.9722 8.97223 12.5833 8.58334C12.1944 8.19445 11.7222 8.00001 11.1667 8.00001H5.05L7.45 10.4L6.5 11.3333L2.5 7.33334L6.5 3.33334L7.45 4.26668L5.05 6.66668H11.1667C12.0889 6.66668 12.875 6.99168 13.525 7.64168C14.175 8.29168 14.5 9.07779 14.5 10V12.6667H13.1667Z" fill="#0036E3"/>
                     </svg></span> <span>Reply</span> </a></li>
-
-                    <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path d="M11.1666 11.3333L10.2166 10.4L13.2833 7.33334L10.2166 4.26668L11.1666 3.33334L15.1666 7.33334L11.1666 11.3333ZM1.83331 12.6667V10C1.83331 9.07779 2.15831 8.29168 2.80831 7.64168C3.45831 6.99168 4.24442 6.66668 5.16665 6.66668H9.28331L6.88331 4.26668L7.83331 3.33334L11.8333 7.33334L7.83331 11.3333L6.88331 10.4L9.28331 8.00001H5.16665C4.61109 8.00001 4.13887 8.19445 3.74998 8.58334C3.36109 8.97223 3.16665 9.44446 3.16665 10V12.6667H1.83331Z" fill="#0036E3"/>
-                    </svg></span> <span>Forwards</span> </a></li>
-
                     <li>
                       <a href="#" class="dropdown-toggle" id="moreOptions" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>
@@ -991,7 +1218,7 @@
               </div>
             </div>
           </div>
-
+<div class="edux-all-message-scroll">
             <div class="all-message-body">
 
               <div class="body-content">
@@ -1082,11 +1309,7 @@
                               <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                             </svg></span> <span>Reply</span> </a>
                             </li>
-                            <li>
-                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                            </svg></span> <span>Forwards</span></a>
-                            </li>
+
                           </ul>
                       </div>
                     </div>
@@ -1141,11 +1364,7 @@
                               <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                             </svg></span> <span>Reply</span> </a>
                             </li>
-                            <li>
-                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                            </svg></span> <span>Forwards</span></a>
-                            </li>
+
                           </ul>
                   </div>
                 </div>
@@ -1196,11 +1415,7 @@
                               <path d="M15.8333 15.8334V12.5001C15.8333 11.8056 15.5903 11.2154 15.1042 10.7292C14.6181 10.2431 14.0278 10.0001 13.3333 10.0001H5.6875L8.6875 13.0001L7.5 14.1667L2.5 9.16675L7.5 4.16675L8.6875 5.33341L5.6875 8.33341H13.3333C14.4861 8.33341 15.4688 8.73966 16.2812 9.55216C17.0938 10.3647 17.5 11.3473 17.5 12.5001V15.8334H15.8333Z" fill="#191D24"/>
                             </svg></span> <span>Reply</span> </a>
                             </li>
-                            <li>
-                              <a class="dropdown-item dropdown-heading " href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                              <path d="M13.3346 14.1667L12.1471 13.0001L15.9805 9.16675L12.1471 5.33341L13.3346 4.16675L18.3346 9.16675L13.3346 14.1667ZM1.66797 15.8334V12.5001C1.66797 11.3473 2.07422 10.3647 2.88672 9.55216C3.69922 8.73966 4.68186 8.33341 5.83464 8.33341H10.9805L7.98047 5.33341L9.16797 4.16675L14.168 9.16675L9.16797 14.1667L7.98047 13.0001L10.9805 10.0001H5.83464C5.14019 10.0001 4.54991 10.2431 4.0638 10.7292C3.57769 11.2154 3.33464 11.8056 3.33464 12.5001V15.8334H1.66797Z" fill="#191D24"/>
-                            </svg></span> <span>Forwards</span></a>
-                            </li>
+
                           </ul>
                       </div>
                     </div>
@@ -1218,9 +1433,13 @@
                 </div>
               </div>
 
+             </div>
+
 
               <div class="edux-type-message position-relative">
+                <div class="edux-type-message-area">
                 <textarea name="" id="" cols="30" rows="10" placeholder="Type your message..."></textarea>
+
                 <div class="text-body-img">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M15.5 11C15.9167 11 16.2708 10.8542 16.5625 10.5625C16.8542 10.2708 17 9.91667 17 9.5C17 9.08333 16.8542 8.72917 16.5625 8.4375C16.2708 8.14583 15.9167 8 15.5 8C15.0833 8 14.7292 8.14583 14.4375 8.4375C14.1458 8.72917 14 9.08333 14 9.5C14 9.91667 14.1458 10.2708 14.4375 10.5625C14.7292 10.8542 15.0833 11 15.5 11ZM8.5 11C8.91667 11 9.27083 10.8542 9.5625 10.5625C9.85417 10.2708 10 9.91667 10 9.5C10 9.08333 9.85417 8.72917 9.5625 8.4375C9.27083 8.14583 8.91667 8 8.5 8C8.08333 8 7.72917 8.14583 7.4375 8.4375C7.14583 8.72917 7 9.08333 7 9.5C7 9.91667 7.14583 10.2708 7.4375 10.5625C7.72917 10.8542 8.08333 11 8.5 11ZM12 17.5C13.1333 17.5 14.1625 17.1792 15.0875 16.5375C16.0125 15.8958 16.6833 15.05 17.1 14H15.45C15.0833 14.6167 14.5958 15.1042 13.9875 15.4625C13.3792 15.8208 12.7167 16 12 16C11.2833 16 10.6208 15.8208 10.0125 15.4625C9.40417 15.1042 8.91667 14.6167 8.55 14H6.9C7.31667 15.05 7.9875 15.8958 8.9125 16.5375C9.8375 17.1792 10.8667 17.5 12 17.5ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="#191D24"/>
@@ -1232,7 +1451,7 @@
                       <path d="M3.33333 18.3333V16.6667H16.6667V18.3333H3.33333ZM9.99999 15.8333L6.66666 12.5L7.83333 11.3333L9.16666 12.625V7.37499L7.83333 8.66666L6.66666 7.49999L9.99999 4.16666L13.3333 7.49999L12.1667 8.66666L10.8333 7.37499V12.625L12.1667 11.3333L13.3333 12.5L9.99999 15.8333ZM3.33333 3.33332V1.66666H16.6667V3.33332H3.33333Z" fill="#191D24" fill-opacity="0.7"/>
                     </svg>
                 </div>
-                <div class="text-area-icon">
+                <div class="text-area-icon position-relative">
                     <div class="text-area-icon-left">
                     <ul>
                       <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1279,12 +1498,17 @@
                           </ul>
                         </div>
                     </div>
+                    </div>
                 </div>
               </div>
 
 
 <!-- =================================== Show Hide Options ============================== -->
-              <div class="edux-type-message position-relative" id="editTextBody" style="display:none">
+<div class="edux-type-message position-relative">
+                <div class="edux-type-message-area" id="editTextBody" style="display:none">
+
+
+              <!-- <div class="edux-type-message position-relative" id="editTextBody" style="display:none"> -->
                 <textarea name="" id="" cols="30" rows="10" placeholder="Type your message...">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec |</textarea>
                 <div class="text-body-img">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1346,6 +1570,8 @@
                     </div>
                 </div>
               </div>
+</div>
+
 
 <!-- =================================== Show Hide Options ============================== -->
               </div>
@@ -1353,11 +1579,16 @@
 
               <div class="body-right-content edux-body-right-content" id="rightOption">
                   <div class="middle-top-right-sidebar">
-                      <div class="middle-top-img">
+                      <div class="middle-top-img position-relative">
                       <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
+                      <span class="edux-notify-point-green-bottom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7" fill="#369450" stroke="white" stroke-width="2"/>
+                      </svg></span>
+
+
                       </div>
                       <div class="middle-top-text">
-                          <h5>Miles, Esther</h5>
+                          <h5>Miles, Esther Test</h5>
                           <p>Curriculum Expert </p>
                           <p>5:32 AM GMT+6  |  Australia</p>
 
@@ -1573,8 +1804,8 @@
 
 <!--================================ Modal Start Here =========================================== -->
 
-
 @endsection
+
 
 
 <script>

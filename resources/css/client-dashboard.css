@@ -6594,7 +6594,7 @@ ul.edux-dropdown-show.show {
   position: absolute;
   inset: 0px auto auto 0px;
   margin: 0px;
-  transform: translate(-140px, 34px) !important;
+  transform: translate(-160px, 40px) !important;
   border-radius: 4px;
   background: #FFF;
   box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
@@ -6625,6 +6625,10 @@ a.edux-draft-option-toggle.show svg {
 a.edux-draft-option-toggle{
   display: flex;
   align-items: center;
+}
+
+a.edux-draft-option-toggle:after {
+  display: none;
 }
 
 .edux-draft-options svg {
@@ -6702,6 +6706,7 @@ ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+  margin-bottom: 0px;
 }
 
 .single-person-avatar-content p {
@@ -6711,6 +6716,7 @@ ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
   font-style: normal;
   font-weight: 400;
   text-align: left;
+  margin-bottom: 0px;
 }
 
 .avatar-title {
@@ -6743,6 +6749,12 @@ p.avatar-time {
   left: 40px;
 }
 
+.edux-notify-point-green-bottom {
+  position: absolute;
+  top: 40px;
+  left: 45px;
+}
+
 p.avatar-count {
   display: flex;
   padding: 3px 7px;
@@ -6772,13 +6784,13 @@ p.avatar-count {
   max-height: 72px;
 }
 
-.middle-top-text h5{
+.middle-top-text h5 {
   color: #191D24;
   font-family: Colfax;
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
-
+  margin-bottom: 0;
 }
 .middle-top-text p{
   color: rgba(48, 55, 68, 0.70);
@@ -6786,6 +6798,7 @@ p.avatar-count {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
+  margin-bottom: 0px;
 }
 
 .middle-top-right {
@@ -6796,12 +6809,10 @@ p.avatar-count {
 .middle-top-right a {
   border-radius: 4px;
   border: 2px solid rgba(39, 88, 70, 0.20);
-  width: 46px;
-  height: 46px;
-  padding: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 8px;
 }
 
 .middle-menu-area {
@@ -6855,7 +6866,6 @@ p.avatar-count {
   display: flex;
   gap: 10px;
   width: auto;
-  margin-top: 31px;
   margin-bottom: 22px;
 }
 
@@ -6946,6 +6956,36 @@ p.avatar-count {
     width: 100%;
 }
 
+.edux-all-message-scroll {
+  max-height: 677px;
+  overflow-y: scroll;
+  padding-right: 10px;
+  margin-top: 31px;
+}
+
+/* ================================ Scroll bar design ========================== */
+.edux-all-message-scroll {
+  scrollbar-width: thin;
+  scrollbar-color:rgba(14, 0, 98, 0.10);
+}
+
+/* Works on Chrome, Edge, and Safari */
+.edux-all-message-scroll::-webkit-scrollbar {
+  width:3px;
+}
+
+.edux-all-message-scroll::-webkit-scrollbar-track {
+  background: rgba(14, 0, 98, 0.10);
+}
+
+.edux-all-message-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(14, 0, 98, 0.10);
+  border-radius: 20px;
+  border: 1px solid rgba(14, 0, 98, 0.10);
+}
+/* ================================ Scroll bar design ========================== */
+
+
 .edux-all-message-body {
   border-bottom: 1px solid #E7E5EF;
   position: relative;
@@ -6989,13 +7029,15 @@ text-transform: uppercase;
   padding: 20px 45px;
   width: 100%;
   position: absolute;
+  top: 40px;
+  cursor: pointer;
 }
 
 .edux-ctx-img {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0px 33px;
+  margin: 20px 0px 0px;
 }
 
 p.edux-start-text {
@@ -7006,8 +7048,8 @@ p.edux-start-text {
   display: flex;
   padding: 12px 16px;
   gap: 5px;
+  margin-bottom: 0px;
 }
-
 
 p.edux-start-text span {
   width: 8px;
@@ -7018,7 +7060,7 @@ p.edux-start-text span {
 }
 .text-body-img {
   position: absolute;
-  top: 18px;
+  top: 65px;
   left: 16px;
 }
 
@@ -7031,10 +7073,9 @@ p.edux-start-text span {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1088px;
+  position: relative;
+  height: 163px;
 }
-
-
 
 .text-area-icon-left ul {
   display: inline-flex;
@@ -7043,17 +7084,16 @@ p.edux-start-text span {
 
 .text-area-icon-left {
   position: absolute;
-  top: 80px;
+  top: 128px;
   width: 50%;
 }
-
 
 .text-area-icon-right ul {
   display: inline-flex;
   padding-left: 0px;
   gap: 8px;
+  margin-bottom: 0px;
 }
-
 
 
 .left-send {
@@ -7083,7 +7123,7 @@ p.edux-start-text span {
   position: absolute;
   inset: 0px auto auto 0px;
   margin: 0px;
-  transform: translate(-140px, 34px) !important;
+  transform: translate(-10px, 34px) !important;
   border-radius: 4px;
   background: #FFF;
   box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
@@ -7128,12 +7168,11 @@ p.edux-start-text span {
   justify-content: space-between;
   width: 50%;
   position: absolute;
-  top: 65px;
+  bottom: 8px;
   right: 0%;
   align-items: center;
   justify-content: flex-end;
 }
-
 .body-right-content {
   display: flex;
   width: 100%;
@@ -7154,7 +7193,7 @@ p.edux-start-text span {
   display: flex;
   flex-direction: row;
   background: #fff;
-  padding: 32px 24px 16px;
+  padding: 32px 24px 16px 0px;
   gap: 10px;
   border-radius: 8px 8px 0px 0px;
   border-bottom: 1px solid  rgba(14, 0, 98, 0.10);
@@ -7264,7 +7303,7 @@ button.edux-btn-accordion {
   font-style: normal;
   font-weight: 500;
   width: 100%;
-  padding: 16px 15px;
+  padding: 16px 0px;
   display: flex;
   position: relative;
   line-height: 10px;
@@ -7650,6 +7689,26 @@ p.content-no-close {
   display: none;
 }
 
+body > .edux-no-footer > footer .footer{
+  display: none;
+}
+
+.edux-left-sidebar-desktop{
+  display: block;
+}
+
+.edux-left-sidebar-mobile{
+  display: none;
+}
+
+footer .footer {
+  display: none;
+}
+
+footer .footer-bottom {
+  display: none;
+}
+
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
 @media only screen and (max-width: 1820px) {
@@ -7744,9 +7803,7 @@ p.content-no-close {
     gap: 15px;
 }
 
-/* .body-content.edux-margin-left {
-  margin-left: 23%;
-} */
+
 
 .body-content {
   margin-bottom: 12px;
@@ -7754,17 +7811,9 @@ p.content-no-close {
 
 }
 
-@media only screen and (max-width: 1427px) {
-  /* .body-content.edux-margin-left {
-    margin-left: 20%;
-  } */
 
-}
 
 @media only screen and (max-width: 1414px) {
-  /* .body-content.edux-margin-left {
-    margin-left: 18%;
-  } */
 
   .text-area-icon-right {
     right: 3%;
@@ -7812,15 +7861,6 @@ header.client-header {
 }
 
 @media only screen and (max-width: 1361px) {
-
-  /* .body-content.edux-margin-left {
-    margin-left: 10%;
-  }
-
-  .text-area-icon-right {
-    right: 5%;
-
-} */
 
 .body-right-content {
   display: flex;
@@ -7936,6 +7976,9 @@ header.client-header {
 }
 
 @media only screen and (max-width: 991px) {
+  .edux-body-right-content{
+    display: none;
+  }
 .single-person-deniyel {
   border-radius: 6.213px 6.213px 0px 0px;
   background: #C8E0FD;
@@ -7985,7 +8028,6 @@ header.client-header {
   text-align: left;
   color: #000000;
   max-width: 482px;
-  /* text-transform: capitalize; */
   margin-bottom: 40px;
   width: 100%;
 }
@@ -8020,18 +8062,10 @@ header.client-header {
 }
 
 
-@media only screen and (max-width: 1078px) {
-  .body-content.edux-margin-left {
-    margin-left: 10%;
-}
-
-}
-
 
 @media only screen and (max-width: 995px) {
-  .body-content.edux-margin-left {
-    margin-left: 3%;
-}
+
+
 
 .edux-modal-footer {
   margin: 0px auto;
@@ -8118,6 +8152,13 @@ header.client-header {
   width: 100%;
 }
 
+.middle-top-right a svg {
+  padding: 0px;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+}
+
 .expert__dashboard__nav {
   display: none;
 }
@@ -8170,13 +8211,14 @@ header.client-header {
 }
 
 .edux-mobile-avatar-area p {
-  color:#191D24;
+  color: #191D24;
   font-family: Public Sans;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   text-transform: capitalize;
   font-family: Colfax;
+  margin-bottom: 0px;
 }
 
 .edux-mobile-avatar-area span {
@@ -8213,6 +8255,7 @@ p.edux-count-point {
   justify-content: center;
   border-radius: 50%;
   margin-left: 10px;
+  margin-bottom: 0px;
 }
 
 .edux-profile-dropdown {
@@ -8353,8 +8396,8 @@ img.middle-top-avatar{
 }
 
 img.middle-top-arrow{
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 
 }
 
@@ -8405,17 +8448,15 @@ img.middle-top-arrow{
 .edux-text-body-expand {
   position: absolute;
   right: 25px;
-  top: 20px;
-  display:block;
+  top: 65px;
+  display: block;
+  z-index: 999;
 }
 
 .edux-message-right-desktop{
   display: none;
 }
 
-.body-content.edux-margin-left {
-  padding: 0px 15px 0px 15%;
-}
 
 ul.edux-dropdown-bottom {
   width: 458px;
@@ -8439,8 +8480,7 @@ ul.edux-dropdown-bottom {
 }
 
 .text-area-icon-right {
-  top: 85px;
-
+  bottom: 10px;
 }
 
 .edux-more-tab-option{
@@ -8458,7 +8498,7 @@ ul.edux-dropdown-bottom {
   background: #fff;
   box-shadow: 0px -4px 8px 0px rgba(14, 0, 98, 0.10);
   position: absolute;
-  bottom: -115px;
+  bottom: -20px;
 }
 .edux-more-tab-option ul li a {
   display: flex;
@@ -8509,8 +8549,7 @@ ul.edux-dropdown-bottom {
   justify-content: space-between;
   width: 100%;
   max-width: 1088px;
-  position: absolute;
-  bottom:0px;
+  position: relative;
 }
 
 footer{
@@ -8541,6 +8580,58 @@ p.avatar-time {
   position: relative;
   margin: 20px 0px 0px;
 }
+
+.edux-left-sidebar-desktop{
+  display: none;
+}
+
+.edux-left-sidebar-mobile{
+  display: block;
+}
+
+.middle-top-right a {
+  border-radius: 4px;
+  border: 2px solid rgba(39, 88, 70, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+ul.edux-mobile-dropdown li {
+  margin-bottom: 12px;
+}
+
+.middle-top-text h5 {
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.middle-top-text p {
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.edux-draft-options ul.dropdown-show {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate(-10px, 45px) !important;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.10);
+  border: none;
+  background: #fff;
+  height: 150px;
+}
+
 
 
 
