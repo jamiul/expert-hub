@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+@assets
+    @vite('resources/css/choices.css')
+    @vite('resources/js/choices.min.js')
+@endassets
 @props([
 'name',
 'label',
@@ -9,6 +11,7 @@
 ])
 
 <div
+    wire:ignore
     class="form-input-group form-multiselect"
     x-data="{
         init() {
@@ -36,3 +39,6 @@
         </select>
     </div>
 </div>
+@error($name)
+    <div class="form-input-error-message">{{ $message }}</div>
+@enderror

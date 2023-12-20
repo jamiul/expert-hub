@@ -13,17 +13,20 @@ class Wizard extends Component
 
     public int $currentStep = 1;
     
-    public $availableExpertFields = [];
-    public $expertField;
+    public $availableExpertFieldGroups = [];
+    public $expertise_id;
+
+    public $availableSkillGroups = [];
+    public $availableSkills = [];
+    public $selectedSkillGroups = [];
+    public $selectedSkills = [];
+    public $skill = '';
 
     public $language = '';
     public $availableLanguages = [];
     public $selectedLanguages = [];
 
 
-    public $expertise = '';
-    public $availableExpertises = [];
-    public $selectedExpertises = [];
 
     public $educationQualifications;
     public $qualification_name = '';
@@ -38,9 +41,7 @@ class Wizard extends Component
         'TV Interview',
         'Keynote Speaker',
     ];
-    public $availableSkills = [];
-    public $selectedSkills = [];
-    public $skill = '';
+    
     public $consultationService = false;
     public $showExistingConsultationService = false;
     public $additionalConsultationService = false;
@@ -58,6 +59,18 @@ class Wizard extends Component
 
     public function mount()
     {
+        $this->availableExpertFieldGroups = Expertise::expertise()->isParent()->get();
+        $this->availableSkillGroups = Expertise::skill()->isParent()->pluck('id')->toArray();
+        $skills = Expertise::skill()->get();
+        $skills->each(function($skill){
+            $this->availableSkills[$skill->id] = [
+                'name' => $skill->name,
+                'parent_id' => $skill->parent_id,
+            ];
+        });
+        // dd($this->availableSkills);
+       
+        // $this->availableExpertFields = Expertise::expertise()->get();
         // $this->selectedLanguages = $this->profile()->languages()->pluck('language_id')->toArray();
         // $this->selectedExpertises = $this->profile()->expertises()->pluck('expertise_id')->toArray();
         // $this->availableExpertises = Expertise::whereNotIn('id', array_keys($this->selectedExpertises))->pluck('name', 'id')->toArray();
@@ -82,17 +95,17 @@ class Wizard extends Component
     {
         if ($this->currentStep > 1) {
             $this->currentStep -= 1;
-            $this->setCurrentStepClass();
         }
     }
 
     public function next()
     {
-        // if ($this->currentStep == 1) {
-        //     $this->validate([
-        //         'selectedLanguages' => ['required', 'array']
-        //     ]);
-        // }
+        if ($this->currentStep == 1) {
+            $this->validate([
+                'expertise_id' => ['required'],
+                'selectedSkills' => ['required', 'array'],
+            ]);
+        }
         // if ($this->currentStep == 2) {
         //     $this->validate([
         //         'selectedExpertises' => ['required', 'array']
@@ -110,8 +123,7 @@ class Wizard extends Component
         if ($this->currentStep < 6) {
             $this->currentStep += 1;
         }
-        
-        // $this->setCurrentStepClass();
+
     }
 
     public function messages()
@@ -157,43 +169,6 @@ class Wizard extends Component
         unset($this->selectedLanguages[$id]);
     }
 
-    public function searchExpertise()
-    {
-        if ($this->expertise) {
-            $availableExpertises = Expertise::where('name', 'like', '%' . $this->expertise . '%')
-                ->whereNotIn('id', array_keys($this->selectedExpertises))
-                ->limit(10)
-                ->get()
-                ->pluck('name', 'id')->toArray();
-            $this->availableExpertises = $availableExpertises;
-        } else {
-            $this->availableExpertises = [];
-        }
-    }
-
-    public function addExpertise($id)
-    {
-        $expertise = Expertise::find($id);
-        if ($expertise) {
-            $this->profile()->expertises()->firstOrCreate([
-                'name' => $expertise->name,
-                'expertise_id' =>  $expertise->id,
-            ]);
-            $this->selectedExpertises[$expertise->id] = $expertise->name;
-            ksort($this->selectedExpertises);
-            unset($this->availableExpertises[$expertise->id]);
-        }
-    }
-
-    public function removeExpertise($id)
-    {
-        $expertise = $this->profile()->expertises()->where('expertise_id', $id)->first();
-        $expertise_name = $expertise->name;
-        $expertise->delete();
-        unset($this->selectedExpertises[$id]);
-        $this->availableExpertises[$id] =  $expertise_name;
-        ksort($this->availableExpertises);
-    }
 
     public function addEducationQualification()
     {
@@ -216,23 +191,6 @@ class Wizard extends Component
         $this->educationQualifications = $this->profile()->educationQualifications;
     }
 
-    public function showConsultationForm()
-    {
-        $this->consultationService = true;
-    }
-
-    public function showAdditionalConsultationServiceForm()
-    {
-        $this->showExistingConsultationService = false;
-        $this->consultationService = true;
-    }
-
-    public function hideAdditionalConsultationServiceForm()
-    {
-        $this->showExistingConsultationService = true;
-        $this->consultationService = false;
-    }
-
     public function searchSkill()
     {
         if ($this->skill) {
@@ -249,49 +207,35 @@ class Wizard extends Component
 
     public function addSkill($id)
     {
-        $skill = Expertise::find($id);
+        $skill = $this->availableSkills[$id];
         if ($skill) {
-            $this->selectedSkills[$skill->id] = $skill->name;
+            $this->selectedSkills[$id] = $skill;
             ksort($this->selectedSkills);
-            $this->reset('skill', 'availableSkills');
+            if(!in_array($skill['parent_id'], $this->selectedSkillGroups)){
+                $this->selectedSkillGroups[] = $skill['parent_id'];
+                $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
+            }
+            unset($this->availableSkills[$id]);
+            $this->reset('skill');
         }
+        // dd($this->selectedSkills);
     }
 
     public function removeSkill($id)
     {
-        unset($this->selectedSkills[$id]);
-    }
-
-    public function addConsultation()
-    {
-        $this->validate([
-            'consultation_type' => ['required'],
-            'value' => ['required'],
-            'photo' => ['required', 'image'],
-            'selectedSkills' => ['required', 'array'],
-        ]);
-        $photoName = $this->photo->getClientOriginalName() . '-' . time() . '.' . $this->photo->extension();
-        $this->photo->storeAs('consultation', $photoName);
-        $consultation = $this->profile()->consultationServices()->create([
-            'type' => $this->consultation_type,
-            'unit' => '30 mins',
-            'value' => $this->value,
-            'photo' => $photoName,
-        ]);
-        $skills = [];
-        foreach ($this->selectedSkills as $id => $name) {
-            $skills[] = [
-                'expertise_id' => $id,
-                'name' => $name,
-            ];
+        $skill = $this->selectedSkills[$id];
+        if ($skill){
+            unset($this->selectedSkills[$id]);
+            $this->availableSkills[$id] = $skill;
+            ksort($this->availableSkills);
         }
-        $consultation->skills()->createMany($skills);
-        $this->consultationServices = $this->profile()->consultationServices;
-        $this->showExistingConsultationService = true;
-        $this->noConsultationService = false;
-        $this->consultationService = false;
-        $this->currentStepClass = 'register-timeline-5';
-        $this->reset('consultation_type', 'value', 'selectedSkills');
+        $this->selectedSkillGroups = [];
+        foreach($this->selectedSkills as $skill){
+            if (!in_array($skill['parent_id'], $this->selectedSkillGroups)) {
+                $this->selectedSkillGroups[] = $skill['parent_id'];
+                $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
+            }
+        }
     }
 
     public function saveBiography()
@@ -324,19 +268,6 @@ class Wizard extends Component
         $this->profile()->update([
             'picture' => $pictureName,
         ]);
-    }
-
-    public function setCurrentStepClass()
-    {
-        $classLookup = [
-            1 => 'register-timeline-1',
-            2 => 'register-timeline-2',
-            3 => 'register-timeline-3',
-            4 => 'register-timeline-4',
-            5 => 'register-timeline-10',
-            6 => 'register-timeline-11',
-        ];
-        $this->currentStepClass = $classLookup[$this->currentStep];
     }
 
     public function profile()

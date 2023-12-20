@@ -1,20 +1,20 @@
 <div>
     <form wire:submit="submit">
             <x-form.autocomplete :results="$countries" :selectedCountries="$selectedCountries" label="" name="country" placeholder="Search by Country"/>
-            <x-form.multiselect name="titles" label="Select multiple" multiple>
+            <x-form.choice name="titles" label="Select multiple" multiple>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Dr">Dr</option>
                 <option value="Prof">Prof</option>
-            </x-form.multiselect>
-            <x-form.multiselect name="title" label="Select Single">
+            </x-form.choice>
+            <x-form.choice name="title" label="Select Single">
                 <option value="">Select Title</option>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Dr">Dr</option>
                 <option value="Prof">Prof</option>
-            </x-form.multiselect>
-            <x-form.multiselect name="title" label="Select Single with group">
+            </x-form.choice>
+            <x-form.choice name="title" label="Select Single with group">
                 <option value="">Select Title</option>
                 <optgroup label="General"> 
                     <option value="Mr">Mr</option>
@@ -24,7 +24,7 @@
                     <option value="Dr">Dr</option>
                     <option value="Prof">Prof</option>
                 </optgroup>
-            </x-form.multiselect>
+            </x-form.choice>
             <x-form.select label="Title" name="title">
                 <option value="">Select Title</option>
                 <option value="Mr">Mr</option>

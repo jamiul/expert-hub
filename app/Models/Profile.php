@@ -40,6 +40,11 @@ class Profile extends Model implements HasMedia
             ->withTimestamps();
     }
 
+    public function expertField()
+    {
+        $this->belongsTo(Expertise::class);
+    }
+
     public function expertises()
     {
         return $this->belongsToMany(Expertise::class, 'profile_expertise')
