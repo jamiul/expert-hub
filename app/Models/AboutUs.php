@@ -53,4 +53,5 @@ class AboutUs extends Model implements HasMedia
             return $mediaItems[0]->getUrl();
         }
     }
+
 }

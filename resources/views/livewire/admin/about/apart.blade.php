@@ -65,8 +65,8 @@
                                                 @if ($aboutApart->type == 'client')
                                                     <div class="col-md-6 col-sm-6">
                                                         <div class="tab-block">
-                                                            <div class="tab-img"> <img
-                                                                    src="{{ asset('assets/frontend/img/tab-icon.png') }}">
+                                                            <div class="tab-img">
+                                                                <img src="{{ $aboutApart->iconImage() }}" alt="">
                                                             </div>
                                                             <div class="tab-text">
                                                                 <h3>
@@ -74,7 +74,8 @@
                                                                 </h3>
                                                                 <button type="button" data-bs-toggle="modal"
                                                                     data-bs-target="#updateApartDetails"
-                                                                    class="btn btn-outline-info btn-sm">Edit</button>
+                                                                    class="btn btn-outline-info btn-sm"
+                                                                    wire:click="editApart({{ $aboutApart->id }})">Edit</button>
                                                                 <button type="button" data-bs-toggle="modal"
                                                                     data-bs-target="#deleteApartModal"
                                                                     class="btn btn-outline-danger btn-sm"
@@ -95,8 +96,8 @@
                                                 @if ($aboutApart->type == 'expert')
                                                     <div class="col-md-6 col-sm-6">
                                                         <div class="tab-block">
-                                                            <div class="tab-img"> <img
-                                                                    src="{{ asset('assets/frontend/img/tab-icon.png') }}">
+                                                            <div class="tab-img">
+                                                                <img src="{{ $aboutApart->iconImage() }}" alt="">
                                                             </div>
                                                             <div class="tab-text">
                                                                 <h3>
@@ -104,12 +105,12 @@
                                                                 </h3>
                                                                 <button type="button" data-bs-toggle="modal"
                                                                     data-bs-target="#updateApartDetails"
-                                                                    class="btn btn-outline-info btn-sm">Edit</button>
+                                                                    class="btn btn-outline-info btn-sm"
+                                                                    wire:click="editApart({{ $aboutApart->id }})">Edit</button>
                                                                 <button type="button" data-bs-toggle="modal"
                                                                     data-bs-target="#deleteApartModal"
                                                                     class="btn btn-outline-danger btn-sm"
                                                                     wire:click="deleteApart({{ $aboutApart->id }})">Delete</button>
-                                                                <p>{{ $aboutApart->description }}</p>
                                                                 <p>{{ $aboutApart->description }}</p>
                                                             </div>
                                                         </div>

@@ -6,11 +6,14 @@ use App\Models\AboutUs;
 use Livewire\Component;
 use App\Models\AboutApart;
 use Illuminate\Support\Facades\Validator;
+use Livewire\WithFileUploads;
 
 class Apart extends Component
 {
+    use WithFileUploads;
+
     public $apartAboutPage, $aboutAparts, $set_title, $description, $type, $aboutApartId;
-    public $apart_title, $about_us_id;
+    public $apart_title, $about_us_id, $icon;
     public $apart_subtitle;
 
     public function rules()
@@ -18,7 +21,7 @@ class Apart extends Component
         return [
             'set_title' => ['required', 'string'],
             'description' => ['required', 'string'],
-            // 'icon' => ['image'],
+            'icon' => ['required', 'image'],
             'type' => ['required', 'string'],
         ];
     }
@@ -31,6 +34,7 @@ class Apart extends Component
     {
         $this->set_title = '';
         $this->description = '';
+        $this->icon = '';
         $this->type = '';
     }
 
@@ -70,12 +74,17 @@ class Apart extends Component
         $data = $this->validate();
 
         try {
-            AboutApart::create([
+            $aboutApart = AboutApart::create([
                 'about_us_id' => $this->apartAboutPage->id,
                 'set_title' => $data['set_title'],
                 'description' => $data['description'],
                 'type' => $data['type'],
             ]);
+
+            $aboutApart->addMedia($this->icon->getRealPath())
+                ->usingName($this->icon->getClientOriginalName())
+                ->toMediaCollection('icon');
+
             session()->flash('success', 'About Apart Created Successfully!!');
             $this->resetFields();
             $this->dispatch('close-modal');
@@ -98,9 +107,9 @@ class Apart extends Component
                 $this->about_us_id = $aboutApart->about_us_id;
                 $this->set_title = $aboutApart->set_title;
                 $this->description = $aboutApart->description;
+                $this->type = $aboutApart->type;
+                $this->icon = $aboutApart->icon;
                 $this->aboutApartId = $aboutApart->id;
-                // $this->resetFields();
-                // $this->dispatch('close-modal');
             } else {
                 session()->flash('error', 'About Apart not found');
                 // return redirect()->to('/admin/about-us');
@@ -118,8 +127,17 @@ class Apart extends Component
                 'about_us_id' => $this->apartAboutPage->id,
                 'set_title' => $this->set_title,
                 'description' => $this->description,
+                'icon' => $this->icon,
                 'type' => $this->type,
             ]);
+
+            // Retrieve the updated AboutApart model instance
+            $aboutApart = AboutApart::find($this->aboutApartId);
+
+            $aboutApart->addMedia($this->icon->getRealPath())
+                ->usingName($this->icon->getClientOriginalName())
+                ->toMediaCollection('icon');
+
             session()->flash('success', 'Apart Updated Successfully!!');
             $this->resetFields();
         } catch (\Exception $ex) {
