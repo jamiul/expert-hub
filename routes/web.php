@@ -44,8 +44,8 @@ Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middl
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
+Route::get('/profile/create', [ProfileController::class, 'create'])->middleware('auth')->name('profile.create');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 

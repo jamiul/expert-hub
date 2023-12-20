@@ -19,8 +19,8 @@ class LanguageSeeder extends Seeder
         $languages = [];
         foreach ($data as $language) {
             $languages[] = [
-                'code' => $language[0],
-                'name' => $language[1],
+                'code' => $language[1],
+                'name' => $language[0],
             ];
         }
 

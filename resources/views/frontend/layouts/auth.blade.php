@@ -20,5 +20,18 @@
             </div>
         </div>
         @yield('content')
+        <script>
+            function openModal(id){
+                const modal = new bootstrap.Modal(document.getElementById(id))
+                modal.show();
+            }
+            function closeModal(id){
+                const modal = new bootstrap.Modal(document.getElementById(id));
+                modal.hide();
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = 'initial';
+                document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+            }
+        </script>
     </body>
 </html>

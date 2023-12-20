@@ -8,6 +8,7 @@
 'id' => $name,
 'required' => false,
 'placeholder' => 'Type here to select',
+'searchPlaceholder' => 'Search Here',
 ])
 
 <div
@@ -22,6 +23,7 @@
                     placeholder:true,
                     search:false,
                     placeholderValue: '{{ $placeholder }}',
+                    searchPlaceholderValue: '{{ $searchPlaceholder }}',
                     items: $wire.{{ $name }},
                 })
                 element.addEventListener('change', function(){
