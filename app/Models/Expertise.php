@@ -16,7 +16,7 @@ class Expertise extends Model
         return $this->belongsTo(Expertise::class, 'parent_id');
     }
 
-    public function childrens()
+    public function children()
     {
         return $this->hasMany(Expertise::class, 'parent_id', 'id');
     }
@@ -29,6 +29,11 @@ class Expertise extends Model
     public function scopeSkill($query)
     {
         return $query->where('is_skill', true);
+    }
+
+    public function scopeIsChild($query)
+    {
+        return $query->whereNotNull('parent_id');
     }
 
     public function scopeIsParent($query)
