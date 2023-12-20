@@ -580,9 +580,46 @@
             <input type="text" class="form-control edux-input-type" id="inputAddress" placeholder="Type scholarship name">
           </div>
           <div class="col-12 mt-4">
-            <label for="inputAddress2" class="form-label edux-label">Scholarship Url</label>
+            <label for="inputAddress2" class="form-label edux-label">Scholarship Website</label>
             <input type="text" class="form-control edux-input-type" id="inputAddress2" placeholder="Add scholarship url">
           </div>
+
+          <div class="col-12 mt-4">
+            <label for="inputAddress2" class="form-label edux-label">Location</label>
+            <select id="inputState" class="form-select edux-input-type">
+                <option selected>Select options</option>
+                <option>Select options</option>
+                <option>Select options</option>
+                <option>Select options</option>
+              </select>
+          </div>
+
+          <div class="col-12 mt-4">
+            <label for="inputAddress2" class="form-label edux-label">University</label>
+            <select id="inputState" class="form-select edux-input-type">
+                <option selected>Select options</option>
+                <option>Select options</option>
+                <option>Select options</option>
+                <option>Select options</option>
+              </select>
+          </div>
+
+          <div class="col-12 mt-4">
+            <label for="inputAddress2" class="form-label edux-label">Deadline</label>
+            <input type="text" class="form-control edux-input-type" id="inputAddress2" placeholder="Add scholarship url">
+          </div>
+
+          <div class="col-12 mt-4">
+                  <div class="col-md-12">
+                        <div class="form-check edux-form-check-scholarship">
+                          <input class="form-check-input" type="checkbox" id="gridCheck3">
+                          <label class="form-check-label edux-label" for="gridCheck3">
+                          Automatic Consideration
+                          </label>
+                        </div>
+                    </div>
+              </div>
+
 
 
           <div class="col-md-6 mt-4">
