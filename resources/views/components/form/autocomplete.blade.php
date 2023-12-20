@@ -4,11 +4,12 @@
     'id' => $name,
     'disabled' => false,
     'readonly' => false,
-    'results' => []
+    'results' => [],
+    'selectedCountries' => [],
 ])
-<div class="autocomplete-field-wrapper" x-data="{ open: false }">
-    <div class="form-input-group form-input-has-icon">
-        <label class="form-input-label">{{ $label }}</label>
+<div class="form-input-group form-input-has-icon autocomplete-field" x-data="{ open: false }">
+    <div class="autocomplete-field-wrapper">
+        @if($label)<label class="form-input-label">{{ $label }}</label>@endif
         <input
             x-on:click="open = true"
             wire:model.live.debounce.500ms="{{ $name }}"
@@ -27,6 +28,14 @@
                 <li wire:key="{{ $result->id }}" x-on:click="open = false; $wire.select{{ ucfirst($name) }}('{{ $result->name }}')"> {{ $result->name }} </li>
             @empty
                 <li>No results found</li>
+            @endforelse
+        </ul>
+    </div>
+    <div class="autocomplete-field-results">
+        <ul>
+            @forelse ($selectedCountries as $country)
+                <li>{{$country}} <i class="icon-item-remove"></i></li>
+            @empty
             @endforelse
         </ul>
     </div>

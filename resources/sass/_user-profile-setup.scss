@@ -87,7 +87,7 @@ section {
                 color: $edu-primary-color;
                 border-radius: 2.625rem;
                 border: 1px solid $edu-primary-color;
-                padding: 0.125rem 0.75rem;
+                padding: 0.125rem 0.60rem;
             }
         }
     }
@@ -111,32 +111,53 @@ section {
         }
     }
 
+    .form-input-group {
+        margin-bottom: 0;
+    }
+
     .accordion {
         .accordion-button {
+            padding: 10px 12px;
+
             &:not(.collapsed) {
-                background-color: transparent;
-                color: $edu-primary-color;
+                color: $edu-headings-color;
                 box-shadow: none !important;
+                font-weight: 500;
+                background: rgba(0, 54, 227, 0.04);
+
             }
 
             &:focus {
                 box-shadow: none !important;
             }
+
+            &:after {
+                width: 16px;
+                height: 16px;
+                background-size: cover;
+                opacity: 0.6;
+            }
         }
 
         .accordion-collapse {
+            &.show {
+                background: rgba(0, 54, 227, 0.04);
+            }
+
             .btn {
-                padding: 0.25rem 0rem 0.25rem 1rem;
+                padding: 0.35rem 12px 0.35rem 12px;
                 text-align: left;
                 font-weight: 400;
                 margin: 1px 0;
 
                 &.btn-light {
-                    background-color: #fff;
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
 
                     &.selected-skill {
-                        background: $edu-primary-light-color;
-                        color: $edu-secondary-dark-color;
+                        background: transparent;
+                        color: $edu-primary-color;
                     }
                 }
             }
@@ -169,6 +190,35 @@ section {
 
         p {
             max-width: 300px;
+        }
+    }
+}
+
+.progress-step-content {
+    .card {
+        .card-footer {
+            .icon-btn {
+                &:hover {
+                    path {
+                        fill: $edu-primary-color;;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.progress-step-control-btn-wrapper {
+    .btn {
+        width: 265px;
+        text-align: center;
+
+        &.btn-outline-primary {
+            &:hover {
+                svg path {
+                    fill: #ffffff;
+                }
+            }
         }
     }
 }

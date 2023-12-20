@@ -18,7 +18,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-biography', 'figma.profilebiography');
     Route::view('/profile-picture', 'figma.profilepicture');
     Route::view('/profile-completed', 'figma.profilecompleted');
-    Route::view('/profile-expertises-popup', '');
+    Route::view('/scholarship-database', 'figma.scholarshipdatabase');
 
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');

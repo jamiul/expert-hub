@@ -1,0 +1,96 @@
+.scholarship-database-page-layout {
+    display: grid;
+    border-radius: 7px;
+    border: 1px solid $edu-border-color;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+    @media screen and (min-width: 990px) {
+        grid-template-columns: 320px auto;
+    }
+    @media screen and (max-width: 990px) and (min-width: 767px) {
+        grid-template-columns: 280px auto;
+    }
+
+    & > div {
+        padding: 32px;
+
+        &.scholarship-database-filter-col {
+            border-right: 1px solid $edu-border-color;
+            background: #FCFCFF;
+            @media screen and (max-width: 767px) {
+                border-right: none;
+                border-bottom: 1px solid $edu-border-color;
+            }
+        }
+    }
+}
+
+.scholarship-database-content-list-item {
+    display: grid;
+    grid-template-columns: 72px auto 300px;
+    gap: 10px;
+    padding: 16px 0;
+    align-items: center;
+    @media screen and (max-width: 550px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .scholarship-university-logo {
+        div {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+    }
+
+    .scholarship-university-info {
+        @media screen and (max-width: 1200px) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        p {
+            color: rgba(48, 55, 68, 0.70);
+        }
+    }
+
+    .scholarship-action {
+        @media screen and (max-width: 1200px) {
+            order: 4;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .btn {
+            padding: 9px;
+
+            &.btn-outline-light {
+                border: 2px solid $edu-border-color;
+            }
+
+            &.btn-outline-primary {
+                padding-left: 27px;
+                padding-right: 27px;
+            }
+        }
+    }
+
+    .scholarship-details {
+        grid-column-start: 2;
+        grid-column-end: 4;
+
+        .custom-table {
+            .tr {
+                .td {
+                    &:first-child {
+                        width: 200px;
+                        @media screen and (max-width: 990px) {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

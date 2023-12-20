@@ -1,6 +1,6 @@
 <div class="progress-step-content ">
-    <h5 class="mb-2">Biography</h5>
-    <p class="mb-5">Please provide a brief biography, limited to 300 words, which will be used in
+    <h6 class="mb-2">Biography</h6>
+    <p class="mb-4">Please provide a brief biography, limited to 300 words, which will be used in
         your public
         profile. Ensure that it conveys meaningful information you would like the client to know
         about you before engaging in your project</p>
@@ -8,7 +8,7 @@
                 class="input-field-control h-auto"
                 placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
 
-    <h5 class="mb-2 mt-5">Upload your profile picture</h5>
+    <h6 class="mb-2 mt-5">Upload your profile picture</h6>
     <p class="mb-5">Please upload the image you would like to appear in your profile</p>
     <div class="image-upload-preview">
         <div class="">

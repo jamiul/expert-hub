@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.app')
 
 @section('content')
     {{--    @vite('resources/default/css/consultantreg.css')--}}
@@ -21,24 +21,27 @@
                 </div>
                 <div class="col-xl-6 col-lg-8 col-md-8 ps-lg-5 mt-5 mt-lg-0">
 
-                    <div class="progress-step-content  ">
-                        <h5 class="mb-2">Expert by Field</h5>
-                        <x-form.select label="Expert by Field" name="title">
-                            <option value="">Architecture History</option>
-                            <option value="Mr">Architecture</option>
-                            <option value="Mrs">- Architecture History</option>
-                            <option value="Dr">- Architectural Restoration</option>
-                            <option value="Prof">Construction</option>
-                            <option value="Prof">-Art</option>
-                            <option value="Prof">-Animation</option>
-                        </x-form.select>
-                        <h5 class="mb-2">Expert skillset</h5>
+                    <div class="progress-step-content">
+                        <h6 class="mb-2">Expert by Field</h6>
+                        <x-form.multiselect name="title" label="">
+                            <option value="">Select Title</option>
+                            <optgroup label="General">
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                            </optgroup>
+                            <optgroup label="Professional">
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                            </optgroup>
+                        </x-form.multiselect>
+
+                        <h6 class="mb-2">Expert skillset</h6>
                         <div class="accordion-items-select-wrapper skillset-selection-area">
                             <div class="card card-24">
                                 <div class="card-header bg-white">
                                     <div class="form-input-group form-input-has-icon input-icon-left my-0">
                                         <input name="skill" id="skill" class="form-input-field"
-                                               placeholder="Search by categories....">
+                                               placeholder="Search skillsets...">
                                         <span class="form-input-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none">

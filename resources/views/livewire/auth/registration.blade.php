@@ -1,6 +1,6 @@
 <div class="container mb-5">
     <div class="row justify-content-center {{ $currentStep != 1 ? 'd-none' : '' }}">
-        <div class="col-6">
+        <div class="col">
             <div class="registration-card" x-data="{ buttonText: 'Apply as an Expert'}">
                 <h3 class="text-center form-title">Join as an Expert or Client</h3>
                 @error('type')
