@@ -23,7 +23,7 @@
 
                     <div class="progress-step-content">
                         <h6 class="mb-2">Expert by Field</h6>
-                        <x-form.multiselect name="title" label="">
+                        <x-form.choice name="title" label="">
                             <option value="">Select Title</option>
                             <optgroup label="General">
                                 <option value="Mr">Mr</option>
@@ -33,7 +33,7 @@
                                 <option value="Dr">Dr</option>
                                 <option value="Prof">Prof</option>
                             </optgroup>
-                        </x-form.multiselect>
+                        </x-form.choice>
 
                         <h6 class="mb-2">Expert skillset</h6>
                         <div class="accordion-items-select-wrapper skillset-selection-area">
