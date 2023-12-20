@@ -51,7 +51,8 @@
 
     .form-input-field {
         @include input-field;
-
+        position: relative;
+        z-index: 1;
         &.input-field-md {
             height: 42px;
         }
@@ -231,6 +232,11 @@ select.input-field-control {
             }
         }
     }
+}
+
+.choices__inner {
+    background-color: #fff !important;
+    border-color: $edu-border-color !important;
 }
 
 .form-multiselect {
