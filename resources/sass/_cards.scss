@@ -1,4 +1,14 @@
 .card {
+    border-color: $edu-border-color;
+
+    .card-header {
+        padding: 1rem;
+        border-color: $edu-border-color;
+    }
+    .card-footer{
+        border-color: $edu-border-color;
+    }
+
     &.card-shadow {
         box-shadow: 12px 12px 48px 0px #0e006221;
     }

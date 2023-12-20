@@ -5,11 +5,11 @@
     'required' => false,
 ])
 <div class="form-input-group">
-    <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>
-    <input 
-        wire:model="{{ $name }}" 
-        name="{{ $name }}" 
-        id="{{ $id }}" 
+    @if($label) <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>@endif
+    <input
+        wire:model="{{ $name }}"
+        name="{{ $name }}"
+        id="{{ $id }}"
         {{ $attributes->merge(['class' => 'form-input-field ' . ($errors->has($name) ? ' has-error':'')]) }}
         {{ $required ? 'required="required"' : '' }}
     >

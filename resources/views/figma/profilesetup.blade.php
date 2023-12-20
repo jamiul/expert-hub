@@ -58,8 +58,9 @@
                                 <h4>Skillsets</h4>
                                 <ul>
                                     <li>Public Health</li>
-                                    <li>Infectious Dis.</li>
+                                    <li>Infectious Diseases</li>
                                     <li>Curriculum Development</li>
+                                    <li>Educational Assessment</li>
                                 </ul>
                             </div>
                         </div>

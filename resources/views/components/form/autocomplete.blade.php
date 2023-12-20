@@ -7,9 +7,9 @@
     'results' => [],
     'selectedCountries' => [],
 ])
-<div class="autocomplete-field-wrapper" x-data="{ open: false }">
-    <div class="form-input-group form-input-has-icon">
-        <label class="form-input-label">{{ $label }}</label>
+<div class="form-input-group form-input-has-icon autocomplete-field" x-data="{ open: false }">
+    <div class="autocomplete-field-wrapper">
+        @if($label)<label class="form-input-label">{{ $label }}</label>@endif
         <input
             x-on:click="open = true"
             wire:model.live.debounce.500ms="{{ $name }}"
@@ -34,9 +34,8 @@
     <div class="autocomplete-field-results">
         <ul>
             @forelse ($selectedCountries as $country)
-                <li>{{$country}}</li>
+                <li>{{$country}} <i class="icon-item-remove"></i></li>
             @empty
-                
             @endforelse
         </ul>
     </div>
