@@ -19,6 +19,7 @@ class Wizard extends Component
     public $availableSkills = [];
     public $selectedSkillGroups = [];
     public $selectedSkills = [];
+    public $skillSearchResult = [];
     public $skill = '';
 
     public $hourly_rate = '';
@@ -136,18 +137,22 @@ class Wizard extends Component
         ];
     }
 
-    public function searchSkill()
+    public function updatedSkill()
     {
         if ($this->skill) {
-            $availableSkills = Expertise::where('name', 'like', '%' . $this->skill . '%')
-                ->whereNotIn('id', array_keys($this->selectedSkills))
-                ->limit(5)
-                ->get()
-                ->pluck('name', 'id')->toArray();
-            $this->availableSkills = $availableSkills;
+            $this->searchSkill();
         } else {
-            $this->availableSkills = [];
+            $this->skillSearchResult = [];
         }
+    }
+
+    public function searchSkill()
+    {
+        $this->skillSearchResult = Expertise::skill()->isChild()->where('name', 'like', '%' . $this->skill . '%')
+            ->whereNotIn('id', array_keys($this->selectedSkills))
+            ->limit(20)
+            ->get()
+            ->pluck('name', 'id')->toArray();
     }
 
     public function addSkill($id)
@@ -161,7 +166,10 @@ class Wizard extends Component
                 $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
             }
             unset($this->availableSkills[$id]);
-            $this->reset('skill');
+            if($this->skill){
+                $this->searchSkill();
+            }
+            // $this->reset('skill');
         }
         // dd($this->selectedSkills);
     }
