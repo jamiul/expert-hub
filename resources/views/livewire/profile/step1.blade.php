@@ -11,6 +11,9 @@
         @endforeach
     </x-form.choice>
     <h6 class="mb-2 mt-20">Expert skillset</h6>
+    @error('selectedSkills')
+        <div class="form-input-error-message">{{ $message }}</div>
+    @enderror
     <div class="accordion-items-select-wrapper skillset-selection-area">
         <div class="card card-24">
             <div class="card-header bg-white">

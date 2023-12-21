@@ -3,7 +3,6 @@
 namespace App\Livewire\Profile;
 
 use App\Models\Expertise;
-use App\Models\Language;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -22,44 +21,28 @@ class Wizard extends Component
     public $selectedSkills = [];
     public $skill = '';
 
-    public $language = '';
-    public $availableLanguages = [];
-    public $selectedLanguages = [];
-
-
-
-    public $educationQualifications;
-    public $qualification_name = '';
-    public $field_of_study = '';
-    public $university = '';
-    public $start_year = '';
-    public $end_year = '';
-
-    public $availableConsultationTypes = [
-        'Consultation',
-        'Media Interview',
-        'TV Interview',
-        'Keynote Speaker',
-    ];
-    
-    public $consultationService = false;
-    public $showExistingConsultationService = false;
-    public $additionalConsultationService = false;
-    public $noConsultationService = true;
-    public $consultation_type = '';
-    public $value = '';
-    public $consultationServices;
-    public $photo;
+    public $hourly_rate = '';
+    public $platform_fee = '';
+    public $total_fee = '';
 
     public $biography;
-    public $research_profile_1;
-    public $research_profile_2;
-
     public $picture;
+    public $pictureUrl = '';
 
     public function mount()
     {
         $this->availableExpertFieldGroups = Expertise::expertise()->isParent()->get();
+        $this->expertise_id = $this->profile()->expertise_id;
+        $this->profile()->expertises->each(function($skill){
+            $this->selectedSkills[$skill->id] = [
+                'name' => $skill->name,
+                'parent_id' => $skill->parent_id,
+            ];
+            if (!in_array($skill['parent_id'], $this->selectedSkillGroups)) {
+                $this->selectedSkillGroups[] = $skill['parent_id'];
+                $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
+            }
+        });
         $this->availableSkillGroups = Expertise::skill()->isParent()->pluck('id')->toArray();
         $skills = Expertise::skill()->get();
         $skills->each(function($skill){
@@ -68,22 +51,13 @@ class Wizard extends Component
                 'parent_id' => $skill->parent_id,
             ];
         });
-        // dd($this->availableSkills);
-       
-        // $this->availableExpertFields = Expertise::expertise()->get();
-        // $this->selectedLanguages = $this->profile()->languages()->pluck('language_id')->toArray();
-        // $this->selectedExpertises = $this->profile()->expertises()->pluck('expertise_id')->toArray();
-        // $this->availableExpertises = Expertise::whereNotIn('id', array_keys($this->selectedExpertises))->pluck('name', 'id')->toArray();
-        // $this->educationQualifications = $this->profile()->educationQualifications;
-        // $this->consultationServices = $this->profile()->consultationServices;
-        // if ($this->consultationServices->count() > 0) {
-        //     $this->showExistingConsultationService = true;
-        //     $this->noConsultationService = false;
-        //     $this->consultationService = false;
-        // }
-        // $this->biography = $this->profile()->biography;
-        // $this->research_profile_1 = $this->profile()->research_profiles[0] ?? '';
-        // $this->research_profile_2 = $this->profile()->research_profiles[1] ?? '';
+
+        $this->hourly_rate = $this->profile()->hourly_rate;
+        $this->platform_fee = $this->profile()->hourly_rate * .1;
+        $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
+        $this->biography = $this->profile()->biography;
+        $picture = $this->profile()->getMedia('picture');
+        $this->pictureUrl = $picture ? $picture[0]->getUrl() : '';
     }
 
     public function render()
@@ -101,29 +75,55 @@ class Wizard extends Component
     public function next()
     {
         if ($this->currentStep == 1) {
-            $this->validate([
-                'expertise_id' => ['required'],
-                'selectedSkills' => ['required', 'array'],
-            ]);
+            $this->saveSkill();
         }
-        // if ($this->currentStep == 2) {
-        //     $this->validate([
-        //         'selectedExpertises' => ['required', 'array']
-        //     ]);
-        // }
-        // if ($this->currentStep == 3) {
-        //     $this->validate([
-        //         'educationQualifications' => ['required', 'array']
-        //     ]);
-        // }
-        // if ($this->currentStep == 5) {
-        //     $this->saveBiography();
-        // }
+        if ($this->currentStep == 5) {
+            $this->validate([
+                'hourly_rate' => ['required','numeric','min:10','max:1000'],
+            ]);
+            $this->profile()->update(['hourly_rate' => $this->hourly_rate]);
+        }
+        if ($this->currentStep == 6) {
+            $this->validate([
+                'biography' => ['required'],
+                'picture' => ['sometimes'],
+            ]);
+            $this->profile()->update(['biography' => $this->biography]);
+            if($this->picture){
+                $this->profile()->addMedia($this->picture->getRealPath())
+                    ->preservingOriginal()
+                    ->usingName($this->picture->getClientOriginalName())
+                    ->toMediaCollection('picture');
+            }
+            return redirect('/figma/expert-dashboard');
+        }
 
         if ($this->currentStep < 6) {
             $this->currentStep += 1;
         }
 
+    }
+
+    public function saveSkill()
+    {
+        $this->validate([
+            'expertise_id' => ['required'],
+            'selectedSkills' => ['required', 'array'],
+        ]);
+        $this->profile()->update(['expertise_id' => $this->expertise_id]);
+        $expertises = array_keys($this->selectedSkills);
+        $this->profile()->expertises()->sync($expertises);
+    }
+
+    public function updatedHourlyRate()
+    {
+        $this->platform_fee = $this->hourly_rate * 0.1;
+        $this->total_fee = $this->hourly_rate + $this->platform_fee;
+    }
+
+    public function updatedPicture()
+    {
+        $this->pictureUrl = $this->picture->temporaryUrl();
     }
 
     public function messages()
@@ -134,61 +134,6 @@ class Wizard extends Component
             'educationQualifications.required' => 'Please add some Education Qualifications',
             'selectedSkills.required' => 'The skills field is required',
         ];
-    }
-
-    public function searchLanguage()
-    {
-        if ($this->language) {
-            $availableLanguages = Language::where('name', 'like', '%' . $this->language . '%')
-                ->whereNotIn('id', array_keys($this->selectedLanguages))
-                ->limit(3)
-                ->get();
-            $this->availableLanguages = $availableLanguages;
-        } else {
-            $this->availableLanguages = [];
-        }
-    }
-
-    public function addLanguage($id)
-    {
-        $language = Language::find($id);
-        if ($language) {
-            $this->profile()->languages()->firstOrCreate([
-                'name' => $language->name,
-                'language_id' =>  $language->id,
-            ]);
-            $this->selectedLanguages[$language->id] = $language->name;
-            $this->reset('language', 'availableLanguages');
-        }
-    }
-
-    public function removeLanguage($id)
-    {
-        $language = $this->profile()->languages()->where('language_id', $id)->first();
-        $language->delete();
-        unset($this->selectedLanguages[$id]);
-    }
-
-
-    public function addEducationQualification()
-    {
-        $data = $this->validate([
-            'qualification_name' => ['required'],
-            'field_of_study' => ['required'],
-            'university' => ['required'],
-            'start_year' => ['required'],
-            'end_year' => ['required'],
-        ]);
-        $this->profile()->educationQualifications()->create($data);
-        $this->reset('qualification_name', 'field_of_study', 'university', 'start_year', 'end_year');
-        $this->educationQualifications = $this->profile()->educationQualifications;
-    }
-
-    public function removeEducationQualification($id)
-    {
-        $educationQualification = $this->profile()->educationQualifications()->where('id', $id)->first();
-        $educationQualification->delete();
-        $this->educationQualifications = $this->profile()->educationQualifications;
     }
 
     public function searchSkill()
