@@ -2,21 +2,34 @@
 
 namespace App\Livewire\Profile;
 
+use App\Models\Degree;
+use App\Models\Expertise;
+use App\Models\University;
 use Livewire\Component;
 
 class Education extends Component
 {
     public $educations = [];
     public $education = null;
+    public $institutions = [];
+    public $degrees = [];
+    public $fields = [];
+    public $years = [];
+
     public $institution = '';
     public $degree = '';
     public $field = '';
     public $start_year = '';
     public $end_year = '';
+    public $currentEducation = false;
 
     public function mount()
     {
         $this->educations = $this->profile()->education;
+        $this->institutions = University::where('country_id', 14)->get();
+        $this->degrees = Degree::get();
+        $this->fields = Expertise::expertise()->isChild()->get();
+        $this->years = years();
     }
 
     public function addEducation()
@@ -28,6 +41,10 @@ class Education extends Component
             'start_year' => ['required'],
             'end_year' => ['nullable'],
         ]);
+
+        if($this->currentEducation){
+            $data['end_year'] = null;
+        }
 
         $this->profile()->education()->create($data);
         $this->reset('institution', 'degree', 'field', 'start_year', 'end_year');

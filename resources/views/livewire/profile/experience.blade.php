@@ -60,34 +60,31 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body px-0">
-                        <x-form.input type="text" label="Job Title" name="title"
-                                        placeholder="Type Here" value=""/>
-                        <x-form.input type="text" label="Institute" name="institute" placeholder="Type"
-                                        value=""/>
-                        <x-form.input type="text" label="Address" name="address" placeholder="Type"
-                                        value=""/>
+                        <x-form.input type="text" label="Job Title" name="title" placeholder="Type job title"/>
+                        <x-form.input type="text" label="Institute" name="institute" placeholder="Type institute name"/>
+                        <x-form.input type="text" label="Address" name="address" placeholder="Type address"/>
                         <div class="row">
                             <div class="col-md-6">
-                                <x-form.select label="Start Year" name="start_year">
-                                    <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
+                                <x-form.choice name="start_year" label="Start Year" searchPlaceholder="Type Year">
+                                    @foreach ($years as $year)
+                                        <option value="">Select Year</option>
+                                        <option value="{{ $year }}">{{ $year }}</option>
+                                    @endforeach
+                                </x-form.choice>
                             </div>
                             <div class="col-md-6">
-                                <x-form.select label="End Year" name="end_year">
-                                    <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
+                                @if(!$this->currentExperience)
+                                <x-form.choice name="end_year" label="End Year" searchPlaceholder="Type Year">
+                                    @foreach ($years as $year)
+                                        <option value="">Select Year</option>
+                                        <option value="{{ $year }}">{{ $year }}</option>
+                                    @endforeach
+                                </x-form.choice>
+                                @endif
                             </div>
                         </div>
                         <x-form.textarea label="Description" name="description" placeholder="Type"/>
-                        <x-form.check name="currentlyWorking">
+                        <x-form.check name="currentExperience" wire:model.live="currentExperience">
                             I currently work here
                         </x-form.check>
                     </div>
@@ -111,34 +108,31 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body px-0">
-                        <x-form.input type="text" label="Job Title" name="title"
-                                        placeholder="Type Here" value=""/>
-                        <x-form.input type="text" label="Institute" name="institute" placeholder="Type"
-                                        value=""/>
-                        <x-form.input type="text" label="Address" name="address" placeholder="Type"
-                                        value=""/>
+                        <x-form.input type="text" label="Job Title" name="title" placeholder="Type job title"/>
+                        <x-form.input type="text" label="Institute" name="institute" placeholder="Type institute name"/>
+                        <x-form.input type="text" label="Address" name="address" placeholder="Type address"/>
                         <div class="row">
                             <div class="col-md-6">
-                                <x-form.select label="Start Year" name="start_year">
-                                    <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
+                                <x-form.choice name="start_year" label="Start Year" searchPlaceholder="Type Year">
+                                    @foreach ($years as $year)
+                                        <option value="">Select Year</option>
+                                        <option value="{{ $year }}">{{ $year }}</option>
+                                    @endforeach
+                                </x-form.choice>
                             </div>
                             <div class="col-md-6">
-                                <x-form.select label="End Year" name="end_year">
-                                    <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
+                                @if(!$this->currentExperience)
+                                <x-form.choice name="end_year" label="End Year" searchPlaceholder="Type Year">
+                                    @foreach ($years as $year)
+                                        <option value="">Select Year</option>
+                                        <option value="{{ $year }}">{{ $year }}</option>
+                                    @endforeach
+                                </x-form.choice>
+                                @endif
                             </div>
                         </div>
                         <x-form.textarea label="Description" name="description" placeholder="Type"/>
-                        <x-form.check name="currentlyWorking">
+                        <x-form.check name="currentExperience" wire:model.live="currentExperience">
                             I currently work here
                         </x-form.check>
                     </div>

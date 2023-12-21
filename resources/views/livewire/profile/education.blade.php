@@ -17,7 +17,7 @@
                         <td class="fw-medium">: {{ $education->degree }}</td>
                     </tr>
                     <tr>
-                        <td>Degree</td>
+                        <td>Field of Study</td>
                         <td class="fw-medium">: {{ $education->field }}</td>
                     </tr>
                     <tr>
@@ -73,38 +73,47 @@
                 </div>
                 <form wire:submit="addEducation">
                 <div class="modal-body px-0">
-                    
-                        <x-form.input type="text" label="Name of Institution" name="institution"
-                                      placeholder="Type institution name" value=""/>
-
-                        <x-form.input type="text" label="Degree" name="degree" placeholder="Ex: Bachelor"
-                                      value=""/>
-                        <x-form.input type="text" label="Degree" name="field" placeholder="Ex: Bachelor"
-                                      value=""/>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <x-form.select label="Start Year" name="start_year">
+                    <x-form.choice name="institution" label="Name of Institution" searchPlaceholder="Type institution name">
+                        @foreach ($institutions as $institution)
+                            <option value="">Select Institution</option>
+                            <option value="{{ $institution->name }}">{{ $institution->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                    <x-form.choice name="degree" label="Degree" searchPlaceholder="Type degree name">
+                        @foreach ($degrees as $degree)
+                            <option value="">Select Degree</option>
+                            <option value="{{ $degree->name }}">{{ $degree->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                    <x-form.choice name="field" label="Field of Study" searchPlaceholder="Type Field of Study">
+                        @foreach ($fields as $field)
+                            <option value="">Select Field of Study</option>
+                            <option value="{{ $field->name }}">{{ $field->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <x-form.choice name="start_year" label="Start Year" searchPlaceholder="Type Year">
+                                @foreach ($years as $year)
                                     <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
-                            </div>
-                            <div class="col-md-6">
-                                <x-form.select label="End Year" name="end_year">
-                                    <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
-                            </div>
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
+                            </x-form.choice>
                         </div>
-                        <x-form.check name="terms">
-                            I currently study here
-                        </x-form.check>
-                    
+                        <div class="col-md-6">
+                            @if(!$this->currentEducation)
+                            <x-form.choice name="end_year" label="End Year" searchPlaceholder="Type Year">
+                                @foreach ($years as $year)
+                                    <option value="">Select Year</option>
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
+                            </x-form.choice>
+                            @endif
+                        </div>
+                    </div>
+                    <x-form.check name="currentEducation" wire:model.live="currentEducation">
+                        I currently study here
+                    </x-form.check>
                 </div>
                 <div class="modal-footer px-0 pb-0 pt-3">
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
@@ -125,38 +134,47 @@
                 </div>
                 <form wire:submit="updateEducation">
                 <div class="modal-body px-0">
-                    
-                        <x-form.input type="text" label="Name of Institution" name="institution"
-                                      placeholder="Type institution name" value=""/>
-
-                        <x-form.input type="text" label="Degree" name="degree" placeholder="Ex: Bachelor"
-                                      value=""/>
-                        <x-form.input type="text" label="Degree" name="field" placeholder="Ex: Bachelor"
-                                      value=""/>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <x-form.select label="Start Year" name="start_year">
+                    <x-form.choice name="institution" label="Name of Institution" searchPlaceholder="Type institution name">
+                        @foreach ($institutions as $institution)
+                            <option value="">Select Institution</option>
+                            <option value="{{ $institution->name }}">{{ $institution->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                    <x-form.choice name="degree" label="Degree" searchPlaceholder="Type degree name">
+                        @foreach ($degrees as $degree)
+                            <option value="">Select Degree</option>
+                            <option value="{{ $degree->name }}">{{ $degree->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                    <x-form.choice name="field" label="Field of Study" searchPlaceholder="Type Field of Study">
+                        @foreach ($fields as $field)
+                            <option value="">Select Field of Study</option>
+                            <option value="{{ $field->name }}">{{ $field->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <x-form.choice name="start_year" label="Start Year" searchPlaceholder="Type Year">
+                                @foreach ($years as $year)
                                     <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
-                            </div>
-                            <div class="col-md-6">
-                                <x-form.select label="End Year" name="end_year">
-                                    <option value="">Select Year</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                </x-form.select>
-                            </div>
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
+                            </x-form.choice>
                         </div>
-                        <x-form.check name="terms">
-                            I currently study here
-                        </x-form.check>
-                    
+                        <div class="col-md-6">
+                            @if(!$this->currentEducation)
+                            <x-form.choice name="end_year" label="End Year" searchPlaceholder="Type Year">
+                                @foreach ($years as $year)
+                                    <option value="">Select Year</option>
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
+                            </x-form.choice>
+                            @endif
+                        </div>
+                    </div>
+                    <x-form.check name="currentEducation" wire:model.live="currentEducation">
+                        I currently study here
+                    </x-form.check>
                 </div>
                 <div class="modal-footer px-0 pb-0 pt-3">
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
