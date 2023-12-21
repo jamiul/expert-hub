@@ -51,6 +51,8 @@
 
     .form-input-field {
         @include input-field;
+        position: relative;
+        z-index: 1;
 
         &.input-field-md {
             height: 42px;
@@ -90,6 +92,15 @@
     }
 }
 
+.input-field-label {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 1.4rem */
+    text-transform: capitalize;
+    padding: 2px 0;
+    margin: 0;
+}
 
 .input-field-control {
     @include input-field;
@@ -231,6 +242,11 @@ select.input-field-control {
             }
         }
     }
+}
+
+.choices__inner {
+    background-color: #fff !important;
+    border-color: $edu-border-color !important;
 }
 
 .form-multiselect {

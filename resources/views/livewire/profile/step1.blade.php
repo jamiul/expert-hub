@@ -3,7 +3,7 @@
     <x-form.choice name="expertise_id" label="">
         <option value="">Select Title</option>
         @foreach ($availableExpertFieldGroups as $group)
-            <optgroup label="{{ $group->name }}"> 
+            <optgroup label="{{ $group->name }}">
                 @foreach ($group->children as $child)
                     <option value="{{ $child->id }}">{{ $child->name }}</option>
                 @endforeach
@@ -20,7 +20,7 @@
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     @foreach ($availableSkillGroups as $skillId)
                         <div class="accordion-item" wire:key="{{ Str::slug($availableSkills[$skillId]['name']) }}">
-                            <button class="accordion-button collapsed px-0" type="button"
+                            <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#{{ Str::slug($availableSkills[$skillId]['name']) }}"
                                     aria-expanded="false" aria-controls="{{ Str::slug($availableSkills[$skillId]['name']) }}">
                                 {{ $availableSkills[$skillId]['name']}}
