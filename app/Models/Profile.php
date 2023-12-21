@@ -35,9 +35,14 @@ class Profile extends Model implements HasMedia
     public function languages()
     {
         return $this->belongsToMany(Language::class, 'profile_language')
-            ->withPivot('proficiency','active')
+            ->using(ProfileLanguage::class)
+            ->withPivot('proficiency', 'active')
             ->wherePivot('active', 1)
             ->withTimestamps();
+        // return $this->belongsToMany(Language::class, 'profile_language')
+        //     ->withPivot('proficiency','active')
+        //     ->wherePivot('active', 1)
+        //     ->withTimestamps();
     }
 
     public function expertField()

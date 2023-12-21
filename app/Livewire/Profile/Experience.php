@@ -33,7 +33,7 @@ class Experience extends Component
         $this->profile()->experiences()->create($data);
         $this->reset('title', 'institute', 'address', 'start_year', 'end_year', 'description');
         $this->experiences = $this->profile()->experiences;
-        $this->dispatch('experienceAdded', 'addExperience');
+        $this->dispatch('experienceAdded');
     }
 
     public function editExperience($id)
@@ -46,7 +46,7 @@ class Experience extends Component
         $this->start_year = $experience->start_year;
         $this->end_year = $experience->end_year;
         $this->description = $experience->description;
-        $this->dispatch('openEditExperienceModal', 'editExperience');
+        $this->dispatch('openEditExperienceModal');
     }
 
     public function updateExperience()
@@ -62,14 +62,20 @@ class Experience extends Component
         $this->experience->update($data);
         $this->experiences = $this->profile()->experiences;
         $this->reset('title', 'institute', 'address', 'start_year', 'end_year', 'description');
-        $this->dispatch('closeEditExperienceModal', 'editExperience');
+        $this->dispatch('experienceUpdated');
     }
 
-    public function removeExperience($id)
+    public function deleteExperience($id)
     {
         $experience = $this->profile()->experiences()->where('id', $id)->first();
-        $experience->delete();
+        $this->experience = $experience;
+    }
+
+    public function destroyExperience()
+    {
+        $this->experience->delete();
         $this->experiences = $this->profile()->experiences;
+        $this->dispatch('experienceDeleted');
     }
 
     public function profile()

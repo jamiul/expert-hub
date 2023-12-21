@@ -2,9 +2,7 @@
 
 namespace App\Livewire\Profile;
 
-use App\Models\Education;
 use App\Models\Expertise;
-use App\Models\Language;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -77,24 +75,8 @@ class Wizard extends Component
     public function next()
     {
         if ($this->currentStep == 1) {
-            $this->validate([
-                'expertise_id' => ['required'],
-                'selectedSkills' => ['required', 'array'],
-            ]);
-            $this->profile()->update(['expertise_id' => $this->expertise_id]);
-            $expertises = array_keys($this->selectedSkills);
-            $this->profile()->expertises()->sync($expertises);
+            $this->saveSkill();
         }
-        // if ($this->currentStep == 2) {
-        //     $this->validate([
-        //         'selectedExpertises' => ['required', 'array']
-        //     ]);
-        // }
-        // if ($this->currentStep == 3) {
-        //     $this->validate([
-        //         'educationQualifications' => ['required', 'array']
-        //     ]);
-        // }
         if ($this->currentStep == 5) {
             $this->validate([
                 'hourly_rate' => ['required','numeric','min:10','max:1000'],
@@ -120,6 +102,17 @@ class Wizard extends Component
             $this->currentStep += 1;
         }
 
+    }
+
+    public function saveSkill()
+    {
+        $this->validate([
+            'expertise_id' => ['required'],
+            'selectedSkills' => ['required', 'array'],
+        ]);
+        $this->profile()->update(['expertise_id' => $this->expertise_id]);
+        $expertises = array_keys($this->selectedSkills);
+        $this->profile()->expertises()->sync($expertises);
     }
 
     public function updatedHourlyRate()

@@ -32,7 +32,7 @@ class Education extends Component
         $this->profile()->education()->create($data);
         $this->reset('institution', 'degree', 'field', 'start_year', 'end_year');
         $this->educations = $this->profile()->education;
-        $this->dispatch('educationAdded', 'addEducation');
+        $this->dispatch('educationAdded');
     }
 
     public function editEducation($id)
@@ -44,7 +44,7 @@ class Education extends Component
         $this->field = $education->field;
         $this->start_year = $education->start_year;
         $this->end_year = $education->end_year;
-        $this->dispatch('openEditEducationModal', 'editEducation');
+        $this->dispatch('openEditEducationModal');
     }
 
     public function updateEducation()
@@ -59,14 +59,21 @@ class Education extends Component
         $this->education->update($data);
         $this->educations = $this->profile()->education;
         $this->reset('institution', 'degree', 'field', 'start_year', 'end_year');
-        $this->dispatch('closeEditEducationModal', 'editEducation');
+        $this->dispatch('educationUpdated');
     }
 
-    public function removeEducation($id)
+
+    public function deleteEducation($id)
     {
         $education = $this->profile()->education()->where('id', $id)->first();
-        $education->delete();
-        $this->education = $this->profile()->education;
+        $this->education = $education;
+    }
+
+    public function destroyEducation()
+    {
+        $this->education->delete();
+        $this->educations = $this->profile()->education;
+        $this->dispatch('educationDeleted');
     }
 
     public function profile()

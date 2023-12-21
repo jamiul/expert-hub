@@ -28,16 +28,17 @@ class Language extends Component
         $this->profile()->languages()->attach($data['language_id'], ['proficiency' => $data['proficiency']]);
         $this->reset('language_id', 'proficiency');
         $this->languages = $this->profile()->languages;
-        $this->dispatch('languageAdded', 'addLanguage');
+        $this->dispatch('languageAdded');
     }
 
     public function editLanguage($id)
     {
-        $language = $this->profile()->languages()->where('id', $id)->first();
+        $this->languages = $this->profile()->languages;
+        $language = $this->profile()->languages()->where('language_id', $id)->first();
         $this->language = $language;
-        $this->language_id = $language->language_id;
-        $this->proficiency = $language->proficiency;
-        $this->dispatch('openEditLanguageModal', 'editLanguage');
+        $this->language_id = $language->id;
+        $this->proficiency = $language->pivot->proficiency;
+        $this->dispatch('openEditLanguageModal');
     }
 
     public function updateLanguage()
@@ -46,17 +47,26 @@ class Language extends Component
             'language_id' => ['required'],
             'proficiency' => ['required'],
         ]);
-        $this->language->update($data);
+        $this->profile()->languages()->updateExistingPivot($this->language->id, [
+            'proficiency' => $data['proficiency'],
+        ]);
         $this->languages = $this->profile()->languages;
         $this->reset('language_id', 'proficiency');
-        $this->dispatch('closeEditLanguageModal', 'editLanguage');
+        $this->dispatch('languageUpdated');
     }
 
-    public function removeLanguage($id)
+    public function deleteLanguage($id)
     {
-        $language = $this->profile()->languages()->where('id', $id)->first();
-        $language->delete();
-        $this->language = $this->profile()->language;
+        $this->languages = $this->profile()->languages;
+        $language = $this->profile()->languages()->where('language_id', $id)->first();
+        $this->language = $language;
+    }
+
+    public function destroyLanguage()
+    {
+        $this->profile()->languages()->detach($this->language->id);
+        $this->languages = $this->profile()->languages;
+        $this->dispatch('languageDeleted');
     }
 
     public function profile()
