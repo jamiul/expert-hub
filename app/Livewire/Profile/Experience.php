@@ -8,16 +8,20 @@ class Experience extends Component
 {
     public $experiences = [];
     public $experience = null;
+    public $years = [];
+
     public $title = '';
     public $institute = '';
     public $address = '';
     public $start_year = '';
     public $end_year = '';
     public $description = '';
+    public $currentExperience = false;
 
     public function mount()
     {
         $this->experiences = $this->profile()->experiences;
+        $this->years = years();
     }
 
     public function addExperience()

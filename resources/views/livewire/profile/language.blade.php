@@ -103,9 +103,8 @@
                         <div class="modal-body px-0">
                             <div class="row">
                                 <div class="col-md-6">
-                                    
-                                    <x-form.input type="text" readonly label="Language" name="" value="{{ $language->name }}"/>
-                                        <x-form.input type="hidden"  label="" name="language_id"/>
+                                    <x-form.input type="text" readonly label="Language" name="" value="{{ $language?->name }}"/>
+                                    <x-form.input type="hidden"  label="" name="language_id"/>
                                 </div>
                                 <div class="col-md-6">
                                     <x-form.select label="Proficiency" name="proficiency">

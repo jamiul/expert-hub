@@ -17,3 +17,9 @@ function getFullNameByExpertID($id): ?string
 
     return null;
 }
+
+
+function years()
+{
+    return range(date('Y'), 1950);
+}
