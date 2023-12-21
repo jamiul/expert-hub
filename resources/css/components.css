@@ -7,14 +7,28 @@
     position: relative;
 }
 
-.form-input-group .icon-field-wrapper:after {
+
+.form-input-group .icon-field-wrapper .form-input-icon {
     position: absolute;
-    content: "";
-    width: 12px;
-    height: 12px;
+    z-index: 0;
+    width: 24px;
+    height: 24px;
     display: block;
     top: 50%;
-    right: 20px;
+    right: 16px;
+    transform: translateY(-50%);
+    /*background: url(../img/arrow-icon.png) no-repeat center;*/
+}
+
+.form-input-group .choices__inner:after {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    top: 50%;
+    right: 16px;
     transform: translateY(-50%);
     background: url(../img/arrow-icon.png) no-repeat center;
 }

@@ -25,10 +25,13 @@ return new class extends Migration
             $table->string('mission_subtitle')->nullable();
             $table->longText('mission_description')->nullable();
             $table->string('mission_image')->nullable();
+            $table->string('apart_title')->nullable();
+            $table->longText('apart_subtitle')->nullable();
             $table->string('team_title')->nullable();
             $table->longText('team_description')->nullable();
             $table->text('team_list')->nullable();
             $table->string('story_title')->nullable();
+            $table->string('story_subtitle')->nullable();
             $table->longText('story_description')->nullable();
             $table->string('story_image')->nullable();
             $table->timestamps();
