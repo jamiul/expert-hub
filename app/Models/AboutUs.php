@@ -18,6 +18,11 @@ class AboutUs extends Model implements HasMedia
         'team_list' => 'array',
     ];
 
+    public function aboutAparts()
+    {
+        return $this->hasMany(AboutApart::class, 'about_apart_id');
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('header_image')

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Frontend\Controller;
-use Illuminate\Http\Request;
+use App\Models\AboutApart;
+use App\Models\AboutUs;
 
 class AboutUsController extends Controller
 {
     public function index()
     {
-        return view('frontend.about-us.index');
+        $aboutAparts = AboutApart::with('aboutUs')->get();
+        $aboutUs = AboutUs::first();
+
+        return view('frontend.about-us.index', compact('aboutAparts', 'aboutUs'));
     }
 }

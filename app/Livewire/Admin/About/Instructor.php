@@ -14,8 +14,8 @@ class Instructor extends Component
     public function rules()
     {
         return [
-            'instructor_title' => ['required','string'],
-            'instructor_subtitle' => ['required','string'],
+            'instructor_title' => ['required', 'string'],
+            'instructor_subtitle' => ['required', 'string'],
             'instructor_list' => ['array'],
         ];
     }
@@ -48,6 +48,23 @@ class Instructor extends Component
         ]);
 
         return redirect()->to('/admin/about-us');
+    }
+
+    public function removeExpert($id)
+    {
+        $index = array_search($id, $this->instructor_list);
+
+        if ($index !== false) {
+            unset($this->instructor_list[$index]);
+        }
+        $data = $this->validate();
+
+        $this->instructorPage->update([
+            'instructor_title' => $data['instructor_title'],
+            'instructor_subtitle' => $data['instructor_subtitle'],
+            'instructor_list' => $this->instructor_list,
+        ]);
+
     }
 
     public function render()

@@ -2,11 +2,13 @@
 
 namespace App\Livewire\Admin\About;
 
+use App\Enums\ProjectType;
 use App\Models\AboutUs;
 use Livewire\Component;
 use App\Models\AboutApart;
-use Illuminate\Support\Facades\Validator;
 use Livewire\WithFileUploads;
+use Illuminate\Validation\Rules\Enum;
+use Illuminate\Support\Facades\Validator;
 
 class Apart extends Component
 {
@@ -23,6 +25,7 @@ class Apart extends Component
             'description' => ['required', 'string'],
             'icon' => ['required', 'image'],
             'type' => ['required', 'string'],
+            // 'type' => [new Enum(ProjectType::class)],
         ];
     }
 

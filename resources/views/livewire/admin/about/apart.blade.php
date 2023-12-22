@@ -33,7 +33,7 @@
                             </div>
                             <div class="row">
                                 <div class="edux-frontend-left-title">
-                                    <button class="save-update">Save Update</button>
+                                    <button class="save-update">Save</button>
                                 </div>
                             </div>
                         </form>

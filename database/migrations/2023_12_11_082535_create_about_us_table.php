@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('apart_title')->nullable();
             $table->longText('apart_subtitle')->nullable();
             $table->string('team_title')->nullable();
+            $table->string('team_subtitle')->nullable();
             $table->longText('team_description')->nullable();
             $table->text('team_list')->nullable();
             $table->string('story_title')->nullable();
