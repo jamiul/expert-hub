@@ -11,7 +11,7 @@ class Wizard extends Component
 {
     use WithFileUploads;
 
-    public int $currentStep = 2;
+    public int $currentStep = 3;
     public $educations = [];
     
     public $availableExpertFieldGroups = [];

@@ -17,7 +17,7 @@ return [
                 'remove-state-on-close' => false,
             ],
             'default-attributes' => [
-                'size' => 'xl',
+                'size' => '2xl',
             ],
         ],
         'slide-over' => [

@@ -1,9 +1,8 @@
 <div class="progress-step-content">
-    <h5 class="mb-2">Expert by Field</h5>
+    <h5 class="mb-2">Educations</h5>
     <p>Add your educational background to let employers know where you studied or are currently
         studying. Even if you didn't finish, it's important to include it here. And if you've earned
         a college degree, you don't need to add your high school/GED.</p>
-    <h6>Educations</h6>
     <div class="d-grid grid-cols-sm-6 gap-3">
         @foreach ($educations as $education)
         <div class="card">
