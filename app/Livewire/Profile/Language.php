@@ -2,71 +2,39 @@
 
 namespace App\Livewire\Profile;
 
-use App\Models\Language as AvailableLanguage;
+use App\Models\ProfileLanguage;
+use Livewire\Attributes\On;
 use Livewire\Component;
+use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 
 class Language extends Component
 {
-    public $availableLanguages = [];
+    use InteractsWithConfirmationModal;
+    
     public $languages = [];
-    public $language = null;
-    public $language_id = '';
-    public $proficiency = '';
 
     public function mount()
     {
-        $this->availableLanguages = AvailableLanguage::pluck('name', 'id')->toArray();
         $this->languages = $this->profile()->languages;
     }
 
-    public function addLanguage()
+    #[On('refresh')]
+    public function updateLanguageList()
     {
-        $data = $this->validate([
-            'language_id' => ['required'],
-            'proficiency' => ['required'],
-        ]);
-        $this->profile()->languages()->attach($data['language_id'], ['proficiency' => $data['proficiency']]);
-        $this->reset('language_id', 'proficiency');
+        $this->profile()->load('languages');
         $this->languages = $this->profile()->languages;
-        $this->dispatch('languageAdded');
-    }
-
-    public function editLanguage($id)
-    {
-        $this->languages = $this->profile()->languages;
-        $language = $this->profile()->languages()->where('language_id', $id)->first();
-        $this->language = $language;
-        $this->language_id = $language->id;
-        $this->proficiency = $language->pivot->proficiency;
-        $this->dispatch('openEditLanguageModal');
-    }
-
-    public function updateLanguage()
-    {
-        $data = $this->validate([
-            'language_id' => ['required'],
-            'proficiency' => ['required'],
-        ]);
-        $this->profile()->languages()->updateExistingPivot($this->language->id, [
-            'proficiency' => $data['proficiency'],
-        ]);
-        $this->languages = $this->profile()->languages;
-        $this->reset('language_id', 'proficiency');
-        $this->dispatch('languageUpdated');
     }
 
     public function deleteLanguage($id)
     {
         $this->languages = $this->profile()->languages;
-        $language = $this->profile()->languages()->where('language_id', $id)->first();
-        $this->language = $language;
-    }
-
-    public function destroyLanguage()
-    {
-        $this->profile()->languages()->detach($this->language->id);
-        $this->languages = $this->profile()->languages;
-        $this->dispatch('languageDeleted');
+        $this->askForConfirmation(
+            callback: function () use ($id) {
+                $language = $this->profile()->languages()->where('language_id', $id)->first();
+                $this->profile()->languages()->detach($language->id);
+                $this->updateLanguageList();
+            },
+        );
     }
 
     public function profile()
