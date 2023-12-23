@@ -1,7 +1,4 @@
-@assets
-    @vite('resources/css/choices.css')
-    @vite('resources/js/choices.min.js')
-@endassets
+<script src="//unpkg.com/alpinejs" defer></script>
 @props([
 'name' => $attributes->whereStartsWith('wire:model')->first(),
 'label',
@@ -25,10 +22,10 @@
                     shouldSort:false,
                     placeholderValue: '{{ $placeholder }}',
                     searchPlaceholderValue: '{{ $searchPlaceholder }}',
-                    items: $wire.{{ $attributes->whereStartsWith('wire:model')->first() }},
+                    {{-- items: $wire.{{ $attributes->whereStartsWith('wire:model')->first() }}, --}}
                 })
                 element.addEventListener('change', function(){
-                    $wire.{{ $attributes->whereStartsWith('wire:model')->first() }} = choices.getValue(true)
+                    {{-- $wire.{{ $attributes->whereStartsWith('wire:model')->first() }} = choices.getValue(true) --}}
                 })
             })
         }

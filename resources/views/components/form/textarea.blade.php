@@ -1,23 +1,23 @@
 @props([
-    'name',
+    'name' => $attributes->whereStartsWith('wire:model')->first(),
     'label',
-    'id' => $name,
+    'id' => $attributes->whereStartsWith('wire:model')->first(),
     'rows' => 5,
     'required' => false,
 ])
 
-<div class="form-input-group">
+<div class="form-input-group {{ $attributes->get('class') }}">
     <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>
     <textarea 
         rows="{{ $rows }}"
-        wire:model="{{ $name }}" 
         name="{{ $name }}" 
         id="{{ $id }}" 
-        {{ $attributes->merge(['class' => 'form-input-field form-textarea-field' . ($errors->has($name) ? ' form-input-has-error':'')]) }} 
+        class="form-input-field form-textarea-field{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"
+        {{ $attributes->whereDoesntStartWith('class') }}
         {{ $required ? 'required="required"' : '' }}
     >
     </textarea>
-    @error($name)
+    @error($attributes->whereStartsWith('wire:model')->first())
         <div class="form-input-error-message">{{ $message }}</div>
     @enderror
 </div>

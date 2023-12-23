@@ -8,6 +8,9 @@
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
+        @vite('resources/css/choices.css')
+        @vite('resources/js/choices.min.js')
+        <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
     </head>
     <body>
         <div class="container-fluid">
@@ -20,20 +23,7 @@
             </div>
         </div>
         @yield('content')
-        <script>
-            function openModal(id){
-                const modal = new bootstrap.Modal(document.getElementById(id))
-                modal.show();
-            }
-            function closeModal(id){
-                const modal = new bootstrap.Modal(document.getElementById(id));
-                modal.hide();
-                document.getElementById(id).classList.remove('show');
-                document.getElementById(id).style.display = 'none';
-                document.body.classList.remove('modal-open');
-                document.body.style.overflow = 'initial';
-                document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
-            }
-        </script>
+        @livewire('modal-pro')
+        <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
     </body>
 </html>
