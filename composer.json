@@ -19,7 +19,8 @@
         "pxlrbt/filament-activity-log": "^1.0",
         "spatie/laravel-activitylog": "^4.7",
         "spatie/laravel-medialibrary": "^10.15",
-        "spatie/laravel-permission": "^6.1"
+        "spatie/laravel-permission": "^6.1",
+        "wire-elements/pro": "^4.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",
@@ -80,6 +81,12 @@
             "php-http/discovery": true
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wire-elements-pro.composer.sh"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true
 }

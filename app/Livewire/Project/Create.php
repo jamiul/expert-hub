@@ -37,7 +37,7 @@ class Create extends Component
         $attachments = [];
 
         $project = Project::create([
-            'user_id' => Auth::user()->id,
+            'profile_id' => Auth::user()->profile->id,
             'title' => $data['title'],
             'slug' => Str::slug($data['title'], '-') . date('Ymd-his'),
             'description' => $data['description'],

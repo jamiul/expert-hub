@@ -1,7 +1,7 @@
 @props([
-    'name',
+    'name' => $attributes->whereStartsWith('wire:model')->first(),
     'label',
-    'id' => $name,
+    'id' => $attributes->whereStartsWith('wire:model')->first(),
     'disabled' => false,
     'readonly' => false,
     'results' => [],
@@ -18,7 +18,7 @@
             {{ $attributes->merge(['class' => 'form-input-field ']) }}
         >
         <span class="form-input-icon"><x-icon.search fill="#ccc"/></span>
-        @error($name)
+        @error($attributes->whereStartsWith('wire:model')->first())
             <div class="error-message">{{ $message }}</div>
         @enderror
     </div>

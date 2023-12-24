@@ -3,9 +3,9 @@
     @vite('resources/js/choices.min.js')
 @endassets
 @props([
-'name',
+'name' => $attributes->whereStartsWith('wire:model')->first(),
 'label',
-'id' => $name,
+'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
 'placeholder' => 'Type here to select',
 'searchPlaceholder' => 'Search Here',
@@ -22,12 +22,13 @@
                     removeItemButton:true,
                     placeholder:true,
                     search:false,
+                    shouldSort:false,
                     placeholderValue: '{{ $placeholder }}',
                     searchPlaceholderValue: '{{ $searchPlaceholder }}',
-                    items: $wire.{{ $name }},
+                    items: $wire.{{ $attributes->whereStartsWith('wire:model')->first() }},
                 })
                 element.addEventListener('change', function(){
-                    $wire.{{ $name }} = choices.getValue(true)
+                    $wire.{{ $attributes->whereStartsWith('wire:model')->first() }} = choices.getValue(true)
                 })
             })
         }
@@ -35,12 +36,11 @@
 >
     @if($label) <label class="form-input-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>@endif
     <div class="icon-field-wrapper">
-        <select class="form-input-field" x-ref="{{ $name }}" name="{{ $name }}[]"
-                wire:model="{{ $name }}" {{ $attributes }}>
+        <select class="form-input-field" x-ref="{{ $name }}" name="{{ $name }}[]" {{ $attributes }}>
             {{ $slot }}
         </select>
     </div>
 </div>
-@error($name)
+@error($attributes->whereStartsWith('wire:model')->first())
     <div class="form-input-error-message">{{ $message }}</div>
 @enderror

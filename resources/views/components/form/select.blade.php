@@ -1,19 +1,19 @@
 @props([
-'name',
+'name' => $attributes->whereStartsWith('wire:model')->first(),
 'label',
-'id' => $name,
+'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
 ])
 
-<div class="form-input-group">
+<div class="form-input-group {{ $attributes->get('class') }}">
     @if($label)<label class="form-input-label">{{ $label }} @if($required)<span
             class="form-input-required">*</span>@endif</label>@endif
     <div class="icon-field-wrapper">
         <select
-            wire:model="{{ $name }}"
             name="{{ $name }}"
             id="{{ $id }}"
-            {{ $attributes->merge(['class' => 'form-input-field form-select-field' . ($errors->has($name) ? ' has-error':'')]) }}
+            class="form-input-field form-select-field{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"
+            {{ $attributes->whereDoesntStartWith('class') }}
             {{ $required ? 'required="required"' : '' }}
         >
             {{ $slot }}
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    @error($name)
+    @error($attributes->whereStartsWith('wire:model')->first())
     <div class="form-input-error-message">{{ $message }}</div>
     @enderror
 </div>

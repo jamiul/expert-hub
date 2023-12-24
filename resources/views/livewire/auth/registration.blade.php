@@ -99,36 +99,30 @@
                         </div>
 
                         <div class="name-fields-wrapper">
-                            <x-form.select  label="Title" name="title">
+                            <x-form.select  label="Title" wire:model="title">
                                 <option value="">Your title</option>
                                 @foreach ($titles as $title)
                                     <option value="{{ $title }}">{{ $title }}</option>
                                 @endforeach
                             </x-form.select>
-                            <x-form.input type="text" label="First Name" name="first_name"
-                                            placeholder="Your first name"/>
-                            <x-form.input type="text" label="Last Name" name="last_name"
-                                            placeholder="Your last name"/>
+                            <x-form.input type="text" label="First Name" wire:model="first_name" placeholder="Your first name"/>
+                            <x-form.input type="text" label="Last Name" wire:model="last_name" placeholder="Your last name"/>
                         </div>
-                        <x-form.input type="email" label="Email Address" name="email"
-                                        placeholder="name@example.com"/>
-                        <x-form.input type="tel" label="Phone (optional)" name="phone"
-                                        placeholder="your phone number"/>
-                        <x-form.input type="password" label="Password" name="password"
-                                        placeholder="Your password (8 or more characters)"/>
-                        <x-form.input type="password" label="Confirm Password" name="password_confirmation"
-                                        placeholder="Your password (8 or more characters)"/>
-                        <x-form.select label="Country" name="country_id">
+                        <x-form.input type="email" label="Email Address" wire:model="email" placeholder="name@example.com"/>
+                        <x-form.input type="tel" label="Phone (optional)" wire:model="phone" placeholder="your phone number"/>
+                        <x-form.input type="password" label="Password" wire:model="password" placeholder="Your password (8 or more characters)"/>
+                        <x-form.input type="password" label="Confirm Password" wire:model="password_confirmation" placeholder="Your password (8 or more characters)"/>
+                        <x-form.select label="Country" wire:model="country_id">
                             <option value="">Select country</option>
                             @foreach ($countries as $id => $country)
                                 <option value="{{ $id }}">{{ $country }}</option>
                             @endforeach
                         </x-form.select>
                         <div class="registration-checkboxes">
-                            <x-form.check name="send_tips">
+                            <x-form.check wire:model="send_tips">
                                 Send me emails with tips on how to find projects that fit my expertise.
                             </x-form.check>
-                            <x-form.check name="terms_agreed" required>
+                            <x-form.check wire:model="terms_agreed" required>
                                 Yes, I understand and agree to the <a href="#">EduEXHub Terms of Service</a>,
                                 including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy.</a>
                             </x-form.check>
