@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('scholarship_funds', function (Blueprint $table) {
             $table->id();
             $table->foreignId('scholarship_id');
-            $table->string('fund_type'); //phpenum
+            $table->string('fund_type'); //App\Enums\Scholarship\FundType
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

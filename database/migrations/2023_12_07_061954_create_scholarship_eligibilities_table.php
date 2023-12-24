@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('scholarship_eligibilities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('scholarship_id');
-            $table->string('study_level'); //phpenum
+            $table->string('study_level'); //App\Enums\Scholarship\StudyLevel
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

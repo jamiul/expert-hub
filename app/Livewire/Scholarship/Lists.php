@@ -17,6 +17,8 @@ class Lists extends Component
 
     public $filtersArray;
 
+    public $scholarshipCount;
+
     public function __construct()
     {
         $this->filtersArray = request()->only(
@@ -70,7 +72,7 @@ class Lists extends Component
             $studentTypes = $this->filtersArray['studentType'];
             $scholarships = $scholarships->where(function ($q) use ($studentTypes) {
                 foreach ($studentTypes as $value) {
-                    $q->orWhere('student_type', 'like', '%' . $value . '%');
+                    $q->orWhere('student_type', $value);
                 }
             });
         }
@@ -80,10 +82,9 @@ class Lists extends Component
             });
         }
         if (isset($this->filtersArray['applicationDeadline']) && $this->filtersArray['applicationDeadline']) {
-            $applicationDeadline = $this->filtersArray['applicationDeadline'];
-            $applicationDeadline = Carbon::parse($applicationDeadline)->format('Y-m-d');
-
-            $scholarships = $scholarships->whereDate('deadline', '>=', $applicationDeadline);
+            $scholarships = $scholarships->whereYear('deadline', '>=', $this->filtersArray['applicationDeadline'])
+                ->whereDate('deadline', '>', now())
+                ->orWhere('automatic_consideration', true);
         }
         if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
             $scholarships = $scholarships->whereHas('university', function ($query) {
@@ -98,6 +99,7 @@ class Lists extends Component
             });
         }
 
+        $this->scholarshipCount = $scholarships->count();
         $scholarships = $scholarships->paginate($this->limit);
 
         return view('livewire.scholarship.lists', compact('scholarships'));
