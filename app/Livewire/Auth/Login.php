@@ -5,6 +5,7 @@ namespace App\Livewire\Auth;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
@@ -18,7 +19,7 @@ class Login extends Component
     {
         return [
             'email' => ['required', 'email'],
-            'password' => ['required', 'string'],
+            'password' => ['required', 'string', Password::min(8)],
             'remember' => ['boolean'],
         ];
     }

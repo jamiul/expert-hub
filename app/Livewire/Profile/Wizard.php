@@ -3,6 +3,7 @@
 namespace App\Livewire\Profile;
 
 use App\Models\Expertise;
+use App\Models\University;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -10,7 +11,8 @@ class Wizard extends Component
 {
     use WithFileUploads;
 
-    public int $currentStep = 1;
+    public int $currentStep = 4;
+    public $educations = [];
     
     public $availableExpertFieldGroups = [];
     public $expertise_id;
@@ -30,8 +32,12 @@ class Wizard extends Component
     public $picture;
     public $pictureUrl = '';
 
+    public $institutions;
+    public $institution = 'Australian Catholic University';
     public function mount()
     {
+        $this->educations = $this->profile()->education;
+        $this->institutions = University::where('country_id', 14)->get();
         $this->availableExpertFieldGroups = Expertise::expertise()->isParent()->get();
         $this->expertise_id = $this->profile()->expertise_id;
         $this->profile()->expertises->each(function($skill){
