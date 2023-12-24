@@ -11,16 +11,15 @@ class Header extends Component
     use WithFileUploads;
 
     public $aboutPage;
-    public $header_subtitle;
+    public string $header_subtitle = '';
     public $header_image;
 
-    public bool $isDisabled = false;
 
     public function rules()
     {
         return [
-            'header_subtitle' => ['required', 'string'],
-            'header_image' => ['required', 'image'],
+            'header_subtitle' => ['required', 'string', 'min:10', 'max:50'],
+            'header_image' => ['nullable','image'],
         ];
     }
 
@@ -42,20 +41,21 @@ class Header extends Component
 
     public function save()
     {
-        sleep(10);
         $data = $this->validate();
-        $this->isDisabled = true;
 
         $this->aboutPage->update([
             'header_subtitle' => $data['header_subtitle'],
         ]);
 
-        $this->aboutPage->addMedia($this->header_image->getRealPath())
+        if( ! is_null($this->header_image )) {
+            $this->aboutPage->clearMediaCollection('header_image');
+
+            $this->aboutPage->addMedia($this->header_image->getRealPath())
             ->usingName($this->header_image->getClientOriginalName())
             ->toMediaCollection('header_image');
+        }
 
         session()->flash('success', 'Header successfully updated.');
-        $this->isDisabled = false;
         return redirect()->to('/admin/about-us');
     }
 
