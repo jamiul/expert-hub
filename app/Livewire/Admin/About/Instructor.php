@@ -8,8 +8,12 @@ use Livewire\Component;
 
 class Instructor extends Component
 {
-    public $instructor_title, $instructor_subtitle, $instructor_list;
-    public $instructors, $instructorPage, $expertId;
+    public $instructor_title = '';
+    public $instructor_subtitle;
+    public $instructor_list = [];
+    public $instructors = [];
+    public $instructorPage;
+    public $expertId;
 
     public function rules()
     {
@@ -28,7 +32,7 @@ class Instructor extends Component
         }
         $this->instructor_title = $this->instructorPage->instructor_title;
         $this->instructor_subtitle = $this->instructorPage->instructor_subtitle;
-        $this->instructor_list = $this->instructorPage->instructor_list;
+        $this->instructor_list = $this->instructorPage->instructor_list ?? [];
     }
 
     public function addExpert($id)

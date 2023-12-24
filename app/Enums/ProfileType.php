@@ -4,11 +4,7 @@ namespace App\Enums;
 
 enum ProfileType: string
 {
-    case Client = 'client';
-    case Expert = 'expert';
+    case Client = 'Client';
+    case Expert = 'Expert';
 
-    public static function values(): array
-    {
-        return array_column(self::cases(), 'name', 'value');
-    }
 }

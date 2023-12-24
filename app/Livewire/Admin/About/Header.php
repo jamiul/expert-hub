@@ -9,16 +9,25 @@ use Livewire\WithFileUploads;
 class Header extends Component
 {
     use WithFileUploads;
-    
+
     public $aboutPage;
     public $header_subtitle;
     public $header_image;
 
+    public bool $isDisabled = false;
+
     public function rules()
     {
         return [
-            'header_subtitle' => ['required','string'],
-            'header_image' => ['required','image'],
+            'header_subtitle' => ['required', 'string'],
+            'header_image' => ['required', 'image'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'header_subtitle.required' => 'Please add subtitle',
         ];
     }
 
@@ -33,7 +42,9 @@ class Header extends Component
 
     public function save()
     {
+        sleep(10);
         $data = $this->validate();
+        $this->isDisabled = true;
 
         $this->aboutPage->update([
             'header_subtitle' => $data['header_subtitle'],
@@ -43,6 +54,8 @@ class Header extends Component
             ->usingName($this->header_image->getClientOriginalName())
             ->toMediaCollection('header_image');
 
+        session()->flash('success', 'Header successfully updated.');
+        $this->isDisabled = false;
         return redirect()->to('/admin/about-us');
     }
 

@@ -17,9 +17,10 @@
                 <div class="team-hire">
                     <div class="row">
                         @php
-                            $teamCount = count($aboutUs->team_list);
+                            $teamCount = $aboutUs->team_list ? count($aboutUs->team_list) : 0;
                             $item = 1;
                         @endphp
+
                         @foreach ($aboutUs->team_list as $team)
                             @if ($item <= 2)
                                 <div class="col-md-4 col-sm-6">

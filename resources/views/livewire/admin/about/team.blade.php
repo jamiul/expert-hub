@@ -58,7 +58,7 @@
             <div class="team-hire">
                 <div class="container">
                     <div class="row">
-                        @if (count($team_list) > 0)
+                        @if ( !is_null($team_list) && count($team_list) > 0)
                             @foreach ($team_list as $team)
                                 <div class="col-md-2 col-sm-6 {{ count($team_list) > 6 ? 'mt-5' : '' }}">
                                     <div class="team-block">
