@@ -13,7 +13,7 @@
                         </div>
                         <p>I’m an Expert</p>
                     </div>
-                    <input x-on:click="buttonText = 'Apply as an Expert'" class="form-check-input" type="radio" wire:model="type" value="{{ App\Enums\ProfileType::Expert->value }}">
+                    <input x-on:click="buttonText = 'Apply as an Expert'" class="form-check-input" type="radio" wire:model.live="type" value="{{ App\Enums\ProfileType::Expert->value }}">
                 </label>
                 <label class="usertype-radio">
                     <div class="usertype-label">
@@ -22,7 +22,7 @@
                         </div>
                         <p>I’m an Client</p>
                     </div>
-                    <input x-on:click="buttonText = 'Apply as a Client'" class="form-check-input" type="radio" wire:model="type" value="{{ App\Enums\ProfileType::Client->value }}">
+                    <input x-on:click="buttonText = 'Apply as a Client'" class="form-check-input" type="radio" wire:model.live="type" value="{{ App\Enums\ProfileType::Client->value }}">
                 </label>
                 <div class="mt-3">
                     <button x-text="buttonText" class="py-3 button button-block button-primary" wire:click="typeSelected" type="button"></button>
@@ -99,30 +99,30 @@
                         </div>
 
                         <div class="name-fields-wrapper">
-                            <x-form.select  label="Title" wire:model="title">
+                            <x-form.select  label="Title" wire:model.change="title">
                                 <option value="">Your title</option>
                                 @foreach ($titles as $title)
                                     <option value="{{ $title }}">{{ $title }}</option>
                                 @endforeach
                             </x-form.select>
-                            <x-form.input type="text" label="First Name" wire:model="first_name" placeholder="Your first name"/>
-                            <x-form.input type="text" label="Last Name" wire:model="last_name" placeholder="Your last name"/>
+                            <x-form.input type="text" label="First Name" wire:model.live="first_name" placeholder="Your first name"/>
+                            <x-form.input type="text" label="Last Name" wire:model.blur="last_name" placeholder="Your last name"/>
                         </div>
-                        <x-form.input type="email" label="Email Address" wire:model="email" placeholder="name@example.com"/>
+                        <x-form.input type="email" label="Email Address" wire:model.live.debounce.1000="email" placeholder="name@example.com"/>
                         <x-form.input type="tel" label="Phone (optional)" wire:model="phone" placeholder="your phone number"/>
-                        <x-form.input type="password" label="Password" wire:model="password" placeholder="Your password (8 or more characters)"/>
-                        <x-form.input type="password" label="Confirm Password" wire:model="password_confirmation" placeholder="Your password (8 or more characters)"/>
-                        <x-form.select label="Country" wire:model="country_id">
+                        <x-form.input type="password" label="Password" wire:model.live.debounce="password" placeholder="Your password (8 or more characters)"/>
+                        <x-form.input type="password" label="Confirm Password" wire:model.live.debounce="password_confirmation" placeholder="Your password (8 or more characters)"/>
+                        <x-form.select label="Country" wire:model.change="country_id">
                             <option value="">Select country</option>
                             @foreach ($countries as $id => $country)
                                 <option value="{{ $id }}">{{ $country }}</option>
                             @endforeach
                         </x-form.select>
                         <div class="registration-checkboxes">
-                            <x-form.check wire:model="send_tips">
+                            <x-form.check wire:model.boolean="send_tips">
                                 Send me emails with tips on how to find projects that fit my expertise.
                             </x-form.check>
-                            <x-form.check wire:model="terms_agreed" required>
+                            <x-form.check wire:model.boolean.change="terms_agreed" required>
                                 Yes, I understand and agree to the <a href="#">EduEXHub Terms of Service</a>,
                                 including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy.</a>
                             </x-form.check>

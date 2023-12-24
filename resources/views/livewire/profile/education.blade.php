@@ -4,7 +4,7 @@
         studying. Even if you didn't finish, it's important to include it here. And if you've earned
         a college degree, you don't need to add your high school/GED.</p>
     <div class="d-grid grid-cols-sm-6 gap-3">
-        @foreach ($educations as $education)
+        @forelse ($educations as $education)
         <div class="card">
             <div class="card-header bg-white">
                 <p class="fw-medium mb-0"> {{ $education->institution }}</p>
@@ -38,7 +38,9 @@
                 </button>
             </div>
         </div>
-        @endforeach
+        @empty
+            <p class="text-info">Not yet added</p>
+        @endforelse
     </div>
     <button wire:click="$dispatch('modal.open', { component: 'profile.education.create'})" class="btn btn-link px-0 d-inline-flex align-items-center my-4">
         <x-icon.add/><span>Add Education</span>
