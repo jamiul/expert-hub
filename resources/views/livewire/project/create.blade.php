@@ -28,14 +28,14 @@
                                 @if($currentStep > 0)
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
-                                        <x-form.input type="text" label="What is your project title?" name="title" placeholder="eg. Developing curriculum for Postgraduate public health unit"/>
+                                        <x-form.input type="text" label="What is your project title?" wire:model="title" placeholder="eg. Developing curriculum for Postgraduate public health unit"/>
                                     </div>
                                 </div>
                                 @endif
                                 @if($currentStep > 1)
                                 <div class="step step-2 mb-4">
                                     <div class="main-form">
-                                        <x-form.textarea label="Project Description" name="description" placeholder="Describe your project here (max 200 words)"/>
+                                        <x-form.textarea label="Project Description" wire:model="description" placeholder="Describe your project here (max 200 words)"/>
                                         <div
                                             wire:ignore
                                             x-data
@@ -156,8 +156,8 @@
                                                         <option value="AUD">AUD</option>
                                                     </select>
                                                 </div>
-                                                <x-form.input type="number" min="0" label="Budget start amount ($)" name="budget_start_amount" placeholder="100"/>
-                                                <x-form.input type="number" min="0" label="Budget end amount ($)" name="budget_end_amount" placeholder="200"/>
+                                                <x-form.input type="number" min="0" label="Budget start amount ($)" wire:model="budget_start_amount" placeholder="100"/>
+                                                <x-form.input type="number" min="0" label="Budget end amount ($)" wire:model="budget_end_amount" placeholder="200"/>
                                             </div>
                                         </div>
                                     </div>

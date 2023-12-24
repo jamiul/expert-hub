@@ -4,15 +4,16 @@
         your public
         profile. Ensure that it conveys meaningful information you would like the client to know
         about you before engaging in your project</p>
-    <textarea rows="5" cols="10" name="bio" id="bio"
-                class="input-field-control h-auto"
-                placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
+    <x-form.textarea label="" rows="5" cols="10" name="biography" wire:model="biography" placeholder="e.g. Brief 300 words summary about your expertise."/>
 
     <h6 class="mb-2 mt-5">Upload your profile picture</h6>
     <p class="mb-5">Please upload the image you would like to appear in your profile</p>
     <div class="image-upload-preview">
         <div class="">
             <div class="uploaded-img-preview">
+                @if($pictureUrl)
+                     <img src="{{ $pictureUrl }}">
+                @else
                 <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133"
                         viewBox="0 0 132 133" fill="none">
                     <g clip-path="url(#clip0_38_2)">
@@ -27,13 +28,14 @@
                         </clipPath>
                     </defs>
                 </svg>
+                @endif
             </div>
             <p class="text-sm fst-italic my-1">
                 Max 2MB 500px 500px
             </p>
         </div>
         <div>
-            <label for="upload-file"
+            <label for="picture"
                     class="btn btn-outline-primary d-inline-flex align-items-center">
                 <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
                         viewBox="0 0 25 24"
@@ -43,7 +45,7 @@
                         fill="#0036E3"/>
                 </svg>
                 Upload Photo</label>
-            <input type="file" id="upload-file" class="d-none">
+            <input type="file" wire:model="picture" id="picture" class="d-none">
         </div>
     </div>
 </div>

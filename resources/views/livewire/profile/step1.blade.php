@@ -1,6 +1,6 @@
 <div class="progress-step-content  ">
     <h6 class="mb-2">Expert by Field</h6>
-    <x-form.choice name="expertise_id" label="">
+    <x-form.choice wire:model="expertise_id" label="">
         <option value="">Select Title</option>
         @foreach ($availableExpertFieldGroups as $group)
             <optgroup label="{{ $group->name }}">
@@ -11,31 +11,40 @@
         @endforeach
     </x-form.choice>
     <h6 class="mb-2 mt-20">Expert skillset</h6>
+    @error('selectedSkills')
+        <div class="form-input-error-message">{{ $message }}</div>
+    @enderror
     <div class="accordion-items-select-wrapper skillset-selection-area">
         <div class="card card-24">
             <div class="card-header bg-white">
-                <x-form.search class="input-field-md" label="" name="skill" placeholder="Search skillsets..."/>
+                <x-form.search class="input-field-md" label="" name="skill" wire:model.live="skill" placeholder="Search skillsets..."/>
             </div>
             <div class="card-body py-3">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
-                    @foreach ($availableSkillGroups as $skillId)
-                        <div class="accordion-item" wire:key="{{ Str::slug($availableSkills[$skillId]['name']) }}">
-                            <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#{{ Str::slug($availableSkills[$skillId]['name']) }}"
-                                    aria-expanded="false" aria-controls="{{ Str::slug($availableSkills[$skillId]['name']) }}">
-                                {{ $availableSkills[$skillId]['name']}}
-                            </button>
-                            <div id="{{ Str::slug($availableSkills[$skillId]['name']) }}" class="accordion-collapse collapse"
-                                    aria-labelledby="{{ Str::slug($availableSkills[$skillId]['name']) }}"
-                                    data-bs-parent="#accordionFlushExample">
-                                @foreach ($availableSkills as $id => $skill)
-                                    @if($skill['parent_id'] == $skillId)
-                                        <button class="btn btn-light w-100" wire:click="addSkill({{ $id }})" wire:key="{{ Str::slug($skill['name']) }}">{{ $skill['name'] }}</button>
-                                    @endif
-                                @endforeach
+                    @if(count($skillSearchResult) > 0)
+                        @foreach ($skillSearchResult as $id => $name)
+                            <button class="btn btn-light w-100" wire:click="addSkill({{ $id }})" wire:key="{{ Str::slug($name) }}">{{ $name }}</button>
+                        @endforeach
+                    @else
+                        @foreach ($availableSkillGroups as $skillId)
+                            <div class="accordion-item" wire:key="{{ Str::slug($availableSkills[$skillId]['name']) }}">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#{{ Str::slug($availableSkills[$skillId]['name']) }}"
+                                        aria-expanded="false" aria-controls="{{ Str::slug($availableSkills[$skillId]['name']) }}">
+                                    {{ $availableSkills[$skillId]['name']}}
+                                </button>
+                                <div id="{{ Str::slug($availableSkills[$skillId]['name']) }}" class="accordion-collapse collapse"
+                                        aria-labelledby="{{ Str::slug($availableSkills[$skillId]['name']) }}"
+                                        data-bs-parent="#accordionFlushExample">
+                                    @foreach ($availableSkills as $id => $skill)
+                                        @if($skill['parent_id'] == $skillId)
+                                            <button class="btn btn-light w-100" wire:click="addSkill({{ $id }})" wire:key="{{ Str::slug($skill['name']) }}">{{ $skill['name'] }}</button>
+                                        @endif
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

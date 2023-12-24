@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('type')->index(); //App\Enums\ProfileType
+            $table->foreignId('expertise_id')->nullable();
             $table->decimal('hourly_rate')->nullable();
             $table->string('picture')->nullable();
             $table->longText('biography')->nullable();

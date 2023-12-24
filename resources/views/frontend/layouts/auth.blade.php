@@ -8,6 +8,9 @@
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
+        @vite('resources/css/choices.css')
+        @vite('resources/js/choices.min.js')
+        <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
     </head>
     <body>
         <div class="container-fluid">
@@ -20,5 +23,7 @@
             </div>
         </div>
         @yield('content')
+        @livewire('modal-pro')
+        <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
     </body>
 </html>

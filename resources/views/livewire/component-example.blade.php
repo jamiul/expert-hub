@@ -1,20 +1,33 @@
 <div>
     <form wire:submit="submit">
-            <x-form.autocomplete :results="$countries" :selectedCountries="$selectedCountries" label="" name="country" placeholder="Search by Country"/>
-            <x-form.choice name="titles" label="Select multiple" multiple>
+            <x-form.flatpicker label="Date picker" name="datepicker"/>
+            <x-form.autocomplete :results="$countries" :selectedCountries="$selectedCountries" label="" wire:model="country" placeholder="Search by Country"/>
+            <x-form.choice-static wire:model="titles" label="Select multiple static" multiple>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Dr">Dr</option>
+                <option value="Prof">Prof</option>
+            </x-form.choice-static>
+            <x-form.choice-static wire:model="titles" label="Select single static" >
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Dr">Dr</option>
+                <option value="Prof">Prof</option>
+            </x-form.choice-static>
+            <x-form.choice wire:model="titles" label="Select multiple" multiple>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Dr">Dr</option>
                 <option value="Prof">Prof</option>
             </x-form.choice>
-            <x-form.choice name="title" label="Select Single">
+            <x-form.choice wire:model="title" label="Select Single">
                 <option value="">Select Title</option>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Dr">Dr</option>
                 <option value="Prof">Prof</option>
             </x-form.choice>
-            <x-form.choice name="title" label="Select Single with group">
+            <x-form.choice wire:model="title" label="Select Single with group">
                 <option value="">Select Title</option>
                 <optgroup label="General"> 
                     <option value="Mr">Mr</option>
@@ -25,7 +38,7 @@
                     <option value="Prof">Prof</option>
                 </optgroup>
             </x-form.choice>
-            <x-form.select label="Title" name="title">
+            <x-form.select label="Title" wire:model="title">
                 <option value="">Select Title</option>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
@@ -33,18 +46,18 @@
                 <option value="Prof">Prof</option>
             </x-form.select>
             <div class="d-flex">
-                <x-form.input class="me-3" type="text" label="First Name" name="first_name" placeholder="Your first name"/>
-                <x-form.input type="text" label="Last Name" name="last_name" placeholder="Your last name"/>
+                <x-form.input class="me-3" type="text" label="First Name" wire:model="first_name" placeholder="Your first name"/>
+                <x-form.input type="text" label="Last Name" wire:model="last_name" placeholder="Your last name"/>
             </div>
-            <x-form.input type="email" label="Email" name="email" placeholder="Email"/>
-            <x-form.input type="password" label="Password" name="password" placeholder="Password"/>
-            <x-form.input type="number" label="Hourly Rate" name="rate" placeholder="Hourly Rate"/>
-            <x-form.input type="text" readonly label="Type" name="type" placeholder="Type" value="Expert"/>
-            <x-form.textarea label="Bio" name="bio" placeholder="Bio"/>
-            <x-form.search label="Search Skill" name="skill" placeholder="Search skills and select"/>
-            <x-form.search label="" name="skill" placeholder="Search skills and select"/>
-            <x-form.radio label="Gender" name="gender" :options="['male' => 'Male', 'female' => 'Female']" inline/>
-            <x-form.check name="terms">
+            <x-form.input type="email" label="Email" wire:model="email" placeholder="Email"/>
+            <x-form.input type="password" label="Password" wire:model="password" placeholder="Password"/>
+            <x-form.input type="number" label="Hourly Rate" wire:model="rate" placeholder="Hourly Rate"/>
+            <x-form.input type="text" readonly label="Type" wire:model="type" placeholder="Type" value="Expert"/>
+            <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio"/>
+            <x-form.search label="Search Skill" wire:model="skill" placeholder="Search skills and select"/>
+            <x-form.search label="" wire:model="skill" placeholder="Search skills and select"/>
+            <x-form.radio label="Gender" wire:model="gender" :options="['male' => 'Male', 'female' => 'Female']" inline/>
+            <x-form.check wire:model="terms">
                 Temrs & condition
             </x-form.check>
 

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -32,8 +33,13 @@ class Profile extends Model implements HasMedia
         return $this->belongsTo(User::class);
     }
 
-    public function languages()
+    public function languages():BelongsToMany
     {
+        // return $this->belongsToMany(Language::class, 'profile_language')
+        //     ->using(ProfileLanguage::class)
+        //     ->withPivot('proficiency', 'active')
+        //     ->wherePivot('active', 1)
+        //     ->withTimestamps();
         return $this->belongsToMany(Language::class, 'profile_language')
             ->withPivot('proficiency','active')
             ->wherePivot('active', 1)

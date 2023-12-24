@@ -1,18 +1,18 @@
 @props([
-    'name',
-    'id' => $name,
+    'name' => $attributes->whereStartsWith('wire:model')->first(),
+    'id' => $attributes->whereStartsWith('wire:model')->first(),
     'required' => false,
 ])
-<div class="form-check-group">
+<div class="form-check-group {{ $attributes->get('class') }}">
     <input 
         type="checkbox"
-        wire:model="{{ $name }}" 
         name="{{ $name }}" 
         id="{{ $id }}"
-        {{ $attributes->merge(['class' => 'form-check-field form-check-input' . ($errors->has($name) ? ' has-error':'')]) }}
+        class="form-check-field form-check-input{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"
+        {{ $attributes->whereDoesntStartWith('class') }}
     >
     <label class="form-check-label" for="{{ $id }}">{{ $slot }} @if($required)<span class="form-input-required">*</span>@endif</label>
-    @error($name)
+    @error($attributes->whereStartsWith('wire:model')->first())
         <div class="form-input-error-message w-100">{{ $message }}</div>
     @enderror
 </div>

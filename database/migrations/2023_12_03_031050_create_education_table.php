@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('institution');
             $table->string('degree');
             $table->string('field')->nullable();
+            $table->integer('start_year')->nullable();
+            $table->integer('end_year')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

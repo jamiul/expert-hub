@@ -51,9 +51,7 @@ class UserSeeder extends Seeder
                     ->preservingOriginal()
                     ->usingName($user['image'])
                     ->toMediaCollection('picture');
-                $profile->expertises()->attach([
-                    'expertise_id' => $user['expertise'],
-                ]);
+                $profile->update(['expertise_id' => $user['expertise']]);
             }
         }
     }

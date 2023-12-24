@@ -159,6 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
+        WireElements\Pro\Components\Modal\ModalServiceProvider::class,
 
         /*
          * Application Service Providers...
