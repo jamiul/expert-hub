@@ -1,4 +1,3 @@
-
 $edu-lighter-brand-bg: rgba(0, 54, 227, 0.05);
 $edu-lighter-brand-border-color: rgba(0, 89, 201, 0.14);
 
@@ -15,6 +14,21 @@ $edu-gray-4-color: #F6F6F6;
 $edu-red-color: #C00000;
 
 // change the Bootstrap Variables
+$edu-bs-secondary: #6c757d !default;
+$edu-bs-success: #198754 !default;
+$edu-bs-info: #0dcaf0 !default;
+$edu-bs-warning: #ffc107 !default;
+$edu-bs-danger: #dc3545 !default;
+$edu-bs-light: #f8f9fa !default;
+$edu-bs-dark: #212529 !default;
+
 $theme-colors: (
     "primary": $edu-primary-color,
+    "secondary": $edu-bs-secondary,
+    "success": $edu-bs-success,
+    "info": $edu-bs-info,
+    "warning": $edu-bs-warning,
+    "danger": $edu-bs-danger,
+    "light": $edu-bs-light,
+    "dark": $edu-bs-dark
 );
