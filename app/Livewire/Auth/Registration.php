@@ -48,11 +48,23 @@ class Registration extends Component
             'last_name' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
             'phone' => ['nullable'],
-            'password' => ['required','confirmed', Password::min(8)],
+            'password' => [
+                'required', 
+                Password::min(8), 
+                Password::min(8)->mixedCase(),
+                Password::min(8)->numbers(),
+                Password::min(8)->symbols(),
+            ],
+            'password_confirmation' => ['required_with:password', 'same:password'],
             'country_id' => ['required'],
             'send_tips' => ['nullable'],
             'terms_agreed' => ['required'],
         ];
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
 
     public function messages()
