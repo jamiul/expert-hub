@@ -2,7 +2,7 @@
     <h5 class="mb-2">Work Experience History</h5>
     <p>Add your working experience.</p>
     <div class="d-grid grid-cols-sm-6 gap-3">
-        @foreach ($experiences as $experience)
+        @forelse ($experiences as $experience)
         <div class="card">
             <div class="card-header bg-white">
                 <p class="fw-medium mb-0"> {{ $experience->title }}</p>
@@ -24,7 +24,9 @@
                 </button>
             </div>
         </div>
-        @endforeach
+        @empty
+            <p class="text-info">Not yet added</p>
+        @endforelse
     </div>
     <button wire:click="$dispatch('modal.open', { component: 'profile.experience.create'})" class="btn btn-link px-0 d-inline-flex align-items-center my-4" >
         <x-icon.add/><span>Add Work Experience</span>

@@ -1,6 +1,6 @@
 <div class="progress-step-content  ">
     <h6 class="mb-2">Expert by Field</h6>
-    <x-form.choice wire:model="expertise_id" label="">
+    <x-form.choice wire:model.change="expertise_id" label="">
         <option value="">Select Title</option>
         @foreach ($availableExpertFieldGroups as $group)
             <optgroup label="{{ $group->name }}">

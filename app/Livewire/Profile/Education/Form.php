@@ -31,6 +31,10 @@ class Form extends BaseForm
     {
         $data = $this->validate();
 
+        if($data['end_year'] == ''){
+            $data['end_year'] = null;
+        }
+        
         if ($this->currentEducation) {
             $data['end_year'] = null;
         }
