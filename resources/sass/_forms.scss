@@ -373,3 +373,53 @@ select.input-field-control {
         }
     }
 }
+.flatpickr-calendar {
+    //padding: 10px;
+
+    .flatpickr-months {
+        border: 1px solid $edu-border-color;
+        padding-bottom: 6px;
+    }
+
+    .flatpickr-innerContainer {
+        //Calender Header
+        .flatpickr-weekdays {
+            text-transform: uppercase;
+        }
+
+        //Calender Days
+        .flatpickr-days {
+            .flatpickr-day {
+                &.selected {
+                    background-color: $edu-primary-color;
+                }
+
+                &.today {
+                    border-color: $edu-border-color;
+                    background: $edu-lighter-brand-bg;
+
+                    &:hover,
+                    &:focus {
+                        background-color: $edu-primary-color;
+                    }
+                }
+
+                &.inRange,
+                &.prevMonthDay.inRange,
+                &.nextMonthDay.inRange,
+                &.today.inRange,
+                &.prevMonthDay.today.inRange,
+                &.nextMonthDay.today.inRange,
+                &:hover,
+                &.prevMonthDay:hover,
+                &.nextMonthDay:hover,
+                &:focus,
+                &.prevMonthDay:focus,
+                &.nextMonthDay:focus {
+
+                }
+            }
+        }
+    }
+}
+
