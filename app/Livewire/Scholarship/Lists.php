@@ -6,12 +6,16 @@ use App\Models\Scholarship;
 use App\Repositories\ScholarshipRepository;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class Lists extends Component
 {
     use WithPagination;
+
+    #[Url()]
+    public $search = null;
 
     public $limit = 4;
 
@@ -29,8 +33,13 @@ class Lists extends Component
             'applicationDeadline',
             'studentType',
             'country',
-            'university',
+            'selectedUniversities',
         );
+    }
+
+    function updatedSearch()
+    {
+        $this->filtersArray['search'] = $this->search;
     }
 
     public function paginationView()
@@ -86,16 +95,14 @@ class Lists extends Component
                 ->whereDate('deadline', '>', now())
                 ->orWhere('automatic_consideration', true);
         }
-        if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
-            $scholarships = $scholarships->whereHas('university', function ($query) {
-                $query->whereHas('country', function($query){
-                    $query->where('name', $this->filtersArray['country']);
-                });
+        if (isset($this->filtersArray['selectedCountries']) && $this->filtersArray['selectedCountries']) {
+            $scholarships = $scholarships->whereHas('country', function ($query) {
+                $query->whereIn('name', $this->filtersArray['selectedCountries']);
             });
         }
-        if (isset($this->filtersArray['university']) && $this->filtersArray['university']) {
+        if (isset($this->filtersArray['selectedUniversities']) && $this->filtersArray['selectedUniversities']) {
             $scholarships = $scholarships->whereHas('university', function ($query) {
-                $query->where('name', $this->filtersArray['university']);
+                $query->whereIn('name', $this->filtersArray['selectedUniversities']);
             });
         }
 

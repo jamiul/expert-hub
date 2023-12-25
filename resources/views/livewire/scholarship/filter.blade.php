@@ -54,24 +54,22 @@
         <div class="filter-widget-content">
             <x-form.select label="" wire:change="filter" wire:model="applicationDeadline">
                 <option value="">Select Year</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
+                @foreach ($years as $year)
+                    <option value="{{ $year }}">{{ $year }}</option>
+                @endforeach
             </x-form.select>
         </div>
     </div>
     <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">University</h6>
         <div class="filter-widget-content">
-            <x-form.autocomplete :results="$universities" label="" name="university" placeholder="Search by University"/>
+            <x-form.autocomplete :searchResults="$universities" selectFunction="selectUniversity" removeFunction="removeUniversity" :selectedRecords="$selectedUniversities" label="" name="university" placeholder="Search by University"/>
         </div>
     </div>
     <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">Location</h6>
         <div class="filter-widget-content">
-            <x-form.autocomplete :results="$countries" label="" name="country" placeholder="Search by Country"/>
+            <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" label="" name="country" placeholder="Search by Country"/>
         </div>
     </div>
 </div>

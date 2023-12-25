@@ -18,6 +18,11 @@ class ComponentExample extends Component
         $this->selectedCountries[] = $country->name;
     }
 
+    public function removeCountry($name)
+    {
+        $this->selectedCountries = array_diff($this->selectedCountries, [$name]);
+    }
+
     public function mount()
     {
         $this->countries = Country::all();

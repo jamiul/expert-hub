@@ -1,6 +1,6 @@
 <div class="scholarship-database-content-col">
     <div class="scholarship-database-content-search-wrapper pb-3 border-bottom">
-        <x-form.search label="" wire:model="search" placeholder="Find scholarship..."/>
+        <x-form.search label="" wire:model.live="search" placeholder="Find scholarship..."/>
         <p class="mb-0 mt-2">{{$scholarshipCount}} Results found</p>
     </div>
     <div class="scholarship-database-content-list">
@@ -18,13 +18,13 @@
             <div class="scholarship-university-info">
                 <h3 class="h6 mb-1"> {{ $scholarship->title }} </h3>
                 @if (isset($scholarship->university))
-                <p class="mb-0 text-sm fw-medium">{{$scholarship->university->university_name}} | Australia</p>
+                <p class="mb-0 text-sm fw-medium">{{$scholarship->university->name}} | {{$scholarship->country?->name}}</p>
                 @endif
             </div>
             <div class="scholarship-action">
                 <div class="d-flex justify-content-end flex-wrap">
                     {{-- <button class="btn btn-outline-primary m-1">Find Consultants</button> --}}
-                    <a class="btn btn-outline-primary m-1" href="{{ route('find.experts') }}">Find Consultants</a>
+                    <a class="btn btn-outline-primary m-1" href="{{ route('find.experts') }}">Find Experts</a>
                     <button class="btn btn-outline-light m-1">
                         <x-icon.favorite/>
                     </button>
