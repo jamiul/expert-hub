@@ -2,11 +2,11 @@
 Todo:
   - [ABOUT-US]:
   -[My Work]:
-    - Single validation header image [@today].
-    - *Crop* header image after upload. [@low]
-    - Use _DTO_ frontend about us [@high].
-    - Complete search ~functionality~ [@critical].
-    ✘ fetch expert from profiles `table`.
+    ✔ Single validation header image. @today
+    ✔ *Crop* header image after upload. @low
+    ✔ Use _DTO_ frontend about us. @high
+    - Complete search functionality. @critical
+    - fetch expert from profiles `table`.
   [FRONTEND]:
     - use Button Modal.
     -

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Enums\CmnEnum;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class AboutUs extends Model implements HasMedia
 {
@@ -21,6 +23,16 @@ class AboutUs extends Model implements HasMedia
     public function aboutAparts()
     {
         return $this->hasMany(AboutApart::class, 'about_apart_id');
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('header_image')
+            ->nonQueued()
+            ->crop('crop-center', 1920, 380);
+            // ->width(CmnEnum::BANNER_WIDTH)
+            // ->height(CmnEnum::BANNER_HEIGHT);
     }
 
     public function registerMediaCollections(): void
@@ -39,7 +51,7 @@ class AboutUs extends Model implements HasMedia
     {
         $mediaItems = $this->getMedia('header_image');
         if (count($mediaItems) > 0) {
-            return $mediaItems[0]->getUrl();
+            return $mediaItems[0]->getUrl('header_image');
         }
     }
 
@@ -58,5 +70,4 @@ class AboutUs extends Model implements HasMedia
             return $mediaItems[0]->getUrl();
         }
     }
-
 }

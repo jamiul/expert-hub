@@ -4,9 +4,9 @@
             <div class="col-md-5 col-sm-6">
                 <div class="team-text">
                     <div class="heading">
-                        <h4>{{ $aboutUs->team_subtitle }}</h4>
-                        <h2>{{ $aboutUs->team_title }}</h2>
-                        <p>{!! nl2br(e($aboutUs->team_description)) !!}</p>
+                        <h4>{{ $aboutUsDTO->team_subtitle }}</h4>
+                        <h2>{{ $aboutUsDTO->team_title }}</h2>
+                        <p>{!! nl2br(e($aboutUsDTO->team_description)) !!}</p>
                         <div class="team-button">
                             <a href="#">Find Experts</a>
                         </div>
@@ -17,11 +17,10 @@
                 <div class="team-hire">
                     <div class="row">
                         @php
-                            $teamCount = $aboutUs->team_list ? count($aboutUs->team_list) : 0;
                             $item = 1;
                         @endphp
 
-                        @foreach ($aboutUs->team_list as $team)
+                        @foreach ($aboutUsDTO->team_list as $team)
                             @if ($item <= 2)
                                 <div class="col-md-4 col-sm-6">
                                     <div class="team-block">
@@ -42,7 +41,7 @@
                     </div>
                     <div class="row">
                         @php $item2 = 1; @endphp
-                        @foreach ($aboutUs->team_list as $team)
+                        @foreach ($aboutUsDTO->team_list as $team)
                             @if ($item2 >= 3)
                                 <div class="col-md-4 col-sm-6">
                                     <div class="team-block">

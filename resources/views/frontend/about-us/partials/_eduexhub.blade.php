@@ -1,8 +1,8 @@
 <div class="eduexhub about-eduexhub">
     <div class="container">
         <div class="heading">
-            <h4>{{ $aboutUs->apart_title }}</h4>
-            <h2>{{ $aboutUs->apart_subtitle }}</h2>
+            <h4>{{ $aboutUsDTO->apart_title }}</h4>
+            <h2>{{ $aboutUsDTO->apart_subtitle }}</h2>
         </div>
         <div class="tabbable-panel">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -19,8 +19,8 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
-                        @if (count($aboutAparts) > 0)
-                            @foreach ($aboutAparts as $apart)
+                        @if (count($aboutApart) > 0)
+                            @foreach ($aboutApart as $apart)
                                 @if ($apart->type == "client")
                                     <div class="col-md-6 col-sm-6">
                                         <div class="tab-block">
@@ -41,8 +41,8 @@
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row">
-                        @if (count($aboutAparts) > 0)
-                            @foreach ($aboutAparts as $apart)
+                        @if (count($aboutApart) > 0)
+                            @foreach ($aboutApart as $apart)
                                 @if ($apart->type == "expert")
                                     <div class="col-md-6 col-sm-6">
                                         <div class="tab-block">

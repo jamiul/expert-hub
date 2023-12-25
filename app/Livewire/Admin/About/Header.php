@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\About;
 
+use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -18,8 +19,18 @@ class Header extends Component
     public function rules()
     {
         return [
-            'header_subtitle' => ['required', 'string', 'min:10', 'max:50'],
-            'header_image' => ['nullable','image'],
+            'header_subtitle' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::SUBTITLE_MIN,
+                'max:' . CmnEnum::SUBTITLE_MAX
+            ],
+            'header_image' => [
+                'nullable',
+                'image',
+                'max:' . CmnEnum::IMAGE_SIZE,
+                'dimensions:min_width=1920,min_height=380'
+            ],
         ];
     }
 
@@ -36,7 +47,7 @@ class Header extends Component
         if (is_null($this->aboutPage)) {
             $this->aboutPage = AboutUs::create();
         }
-        $this->header_subtitle = $this->aboutPage->header_subtitle;
+        $this->header_subtitle = $this->header_subtitle ? $this->aboutPage->header_subtitle : '';
     }
 
     public function save()

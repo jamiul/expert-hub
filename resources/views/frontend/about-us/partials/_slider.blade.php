@@ -1,12 +1,12 @@
 <div class="about-slider">
     <div class="container">
         <div class="heading">
-            <h4>{{ $aboutUs->instructor_subtitle }}</h4>
-            <h2>{{ $aboutUs->instructor_title }}</h2>
+            <h4>{{ $aboutUsDTO->instructor_subtitle }}</h4>
+            <h2>{{ $aboutUsDTO->instructor_title }}</h2>
         </div>
         <div id="owl-carousel" class="owl-carousel owl-theme">
-            @if(count($aboutUs->instructor_list) > 0)
-                @foreach(($aboutUs->instructor_list) as $instrctor)
+            @if(count($aboutUsDTO->instructor_list) > 0)
+                @foreach(($aboutUsDTO->instructor_list) as $instrctor)
                     <div class="item">
                         <div class="carousel-img">
                             <img src="{{ asset('assets/frontend/img/find-trad1.png') }}">
