@@ -15,6 +15,26 @@
                 @foreach (App\Enums\LanguageProficiency::cases() as $proficiency)
                     <option value="{{ $proficiency->value }}">{{ $proficiency->value }}</option>
                 @endforeach
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
+                <option value="">10</option>
             </x-form.select>
         </div>
     </div>

@@ -22,6 +22,7 @@
                     placeholder:true,
                     search:false,
                     shouldSort:false,
+                    position:'bottom',
                     placeholderValue: '{{ $placeholder }}',
                     searchPlaceholderValue: '{{ $searchPlaceholder }}',
                     items: $wire.{{ $attributes->whereStartsWith('wire:model')->first() }},
