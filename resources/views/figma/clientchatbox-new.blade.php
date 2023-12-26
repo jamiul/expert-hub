@@ -209,12 +209,7 @@
                         <div class="chatbox-mobile-view-controller">
                             <button class="icon-btn"
                                     onclick="removeClass('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
-                                     fill="none">
-                                    <path
-                                        d="M5.86875 10.25L10.0688 14.45L9 15.5L3 9.5L9 3.5L10.0688 4.55L5.86875 8.75H15V10.25H5.86875Z"
-                                        fill="#0036E3"/>
-                                </svg>
+                                <x-icon.arrow-back/>
                             </button>
                         </div>
                         <div class="chatbox-recipient-thumb">
@@ -247,7 +242,7 @@
                     <div class="chatbox-conversation-inner">
                         <div class="chatbox-message-list">
                             <div class="chatbox-conversation-message recipient-message"
-                                 ondblclick="showMobileMessageAction(this)">
+                                 onclick="showMobileMessageAction(this)">
                                 <div class="conversation-user-thumb">
                                     <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}"
                                          alt="avatar">
@@ -464,9 +459,18 @@
                                     </button>
                                 </div>
                                 <div class="message-editor-functional-action">
-                                    <button class="icon-btn">
-                                        <x-icon.alternate-email/>
-                                    </button>
+                                    <div class="dropdown d-inline-block">
+                                        <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <x-icon.alternate-email/>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <button class="dropdown-item">Room</button>
+                                            <button class="dropdown-item">Fabio Rossi</button>
+                                            <button class="dropdown-item">Shuvo Reza</button>
+                                        </div>
+                                    </div>
+
+
                                     <button class="icon-btn">
                                         <x-icon.attach-file/>
                                     </button>
@@ -488,10 +492,10 @@
 
                                 <button><span> <x-icon.reply/> </span> <span>Reply</span></button>
 
-                                <button class="dropdown-toggle" id="moreOptions" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                    <span> <x-icon.three-dots/></span> <span>More</span>
-                                </button>
+                                {{--                                <button class="dropdown-toggle" id="moreOptions" data-bs-toggle="dropdown"--}}
+                                {{--                                        aria-expanded="false">--}}
+                                {{--                                    <span> <x-icon.three-dots/></span> <span>More</span>--}}
+                                {{--                                </button>--}}
                                 {{--            <ul class="dropdown-menu edux-dropdown-option" aria-labelledby="moreOptions">--}}
                                 {{--                <li><a class="dropdown-item" href="#">Option 1</a></li>--}}
                                 {{--                <li><a class="dropdown-item" href="#">Option 2</a></li>--}}
@@ -521,19 +525,19 @@
                             </div>
                         </div>
                         <div class="accordion-wrapper">
-                            <div class="accordion" id="accordionExample">
+                            <div class="chatbox-summary-accordion accordion" id="accordionExample">
 
-                                <div class="accordion-item edux-accordion-item">
-                                    <button class="edux-btn-accordion" type="button" data-bs-toggle="collapse"
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button chatbox-summary-accordion-btn" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#collapseOne" aria-expanded="true"
                                             aria-controls="collapseOne">
                                         Files & Links
                                     </button>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                          aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
+                                        <div class="accordion-body p-0">
+                                            <div class="chatbox-summary-file-link-card">
+                                                <div class="">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
                                                          viewBox="0 0 33 32" fill="none">
                                                         <path
@@ -541,40 +545,17 @@
                                                             fill="#C8C5D5"/>
                                                     </svg>
                                                 </div>
-                                                <div class="edux-message-iconic-text">
+                                                <div class="">
                                                     <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
                                                             a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>Yesterday</span>
+                                                    <div class="file-link-card-footer">
+                                                        <div>40.00 KB</div>
+                                                        <div>Yesterday</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M14.8828 22.6666H9.54948C7.70504 22.6666 6.13281 22.0166 4.83281 20.7166C3.53281 19.4166 2.88281 17.8444 2.88281 15.9999C2.88281 14.1555 3.53281 12.5833 4.83281 11.2833C6.13281 9.98325 7.70504 9.33325 9.54948 9.33325H14.8828V11.9999H9.54948C8.43837 11.9999 7.49392 12.3888 6.71615 13.1666C5.93837 13.9444 5.54948 14.8888 5.54948 15.9999C5.54948 17.111 5.93837 18.0555 6.71615 18.8333C7.49392 19.611 8.43837 19.9999 9.54948 19.9999H14.8828V22.6666ZM10.8828 17.3333V14.6666H21.5495V17.3333H10.8828ZM17.5495 22.6666V19.9999H22.8828C23.9939 19.9999 24.9384 19.611 25.7161 18.8333C26.4939 18.0555 26.8828 17.111 26.8828 15.9999C26.8828 14.8888 26.4939 13.9444 25.7161 13.1666C24.9384 12.3888 23.9939 11.9999 22.8828 11.9999H17.5495V9.33325H22.8828C24.7273 9.33325 26.2995 9.98325 27.5995 11.2833C28.8995 12.5833 29.5495 14.1555 29.5495 15.9999C29.5495 17.8444 28.8995 19.4166 27.5995 20.7166C26.2995 22.0166 24.7273 22.6666 22.8828 22.6666H17.5495Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>01/10/2023</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
+                                            <div class="chatbox-summary-file-link-card">
+                                                <div class="">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
                                                          viewBox="0 0 33 32" fill="none">
                                                         <path
@@ -582,163 +563,83 @@
                                                             fill="#C8C5D5"/>
                                                     </svg>
                                                 </div>
-                                                <div class="edux-message-iconic-text">
+                                                <div class="">
                                                     <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
                                                             a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>30/09/2023</span>
+                                                    <div class="file-link-card-footer">
+                                                        <div>40.00 KB</div>
+                                                        <div>01/10/2023</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="chatbox-summary-file-link-card">
+                                                <div class="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
+                                                         viewBox="0 0 33 32" fill="none">
+                                                        <path
+                                                            d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z"
+                                                            fill="#C8C5D5"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="">
+                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
+                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
+                                                    <div class="file-link-card-footer">
+                                                        <div>40.00 KB</div>
+                                                        <div>30/09/2023</div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
 
 
-                                <div class="accordion-item edux-accordion-item">
-                                    <button class="edux-btn-accordion collapsed" type="button"
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button chatbox-summary-accordion-btn collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                             aria-expanded="false" aria-controls="collapseTwo">
                                         People
                                     </button>
                                     <div id="collapseTwo" class="accordion-collapse collapse"
                                          aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
+                                        <div class="accordion-body p-0">
+                                            <div class="chatbox-recipient-card mb-0 align-items-center user-online">
+                                                <div class="chatbox-recipient-card-thumb">
+                                                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}"
+                                                         alt="avatar">
                                                 </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>Yesterday</span>
-                                                    </div>
+                                                <div class="chatbox-recipient-card-info">
+                                                    <p class="fw-medium">Michel Jhon</p>
+                                                    <p class="mb-0">Owner</p>
                                                 </div>
                                             </div>
-                                        </div>
-
-
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M14.8828 22.6666H9.54948C7.70504 22.6666 6.13281 22.0166 4.83281 20.7166C3.53281 19.4166 2.88281 17.8444 2.88281 15.9999C2.88281 14.1555 3.53281 12.5833 4.83281 11.2833C6.13281 9.98325 7.70504 9.33325 9.54948 9.33325H14.8828V11.9999H9.54948C8.43837 11.9999 7.49392 12.3888 6.71615 13.1666C5.93837 13.9444 5.54948 14.8888 5.54948 15.9999C5.54948 17.111 5.93837 18.0555 6.71615 18.8333C7.49392 19.611 8.43837 19.9999 9.54948 19.9999H14.8828V22.6666ZM10.8828 17.3333V14.6666H21.5495V17.3333H10.8828ZM17.5495 22.6666V19.9999H22.8828C23.9939 19.9999 24.9384 19.611 25.7161 18.8333C26.4939 18.0555 26.8828 17.111 26.8828 15.9999C26.8828 14.8888 26.4939 13.9444 25.7161 13.1666C24.9384 12.3888 23.9939 11.9999 22.8828 11.9999H17.5495V9.33325H22.8828C24.7273 9.33325 26.2995 9.98325 27.5995 11.2833C28.8995 12.5833 29.5495 14.1555 29.5495 15.9999C29.5495 17.8444 28.8995 19.4166 27.5995 20.7166C26.2995 22.0166 24.7273 22.6666 22.8828 22.6666H17.5495Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
+                                            <div class="chatbox-recipient-card align-items-center user-online">
+                                                <div class="chatbox-recipient-card-thumb">
+                                                    <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}"
+                                                         alt="avatar">
                                                 </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>01/10/2023</span>
-                                                    </div>
+                                                <div class="chatbox-recipient-card-info">
+                                                    <p class="fw-medium">Jane Dow</p>
+                                                    <p class="mb-0">Admin (You)</p>
                                                 </div>
                                             </div>
+                                            <button class="btn btn-outline-primary btn-md w-100">Add People</button>
                                         </div>
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>30/09/2023</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
 
-                                <div class="accordion-item edux-accordion-item">
-                                    <button class="edux-btn-accordion collapsed" type="button"
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button chatbox-summary-accordion-btn collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
                                         Personal Note
                                     </button>
                                     <div id="collapseThree" class="accordion-collapse collapse"
                                          aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>Yesterday</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M14.8828 22.6666H9.54948C7.70504 22.6666 6.13281 22.0166 4.83281 20.7166C3.53281 19.4166 2.88281 17.8444 2.88281 15.9999C2.88281 14.1555 3.53281 12.5833 4.83281 11.2833C6.13281 9.98325 7.70504 9.33325 9.54948 9.33325H14.8828V11.9999H9.54948C8.43837 11.9999 7.49392 12.3888 6.71615 13.1666C5.93837 13.9444 5.54948 14.8888 5.54948 15.9999C5.54948 17.111 5.93837 18.0555 6.71615 18.8333C7.49392 19.611 8.43837 19.9999 9.54948 19.9999H14.8828V22.6666ZM10.8828 17.3333V14.6666H21.5495V17.3333H10.8828ZM17.5495 22.6666V19.9999H22.8828C23.9939 19.9999 24.9384 19.611 25.7161 18.8333C26.4939 18.0555 26.8828 17.111 26.8828 15.9999C26.8828 14.8888 26.4939 13.9444 25.7161 13.1666C24.9384 12.3888 23.9939 11.9999 22.8828 11.9999H17.5495V9.33325H22.8828C24.7273 9.33325 26.2995 9.98325 27.5995 11.2833C28.8995 12.5833 29.5495 14.1555 29.5495 15.9999C29.5495 17.8444 28.8995 19.4166 27.5995 20.7166C26.2995 22.0166 24.7273 22.6666 22.8828 22.6666H17.5495Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>01/10/2023</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-body single-file-links">
-                                            <div class="duex-single-file-links">
-                                                <div class="message-iconic">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32"
-                                                         viewBox="0 0 33 32" fill="none">
-                                                        <path
-                                                            d="M7.29308 27.3334C6.61957 27.3334 6.04948 27.1 5.58281 26.6334C5.11615 26.1667 4.88281 25.5966 4.88281 24.9231V7.07702C4.88281 6.40351 5.11615 5.83341 5.58281 5.36675C6.04948 4.90008 6.61957 4.66675 7.29308 4.66675H25.1391C25.8127 4.66675 26.3827 4.90008 26.8494 5.36675C27.3161 5.83341 27.5494 6.40351 27.5494 7.07702V24.9231C27.5494 25.5966 27.3161 26.1667 26.8494 26.6334C26.3827 27.1 25.8127 27.3334 25.1391 27.3334H7.29308ZM7.29308 25.3334H25.1391C25.2417 25.3334 25.3358 25.2906 25.4212 25.2052C25.5067 25.1197 25.5494 25.0257 25.5494 24.9231V7.07702C25.5494 6.97444 25.5067 6.8804 25.4212 6.79492C25.3358 6.70945 25.2417 6.66672 25.1391 6.66672H7.29308C7.1905 6.66672 7.09647 6.70945 7.01098 6.79492C6.92551 6.8804 6.88278 6.97444 6.88278 7.07702V24.9231C6.88278 25.0257 6.92551 25.1197 7.01098 25.2052C7.09647 25.2906 7.1905 25.3334 7.29308 25.3334ZM9.21618 22.3334H23.3186L18.934 16.4872L15.1905 21.359L12.5238 17.9488L9.21618 22.3334Z"
-                                                            fill="#C8C5D5"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="edux-message-iconic-text">
-                                                    <p><a href="#">https://www.eduexhub.com/ab/ messages/att/
-                                                            a49d7ac7-37bc-436b-8db0 -bebc05270a33</a></p>
-                                                    <div class="date-space">
-                                                        <span>40.00 KB</span>
-                                                        <span>30/09/2023</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="accordion-body p-0">
+                                            <x-form.textarea label="" wire:model="bio" placeholder="Type Here"/>
                                         </div>
                                     </div>
                                 </div>
