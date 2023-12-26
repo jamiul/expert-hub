@@ -80,6 +80,7 @@ Route::group(['prefix' => 'figma'], function () {
     // Register-profile options
     Route::view('/notification', 'figma.allnotification');
     Route::view('/client-chatbox', 'figma.clientchatbox');
+    Route::view('/client-chatbox-new', 'figma.clientchatbox-new');
 
     // Training Checkout
     Route::view('/training-checkout', 'figma.trainingcheckout');
