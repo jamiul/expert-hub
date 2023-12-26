@@ -6,9 +6,11 @@ use App\Models\Scholarship;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
+use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 
 class Table extends Component
 {
+    use InteractsWithConfirmationModal;
     // use WithPagination;
 
     public $scholarships;
@@ -21,6 +23,19 @@ class Table extends Component
     public function paginationView()
     {
         return 'livewire.pagination';
+    }
+
+    public function deleteScholarship($id)
+    {
+        $this->askForConfirmation(
+            callback: function () use ($id) {
+                $scholarship = Scholarship::find($id);
+                if($scholarship){
+                    $scholarship->delete();
+                }
+                $this->refreshScholarship();
+            },
+        );
     }
 
     #[On('refresh')]

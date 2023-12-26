@@ -178,10 +178,11 @@
                                                     </li>
                                                     <li>
 
-                                                        <a class="dropdown-item" href="#"><span
+                                                        {{-- <a class="dropdown-item" href="#"><span
                                                                 type="button" data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModalDelete"
-                                                                data-bs-whatever="@mdo">Delete</span></a>
+                                                                data-bs-whatever="@mdo">Delete</span></a> --}}
+                                                        <button wire:click="deleteScholarship({{ $scholarship->id }})">Delete</button>
                                                     </li>
                                                     <li>
                                                         <a class="dropdown-item" href="#">Contact to
