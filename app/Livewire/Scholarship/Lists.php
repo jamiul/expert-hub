@@ -68,7 +68,7 @@ class Lists extends Component
             $scholarships = $scholarships->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
         }
         if (isset($this->filtersArray['level']) && $this->filtersArray['level']) {
-            $scholarships = $scholarships->whereHas('studyLevel', function($query){
+            $scholarships = $scholarships->whereHas('studyLevels', function($query){
                 $query->whereIn('name', $this->filtersArray['level']);
             });
         }

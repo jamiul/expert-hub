@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Scholarships;
 
 use App\Models\Education;
+use App\Models\Scholarship;
 use Livewire\Attributes\Validate;
 use Livewire\Form as BaseForm;
 
@@ -31,14 +32,14 @@ class Form extends BaseForm
     #[Validate('nullable')]
     public $deadline = '';
 
-    #[Validate('nullable')]
+    #[Validate('nullable|array')]
     public $studyAreas = [];
 
-    #[Validate('nullable')]
-    public $fundTypes = [];
-
-    #[Validate('nullable')]
+    #[Validate('nullable|array')]
     public $studyLevels = [];
+
+    #[Validate('nullable|array')]
+    public $fundTypes = [];
 
     public $countries = [];
     public $universities = [];
@@ -46,16 +47,35 @@ class Form extends BaseForm
     public function create()
     {
         $data = $this->validate();
-
-        if($data['end_year'] == ''){
-            $data['end_year'] = null;
+        // dd($data);
+        $scholarship = Scholarship::create([
+            'title' => $data['title'],
+            'link' => $data['link'],
+            'university_id' => $data['university_id'],
+            'country_id' => $data['country_id'],
+            'student_type' => $data['student_type'],
+            'automatic_consideration' => $data['automatic_consideration'],
+            'deadline' => $data['deadline'],
+        ]);
+        if(is_array($data['studyAreas'])){
+            foreach($data['studyAreas'] as $studyArea){
+                $scholarship->studyAreas()->attach($studyArea);
+            }
         }
-        
-        if ($this->currentEducation) {
-            $data['end_year'] = null;
+        if(is_array($data['studyLevels'])){
+            foreach ($data['studyLevels'] as $studyLevel) {
+                $scholarship->studyLevels()->create([
+                    'name' => $studyLevel,
+                ]);
+            }
         }
-
-        $this->profile()->education()->create($data);
+        if(is_array($data['fundTypes'])){
+            foreach ($data['fundTypes'] as $fundType) {
+                $scholarship->fundTypes()->create([
+                    'name' => $fundType,
+                ]);
+            }
+        }
         $this->reset();
     }
 
@@ -64,18 +84,19 @@ class Form extends BaseForm
         
     }
 
-    public function set(Education $education)
+    public function set(Scholarship $scholarship)
     {
-        $this->education = $education;
-        $this->institution = $education->institution;
-        $this->degree = $education->degree;
-        $this->field = $education->field;
-        $this->start_year = $education->start_year;
-        $this->end_year = $education->end_year;
-
-        if(is_null($this->end_year)){
-            $this->currentEducation = true;
-        }
+        $this->scholarship = $scholarship;
+        $this->title = $scholarship->title;
+        $this->link = $scholarship->link;
+        $this->university_id = $scholarship->university_id;
+        $this->country_id = $scholarship->country_id;
+        $this->student_type = $scholarship->student_type;
+        $this->automatic_consideration = $scholarship->automatic_consideration;
+        $this->deadline = $scholarship->deadline->format('Y-m-d');
+        $this->studyAreas = $this->scholarship->studyAreas->pluck('id')->toArray();
+        $this->studyLevels = $this->scholarship->studyLevels->pluck('name')->toArray();
+        $this->fundTypes = $this->scholarship->fundTypes->pluck('name')->toArray();
     }
 
     public function update()
