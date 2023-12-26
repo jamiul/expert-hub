@@ -8,12 +8,14 @@
             <div class="card-body">
                 <table class="table table-sm table-borderless mb-0">
                     <tr>
-                        <td>Language</td>
-                        <td class="fw-medium">: {{ $language->name }}</td>
+                        <td width="90">Language</td>
+                        <td width="3">:</td>
+                        <td class="fw-medium"> {{ $language->name }}</td>
                     </tr>
                     <tr>
                         <td>Proficiency</td>
-                        <td class="fw-medium">: {{ $language->pivot->proficiency }}</td>
+                        <td width="3">:</td>
+                        <td class="fw-medium"> {{ $language->pivot->proficiency }}</td>
                     </tr>
                 </table>
             </div>
@@ -27,7 +29,7 @@
             </div>
         </div>
         @empty
-            <p class="text-info">Not yet added</p>
+            
         @endforelse
     </div>
 
