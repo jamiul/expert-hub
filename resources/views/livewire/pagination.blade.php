@@ -8,7 +8,6 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
        (\$el.closest('{$scrollTo}') || document.querySelector('{$scrollTo}')).scrollIntoView()
     JS
     : '';
-    // dd($paginator);
 @endphp
 <div>
     @if ($paginator->hasPages())

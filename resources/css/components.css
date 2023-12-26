@@ -56,6 +56,16 @@
     border-radius: 4px;
 }
 
+.form-input-group.form-multiselect.has-choice-error .choices__inner{
+    border: 2px solid #FF0000 !important;
+    box-shadow: 0 0 0 .25rem #ff00001a;
+}
+
+.form-input-group.form-multiselect.has-choice-error .choices{
+    box-shadow: 0 0 0 .25rem #ff00001a;
+    border-radius: 4px;
+}
+
 .form-input-group.form-multiselect .is-focused .choices__inner {
     border-color: #0036E3;
     box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .3);
