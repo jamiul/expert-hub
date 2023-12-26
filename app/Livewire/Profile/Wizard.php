@@ -4,6 +4,8 @@ namespace App\Livewire\Profile;
 
 use App\Models\Expertise;
 use App\Models\University;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\File;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -11,8 +13,7 @@ class Wizard extends Component
 {
     use WithFileUploads;
 
-    public int $currentStep = 4;
-    public $educations = [];
+    public int $currentStep = 1;
     
     public $availableExpertFieldGroups = [];
     public $expertise_id;
@@ -32,12 +33,8 @@ class Wizard extends Component
     public $picture;
     public $pictureUrl = '';
 
-    public $institutions;
-    public $institution = 'Australian Catholic University';
     public function mount()
     {
-        $this->educations = $this->profile()->education;
-        $this->institutions = University::where('country_id', 14)->get();
         $this->availableExpertFieldGroups = Expertise::expertise()->isParent()->get();
         $this->expertise_id = $this->profile()->expertise_id;
         $this->profile()->expertises->each(function($skill){
@@ -63,8 +60,7 @@ class Wizard extends Component
         $this->platform_fee = $this->profile()->hourly_rate * .1;
         $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
         $this->biography = $this->profile()->biography;
-        $picture = $this->profile()->getMedia('picture');
-        $this->pictureUrl = $picture ? $picture[0]->getUrl() : '';
+        $this->pictureUrl = $this->profile()->getFirstMediaUrl('picture');
     }
 
     public function render()
@@ -85,15 +81,13 @@ class Wizard extends Component
             $this->saveSkill();
         }
         if ($this->currentStep == 5) {
-            $this->validate([
-                'hourly_rate' => ['required','numeric','min:10','max:1000'],
-            ]);
+            $this->validateOnly('hourly_rate');
             $this->profile()->update(['hourly_rate' => $this->hourly_rate]);
         }
         if ($this->currentStep == 6) {
             $this->validate([
                 'biography' => ['required'],
-                'picture' => ['sometimes'],
+                'picture' => $this->rules()['picture'],
             ]);
             $this->profile()->update(['biography' => $this->biography]);
             if($this->picture){
@@ -130,7 +124,30 @@ class Wizard extends Component
 
     public function updatedPicture()
     {
+        $this->validateOnly('picture');
         $this->pictureUrl = $this->picture->temporaryUrl();
+    }
+
+    public function rules()
+    {
+        $required = $this->pictureUrl == '' ? 'required' : 'nullable';
+        return [
+            'expertise_id' => ['required'],
+            'selectedSkills' => ['required', 'array'],
+            'hourly_rate' => ['required', 'numeric', 'min:10', 'max:1000'],
+            'biography' => ['required'],
+            'picture' => [
+                $required,
+                'image', 
+                File::image()->max(2 * 1024),
+                Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
+            ],
+        ];
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
 
     public function messages()
@@ -175,9 +192,7 @@ class Wizard extends Component
             if($this->skill){
                 $this->searchSkill();
             }
-            // $this->reset('skill');
         }
-        // dd($this->selectedSkills);
     }
 
     public function removeSkill($id)
@@ -197,36 +212,9 @@ class Wizard extends Component
         }
     }
 
-    public function saveBiography()
-    {
-        $this->validate([
-            'biography' => ['required'],
-        ]);
-        $research_profiles = [
-            $this->research_profile_1,
-            $this->research_profile_2,
-        ];
-        $this->profile()->update([
-            'biography' => $this->biography,
-            'research_profiles' => $research_profiles,
-        ]);
-    }
-
     public function removePicture()
     {
         $this->reset('picture');
-    }
-
-    public function previewProfile()
-    {
-        $this->validate([
-            'picture' => ['required', 'image'],
-        ]);
-        $pictureName = $this->picture->getClientOriginalName() . '-' . time() . '.' . $this->picture->extension();
-        $this->picture->storeAs('profile-picture', $pictureName);
-        $this->profile()->update([
-            'picture' => $pictureName,
-        ]);
     }
 
     public function profile()

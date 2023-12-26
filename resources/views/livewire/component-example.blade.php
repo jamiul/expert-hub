@@ -1,7 +1,7 @@
 <div>
     <form wire:submit="submit">
             <x-form.flatpicker label="Date picker" name="datepicker"/>
-            <x-form.autocomplete :results="$countries" :selectedCountries="$selectedCountries" label="" wire:model="country" placeholder="Search by Country"/>
+            <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" label="" name="country" placeholder="Search by Country"/>
             <x-form.choice-static wire:model="titles" label="Select multiple static" multiple>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>

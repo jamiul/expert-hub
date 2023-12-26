@@ -6,7 +6,7 @@ enum StudentType: string
 {
     case Domestic = 'Domestic';
     case International = 'International';
-    case Both = 'Both';
+    case Both = 'Domestic & International';
 
     public function getLabel(): ?string
     {

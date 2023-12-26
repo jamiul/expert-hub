@@ -1,11 +1,13 @@
 @props([
-    'name' => $attributes->whereStartsWith('wire:model')->first(),
+    'name',
     'label',
-    'id' => $attributes->whereStartsWith('wire:model')->first(),
+    'id' => $name,
     'disabled' => false,
     'readonly' => false,
-    'results' => [],
-    'selectedCountries' => [],
+    'searchResults',
+    'selectFunction',
+    'selectedRecords',
+    'removeFunction',
 ])
 <div class="form-input-group form-input-has-icon autocomplete-field" x-data="{ open: false }">
     <div class="autocomplete-field-wrapper">
@@ -24,8 +26,8 @@
     </div>
     <div class="autocomplete-field-suggestion">
         <ul class="" x-show="open" x-on:click.outside="open = false" x-on:keyup.escape.window="open = false">
-            @forelse ($results as $result)
-                <li wire:key="{{ $result->id }}" x-on:click="open = false; $wire.select{{ ucfirst($name) }}('{{ $result->name }}')"> {{ $result->name }} </li>
+            @forelse ($searchResults as $result)
+                <li wire:key="{{ $result->id }}" x-on:click="open = false; $wire.{{ $selectFunction }}('{{ $result->name }}')"> {{ $result->name }} </li>
             @empty
                 <li>No results found</li>
             @endforelse
@@ -33,8 +35,8 @@
     </div>
     <div class="autocomplete-field-results">
         <ul>
-            @forelse ($selectedCountries as $country)
-                <li>{{$country}} <i class="icon-item-remove"></i></li>
+            @forelse ($selectedRecords as $record)
+                <li>{{$record}} <i wire:click="{{ $removeFunction }}('{{$record}}')" class="icon-item-remove"></i></li>
             @empty
             @endforelse
         </ul>

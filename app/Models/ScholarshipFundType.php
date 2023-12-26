@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use App\Enums\Scholarship\FundType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ScholarshipFund extends Model
+class ScholarshipFundType extends Model
 {
     use SoftDeletes;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'name' => FundType::class,
+    ];
 }

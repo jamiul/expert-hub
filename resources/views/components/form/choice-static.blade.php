@@ -1,16 +1,15 @@
 <script src="//unpkg.com/alpinejs" defer></script>
 @props([
-'name' => $attributes->whereStartsWith('wire:model')->first(),
-'label',
-'id' => $attributes->whereStartsWith('wire:model')->first(),
-'required' => false,
-'placeholder' => 'Type here to select',
-'searchPlaceholder' => 'Search Here',
+    'name' => $attributes->whereStartsWith('wire:model')->first(),
+    'label',
+    'id' => $attributes->whereStartsWith('wire:model')->first(),
+    'required' => false,
+    'placeholder' => 'Type here to select',
+    'searchPlaceholder' => 'Search Here',
 ])
-
+<div class="form-input-group form-multiselect {{ $attributes->get('class') }} {{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? 'has-choice-error':'' }}">
 <div
     wire:ignore
-    class="form-input-group form-multiselect"
     x-data="{
         init() {
             this.$nextTick(() => {
@@ -41,3 +40,4 @@
 @error($attributes->whereStartsWith('wire:model')->first())
     <div class="form-input-error-message">{{ $message }}</div>
 @enderror
+</div>

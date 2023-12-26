@@ -2,9 +2,6 @@
 
 namespace App\Livewire\Profile;
 
-use App\Models\Degree;
-use App\Models\Expertise;
-use App\Models\University;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;

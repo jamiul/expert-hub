@@ -1,0 +1,70 @@
+.alert {
+    &.edux-alert {
+        display: flex;
+        padding: 1.5rem;
+        align-items: center;
+        gap: 0.625rem;
+        align-self: stretch;
+        font-size: 1.125rem;
+        line-height: 160%;
+
+        strong {
+            font-weight: 500;
+        }
+    }
+
+    & > .close {
+        margin-left: auto;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    &.alert-success {
+        border: 1px solid rgba(90, 188, 118, 0.25);
+        background: rgba(90, 188, 118, 0.08);
+        color: #5ABC76;
+
+        svg {
+            path {
+                fill: #5ABC76;
+            }
+        }
+    }
+
+    &.alert-warning {
+        color: #8E6F00;;
+        border: 1px solid rgba(233, 185, 17, 0.34);
+        background: rgba(233, 185, 17, 0.06);
+
+        svg {
+            path {
+                fill: #E9B911;
+            }
+        }
+    }
+
+    &.alert-info {
+        color: #191D24;;
+        border: 1px solid rgba(0, 54, 227, 0.10);
+        background: rgba(0, 54, 227, 0.05);
+
+        svg {
+            path {
+                fill: #0036E3;
+            }
+        }
+    }
+
+    &.alert-danger {
+        color: #C00000;;
+        border: 1px solid rgba(255, 0, 0, 0.12);
+        background: rgba(255, 0, 0, 0.06);
+
+        svg {
+            path {
+                fill: #C00000;
+            }
+        }
+    }
+}

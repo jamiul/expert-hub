@@ -4,7 +4,7 @@
         your public
         profile. Ensure that it conveys meaningful information you would like the client to know
         about you before engaging in your project</p>
-    <x-form.textarea label="" rows="5" cols="10" name="biography" wire:model="biography" placeholder="e.g. Brief 300 words summary about your expertise."/>
+    <x-form.textarea label="" rows="5" cols="10" name="biography" wire:model.blur="biography" placeholder="e.g. Brief 300 words summary about your expertise."/>
 
     <h6 class="mb-2 mt-5">Upload your profile picture</h6>
     <p class="mb-5">Please upload the image you would like to appear in your profile</p>
@@ -45,7 +45,10 @@
                         fill="#0036E3"/>
                 </svg>
                 Upload Photo</label>
-            <input type="file" wire:model="picture" id="picture" class="d-none">
+            <input type="file" wire:model.live="picture" id="picture" class="d-none">
+            @error('picture')
+                <div class="form-input-error-message">{{ $message }}</div>
+            @enderror
         </div>
     </div>
 </div>

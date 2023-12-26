@@ -35,7 +35,7 @@ Route::get('/find-training', [TrainingController::class, 'index'])->name('find-t
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
 Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
 Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
-Route::get('/scholarship-database', [ScholarshipController::class, 'scholarshipDatabase'])->name('scholarship-database');
+Route::get('/scholarship-database', ScholarshipController::class)->name('scholarship-database');
 
 Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
 Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');

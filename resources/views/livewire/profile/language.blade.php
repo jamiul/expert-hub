@@ -3,7 +3,7 @@
     <p>We will use this to help match you with clients who are fluent in their language.</p>
 
     <div class="d-grid grid-cols-sm-6 gap-3">
-        @foreach ($languages as $language)
+        @forelse ($languages as $language)
         <div class="card">
             <div class="card-body">
                 <table class="table table-sm table-borderless mb-0">
@@ -26,7 +26,9 @@
                 </button>
             </div>
         </div>
-        @endforeach
+        @empty
+            <p class="text-info">Not yet added</p>
+        @endforelse
     </div>
 
     <button wire:click="$dispatch('modal.open', { component: 'profile.language.create'})" class="btn btn-link px-0 d-inline-flex align-items-center my-4">

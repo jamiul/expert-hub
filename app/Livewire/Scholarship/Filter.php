@@ -19,8 +19,6 @@ use Livewire\Component;
 class Filter extends Component
 {
     #[Url()]
-    public $search = null;
-    #[Url()]
     public $level = [];
     #[Url()]
     public $studyArea = [];
@@ -32,78 +30,113 @@ class Filter extends Component
     public $applicationDeadline = '';
     #[Url()]
     public $country = '';
+    public $selectedCountries = [];
     public $countries = null;
     public $searchCountry = '';
     #[Url()]
     public $university = '';
+    public $selectedUniversities = [];
     public $universities = null;
     public $searchUniversity = '';
 
+    public $years;
+
     public function mount()
     {
-        $this->countries = Country::limit(5)->get();
-        $this->universities = University::limit(5)->get();
+        $this->setcountries();
+        $this->setUniversities();
+        $this->years = range(date('Y'), (date('Y')+5));
     }
 
     public function filter()
     {
         $filters = [
-            'search' => $this->search,
             'level' => $this->level,
             'studyArea' => $this->studyArea,
             'scholarshipType' => $this->scholarshipType,
             'applicationDeadline' => $this->applicationDeadline,
             'studentType' => $this->studentType,
-            'country' => $this->country,
-            'university' => $this->university,
+            'selectedCountries' => $this->selectedCountries,
+            'selectedUniversities' => $this->selectedUniversities,
         ];
         $this->dispatch('scholarship-filter', $filters);
     }
 
     public function resetFilter()
     {
-        $this->search = null;
         $this->level = [];
         $this->studyArea = [];
         $this->scholarshipType = [];
         $this->applicationDeadline = '';
         $this->studentType = [];
-        $this->country = '';
-        $this->university = '';
+        $this->selectedCountries = [];
+        $this->selectedUniversities = [];
 
         $this->filter();
     }
 
     public function updatedCountry()
     {
-        if($this->country){
-            $this->countries = Country::where('name', 'like', '%' . $this->country . '%')->limit(5)->get();
+        if ($this->country) {
+            $this->countries = Country::where('name', 'like', '%' . $this->country . '%')
+                ->whereNotIn('name', $this->selectedCountries)
+                ->limit(5)
+                ->get();
+        }else{
+            $this->setCountries();
         }
-        // $this->filter();
+    }
+
+    public function setCountries()
+    {
+        $this->countries = Country::whereNotIn('name', $this->selectedCountries)->limit(5)->get();
     }
 
     public function selectCountry($name)
     {
         $country = Country::where('name', $name)->first();
-        $this->country = $country->name;
+        $this->selectedCountries[] = $country->name;
+        $this->setCountries();
         $this->filter();
-        // $this->countries = null;
+    }
+
+    public function removeCountry($name)
+    {
+        $this->selectedCountries = array_diff($this->selectedCountries, [$name]);
+        $this->setCountries();
+        $this->filter();
     }
 
     public function updatedUniversity()
     {
         if($this->university){
-            $this->universities = University::where('name', 'like', '%' . $this->university . '%')->limit(5)->get();
+            $this->universities = University::where('name', 'like', '%' . $this->university . '%')
+                ->whereNotIn('name', $this->selectedUniversities)
+                ->limit(5)
+                ->get();
+        }else{
+            $this->setUniversities();
         }
-        // $this->filter();
+    }
+
+    public function setUniversities()
+    {
+        $this->universities = University::whereNotIn('name', $this->selectedUniversities)->limit(5)->get();
     }
 
     public function selectUniversity($name)
     {
         $university = University::where('name', $name)->first();
-        $this->university = $university->name;
+        $this->selectedUniversities[] = $university->name;
+        $this->setUniversities();
         $this->filter();
-        // $this->universities = null;
+    }
+
+    public function removeUniversity($name)
+    {
+        $this->selectedUniversities = array_diff($this->selectedUniversities, [$name]);
+        $this->setUniversities();
+        $this->filter();
     }
 
     public function render()

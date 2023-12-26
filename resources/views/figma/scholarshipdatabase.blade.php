@@ -88,7 +88,7 @@
                             <div class="filter-widget mb-40">
                                 <h6 class="filter-widget-title">University</h6>
                                 <div class="filter-widget-content">
-                                    {{--                                    <x-form.autocomplete :results="$countries" :selectedCountries="$selectedCountries" label="" name="country" placeholder="Search by Country"/>--}}
+                                    {{--                                                                        <x-form.autocomplete :results="$countries" :selectedCountries="$selectedCountries" label="" name="country" placeholder="Search by Country"/>--}}
                                 </div>
                             </div>
                             <div class="filter-widget mb-40">
@@ -128,7 +128,9 @@
                                                 </svg>
                                             </button>
                                             <div class="dropdown">
-                                                <button class="btn btn-outline-light m-1">
+                                                <button class="btn btn-outline-light m-1" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                                                          viewBox="0 0 24 25" fill="none">
                                                         <path
@@ -136,28 +138,40 @@
                                                             fill="#0036E3"/>
                                                     </svg>
                                                 </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">
-                                                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                            <path d="M4.62669 3.33339C4.62651 3.68701 4.48587 4.02608 4.23569 4.276C3.98552 4.52593 3.64631 4.66623 3.29269 4.66606C2.93907 4.66588 2.6 4.52523 2.35007 4.27506C2.10015 4.02489 1.95985 3.68568 1.96002 3.33206C1.9602 2.97843 2.10084 2.63937 2.35102 2.38944C2.60119 2.13952 2.9404 1.99921 3.29402 1.99939C3.64764 1.99957 3.98671 2.14021 4.23664 2.39039C4.48656 2.64056 4.62687 2.97977 4.62669 3.33339ZM4.66669 5.65339H2.00002V14.0001H4.66669V5.65339ZM8.88002 5.65339H6.22669V14.0001H8.85336V9.62006C8.85336 7.18006 12.0334 6.95339 12.0334 9.62006V14.0001H14.6667V8.71339C14.6667 4.60006 9.96002 4.75339 8.85336 6.77339L8.88002 5.65339Z" fill="#0036E3"/>
-                                                        </svg>
-                                                        Linkedin
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                                                            <path d="M9.91665 10.0625H11.6875L12.3958 7.22919H9.91665V5.81252C9.91665 5.08294 9.91665 4.39585 11.3333 4.39585H12.3958V2.01585C12.1649 1.9854 11.2929 1.91669 10.3721 1.91669C8.44898 1.91669 7.08331 3.0904 7.08331 5.24585V7.22919H4.95831V10.0625H7.08331V16.0834H9.91665V10.0625Z" fill="black"/>
-                                                        </svg>
-                                                        Facebook
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                                                            <path d="M4.95819 4.75002V2.62502C4.95819 2.23382 5.27533 1.91669 5.66653 1.91669H14.1665C14.5577 1.91669 14.8749 2.23382 14.8749 2.62502V12.5417C14.8749 12.9329 14.5577 13.25 14.1665 13.25H12.0415V15.3744C12.0415 15.766 11.7228 16.0834 11.3284 16.0834H2.83805C2.44417 16.0834 2.125 15.7684 2.125 15.3744L2.12684 5.45897C2.12691 5.06743 2.44562 4.75002 2.84001 4.75002H4.95819ZM3.54338 6.16669L3.5418 14.6667H10.6249V6.16669H3.54338ZM6.37486 4.75002H12.0415V11.8334H13.4582V3.33335H6.37486V4.75002Z" fill="black"/>
-                                                        </svg>
-                                                        Copy Link
-                                                    </a>
-
-                                                </div>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li><a class="dropdown-item" href="#">
+                                                            <svg class="me-2" xmlns="http://www.w3.org/2000/svg"
+                                                                 width="16"
+                                                                 height="16" viewBox="0 0 16 16" fill="none">
+                                                                <path
+                                                                    d="M4.62669 3.33339C4.62651 3.68701 4.48587 4.02608 4.23569 4.276C3.98552 4.52593 3.64631 4.66623 3.29269 4.66606C2.93907 4.66588 2.6 4.52523 2.35007 4.27506C2.10015 4.02489 1.95985 3.68568 1.96002 3.33206C1.9602 2.97843 2.10084 2.63937 2.35102 2.38944C2.60119 2.13952 2.9404 1.99921 3.29402 1.99939C3.64764 1.99957 3.98671 2.14021 4.23664 2.39039C4.48656 2.64056 4.62687 2.97977 4.62669 3.33339ZM4.66669 5.65339H2.00002V14.0001H4.66669V5.65339ZM8.88002 5.65339H6.22669V14.0001H8.85336V9.62006C8.85336 7.18006 12.0334 6.95339 12.0334 9.62006V14.0001H14.6667V8.71339C14.6667 4.60006 9.96002 4.75339 8.85336 6.77339L8.88002 5.65339Z"
+                                                                    fill="#0036E3"/>
+                                                            </svg>
+                                                            Linkedin
+                                                        </a></li>
+                                                    <li><a class="dropdown-item" href="#">
+                                                            <svg class="me-2" xmlns="http://www.w3.org/2000/svg"
+                                                                 width="17"
+                                                                 height="18" viewBox="0 0 17 18" fill="none">
+                                                                <path
+                                                                    d="M9.91665 10.0625H11.6875L12.3958 7.22919H9.91665V5.81252C9.91665 5.08294 9.91665 4.39585 11.3333 4.39585H12.3958V2.01585C12.1649 1.9854 11.2929 1.91669 10.3721 1.91669C8.44898 1.91669 7.08331 3.0904 7.08331 5.24585V7.22919H4.95831V10.0625H7.08331V16.0834H9.91665V10.0625Z"
+                                                                    fill="black"/>
+                                                            </svg>
+                                                            Facebook
+                                                        </a></li>
+                                                    <li><a class="dropdown-item" href="#">
+                                                            <svg class="me-2" xmlns="http://www.w3.org/2000/svg"
+                                                                 width="17"
+                                                                 height="18" viewBox="0 0 17 18" fill="none">
+                                                                <path
+                                                                    d="M4.95819 4.75002V2.62502C4.95819 2.23382 5.27533 1.91669 5.66653 1.91669H14.1665C14.5577 1.91669 14.8749 2.23382 14.8749 2.62502V12.5417C14.8749 12.9329 14.5577 13.25 14.1665 13.25H12.0415V15.3744C12.0415 15.766 11.7228 16.0834 11.3284 16.0834H2.83805C2.44417 16.0834 2.125 15.7684 2.125 15.3744L2.12684 5.45897C2.12691 5.06743 2.44562 4.75002 2.84001 4.75002H4.95819ZM3.54338 6.16669L3.5418 14.6667H10.6249V6.16669H3.54338ZM6.37486 4.75002H12.0415V11.8334H13.4582V3.33335H6.37486V4.75002Z"
+                                                                    fill="black"/>
+                                                            </svg>
+                                                            Copy Link
+                                                        </a></li>
+                                                </ul>
                                             </div>
+
 
                                         </div>
                                     </div>
@@ -446,7 +460,6 @@
 
             <div class="row mt-60">
                 <div class="col text-center">
-
                     <h3>Slider Here</h3>
                 </div>
             </div>

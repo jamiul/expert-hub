@@ -249,7 +249,7 @@ select.input-field-control {
     border-color: $edu-border-color !important;
 }
 
-.choices{
+.choices {
     &[data-type="select-one"] {
         .choices__list--dropdown {
             &[aria-expanded="true"] {
@@ -271,25 +271,31 @@ select.input-field-control {
 
     .choices__list--dropdown {
         padding: 1rem;
+
         input {
             @include input-field($height: 36px, $border-color: none);
             margin-bottom: 8px;
         }
+
         .choices__placeholder {
             display: none;
         }
+
         .choices__list {
             padding-top: 1rem;
         }
+
         .choices__item {
             font-size: 0.875rem;
             font-style: normal;
             font-weight: 400;
             line-height: 160%;
             padding: 0.3125rem 1.65rem;
+
             &:after {
                 display: none;
             }
+
             &.choices__item--selectable.is-highlighted {
                 background-color: transparent;
                 color: $edu-primary-color;
@@ -298,6 +304,7 @@ select.input-field-control {
         }
 
     }
+
     .choices__heading {
         padding: 0.3125rem 1rem;
         border-bottom: 1px solid #f7f7f7;
@@ -373,3 +380,56 @@ select.input-field-control {
         }
     }
 }
+
+.flatpickr-calendar {
+    //padding: 10px;
+
+    .flatpickr-months {
+        border: 1px solid $edu-border-color;
+        padding-bottom: 6px;
+    }
+
+    .flatpickr-innerContainer {
+        //Calender Header
+        .flatpickr-weekdays {
+            text-transform: uppercase;
+        }
+
+        //Calender Days
+        .flatpickr-days {
+            .flatpickr-day {
+                &.selected {
+                    background-color: $edu-primary-color;
+                }
+
+                &.today {
+                    border-color: $edu-border-color;
+                    background: $edu-lighter-brand-bg;
+                    color: $edu-primary-color;
+
+                    &:hover,
+                    &:focus {
+                        background-color: $edu-primary-color;
+                        color: #ffffff;
+                    }
+                }
+
+                &.inRange,
+                &.prevMonthDay.inRange,
+                &.nextMonthDay.inRange,
+                &.today.inRange,
+                &.prevMonthDay.today.inRange,
+                &.nextMonthDay.today.inRange,
+                &:hover,
+                &.prevMonthDay:hover,
+                &.nextMonthDay:hover,
+                &:focus,
+                &.prevMonthDay:focus,
+                &.nextMonthDay:focus {
+
+                }
+            }
+        }
+    }
+}
+
