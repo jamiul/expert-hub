@@ -2,7 +2,7 @@ $large-device-header-height: 92px;
 $medium-device-header-height: 158px;
 $small-device-header-height: 64px;
 $contact-filter-height: 125px;
-$message-recipient-height: 70px;
+$message-recipient-height: 90px;
 $message-editor-height: 148px;
 $chatbox-recipient-card-height: 164px;
 
@@ -82,12 +82,11 @@ $chatbox-recipient-card-height: 164px;
             & > .chatbox-recipient-area {
                 flex: 0 0 100%;
                 max-width: 100%;
-                height: 70px;
-                //background-color: #b605b6;
+                height: $message-recipient-height;
             }
 
             & > .chatbox-conversation-area {
-                height: calc(100% - 70px);
+                height: calc(100% - #{$message-recipient-height});
                 @media screen and (min-width: 800px) {
                     padding: 0 30px;
                 }
@@ -119,9 +118,12 @@ $chatbox-recipient-card-height: 164px;
     .chatbox-contact-filter-area {
         padding: 1rem 0.5rem;
         @media screen and (min-width: 800px) {
-            padding: 1rem 1.5rem;
+            padding: 15px 1.5rem 22px;
         }
 
+        h5 {
+            margin-bottom: 2px;
+        }
 
         .chatbox-contact-filter-box {
             display: flex;
@@ -133,14 +135,33 @@ $chatbox-recipient-card-height: 164px;
 
             form {
                 width: calc(100% - 50px);
+
+                .form-input-group {
+                    margin-bottom: 0;
+                }
             }
 
             button {
                 background-color: #EBEFF7;
+
+                svg {
+                    path {
+                        fill: #30374480;
+                    }
+                }
+
+                &:hover {
+                    background-color: $edu-primary-color;
+
+                    path {
+                        fill: #ffffff;
+                    }
+                }
             }
 
             input {
-                height: 40px
+                height: 40px;
+                font-size: 0.875rem;
             }
         }
     }
@@ -154,6 +175,7 @@ $chatbox-recipient-card-height: 164px;
             border-bottom: 1px solid $edu-border-color;
             color: rgba(25, 29, 36, 0.70);
             padding: 1rem 0.5rem;
+            cursor: pointer;
             @media screen and (min-width: 800px) {
                 padding: 1rem 1.5rem;
             }
@@ -290,27 +312,17 @@ $chatbox-recipient-card-height: 164px;
 
         .advance-chat-options {
             margin-left: auto;
-
+            path {
+                fill: $edu-primary-color;
+            }
         }
 
         h3 {
             font-size: 1.1875rem;
             font-weight: 500;
             margin-bottom: 0;
-
-            span {
-                @media screen and (max-width: 850px) {
-                    display: none;
-                }
-            }
         }
 
-        time {
-            font-size: 0.875rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 143%;
-        }
 
         p {
             font-size: 0.875rem;
@@ -318,6 +330,10 @@ $chatbox-recipient-card-height: 164px;
             font-weight: 400;
             line-height: 143%;
             margin: 0;
+
+            &.chatbox-recipient-time {
+                color: rgba(48, 55, 68, 0.70);
+            }
         }
 
         @media screen and (max-width: 1200px) {
@@ -351,6 +367,10 @@ $chatbox-recipient-card-height: 164px;
         .chatbox-message-list {
             overflow-y: auto;
             margin-top: 20px;
+
+            .separator {
+                font-size: 0.625rem;
+            }
         }
 
         .chatbox-message-editor {
@@ -398,6 +418,7 @@ $chatbox-recipient-card-height: 164px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: 137%;
+                    color: #A1A0A5;
                 }
             }
 
@@ -415,13 +436,56 @@ $chatbox-recipient-card-height: 164px;
                 p {
                     margin: 0;
                 }
-            }
 
-            .message-action-trigger {
 
             }
+
+
+            @keyframes message-blink {
+                50% {
+                    fill: transparent
+                }
+            }
+
+            .dot {
+                animation: 1s message-blink infinite;
+                fill: grey;
+            }
+
+            .dot:nth-child(2) {
+                animation-delay: 250ms
+            }
+
+            .dot:nth-child(3) {
+                animation-delay: 500ms
+            }
+
+            .loader {
+                background-color: rgba(14, 0, 98, 0.03);
+                color: #C8C5D4;
+                padding: 0.75rem 1rem;
+                border: 1px solid $edu-border-color;
+                border-radius: 20px;
+            }
+
 
         }
+
+        &.conversation-user-message-action {
+            .icon-btn {
+                svg {
+                    width: 18px;
+
+                    path {
+                        fill: #191D24;
+                    }
+                }
+            }
+        }
+    }
+
+    &.message-typing {
+        align-items: center;
     }
 
     &.recipient-message {
@@ -440,14 +504,49 @@ $chatbox-recipient-card-height: 164px;
     padding: 24px;
     background-color: #fff;
 
+    .insert-emoji-btn {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        left: 26px;
+        top: 34px;
+        padding: 0;
+    }
+
+    .chatbox-message-editor-expand-trigger {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 12px;
+        top: 10px;
+        padding: 0;
+        display: none;
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+
+        svg {
+            width: 20px;
+
+            path {
+                fill: #191D24B2;
+            }
+        }
+    }
+
     textarea {
         width: 100%;
         height: 60px;
         border: none;
         outline: none;
-        padding: 10px;
+        padding: 10px 10px 10px 35px;
         min-height: 60px;
         max-height: 50vh;
+        transition: 0.2s;
+
+        &.message-editor-expanded {
+            height: 50vh;
+        }
     }
 
     .chatbox-message-editor-helper {
@@ -461,12 +560,24 @@ $chatbox-recipient-card-height: 164px;
                 width: 24px;
                 height: 24px;
                 padding: 0;
+
+                svg {
+                    path {
+                        fill: #303744B2;
+                    }
+                }
             }
         }
 
         .message-editor-functional-action {
             .icon-btn {
                 background-color: #EBEFF7;
+
+                svg {
+                    path {
+                        fill: #A1A0A5;
+                    }
+                }
 
                 &.send-message {
                     margin-left: 20px;
@@ -507,6 +618,14 @@ $chatbox-recipient-card-height: 164px;
             background-color: white;
             border: 0;
             flex-direction: column;
+
+            svg {
+                width: 16px;
+
+                path {
+                    fill: #0036E3;
+                }
+            }
         }
     }
 }
@@ -659,14 +778,18 @@ $chatbox-recipient-card-height: 164px;
     display: none;
 }
 
+
 .chatbox-wrapper {
     &.chatbox-mobile-view-activated {
-        .chatbox-contact-area {
-            display: none;
+        @media screen and (max-width: 767px) {
+            .chatbox-contact-area {
+                display: none;
+            }
+
+            .chatbox-content-area {
+                display: block;
+            }
         }
 
-        .chatbox-content-area {
-            display: block;
-        }
     }
 }
