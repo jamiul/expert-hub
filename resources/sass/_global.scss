@@ -262,17 +262,19 @@ img {
 
     & > .button-list-item {
         list-style: none;
-        display: inline-flex;
-        border-radius: 36px;
+        display: flex;
+        border-radius: 30px;
         border: 1px solid $edu-border-color;
         background: rgba(48, 55, 68, 0.03);
-        padding: 6px 8px 4px 8px;
+        padding: 8px 10px 8px 16px;
         align-items: center;
         gap: 8px;
         font-size: 0.875rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%;
+        line-height: 140%;
+        justify-content: space-between;
+        width: 100%;
 
         .button-list-icon {
             line-height: 100%;
