@@ -68,12 +68,12 @@ class Lists extends Component
             $scholarships = $scholarships->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
         }
         if (isset($this->filtersArray['level']) && $this->filtersArray['level']) {
-            $scholarships = $scholarships->whereHas('eligibilities', function($query){
-                $query->whereIn('study_level', $this->filtersArray['level']);
+            $scholarships = $scholarships->whereHas('studyLevel', function($query){
+                $query->whereIn('name', $this->filtersArray['level']);
             });
         }
         if (isset($this->filtersArray['studyArea']) && $this->filtersArray['studyArea']) {
-            $scholarships = $scholarships->whereHas('areas', function ($query) {
+            $scholarships = $scholarships->whereHas('studyAreas', function ($query) {
                 $query->whereIn('expertise_id', $this->filtersArray['studyArea']);
             });
         }
@@ -86,8 +86,8 @@ class Lists extends Component
             });
         }
         if (isset($this->filtersArray['scholarshipType']) && $this->filtersArray['scholarshipType']) {
-            $scholarships = $scholarships->whereHas('funds', function ($query) {
-                $query->whereIn('fund_type', $this->filtersArray['scholarshipType']);
+            $scholarships = $scholarships->whereHas('fundTypes', function ($query) {
+                $query->whereIn('name', $this->filtersArray['scholarshipType']);
             });
         }
         if (isset($this->filtersArray['applicationDeadline']) && $this->filtersArray['applicationDeadline']) {
