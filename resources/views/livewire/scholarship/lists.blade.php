@@ -64,13 +64,13 @@
                     <div class="tr">
                         <div class="td">Study area</div>
                         <div class="td fw-medium">
-                            {{ $scholarship->eligibilities ? $scholarship->areas->implode('name', ', ') : 'n/a' }}
+                            {{ $scholarship->studyAreas ? $scholarship->studyAreas->implode('name', ', ') : 'n/a' }}
                         </div>
                     </div>
                     <div class="tr">
                         <div class="td">Study Level</div>
                         <div class="td fw-medium">
-                            {{ $scholarship->eligibilities ? $scholarship->eligibilities->implode('study_level', ', ') : 'n/a' }}
+                            {{ $scholarship->studyLevel ? $scholarship->studyLevel->implode('name', ', ') : 'n/a' }}
                         </div>
                     </div>
                     <div class="tr">

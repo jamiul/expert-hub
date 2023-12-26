@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('scholarships', function (Blueprint $table) {
             $table->id();
             $table->string('title', 500);
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->foreignId('university_id')->nullable();
             $table->foreignId('country_id')->nullable();
             $table->string('student_type')->nullable(); //App\Enums\Scholarship\StudentType

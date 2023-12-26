@@ -6,7 +6,6 @@ use App\Models\Country;
 use App\Models\Expertise;
 use App\Models\Scholarship;
 use App\Models\University;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -45,19 +44,19 @@ class ScholarshipSeeder extends Seeder
             foreach(explode(',', $scholarship['study_level']) as $studyLevel){
                 $studyLevelData[] =[
                     'scholarship_id' => $scholarship_id,
-                    'study_level' => trim($studyLevel),
+                    'name' => trim($studyLevel),
                 ];
             }
-            DB::table('scholarship_eligibilities')->insert($studyLevelData);
+            DB::table('scholarship_study_levels')->insert($studyLevelData);
 
             $scholarshipFundData = [];
             foreach(explode(',', $scholarship['fund_type']) as $scholarshipFund){
                 $scholarshipFundData[] =[
                     'scholarship_id' => $scholarship_id,
-                    'fund_type' => trim($scholarshipFund),
+                    'name' => trim($scholarshipFund),
                 ];
             }
-            DB::table('scholarship_funds')->insert($scholarshipFundData);
+            DB::table('scholarship_fund_types')->insert($scholarshipFundData);
 
             $scholarshipAreaData = [];
             $expertiseLookup = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
@@ -80,7 +79,7 @@ class ScholarshipSeeder extends Seeder
                     }
                 }
             }
-            DB::table('scholarship_area')->insert($scholarshipAreaData);
+            DB::table('scholarship_study_area')->insert($scholarshipAreaData);
         }
     }
 }

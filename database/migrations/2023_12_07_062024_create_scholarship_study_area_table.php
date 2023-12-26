@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('scholarship_eligibilities', function (Blueprint $table) {
+        Schema::create('scholarship_study_area', function (Blueprint $table) {
             $table->id();
             $table->foreignId('scholarship_id');
-            $table->string('study_level'); //App\Enums\Scholarship\StudyLevel
+            $table->foreignId('expertise_id');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('scholarship_eligibilities');
+        Schema::dropIfExists('scholarship_study_area');
     }
 };
