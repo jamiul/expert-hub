@@ -47,7 +47,7 @@ class Header extends Component
         if (is_null($this->aboutPage)) {
             $this->aboutPage = AboutUs::create();
         }
-        $this->header_subtitle = $this->header_subtitle ? $this->aboutPage->header_subtitle : '';
+        $this->header_subtitle = $this->aboutPage->header_subtitle ?? '';
     }
 
     public function save()

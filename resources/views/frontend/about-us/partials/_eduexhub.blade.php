@@ -21,7 +21,7 @@
                     <div class="row">
                         @if (count($aboutApart) > 0)
                             @foreach ($aboutApart as $apart)
-                                @if ($apart->type == "client")
+                                @if ($apart->type == "Client")
                                     <div class="col-md-6 col-sm-6">
                                         <div class="tab-block">
                                             <div class="tab-img">
@@ -43,7 +43,7 @@
                     <div class="row">
                         @if (count($aboutApart) > 0)
                             @foreach ($aboutApart as $apart)
-                                @if ($apart->type == "expert")
+                                @if ($apart->type == "Expert")
                                     <div class="col-md-6 col-sm-6">
                                         <div class="tab-block">
                                             <div class="tab-img">

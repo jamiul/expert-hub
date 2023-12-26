@@ -20,7 +20,7 @@ class AboutUs extends Model implements HasMedia
         'team_list' => 'array',
     ];
 
-    public function aboutAparts()
+    public function about_aparts()
     {
         return $this->hasMany(AboutApart::class, 'about_apart_id');
     }

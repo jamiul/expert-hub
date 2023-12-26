@@ -53,28 +53,21 @@
                                 <div class="tab-pane fade active show" id="home" role="tabpanel"
                                     aria-labelledby="home-tab">
                                     <div class="row">
-                                        {{-- {{ App\Enums\ProfileType::Client->value }} --}}
-                                        @if (count($aboutAparts) > 0)
-                                            @foreach ($aboutAparts as $aboutApart)
-                                                @if ($aboutApart->type == App\Enums\ProfileType::Client->value)
+                                        @if (count($aparts) > 0)
+                                            @foreach ($aparts as $apart)
+                                                @if ($apart->type == App\Enums\ProfileType::Client->value)
                                                     <div class="col-md-6 col-sm-6">
                                                         <div class="tab-block">
                                                             <div class="tab-img">
-                                                                <img src="{{ $aboutApart->iconImage() }}" alt="Icon">
+                                                                <img src="{{ $apart->iconImage() }}" alt="Icon">
                                                             </div>
                                                             <div class="tab-text">
                                                                 <h3>
-                                                                    {{ $aboutApart->set_title }}
+                                                                    {{ $apart->set_title }}
                                                                 </h3>
-                                                                <button type="button" data-bs-toggle="modal"
-                                                                    data-bs-target="#updateApartDetails"
-                                                                    class="btn btn-outline-info btn-sm"
-                                                                    wire:click="editApart({{ $aboutApart->id }})">Edit</button>
-                                                                <button type="button" data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteApartModal"
-                                                                    class="btn btn-outline-danger btn-sm"
-                                                                    wire:click="deleteApart({{ $aboutApart->id }})">Delete</button>
-                                                                <p>{{ $aboutApart->description }}</p>
+                                                                <button type="button" wire:click="$dispatch('modal.open', {component: 'admin.about.aparts.edit', arguments: {'aboutApart': {{$apart->id}} }})" class="btn btn-outline-info btn-sm">Edit</button>
+                                                                <button wire:click="deleteApart({{ $apart->id }})" class="btn btn-outline-danger btn-sm">Delete</button>
+                                                                <p>{{ $apart->description }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -85,27 +78,21 @@
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="row">
-                                        @if (count($aboutAparts) > 0)
-                                            @foreach ($aboutAparts as $aboutApart)
-                                                @if ($aboutApart->type == App\Enums\ProfileType::Expert->value)
+                                        @if (count($aparts) > 0)
+                                            @foreach ($aparts as $apart)
+                                                @if ($apart->type == App\Enums\ProfileType::Expert->value)
                                                     <div class="col-md-6 col-sm-6">
                                                         <div class="tab-block">
                                                             <div class="tab-img">
-                                                                <img src="{{ $aboutApart->iconImage() }}" alt="Icon">
+                                                                <img src="{{ $apart->iconImage() }}" alt="Icon">
                                                             </div>
                                                             <div class="tab-text">
                                                                 <h3>
-                                                                    {{ $aboutApart->set_title }}
+                                                                    {{ $apart->set_title }}
                                                                 </h3>
-                                                                <button type="button" data-bs-toggle="modal"
-                                                                    data-bs-target="#updateApartDetails"
-                                                                    class="btn btn-outline-info btn-sm"
-                                                                    wire:click="editApart({{ $aboutApart->id }})">Edit</button>
-                                                                <button type="button" data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteApartModal"
-                                                                    class="btn btn-outline-danger btn-sm"
-                                                                    wire:click="deleteApart({{ $aboutApart->id }})">Delete</button>
-                                                                <p>{{ $aboutApart->description }}</p>
+                                                                <button type="button" wire:click="$dispatch('modal.open', {component: 'admin.about.aparts.edit', arguments: {'aboutApart': {{$apart->id}} }})" class="btn btn-outline-info btn-sm">Edit</button>
+                                                                <button wire:click="deleteApart({{ $apart->id }})" class="btn btn-outline-danger btn-sm">Delete</button>
+                                                                <p>{{ $apart->description }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -124,10 +111,11 @@
                         <div class="require-block">
                             <div class="academic-single-item d-flex flex-column">
                                 <div class="admin-add-more">
-                                    <a href="#apart">
+                                    <button wire:click="$dispatch('modal.open', { component: 'admin.about.aparts.create'})" type="button" class="material-symbols-outlined">add</button>
+                                    {{-- <a href="#apart">
                                         <span class="material-symbols-outlined" data-bs-toggle="modal"
                                             data-bs-target="#addApartDetails">add</span>
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -136,14 +124,4 @@
             </div>
         </div>
     </div>
-    @include('livewire.admin.about.apart-modal')
 </div>
-@push('bottom_scripts')
-    <script>
-        window.addEventListener('close-modal', event => {
-            $('#addApartDetails').modal('hide');
-            $('#updateApartDetails').modal('hide');
-            $('#deleteApartModal').modal('hide');
-        })
-    </script>
-@endpush

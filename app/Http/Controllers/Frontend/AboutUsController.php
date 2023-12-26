@@ -14,9 +14,9 @@ class AboutUsController extends Controller
     {
         $about = AboutUs::first();
         $aboutUsDTO = new AboutUsData($about);
-        $aboutApart = AboutApart::with('aboutUs')->get();
-        $aboutApartDTO = count($aboutApart) > 0 ? new AboutApartDTO($aboutApart) : 0;
+        $aboutApart = AboutApart::with('about_us')->get();
+        // $aboutApartDTO = new AboutApartDTO($aboutApart);
 
-        return view('frontend.about-us.index', compact('about', 'aboutApart', 'aboutApartDTO', 'aboutUsDTO'));
+        return view('frontend.about-us.index', compact('about', 'aboutApart', 'aboutUsDTO'));
     }
 }

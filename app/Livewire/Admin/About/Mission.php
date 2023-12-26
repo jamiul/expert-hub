@@ -22,7 +22,16 @@ class Mission extends Component
             'mission_title' => ['required','string'],
             'mission_subtitle' => ['required','string'],
             'mission_description' => ['required','string'],
-            'mission_image' => ['required','image'],
+            'mission_image' => ['nullable','image'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'mission_title.required' => 'Please add title',
+            'mission_subtitle.required' => 'Please add subtitle',
+            'mission_description.required' => 'Please add description',
         ];
     }
 

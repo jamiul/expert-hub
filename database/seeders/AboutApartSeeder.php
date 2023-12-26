@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\ProfileType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +18,7 @@ class AboutApartSeeder extends Seeder
             'set_title' => 'A Wealth of Expertise',
             'description' => 'EduExHub takes pride in its extensive and diverse network of distinguished academic experts spanning various fields and disciplines.',
             'icon' => 'frontend/img/tab-icon.png',
-            'type' => 'client',
+            'type' => ProfileType::Client->value,
             'active' => 1
         ]);
     }

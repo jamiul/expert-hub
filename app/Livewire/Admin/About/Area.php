@@ -21,6 +21,15 @@ class Area extends Component
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'area_title.required' => 'Please add title',
+            'area_subtitle.required' => 'Please add subtitle',
+            'area_description.required' => 'Please add description',
+        ];
+    }
+
     public function mount()
     {
         $this->areaAboutPage = AboutUs::first();

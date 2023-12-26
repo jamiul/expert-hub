@@ -24,6 +24,14 @@ class Instructor extends Component
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'instructor_title.required' => 'Please add title',
+            'instructor_subtitle.required' => 'Please add subtitle',
+        ];
+    }
+
     public function mount()
     {
         $this->instructorPage = AboutUs::first();

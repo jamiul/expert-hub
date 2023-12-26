@@ -17,26 +17,18 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col admin-sub-title position-relative">
-                                        <label for="subtitle"
-                                            class="form-label position-absolute level-subtitle">subtitle</label>
-                                        <input id="subtitle" type="text" class="form-control admin-form-input "
-                                            placeholder="Require steps" aria-label="First name" wire:model="story_subtitle">
+                                        <x-form.input type="text" label="Subtitle" wire:model="story_subtitle"
+                                        placeholder="Add Subtitle here" />
                                     </div>
                                     <div class="col admin-sub-title position-relative">
-                                        <label for="title"
-                                            class="form-label position-absolute level-title">title</label>
-                                        <input id="title" type="text"
-                                            class="form-control admin-form-input admin-m-input"
-                                            placeholder="Search Academic Expert Made Easy" aria-label="Last name" wire:model="story_title">
+                                        <x-form.input type="text" label="Title" wire:model="story_title"
+                                        placeholder="Add Title here" />
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-floating admin-text-area position-relative mb-3">
-                                        <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea" wire:model="story_description"></textarea>
-                                        <span class="edux-word-count">0/1000</span>
-                                        <label for="floatingTextarea"
-                                            class=" admin-text-area-level position-absolute">Paragraph</label>
+                                        <x-form.textarea label="Description" wire:model="story_description" placeholder="Description"/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -47,7 +39,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="edux-frontend-left-title">
-                                        <button type="submit" class="save-update">Save Update</button>
+                                        <button type="submit" class="save-update">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +52,7 @@
         <div class="row mt-4">
             <div class="col-md-5">
                 <div class="mission-img overlay-edit position-relative">
-                    <img src="{{ $storyPage->storyImage() }}" alt="">
+                    <img src="{{ $storyPage->storyImage() }}" alt="Story Image">
                 </div>
             </div>
         </div>

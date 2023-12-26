@@ -14,7 +14,7 @@ class AboutApart extends Model implements HasMedia
 
     protected $guarded = [];
 
-    public function aboutUs()
+    public function about_us()
     {
         return $this->belongsTo(AboutUs::class, 'about_us_id');
     }

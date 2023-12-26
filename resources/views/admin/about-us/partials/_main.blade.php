@@ -47,7 +47,7 @@
                             @livewire('admin.about.area')
                             @livewire('admin.about.instructor')
                             @livewire('admin.about.mission')
-                            @livewire('admin.about.apart')
+                            @livewire('admin.about.aparts.base-apart')
                             @livewire('admin.about.team')
                             @livewire('admin.about.story')
                         </section>

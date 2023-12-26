@@ -18,21 +18,10 @@
                                     <div class="col admin-sub-title position-relative">
                                         <x-form.input type="text" label="Subtitle" wire:model="instructor_subtitle"
                                             placeholder="Add Subtitle here" />
-                                        {{-- <label for="subtitle"
-                                            class="form-label position-absolute level-subtitle">subtitle</label>
-                                        <input id="subtitle" type="text" class="form-control admin-form-input "
-                                            placeholder="Require steps" aria-label="First name"
-                                            wire:model="instructor_subtitle"> --}}
                                     </div>
                                     <div class="col admin-sub-title position-relative">
                                         <x-form.input type="text" label="Title" wire:model="instructor_title"
                                             placeholder="Add Title here" />
-                                        {{-- <label for="title"
-                                            class="form-label position-absolute level-title">title</label>
-                                        <input id="title" type="text"
-                                            class="form-control admin-form-input admin-m-input"
-                                            placeholder="Search Academic Expert Made Easy" aria-label="Last name"
-                                            wire:model="instructor_title"> --}}
                                     </div>
                                 </div>
                             </div>
