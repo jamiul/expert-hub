@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Country;
 use App\Models\Expertise;
 use App\Models\Scholarship;
 use App\Models\University;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +17,7 @@ class ScholarshipSeeder extends Seeder
      */
     public function run(): void
     {
+        Scholarship::truncate();
         $feed = database_path('data/scholarships.csv');
         $data = array_map('str_getcsv', file($feed));
         $keys = array_shift($data);
@@ -26,18 +27,16 @@ class ScholarshipSeeder extends Seeder
         }, $data);
 
         $universityLookup = University::pluck('id', 'name')->toArray();
+        $countryLookup = Country::pluck('id', 'name')->toArray();
         foreach ($keyedData as $scholarship) {
             $scholarshipData = [
-                'title' => $scholarship['title'],
-                'link' => $scholarship['link'],
-                'university_id' => $universityLookup[$scholarship['university']],
-                'student_type' => $scholarship['student_type'],
-                'supervisor_link' => $scholarship['supervisor_link'],
-                'application_process_link' => $scholarship['application_process_link'],
+                'title' => trim($scholarship['scholarships_title']),
+                'link' => trim($scholarship['scholarships_link']),
+                'university_id' => $universityLookup[trim($scholarship['university'])] ?? null,
+                'country_id' => $countryLookup[trim($scholarship['country'])] ?? null,
+                'student_type' => trim($scholarship['student_type']),
                 'automatic_consideration' => $scholarship['automatic_consideration']  == 'FALSE' ? 0 : 1,
-                'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('m-d-Y',$scholarship['deadline']),
-                'currency' => $scholarship['currency'],
-                'value' => empty($scholarship['value']) ? null : $scholarship['value'],
+                'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('d-m-Y',$scholarship['deadline']),
             ];
             $scholarship_id = DB::table('scholarships')->insertGetId($scholarshipData);
             
@@ -45,19 +44,19 @@ class ScholarshipSeeder extends Seeder
             foreach(explode(',', $scholarship['study_level']) as $studyLevel){
                 $studyLevelData[] =[
                     'scholarship_id' => $scholarship_id,
-                    'study_level' => $studyLevel,
+                    'name' => trim($studyLevel),
                 ];
             }
-            DB::table('scholarship_eligibilities')->insert($studyLevelData);
+            DB::table('scholarship_study_levels')->insert($studyLevelData);
 
             $scholarshipFundData = [];
             foreach(explode(',', $scholarship['fund_type']) as $scholarshipFund){
                 $scholarshipFundData[] =[
                     'scholarship_id' => $scholarship_id,
-                    'fund_type' => $scholarshipFund,
+                    'name' => trim($scholarshipFund),
                 ];
             }
-            DB::table('scholarship_funds')->insert($scholarshipFundData);
+            DB::table('scholarship_fund_types')->insert($scholarshipFundData);
 
             $scholarshipAreaData = [];
             $expertiseLookup = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
@@ -71,14 +70,16 @@ class ScholarshipSeeder extends Seeder
                 }
             }else{
                 foreach (explode(',', $scholarship['study_area']) as $scholarshipArea) {
-                    $expertiseId = $expertiseLookup[$scholarshipArea];
-                    $scholarshipAreaData[] = [
-                        'scholarship_id' => $scholarship_id,
-                        'expertise_id' => $expertiseId,
-                    ];
+                    $expertiseId = $expertiseLookup[trim($scholarshipArea)] ?? null;
+                    if($expertiseId){
+                        $scholarshipAreaData[] = [
+                            'scholarship_id' => $scholarship_id,
+                            'expertise_id' => $expertiseId,
+                        ];
+                    }
                 }
             }
-            DB::table('scholarship_area')->insert($scholarshipAreaData);
+            DB::table('scholarship_study_area')->insert($scholarshipAreaData);
         }
     }
 }

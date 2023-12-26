@@ -22,24 +22,24 @@ class Scholarship extends Model
 
     public function country()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(Country::class);
     }
 
-    public function eligibilities()
+    public function studyLevel()
     {
-        return $this->hasMany(ScholarshipEligibility::class);
+        return $this->hasMany(ScholarshipStudyLevel::class);
     }
 
-    public function areas()
+    public function studyAreas()
     {
-        return $this->belongsToMany(Expertise::class, 'scholarship_area')
+        return $this->belongsToMany(Expertise::class, 'scholarship_study_area')
             ->withPivot('active')
             ->wherePivot('active', 1)
             ->withTimestamps();
     }
 
-    public function funds()
+    public function fundTypes()
     {
-        return $this->hasMany(ScholarshipFund::class);
+        return $this->hasMany(ScholarshipFundType::class);
     }
 }
