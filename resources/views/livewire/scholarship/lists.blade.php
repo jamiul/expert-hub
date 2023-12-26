@@ -58,7 +58,7 @@
                     <div class="tr">
                         <div class="td">Application Deadline</div>
                         <div class="td fw-medium">
-                            {{ $scholarship->deadline ? $scholarship->deadline->format('d F Y') : 'n/a' }}
+                            {{ $scholarship->deadline ? $scholarship->deadline->format('d F Y') : 'Avaiable' }}
                         </div>
                     </div>
                     <div class="tr">
@@ -70,7 +70,7 @@
                     <div class="tr">
                         <div class="td">Study Level</div>
                         <div class="td fw-medium">
-                            {{ $scholarship->studyLevel ? $scholarship->studyLevel->implode('name', ', ') : 'n/a' }}
+                            {{ $scholarship->studyLevels ? $scholarship->studyLevels->implode('name.value', ', ') : 'n/a'}}
                         </div>
                     </div>
                     <div class="tr">

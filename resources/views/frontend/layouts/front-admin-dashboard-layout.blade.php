@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
     @include('frontend.layouts.front-header')
+    @vite('resources/css/choices.css')
+    @vite('resources/js/choices.min.js')
     <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
     <body>
         @include('frontend.layouts.admin-top-dashboard-navbarmain')

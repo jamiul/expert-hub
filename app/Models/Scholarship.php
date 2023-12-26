@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Scholarship\StudentType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -13,6 +14,7 @@ class Scholarship extends Model
 
     protected $casts = [
         'deadline' => 'date',
+        'student_type' => StudentType::class,
     ];
 
     public function university()
@@ -25,7 +27,7 @@ class Scholarship extends Model
         return $this->belongsTo(Country::class);
     }
 
-    public function studyLevel()
+    public function studyLevels()
     {
         return $this->hasMany(ScholarshipStudyLevel::class);
     }
