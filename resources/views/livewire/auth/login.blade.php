@@ -12,7 +12,9 @@
                         </x-form.check>
                         <a class="link-button" href="#">Forgot Password?</a>
                     </div>
-                    <button class="button button-block button-primary" type="submit">Login</button>
+                    <div class="d-grid mt-3">
+                        <button class="btn btn-md btn-primary" type="submit">Login</button>
+                    </div>
                 </form>
                 <p class="auth-footer">Don’t have an account, <a class="link-button" href="{{ route('auth.registration') }}">Register Now</a></p>
             </div>
