@@ -90,10 +90,12 @@ img {
     font-weight: 400;
     line-height: 160%;
 }
-.btn-link{
+
+.btn-link {
     color: $edu-primary-color !important;
     text-decoration: none;
 }
+
 .text-primary-dark {
     color: $edu-primary-dark-color !important;
 }
@@ -110,9 +112,11 @@ img {
 .mb-40 {
     margin-bottom: 40px;
 }
+
 .mt-20 {
     margin-top: 20px;
 }
+
 .mb-20 {
     margin-bottom: 20px;
 }
@@ -125,9 +129,11 @@ img {
     margin-top: 60px;
     margin-bottom: 60px;
 }
+
 .mt-60 {
     margin-top: 60px;
 }
+
 .mb-60 {
     margin-bottom: 60px;
 }
@@ -171,23 +177,22 @@ img {
 
     &:before {
         content: "";
-        background: #0000001c;
+        background: $edu-border-color;
         height: 1px;
         width: 100%;
         position: absolute;
         left: 0;
         right: 0;
-        top: 10px;
+        top: 50%;
     }
 
     span {
         background: #fff;
-        z-index: 999;
+        z-index: 2;
         position: relative;
-        width: 85px;
+        padding-left: 10px;
+        padding-right: 10px;
         display: inline-block;
-        color: #303744;
-        font-size: 15px;
     }
 }
 
@@ -257,17 +262,19 @@ img {
 
     & > .button-list-item {
         list-style: none;
-        display: inline-flex;
-        border-radius: 36px;
+        display: flex;
+        border-radius: 30px;
         border: 1px solid $edu-border-color;
         background: rgba(48, 55, 68, 0.03);
-        padding: 6px 8px 4px 8px;
+        padding: 8px 10px 8px 16px;
         align-items: center;
         gap: 8px;
         font-size: 0.875rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%;
+        line-height: 140%;
+        justify-content: space-between;
+        width: 100%;
 
         .button-list-icon {
             line-height: 100%;

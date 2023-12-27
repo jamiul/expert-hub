@@ -19,6 +19,26 @@
     margin-bottom: 12px;
     position: relative;
 
+    .form-input-label {
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 1.4rem */
+        text-transform: capitalize;
+        padding: 2px 0;
+    }
+
+    .form-input-field {
+        @include input-field;
+        position: relative;
+        z-index: 1;
+    }
+
+    .form-textarea-field {
+        height: inherit;
+        padding-top: 20px;
+    }
+
     &.form-input-has-icon {
         &.input-icon-left {
             .form-input-field {
@@ -40,28 +60,10 @@
         }
     }
 
-    .form-input-label {
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 160%; /* 1.4rem */
-        text-transform: capitalize;
-        padding: 2px 0;
-    }
-
-    .form-input-field {
-        @include input-field;
-        position: relative;
-        z-index: 1;
-
-        &.input-field-md {
+    &.input-field-md {
+        .form-input-field{
             height: 42px;
         }
-    }
-
-    .form-textarea-field {
-        height: inherit;
-        padding-top: 20px;
     }
 }
 
@@ -286,11 +288,11 @@ select.input-field-control {
         }
 
         .choices__item {
-            font-size: 0.875rem;
+            font-size: 1rem !important;
             font-style: normal;
             font-weight: 400;
             line-height: 160%;
-            padding: 0.3125rem 1.65rem;
+            padding: 0.3125rem 1.65rem !important;
 
             &:after {
                 display: none;
@@ -299,7 +301,6 @@ select.input-field-control {
             &.choices__item--selectable.is-highlighted {
                 background-color: transparent;
                 color: $edu-primary-color;
-                font-weight: 500;
             }
         }
 
@@ -308,7 +309,7 @@ select.input-field-control {
     .choices__heading {
         padding: 0.3125rem 1rem;
         border-bottom: 1px solid #f7f7f7;
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-style: normal;
         font-weight: 500;
         line-height: 160%;
@@ -338,7 +339,6 @@ select.input-field-control {
                 &:hover {
                     background: rgba(0, 89, 201, 0.08);
                     color: $edu-primary-color;
-                    font-weight: 500;
                 }
             }
         }
@@ -364,7 +364,7 @@ select.input-field-control {
                 padding: 0.125rem 0.375rem 0rem 0.625rem;
                 align-items: center;
                 gap: 8px;
-                font-size: 0.875rem;
+                font-size: 1rem;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 160%;

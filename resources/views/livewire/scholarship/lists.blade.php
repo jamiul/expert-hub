@@ -1,8 +1,4 @@
 <div class="scholarship-database-content-col">
-    <div class="scholarship-database-content-search-wrapper pb-3 border-bottom">
-        <x-form.search label="" wire:model.live="search" placeholder="Find scholarship..."/>
-        <p class="mb-0 mt-2">{{$scholarshipCount}} Results found</p>
-    </div>
     <div class="scholarship-database-content-list">
         @forelse ($scholarships as $scholarship)
         <div class="scholarship-database-content-list-item">
@@ -57,29 +53,29 @@
                 <div class="custom-table text-sm">
                     <div class="tr">
                         <div class="td">Application Deadline</div>
-                        <div class="td fw-medium">
+                        <div class="td">
                             {{ $scholarship->deadline ? $scholarship->deadline->format('d F Y') : 'Avaiable' }}
                         </div>
                     </div>
                     <div class="tr">
                         <div class="td">Study area</div>
-                        <div class="td fw-medium">
+                        <div class="td">
                             {{ $scholarship->studyAreas ? $scholarship->studyAreas->implode('name', ', ') : 'n/a' }}
                         </div>
                     </div>
                     <div class="tr">
                         <div class="td">Study Level</div>
-                        <div class="td fw-medium">
+                        <div class="td">
                             {{ $scholarship->studyLevels ? $scholarship->studyLevels->implode('name.value', ', ') : 'n/a'}}
                         </div>
                     </div>
                     <div class="tr">
                         <div class="td">Student type</div>
-                        <div class="td fw-medium">{{ $scholarship->student_type ? $scholarship->student_type : 'n/a' }}</div>
+                        <div class="td">{{ $scholarship->student_type ? $scholarship->student_type : 'n/a' }}</div>
                     </div>
                     <div class="tr">
                         <div class="td">Scholarship Website</div>
-                        <div class="td fw-medium">
+                        <div class="td">
                             @if($scholarship->link)
                             <a class="text-decoration-underline" href="{{ $scholarship->link }}">Click Here</a>
                             @endif

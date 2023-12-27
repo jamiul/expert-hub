@@ -3,7 +3,7 @@
     <p>Add your educational background to let employers know where you studied or are currently
         studying. Even if you didn't finish, it's important to include it here. And if you've earned
         a college degree, you don't need to add your high school/GED.</p>
-    <div class="d-grid grid-cols-sm-6 gap-3">
+    <div class="d-grid gap-3">
         @forelse ($educations as $education)
         <div class="card">
             <div class="card-header bg-white">
@@ -12,20 +12,24 @@
             <div class="card-body">
                 <table class="table table-sm table-borderless mb-0">
                     <tr>
-                        <td>Degree</td>
-                        <td class="fw-medium">: {{ $education->degree }}</td>
+                        <td width="120">Degree</td>
+                        <td width="3">:</td>
+                        <td class="fw-medium"> {{ $education->degree }}</td>
                     </tr>
                     <tr>
                         <td>Field of Study</td>
-                        <td class="fw-medium">: {{ $education->field }}</td>
+                        <td>:</td>
+                        <td class="fw-medium"> {{ $education->field }}</td>
                     </tr>
                     <tr>
                         <td>Start Year</td>
-                        <td class="fw-medium">: {{ $education->start_year }}</td>
+                        <td>:</td>
+                        <td class="fw-medium"> {{ $education->start_year }}</td>
                     </tr>
                     <tr>
                         <td>End Year</td>
-                        <td class="fw-medium">: {{ $education->end_year }}</td>
+                        <td>:</td>
+                        <td class="fw-medium"> {{ $education->end_year }}</td>
                     </tr>
                 </table>
             </div>
@@ -39,7 +43,7 @@
             </div>
         </div>
         @empty
-            <p class="text-info">Not yet added</p>
+            
         @endforelse
     </div>
     <button wire:click="$dispatch('modal.open', { component: 'profile.education.create'})" class="btn btn-link px-0 d-inline-flex align-items-center my-4">
