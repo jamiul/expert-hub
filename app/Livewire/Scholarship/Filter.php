@@ -19,6 +19,8 @@ use Livewire\Component;
 class Filter extends Component
 {
     #[Url()]
+    public $search = null;
+    #[Url()]
     public $level = [];
     #[Url()]
     public $studyArea = [];
@@ -51,6 +53,7 @@ class Filter extends Component
     public function filter()
     {
         $filters = [
+            'search' => $this->search,
             'level' => $this->level,
             'studyArea' => $this->studyArea,
             'scholarshipType' => $this->scholarshipType,
@@ -64,6 +67,7 @@ class Filter extends Component
 
     public function resetFilter()
     {
+        $this->search = '';
         $this->level = [];
         $this->studyArea = [];
         $this->scholarshipType = [];

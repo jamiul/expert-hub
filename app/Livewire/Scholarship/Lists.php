@@ -14,9 +14,6 @@ class Lists extends Component
 {
     use WithPagination;
 
-    #[Url()]
-    public $search = null;
-
     public $limit = 4;
 
     public $filtersArray;
@@ -37,11 +34,6 @@ class Lists extends Component
         );
     }
 
-    function updatedSearch()
-    {
-        $this->filtersArray['search'] = $this->search;
-    }
-
     public function paginationView()
     {
         return 'livewire.pagination';
@@ -52,12 +44,6 @@ class Lists extends Component
     {
         $this->filtersArray = $filtersArray;
         $this->resetPage();
-    }
-
-    public function updateFavorite(string|int $id, bool $status)
-    {
-        $repository = app(ScholarshipRepository::class);
-        $repository->updateFavorite($id, $status);
     }
 
     public function render()
