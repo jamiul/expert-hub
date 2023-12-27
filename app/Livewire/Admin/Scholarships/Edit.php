@@ -29,7 +29,7 @@ class Edit extends Modal
         $this->studyAreas = Expertise::expertise()->isParent()->get();
     }
 
-    public function editScholarship()
+    public function updateScholarship()
     {
         $this->form->update();
         $this->dispatch('refresh')->to(Table::class);

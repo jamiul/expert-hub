@@ -29,16 +29,18 @@ class Form extends BaseForm
     #[Validate('nullable')]
     public $automatic_consideration = false;
 
+    //Todo Conditional validation
+
     #[Validate('nullable')]
     public $deadline = '';
 
-    #[Validate('nullable|array')]
+    #[Validate('required|array')]
     public $studyAreas = [];
 
-    #[Validate('nullable|array')]
+    #[Validate('required|array')]
     public $studyLevels = [];
 
-    #[Validate('nullable|array')]
+    #[Validate('required|array')]
     public $fundTypes = [];
 
     public $countries = [];
@@ -47,7 +49,7 @@ class Form extends BaseForm
     public function create()
     {
         $data = $this->validate();
-        // dd($data);
+
         $scholarship = Scholarship::create([
             'title' => $data['title'],
             'link' => $data['link'],
@@ -103,11 +105,32 @@ class Form extends BaseForm
     {
         $data = $this->validate();
 
-        if ($this->currentEducation) {
-            $data['end_year'] = null;
+        $this->scholarship->update([
+            'title' => $data['title'],
+            'link' => $data['link'],
+            'university_id' => $data['university_id'],
+            'country_id' => $data['country_id'],
+            'student_type' => $data['student_type'],
+            'automatic_consideration' => $data['automatic_consideration'],
+            'deadline' => $data['deadline'],
+        ]);
+        if (is_array($data['studyAreas'])) {
+            $this->scholarship->studyAreas()->sync($data['studyAreas']);
         }
-
-        $this->education->update($data);
+        if (is_array($data['studyLevels'])) {
+            foreach ($data['studyLevels'] as $studyLevel) {
+                $this->scholarship->studyLevels()->updateOrCreate([
+                    'name' => $studyLevel,
+                ]);
+            }
+        }
+        if (is_array($data['fundTypes'])) {
+            foreach ($data['fundTypes'] as $fundType) {
+                $this->scholarship->fundTypes()->updateOrCreate([
+                    'name' => $fundType,
+                ]);
+            }
+        }
         $this->reset();
     }
 
