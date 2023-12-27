@@ -459,25 +459,32 @@
                                     </button>
                                 </div>
                                 <div class="message-editor-functional-action">
-                                    <div class="dropdown d-inline-block">
-                                        <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <x-icon.alternate-email/>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <button class="dropdown-item">Room</button>
-                                            <button class="dropdown-item">Fabio Rossi</button>
-                                            <button class="dropdown-item">Shuvo Reza</button>
-                                        </div>
-                                    </div>
+{{--                                    <div class="dropdown d-inline-block">--}}
+{{--                                        <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--}}
+{{--                                            <x-icon.alternate-email/>--}}
+{{--                                        </button>--}}
+{{--                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">--}}
+{{--                                            <button class="dropdown-item">Room</button>--}}
+{{--                                            <button class="dropdown-item">Fabio Rossi</button>--}}
+{{--                                            <button class="dropdown-item">Shuvo Reza</button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
 
                                     <button class="icon-btn">
                                         <x-icon.attach-file/>
                                     </button>
+                                    <div class="dropdown d-inline-block">
+                                        <button class="icon-btn" id="chatbox-editor-settings" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <x-icon.settings/>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="chatbox-editor-settings">
+                                            <p class="text-sm fw-medium">Pressing Enter Key will :</p>
+                                            <x-form.radio label="" wire:model="gender" :options="['send-message' => 'Send message', 'line-break' => 'Add a line break']"/>
+                                            <p class="text-sm fw-medium mb-0">You can use Ctrl + Enter to send</p>
+                                        </div>
+                                    </div>
 
-                                    <button class="icon-btn">
-                                        <x-icon.settings/>
-                                    </button>
                                     <button class="icon-btn send-message">
                                         <x-icon.send/>
                                     </button>
