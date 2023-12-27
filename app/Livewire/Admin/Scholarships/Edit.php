@@ -33,6 +33,7 @@ class Edit extends Modal
     {
         $this->form->update();
         $this->dispatch('refresh')->to(Table::class);
+        $this->dispatch('notify', content: 'Scholarship updated', type: 'success');
         $this->close();
     }
 

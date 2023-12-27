@@ -1,4 +1,10 @@
 <div>
+    <div class="pb-4">
+        <button class="btn btn-success" wire:click="showNotification('success')">Success Notification</button>
+        <button class="btn btn-info" wire:click="showNotification('info')">Info Notification</button>
+        <button class="btn btn-warning" wire:click="showNotification('warning')">Warning Notification</button>
+        <button class="btn btn-danger" wire:click="showNotification('danger')">Danger Notification</button>
+    </div>
     <form wire:submit="submit">
             <x-form.flatpicker label="Date picker" name="datepicker"/>
             <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" label="" name="country" placeholder="Search by Country"/>

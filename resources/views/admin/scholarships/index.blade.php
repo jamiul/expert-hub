@@ -16,5 +16,6 @@
             </div>
             <!-- end header -->
             @livewire('admin.scholarships.table')
+            <x-toaster/>
     </main>
 @endsection
