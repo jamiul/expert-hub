@@ -112,12 +112,12 @@
                         <x-form.input type="tel" label="Phone (optional)" wire:model="phone" placeholder="your phone number"/>
                         <x-form.input type="password" label="Password" wire:model.live.debounce="password" placeholder="Your password (8 or more characters)"/>
                         <x-form.input type="password" label="Confirm Password" wire:model.live.debounce="password_confirmation" placeholder="Your password (8 or more characters)"/>
-                        <x-form.select label="Country" wire:model.change="country_id">
+                        <x-form.choice label="Country" wire:model.change="country_id">
                             <option value="">Select country</option>
                             @foreach ($countries as $id => $country)
                                 <option value="{{ $id }}">{{ $country }}</option>
                             @endforeach
-                        </x-form.select>
+                        </x-form.choice>
                         <div class="registration-checkboxes">
                             <x-form.check wire:model.boolean="send_tips">
                                 Send me emails with tips on how to find projects that fit my expertise.
