@@ -60,13 +60,13 @@
                     <div class="tr">
                         <div class="td">Study area</div>
                         <div class="td">
-                            {{ $scholarship->studyAreas ? $scholarship->studyAreas->implode('name', ', ') : 'n/a' }}
+                            {{ $scholarship->studyAreas->count() ? $scholarship->studyAreas->implode('name', ', ') : 'N/A' }}
                         </div>
                     </div>
                     <div class="tr">
                         <div class="td">Study Level</div>
                         <div class="td">
-                            {{ $scholarship->studyLevels ? $scholarship->studyLevels->implode('name.value', ', ') : 'n/a'}}
+                            {{ $scholarship->studyLevels->count() ? $scholarship->studyLevels->implode('name.value', ', ') : 'N/A'}}
                         </div>
                     </div>
                     <div class="tr">

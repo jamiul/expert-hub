@@ -28,6 +28,7 @@ class Create extends Modal
     {
         $this->form->create();
         $this->dispatch('refresh')->to(Table::class);
+        $this->dispatch('notify', content: 'Scholarship added', type: 'success');
         $this->close();
     }
     public function render()
