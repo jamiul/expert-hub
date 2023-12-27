@@ -1,6 +1,6 @@
 <div class="scholarship-database-filter-col">
     <div class="scholarship-database-content-search-wrapper pb-3 border-bottom">
-        <x-form.search label="" wire:model.live="search" placeholder="Find scholarship..."/>
+        <x-form.search label="" wire:model.live.debounce="search" placeholder="Find scholarship..."/>
     </div>
     <div class="filter-widget mb-40">
         <div class="d-flex justify-content-between">

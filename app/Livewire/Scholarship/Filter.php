@@ -79,6 +79,11 @@ class Filter extends Component
         $this->filter();
     }
 
+    public function updatedSearch()
+    {
+        $this->filter();
+    }
+
     public function updatedCountry()
     {
         if ($this->country) {
