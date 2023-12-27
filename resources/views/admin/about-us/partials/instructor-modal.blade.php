@@ -7,20 +7,11 @@
                 <div class="add-expert-modal-area">
                     <h1 class="modal-title fs-5 m-expert-title" id="exampleModalLabel">Add Expert</h1>
                     <div class="admin-text-search position-relative">
-                        <x-form.search label="" wire:model="skill" placeholder="Search skills and select"/>
-                        {{-- <span class="img-admin-search position-absolute">
-                            <img src="{{ asset('assets/frontend/img/admin-search.png') }}">
-                        </span> --}}
-                        {{-- <select class="form-select top-input-control" aria-label="Default select example">
-                            <option selected>Search expert by na...</option>
-                            <option value="1">Professor Miles Esther</option>
-                            <option value="2"> enny Wilson</option>
-                            <option value="3">Leslie Alexander</option>
-                            <option value="4">Leslie Alexander</option>
-                        </select> --}}
+                        <x-form.search label="" wire:model.live.debounce.500ms="search" placeholder="Search Experts"/>
                     </div>
                     @if (count($instructors) > 0)
                         @foreach ($instructors as $instructor)
+                        {{-- @dd($instructor) --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
@@ -29,7 +20,7 @@
                                                 <div class="database-img"> <img
                                                         src="{{ asset('assets/frontend/img/admin/ex1.png') }}"> </div>
                                                 <div class="database-text admin-text">
-                                                    <h4> <a href="#">{{ $instructor->first_name .' '. $instructor->last_name }}</a> </h4>
+                                                    <h4> <a href="#">{{ $instructor->user->full_name }}</a> </h4>
                                                     <span>Agricultural Engineering Expert</span> <span>University of
                                                         Sydney</span> <span>Australia</span>
                                                     <div class="review rating-area consultant-reviw modal-consultant-review">

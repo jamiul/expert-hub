@@ -16,11 +16,11 @@
                                 <div class="row">
                                     <div class="col admin-sub-title position-relative">
                                         <x-form.input type="text" label="Subtitle" wire:model="apart_subtitle"
-                                        placeholder="Add Subtitle here" />
+                                            placeholder="Add Subtitle here" />
                                     </div>
                                     <div class="col admin-sub-title position-relative">
                                         <x-form.input type="text" label="Title" wire:model="apart_title"
-                                        placeholder="Add Title here" />
+                                            placeholder="Add Title here" />
                                     </div>
                                 </div>
                             </div>
@@ -34,6 +34,11 @@
                 </div>
             </div>
         </div>
+        @if (session('error'))
+            <div class="alert alert-success">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="eduexhub eduexhub-blog">
             <div class="container p-1">
                 <div class="row">
@@ -65,8 +70,11 @@
                                                                 <h3>
                                                                     {{ $apart->set_title }}
                                                                 </h3>
-                                                                <button type="button" wire:click="$dispatch('modal.open', {component: 'admin.about.aparts.edit', arguments: {'aboutApart': {{$apart->id}} }})" class="btn btn-outline-info btn-sm">Edit</button>
-                                                                <button wire:click="deleteApart({{ $apart->id }})" class="btn btn-outline-danger btn-sm">Delete</button>
+                                                                <button type="button"
+                                                                    wire:click="$dispatch('modal.open', {component: 'admin.about.aparts.edit', arguments: {'aboutApart': {{ $apart->id }} }})"
+                                                                    class="btn btn-outline-info btn-sm">Edit</button>
+                                                                <button wire:click="deleteApart({{ $apart->id }})"
+                                                                    class="btn btn-outline-danger btn-sm">Delete</button>
                                                                 <p>{{ $apart->description }}</p>
                                                             </div>
                                                         </div>
@@ -90,8 +98,11 @@
                                                                 <h3>
                                                                     {{ $apart->set_title }}
                                                                 </h3>
-                                                                <button type="button" wire:click="$dispatch('modal.open', {component: 'admin.about.aparts.edit', arguments: {'aboutApart': {{$apart->id}} }})" class="btn btn-outline-info btn-sm">Edit</button>
-                                                                <button wire:click="deleteApart({{ $apart->id }})" class="btn btn-outline-danger btn-sm">Delete</button>
+                                                                <button type="button"
+                                                                    wire:click="$dispatch('modal.open', {component: 'admin.about.aparts.edit', arguments: {'aboutApart': {{ $apart->id }} }})"
+                                                                    class="btn btn-outline-info btn-sm">Edit</button>
+                                                                <button wire:click="deleteApart({{ $apart->id }})"
+                                                                    class="btn btn-outline-danger btn-sm">Delete</button>
                                                                 <p>{{ $apart->description }}</p>
                                                             </div>
                                                         </div>
@@ -111,11 +122,9 @@
                         <div class="require-block">
                             <div class="academic-single-item d-flex flex-column">
                                 <div class="admin-add-more">
-                                    <button wire:click="$dispatch('modal.open', { component: 'admin.about.aparts.create'})" type="button" class="material-symbols-outlined">add</button>
-                                    {{-- <a href="#apart">
-                                        <span class="material-symbols-outlined" data-bs-toggle="modal"
-                                            data-bs-target="#addApartDetails">add</span>
-                                    </a> --}}
+                                    <button
+                                        wire:click="$dispatch('modal.open', { component: 'admin.about.aparts.create'})"
+                                        type="button" class="material-symbols-outlined">add</button>
                                 </div>
                             </div>
                         </div>

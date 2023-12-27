@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\About;
 
 use App\Models\User;
 use App\Models\AboutUs;
+use App\Models\Profile;
 use Livewire\Component;
 
 class Instructor extends Component
@@ -14,6 +15,7 @@ class Instructor extends Component
     public $instructors = [];
     public $instructorPage;
     public $expertId;
+    public $search = '';
 
     public function rules()
     {
@@ -81,7 +83,14 @@ class Instructor extends Component
 
     public function render()
     {
-        $this->instructors = User::where('active_profile', 'Expert')->get();
+        $this->instructors = Profile::expert()
+            ->with('user')
+            ->whereHas('user', function ($query) {
+                $query->where('first_name', 'like', '%' . $this->search . '%')
+                    ->orWhere('last_name', 'like', '%' . $this->search . '%');
+            })
+            ->get();
+        // $this->instructors = Profile::expert()->with('user')->get();
         return view('livewire.admin.about.instructor');
     }
 }

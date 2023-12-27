@@ -1,3 +1,4 @@
+<span class="text-danger" wire.model.blur="form.msg"></span>
 <x-form.input type="text" label="Apart Title" wire:model.blur="form.set_title" placeholder="Add title here"/>
 <x-form.textarea label="Description" wire:model.blur="form.description" placeholder="Description"/>
 <x-form.select label="Type" wire:model.blur="form.type">

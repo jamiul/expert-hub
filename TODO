@@ -8,7 +8,7 @@ Todo:
     - Complete search functionality. @critical
     - fetch expert from profiles `table`.
   [FRONTEND]:
-    - use Button Modal.
-    -
+    ✔ Aparts can not create more than 6. @today
+    - show apart message.
 
 
