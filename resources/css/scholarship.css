@@ -1,0 +1,58 @@
+.edux-scholarship-table {
+    border: none;
+    color: #191D24;
+  }
+
+.edux-data-table > :not(caption) > * > * {
+    border-color:  rgba(0, 0, 0, 0.10);
+    padding: 1rem;
+
+}
+
+.edux-data-table > thead > tr > th{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: rgba(48, 55, 68, 0.80);
+    font-weight: 500;
+}
+
+.edux-data-table tr > td{
+    vertical-align:middle
+}
+
+.edux-data-table tr > td h6{
+    color:#191D24;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.edux-scholarship-details-cell ul li {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon{
+    max-width: 24px;
+    flex: 0 0 24px;
+}
+
+.edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon{
+    max-width: 24px;
+    flex: 0 0 24px;
+}
+
+.edux-scholarship-details-cell .text-bg-secondary {
+    color: #fff !important;
+    background-color: #9CA5C2
+}
+
+.edux-scholarship-details-cell .badge {
+    padding: 4px 10px;
+}
+
+
+
+

@@ -3512,6 +3512,9 @@ font-weight: 500;
 
 /*  ========================= Admin dashboard  start here ================================================ */
 
+
+
+
 .admin-tab-nav-area {
     background-color: #F0F1F7;
     align-items: center;
@@ -3533,7 +3536,7 @@ font-weight: 500;
   border-radius: 8px;
   background: #FFF;
   /* border: 1px solid #E7E5EF; */
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
 }
 
 .search-by-admin {
@@ -3661,9 +3664,7 @@ ul.admin-d-item li:hover a.dropdown-item{
   font-weight: 500 !important ;
 }
 
-.admin-policy-area {
-  padding: 24px 10px;
-}
+
 
 .policy-option {
   display: flex;
@@ -7317,8 +7318,27 @@ button.edux-btn-accordion {
 
 
 
+
+
 /**** ============================================== Client Chatbox End Here  ================================= ***/
 /**** ============================================== Scholarship Page design start here  ================================= ***/
+
+.tr-edux-scholarship {
+  vertical-align: middle;
+  border-bottom: 1px solid var(--color-border-color-solid, #E7E5EF);
+}
+
+.admin-policy-area {
+  padding: 27px 0px 30px 0px!important;
+  color: rgba(48, 55, 68, 0.80) !important;
+  font-size: 14px  !important;
+  font-weight: 500;
+}
+.admin-policy-area-padding{
+  padding-left:20px !important;
+}
+
+
 .edux-scholarship-heading-area ul {
   display: flex;
   justify-content: flex-start;
@@ -7384,6 +7404,11 @@ button.edux-btn-accordion {
   flex-direction: column;
   justify-content: center;
   gap: 9px;
+  /* padding-left: 20px; */
+}
+
+tr.tr-edux-scholarship td {
+  padding: 16px 0px;
 }
 
 .edux-fund-type{
@@ -7708,6 +7733,19 @@ footer .footer {
 footer .footer-bottom {
   display: none;
 }
+
+
+
+
+/**** ============================================== New Update css start  ================================= ***/
+.tr-edux-scholarship {
+  vertical-align: middle;
+}
+
+/* .tr-edux-scholarship td{
+  padding: 40px 16px;
+} */
+/**** ============================================== New Update css end   ================================= ***/
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
