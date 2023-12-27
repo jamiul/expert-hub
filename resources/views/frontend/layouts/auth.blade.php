@@ -25,5 +25,6 @@
         @yield('content')
         @livewire('modal-pro')
         <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
+        <x-toaster/>
     </body>
 </html>

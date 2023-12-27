@@ -14,7 +14,7 @@ class Lists extends Component
 {
     use WithPagination;
 
-    public $limit = 4;
+    public $limit = 5;
 
     public $filtersArray;
 
@@ -93,7 +93,7 @@ class Lists extends Component
         }
 
         $this->scholarshipCount = $scholarships->count();
-        $scholarships = $scholarships->paginate($this->limit);
+        $scholarships = $scholarships->orderByDesc('id')->paginate($this->limit);
 
         return view('livewire.scholarship.lists', compact('scholarships'));
     }

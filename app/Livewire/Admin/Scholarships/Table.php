@@ -17,7 +17,7 @@ class Table extends Component
 
     public function mount()
     {
-        $this->scholarships = Scholarship::get();
+        $this->refreshScholarship();
     }
 
     public function paginationView()
@@ -41,7 +41,7 @@ class Table extends Component
     #[On('refresh')]
     public function refreshScholarship()
     {
-        $this->scholarships = Scholarship::get();
+        $this->scholarships = Scholarship::orderByDesc('id')->get();
     }
 
     public function render()
