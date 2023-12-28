@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\About;
 
 use App\Models\User;
+use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use App\Models\Profile;
 use Livewire\Component;
@@ -21,8 +22,18 @@ class Instructor extends Component
     public function rules()
     {
         return [
-            'instructor_title' => ['required', 'string'],
-            'instructor_subtitle' => ['required', 'string'],
+            'instructor_title' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::TITLE_MIN,
+                'max:' . CmnEnum::TITLE_MAX
+            ],
+            'instructor_subtitle' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::SUBTITLE_MIN,
+                'max:' . CmnEnum::SUBTITLE_MAX
+            ],
             'instructor_list' => ['array'],
         ];
     }
@@ -59,9 +70,13 @@ class Instructor extends Component
     {
         $data = $this->validate();
 
-        // if (count($this->experts) < 7) {
-        //     return $this->addError('experts', 'You can only select up to 2 experts.');
-        // }
+        if (count($this->experts) > 7) {
+            return $this->addError('experts', 'You can only select up to 7 experts.');
+        }
+
+        if (count($this->experts) < 6) {
+            return $this->addError('experts', 'Please select minimum 6 experts');
+        }
 
         $this->instructorPage->update([
             'instructor_title' => $data['instructor_title'],
@@ -69,6 +84,7 @@ class Instructor extends Component
             'instructor_list' => $this->instructor_list,
         ]);
 
+        session()->flash('success', 'Expert successfully updated.');
         return redirect()->to('/admin/about-us');
     }
 

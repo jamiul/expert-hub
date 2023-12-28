@@ -2,18 +2,18 @@
     <div class="container">
         <div class="heading">
             <h4>{{ $aboutUsDTO->instructor_subtitle }}</h4>
-            <h2>{{ $aboutUsDTO->instructor_title }}</h2>
+            <h2>{{ capitalizedString($aboutUsDTO->instructor_title) }}</h2>
         </div>
         <div id="owl-carousel" class="owl-carousel owl-theme">
-            @if(count($aboutUsDTO->instructor_list) > 0)
-                @foreach(($aboutUsDTO->instructor_list) as $instrctor)
+            @if(count($experts) > 0)
+                @foreach($experts as $expert)
                     <div class="item">
                         <div class="carousel-img">
-                            <img src="{{ asset('assets/frontend/img/find-trad1.png') }}">
+                            <img src="{{ $expert->getFirstMediaUrl('picture') }}">
                         </div>
                         <div class="carousel-text">
-                            <h4>{{ getFullNameByExpertID($instrctor) }}</h4>
-                            <p>Accreditation Specialist</p>
+                            <h4>{{ $expert->user->full_name }}</h4>
+                            <p>{{ getExpertiseById($expert->expertise_id) }}</p>
                             <h5>Oxford University</h5>
                         </div>
                     </div>

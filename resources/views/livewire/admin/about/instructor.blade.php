@@ -33,13 +33,12 @@
                                     <div class="row">
                                         @if (!is_null($experts) && count($experts) > 0)
                                             @foreach ($experts as $expert)
-                                                {{-- @dd($expert->id); --}}
                                                 <div class="col-md-2 col-sm-6 {{ count($experts) > 6 ? 'mt-5' : '' }}">
                                                     <div class="team-block">
                                                         <a href="#">
                                                             <div class="team-img position-relative">
                                                                 <img
-                                                                    src="{{ asset('assets/frontend/img/team-1.png') }}">
+                                                                    src="{{ $expert->getFirstMediaUrl('picture') }}">
                                                                 <a class="blog-close position-absolute"
                                                                     wire:click="removeExpert({{ $expert->id }})">
                                                                     <img class=""
@@ -49,7 +48,7 @@
                                                             </div>
                                                             <div class="hire-text">
                                                                 <h4>{{ $expert->user->full_name }}</h4>
-                                                                <p>Accreditation Specialist</p>
+                                                                <p>{{ getExpertiseById($expert->expertise_id) }}</p>
                                                             </div>
                                                         </a>
                                                     </div>

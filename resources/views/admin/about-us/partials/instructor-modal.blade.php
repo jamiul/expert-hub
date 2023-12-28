@@ -9,21 +9,21 @@
                     <div class="admin-text-search position-relative">
                         <x-form.search label="" wire:model.live.debounce.500ms="search" placeholder="Filter by experts.."/>
                     </div>
-                    {{-- @dd($instructor_list); --}}
                     @if (count($instructors) > 0)
                         @foreach ($instructors as $instructor)
-                        {{-- @dd($instructor->id) --}}
+                        {{-- @dd($instructor->user->country_id); --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
                                         <div class="database-block database-blog">
                                             <div class="database-contant">
-                                                <div class="database-img"> <img
-                                                        src="{{ asset('assets/frontend/img/admin/ex1.png') }}"> </div>
+                                                <div class="database-img">
+                                                    <img src="{{ $instructor->getFirstMediaUrl('picture') }}">
+                                                </div>
                                                 <div class="database-text admin-text">
                                                     <h4> <a href="#">{{ $instructor->user->full_name }}</a> </h4>
-                                                    <span>Agricultural Engineering Expert</span> <span>University of
-                                                        Sydney</span> <span>Australia</span>
+                                                    <span>{{ getExpertiseById($instructor->expertise_id) }}</span> <span>University of
+                                                        Sydney</span> <span>{{ getCountryNameById($instructor->user->country_id) }}</span>
                                                     <div class="review rating-area consultant-reviw modal-consultant-review">
                                                         <ul class="all-project-rating">
                                                             <li> <strong>$200</strong> / hr </li>

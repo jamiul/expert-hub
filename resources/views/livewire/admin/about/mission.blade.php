@@ -16,23 +16,28 @@
                                 <div class="row">
                                     <div class="col admin-sub-title position-relative">
                                         <x-form.input type="text" label="Subtitle" wire:model="mission_subtitle"
-                                        placeholder="Add Subtitle here" />
+                                            placeholder="Add Subtitle here" />
                                     </div>
                                     <div class="col admin-sub-title position-relative">
                                         <x-form.input type="text" label="Title" wire:model="mission_title"
-                                        placeholder="Add Title here" />
+                                            placeholder="Add Title here" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-floating admin-text-area position-relative mb-3">
-                                        <x-form.textarea label="Description" wire:model="mission_description" placeholder="Description"/>
+                                        <x-form.textarea label="Description" wire:model="mission_description"
+                                            placeholder="Description" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="missionImage">Image</label>
-                                        <input type="file" class="form-control" id="missionImage" wire:model="mission_image">
+                                        <input type="file" class="form-control" id="missionImage"
+                                            wire:model="mission_image">
                                     </div>
+                                    @error('mission_image')
+                                        <div class="form-input-error-message">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">
@@ -48,7 +53,7 @@
         <div class="row mt-4">
             <div class="col-md-5">
                 <div class="mission-img overlay-edit position-relative">
-                    <img src="{{ $missionAbout->missionImage() }}" alt="Mission Image">
+                    <img src="{{ $missionAbout->missionImage() }}">
                 </div>
             </div>
         </div>

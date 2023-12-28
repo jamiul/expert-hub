@@ -28,7 +28,13 @@ class Area extends Component
                 'min:' . CmnEnum::SUBTITLE_MIN,
                 'max:' . CmnEnum::SUBTITLE_MAX
             ],
-            'area_description' => ['required','string'],
+            'area_description' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::DESCRIPTION_MIN,
+                'max:' . CmnEnum::DESCRIPTION_MAX
+
+            ],
         ];
     }
 

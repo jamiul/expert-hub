@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\About;
 
+use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -11,6 +12,7 @@ class Mission extends Component
     use WithFileUploads;
 
     public $missionAbout;
+    public $missionImageUrl = '';
     public $mission_title;
     public $mission_subtitle;
     public $mission_description;
@@ -18,11 +20,33 @@ class Mission extends Component
 
     public function rules()
     {
+        $requiredOrNull = $this->missionImageUrl == '' ? 'required' : 'nullable';
+
         return [
-            'mission_title' => ['required','string'],
-            'mission_subtitle' => ['required','string'],
-            'mission_description' => ['required','string'],
-            'mission_image' => ['nullable','image'],
+            'mission_title' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::TITLE_MIN,
+                'max:' . CmnEnum::TITLE_MAX
+            ],
+            'mission_subtitle' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::SUBTITLE_MIN,
+                'max:' . CmnEnum::SUBTITLE_MAX
+            ],
+            'mission_description' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::DESCRIPTION_MIN,
+                'max:' . CmnEnum::DESCRIPTION_MAX
+            ],
+            'mission_image' => [
+                $requiredOrNull,
+                'image',
+                'max:' . CmnEnum::IMAGE_SIZE,
+                'dimensions:min_width=540,min_height=600'
+            ],
         ];
     }
 

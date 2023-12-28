@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Country;
+use App\Models\Expertise;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 
@@ -51,4 +53,17 @@ function addNewLine($header_subtitle, $chunkLength)
 function capitalizedString($string)
 {
     return ucwords($string);
+}
+
+// fetch expertise
+function getExpertiseById($id)
+{
+    $expertise = Expertise::findOrFail($id);
+    return $expertise->name;
+}
+
+function getCountryNameById($id)
+{
+    $country = Country::findOrFail($id);
+    return $country->name;
 }
