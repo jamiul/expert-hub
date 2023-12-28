@@ -6,7 +6,6 @@
 .edux-data-table > :not(caption) > * > * {
     border-color:  rgba(0, 0, 0, 0.10);
     padding: 1rem;
-
 }
 
 .edux-data-table > thead > tr > th{
