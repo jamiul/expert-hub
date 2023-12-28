@@ -7,11 +7,12 @@
                 <div class="add-expert-modal-area">
                     <h1 class="modal-title fs-5 m-expert-title" id="exampleModalLabel">Add Expert</h1>
                     <div class="admin-text-search position-relative">
-                        <x-form.search label="" wire:model.live.debounce.500ms="search" placeholder="Search Experts"/>
+                        <x-form.search label="" wire:model.live.debounce.500ms="search" placeholder="Filter by experts.."/>
                     </div>
+                    {{-- @dd($instructor_list); --}}
                     @if (count($instructors) > 0)
                         @foreach ($instructors as $instructor)
-                        {{-- @dd($instructor) --}}
+                        {{-- @dd($instructor->id) --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
@@ -98,7 +99,7 @@
                                 <div class="post-job add-expert-post position-absolute">
                                     <button class="btn btn-postjob d-flex justify-content-center align-items-center" wire:click="addExpert({{ $instructor->id }})">
                                         <span class="material-symbols-outlined">add</span>
-                                        <span>Add expert </span>
+                                        <span>Add expert</span>
                                     </button>
                                 </div>
                             </div>

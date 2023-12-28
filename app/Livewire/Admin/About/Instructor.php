@@ -13,6 +13,7 @@ class Instructor extends Component
     public $instructor_subtitle;
     public $instructor_list = [];
     public $instructors = [];
+    public $experts = [];
     public $instructorPage;
     public $expertId;
     public $search = '';
@@ -43,17 +44,24 @@ class Instructor extends Component
         $this->instructor_title = $this->instructorPage->instructor_title;
         $this->instructor_subtitle = $this->instructorPage->instructor_subtitle;
         $this->instructor_list = $this->instructorPage->instructor_list ?? [];
+
+        $this->updateExpertList();
     }
 
     public function addExpert($id)
     {
         $this->expertId = $id;
         array_push($this->instructor_list, $this->expertId);
+        $this->updateExpertList();
     }
 
     public function saveExpert()
     {
         $data = $this->validate();
+
+        // if (count($this->experts) < 7) {
+        //     return $this->addError('experts', 'You can only select up to 2 experts.');
+        // }
 
         $this->instructorPage->update([
             'instructor_title' => $data['instructor_title'],
@@ -71,6 +79,9 @@ class Instructor extends Component
         if ($index !== false) {
             unset($this->instructor_list[$index]);
         }
+
+        $this->updateExpertList();
+
         $data = $this->validate();
 
         $this->instructorPage->update([
@@ -78,19 +89,26 @@ class Instructor extends Component
             'instructor_subtitle' => $data['instructor_subtitle'],
             'instructor_list' => $this->instructor_list,
         ]);
+    }
 
+    private function updateExpertList()
+    {
+        if (count($this->instructor_list) > 0) {
+            $this->experts = Profile::whereIn('id', $this->instructor_list)
+                ->with('user')
+                ->get();
+        }
     }
 
     public function render()
     {
-        $this->instructors = Profile::expert()
+        $this->instructors = Profile::whereNotIn('id', $this->instructor_list)->expert()
             ->with('user')
             ->whereHas('user', function ($query) {
                 $query->where('first_name', 'like', '%' . $this->search . '%')
                     ->orWhere('last_name', 'like', '%' . $this->search . '%');
             })
-            ->get();
-        // $this->instructors = Profile::expert()->with('user')->get();
+            ->take(3)->orderBy('id', 'desc')->get();
         return view('livewire.admin.about.instructor');
     }
 }

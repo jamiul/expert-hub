@@ -14,10 +14,12 @@ class Header extends Component
     public $aboutPage;
     public string $header_subtitle = '';
     public $header_image;
+    public $headerImageUrl = '';
 
 
     public function rules()
     {
+        $requiredOrNull = $this->headerImageUrl == '' ? 'required' : 'nullable';
         return [
             'header_subtitle' => [
                 'required',
@@ -26,7 +28,7 @@ class Header extends Component
                 'max:' . CmnEnum::SUBTITLE_MAX
             ],
             'header_image' => [
-                'nullable',
+                $requiredOrNull,
                 'image',
                 'max:' . CmnEnum::IMAGE_SIZE,
                 'dimensions:min_width=1920,min_height=380'
@@ -48,6 +50,8 @@ class Header extends Component
             $this->aboutPage = AboutUs::create();
         }
         $this->header_subtitle = $this->aboutPage->header_subtitle ?? '';
+        $this->headerImageUrl = $this->aboutPage->getFirstMediaUrl('header_image');
+        // dd($this->headerImageUrl);
     }
 
     public function save()
@@ -58,12 +62,12 @@ class Header extends Component
             'header_subtitle' => $data['header_subtitle'],
         ]);
 
-        if( ! is_null($this->header_image )) {
+        if (!is_null($this->header_image)) {
             $this->aboutPage->clearMediaCollection('header_image');
 
             $this->aboutPage->addMedia($this->header_image->getRealPath())
-            ->usingName($this->header_image->getClientOriginalName())
-            ->toMediaCollection('header_image');
+                ->usingName($this->header_image->getClientOriginalName())
+                ->toMediaCollection('header_image');
         }
 
         session()->flash('success', 'Header successfully updated.');

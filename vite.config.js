@@ -31,6 +31,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/components.css',
                 'resources/css/auth.css',
+                'resources/css/scholarship.css',
                 'resources/js/app.js',
                 'resources/js/owl.carousel.min.js',
                 'resources/js/filepond.js',

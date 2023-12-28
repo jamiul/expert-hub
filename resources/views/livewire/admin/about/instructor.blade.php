@@ -6,6 +6,9 @@
                 <div class="academic-bar d-flex">
                     <h3 class="seller-title">Meet Our Experts</h3>
                 </div>
+                @if ($errors->has('experts'))
+                    <div class="alert alert-danger">{{ $errors->first('experts') }}</div>
+                @endif
             </div>
         </div>
         <div class="row">
@@ -28,24 +31,24 @@
                             <div class="team  team-blog">
                                 <div class="team-hire">
                                     <div class="row">
-                                        @if (!is_null($instructor_list) && count($instructor_list) > 0)
-                                            @foreach ($instructor_list as $instructor)
-                                                <div
-                                                    class="col-md-2 col-sm-6 {{ count($instructor_list) > 6 ? 'mt-5' : '' }}">
+                                        @if (!is_null($experts) && count($experts) > 0)
+                                            @foreach ($experts as $expert)
+                                                {{-- @dd($expert->id); --}}
+                                                <div class="col-md-2 col-sm-6 {{ count($experts) > 6 ? 'mt-5' : '' }}">
                                                     <div class="team-block">
                                                         <a href="#">
                                                             <div class="team-img position-relative">
                                                                 <img
                                                                     src="{{ asset('assets/frontend/img/team-1.png') }}">
                                                                 <a class="blog-close position-absolute"
-                                                                    wire:click="removeExpert({{ $instructor }})">
+                                                                    wire:click="removeExpert({{ $expert->id }})">
                                                                     <img class=""
                                                                         src="{{ asset('assets/frontend/img/blog-admin/blog-close.png') }}"
                                                                         alt="close">
                                                                 </a>
                                                             </div>
                                                             <div class="hire-text">
-                                                                <h4>{{ getFullNameByExpertID($instructor) }}</h4>
+                                                                <h4>{{ $expert->user->full_name }}</h4>
                                                                 <p>Accreditation Specialist</p>
                                                             </div>
                                                         </a>

@@ -2,21 +2,32 @@
 
 namespace App\Livewire\Admin\About;
 
+use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
 
 class Area extends Component
 {
     public $areaAboutPage;
-    public $area_title;
-    public $area_subtitle;
-    public $area_description;
+    public $area_title = '';
+    public $area_subtitle = '';
+    public $area_description = '';
 
     public function rules()
     {
         return [
-            'area_title' => ['required','string'],
-            'area_subtitle' => ['required','string'],
+            'area_title' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::TITLE_MIN,
+                'max:' . CmnEnum::TITLE_MAX
+            ],
+            'area_subtitle' => [
+                'required',
+                'string',
+                'min:' . CmnEnum::SUBTITLE_MIN,
+                'max:' . CmnEnum::SUBTITLE_MAX
+            ],
             'area_description' => ['required','string'],
         ];
     }
@@ -51,6 +62,7 @@ class Area extends Component
             'area_description' => $data['area_description'],
         ]);
 
+        session()->flash('success', 'Area successfully updated.');
         return redirect()->to('/admin/about-us');
     }
 

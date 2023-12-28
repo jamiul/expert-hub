@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Support\Carbon;
 
 function getExpertByID($id): ?User
 {
@@ -23,8 +24,31 @@ function getFullNameByExpertID($id): ?string
     return null;
 }
 
-
 function years()
 {
     return range(date('Y'), 1950);
+}
+
+function eduexDateFormat($date)
+{
+    if($date instanceof Carbon){
+        return $date->format('d-m-Y');
+    }
+    return 'Send Carbon Instance';
+}
+
+// add new line after chunk length
+function addNewLine($header_subtitle, $chunkLength)
+{
+    $chunks = collect(str_split($header_subtitle, $chunkLength))->map(function ($chunk) {
+        return rtrim($chunk);
+    });
+
+    return $chunks->implode(PHP_EOL);
+}
+
+// Capitalize the first character of each word
+function capitalizedString($string)
+{
+    return ucwords($string);
 }
