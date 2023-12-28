@@ -79,7 +79,7 @@
           <div class="row">
       <div class="col-12">
         <div class="balance-table-area-admin d-flex flex-column">
-            <table class="table table-hover transaction-all">
+            <table class="table table-hover transaction-all table-responsive">
               <thead class="t-history">
                   <tr>
                     <th scope="col"><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> ID</th>
