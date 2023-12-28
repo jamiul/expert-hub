@@ -32,6 +32,11 @@ class ComponentExample extends Component
         return view('livewire.component-example');
     }
 
+    public function showNotification($type)
+    {
+        $this->dispatch('notify', content: 'This is a sample '. $type .' notification', type: $type);
+    }
+
     public function submit()
     {
         dd($this->names);

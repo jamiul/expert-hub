@@ -24,8 +24,8 @@
                     </div>
                     <input x-on:click="buttonText = 'Apply as a Client'" class="form-check-input" type="radio" wire:model.live="type" value="{{ App\Enums\ProfileType::Client->value }}">
                 </label>
-                <div class="mt-3">
-                    <button x-text="buttonText" class="py-3 button button-block button-primary" wire:click="typeSelected" type="button"></button>
+                <div class="d-grid mt-3">
+                    <button x-text="buttonText" class="btn btn-md btn-primary" wire:click="typeSelected" type="button">Apply as an Expert</button>
                 </div>
                 <p class="auth-footer">Already have an account, <a class="link-button" href="{{ route('auth.login') }}">Sign In</a></p>
             </div>
@@ -112,12 +112,12 @@
                         <x-form.input type="tel" label="Phone (optional)" wire:model="phone" placeholder="your phone number"/>
                         <x-form.input type="password" label="Password" wire:model.live.debounce="password" placeholder="Your password (8 or more characters)"/>
                         <x-form.input type="password" label="Confirm Password" wire:model.live.debounce="password_confirmation" placeholder="Your password (8 or more characters)"/>
-                        <x-form.select label="Country" wire:model.change="country_id">
+                        <x-form.choice label="Country" wire:model.change="country_id">
                             <option value="">Select country</option>
                             @foreach ($countries as $id => $country)
                                 <option value="{{ $id }}">{{ $country }}</option>
                             @endforeach
-                        </x-form.select>
+                        </x-form.choice>
                         <div class="registration-checkboxes">
                             <x-form.check wire:model.boolean="send_tips">
                                 Send me emails with tips on how to find projects that fit my expertise.
@@ -127,8 +127,8 @@
                                 including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy.</a>
                             </x-form.check>
                         </div>
-                        <div class="mt-3">
-                            <button class="button button-block button-primary" type="submit">Create Account</button>
+                        <div class="d-grid mt-3">
+                            <button class="btn btn-md btn-primary" type="submit">Create Account</button>
                         </div>
                     </form>
                     <div class="auth-card-bottom">

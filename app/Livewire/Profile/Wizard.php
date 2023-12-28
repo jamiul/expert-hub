@@ -4,6 +4,7 @@ namespace App\Livewire\Profile;
 
 use App\Models\Expertise;
 use App\Models\University;
+use Illuminate\Mail\Mailables\Content;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\File;
 use Livewire\Component;
@@ -79,6 +80,21 @@ class Wizard extends Component
     {
         if ($this->currentStep == 1) {
             $this->saveSkill();
+        }
+        if ($this->currentStep == 2) {
+            if($this->profile()->education->count() == 0){
+                return $this->dispatch('notify', content: 'Please add education', type: 'info');
+            }
+        }
+        if ($this->currentStep == 3) {
+            if($this->profile()->experiences->count() == 0){
+                return $this->dispatch('notify', content: 'Please add experience', type: 'info');
+            }
+        }
+        if ($this->currentStep == 4) {
+            if($this->profile()->languages->count() == 0){
+                return $this->dispatch('notify', content: 'Please add language', type: 'info');
+            }
         }
         if ($this->currentStep == 5) {
             $this->validateOnly('hourly_rate');
