@@ -53,7 +53,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link"
-                                            href="{{ url('/find-training') }}">{{ __('Find Training') }}</a>
+                                            href="#">{{ __('Find Training') }}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link"
