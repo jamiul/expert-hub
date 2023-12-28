@@ -3,10 +3,7 @@
 namespace App\Livewire\Scholarship;
 
 use App\Models\Scholarship;
-use App\Repositories\ScholarshipRepository;
-use Illuminate\Support\Carbon;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,7 +11,7 @@ class Lists extends Component
 {
     use WithPagination;
 
-    public $limit = 5;
+    public $perPage = 6;
 
     public $filtersArray;
 
@@ -44,6 +41,12 @@ class Lists extends Component
     {
         $this->filtersArray = $filtersArray;
         $this->resetPage();
+    }
+
+    public function updatedPerPage()
+    {
+        $this->resetPage();
+        $this->render();
     }
 
     public function render()
@@ -93,7 +96,7 @@ class Lists extends Component
         }
 
         $this->scholarshipCount = $scholarships->count();
-        $scholarships = $scholarships->orderByDesc('id')->paginate($this->limit);
+        $scholarships = $scholarships->orderByDesc('id')->paginate($this->perPage);
 
         return view('livewire.scholarship.lists', compact('scholarships'));
     }

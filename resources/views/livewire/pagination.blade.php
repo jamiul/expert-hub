@@ -15,7 +15,7 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
             <div class="row">
                 <div class="col-md-4">
                     <div class="pagination-left">
-                        Showing {{ max(1, 4 * ($paginator->currentPage() - 1) + 1) }} to {{ min(4 * $paginator->currentPage(), $paginator->total()) }} of
+                        Showing {{ max(1, $paginator->perPage() * ($paginator->currentPage() - 1) + 1) }} to {{ min($paginator->perPage() * $paginator->currentPage(), $paginator->total()) }} of
                             {{ $paginator->total() }} results
                     </div>
                 </div>
@@ -23,14 +23,11 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                     <div class="pagination-right">
                         <div class="results">
                             <p>{{ 'Results per page' }}</p>
-                            <select class="select-page" wire:change="gotoPage($event.target.value, '{{ $paginator->getPageName() }}')">
-                                @foreach ($elements as $element)
-                                    @if (is_array($element))
-                                        @foreach ($element as $page => $url)
-                                            <option value="{{ $page }}" {{ $page == $paginator->currentPage() ? 'selected' : '' }}>{{ $page }}</option>
-                                        @endforeach
-                                    @endif
-                                @endforeach
+                            <select class="select-page" wire:model.live="perPage">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
                             </select>
                         </div>
                         <ul>

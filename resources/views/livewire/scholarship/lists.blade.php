@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="tr">
-                        <div class="td">Study area</div>
+                        <div class="td">Study Area</div>
                         <div class="td">
                             {{ $scholarship->studyAreas->count() ? $scholarship->studyAreas->implode('name', ', ') : 'N/A' }}
                         </div>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="tr">
-                        <div class="td">Student type</div>
+                        <div class="td">Student Type</div>
                         <div class="td">{{ $scholarship->student_type ? $scholarship->student_type : 'n/a' }}</div>
                     </div>
                     <div class="tr">
