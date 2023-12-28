@@ -33,6 +33,13 @@
     align-items: center;
 }
 
+.edux-inprogress-details-cell ul li {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon{
     max-width: 24px;
     flex: 0 0 24px;
@@ -52,6 +59,33 @@
     padding: 4px 10px;
 }
 
+.user-card-small{
+
+display: flex;
+gap: 8px;
+
+}
+
+.user-card-info h5{
+    color: #191D24;
+    font-weight: 500;
+}
+
+.dispute-reason {
+    color: var(--color-theme-color-2);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+
+  .edux-rating{
+    display: inline-flex;
+  }
 
 
+  .edux-rating li svg{
+    width: 16px;
+    height: 16px;
+  }
 

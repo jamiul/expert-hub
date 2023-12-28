@@ -2600,7 +2600,7 @@ td.balance-text {
 
 span.discord-reason {
   color: var(--color-red-2, #F00);
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3551,7 +3551,7 @@ font-weight: 500;
   background: #FFF !important;
   box-shadow: 0px 2px 8px 0px rgba(14, 0, 98, 0.03);
   color: #000 !important;
-  font-family: Inter !important;
+
   font-size: 15px !important;
   font-style: normal;
   font-weight: 600;
@@ -3561,7 +3561,7 @@ font-weight: 500;
 
 .admin-nav-link{
   color: #495057;
-  font-family: Inter;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -3582,7 +3582,7 @@ font-weight: 500;
 }
 .policy-content h4{
   color: var(--color-heading-color);
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3658,7 +3658,7 @@ ul.admin-d-item li a.dropdown-item {
 ul.admin-d-item li:hover a.dropdown-item{
   background: rgba(0, 54, 227, 0.05) !important;
   color: var(--color-theme-color-2) !important;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500 !important ;
@@ -3698,7 +3698,7 @@ ul.admin-d-item li:hover a.dropdown-item{
 
 .rating-comments a p{
   color: var(--color-theme-color-2);
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3706,7 +3706,7 @@ ul.admin-d-item li:hover a.dropdown-item{
 
 a.danger-comments span p {
   color: var(--color-red);
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3744,7 +3744,7 @@ a.danger-comments:hover {
 
 .escrow-text{
   color: var(--color-heading-color);
-font-family: Poppins;
+
 font-size: 14px;
 font-style: normal;
 font-weight: 500;
@@ -3752,7 +3752,7 @@ font-weight: 500;
 
 .policy-price-text{
   color: var(--color-heading);
-font-family: Poppins;
+
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -3790,15 +3790,8 @@ span.admin-currency{
   border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
 }
 
-p.dispute-reason {
-  font-weight: 500;
-  color: var(--color-theme-color-2);
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  text-decoration-line: underline;
-}
+
+
 
 .policy-price .consultant-reviw ul {
   padding-left: 0px;
@@ -3813,7 +3806,7 @@ span.ac-completed {
   border-radius: 63px;
   background:  #369450;
   color: #FFF;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3824,7 +3817,7 @@ span.ac-completed {
   border-radius: 63px;
   background: var(--color-yellow);
   color: var(--color-heading-color);
-  font-family: Poppins;
+
   font-size: 14px;
   font-weight: 500;
   padding: 2px 10px;
@@ -3835,7 +3828,7 @@ span.ac-progress {
   border-radius: 63px;
   background:  #E9B911;
   color: #FFF;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3847,7 +3840,7 @@ span.ac-hold {
   border-radius: 63px;
   background:  #9CA5C2;
   color: #FFF;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3859,7 +3852,7 @@ span.ac-hiring {
   border-radius: 63px;
   background:  #0036E3;
   color: #FFF;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3867,7 +3860,7 @@ span.ac-hiring {
 }
 span.spent-price{
   color:  #0036E3;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -3887,7 +3880,7 @@ input.admin-all-checkbox {
 
 .admin-client-title h4{
   color: #000;
-  font-family: Poppins;
+
   font-size: 23px;
   font-style: normal;
   font-weight: 600;
@@ -3914,7 +3907,7 @@ span.fixed-screw {
   border: none;
   justify-content: center;
   color: var(--color-heading-color, #191D24);
-  font-family: Poppins;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -3932,7 +3925,7 @@ span.hourly-screw{
   border: none;
   justify-content: center;
   color: var(--color-heading-color, #191D24);
-  font-family: Poppins;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -3982,14 +3975,14 @@ span.hourly-screw{
 
 .admin-user-title h5{
   color:#191D24;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
 }
 .admin-user-title h6{
   color: #A2A3B7;
-  font-family: Poppins;
+
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -4687,7 +4680,7 @@ span.checkout-about, span.checkout-extend {
 
 .frontend-left-title h4{
   color: #000;
-  font-family: Poppins;
+
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -4890,7 +4883,7 @@ a.position-absolute.blog-close {
 
 .text-area h5{
     color: rgba(25, 29, 36, 0.70);
-    font-family: Poppins;
+
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -4899,7 +4892,7 @@ a.position-absolute.blog-close {
 
 .text-area h6 {
     color: rgba(25, 29, 36, 0.70);
-    font-family: Poppins;
+
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -4912,7 +4905,7 @@ a.position-absolute.blog-close {
 
 h3.seller-title {
     color: #000;
-    font-family: Poppins;
+
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -5013,7 +5006,7 @@ label.admin-text-area-level{
 }
 .admin-form-title h5 {
   color: #000;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5314,7 +5307,7 @@ h4.light-weight {
 
 .m-expert-title {
   color: #191D24;
-  font-family: Poppins;
+
   font-size: 18px !important;
   font-style: normal;
   font-weight: 500;
@@ -5350,7 +5343,7 @@ select.top-input-control {
 
 .admin-text h4 a{
   color:  #191D24;
-  font-family: Poppins;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -5367,7 +5360,7 @@ select.top-input-control {
 h4.light-weight p {
   color: rgba(48, 55, 68, 0.80);
   text-align: center;
-  font-family: Poppins;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -5376,7 +5369,7 @@ h4.light-weight p {
 
 h4.light-weight:hover{
   text-align: center;
-  font-family: Poppins;
+
   font-size: 12px !important;
   font-style: normal;
   font-weight: 600 !important;
@@ -5387,7 +5380,7 @@ h4.light-weight:hover{
 h4.light-weight.active{
   color: #0036E3 !important;
   text-align: center;
-  font-family: Poppins;
+
   font-size: 12px !important;
   font-style: normal;
   font-weight: 600 !important;
@@ -5397,7 +5390,7 @@ h4.light-weight.active{
 h4.light-weight.active p{
   color: #0036E3 !important;
   text-align: center;
-  font-family: Poppins;
+
   font-size: 12px !important;
   font-style: normal;
   font-weight: 600 !important;
@@ -5407,7 +5400,7 @@ h4.light-weight.active p{
 h4.light-weight:hover p{
   color: #0036E3 !important;
   text-align: center;
-  font-family: Poppins;
+
   font-size: 12px !important;
   font-style: normal;
   font-weight: 600 !important;
@@ -5441,7 +5434,7 @@ h4.more-read-blog {
 .more-read-blog p{
   color:  #191D24;
   text-align: center;
-  font-family: Poppins;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -5488,7 +5481,7 @@ h4.more-read-blog {
   background:  #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Poppins;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -5552,7 +5545,7 @@ span.blog-upload {
   border-radius: 4px;
   border: 2px solid rgba(48, 55, 68, 0.15);
   color: rgba(48, 55, 68, 0.70);
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -5591,7 +5584,7 @@ input.academic-title{
   background:  #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Poppins;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -5614,7 +5607,7 @@ input.academic-title{
 
 .admin-exp-text p{
 color: #191D24;
-font-family: Poppins;
+
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -5635,7 +5628,7 @@ padding-bottom: 16px;
 
 .m-top-title h1{
   color:  #191D24;
-  font-family: Poppins;
+
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -5645,7 +5638,7 @@ padding-bottom: 16px;
 .b-expert-text h3 {
   color: #191D24 !important;
   text-align: left;
-  font-family: Poppins;
+
   font-size: 20px !important;
   font-style: normal;
   font-weight: 500 !important;
@@ -5698,7 +5691,7 @@ p.p-rote {
 
 .scholarship-title h4 a{
   color:#191D24;
-  font-family: Poppins;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -5706,7 +5699,7 @@ p.p-rote {
 
   .dataset-title h4 a{
     color: #191D24;
-    font-family: Poppins;
+
     font-size: 19px;
     font-style: normal;
     font-weight: 600;
@@ -5719,7 +5712,7 @@ p.p-rote {
 
 .p-rote-text{
   color:  #0036E3  !important;
-  font-family: Poppins;
+
   font-size: 14px !important;
   font-style: normal !important;
 
@@ -5754,7 +5747,7 @@ select.top-input-control{
   appearance: none;
   border: 2px solid rgba(48, 55, 68, 0.15);
   color: rgba(48, 55, 68, 0.70);
-  font-family: Poppins;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -5778,7 +5771,7 @@ select.form-select.top-input-control option{
   background: #FFF;
   box-shadow: 0px 3px 6px 0px rgba(14, 0, 98, 0.10) !important;
   color:  #191D24;
-  font-family: Poppins;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5788,12 +5781,12 @@ select.form-select.top-input-control option{
 
 select.top-input-control option::hover{
   background-color: #191D24;
-  font-family: Poppins;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   color:  #0036E3;
-  font-family: Poppins;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5845,7 +5838,7 @@ select.top-input-control option::hover{
 }
 h5.comment-title {
   color: var(--color-heading-color);
-  font-family: Poppins;
+
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -5854,7 +5847,7 @@ h5.comment-title {
 
 h5.comment-title-dispute {
   color: var(--color-heading-color);
-  font-family: Poppins;
+
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -5864,7 +5857,7 @@ h5.comment-title-dispute {
 
 p.c-rating-title{
   color: var(--color-heading-color);
-  font-family: Poppins;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -5876,7 +5869,7 @@ p.c-rating-title{
 
 .comment-text p {
   color: var(--color-heading);
-  font-family: Poppins;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -7460,7 +7453,7 @@ font-weight: 400;
 
 .edux-value-currency{
   color: #0036E3;
-  font-family: Poppins;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -7468,7 +7461,7 @@ font-weight: 400;
 
 .edux-policy-content h6 {
   color:  #191D24;
-  font-family: Poppins;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

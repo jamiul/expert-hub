@@ -20,7 +20,6 @@
             <!-- end header -->
 
 <div class="content__wrapper">
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -78,7 +77,7 @@
 
           <div class="row">
       <div class="col-12">
-        <div class="balance-table-area-admin d-flex flex-column">
+        <div class="balance-table-area-admin d-flex flex-column table-responsive">
             <table class="table table-hover transaction-all table-responsive">
               <thead class="t-history">
                   <tr>

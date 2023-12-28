@@ -66,7 +66,7 @@
 
                 <div class="row">
       <div class="col-12">
-        <div class="balance-table-area-admin d-flex flex-column">
+        <div class="balance-table-area-admin d-flex flex-column table-responsive">
             <table class="table table-hover transaction-all">
               <thead class="t-history">
                   <tr>
