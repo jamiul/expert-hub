@@ -1,6 +1,6 @@
 <div class="progress-step-content  ">
     <h6 class="mb-2">Expert by Field</h6>
-    <x-form.choice wire:model.change="expertise_id" label="">
+    <x-form.choice wire:model.change="expertise_id">
         <option value="">Select Title</option>
         @foreach ($availableExpertFieldGroups as $group)
             <optgroup label="{{ $group->name }}">
@@ -17,7 +17,7 @@
     <div class="accordion-items-select-wrapper skillset-selection-area">
         <div class="card card-24">
             <div class="card-header bg-white">
-                <x-form.search class="input-field-md" label="" name="skill" wire:model.live="skill"
+                <x-form.search class="input-field-md" name="skill" wire:model.live="skill"
                                placeholder="Search skillsets..."/>
             </div>
             <div class="card-body py-3">

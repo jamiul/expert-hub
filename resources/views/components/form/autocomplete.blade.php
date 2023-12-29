@@ -1,6 +1,6 @@
 @props([
     'name',
-    'label',
+    'label' => null,
     'id' => $name,
     'disabled' => false,
     'readonly' => false,
@@ -9,7 +9,7 @@
     'selectedRecords',
     'removeFunction',
 ])
-<div class="form-input-group form-input-has-icon autocomplete-field" x-data="{ open: false }">
+<div class="form-input-group form-input-has-icon autocomplete-field {{ $attributes->get('class') }}" x-data="{ open: false }">
     <div class="autocomplete-field-wrapper">
         @if($label)<label class="form-input-label">{{ $label }}</label>@endif
         <input
@@ -17,7 +17,8 @@
             wire:model.live.debounce.500ms="{{ $name }}"
             name="{{ $name }}"
             id="{{ $id }}"
-            {{ $attributes->merge(['class' => 'form-input-field ']) }}
+            class="form-input-field"
+            {{ $attributes->whereDoesntStartWith('class') }}
         >
         <span class="form-input-icon"><x-icon.search fill="#ccc"/></span>
         @error($attributes->whereStartsWith('wire:model')->first())

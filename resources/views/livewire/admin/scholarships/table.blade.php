@@ -6,7 +6,7 @@
                     <div class="dashboard-inprogress">
                         <div class="admin-tab-nav-area d-flex flex-row justify-content-between">
                             <div class="short-by-area">
-                                <x-form.flatpicker label=""/>
+                                <x-form.flatpicker/>
                                 <div class="search-by search-by-admin">
                                     <form class="example search-form">
                                         <input type="text" placeholder="Search by ID" name="search">

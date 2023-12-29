@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 @props([
 'name' => $attributes->whereStartsWith('wire:model')->first(),
-'label',
+'label' => null,
 'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
 ])
