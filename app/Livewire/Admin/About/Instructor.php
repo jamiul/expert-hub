@@ -106,12 +106,10 @@ class Instructor extends Component
             'instructor_list' => $this->instructor_list,
         ]);
 
-        $this->dispatch('instructor')->self();
-
-        // if ($index === false) {
-        //     session()->flash('success', 'Expert has been removed.');
-        //     return redirect()->to('/admin/about-us');
-        // }
+        if (count($this->instructor_list) == 0) {
+            session()->flash('success', 'Expert has been removed.');
+            return redirect()->to('/admin/about-us');
+        }
     }
 
     private function updateExpertList()

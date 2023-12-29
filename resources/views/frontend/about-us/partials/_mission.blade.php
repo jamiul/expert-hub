@@ -10,7 +10,7 @@
                 <div class="mission-text">
                     <div class="heading">
                         <h4>{{ $aboutUsDTO->mission_subtitle }}</h4>
-                        <h2>{{ $aboutUsDTO->mission_title }}</h2>
+                        <h2>{{ capitalizedString($aboutUsDTO->mission_title) }}</h2>
                         <p>{!! nl2br(e($aboutUsDTO->mission_description)) !!}</p>
                     </div>
                 </div>

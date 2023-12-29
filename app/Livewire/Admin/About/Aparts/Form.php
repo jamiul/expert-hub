@@ -47,7 +47,7 @@ class Form extends BaseForm
         $data = $this->validate([
             'set_title' => 'required|max:50',
             'description' => 'required|max:500',
-            'icon' => 'required|image|max:' . CmnEnum::ICON_SIZE,
+            'icon' => 'required|image|max:' . CmnEnum::ICON_SIZE. '|dimensions:min_width=25,min_height=25',
             'type' => 'required|string',
         ]);
 
@@ -97,7 +97,12 @@ class Form extends BaseForm
         $data = $this->validate([
             'set_title' => 'required|max:50',
             'description' => 'required|max:500',
-            'icon' => 'nullable|image|max:' . CmnEnum::ICON_SIZE,
+            'icon' => [
+                'nullable',
+                'image',
+                'max:' . CmnEnum::ICON_SIZE,
+                'dimensions:min_width=25,min_height=25',
+            ],
             'type' => 'required|string',
         ]);
 

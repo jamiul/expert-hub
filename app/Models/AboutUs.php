@@ -52,16 +52,14 @@ class AboutUs extends Model implements HasMedia
             ->singleFile()
             ->registerMediaConversions(function (Media $media = null): void {
                 $this->addMediaConversion('mission_image_front')
-                ->width(800)
-                ->height(800);
+                ->crop('crop-center',615, 700);
             });
 
         $this->addMediaCollection('story_image')
             ->singleFile()
             ->registerMediaConversions(function (Media $media = null): void {
                 $this->addMediaConversion('story_image_front')
-                ->width(500)
-                ->height(500);
+                ->crop('crop-center',615, 650);
             });
     }
 
@@ -77,7 +75,7 @@ class AboutUs extends Model implements HasMedia
     {
         $mediaItems = $this->getMedia('story_image');
         if (count($mediaItems) > 0) {
-            return $mediaItems[0]->getUrl();
+            return $mediaItems[0]->getUrl('story_image_front');
         }
     }
 

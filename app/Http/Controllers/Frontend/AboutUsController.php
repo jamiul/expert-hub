@@ -20,6 +20,20 @@ class AboutUsController extends Controller
             ->with('user')
             ->get();
 
-        return view('frontend.about-us.index', compact('about', 'aboutApart', 'aboutUsDTO', 'experts'));
+        $teamList = Profile::whereIn('id', $aboutUsDTO->team_list)
+            ->with('user')
+            ->get();
+
+        $teamList2 = $teamList->splice(0, 2);
+        $teamList3 = $teamList;
+
+        return view('frontend.about-us.index', compact(
+            'about',
+            'aboutApart',
+            'aboutUsDTO',
+            'experts',
+            'teamList2',
+            'teamList3'
+        ));
     }
 }
