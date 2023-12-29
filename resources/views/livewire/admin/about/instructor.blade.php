@@ -37,8 +37,7 @@
                                                     <div class="team-block">
                                                         <a href="#">
                                                             <div class="team-img position-relative">
-                                                                <img
-                                                                    src="{{ $expert->getFirstMediaUrl('picture') }}">
+                                                                <img src="{{ $expert->getFirstMediaUrl('picture') }}">
                                                                 <a class="blog-close position-absolute"
                                                                     wire:click="removeExpert({{ $expert->id }})">
                                                                     <img class=""

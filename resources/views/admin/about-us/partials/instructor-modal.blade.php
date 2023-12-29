@@ -11,7 +11,6 @@
                     </div>
                     @if (count($instructors) > 0)
                         @foreach ($instructors as $instructor)
-                        {{-- @dd($instructor->user->country_id); --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
@@ -22,8 +21,9 @@
                                                 </div>
                                                 <div class="database-text admin-text">
                                                     <h4> <a href="#">{{ $instructor->user->full_name }}</a> </h4>
-                                                    <span>{{ getExpertiseById($instructor->expertise_id) }}</span> <span>University of
-                                                        Sydney</span> <span>{{ getCountryNameById($instructor->user->country_id) }}</span>
+                                                    <span>{{ getExpertiseById($instructor->expertise_id) }}</span>
+                                                    <span>University of Sydney</span>
+                                                    <span>{{ getCountryNameById($instructor->user->country_id) }}</span>
                                                     <div class="review rating-area consultant-reviw modal-consultant-review">
                                                         <ul class="all-project-rating">
                                                             <li> <strong>$200</strong> / hr </li>

@@ -105,6 +105,13 @@ class Instructor extends Component
             'instructor_subtitle' => $data['instructor_subtitle'],
             'instructor_list' => $this->instructor_list,
         ]);
+
+        $this->dispatch('instructor')->self();
+
+        // if ($index === false) {
+        //     session()->flash('success', 'Expert has been removed.');
+        //     return redirect()->to('/admin/about-us');
+        // }
     }
 
     private function updateExpertList()
