@@ -53,7 +53,7 @@
         <div class="row mt-4">
             <div class="col-md-5">
                 <div class="mission-img overlay-edit position-relative">
-                    <img src="{{ $missionAbout->missionImage() }}">
+                    <img src="{{ $missionAbout->getFirstMediaUrl('mission_image') }}">
                 </div>
             </div>
         </div>

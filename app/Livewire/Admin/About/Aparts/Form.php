@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\About\Aparts;
 
+use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use App\Enums\ProfileType;
 use App\Models\AboutApart;
@@ -14,26 +15,41 @@ class Form extends BaseForm
     use WithFileUploads;
 
     public $aboutApart;
-    public $msg;
+    public $iconUrl = '';
+    // public $requiredOrNull = $iconUrl == '' ? 'required' : 'nullable';
 
-    #[Validate('required|max:500')]
+    // #[Validate('required|max:50')]
     public $set_title = '';
 
-    #[Validate('required|max:1000')]
+    // #[Validate('required|max:500')]
     public $description = '';
 
-    #[Validate('nullable|image|max:1024')]
+    // #[Validate('image|max:' . CmnEnum::ICON_SIZE, onUpdate: false)]
     public $icon;
 
-    #[Validate('required|string')]
+    // #[Validate('required|string')]
     public $type = '';
 
     #[Validate('nullable')]
     public $about_us_id = '';
 
+
+    public function mount()
+    {
+        $this->aboutApart = AboutApart::first();
+        if (is_null($this->aboutApart)) {
+            $this->aboutApart = AboutApart::create();
+        }
+        $this->iconUrl = $this->aboutApart->getFirstMediaUrl('icon');
+    }
     public function create()
     {
-        $data = $this->validate();
+        $data = $this->validate([
+            'set_title' => 'required|max:50',
+            'description' => 'required|max:500',
+            'icon' => 'required|image|max:' . CmnEnum::ICON_SIZE,
+            'type' => 'required|string',
+        ]);
 
         // count client and expert
         $countClient = AboutApart::where('type', ProfileType::Client)->count();
@@ -42,13 +58,13 @@ class Form extends BaseForm
         // prevent: you can not create more than 6 client or expert
         if(($data['type'] == ProfileType::Client->value)) {
             if($countClient >= 6) {
-                return $this->msg = 'You can not add more than 6 client';
+                return $this->addError('apart', 'You can not add more than 6 client.');
             }
         }
 
         if(($data['type'] == ProfileType::Expert->value)) {
             if($countExpert >= 6) {
-                return $this->msg = 'You can not add more than 6 client';
+                return $this->addError('apart', 'You can not add more than 6 expert');
             }
         }
         $aboutApart = AboutApart::create([
@@ -78,7 +94,12 @@ class Form extends BaseForm
 
     public function update()
     {
-        $data = $this->validate();
+        $data = $this->validate([
+            'set_title' => 'required|max:50',
+            'description' => 'required|max:500',
+            'icon' => 'nullable|image|max:' . CmnEnum::ICON_SIZE,
+            'type' => 'required|string',
+        ]);
 
         AboutApart::whereId($this->aboutApart->id)->update([
             'about_us_id' => $this->aboutApart->about_us->id,

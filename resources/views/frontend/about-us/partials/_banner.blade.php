@@ -1,6 +1,6 @@
 <div class="about-banner">
     <div class="about-img">
-        <img src="{{ $about ? $about->headerImage() : '#'}}">
+        <img src="{{ $about->headerImage() }}">
     </div>
     <div class="banner-text">
         <div class="container">

@@ -51,7 +51,6 @@ class Header extends Component
         }
         $this->header_subtitle = $this->aboutPage->header_subtitle ?? '';
         $this->headerImageUrl = $this->aboutPage->getFirstMediaUrl('header_image');
-        // dd($this->headerImageUrl);
     }
 
     public function save()

@@ -34,11 +34,6 @@
                 </div>
             </div>
         </div>
-        @if (session('error'))
-            <div class="alert alert-success">
-                {{ session('error') }}
-            </div>
-        @endif
         <div class="eduexhub eduexhub-blog">
             <div class="container p-1">
                 <div class="row">

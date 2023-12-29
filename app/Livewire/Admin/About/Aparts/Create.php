@@ -17,6 +17,7 @@ class Create extends Modal
     public function addApart()
     {
         $this->form->create();
+        session()->flash('success', 'Apart successfully updated.');
         $this->dispatch('refresh')->to(BaseApart::class);
         $this->close();
     }

@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Admin\About\Aparts;
 
+use App\Enums\CmnEnum;
 use App\Models\AboutUs;
-use App\Models\AboutApart;
 use Livewire\Component;
+use App\Models\AboutApart;
 use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Validator;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
@@ -33,7 +34,20 @@ class BaseApart extends Component
     {
         $validated = Validator::make(
             ['apart_title' => $this->apart_title, 'apart_subtitle' => $this->apart_subtitle],
-            ['apart_title' => ['required', 'string'], 'apart_subtitle' => ['required', 'string']],
+            [
+                'apart_title' => [
+                    'required',
+                    'string',
+                    'min:' . CmnEnum::TITLE_MIN,
+                    'max:' . CmnEnum::TITLE_MAX
+                ],
+                'apart_subtitle' => [
+                    'required',
+                    'string',
+                    'min:' . CmnEnum::SUBTITLE_MIN,
+                    'max:' . CmnEnum::SUBTITLE_MAX
+                ]
+            ],
             ['required' => 'Please add :attribute'],
         )->validate();
 
@@ -42,6 +56,7 @@ class BaseApart extends Component
             'apart_subtitle' => $validated['apart_subtitle'],
         ]);
 
+        session()->flash('success', 'Apart successfully updated.');
         return redirect()->to('/admin/about-us');
     }
 
@@ -50,7 +65,7 @@ class BaseApart extends Component
         $this->askForConfirmation(
             callback: function () use ($id) {
                 $aboutApart = AboutApart::find($id);
-                if($aboutApart){
+                if ($aboutApart) {
                     $aboutApart->delete();
                 }
                 $this->refreshAboutApart();

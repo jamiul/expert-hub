@@ -45,7 +45,7 @@ class Mission extends Component
                 $requiredOrNull,
                 'image',
                 'max:' . CmnEnum::IMAGE_SIZE,
-                'dimensions:min_width=540,min_height=600'
+                'dimensions:min_width=530,min_height=600' // w:860 h:770
             ],
         ];
     }
@@ -56,6 +56,7 @@ class Mission extends Component
             'mission_title.required' => 'Please add title',
             'mission_subtitle.required' => 'Please add subtitle',
             'mission_description.required' => 'Please add description',
+            'mission_image.required' => 'Please add image',
         ];
     }
 
@@ -68,6 +69,7 @@ class Mission extends Component
         $this->mission_title = $this->missionAbout->mission_title;
         $this->mission_subtitle = $this->missionAbout->mission_subtitle;
         $this->mission_description = $this->missionAbout->mission_description;
+        $this->missionImageUrl = $this->missionAbout->getFirstMediaUrl('mission_image');
     }
 
     public function saveMission()
@@ -80,9 +82,15 @@ class Mission extends Component
             'mission_description' => $data['mission_description'],
         ]);
 
-        $this->missionAbout->addMedia($this->mission_image->getRealPath())
+        if (!is_null($this->mission_image)) {
+            $this->missionAbout->clearMediaCollection('mission_image');
+
+            $this->missionAbout->addMedia($this->mission_image->getRealPath())
             ->usingName($this->mission_image->getClientOriginalName())
             ->toMediaCollection('mission_image');
+        }
+
+        session()->flash('success', 'Mission successfully updated.');
 
         return redirect()->to('/admin/about-us');
     }

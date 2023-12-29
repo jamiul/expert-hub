@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="mission-img">
-                    <img src="{{ $about ? $about->missionImage() : '#'}}"></img>
+                    <img src="{{ $about->missionImage() }}"></img>
                 </div>
             </div>
             <div class="col-md-6">

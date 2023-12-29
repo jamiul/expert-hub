@@ -40,7 +40,7 @@
                                         </div> --}}
                                         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
                                         <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-                                        <img src="{{ $aboutPage->headerImage() }}" width="40%" class="mb-3">
+                                        <img src="{{ $aboutPage->getFirstMediaUrl('header_image') }}" width="40%" class="mb-3">
                                         <div wire:ignore x-data x-init="FilePond.setOptions({
                                             allowMultiple: false,
                                             server: {

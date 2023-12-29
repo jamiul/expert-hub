@@ -13,4 +13,5 @@ abstract class CmnEnum
     const BANNER_WIDTH = 1920;
     const BANNER_HEIGHT = 380;
     const IMAGE_SIZE = 2048; // 2 MB
+    const ICON_SIZE = 512; // 0.5 MB
 }

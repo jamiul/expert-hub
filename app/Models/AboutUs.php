@@ -25,33 +25,51 @@ class AboutUs extends Model implements HasMedia
         return $this->hasMany(AboutApart::class, 'about_apart_id');
     }
 
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this
-            ->addMediaConversion('header_image')
-            ->nonQueued()
-            ->crop('crop-center', 1920, 380);
-            // ->width(CmnEnum::BANNER_WIDTH)
-            // ->height(CmnEnum::BANNER_HEIGHT);
-    }
+    // public function registerMediaConversions(Media $media = null): void
+    // {
+    //     $this
+    //         ->addMediaConversion('header_image')
+    //         ->nonQueued()
+    //         ->crop('crop-center', 1920, 380);
+
+    //     $this
+    //         ->addMediaConversion('mission_image')
+    //         ->nonQueued()
+    //         ->width(540)
+    //         ->height(600);
+    // }
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('header_image')
-            ->singleFile();
+            ->singleFile()
+            ->registerMediaConversions(function (Media $media = null): void {
+                $this->addMediaConversion('header_image_front')
+                ->crop('crop-center',1900, 400);
+            });
 
         $this->addMediaCollection('mission_image')
-            ->singleFile();
+            ->singleFile()
+            ->registerMediaConversions(function (Media $media = null): void {
+                $this->addMediaConversion('mission_image_front')
+                ->width(800)
+                ->height(800);
+            });
 
         $this->addMediaCollection('story_image')
-            ->singleFile();
+            ->singleFile()
+            ->registerMediaConversions(function (Media $media = null): void {
+                $this->addMediaConversion('story_image_front')
+                ->width(500)
+                ->height(500);
+            });
     }
 
     public function headerImage()
     {
         $mediaItems = $this->getMedia('header_image');
         if (count($mediaItems) > 0) {
-            return $mediaItems[0]->getUrl('header_image');
+            return $mediaItems[0]->getUrl('header_image_front');
         }
     }
 
@@ -67,7 +85,7 @@ class AboutUs extends Model implements HasMedia
     {
         $mediaItems = $this->getMedia('mission_image');
         if (count($mediaItems) > 0) {
-            return $mediaItems[0]->getUrl();
+            return $mediaItems[0]->getUrl('mission_image_front');
         }
     }
 }
