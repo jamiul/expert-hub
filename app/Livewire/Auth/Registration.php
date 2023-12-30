@@ -90,7 +90,7 @@ class Registration extends Component
             'send_tips' => $this->send_tips,
             'terms_agreed' => $this->terms_agreed,
         ]);
-        // event(new Registered($user));
+        event(new Registered($user));
         Profile::create([
             'user_id' => $user->id,
             'type' => $this->type,
