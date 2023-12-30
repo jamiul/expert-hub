@@ -12,6 +12,7 @@
                     </div>
                     @if (count($experts) > 0)
                         @foreach ($experts as $expert)
+                        {{-- @dd($expert); --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
@@ -23,9 +24,9 @@
                                                     <h4>
                                                         <a href="#">{{ $expert->user->full_name }}</a>
                                                     </h4>
-                                                    <span>{{ getExpertiseById($expert->expertise_id) }}</span>
+                                                    <span>{{ $expert->expertField ? $expert->expertField->name : '' }}</span>
                                                     <span>University of Sydney</span>
-                                                    <span>{{ getCountryNameById($expert->user->country_id) }}</span>
+                                                    <span>{{ $expert->user->country->name }}</span>
                                                     <div
                                                         class="review rating-area consultant-reviw modal-consultant-review">
                                                         <ul class="all-project-rating">

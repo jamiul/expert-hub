@@ -47,7 +47,7 @@
                                                             </div>
                                                             <div class="hire-text">
                                                                 <h4>{{ $expert->user->full_name }}</h4>
-                                                                <p>{{ getExpertiseById($expert->expertise_id) }}</p>
+                                                                <p>{{ $expert->expertField ? $expert->expertField->name : '' }}</p>
                                                             </div>
                                                         </a>
                                                     </div>

@@ -25,6 +25,7 @@ class Edit extends Modal
     {
         $this->form->update();
         $this->dispatch('refresh')->to(BaseApart::class);
+        $this->dispatch('notify', content: 'About aparts updated', type: 'success');
         $this->close();
     }
 

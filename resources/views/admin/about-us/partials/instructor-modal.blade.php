@@ -21,9 +21,9 @@
                                                 </div>
                                                 <div class="database-text admin-text">
                                                     <h4> <a href="#">{{ $instructor->user->full_name }}</a> </h4>
-                                                    <span>{{ getExpertiseById($instructor->expertise_id) }}</span>
+                                                    <span>{{ $instructor->expertField ? $instructor->expertField->name : '' }}</span>
                                                     <span>University of Sydney</span>
-                                                    <span>{{ getCountryNameById($instructor->user->country_id) }}</span>
+                                                    <span>{{ $instructor->user->country->name }}</span>
                                                     <div class="review rating-area consultant-reviw modal-consultant-review">
                                                         <ul class="all-project-rating">
                                                             <li> <strong>$200</strong> / hr </li>

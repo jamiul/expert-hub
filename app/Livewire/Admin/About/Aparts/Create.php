@@ -19,6 +19,7 @@ class Create extends Modal
         $this->form->create();
         session()->flash('success', 'Apart successfully updated.');
         $this->dispatch('refresh')->to(BaseApart::class);
+        $this->dispatch('notify', content: 'About aparts added', type: 'success');
         $this->close();
     }
 

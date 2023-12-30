@@ -1,8 +1,8 @@
 <div class="eduexhub about-eduexhub">
     <div class="container">
         <div class="heading">
-            <h4>{{ $aboutUsDTO->apart_subtitle }}</h4>
-            <h2>{{ capitalizedString($aboutUsDTO->apart_title) }}</h2>
+            <h4>{{ Str::upper($aboutUsDTO->apart_subtitle) }}</h4>
+            <h2>{{ Str::headline(($aboutUsDTO->apart_title)) }}</h2>
         </div>
         <div class="tabbable-panel">
             <ul class="nav nav-tabs" id="myTab" role="tablist">

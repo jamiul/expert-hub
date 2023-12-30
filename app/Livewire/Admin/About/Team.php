@@ -77,6 +77,10 @@ class Team extends Component
     {
         $data = $this->validate();
 
+        if (count($this->teamList) < 5) {
+            return $this->addError('experts', 'Please selece minimum 5 experts.');
+        }
+
         if (count($this->teamList) > 5) {
             return $this->addError('team', 'You can only select up to 5 experts.');
         }
@@ -88,8 +92,7 @@ class Team extends Component
             'team_list' => $this->team_list,
         ]);
 
-        session()->flash('success', 'Team successfully updated.');
-        return redirect()->to('/admin/about-us');
+        $this->dispatch('notify', content: 'Expert has been updated!', type: 'success');
     }
 
     public function removeTeam($id)
@@ -106,8 +109,9 @@ class Team extends Component
             'team_list' => $this->team_list,
         ]);
 
+        $this->dispatch('notify', content: 'Expert has been removed!', type: 'success');
+
         if (count($this->team_list) == 0) {
-            session()->flash('success', 'Team has been removed.');
             return redirect()->to('/admin/about-us');
         }
     }
@@ -125,7 +129,7 @@ class Team extends Component
     public function render()
     {
         $this->experts = Profile::whereNotIn('id', $this->team_list)->expert()
-            ->with('user')
+            ->with('user', 'expertField')
             ->whereHas('user', function ($query) {
                 $query->where('first_name', 'like', '%' . $this->search . '%')
                     ->orWhere('last_name', 'like', '%' . $this->search . '%');

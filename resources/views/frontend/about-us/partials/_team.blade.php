@@ -4,8 +4,8 @@
             <div class="col-md-5 col-sm-6">
                 <div class="team-text">
                     <div class="heading">
-                        <h4>{{ $aboutUsDTO->team_subtitle }}</h4>
-                        <h2>{{ capitalizedString($aboutUsDTO->team_title) }}</h2>
+                        <h4>{{ Str::upper($aboutUsDTO->team_subtitle) }}</h4>
+                        <h2>{{ Str::headline($aboutUsDTO->team_title) }}</h2>
                         <p>{!! nl2br(e($aboutUsDTO->team_description)) !!}</p>
                         <div class="team-button">
                             <a href="#">Find Experts</a>
@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="hire-text">
                                             <h4>{{ $team2->user->full_name }}</h4>
-                                            <p>{{ getExpertiseById($team2->expertise_id) }}</p>
+                                            <p>{{ $team2->expertField ? $team2->expertField : '' }}</p>
                                         </div>
                                     </a>
                                 </div>
@@ -42,7 +42,7 @@
                                         </div>
                                         <div class="hire-text">
                                             <h4>{{ $team3->user->full_name }}</h4>
-                                            <p>{{ getExpertiseById($team3->expertise_id) }}</p>
+                                            <p>{{ $team3->expertField ? $team3->expertField : '' }}</p>
                                         </div>
                                     </a>
                                 </div>

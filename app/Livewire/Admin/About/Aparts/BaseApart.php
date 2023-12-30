@@ -56,8 +56,8 @@ class BaseApart extends Component
             'apart_subtitle' => $validated['apart_subtitle'],
         ]);
 
-        session()->flash('success', 'Apart successfully updated.');
-        return redirect()->to('/admin/about-us');
+        $this->dispatch('notify', content: 'About aparts updated', type: 'success');
+        $this->dispatch('refresh')->self();
     }
 
     public function deleteApart($id)
@@ -68,6 +68,7 @@ class BaseApart extends Component
                 if ($aboutApart) {
                     $aboutApart->delete();
                 }
+                $this->dispatch('notify', content: 'About aparts has been removed', type: 'success');
                 $this->refreshAboutApart();
             },
         );

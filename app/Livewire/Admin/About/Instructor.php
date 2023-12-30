@@ -7,6 +7,7 @@ use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use App\Models\Profile;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Instructor extends Component
 {
@@ -56,14 +57,14 @@ class Instructor extends Component
         $this->instructor_subtitle = $this->instructorPage->instructor_subtitle;
         $this->instructor_list = $this->instructorPage->instructor_list ?? [];
 
-        $this->updateExpertList();
+        $this->refreshExpertList();
     }
 
     public function addExpert($id)
     {
         $this->expertId = $id;
         array_push($this->instructor_list, $this->expertId);
-        $this->updateExpertList();
+        $this->refreshExpertList();
     }
 
     public function saveExpert()
@@ -96,7 +97,7 @@ class Instructor extends Component
             unset($this->instructor_list[$index]);
         }
 
-        $this->updateExpertList();
+        $this->refreshExpertList();
 
         $data = $this->validate();
 
@@ -106,13 +107,15 @@ class Instructor extends Component
             'instructor_list' => $this->instructor_list,
         ]);
 
+        $this->dispatch('notify', content: 'Expert has been removed!', type: 'success');
+
         if (count($this->instructor_list) == 0) {
-            session()->flash('success', 'Expert has been removed.');
             return redirect()->to('/admin/about-us');
         }
     }
 
-    private function updateExpertList()
+    #[On('refresh')]
+    private function refreshExpertList()
     {
         if (count($this->instructor_list) > 0) {
             $this->experts = Profile::whereIn('id', $this->instructor_list)
@@ -124,7 +127,7 @@ class Instructor extends Component
     public function render()
     {
         $this->instructors = Profile::whereNotIn('id', $this->instructor_list)->expert()
-            ->with('user')
+            ->with('user', 'expertField')
             ->whereHas('user', function ($query) {
                 $query->where('first_name', 'like', '%' . $this->search . '%')
                     ->orWhere('last_name', 'like', '%' . $this->search . '%');
