@@ -3,15 +3,17 @@
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
+use App\Http\Controllers\Frontend\Auth\NewPasswordController;
+use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
-use App\Http\Controllers\Frontend\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +41,8 @@ Route::get('/scholarship-database', ScholarshipController::class)->name('scholar
 
 Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
 Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->middleware('guest')->name('password.request');
+Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])->middleware('guest')->name('password.reset');
 Route::post('/auth/logout', [AuthenticatedSessionController::class, 'logout'])->middleware('auth')->name('auth.logout');
 Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
