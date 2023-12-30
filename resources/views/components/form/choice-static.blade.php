@@ -1,7 +1,7 @@
 <script src="//unpkg.com/alpinejs" defer></script>
 @props([
     'name' => $attributes->whereStartsWith('wire:model')->first(),
-    'label',
+    'label' => null,
     'id' => $attributes->whereStartsWith('wire:model')->first(),
     'required' => false,
     'placeholder' => 'Type here to select',

@@ -16,7 +16,7 @@
                         /hr
                     </div>
                     <div>
-                        <x-form.input type="number" label="" name="hourly_rate" wire:model.live="hourly_rate" placeholder="0.00"/>
+                        <x-form.input type="number" name="hourly_rate" wire:model.live="hourly_rate" placeholder="0.00"/>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         /hr
                     </div>
                     <div>
-                        <x-form.input type="number" readonly label="" name="platform_fee" wire:model.live="platform_fee" placeholder="0.00"/>
+                        <x-form.input type="number" readonly name="platform_fee" wire:model.live="platform_fee" placeholder="0.00"/>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         /hr
                     </div>
                     <div>
-                        <x-form.input type="number" readonly label="" name="total_fee" wire:model.live="total_fee" placeholder="0.00"/>
+                        <x-form.input type="number" readonly name="total_fee" wire:model.live="total_fee" placeholder="0.00"/>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
     </div>
     <form wire:submit="submit">
             <x-form.flatpicker label="Date picker" name="datepicker"/>
-            <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" label="" name="country" placeholder="Search by Country"/>
+            <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
             <x-form.choice-static wire:model="titles" label="Select multiple static" multiple>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
@@ -61,7 +61,7 @@
             <x-form.input type="text" readonly label="Type" wire:model="type" placeholder="Type" value="Expert"/>
             <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio"/>
             <x-form.search label="Search Skill" wire:model="skill" placeholder="Search skills and select"/>
-            <x-form.search label="" wire:model="skill" placeholder="Search skills and select"/>
+            <x-form.search wire:model="skill" placeholder="Search skills and select"/>
             <x-form.radio label="Gender" wire:model="gender" :options="['male' => 'Male', 'female' => 'Female']" inline/>
             <x-form.check wire:model="terms">
                 Temrs & condition
