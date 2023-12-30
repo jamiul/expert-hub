@@ -26,9 +26,12 @@ class Scholarship extends Model
     public function favourite()
     {
         $attributes = ['profile_id' => auth()->user()->profile->id];
-        if(!$this->favourites()->where($attributes)->exists()){
+        $record = $this->favourites()->where($attributes)->first();
+        if($record){
+            $record->delete();
+        }else{
             $this->favourites()->create($attributes);
-        }
+        }   
     }
 
     public function favourited()
