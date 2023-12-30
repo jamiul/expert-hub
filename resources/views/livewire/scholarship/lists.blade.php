@@ -21,7 +21,7 @@
                 <div class="d-flex justify-content-end flex-wrap">
                     {{-- <button class="btn btn-outline-primary m-1">Find Consultants</button> --}}
                     <a class="btn btn-outline-primary m-1" href="{{ route('find.experts') }}">Find Experts</a>
-                    <button class="btn btn-outline-light m-1">
+                    <button wire:click="favourite({{ $scholarship->id }})" class="btn btn-outline-light m-1 {{ $scholarship->favourited() ? 'favourited' : ''}}">
                         <x-icon.favorite/>
                     </button>
                     <div class="dropdown">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="tr">
-                        <div class="td">Study area</div>
+                        <div class="td">Study Area</div>
                         <div class="td">
                             {{ $scholarship->studyAreas->count() ? $scholarship->studyAreas->implode('name', ', ') : 'N/A' }}
                         </div>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="tr">
-                        <div class="td">Student type</div>
+                        <div class="td">Student Type</div>
                         <div class="td">{{ $scholarship->student_type ? $scholarship->student_type : 'n/a' }}</div>
                     </div>
                     <div class="tr">

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,6 +13,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Profile extends Model implements HasMedia
 {
+    use HasFactory;
     use SoftDeletes;
     use InteractsWithMedia;
 
@@ -35,11 +37,6 @@ class Profile extends Model implements HasMedia
 
     public function languages():BelongsToMany
     {
-        // return $this->belongsToMany(Language::class, 'profile_language')
-        //     ->using(ProfileLanguage::class)
-        //     ->withPivot('proficiency', 'active')
-        //     ->wherePivot('active', 1)
-        //     ->withTimestamps();
         return $this->belongsToMany(Language::class, 'profile_language')
             ->withPivot('proficiency','active')
             ->wherePivot('active', 1)
@@ -48,7 +45,7 @@ class Profile extends Model implements HasMedia
 
     public function expertField()
     {
-        $this->belongsTo(Expertise::class);
+        return $this->belongsTo(Expertise::class, 'expertise_id');
     }
 
     public function expertises()
