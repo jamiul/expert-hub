@@ -1,6 +1,6 @@
 <div class="scholarship-database-filter-col">
     <div class="scholarship-database-content-search-wrapper pb-3">
-        <x-form.search label="" wire:model.live.debounce="search" placeholder="Find scholarship..."/>
+        <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find scholarship..."/>
     </div>
     <div class="filter-widget mb-40 border-bottom">
         <div class="d-flex justify-content-between">
@@ -43,7 +43,7 @@
     <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">Application Deadline</h6>
         <div class="filter-widget-content">
-            <x-form.select label="" wire:change="filter" wire:model="applicationDeadline">
+            <x-form.select class="input-field-md" wire:change="filter" wire:model="applicationDeadline">
                 <option value="">Select Year</option>
                 @foreach ($years as $year)
                     <option value="{{ $year }}">{{ $year }}</option>
@@ -64,13 +64,13 @@
     <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">University</h6>
         <div class="filter-widget-content">
-            <x-form.autocomplete :searchResults="$universities" selectFunction="selectUniversity" removeFunction="removeUniversity" :selectedRecords="$selectedUniversities" label="" name="university" placeholder="Search by University"/>
+            <x-form.autocomplete class="input-field-md" :searchResults="$universities" selectFunction="selectUniversity" removeFunction="removeUniversity" :selectedRecords="$selectedUniversities" name="university" placeholder="Search by University"/>
         </div>
     </div>
     <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">Location</h6>
         <div class="filter-widget-content">
-            <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" label="" name="country" placeholder="Search by Country"/>
+            <x-form.autocomplete class="input-field-md" :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
         </div>
     </div>
 </div>

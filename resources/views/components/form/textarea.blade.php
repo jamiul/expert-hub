@@ -1,6 +1,6 @@
 @props([
     'name' => $attributes->whereStartsWith('wire:model')->first(),
-    'label',
+    'label' => null,
     'id' => $attributes->whereStartsWith('wire:model')->first(),
     'rows' => 5,
     'required' => false,
