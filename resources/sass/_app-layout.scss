@@ -1,6 +1,8 @@
 $edu-admin-sidebar-width: 265px;
+$edu-admin-sm-sidebar-width: 70px;
 $edu-admin-header-height: 76px;
 .admin-layout {
+
 
     & > .admin-header {
         position: fixed;
@@ -19,6 +21,23 @@ $edu-admin-header-height: 76px;
         left: 0;
         top: 0;
         width: $edu-admin-sidebar-width;
+        background-color: $edu-primary-color;
+        min-height: 100vh;
+
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(11, 7, 56, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(15, 7, 52, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(14, 0, 98, 0.10);
+        }
+
     }
 
     & > .admin-content {
@@ -29,192 +48,249 @@ $edu-admin-header-height: 76px;
 
 }
 
-.admin-sidebar {
-    background-color: $edu-primary-color;
-    transition: 0.5s all;
-    min-height: 100vh;
-    overflow: hidden;
+.admin-layout {
+    &:not(.sidebar-small) {
+        .admin-sidebar {
+            .sidebar-header {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                height: $edu-admin-header-height;
+                align-items: center;
+                padding: 20px 25px;
 
-    .logo-wrapper {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        height: $edu-admin-header-height;
-        align-items: center;
-        padding: 20px 25px;
+                .btn {
+                    width: 2rem;
+                    height: 2rem;
+                    background: rgba(255, 255, 255, 0.19);
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+
+            .sidebar-menu-wrapper {
+                padding: 20px 0;
+                max-height: calc(100vh - 150px);
+                overflow-y: auto;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        list-style: none;
+
+                        &.has-children {
+                            & > a {
+
+                                &:after {
+                                    content: "";
+                                    display: block;
+                                    width: 24px;
+                                    height: 24px;
+                                    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12.9457 11.9995L8.3457 7.39953L9.39953 6.3457L15.0534 11.9995L9.39953 17.6534L8.3457 16.5995L12.9457 11.9995Z" fill="white" fill-opacity="0.8"/></svg>') no-repeat center;
+                                    background-size: cover;
+                                    margin-left: auto;
+                                }
+
+                            }
+
+                            ul {
+                                display: none;
+                            }
+
+                            &.active-sub-menu {
+                                background: rgba(0, 0, 0, 0.14);
+
+                                & > a {
+                                    color: #ffffff;
+
+                                    &:after {
+                                        transform: rotate(90deg);
+                                    }
+                                }
+
+                                ul {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            color: rgba(255, 255, 255, 0.80);
+                            font-weight: 500;
+
+                            svg {
+                                width: 18px;
+
+                                path {
+                                    fill: rgba(255, 255, 255, 0.70);
+                                }
+                            }
+
+                            &:hover {
+                                color: #ffffff;
+                            }
+                        }
+
+                        ul {
+                            li {
+                                a {
+                                    padding: 8px 25px 8px 30px;
+                                    font-weight: normal;
+                                    position: relative;
+
+                                    &:before {
+                                        content: "";
+                                        display: block;
+                                        width: 12px;
+                                        height: 12px;
+                                        border: 1px solid rgba(255, 255, 255, 0.80);
+                                        border-radius: 100%;
+                                    }
+
+                                    &:hover {
+                                        color: #ffffff;
+                                        border-color: #ffffff;
+                                    }
+                                }
+
+                                &.current-menu-item {
+                                    a {
+                                        color: #ffffff;
+                                        border-color: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.menu {
+                        & > li {
+
+                            & > a {
+                                padding: 11px 25px;
+                            }
+
+                            &.menu-title {
+                                color: rgba(255, 255, 255, 0.60);
+                                padding: 32px 25px 5px;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+
+            .sidebar-footer {
+                padding: 20px 25px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                color: #FFFFFF;
+            }
+        }
+
+    }
+
+}
+
+:has(.sidebar-small) {
+    .admin-sidebar {
+        width: 70px;
+    }
+
+    .sidebar-header {
+        padding: 11px 5px;
 
         .btn {
-            width: 2rem;
-            height: 2rem;
-            background: rgba(255, 255, 255, 0.19);
-
-            &:hover {
-                background: rgba(255, 255, 255, 0.5);
-            }
+            display: none;
         }
     }
 
     .sidebar-menu-wrapper {
-        padding: 20px 0;
-
-        ul {
-            margin: 0;
-            padding: 0;
-
-            li {
-                list-style: none;
-
-                &.has-children {
-                    & > a {
-                        pointer-events: none;
-
-                        &:after {
-                            content: "";
-                            display: block;
-                            width: 24px;
-                            height: 24px;
-                            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12.9457 11.9995L8.3457 7.39953L9.39953 6.3457L15.0534 11.9995L9.39953 17.6534L8.3457 16.5995L12.9457 11.9995Z" fill="white" fill-opacity="0.8"/></svg>') no-repeat center;
-                            background-size: cover;
-                            margin-left: auto;
-                        }
-                    }
-
-                    &[aria-expanded="true"] {
-                        background: rgba(0, 0, 0, 0.14);
-                    }
-                }
-
-                a {
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    color: rgba(255, 255, 255, 0.80);
-
-                    svg {
-                        width: 18px;
-
-                        path {
-                            fill: rgba(255, 255, 255, 0.70);
-                        }
-                    }
-                }
-            }
-
-            &.menu {
-                & > li {
-                    padding: 11px 25px;
-
-                    &.menu-title {
-                        color: rgba(255, 255, 255, 0.60);
-                        padding-top: 32px;
-                        padding-bottom: 5px;
-                    }
-                }
-            }
-
-
-        }
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-
-        &.link__box {
-            min-height: calc(100vh - 156px);
-
-            .label {
-                color: rgba(255, 255, 255, 0.6);
-                padding: 0 1.437rem;
+        ul.menu {
+            & > li {
                 white-space: nowrap;
-                display: block;
-            }
+                position: relative;
 
-            li {
-                margin-top: 0;
-                width: 100%;
-
-                &.active {
-                    background-color: var(--nav-active-bg);
-
-                    & > a {
-                        color: var(--white) !important;
-                    }
+                &.menu-title {
+                    display: none;
                 }
 
-                .nav-link {
-                    font-size: 0.875rem;
-                    font-weight: 500;
-                    color: rgba(255, 255, 255, 0.8);
-                    transition: all 0.3s ease-in-out;
-                    padding: 0.6875rem 1.437rem;
+                & > a {
+                    padding: 11px 20px;
+                    display: block;
 
-                    &:hover {
-                        background-color: var(--nav-active-bg);
-                        color: var(--white);
+                    path {
+                        fill: rgba(255, 255, 255, 0.70);
                     }
 
                     span {
-                        margin-left: 8px;
+                        display: none;
+                        padding-left: 35px;
                     }
 
-                    &.collapse__btn {
-                        position: relative;
-                        margin-bottom: 4px;
+                    &:after {
+                        display: none !important;
+                    }
+                }
 
-                        &:after {
-                            content: "\e5cf";
-                            font-family: 'Material Symbols Outlined';
-                            text-rendering: auto;
-                            position: absolute;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            right: 1.437rem;
-                            transition: all 0.3s ease-in-out;
-                            font-size: 20px;
+                ul {
+                    display: none;
+                }
 
+                &:hover {
+                    & > a {
+                        width: 260px;
+                        background-color: $edu-primary-dark-color;
+                        color: #ffffff;
+
+                        span {
+                            display: inline-block;
                         }
+                    }
 
-                        &.collapsed::after {
-                            transform: translateY(-50%) rotate(-90deg);
+                    ul {
+                        box-shadow: 0 0.5rem 1rem #0000001a;
+                        display: block;
+                        height: auto !important;
+                        left: 70px;
+                        position: absolute;
+                        width: 190px;
+                        background-color: #ffffff;
+
+                        li {
+                            a {
+                                color: $edu-headings-color;
+                                padding: 6px 11px;
+                                display: block;
+                            }
                         }
                     }
                 }
 
-                a.inner-link {
-                    font-size: 0.875rem;
-                    font-weight: 500;
-                    color: var(--white);
-                    padding: 0.5rem 0 0.5rem 2.875rem;
-                    display: flex;
-                    align-items: center;
 
-                    &:before {
-                        content: "";
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        border: 1px solid var(--white);
-                        margin-right: 0.625rem;
-                    }
-                }
             }
         }
-
     }
 
+    .sidebar-footer {
+        display: none;
+    }
 
-    .copy__right {
-        padding: 19px 10px 27px 10px;
-        border-color: rgba(255, 255, 255, 0.1) !important;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        max-width: 265px;
-        width: 100%;
+    .admin-content {
+        padding-left: $edu-admin-sm-sidebar-width + 20px;
     }
 }
 
