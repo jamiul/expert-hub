@@ -11,14 +11,9 @@ use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 class Table extends Component
 {
     use InteractsWithConfirmationModal;
-    // use WithPagination;
+    use WithPagination;
 
-    public $scholarships;
-
-    public function mount()
-    {
-        $this->refreshScholarship();
-    }
+    public $perPage = 6;
 
     public function paginationView()
     {
@@ -41,15 +36,14 @@ class Table extends Component
     #[On('refresh')]
     public function refreshScholarship()
     {
-        $this->scholarships = Scholarship::orderByDesc('id')->get();
+        $this->render();
     }
 
     public function render()
     {
-        // $scholarships = Scholarship::paginate(5);
-        return view('livewire.admin.scholarships.table');
-        // return view('livewire.admin.scholarships.table', [
-        //     'scholarships' => $scholarships,
-        // ]);
+        $scholarships = Scholarship::orderByDesc('id')->paginate($this->perPage);
+        return view('livewire.admin.scholarships.table', [
+            'scholarships' => $scholarships,
+        ]);
     }
 }

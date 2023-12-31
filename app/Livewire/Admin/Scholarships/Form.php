@@ -95,7 +95,7 @@ class Form extends BaseForm
         $this->country_id = $scholarship->country_id;
         $this->student_type = $scholarship->student_type;
         $this->automatic_consideration = $scholarship->automatic_consideration;
-        $this->deadline = $scholarship->deadline->format('Y-m-d');
+        $this->deadline = $scholarship->deadline?->format('Y-m-d');
         $this->studyAreas = $this->scholarship->studyAreas->pluck('id')->toArray();
         $this->studyLevels = $this->scholarship->studyLevels->pluck('name')->toArray();
         $this->fundTypes = $this->scholarship->fundTypes->pluck('name')->toArray();

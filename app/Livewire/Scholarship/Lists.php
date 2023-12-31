@@ -31,6 +31,14 @@ class Lists extends Component
         );
     }
 
+    public function favourite(Scholarship $scholarship)
+    {
+        if(!auth()->user()){
+            return $this->dispatch('notify', content: 'Please Login to add Scholarship in favourite list', type: 'warning');
+        }
+        $scholarship->favourite();
+    }
+
     public function paginationView()
     {
         return 'livewire.pagination';
