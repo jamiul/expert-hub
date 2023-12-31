@@ -1,25 +1,19 @@
 @extends('frontend.layouts.front-admin-dashboard-layout')
-
 @section('content')
-
-<main class="main__layout d-flex">
-        <!-- start left sidebar -->
-        <div class="left__sidebar">
-           @include('figma/adminleftsidebar')
+  <div class="admin-layout" sidebar-size="small">
+      <!-- start header -->
+        <div class="admin-header">
+            @include('figma/admintopbar')
         </div>
-
+        <!-- end header -->
+        <!-- start left sidebar -->
+        <div class="admin-sidebar">
+            @include('figma/adminleftsidebar')
+        </div>
         <!-- end left sidebar -->
 
-        <div class="main__content__wrapper col">
-             <!-- start header -->
-            <div class="header__wrapper py-2 bg-white">
-
-            @include('figma/admintopbar')
-
-            </div>
-            <!-- end header -->
-
-<div class="content__wrapper">
+<!-- <div class="content__wrapper"> -->
+<main class="admin-content">
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -771,11 +765,37 @@
     </div>
   </div>
 </div>
-
-</div>
 </main>
+</div>
 
 
+<script>
+        function submenuTrigger(element, event) {
+            event.preventDefault();
+            element.parentElement.classList.toggle("active-sub-menu");
+        }
+
+        function toggleClasses(parentSelector, className) {
+            var parentElement = document.querySelector(parentSelector);
+            if (parentElement) {
+                // Toggle the specified class on the parent element
+                parentElement.classList.toggle(className);
+            } else {
+                console.error('Parent element not found!');
+            }
+        }
+
+        function removeClass(elementSelector, className) {
+            var element = document.querySelector(elementSelector);
+
+            if (element) {
+                // Remove the specified class from the element
+                element.classList.remove(className);
+            } else {
+                console.error('Element not found!');
+            }
+        }
+    </script>
 
 
 

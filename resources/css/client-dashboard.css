@@ -2322,27 +2322,27 @@ span.suggest-skill{
   padding: 5px;
 }
 
-a.draft-option-toggle{
+.draft-option-toggle{
   background-color: transparent !important;
   padding: 0px;
   border: none;
 
 }
 
-a.draft-option-toggle:hover{
+.draft-option-toggle:hover{
   background-color: transparent !important;
   padding: 0px;
   border: none;
 
 }
 
-a.draft-option-toggle::after{
+.draft-option-toggle::after{
   display: none !important;
 
 
 }
 
-a.draft-option-toggle.show svg{
+.draft-option-toggle.show svg{
   border: 1px solid #0E00621A;
   box-shadow: 2px 2px 13px 0px #0E00620A;
   background-color: #0036E3 !important;
@@ -2351,7 +2351,7 @@ a.draft-option-toggle.show svg{
 }
 
 
-a.draft-option-toggle.show svg path{
+.draft-option-toggle.show svg path{
   fill:#fff !important;
 }
 
@@ -2535,7 +2535,6 @@ p.short-by-date {
 }
 
 .transaction-all-payment  thead th {
-
   background: rgba(0, 54, 227, 0.03);
   color: rgba(48, 55, 68, 0.80);
   font-family: Colfax;
@@ -2544,6 +2543,16 @@ p.short-by-date {
   font-weight: 500;
   padding: 13px 8px;
   vertical-align: middle;
+}
+
+.transaction-all-payment tr td{
+  vertical-align: middle;
+}
+
+.payment-date {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
 }
 
 
@@ -3644,7 +3653,7 @@ ul.admin-d-item{
 
 ul.admin-d-item li a.dropdown-item {
   color: var(--color-heading-color);
-  font-family: Poppins !important;
+
   font-size: 14px !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -3692,19 +3701,19 @@ ul.admin-d-item li:hover a.dropdown-item{
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap:5px;
   text-align: left;
 }
 
-.rating-comments a p{
+.rating-comments p{
   color: var(--color-theme-color-2);
-
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+  margin-bottom: 0px;
 }
 
-a.danger-comments span p {
+.danger-comments span p {
   color: var(--color-red);
 
   font-size: 14px;
@@ -3714,11 +3723,31 @@ a.danger-comments span p {
   border-bottom: 2px solid C00000;
 }
 
-a.success-comments:hover {
+.success-comments {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+}
+
+.danger-comments {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+}
+
+.success-comments p{
+  margin-bottom: 0px;
+}
+
+.success-comments:hover {
   border-bottom: 2px solid var(--color-theme-color-2);
 }
 
-a.danger-comments:hover {
+.danger-comments:hover {
   border-bottom: 2px solid var(--color-red);
 }
 
@@ -3872,7 +3901,7 @@ input.admin-all-checkbox {
 
 .ad-unhold {
   color: #F00 !important;
-  font-family: Poppins !important;
+
   font-size: 14px !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -5043,7 +5072,7 @@ span.require-count{
   top: 0px;
   right: 0px;
 }
-a.blog-close.position-absolute img {
+.blog-close.position-absolute img {
   max-width: 24px !important;
   max-height: 24px !important;
 }
@@ -5351,7 +5380,7 @@ select.top-input-control {
 
 .right-sidebar .database-block .database-contant .admin-text span {
   color: rgba(48, 55, 68, 0.60) !important;
-  font-family: Poppins !important;
+
   font-size: 13px !important;
   font-style: normal !important;
   font-weight: 500 !important;
@@ -5598,7 +5627,7 @@ input.academic-title{
 .admin-exp-text h3 {
   color: #191D24;
   text-align: left !important;
-  font-family: Poppins !important;
+
   font-size: 16px !important;
   font-style: normal !important;
   font-weight: 500 !important;
@@ -5855,12 +5884,13 @@ h5.comment-title-dispute {
   line-height: 10px;
 }
 
-p.c-rating-title{
+.c-rating-title{
   color: var(--color-heading-color);
 
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+  margin-bottom: 0px;
 }
 
 .consultant-reviw ul li a i{
