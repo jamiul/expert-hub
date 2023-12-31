@@ -12,7 +12,7 @@ class Header extends Component
     use WithFileUploads;
 
     public $aboutPage;
-    public string $header_subtitle = '';
+    public string $header_title = '';
     public $header_image;
     public $headerImageUrl = '';
 
@@ -21,7 +21,7 @@ class Header extends Component
     {
         $requiredOrNull = $this->headerImageUrl == '' ? 'required' : 'nullable';
         return [
-            'header_subtitle' => [
+            'header_title' => [
                 'required',
                 'string',
                 'min:' . AboutUsEnum::SubtitleMin->value,
@@ -39,7 +39,7 @@ class Header extends Component
     public function messages()
     {
         return [
-            'header_subtitle.required' => 'Please add subtitle',
+            'header_title.required' => 'Please add title',
         ];
     }
 
@@ -49,7 +49,7 @@ class Header extends Component
         if (is_null($this->aboutPage)) {
             $this->aboutPage = AboutUs::create();
         }
-        $this->header_subtitle = $this->aboutPage->header_subtitle ?? '';
+        $this->header_title = $this->aboutPage->header_title ?? '';
         $this->headerImageUrl = $this->aboutPage->getFirstMediaUrl('header_image');
     }
 
@@ -58,7 +58,7 @@ class Header extends Component
         $data = $this->validate();
 
         $this->aboutPage->update([
-            'header_subtitle' => $data['header_subtitle'],
+            'header_title' => $data['header_title'],
         ]);
 
         if (!is_null($this->header_image)) {

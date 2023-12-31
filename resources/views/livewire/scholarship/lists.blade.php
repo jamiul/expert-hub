@@ -19,7 +19,6 @@
             </div>
             <div class="scholarship-action">
                 <div class="d-flex justify-content-end flex-wrap">
-                    {{-- <button class="btn btn-outline-primary m-1">Find Consultants</button> --}}
                     <a class="btn btn-outline-primary m-1" href="{{ route('find.experts') }}">Find Experts</a>
                     <button wire:click="favourite({{ $scholarship->id }})" class="btn btn-outline-light m-1 {{ $scholarship->favourited() ? 'favourited' : ''}}">
                         <x-icon.favorite/>

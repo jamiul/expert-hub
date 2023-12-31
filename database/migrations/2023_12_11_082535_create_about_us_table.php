@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->string('header_subtitle')->nullable();
+            $table->string('header_title')->nullable();
             $table->string('header_image')->nullable();
             $table->string('area_title')->nullable();
             $table->string('area_subtitle')->nullable();

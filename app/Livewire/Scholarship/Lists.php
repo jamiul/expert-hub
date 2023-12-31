@@ -34,7 +34,8 @@ class Lists extends Component
     public function favourite(Scholarship $scholarship)
     {
         if(!auth()->user()){
-            return $this->dispatch('notify', content: 'Please Login to add Scholarship in favourite list', type: 'warning');
+            session(['url.intended' => route('scholarship-database')]);
+            return $this->redirect(route('auth.login'));
         }
         $scholarship->favourite();
     }

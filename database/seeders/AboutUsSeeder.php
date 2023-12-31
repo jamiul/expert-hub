@@ -13,7 +13,7 @@ class AboutUsSeeder extends Seeder
     public function run(): void
     {
         $about = AboutUs::create([
-            'header_subtitle' => 'Welcome to EduExHub',
+            'header_title' => 'Welcome to EduExHub',
             'header_image' => 'about-banner.jpg',
             'area_subtitle' => 'info',
             'area_title' => 'about us',

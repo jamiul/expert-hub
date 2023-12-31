@@ -1,13 +1,17 @@
-@extends('frontend.layouts.front-admin-dashboard-layout') @section('content')
-<main class="main__layout d-flex">
-  <!-- start left sidebar -->
-  <div class="left__sidebar"> @include('figma/adminleftsidebar') </div>
-  <!-- end left sidebar -->
-  <div class="main__content__wrapper col">
-    <!-- start header -->
-    <div class="header__wrapper py-2 bg-white"> @include('figma/admintopbar') </div>
-    <!-- end header -->
-    <div class="content__wrapper">
+@extends('frontend.layouts.front-admin-dashboard-layout')
+@section('content')
+    <div class="admin-layout" sidebar-size="small">
+      <!-- start header -->
+        <div class="admin-header">
+            @include('figma/admintopbar')
+        </div>
+        <!-- end header -->
+        <!-- start left sidebar -->
+        <div class="admin-sidebar">
+            @include('figma/adminleftsidebar')
+        </div>
+        <!-- end left sidebar -->
+  <main class="admin-content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -82,49 +86,47 @@
                                   </div>
                                   <div class="row">
                                     <div class="col-12">
-                                      <div class="balance-table-area-admin d-flex flex-column">
+                                      <div class="balance-table-area-admin d-flex flex-column table-responsive">
                                         <table class="table table-hover transaction-all-payment">
                                           <thead class="t-history">
                                             <tr>
-                                              <th scope="col" class="th-heading">
-                                                <span><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"></span>
-                                                 <span class="th-date">Date</span>
-                                                 <span class="material-symbols-outlined th-arrow">unfold_more </span>
+                                              <th>
+                                                  <p  class="payment-date"><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> <span class="date-range">Date</span> <span class="material-symbols-outlined th-arrow">unfold_more </span> </p>
                                               </th>
-                                              <th scope="col">Project <br>ID</th>
-                                              <th scope="col">Expert <br>  ID</th>
-                                              <th scope="col">Client <br> ID</th>
-                                              <th scope="col" class="th-project-value">Project <br> value</th>
-                                              <th scope="col">GST</th>
-                                              <th scope="col" class="th-project-expert">Expert <br> Income</th>
-                                              <th scope="col" >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
-                                              <th scope="col"> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
-                                              <th scope="col">Client contract <br> initiation fee <br> (fixed) </th>
-                                              <th scope="col">Payment type</th>
-                                              <th scope="col"></th>
+                                              <th>Project <br>ID</th>
+                                              <th>Expert <br>  ID</th>
+                                              <th>Client <br> ID</th>
+                                              <th class="th-project-value">Project <br> value</th>
+                                              <th>GST</th>
+                                              <th class="th-project-expert">Expert <br> Income</th>
+                                              <th>Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
+                                              <th> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
+                                              <th>Client contract <br> initiation fee <br> (fixed) </th>
+                                              <th>Payment type</th>
+                                              <th></th>
                                             </tr>
                                           </thead>
                                           <tbody class="">
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="fixed-screw">Fixed escrow</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="fixed-screw">Fixed escrow</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -135,13 +137,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item " href="#">Hold</button>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item" href="#">Re-fund</button>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item" href="#">Release</butt>
                                                         </li>
 
                                                       </ul>
@@ -152,25 +154,25 @@
                                             </tr>
 
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -181,13 +183,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item " href="#">Hold</button>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item" href="#">Re-fund</button>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item" href="#">Release</button>
                                                         </li>
 
                                                       </ul>
@@ -197,25 +199,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -226,13 +228,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item " href="#">Hold</button>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item" href="#">Re-fund</button>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item" href="#">Release</button>
                                                         </li>
 
                                                       </ul>
@@ -242,25 +244,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -271,13 +273,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item ">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -287,25 +289,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -316,13 +318,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -332,25 +334,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -361,13 +363,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -377,25 +379,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -406,13 +408,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -422,25 +424,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -451,13 +453,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -467,25 +469,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"><span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td><span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -496,13 +498,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -512,25 +514,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                               <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"> <span class="fixed-screw">Fixed escrow</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td> <span class="fixed-screw">Fixed escrow</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -541,13 +543,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -557,25 +559,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;"> <span class="hourly-screw">Hourly</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td> <span class="hourly-screw">Hourly</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -586,13 +588,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -602,25 +604,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;" > <span class="fixed-screw">Fixed escrow</span></td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td > <span class="fixed-screw">Fixed escrow</span></td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -631,13 +633,13 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item " href="#">Hold</a>
+                                                          <button class="dropdown-item">Hold</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -712,49 +714,48 @@
                                   </div>
                                   <div class="row">
                                     <div class="col-12">
-                                      <div class="balance-table-area-admin d-flex flex-column">
+                                      <div class="balance-table-area-admin d-flex flex-column table-responsive">
                                         <table class="table table-hover transaction-all-payment">
                                           <thead class="t-history">
-                                            <tr>
-                                              <th scope="col" class="th-heading">
-                                                <input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> <span class="th-date">Date</span> <span class="material-symbols-outlined th-arrow">unfold_more </span>
+                                               <th>
+                                                  <p  class="payment-date"><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> <span class="date-range">Date</span> <span class="material-symbols-outlined th-arrow">unfold_more </span> </p>
                                               </th>
-                                              <th scope="col">Project <br>ID</th>
-                                              <th scope="col">Expert <br>  ID</th>
-                                              <th scope="col">Client <br> ID</th>
-                                              <th scope="col">Reason</th>
-                                              <th scope="col" class="th-project-value">Project <br> value</th>
-                                              <th scope="col">GST</th>
-                                              <th scope="col" class="th-project-expert">Expert <br> Fees</th>
-                                              <th scope="col" >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
-                                              <th scope="col"> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
-                                              <th scope="col">Client contract <br> initiation fee <br> (fixed) </th>
-                                              <th scope="col">Payment type</th>
-                                              <th scope="col"></th>
+                                              <th>Project <br>ID</th>
+                                              <th>Expert <br>  ID</th>
+                                              <th>Client <br> ID</th>
+                                              <th>Reason</th>
+                                              <th class="th-project-value">Project <br> value</th>
+                                              <th>GST</th>
+                                              <th class="th-project-expert">Expert <br> Fees</th>
+                                              <th >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
+                                              <th> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
+                                              <th>Client contract <br> initiation fee <br> (fixed) </th>
+                                              <th>Payment type</th>
+                                              <th></th>
                                             </tr>
                                           </thead>
                                           <tbody class="">
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Doc issue</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -766,10 +767,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -780,26 +781,26 @@
                                             </tr>
 
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -811,10 +812,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -824,26 +825,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Doc issue</span> </td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -855,10 +856,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -868,26 +869,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -898,10 +899,10 @@
                                                       </a>
                                                       <ul class="dropdown-menu admin-d-item">
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -911,26 +912,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -942,10 +943,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -955,26 +956,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -986,10 +987,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -999,26 +1000,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Doc issue</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1030,10 +1031,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -1043,26 +1044,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Doc issue</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1074,10 +1075,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -1087,26 +1088,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1118,10 +1119,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -1131,26 +1132,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                               <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1162,10 +1163,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -1175,26 +1176,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Card decline</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Card decline</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1206,10 +1207,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -1219,26 +1220,26 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;"> <span class="discord-reason">Doc issue</span> </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td> <span class="discord-reason">Doc issue</span> </td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1250,10 +1251,10 @@
                                                       <ul class="dropdown-menu admin-d-item">
 
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Re-fund</a>
+                                                          <button class="dropdown-item">Re-fund</a>
                                                         </li>
                                                         <li>
-                                                          <a class="dropdown-item" href="#">Release</a>
+                                                          <button class="dropdown-item">Release</a>
                                                         </li>
 
                                                       </ul>
@@ -1327,47 +1328,47 @@
                                   </div>
                                   <div class="row">
                                     <div class="col-12">
-                                      <div class="balance-table-area-admin d-flex flex-column">
+                                      <div class="balance-table-area-admin d-flex flex-column table-responsive">
                                         <table class="table table-hover transaction-all-payment">
                                           <thead class="t-history">
                                             <tr>
-                                              <th scope="col" class="th-heading">
-                                                <input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> <span class="th-date">Date</span> <span class="material-symbols-outlined th-arrow">unfold_more </span>
+                                            <th>
+                                              <p  class="payment-date"><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> <span class="date-range">Date</span> <span class="material-symbols-outlined th-arrow">unfold_more </span> </p>
                                               </th>
-                                              <th scope="col">Project <br>ID</th>
-                                              <th scope="col">Expert <br>  ID</th>
-                                              <th scope="col">Client <br> ID</th>
-                                              <th scope="col" class="th-project-value">Project <br> value</th>
-                                              <th scope="col">GST</th>
-                                              <th scope="col" class="th-project-expert">Expert <br> Fees</th>
-                                              <th scope="col" >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
-                                              <th scope="col"> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
-                                              <th scope="col">Client contract <br> initiation fee <br> (fixed) </th>
-                                              <th scope="col">Payment type</th>
-                                              <th scope="col"></th>
+                                              <th>Project <br>ID</th>
+                                              <th>Expert <br>  ID</th>
+                                              <th>Client <br> ID</th>
+                                              <th class="th-project-value">Project <br> value</th>
+                                              <th>GST</th>
+                                              <th class="th-project-expert">Expert <br> Fees</th>
+                                              <th >Expert <br> marketplace fees <br> Expert (10% of expert <br> income)</th>
+                                              <th> Client <br> marketplace <br> fees Client (5%  <br>of project value)</th>
+                                              <th>Client contract <br> initiation fee <br> (fixed) </th>
+                                              <th>Payment type</th>
+                                              <th></th>
                                             </tr>
                                           </thead>
                                           <tbody class="">
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1382,25 +1383,25 @@
                                             </tr>
 
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1414,25 +1415,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1446,25 +1447,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1478,25 +1479,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1510,25 +1511,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1542,25 +1543,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1574,25 +1575,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1606,25 +1607,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span  class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1638,25 +1639,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                               <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1670,25 +1671,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span>$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1702,25 +1703,25 @@
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <input class="form-check-input mt-0  admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> 16 Nov, 2023
                                               </td>
-                                              <td style="vertical-align: middle;">1009871</td>
+                                              <td>1009871</td>
                                               <td class="balance-text">13617</td>
-                                              <td style="vertical-align: middle;">345785</td>
-                                              <td style="vertical-align: middle;">
+                                              <td>345785</td>
+                                              <td>
                                                 <span class="spent-price">$500</span>
                                               </td>
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <span >$50</span>
                                               </td>
-                                              <td style="vertical-align: middle;">$450</td>
-                                              <td style="vertical-align: middle;">$50</td>
-                                              <td style="vertical-align: middle;">$25</td>
-                                              <td style="vertical-align: middle;">$3</td>
-                                              <td style="vertical-align: middle;">Fixed escrow</td>
+                                              <td>$450</td>
+                                              <td>$50</td>
+                                              <td>$25</td>
+                                              <td>$3</td>
+                                              <td>Fixed escrow</td>
 
-                                              <td style="vertical-align: middle;">
+                                              <td>
                                                 <div class="policy-option">
                                                   <div class="draft-options">
                                                     <div class="dropdown">
@@ -1811,6 +1812,35 @@
           </div>
         </div>
       </div>
+      </main>
     </div>
-</main>
+
+    <script>
+        function submenuTrigger(element, event) {
+            event.preventDefault();
+            element.parentElement.classList.toggle("active-sub-menu");
+        }
+
+        function toggleClasses(parentSelector, className) {
+            var parentElement = document.querySelector(parentSelector);
+            if (parentElement) {
+                // Toggle the specified class on the parent element
+                parentElement.classList.toggle(className);
+            } else {
+                console.error('Parent element not found!');
+            }
+        }
+
+        function removeClass(elementSelector, className) {
+            var element = document.querySelector(elementSelector);
+
+            if (element) {
+                // Remove the specified class from the element
+                element.classList.remove(className);
+            } else {
+                console.error('Element not found!');
+            }
+        }
+    </script>
+
  @endsection

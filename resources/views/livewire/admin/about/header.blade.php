@@ -16,7 +16,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col admin-sub-title position-relative">
-                                        <x-form.input type="text" label="Title" wire:model="header_subtitle"
+                                        <x-form.input type="text" label="Title" wire:model="header_title"
                                             placeholder="Add Subtitle here" />
                                     </div>
 
