@@ -11,7 +11,7 @@
                             <div class="auth-card-title">
                                 <h1 class="h4">Sign Up</h1>
                             </div>
-                            <form method="post">
+                            <form action="/figma/client-profile-position-setup">
                                 <div class="social-auth col-items-3">
                                     <div>
                                         <a href="#">

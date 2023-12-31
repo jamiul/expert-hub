@@ -1,0 +1,23 @@
+.sidebar-layout {
+    display: grid;
+    border-radius: 7px;
+    border: 1px solid $edu-border-color;
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+    @media screen and (min-width: 990px) {
+        grid-template-columns: 320px auto;
+    }
+    @media screen and (max-width: 990px) and (min-width: 767px) {
+        grid-template-columns: 280px auto;
+    }
+
+    & > div {
+        padding: 32px;
+
+    }
+}
+
+.left-sidebar-layout {
+    .page-sidebar {
+        border-right: 1px solid $edu-border-color;
+    }
+}

@@ -301,10 +301,15 @@ img {
     border-radius: 100%;
     background-color: white;
     border: 0;
+    padding: 0;
 
     &.icon-btn-sm {
         width: 24px;
         height: 24px;
+        padding: 3px;
+        svg {
+            //width: 22px;
+        }
     }
 
 }
