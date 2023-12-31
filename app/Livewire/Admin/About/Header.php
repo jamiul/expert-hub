@@ -24,13 +24,13 @@ class Header extends Component
             'header_subtitle' => [
                 'required',
                 'string',
-                'min:' . AboutUsEnum::SubtitleMin->array_values,
-                'max:' . AboutUsEnum::SubtitleMax->array_values
+                'min:' . AboutUsEnum::SubtitleMin->value,
+                'max:' . AboutUsEnum::SubtitleMax->value
             ],
             'header_image' => [
                 $requiredOrNull,
                 'image',
-                'max:' . AboutUsEnum::ImageSize->array_values,
+                'max:' . AboutUsEnum::ImageSize->value,
                 'dimensions:min_width=1920,min_height=380'
             ],
         ];

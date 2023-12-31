@@ -29,12 +29,12 @@
                                                             <li> <strong>$200</strong> / hr </li>
                                                             <li>
                                                                 <a href="#">
-                                                                    <x-icon.star />
+                                                                    <x-icon.star fill="#E9B911"/>
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a href="#">
-                                                                    <x-icon.star />
+                                                                    <x-icon.star fill="#E9B911" />
                                                                 </a>
                                                             </li>
                                                             <li>

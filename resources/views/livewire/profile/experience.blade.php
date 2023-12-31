@@ -22,7 +22,10 @@
                     <tr>
                         <td>Duration</td>
                         <td>:</td>
-                        <td class="fw-medium"> {{ $experience->start_year }} @if($experience->end_year)- {{ $experience->end_year }} @endif</td>
+                        <td class="fw-medium"> 
+                            {{ $experience->start_year }} -
+                            @if($experience->end_year) {{ $experience->end_year }} @else Continuing @endif
+                        </td>
                     </tr>
                     @if($experience->description)
                     <tr>

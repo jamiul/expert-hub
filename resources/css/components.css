@@ -413,3 +413,7 @@
 .favourited{
     background: blue;
 }
+.form-input-group.password-input .icon-field-wrapper .form-input-icon{
+    z-index: 1;
+    cursor: pointer;
+}

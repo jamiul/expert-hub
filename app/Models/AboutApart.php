@@ -14,6 +14,9 @@ class AboutApart extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $guarded = [];
+    protected $casts = [
+        'about_us_id' => 'array',
+    ];
 
     public function about_us()
     {

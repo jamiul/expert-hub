@@ -38,7 +38,7 @@ class Form extends BaseForm
         $data = $this->validate([
             'set_title' => 'required|max:50',
             'description' => 'required|max:500',
-            'icon' => 'required|image|max:' . AboutUsEnum::ICON_SIZE->value. '|dimensions:min_width=25,min_height=25',
+            'icon' => 'required|image|max:' . AboutUsEnum::IconSize->value. '|dimensions:min_width=25,min_height=25',
             'type' => 'required|string',
         ]);
 
@@ -91,7 +91,7 @@ class Form extends BaseForm
             'icon' => [
                 'nullable',
                 'image',
-                'max:' . AboutUsEnum::ICON_SIZE->value,
+                'max:' . AboutUsEnum::IconSize->value,
                 'dimensions:min_width=25,min_height=25',
             ],
             'type' => 'required|string',

@@ -27,9 +27,15 @@
                         <td class="fw-medium"> {{ $education->start_year }}</td>
                     </tr>
                     <tr>
-                        <td>End Year</td>
-                        <td>:</td>
-                        <td class="fw-medium"> {{ $education->end_year }}</td>
+                        @if($education->end_year)
+                            <td>End Year</td>
+                            <td>:</td>
+                            <td class="fw-medium"> {{ $education->end_year }}</td>
+                        @else
+                            <td class="fw-medium">Continuing</td>
+                            {{-- <td></td>
+                            <td class="fw-medium"></td> --}}
+                        @endif
                     </tr>
                 </table>
             </div>

@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-6">
                 <div class="mission-img">
-                    <img src="{{ $about->storyImage() ?? ''}}">
+                    <img src="{{ $about ? $about->storyImage() : ''}}">
                 </div>
             </div>
         </div>
