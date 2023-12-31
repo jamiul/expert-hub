@@ -1,6 +1,7 @@
 @extends('frontend.user.expert.layout._main')
 @section('content')
     @vite('resources/default/css/expert-dashboard.css')
+    @vite('resources/default/css/expert-header.css')
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <main class="expert__dashboad py-5">
