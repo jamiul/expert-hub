@@ -97,8 +97,10 @@ class Registration extends Component
             'status' => ProfileStatus::Draft,
         ]);
         Auth::login($user);
-        return redirect()->route('verification.notice');
-        // dd(auth()->user());
+        if($this->type === ProfileType::Expert->value){
+            return redirect()->route('verification.notice');
+        }
+        return redirect('/figma/client-dashboardhome');
     }
 
     public function render()

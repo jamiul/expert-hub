@@ -134,8 +134,14 @@ class Wizard extends Component
 
     public function updatedHourlyRate()
     {
-        $this->platform_fee = $this->hourly_rate * 0.1;
-        $this->total_fee = $this->hourly_rate + $this->platform_fee;
+        if($this->hourly_rate){
+            $this->platform_fee = $this->hourly_rate * 0.1;
+            $this->total_fee = $this->hourly_rate + $this->platform_fee;
+        }else{
+            $this->platform_fee = 0;
+            $this->total_fee = 0;
+        }
+        
     }
 
     public function updatedPicture()
@@ -155,7 +161,7 @@ class Wizard extends Component
             'picture' => [
                 $required,
                 'image', 
-                File::image()->max(2 * 1024),
+                File::image()->max(1 * 1024),
                 Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],
         ];

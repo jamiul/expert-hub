@@ -15,6 +15,7 @@
         @vite('resources/css/client-dashboard.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
+        <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
         @stack('top_styles')
     </head>
     <body>
@@ -25,6 +26,8 @@
         @vite('resources/js/choices.min.js')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         @vite('resources/js/owl.carousel.min.js')
+        @livewire('modal-pro')
+        <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
         @stack('bottom_scripts')
         <x-toaster/>
     </body>

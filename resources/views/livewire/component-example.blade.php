@@ -56,7 +56,7 @@
                 <x-form.input type="text" label="Last Name" wire:model="last_name" placeholder="Your last name"/>
             </div>
             <x-form.input type="email" label="Email" wire:model="email" placeholder="Email"/>
-            <x-form.input type="password" label="Password" wire:model="password" placeholder="Password"/>
+            <x-form.password label="Password" wire:model="password" placeholder="Password"/>
             <x-form.input type="number" label="Hourly Rate" wire:model="rate" placeholder="Hourly Rate"/>
             <x-form.input type="text" readonly label="Type" wire:model="type" placeholder="Type" value="Expert"/>
             <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio"/>
@@ -69,4 +69,22 @@
 
             <button type="submit">Submit</button>
         </form>
+        <h2>All Icons</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Icon</th>
+                    <th>Component</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($iconComponentFileNames as $iconComponentFileName)
+                    <tr>
+                        <td><x-dynamic-component :component="$iconComponentFileName" /></td>
+                        <td><code>{{ '<x-' . $iconComponentFileName . '/>' }}</code></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        
 </div>
