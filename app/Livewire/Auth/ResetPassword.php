@@ -35,10 +35,10 @@ class ResetPassword extends Component
             'email' => ['required', 'string', 'email'],
             'password' => [
                 'required',
-                PasswordRule::min(8),
-                PasswordRule::min(8)->mixedCase(),
-                PasswordRule::min(8)->numbers(),
-                PasswordRule::min(8)->symbols(),
+                Password::min(8)
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols(),
             ],
             'password_confirmation' => ['required_with:password', 'same:password'],
         ]);
