@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Admin\About;
 
-use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
+use App\Enums\AboutUsEnum;
 use Livewire\WithFileUploads;
 
 class Mission extends Component
@@ -26,25 +26,25 @@ class Mission extends Component
             'mission_title' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::TITLE_MIN,
-                'max:' . CmnEnum::TITLE_MAX
+                'min:' . AboutUsEnum::TitleMin->value,
+                'max:' . AboutUsEnum::TitleMax->value
             ],
             'mission_subtitle' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::SUBTITLE_MIN,
-                'max:' . CmnEnum::SUBTITLE_MAX
+                'min:' . AboutUsEnum::SubtitleMin->value,
+                'max:' . AboutUsEnum::SubtitleMax->value
             ],
             'mission_description' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::DESCRIPTION_MIN,
-                'max:' . CmnEnum::DESCRIPTION_MAX
+                'min:' . AboutUsEnum::DescriptionMin->value,
+                'max:' . AboutUsEnum::DescriptionMax->value
             ],
             'mission_image' => [
                 $requiredOrNull,
                 'image',
-                'max:' . CmnEnum::IMAGE_SIZE,
+                'max:' . AboutUsEnum::ImageSize->value,
                 'dimensions:min_width=530,min_height=600' // w:860 h:770
             ],
         ];

@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Admin\About;
 
-use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
+use App\Enums\AboutUsEnum;
 use Livewire\WithFileUploads;
 
 class Header extends Component
@@ -24,13 +24,13 @@ class Header extends Component
             'header_subtitle' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::SUBTITLE_MIN,
-                'max:' . CmnEnum::SUBTITLE_MAX
+                'min:' . AboutUsEnum::SubtitleMin->array_values,
+                'max:' . AboutUsEnum::SubtitleMax->array_values
             ],
             'header_image' => [
                 $requiredOrNull,
                 'image',
-                'max:' . CmnEnum::IMAGE_SIZE,
+                'max:' . AboutUsEnum::ImageSize->array_values,
                 'dimensions:min_width=1920,min_height=380'
             ],
         ];

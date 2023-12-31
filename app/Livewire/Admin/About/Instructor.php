@@ -2,11 +2,10 @@
 
 namespace App\Livewire\Admin\About;
 
-use App\Models\User;
-use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use App\Models\Profile;
 use Livewire\Component;
+use App\Enums\AboutUsEnum;
 use Livewire\Attributes\On;
 
 class Instructor extends Component
@@ -26,14 +25,14 @@ class Instructor extends Component
             'instructor_title' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::TITLE_MIN,
-                'max:' . CmnEnum::TITLE_MAX
+                'min:' . AboutUsEnum::TitleMin->value,
+                'max:' . AboutUsEnum::TitleMax->value
             ],
             'instructor_subtitle' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::SUBTITLE_MIN,
-                'max:' . CmnEnum::SUBTITLE_MAX
+                'min:' . AboutUsEnum::SubtitleMin->value,
+                'max:' . AboutUsEnum::SubtitleMax->value
             ],
             'instructor_list' => ['array'],
         ];

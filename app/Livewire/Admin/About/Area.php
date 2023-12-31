@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\About;
 
-use App\Enums\CmnEnum;
+use App\Enums\AboutUsEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
 
@@ -19,20 +19,20 @@ class Area extends Component
             'area_title' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::TITLE_MIN,
-                'max:' . CmnEnum::TITLE_MAX
+                'min:' . AboutUsEnum::TitleMin->value,
+                'max:' . AboutUsEnum::TitleMax->value
             ],
             'area_subtitle' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::SUBTITLE_MIN,
-                'max:' . CmnEnum::SUBTITLE_MAX
+                'min:' . AboutUsEnum::SubtitleMin->value,
+                'max:' . AboutUsEnum::SubtitleMax->value
             ],
             'area_description' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::DESCRIPTION_MIN,
-                'max:' . CmnEnum::DESCRIPTION_MAX
+                'min:' . AboutUsEnum::DescriptionMin->value,
+                'max:' . AboutUsEnum::DescriptionMax->value
 
             ],
         ];

@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Admin\About\Aparts;
 
-use App\Enums\CmnEnum;
 use App\Models\AboutUs;
+use App\Enums\AboutUsEnum;
 use App\Enums\ProfileType;
 use App\Models\AboutApart;
 use Livewire\WithFileUploads;
@@ -16,18 +16,9 @@ class Form extends BaseForm
 
     public $aboutApart;
     public $iconUrl = '';
-    // public $requiredOrNull = $iconUrl == '' ? 'required' : 'nullable';
-
-    // #[Validate('required|max:50')]
     public $set_title = '';
-
-    // #[Validate('required|max:500')]
     public $description = '';
-
-    // #[Validate('image|max:' . CmnEnum::ICON_SIZE, onUpdate: false)]
     public $icon;
-
-    // #[Validate('required|string')]
     public $type = '';
 
     #[Validate('nullable')]
@@ -47,7 +38,7 @@ class Form extends BaseForm
         $data = $this->validate([
             'set_title' => 'required|max:50',
             'description' => 'required|max:500',
-            'icon' => 'required|image|max:' . CmnEnum::ICON_SIZE. '|dimensions:min_width=25,min_height=25',
+            'icon' => 'required|image|max:' . AboutUsEnum::ICON_SIZE->value. '|dimensions:min_width=25,min_height=25',
             'type' => 'required|string',
         ]);
 
@@ -100,7 +91,7 @@ class Form extends BaseForm
             'icon' => [
                 'nullable',
                 'image',
-                'max:' . CmnEnum::ICON_SIZE,
+                'max:' . AboutUsEnum::ICON_SIZE->value,
                 'dimensions:min_width=25,min_height=25',
             ],
             'type' => 'required|string',

@@ -2,10 +2,10 @@
 
 namespace App\Livewire\Admin\About;
 
-use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use App\Models\Profile;
 use Livewire\Component;
+use App\Enums\AboutUsEnum;
 use Livewire\Attributes\On;
 
 class Team extends Component
@@ -26,20 +26,20 @@ class Team extends Component
             'team_title' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::TITLE_MIN,
-                'max:' . CmnEnum::TITLE_MAX
+                'min:' . AboutUsEnum::TitleMin->value,
+                'max:' . AboutUsEnum::TitleMax->value
             ],
             'team_subtitle' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::SUBTITLE_MIN,
-                'max:' . CmnEnum::SUBTITLE_MAX
+                'min:' . AboutUsEnum::SubtitleMin->value,
+                'max:' . AboutUsEnum::SubtitleMax->value
             ],
             'team_description' => [
                 'required',
                 'string',
-                'min:' . CmnEnum::DESCRIPTION_MIN,
-                'max:' . CmnEnum::DESCRIPTION_MAX
+                'min:' . AboutUsEnum::DescriptionMin->value,
+                'max:' . AboutUsEnum::DescriptionMax->value
             ],
             'team_list' => ['array'],
         ];

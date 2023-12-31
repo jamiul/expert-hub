@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Admin\About\Aparts;
 
-use App\Enums\CmnEnum;
 use App\Models\AboutUs;
 use Livewire\Component;
+use App\Enums\AboutUsEnum;
 use App\Models\AboutApart;
 use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Validator;
@@ -38,14 +38,14 @@ class BaseApart extends Component
                 'apart_title' => [
                     'required',
                     'string',
-                    'min:' . CmnEnum::TITLE_MIN,
-                    'max:' . CmnEnum::TITLE_MAX
+                    'min:' . AboutUsEnum::TitleMin->value,
+                    'max:' . AboutUsEnum::TitleMax->value
                 ],
                 'apart_subtitle' => [
                     'required',
                     'string',
-                    'min:' . CmnEnum::SUBTITLE_MIN,
-                    'max:' . CmnEnum::SUBTITLE_MAX
+                    'min:' . AboutUsEnum::SubtitleMin->value,
+                    'max:' . AboutUsEnum::SubtitleMax->value
                 ]
             ],
             ['required' => 'Please add :attribute'],
