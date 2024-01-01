@@ -20,6 +20,9 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-completed', 'figma.profilecompleted');
     Route::view('/scholarship-database', 'figma.scholarshipdatabase');
 
+    Route::view('/scholarship-singlePage', 'figma.scholarshipsinglepage');
+    Route::view('/search-empty', 'figma.searchempty');
+
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');
     Route::view('/client-signup', 'figma.clientsignup');
