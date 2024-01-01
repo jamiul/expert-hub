@@ -21,8 +21,8 @@
     }
 
     &.alert-success {
-        border: 1px solid rgba(90, 188, 118, 0.25);
-        background: rgba(90, 188, 118, 0.08);
+        border: 1px solid #CCEBD5;
+        background: #F2FAF4;
         color: #5ABC76;
 
         svg {
@@ -34,8 +34,8 @@
 
     &.alert-warning {
         color: #8E6F00;;
-        border: 1px solid rgba(233, 185, 17, 0.34);
-        background: rgba(233, 185, 17, 0.06);
+        border: 1px solid #F8E8B0;
+        background: #FEFBF1;
 
         svg {
             path {
@@ -46,8 +46,8 @@
 
     &.alert-info {
         color: #191D24;;
-        border: 1px solid rgba(0, 54, 227, 0.10);
-        background: rgba(0, 54, 227, 0.05);
+        border: 1px solid #E9EEFD;
+        background: #F2F5FE;
 
         svg {
             path {
@@ -58,8 +58,8 @@
 
     &.alert-danger {
         color: #C00000;;
-        border: 1px solid rgba(255, 0, 0, 0.12);
-        background: rgba(255, 0, 0, 0.06);
+        border: 1px solid #FFD7D7;
+        background: #FFF0F0;
 
         svg {
             path {

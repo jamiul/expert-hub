@@ -23,6 +23,8 @@ Route::group(['prefix' => 'figma'], function () {
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');
     Route::view('/client-signup', 'figma.clientsignup');
+    Route::view('/client-profile-position-setup', 'figma.clientprofilepositionsetup');
+    Route::view('/client-profile', 'figma.clientprofile');
     Route::view('/client-verify-email', 'figma.clientverifyemail');
     Route::view('/client-verify-your-email', 'figma.clientverifyyouremail');
 

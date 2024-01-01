@@ -5,7 +5,8 @@
         padding: 1rem;
         border-color: $edu-border-color;
     }
-    .card-footer{
+
+    .card-footer {
         border-color: $edu-border-color;
     }
 
@@ -71,6 +72,18 @@
 }
 
 .offered-service-card {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 180px auto;
+    gap: 20px;
+    border: 1px solid $edu-border-color;
+}
+
+.profile-setup-card {
+    max-width: 640px;
+}
+
+.service-edit-card {
     padding: 24px;
     display: grid;
     grid-template-columns: 180px auto;
