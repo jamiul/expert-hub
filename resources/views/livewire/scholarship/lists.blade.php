@@ -30,19 +30,19 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" target="_blank" href="https://linkedin.com/shareArticle?u={{ route('scholarship-database.show', $scholarship) }}">
                                     <x-icon.linkedin/>Linkedin
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('scholarship-database.show', $scholarship) }}">
                                     <x-icon.facebook/>Facebook
                                 </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
+                            <li x-data="{ scholarshipUrl: '{{ route('scholarship-database.show', $scholarship) }}' }">
+                                <button class="dropdown-item" x-clipboard="scholarshipUrl">
                                     <x-icon.copy/>Copy Link
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -84,7 +84,13 @@
             </div>
         </div>
         @empty
-        No records Found
+        <div class="d-flex flex-column align-items-center">
+            <img style="width: 240px;" src="{{ asset('assets/frontend/img/notification.png') }}" alt="client health">
+            <div style="width: 389px;">
+                <h3 class="text-center">There are no results that match your search.</h3>
+                <p class="text-center mb-0 fw-small">Please try adjusting your search keywords or filters.</p>
+            </div>
+        </div>
         @endforelse
         <hr>
         <div class="text-center">
