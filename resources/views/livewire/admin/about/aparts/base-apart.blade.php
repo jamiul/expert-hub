@@ -117,9 +117,9 @@
                         <div class="require-block">
                             <div class="academic-single-item d-flex flex-column">
                                 <div class="admin-add-more">
-                                    <button
+                                    <button class="btn-add-more"
                                         wire:click="$dispatch('modal.open', { component: 'admin.about.aparts.create'})"
-                                        type="button" class="material-symbols-outlined">add</button>
+                                        type="button" class="material-symbols-outlined"><span class="material-symbols-outlined">add</span></button>
                                 </div>
                             </div>
                         </div>
