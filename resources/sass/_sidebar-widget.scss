@@ -1,8 +1,129 @@
-.filter-widget{
-    .filter-widget-title{
+.filter-widget,
+.profile-widget,
+.profile-edit-widget {
+    margin-bottom: 40px;
+
+    .filter-widget-title,
+    .widget-title {
         font-size: 1rem;
         font-weight: 500;
         line-height: 120%;
     }
+}
 
+
+.profile-edit-widget {
+    .widget-title {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .icon-btn {
+            margin-left: auto;
+        }
+    }
+
+    .icon-btn {
+        border: 1px solid $edu-border-color;
+    }
+}
+
+.user-bio-edit-widget {
+    .user-profile-picture {
+        max-width: 167px;
+        max-height: 167px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 100%;
+        margin: 0 auto;
+
+        &:hover {
+            button {
+                bottom: 0;
+            }
+        }
+
+        button {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: $edu-headings-color;
+            bottom: -100%;
+            border: none;
+            padding: 5px 10px 10px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: 0.2s;
+        }
+    }
+
+    .user-profile-info {
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid $edu-border-color;
+        margin-bottom: 24px;
+
+        p {
+            margin-bottom: .2rem;
+        }
+    }
+}
+
+.user-language-edit-widget {
+    ul {
+        margin: 0;
+        padding: 0;
+        //display: flex;
+        //flex-wrap: wrap;
+        //gap: 5px;
+
+        li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 159.5%;
+        }
+    }
+}
+
+.user-skills-edit-widget {
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        li {
+            list-style: none;
+            display: inline-flex;
+            gap: 4px;
+            align-items: center;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 159.5%;
+            color: $edu-headings-color;
+            border-radius: 2.625rem;
+            //border: 1px solid $edu-primary-color;
+            padding: 0.125rem 0.60rem;
+            background-color: $edu-gray-4-color;
+        }
+    }
+}
+
+.user-education-edit-widget {
+    .user-education-box-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid $edu-border-color;
+    }
 }
