@@ -6,10 +6,12 @@ use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
 use App\Models\Country;
 use App\Models\Profile;
+use App\Models\Title;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
@@ -35,7 +37,7 @@ class Registration extends Component
 
     public function mount()
     {
-        $this->titles = ['Mr', 'Mrs'];
+        $this->titles = Title::pluck('name')->toArray();
         $this->countries = Country::pluck('name', 'id')->toArray();
     }
 
@@ -50,10 +52,10 @@ class Registration extends Component
             'phone' => ['nullable'],
             'password' => [
                 'required', 
-                Password::min(8), 
-                Password::min(8)->mixedCase(),
-                Password::min(8)->numbers(),
-                Password::min(8)->symbols(),
+                Password::min(8)
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols(),
             ],
             'password_confirmation' => ['required_with:password', 'same:password'],
             'country_id' => ['required'],
@@ -110,7 +112,7 @@ class Registration extends Component
 
     public function username()
     {
-        return $this->first_name . '-' . $this->last_name;
+        return Str::uuid();
     }
 
     public function typeSelected()

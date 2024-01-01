@@ -16,10 +16,8 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col admin-sub-title position-relative">
-                                        <label for="subtitle"
-                                            class="form-label position-absolute level-subtitle">subtitle</label>
-                                        <input id="subtitle" wire:model="header_subtitle" type="text" class="form-control admin-form-input "
-                                            placeholder="Require steps" aria-label="First name">
+                                        <x-form.input type="text" label="Title" wire:model="header_title"
+                                            placeholder="Add Subtitle here" />
                                     </div>
 
                                 </div>
@@ -42,35 +40,31 @@
                                         </div> --}}
                                         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
                                         <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-                                        <img src="{{ $aboutPage->headerImage() }}" alt="">
-                                        <div
-                                            wire:ignore
-                                            x-data
-                                            x-init="
-                                                FilePond.setOptions({
-                                                    allowMultiple: false,
-                                                    server: {
-                                                        process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
-                                                            @this.upload('header_image', file, load, error, progress)
-                                                        },
-                                                        revert: (fileName, load) => {
-                                                            @this.removeUpload('header_image', fileName, load)
-                                                        },
-                                                    },
-                                                    credits: {},
-                                                    labelIdle: '<strong>Clik to upload or drag & drop</strong> <br> Drag & drop any images or documents that might be helpful in explaining your brief here'
-                                                });
-                                                FilePond.create($refs.input);
-                                            "
-                                        >
+                                        <img src="{{ $aboutPage->getFirstMediaUrl('header_image') }}" width="40%" class="mb-3">
+                                        <div wire:ignore x-data x-init="FilePond.setOptions({
+                                            allowMultiple: false,
+                                            server: {
+                                                process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                                                    @this.upload('header_image', file, load, error, progress)
+                                                },
+                                                revert: (fileName, load) => {
+                                                    @this.removeUpload('header_image', fileName, load)
+                                                },
+                                            },
+                                            credits: {},
+                                            labelIdle: '<strong>Clik to upload or drag & drop</strong> <br> Drag & drop any images or documents that might be helpful in explaining your brief here'
+                                        });
+                                        FilePond.create($refs.input);">
                                             <input type="file" x-ref="input">
                                         </div>
+                                        @error('header_image')
+                                            <div class="form-input-error-message">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="edux-frontend-left-title ">
-                                        <button type="submit" class="save-update">Save
-                                            Update</button>
+                                    <div class="edux-frontend-left-title">
+                                        <button type="submit" class="save-update">Save</button>
                                     </div>
                                 </div>
 

@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/components', 'components');
+Route::view('/components/icons', 'icons');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
@@ -37,7 +38,8 @@ Route::get('/find-training', [TrainingController::class, 'index'])->name('find-t
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
 Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
 Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
-Route::get('/scholarship-database', ScholarshipController::class)->name('scholarship-database');
+Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
+Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
 
 Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
 Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');
