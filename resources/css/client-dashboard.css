@@ -5386,54 +5386,51 @@ select.top-input-control {
   font-weight: 500 !important;
 }
 
-h4.light-weight p {
+.light-weight p {
   color: rgba(48, 55, 68, 0.80);
   text-align: center;
-
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 159.5%;
+  margin-bottom: 0px;
 }
-
-h4.light-weight:hover{
+.light-weight:hover{
   text-align: center;
 
   font-size: 12px !important;
   font-style: normal;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   border-radius: 42px  !important;
   background: rgba(0, 54, 227, 0.06) !important;
 }
 
-h4.light-weight.active{
+.light-weight.active{
   color: #0036E3 !important;
   text-align: center;
 
   font-size: 12px !important;
   font-style: normal;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   border-radius: 42px  !important;
 }
 
-h4.light-weight.active p{
+.light-weight.active p{
   color: #0036E3 !important;
   text-align: center;
-
   font-size: 12px !important;
   font-style: normal;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   border-radius: 42px  !important;
 }
 
-h4.light-weight:hover p{
+.light-weight:hover p{
   color: #0036E3 !important;
   text-align: center;
-
   font-size: 12px !important;
   font-style: normal;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   border-radius: 42px  !important;
+  margin-bottom:0px;
 }
 
 .right-sidebar .database-blog .database-contant {
@@ -5460,13 +5457,18 @@ h4.more-read-blog {
   text-align: center;
 }
 
-.more-read-blog p{
-  color:  #191D24;
-  text-align: center;
+.btn-add-more{
+  background: transparent;
+  border:none;
+}
 
+.more-read-blog p {
+  color: #191D24;
+  text-align: center;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
+  margin-bottom: 0px;
 }
 
 .btn-addexpert-cancel {
