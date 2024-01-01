@@ -1461,6 +1461,74 @@ top: 0 !important;
 .register-michael-6 .michael-6-btn ul li a:hover {background:#0036E3;color:#fff;}
 .register-michael-6 .michael-6-btn ul li {display: inline-block;margin-right: 8px;}
 
+
+
+
+  /* ==================================== Scholarship Single page  start ===================================== */
+
+  .edux-sidebar-layout {
+    display: grid;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    grid-template-columns: auto;
+}
+
+.btn-edux-wishlist.show {
+    background: #0036E3;
+}
+.btn-edux-wishlist.show svg path{
+    fill: #fff;
+}
+.edux-custom-table {
+    display: table;
+    width: auto;
+}
+
+
+.scholarship-database-content-list-item {
+    display: grid;
+    grid-template-columns: 72px auto 300px;
+    gap: 10px;
+    padding: 16px 0;
+    align-items: center;
+    border-bottom: 1px solid #E7E5EF;
+}
+  /* ==================================== Scholarship Single  page end ===================================== */
+  /* ==================================== Search empty  start  page ===================================== */
+  .edux-notification-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 389px;
+    margin: 0 auto;
+}
+.edux-notification-details img{
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.notification-details {
+    text-align: center;
+}
+
+.notification-details h5{
+    text-align: center;
+    font-size: 33px;
+    line-height: 105%;
+}
+
+.notification-details p{
+    font-size: 16px;
+}
+  /* ==================================== Search empty end  page ===================================== */
+
+
+
+
 .single-contest-top p {
     font-family: Colfax;
     font-size: 15px;

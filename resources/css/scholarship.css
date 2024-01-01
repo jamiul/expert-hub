@@ -89,3 +89,15 @@ gap: 8px;
     height: 16px;
   }
 
+
+  /* ==================================== Scholarship Single page ===================================== */
+
+  .edux-sidebar-layout {
+    display: grid;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+    grid-template-columns: auto;
+}
+  /* ==================================== Scholarship Single page ===================================== */
+

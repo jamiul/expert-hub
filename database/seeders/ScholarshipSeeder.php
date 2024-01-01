@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Scholarship\FundType;
+use App\Enums\Scholarship\StudentType;
+use App\Enums\Scholarship\StudyLevel;
 use App\Models\Country;
 use App\Models\Expertise;
 use App\Models\Scholarship;
@@ -29,12 +32,13 @@ class ScholarshipSeeder extends Seeder
         $universityLookup = University::pluck('id', 'name')->toArray();
         $countryLookup = Country::pluck('id', 'name')->toArray();
         foreach ($keyedData as $scholarship) {
+            $studentType = StudentType::tryFrom(trim($scholarship['student_type']));
             $scholarshipData = [
                 'title' => trim($scholarship['scholarships_title']),
                 'link' => trim($scholarship['scholarships_link']),
                 'university_id' => $universityLookup[trim($scholarship['university'])] ?? null,
                 'country_id' => $countryLookup[trim($scholarship['country'])] ?? null,
-                'student_type' => trim($scholarship['student_type']),
+                'student_type' => $studentType ? $studentType->value : null,
                 'automatic_consideration' => $scholarship['automatic_consideration']  == 'FALSE' ? 0 : 1,
                 'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('d-m-Y',$scholarship['deadline']),
             ];
@@ -42,19 +46,25 @@ class ScholarshipSeeder extends Seeder
             
             $studyLevelData = [];
             foreach(explode(',', $scholarship['study_level']) as $studyLevel){
-                $studyLevelData[] =[
-                    'scholarship_id' => $scholarship_id,
-                    'name' => trim($studyLevel),
-                ];
+                $studyLevel = StudyLevel::tryFrom(trim($studyLevel));
+                if($studyLevel){
+                    $studyLevelData[] = [
+                        'scholarship_id' => $scholarship_id,
+                        'name' => $studyLevel->value,
+                    ];
+                }
             }
             DB::table('scholarship_study_levels')->insert($studyLevelData);
 
             $scholarshipFundData = [];
             foreach(explode(',', $scholarship['fund_type']) as $scholarshipFund){
-                $scholarshipFundData[] =[
-                    'scholarship_id' => $scholarship_id,
-                    'name' => trim($scholarshipFund),
-                ];
+                $fundType = FundType::tryFrom(trim($scholarshipFund));
+                if($fundType){
+                    $scholarshipFundData[] = [
+                        'scholarship_id' => $scholarship_id,
+                        'name' => $fundType->value,
+                    ];
+                }
             }
             DB::table('scholarship_fund_types')->insert($scholarshipFundData);
 
