@@ -417,3 +417,33 @@
     z-index: 1;
     cursor: pointer;
 }
+ .edux-sidebar-layout {
+     display: grid;
+     border-radius: 7px;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
+     grid-template-columns: auto;
+ }
+
+ .btn-edux-wishlist.show {
+     background: #0036E3;
+ }
+
+ .btn-edux-wishlist.show svg path {
+     fill: #fff;
+ }
+
+ .edux-custom-table {
+     display: table;
+     width: auto;
+ }
+
+
+ .scholarship-database-content-list-item {
+     display: grid;
+     grid-template-columns: 72px auto 300px;
+     gap: 10px;
+     padding: 16px 0;
+     align-items: center;
+     border-bottom: 1px solid #E7E5EF;
+ }
