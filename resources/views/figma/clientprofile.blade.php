@@ -129,8 +129,97 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            im a content
+                        <div class="page-content">
+                            <div class="page-block">
+                                <div class="page-block-heading d-flex justify-content-between gap-3">
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <h3 class="h5">Biography</h3>
+                                        <button class="icon-btn icon-btn-sm border">
+                                            <x-icon.edit/>
+                                        </button>
+                                    </div>
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <p class="mb-0 fw-medium"> $200/hour</p>
+                                        <button class="icon-btn icon-btn-sm border">
+                                            <x-icon.edit/>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="user-biography-content">
+                                    Prof. Michael is an accomplished Curriculum Development Specialist with a
+                                    distinguished career in education and a track record of providing consultation
+                                    services. Holding a PhD in Curriculum and Instruction, Prof. Michael has dedicated
+                                    expertise in designing innovative curricula, enhancing student engagement, and
+                                    conducting research on educational best practices particularly in public health
+                                    education. With a background in curriculum coordination, consultation, and a strong
+                                    commitment to education, Prof. Michael has made significant contributions to the
+                                    field. <a href="#">More</a>
+                                </div>
+                            </div>
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                            <div class="d-flex gap-3 align-items-center">
+                                                <x-icon.briefcase/>
+                                                <h3 class="h5 mb-0">Services</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info/>
+                                                </button>
+                                            </div>
+
+                                            <div class="d-flex gap-3 align-items-center">
+
+                                                <button class="icon-btn icon-btn-sm border">
+                                                    <x-icon.edit/>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="service-edit-card">
+                                            <div>
+                                                <img
+                                                    src="{{ asset('/assets/frontend/default/img/expert_dashboard/book-exprt2.jpg') }}"/>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div>
+                                                        <h6 class="">Architecture history</h6>
+                                                        <p class="h6 mb-0">$120/1 hrs</p>
+                                                    </div>
+                                                    <div>
+                                                        <button class="icon-btn icon-btn-sm border">
+                                                            <x-icon.edit/>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <p>Prof. Jhon dowe offers consultation services to educational
+                                                    institutions,
+                                                    businesses and individuals seeking expertise in curriculum
+                                                    development.</p>
+                                                <ul class="button-list">
+                                                    <li class="button-list-item">
+                                                        Accreditation Documentation
+                                                    </li>
+                                                    <li class="button-list-item">
+                                                        Accreditation Process
+                                                    </li>
+
+                                                    <li class="button-list-item">
+                                                        Educational Expertise
+                                                    </li>
+                                                    <li class="button-list-item">
+                                                        Instructionḁl Design
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
