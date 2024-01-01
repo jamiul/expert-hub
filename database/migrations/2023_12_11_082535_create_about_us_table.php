@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->string('header_subtitle')->nullable();
+            $table->string('header_title')->nullable();
             $table->string('header_image')->nullable();
             $table->string('area_title')->nullable();
             $table->string('area_subtitle')->nullable();
@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('apart_title')->nullable();
             $table->longText('apart_subtitle')->nullable();
             $table->string('team_title')->nullable();
+            $table->string('team_subtitle')->nullable();
             $table->longText('team_description')->nullable();
             $table->text('team_list')->nullable();
             $table->string('story_title')->nullable();

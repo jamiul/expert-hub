@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\About;
 
 use App\Models\AboutUs;
 use Livewire\Component;
+use App\Enums\AboutUsEnum;
 use Livewire\WithFileUploads;
 
 class Mission extends Component
@@ -11,6 +12,7 @@ class Mission extends Component
     use WithFileUploads;
 
     public $missionAbout;
+    public $missionImageUrl = '';
     public $mission_title;
     public $mission_subtitle;
     public $mission_description;
@@ -18,11 +20,43 @@ class Mission extends Component
 
     public function rules()
     {
+        $requiredOrNull = $this->missionImageUrl == '' ? 'required' : 'nullable';
+
         return [
-            'mission_title' => ['required','string'],
-            'mission_subtitle' => ['required','string'],
-            'mission_description' => ['required','string'],
-            'mission_image' => ['required','image'],
+            'mission_title' => [
+                'required',
+                'string',
+                'min:' . AboutUsEnum::TitleMin->value,
+                'max:' . AboutUsEnum::TitleMax->value
+            ],
+            'mission_subtitle' => [
+                'required',
+                'string',
+                'min:' . AboutUsEnum::SubtitleMin->value,
+                'max:' . AboutUsEnum::SubtitleMax->value
+            ],
+            'mission_description' => [
+                'required',
+                'string',
+                'min:' . AboutUsEnum::DescriptionMin->value,
+                'max:' . AboutUsEnum::DescriptionMax->value
+            ],
+            'mission_image' => [
+                $requiredOrNull,
+                'image',
+                'max:' . AboutUsEnum::ImageSize->value,
+                'dimensions:min_width=530,min_height=600' // w:860 h:770
+            ],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'mission_title.required' => 'Please add title',
+            'mission_subtitle.required' => 'Please add subtitle',
+            'mission_description.required' => 'Please add description',
+            'mission_image.required' => 'Please add image',
         ];
     }
 
@@ -35,6 +69,7 @@ class Mission extends Component
         $this->mission_title = $this->missionAbout->mission_title;
         $this->mission_subtitle = $this->missionAbout->mission_subtitle;
         $this->mission_description = $this->missionAbout->mission_description;
+        $this->missionImageUrl = $this->missionAbout->getFirstMediaUrl('mission_image');
     }
 
     public function saveMission()
@@ -47,9 +82,15 @@ class Mission extends Component
             'mission_description' => $data['mission_description'],
         ]);
 
-        $this->missionAbout->addMedia($this->mission_image->getRealPath())
+        if (!is_null($this->mission_image)) {
+            $this->missionAbout->clearMediaCollection('mission_image');
+
+            $this->missionAbout->addMedia($this->mission_image->getRealPath())
             ->usingName($this->mission_image->getClientOriginalName())
             ->toMediaCollection('mission_image');
+        }
+
+        session()->flash('success', 'Mission successfully updated.');
 
         return redirect()->to('/admin/about-us');
     }

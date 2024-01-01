@@ -1,0 +1,28 @@
+
+Todo:
+  - [ABOUT-US]:
+  -[My Work]:
+    ✔ Single validation header image. @today
+    ✔ *Crop* header image after upload. @low
+    ✔ Use _DTO_ frontend about us. @high
+    ✔ Complete search functionality. @critical
+    ✔ fetch expert from profiles `table`.
+  [FRONTEND]:
+    ✔ Aparts can not create more than 6. @today
+
+  NEW:
+    ✔ if Instructor added to the experts list then remove from the list.
+    - make sure all fields should be required.
+    ✔ user can not add more than 8 items.
+    ✔ Show expertise from profile.
+    ✔ show apart message.
+    ✔ filter by university.
+    - query university, rating.
+    - Complete mission part.
+
+  LOGS:
+    - University Name => no data.
+    - Country Name => always same.
+    - Rating => no data.
+
+

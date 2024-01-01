@@ -11,27 +11,18 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add details insert</h1>
                     <form wire:submit.prevent="storeApartDetails">
                         <div class="my-2">
-                            <input type="text" class="form-control academic-title" id="recipient-name"
-                                placeholder="title" wire:model="set_title">
-                            @error('set_title')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-form.input type="text" label="Title" wire:model="set_title"
+                            placeholder="Add title here" />
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control academic-text" id="message-text" placeholder="Add description" wire:model="description"></textarea>
-                            @error('description')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-form.textarea label="Description" wire:model="description" placeholder="Description"/>
                         </div>
                         <div class="mb-3">
-                            <select class="form-select" aria-label="Default select example" wire:model="type">
+                            <x-form.select label="Title" wire:model="type">
                                 <option selected>Select type</option>
-                                <option value="client">Client</option>
-                                <option value="expert">Expert</option>
-                            </select>
-                            @error('type')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                                <option value="{{ App\Enums\ProfileType::Client->value }}">Client</option>
+                                <option value="{{ App\Enums\ProfileType::Expert->value }}">Expert</option>
+                            </x-form.select>
                         </div>
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="iconFile">Add Icon</label>
@@ -65,27 +56,18 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Update details</h1>
                     <form>
                         <div class="my-2">
-                            <input type="text" class="form-control academic-title" id="recipient-name"
-                                placeholder="title" wire:model="set_title">
-                            @error('set_title')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-form.input type="text" label="Title" wire:model="set_title"
+                            placeholder="Add title here" />
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control academic-text" id="message-text" placeholder="Add description" wire:model="description"></textarea>
-                            @error('description')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-form.textarea label="Description" wire:model="description" placeholder="Description"/>
                         </div>
                         <div class="mb-3">
-                            <select class="form-select" aria-label="Default select example" wire:model="type">
+                            <x-form.select label="Title" wire:model="type">
                                 <option selected>Select type</option>
-                                <option value="client">Client</option>
-                                <option value="expert">Expert</option>
-                            </select>
-                            @error('type')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                                <option value="{{ App\Enums\ProfileType::Client->value }}">Client</option>
+                                <option value="{{ App\Enums\ProfileType::Expert->value }}">Expert</option>
+                            </x-form.select>
                         </div>
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="iconFile">Add Icon</label>

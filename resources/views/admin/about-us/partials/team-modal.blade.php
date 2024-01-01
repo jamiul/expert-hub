@@ -1,4 +1,5 @@
-<div wire:ignore.self class="modal fade" id="instructorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog add-expert-modal">
         <div class="modal-content add-expert-content">
             <div class="modal-header border-0"> <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -9,32 +10,35 @@
                     <div class="admin-text-search position-relative">
                         <x-form.search label="" wire:model.live.debounce.500ms="search" placeholder="Filter by experts.."/>
                     </div>
-                    @if (count($instructors) > 0)
-                        @foreach ($instructors as $instructor)
+                    @if (count($experts) > 0)
+                        @foreach ($experts as $expert)
+                        {{-- @dd($expert); --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
                                         <div class="database-block database-blog">
                                             <div class="database-contant">
                                                 <div class="database-img">
-                                                    <img src="{{ $instructor->getFirstMediaUrl('picture') }}">
-                                                </div>
+                                                    <img src="{{ $expert->getFirstMediaUrl('picture') }}"> </div>
                                                 <div class="database-text admin-text">
-                                                    <h4> <a href="#">{{ $instructor->user->full_name }}</a> </h4>
-                                                    <span>{{ $instructor->expertField ? $instructor->expertField->name : '' }}</span>
+                                                    <h4>
+                                                        <a href="#">{{ $expert->user->full_name }}</a>
+                                                    </h4>
+                                                    <span>{{ $expert->expertField ? $expert->expertField->name : '' }}</span>
                                                     <span>University of Sydney</span>
-                                                    <span>{{ $instructor->user->country->name }}</span>
-                                                    <div class="review rating-area consultant-reviw modal-consultant-review">
+                                                    <span>{{ $expert->user->country->name }}</span>
+                                                    <div
+                                                        class="review rating-area consultant-reviw modal-consultant-review">
                                                         <ul class="all-project-rating">
                                                             <li> <strong>$200</strong> / hr </li>
                                                             <li>
                                                                 <a href="#">
-                                                                    <x-icon.star fill="#E9B911"/>
+                                                                    <x-icon.star />
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a href="#">
-                                                                    <x-icon.star fill="#E9B911" />
+                                                                    <x-icon.star />
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -60,9 +64,11 @@
                                                                     data-bs-target="#carouselExampleIndicators"
                                                                     data-bs-slide-to="2" aria-label="Slide 3">
                                                                     <h4 class="light-weight active">
-                                                                        <p> <img src="{{ asset('assets/frontend/img/admin/activelight.png') }}"
-                                                                                alt=""> </p>
-                                                                        <p> keynote speaker</p>
+                                                                        <p>
+                                                                            <img src="{{ asset('assets/frontend/img/admin/activelight.png') }}"
+                                                                                alt="">
+                                                                        </p>
+                                                                        <p>keynote speaker</p>
                                                                     </h4>
                                                                 </button> <button type="button"
                                                                     data-bs-target="#carouselExampleIndicators"
@@ -82,13 +88,15 @@
                                                                     <h4 class="light-weight">
                                                                         <p>Educational</p>
                                                                     </h4>
-                                                                </button> <button type="button"
+                                                                </button>
+                                                                <button type="button"
                                                                     data-bs-target="#carouselExampleIndicators"
                                                                     data-bs-slide-to="2" aria-label="Slide 6">
                                                                     <h4 class="more-read more-read-blog">
                                                                         <p>+12 More</p>
                                                                     </h4>
-                                                                </button> </div>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -97,7 +105,8 @@
                                     </div>
                                 </div>
                                 <div class="post-job add-expert-post position-absolute">
-                                    <button class="btn btn-postjob d-flex justify-content-center align-items-center" wire:click="addExpert({{ $instructor->id }})">
+                                    <button class="btn btn-postjob d-flex justify-content-center align-items-center"
+                                        wire:click="addTeam({{ $expert->id }})">
                                         <span class="material-symbols-outlined">add</span>
                                         <span>Add expert</span>
                                     </button>
@@ -105,11 +114,11 @@
                             </div>
                         @endforeach
                     @endif
-
                 </div>
             </div>
-            <div class="modal-footer border-0 pt-0"> <button type="button"
-                    class="btn btn-secondary btn-addexpert-cancel" data-bs-dismiss="modal">Cancel</button> </div>
+            <div class="modal-footer border-0 pt-0">
+                <button type="button" class="btn btn-secondary btn-addexpert-cancel" data-bs-dismiss="modal">Cancel</button>
+            </div>
         </div>
     </div>
 </div>
