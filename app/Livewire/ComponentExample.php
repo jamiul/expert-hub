@@ -13,7 +13,6 @@ class ComponentExample extends Component
     public $email = '';
     public $countries = [];
     public $selectedCountries = [];
-    public $iconComponentFileNames = [];
 
     public function selectCountry($name)
     {
@@ -28,10 +27,6 @@ class ComponentExample extends Component
 
     public function mount()
     {
-        $iconComponentFiles = File::files(resource_path('views/components/icon'));
-        foreach($iconComponentFiles as $file){
-            $this->iconComponentFileNames[] = 'icon.' . Str::before($file->getFileName(), '.blade.php');
-        }
         $this->countries = Country::all();
     }
     public function render()

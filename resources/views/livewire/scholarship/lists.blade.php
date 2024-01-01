@@ -76,7 +76,7 @@
                         <div class="td">Scholarship Website</div>
                         <div class="td">
                             @if($scholarship->link)
-                            <a class="text-decoration-underline" href="{{ $scholarship->link }}">Click Here</a>
+                            <a target="_blank" class="text-decoration-underline" href="{{ $scholarship->link }}">Click Here</a>
                             @endif
                         </div>
                     </div>

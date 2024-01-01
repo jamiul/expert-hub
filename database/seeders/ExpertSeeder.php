@@ -15,7 +15,7 @@ class ExpertSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)
+        User::factory(100)
             ->has(
                 Profile::factory()
                 ->hasAttached(Expertise::skill()->isChild()->limit(5)->get())
