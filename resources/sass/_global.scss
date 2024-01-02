@@ -30,7 +30,7 @@ body {
     font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .text-heading {
     color: $edu-headings-color;
 }
 
@@ -303,12 +303,21 @@ img {
     border: 0;
     padding: 0;
 
+    &.icon-btn-md {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+        svg {
+
+        }
+    }
+
     &.icon-btn-sm {
         width: 24px;
         height: 24px;
         padding: 3px;
         svg {
-            //width: 22px;
+
         }
     }
 

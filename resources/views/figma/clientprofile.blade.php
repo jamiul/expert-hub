@@ -14,7 +14,7 @@
                                 <div class="user-profile-info">
                                     <h3 class="h6">Michael Kassiou</h3>
                                     <p class="text-primary d-inline-flex align-items-center gap-3">Public Health
-                                        <button class="icon-btn icon-btn-sm border-1 border-gray-100">
+                                        <button class="icon-btn icon-btn-md border-1 border-gray-100">
                                             <x-icon.edit/>
                                         </button>
                                     </p>
@@ -38,89 +38,72 @@
                                         </svg>
                                         <span> 10.15am AEST</span>
                                     </p>
+                                    <div class="my-4 complete-profile-status-edit-widget">
+                                        <p class="text-sm d-flex align-items-center mb-1 gap-3">Complete your profile
+                                            <button class="icon-btn icon-btn-md">
+                                                <x-icon.edit/>
+                                            </button>
+                                        </p>
+                                        <div progress-status="40%" class="complete-profile-status-progress-bar"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="profile-edit-widget user-language-edit-widget">
-                                <h4 class="widget-title">Languages
-                                    <button class="icon-btn icon-btn-sm">
-                                        <x-icon.edit/>
-                                    </button>
-                                </h4>
-                                <ul>
-                                    <li>
-                                        <x-icon.globe/>
-                                        <span>Proficient in English</span>
-                                        <span class="ms-auto d-inline-flex gap-2">
-                                             <button class="icon-btn icon-btn-sm"> <x-icon.edit/> </button>
-                                             <button class="icon-btn icon-btn-sm"> <x-icon.delete/> </button>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="profile-edit-widget  user-skills-edit-widget">
-                                <h4 class="widget-title">
-                                    Skillsets
-                                    <span class="ms-auto d-inline-flex gap-2">
-                                         <button class="icon-btn icon-btn-sm"> <x-icon.add/> </button>
-                                        <button class="icon-btn icon-btn-sm"> <x-icon.edit/> </button>
 
-                                   </span>
-                                </h4>
-                                <ul>
-                                    <li>Public Health</li>
-                                    <li>Infectious Diseases</li>
-                                    <li>Curriculum Development</li>
-                                    <li>Educational Assessment</li>
-                                </ul>
                             </div>
+
                             <div class="profile-edit-widget user-education-edit-widget">
                                 <h4 class="widget-title">Education
-                                    <button class="icon-btn icon-btn-sm">
+                                    <button class="icon-btn icon-btn-md" data-bs-toggle="modal"
+                                            data-bs-target="#addEducation">
                                         <x-icon.add/>
                                     </button>
                                 </h4>
                                 <div class="widget-content">
                                     <div class="user-education-box-item">
                                         <div>
-                                            <p class="text-sm fw-medium my-1">PhD in Public Health</p>
-                                            <p class="text-sm fst-italic mb-1">EduExHub University</p>
+                                            <p class="text-sm fw-medium mt-1 mb-0">Doctor of Philosophy</p>
+                                            <p class="text-sm mb-0">Public Health</p>
+                                            <p class="text-sm fst-italic mb-0">EduExHub University</p>
                                             <p class="text-sm fw-medium mb-1">1995 - 2000</p>
                                         </div>
                                         <div class="ms-auto">
-                                            <button class="icon-btn icon-btn-sm">
+                                            <button class="icon-btn icon-btn-md">
                                                 <x-icon.edit/>
                                             </button>
-                                            <button class="icon-btn icon-btn-sm">
+                                            <button class="icon-btn icon-btn-md" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteEducation">
                                                 <x-icon.delete/>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="user-education-box-item">
                                         <div>
-                                            <p class="text-sm fw-medium my-1">PhD in Public Health</p>
-                                            <p class="text-sm fst-italic mb-1">EduExHub University</p>
-                                            <p class="text-sm fw-medium mb-1">1995 - 2000</p>
+                                            <p class="text-sm fw-medium mt-1 mb-0">Master’s</p>
+                                            <p class="text-sm mb-0">Public Health</p>
+                                            <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                            <p class="text-sm fw-medium mb-1">1993 -1995</p>
                                         </div>
                                         <div class="ms-auto">
-                                            <button class="icon-btn icon-btn-sm">
+                                            <button class="icon-btn icon-btn-md">
                                                 <x-icon.edit/>
                                             </button>
-                                            <button class="icon-btn icon-btn-sm">
+                                            <button class="icon-btn icon-btn-md" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteEducation">
                                                 <x-icon.delete/>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="user-education-box-item mb-0">
                                         <div>
-                                            <p class="text-sm fw-medium my-1">PhD in Public Health</p>
-                                            <p class="text-sm fst-italic mb-1">EduExHub University</p>
-                                            <p class="text-sm fw-medium mb-1">1995 - 2000</p>
+                                            <p class="text-sm fw-medium mt-1 mb-0">Bachelor</p>
+                                            <p class="text-sm mb-0">Public Health</p>
+                                            <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                            <p class="text-sm fw-medium mb-1">1989 - 1993</p>
                                         </div>
                                         <div class="ms-auto">
-                                            <button class="icon-btn icon-btn-sm">
+                                            <button class="icon-btn icon-btn-md">
                                                 <x-icon.edit/>
                                             </button>
-                                            <button class="icon-btn icon-btn-sm">
+                                            <button class="icon-btn icon-btn-md">
                                                 <x-icon.delete/>
                                             </button>
                                         </div>
@@ -131,99 +114,293 @@
                         </div>
                         <div class="page-content">
                             <div class="page-block">
-                                <div class="page-block-heading d-flex justify-content-between gap-3">
-                                    <div class="d-flex gap-3 align-items-center">
-                                        <h3 class="h5">Biography</h3>
-                                        <button class="icon-btn icon-btn-sm border">
-                                            <x-icon.edit/>
-                                        </button>
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.user-tie/>
+                                                <h3 class="h5 mb-0">Biography</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
+
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addWorkExperience">
+                                                <x-icon.edit/>
+                                            </button>
+                                        </div>
+                                        <div class="mb-2">
+                                            <form action="">
+                                                <x-form.textarea label="" wire:model="bio" placeholder="Bio"/>
+                                                <div>
+                                                    <button class="btn btn-md px-5 btn-primary">Save</button>
+                                                    <button class="btn btn-md px-5 btn-outline-gray">Cancel</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                        <div class="my-2">
+                                            <p>Prof. Michael is an accomplished Curriculum Development Specialist with a
+                                                distinguished career in education and a track record of providing
+                                                consultation services. Holding a PhD in Curriculum and Instruction,
+                                                Prof. Michael has dedicated expertise in designing innovative curricula,
+                                                enhancing student engagement, and conducting research on educational
+                                                best practices particularly in public health education. With a
+                                                background in curriculum coordination, consultation, and a strong
+                                                commitment to education, Prof. Michael has made significant
+                                                contributions to the field. More</p>
+                                        </div>
+
                                     </div>
 
-                                    <div class="d-flex gap-3 align-items-center">
-                                        <p class="mb-0 fw-medium"> $200/hour</p>
-                                        <button class="icon-btn icon-btn-sm border">
-                                            <x-icon.edit/>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="user-biography-content">
-                                    Prof. Michael is an accomplished Curriculum Development Specialist with a
-                                    distinguished career in education and a track record of providing consultation
-                                    services. Holding a PhD in Curriculum and Instruction, Prof. Michael has dedicated
-                                    expertise in designing innovative curricula, enhancing student engagement, and
-                                    conducting research on educational best practices particularly in public health
-                                    education. With a background in curriculum coordination, consultation, and a strong
-                                    commitment to education, Prof. Michael has made significant contributions to the
-                                    field. <a href="#">More</a>
                                 </div>
                             </div>
                             <div class="page-block mt-40">
                                 <div class="card card-24">
                                     <div class="card-body">
                                         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
-                                            <div class="d-flex gap-3 align-items-center">
-                                                <x-icon.briefcase/>
-                                                <h3 class="h5 mb-0">Services</h3>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.user-tie/>
+                                                <h3 class="h5 mb-0">Work Experience</h3>
                                                 <button class="icon-btn">
-                                                    <x-icon.info/>
+                                                    <x-icon.info fill="#C8C5D4"/>
                                                 </button>
                                             </div>
 
-                                            <div class="d-flex gap-3 align-items-center">
-
-                                                <button class="icon-btn icon-btn-sm border">
-                                                    <x-icon.edit/>
-                                                </button>
-                                            </div>
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addWorkExperience">
+                                                <x-icon.edit/>
+                                            </button>
                                         </div>
 
-                                        <div class="service-edit-card">
-                                            <div>
-                                                <img
-                                                    src="{{ asset('/assets/frontend/default/img/expert_dashboard/book-exprt2.jpg') }}"/>
-                                            </div>
-                                            <div>
+                                        <div class="card card-24">
+                                            <div class="card-body">
                                                 <div class="d-flex gap-3 justify-content-sm-between">
                                                     <div>
-                                                        <h6 class="">Architecture history</h6>
-                                                        <p class="h6 mb-0">$120/1 hrs</p>
+                                                        <h6 class="">Director of Curriculum Development</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>Mar 2015 - Mar 2020</strong>
+                                                        </p>
                                                     </div>
                                                     <div>
-                                                        <button class="icon-btn icon-btn-sm border">
+                                                        <button class="icon-btn icon-btn-md border">
                                                             <x-icon.edit/>
+                                                        </button>
+                                                        <button class="icon-btn icon-btn-md border"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteWorkExperience">
+                                                            <x-icon.delete/>
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <p>Prof. Jhon dowe offers consultation services to educational
-                                                    institutions,
-                                                    businesses and individuals seeking expertise in curriculum
-                                                    development.</p>
-                                                <ul class="button-list">
-                                                    <li class="button-list-item">
-                                                        Accreditation Documentation
-                                                    </li>
-                                                    <li class="button-list-item">
-                                                        Accreditation Process
-                                                    </li>
-
-                                                    <li class="button-list-item">
-                                                        Educational Expertise
-                                                    </li>
-                                                    <li class="button-list-item">
-                                                        Instructionḁl Design
-                                                    </li>
-                                                </ul>
+                                                <p>As a Director of Curriculum Development at the Public Health
+                                                    Institute of Sydney, I have played a pivotal
+                                                    role in shaping the education landscape. My responsibilities include
+                                                    ... More</p>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading mb-3">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.quote-right/>
+                                                <h3 class="h5 mb-0">Reviews & Rating</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
 
+                                        </div>
+
+                                        <div class="card border-0 border-bottom rounded-0">
+                                            <div class="card-body px-0">
+                                                <div class="">
+                                                    <p class="fst-italic">Prof. Michael Kassiou played a pivotal role in
+                                                        the development of
+                                                        our university curriculum. His expertise, creativity, and
+                                                        dedication to ensuring our program met the highest standards
+                                                        were truly outstanding. We are grateful for his contributions
+                                                        and highly recommend his services to any educational
+                                                        institution.</p>
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center">
+                                                    <div class="">
+                                                        <img
+                                                            src="<?php echo e(asset('assets/frontend/img/chat-avatar.png')); ?>">
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-0 fw-medium">Dr. Danial</p>
+                                                        <p class="text-sm mb-0">Dean | School of Business | EduEx
+                                                            University </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Modal : Add Education-->
+    <div class="modal fade" id="addEducation" tabindex="-1" aria-labelledby="addEducationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Education</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 pt-2">
+                    <form action="">
+                        <x-form.input type="text" readonly label="Name of Institution" name="type"
+                                      placeholder="Type institution name" value=""/>
+                        <x-form.input type="text" readonly label="Degree" name="type" placeholder="Ex: Bachelor"
+                                      value=""/>
+                        <x-form.select label="Field of Study" name="title">
+                            <option value="">Select</option>
+                            <option value="Mr">Public Health</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Prof">Prof</option>
+                        </x-form.select>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <x-form.select label="Start Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                            <div class="col-md-6">
+                                <x-form.select label="End Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                        </div>
+                        <x-form.check name="terms">
+                            I currently study here
+                        </x-form.check>
+                    </form>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Delete Education-->
+    <div class="modal fade" id="deleteEducation" tabindex="-1" aria-labelledby="deleteEducationLabel"
+         aria-hidden="true">
+        <div class="modal-dialog flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Education</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 py-2">
+                    <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Add Work Experience-->
+    <div class="modal fade" id="addWorkExperience" tabindex="-1" aria-labelledby="addWorkExperienceLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Work Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 pt-2">
+                    <form action="">
+                        <x-form.input type="text" readonly label="Job Title" name="type"
+                                      placeholder="Type Here" value=""/>
+                        <x-form.input type="text" readonly label="Institute" name="type" placeholder="Type"
+                                      value=""/>
+                        <x-form.input type="text" readonly label="Address" name="type" placeholder="Type"
+                                      value=""/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <x-form.select label="Start Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                            <div class="col-md-6">
+                                <x-form.select label="End Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                        </div>
+                        <x-form.textarea label="Description" name="bio" placeholder="Type"/>
+                        <x-form.check name="terms">
+                            I currently work here
+                        </x-form.check>
+                    </form>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+    <!-- Modal : Delete Work Experience-->
+    <div class="modal fade" id="deleteWorkExperience" tabindex="-1" aria-labelledby="deleteWorkExperienceLabel"
+         aria-hidden="true">
+        <div class="modal-dialog flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Work Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 py-2">
+                    <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+
+
 @endsection
