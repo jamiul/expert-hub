@@ -1,39 +1,35 @@
+/*
+Project Name: Eduxhub
+Author: Rabiul
+Description:
+Version: 1.0
+Main Font :Colfix
+------------------------------------------
+Table of contents
+  1.0 : Client Dashboard Header start Here
+  2.0 : Messenger setting
+  3.0 : Menu design
+  4.0 : Main Dashboard
+  5.0 Draft and edit Modal start here
+  6.0 contact start here
+  7.0  Table History
+  8.0 Pagination  start
+  9.0 All Contact
+  10.0 Add Payment
+  11.0  Form validation
+  12.0 Admin dashboard
+  13.0 Expert Login
+  14.0 Notification alert
+  15.0 Client Chatbox
+  16.0 Scroll bar
+  17.0 Scholarship Page
+  18.0 Responsive Design Start
+*/
+
+
+
+
 /**** ================================== Client Dashboard Start Here ===================================***/
-
-/*:root {*/
-/*  --color-heading-color: #191D24;*/
-/*  --color-heading: #303744;*/
-/*  --primary: #0036E3;*/
-/*  --success: #369450;*/
-/*  --white: #ffffff;*/
-/*  --heading-color: #303744;*/
-/*  --dark: #191D24;*/
-/*  --border-color: rgba(14, 0, 98, 0.10);*/
-/*  --white: #ffffff;*/
-/*  --bs-border-color: #E7E5EF;*/
-/*  --color-theme-color-2:#0036E3;*/
-/*  --color-border-color-solid: #E7E5EF;*/
-/*  --color-red: #C00000;*/
-/*  --color-yellow: #E9B911;*/
-/*  --colfax:Colfax;*/
-/*}*/
-
-/*body{*/
-/*  font-family: Colfax;*/
-/*}*/
-
-/*h1, h2, h3, h4, h5, h6, p, ul, ol{*/
-/*  margin-bottom: 0px;*/
-/*}*/
-
-/*a{*/
-/*  text-decoration: none;*/
-/*}*/
-/*li{*/
-/*  list-style: none;*/
-/*}*/
-
-
 
 .form-select, select.form-control:focus {
   border-color: #86b7fe;
@@ -43,7 +39,6 @@
   border: 2px solid rgba(14, 0, 98, 0.15);
 }
 
-/* ================ Header start Here =========== */
 header.client-header {
   margin-top: 0px;
   display: flex;
@@ -264,7 +259,7 @@ p.btn-details {
   font-weight: 500;
 }
 
-/* ========================== Messenger setting start here ============== */
+/* ========================== Messenger setting End here ============== */
 
 span.m-top-arrow {
   position: absolute !important;
@@ -934,11 +929,6 @@ button.owl-next span {
   margin: 0 auto;
 }
 
-/* .discover-carousel .owl-item {
-  width: 291px !important;
-  margin-right: 32px !important;
-  box-shadow: 8px 8px 32px 0px #0E006214;
-} */
 
 /* === owl theme design end === */
 
@@ -1031,10 +1021,6 @@ section.team-area {
   height: 65px;
 }
 
-
-
-
-
 .person-details h3 {
   font-family: Colfax;
   font-size: 14px;
@@ -1066,7 +1052,6 @@ section.team-area {
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
-  /* text-transform: uppercase; */
   color: #0036E3;
 
 }
@@ -1130,6 +1115,7 @@ section.team-area {
 }
 
 /* ================ Main Dashboard End  Here =========== */
+
 .single-team-member-row {
   display: flex;
   flex-direction: row;
@@ -1902,8 +1888,6 @@ margin: 40px 0px 16px;
   gap: 24px;
 }
 
-
-
 .overlay{
 position: absolute;
 top: 0;
@@ -2103,10 +2087,6 @@ span.currency-edit {
   align-items: center;
 }
 
-/* .justify-content-between {
-  min-width: 590px;
-  align-items: center;
-} */
 
 span.text-count{
   right: 10px;
@@ -2164,7 +2144,7 @@ button.btn-update{
   border-bottom: 1px solid #E7E5EF;;
 }
 
-/* *** single contact hours  start*** */
+/* *** ===================================  contact start here  ==============================*** */
 
 .single-contact-hours-title{
   border-top: 1px solid  #E7E5EF;
@@ -2347,7 +2327,6 @@ span.suggest-skill{
   box-shadow: 2px 2px 13px 0px #0E00620A;
   background-color: #0036E3 !important;
   color: #fff;
-  /* fill:#0036E3 !important; */
 }
 
 
@@ -2470,7 +2449,6 @@ span.hourly-color {
   letter-spacing: 0em;
   text-align: left;
   color:#191D24;
-  ;
 
 }
 
@@ -2519,8 +2497,6 @@ p.short-by-date {
   color: #303744;
 }
 
-/*  =================== Table History start================== */
-
 .transaction-all  thead th {
   border-top: 1px solid #E7E5EF;
   border-bottom: 1px solid  #E7E5EF;
@@ -2530,7 +2506,6 @@ p.short-by-date {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  /* min-height: 51px; */
   padding: 13px 8px;
 }
 
@@ -2565,7 +2540,6 @@ p.short-by-date {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  /* padding: 19px 8px; */
 }
 
 .check-box-option {
@@ -2587,7 +2561,6 @@ p.short-by-date {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  /* padding: 19px 8px; */
 }
 
 .budget-single {
@@ -2608,8 +2581,7 @@ td.balance-text {
 }
 
 span.discord-reason {
-  color: var(--color-red-2, #F00);
-
+  color:  #F00;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2706,12 +2678,11 @@ li.page-item.active a {
   line-height: 22px;
   color:#191D24;
 
-
 }
-
-
 /* ============== Pagination  start here ============ */
-/* ============== All Contact   start here ============ */
+
+
+/* ============== All Contact start here ============ */
 
 .all-contact-profile-policy{
   padding: 32px 28px;
@@ -2904,8 +2875,6 @@ button.action-milestone-btn {
   line-height: 32px;
   color: #191D24;
 }
-
-
 
 .payment-txt p{
   font-family: Colfax;
@@ -3410,35 +3379,6 @@ font-weight: 500;
 
 }
 
-/*input[type=checkbox] {*/
-/*  width: 20px;*/
-/*  height: 20px;*/
-/*}*/
-
-/*input[type=checkbox]:checked+label::before {*/
-/*  content: "";*/
-/*  display: block;*/
-/*  position: absolute;*/
-/*  text-align: center;*/
-/*  height: 20px;*/
-/*  width: 20px;*/
-/*  left: 0;*/
-/*  top: 5px;*/
-/*  background-color: #369450;*/
-/*  font-family: "Montserrat";*/
-/*  border-radius: 2px;*/
-/*  border: 1px solid rgb(150 150 150 / 30%);*/
-
-/*}*/
-
-/*input[type=checkbox]:checked+label::after {*/
-/*  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');*/
-/*  display: block;*/
-/*  position: absolute;*/
-/*  left: 3px;*/
-/*  top: 5px;*/
-/*}*/
-
 .form-check-input:focus {
   border-color: #86b7fe;
   outline: 0;
@@ -3514,15 +3454,11 @@ font-weight: 500;
 .input-control .error {
   color: #ff3860;
   font-size: 9px;
-  /* height: 13px; */
 }
 /* ============== Form validation ============ */
 
 
 /*  ========================= Admin dashboard  start here ================================================ */
-
-
-
 
 .admin-tab-nav-area {
     background-color: #F0F1F7;
@@ -3538,14 +3474,10 @@ font-weight: 500;
 }
 
 .admin-dashboard-area {
-  /* border: 1px solid rgba(14, 0, 98, 0.1) !important;
-  box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1); */
   border-radius: 8px;
   border: 1px;
   border-radius: 8px;
   background: #FFF;
-  /* border: 1px solid #E7E5EF; */
-  /* margin-bottom: 24px; */
 }
 
 .search-by-admin {
@@ -3819,9 +3751,6 @@ span.admin-currency{
   border-bottom: 1px solid var(--color-border-color, rgba(14, 0, 98, 0.10));
 }
 
-
-
-
 .policy-price .consultant-reviw ul {
   padding-left: 0px;
 }
@@ -3998,7 +3927,6 @@ span.hourly-screw{
   border: 1px;
   border-radius: 8px;
   background: #FFF;
-  /* border: 1px solid #E7E5EF; */
   margin: 24px 0px;
 }
 
@@ -4024,7 +3952,6 @@ span.hourly-screw{
 .top-nav-area-admin{
   display: flex;
   align-items: center;
-  /* justify-content: flex-start; */
   gap: 63px;
 }
 
@@ -4255,8 +4182,8 @@ a.eye-off{
 /*  ========================= Expert Login End here ================================================ */
 
 
-/**** ============================================== Client Dashboard End Here ================================= ***/
-/**** ============================================== Registration  Modal start Here  ================================= ***/
+/*  ========================= Client Dashboard End Here ================================================ */
+/*  ========================= Registration  Modal start Here ================================================ */
 
 .modal-registraion-content {
   padding: 30px;
@@ -4425,8 +4352,7 @@ input.registration-check[type=checkbox]:checked+label::before {
   padding-top: 0px;
 }
 
-/**** ============================================== Registration  Modal End Here  ================================= ***/
-/**** ============================================== Checkout Payment start Here  ================================= ***/
+
 
 .checkout-billing-content {
   max-width: 608px;
@@ -4682,8 +4608,7 @@ span.checkout-about, span.checkout-extend {
   max-height: 256px;
   margin-left: 16px;
 }
-/**** ============================================== Checkout Payment End Here  ================================= ***/
-/**** ============================================== Frontend Dashboard stat here  ================================= ***/
+
 
 .frontend-dashboard-area {
   border: 1px solid rgba(14, 0, 98, 0.1) !important;
@@ -4714,12 +4639,7 @@ span.checkout-about, span.checkout-extend {
   font-style: normal;
   font-weight: 600;
 }
-/**** ============================================== Frontend Dashboard end here  ================================= ***/
 
-
-
-
-/**** ============================================== Frontend Dashboard stat here  ================================= ***/
 .academic-bar {
     margin-bottom: 12px;
 }
@@ -5001,7 +4921,7 @@ h3.seller-title {
 
 label.level-subtitle {
   top: -11px;
-  color: var(--color-heading, #303744);
+  color: #303744;
   font-family: Colfax;
   font-size: 14px;
   font-style: normal;
@@ -5013,7 +4933,7 @@ label.level-subtitle {
 
 label.level-title {
   top: -11px;
-  color: var(--color-heading, #303744);
+  color: #303744;
   font-family: Colfax;
   font-size: 14px;
   font-style: normal;
@@ -5023,7 +4943,6 @@ label.level-title {
   background: #fff;
 }
 label.admin-text-area-level{
-  /* position: absolute; */
   color: #303744 !important;
   font-family: Colfax;
   font-size: 14px;
@@ -5236,9 +5155,6 @@ span.require-count{
   box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
   display: flex;
   flex-direction: column;
-  /* min-height:943px; */
-
-
 }
 
 
@@ -5250,9 +5166,6 @@ span.require-count{
   box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
   display: flex;
   flex-direction: column;
-
-
-
 }
 
 
@@ -5261,8 +5174,6 @@ span.require-count{
   min-width: 913px;
   display: flex;
   flex-direction: column;
-  /* min-height:943px; */
-
 }
 
 
@@ -5552,7 +5463,6 @@ label.basic-file-upload {
 span.edux-word-count {
   color: rgba(48, 55, 68, 0.70);
   text-align: right;
-  font-family: var(--colfax);
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -5580,8 +5490,6 @@ span.blog-upload {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  /* line-height: 137%; */
-  /* background: rgba(0, 0, 0, 0.60); */
   border-radius: 4px;
   background:  #EBEFF7;
   padding: 0px 5px;
@@ -5730,7 +5638,6 @@ p.p-rote {
 
   .dataset-title h4 a{
     color: #191D24;
-
     font-size: 19px;
     font-style: normal;
     font-weight: 600;
@@ -5769,22 +5676,16 @@ p.p-rote {
   margin: 5px 0 10px !important;
 }
 
-
-
-
 select.top-input-control{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: 2px solid rgba(48, 55, 68, 0.15);
   color: rgba(48, 55, 68, 0.70);
-
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-
   border-radius: 8px;
-
   outline: none;
   box-shadow: 0 0 20px rgba(20,20,30,0.25);
 }
@@ -5794,8 +5695,6 @@ select.top-input-control::-ms-expand{
 select.top-input-control:hover{
   border: 2px solid rgba(48, 55, 68, 0.15);
 }
-
-
 
 select.form-select.top-input-control option{
   border-radius: 50px !important;
@@ -5812,12 +5711,10 @@ select.form-select.top-input-control option{
 
 select.top-input-control option::hover{
   background-color: #191D24;
-
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   color:  #0036E3;
-
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5838,9 +5735,6 @@ select.top-input-control option::hover{
     height: 62px !important;
 }
 
-/**** ============================================== Frontend Dashboard end here  ================================= ***/
-
-/**** ============================================== Super Admin Payment start Here ================================= ***/
 .dropdown-comments {
   border-radius: 8px;
   background: #FFF;
@@ -5882,7 +5776,6 @@ h5.comment-title-dispute {
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  /* margin-bottom: 10px; */
   line-height: 10px;
 }
 
@@ -5918,8 +5811,6 @@ h5.comment-title-dispute {
   border-bottom: 1px solid var(--color-border-color-solid);
 }
 
-/**** ============================================== Super Admin Payment end Here ================================= ***/
-/**** ============================================== Logo area register start here ================================= ***/
 
 .main__content__wrapper_register {
   background: #FBFBFC;
@@ -5935,7 +5826,6 @@ width:100%;
 display:flex;
 
 }
-/**** ============================================== Logo area register End here ================================= ***/
 
 /* =================== Notification alert  start here ======================= */
 .all-notification {
@@ -6015,8 +5905,7 @@ button.edux-btn-close {
   background: transparent;
 }
 
-
-/* =================== Notification start here ======================= */
+/* =================== Notification End here ======================= */
 
 .edux-btn-primary {
   display: flex;
@@ -6025,7 +5914,7 @@ button.edux-btn-close {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background: var(--color-theme-color-2);
+  background: #002CB9 !important;
   max-width: 100%;
   color: #FFF;
   text-align: center;
@@ -6044,7 +5933,7 @@ button.edux-btn-close {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background: #002CB9;
+  background: #002CB9 !important;
   max-width: 100%;
   color: #FFF;
   text-align: center;
@@ -6255,12 +6144,11 @@ gap: 10px;
   border-radius: 30px;
   border: 2px solid rgba(0, 54, 227, 0.20);
   background: rgba(0, 54, 227, 0.10);
-
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    fill: #0036E3;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  fill: #0036E3;
 }
 
 .single-rate:hover svg path{
@@ -6512,7 +6400,7 @@ span.online-active{
 }
 
 
-/**** ============================================== Client Chatbox start Here  ================================= ***/
+/*  ================================================== Client Chatbox start Here  =============================================  */
 .edux-chatbox-area {
   display: flex;
   flex-direction: row;
@@ -6549,7 +6437,6 @@ span.online-active{
   display: flex;
   margin: 0 auto;
   width: 100%;
-  /* max-width: 1536px; */
   flex-direction: column;
 }
 
@@ -7043,7 +6930,6 @@ text-transform: uppercase;
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  /* max-width: 1088px; */
 }
 
 .edux-type-message textarea {
@@ -7301,10 +7187,6 @@ button.edux-btn-accordion:focus{
   background: transparent;
 }
 
-/* .edux-accordion-item .accordion-button::after {
-  display: none;
-
-} */
 
 button.edux-btn-accordion::after{
   content: "\e5cf";
@@ -7340,13 +7222,7 @@ button.edux-btn-accordion {
 }
 
 
-
-
-
-
-
-/**** ============================================== Client Chatbox End Here  ================================= ***/
-/**** ============================================== Scholarship Page design start here  ================================= ***/
+/* =============================================== Scholarship Page design start here ==================================== */
 
 .tr-edux-scholarship {
   vertical-align: middle;
@@ -7429,7 +7305,6 @@ button.edux-btn-accordion {
   flex-direction: column;
   justify-content: center;
   gap: 9px;
-  /* padding-left: 20px; */
 }
 
 tr.tr-edux-scholarship td {
@@ -7485,7 +7360,6 @@ font-weight: 400;
 
 .edux-value-currency{
   color: #0036E3;
-
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -7751,26 +7625,13 @@ body > .edux-no-footer > footer .footer{
   display: none;
 }
 
-/* footer .footer {
-  display: none;
-}
 
-footer .footer-bottom {
-  display: none;
-} */
-
-
-
-
-/**** ============================================== New Update css start  ================================= ***/
 .tr-edux-scholarship {
   vertical-align: middle;
 }
 
-/* .tr-edux-scholarship td{
-  padding: 40px 16px;
-} */
-/**** ============================================== New Update css end   ================================= ***/
+
+
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
