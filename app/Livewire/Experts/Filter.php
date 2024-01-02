@@ -3,6 +3,7 @@
 namespace App\Livewire\Experts;
 
 use App\Models\Country;
+use App\Models\Expertise;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
@@ -12,10 +13,10 @@ class Filter extends Component
     public $search = '';
 
     #[Url()]
-    public $minimumHourlyRate = 0;
+    public $minimumHourlyRate = '';
 
     #[Url()]
-    public $maximumHourlyRate = 1000;
+    public $maximumHourlyRate = '';
 
     #[Url()]
     public $selectedCountries = [];
@@ -23,9 +24,19 @@ class Filter extends Component
     public $countries = null;
     public $searchCountry = '';
 
+    #[Url()]
+    public $fields = [];
+    public $expertFields;
+
+    #[Url()]
+    public $skills = [];
+    public $expertSkills;
+
     public function mount()
     {
         $this->setcountries();
+        $this->expertFields = Expertise::expertise()->isParent()->get();
+        $this->expertSkills = Expertise::skill()->isParent()->get();
     }
 
     public function filter()
@@ -35,6 +46,8 @@ class Filter extends Component
             'minimumHourlyRate' => $this->minimumHourlyRate,
             'maximumHourlyRate' => $this->maximumHourlyRate,
             'selectedCountries' => $this->selectedCountries,
+            'fields' => $this->fields,
+            'skills' => $this->skills,
         ];
         $this->dispatch('expert-filter', $filters);
     }
@@ -45,6 +58,8 @@ class Filter extends Component
         $this->minimumHourlyRate = '';
         $this->maximumHourlyRate = '';
         $this->selectedCountries = [];
+        $this->fields = [];
+        $this->skills = [];
         $this->filter();
     }
 

@@ -22,6 +22,8 @@ class Lists extends Component
             'minimumHourlyRate',
             'maximumHourlyRate',
             'selectedCountries',
+            'fields',
+            'skills',
         );
     }
 
@@ -61,7 +63,16 @@ class Lists extends Component
                 $query->where('first_name', 'like', '%' . $this->filtersArray['search'] . '%');
             });
         };
-
+        if (isset($this->filtersArray['fields']) && $this->filtersArray['fields']) {
+            $experts = $experts->whereHas('expertField', function($query){
+                $query->whereIn('name', $this->filtersArray['fields']);
+            });
+        };
+        if (isset($this->filtersArray['skills']) && $this->filtersArray['skills']) {
+            $experts = $experts->whereHas('expertises', function($query){
+                $query->whereIn('name', $this->filtersArray['skills']);
+            });
+        };
         $experts = $experts->orderByDesc('id')->paginate($this->perPage);
         
         return view('livewire.experts.lists', compact('experts'));

@@ -1,6 +1,6 @@
 <div class="col-md-8">
     @forelse ($experts as $expert)
-        <div class="right-sidebar">
+        <div class="right-sidebar" wire:loading.class="opacity-25">
             <div class="right-database">
                 <div class="database-block">
                     <div class="database-contant">
