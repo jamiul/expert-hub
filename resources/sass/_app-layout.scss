@@ -368,7 +368,7 @@ $edu-admin-header-height: 76px;
                 }
 
                 &.admin-notification-menu {
-                    a {
+                    & > a {
                         border-radius: 1.875rem;
                         border: 2px solid $edu-border-color;
                         padding: 8px;
@@ -468,6 +468,121 @@ $edu-admin-header-height: 76px;
     .links a:hover svg path {
         fill: var(--primary);
     }
+}
 
+.admin-notification-menu {
+    .dropdown-menu {
+        border-radius: 8px;
+        filter: drop-shadow(8px 8px 32px rgba(14, 0, 98, 0.10));
+        top: 20px !important;
+    }
+
+    .notification-dropdown-inner {
+        width: 304px;
+        padding: 1.5rem 0.5rem;
+
+        .notification-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid $edu-border-color;
+            padding: 5px 20px 5px 5px;
+            position: relative;
+
+            &:hover {
+                background-color: rgba(0, 54, 227, 0.05);;
+            }
+
+            & > div {
+                &.notification-dropdown-thumb {
+                    flex: 0 0 48px;
+                    max-width: 48px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                }
+
+                &.notification-dropdown-info {
+                    flex: 0 0 calc(100% - 58px);
+                    max-width: calc(100% - 58px);
+
+                    p {
+                        margin: 0;
+                        display: flex;
+                        justify-content: space-between;
+
+                        &.notification-dropdown-title {
+                            white-space: nowrap;
+                            max-width: 173px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        span {
+                            display: inline-block;
+
+                            &.notification-dropdown-message {
+                                white-space: nowrap;
+                                max-width: 160px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.notification-dropdown-item-unread {
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: $edu-primary-color;
+                    position: absolute;
+                    top: 50%;
+                    right: 11px;
+                    border-radius: 100%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .show-dropdown-notification-details {
+                position: absolute !important;
+                top: 50%;
+                right: 11px;
+                border-radius: 20px !important;
+                transform: translateY(-50%);
+                background-color: #fff;
+                padding: 0.1875rem 0.75rem 0.125rem 0.75rem !important;
+                box-shadow: 0px 1px 2px 0px rgba(14, 0, 98, 0.15);
+                z-index: 3;
+                color: rgba(25, 29, 36, 0.70);
+                font-weight: 500;
+                border: 1px solid #EBEFF7;
+                visibility: hidden;
+            }
+
+            &:hover {
+                .show-dropdown-notification-details {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .notification-dropdown-view-all {
+        padding: 0 0.5rem 1rem;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $edu-primary-color;
+
+        path {
+            color: #C8C5D4;
+        }
+    }
 
 }

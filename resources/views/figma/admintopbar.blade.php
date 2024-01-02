@@ -17,11 +17,80 @@
 
     <div class="header-menu">
         <ul>
-            <li class="admin-notification-menu">
-                <a class="" href="#">
+            <li class="dropdown admin-notification-menu">
+                <a class="" href="#" role="button" id="notification-dropdown" data-bs-toggle="dropdown"
+                   aria-expanded="true">
                     <span>1</span>
                     <x-icon.bell/>
                 </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"
+                     onclick="stopPropagation(event)">
+                    <div class="notification-dropdown-inner">
+                        <div class="notification-dropdown-item notification-dropdown-item-unread">
+                            <div class="notification-dropdown-thumb">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                     class="" alt="avatar">
+                            </div>
+                            <div class="notification-dropdown-info">
+                                <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
+                                <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                    <span class="notification-dropdown-time">1m</span></p>
+                                <a class="show-dropdown-notification-details" href="">Details</a>
+                            </div>
+
+                        </div>
+                        <div class="notification-dropdown-item">
+                            <div class="notification-dropdown-thumb">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                     class="" alt="avatar">
+                            </div>
+                            <div class="notification-dropdown-info">
+                                <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
+                                <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                    <span class="notification-dropdown-time">1m</span></p>
+                                <a class="show-dropdown-notification-details" href="">Details</a>
+                            </div>
+                        </div>
+                        <div class="notification-dropdown-item">
+                            <div class="notification-dropdown-thumb">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                     class="" alt="avatar">
+                            </div>
+                            <div class="notification-dropdown-info">
+                                <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
+                                <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                    <span class="notification-dropdown-time">1m</span></p>
+                                <a class="show-dropdown-notification-details" href="">Details</a>
+                            </div>
+                        </div>
+                        <div class="notification-dropdown-item">
+                            <div class="notification-dropdown-thumb">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                     class="" alt="avatar">
+                            </div>
+                            <div class="notification-dropdown-info">
+                                <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
+                                <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                    <span class="notification-dropdown-time">1m</span></p>
+                                <a class="show-dropdown-notification-details" href="">Details</a>
+                            </div>
+                        </div>
+                        <div class="notification-dropdown-item">
+                            <div class="notification-dropdown-thumb">
+                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                     class="" alt="avatar">
+                            </div>
+                            <div class="notification-dropdown-info">
+                                <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
+                                <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                    <span class="notification-dropdown-time">1m</span></p>
+                                <a class="show-dropdown-notification-details" href="">Details</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a href="#" class="notification-dropdown-view-all"><x-icon.bell/> View All Notification</a>
+                </div>
             </li>
             <li class="dropdown admin-profile-menu">
                 <a class=""
