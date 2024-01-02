@@ -300,8 +300,8 @@
                     </form>
                 </div>
                 <div class="modal-footer p-40 pt-3">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-primary">Save</button>
                 </div>
             </div>
         </div>
@@ -321,8 +321,8 @@
                     <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
                 </div>
                 <div class="modal-footer p-40 pt-3">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Save</button>
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-danger">Save</button>
                 </div>
             </div>
         </div>
@@ -373,8 +373,8 @@
                     </form>
                 </div>
                 <div class="modal-footer p-40 pt-3">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-primary">Save</button>
                 </div>
             </div>
         </div>
@@ -394,8 +394,8 @@
                     <p>Paragraph: Archetype lets designers like you very quickly and easily create consistent</p>
                 </div>
                 <div class="modal-footer p-40 pt-3">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Save</button>
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-md btn-danger">Save</button>
                 </div>
             </div>
         </div>
