@@ -1,8 +1,8 @@
-<div class="eduexhub about-eduexhub">
+<div class="eduexhub about-eduexhub" id="#eduexhub-set">
     <div class="container">
         <div class="heading">
             <h4>{{ Str::upper($aboutUsDTO->apart_subtitle) }}</h4>
-            <h2>{{ Str::headline(($aboutUsDTO->apart_title)) }}</h2>
+            <h2>{{ Str::headline($aboutUsDTO->apart_title) }}</h2>
         </div>
         <div class="tabbable-panel">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -16,52 +16,7 @@
                         Experts</button>
                 </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="row">
-                        @if (count($aboutApart) > 0)
-                            @foreach ($aboutApart as $apart)
-                                @if ($apart->type == "Client")
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="tab-block">
-                                            <div class="tab-img">
-                                                <img src="{{ $apart->iconImage() }}" alt="">
-                                            </div>
-                                            <div class="tab-text">
-                                                <h3>{{ $apart->set_title}}</h3>
-                                                <p>{!! nl2br(e($apart->description)) !!}</p>
-                                                <a href="#">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="row">
-                        @if (count($aboutApart) > 0)
-                            @foreach ($aboutApart as $apart)
-                                @if ($apart->type == "Expert")
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="tab-block">
-                                            <div class="tab-img">
-                                                <img src="{{ $apart->iconImage() }}" alt="">
-                                            </div>
-                                            <div class="tab-text">
-                                                <h3>{{ $apart->set_title}}</h3>
-                                                <p>{!! nl2br(e($apart->description)) !!}</p>
-                                                <a href="#">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
-            </div>
+            @livewire('about.apart-set')
         </div>
         <div class="about-eduexhub-btn">
             <a href="#">Get Started</a>

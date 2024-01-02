@@ -8,18 +8,19 @@
                 <div class="add-expert-modal-area">
                     <h1 class="modal-title fs-5 m-expert-title" id="exampleModalLabel">Add Expert</h1>
                     <div class="admin-text-search position-relative">
-                        <x-form.search label="" wire:model.live.debounce.500ms="search" placeholder="Filter by experts.."/>
+                        <x-form.search label="" wire:model.live.debounce.500ms="search"
+                            placeholder="Filter by experts.." />
                     </div>
                     @if (count($experts) > 0)
                         @foreach ($experts as $expert)
-                        {{-- @dd($expert); --}}
                             <div class="add-expert-single-item position-relative">
                                 <div class="right-sidebar">
                                     <div class="right-database">
                                         <div class="database-block database-blog">
                                             <div class="database-contant">
                                                 <div class="database-img">
-                                                    <img src="{{ $expert->getFirstMediaUrl('picture') }}"> </div>
+                                                    <img src="{{ $expert->getFirstMediaUrl('picture') }}">
+                                                </div>
                                                 <div class="database-text admin-text">
                                                     <h4>
                                                         <a href="#">{{ $expert->user->full_name }}</a>
@@ -58,47 +59,7 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div class="projects-slider">
-                                                        <div id="carouselExampleIndicators" class="carousel slide">
-                                                            <div class="carousel-indicators"> <button type="button"
-                                                                    data-bs-target="#carouselExampleIndicators"
-                                                                    data-bs-slide-to="2" aria-label="Slide 3">
-                                                                    <h4 class="light-weight active">
-                                                                        <p>
-                                                                            <img src="{{ asset('assets/frontend/img/admin/activelight.png') }}"
-                                                                                alt="">
-                                                                        </p>
-                                                                        <p>keynote speaker</p>
-                                                                    </h4>
-                                                                </button> <button type="button"
-                                                                    data-bs-target="#carouselExampleIndicators"
-                                                                    data-bs-slide-to="2" aria-label="Slide 5">
-                                                                    <h4 class="light-weight">
-                                                                        <p>Educational Research</p>
-                                                                    </h4>
-                                                                </button> <button type="button"
-                                                                    data-bs-target="#carouselExampleIndicators"
-                                                                    data-bs-slide-to="2" aria-label="Slide 5">
-                                                                    <h4 class="light-weight">
-                                                                        <p>Educational Research</p>
-                                                                    </h4>
-                                                                </button> <button type="button"
-                                                                    data-bs-target="#carouselExampleIndicators"
-                                                                    data-bs-slide-to="2" aria-label="Slide 5">
-                                                                    <h4 class="light-weight">
-                                                                        <p>Educational</p>
-                                                                    </h4>
-                                                                </button>
-                                                                <button type="button"
-                                                                    data-bs-target="#carouselExampleIndicators"
-                                                                    data-bs-slide-to="2" aria-label="Slide 6">
-                                                                    <h4 class="more-read more-read-blog">
-                                                                        <p>+12 More</p>
-                                                                    </h4>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <livewire:admin.about.expert-expertise :expert="$expert">
                                                 </div>
                                             </div>
                                         </div>
@@ -117,7 +78,8 @@
                 </div>
             </div>
             <div class="modal-footer border-0 pt-0">
-                <button type="button" class="btn btn-secondary btn-addexpert-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary btn-addexpert-cancel"
+                    data-bs-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

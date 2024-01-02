@@ -7,7 +7,7 @@ enum AboutUsEnum: int
     case TitleMin = 5;
     case TitleMax = 60;
     case SubtitleMin = 4;
-    case SubtitleMax = 20;
+    case SubtitleMax = 30;
     case DescriptionMin = 100;
     case DescriptionMax = 1500;
     case BannerWidth = 1920;

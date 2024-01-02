@@ -4,7 +4,7 @@ namespace App\DTO;
 
 class AboutUsData
 {
-    public string $header_subtitle = '';
+    public string $header_title = '';
     public string $header_image = '';
     public string $area_title = '';
     public string $area_subtitle = '';
@@ -30,7 +30,7 @@ class AboutUsData
     public function __construct($about)
     {
         if ($about) {
-            $this->header_subtitle = $about->header_subtitle ?? '';
+            $this->header_title = $about->header_title ?? '';
             $this->header_image = $about->header_image ?? '';
             $this->area_title = $about->area_title ?? '';
             $this->area_subtitle = $about->area_subtitle ?? '';
