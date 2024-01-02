@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\AboutUs;
 use App\Models\Profile;
 use App\DTO\AboutUsData;
-use App\Models\AboutApart;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Frontend\Controller;
 
@@ -24,7 +23,6 @@ class AboutUsController extends Controller
     {
         $about = AboutUs::first();
         $aboutUsDTO = new AboutUsData($about);
-        $aboutApart = AboutApart::with('about_us')->get();
 
         // experts list
         $experts = $this->fetchProfileData($aboutUsDTO->instructor_list);
@@ -36,11 +34,10 @@ class AboutUsController extends Controller
         $teamList3 = $teamList;
 
         // add new line after 10 characters
-        $aboutUsDTO->header_subtitle =  Str::of($aboutUsDTO->header_subtitle)->wordWrap(10, "\n");
+        $aboutUsDTO->header_title =  Str::of($aboutUsDTO->header_title)->wordWrap(10, "\n");
 
         return view('frontend.about-us.index', compact(
             'about',
-            'aboutApart',
             'aboutUsDTO',
             'experts',
             'teamList2',

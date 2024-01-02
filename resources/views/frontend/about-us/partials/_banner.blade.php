@@ -4,7 +4,7 @@
     </div>
     <div class="banner-text">
         <div class="container">
-            <h3>{!! nl2br(e(Str::headline($aboutUsDTO->header_subtitle))) !!}</h3>
+            <h3>{!! nl2br(e(Str::headline($aboutUsDTO->header_title))) !!}</h3>
         </div>
     </div>
 </div>

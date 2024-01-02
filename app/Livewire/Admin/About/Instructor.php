@@ -18,6 +18,9 @@ class Instructor extends Component
     public $instructorPage;
     public $expertId;
     public $search = '';
+    public $showReadMoreButton = null;
+    public $loadExpertise = [];
+    public $lessExpertise = [];
 
     public function rules()
     {
@@ -123,10 +126,20 @@ class Instructor extends Component
         }
     }
 
+    public function moreExpertise($id)
+    {
+        $this->showReadMoreButton = $id;
+    }
+
+    public function lessExpertise()
+    {
+        $this->showReadMoreButton = null;
+    }
+
     public function render()
     {
         $this->instructors = Profile::whereNotIn('id', $this->instructor_list)->expert()
-            ->with('user', 'expertField')
+            ->with('user', 'expertField', 'expertises')
             ->whereHas('user', function ($query) {
                 $query->where('first_name', 'like', '%' . $this->search . '%')
                     ->orWhere('last_name', 'like', '%' . $this->search . '%');
