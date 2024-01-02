@@ -18,7 +18,7 @@ class ExpertSeeder extends Seeder
         User::factory(100)
             ->has(
                 Profile::factory()
-                ->hasAttached(Expertise::skill()->isChild()->limit(5)->get())
+                ->hasAttached(Expertise::inRandomOrder()->skill()->isChild()->limit(10)->get())
                 ->count(1)
             )
             ->create();

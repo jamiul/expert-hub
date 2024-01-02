@@ -23,7 +23,12 @@ class Profile extends Model implements HasMedia
     {
         $this->addMediaCollection('picture')
             ->singleFile();
-    }   
+    }
+
+    public function getPictureAttribute()
+    {
+        return $this->getFirstMediaUrl('picture');
+    }
 
     protected $casts = [
         'status' => ProfileStatus::class,

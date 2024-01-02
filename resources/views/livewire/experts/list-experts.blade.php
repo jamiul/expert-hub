@@ -61,20 +61,20 @@
                 </div>
                 <div class="consultant-reviw">
                     <ul>
-                        <li><strong>${{ $expert->profile->hourly_rate }}</strong> / hr</li>
+                        <li><strong>${{ $expert->hourly_rate }}</strong> / hr</li>
                         <li>
-                            @for ($i = 0; $i < $expert->profile->rating; $i++)
+                            {{-- @for ($i = 0; $i < $expert->profile->rating; $i++)
                                 <i class="fa fa-star"></i>
-                            @endfor
+                            @endfor --}}
                         </li>
                     </ul>
                 </div>
 
                 <div class="database-p box-line-clamp">
                     <div :class="isShowMore === {{ $expert->id }} ? '' : 'line-clamp-3'">
-                        <div>{{ $expert->profile->bio }}</div>
+                        <div>{{ $expert->biography }}</div>
                     </div>
-                    @if (strlen($expert->profile->bio) > 500)
+                    @if (strlen($expert->biography) > 500)
                         <div class="box-more">
                             <span x-on:click="handleShowMore({{ $expert->id }})" class="more-btn"
                                 style="margin-left: 10px"
@@ -163,7 +163,7 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     document.addEventListener('alpine:init', () => {
         Alpine.data('expertsStore', () => ({
             page: 1,
@@ -223,4 +223,4 @@
             }
         }))
     })
-</script>
+</script> --}}

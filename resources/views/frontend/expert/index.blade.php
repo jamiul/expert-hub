@@ -1,8 +1,14 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.app')
 
 @section('content')
-    @include('frontend.expert.partials._breadcrumb')
-    @include('frontend.expert.partials._main')
+    <div class="find-consultant databasepading mt-60">
+        <div class="container">
+            <div class="row">
+                @livewire('experts.filter')
+                @livewire('experts.lists')
+            </div>
+        </div>
+    </div>
     @include('frontend.expert.partials._slider')
 @endsection
 

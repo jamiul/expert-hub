@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Experts;
 
+use App\Models\Profile;
 use App\Models\Service;
 use App\Models\User;
 use App\Models\UserFavorite;
@@ -77,10 +78,11 @@ class ListExperts extends Component
 
     public function render()
     {
-        $experts = User::with(['profile', 'educationDetails'])
-            ->where('user_type', '=', 'expert');
+        // $experts = User::with(['profile', 'educationDetails'])
+        //     ->where('user_type', '=', 'expert');
+        $experts = Profile::expert()->with('user', 'education');
 
-        $favoriteExperts = UserFavorite::where('user_id', auth()->id())->where('favoriteable_type', '=', 'expert_favorite')->get();
+        // $favoriteExperts = UserFavorite::where('user_id', auth()->id())->where('favoriteable_type', '=', 'expert_favorite')->get();
 
         $perPage = $this->limit;
         $skip = ($this->page - 1) * $perPage;
@@ -140,6 +142,6 @@ class ListExperts extends Component
             ->take($perPage)
             ->get();
 
-        return view('livewire.experts.list-experts', compact('experts', 'favoriteExperts'));
+        return view('livewire.experts.list-experts', compact('experts'));
     }
 }
