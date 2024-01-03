@@ -5314,7 +5314,22 @@ ul.share-links > li {
     padding: 16px 24px;
 }
 
+.customer-upload {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background: #0059c90d;
+    border: solid 1px #0059c94d;
+    border-radius: 4px;
+    padding: 16px 24px;
+}
+
 .client-job-post .customer-upload .upload-file-user {
+    display: flex;
+    flex-grow: 1;
+}
+
+ .upload-file-user {
     display: flex;
     flex-grow: 1;
 }
@@ -5326,11 +5341,30 @@ ul.share-links > li {
     color: #303744;
 }
 
+
+.upload-file-user-text h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #303744;
+}
+
 .client-job-post .customer-upload .upload-file-user-text p {
     margin: 0;
     color: #303744;
     font-size: 14px;
 }
+
+.upload-file-user-text p {
+    margin: 0;
+    color: #303744;
+    font-size: 14px;
+}
+
+ .upload-file-user-img {
+    margin-right: 18px;
+}
+
 
 .client-job-post .customer-upload .upload-file-user .upload-file-user-img {
     margin-right: 18px;

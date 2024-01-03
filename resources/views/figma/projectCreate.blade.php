@@ -40,16 +40,32 @@
                                     </div>
                                 </div>
                                 <div class="step step-2 mb-4">
-                                    <div class="main-form">
-                                        <x-form.textarea label="Project Description" wire:model="description" placeholder="Describe your project here (max 200 words)"/>
+                                    <div class="main-form position-relative">
+                                    <x-form.textarea label="Project Description" wire:model="bio" placeholder="Bio">
+                                    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this
+                                    </x-form.textarea>
+                                    <span class="edux-word-count">0/1000</span>
                                         </div>
                                     </div>
+
+
+                                    <div class="upload-file">
+                                        <label class="btn btn-default btn-file d-flex justify-content-center flex-column basic-file-upload gap-2">
+                                        <span>
+                                            <input type="file" style="display: none;" required="">
+                                        </span>
+                                        <span class="edux-blog-upload"> <a href="#"><img src=" {{ asset('assets/frontend/img/upload-icon.png') }}"></a></span>
+                                        <h6 class="edux-click">Click to upload or drag & drop</h6>
+                                        <p>Drag & drop any images or documents that might be helpful in explaining your brief here</p>
+                                    </label>
+                                    </div>
+
 
 
                                     <div class="customer-upload">
                                         <div class="upload-file-user">
                                         <div class="upload-file-user-img">
-                                            <img src="images/uploadfile-icon.png"></img>
+                                            <img src="{{ asset('assets/frontend/img/uploadfile-icon.png') }}"/>
                                         </div>
                                         <div class="upload-file-user-text">
                                             <h4>Customer_file.png</h4>
@@ -57,7 +73,7 @@
                                         </div>
                                         </div>
                                         <div class="dust-img">
-                                        <img src="images/dust-icon.png"></img>
+                                        <x-icon.delete/>
                                         </div>
                                     </div>
 
@@ -139,8 +155,8 @@
                                                         <option value="AUD">AUD</option>
                                                     </select>
                                                 </div>
-                                                <x-form.input type="number" min="0" label="Budget start amount ($)" wire:model="budget_start_amount" placeholder="100"/>
-                                                <x-form.input type="number" min="0" label="Budget end amount ($)" wire:model="budget_end_amount" placeholder="200"/>
+                                                <x-form.input type="number" min="0" label="Start Amount" wire:model="budget_start_amount" placeholder="Type Here"/>
+                                                <x-form.input type="number" min="0" label="End Amount" wire:model="budget_end_amount" placeholder="Type Here"/>
                                             </div>
                                         </div>
                                     </div>
@@ -156,19 +172,14 @@
                                                 <div class="tags-preview">
                                                     <div class="bootstrap-tagsinput">
                                                         <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Agriculture<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
+
                                                         <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Agriculture<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
+
                                                         <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Agriculture<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="rate-preview">
-                                                <div class="currency-img">
-                                                    <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
-                                                </div>
-                                                <div class="pay-ratee">
-                                                    <h4>Fixed price</h4>
-                                                    <p>$100 - $200</p>
-                                                </div>
                                                     <div class="currency-img">
                                                         <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
                                                     </div>
@@ -181,7 +192,7 @@
                                     </div>
                                 </div>
                                 <div class="form-buttons">
-                                    <button wire:click="next" type="button" class="edux-btn-primary">Next</button>
+                                    <button wire:click="next" type="button" class="edux-btn-primary">Continue</button>
                                 </div>
                                 <div class="form-buttons">
                                     <button type="submit" class="edux-btn-primary">Yes Post my Project</button>

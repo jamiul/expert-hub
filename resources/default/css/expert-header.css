@@ -92,7 +92,9 @@
 .profile__dropdown .links a:hover { color: var(--primary); }
 .profile__dropdown .links a:hover svg path { fill: var(--primary); }
 
-
+.icon-component-list svg path {
+  fill: #000000 !important;
+}
 .message__dropdown { width: 384px;left: -300px !important;padding: .5rem; }
 .mess__list li { padding: 12px 8px;border-radius: 4px; }
 .mess__list li:not(:last-child) { border-bottom: 1px solid var(--border-color); }

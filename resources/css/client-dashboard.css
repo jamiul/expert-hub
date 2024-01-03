@@ -753,6 +753,7 @@ button.no-hover::after{
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+  margin-bottom: 0px;
 }
 
 .profile-single-text p {
@@ -995,15 +996,14 @@ section.team-area {
   background: #C8E0FD;
   display: flex;
   width: 100%;
-  height: 156px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 0px;
 }
 
 .single-person-deniyel img {
   max-width: 160px;
   max-height: 185px;
-  position: absolute;
-  top: -25px;
-  left: 20%;
 }
 
 .person-details {
@@ -1015,7 +1015,6 @@ section.team-area {
   background: #fff;
   border-radius: 0px 0px 6.241px 6.241px;
   border-radius: 0px 0px 6.213px 6.213px;
-  border-top: 0.777px solid  rgba(14, 0, 98, 0.10);
   background: #FFF;
   box-shadow: 14.75532px 13.20213px 37.2766px 0px rgba(14, 0, 98, 0.12);
   height: 65px;
@@ -1314,7 +1313,7 @@ span.material-symbols-outlined.active.setting-root {
   margin-bottom: 0px;
 }
 
-button.btn.btn-postjob {
+.btn.btn-postjob {
   border-radius: 4px;
   background: #0036E3;
   gap: 8px;
@@ -1323,13 +1322,14 @@ button.btn.btn-postjob {
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  min-width: 203px;
-  min-height: 46px;
+  /* min-width: 203px; */
+  /* min-height: 46px; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  line-height: 20px;
+  /* line-height: 20px; */
+  padding: 4px 24px 4px 17px;
 }
 
 button.edux-btn-postjob{
@@ -1356,26 +1356,6 @@ button.edux-btn-postjob{
 }
 
 
-
-button.btn.btn-postjob:active{
-  border-radius: 4px;
-  background: #0036E3;
-  gap: 8px;
-  color: #FFF;
-  text-align: center;
-  font-family: Colfax;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  min-width: 163px;
-  min-height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: center;
-  text-align: center;
-  line-height: 20px;
-}
 
 .edit-active {
   display: flex;
@@ -5467,8 +5447,18 @@ span.edux-word-count {
   font-style: normal;
   font-weight: 400;
   position: absolute;
-  right: 25px;
-  bottom: 5px;
+  right: 15px;
+  bottom: 10px;
+}
+
+.customer-upload {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background: #0059C90D;
+    border: solid 1px #0059C94D;
+    border-radius: 4px;
+    padding: 16px 24px;
 }
 
 label.basic-file-upload:hover {
@@ -7630,7 +7620,9 @@ body > .edux-no-footer > footer .footer{
   vertical-align: middle;
 }
 
-
+.icon-component-list > div path {
+  fill: #000000 !important;
+}
 
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
