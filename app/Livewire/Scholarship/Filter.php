@@ -31,13 +31,13 @@ class Filter extends Component
     #[Url()]
     public $applicationDeadline = '';
     #[Url()]
-    public $country = '';
     public $selectedCountries = [];
+    public $country = '';
     public $countries = null;
     public $searchCountry = '';
     #[Url()]
-    public $university = '';
     public $selectedUniversities = [];
+    public $university = '';
     public $universities = null;
     public $searchUniversity = '';
 
