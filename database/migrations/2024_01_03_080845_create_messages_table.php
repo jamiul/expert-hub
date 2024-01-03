@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('conversation_id');
             $table->foreignId('profile_id');
-            $table->longText('content');
+            $table->longText('content')->nullable();
             $table->boolean('has_attachment')->default(0);
             $table->foreignId('parent_id')->nullable();
             $table->boolean('active')->default(1);
