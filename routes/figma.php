@@ -85,6 +85,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     // Register-profile options
     Route::view('/notification', 'figma.allnotification');
+    Route::view('/user-notification', 'figma.usernotification');
     Route::view('/client-chatbox', 'figma.clientchatbox');
     Route::view('/client-chatbox-new', 'figma.clientchatbox-new');
 

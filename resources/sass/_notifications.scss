@@ -1,0 +1,86 @@
+.notification-page-block-heading {
+    padding: 10px 20px 10px 40px;
+    border-bottom: 1px solid $edu-border-color;
+    background: #EBEFF7;
+
+    h3 {
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 500;
+        margin: 0;
+    }
+}
+
+.notification-details-list-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid $edu-border-color;
+    padding: 16px 40px;
+    position: relative;
+
+    & > div {
+        &.notification-details-thumb {
+            flex: 0 0 56px;
+            max-width: 56px;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+
+        &.notification-details-info {
+            flex: 0 0 calc(100% - 288px);
+            max-width: calc(100% - 288px);
+
+            p {
+                margin: 0;
+            }
+
+            .notification-details-title {
+                font-size: 18px;
+            }
+
+            .notification-details-message {
+
+            }
+
+            .notification-details-time {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+
+                    path {
+                        fill: #6E737C;
+                    }
+                }
+            }
+        }
+
+        &.notification-details-action {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-left: auto;
+
+            .btn-outline-primary {
+                padding: 4px 24px;
+            }
+        }
+    }
+}
+
+.load-more-notification-item {
+    padding: 28px 40px;
+
+    .btn {
+        padding: 11px 40px !important;
+    }
+}
+
+.no-details-notification {
+    padding: 24px 40px;
+    text-align: center;
+}
