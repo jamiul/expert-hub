@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
+use App\Models\Expertise;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -36,7 +37,7 @@ class UserSeeder extends Seeder
                 'email' => $user['email'],
                 'email_verified_at' => now(),
                 'password' => Hash::make($user['password']),
-                'country_id' => 1,
+                'country_id' => 12,
             ];
             $user_id = DB::table('users')->insertGetId($userData);
             $profile_id = DB::table('profiles')->insertGetId([
@@ -51,7 +52,12 @@ class UserSeeder extends Seeder
                     ->preservingOriginal()
                     ->usingName($user['image'])
                     ->toMediaCollection('picture');
-                $profile->update(['expertise_id' => $user['expertise']]);
+                $profile->update([
+                    'expertise_id' => $user['expertise'],
+                    'biography' => fake()->sentence(),
+                    'hourly_rate' => fake()->randomElement([50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]),
+                ]);
+                $profile->expertises()->attach(Expertise::inRandomOrder()->skill()->isChild()->limit(9)->pluck('id')->toArray());
             }
         }
     }

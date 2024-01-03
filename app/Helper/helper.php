@@ -14,3 +14,8 @@ function eduexDateFormat($date)
     }
     return 'Send Carbon Instance';
 }
+
+function getGravatar($email)
+{
+    return 'https://www.gravatar.com/avatar/' .  md5( strtolower( trim( $email ) ) );
+}
