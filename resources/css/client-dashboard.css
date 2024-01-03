@@ -5914,7 +5914,7 @@ button.edux-btn-close {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background: #002CB9 !important;
+  background: #0036E3 !important;
   max-width: 100%;
   color: #FFF;
   text-align: center;
@@ -5951,13 +5951,13 @@ button.edux-btn-close {
   align-items: center;
   border-radius: 4px;
   max-width: 100%;
-  color:var(--color-theme-color-2);
+  color:#0036E3;
   text-align: center;
   font-family: Colfax;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  border: 2px solid var(--color-theme-color-2);
+  border: 2px solid #0036E3;
 
 }
 
@@ -5969,7 +5969,7 @@ button.edux-btn-close {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background: var(--color-theme-color-2);
+  background: #0036E3;
   max-width: 100%;
   color: #FFF;
   text-align: center;
@@ -5977,7 +5977,7 @@ button.edux-btn-close {
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  border: 2px solid var(--color-theme-color-2);
+  border: 2px solid #0036E3;
 }
 
 .edux-btn-border-primary:hover .arrow-left svg path{
