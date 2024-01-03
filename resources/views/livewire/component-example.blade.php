@@ -35,7 +35,7 @@
         </x-form.choice>
         <x-form.choice wire:model="title" label="Select Single with group">
             <option value="">Select Title</option>
-            <optgroup label="General"> 
+            <optgroup label="General">
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
             </optgroup>

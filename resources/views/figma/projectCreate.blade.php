@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="col-md-4 col-12 p-0">
                                         <div class="post-header-image">
-                                            <img src="{{ asset('assets/frontend/img/expert.png') }}"/>
+                                            <img src="{{ asset('assets/frontend/img/client-hire.png') }}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -36,15 +36,31 @@
                             <form wire:submit="save">
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
-                                        <x-form.input type="text" label="What is your project title?" wire:model="title" placeholder="eg. Developing curriculum for Postgraduate public health unit"/>
+                                        <x-form.input type="text" label="What is your project title?" wire:model="title" placeholder="Academic content writer"/>
                                     </div>
                                 </div>
                                 <div class="step step-2 mb-4">
                                     <div class="main-form">
                                         <x-form.textarea label="Project Description" wire:model="description" placeholder="Describe your project here (max 200 words)"/>
-                                        
                                         </div>
                                     </div>
+
+
+                                    <div class="customer-upload">
+                                        <div class="upload-file-user">
+                                        <div class="upload-file-user-img">
+                                            <img src="images/uploadfile-icon.png"></img>
+                                        </div>
+                                        <div class="upload-file-user-text">
+                                            <h4>Customer_file.png</h4>
+                                            <p>456 KB    -   21 second left</p>
+                                        </div>
+                                        </div>
+                                        <div class="dust-img">
+                                        <img src="images/dust-icon.png"></img>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="step step-3">
                                     <div class="main-form">
@@ -63,7 +79,7 @@
                                                         <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Lorem<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
                                                 </div>
                                                     <div class="shadow bg-white position-absolute z-1" style="top:60px;">
-                                                        
+
                                                     </div>
                                             </div>
                                         </div>
