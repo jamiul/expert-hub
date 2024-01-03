@@ -15,8 +15,7 @@
         class="form-input-field form-textarea-field{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"
         {{ $attributes->whereDoesntStartWith('class') }}
         {{ $required ? 'required="required"' : '' }}
-    >
-    </textarea>
+    >{{ $slot }}</textarea>
     @error($attributes->whereStartsWith('wire:model')->first())
         <div class="form-input-error-message">{{ $message }}</div>
     @enderror

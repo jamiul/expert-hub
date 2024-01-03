@@ -59,7 +59,9 @@
         <x-form.password label="Password" wire:model="password" placeholder="Password"/>
         <x-form.input type="number" label="Hourly Rate" wire:model="rate" placeholder="Hourly Rate"/>
         <x-form.input type="text" readonly label="Type" wire:model="type" placeholder="Type" value="Expert"/>
-        <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio"/>
+        <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio">
+            lorem
+        </x-form.textarea>
         <x-form.search label="Search Skill" wire:model="skill" placeholder="Search skills and select"/>
         <x-form.search wire:model="skill" placeholder="Search skills and select"/>
         <x-form.radio label="Gender" wire:model="gender" :options="['male' => 'Male', 'female' => 'Female']" inline/>
