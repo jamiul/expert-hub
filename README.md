@@ -7,6 +7,7 @@
 - `php artisan migrate:fresh --seed`
 - `npm run dev` when writing css/js
 - `npm run build` when writing other code and no refresh required
+- `php artisan storage:link` to link storage with public folder
 - `php artisan optimize:clear`
 - `chmod 777 storage/logs`
 
