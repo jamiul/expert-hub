@@ -11,13 +11,17 @@
               <p>Boost your academic success with us! Share your project details, browse profiles, contact academic experts, and pay only when you are satisfied</p>
             </div>
             <div class="client-job-right">
-              <img src="images/client-hire.png"></img>
+              <img src="{{ asset('assets/frontend/img/client-hire.png') }}" alt=""></img>
             </div>
           </div>
-          <div class="form-group form-group2">
-            <input type="text" placeholder="Academic content writer" name="fname">
-            <img src="images/edit-icon.png"></img>
-          </div>
+
+          <x-form.input type="text" readonly label="What is your project title?" wire:model="type" placeholder="Academic content writer" value="Academic content writer"/>
+          <x-form.textarea label="Project Description" wire:model="bio" placeholder="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this " value="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this "/>
+          <div class="col admin-sub-title position-relative">
+            <label for="subtitle" class="form-label  level-subtitle">Project Description</label>
+          <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this </textarea>
+          <span class="edux-word-count">0/1000</span>
+        </div>
           <form class="client-form">
             <div class="form-new">
               <label>Project Description</label>

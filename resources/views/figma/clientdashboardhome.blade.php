@@ -48,6 +48,58 @@
 
         <!-- <div class="row"> -->
         <div class="owl-carousel owl-carouselfour owl-theme client-home-carousel">
+        <div class="item">
+            <div class="single-card-area">
+              <div class="inprogress-area">
+                  <div class="in-hiring">
+                  <p class="btn-hiring">Hiring</p>
+                  </div>
+                <div class="draft-options">
+                    <div class="dropdown">
+                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                        <path d="M9.5 15C9.0875 15 8.73438 14.8531 8.44063 14.5594C8.14687 14.2656 8 13.9125 8 13.5C8 13.0875 8.14687 12.7344 8.44063 12.4406C8.73438 12.1469 9.0875 12 9.5 12C9.9125 12 10.2656 12.1469 10.5594 12.4406C10.8531 12.7344 11 13.0875 11 13.5C11 13.9125 10.8531 14.2656 10.5594 14.5594C10.2656 14.8531 9.9125 15 9.5 15ZM9.5 10.5C9.0875 10.5 8.73438 10.3531 8.44063 10.0594C8.14687 9.76563 8 9.4125 8 9C8 8.5875 8.14687 8.23438 8.44063 7.94063C8.73438 7.64688 9.0875 7.5 9.5 7.5C9.9125 7.5 10.2656 7.64688 10.5594 7.94063C10.8531 8.23438 11 8.5875 11 9C11 9.4125 10.8531 9.76563 10.5594 10.0594C10.2656 10.3531 9.9125 10.5 9.5 10.5ZM9.5 6C9.0875 6 8.73438 5.85313 8.44063 5.55938C8.14687 5.26562 8 4.9125 8 4.5C8 4.0875 8.14687 3.73438 8.44063 3.44063C8.73438 3.14687 9.0875 3 9.5 3C9.9125 3 10.2656 3.14687 10.5594 3.44063C10.8531 3.73438 11 4.0875 11 4.5C11 4.9125 10.8531 5.26562 10.5594 5.55938C10.2656 5.85313 9.9125 6 9.5 6Z" fill="#191D24"/>
+                      </svg>
+                      </a>
+                      <ul class="dropdown-menu dropdown-show">
+                        <li>
+                          <a class="dropdown-item " href="#">Invite Experts</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">View Job Posting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Edit Posting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Remove Posting</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="developing-area">
+                <div class="profile-single-area">
+                  <div class="single-person">
+                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
+                    <p class="single-designation">Prof. Michael Kassiou</p>
+                </div>
+
+                </div>
+                <div class="profile-single-title">
+                  <h3>Developing curriculum for Postgraduate...</h3>
+                </div>
+                <div class="profile-single-text">
+                  <p>You have 35 new proposal</p>
+                </div>
+                <div class="profile-single-button">
+                  <button class="btn-fundmilestone">Review Proposal</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
@@ -100,57 +152,7 @@
             </div>
           </div>
 
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                  <div class="in-hiring">
-                  <p class="btn-hiring">Hiring</p>
-                  </div>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <path d="M9.5 15C9.0875 15 8.73438 14.8531 8.44063 14.5594C8.14687 14.2656 8 13.9125 8 13.5C8 13.0875 8.14687 12.7344 8.44063 12.4406C8.73438 12.1469 9.0875 12 9.5 12C9.9125 12 10.2656 12.1469 10.5594 12.4406C10.8531 12.7344 11 13.0875 11 13.5C11 13.9125 10.8531 14.2656 10.5594 14.5594C10.2656 14.8531 9.9125 15 9.5 15ZM9.5 10.5C9.0875 10.5 8.73438 10.3531 8.44063 10.0594C8.14687 9.76563 8 9.4125 8 9C8 8.5875 8.14687 8.23438 8.44063 7.94063C8.73438 7.64688 9.0875 7.5 9.5 7.5C9.9125 7.5 10.2656 7.64688 10.5594 7.94063C10.8531 8.23438 11 8.5875 11 9C11 9.4125 10.8531 9.76563 10.5594 10.0594C10.2656 10.3531 9.9125 10.5 9.5 10.5ZM9.5 6C9.0875 6 8.73438 5.85313 8.44063 5.55938C8.14687 5.26562 8 4.9125 8 4.5C8 4.0875 8.14687 3.73438 8.44063 3.44063C8.73438 3.14687 9.0875 3 9.5 3C9.9125 3 10.2656 3.14687 10.5594 3.44063C10.8531 3.73438 11 4.0875 11 4.5C11 4.9125 10.8531 5.26562 10.5594 5.55938C10.2656 5.85313 9.9125 6 9.5 6Z" fill="#191D24"/>
-                      </svg>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
 
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person">
-                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Review Proposal</button>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="item">
             <div class="single-card-area">
@@ -295,7 +297,57 @@
             </div>
           </div>
 
+          <div class="item">
+            <div class="single-card-area">
+              <div class="inprogress-area">
+                <div class="in-hiring">
+                 <p class="btn-hiring">Hiring</p>
+                </div>
+                <div class="draft-options">
+                    <div class="dropdown">
+                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                        <path d="M9.5 15C9.0875 15 8.73438 14.8531 8.44063 14.5594C8.14687 14.2656 8 13.9125 8 13.5C8 13.0875 8.14687 12.7344 8.44063 12.4406C8.73438 12.1469 9.0875 12 9.5 12C9.9125 12 10.2656 12.1469 10.5594 12.4406C10.8531 12.7344 11 13.0875 11 13.5C11 13.9125 10.8531 14.2656 10.5594 14.5594C10.2656 14.8531 9.9125 15 9.5 15ZM9.5 10.5C9.0875 10.5 8.73438 10.3531 8.44063 10.0594C8.14687 9.76563 8 9.4125 8 9C8 8.5875 8.14687 8.23438 8.44063 7.94063C8.73438 7.64688 9.0875 7.5 9.5 7.5C9.9125 7.5 10.2656 7.64688 10.5594 7.94063C10.8531 8.23438 11 8.5875 11 9C11 9.4125 10.8531 9.76563 10.5594 10.0594C10.2656 10.3531 9.9125 10.5 9.5 10.5ZM9.5 6C9.0875 6 8.73438 5.85313 8.44063 5.55938C8.14687 5.26562 8 4.9125 8 4.5C8 4.0875 8.14687 3.73438 8.44063 3.44063C8.73438 3.14687 9.0875 3 9.5 3C9.9125 3 10.2656 3.14687 10.5594 3.44063C10.8531 3.73438 11 4.0875 11 4.5C11 4.9125 10.8531 5.26562 10.5594 5.55938C10.2656 5.85313 9.9125 6 9.5 6Z" fill="#191D24"/>
+                      </svg>
+                      </a>
+                      <ul class="dropdown-menu dropdown-show">
+                        <li>
+                          <a class="dropdown-item " href="#">Invite Experts</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">View Job Posting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Edit Posting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Remove Posting</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
 
+              </div>
+              <div class="developing-area">
+                <div class="profile-single-area">
+                  <div class="single-person">
+                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
+                    <p class="single-designation">Prof. Michael Kassiou</p>
+                </div>
+
+                </div>
+                <div class="profile-single-title">
+                  <h3>Developing curriculum for Postgraduate...</h3>
+                </div>
+                <div class="profile-single-text">
+                  <p>You have 35 new proposal</p>
+                </div>
+                <div class="profile-single-button">
+                  <button class="btn-fundmilestone">Review Proposal</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           <div class="item">
@@ -348,57 +400,7 @@
             </div>
           </div>
 
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                <div class="in-hiring">
-                 <p class="btn-hiring">Hiring</p>
-                </div>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <path d="M9.5 15C9.0875 15 8.73438 14.8531 8.44063 14.5594C8.14687 14.2656 8 13.9125 8 13.5C8 13.0875 8.14687 12.7344 8.44063 12.4406C8.73438 12.1469 9.0875 12 9.5 12C9.9125 12 10.2656 12.1469 10.5594 12.4406C10.8531 12.7344 11 13.0875 11 13.5C11 13.9125 10.8531 14.2656 10.5594 14.5594C10.2656 14.8531 9.9125 15 9.5 15ZM9.5 10.5C9.0875 10.5 8.73438 10.3531 8.44063 10.0594C8.14687 9.76563 8 9.4125 8 9C8 8.5875 8.14687 8.23438 8.44063 7.94063C8.73438 7.64688 9.0875 7.5 9.5 7.5C9.9125 7.5 10.2656 7.64688 10.5594 7.94063C10.8531 8.23438 11 8.5875 11 9C11 9.4125 10.8531 9.76563 10.5594 10.0594C10.2656 10.3531 9.9125 10.5 9.5 10.5ZM9.5 6C9.0875 6 8.73438 5.85313 8.44063 5.55938C8.14687 5.26562 8 4.9125 8 4.5C8 4.0875 8.14687 3.73438 8.44063 3.44063C8.73438 3.14687 9.0875 3 9.5 3C9.9125 3 10.2656 3.14687 10.5594 3.44063C10.8531 3.73438 11 4.0875 11 4.5C11 4.9125 10.8531 5.26562 10.5594 5.55938C10.2656 5.85313 9.9125 6 9.5 6Z" fill="#191D24"/>
-                      </svg>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
 
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person">
-                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Review Proposal</button>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="item">
             <div class="single-card-area">
@@ -546,6 +548,59 @@
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
       <div class="owl-carousel owl-carouselfour owl-theme client-home-carousel">
+
+      <div class="item">
+            <div class="single-card-area">
+              <div class="inprogress-area">
+                  <div class="in-hiring">
+                  <p class="btn-hiring">Hiring</p>
+                  </div>
+                <div class="draft-options">
+                    <div class="dropdown">
+                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                        <path d="M9.5 15C9.0875 15 8.73438 14.8531 8.44063 14.5594C8.14687 14.2656 8 13.9125 8 13.5C8 13.0875 8.14687 12.7344 8.44063 12.4406C8.73438 12.1469 9.0875 12 9.5 12C9.9125 12 10.2656 12.1469 10.5594 12.4406C10.8531 12.7344 11 13.0875 11 13.5C11 13.9125 10.8531 14.2656 10.5594 14.5594C10.2656 14.8531 9.9125 15 9.5 15ZM9.5 10.5C9.0875 10.5 8.73438 10.3531 8.44063 10.0594C8.14687 9.76563 8 9.4125 8 9C8 8.5875 8.14687 8.23438 8.44063 7.94063C8.73438 7.64688 9.0875 7.5 9.5 7.5C9.9125 7.5 10.2656 7.64688 10.5594 7.94063C10.8531 8.23438 11 8.5875 11 9C11 9.4125 10.8531 9.76563 10.5594 10.0594C10.2656 10.3531 9.9125 10.5 9.5 10.5ZM9.5 6C9.0875 6 8.73438 5.85313 8.44063 5.55938C8.14687 5.26562 8 4.9125 8 4.5C8 4.0875 8.14687 3.73438 8.44063 3.44063C8.73438 3.14687 9.0875 3 9.5 3C9.9125 3 10.2656 3.14687 10.5594 3.44063C10.8531 3.73438 11 4.0875 11 4.5C11 4.9125 10.8531 5.26562 10.5594 5.55938C10.2656 5.85313 9.9125 6 9.5 6Z" fill="#191D24"/>
+                      </svg>
+                      </a>
+                      <ul class="dropdown-menu dropdown-show">
+                        <li>
+                          <a class="dropdown-item " href="#">Invite Experts</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">View Job Posting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Edit Posting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Remove Posting</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="developing-area">
+                <div class="profile-single-area">
+                  <div class="single-person">
+                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
+                    <p class="single-designation">Prof. Michael Kassiou</p>
+                </div>
+
+                </div>
+                <div class="profile-single-title">
+                  <h3>Developing curriculum for Postgraduate...</h3>
+                </div>
+                <div class="profile-single-text">
+                  <p>You have 35 new proposal</p>
+                </div>
+                <div class="profile-single-button">
+                  <button class="btn-fundmilestone">Review Proposal</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="item">
             <div class="single-card-area">
               <div class="inprogress-area">
@@ -598,57 +653,7 @@
             </div>
           </div>
 
-          <div class="item">
-            <div class="single-card-area">
-              <div class="inprogress-area">
-                  <div class="in-hiring">
-                  <p class="btn-hiring">Hiring</p>
-                  </div>
-                <div class="draft-options">
-                    <div class="dropdown">
-                      <a class="btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <path d="M9.5 15C9.0875 15 8.73438 14.8531 8.44063 14.5594C8.14687 14.2656 8 13.9125 8 13.5C8 13.0875 8.14687 12.7344 8.44063 12.4406C8.73438 12.1469 9.0875 12 9.5 12C9.9125 12 10.2656 12.1469 10.5594 12.4406C10.8531 12.7344 11 13.0875 11 13.5C11 13.9125 10.8531 14.2656 10.5594 14.5594C10.2656 14.8531 9.9125 15 9.5 15ZM9.5 10.5C9.0875 10.5 8.73438 10.3531 8.44063 10.0594C8.14687 9.76563 8 9.4125 8 9C8 8.5875 8.14687 8.23438 8.44063 7.94063C8.73438 7.64688 9.0875 7.5 9.5 7.5C9.9125 7.5 10.2656 7.64688 10.5594 7.94063C10.8531 8.23438 11 8.5875 11 9C11 9.4125 10.8531 9.76563 10.5594 10.0594C10.2656 10.3531 9.9125 10.5 9.5 10.5ZM9.5 6C9.0875 6 8.73438 5.85313 8.44063 5.55938C8.14687 5.26562 8 4.9125 8 4.5C8 4.0875 8.14687 3.73438 8.44063 3.44063C8.73438 3.14687 9.0875 3 9.5 3C9.9125 3 10.2656 3.14687 10.5594 3.44063C10.8531 3.73438 11 4.0875 11 4.5C11 4.9125 10.8531 5.26562 10.5594 5.55938C10.2656 5.85313 9.9125 6 9.5 6Z" fill="#191D24"/>
-                      </svg>
-                      </a>
-                      <ul class="dropdown-menu dropdown-show">
-                        <li>
-                          <a class="dropdown-item " href="#">Invite Experts</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">View Job Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Edit Posting</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Remove Posting</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
 
-              </div>
-              <div class="developing-area">
-                <div class="profile-single-area">
-                  <div class="single-person">
-                    <img src="{{ asset('assets/frontend/img/kk2.png') }}" />
-                    <p class="single-designation">Prof. Michael Kassiou</p>
-                </div>
-
-                </div>
-                <div class="profile-single-title">
-                  <h3>Developing curriculum for Postgraduate...</h3>
-                </div>
-                <div class="profile-single-text">
-                  <p>You have 35 new proposal</p>
-                </div>
-                <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Review Proposal</button>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="item">
             <div class="single-card-area">
