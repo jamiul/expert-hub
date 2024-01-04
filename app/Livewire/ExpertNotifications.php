@@ -20,6 +20,7 @@ class ExpertNotifications extends Component
                 return $query->where( 'id', $id );
             } )
             ->markAsRead();
+        $this->emit('NotificationMarkedAsRead', auth()->user()->unreadNotifications()->count());
     }
 
     public function loadMore() {
