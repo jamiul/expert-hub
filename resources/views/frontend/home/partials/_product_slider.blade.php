@@ -8,8 +8,16 @@
                         <p>EduExHub is an exclusive platform featuring top academic experts across <br> diverse fields.
                             Whether it's a personal or institutional project</p>
                         <div class="hero-button d-flex gap-3">
-                            <a class="btn btn-primary edux-btn-primary">Find an Expert</a>
-                            <a class="btn edux-btn-border-primary">Become an Expert</a>
+                            <x-button.link
+                                href="{{ route('find.experts') }}"
+                                class="btn btn-primary edux-btn-primary"
+                                text="Find Experts"
+                            />
+                            <x-button.link
+                                href="{{ route('auth.login') }}"
+                                class="btn edux-btn-border-primary"
+                                text="Become an Expert"
+                            />
                         </div>
                     </div>
                 </div>

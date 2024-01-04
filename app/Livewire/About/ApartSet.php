@@ -8,7 +8,8 @@ use App\Models\AboutApart;
 class ApartSet extends Component
 {
     public $aboutApart;
-    public $description;
+    public $title = '';
+    public $subtitle = '';
     public $showReadMoreButton = null;
 
     public function mount()
