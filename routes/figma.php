@@ -23,6 +23,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/scholarship-singlePage', 'figma.scholarshipsinglepage');
     Route::view('/search-empty', 'figma.searchempty');
     // client post Job
+    Route::view('/project-create', 'figma.projectCreate');
     Route::view('/jobposts', 'figma.clientjobpost');
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');
