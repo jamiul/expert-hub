@@ -1,0 +1,61 @@
+
+.project-list-card-item {
+    padding: 32px;
+    border-bottom: 1px solid $edu-border-color;
+
+    .project-list-card-item-header {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $edu-border-color;
+
+        .project-item-title {
+            h3 {
+                a {
+                    color: inherit;
+                }
+            }
+        }
+
+        .project-item-meta-data {
+            font-size: 14px;
+        }
+    }
+
+    .project-list-card-item-body {
+        padding: 1rem 0;
+    }
+
+
+    &:hover {
+        background-color: #F7F9FE;
+    }
+}
+
+.project-details-card {
+    padding: 32px;
+    .project-details-card-header {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $edu-border-color;
+
+        .project-details-meta-data {
+            font-size: 14px;
+        }
+    }
+    .project-details-card-body {
+        padding: 1rem 0;
+    }
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    a {
+        padding: 2px 12px;
+        border-radius: 42px;
+        background: #EBEFF7;
+        font-size: 14px;
+        font-weight: 500;
+        color: #555C68;
+    }
+}
