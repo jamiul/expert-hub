@@ -64,5 +64,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="single-button d-flex justify-content-center mt-5">
+                <button type="button" class="btn btn-primary edux-btn-primary">Get Started</button>
+            </div>
+        </div>
     </div>
 </div>

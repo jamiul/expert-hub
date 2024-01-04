@@ -16,6 +16,12 @@
                 </li>
             </ul>
             @livewire('about.apart-set')
+
+        </div>
+        <div class="row">
+            <div class="single-button d-flex justify-content-center">
+                <a class="btn btn-primary edux-btn-primary">Get Started</a>
+            </div>
         </div>
     </div>
 </div>

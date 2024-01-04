@@ -26,9 +26,9 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="training-button">
-                    <a href="#">Registration</a>
-                    <a href="#">Read More</a>
+                <div class="single-button d-flex gap-3 justify-content-end">
+                    <a href="" class="btn btn-primary">Registration</a>
+                    <a href="" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
         </div>
@@ -54,9 +54,9 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="training-button">
-                    <a href="#">Registration</a>
-                    <a href="#">Read More</a>
+                <div class="single-button d-flex gap-3 justify-content-end">
+                    <a href="" class="btn btn-primary">Registration</a>
+                    <a href="" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
         </div>
@@ -82,9 +82,9 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="training-button">
-                    <a href="#">Registration</a>
-                    <a href="#">Read More</a>
+                <div class="single-button d-flex gap-3 justify-content-end">
+                    <a href="" class="btn btn-primary">Registration</a>
+                    <a href="" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
         </div>
@@ -110,9 +110,9 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="training-button">
-                    <a href="#">Registration</a>
-                    <a href="#">Read More</a>
+                <div class="single-button d-flex gap-3 justify-content-end">
+                    <a href="" class="btn btn-primary">Registration</a>
+                    <a href="" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
         </div>
@@ -138,9 +138,9 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="training-button">
-                    <a href="#">Registration</a>
-                    <a href="#">Read More</a>
+                <div class="single-button d-flex gap-3 justify-content-end">
+                    <a href="" class="btn btn-primary">Registration</a>
+                    <a href="" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
         </div>

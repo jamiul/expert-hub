@@ -67,8 +67,10 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-dashboardatimesheet', 'figma.clientdashboardatimesheet');
     Route::view('/client-passwordsecurity', 'figma.clientdashboardpasswordsecurity');
     Route::view('/client-notificationsettting', 'figma.clientdashboardnotificationsettting');
+    //Projects
+    Route::view('/find-projects', 'figma.find-projects');
+    Route::view('/project-details-view', 'figma.project-details-view');
 
-    Route::view('/project-create', 'figma.projectCreate');
     // Admin dashboard
     Route::view('/super-admin-layout', 'figma.admin-layout');
     Route::view('/super-admin-projects', 'figma.admin-projects');

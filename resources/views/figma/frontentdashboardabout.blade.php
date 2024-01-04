@@ -1,23 +1,18 @@
 @extends('frontend.layouts.front-admin-dashboard-layout')
 @section('content')
-<main class="main__layout d-flex">
-<!-- start left sidebar -->
-<div class="left__sidebar">
-<div class="content">
-@include('figma/adminleftsidebar')
-</div><!--.//content-->
-</div>
-<!-- end left sidebar -->
+  <div class="admin-layout" sidebar-size="small">
+      <!-- start header -->
+        <div class="admin-header">
+            @include('figma/admintopbar')
+        </div>
+        <!-- end header -->
+        <!-- start left sidebar -->
+        <div class="admin-sidebar">
+            @include('figma/adminleftsidebar')
+        </div>
+        <!-- end left sidebar -->
 
-<!-- start main body content -->
-<div class="main__content__wrapper col">
-<!-- start header -->
-<div class="header__wrapper py-2 bg-white">
-@include('figma/admintopbar')
-</div>
-<!-- end header -->
-
-<div class="content__wrapper">
+        <main class="admin-content">
 <div class="container-fluid">
     <div class="row">
         <!-- <div class="col-md-2">
@@ -290,9 +285,11 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="form-floating admin-text-area position-relative"> <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.</textarea>
+                                                <div class="form-floating admin-text-area position-relative">
+                                                <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.</textarea>
                                                 <span class="edux-word-count">0/1000</span>
-                                                <label for="floatingTextarea" class=" admin-text-area-level position-absolute">Paragraph</label> </div>
+                                                <label for="floatingTextarea" class=" admin-text-area-level">Paragraph</label>
+                                            </div>
                                             </div>
                                         </div>
                                     </form>
@@ -2237,7 +2234,40 @@
                 </div>
                 <div class="modal-footer"> <button type="button" class="btn btn-secondary btn-addexpert-cancel" data-bs-dismiss="modal">Cancel</button> <button type="button" class="btn btn-primary btn-expert-update">Update</button> </div>
             </div>
-        </div>
+</main>
     </div>
     <!--======================================= Add this category End Here =================================-->
+
+
+    <script>
+        function submenuTrigger(element, event) {
+            event.preventDefault();
+            element.parentElement.classList.toggle("active-sub-menu");
+        }
+
+        function toggleClasses(parentSelector, className) {
+            var parentElement = document.querySelector(parentSelector);
+            if (parentElement) {
+                // Toggle the specified class on the parent element
+                parentElement.classList.toggle(className);
+            } else {
+                console.error('Parent element not found!');
+            }
+        }
+
+        function removeClass(elementSelector, className) {
+            var element = document.querySelector(elementSelector);
+
+            if (element) {
+                // Remove the specified class from the element
+                element.classList.remove(className);
+            } else {
+                console.error('Element not found!');
+            }
+        }
+    </script>
+
+
     @endsection
+
+
