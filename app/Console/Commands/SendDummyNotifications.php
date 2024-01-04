@@ -31,6 +31,7 @@ class SendDummyNotifications extends Command {
             try {
                 //send notification to single user
                 $user = User::findOrFail( $user_id );
+                //todo: send project model directly
                 $user->notify( new ProjectPostNotification( [
                     'title'   => 'Hello',
                     'message' => 'welcome to the world',
@@ -44,6 +45,7 @@ class SendDummyNotifications extends Command {
             try {
                 //send notification to multiple user
                 $users = User::get();
+                //todo: send project model directly
                 Notification::send( $users, new ProjectPostNotification( [
                     'title'   => 'Hello',
                     'message' => 'welcome to the world',
