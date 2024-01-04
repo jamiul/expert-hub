@@ -17,6 +17,7 @@ class ProjectPostNotification extends Notification {
         $this->title   = $data['title'];
         $this->message = $data['message'];
         $this->link    = $data['link'];
+        $this->avatar  = $data['avatar'];
     }
 
     /**
@@ -48,7 +49,8 @@ class ProjectPostNotification extends Notification {
         return [
             'title'   => $this->title,
             'message' => $this->message,
-            'link'    => $this->link
+            'link'    => $this->link,
+            'avatar'  => $this->avatar
         ];
     }
 }

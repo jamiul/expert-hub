@@ -1,19 +1,7 @@
 <?php
 
-use App\Http\Controllers\Frontend\AboutUsController;
-use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
-use App\Http\Controllers\Frontend\Auth\NewPasswordController;
-use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Frontend\Auth\RegistrationController;
-use App\Http\Controllers\Frontend\ExpertController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\ProfileController;
-use App\Http\Controllers\Frontend\ProjectController;
-use App\Http\Controllers\Frontend\ScholarshipController;
-use App\Http\Controllers\Frontend\SearchScholarshipController;
-use App\Http\Controllers\Frontend\TrainingController;
-use App\Http\Controllers\Frontend\TrainingDetailsController;
+use App\Http\Controllers\Frontend\Auth\{AuthenticatedSessionController, EmailVerificationController, NewPasswordController, PasswordResetLinkController, RegistrationController};
+use App\Http\Controllers\Frontend\{AboutUsController, ExpertController, HomeController, ProfileController, ProjectController, ScholarshipController, SearchScholarshipController, TrainingController, TrainingDetailsController, NotificationsController };
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,4 +43,7 @@ Route::get('/profile/create', [ProfileController::class, 'create'])->middleware(
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
+
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
+
+Route::get('/notifications', [NotificationsController::class, 'notifications'])->middleware(['auth'])->name('notifications');

@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use App\Notifications\ProjectPostNotification;
+use Faker\Factory;
 use Illuminate\Console\Command;
 use Notification;
 
@@ -13,7 +14,7 @@ class SendDummyNotifications extends Command {
      *
      * @var string
      */
-    protected $signature = 'app:send-dummy-notifications {--user=}';
+    protected $signature = 'send-dummy-notifications {--user=}';
 
     /**
      * The console command description.
@@ -27,15 +28,19 @@ class SendDummyNotifications extends Command {
      */
     public function handle() {
         $user_id = $this->option( 'user' );
+
+        $faker = Factory::create();
+
         if ( $user_id ) {
             try {
                 //send notification to single user
                 $user = User::findOrFail( $user_id );
                 //todo: send project model directly
                 $user->notify( new ProjectPostNotification( [
-                    'title'   => 'Hello',
-                    'message' => 'welcome to the world',
-                    'link'    => 'http://google.com'
+                    'title'   => $faker->sentence,
+                    'message' => $faker->text( $maxNbChars = 300 ),
+                    'link'    => 'http://eduexhub.com',
+                    'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
                 ] ) );
                 echo 'notification sent';
             } catch ( \Exception $ex ) {
@@ -47,9 +52,10 @@ class SendDummyNotifications extends Command {
                 $users = User::get();
                 //todo: send project model directly
                 Notification::send( $users, new ProjectPostNotification( [
-                    'title'   => 'Hello',
-                    'message' => 'welcome to the world',
-                    'link'    => 'http://google.com'
+                    'title'   => $faker->sentence,
+                    'message' => $faker->text( $maxNbChars = 300 ),
+                    'link'    => 'http://eduexhub.com',
+                    'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
                 ] ) );
                 echo 'notification sent';
             } catch ( \Exception $ex ) {
