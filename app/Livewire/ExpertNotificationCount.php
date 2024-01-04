@@ -6,14 +6,9 @@ use Livewire\Component;
 
 class ExpertNotificationCount extends Component
 {
-    public $count;
+    public function render() {
+        $unreadCount = auth()->user()->unreadNotifications()->count();
 
-    protected $listeners = [
-        'NotificationMarkedAsRead' => 'updateCount',
-    ];
-
-    public function updateCount(int $count): int
-    {
-        return $count;
+        return view('livewire.expert-notification-count', compact('unreadCount'));
     }
 }

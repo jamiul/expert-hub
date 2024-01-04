@@ -62,11 +62,11 @@
                     </button>
                 </div>
             </div>
-            <div class="load-more-notification-item text-center">
-                <button class="btn btn-outline-primary" wire:click="loadMore">Load More</button>
-            </div>
         @empty
 
         @endforelse
+    </div>
+    <div class="load-more-notification-item text-center">
+        <button class="btn btn-outline-primary" wire:click="loadMore">Load More</button>
     </div>
 </div>
