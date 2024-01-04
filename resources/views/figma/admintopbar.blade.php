@@ -17,7 +17,7 @@
 
     <div class="header-menu">
         <ul>
-            <li class="dropdown admin-notification-menu">
+            <li class="dropdown notification-dropdown-menu">
                 <a class="" href="#" role="button" id="notification-dropdown" data-bs-toggle="dropdown"
                    aria-expanded="true">
                     <span>1</span>
@@ -33,9 +33,11 @@
                             </div>
                             <div class="notification-dropdown-info">
                                 <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
-                                <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
-                                    <span class="notification-dropdown-time">1m</span></p>
-                                <a class="show-dropdown-notification-details" href="">Details</a>
+                                <p class="text-sm">
+                                    <span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                    <span class="notification-dropdown-time">1m</span>
+                                </p>
+
                             </div>
 
                         </div>
@@ -48,7 +50,7 @@
                                 <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
                                 <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                     <span class="notification-dropdown-time">1m</span></p>
-                                <a class="show-dropdown-notification-details" href="">Details</a>
+
                             </div>
                         </div>
                         <div class="notification-dropdown-item">
@@ -60,7 +62,7 @@
                                 <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
                                 <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                     <span class="notification-dropdown-time">1m</span></p>
-                                <a class="show-dropdown-notification-details" href="">Details</a>
+
                             </div>
                         </div>
                         <div class="notification-dropdown-item">
@@ -72,7 +74,7 @@
                                 <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
                                 <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                     <span class="notification-dropdown-time">1m</span></p>
-                                <a class="show-dropdown-notification-details" href="">Details</a>
+
                             </div>
                         </div>
                         <div class="notification-dropdown-item">
@@ -84,12 +86,13 @@
                                 <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your invitation</p>
                                 <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                     <span class="notification-dropdown-time">1m</span></p>
-                                <a class="show-dropdown-notification-details" href="">Details</a>
                             </div>
                         </div>
 
                     </div>
-                    <a href="#" class="notification-dropdown-view-all"><x-icon.bell/> View All Notification</a>
+                    <a href="/figma/user-notification" class="notification-dropdown-view-all">
+                        <x-icon.bell fill="#C8C5D4"/>
+                        View All Notification</a>
                 </div>
             </li>
             <li class="dropdown admin-profile-menu">

@@ -21,6 +21,16 @@
 
 }
 
+.btn-outline-primary {
+    &:hover {
+        svg {
+            path {
+                fill: white;
+            }
+        }
+    }
+}
+
 .btn-outline-gray {
     border-radius: 4px;
     border: 2px solid $edu-border-color;
