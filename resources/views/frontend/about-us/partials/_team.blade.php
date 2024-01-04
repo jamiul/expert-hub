@@ -7,8 +7,9 @@
                         <h4>{{ Str::upper($aboutUsDTO->team_subtitle) }}</h4>
                         <h2>{{ Str::headline($aboutUsDTO->team_title) }}</h2>
                         <p>{!! nl2br(e($aboutUsDTO->team_description)) !!}</p>
-                        <div class="team-button">
-                            <a href="#">Find Experts</a>
+
+                        <div class="single-button">
+                            <button type="button" class="btn btn-primary edux-btn-primary">Find Experts</button>
                         </div>
                     </div>
                 </div>

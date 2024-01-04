@@ -7,9 +7,11 @@
                         <h2>Find a Top Academic <br> Expert for Your Project</h2>
                         <p>EduExHub is an exclusive platform featuring top academic experts across <br> diverse fields.
                             Whether it's a personal or institutional project</p>
-                        <div class="hero-button">
-                            <a href="#">Find an Expert</a>
-                            <a href="#">Become an Expert</a>
+                        <div class="hero-button d-flex gap-3">
+                        <button type="button" class="btn btn-primary edux-btn-primary">Find an Expert</button>
+                        <button type="button" class="btn edux-btn-border-primary">Become an Expert</button>
+                            <!-- <a href="#">Find an Expert</a>
+                            <a href="#">Become an Expert</a> -->
                         </div>
                     </div>
                 </div>

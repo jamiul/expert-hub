@@ -8,7 +8,8 @@
                         <h2>{{ Str::headline($aboutUsDTO->team_title) }}</h2>
                         <p>{!! nl2br(e($aboutUsDTO->team_description)) !!}</p>
                         <div class="team-button">
-                            <a href="#">Get Started</a>
+                        <button type="button" class="btn btn-primary edux-btn-primary">Get Started test</button>
+                            <!-- <a href="#">Get Started test</a> -->
                         </div>
                     </div>
                 </div>
