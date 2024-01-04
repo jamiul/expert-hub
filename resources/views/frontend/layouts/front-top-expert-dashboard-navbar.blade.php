@@ -225,7 +225,7 @@
 
           @livewire('expert-notification-count')
 
-          <div class="dropdown">
+         <div class="dropdown">
             <!-- data-bs-auto-close="false" -->
             <a class="drop__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center overflow-hidden" href="#" role="button" id="messageDrop" data-bs-toggle="dropdown" aria-expanded="false"  >
                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="rounded-circle" alt="avatar">
