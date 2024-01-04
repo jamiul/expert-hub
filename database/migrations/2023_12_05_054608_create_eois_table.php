@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('project_files', function (Blueprint $table) {
+        Schema::create('eois', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id');
-            $table->string('name');
-            $table->string('type');
+            $table->foreignId('expert_id');
+            $table->decimal('amount');
+            $table->text('message');
+            $table->string('status');
+            $table->boolean('is_milestone')->default(0);
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('project_files');
+        Schema::dropIfExists('eois');
     }
 };

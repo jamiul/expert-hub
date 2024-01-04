@@ -21,15 +21,6 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                 </div>
                 <div class="col-md-8">
                     <div class="pagination-right">
-                        <div class="results">
-                            <p>{{ 'Results per page' }}</p>
-                            <select class="select-page" wire:model.live="perPage">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
                         <ul>
                             {{-- First Page Link --}}
                             @if ($paginator->onFirstPage())
