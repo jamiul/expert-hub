@@ -311,39 +311,6 @@ header .header-menu .login-block i {
     font-size: 16px;
 }
 
-.product-slider .hero-contant .hero-text .hero-button a {
-    transition: all 500ms;
-    background: #0036e3;
-    width: 218px;
-    height: 45px;
-    display: inline-table;
-    color: #fff;
-    text-align: center;
-    line-height: 45px;
-    border-radius: 4px;
-    margin-right: 13px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    border: solid 2px #0036e3;
-}
-
-.product-slider .hero-contant .hero-text .hero-button a:hover {
-    background: #edf0f9;
-    color: #0036e3;
-}
-
-.product-slider .hero-contant .hero-text .hero-button a:last-child {
-    background: #edf0f9;
-    color: #0036e3;
-}
-
-.product-slider .hero-contant .hero-text .hero-button a:last-child:hover {
-    background: #0036e3;
-    border-color: #0036e3;
-    color: #fff;
-}
-
 .product-slider .carousel-indicators {
     position: inherit;
     margin: 0;
@@ -684,27 +651,6 @@ header .header-menu .login-block i {
     padding-right: 88px;
 }
 
-.team .team-text .team-button a {
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-    width: 218px;
-    height: 45px;
-    display: inline-table;
-    background: #0036E3;
-    text-align: center;
-    line-height: 45px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 500ms;
-    border: solid 2px #0036E3;
-}
-
-.team .team-text .team-button a:hover {
-    color: #0036E3;
-    background: #fff;
-}
-
 .team .team-block {
     text-align: center;
     margin: 0 0 50px;
@@ -823,27 +769,6 @@ img.exp-categoryl {
     line-height: 25px;
     margin: 0 0 35px;
     padding-right: 88px;
-}
-
-.team .team-text .team-button a {
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-    width: 218px;
-    height: 45px;
-    display: inline-table;
-    background: #0036e3;
-    text-align: center;
-    line-height: 45px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 500ms;
-    border: solid 2px #0036e3;
-}
-
-.team .team-text .team-button a:hover {
-    color: #0036e3;
-    background: #fff;
 }
 
 .team .team-block {

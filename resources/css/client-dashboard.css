@@ -5899,13 +5899,13 @@ button.edux-btn-close {
 
 .edux-btn-primary {
   display: flex;
-  min-width: 218px;
+  max-width: 218px;
   padding: 11px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   background: #0036E3 !important;
-  max-width: 100%;
+  width: 100%;
   color: #FFF;
   text-align: center;
   font-family: Colfax;
@@ -5918,13 +5918,13 @@ button.edux-btn-close {
 
 .edux-btn-primary:hover{
   display: flex;
-  min-width: 218px;
+  max-width: 218px;
   padding: 11px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   background: #002CB9 !important;
-  max-width: 100%;
+  width: 100%;
   color: #FFF;
   text-align: center;
   font-family: Colfax;
@@ -5935,12 +5935,12 @@ button.edux-btn-close {
 
 .edux-btn-border-primary{
   display: flex;
-  min-width: 218px;
+  max-width: 218px;
   padding: 11px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  max-width: 100%;
+  width: 100%;
   color:#0036E3;
   text-align: center;
   font-family: Colfax;
@@ -5954,13 +5954,13 @@ button.edux-btn-close {
 
 .edux-btn-border-primary:hover{
   display: flex;
-  min-width: 218px;
+  max-width: 218px;
   padding: 11px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   background: #0036E3;
-  max-width: 100%;
+  width: 100%;
   color: #FFF;
   text-align: center;
   font-family: Colfax;

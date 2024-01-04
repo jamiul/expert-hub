@@ -9,7 +9,7 @@
                         <p>{!! nl2br(e($aboutUsDTO->team_description)) !!}</p>
 
                         <div class="single-button">
-                            <button type="button" class="btn btn-primary edux-btn-primary">Find Experts</button>
+                            <a class="btn btn-primary edux-btn-primary">Find Experts</a>
                         </div>
                     </div>
                 </div>
