@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="sidebar-layout scholarship-database-page-layout">
+                    <div class="sidebar-layout left-sidebar-layout scholarship-database-page-layout">
 
                         @livewire('scholarship.filter')
                         @livewire('scholarship.lists')

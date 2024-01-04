@@ -8,7 +8,8 @@
             <div class="col-md-3 col-sm-6">
                 <div class="scholarship-block">
                     <div class="scholarship-img">
-                        <a href="#"><img src="{{ $scholarship->university->logo ? $scholarship->university->logo: asset('assets/frontend/img/scholarship1.jpg') }}" /></a>
+                        <a href="#"><img
+                                src="{{ $scholarship->university->logo ? $scholarship->university->logo : asset('assets/frontend/img/scholarship1.jpg') }}" /></a>
                     </div>
                     <div class="scholarship-text">
                         <a href="#">{{ $scholarship->university->name }} | {{ $scholarship->country->name }}</a>
@@ -17,10 +18,12 @@
                 </div>
             </div>
         @empty
-        <p>No Data</p>
+            <p>No Data</p>
         @endforelse
     </div>
-    <div class="scholarship-button">
-        <a href="#">View all Scholarships 2024</a>
+
+    <div class="single-button d-flex justify-content-center mt-5">
+        <x-button.link href="{{ route('scholarship-database') }}" class="btn edux-btn-border-primary"
+            text="View all Scholarships 2024" />
     </div>
 </div>

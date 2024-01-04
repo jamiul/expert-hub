@@ -100,6 +100,13 @@ img {
     color: $edu-primary-dark-color !important;
 }
 
+.btn-has-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 .p-40 {
     padding: 40px;
 }
@@ -307,6 +314,7 @@ img {
         width: 32px;
         height: 32px;
         padding: 6px;
+
         svg {
 
         }
@@ -316,6 +324,7 @@ img {
         width: 24px;
         height: 24px;
         padding: 3px;
+
         svg {
 
         }

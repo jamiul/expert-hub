@@ -39,7 +39,7 @@
                         <li><strong> Availability </strong></li>
                         <li><strong> Summery </strong></li>
                     </ul>
-                    <div class="progress-step-content mt-40 ">
+                    <div class="progress-step-content mt-40">
                         <h6 class="mb-2">Expert by Field</h6>
                         <x-form.select label="Expert by Field" name="title">
                             <option value="">Architecture History</option>
@@ -193,7 +193,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-step-content mt-40 d-none">
+                    <div class="progress-step-content mt-40">
                         <div class="mb-40">
                             <h6 class="mb-2">Expert skillset</h6>
                             <p>Time zone for opening hours and new events. Your invitees will see your
@@ -266,7 +266,7 @@
 
                         </div>
                     </div>
-                    <div class="progress-step-content mt-40 d-none">
+                    <div class="progress-step-content mt-40">
                         <h6 class="mb-2">Hourly rate</h6>
                         <p>Clients will see this rate on your profile and in search results once you publish
                             your
@@ -327,7 +327,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-step-content mt-40 d-none">
+                    <div class="progress-step-content mt-40">
                         <h6 class="mb-2">Consultation Summery</h6>
 
                         <textarea rows="5" cols="10" name="bio" id="bio"
@@ -370,7 +370,7 @@
 
                         </div>
                     </div>
-                    <div class="progress-step-content mt-40 d-none">
+                    <div class="progress-step-content mt-40">
                         <div class="offered-service-card mb-40">
                             <div>
                                 <img
