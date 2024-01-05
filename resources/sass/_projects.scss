@@ -32,6 +32,7 @@
 
 .project-details-card {
     padding: 32px;
+
     .project-details-card-header {
         padding-bottom: 5px;
         border-bottom: 1px solid $edu-border-color;
@@ -40,22 +41,84 @@
             font-size: 14px;
         }
     }
-    .project-details-card-body {
-        padding: 1rem 0;
+
+}
+
+.attachment-display-wrapper {
+    display: flex;
+    gap: 1.5rem;
+
+    & > div {
+        flex: 0 0 218px;
+        max-width: 318px;
     }
 }
 
-.tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+.attachment-display-card {
+    .attachment-display-thumb {
+        display: table;
+        margin-bottom: 0.6875rem;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    h6 {
+        font-size: 0.875rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+}
+
+
+.related-project-card {
+    border: solid 1px #0E00621A;
+    border-radius: 8px;
+    //box-shadow: 12px 17px 48px 0px #0e00621a;
+    padding: 35px 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    h4 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 45px;
+        margin-bottom: 10px;
+    }
 
     a {
-        padding: 2px 12px;
-        border-radius: 42px;
-        background: #EBEFF7;
-        font-size: 14px;
-        font-weight: 500;
-        color: #555C68;
+        color: inherit;
+
+        &:hover {
+            color: $edu-primary-color;
+        }
     }
+
+    p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 70px;
+    }
+
+    a.view-project-details {
+        display: flex;
+        align-items: center;
+        color: $edu-headings-color;
+        font-weight: 500;
+        font-size: 0.875rem;
+        path {
+            fill: $edu-headings-color;
+        }
+        &:hover {
+            color: $edu-primary-color;
+            path {
+                fill: $edu-primary-color;
+            }
+        }
+    }
+
 }

@@ -3,10 +3,14 @@
     border-radius: 7px;
     border: 1px solid $edu-border-color;
     //box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
-
+    background-color: #fff;
 
     & > div {
         padding: 32px;
+
+        &.page-sidebar{
+            background-color: #FCFCFF;
+        }
     }
 }
 
