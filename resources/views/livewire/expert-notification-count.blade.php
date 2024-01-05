@@ -19,7 +19,7 @@
                                 <p class="mb-0 small text-muted desc">{{ Str::limit($unread_notification->data['message'], $limit = 150, $end = '...') }}</p>
                             </div>
                             <div class="time__box fw-medium text-end fs-12">
-                                <div class="d-block text-muted">{{ $unread_notification->created_at->format('M d, Y') }}</div>
+                                <div class="d-block text-muted">{{ $unread_notification->created_at->diffForHumans() }}</div>
                                 <a href="{{ @$unread_notification->data['link'] }}" class="rounded-pill detail__link transition">Details</a>
                             </div>
                         </div>
