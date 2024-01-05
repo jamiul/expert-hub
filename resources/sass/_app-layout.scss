@@ -481,3 +481,396 @@ $edu-admin-header-height: 76px;
         color: $edu-headings-color;
     }
 }
+
+
+header {
+    &.public-header {
+        background-color: #ffffff;
+
+        .public-header-main {
+            border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+            background: #FFF;
+        }
+
+        .public-header-main-container {
+            padding: 25px 15px;
+            max-width: 1320px;
+            margin: 0 auto;
+            display: grid;
+            align-items: center;
+            gap: 20px;
+            @media screen and (min-width: 950px) {
+                grid-template-columns: 150px auto 260px;
+                .public-header-menu-trigger {
+                    display: none;
+                }
+                .header-search-trigger {
+                    display: none;
+                }
+            }
+            @media screen and (max-width: 950px) {
+                grid-template-columns: 150px auto 60px;
+                .header-search-trigger {
+                    display: none;
+                }
+                .header-special-menu {
+                    //border-top: 1px solid rgba(14, 0, 98, 0.10);
+                    grid-column-start: 1;
+                    grid-column-end: 4;
+
+                    ul {
+                        justify-content: center;
+                    }
+                }
+            }
+
+        }
+
+        .header-special-menu {
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 24px;
+
+                li {
+                    list-style: none;
+                    display: inline-block;
+
+                    a {
+                        display: inline;
+                        font-weight: 500;
+                        color: $edu-primary-color;
+                        text-decoration: underline;
+                        font-size: 0.875rem;
+                    }
+
+                }
+            }
+        }
+
+        &.mobile-menu-activated {
+            .public-header-nav {
+                display: block;
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                background-color: #fff;
+                width: 100%;
+                max-width: calc(100% - 90px);
+                box-shadow: 0 0 10px #cccccc;
+                z-index: 5;
+
+                ul {
+                    margin: 0;
+                    padding: 20px 0;
+
+                    li {
+                        list-style: none;
+                        display: block;
+                        border-bottom: 1px solid $edu-border-color;
+
+                        a {
+                            display: block;
+                            padding: 0.8rem 1.9rem;
+                            color: $edu-headings-color;
+                        }
+
+                        &.public-auth-nav-item {
+                            a {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                color: $edu-primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .public-header-menu-trigger {
+
+                span {
+                    background-color: transparent;
+                    width: 25px;
+                    position: relative;
+
+                    &:before {
+                        top: 0;
+                        width: 25px;
+                        transition-delay: 0.2s;
+                        transform: rotate(40deg);
+                        background-color: $edu-red-color;
+                    }
+
+                    &:after {
+                        top: 0;
+                        width: 25px;
+                        transition-delay: 0.2s;
+                        transform: rotate(-40deg);
+                        background-color: $edu-red-color;
+                    }
+                }
+
+                &.close-menu-animation {
+                    border: 1px solid #FD6D4D;
+                    border-radius: 50%;
+                    //background-color: #FD6D4D;
+                    span {
+                        background-color: transparent;
+
+                        &:before {
+                            transform: rotate(40deg);
+                            background-color: #FD6D4D;
+                        }
+
+                        &:after {
+                            transform: rotate(-40deg);
+                            background-color: #FD6D4D;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.public-header-nav {
+    @media screen and (min-width: 950px) {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+
+
+            li {
+                list-style: none;
+                display: inline-block;
+                margin: 0.1rem 1rem 0.1rem 0;
+                @media screen and (min-width: 1100px) {
+                    margin: 0.1rem 2rem 0.1rem 0;
+                }
+
+                a {
+                    display: block;
+                    padding: 1rem 0;
+                    color: $edu-headings-color;
+
+                    &:hover {
+                        color: $edu-primary-color;
+                    }
+                }
+
+                &.public-auth-nav-item {
+                    margin-right: 0.5rem;
+
+                    &.login-nav-item {
+                        margin-left: auto;
+                    }
+
+                    &.register-nav-item {
+                        margin-right: 0;
+                    }
+
+                    a {
+                        border: 2px solid $edu-primary-color;
+                        padding: 0.8rem 1.9rem 0.8rem 1.4rem;
+                        border-radius: 0.25rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: 500;
+                        color: $edu-primary-color;
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        &:hover {
+                            background-color: $edu-primary-dark-color;
+                            color: white;
+
+                            path {
+                                fill: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 950px) {
+        display: none;
+    }
+}
+
+.header-search {
+    form {
+        display: flex;
+        align-items: center;
+        max-width: 600px;
+        border-radius: 4px;
+        border: 2px solid $edu-border-color;
+        margin: 0 auto;
+
+        input[type='search'] {
+            width: calc(100% - 150px);
+            padding: 13px 24px;
+            border: none;
+            outline: none;
+        }
+
+        .search-select {
+            width: 100px;
+            position: relative;
+
+            label {
+                width: 18px;
+                height: 18px;
+                display: block;
+                position: absolute;
+                right: 3px;
+                top: 50%;
+                transform: translateY(-50%) rotate(90deg);
+                z-index: 1;
+            }
+
+            &:before {
+                width: 1px;
+                height: 26px;
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $edu-border-color;
+                z-index: 2;
+            }
+
+            ul {
+                display: none;
+                position: absolute;
+                left: 0;
+                background-color: #fff;
+                margin: 0;
+                padding: 0;
+                top: 100%;
+                box-shadow: 0px 3px 16px 0px rgba(14, 0, 98, 0.1);
+                z-index: 3;
+                border-radius: 4px;
+
+                li {
+                    padding: 8px 16px;
+                    display: block;
+                    white-space: nowrap;
+                    border-bottom: 1px solid $edu-border-color;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $edu-primary-color;
+                    }
+                }
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: 13px 24px;
+                position: relative;
+                cursor: pointer;
+
+                &:focus ~ {
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: #EBEFF7;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: $edu-primary-dark-color;
+                transform: scale(1.1);
+                border-radius: 4px;
+
+                path {
+                    fill: white;
+                }
+            }
+        }
+
+
+    }
+
+    @media screen and (max-width: 667px) {
+        form {
+            display: none;
+        }
+
+        .header-search-trigger {
+            display: block !important;
+            float: right;
+        }
+    }
+}
+
+.public-header-menu-trigger {
+    button {
+        display: inline-flex;
+        width: 35px;
+        height: 35px;
+        background-color: #ffffff;
+        cursor: pointer;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: unset !important;
+        padding: 0;
+
+        & > span {
+            display: block;
+            width: 28px;
+            height: 4px;
+            background: $edu-primary-color;
+            //transform: translateY(18px);
+            border-radius: 3px;
+            position: relative;
+
+            &:before, &:after {
+                display: block;
+                content: "";
+                width: 35px;
+                height: 4px;
+                background: $edu-primary-color;
+                position: absolute;
+                border-radius: 3px;
+                transition: 0.2s linear;
+            }
+
+            &:before {
+                top: -12px;
+            }
+
+            &:after {
+                top: 12px;
+            }
+        }
+    }
+}
