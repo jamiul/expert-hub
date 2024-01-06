@@ -883,7 +883,7 @@ header {
             background: #FFF;
             @media screen and (min-width: 950px) {
                 grid-template-columns: 150px auto 260px;
-                padding: 15px;
+                padding: 20px;
                 align-items: center;
                 .header-menu-trigger {
                     display: none;
@@ -904,13 +904,30 @@ header {
                 li {
                     list-style: none;
                     display: inline-block;
+                    position: relative;
+
+                    & > span {
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        background-color: #FF0000;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: -5px;
+                        right: -8px;
+                        font-weight: 700;
+                        color: #ffffff;
+                        font-size: 10px;
+                        line-height: 10px;
+                    }
 
                     a {
-                        //display: inline;
-                        //font-weight: 500;
-                        //color: $edu-primary-color;
-                        //text-decoration: underline;
-                        //font-size: 0.875rem;
+                        &.icon-btn {
+                            width: 44px;
+                            height: 44px;
+                        }
                     }
 
                 }

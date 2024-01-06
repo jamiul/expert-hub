@@ -136,22 +136,24 @@
             <div class="header-special-menu">
                 <ul class="">
                     <li>
-                        <a class="icon-btn border" href="">
+                        <a class="icon-btn border" href="#">
                             <x-icon.heart/>
                         </a>
                     </li>
                     <li>
-                        <a class="icon-btn border" href="">
+                        <span>99</span>
+                        <a class="icon-btn border" href="#">
                             <x-icon.bell/>
                         </a>
                     </li>
                     <li>
-                        <a class="icon-btn border" href="">
+                        <span>99</span>
+                        <a class="icon-btn border" href="#">
                             <x-icon.message-line/>
                         </a>
                     </li>
                     <li>
-                        <a  class="icon-btn border"  href="">
+                        <a  class="icon-btn border"  href="#">
                             <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
                         </a>
                     </li>
