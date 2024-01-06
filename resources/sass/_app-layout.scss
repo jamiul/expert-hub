@@ -552,41 +552,6 @@ header {
         &.mobile-menu-activated {
             .public-header-nav {
                 display: block;
-                position: fixed;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                background-color: #fff;
-                width: 100%;
-                max-width: calc(100% - 90px);
-                box-shadow: 0 0 10px #cccccc;
-                z-index: 5;
-
-                ul {
-                    margin: 0;
-                    padding: 20px 0;
-
-                    li {
-                        list-style: none;
-                        display: block;
-                        border-bottom: 1px solid $edu-border-color;
-
-                        a {
-                            display: block;
-                            padding: 0.8rem 1.9rem;
-                            color: $edu-headings-color;
-                        }
-
-                        &.public-auth-nav-item {
-                            a {
-                                display: flex;
-                                align-items: center;
-                                gap: 0.5rem;
-                                color: $edu-primary-color;
-                            }
-                        }
-                    }
-                }
             }
 
             .header-menu-trigger {
@@ -709,6 +674,40 @@ header {
     }
     @media screen and (max-width: 950px) {
         display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #fff;
+        width: 100%;
+        max-width: calc(100% - 90px);
+        box-shadow: 0 0 10px #cccccc;
+        z-index: 5;
+        ul {
+            margin: 0;
+            padding: 20px 0;
+
+            li {
+                list-style: none;
+                display: block;
+                border-bottom: 1px solid $edu-border-color;
+
+                a {
+                    display: block;
+                    padding: 0.8rem 1.9rem;
+                    color: $edu-headings-color;
+                }
+
+                &.public-auth-nav-item {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: $edu-primary-color;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -881,15 +880,36 @@ header {
             display: grid;
             border-bottom: 1px solid rgba(14, 0, 98, 0.10);
             background: #FFF;
-            @media screen and (min-width: 950px) {
-                grid-template-columns: 150px auto 260px;
-                padding: 20px;
-                align-items: center;
+            gap: 30px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            @media screen and (min-width: 1300px) {
+                grid-template-columns: 150px auto auto auto;
+                .header-search-trigger {
+                    display: none;
+                }
+            }
+            @media screen and (min-width: 1000px) and (max-width: 1300px) {
+                grid-template-columns: 150px auto auto;
+            }
+            @media screen and (min-width: 1000px) {
                 .header-menu-trigger {
                     display: none;
                 }
-                .header-search-trigger {
+            }
+            @media screen and (max-width: 1000px) {
+                grid-template-columns: 40px 150px auto;
+                gap: 20px;
+                .main-header-nav {
                     display: none;
+                    position: fixed;
+                    background: #fff;
+                    width: calc(100% - 80px);
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 5;
                 }
             }
         }
@@ -933,5 +953,74 @@ header {
                 }
             }
         }
+
+        .header-menu-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-search {
+            @media screen and (max-width: 1300px) {
+                display: none;
+            }
+        }
+    }
+
+    &.mobile-menu-activated {
+        .main-header-nav {
+            display: block !important;
+        }
+    }
+}
+
+.main-header-nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        @media screen and (min-width: 1000px) {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                margin: 0.1rem 1rem 0.1rem 0;
+
+                a {
+                    display: block;
+                    padding: 1rem 0;
+                    color: $edu-headings-color;
+
+                    &:hover {
+                        color: $edu-primary-color;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            padding: 20px 0;
+            li {
+                list-style: none;
+                display: block;
+                border-bottom: 1px solid $edu-border-color;
+
+                a {
+                    display: block;
+                    padding: 0.8rem 1.9rem;
+                    color: $edu-headings-color;
+                }
+
+                &.public-auth-nav-item {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: $edu-primary-color;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -97,11 +97,35 @@
     <div class="separator"><span>Authorized User Header</span></div>
     <header class="main-header">
         <div class="main-header-container">
+            <div class="header-menu-trigger">
+                <button onclick="toggleClasses('.main-header', 'mobile-menu-activated' )">
+                    <span></span>
+                </button>
+            </div>
             <div class="header-logo">
                 <a href="">
                     <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
                 </a>
             </div>
+            <nav class="main-header-nav">
+                <ul>
+                    <li>
+                        <a href="/figma/client-dashboard">Projects </a>
+                    </li>
+                    <li>
+                        <a href="/figma/client-dashboardexperthire">Experts</a>
+                    </li>
+
+                    <li>
+                        <a href="/figma/client-clientaddpayment">Billing & Payments</a>
+                    </li>
+
+                    <li>
+                        <a href="/figma/client-passwordsecurity">Settings</a>
+                    </li>
+                </ul>
+            </nav>
+
             <div class="header-search">
                 <form action="">
                     <input type="search" placeholder="I am looking for">
@@ -122,19 +146,17 @@
                         <x-icon.search fill="#191D24"/>
                     </button>
                 </form>
-                <div class="header-search-trigger">
-                    <button class="icon-btn border">
-                        <x-icon.search fill="#0036E3"/>
-                    </button>
-                </div>
             </div>
-            <div class="header-menu-trigger">
-                <button onclick="toggleClasses('.public-header', 'mobile-menu-activated' )">
-                    <span></span>
-                </button>
-            </div>
+
+
+
             <div class="header-special-menu">
                 <ul class="">
+                    <li class="header-search-trigger">
+                        <a class="icon-btn border" href="#">
+                            <x-icon.search fill="#191D24"/>
+                        </a>
+                    </li>
                     <li>
                         <a class="icon-btn border" href="#">
                             <x-icon.heart/>
@@ -153,7 +175,7 @@
                         </a>
                     </li>
                     <li>
-                        <a  class="icon-btn border"  href="#">
+                        <a class="icon-btn border" href="#">
                             <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
                         </a>
                     </li>
