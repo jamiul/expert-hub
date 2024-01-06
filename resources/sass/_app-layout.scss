@@ -915,40 +915,43 @@ header {
         }
 
         .header-special-menu {
-            ul {
+            & > ul {
                 margin: 0;
                 padding: 0;
                 display: flex;
                 gap: 9px;
 
-                li {
+                & > li {
                     list-style: none;
                     display: inline-block;
                     position: relative;
 
-                    & > span {
-                        position: absolute;
-                        width: 20px;
-                        height: 20px;
-                        background-color: #FF0000;
-                        border-radius: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        top: -5px;
-                        right: -8px;
-                        font-weight: 700;
-                        color: #ffffff;
-                        font-size: 10px;
-                        line-height: 10px;
-                    }
+                    & > a {
+                        //pointer-events: none;
 
-                    a {
+                        & > span {
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            background-color: #FF0000;
+                            border-radius: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            top: -5px;
+                            right: -8px;
+                            font-weight: 700;
+                            color: #ffffff;
+                            font-size: 10px;
+                            line-height: 10px;
+                        }
+
                         &.icon-btn {
                             width: 44px;
                             height: 44px;
                         }
                     }
+
 
                 }
             }
@@ -1022,5 +1025,225 @@ header {
             }
         }
 
+    }
+}
+
+.header-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid $edu-border-color;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 8px 8px 32px rgba(14, 0, 98, 0.1);
+    width: 300px;
+    top: calc(100% + 28px);
+    visibility: hidden;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        transform: rotate(-45deg);
+        border-top: 1px solid $edu-border-color;
+        border-right: 1px solid $edu-border-color;
+        background-color: #fff;
+        position: absolute;
+        top: -9px;
+        right: 16px;
+    }
+
+    .profile-dropdown-inner {
+
+        .dropdown-user-thumbnail {
+            display: flex;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            overflow: hidden;
+            background-color: #cccccc;
+            align-items: flex-end;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .dropdown-user-info {
+            text-align: center;
+        }
+
+        .dropdown-user-profile-status {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border: 2px solid $edu-border-color;
+            border-radius: 4px;
+
+            input {
+                display: none;
+
+                &:checked {
+                    + label {
+                        background-color: $edu-primary-color;
+                        color: white;
+                        border-radius: 4px;
+                    }
+                }
+            }
+
+            label {
+                padding: 9px 24px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+
+        .dropdown-user-menu {
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    display: block;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 8px 0;
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: inherit;
+
+                        path {
+                            fill: #A1A0A5;
+                        }
+
+                        &:hover {
+                            color: $edu-primary-color;
+
+                            path {
+                                fill: $edu-primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .notification-dropdown-inner {
+        .notification-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid $edu-border-color;
+            padding: 5px 20px 5px 5px;
+            position: relative;
+            color: inherit;
+
+            &:hover,
+            &.notification-dropdown-item-unread {
+                background-color: rgba(0, 54, 227, 0.05);
+            }
+
+            & > div {
+                &.notification-dropdown-thumb {
+                    flex: 0 0 48px;
+                    max-width: 48px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                }
+
+                &.notification-dropdown-info {
+                    flex: 0 0 calc(100% - 58px);
+                    max-width: calc(100% - 58px);
+
+                    p {
+                        margin: 0;
+                        display: flex;
+                        justify-content: space-between;
+
+                        &.notification-dropdown-title {
+                            white-space: nowrap;
+                            max-width: 173px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        span {
+                            display: inline-block;
+
+                            &.notification-dropdown-message {
+                                white-space: nowrap;
+                                max-width: 160px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.notification-dropdown-item-unread {
+                //&:after {
+                //    content: "";
+                //    display: block;
+                //    width: 10px;
+                //    height: 10px;
+                //    background-color: $edu-primary-color;
+                //    position: absolute;
+                //    top: 50%;
+                //    right: 11px;
+                //    border-radius: 100%;
+                //    transform: translateY(-50%);
+                //}
+            }
+
+            .show-dropdown-notification-details {
+                position: absolute !important;
+                top: 50%;
+                right: 11px;
+                border-radius: 20px !important;
+                transform: translateY(-50%);
+                background-color: #fff;
+                padding: 0.1875rem 0.75rem 0.125rem 0.75rem !important;
+                box-shadow: 0px 1px 2px 0px rgba(14, 0, 98, 0.15);
+                z-index: 3;
+                color: rgba(25, 29, 36, 0.70);
+                font-weight: 500;
+                border: 1px solid #EBEFF7;
+                visibility: hidden;
+            }
+
+            &:hover {
+                .show-dropdown-notification-details {
+                    visibility: visible;
+                }
+            }
+        }
+
+        .notification-dropdown-view-all {
+            padding: 12px 0.5rem 0px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: $edu-primary-color;
+
+            path {
+                color: #C8C5D4;
+            }
+        }
+    }
+
+
+}
+
+.active-sub-menu {
+    .header-dropdown {
+        visibility: visible;
     }
 }
