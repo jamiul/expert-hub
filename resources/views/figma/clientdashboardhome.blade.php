@@ -46,8 +46,6 @@
 
       <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-        <!-- <div class="row"> -->
         <div class="owl-carousel owl-carouselfour owl-theme client-home-carousel">
         <div class="item">
             <div class="single-card-area">
@@ -99,7 +97,7 @@
               </div>
 
               <div class="profile-single-button">
-                  <button class="btn-fundmilestone">Review Proposal</button>
+                  <button type="button" class="btn btn-fundmilestone">Review Proposal</button>
                 </div>
 
             </div>
@@ -1167,14 +1165,13 @@
         <div class="all-project">
           <h2>Discover our Experts</h2>
         </div>
-        <div class="post-job">
-          <button class="btn btn-postjob"> View All Experts</button>
+        <div class="view-all-expert">
+          <button type="button" class="btn btn-primary edux-btn-primary">View All Experts</button>
         </div>
       </div>
   </div>
-  <!-- owl carousel 2  Start Here -->
   <div class="row">
-        <div class="owl-carousel owl-carouselfour  owl-theme rate-caurasel discover-carousel">
+        <div class="owl-carousel owl-carouselfour  owl-theme rate-caurasel discover-carousel mb-4">
           <div class="item">
             <div class="single-card-area discover-gradient">
               <div class="developing-area">
@@ -1197,7 +1194,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                  <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1225,7 +1222,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1253,7 +1250,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1280,7 +1277,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1307,7 +1304,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1334,7 +1331,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1361,7 +1358,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1388,7 +1385,7 @@
                 </div>
                 </div>
                 <div class="profile-single-button">
-                  <button class="btn-viewprofile">View Profile</button>
+                <button type="button" class="btn btn-fundmilestone btn-viewprofile">View Profile</button>
                 </div>
               </div>
             </div>
@@ -1396,7 +1393,6 @@
         </div>
         </div>
   </div>
-  <!-- owl carousel 2  Edn Here -->
 </div>
 
 </section>
