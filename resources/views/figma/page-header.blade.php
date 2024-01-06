@@ -109,8 +109,15 @@
             </div>
             <nav class="main-header-nav">
                 <ul>
-                    <li>
+                    <li class="item-has-submenu">
                         <a href="/figma/client-dashboard">Projects </a>
+                        <ul>
+                            <li><a href="">Sub Menu 01</a></li>
+                            <li><a href="">Sub Menu 02</a></li>
+                            <li><a href="">Sub Menu 03</a></li>
+                            <li><a href="">Sub Menu 04</a></li>
+                            <li><a href="">Sub Menu 05</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/figma/client-dashboardexperthire">Experts</a>
@@ -259,7 +266,8 @@
                     </li>
                     <li>
                         <a class="icon-btn border" onclick="submenuTrigger(this, event)" href="#">
-                            <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
+                            <img
+                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
                         </a>
                         <div class="header-dropdown">
                             <div class="profile-dropdown-inner">
