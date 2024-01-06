@@ -7,11 +7,12 @@
         <div class="all-project">
           <h2>Your workspace</h2>
         </div>
-        <div class="post-job">
-          <button class="btn btn-postjob d-flex justify-content-center  align-items-center">
-            <span class="material-symbols-outlined">add</span>
-            <span>Post a Job</span>
-          </button>
+        <div class="job-post">
+          <button type="button" class="btn edux-btn-primary"> <span class="arrow-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z" fill="white"/>
+              </svg>
+              </span> <span class="btn-text">Post a Job</span></button>
         </div>
       </div>
   </div>
@@ -79,6 +80,7 @@
                   </div>
 
               </div>
+
               <div class="developing-area">
                 <div class="profile-single-area">
                   <div class="single-person">
@@ -93,10 +95,13 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Review Proposal</button>
                 </div>
-              </div>
+
             </div>
           </div>
 
@@ -145,10 +150,13 @@
                 <div class="profile-single-text">
                   <p>Fund a new milestone for Paras to keep working</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Fund & activate milestone</button>
                 </div>
-              </div>
+
             </div>
           </div>
 
@@ -199,10 +207,11 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Restart Contract</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -342,10 +351,11 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Review Proposal</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -393,10 +403,11 @@
                 <div class="profile-single-text">
                   <p>Fund a new milestone for Paras to keep working</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Fund & activate milestone</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -445,10 +456,10 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Restart Contract</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -594,10 +605,11 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Review Proposal</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -646,10 +658,11 @@
                 <div class="profile-single-text">
                   <p>Fund a new milestone for Paras to keep working</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Fund & activate milestone</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -700,10 +713,11 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Restart Contract</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -790,10 +804,10 @@
                         </ul>
                       </div>
                   </div>
-                <div class="profile-single-button">
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Rehire</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -843,10 +857,11 @@
                 <div class="profile-single-text">
                   <p>Fund a new milestone for Paras to keep working</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Fund & activate milestone</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -895,10 +910,10 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Review Proposal</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -945,10 +960,11 @@
                 <div class="profile-single-text">
                   <p>You have 35 new proposal</p>
                 </div>
-                <div class="profile-single-button">
+
+              </div>
+              <div class="profile-single-button">
                   <button class="btn-fundmilestone">Restart Contract</button>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -1394,7 +1410,7 @@
           <h3>Build on Demand Teams for your Education Institution</h3>
           <p class="hire-details">Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time. Hire in unde</p>
           <div class="post-job">
-            <button class="btn btn-postjob edux-btn-postjob btn-getstart">Get Started</button>
+            <button type="button" class="btn btn-primary edux-btn-primary">Get Started</button>
         </div>
         </div>
       </div>
