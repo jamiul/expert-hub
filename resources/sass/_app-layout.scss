@@ -492,7 +492,7 @@ header {
             background: #FFF;
         }
 
-        .public-header-main-container {
+        .public-header-container {
             padding: 25px 15px;
             max-width: 1320px;
             margin: 0 auto;
@@ -501,7 +501,7 @@ header {
             gap: 20px;
             @media screen and (min-width: 950px) {
                 grid-template-columns: 150px auto 260px;
-                .public-header-menu-trigger {
+                .header-menu-trigger {
                     display: none;
                 }
                 .header-search-trigger {
@@ -589,7 +589,7 @@ header {
                 }
             }
 
-            .public-header-menu-trigger {
+            .header-menu-trigger {
 
                 span {
                     background-color: transparent;
@@ -830,7 +830,7 @@ header {
     }
 }
 
-.public-header-menu-trigger {
+.header-menu-trigger {
     button {
         display: inline-flex;
         width: 35px;
@@ -870,6 +870,50 @@ header {
 
             &:after {
                 top: 12px;
+            }
+        }
+    }
+}
+
+header {
+    &.main-header {
+        .main-header-container {
+            display: grid;
+            border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+            background: #FFF;
+            @media screen and (min-width: 950px) {
+                grid-template-columns: 150px auto 260px;
+                padding: 15px;
+                align-items: center;
+                .header-menu-trigger {
+                    display: none;
+                }
+                .header-search-trigger {
+                    display: none;
+                }
+            }
+        }
+
+        .header-special-menu {
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 9px;
+
+                li {
+                    list-style: none;
+                    display: inline-block;
+
+                    a {
+                        //display: inline;
+                        //font-weight: 500;
+                        //color: $edu-primary-color;
+                        //text-decoration: underline;
+                        //font-size: 0.875rem;
+                    }
+
+                }
             }
         }
     }

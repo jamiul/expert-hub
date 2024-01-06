@@ -12,7 +12,7 @@
 
     <header class="public-header">
         <div class="public-header-main">
-            <div class="public-header-main-container">
+            <div class="public-header-container">
                 <div class="header-logo">
                     <a href="">
                         <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
@@ -40,11 +40,11 @@
                     </form>
                     <div class="header-search-trigger">
                         <button class="icon-btn border">
-                           <x-icon.search fill="#0036E3"/>
+                            <x-icon.search fill="#0036E3"/>
                         </button>
                     </div>
                 </div>
-                <div class="public-header-menu-trigger">
+                <div class="header-menu-trigger">
                     <button onclick="toggleClasses('.public-header', 'mobile-menu-activated' )">
                         <span></span>
                     </button>
@@ -95,6 +95,73 @@
     </header>
 
     <div class="separator"><span>Authorized User Header</span></div>
+    <header class="main-header">
+        <div class="main-header-container">
+            <div class="header-logo">
+                <a href="">
+                    <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
+                </a>
+            </div>
+            <div class="header-search">
+                <form action="">
+                    <input type="search" placeholder="I am looking for">
+                    <div class="search-select" id="">
+                        <label for="header-search-type">
+                            <x-icon.chevron-right width="18" height="18"/>
+                        </label>
+                        <input type="text" value="Expert" id="header-search-type">
+                        <ul>
+                            <li> My Projects</li>
+                            <li> Proposals</li>
+                            <li> All Contracts</li>
+                            <li> Save jobs</li>
+                            <li> Work Diary</li>
+                        </ul>
+                    </div>
+                    <button>
+                        <x-icon.search fill="#191D24"/>
+                    </button>
+                </form>
+                <div class="header-search-trigger">
+                    <button class="icon-btn border">
+                        <x-icon.search fill="#0036E3"/>
+                    </button>
+                </div>
+            </div>
+            <div class="header-menu-trigger">
+                <button onclick="toggleClasses('.public-header', 'mobile-menu-activated' )">
+                    <span></span>
+                </button>
+            </div>
+            <div class="header-special-menu">
+                <ul class="">
+                    <li>
+                        <a class="icon-btn border" href="">
+                            <x-icon.heart/>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon-btn border" href="">
+                            <x-icon.bell/>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon-btn border" href="">
+                            <x-icon.message-line/>
+                        </a>
+                    </li>
+                    <li>
+                        <a  class="icon-btn border"  href="">
+                            <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="mb-60"></div>
 
     <script>
         function toggleClasses(parentSelector, className) {
