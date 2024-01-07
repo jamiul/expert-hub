@@ -9,7 +9,7 @@
         </div>
         <div class="collapsable-sidebar-trigger">
             <button onclick="removeClass('.admin-layout', 'sidebar-small')">
-                <i>AAA</i>
+                <x-icon.expand-right/>
             </button>
         </div>
 
@@ -35,7 +35,8 @@
                                     <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your
                                         invitation</p>
                                     <p class="text-sm">
-                                        <span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                        <span
+                                            class="notification-dropdown-message">A wonderful serenity has taken</span>
                                         <span class="notification-dropdown-time">1m</span>
                                     </p>
 

@@ -986,7 +986,7 @@ header {
         .header-search {
             @media screen and (max-width: 1300px) {
                 display: none;
-                
+
                 &.header-search-activated {
                     display: block !important;
                     position: absolute;
