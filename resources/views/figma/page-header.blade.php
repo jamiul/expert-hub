@@ -159,9 +159,9 @@
             <div class="header-special-menu">
                 <ul class="">
                     <li class="header-search-trigger">
-                        <a class="icon-btn border" href="#">
+                        <button class="icon-btn border" onclick="toggleClasses('.main-header .header-search', 'header-search-activated' )">
                             <x-icon.search fill="#191D24"/>
-                        </a>
+                        </button>
                     </li>
                     <li>
                         <a class="icon-btn border" href="#">
@@ -269,6 +269,7 @@
                             <img
                                 src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
                         </a>
+
                         <div class="header-dropdown">
                             <div class="profile-dropdown-inner">
                                 <div class="dropdown-user-thumbnail mb-3">

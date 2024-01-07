@@ -347,6 +347,7 @@ $edu-admin-header-height: 76px;
             & > li {
                 list-style: none;
                 display: block;
+                position: relative;
 
                 & > a {
                     display: flex;
@@ -524,6 +525,20 @@ header {
                 }
             }
 
+        }
+
+        .header-search {
+
+            @media screen and (max-width: 667px) {
+                form {
+                    display: none;
+                }
+
+                .header-search-trigger {
+                    display: block !important;
+                    float: right;
+                }
+            }
         }
 
         .header-special-menu {
@@ -816,17 +831,6 @@ header {
 
 
     }
-
-    @media screen and (max-width: 667px) {
-        form {
-            display: none;
-        }
-
-        .header-search-trigger {
-            display: block !important;
-            float: right;
-        }
-    }
 }
 
 .header-menu-trigger {
@@ -876,6 +880,8 @@ header {
 
 header {
     &.main-header {
+        position: relative;
+
         .main-header-container {
             display: grid;
             border-bottom: 1px solid rgba(14, 0, 98, 0.10);
@@ -950,6 +956,20 @@ header {
                             width: 44px;
                             height: 44px;
                             overflow: hidden;
+
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            &:hover {
+                                background-color: $edu-primary-color;
+                                color: #ffffff;
+
+                                path {
+                                    fill: white;
+                                }
+                            }
                         }
                     }
 
@@ -966,7 +986,20 @@ header {
         .header-search {
             @media screen and (max-width: 1300px) {
                 display: none;
+                
+                &.header-search-activated {
+                    display: block !important;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: #fff;
+                    padding: 20px;
+                    border: 1px solid $edu-border-color;
+                }
             }
+
+
         }
     }
 
@@ -1297,3 +1330,4 @@ header {
         visibility: visible;
     }
 }
+
