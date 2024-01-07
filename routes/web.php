@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\NewPasswordController;
 use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
+use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
@@ -56,3 +57,6 @@ Route::get('/profile/create', [ProfileController::class, 'create'])->middleware(
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
+
+// Nel test
+Route::get('/conversation/create', [ConversationController::class, 'store'])->name('conversation.create');
