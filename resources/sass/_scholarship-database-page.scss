@@ -65,6 +65,24 @@
                 display: flex;
                 align-items: center;
             }
+
+            .favorite-icon {
+                display: block;
+            }
+
+            .favorite-icon-filled {
+                display: none;
+            }
+
+            &.favourited {
+                .favorite-icon {
+                    display: none;
+                }
+
+                .favorite-icon-filled {
+                    display: block;
+                }
+            }
         }
     }
 

@@ -51,20 +51,6 @@ $chatbox-recipient-card-height: 164px;
         grid-template-columns: 367px auto;
     }
 
-    ::-webkit-scrollbar {
-        width: 3px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: rgba(14, 0, 98, 0.10);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: rgba(14, 0, 98, 0.10);
-        border-radius: 20px;
-        border: 1px solid rgba(14, 0, 98, 0.10);
-    }
-
     & > div {
         //border: 1px solid $edu-border-color;
 

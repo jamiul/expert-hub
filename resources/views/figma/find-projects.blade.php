@@ -19,10 +19,10 @@
                             </div>
                             <div class="filter-widget">
                                 <h4 class="widget-title">Project by Categories</h4>
-                                <div class="widget-accordion">
+                                <div class="widget-accordion use-scroll-content">
                                     <div class="widget-accordion-item">
                                         <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                                            Course Accreditations
+                                            <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/> Course Accreditations
                                         </div>
                                         <div class="widget-accordion-content">
                                             <x-form.check wire:model="project-category" id="A01">
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="widget-accordion-item">
                                         <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                                            Curriculum Development
+                                            <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/> Curriculum Development
                                         </div>
                                         <div class="widget-accordion-content">
                                             <x-form.check wire:model="project-category" id="B01">
@@ -81,32 +81,76 @@
                                 </div>
                             </div>
                             <div class="filter-widget">
-                                <div class="d-flex gap-3 justify-content-between mb-2">
-                                    <h4 class="widget-title mb-0">Project Type</h4>
-                                    <span>
-                                        <label class="widget-title-switch">
-                                            <input type="checkbox" role="switch" name="project-type">
-                                            <span class="switch-label">
-                                                <span class="checkbox-indicator-area">
-                                                    <span class="switch-indicator"></span>
-                                                </span>
-                                                <span class="switch-default-label" aria-hidden="true">Fixed</span>
-                                                <span class="switch-alt-label" aria-hidden="true">Hourly</span>
-                                            </span>
-                                        </label>
-                                    </span>
-                                </div>
-
+                                <h4 class="widget-title">Project Type</h4>
+                                <x-form.check class="mb-2" wire:model="fixed">
+                                    Fixed Price
+                                </x-form.check>
                                 <div class="widget-field-row">
                                     <x-form.input class="input-field-md" type="text" wire:model="type"
                                                   placeholder="Min"/>
                                     <x-form.input class="input-field-md" type="text" wire:model="type"
                                                   placeholder="Max"/>
                                 </div>
+
+                                <x-form.check class="mb-2 mt-1" wire:model="hourly">
+                                    Hourly
+                                </x-form.check>
+                                <div class="widget-field-row">
+                                    <x-form.input class="input-field-md  mb-0" type="text" wire:model="type"
+                                                  placeholder="Min"/>
+                                    <x-form.input class="input-field-md  mb-0" type="text" wire:model="type"
+                                                  placeholder="Max"/>
+                                </div>
                             </div>
+{{--                            <div class="filter-widget">--}}
+{{--                                <h4 class="widget-title">Location</h4>--}}
+{{--                                <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>--}}
+{{--                            </div>--}}
                             <div class="filter-widget">
                                 <h4 class="widget-title">Location</h4>
-                                {{--<x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>--}}
+                                <div class="filter-widget-content">
+                                    <div class="form-input-group form-input-has-icon autocomplete-field input-field-md"
+                                         x-data="{ open: false }">
+                                        <div class="autocomplete-field-wrapper">
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                                            <input x-on:click="open = true" wire:model.live.debounce.500ms="country"
+                                                   name="country" id="country" class="form-input-field"
+                                                   placeholder="Search by Country">
+                                            <span class="form-input-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                               width="24" height="24"
+                                                                               viewBox="0 0 24 25" fill="none">
+    <path fill="#ccc"
+          d="M19.6 21.5L13.3 15.2C12.8 15.6 12.225 15.9167 11.575 16.15C10.925 16.3833 10.2333 16.5 9.5 16.5C7.68333 16.5 6.14583 15.8708 4.8875 14.6125C3.62917 13.3542 3 11.8167 3 10C3 8.18333 3.62917 6.64583 4.8875 5.3875C6.14583 4.12917 7.68333 3.5 9.5 3.5C11.3167 3.5 12.8542 4.12917 14.1125 5.3875C15.3708 6.64583 16 8.18333 16 10C16 10.7333 15.8833 11.425 15.65 12.075C15.4167 12.725 15.1 13.3 14.7 13.8L21 20.1L19.6 21.5ZM9.5 14.5C10.75 14.5 11.8125 14.0625 12.6875 13.1875C13.5625 12.3125 14 11.25 14 10C14 8.75 13.5625 7.6875 12.6875 6.8125C11.8125 5.9375 10.75 5.5 9.5 5.5C8.25 5.5 7.1875 5.9375 6.3125 6.8125C5.4375 7.6875 5 8.75 5 10C5 11.25 5.4375 12.3125 6.3125 13.1875C7.1875 14.0625 8.25 14.5 9.5 14.5Z"></path>
+</svg></span>
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                                        </div>
+                                        <div class="autocomplete-field-suggestion">
+                                            <ul class="" x-show="open" x-on:click.outside="open = false"
+                                                x-on:keyup.escape.window="open = false" style="">
+                                                <!--[if BLOCK]><![endif]-->
+                                                <li wire:key="1"
+                                                    x-on:click="open = false; $wire.selectCountry('Afghanistan')">
+                                                    Afghanistan
+                                                </li>
+                                                <li wire:key="2"
+                                                    x-on:click="open = false; $wire.selectCountry('Albania')"> Albania
+                                                </li>
+                                                <li wire:key="3"
+                                                    x-on:click="open = false; $wire.selectCountry('Algeria')"> Algeria
+                                                </li>
+                                                <li wire:key="4"
+                                                    x-on:click="open = false; $wire.selectCountry('American Samoa')">
+                                                    American Samoa
+                                                </li>
+                                                <li wire:key="5"
+                                                    x-on:click="open = false; $wire.selectCountry('Andorra')"> Andorra
+                                                </li>
+                                                <!--[if ENDBLOCK]><![endif]-->
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="page-content p-0">
@@ -116,7 +160,8 @@
                                         <div class="project-item-title">
                                             <h3 class="h6 d-flex gap-2 mb-0">
                                                 <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                <a href="/figma/project-details-view"> Developing curriculum for Postgraduate
+                                                <a href="/figma/project-details-view"> Developing curriculum for
+                                                    Postgraduate
                                                     public health
                                                     unit</a>
                                             </h3>
@@ -175,7 +220,8 @@
                                         <div class="project-item-title">
                                             <h3 class="h6 d-flex gap-2 mb-0">
                                                 <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                <a href="/figma/project-details-view"> Developing curriculum for Postgraduate
+                                                <a href="/figma/project-details-view"> Developing curriculum for
+                                                    Postgraduate
                                                     public health
                                                     unit</a>
 
