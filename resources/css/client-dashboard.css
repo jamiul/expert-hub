@@ -1060,7 +1060,7 @@ section.team-area {
   color: #000;
 }
 
-.about-slider-experts-database .no-js .owl-carousel, .owl-carousel.owl-loaded {
+.about-slider-experts-database .owl-carousel.owl-loaded {
   display: block;
   max-height: 290px;
 }
@@ -1300,6 +1300,29 @@ span.material-symbols-outlined.active.setting-root {
 
 
 }
+
+.all-project-post {
+  display: flex;
+  justify-content: space-between;
+  gap: 34px;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-project-post-content ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  gap: 16px;
+}
+
+.all-project-post-content ul li a {
+  color: #303744;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
 
 .client-dashboard{
   border: 1px solid rgba(14, 0, 98, 0.1) !important;
