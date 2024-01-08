@@ -1033,7 +1033,36 @@ section.team-area {
   border-radius: 0px 0px 6.213px 6.213px;
   background: #FFF;
   box-shadow: 14.75532px 13.20213px 37.2766px 0px rgba(14, 0, 98, 0.12);
-  height: 65px;
+  min-height: 60px;
+}
+
+.owl-stage-outer .person-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 0px 0px 6.241px 6.241px;
+  border-radius: 0px 0px 6.213px 6.213px;
+  background: #FFF;
+  box-shadow: none;
+  min-height: 60px;
+}
+
+
+.about-slider-experts-database  .owl-carousel .owl-nav button.owl-prev {
+  display: block !important;
+  border-radius: 38.442px !important;
+  border: 2.197px solid rgba(0, 0, 0, 0.10) !important;
+  background: #FFF !important;
+  box-shadow: 4.393px 4.393px 17.573px 0px rgba(14, 0, 98, 0.10);
+  color: #000;
+}
+
+.about-slider-experts-database .no-js .owl-carousel, .owl-carousel.owl-loaded {
+  display: block;
+  max-height: 290px;
 }
 
 .person-details h3 {
@@ -1042,7 +1071,7 @@ section.team-area {
   font-weight: 500;
   line-height: 17px;
   color: #191D24;
-  margin: 12px 0px 3px;
+  margin: 0px 0px 3px;
 }
 
 .person-details p {
@@ -1052,6 +1081,13 @@ section.team-area {
   line-height: 13px;
   color: #303744B2;
   margin-bottom: 15px;
+}
+
+.person-details a {
+  color: #0036E3;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .single-team-text {
