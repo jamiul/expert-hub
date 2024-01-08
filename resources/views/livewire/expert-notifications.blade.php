@@ -72,9 +72,11 @@
         </div>
 
         @if($read_total > $per_page)
-            <div class="load-more-notification-item text-center">
-                <button class="btn btn-outline-primary" wire:click="loadMore">Load More</button>
-            </div>
+            @if($read_notifications->count() != $read_total)
+                <div class="load-more-notification-item text-center">
+                    <button class="btn btn-outline-primary" wire:click="loadMore">Load More</button>
+                </div>
+            @endif
         @endif
     @endif
 </div>
