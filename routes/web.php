@@ -53,6 +53,7 @@ Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->mid
 
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
 Route::get('/profile/create', [ProfileController::class, 'create'])->middleware('auth')->name('profile.create');
+Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])->middleware('auth')->name('profile.edit');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
