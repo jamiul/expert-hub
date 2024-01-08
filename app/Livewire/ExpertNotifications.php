@@ -5,8 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ExpertNotifications extends Component
-{
+class ExpertNotifications extends Component {
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -26,12 +25,11 @@ class ExpertNotifications extends Component
         $this->amount += 2;
     }
 
-    public function render()
-    {
+    public function render() {
         $unread_notifications = auth()->user()->unreadNotifications()->get();
 
-        $read_notifications   = auth()->user()->readNotifications()->take( $this->amount )->get();
+        $read_notifications = auth()->user()->readNotifications()->take( $this->amount )->get();
 
-        return view('livewire.expert-notifications', compact('unread_notifications', 'read_notifications'));
+        return view( 'livewire.expert-notifications', compact( 'unread_notifications', 'read_notifications' ) );
     }
 }

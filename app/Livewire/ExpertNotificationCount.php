@@ -4,8 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class ExpertNotificationCount extends Component
-{
+class ExpertNotificationCount extends Component {
     public function markAsRead( $id ) {
         auth()->user()
             ->unreadNotifications
@@ -14,10 +13,11 @@ class ExpertNotificationCount extends Component
             } )
             ->markAsRead();
     }
+
     public function render() {
         $unread_notifications = auth()->user()->unreadNotifications()->get();
-        $unreadCount = auth()->user()->unreadNotifications()->count();
+        $unreadCount          = auth()->user()->unreadNotifications()->count();
 
-        return view('livewire.expert-notification-count', compact('unread_notifications', 'unreadCount'));
+        return view( 'livewire.expert-notification-count', compact( 'unread_notifications', 'unreadCount' ) );
     }
 }

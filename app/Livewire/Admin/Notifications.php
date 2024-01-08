@@ -5,8 +5,7 @@ namespace App\Livewire\Admin;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Notifications extends Component
-{
+class Notifications extends Component {
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -20,10 +19,9 @@ class Notifications extends Component
             ->markAsRead();
     }
 
-    public function render()
-    {
-        $notifications = auth()->user()->notifications()->paginate(5);
+    public function render() {
+        $notifications = auth()->user()->notifications()->paginate( 5 );
 
-        return view('livewire.admin.notifications', compact('notifications'));
+        return view( 'livewire.admin.notifications', compact( 'notifications' ) );
     }
 }
