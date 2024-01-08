@@ -144,7 +144,7 @@
                                             <div class="row">
                                             <div class="col-md-6">
                                             <div class="form-input-group">
-                                            <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  <span class="edux-arrow-icon"></span> Minimum start amount is $50 </span> </span> </label>    <input name="budget_start_amount" id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model="budget_start_amount" placeholder="Type Here">
+                                            <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    <input name="budget_start_amount" id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model="budget_start_amount" placeholder="Type Here">
                                             </div>
 
                                             </div>
