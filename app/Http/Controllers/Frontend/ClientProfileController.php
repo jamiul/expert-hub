@@ -9,11 +9,11 @@ class ClientProfileController extends Controller
 {
     public function index()
     {
-        return view('frontend.client-profile.index');
+        return view('frontend.client.profile.index');
     }
 
     public function position()
     {
-        return view('frontend.client-profile.position');
+        return view('frontend.client.profile.current-position');
     }
 }

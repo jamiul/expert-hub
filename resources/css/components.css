@@ -445,3 +445,10 @@
      align-items: center;
      border-bottom: 1px solid #E7E5EF;
  }
+
+ /*@Abdur Rahman todo move to sass */
+ .item-has-submenu ul,
+ .header-dropdown,
+ .header-search-activated{
+    z-index: 2;
+ }
