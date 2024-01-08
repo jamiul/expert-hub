@@ -6,12 +6,12 @@ use Livewire\Component;
 
 class NotificationCount extends Component {
     public function markAsRead( $id ) {
-        auth()->user()
-            ->unreadNotifications
-            ->when( $id, function ( $query ) use ( $id ) {
-                return $query->where( 'id', $id );
-            } )
-            ->markAsRead();
+        $notification = auth()->user()->notifications()->where('id', $id)->first();
+
+        if ($notification) {
+            $notification->markAsRead();
+            return redirect($notification->data['link']);
+        }
     }
 
     public function render() {
