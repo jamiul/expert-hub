@@ -10,6 +10,8 @@ class ExpertNotifications extends Component {
 
     protected $paginationTheme = 'bootstrap';
 
+    public $per_page = 2;
+
     public $amount = 2;
 
     public function markAsRead( $id ) {
@@ -30,6 +32,8 @@ class ExpertNotifications extends Component {
 
         $read_notifications = auth()->user()->readNotifications()->take( $this->amount )->get();
 
-        return view( 'livewire.expert-notifications', compact( 'unread_notifications', 'read_notifications' ) );
+        $read_total = auth()->user()->readNotifications()->count();
+
+        return view( 'livewire.expert-notifications', compact( 'unread_notifications', 'read_notifications', 'read_total' ) );
     }
 }

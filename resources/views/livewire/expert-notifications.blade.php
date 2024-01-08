@@ -1,4 +1,4 @@
-<div class="title-page-body">
+<div class="title-page-body" wire:poll.keep-alive>
     <div class="notification-page-block-heading">
         <h3 class="">Most recent</h3>
     </div>
@@ -20,7 +20,9 @@
 
                 </div>
                 <div class="notification-details-action">
-                    <a class="btn btn-outline-primary" href="{{ @$unread_notification->data['link'] }}">View Proposal</a>
+                    @if($unread_notification->data['link'])
+                        <a class="btn btn-outline-primary" href="{{ @$unread_notification->data['link'] }}">{{ @$unread_notification->data['button'] }}</a>
+                    @endif
                     <button class="icon-btn" wire:click="markAsRead('{{ $unread_notification->id }}')">
                         <x-icon.close/>
                     </button>
@@ -34,39 +36,45 @@
             </div>
         @endforelse
     </div>
+    @if($read_notifications->count() > 0)
+        <div class="notification-page-block-heading">
+            <h3 class="">Earlier</h3>
+        </div>
+        <div class="notification-details-list">
+            @forelse($read_notifications as $read_notification)
+                <div class="notification-details-list-item">
+                    <div class="notification-details-thumb">
+                        <img
+                            src="{{ $read_notification->data['avatar']  }}"
+                            class="" alt="avatar">
+                    </div>
+                    <div class="notification-details-info">
+                        <p class="text-sm notification-details-time">
+                            <x-icon.calender/>
+                            {{ $read_notification->created_at->format('M d, Y') }}
+                        </p>
+                        <p class="fw-medium notification-details-title">{{ @$read_notification->data['title'] }}</p>
+                        <p class=" notification-details-message">{{ Str::limit($read_notification->data['message'], $limit = 150, $end = '...') }}</p>
 
-    <div class="notification-page-block-heading">
-        <h3 class="">Earlier</h3>
-    </div>
-    <div class="notification-details-list">
-        @forelse($read_notifications as $read_notification)
-            <div class="notification-details-list-item">
-                <div class="notification-details-thumb">
-                    <img
-                        src="{{ $read_notification->data['avatar']  }}"
-                        class="" alt="avatar">
+                    </div>
+                    <div class="notification-details-action">
+                        @if($read_notification->data['link'])
+                            <a class="btn btn-outline-primary" href="{{ @$read_notification->data['link'] }}">{{ @$read_notification->data['button'] }}</a>
+                        @endif
+{{--                        <button class="icon-btn">--}}
+{{--                            <x-icon.close/>--}}
+{{--                        </button>--}}
+                    </div>
                 </div>
-                <div class="notification-details-info">
-                    <p class="text-sm notification-details-time">
-                        <x-icon.calender/>
-                        {{ $read_notification->created_at->format('M d, Y') }}
-                    </p>
-                    <p class="fw-medium notification-details-title">{{ @$read_notification->data['title'] }}</p>
-                    <p class=" notification-details-message">{{ Str::limit($read_notification->data['message'], $limit = 150, $end = '...') }}</p>
+            @empty
 
-                </div>
-                <div class="notification-details-action">
-                    <a class="btn btn-outline-primary" href="{{ @$read_notification->data['link'] }}">View Proposal</a>
-                    <button class="icon-btn">
-                        <x-icon.close/>
-                    </button>
-                </div>
+            @endforelse
+        </div>
+
+        @if($read_total > $per_page)
+            <div class="load-more-notification-item text-center">
+                <button class="btn btn-outline-primary" wire:click="loadMore">Load More</button>
             </div>
-        @empty
-
-        @endforelse
-    </div>
-    <div class="load-more-notification-item text-center">
-        <button class="btn btn-outline-primary" wire:click="loadMore">Load More</button>
-    </div>
+        @endif
+    @endif
 </div>

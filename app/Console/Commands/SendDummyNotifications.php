@@ -40,6 +40,7 @@ class SendDummyNotifications extends Command {
                     'title'   => $faker->sentence,
                     'message' => $faker->text( $maxNbChars = 300 ),
                     'link'    => 'http://eduexhub.com',
+                    'button' => 'view proposal',
                     'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
                 ] ) );
                 echo 'notification sent';
@@ -55,6 +56,7 @@ class SendDummyNotifications extends Command {
                     'title'   => $faker->sentence,
                     'message' => $faker->text( $maxNbChars = 300 ),
                     'link'    => 'http://eduexhub.com',
+                    'button' => 'view proposal',
                     'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
                 ] ) );
                 echo 'notification sent';
