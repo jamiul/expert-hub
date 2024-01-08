@@ -569,49 +569,6 @@ header {
                 display: block;
             }
 
-            .header-menu-trigger {
-
-                span {
-                    background-color: transparent;
-                    width: 25px;
-                    position: relative;
-
-                    &:before {
-                        top: 0;
-                        width: 25px;
-                        transition-delay: 0.2s;
-                        transform: rotate(40deg);
-                        background-color: $edu-red-color;
-                    }
-
-                    &:after {
-                        top: 0;
-                        width: 25px;
-                        transition-delay: 0.2s;
-                        transform: rotate(-40deg);
-                        background-color: $edu-red-color;
-                    }
-                }
-
-                &.close-menu-animation {
-                    border: 1px solid #FD6D4D;
-                    border-radius: 50%;
-                    //background-color: #FD6D4D;
-                    span {
-                        background-color: transparent;
-
-                        &:before {
-                            transform: rotate(40deg);
-                            background-color: #FD6D4D;
-                        }
-
-                        &:after {
-                            transform: rotate(-40deg);
-                            background-color: #FD6D4D;
-                        }
-                    }
-                }
-            }
 
         }
     }
@@ -1011,6 +968,7 @@ header {
         .main-header-nav {
             display: block !important;
         }
+
     }
 }
 
@@ -1112,6 +1070,52 @@ header {
             }
         }
 
+    }
+}
+
+.mobile-menu-activated {
+    .header-menu-trigger {
+
+        span {
+            background-color: transparent;
+            width: 25px;
+            position: relative;
+
+            &:before {
+                top: 0;
+                width: 25px;
+                transition-delay: 0.2s;
+                transform: rotate(40deg);
+                background-color: $edu-red-color;
+            }
+
+            &:after {
+                top: 0;
+                width: 25px;
+                transition-delay: 0.2s;
+                transform: rotate(-40deg);
+                background-color: $edu-red-color;
+            }
+        }
+
+        &.close-menu-animation {
+            border: 1px solid #FD6D4D;
+            border-radius: 50%;
+            //background-color: #FD6D4D;
+            span {
+                background-color: transparent;
+
+                &:before {
+                    transform: rotate(40deg);
+                    background-color: #FD6D4D;
+                }
+
+                &:after {
+                    transform: rotate(-40deg);
+                    background-color: #FD6D4D;
+                }
+            }
+        }
     }
 }
 
