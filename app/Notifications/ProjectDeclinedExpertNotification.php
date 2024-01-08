@@ -7,13 +7,15 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ProjectDeclinedExpertNotification extends Notification {
+class ProjectDeclinedExpertNotification extends Notification
+{
     use Queueable;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct( $data ) {
+    public function __construct( $data )
+    {
         $this->title   = $data['title'];
         $this->message = $data['message'];
         $this->link    = $data['link'];
@@ -25,14 +27,16 @@ class ProjectDeclinedExpertNotification extends Notification {
      *
      * @return array<int, string>
      */
-    public function via( object $notifiable ): array {
+    public function via( object $notifiable ): array
+    {
         return [ 'database' ];
     }
 
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail( object $notifiable ): MailMessage {
+    public function toMail( object $notifiable ): MailMessage
+    {
         return ( new MailMessage )
             ->line( $this->title )
             ->line( $this->message )
@@ -45,7 +49,8 @@ class ProjectDeclinedExpertNotification extends Notification {
      *
      * @return array<string, mixed>
      */
-    public function toArray( object $notifiable ): array {
+    public function toArray( object $notifiable ): array
+    {
         return [
             'title'   => $this->title,
             'message' => $this->message,

@@ -5,7 +5,8 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ExpertNotifications extends Component {
+class ExpertNotifications extends Component
+{
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -14,7 +15,8 @@ class ExpertNotifications extends Component {
 
     public $amount = 2;
 
-    public function markAsRead( $id ) {
+    public function markAsRead( $id )
+    {
         auth()->user()
             ->unreadNotifications
             ->when( $id, function ( $query ) use ( $id ) {
@@ -23,15 +25,18 @@ class ExpertNotifications extends Component {
             ->markAsRead();
     }
 
-    public function deleteNotification($id) {
+    public function deleteNotification($id)
+    {
         auth()->user()->notifications()->where( 'id', $id )->delete();
     }
 
-    public function loadMore() {
+    public function loadMore()
+    {
         $this->amount += 2;
     }
 
-    public function render() {
+    public function render()
+    {
         $unread_notifications = auth()->user()->unreadNotifications()->get();
 
         $read_notifications = auth()->user()->readNotifications()->take( $this->amount )->get();

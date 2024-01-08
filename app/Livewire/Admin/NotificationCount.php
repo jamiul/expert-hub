@@ -4,8 +4,10 @@ namespace App\Livewire\Admin;
 
 use Livewire\Component;
 
-class NotificationCount extends Component {
-    public function markAsRead( $id ) {
+class NotificationCount extends Component
+{
+    public function markAsRead( $id )
+    {
         $notification = auth()->user()->notifications()->where( 'id', $id )->first();
 
         if ( $notification ) {
@@ -15,7 +17,8 @@ class NotificationCount extends Component {
         }
     }
 
-    public function render() {
+    public function render()
+    {
         $unread_notifications = auth()->user()->unreadNotifications()->get();
         $unreadCount          = auth()->user()->unreadNotifications()->count();
 

@@ -8,7 +8,8 @@ use Faker\Factory;
 use Illuminate\Console\Command;
 use Notification;
 
-class SendDummyNotifications extends Command {
+class SendDummyNotifications extends Command
+{
     /**
      * The name and signature of the console command.
      *
@@ -26,7 +27,8 @@ class SendDummyNotifications extends Command {
     /**
      * Execute the console command.
      */
-    public function handle() {
+    public function handle()
+    {
         $user_id = $this->option( 'user' );
 
         $faker = Factory::create();

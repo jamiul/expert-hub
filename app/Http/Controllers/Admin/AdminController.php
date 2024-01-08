@@ -47,7 +47,8 @@ class AdminController extends Controller
         return view('figma.adminpaymentprogress');
     }
 
-    public function notifications() {
+    public function notifications()
+    {
 
         return view('admin.notifications');
     }

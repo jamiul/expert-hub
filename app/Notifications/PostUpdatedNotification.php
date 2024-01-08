@@ -7,7 +7,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class PostUpdatedNotification extends Notification {
+class PostUpdatedNotification extends Notification
+{
     use Queueable;
 
     /**
@@ -25,14 +26,16 @@ class PostUpdatedNotification extends Notification {
      *
      * @return array<int, string>
      */
-    public function via( object $notifiable ): array {
+    public function via( object $notifiable ): array
+    {
         return [ 'database' ];
     }
 
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail( object $notifiable ): MailMessage {
+    public function toMail( object $notifiable ): MailMessage
+    {
         return ( new MailMessage )
             ->line( $this->title )
             ->line( $this->message )
@@ -45,7 +48,8 @@ class PostUpdatedNotification extends Notification {
      *
      * @return array<string, mixed>
      */
-    public function toArray( object $notifiable ): array {
+    public function toArray( object $notifiable ): array
+    {
         return [
             'title'   => $this->title,
             'message' => $this->message,
