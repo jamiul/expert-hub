@@ -524,6 +524,8 @@ button.no-hover::after{
 /* ================= Menu End ============ */
 /* ================ Header end  Here =========== */
 /* ================ Main Dashboard start  Here =========== */
+
+
 .all-job-tab{
   font-family: Colfax;
   font-size: 15px;
@@ -539,7 +541,6 @@ button.no-hover::after{
   border-radius: 0px;
 }
 
-
 .single-card-area {
   display: flex;
   flex-direction: column;
@@ -547,7 +548,7 @@ button.no-hover::after{
   max-width: 301px;
   min-height: 320px;
   border-radius: 8px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 24px;
   box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.08);
   margin-right: 24px;
@@ -560,7 +561,7 @@ button.no-hover::after{
 .inprogress-area {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .btn-inprogress {
@@ -763,7 +764,7 @@ button.no-hover::after{
   font-weight: 400;
   line-height: 19px;
   color: #303744;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   text-decoration: underline;
 }
 
@@ -797,25 +798,52 @@ ul.all-project-rating svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
 }
 
 
 .btn-fundmilestone {
-  padding: 11px 10px;
-  border: 2px;
-  gap: 10px;
+  display: flex;
+  min-width: 218px;
+  padding: 11px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
   color: #0036E3;
-  border: 2px solid #0036E3;
+  text-align: center;
   font-family: Colfax;
   font-size: 15px;
+  font-style: normal;
   font-weight: 500;
-  background: transparent;
-  max-width: 237px;
-  min-height: 37px;
-  width: 100%;
-  border-radius: 4px;
+  border: 2px solid #0036E3;
 }
+
+.btn-fundmilestone:hover {
+  display: flex;
+  min-width: 218px;
+  padding: 11px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #0036E3;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  border: 2px solid #0036E3;
+}
+
+.view-all-expert .btn{
+  padding: 8px 24px;
+}
+
+.view-all-expert .btn:hover{
+  padding: 8px 24px;
+}
+
 
 
 
@@ -834,19 +862,7 @@ button.btn.btn-xs.btn-success.btn-preview.active {
 }
 
 .btn-viewprofile {
-  padding: 11px 10px;
-  border: 2px;
-  gap: 10px;
-  color: #0036E3;
-  border: 2px solid #0036E3;
-  font-family: Colfax;
-  font-size: 15px;
-  font-weight: 500;
-  background: transparent;
   margin-top: 32px;
-  width: 100%;
-  max-width: 237px;
-  border-radius: 4px;
 }
 
 /* === owl theme design end === */
@@ -863,7 +879,7 @@ button.btn.btn-xs.btn-success.btn-preview.active {
 
 
 .owl-carouselfour{
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .owlp-bottom{
@@ -1097,7 +1113,7 @@ section.team-area {
 }
 
 .row.alljob-short {
-  padding: 22px 20px 24px;
+  padding: 20px 20px 8px;
 }
 .short-option {
   display: flex;
@@ -7630,6 +7646,14 @@ body > .edux-no-footer > footer .footer{
 
 .icon-component-list > div path {
   fill: #000000 !important;
+}
+
+.job-post .btn{
+  padding: 4px 24px 4px 17px;
+}
+
+.job-post .btn:hover{
+  padding: 4px 24px 4px 17px;
 }
 
 
