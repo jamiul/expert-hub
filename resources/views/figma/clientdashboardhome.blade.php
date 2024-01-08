@@ -8,11 +8,12 @@
           <h2>Your workspace</h2>
         </div>
         <div class="job-post">
-          <button type="button" class="btn edux-btn-primary"> <span class="arrow-left">
+          <a href="/figma/jobposts"  class="btn edux-btn-primary">
+              <span class="arrow-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z" fill="white"/>
               </svg>
-              </span> <span class="btn-text">Post a Job</span></button>
+              </span> <span class="btn-text">Post a Job</span></a>
         </div>
       </div>
   </div>
