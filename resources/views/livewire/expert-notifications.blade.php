@@ -23,7 +23,7 @@
                     @if($unread_notification->data['link'])
                         <a class="btn btn-outline-primary" href="{{ @$unread_notification->data['link'] }}">{{ @$unread_notification->data['button'] }}</a>
                     @endif
-                    <button class="icon-btn" wire:click="markAsRead('{{ $unread_notification->id }}')">
+                    <button class="icon-btn" wire:click="deleteNotification('{{ $unread_notification->id }}')">
                         <x-icon.close/>
                     </button>
                 </div>
@@ -61,9 +61,9 @@
                         @if($read_notification->data['link'])
                             <a class="btn btn-outline-primary" href="{{ @$read_notification->data['link'] }}">{{ @$read_notification->data['button'] }}</a>
                         @endif
-{{--                        <button class="icon-btn">--}}
-{{--                            <x-icon.close/>--}}
-{{--                        </button>--}}
+                        <button class="icon-btn" wire:click="deleteNotification('{{ $read_notification->id }}')">
+                            <x-icon.close/>
+                        </button>
                     </div>
                 </div>
             @empty

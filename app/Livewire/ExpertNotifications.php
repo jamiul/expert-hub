@@ -23,6 +23,10 @@ class ExpertNotifications extends Component {
             ->markAsRead();
     }
 
+    public function deleteNotification($id) {
+        auth()->user()->notifications()->where( 'id', $id )->delete();
+    }
+
     public function loadMore() {
         $this->amount += 2;
     }
