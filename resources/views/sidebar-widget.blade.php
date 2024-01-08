@@ -7,18 +7,14 @@
             <div class="col-md-3">
                 <h4 class="text-center h6 mb-4">Profile View Widget</h4>
                 <div class="page-sidebar">
-                    <div class="profile-edit-widget user-bio-edit-widget">
+                    <div class="profile-widget user-bio-widget">
                         <div class="user-profile-picture">
                             <img src="{{ asset('assets/frontend/img/Mask-img.jpg') }}">
                             <button>Edit</button>
                         </div>
                         <div class="user-profile-info">
                             <h3 class="h6">Michael Kassiou</h3>
-                            <p class="text-primary d-inline-flex align-items-center gap-3">Public Health
-                                <button class="icon-btn icon-btn-md border-1 border-gray-100">
-                                    <x-icon.edit/>
-                                </button>
-                            </p>
+                            <p class="text-primary">Public Health</p>
                             <p class="text-sm d-flex align-items-center justify-content-center">
                                 <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
                                      viewBox="0 0 25 24"
@@ -39,77 +35,43 @@
                                 </svg>
                                 <span> 10.15am AEST</span>
                             </p>
-                            <div class="my-4 complete-profile-status-edit-widget">
-                                <p class="text-sm d-flex align-items-center mb-1 gap-3">Complete your profile
-                                    <button class="icon-btn icon-btn-md">
-                                        <x-icon.edit/>
-                                    </button>
-                                </p>
-                                <div progress-status="40%" class="complete-profile-status-progress-bar"></div>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
 
-                    <div class="profile-edit-widget user-education-edit-widget">
-                        <h4 class="widget-title">Education
-                            <button class="icon-btn icon-btn-md" data-bs-toggle="modal"
-                                    data-bs-target="#addEducation">
-                                <x-icon.add/>
-                            </button>
-                        </h4>
+                    <div class="profile-widget user-education-widget">
+                        <h4 class="widget-title">Education </h4>
                         <div class="widget-content">
                             <div class="user-education-box-item">
-                                <div>
-                                    <p class="text-sm fw-medium mt-1 mb-0">Doctor of Philosophy</p>
-                                    <p class="text-sm mb-0">Public Health</p>
-                                    <p class="text-sm fst-italic mb-0">EduExHub University</p>
-                                    <p class="text-sm fw-medium mb-1">1995 - 2000</p>
-                                </div>
-                                <div class="ms-auto">
-                                    <button class="icon-btn icon-btn-md">
-                                        <x-icon.edit/>
-                                    </button>
-                                    <button class="icon-btn icon-btn-md" data-bs-toggle="modal"
-                                            data-bs-target="#deleteEducation">
-                                        <x-icon.delete/>
-                                    </button>
-                                </div>
+                                <p class="text-sm fw-medium mt-1 mb-0">Doctor of Philosophy</p>
+                                <p class="text-sm mb-0">Public Health</p>
+                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm mb-1">1995 - 2000</p>
                             </div>
                             <div class="user-education-box-item">
-                                <div>
-                                    <p class="text-sm fw-medium mt-1 mb-0">Master’s</p>
-                                    <p class="text-sm mb-0">Public Health</p>
-                                    <p class="text-sm fst-italic mb-0">EduExHub University</p>
-                                    <p class="text-sm fw-medium mb-1">1993 -1995</p>
-                                </div>
-                                <div class="ms-auto">
-                                    <button class="icon-btn icon-btn-md">
-                                        <x-icon.edit/>
-                                    </button>
-                                    <button class="icon-btn icon-btn-md" data-bs-toggle="modal"
-                                            data-bs-target="#deleteEducation">
-                                        <x-icon.delete/>
-                                    </button>
-                                </div>
+                                <p class="text-sm fw-medium mt-1 mb-0">Master’s</p>
+                                <p class="text-sm mb-0">Public Health</p>
+                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm mb-1">1993 -1995</p>
                             </div>
                             <div class="user-education-box-item mb-0">
-                                <div>
-                                    <p class="text-sm fw-medium mt-1 mb-0">Bachelor</p>
-                                    <p class="text-sm mb-0">Public Health</p>
-                                    <p class="text-sm fst-italic mb-0">EduExHub University</p>
-                                    <p class="text-sm fw-medium mb-1">1989 - 1993</p>
-                                </div>
-                                <div class="ms-auto">
-                                    <button class="icon-btn icon-btn-md">
-                                        <x-icon.edit/>
-                                    </button>
-                                    <button class="icon-btn icon-btn-md">
-                                        <x-icon.delete/>
-                                    </button>
-                                </div>
+                                <p class="text-sm fw-medium mt-1 mb-0">Bachelor</p>
+                                <p class="text-sm mb-0">Public Health</p>
+                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm mb-1">1989 - 1993</p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="profile-widget user-skills-widget">
+                        <h4 class="widget-title">Skillsets</h4>
 
+                        <div class="user-profile-skills">
+                            <ul>
+                                <li>Public Health</li>
+                                <li>Infectious Diseases</li>
+                                <li>Curriculum Development</li>
+                                <li>Educational Assessment</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

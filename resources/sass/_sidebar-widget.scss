@@ -220,6 +220,79 @@
     }
 }
 
+.user-bio-widget {
+    .user-profile-picture {
+        max-width: 167px;
+        max-height: 167px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 100%;
+        margin: 0 auto;
+
+        &:hover {
+            button {
+                bottom: 0;
+            }
+        }
+
+        button {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: $edu-headings-color;
+            bottom: -100%;
+            border: none;
+            padding: 5px 10px 10px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: 0.2s;
+        }
+    }
+
+    .user-profile-info {
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid $edu-border-color;
+        margin-bottom: 24px;
+
+        p {
+            margin-bottom: .2rem;
+        }
+    }
+}
+
+.user-education-widget {
+    .user-education-box-item {
+        margin-bottom: 0.8rem;
+    }
+}
+
+.user-profile-skills {
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+
+        li {
+            //display: inline-flex;
+            //gap: 4px;
+            //align-items: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 159.5%;
+            list-style: none;
+            color: $edu-primary-color;
+            border-radius: 2.625rem;
+            border: 1px solid $edu-primary-color;
+            padding: 0.125rem 0.60rem;
+        }
+    }
+}
+
 .widget-accordion {
     .widget-accordion-title {
         border-bottom: 1px solid rgba(14, 0, 98, 0.10);
@@ -243,6 +316,7 @@
             transform: translateY(-50%) rotate(0deg);
             right: 0;
         }
+
         &.accordion-item-active {
 
 
@@ -278,6 +352,7 @@
                 height: 20px;
                 border-radius: 4px;
             }
+
             &.accordion-item-active {
                 &:before {
                     background: $edu-primary-color url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.99999 13.6134L1.85999 9.47342L3.74665 7.58675L5.99999 9.84675L12.5867 3.25342L14.4733 5.14008L5.99999 13.6134Z" fill="white"/></svg>') no-repeat center;
