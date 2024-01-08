@@ -15,6 +15,20 @@
     }
 }
 
+.icon-field-wrapper {
+    position: relative;
+}
+.form-input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
 .form-input-group {
     margin-bottom: 12px;
     position: relative;
@@ -50,18 +64,12 @@
                 right: 0;
             }
         }
-
-        .form-input-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-        }
     }
 
+
+
     &.input-field-md {
-        .form-input-field{
+        .form-input-field {
             height: 42px;
         }
     }
