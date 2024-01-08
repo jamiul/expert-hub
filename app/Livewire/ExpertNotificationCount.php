@@ -6,11 +6,12 @@ use Livewire\Component;
 
 class ExpertNotificationCount extends Component {
     public function markAsRead( $id ) {
-        $notification = auth()->user()->notifications()->where('id', $id)->first();
+        $notification = auth()->user()->notifications()->where( 'id', $id )->first();
 
-        if ($notification) {
+        if ( $notification ) {
             $notification->markAsRead();
-            return redirect($notification->data['link']);
+
+            return redirect( $notification->data['link'] );
         }
     }
 
