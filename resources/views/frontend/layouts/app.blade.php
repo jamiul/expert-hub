@@ -20,7 +20,12 @@
         @stack('top_styles')
     </head>
     <body>
-        @include('frontend.layouts.partials.nav')
+        @auth
+            @include('frontend.layouts.partials.auth-nav')
+        @endauth
+        @guest
+            @include('frontend.layouts.partials.nav')
+        @endguest
         @yield('content')
         @include('frontend.layouts.partials.footer')
         @vite('resources/js/filepond.js')
@@ -29,6 +34,22 @@
         @vite('resources/js/owl.carousel.min.js')
         @livewire('modal-pro')
         <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
+        <script>
+            function toggleClasses(parentSelector, className) {
+                var parentElement = document.querySelector(parentSelector);
+                if (parentElement) {
+                    // Toggle the specified class on the parent element
+                    parentElement.classList.toggle(className);
+                } else {
+                    console.error('Parent element not found!');
+                }
+            }
+
+            function submenuTrigger(element, event) {
+                event.preventDefault();
+                element.parentElement.classList.toggle("active-sub-menu");
+            }
+        </script>
         @stack('bottom_scripts')
         <x-toaster/>
     </body>
