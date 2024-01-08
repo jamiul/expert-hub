@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
+use App\Http\Controllers\Frontend\NotificationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,4 +57,7 @@ Route::get('/profile/create', [ProfileController::class, 'create'])->middleware(
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
+
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
+
+Route::get('/notifications', [NotificationsController::class, 'notifications'])->middleware(['auth'])->name('notifications');

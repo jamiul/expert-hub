@@ -155,7 +155,8 @@
             <div class="header-special-menu">
                 <ul class="">
                     <li class="header-search-trigger">
-                        <button class="icon-btn border" onclick="toggleClasses('.main-header .header-search', 'header-search-activated' )">
+                        <button class="icon-btn border"
+                                onclick="toggleClasses('.main-header .header-search', 'header-search-activated' )">
                             <x-icon.search fill="#191D24"/>
                         </button>
                     </li>
@@ -270,7 +271,8 @@
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
                                             <p class="text-sm">
-                                                <span class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
 
@@ -287,7 +289,8 @@
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
                                             <p class="text-sm">
-                                                <span class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
 
@@ -304,7 +307,8 @@
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
                                             <p class="text-sm">
-                                                <span class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
 
@@ -321,7 +325,8 @@
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
                                             <p class="text-sm">
-                                                <span class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
 
@@ -338,7 +343,8 @@
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
                                             <p class="text-sm">
-                                                <span class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
 
@@ -348,7 +354,7 @@
 
                                 </div>
                                 <a href="/figma/client-chatbox-new" class="message-dropdown-view-all">
-                                   <x-icon.message-line fill="#C8C5D4"/>
+                                    <x-icon.message-line fill="#C8C5D4"/>
                                     View All Message
                                 </a>
                             </div>
@@ -384,9 +390,18 @@
                                         <li><a href="">
                                                 <x-icon.settings-line/>
                                                 Setting</a></li>
-                                        <li><a href="">
-                                                <x-icon.logout-box-line/>
-                                                Logout</a></li>
+
+                                        @auth
+                                            <li>
+                                                <form class="dropdown-logout-form" method="POST"
+                                                      action="{{ route('auth.logout') }}">
+                                                    @csrf
+                                                    <x-icon.logout-box-line/>
+                                                    <button class="bg-light" type="submit">Logout</button>
+                                                </form>
+                                            </li>
+                                        @endauth
+
                                     </ul>
                                 </div>
                             </div>
