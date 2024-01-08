@@ -7656,6 +7656,72 @@ body > .edux-no-footer > footer .footer{
   padding: 4px 24px 4px 17px;
 }
 
+.edux-tooltips{
+  position: relative;
+}
+
+.edux-tooltips:hover .edux-tooltips-details{
+  visibility: visible;
+}
+
+.edux-tooltips:hover .edux-tooltips-details:before{
+  visibility: visible;
+}
+
+.edux-tooltips-details {
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #191D24;
+  border: 2px solid #e7e5ef;
+  padding: 15px 22px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  min-width: 250px;
+  left: -24px;
+  top: 35px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.edux-arrow-icon {
+  position: absolute;
+  top: 0px;
+  rotate: 270deg;
+}
+
+.edux-tooltips-details:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 16px solid #fff;
+  border-top: 0;
+  top: -16px;
+  left: 19px;
+  visibility: hidden;
+}
+
+.edux-tooltip-level {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+
+
+.skills p{
+color:  #191D24;
+font-family: Colfax;
+font-size: 16px;
+font-weight: 400;
+}
+
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
