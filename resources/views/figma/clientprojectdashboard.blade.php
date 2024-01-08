@@ -7,27 +7,43 @@
         <div class="all-project">
           <h2>Your workspace</h2>
         </div>
-        <div class="all-project-post">
-          <div class="all-project-post-content">
-            <ul>
-              <li><a href="#">All Project Posts</a></li>
-              <li><a href="#">All Contracts</a></li>
-            </ul>
-          </div>
-          <div class="job-post">
-            <a href="/figma/jobposts"  class="btn edux-btn-primary">
-                <span class="arrow-left">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z" fill="white"/>
-                </svg>
-                </span> <span class="btn-text">Post a Job</span></a>
-          </div>
+        <div class="job-post">
+          <a href="/figma/jobposts"  class="btn edux-btn-primary">
+              <span class="arrow-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z" fill="white"/>
+              </svg>
+              </span> <span class="btn-text">Post a Job</span></a>
         </div>
       </div>
   </div>
+  <div class="row alljob-short">
+    <div class="col">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active all-job-tab" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All Job post</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link all-job-tab" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">All Contracts</button>
+      </li>
+    </ul>
+    </div>
+    <div class="col">
+      <div class="shorting-area">
+        <p class="short-title">Short by :</p>
+        <div class="short-option">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>All</option>
+            <option value="1">All Job post</option>
+            <option value="2">All Contracts</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
+  </div>
 
-  <div class="row owlp-bottom mt-5">
+  <div class="row owlp-bottom">
 
       <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
