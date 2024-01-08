@@ -24,7 +24,7 @@
                                     <div class="admin-tab-nav-area-client d-flex flex-row justify-content-between">
 
                                         <div class="admin-client-title">
-                                            <h4>Notifications</h4>
+                                            <h4>{{ __('admin.Notifications') }}</h4>
                                         </div>
 
                                     </div>
