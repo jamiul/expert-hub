@@ -6,15 +6,16 @@ use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\NewPasswordController;
 use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
+use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\NotificationsController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
-use App\Http\Controllers\Frontend\NotificationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +55,8 @@ Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->mid
 
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
 Route::get('/profile/create', [ProfileController::class, 'create'])->middleware('auth')->name('profile.create');
+Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware('auth')->name('client.profile');
+Route::get('/client/profile/position', [ClientProfileController::class, 'position'])->middleware('auth')->name('client.profile.position');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 

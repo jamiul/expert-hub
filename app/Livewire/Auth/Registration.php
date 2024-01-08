@@ -102,7 +102,7 @@ class Registration extends Component
         if($this->type === ProfileType::Expert->value){
             return redirect()->route('verification.notice');
         }
-        return redirect('/figma/client-dashboardhome');
+        return redirect()->route('client.profile.position');
     }
 
     public function render()
