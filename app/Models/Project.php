@@ -4,16 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Project extends Model
+class Project extends Model implements HasMedia
 {
     use SoftDeletes;
+    use InteractsWithMedia;
 
     protected $guarded = [];
 
-    public function files()
+    public function registerMediaCollections(): void
     {
-        return $this->hasMany(ProjectFile::class);
+        $this->addMediaCollection('attachments');
     }
     
     public function skills()
