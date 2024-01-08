@@ -1197,7 +1197,7 @@ header {
                     list-style: none;
                     display: block;
 
-                    a {
+                    a, .dropdown-logout-form {
                         display: flex;
                         align-items: center;
                         gap: 12px;
@@ -1210,11 +1210,22 @@ header {
                             fill: #A1A0A5;
                         }
 
+                        button {
+                            border: none;
+                            background-color: transparent;
+                            font-weight: 500;
+                            padding: 0;
+                        }
+
                         &:hover {
                             color: $edu-primary-color;
 
                             path {
                                 fill: $edu-primary-color;
+                            }
+
+                            button {
+                                color: $edu-primary-color;
                             }
                         }
                     }
