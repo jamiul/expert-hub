@@ -97,11 +97,7 @@
     <div class="separator"><span>Authorized User Header</span></div>
     <header class="main-header">
         <div class="main-header-container">
-            <div class="header-menu-trigger">
-                <button onclick="toggleClasses('.main-header', 'mobile-menu-activated' )">
-                    <span></span>
-                </button>
-            </div>
+
             <div class="header-logo">
                 <a href="">
                     <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
@@ -303,6 +299,11 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div class="header-menu-trigger">
+                <button onclick="toggleClasses('.main-header', 'mobile-menu-activated' )">
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
