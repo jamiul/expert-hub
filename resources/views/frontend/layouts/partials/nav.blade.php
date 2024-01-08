@@ -1,90 +1,91 @@
-<header>
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-3">
-                    <div class="logo">
-                        <a href="/"><img src="{{ asset('assets/frontend/img/logo.png') }}" /></a>
+<header class="public-header">
+    <div class="public-header-main">
+        <div class="public-header-container">
+            <div class="header-logo">
+                <a href="/"><img src="{{ asset('assets/frontend/img/logo.png') }}"/></a>
+            </div>
+            <div class="header-search">
+                <form action="">
+                    <input type="search" placeholder="I am looking for">
+                    <div class="search-select" id="">
+                        <label for="header-search-type">
+                            <x-icon.chevron-right width="18" height="18"/>
+                        </label>
+                        <input type="text" value="Expert" id="header-search-type">
+                        <ul>
+                            <li> My Projects</li>
+                            <li> Proposals</li>
+                            <li> All Contracts</li>
+                            <li> Save jobs</li>
+                            <li> Work Diary</li>
+                        </ul>
                     </div>
+                    <button>
+                        <x-icon.search fill="#191D24"/>
+                    </button>
+                </form>
+                <div class="header-search-trigger">
+                    <button class="icon-btn border">
+                        <x-icon.search fill="#0036E3"/>
+                    </button>
                 </div>
-                <div class="col-md-7 col-sm-5">
-                    <div class="search-block">
-                        <form class="example">
-                            <input type="text" placeholder="Search expert..." name="search">
-                            <button type="submit">
-                                <x-icon.search/>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-4 padding">
-                    <div class="header-post">
-                        <a href="{{ route('projects.create') }}">{{ __('Post your Project') }}</a>
-                        <a href="#">{{ __('Become an Expert') }}</a>
-                    </div>
-                </div>
+            </div>
+            <div class="header-menu-trigger">
+                <button onclick="toggleClasses('.public-header', 'mobile-menu-activated' )">
+                    <span></span>
+                </button>
+            </div>
+            <div class="header-special-menu">
+                <ul class="">
+                    <li><a href="{{ route('projects.create') }}">{{ __('Post your Project') }}</a></li>
+                    <li><a href="#">Become an Expert</a></li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="header-menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-9">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <div class="container-fluid">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="{{ url('/find-experts') }}">{{ __('Find Experts') }}</a>
-                                    </li>
-                                    {{-- <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="{{ url('/find-consultant') }}">{{ __('Find Consultants') }}</a>
-                                    </li> --}}
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="{{ url('find-projects') }}">{{ __('Find Projects') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="#">{{ __('Find Training') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="{{ url('scholarship-database') }}">{{ __('Scholarships Database') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('about-us') }}">{{ __('About Us') }}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="login-block">
-                        @guest
-                            <a href="{{ route('auth.login') }}" class="eudx-login-person">
-                                <span class="material-symbols-outlined top-person">person</span>
-                                <span class="login-text">{{ __('Login') }}</span>
-                            </a>
-                            <a href="{{ route('auth.registration') }}">{{ __('Register') }}</a>
-                        @endguest
-                        @auth
-                            <form method="POST" action="{{ route('auth.logout') }}">
-                                @csrf
-                                <button class="button button-xs button-primary" type="submit">Logout</button>
-                            </form>
-                        @endauth
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="public-header-bottom">
+
+        <nav class="public-header-nav">
+            <ul>
+                <li>
+                    <a href="{{ url('/find-experts') }}">{{ __('Find Experts') }}</a>
+                </li>
+
+                <li>
+                    <a href="{{ url('find-projects') }}">{{ __('Find Projects') }}</a>
+                </li>
+                <li>
+                    <a href="#">{{ __('Find Training') }}</a>
+                </li>
+                <li>
+                    <a href="{{ url('scholarship-database') }}">{{ __('Scholarships Database') }}</a>
+                </li>
+                <li>
+                    <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>
+                </li>
+                @guest
+                    <li class="public-auth-nav-item login-nav-item">
+                        <a href="{{ route('auth.login') }}">
+                            <x-icon.user-tie/>
+                            {{ __('Login') }}
+                        </a>
+                    </li>
+                    <li class="public-auth-nav-item register-nav-item">
+                        <a href="{{ route('auth.registration') }}">
+                            <x-icon.user-tie/> {{ __('Register') }}</a>
+                    </li>
+                @endguest
+{{--                @auth--}}
+{{--                    <li class="public-auth-nav-item logout-nav-item">--}}
+{{--                        <form method="POST" action="{{ route('auth.logout') }}">--}}
+{{--                            @csrf--}}
+{{--                            <button class="button button-primary" type="submit">Logout</button>--}}
+{{--                        </form>--}}
+{{--                    </li>--}}
+{{--                @endauth--}}
+            </ul>
+        </nav>
+
     </div>
+
 </header>
