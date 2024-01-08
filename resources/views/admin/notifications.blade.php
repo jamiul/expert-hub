@@ -3,7 +3,7 @@
     <div class="admin-layout" sidebar-size="small">
         <!-- start header -->
         <div class="admin-header">
-            @include('figma/admintopbar')
+            @include('figma/admintopbar-notification')
         </div>
         <!-- end header -->
         <!-- start left sidebar -->
