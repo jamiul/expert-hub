@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'figma'], function () {
@@ -113,4 +114,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-add-payment-method', '');
     Route::view('/expert-tax-information', '');
     Route::view('/expert-find-project', '');
+
+    //Global sections
+    Route::view('/page-header', 'figma.page-header');
 });
