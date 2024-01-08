@@ -72,22 +72,8 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="balance-table-area-admin d-flex flex-column table-responsive">
-                                                <table class="table table-hover transaction-all table-responsive">
-                                                    <thead class="t-history">
-                                                    <tr>
-                                                        <th scope="col"><input class="form-check-input mt-0 admin-all-checkbox" type="checkbox" value="" aria-label="Checkbox for following text input"> ID</th>
-                                                        <th scope="col">Title</th>
-                                                        <th scope="col">Message</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col"></th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody class="">
 
-                                                    @livewire('admin.notifications')
-
-                                                    </tbody>
-                                                </table>
+                                                @livewire('admin.notifications')
 
                                             </div>
                                         </div>
