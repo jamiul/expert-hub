@@ -5,7 +5,7 @@
     <div class="notification-details-list">
         @forelse($unread_notifications as $unread_notification)
             <div class="notification-details-list-item">
-                <div class="notification-details-thumb">
+                <div class="notification-details-thumb" wire:click="markAsRead('{{ $unread_notification->id }}')">
                     <img
                         src="{{ $unread_notification->data['avatar']  }}"
                         class="" alt="avatar">
