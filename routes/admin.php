@@ -16,4 +16,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     route::get('/reviews', [AdminController::class, 'reviewList'])->name('reviews');
 
     Route::get('/scholarships', [ScholarshipController::class, 'index'])->name('scholarships.index');
+
+    Route::get('/notifications', [AdminController::class, 'notifications'])->middleware(['auth'])->name('notifications');
 });
