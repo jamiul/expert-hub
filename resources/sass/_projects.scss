@@ -357,9 +357,11 @@
         .btn-outline-light {
             border-width: 2px;
             border-color: rgba(14, 0, 98, 0.10);
+
             path {
                 fill: $edu-primary-color;
             }
+
             &:hover {
                 background: $edu-primary-color;
 
@@ -439,4 +441,66 @@
             }
         }
     }
+}
+
+
+.btn {
+    &.btn-icon {
+        height: 46px;
+        width: 46px;
+        padding: 5px !important;
+        border-width: 2px;
+
+        &.btn-outline-light {
+            border-color: rgba(14, 0, 98, 0.10);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.btn-favorite {
+    span {
+        &.heart-line {
+            display: block;
+        }
+
+        &.heart-filled {
+            display: none;
+        }
+    }
+
+    &.favorited {
+        span {
+            &.heart-line {
+                display: none;
+            }
+
+            &.heart-filled {
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $edu-primary-color;
+        color: white;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+.project-eoi-trams-condition {
+    a {
+        color: initial;
+    }
+}
+
+.project-eoi-submit-btn {
+    width: 265px;
 }

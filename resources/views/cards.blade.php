@@ -1,8 +1,26 @@
 @extends('frontend.layouts.app')
 @section('content')
 
-    <h4 class="my-5  text-center">Expert Card</h4>
+
     <div class="container">
+        <div class="row">
+            <h4 class="my-5  text-center">General Elements</h4>
+        </div>
+        <div class="row">
+            <div class="col">
+                I am label
+                <div class="tooltip-wrapper bottom-left">
+                    <i class="tooltip-icon"></i>
+                    <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Eum, placeat!
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <h4 class="my-5  text-center">Expert Card</h4>
+        </div>
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="project-expert-card border-bottom">

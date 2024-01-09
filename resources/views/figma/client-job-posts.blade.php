@@ -8,7 +8,7 @@
                     <div class="d-flex justify-content-between align-items-center gap-3">
                         <div><h1 class="h5 m-0">All Project Posts</h1></div>
                         <div>
-                            <a href="" class="btn btn-primary btn-md">Post a Job</a>
+                            <a href="/figma/jobposts" class="btn btn-primary btn-md">Post a Job</a>
                         </div>
                     </div>
                     <div class="seller-admin-project-filter mt-20">
