@@ -160,7 +160,7 @@
                     <div class="profile-edit-started-btn-wrapper mt-5">
                         <p class="text-sm">Create your profile takes a few minutes and you have the option to edit it
                             later</p>
-                        <a class="btn btn-primary w-100 btn-lg" href="{{ route('profile.create') }}">Get Started</a>
+                        <a class="btn btn-primary w-100 btn-lg" href="{{ route('expert.profile.create') }}">Get Started</a>
                     </div>
 
                 </div>

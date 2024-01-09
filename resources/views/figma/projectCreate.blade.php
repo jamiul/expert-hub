@@ -49,19 +49,6 @@
                                     </div>
 
 
-                                    <div class="upload-file">
-                                        <label class="btn btn-default btn-file d-flex justify-content-center flex-column basic-file-upload gap-2">
-                                        <span>
-                                            <input type="file" style="display: none;" required="">
-                                        </span>
-                                        <span class="edux-blog-upload"> <a href="#"><img src=" {{ asset('assets/frontend/img/upload-icon.png') }}"></a></span>
-                                        <h6 class="edux-click">Click to upload or drag & drop</h6>
-                                        <p>Drag & drop any images or documents that might be helpful in explaining your brief here</p>
-                                    </label>
-                                    </div>
-
-
-
                                     <div class="customer-upload">
                                         <div class="upload-file-user">
                                         <div class="upload-file-user-img">
@@ -78,7 +65,7 @@
                                     </div>
 
                                 </div>
-                                <div class="step step-3">
+                                <div class="step step-3 mt-3">
                                     <div class="main-form">
                                         <div class="skills">
                                             <h3>What academic skills is required for this project?</h3>
@@ -92,7 +79,9 @@
                                                 </div>
                                                 <p>Suggestion skills:  <span>Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></p>
                                                 <div class="pt-2">
-                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Lorem<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
+                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Architecture 1<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
+                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Architecture 2<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
+                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">LMS 2<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
                                                 </div>
                                                     <div class="shadow bg-white position-absolute z-1" style="top:60px;">
 
@@ -148,55 +137,29 @@
                                     <div class="main-form">
                                         <div class="budget-block">
                                             <h3>What is your estimate budget?</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
                                             <div class="d-flex gap-4">
-                                                <div class="input-group mb-0 d-none" style="width: 120px">
-                                                    <select wire:model.change="currency" class="form-select form-control">
-                                                        <option value="USD">USD</option>
-                                                        <option value="AUD">AUD</option>
-                                                    </select>
-                                                </div>
-                                                <x-form.input type="number" min="0" label="Start Amount" wire:model="budget_start_amount" placeholder="Type Here"/>
+
+                                            </div>
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                            <div class="form-input-group">
+                                            <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    <input name="budget_start_amount" id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model="budget_start_amount" placeholder="Type Here">
+                                            </div>
+
+                                            </div>
+                                            <div class="col-md-6">
                                                 <x-form.input type="number" min="0" label="End Amount" wire:model="budget_end_amount" placeholder="Type Here"/>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="step step-7">
-                                    <div class="main-form">
-                                        <div class="correction-block">
-                                            <h3>Are these details correct?</h3>
-                                            <div class="correction-preview">
-                                                <div class="discription-view">
-                                                    <p>Lorem Ipsum description</p>
-                                                </div>
-                                                <div class="tags-preview">
-                                                    <div class="bootstrap-tagsinput">
-                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Agriculture<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
-
-                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Agriculture<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
-
-                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">Agriculture<img class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rate-preview">
-                                                    <div class="currency-img">
-                                                        <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
-                                                    </div>
-                                                    <div class="pay-ratee">
-                                                        <h4>Price per hour</h4>
-                                                        <p>$100 - $200</p>
-                                                    </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="form-buttons">
-                                    <button wire:click="next" type="button" class="edux-btn-primary">Continue</button>
+                                    <button wire:click="next" type="button" class="edux-btn-primary">Post Job</button>
                                 </div>
-                                <div class="form-buttons">
-                                    <button type="submit" class="edux-btn-primary">Yes Post my Project</button>
-                                </div>
+
                             </form>
                         </div>
                     </div>

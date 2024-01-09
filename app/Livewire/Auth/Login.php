@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Enums\ProfileType;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
@@ -48,9 +49,17 @@ class Login extends Component
         session()->regenerate();
 
         $this->redirect(
-            session('url.intended', '/dashboard'),
+            session('url.intended', $this->getDashboardUrl()),
             navigate: true
         );
+    }
+
+    public function getDashboardUrl()
+    {
+        if(auth()->user()->active_profile == ProfileType::Expert){
+            return route('expert.dashboard');
+        }
+        return route('client.dashboard');
     }
 
     protected function ensureIsNotRateLimited(): void
