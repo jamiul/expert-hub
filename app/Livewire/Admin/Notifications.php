@@ -9,7 +9,10 @@ class Notifications extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'bootstrap';
+    public function paginationView()
+    {
+        return 'livewire.pagination';
+    }
 
     public function markAsRead( $id )
     {

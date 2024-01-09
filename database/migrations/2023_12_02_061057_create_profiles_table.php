@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('expertise_id')->nullable();
             $table->decimal('hourly_rate')->nullable();
             $table->longText('biography')->nullable();
+            $table->string('current_role')->nullable();
+            $table->string('current_organization')->nullable();
             $table->string('status'); //App\Enums\ProfileStatus
             $table->boolean('active')->default(1);
             $table->timestamps();

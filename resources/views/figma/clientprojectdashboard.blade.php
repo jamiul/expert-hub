@@ -1,4 +1,3 @@
-
 @extends('frontend.layouts.front-client-dashboard-layoutmain')
 @section('content')
 <section class="client-dashboard mx-auto my-5">
@@ -8,27 +7,43 @@
         <div class="all-project">
           <h2>Your workspace</h2>
         </div>
-        <div class="all-project-post">
-          <div class="all-project-post-content">
-            <ul>
-              <li><a href="#">All Project Posts</a></li>
-              <li><a href="#">All Contracts</a></li>
-            </ul>
-          </div>
-          <div class="job-post">
-            <a href="/figma/jobposts"  class="btn edux-btn-primary">
-                <span class="arrow-left">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z" fill="white"/>
-                </svg>
-                </span> <span class="btn-text">Post a Job</span></a>
-          </div>
+        <div class="job-post">
+          <a href="/figma/jobposts"  class="btn edux-btn-primary">
+              <span class="arrow-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z" fill="white"/>
+              </svg>
+              </span> <span class="btn-text">Post a Job</span></a>
         </div>
       </div>
   </div>
+  <div class="row alljob-short">
+    <div class="col">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active all-job-tab" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All Job post</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link all-job-tab" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">All Contracts</button>
+      </li>
+    </ul>
+    </div>
+    <div class="col">
+      <div class="shorting-area">
+        <p class="short-title">Short by :</p>
+        <div class="short-option">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>All</option>
+            <option value="1">All Job post</option>
+            <option value="2">All Contracts</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
+  </div>
 
-  <div class="row owlp-bottom mt-5">
+  <div class="row owlp-bottom">
 
       <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -1052,12 +1067,12 @@
 
 
   <div class="academic-block academic-block-client">
-      <div class="container px-5 px-sm-3">
+      <div class="container px-5">
         <div class="heading client-heading">
           <h2>Upcoming Academic Training</h2>
         </div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-4">
             <div class="live-zoom">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }} " ></img>
@@ -1066,7 +1081,7 @@
               <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-4">
             <div class="training">
               <h3>Statistics with R*</h3>
               <div class="training-text">
@@ -1077,7 +1092,7 @@
               <h6>Language: <span>French</span></h6>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 col-sm-4">
             <div class="training-button">
               <a href="#" class="training-registered">Registered</a>
               <a href="#">Read More</a>
@@ -1085,7 +1100,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-4">
             <div class="live-zoom">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>
@@ -1094,7 +1109,7 @@
               <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-4">
             <div class="training">
               <h3>Longitudinal Data Analysis Using Stata</h3>
               <div class="training-text">
@@ -1105,7 +1120,7 @@
               <h6>Language: <span>French</span></h6>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 col-sm-4">
             <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
@@ -1113,7 +1128,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-4">
             <div class="live-zoom">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}"></img>
@@ -1122,7 +1137,7 @@
               <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-4">
             <div class="training">
               <h3>Multilevel and Mixed Models Using Stata</h3>
               <div class="training-text">
@@ -1133,7 +1148,7 @@
               <h6>Language: <span>French</span></h6>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 col-sm-4">
             <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
@@ -1396,7 +1411,7 @@
         </div>
         </div>
       </div>
-      <div class="col-md-7 p-0 pe-sm-3 pe-xs-3">
+      <div class="col-md-7 p-0">
       <div class="single-team-member-area">
         <div class="single-team-member-row">
 

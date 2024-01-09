@@ -16,6 +16,7 @@ class Profile extends Model implements HasMedia
     use HasFactory;
     use SoftDeletes;
     use InteractsWithMedia;
+    use Favoritable;
 
     protected $guarded = [];
 

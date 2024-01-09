@@ -9,10 +9,17 @@
             </div>
         </div>
     </div>
-    @include('frontend.expert.partials._slider')
+    @include('frontend.find-experts.partials._slider')
 @endsection
 
 @push('bottom_scripts')
+<script>
+    function toggleAccordion(header) {
+        header.classList.toggle("accordion-item-active");
+        var content = header.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
 @vite('resources/js/expert.js')
 @vite('resources/js/find-project.js')
 @endpush

@@ -2,11 +2,11 @@
 
 namespace App\Livewire\Project;
 
-use App\Enums\OptionGroupEnum;
 use App\Enums\ProjectStatus;
 use App\Models\Expertise;
-use App\Models\Option;
+use App\Models\Profile;
 use App\Models\Project;
+use App\Notifications\ProjectPostNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -23,6 +23,7 @@ class Create extends Component
     public $attachments = [];
 
     public $availableSkills = [];
+    public $skillLimit = 10;
     public $selectedSkills = [];
     public $skill = '';
 
@@ -31,10 +32,14 @@ class Create extends Component
     public $budget_start_amount;
     public $budget_end_amount;
 
+    public function mount()
+    {
+        $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
+    }
+
     public function save()
     {
         $data = $this->validate();
-        $attachments = [];
 
         $project = Project::create([
             'profile_id' => Auth::user()->profile->id,
@@ -47,22 +52,33 @@ class Create extends Component
             'budget_end_amount' => $data['budget_end_amount'],
             'status' => ProjectStatus::Published,
         ]);
-        foreach($this->selectedSkills as $id => $name){
+        foreach($this->selectedSkills as $id){
             $project->skills()->attach([
                 'expertise_id' => $id,
             ]);
         }
         foreach ($this->attachments as $attachment) {
             $fileName = $attachment->getClientOriginalName() . '-' . time() . '.' . $attachment->extension();
-            $attachment->storeAs('project', $fileName);
-            $project->files()->create([
-                'name' => $fileName,
-                'type' => $attachment->extension(),
-            ]);
-            // show attachment asset('storage/project/' . $project->attachments[0])
+            $project->addMedia($attachment->getRealPath())
+                ->usingName($fileName)
+                ->toMediaCollection('attachments');
         }
+        $this->notify($project);
+        return redirect()->route('client.dashboard');
+    }
 
-        return redirect()->to('/');
+    public function notify($project)
+    {
+        $experts = Profile::expert()->with('user')->get();
+        $experts->each(function($expert) use($project){
+            $expert->user->notify(new ProjectPostNotification([
+                'title'   => 'New Project posted',
+                'message' => $project->description,
+                'link'    => $project->slug,
+                'button' => 'View project',
+                'avatar'  => Auth::user()->profile->picture,
+            ]));
+        });
     }
 
     public function rules()
@@ -85,29 +101,14 @@ class Create extends Component
         ];
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function render()
     {
         return view('livewire.project.create');
-    }
-
-    public function next()
-    {
-        if($this->currentStep === 1){
-            $this->validateOnly('title');
-        }
-        if($this->currentStep === 2){
-            $this->validateOnly('description');
-        }
-        if($this->currentStep === 3){
-            $this->validateOnly('selectedSkills');
-        }
-        if($this->currentStep === 4){
-            $this->validateOnly('type');
-        }
-        if($this->currentStep === 5){
-            $this->validateOnly('budget_start_amount');
-        }
-        $this->currentStep += 1;
     }
 
     public function searchSkill()

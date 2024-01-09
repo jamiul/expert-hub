@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="col-md-4 col-12 p-0">
                                         <div class="post-header-image">
-                                            <img src="{{ asset('assets/frontend/img/expert.png') }}"/>
+                                            <img src="{{ asset('assets/frontend/img/client-hire.png') }}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -27,78 +27,70 @@
                         </div>
                         <div class="job-post-form">
                             <form wire:submit="save">
-                                @if($currentStep > 0)
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
-                                        <x-form.input type="text" label="What is your project title?" wire:model="title" placeholder="eg. Developing curriculum for Postgraduate public health unit"/>
+                                        <x-form.input type="text" label="What is your project title?" wire:model.blur="title" placeholder="Academic content writer"/>
                                     </div>
                                 </div>
-                                @endif
-                                @if($currentStep > 1)
                                 <div class="step step-2 mb-4">
-                                    <div class="main-form">
-                                        <x-form.textarea label="Project Description" wire:model="description" placeholder="Describe your project here (max 200 words)"/>
-                                        <div
-                                            wire:ignore
-                                            x-data
-                                            x-init="
-                                                FilePond.setOptions({
-                                                    allowMultiple: true,
-                                                    server: {
-                                                        process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
-                                                            @this.upload('attachments', file, load, error, progress)
-                                                        },
-                                                        revert: (fileName, load) => {
-                                                            @this.removeUpload('attachments', fileName, load)
-                                                        },
-                                                    },
-                                                    credits: {},
-                                                    labelIdle: '<strong>Clik to upload or drag & drop</strong> <br> Drag & drop any images or documents that might be helpful in explaining your brief here'
-                                                });
-                                                FilePond.create($refs.input);
-                                            "
-                                        >
-                                            <input type="file" x-ref="input">
+                                    <div class="main-form position-relative">
+                                    <x-form.textarea label="Project Description" wire:model.blur="description" placeholder="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this">
+                                    </x-form.textarea>
+                                    <span class="edux-word-count">0/1000</span>
                                         </div>
                                     </div>
+                                    <div
+                                        wire:ignore
+                                        x-data
+                                        x-init="
+                                            FilePond.setOptions({
+                                                allowMultiple: true,
+                                                server: {
+                                                    process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                                                        @this.upload('attachments', file, load, error, progress)
+                                                    },
+                                                    revert: (fileName, load) => {
+                                                        @this.removeUpload('attachments', fileName, load)
+                                                    },
+                                                },
+                                                credits: {},
+                                                labelIdle: '<strong>Clik to upload or drag & drop</strong> <br> Drag & drop any images or documents that might be helpful in explaining your brief here'
+                                            });
+                                            FilePond.create($refs.input);
+                                        "
+                                    >
+                                        <input type="file" x-ref="input">
+                                    </div>
+                                    {{-- <div class="customer-upload">
+                                        <div class="upload-file-user">
+                                        <div class="upload-file-user-img">
+                                            <img src="{{ asset('assets/frontend/img/uploadfile-icon.png') }}"/>
+                                        </div>
+                                        <div class="upload-file-user-text">
+                                            <h4>Customer_file.png</h4>
+                                            <p>456 KB    -   21 second left</p>
+                                        </div>
+                                        </div>
+                                        <div class="dust-img">
+                                        <x-icon.delete/>
+                                        </div>
+                                    </div> --}}
+
                                 </div>
-                                @endif
-                                @if($currentStep > 2)
-                                <div class="step step-3">
+                                <div class="step step-3 mt-3">
                                     <div class="main-form">
                                         <div class="skills">
                                             <h3>What academic skills is required for this project?</h3>
-                                            <p>List up to 5 key skills that represent your project. Academic experts will use these skills to match with projects aligned to their interests and expertise.</p>
-                                            <div class="form-group position-relative">
-                                                <div class="input-group">
-                                                    <input wire:keyup="searchSkill" wire:model="skill" class="form-control @error('selectedSkills') has-error @enderror" placeholder="Type the skills & select" type="text">
-                                                    @error('selectedSkills')
-                                                        <div class="error-message">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                                <p>Suggestion skills:  <span>Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></p>
-                                                <div class="pt-2">
-                                                    @foreach ($selectedSkills as $id => $name)
-                                                        <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">{{ $name }}<img wire:click="removeSkill({{ $id }})" class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
-                                                    @endforeach
-                                                </div>
-                                                @if($availableSkills)
-                                                    <div class="shadow bg-white position-absolute z-1" style="top:60px;">
-                                                        <ul class="list-style-none py-2 mb-0 px-3">
-                                                            @forelse ($availableSkills as $id => $name)
-                                                                <li class="py-2 cursor-pointer" wire:click="addSkill({{ $id }})" wire:key="{{ $id }}">{{$name}}</li>
-                                                            @empty
-                                                                <li>No results</li>
-                                                            @endforelse
-                                                        </ul>
-                                                    </div>
-                                                @endif
-                                            </div>
+                                            <p>List up to 10 key skills that represent your project. Academic experts will use these skills to match with projects aligned to their interests and expertise.</p>
+                                            <x-form.choice wire:model.change="selectedSkills" placeholder="Type the skills & hit enter" id="skills" multiple>
+                                                @foreach ($availableSkills as $id => $name)
+                                                    <option value="{{ $id }}">{{ $name }}</option>
+                                                @endforeach
+                                            </x-form.choice>
+                                            <div class="text-sm">Suggestion skills:  <span class="text-sm fw-mwdium">Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></div>
                                         </div>
                                     </div>
                                 </div>
-                                @endif
-                                @if($currentStep > 3)
                                 <div class="step step-5">
                                     <div class="main-form">
                                         <div class="hourly-fixed-block">
@@ -108,7 +100,7 @@
                                                     <div class="rate-box">
                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                             <div class="hourly-check">
-                                                                <input type="radio" class="btn-check" wire:model="type" value="hourly" id="btnradio1" autocomplete="off">
+                                                                <input type="radio" class="btn-check" wire:model.change="type" value="hourly" id="btnradio1" autocomplete="off">
                                                                 <label class="btn btn-outline-primary" for="btnradio1">
                                                                     <div class="currency-img">
                                                                         <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
@@ -125,7 +117,7 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="rate-box">
                                                         <div class="fixed-check">
-                                                            <input type="radio" class="btn-check" wire:model="type" value="fixed" id="btnradio2" autocomplete="off">
+                                                            <input type="radio" class="btn-check" wire:model.change="type" value="fixed" id="btnradio2" autocomplete="off">
                                                             <label class="btn btn-outline-primary" for="btnradio2">
                                                                 <div class="currency-img">
                                                                     <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
@@ -139,85 +131,37 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @error('type')
-                                                <div class="error-message">{{ $message }}</div>
-                                            @enderror
                                         </div>
                                     </div>
                                 </div>
-                                @endif
-                                @if($currentStep > 4)
                                 <div class="step step-6">
                                     <div class="main-form">
                                         <div class="budget-block">
                                             <h3>What is your estimate budget?</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
                                             <div class="d-flex gap-4">
-                                                <div class="input-group mb-0 d-none" style="width: 120px">
-                                                    <select wire:model.change="currency" class="form-select form-control">
-                                                        <option value="USD">USD</option>
-                                                        <option value="AUD">AUD</option>
-                                                    </select>
-                                                </div>
-                                                <x-form.input type="number" min="0" label="Budget start amount ($)" wire:model="budget_start_amount" placeholder="100"/>
-                                                <x-form.input type="number" min="0" label="Budget end amount ($)" wire:model="budget_end_amount" placeholder="200"/>
+
+                                            </div>
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                            <div class="form-input-group">
+                                            <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    
+                                            <input id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model.blur="budget_start_amount" placeholder="Type Here">
+                                            </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <x-form.input type="number" min="0" label="End Amount" wire:model.blur="budget_end_amount" placeholder="Type Here"/>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                @endif
-                                @if($currentStep > 5)
-                                <div class="step step-7">
-                                    <div class="main-form">
-                                        <div class="correction-block">
-                                            <h3>Are these details correct?</h3>
-                                            <div class="correction-preview">
-                                                <div class="discription-view">
-                                                    <p>{{ $description }}</p>
-                                                </div>
-                                                <div class="tags-preview">
-                                                    <div class="bootstrap-tagsinput">
-                                                        @foreach ($selectedSkills as $id => $name)
-                                                            <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center">{{ $name }}<img wire:click="removeSkill({{ $id }})" class="ps-2" src="{{ asset('assets/frontend/img/close-i.png') }}"></div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rate-preview">
-                                                @if($type === 'fixed')
-                                                <div class="currency-img">
-                                                    <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
-                                                </div>
-                                                <div class="pay-ratee">
-                                                    <h4>Fixed price</h4>
-                                                    <p>${{ $budget_start_amount }} - ${{ $budget_end_amount }}</p>
-                                                </div>
-                                                @endif
-                                                @if($type === 'hourly')
-                                                    <div class="currency-img">
-                                                        <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
-                                                    </div>
-                                                    <div class="pay-ratee">
-                                                        <h4>Price per hour</h4>
-                                                        <p>${{ $budget_start_amount }} - ${{ $budget_end_amount }}</p>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($currentStep < 6)
+
                                 <div class="form-buttons">
-                                    <!-- <button wire:click="next" type="button" class="btn btn-primary next-step edux-btn-primary">Next</button> -->
-                                    <button wire:click="next" type="button" class="edux-btn-primary">Next</button>
+                                    <button type="submit" class="edux-btn-primary">Post Job</button>
                                 </div>
-                                @endif
-                                @if($currentStep === 6)
-                                <div class="form-buttons">
-                                    <!-- <button type="submit" class="btn btn-primary next-step">Yes Post my Project</button> -->
-                                    <button type="submit" class="edux-btn-primary">Yes Post my Project</button>
-                                </div>
-                                @endif
+
                             </form>
                         </div>
                     </div>
@@ -226,4 +170,3 @@
         </div>
     </div>
 </div>
-
