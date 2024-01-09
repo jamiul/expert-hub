@@ -1052,7 +1052,7 @@
 
 
   <div class="academic-block academic-block-client">
-      <div class="container px-5">
+      <div class="container px-5 px-sm-3">
         <div class="heading client-heading">
           <h2>Upcoming Academic Training</h2>
         </div>
@@ -1396,7 +1396,7 @@
         </div>
         </div>
       </div>
-      <div class="col-md-7 p-0">
+      <div class="col-md-7 p-0 pe-sm-3 pe-xs-3">
       <div class="single-team-member-area">
         <div class="single-team-member-row">
 
