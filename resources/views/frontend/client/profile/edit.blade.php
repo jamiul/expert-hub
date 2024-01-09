@@ -71,9 +71,7 @@
                                                     <x-icon.info fill="#C8C5D4" />
                                                 </button>
                                             </div>
-
                                         </div>
-
                                         <div class="card border-0 border-bottom rounded-0">
                                             <div class="card-body px-0">
                                                 <div class="">
@@ -94,7 +92,6 @@
                                                         <p class="text-sm mb-0">Dean | School of Business | EduEx
                                                             University </p>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>

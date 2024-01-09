@@ -63,6 +63,7 @@ Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->mi
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth'])->name('expert.dashboard');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware('auth')->name('client.profile');
+Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware('auth')->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware('auth')->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth'])->name('client.dashboard');
 
