@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.app')
 
 @section('content')
     <section class=" profile-setup">
@@ -163,24 +163,7 @@
                             <p><a class="fw-medium text-decoration-underline" href="">Schedule Your Consultation</a>   (Max 5 schedule per day)</p>
                             <div class="available-schedule-input-wrapper mb-40">
 
-                                <div class="study-level">
-                                    <div class="calendar-box position-relative">
-                                        <input class="timesheet-date" type="text" id="dateInput" placeholder="23 Dec 2023">
-
-                                        <div class="calendar" id="calendar">
-                                        <div class="header">
-                                            <button id="prevBtn">
-                                            <i class="fa fa-angle-left"></i>
-                                            </button>
-                                            <h2 id="monthYear">Month Year</h2>
-                                            <button id="nextBtn">
-                                            <i class="fa fa-angle-right"></i>
-                                            </button>
-                                        </div>
-                                        <div class="days" id="daysContainer"></div>
-                                        </div>
-                                    </div>
-                                    </div>
+                            <x-form.flatpicker label="Date picker" name="datepicker"/>
 
                                 <div class="available-time-select-col">
                                     <ul>
@@ -325,24 +308,25 @@
                             <p><a class="fw-bold" href="">Schedule Your Consultation</a></p>
                             <div class="available-schedule-input-wrapper mb-40">
 
-                                 <div class="study-level">
+                            <x-form.flatpicker label="Date picker" name="datepicker"/>
+                                 <!-- <div class="study-level">
                                     <div class="calendar-box position-relative">
                                         <input class="timesheet-date" type="text" id="dateInput" placeholder="23 Dec 2023">
 
                                         <div class="calendar" id="calendar">
                                         <div class="header">
                                             <button id="prevBtn">
-                                            <i class="fa fa-angle-left"></i>
+                                            <x-icon.arrow-left/>
                                             </button>
                                             <h2 id="monthYear">Month Year</h2>
                                             <button id="nextBtn">
-                                            <i class="fa fa-angle-right"></i>
+                                            <x-icon.arrow-right/>
                                             </button>
                                         </div>
                                         <div class="days" id="daysContainer"></div>
                                         </div>
                                     </div>
-                                    </div>
+                                    </div> -->
 
                                 <div class="available-time-select-col">
                                     <ul>
@@ -397,98 +381,10 @@
     <!--End Modal -->
 
 
-<!-- Date time Picker js -->
-<script>
-      const daysContainer = document.getElementById("daysContainer");
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
-      const monthYear = document.getElementById("monthYear");
-      const dateInput = document.getElementById("dateInput");
-      const calendar = document.getElementById("calendar");
 
-      let currentDate = new Date();
-      let selectedDate = null;
 
-      function handleDayClick(day) {
-        selectedDate = new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth(),
-          day
-        );
-        dateInput.value = selectedDate.toLocaleDateString("en-US");
-        calendar.style.display = "none";
-        renderCalendar();
-      }
 
-      function createDayElement(day) {
-        const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-        const dayElement = document.createElement("div");
-        dayElement.classList.add("day");
 
-        if (date.toDateString() === new Date().toDateString()) {
-          dayElement.classList.add("current");
-        }
-        if (selectedDate && date.toDateString() === selectedDate.toDateString()) {
-          dayElement.classList.add("selected");
-        }
 
-        dayElement.textContent = day;
-        dayElement.addEventListener("click", () => {
-          handleDayClick(day);
-        });
-        daysContainer.appendChild(dayElement);
-      }
-
-      function renderCalendar() {
-        daysContainer.innerHTML = "";
-        const firstDay = new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth(),
-          1
-        );
-        const lastDay = new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth() + 1,
-          0
-        );
-
-        monthYear.textContent = `${currentDate.toLocaleString("default", {
-          month: "long"
-        })} ${currentDate.getFullYear()}`;
-
-        for (let day = 1; day <= lastDay.getDate(); day++) {
-          createDayElement(day);
-        }
-      }
-
-      prevBtn.addEventListener("click", () => {
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        renderCalendar();
-      });
-
-      nextBtn.addEventListener("click", () => {
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        renderCalendar();
-      });
-
-      dateInput.addEventListener("click", () => {
-        calendar.style.display = "block";
-        positionCalendar();
-      });
-
-      document.addEventListener("click", (event) => {
-        if (!dateInput.contains(event.target) && !calendar.contains(event.target)) {
-          calendar.style.display = "none";
-        }
-      });
-
-      function positionCalendar() {
-        const inputRect = dateInput.getBoundingClientRect();
-        calendar.style.top = inputRect.bottom + "px";
-        calendar.style.left = inputRect.left + "px";
-      }
-      window.addEventListener("resize", positionCalendar);
-      renderCalendar();
-    </script>
 <!-- Date time Picker js -->
 @endsection
