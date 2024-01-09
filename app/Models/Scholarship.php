@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Scholarship extends Model
 {
     use SoftDeletes;
+    use Favoritable;
 
     protected $guarded = [];
 
@@ -17,31 +18,6 @@ class Scholarship extends Model
         'deadline' => 'date',
         'student_type' => StudentType::class,
     ];
-
-    public function favourites(): MorphMany
-    {
-        return $this->morphMany(Favourite::class, 'loveable');
-    }
-
-    public function favourite()
-    {
-        $attributes = ['profile_id' => auth()->user()->profile->id];
-        $record = $this->favourites()->where($attributes)->first();
-        if($record){
-            $record->delete();
-        }else{
-            $this->favourites()->create($attributes);
-        }   
-    }
-
-    public function favourited()
-    {
-        if(!auth()->user()){
-            return null;
-        }
-        $attributes = ['profile_id' => auth()->user()->profile->id];
-        return $this->favourites()->where($attributes)->exists();
-    }
 
     public function university()
     {

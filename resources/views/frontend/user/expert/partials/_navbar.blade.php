@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('/assets/frontend/default/css/expert-header.css') }}">
 <nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
     <div class="container-fluid algin-items-center mx-auto">
-        <a class="navbar-brand" href="{{ route('dashboard') }}">
+        <a class="navbar-brand" href="{{ route('expert.dashboard') }}">
             <img src="{{ asset('assets/frontend/img/logo.png') }}" />
         </a>
 
