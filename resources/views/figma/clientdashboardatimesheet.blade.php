@@ -1,4 +1,5 @@
-@extends('frontend.layouts.front-client-dashboard-layout') @section('content') <section class="client-dashboard mx-auto my-5">
+@extends('frontend.layouts.front-client-dashboard-layout')
+ @section('content') <section class="client-dashboard mx-auto my-5">
   <div class="container">
     <div class="row">
       <div class="contact-project-area d-flex justify-content-between">

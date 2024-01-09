@@ -7779,6 +7779,225 @@ font-weight: 400;
 }
 
 
+/* ============================== Add Consultant start Here ============================= */
+.edux-single-skills {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.edux-skill-input {
+  padding: 60px 20px 10px;
+}
+
+
+.service-fee-description .edux-tooltips-details {
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #191D24;
+  border: 2px solid #e7e5ef;
+  padding: 15px 22px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  min-width: 180px;
+  left: -24px;
+  top: 35px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.available-schedule-input-wrapper .calendar {
+  background-color: white;
+  border-radius: 4px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  left: 0px !important;
+  /* border: solid 2px #0036E3; */
+  top: 45px !important;
+  min-width: 298px;
+  min-height: 282px;
+  box-shadow: 12px 17px 48px 0px #0E00621A;
+}
+
+.available-schedule-input-wrapper .timesheet-date {
+  min-width: 301px !important;
+}
+
+/* #addConsultation label{
+  color: #191D24;
+  font-size: 15px !important;
+} */
+
+.skilled-label{
+  color: #191D24;
+  font-size: 15px !important;
+  font-weight: 500;
+}
+
+.skill-suggestion{
+  color: #303744;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.skill-suggestion span{
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+.edux-platform-bg{
+  background-color: #E7E5EF;
+}
+
+.available-time-select-col {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #DDD;
+}
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-upload-flat {
+  display: flex;
+  border-radius: 4px;
+  border: 2px solid  #0036E3;
+  width: 218px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+}
+
+.edux-label-upload {
+  display: flex !important;
+  padding: 0px !important;
+  justify-content: center;
+  align-items: center;
+  color: #0036E3;
+}
+
+.available-schedule-upload {
+  align-items: center !important;
+  grid-template-columns: 220px auto;
+}
+
+.edux-button-list .button-list-item {
+  list-style: none;
+  display: inline-flex;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(48, 55, 68, 0.03);
+  padding: 2px 12px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  justify-content: space-between;
+  width:auto;
+  color: #191D24
+}
+
+.edux-btn-cancel{
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  background: transparent;
+}
+
+.edux-btn-cancel:hover{
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  background: transparent;
+}
+
+
+.eudx-btn-save{
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background:  #0036E3;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-btn-back{
+  display: flex;
+  padding: 6px 24px 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-btn-back:hover{
+  display: flex;
+  padding: 6px 24px 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+/* ============================== Add Consultant start Here ============================= */
+
+
+
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
 @media only screen and (max-width: 1820px) {
