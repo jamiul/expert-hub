@@ -62,7 +62,7 @@ class Create extends Component
                 ->toMediaCollection('attachments');
         }
 
-        return redirect()->to('/');
+        return redirect()->route('client.dashboard');
     }
 
     public function rules()
