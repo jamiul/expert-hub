@@ -1,5 +1,5 @@
 <x-modal.form action="updateBiography">
-    <x-slot name="title">Update Biography</x-slot>
+    <x-slot name="title">Edit Biography</x-slot>
     @include('livewire.profile.biography.form')
     <x-slot name="button">
         <button type="submit" class="btn btn-primary">Save</button>

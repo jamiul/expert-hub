@@ -13,6 +13,7 @@ class Experience extends Component
     public $experiences = [];
     public $experience = null;
     public $years = [];
+    public $showReadMoreButton = null;
 
     public function mount()
     {
@@ -40,6 +41,16 @@ class Experience extends Component
     public function profile()
     {
         return auth()->user()->profile;
+    }
+
+    public function readLess()
+    {
+        $this->showReadMoreButton = null;
+    }
+
+    public function readMore($id)
+    {
+        $this->showReadMoreButton = $id;
     }
 
     public function render()

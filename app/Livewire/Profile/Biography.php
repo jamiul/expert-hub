@@ -9,6 +9,7 @@ class Biography extends Component
 {
     public $profile = [];
     public $biography = '';
+    public $showReadMoreButton = null;
 
     public function mount()
     {
@@ -21,6 +22,17 @@ class Biography extends Component
     {
         $this->biography = $this->profile()->biography;
     }
+
+    public function readLess()
+    {
+        $this->showReadMoreButton = null;
+    }
+
+    public function readMore($id)
+    {
+        $this->showReadMoreButton = $id;
+    }
+
     public function render()
     {
         return view('livewire.profile.biography');

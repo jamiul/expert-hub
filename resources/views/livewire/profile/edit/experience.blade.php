@@ -36,7 +36,17 @@
                             </button>
                         </div>
                     </div>
-                    <p>{{ $experience->description ?? '' }}</p>
+                    @if ($showReadMoreButton === $experience->id)
+                        <p>
+                            {!! nl2br(e($experience->description)) !!}
+                            <a href="#work-experience" wire:click="readLess">Less</a>
+                        </p>
+                    @else
+                        <p>
+                            {{ Str::limit($experience->description, 300) }}
+                            <a href="#work-experience" wire:click="readMore({{ $experience->id }})">More</a>
+                        </p>
+                    @endif
                 </div>
             </div>
         @empty
