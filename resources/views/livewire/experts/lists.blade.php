@@ -16,8 +16,11 @@
                         </div>
                     </div>
                     <div class="database-right">
-                        <a class="data-icon" href="#"><img
-                                src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
+                        <button wire:click="favourite({{ $expert->id }})"
+                                class="btn btn-outline-light m-1 {{ $expert->favourited() ? 'favourited' : ''}}">
+                            <span class="favorite-icon"> <x-icon.heart fill="#0036E3"/></span>
+                            <span class="favorite-icon-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
+                        </button>
                         <a class="data-icon" href="#"><img
                                 src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
                     </div>
