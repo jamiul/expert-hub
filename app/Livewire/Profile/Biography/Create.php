@@ -19,8 +19,9 @@ class Create extends Modal
 
     public function addBiography()
     {
-        $this->form->create();
+        $this->form->update();
         $this->dispatch('refresh')->to(Biography::class);
+        $this->dispatch('notify', content: 'Biography Added', type: 'success');
         $this->close();
     }
 

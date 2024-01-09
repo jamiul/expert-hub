@@ -18,13 +18,4 @@ class ProfileController extends Controller
     {
         return view('frontend.profile.create');
     }
-
-    public function edit($id)
-    {
-        $profile = Profile::where('id', $id)
-                ->with('user' ,'expertField')
-                ->get();
-
-        return view('frontend.profile.edit');
-    }
 }

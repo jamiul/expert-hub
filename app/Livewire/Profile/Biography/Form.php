@@ -11,10 +11,10 @@ class Form extends BaseForm
     #[Validate('required')]
     public $biography = '';
 
-    public function create()
+    public function update()
     {
         $data = $this->validate();
-        $this->profile()->create($data);
+        $this->profile()->update($data);
         $this->reset();
     }
 

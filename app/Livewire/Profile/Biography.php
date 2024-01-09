@@ -3,6 +3,7 @@
 namespace App\Livewire\Profile;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Biography extends Component
 {
@@ -13,6 +14,12 @@ class Biography extends Component
     {
         $this->profile = $this->profile();
         $this->biography = $this->profile->biography;
+    }
+
+    #[On('refresh')]
+    public function refreshBiography()
+    {
+        $this->biography = $this->profile()->biography;
     }
     public function render()
     {
