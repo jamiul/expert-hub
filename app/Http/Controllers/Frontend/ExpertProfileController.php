@@ -18,4 +18,9 @@ class ExpertProfileController extends Controller
     {
         return view('frontend.expert.profile.create');
     }
+
+    public function edit()
+    {
+        return view('frontend.expert.profile.edit');
+    }
 }
