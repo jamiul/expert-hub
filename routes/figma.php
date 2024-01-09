@@ -47,7 +47,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     //Client Dashboard
     Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
-    Route::view('/client-dashboard', 'figma.clientdashboard');
+
     Route::view('/client-dashboardexpertconsultant', 'figma.clientdashboardexpertconsultant');
     Route::view('/client-dashboardexpertconsultantteam', 'figma.clientdashboardexpertconsultantteam');
     Route::view('/client-dashboardallcontact', 'figma.clientdashboardallcontact');
@@ -117,4 +117,8 @@ Route::group(['prefix' => 'figma'], function () {
 
     //Global sections
     Route::view('/page-header', 'figma.page-header');
+
+    //Project
+    Route::view('/project/client-job-posts', 'figma.client-job-posts');
+    Route::view('/project/client-job-post-view', 'figma.client-job-post-view');
 });
