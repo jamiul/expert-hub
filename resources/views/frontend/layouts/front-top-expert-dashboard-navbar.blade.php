@@ -223,7 +223,7 @@
             </div>
          </div>
 
-          @livewire('expert-notification-count')
+          {{-- @livewire('expert-notification-count') --}}
 
          <div class="dropdown">
             <!-- data-bs-auto-close="false" -->
