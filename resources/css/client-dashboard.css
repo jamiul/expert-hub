@@ -8257,6 +8257,28 @@ header.client-header {
   margin: 12px;
 }
 
+.job-area-top {
+  padding: 20px 0px 15px;
+  border-bottom: 1px solid #E7E5EF;
+}
+
+.all-project h2 {
+  font-family: Colfax;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #191D24;
+}
+
+.all-project-post-content ul li a {
+  color: #303744;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
 }
 
 @media only screen and (max-width: 500px) {
