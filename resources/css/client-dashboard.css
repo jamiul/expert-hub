@@ -1689,10 +1689,7 @@ td.health-budget{
   display: flex;
   min-height: 244px;
   padding: 24px;
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
   gap: 12px;
-  /* align-self: stretch; */
   border-radius: 4px;
   background: #FFF;
   box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
@@ -8048,6 +8045,13 @@ header.client-header {
 
 }
 
+@media only screen and (max-width: 995px) {
+  .edux-modal-footer {
+    margin: 0px auto;
+  }
+
+  }
+
 @media only screen and (max-width: 991px) {
   .edux-body-right-content{
     display: none;
@@ -8063,10 +8067,12 @@ header.client-header {
 .single-person-deniyel img {
   max-width: 160px;
   max-height: 185px;
-  position: absolute;
-  top: -25px;
-  left: 0%;
+  /* position: absolute; */
+  /* top: -25px; */
+  /* left: 0%; */
+  /* width: 100%; */
   width: 100%;
+  height: 100%;
 }
 
 .person-details p {
@@ -8107,8 +8113,8 @@ header.client-header {
 
 .btn-fundmilestone {
   font-size: 10px;
+  min-width: 100px;
 }
-
 .profile-single-title h3 {
   font-size: 12px;
 }
@@ -8136,18 +8142,51 @@ header.client-header {
 
 
 
-@media only screen and (max-width: 995px) {
 
 
 
-.edux-modal-footer {
-  margin: 0px auto;
+@media only screen and (max-width: 768px) {
+  .academic-block .live-zoom {
+    border-right: solid 1px #d9dbea;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    min-width: 100% !important;
+}
+
+.btn-fundmilestone {
+  min-width: 100px;
+
+}
+
+.single-card-area {
+  margin-right: 0px;
+  max-width: 100%;
 }
 
 }
+
 
 
 @media only screen and (max-width: 767px) {
+
+  .btn-fundmilestone {
+    display: flex;
+    max-width: 218px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    width: 100%;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: 2px solid #0036E3;
+}
 
   .team .team-block {
     text-align: center;
@@ -8193,6 +8232,7 @@ header.client-header {
   display: flex;
   flex-direction: column;
 }
+
 
 }
 
@@ -8493,15 +8533,6 @@ img.middle-top-arrow{
   display: block;
 }
 
-/*.hide {*/
-/*  display: none;*/
-/*}*/
-
-/*.show {*/
-/*  display: block;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*}*/
 
 .middle-top-img button{
   border: none;
@@ -8705,7 +8736,38 @@ ul.edux-mobile-dropdown li {
   height: 150px;
 }
 
+.job-area-top {
+  padding: 20px 30px 15px;
+  border-bottom: 1px solid #E7E5EF;
+  flex-direction: column;
+}
 
+.all-project-post-content ul {
+  padding-left: 0px;
+}
+
+.all-project-post {
+  gap: 5px;
+  flex-direction: column;
+}
+
+.edux-all-job-area {
+  padding: 48px 30px 0px !important;
+  border-top: 1px solid #E7E5EF;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-team-member-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.academic-block .live-zoom {
+  border-right: none !important;
+}
 
 
 }
