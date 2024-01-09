@@ -24,8 +24,8 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/scholarship-singlePage', 'figma.scholarshipsinglepage');
     Route::view('/search-empty', 'figma.searchempty');
     // client post Job
-    Route::view('/project-create', 'figma.projectCreate');
-    Route::view('/jobposts', 'figma.clientjobpost');
+    Route::view('/jobposts', 'figma.projectCreate');
+    Route::view('/jobposts-test', 'figma.clientjobpost');
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');
     Route::view('/client-signup', 'figma.clientsignup');
@@ -46,8 +46,9 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-status-analytics', 'figma.expert-status-analytics');
 
     //Client Dashboard
-    Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
-    Route::view('/client-dashboard', 'figma.clientdashboard');
+    Route::view('/client-dashboard', 'figma.clientdashboardhome');
+    // Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
+    Route::view('/client-dashboardall', 'figma.clientdashboard');
     Route::view('/client-dashboardexpertconsultant', 'figma.clientdashboardexpertconsultant');
     Route::view('/client-dashboardexpertconsultantteam', 'figma.clientdashboardexpertconsultantteam');
     Route::view('/client-dashboardallcontact', 'figma.clientdashboardallcontact');

@@ -6,15 +6,15 @@ use App\Http\Controllers\Frontend\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class ProfileController extends Controller
+class ExpertProfileController extends Controller
 {
     public function index(): View
     {
-        return view('frontend.profile.index');
+        return view('frontend.expert.profile.index');
     }
 
     public function create(): View
     {
-        return view('frontend.profile.create');
+        return view('frontend.expert.profile.create');
     }
 }

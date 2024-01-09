@@ -19,7 +19,7 @@ class Create extends Modal
 
     public function mount()
     {
-        $this->institutions = University::where('country_id', 14)->get();
+        $this->institutions = University::where('country_id', 12)->get();
         $this->degrees = Degree::get();
         $this->fields = Expertise::expertise()->isChild()->get();
         $this->years = years();

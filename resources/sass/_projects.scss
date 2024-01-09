@@ -4,7 +4,7 @@
     border-bottom: 1px solid $edu-border-color;
 
     .project-list-card-item-header {
-        padding-bottom: 5px;
+        padding-bottom: 1rem;
         border-bottom: 1px solid $edu-border-color;
 
         .project-item-title {
@@ -15,18 +15,79 @@
             }
         }
 
-        .project-item-meta-data {
+        .project-item-meta-wrapper {
             font-size: 14px;
+
+            .icon-btn {
+                border-radius: 4px;
+                border: 2px solid rgba(14, 0, 98, 0.10);
+                width: 46px;
+                height: 46px;
+
+                span {
+                    &.heart-line {
+                        display: block;
+                    }
+
+                    &.heart-filled {
+                        display: none;
+                    }
+                }
+
+                &.favorited {
+                    span {
+                        &.heart-line {
+                            display: none;
+                        }
+
+                        &.heart-filled {
+                            display: block;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: $edu-primary-color;
+                    color: white;
+
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+
+            .project-item-price {
+                strong {
+                    color: rgba(25, 29, 36, 0.70);;
+                }
+            }
+
+            @media screen and (max-width: 1100px) {
+                flex-wrap: wrap;
+
+            }
         }
     }
 
     .project-list-card-item-body {
         padding: 1rem 0;
+
+        a {
+            color: $edu-primary-color;
+        }
     }
 
 
     &:hover {
         background-color: #F7F9FE;
+    }
+}
+
+.project-instruction {
+    .btn-primary {
+        width: 265px;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 
@@ -79,6 +140,7 @@
     padding: 35px 30px;
     margin-bottom: 30px;
     background-color: #fff;
+
     h4 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -110,11 +172,14 @@
         color: $edu-headings-color;
         font-weight: 500;
         font-size: 0.875rem;
+
         path {
             fill: $edu-headings-color;
         }
+
         &:hover {
             color: $edu-primary-color;
+
             path {
                 fill: $edu-primary-color;
             }

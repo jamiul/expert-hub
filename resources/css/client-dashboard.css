@@ -1033,7 +1033,36 @@ section.team-area {
   border-radius: 0px 0px 6.213px 6.213px;
   background: #FFF;
   box-shadow: 14.75532px 13.20213px 37.2766px 0px rgba(14, 0, 98, 0.12);
-  height: 65px;
+  min-height: 60px;
+}
+
+.owl-stage-outer .person-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 0px 0px 6.241px 6.241px;
+  border-radius: 0px 0px 6.213px 6.213px;
+  background: #FFF;
+  box-shadow: none;
+  min-height: 60px;
+}
+
+
+.about-slider-experts-database  .owl-carousel .owl-nav button.owl-prev {
+  display: block !important;
+  border-radius: 38.442px !important;
+  border: 2.197px solid rgba(0, 0, 0, 0.10) !important;
+  background: #FFF !important;
+  box-shadow: 4.393px 4.393px 17.573px 0px rgba(14, 0, 98, 0.10);
+  color: #000;
+}
+
+.about-slider-experts-database .owl-carousel.owl-loaded {
+  display: block;
+  max-height: 290px;
 }
 
 .person-details h3 {
@@ -1042,7 +1071,7 @@ section.team-area {
   font-weight: 500;
   line-height: 17px;
   color: #191D24;
-  margin: 12px 0px 3px;
+  margin: 0px 0px 3px;
 }
 
 .person-details p {
@@ -1052,6 +1081,13 @@ section.team-area {
   line-height: 13px;
   color: #303744B2;
   margin-bottom: 15px;
+}
+
+.person-details a {
+  color: #0036E3;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .single-team-text {
@@ -1264,6 +1300,29 @@ span.material-symbols-outlined.active.setting-root {
 
 
 }
+
+.all-project-post {
+  display: flex;
+  justify-content: space-between;
+  gap: 34px;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-project-post-content ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  gap: 16px;
+}
+
+.all-project-post-content ul li a {
+  color: #303744;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
 
 .client-dashboard{
   border: 1px solid rgba(14, 0, 98, 0.1) !important;
@@ -7654,6 +7713,72 @@ body > .edux-no-footer > footer .footer{
 
 .job-post .btn:hover{
   padding: 4px 24px 4px 17px;
+}
+
+.edux-tooltips{
+  position: relative;
+}
+
+.edux-tooltips:hover .edux-tooltips-details{
+  visibility: visible;
+}
+
+.edux-tooltips:hover .edux-tooltips-details:before{
+  visibility: visible;
+}
+
+.edux-tooltips-details {
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #191D24;
+  border: 2px solid #e7e5ef;
+  padding: 15px 22px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  min-width: 250px;
+  left: -24px;
+  top: 35px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.edux-arrow-icon {
+  position: absolute;
+  top: 0px;
+  rotate: 270deg;
+}
+
+.edux-tooltips-details:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 16px solid #fff;
+  border-top: 0;
+  top: -16px;
+  left: 19px;
+  visibility: hidden;
+}
+
+.edux-tooltip-level {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+
+
+.skills p{
+color:  #191D24;
+font-family: Colfax;
+font-size: 16px;
+font-weight: 400;
 }
 
 

@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('content')
-    @livewire('project.create')
+    @livewire('client-profile.show')
 @endsection
