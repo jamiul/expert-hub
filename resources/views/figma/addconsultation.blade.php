@@ -327,19 +327,19 @@
 
                                  <div class="study-level">
                                     <div class="calendar-box position-relative">
-                                        <input class="timesheet-date" type="text" id="dateInput2" placeholder="23 Dec 2023">
+                                        <input class="timesheet-date" type="text" id="dateInput" placeholder="23 Dec 2023">
 
-                                        <div class="calendar" id="calendar2">
+                                        <div class="calendar" id="calendar">
                                         <div class="header">
-                                            <button id="prevBtn2">
+                                            <button id="prevBtn">
                                             <x-icon.arrow-left/>
                                             </button>
                                             <h2 id="monthYear">Month Year</h2>
-                                            <button id="nextBtn2">
+                                            <button id="nextBtn">
                                             <x-icon.arrow-right/>
                                             </button>
                                         </div>
-                                        <div class="days" id="daysContainer2"></div>
+                                        <div class="days" id="daysContainer"></div>
                                         </div>
                                     </div>
                                     </div>
