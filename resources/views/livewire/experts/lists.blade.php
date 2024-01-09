@@ -16,10 +16,39 @@
                         </div>
                     </div>
                     <div class="database-right">
-                        <a class="data-icon" href="#"><img
-                                src="{{ asset('assets/frontend/img/like-icon.png') }}"></a>
-                        <a class="data-icon" href="#"><img
-                                src="{{ asset('assets/frontend/img/share-icon.png') }}"></a>
+                        <button wire:click="favourite({{ $expert->id }})"
+                                class="btn btn-outline-light m-1 {{ $expert->favourited() ? 'favourited' : ''}}">
+                            <span class="favorite-icon"> <x-icon.heart fill="#0036E3"/></span>
+                            <span class="favorite-icon-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light m-1" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <x-icon.share/>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" target="_blank"
+                                       href="https://linkedin.com/shareArticle?u={{ route('home') }}">
+                                        <x-icon.linkedin/>
+                                        Linkedin
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" target="_blank"
+                                       href="https://www.facebook.com/sharer/sharer.php?u={{ route('home') }}">
+                                        <x-icon.facebook/>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li x-data="{ scholarshipUrl: '{{ route('home') }}' }">
+                                    <button class="dropdown-item" x-clipboard="scholarshipUrl">
+                                        <x-icon.copy/>
+                                        Copy Link
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="consultant-reviw">

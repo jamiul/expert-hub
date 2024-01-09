@@ -19,8 +19,7 @@ class Lists extends Component
     {
         $this->filtersArray = request()->only(
             'search',
-            'minimumHourlyRate',
-            'maximumHourlyRate',
+            'hourlyRate',
             'selectedCountries',
             'fields',
             'skills',
@@ -34,6 +33,12 @@ class Lists extends Component
         $this->resetPage();
     }
 
+    public function favourite(Profile $profile)
+    {
+        $redirectUrlIfNotAuthenticated = route('find.experts');
+        $profile->favourite($redirectUrlIfNotAuthenticated);
+    }
+
     public function paginationView()
     {
         return 'livewire.pagination';
@@ -42,12 +47,9 @@ class Lists extends Component
     public function render()
     {
         $experts = Profile::expert()->with('user', 'education');
-        if (!empty($this->filtersArray['minimumHourlyRate'])) {
-            $experts = $experts->where('hourly_rate', '>=' ,$this->filtersArray['minimumHourlyRate']);
-        }
-
-        if (!empty($this->filtersArray['maximumHourlyRate'])) {
-            $experts = $experts->where('hourly_rate', '<=' ,$this->filtersArray['maximumHourlyRate']);
+        if (!empty($this->filtersArray['hourlyRate'])) {
+            $hourlyRateRange = explode('-', $this->filtersArray['hourlyRate']);
+            $experts = $experts->whereBetween('hourly_rate', $hourlyRateRange);
         }
 
         if (!empty($this->filtersArray['selectedCountries'])) {

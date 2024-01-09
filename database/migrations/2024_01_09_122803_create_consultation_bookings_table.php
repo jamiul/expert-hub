@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultations', function (Blueprint $table) {
+        Schema::create('consultation_bookings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('slot_id');
             $table->foreignId('profile_id');
-            $table->string('unit');
-            $table->string('value');
+            $table->text('note');
+            $table->string('status');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consultations');
+        Schema::dropIfExists('consultation_bookings');
     }
 };

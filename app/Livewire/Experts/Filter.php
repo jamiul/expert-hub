@@ -13,10 +13,7 @@ class Filter extends Component
     public $search = '';
 
     #[Url()]
-    public $minimumHourlyRate = '';
-
-    #[Url()]
-    public $maximumHourlyRate = '';
+    public $hourlyRate = '';
 
     #[Url()]
     public $selectedCountries = [];
@@ -43,8 +40,7 @@ class Filter extends Component
     {
         $filters = [
             'search' => $this->search,
-            'minimumHourlyRate' => $this->minimumHourlyRate,
-            'maximumHourlyRate' => $this->maximumHourlyRate,
+            'hourlyRate' => $this->hourlyRate,
             'selectedCountries' => $this->selectedCountries,
             'fields' => $this->fields,
             'skills' => $this->skills,
@@ -55,8 +51,7 @@ class Filter extends Component
     public function resetFilter()
     {
         $this->search = '';
-        $this->minimumHourlyRate = '';
-        $this->maximumHourlyRate = '';
+        $this->hourlyRate = '';
         $this->selectedCountries = [];
         $this->fields = [];
         $this->skills = [];
