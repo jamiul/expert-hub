@@ -33,11 +33,8 @@ class Lists extends Component
 
     public function favourite(Scholarship $scholarship)
     {
-        if(!auth()->user()){
-            session(['url.intended' => route('scholarship-database')]);
-            return $this->redirect(route('auth.login'));
-        }
-        $scholarship->favourite();
+        $redirectUrlIfNotAuthenticated = route('scholarship-database');
+        $scholarship->favourite($redirectUrlIfNotAuthenticated);
     }
 
     public function paginationView()

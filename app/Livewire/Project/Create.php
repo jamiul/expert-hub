@@ -4,7 +4,9 @@ namespace App\Livewire\Project;
 
 use App\Enums\ProjectStatus;
 use App\Models\Expertise;
+use App\Models\Profile;
 use App\Models\Project;
+use App\Notifications\ProjectPostNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -61,8 +63,22 @@ class Create extends Component
                 ->usingName($fileName)
                 ->toMediaCollection('attachments');
         }
+        $this->notify($project);
+        return redirect()->route('client.dashboard');
+    }
 
-        return redirect()->to('/');
+    public function notify($project)
+    {
+        $experts = Profile::expert()->with('user')->get();
+        $experts->each(function($expert) use($project){
+            $expert->user->notify(new ProjectPostNotification([
+                'title'   => 'New Project posted',
+                'message' => $project->description,
+                'link'    => $project->slug,
+                'button' => 'View project',
+                'avatar'  => Auth::user()->profile->picture,
+            ]));
+        });
     }
 
     public function rules()

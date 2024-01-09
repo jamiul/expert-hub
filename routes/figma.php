@@ -19,12 +19,15 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-biography', 'figma.profilebiography');
     Route::view('/profile-picture', 'figma.profilepicture');
     Route::view('/profile-completed', 'figma.profilecompleted');
-    Route::view('/scholarship-database', 'figma.scholarshipdatabase');
 
+    Route::view('/add-consultation', 'figma.addconsultation');
+
+
+    Route::view('/scholarship-database', 'figma.scholarshipdatabase');
     Route::view('/scholarship-singlePage', 'figma.scholarshipsinglepage');
     Route::view('/search-empty', 'figma.searchempty');
     // client post Job
-    Route::view('/jobposts', 'figma.projectCreate');
+    Route::view('/job-posts', 'figma.projectCreate');
     Route::view('/jobposts-test', 'figma.clientjobpost');
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');

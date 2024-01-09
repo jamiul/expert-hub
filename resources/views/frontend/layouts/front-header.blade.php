@@ -22,8 +22,7 @@
     @vite('resources/css/owl.theme.default.css')
     @vite('resources/css/components.css')
     @vite('resources/css/client-dashboard.css')
-    @vite('resources/default/css/expert-dashboard.css')
-    @vite('resources/default/css/expert-header.css')
+    @vite('resources/css/experthire.css')
 
     @stack('top_styles')
 </head>
