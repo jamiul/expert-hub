@@ -12,7 +12,7 @@
                                      viewBox="0 0 24 24" fill="none">
                                     <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" fill="#0036E3"/>
                                 </svg>
-                                <span>Add Consultation</span>
+                                <span>Book Consultation</span>
                             </button>
                         </div>
 
@@ -28,10 +28,14 @@
         <div class="modal-dialog modal-lg flat-modal">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title pt-3 px-3" id="exampleModalLabel">Add Consultation</h5>
+                    <h5 class="modal-title pt-3 px-3" id="exampleModalLabel">Booking A Curriculum development</h5>
                     <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pb-4">
+
+                <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio">
+
+
                     <ul class="progress-bar-nav-horizontal">
                         <li class="done-item"><strong> Expertise </strong></li>
                         <li class="running-item"><strong> Service fees </strong></li>
@@ -39,6 +43,8 @@
                         <li><strong> Summery </strong></li>
                     </ul>
                     <div class="progress-step-content mt-20">
+
+
 
                         <x-form.select label="Consultation Title" name="title">
                             <option value="">Architecture History</option>

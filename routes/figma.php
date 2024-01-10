@@ -21,6 +21,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-completed', 'figma.profilecompleted');
 
     Route::view('/add-consultation', 'figma.addconsultation');
+    Route::view('/book-consultation', 'figma.bookconsultation');
 
 
     Route::view('/scholarship-database', 'figma.scholarshipdatabase');
