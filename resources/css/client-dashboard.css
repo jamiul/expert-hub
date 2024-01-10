@@ -7873,15 +7873,6 @@ font-weight: 400;
   gap: 10px;
 }
 
-.image-upload-flat {
-  display: flex;
-  border-radius: 4px;
-  border: 2px solid  #0036E3;
-  width: 218px;
-  height: 46px;
-  align-items: center;
-  justify-content: center;
-}
 
 .edux-label-upload {
   display: flex !important;
@@ -7994,7 +7985,87 @@ font-weight: 400;
   font-style: normal;
   font-weight: 500;
 }
-/* ============================== Add Consultant start Here ============================= */
+/* ============================== Add Consultant End Here ============================= */
+/* ============================== Book Consultant Start Here ============================= */
+.edux-slot-count{
+  color:  #191D24 !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.edux-total-select-count {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+}
+
+.single-slot {
+  display: flex;
+  padding: 5px 50px 3px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+}
+
+.single-slot span {
+  color: rgba(48, 55, 68, 0.70);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.slot-border {
+  border-radius: 4px;
+  border: 2px solid #0036E3;
+}
+
+.slot-border span{
+  color: #0036E3;
+}
+
+.slot-fill {
+  border-radius: 4px;
+  background: #0036E3;
+  border: none;
+}
+.slot-item-area {
+  padding-right: 20px;
+}
+
+.slot-fill  span{
+  color: #fff;
+}
+
+.multi-slot {
+    display: flex;
+    justify-content: space-between;
+}
+.slot-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.available-schedule-slot {
+  grid-template-columns: 50% 50%;
+  display: grid;
+  gap: 25px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  padding: 20px;
+}
+
+/* .slot-item-area {
+  padding: 0px 25px 0px 0px;
+} */
+/* ============================== Book Consultant End Here ============================= */
+
+
+
 
 
 
@@ -8418,6 +8489,9 @@ header.client-header {
   text-align: center;
   font-size: 12px;
 }
+.single-slot {
+  padding: 5px 20px 3px;
+}
 
 }
 
@@ -8539,6 +8613,14 @@ header.client-header {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .available-schedule-slot {
+    grid-template-columns: 100%;
+  }
+  .single-slot {
+    padding: 5px 45px 3px;
+}
+
 .edux-mobile-menu{
   display:block;
   width: 100%;
@@ -9100,6 +9182,18 @@ ul.progress-bar-nav-horizontal li strong {
 
 
 }
+
+
+
+@media only screen and (max-width: 375px) {
+
+  .single-slot {
+    padding: 5px 35px 3px;
+}
+
+}
+
+
 
 @media only screen and (max-width: 320px) {
 .available-schedule-input-wrapper .available-time-select-col ul li {

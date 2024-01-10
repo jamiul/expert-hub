@@ -226,34 +226,31 @@
                         </h6>
 
 
-                                  <div class="available-schedule-input-wrapper mb-40 available-schedule-upload">
-
-
-                        <div class="consultant-upload">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133" fill="none">
-                            <path d="M81.048 68.8343C92.1752 72.0874 101.948 78.8589 108.903 88.134C115.858 97.4091 119.62 108.688 119.625 120.281H12.375C12.3774 108.688 16.1382 97.4072 23.0934 88.1315C30.0486 78.8559 39.8234 72.085 50.952 68.8343L66 91.4062L81.048 68.8343ZM92.8125 39.8438C92.8125 46.9549 89.9876 53.7747 84.9593 58.8031C79.931 63.8314 73.1111 66.6562 66 66.6562C58.8889 66.6562 52.069 63.8314 47.0407 58.8031C42.0124 53.7747 39.1875 46.9549 39.1875 39.8438C39.1875 32.7326 42.0124 25.9128 47.0407 20.8844C52.069 15.8561 58.8889 13.0313 66 13.0312C73.1111 13.0313 79.931 15.8561 84.9593 20.8844C89.9876 25.9128 92.8125 32.7326 92.8125 39.8438Z" fill="#B3C1CF"/>
-                            </svg>
-                            <p>Max 2MB 500px 500px</p>
-                        </div>
-
-                        <div class="image-upload-flat">
-
-
-                            <label for="upload-file" class="text-center border-0 edux-label-upload">
-                                        <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-  <path d="M11.5 16.1562V8.00625L8.9 10.6063L7.5 9.15625L12.5 4.15625L17.5 9.15625L16.1 10.6063L13.5 8.00625V16.1562H11.5ZM6.5 20.1562C5.95 20.1562 5.47917 19.9604 5.0875 19.5688C4.69583 19.1771 4.5 18.7063 4.5 18.1562V15.1562H6.5V18.1562H18.5V15.1562H20.5V18.1562C20.5 18.7063 20.3042 19.1771 19.9125 19.5688C19.5208 19.9604 19.05 20.1562 18.5 20.1562H6.5Z" fill="#0036E3"/>
-</svg>
-                                        </span>
-                                <span class="fw-bold">Upload Photo</span>
-
-                            </label>
-                            <input type="file" id="upload-file" class="d-none">
-
-                        </div>
-
-                                  </div>
+                        <div class="image-upload-preview">
+            <div class="">
+                <div class="uploaded-img-preview">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133" fill="none">
+                        <g clip-path="url(#clip0_38_2)">
+                            <path d="M81.048 80.678C92.1752 83.9312 101.948 90.7027 108.903 99.9778C115.858 109.253 119.62 120.532 119.625 132.125H12.375C12.3774 120.531 16.1382 109.251 23.0934 99.9753C30.0486 90.6997 39.8234 83.9288 50.952 80.678L66 103.25L81.048 80.678ZM92.8125 51.6875C92.8125 58.7986 89.9876 65.6185 84.9593 70.6468C79.931 75.6751 73.1111 78.5 66 78.5C58.8889 78.5 52.069 75.6751 47.0407 70.6468C42.0124 65.6185 39.1875 58.7986 39.1875 51.6875C39.1875 44.5764 42.0124 37.7565 47.0407 32.7282C52.069 27.6999 58.8889 24.875 66 24.875C73.1111 24.875 79.931 27.6999 84.9593 32.7282C89.9876 37.7565 92.8125 44.5764 92.8125 51.6875Z" fill="#B3C1CF"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_38_2">
+                                <rect width="132" height="132" fill="white" transform="translate(0 0.5)"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <p class="text-sm fst-italic my-1">
+                    Max 2MB 500px 500px
+                </p>
+            </div>
+            <div>
+                <label for="upload-file" class="btn btn-outline-primary d-inline-flex align-items-center">
+                    <x-icon.upload fill="#0059C999"/>
+                    Upload Photo</label>
+                <input type="file" id="upload-file" class="d-none">
+            </div>
+        </div>
                     </div>
 
 
@@ -308,24 +305,7 @@
                             <div class="available-schedule-input-wrapper mb-40">
 
                             <x-form.flatpicker label="Date picker" name="datepicker"/>
-                                 <!-- <div class="study-level">
-                                    <div class="calendar-box position-relative">
-                                        <input class="timesheet-date" type="text" id="dateInput" placeholder="23 Dec 2023">
 
-                                        <div class="calendar" id="calendar">
-                                        <div class="header">
-                                            <button id="prevBtn">
-                                            <x-icon.arrow-left/>
-                                            </button>
-                                            <h2 id="monthYear">Month Year</h2>
-                                            <button id="nextBtn">
-                                            <x-icon.arrow-right/>
-                                            </button>
-                                        </div>
-                                        <div class="days" id="daysContainer"></div>
-                                        </div>
-                                    </div>
-                                    </div> -->
 
                                 <div class="available-time-select-col">
                                     <ul>
