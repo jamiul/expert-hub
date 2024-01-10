@@ -131,15 +131,38 @@ img {
     padding: 40px;
 }
 
+.px-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.py-40 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.m-40 {
+    margin: 40px;
+}
+
 .my-40 {
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+.mx-40 {
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .mb-40 {
     margin-bottom: 40px;
 }
 
+.my-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .mt-20 {
     margin-top: 20px;
 }
