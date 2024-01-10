@@ -20,6 +20,7 @@ class Create extends Modal
     {
         $this->form->create();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Experience::class);
+        $this->dispatch('refresh')->to(\App\Livewire\Profile\Edit\Experience::class);
         $this->close();
     }
 

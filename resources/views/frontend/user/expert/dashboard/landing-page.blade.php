@@ -2,8 +2,6 @@
 @section('content')
     @vite('resources/default/css/expert-dashboard.css')
     @vite('resources/default/css/expert-header.css')
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <main class="expert__dashboad py-5">
         <div class="container">
             <div class="main__content__wrapp">
@@ -1899,14 +1897,18 @@
                             <p class="text-center text-muted fw-normal mb-0 small lh-base"> Curriculum Expert <span
                                     class="d-block fw-medium">Public Health</span> </p>
                             <div class="mt-3">
-                                <div class="d-inline-flex"> <span class="text-dark small fw-medium">Complete your
-                                        profile</span> <a href="#" class="px-2"> <svg width="24"
+                                <div class="d-inline-flex">
+                                    <span class="text-dark small fw-medium">
+                                        Complete your profile
+                                    </span>
+                                        <a href="{{ route('profile.edit', auth()->id()) }}" class="px-2"> <svg width="24"
                                             height="25" viewBox="0 0 24 25" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M5.15385 19.4269H6.39038L15.6501 10.1672L14.4135 8.93069L5.15385 18.1904V19.4269ZM18.8577 9.08264L15.4827 5.73846L16.7866 4.43464C17.0802 4.14105 17.4372 3.99426 17.8577 3.99426C18.2782 3.99426 18.6352 4.14105 18.9288 4.43464L20.1461 5.65191C20.4397 5.9455 20.5916 6.29741 20.6019 6.70766C20.6121 7.11791 20.4705 7.46983 20.1769 7.76341L18.8577 9.08264ZM17.7731 10.1826L7.02883 20.9269H3.6539V17.5519L14.3981 6.80766L17.7731 10.1826ZM15.027 9.54416L14.4135 8.93069L15.6501 10.1672L15.027 9.54416Z"
                                                 fill="#191D24" />
-                                        </svg> </a> </div>
+                                        </svg> </a>
+                                </div>
                                 <div class="d-flex align-items-center">
                                     <div class="progress" style="width: calc(100% - 3rem);">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;"

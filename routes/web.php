@@ -59,9 +59,11 @@ Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->mid
 
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware('auth')->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware('auth')->name('expert.profile.create');
+Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware('auth')->name('expert.profile.edit');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth'])->name('expert.dashboard');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware('auth')->name('client.profile');
+Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware('auth')->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware('auth')->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth'])->name('client.dashboard');
 
