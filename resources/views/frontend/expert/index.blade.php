@@ -16,3 +16,16 @@
 @vite('resources/js/expert.js')
 @vite('resources/js/find-project.js')
 @endpush
+
+@push('bottom_scripts')
+<script type="module">
+
+    
+    Echo.channel(`channel-name-neloy`)
+    .listen('ConversationCreated', (e) => {
+        console.log(e);
+    });
+
+    
+</script>
+@endpush

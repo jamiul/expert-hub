@@ -60,4 +60,4 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['aut
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
 
 // Nel test
-Route::get('/conversation/create', [ConversationController::class, 'store'])->name('conversation.create');
+Route::get('/conversation/create', [ConversationController::class, 'store'])->middleware('auth')->name('conversation.create');

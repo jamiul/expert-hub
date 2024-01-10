@@ -30,7 +30,12 @@ class ConversationCreated implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('channel-name-neloy'),
+            new Channel('channel-name-neloy'),
         ];
+    }
+
+        public function broadcastWith(): array
+    {
+        return ['nel' => 'Nel testing: $this->user->id'];
     }
 }
