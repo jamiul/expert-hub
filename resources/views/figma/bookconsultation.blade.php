@@ -34,7 +34,9 @@
         </div>
         <div class="mb-40">
           <div class="available-schedule-slot mb-40">
-            <x-form.flatpicker label="" name="datepicker" />
+
+            <x-form.flatpicker label="Date picker" inline="true" name="datepicker"/>
+
             <div class="slot-item-area">
               <h6>Wednesday, 15th Oct </h6>
               <div class="slot-item">

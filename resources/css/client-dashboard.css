@@ -7787,9 +7787,9 @@ font-weight: 400;
 }
 
 .edux-skill-input {
-  padding: 60px 20px 10px;
+  /* padding: 60px 20px 10px; */
+  min-height: 87px;
 }
-
 
 .service-fee-description .edux-tooltips-details {
   font-family: Colfax;
@@ -7861,10 +7861,13 @@ font-weight: 400;
   background-color: #E7E5EF;
 }
 
-.available-time-select-col {
+.eudx-time-select {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #DDD;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  background: rgba(0, 54, 227, 0.02);
 }
 .text-center {
   display: flex;
@@ -8059,9 +8062,73 @@ font-weight: 400;
   padding: 20px;
 }
 
-/* .slot-item-area {
-  padding: 0px 25px 0px 0px;
-} */
+
+.edux-timezoon{
+  max-width: 256px;
+}
+.edux-schedule-input{
+  grid-template-columns: 100%;
+}
+
+.edux-selected-slot li {
+  color: #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  /* display: flex; */
+  height: 42px;
+  padding: 10px 16px !important;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* flex: 1 0 0; */
+  border-radius: 4px !important;
+  border: 2px solid rgba(14, 0, 98, 0.15) !important;
+  background: #FFF;
+  width: auto !important;
+  margin: 0px 3px;
+}
+
+ .edux-selected-slot{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0px !important;
+}
+
+.edux-selected-slot li.edux-day-schedule {
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  border: none !important;
+  padding-left: 0px !important;
+  min-width: 75px;
+  text-align: left !important;
+  background: transparent;
+}
+
+.edux-selected-slot li.selected-date-bg{
+  color: #0036E3 !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+  background: rgba(0, 54, 227, 0.06) !important;
+}
+
+.edux-schedule-input .btn{
+  max-width:118px;
+}
+
+.edux-more{
+  color: #191D24;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
 /* ============================== Book Consultant End Here ============================= */
 
 
@@ -8493,6 +8560,21 @@ header.client-header {
   padding: 5px 20px 3px;
 }
 
+.available-schedule-slot {
+  grid-template-columns: 100%;
+  display: grid;
+  gap: 25px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  padding: 20px;
+}
+
+.edux-selected-slot li {
+  margin: 5px 3px;
+}
+
+
+
 }
 
 
@@ -8613,6 +8695,14 @@ header.client-header {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .edux-selected-slot li {
+    margin: 5px 3px;
+}
+
+  h5{
+    font-size:1rem;
+  }
 
   .available-schedule-slot {
     grid-template-columns: 100%;
@@ -9196,6 +9286,17 @@ ul.progress-bar-nav-horizontal li strong {
 
 
 @media only screen and (max-width: 320px) {
+
+  .single-slot {
+    padding: 5px 20px 3px;
+}
+
+.flatpickr-calendar {
+  width: 221.875px !important;
+
+}
+
+
 .available-schedule-input-wrapper .available-time-select-col ul li {
   list-style: none;
   display: inline-block;
@@ -9222,6 +9323,9 @@ ul.progress-bar-nav-horizontal li strong {
   padding: 40% 20px 10px;
 }
 
+h5{
+  font-size:0.70rem;
+}
 
 }
 
