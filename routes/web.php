@@ -69,5 +69,6 @@ Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->mi
 
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
+Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
 
 Route::get('/notifications', [NotificationsController::class, 'notifications'])->middleware(['auth'])->name('notifications');

@@ -45,6 +45,13 @@ class UserSeeder extends Seeder
                 'type' => $user['type'],
                 'status' => ProfileStatus::Draft->name,
             ]);
+            if ($user['type'] == ProfileType::Client->value) {
+                $profile = Profile::find($profile_id);
+                $profile->update([
+                    'current_role' => 'Director',
+                    'current_organization' => 'Sydney Islamic Business School',
+                ]);
+            }
             if($user['type'] == ProfileType::Expert->value){
                 $profile = Profile::find($profile_id);
                 $imagePath = database_path('/data/users/'. $user['image']);

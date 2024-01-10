@@ -50,10 +50,6 @@
                         </p>
                     </div>
                     <div class="tag-list">
-                        <a href="#"
-                            class="expert-profile-tag offer-consultation-btn">
-                            <x-icon.video fill="#0036E3"/>
-                            Offer Consultation</a>
                         @foreach ($expert->expertises as $expertise)
                             <a href="#" class="expert-profile-tag">{{ $expertise->name }}</a>
                         @endforeach
@@ -86,7 +82,5 @@
         </div>
     @endforelse
     <hr>
-    <div class="text-center">
-        {{ $experts->onEachSide(1)->links() }}
-    </div>
+    {{ $experts->onEachSide(1)->links() }}
 </div>

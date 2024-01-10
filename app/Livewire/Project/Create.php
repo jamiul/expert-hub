@@ -44,7 +44,7 @@ class Create extends Component
         $project = Project::create([
             'profile_id' => Auth::user()->profile->id,
             'title' => $data['title'],
-            'slug' => Str::slug($data['title'], '-') . date('Ymd-his'),
+            'slug' => Str::slug($data['title'], '-') . time(),
             'description' => $data['description'],
             'type' => $data['type'],
             'currency_id' => 1,
@@ -64,6 +64,7 @@ class Create extends Component
                 ->toMediaCollection('attachments');
         }
         $this->notify($project);
+        $this->dispatch('notify', content: 'Job has been created successfully', type: 'success');
         return redirect()->route('client.dashboard');
     }
 
