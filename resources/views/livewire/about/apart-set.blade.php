@@ -6,17 +6,16 @@
     <div class="tabbable-panel">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                    role="tab" aria-controls="home" aria-selected="true">For Clients</button>
+                <button wire:click="$set('tab', 'client')" class="nav-link {{ $tab == 'client' ? 'active' : '' }}" type="button">For Clients</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-                    role="tab" aria-controls="profile" aria-selected="false" tabindex="-1">For
-                    Experts</button>
+                <button wire:click="$set('tab', 'expert')" class="nav-link {{ $tab == 'expert' ? 'active' : '' }}" type="button">
+                    For Experts
+                </button>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade show {{ $tab == 'client' ? 'active' : '' }}" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="row">
                     @if (count($aboutApart) > 0)
                         @foreach ($aboutApart as $apart)
@@ -44,7 +43,7 @@
                     @endif
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade show {{ $tab == 'expert' ? 'active' : '' }}" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="row">
                     @if (count($aboutApart) > 0)
                         @foreach ($aboutApart as $apart)

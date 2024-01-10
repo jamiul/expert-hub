@@ -2,16 +2,18 @@
 
 namespace App\Livewire\Profile;
 
+use Carbon\Carbon;
 use Livewire\Component;
 
 class Summary extends Component
 {
     public $profile = [];
+    // public $today = '';
 
     public function mount()
     {
         $this->profile = $this->profile();
-        // dd($this->profile->user->full_name);
+        // $this->today = Carbon::now();
     }
 
     public function profile()

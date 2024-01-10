@@ -1885,7 +1885,8 @@
                     </div>
                     <!--.//col-->
                     <div class="col-lg-4 col-xxl-3 aside__wrapp">
-                        <div class="px-3 px-sm-4 pt-5 pb-4 border-bottom">
+                        <livewire:profile.summary />
+                        {{-- <div class="px-3 px-sm-4 pt-5 pb-4 border-bottom">
                             <figure class="thumbnail__box rounded-circle mx-auto position-relative mb-2"> <img
                                     src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
                                     width="95" height="95" alt="Profile Thumbnail"
@@ -1912,7 +1913,7 @@
                                     <div class="small fw-medium text-dark text-end" style="width: 3rem;">60%</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="px-3 px-sm-4 py-4 border-bottom">
                             <p class="lead-sm fw-medium text-black mb-0">Available for Projects</p>
                             <div class="d-flex justify-content-between align-items-center"> <small
