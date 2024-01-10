@@ -10,12 +10,14 @@
         <x-form.flatpicker label="Date picker" inline="true" name="datepicker"/>
         <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry"
                              :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
+
         <x-form.choice-static wire:model="titles" label="Select multiple static" multiple>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Dr">Dr</option>
             <option value="Prof">Prof</option>
         </x-form.choice-static>
+
         <x-form.choice-static wire:model="titles" label="Select single static">
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
@@ -116,6 +118,7 @@
                 <input type="file" id="upload-file" class="d-none">
             </div>
         </div>
+
         <button type="submit">Submit</button>
     </form>
 </div>
