@@ -3,6 +3,7 @@
 @props([
 'name' => $attributes->whereStartsWith('wire:model')->first(),
 'label' => null,
+'inline' => 'false',
 'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
 ])
@@ -14,6 +15,7 @@
                 {{-- mode: 'range', --}}
         dateFormat: 'd M Y',
         defaultDate: this.value,
+        inline: {{ $inline }},
         onChange: (date, dateString) => {
             this.value = dateString.split(' to ')
         }
@@ -34,9 +36,11 @@
             {{ $attributes->whereDoesntStartWith('class') }}
             {{ $required ? 'required="required"' : '' }}
         >
+        @if($inline == 'false')
         <span class="form-input-icon">
             <x-icon.calender/>
         </span>
+        @endif
     </div>
 
     @error($attributes->whereStartsWith('wire:model')->first())
