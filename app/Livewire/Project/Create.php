@@ -22,6 +22,9 @@ class Create extends Component
     public $description;
     public $attachments = [];
 
+    public $availableExpertiseFields = [];
+    public $expertise_id;
+
     public $availableSkills = [];
     public $skillLimit = 10;
     public $selectedSkills = [];
@@ -34,6 +37,7 @@ class Create extends Component
 
     public function mount()
     {
+        $this->availableExpertiseFields = Expertise::expertise()->isParent()->pluck('name', 'id')->toArray();
         $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
     }
 
@@ -43,8 +47,9 @@ class Create extends Component
 
         $project = Project::create([
             'profile_id' => Auth::user()->profile->id,
+            'expertise_id' => $this->expertise_id,
             'title' => $data['title'],
-            'slug' => Str::slug($data['title'], '-') . date('Ymd-his'),
+            'slug' => Str::slug($data['title'], '-') . time(),
             'description' => $data['description'],
             'type' => $data['type'],
             'currency_id' => 1,
@@ -64,6 +69,7 @@ class Create extends Component
                 ->toMediaCollection('attachments');
         }
         $this->notify($project);
+        $this->dispatch('notify', content: 'Job has been created successfully', type: 'success');
         return redirect()->route('client.dashboard');
     }
 
@@ -84,6 +90,7 @@ class Create extends Component
     public function rules()
     {
         return [
+            'expertise_id' => ['required'],
             'title' => ['required', 'string'],
             'description' => ['required'],
             'selectedSkills' => ['required', 'array'],

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('profile_id');
+            $table->foreignId('expertise_id');
             $table->string('title');
             $table->string('slug');
             $table->longText('description');
