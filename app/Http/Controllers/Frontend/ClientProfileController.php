@@ -16,4 +16,9 @@ class ClientProfileController extends Controller
     {
         return view('frontend.client.profile.current-position');
     }
+
+    public function edit()
+    {
+        return view('frontend.client.profile.edit');
+    }
 }

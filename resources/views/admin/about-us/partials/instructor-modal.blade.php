@@ -21,11 +21,10 @@
                                                 <div class="database-img">
                                                     <img src="{{ $instructor->getFirstMediaUrl('picture') }}">
                                                 </div>
-                                                {{-- @dd($instructor->expertises->first()->name); --}}
                                                 <div class="database-text admin-text">
                                                     <h4> <a href="#">{{ $instructor->user->full_name }}</a> </h4>
                                                     <span>
-                                                        {{ $instructor->expertField ? $instructor->expertField->name : '' }}
+                                                        {{ $instructor->expertField ? $instructor->expertField->parent->name : '' }}
                                                     </span>
                                                     <span>University of Sydney</span>
                                                     <span>{{ $instructor->user->country->name }}</span>

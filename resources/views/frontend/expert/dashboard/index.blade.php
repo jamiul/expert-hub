@@ -1897,7 +1897,7 @@
                                     class="d-block fw-medium">Public Health</span> </p>
                             <div class="mt-3">
                                 <div class="d-inline-flex"> <span class="text-dark small fw-medium">Complete your
-                                        profile</span> <a href="#" class="px-2"> <svg width="24"
+                                        profile</span> <a href="{{ route('expert.profile.edit') }}" class="px-2"> <svg width="24"
                                             height="25" viewBox="0 0 24 25" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
