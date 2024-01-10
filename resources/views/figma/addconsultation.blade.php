@@ -157,7 +157,7 @@
                                 <div class="available-time-select-col eudx-time-select">
                                 <h6>Selected slot</h6>
                                     <ul class="edux-selected-slot">
-                                        <div class="row">
+                                        <div class="row edux-padding-xs">
                                         <li class="edux-day-schedule">Friday</li>
                                         <li>01.00 AM</li>
                                         <li>10:00 AM</li>
@@ -167,7 +167,7 @@
                                         <li>09:00 PM</li>
                                         </div>
 
-                                        <div class="row">
+                                        <div class="row edux-padding-xs">
                                         <li class="edux-day-schedule">Saturday</li>
                                         <li>01.00 AM</li>
                                         <li>10:00 AM</li>
@@ -195,7 +195,7 @@
 
                                 <div class="available-time-select-col eudx-time-select">
 
-                                    <ul class="edux-selected-slot">
+                                    <ul class="edux-selected-slot edux-selected-slot-more">
                                         <li>01.00 AM</li>
                                         <li class="selected-date-bg">10:00 AM</li>
                                         <li>04:00 PM</li>

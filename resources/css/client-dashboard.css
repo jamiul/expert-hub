@@ -8107,6 +8107,7 @@ font-weight: 400;
   min-width: 75px;
   text-align: left !important;
   background: transparent;
+  padding: 10px !important;
 }
 
 .edux-selected-slot li.selected-date-bg{
@@ -8518,6 +8519,17 @@ header.client-header {
 
 
 @media only screen and (max-width: 768px) {
+  ul.edux-selected-slot.edux-selected-slot-more {
+    margin: 0px !important;
+}
+
+  .edux-selected-slot {
+    margin: 10px !important;
+}
+.edux-selected-slot li.edux-day-schedule {
+  padding: 10px 0px !important;
+}
+
   .academic-block .live-zoom {
     border-right: solid 1px #d9dbea;
     width: 100% !important;
