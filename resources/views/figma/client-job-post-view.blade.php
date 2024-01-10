@@ -759,8 +759,36 @@
 
                         </div>
                         <div x-show="activeTab === 'invite-expert'" id="invite-expert-tab-content">
-                            <h3>Invite Expert (12)</h3>
-                            <p>Some content in menu 1.</p>
+                            <div x-data="{ activeInvitedExpertTab: 'search-experts' }">
+                                <div class="project-secondary-tab">
+                                    <div class="secondary-tab-nav">
+                                        <button class="tab-nav-item" @click="activeInvitedExpertTab = 'search-experts'" :class="{ 'active': activeInvitedExpertTab === 'search-experts' }">Search Experts</button>
+                                        <button class="tab-nav-item" @click="activeInvitedExpertTab = 'invited-experts'" :class="{ 'active': activeInvitedExpertTab === 'invited-experts' }">Invited Experts (2)</button>
+                                        <button class="tab-nav-item" @click="activeInvitedExpertTab = 'my-hires-experts'" :class="{ 'active': activeInvitedExpertTab === 'my-hires-experts' }">My Hires Experts (1)</button>
+                                        <button class="tab-nav-item" @click="activeInvitedExpertTab = 'saved-experts'" :class="{ 'active': activeInvitedExpertTab === 'saved-experts' }">Saved Experts</button>
+                                    </div>
+                                    <div class="secondary-tab-content">
+                                        <div x-show="activeInvitedExpertTab === 'search-experts'">
+                                            <div x-data="{ isSidebarVisible: true }" class="sidebar-layout" :class="{ 'left-sidebar-layout': isSidebarVisible }">
+                                                <div class="page-sidebar" x-show="isSidebarVisible">
+                                                    <!-- Content for the sidebar -->
+                                                    Sidebar Content
+                                                </div>
+                                                <div class="page-content">
+                                                    <button class="toggle-sidebar" @click="isSidebarVisible = !isSidebarVisible">Toggle Sidebar</button>
+                                                    <!-- Content for the page -->
+                                                    Page Content
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div x-show="activeInvitedExpertTab === 'invited-experts'">Content for Invited Experts (2)</div>
+                                        <div x-show="activeInvitedExpertTab === 'my-hires-experts'">Content for My Hires Experts (1)</div>
+                                        <div x-show="activeInvitedExpertTab === 'saved-experts'">Content for Saved Experts</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div x-show="activeTab === 'offer'" id="offer-tab-content">
                             <h3>Offer (2)</h3>
