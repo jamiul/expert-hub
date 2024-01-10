@@ -1,11 +1,12 @@
 <div class="profile-edit-widget user-bio-edit-widget">
     <div class="user-profile-picture">
-        <img src="{{ asset('assets/frontend/img/Mask-img.jpg') }}">
+        <img src="{{ $profile->getFirstMediaUrl('picture') }}">
         <button>Edit</button>
     </div>
     <div class="user-profile-info">
         <h3 class="h6">{{ $profile->user->full_name ?? '' }}</h3>
-        <p class="text-primary d-inline-flex align-items-center gap-3">Public Health
+        <p class="text-primary d-inline-flex align-items-center gap-3">
+            {{ $profile->expertField ? $profile->expertField->name : '' }}
             <button class="icon-btn icon-btn-md border-1 border-gray-100">
                 <x-icon.edit />
             </button>

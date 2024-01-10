@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="hire-text">
                                         <h4>{{ $team2->user->full_name }}</h4>
-                                        <p>{{ $team2->expertField ? $team2->expertField->name : '' }}</p>
+                                        <p>{{ $team2->expertField ? $team2->expertField->parent->name : '' }}</p>
                                     </div>
                                 </a>
                             </div>
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="hire-text">
                                         <h4>{{ $team3->user->full_name }}</h4>
-                                        <p>{{ $team3->expertField ? $team3->expertField->name : '' }}</p>
+                                        <p>{{ $team3->expertField ? $team3->expertField->parent->name : '' }}</p>
                                     </div>
                                 </a>
                             </div>
