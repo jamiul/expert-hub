@@ -78,6 +78,14 @@
 
                                 </div>
                                 <div class="step step-3 mt-3">
+                                    <x-form.choice wire:model.change="expertise_id" label="Expertise Field">
+                                        <option value="">Select Expertise Field</option>
+                                        @foreach ($availableExpertiseFields as $id => $name)
+                                            <option value="{{ $id }}">{{ $name }}</option>
+                                        @endforeach
+                                    </x-form.choice>
+                                </div>
+                                <div class="step step-3 mt-3">
                                     <div class="main-form">
                                         <div class="skills">
                                             <h3>What academic skills is required for this project?</h3>
