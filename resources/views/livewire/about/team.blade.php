@@ -3,9 +3,9 @@
         <div class="col-md-5 col-sm-6">
             <div class="team-text">
                 <div class="heading">
-                    <h4>{{ Str::upper($subtitle) }}</h4>
-                    <h2>{{ Str::headline($title) }}</h2>
-                    <p>{!! nl2br(e($description)) !!}</p>
+                    <h4>{{ Str::upper($team_subtitle) }}</h4>
+                    <h2>{{ Str::headline($team_title) }}</h2>
+                    <p>{!! nl2br(e($team_description)) !!}</p>
 
                     <div class="single-button">
                         <x-button.link

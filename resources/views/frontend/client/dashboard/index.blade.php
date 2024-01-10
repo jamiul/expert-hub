@@ -8,10 +8,10 @@
                         <h2>Your workspace</h2>
                     </div>
                     <div class="post-job">
-                        <button class="btn btn-postjob d-flex justify-content-center  align-items-center">
+                        <a href="{{ route('projects.create') }}" class="btn btn-postjob d-flex justify-content-center align-items-center">
                             <span class="material-symbols-outlined">add</span>
                             <span>Post a Job</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1291,7 +1291,10 @@
 
     </section>
 
-    <section class="team-area">
+    <div class="team about-team" style="background: none;">
+        <livewire:about.team />
+    </div>
+    {{-- <section class="team-area">
         <div class="container">
             <div class="row">
                 <div class="col-5 p-0">
@@ -1372,5 +1375,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
