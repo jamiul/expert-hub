@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('content')
     <section class=" profile-setup">
         <div class="container">
@@ -41,35 +40,25 @@
                     </ul>
                     <div class="progress-step-content mt-20">
 
-                        <x-form.select label="Consultation Title" name="title">
-                            <option value="">Architecture History</option>
-                            <option value="Mr">Architecture</option>
-                            <option value="Mrs">- Architecture History</option>
-                            <option value="Dr">- Architectural Restoration</option>
-                            <option value="Prof">Construction</option>
-                            <option value="Prof">-Art</option>
-                            <option value="Prof">-Animation</option>
-                        </x-form.select>
+                    <x-form.choice-static wire:model="title" label="Consultation Title">
+                        <option value="">Select a consultation title</option>
+                        <optgroup label="# Curriculum Expert">
+                            <option value="Curriculum Development">Curriculum Development</option>
+                            <option value="Interaction design">Interaction design</option>
+                        </optgroup>
+                        <optgroup label="# Program designer">
+                            <option value="Dr">Educational Expertise</option>
+                            <option value="Prof">Curriculum Development</option>
+                        </optgroup>
+                    </x-form.choice-static>
 
-                        <label class="form-input-label mt-4 mb-2 skilled-label">Skillsets</label>
-                        <div class="form-group position-relative">
-                            <div class="input-group">
-                                <input class="form-control edux-skill-input" placeholder="Type the skills &amp; select" type="text">
-
-
-                            </div>
-                            <div class="pt-2 edux-single-skills">
-                                <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center fw-normal">Architecture 1<img class="ps-2" src="http://127.0.0.1:8000/assets/frontend/img/close-i.png"></div>
-                                <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center fw-normal">Architecture 2<img class="ps-2" src="http://127.0.0.1:8000/assets/frontend/img/close-i.png"></div>
-                                <div class="btn mb-2 border rounded-4 lh-sm pb-1 d-inline-flex align-items-center fw-normal">LMS 2<img class="ps-2" src="http://127.0.0.1:8000/assets/frontend/img/close-i.png"></div>
-                            </div>
-                                <p class="skill-suggestion">Suggestion skills:  <span>Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></p>
-
-                                    <div class="shadow bg-white position-absolute z-1" style="top:60px;">
-
-                                    </div>
-                        </div>
-
+                    <x-form.choice-static wire:model="titles" label="Consultation Skillsets" multiple>
+                        <option value="Architectural Design">Architectural Design</option>
+                        <option value="Architectural Design">Architectural Design</option>
+                        <option value="Architectural Design">Architectural Design</option>
+                        <option value="Architectural Design">Architectural Design</option>
+                    </x-form.choice-static>
+                    <p class="skill-suggestion">Suggestion skills:  <span>Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></p>
 
 
                         <div class="progress-step-content mt-40">
@@ -144,7 +133,7 @@
                     <div class="mb-40">
                             <h6 class="mb-2">What is the event time zone?</h6>
                             <p>Time zone for opening hours and new events. Your invitees will see your availability in their local time zone.</p>
-                            <select name="" id="" class="input-field-control">
+                            <select name="" id="" class="input-field-control edux-timezoon">
                                 <option value="">Europe/Australia</option>
                                 <option value="">Dhaka/Asia</option>
                             </select>
@@ -152,47 +141,113 @@
 
 
                     <div class="mb-40">
-                            <h6 class="mb-2">Opening hours
+                            <h6 class="mb-2">Set schedule
                                 <div class="tooltip-wrapper bottom-left">
-                                    <i class="tooltip-icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+  <path d="M9.95573 15.4974C10.2474 15.4974 10.4939 15.3967 10.6953 15.1953C10.8967 14.9939 10.9974 14.7474 10.9974 14.4557C10.9974 14.1641 10.8967 13.9175 10.6953 13.7161C10.4939 13.5148 10.2474 13.4141 9.95573 13.4141C9.66406 13.4141 9.41754 13.5148 9.21615 13.7161C9.01476 13.9175 8.91406 14.1641 8.91406 14.4557C8.91406 14.7474 9.01476 14.9939 9.21615 15.1953C9.41754 15.3967 9.66406 15.4974 9.95573 15.4974ZM9.20573 12.2891H10.7474C10.7474 11.8307 10.7995 11.4696 10.9036 11.2057C11.0078 10.9418 11.303 10.5807 11.7891 10.1224C12.1502 9.76129 12.4349 9.41754 12.6432 9.09115C12.8516 8.76476 12.9557 8.3724 12.9557 7.91406C12.9557 7.13629 12.671 6.53906 12.1016 6.1224C11.5321 5.70573 10.8585 5.4974 10.0807 5.4974C9.28906 5.4974 8.6467 5.70573 8.15365 6.1224C7.66059 6.53906 7.31684 7.03906 7.1224 7.6224L8.4974 8.16406C8.56684 7.91406 8.72309 7.64323 8.96615 7.35156C9.2092 7.0599 9.58073 6.91406 10.0807 6.91406C10.5252 6.91406 10.8585 7.03559 11.0807 7.27865C11.303 7.5217 11.4141 7.78906 11.4141 8.08073C11.4141 8.35851 11.3307 8.61892 11.1641 8.86198C10.9974 9.10504 10.7891 9.33073 10.5391 9.53906C9.92795 10.0807 9.55295 10.4905 9.41406 10.7682C9.27517 11.046 9.20573 11.553 9.20573 12.2891ZM9.9974 18.8307C8.84462 18.8307 7.76129 18.612 6.7474 18.1745C5.73351 17.737 4.85156 17.1432 4.10156 16.3932C3.35156 15.6432 2.75781 14.7613 2.32031 13.7474C1.88281 12.7335 1.66406 11.6502 1.66406 10.4974C1.66406 9.34462 1.88281 8.26129 2.32031 7.2474C2.75781 6.23351 3.35156 5.35156 4.10156 4.60156C4.85156 3.85156 5.73351 3.25781 6.7474 2.82031C7.76129 2.38281 8.84462 2.16406 9.9974 2.16406C11.1502 2.16406 12.2335 2.38281 13.2474 2.82031C14.2613 3.25781 15.1432 3.85156 15.8932 4.60156C16.6432 5.35156 17.237 6.23351 17.6745 7.2474C18.112 8.26129 18.3307 9.34462 18.3307 10.4974C18.3307 11.6502 18.112 12.7335 17.6745 13.7474C17.237 14.7613 16.6432 15.6432 15.8932 16.3932C15.1432 17.1432 14.2613 17.737 13.2474 18.1745C12.2335 18.612 11.1502 18.8307 9.9974 18.8307Z" fill="#BABABA"/>
+</svg>
                                     <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
                                         adipisicing elit. Eum, placeat!
                                     </div>
                                 </div>
                             </h6>
                             <p><a class="fw-medium text-decoration-underline" href="">Schedule Your Consultation</a>   (Max 5 schedule per day)</p>
-                            <div class="available-schedule-input-wrapper mb-40">
+                            <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
 
-                            <x-form.flatpicker label="Date picker" name="datepicker"/>
+                                <div class="available-time-select-col eudx-time-select">
+                                <h6>Selected slot</h6>
+                                    <ul class="edux-selected-slot">
+                                        <div class="row edux-padding-xs">
+                                        <li class="edux-day-schedule">Friday</li>
+                                        <li>01.00 AM</li>
+                                        <li>10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        </div>
 
-                                <div class="available-time-select-col">
-                                    <ul>
-                                        <li class="selected-date">01.00 AM</li>
-                                        <li>02.00 AM</li>
-                                        <li>03.00 AM</li>
-                                        <li>04.00 AM</li>
-                                        <li>05.00 AM</li>
-                                        <li>06.00 AM</li>
-                                        <li class="selected-date">07.00 AM</li>
-                                        <li>08.00 AM</li>
-                                        <li>09.00 AM</li>
-                                        <li>10.00 AM</li>
-                                        <li>11.00 AM</li>
-                                        <li>12.00 AM</li>
-                                        <li>01.00 PM</li>
-                                        <li>02.00 PM</li>
-                                        <li>03.00 PM</li>
-                                        <li>04.00 PM</li>
-                                        <li>05.00 PM</li>
-                                        <li>06.00 PM</li>
-                                        <li>07.00 PM</li>
-                                        <li>08.00 PM</li>
-                                        <li>09.00 PM</li>
-                                        <li>10.00 PM</li>
-                                        <li>11.00 PM</li>
-                                        <li>12.00 PM</li>
+                                        <div class="row edux-padding-xs">
+                                        <li class="edux-day-schedule">Saturday</li>
+                                        <li>01.00 AM</li>
+                                        <li>10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        </div>
                                     </ul>
                                 </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-40">
+                            <x-form.choice-static wire:model="titles" class="edux-timezoon" label="Select day" multiple>
+                                <option value="Mr">Monday</option>
+                                <option value="Mrs">Sunday</option>
+                                <option value="Dr">Friday</option>
+                                <option value="Prof">Wednesday</option>
+                            </x-form.choice-static>
+                            <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
+
+                                <div class="available-time-select-col eudx-time-select">
+
+                                    <ul class="edux-selected-slot edux-selected-slot-more">
+                                        <li>01.00 AM</li>
+                                        <li class="selected-date-bg">10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>01.00 AM</li>
+
+                                        <li>10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li class="selected-date-bg">09:00 PM</li>
+                                        <li class="selected-date-bg">09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+
+                                        <li>10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li class="selected-date-bg">09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+
+                                        <li>10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li class="selected-date-bg">09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+
+                                        <li>10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li class="selected-date-bg">09:00 PM</li>
+                                        <li>09:00 PM</li>
+
+                                        <li class="selected-date-bg">10:00 AM</li>
+                                        <li>04:00 PM</li>
+                                        <li>05:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+                                        <li>09:00 PM</li>
+
+
+                                    </ul>
+                                </div>
+
+                                <button type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
 
                             </div>
 
@@ -210,12 +265,12 @@
                                 </div>
                             </h6>
 
-
-                        <textarea rows="5" cols="10" name="bio" id="bio"
-                                  class="input-field-control h-auto"
-                                  placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
-
-
+                            <div class="edux-select-options position-relative">
+                            <textarea rows="5" cols="10" name="bio" id="bio"
+                                    class="input-field-control h-auto"
+                                    placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
+                                    <span class="edux-total-select-count">0/200</span>
+                            </div>
 
                                   <h6 class="mb-2 mt-5">Upload Consultation Service Picture
                             <div class="tooltip-wrapper bottom-left">
@@ -227,34 +282,31 @@
                         </h6>
 
 
-                                  <div class="available-schedule-input-wrapper mb-40 available-schedule-upload">
-
-
-                        <div class="consultant-upload">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133" fill="none">
-                            <path d="M81.048 68.8343C92.1752 72.0874 101.948 78.8589 108.903 88.134C115.858 97.4091 119.62 108.688 119.625 120.281H12.375C12.3774 108.688 16.1382 97.4072 23.0934 88.1315C30.0486 78.8559 39.8234 72.085 50.952 68.8343L66 91.4062L81.048 68.8343ZM92.8125 39.8438C92.8125 46.9549 89.9876 53.7747 84.9593 58.8031C79.931 63.8314 73.1111 66.6562 66 66.6562C58.8889 66.6562 52.069 63.8314 47.0407 58.8031C42.0124 53.7747 39.1875 46.9549 39.1875 39.8438C39.1875 32.7326 42.0124 25.9128 47.0407 20.8844C52.069 15.8561 58.8889 13.0313 66 13.0312C73.1111 13.0313 79.931 15.8561 84.9593 20.8844C89.9876 25.9128 92.8125 32.7326 92.8125 39.8438Z" fill="#B3C1CF"/>
-                            </svg>
-                            <p>Max 2MB 500px 500px</p>
-                        </div>
-
-                        <div class="image-upload-flat">
-
-
-                            <label for="upload-file" class="text-center border-0 edux-label-upload">
-                                        <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-  <path d="M11.5 16.1562V8.00625L8.9 10.6063L7.5 9.15625L12.5 4.15625L17.5 9.15625L16.1 10.6063L13.5 8.00625V16.1562H11.5ZM6.5 20.1562C5.95 20.1562 5.47917 19.9604 5.0875 19.5688C4.69583 19.1771 4.5 18.7063 4.5 18.1562V15.1562H6.5V18.1562H18.5V15.1562H20.5V18.1562C20.5 18.7063 20.3042 19.1771 19.9125 19.5688C19.5208 19.9604 19.05 20.1562 18.5 20.1562H6.5Z" fill="#0036E3"/>
-</svg>
-                                        </span>
-                                <span class="fw-bold">Upload Photo</span>
-
-                            </label>
-                            <input type="file" id="upload-file" class="d-none">
-
-                        </div>
-
-                                  </div>
+                        <div class="image-upload-preview">
+            <div class="">
+                <div class="uploaded-img-preview">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133" fill="none">
+                        <g clip-path="url(#clip0_38_2)">
+                            <path d="M81.048 80.678C92.1752 83.9312 101.948 90.7027 108.903 99.9778C115.858 109.253 119.62 120.532 119.625 132.125H12.375C12.3774 120.531 16.1382 109.251 23.0934 99.9753C30.0486 90.6997 39.8234 83.9288 50.952 80.678L66 103.25L81.048 80.678ZM92.8125 51.6875C92.8125 58.7986 89.9876 65.6185 84.9593 70.6468C79.931 75.6751 73.1111 78.5 66 78.5C58.8889 78.5 52.069 75.6751 47.0407 70.6468C42.0124 65.6185 39.1875 58.7986 39.1875 51.6875C39.1875 44.5764 42.0124 37.7565 47.0407 32.7282C52.069 27.6999 58.8889 24.875 66 24.875C73.1111 24.875 79.931 27.6999 84.9593 32.7282C89.9876 37.7565 92.8125 44.5764 92.8125 51.6875Z" fill="#B3C1CF"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_38_2">
+                                <rect width="132" height="132" fill="white" transform="translate(0 0.5)"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <p class="text-sm fst-italic my-1">
+                    Max 2MB 500px 500px
+                </p>
+            </div>
+            <div>
+                <label for="upload-file" class="btn btn-outline-primary d-inline-flex align-items-center">
+                    <x-icon.upload fill="#0059C999"/>
+                    Upload Photo</label>
+                <input type="file" id="upload-file" class="d-none">
+            </div>
+        </div>
                     </div>
 
 
@@ -272,7 +324,7 @@
                                     <p class="h6 mb-0">$120/1 hrs</p>
                                 </div>
                                 <p>Prof. Jhon dowe offers consultation services to educational institutions,
-                                    businesses and individuals seeking expertise in curriculum development.</p>
+                                    businesses and individuals seeking expertise in curriculum development. <span class="edux-more"> More...</span></p>
                                 <ul class="button-list edux-button-list">
                                     <li class="button-list-item">
                                         Accreditation Documentation
@@ -297,65 +349,33 @@
                             </div>
                         </div>
                         <div class="mb-40">
-                            <h6 class="mb-2">Opening hours
-                                <div class="tooltip-wrapper bottom-left">
-                                    <i class="tooltip-icon"></i>
-                                    <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Eum, placeat!
+
+                        <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
+                            <div class="available-time-select-col eudx-time-select">
+                            <h6>Selected slot</h6>
+                                <ul class="edux-selected-slot">
+
+                                  <div class="row">
+                                  <li class="edux-day-schedule">Friday</li>
+                                    <li>01.00 AM</li>
+                                    <li>10:00 AM</li>
+                                    <li>04:00 PM</li>
+                                    <li>05:00 PM</li>
+                                    <li>09:00 PM</li>
+                                    <li>09:00 PM</li>
+                                  </div>
+
+                                    <div class="row">
+                                    <li class="edux-day-schedule">Saturday</li>
+                                    <li>01.00 AM</li>
+                                    <li>10:00 AM</li>
+                                    <li>04:00 PM</li>
+                                    <li>05:00 PM</li>
+                                    <li>09:00 PM</li>
+                                    <li>09:00 PM</li>
                                     </div>
-                                </div>
-                            </h6>
-                            <p><a class="fw-bold" href="">Schedule Your Consultation</a></p>
-                            <div class="available-schedule-input-wrapper mb-40">
-
-                            <x-form.flatpicker label="Date picker" name="datepicker"/>
-                                 <!-- <div class="study-level">
-                                    <div class="calendar-box position-relative">
-                                        <input class="timesheet-date" type="text" id="dateInput" placeholder="23 Dec 2023">
-
-                                        <div class="calendar" id="calendar">
-                                        <div class="header">
-                                            <button id="prevBtn">
-                                            <x-icon.arrow-left/>
-                                            </button>
-                                            <h2 id="monthYear">Month Year</h2>
-                                            <button id="nextBtn">
-                                            <x-icon.arrow-right/>
-                                            </button>
-                                        </div>
-                                        <div class="days" id="daysContainer"></div>
-                                        </div>
-                                    </div>
-                                    </div> -->
-
-                                <div class="available-time-select-col">
-                                    <ul>
-                                        <li class="selected-date">01.00 AM</li>
-                                        <li>02.00 AM</li>
-                                        <li>03.00 AM</li>
-                                        <li>04.00 AM</li>
-                                        <li>05.00 AM</li>
-                                        <li>06.00 AM</li>
-                                        <li class="selected-date">07.00 AM</li>
-                                        <li>08.00 AM</li>
-                                        <li>09.00 AM</li>
-                                        <li>10.00 AM</li>
-                                        <li>11.00 AM</li>
-                                        <li>12.00 AM</li>
-                                        <li>01.00 PM</li>
-                                        <li>02.00 PM</li>
-                                        <li>03.00 PM</li>
-                                        <li>04.00 PM</li>
-                                        <li>05.00 PM</li>
-                                        <li>06.00 PM</li>
-                                        <li>07.00 PM</li>
-                                        <li>08.00 PM</li>
-                                        <li>09.00 PM</li>
-                                        <li>10.00 PM</li>
-                                        <li>11.00 PM</li>
-                                        <li>12.00 PM</li>
-                                    </ul>
-                                </div>
+                                </ul>
+                            </div>
 
                             </div>
 

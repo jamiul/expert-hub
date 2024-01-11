@@ -30,7 +30,7 @@
                                     <a href="#">
                                         <img src="{{ asset('assets/frontend/img/map-img.png') }}" />
                                         <h4>{{ $expert->user->full_name }}</h4>
-                                        <p>{{ $expert->expertField ? $expert->expertField->name : '' }}</p>
+                                        <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
                                         <h5>Oxford University</h5>
                                     </a>
                                 </div>
@@ -42,7 +42,7 @@
                                     <a href="#">
                                         <img src="{{ asset('assets/frontend/img/map-img.png') }}" />
                                         <h4>{{ $expert->user->full_name }}</h4>
-                                        <p>{{ $expert->expertField ? $expert->expertField->name : '' }}</p>
+                                        <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
                                         <h5>Oxford University</h5>
                                     </a>
                                 </div>
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="carousel-text">
                                     <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField ? $expert->expertField->name : '' }}</p>
+                                    <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
                                 </div>
                             </div>
                         </button>
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="carousel-text">
                                     <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField ? $expert->expertField->name : '' }}</p>
+                                    <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
                                 </div>
                             </div>
                         </button>

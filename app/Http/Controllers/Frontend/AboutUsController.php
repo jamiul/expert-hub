@@ -27,21 +27,13 @@ class AboutUsController extends Controller
         // experts list
         $experts = $this->fetchProfileData($aboutUsDTO->instructor_list);
 
-        // team list
-        $teamList = $this->fetchProfileData($aboutUsDTO->team_list);
-
-        $teamList2 = $teamList->splice(0, 2);
-        $teamList3 = $teamList;
-
         // add new line after 10 characters
         $aboutUsDTO->header_title =  Str::of($aboutUsDTO->header_title)->wordWrap(10, "\n");
 
         return view('frontend.about-us.index', compact(
             'about',
             'aboutUsDTO',
-            'experts',
-            'teamList2',
-            'teamList3'
+            'experts'
         ));
     }
 }

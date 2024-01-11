@@ -29,9 +29,10 @@ class Create extends Modal
     {
         $this->form->create();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Education::class);
+        $this->dispatch('refresh')->to(\App\Livewire\Profile\Edit\Education::class);
         $this->close();
     }
-    
+
     public function render()
     {
         return view('livewire.profile.education.create');

@@ -25,7 +25,7 @@
                                                     <h4>
                                                         <a href="#">{{ $expert->user->full_name }}</a>
                                                     </h4>
-                                                    <span>{{ $expert->expertField ? $expert->expertField->name : '' }}</span>
+                                                    <span>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</span>
                                                     <span>University of Sydney</span>
                                                     <span>{{ $expert->user->country->name }}</span>
                                                     <div

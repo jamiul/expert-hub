@@ -1,0 +1,1 @@
+<x-form.textarea label="Description" wire:model.blur="form.biography" placeholder="Biography" />
