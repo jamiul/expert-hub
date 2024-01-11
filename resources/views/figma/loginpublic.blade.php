@@ -34,7 +34,7 @@
                 </div>
                 <div class="edux-billing-method-right-sidebar">
                     <div class="book-expert-profile pb-3">
-                        <img src="{{ asset('assets/frontend/img/Rectangle 6.png') }}" alt="">
+                        <img src="{{ asset('assets/frontend/img/rectangle6.png') }}" alt="">
                         <div class="profile-mile-ester">
                             <img src="{{ asset('assets/frontend/img/profile-miles.png') }}" alt="">
                             <p>Professor Miles Esther</p>
