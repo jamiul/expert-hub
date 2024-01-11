@@ -36,6 +36,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/components', 'components');
 Route::view('/components/icons', 'icons');
 Route::view('/components/widgets', 'sidebar-widget');
+Route::view('/components/cards', 'cards');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
