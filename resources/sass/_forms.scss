@@ -35,6 +35,12 @@
     margin-bottom: 12px;
     position: relative;
 
+    &.label-inline {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
     .form-input-label {
         font-size: 0.875rem;
         font-style: normal;
@@ -119,6 +125,7 @@
     &.input-field-control-lg {
         height: 46px;
     }
+
     &.input-field-control-md {
         height: 42px;
     }
