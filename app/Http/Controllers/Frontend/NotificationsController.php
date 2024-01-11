@@ -14,7 +14,8 @@ class NotificationsController extends Controller
         return view( 'frontend.notifications.expert-notifications' );
     }
 
-    public function notificationSettings() {
+    public function notificationSettings()
+    {
 
         return view( 'frontend.notifications.notification-settings' );
     }
