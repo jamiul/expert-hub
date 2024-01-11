@@ -88,7 +88,7 @@
         </a>
       </li>
       <li>
-        <a class="nav-link {{ request()->is('figma/client-passwordsecurity') ? '!active' : 'active-icon' }}" href="/figma/client-notificationsettting" >Notification</a>
+        <a class="nav-link {{ request()->is('figma/client-passwordsecurity') ? '!active' : 'active-icon' }}" href="{{ route('notifications.settings') }}" >Notification</a>
       </li>
 
     </ul>

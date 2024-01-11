@@ -90,7 +90,7 @@
                      <a class="dropdown-item" href="/figma/expert-id-verify">Id Verification</a>
                   </li>
                   <li>
-                     <a class="dropdown-item" href="/figma/expert-notification-settings">Notification Settings</a>
+                     <a class="dropdown-item" href="{{ route('notifications.settings') }}">{{ __('Notification Settings') }}</a>
                   </li>
 
                </ul>
