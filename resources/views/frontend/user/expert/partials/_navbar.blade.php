@@ -96,7 +96,7 @@
                             <a class="dropdown-item" href="/figma/expert-id-verify">Id Verification</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/figma/expert-notification-settings">Notification
+                            <a class="dropdown-item" href="{{ route('notifications.settings') }}">Notification
                                 Settings</a>
                         </li>
 
