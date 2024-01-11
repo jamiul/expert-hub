@@ -8187,7 +8187,7 @@ font-weight: 400;
 }
 
 .edux-btn-paypal{
-  color: #0036E3;
+  color: #0036E3 !important;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8200,19 +8200,59 @@ font-weight: 400;
 
 }
 
-.edux-btn-paypal:hover{
-  color: #fff;
+.edux-btn-set-as-primary{
+  display: flex;
+  padding: 2px 16px 1px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 23px;
+  background: #369450;
+  color: #FFF;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+}
+
+.edux-btn-set-as-primary:hover{
   display: flex;
   padding: 2px 16px 1px 16px;
   justify-content: center;
   align-items: center;
   border-radius: 23px;
-  border: 2px solid #0036E3;
-  background-color: #0036E3;
+  background: #369450;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
 
+.edux-btn-set-as-remove{
+  display: flex;
+  padding: 2px 16px 1px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23px;
+  border: 2px solid  #C00000;
+  background: #C00000;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.edux-radio-option{
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.edux-form-radio-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  min-width: 185px;
 }
 
 .eudx-visa-card {
@@ -8615,6 +8655,20 @@ header.client-header {
   margin: 8px 0px 0px;
 }
 
+.edux-billing-method-content {
+  width: calc(100% - 350px);
+}
+
+.edux-billing-method-right-sidebar {
+  max-width: 350px;
+  width: 100%;
+}
+.edux-billing-method-area {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+}
+
 }
 
 @media only screen and (max-width: 995px) {
@@ -8623,8 +8677,27 @@ header.client-header {
   }
 
   .edux-paypal-billing span {
-    font-size: 10px;
+    font-size: 11px;
+}
 
+.edux-btn-set-as-primary {
+  font-size: 11px;
+  padding: 2px 10px 1px 10px;
+
+}
+
+.edux-btn-set-as-remove {
+  font-size: 11px;
+  padding: 2px 10px 1px 10px;
+
+}
+
+.edux-form-radio-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  min-width: 140px;
 }
 
   }
@@ -8737,7 +8810,43 @@ header.client-header {
 
 }
 
+@media only screen and (max-width: 846px) {
 
+  .edux-billing-method-area {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.edux-billing-method-content {
+  width: 100%;
+}
+
+.edux-paypal-billing span {
+  font-size: 16px;
+}
+.edux-btn-set-as-primary {
+  font-size: 15px;
+  padding: 2px 16px 1px ;
+}
+.edux-btn-set-as-remove {
+  font-size: 15px;
+  padding: 2px 16px 1px;
+}
+.edux-paypal-visa-billing .single-button {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.edux-billing-method-right-sidebar {
+  max-width: 100%;
+  width: 100%;
+}
+
+}
 
 
 
@@ -8918,9 +9027,22 @@ header.client-header {
   flex-direction: row;
 }
 .edux-paypal-billing span {
-  font-size: 15px;
+  font-size: 12px;
+}
+.edux-form-radio-title {
+
+  min-width: 100px;
 }
 
+.edux-btn-set-as-primary {
+  font-size: 12px;
+  padding: 2px 10px 1px;
+}
+
+.edux-btn-set-as-remove {
+  font-size: 12px;
+  padding: 2px 10px 1px;
+}
 
 }
 
@@ -8971,8 +9093,31 @@ header.client-header {
 
 @media only screen and (max-width: 500px) {
 
+  .edux-paypal-visa-billing-area {
+    padding: 16px 10px;
+
+}
+
+.edux-billing-method-right-sidebar {
+  padding: 24px 10px;
+
+}
+
+  .edux-form-radio-title {
+    min-width: 115px;
+}
+.edux-btn-set-as-primary {
+  font-size: 10px;
+  padding: 2px 5px 1px;
+}
+
+.edux-btn-set-as-remove {
+  font-size: 10px;
+  padding: 2px 5px 1px;
+}
+
   .edux-paypal-billing span {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .edux-btn-paypal {
@@ -9556,12 +9701,38 @@ ul.progress-bar-nav-horizontal li strong {
 }
 
 
+.edux-radio-option {
+  align-items: center;
+  display: flex;
+  gap: 2px;
+}
+
 
 }
 
 
 
 @media only screen and (max-width: 375px) {
+
+.edux-form-radio-title img{
+    width: 20px !important;
+    height: auto;
+}
+
+.edux-btn-set-as-primary {
+  font-size: 7px;
+  padding: 2px 5px 1px;
+}
+.edux-btn-set-as-remove {
+  font-size: 7px;
+  padding: 2px 5px 1px;
+}
+
+
+.edux-form-radio-title {
+  min-width: 135px !important;
+  margin-right: 10px !important;
+}
 
   .single-slot {
     padding: 5px 35px 3px;

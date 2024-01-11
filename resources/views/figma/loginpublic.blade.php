@@ -5,20 +5,33 @@
         <div class="container">
             <div class="edux-billing-method-area">
                 <div class="edux-billing-method-content">
-                    <h2>Select a billing method</h2>
+                    <h5>Select a billing method</h5>
                     <p>This will be primary billing method across all contracts, account activity and subscriptions</p>
                     <div class="edux-paypal-visa-billing">
 
-                        <div class="edux-paypal-visa-billing-area mb-5 mb-sm-4">
+                        <div class="edux-paypal-visa-billing-area mb-4">
                             <div class="edux-paypal-billing">
-                            <x-form.radio label="" wire:model="gender" :options="['' => '']" inline/>
-                            <span class="me-2 edux-paypal-title"> <img src="{{ asset('assets/frontend/img/check-paypal.png') }}" alt="all-card"> <span> Paypal (account@gmail.com)</span></span>
-                            <button class="btn edux-btn-paypal">Primary</button>
+
+                            <div class="form-radio-option edux-radio-option">
+                                <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
+                                <label class="form-radio-title  edux-form-radio-title me-4" for="Male"> <span class="me-1 edux-paypal-title"> <img src="{{ asset('assets/frontend/img/mastercard.png') }}" alt="all-card"> </span> <span>Master ending in 8698</span> </label>
+                            </div>
+
+
+
+
+
+                            <span class="edux-btn-paypal">Primary</span>
 
                             </div>
                             <div class="edux-paypal-billing">
-                                <x-form.radio label="" wire:model="gender" :options="['' => '']" inline/>
-                                <span class="eudx-visa-card"> <img src="{{ asset('assets/frontend/img/visa.png') }}" alt="all-card"> <span> Visa ending in 8698</span></span>
+
+                            <div class="form-radio-option edux-radio-option">
+                                <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
+                                <label class="form-radio-title  edux-form-radio-title me-4" for="Male"> <span class="me-1 edux-paypal-title"> <img src="{{ asset('assets/frontend/img/visa.png') }}" alt="all-card"> </span> <span> Visa ending in 8698</span> </label>
+                                <button class=" btn edux-btn-set-as-primary">Set as primary</button>
+                                <button class=" btn edux-btn-set-as-remove">Remove</button>
+                            </div>
 
                             </div>
                         </div>
