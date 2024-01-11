@@ -1,4 +1,4 @@
-<div class="profile-edit-widget user-bio-edit-widget">
+<div class="profile-edit-widget user-bio-edit-widget {{ $expertDashboard ? 'px-30' : '' }}">
     <div class="user-profile-picture">
         <img src="{{ $profile->getFirstMediaUrl('picture') }}">
         <button>Edit</button>
@@ -7,7 +7,7 @@
         <h3 class="h6">{{ $profile->user->full_name ?? '' }}</h3>
         <p class="text-primary d-inline-flex align-items-center gap-3">
             {{ $profile->expertField ? $profile->expertField->name : '' }}
-            <button class="icon-btn icon-btn-md border-1 border-gray-100">
+            <button class="icon-btn icon-btn-md border-1 border-gray-100 {{ ! $editable ? 'd-none' : '' }}">
                 <x-icon.edit />
             </button>
         </p>
@@ -31,7 +31,7 @@
         </p>
         <div class="my-4 complete-profile-status-edit-widget">
             <p class="text-sm d-flex align-items-center mb-1 gap-3">Complete your profile
-                <button class="icon-btn icon-btn-md">
+                <button class="icon-btn icon-btn-md {{ ! $editable ? 'd-none' : '' }}">
                     <x-icon.edit />
                 </button>
             </p>

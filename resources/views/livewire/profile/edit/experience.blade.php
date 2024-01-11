@@ -4,12 +4,12 @@
             <div class="d-flex gap-2 align-items-center">
                 <x-icon.user-tie />
                 <h3 class="h5 mb-0">Work Experience</h3>
-                <button class="icon-btn">
+                <button class="icon-btn {{ ! $editable ? 'd-none' : '' }}">
                     <x-icon.info fill="#C8C5D4" />
                 </button>
             </div>
             <button wire:click="$dispatch('modal.open', { component: 'profile.experience.create'})"
-                class="icon-btn icon-btn-md border">
+                class="icon-btn icon-btn-md border {{ ! $editable ? 'd-none' : '' }}">
                 <x-icon.add />
             </button>
         </div>
@@ -27,11 +27,11 @@
                         <div>
                             <button
                                 wire:click="$dispatch('modal.open', { component: 'profile.experience.edit', arguments: { experience: {{ $experience->id }} }})"
-                                class="icon-btn icon-btn-md border">
+                                class="icon-btn icon-btn-md border {{ ! $editable ? 'd-none' : '' }}">
                                 <x-icon.edit />
                             </button>
                             <button wire:click="deleteExperience({{ $experience->id }})"
-                                class="icon-btn icon-btn-md border">
+                                class="icon-btn icon-btn-md border {{ ! $editable ? 'd-none' : '' }}">
                                 <x-icon.delete />
                             </button>
                         </div>

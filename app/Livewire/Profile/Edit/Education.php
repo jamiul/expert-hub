@@ -11,6 +11,7 @@ class Education extends Component
     use InteractsWithConfirmationModal;
 
     public $educations = [];
+    public $editable = true;
 
     public function mount()
     {

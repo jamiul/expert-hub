@@ -1885,35 +1885,7 @@
                     </div>
                     <!--.//col-->
                     <div class="col-lg-4 col-xxl-3 aside__wrapp">
-                        <livewire:profile.summary />
-                        {{-- <div class="px-3 px-sm-4 pt-5 pb-4 border-bottom">
-                            <figure class="thumbnail__box rounded-circle mx-auto position-relative mb-2"> <img
-                                    src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
-                                    width="95" height="95" alt="Profile Thumbnail"
-                                    class="img-fluid rounded-circle object-cover"> <span
-                                    class="status active position-absolute rounded-circle d-flex justify-content-center align-items-center"></span>
-                            </figure>
-                            <p class="text-center text-dark fw-medium mb-0">Professor Michael Kassiou</p>
-                            <p class="text-center text-muted fw-normal mb-0 small lh-base"> Curriculum Expert <span
-                                    class="d-block fw-medium">Public Health</span> </p>
-                            <div class="mt-3">
-                                <div class="d-inline-flex"> <span class="text-dark small fw-medium">Complete your
-                                        profile</span> <a href="{{ route('expert.profile.edit') }}" class="px-2"> <svg width="24"
-                                            height="25" viewBox="0 0 24 25" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M5.15385 19.4269H6.39038L15.6501 10.1672L14.4135 8.93069L5.15385 18.1904V19.4269ZM18.8577 9.08264L15.4827 5.73846L16.7866 4.43464C17.0802 4.14105 17.4372 3.99426 17.8577 3.99426C18.2782 3.99426 18.6352 4.14105 18.9288 4.43464L20.1461 5.65191C20.4397 5.9455 20.5916 6.29741 20.6019 6.70766C20.6121 7.11791 20.4705 7.46983 20.1769 7.76341L18.8577 9.08264ZM17.7731 10.1826L7.02883 20.9269H3.6539V17.5519L14.3981 6.80766L17.7731 10.1826ZM15.027 9.54416L14.4135 8.93069L15.6501 10.1672L15.027 9.54416Z"
-                                                fill="#191D24" />
-                                        </svg> </a> </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="progress" style="width: calc(100% - 3rem);">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="small fw-medium text-dark text-end" style="width: 3rem;">60%</div>
-                                </div>
-                            </div>
-                        </div> --}}
+                        <livewire:profile.summary :expertDashboard=true />
                         <div class="px-3 px-sm-4 py-4 border-bottom">
                             <p class="lead-sm fw-medium text-black mb-0">Available for Projects</p>
                             <div class="d-flex justify-content-between align-items-center"> <small
