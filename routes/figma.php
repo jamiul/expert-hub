@@ -19,12 +19,16 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-biography', 'figma.profilebiography');
     Route::view('/profile-picture', 'figma.profilepicture');
     Route::view('/profile-completed', 'figma.profilecompleted');
-    Route::view('/scholarship-database', 'figma.scholarshipdatabase');
 
+    Route::view('/add-consultation', 'figma.addconsultation');
+    Route::view('/book-consultation', 'figma.bookconsultation');
+
+
+    Route::view('/scholarship-database', 'figma.scholarshipdatabase');
     Route::view('/scholarship-singlePage', 'figma.scholarshipsinglepage');
     Route::view('/search-empty', 'figma.searchempty');
     // client post Job
-    Route::view('/jobposts', 'figma.projectCreate');
+    Route::view('/job-posts', 'figma.projectCreate');
     Route::view('/jobposts-test', 'figma.clientjobpost');
     //client Registration
     Route::view('/client-login', 'figma.clientlogin');
@@ -49,6 +53,8 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-dashboard', 'figma.clientdashboardhome');
     // Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
     Route::view('/client-dashboardall', 'figma.clientdashboard');
+    Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
+
     Route::view('/client-dashboardexpertconsultant', 'figma.clientdashboardexpertconsultant');
     Route::view('/client-dashboardexpertconsultantteam', 'figma.clientdashboardexpertconsultantteam');
     Route::view('/client-dashboardallcontact', 'figma.clientdashboardallcontact');
@@ -72,6 +78,7 @@ Route::group(['prefix' => 'figma'], function () {
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
     Route::view('/project-details-view', 'figma.project-details-view');
+    Route::view('/submit-project-proposal', 'figma.submit-project-proposal');
 
     // Admin dashboard
     Route::view('/super-admin-layout', 'figma.admin-layout');
@@ -118,4 +125,8 @@ Route::group(['prefix' => 'figma'], function () {
 
     //Global sections
     Route::view('/page-header', 'figma.page-header');
+
+    //Project
+    Route::view('/project/client-job-posts', 'figma.client-job-posts');
+    Route::view('/project/client-job-post-view', 'figma.client-job-post-view');
 });

@@ -86,3 +86,21 @@ hr {
         }
     }
 }
+
+table {
+    &.table-extra-padding {
+        tr {
+            td {
+                padding: 30px;
+
+                &:first-child {
+                    padding-left: 40px;
+                }
+
+                &:last-child {
+                    padding-right: 40px;
+                }
+            }
+        }
+    }
+}

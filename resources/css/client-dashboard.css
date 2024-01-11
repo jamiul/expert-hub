@@ -1689,10 +1689,7 @@ td.health-budget{
   display: flex;
   min-height: 244px;
   padding: 24px;
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
   gap: 12px;
-  /* align-self: stretch; */
   border-radius: 4px;
   background: #FFF;
   box-shadow: 4px 4px 16px 0px rgba(14, 0, 98, 0.10);
@@ -7782,6 +7779,364 @@ font-weight: 400;
 }
 
 
+/* ============================== Add Consultant start Here ============================= */
+.edux-single-skills {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.edux-skill-input {
+  /* padding: 60px 20px 10px; */
+  min-height: 87px;
+}
+
+.service-fee-description .edux-tooltips-details {
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #191D24;
+  border: 2px solid #e7e5ef;
+  padding: 15px 22px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  min-width: 180px;
+  left: -24px;
+  top: 35px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.available-schedule-input-wrapper .calendar {
+  background-color: white;
+  border-radius: 4px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  left: 0px !important;
+  /* border: solid 2px #0036E3; */
+  top: 45px !important;
+  min-width: 298px;
+  min-height: 282px;
+  box-shadow: 12px 17px 48px 0px #0E00621A;
+}
+
+.available-schedule-input-wrapper .timesheet-date {
+  min-width: 301px !important;
+}
+
+/* #addConsultation label{
+  color: #191D24;
+  font-size: 15px !important;
+} */
+
+.skilled-label{
+  color: #191D24;
+  font-size: 15px !important;
+  font-weight: 500;
+}
+
+.skill-suggestion{
+  color: #303744;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.skill-suggestion span{
+  color: rgba(48, 55, 68, 0.70);
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+.edux-platform-bg{
+  background-color: #E7E5EF;
+}
+
+.eudx-time-select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  background: rgba(0, 54, 227, 0.02);
+}
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.edux-label-upload {
+  display: flex !important;
+  padding: 0px !important;
+  justify-content: center;
+  align-items: center;
+  color: #0036E3;
+}
+
+.available-schedule-upload {
+  align-items: center !important;
+  grid-template-columns: 220px auto;
+}
+
+.edux-button-list .button-list-item {
+  list-style: none;
+  display: inline-flex;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(48, 55, 68, 0.03);
+  padding: 2px 12px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  justify-content: space-between;
+  width:auto;
+  color: #191D24
+}
+
+.edux-btn-cancel{
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  background: transparent;
+}
+
+.edux-btn-cancel:hover{
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  background: transparent;
+}
+
+
+.eudx-btn-save{
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background:  #0036E3;
+  color: #FFF;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-btn-back{
+  display: flex;
+  padding: 6px 24px 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-btn-back:hover{
+  display: flex;
+  padding: 6px 24px 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  color: rgba(25, 29, 36, 0.70);
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+/* ============================== Add Consultant End Here ============================= */
+/* ============================== Book Consultant Start Here ============================= */
+.edux-slot-count{
+  color:  #191D24 !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.edux-total-select-count {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+}
+
+.single-slot {
+  display: flex;
+  padding: 5px 50px 3px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+}
+
+.single-slot span {
+  color: rgba(48, 55, 68, 0.70);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.slot-border {
+  border-radius: 4px;
+  border: 2px solid #0036E3;
+}
+
+.slot-border span{
+  color: #0036E3;
+}
+
+.slot-fill {
+  border-radius: 4px;
+  background: #0036E3;
+  border: none;
+}
+.slot-item-area {
+  padding-right: 20px;
+}
+
+.slot-fill  span{
+  color: #fff;
+}
+
+.multi-slot {
+    display: flex;
+    justify-content: space-between;
+}
+.slot-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.available-schedule-slot {
+  grid-template-columns: 50% 50%;
+  display: grid;
+  gap: 25px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  padding: 20px;
+}
+
+
+.edux-timezoon{
+  max-width: 256px;
+}
+.edux-schedule-input{
+  grid-template-columns: 100%;
+}
+
+.edux-selected-slot li {
+  color: #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  /* display: flex; */
+  height: 42px;
+  padding: 10px 16px !important;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* flex: 1 0 0; */
+  border-radius: 4px !important;
+  border: 2px solid rgba(14, 0, 98, 0.15) !important;
+  background: #FFF;
+  width: auto !important;
+  margin: 0px 3px;
+}
+
+ .edux-selected-slot{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0px !important;
+}
+
+.edux-selected-slot li.edux-day-schedule {
+  color: #191D24;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  border: none !important;
+  padding-left: 0px !important;
+  min-width: 75px;
+  text-align: left !important;
+  background: transparent;
+  padding: 10px !important;
+}
+
+.edux-selected-slot li.selected-date-bg{
+  color: #0036E3 !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 4px;
+  border: 2px solid rgba(14, 0, 98, 0.15);
+  background: rgba(0, 54, 227, 0.06) !important;
+}
+
+.edux-schedule-input .btn{
+  max-width:118px;
+}
+
+.edux-more{
+  color: #191D24;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+/* ============================== Book Consultant End Here ============================= */
+
+
+
+
+
+
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
 @media only screen and (max-width: 1820px) {
@@ -8046,7 +8401,24 @@ header.client-header {
   text-decoration: underline;
 }
 
+.single-team-text h3 {
+  font-family: Colfax;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 48px;
+  color: #191D24;
+  max-width: 423px;
+  margin: 8px 0px 0px;
 }
+
+}
+
+@media only screen and (max-width: 995px) {
+  .edux-modal-footer {
+    margin: 0px auto;
+  }
+
+  }
 
 @media only screen and (max-width: 991px) {
   .edux-body-right-content{
@@ -8063,10 +8435,8 @@ header.client-header {
 .single-person-deniyel img {
   max-width: 160px;
   max-height: 185px;
-  position: absolute;
-  top: -25px;
-  left: 0%;
   width: 100%;
+  height: 100%;
 }
 
 .person-details p {
@@ -8107,8 +8477,8 @@ header.client-header {
 
 .btn-fundmilestone {
   font-size: 10px;
+  min-width: 100px;
 }
-
 .profile-single-title h3 {
   font-size: 12px;
 }
@@ -8132,22 +8502,116 @@ header.client-header {
   font-size: 14px;
 }
 
+.single-team-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  margin-top: 45px;
+  padding: 0px 20px;
+}
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+  ul.edux-selected-slot.edux-selected-slot-more {
+    margin: 0px !important;
+}
+
+  .edux-selected-slot {
+    margin: 10px !important;
+}
+.edux-selected-slot li.edux-day-schedule {
+  padding: 10px 0px !important;
+}
+
+  .academic-block .live-zoom {
+    border-right: solid 1px #d9dbea;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    min-width: 100% !important;
+}
+
+.btn-fundmilestone {
+  min-width: 100px;
+
+}
+
+.single-card-area {
+  margin-right: 0px;
+  max-width: 100%;
+}
+
+.academic-block .live-zoom {
+  border-right: none;
+}
+
+.available-schedule-input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.available-schedule-input-wrapper .available-time-select-col ul li {
+  list-style: none;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #DDD;
+  padding: 8px 4px;
+  width: 80px;
+  text-align: center;
+  font-size: 12px;
+}
+.single-slot {
+  padding: 5px 20px 3px;
+}
+
+.available-schedule-slot {
+  grid-template-columns: 100%;
+  display: grid;
+  gap: 25px;
+  border-radius: 4px;
+  border: 2px solid  #E7E5EF;
+  padding: 20px;
+}
+
+.edux-selected-slot li {
+  margin: 5px 3px;
 }
 
 
 
-@media only screen and (max-width: 995px) {
-
-
-
-.edux-modal-footer {
-  margin: 0px auto;
 }
 
-}
 
 
 @media only screen and (max-width: 767px) {
+  .academic-block .live-zoom {
+    border-right: none !important;
+  }
+
+  .btn-fundmilestone {
+    display: flex;
+    max-width: 218px;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    width: 100%;
+    color: #0036E3;
+    text-align: center;
+    font-family: Colfax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    border: 2px solid #0036E3;
+}
 
   .team .team-block {
     text-align: center;
@@ -8170,13 +8634,13 @@ header.client-header {
   width: 100%;
 }
 
-
 .single-team-member-area {
   display: flex;
   width: 100%;
   flex-direction: column;
   gap: 32px;
   margin-top: 40px;
+  padding: 0px 10px;
 }
 
 .single-team-text {
@@ -8193,6 +8657,7 @@ header.client-header {
   display: flex;
   flex-direction: column;
 }
+
 
 }
 
@@ -8217,9 +8682,47 @@ header.client-header {
   margin: 12px;
 }
 
+.job-area-top {
+  padding: 20px 10px 15px;
+  border-bottom: 1px solid #E7E5EF;
+}
+
+.all-project h2 {
+  font-family: Colfax;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #191D24;
+}
+
+.all-project-post-content ul li a {
+  color: #303744;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
 }
 
 @media only screen and (max-width: 500px) {
+
+  .edux-selected-slot li {
+    margin: 5px 3px;
+}
+
+  h5{
+    font-size:1rem;
+  }
+
+  .available-schedule-slot {
+    grid-template-columns: 100%;
+  }
+  .single-slot {
+    padding: 5px 45px 3px;
+}
+
 .edux-mobile-menu{
   display:block;
   width: 100%;
@@ -8381,8 +8884,6 @@ li.nav-item.edux-nav-item-count {
 }
 
 .nav-link-count{
-  /* display: flex; */
-  /* flex-direction: column; */
   align-items: center;
   background-color: #FF0000;
   color: #fff;
@@ -8493,15 +8994,6 @@ img.middle-top-arrow{
   display: block;
 }
 
-/*.hide {*/
-/*  display: none;*/
-/*}*/
-
-/*.show {*/
-/*  display: block;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*}*/
 
 .middle-top-img button{
   border: none;
@@ -8705,8 +9197,147 @@ ul.edux-mobile-dropdown li {
   height: 150px;
 }
 
+.job-area-top {
+  padding: 20px 30px 15px;
+  border-bottom: 1px solid #E7E5EF;
+  flex-direction: column;
+}
+
+.all-project-post-content ul {
+  padding-left: 0px;
+}
+
+.all-project-post {
+  gap: 5px;
+  flex-direction: column;
+}
+
+.edux-all-job-area {
+  padding: 48px 30px 0px !important;
+  border-top: 1px solid #E7E5EF;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-team-member-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.academic-block .live-zoom {
+  border-right: none !important;
+}
+
+.edux-skill-input {
+  padding: 30% 20px 10px;
+}
+
+.available-schedule-input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.offered-service-card.mb-40 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.available-schedule-input-wrapper .available-time-select-col ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+ul.progress-bar-nav-horizontal li strong {
+  display: table;
+  font-size: 0.70rem;
+  font-weight: 500;
+  line-height: 159.5%;
+  color: #303744;
+}
+
+.d-flex.gap-3.justify-content-sm-between h6 {
+  font-size: 11px;
+}
+
+.d-flex.gap-3.justify-content-sm-between p {
+  font-size: 11px;
+}
+
+.edux-button-list .button-list-item {
+  font-size: 0.70rem;
+}
+.edux-skill-input {
+  padding: 40% 20px 10px;
+}
+
+.available-schedule-input-wrapper .available-time-select-col ul li {
+  width: 82px;
+
+}
 
 
+
+}
+
+
+
+@media only screen and (max-width: 375px) {
+
+  .single-slot {
+    padding: 5px 35px 3px;
+}
+
+}
+
+
+
+@media only screen and (max-width: 320px) {
+
+  .single-slot {
+    padding: 5px 20px 3px;
+}
+
+.flatpickr-calendar {
+  width: 221.875px !important;
+
+}
+
+
+.available-schedule-input-wrapper .available-time-select-col ul li {
+  list-style: none;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #DDD;
+  padding: 8px 1px;
+  width: 77px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.d-flex.gap-3.justify-content-sm-between h6 {
+  font-size: 11px;
+}
+
+.d-flex.gap-3.justify-content-sm-between p {
+  font-size: 11px;
+}
+
+.edux-button-list .button-list-item {
+  font-size: 0.70rem;
+}
+.edux-skill-input {
+  padding: 40% 20px 10px;
+}
+
+h5{
+  font-size:0.70rem;
+}
 
 }
 

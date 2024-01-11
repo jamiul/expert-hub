@@ -25,6 +25,7 @@ class Edit extends Modal
     {
         $this->form->update();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Experience::class);
+        $this->dispatch('refresh')->to(\App\Livewire\Profile\Edit\Experience::class);
         $this->close();
     }
 

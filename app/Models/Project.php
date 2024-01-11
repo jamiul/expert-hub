@@ -11,12 +11,23 @@ class Project extends Model implements HasMedia
 {
     use SoftDeletes;
     use InteractsWithMedia;
+    use Favoritable;
 
     protected $guarded = [];
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('attachments');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Profile::class, 'profile_id');
+    }
+
+    public function expertise()
+    {
+        return $this->belongsTo(Expertise::class);
     }
     
     public function skills()

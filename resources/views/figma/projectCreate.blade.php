@@ -157,7 +157,7 @@
                                 </div>
 
                                 <div class="form-buttons">
-                                    <button wire:click="next" type="button" class="edux-btn-primary">Post Job</button>
+                                    <button  wire:click="next" type="button" class="edux-btn-primary">Post Job</button>
                                 </div>
 
                             </form>

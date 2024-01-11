@@ -13,7 +13,7 @@
                         </div>
                         <div class="carousel-text">
                             <h4>{{ $expert->user->full_name }}</h4>
-                            <p>{{ $expert->expertField ? $expert->expertField->name : '' }}</p>
+                            <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
                             <h5>Oxford University</h5>
                         </div>
                     </div>

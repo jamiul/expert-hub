@@ -31,14 +31,16 @@ class ProjectSeeder extends Seeder
         foreach ($keyedData as $project) {
             $projects[] = [
                 'profile_id' => $client->id,
+                'expertise_id' => fake()->randomElement(range(1, 14)),
                 'title' => $project['title'],
-                'slug' => Str::slug($project['title']) . now(),
+                'slug' => Str::slug($project['title']) . time(),
                 'description' => $project['description'],
                 'type' => $project['type'],
                 'currency_id' => 1,
                 'budget_start_amount' => intval($project['budget_start_amount']),
                 'budget_end_amount' => intval($project['budget_end_amount']),
                 'status' => ProjectStatus::Published,
+                'created_at' => now(),
             ];
             $projectSkills[] = $project['skills'];
         }
