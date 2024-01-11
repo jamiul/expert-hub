@@ -4,6 +4,7 @@
     <div class="text-center">
         <a class="btn btn-primary btn-lg " href="/components/icons">Icon List</a>
         <a class="btn btn-primary btn-lg " href="/components/widgets">Widget List</a>
+        <a class="btn btn-primary btn-lg " href="/components/cards">Card List</a>
     </div>
 
     <div class="col-md-4 py-3 m-auto">

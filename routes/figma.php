@@ -22,6 +22,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     Route::view('/add-consultation', 'figma.addconsultation');
     Route::view('/book-consultation', 'figma.bookconsultation');
+    Route::view('/expert/profile/login/public', 'figma.loginpublic');
 
 
     Route::view('/scholarship-database', 'figma.scholarshipdatabase');
