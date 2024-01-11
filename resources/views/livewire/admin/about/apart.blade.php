@@ -53,7 +53,6 @@
                                 <div class="tab-pane fade active show" id="home" role="tabpanel"
                                     aria-labelledby="home-tab">
                                     <div class="row">
-                                        {{-- {{ App\Enums\ProfileType::Client->value }} --}}
                                         @if (count($aboutAparts) > 0)
                                             @foreach ($aboutAparts as $aboutApart)
                                                 @if ($aboutApart->type == App\Enums\ProfileType::Client->value)

@@ -112,7 +112,7 @@ class Wizard extends Component
                     ->usingName($this->picture->getClientOriginalName())
                     ->toMediaCollection('picture');
             }
-            return redirect('/figma/expert-dashboard');
+            return redirect()->route('expert.dashboard');
         }
 
         if ($this->currentStep < 6) {

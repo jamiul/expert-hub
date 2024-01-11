@@ -36,4 +36,12 @@ class ProjectController extends Controller
     {
         return view('frontend.project.create');
     }
+
+    public function show(Project $project)
+    {
+        // dd($project);
+        return view('frontend.project.show',[
+            'project' => $project
+        ]);
+    }
 }

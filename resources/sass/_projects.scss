@@ -4,7 +4,7 @@
     border-bottom: 1px solid $edu-border-color;
 
     .project-list-card-item-header {
-        padding-bottom: 5px;
+        padding-bottom: 1rem;
         border-bottom: 1px solid $edu-border-color;
 
         .project-item-title {
@@ -15,18 +15,79 @@
             }
         }
 
-        .project-item-meta-data {
+        .project-item-meta-wrapper {
             font-size: 14px;
+
+            .icon-btn {
+                border-radius: 4px;
+                border: 2px solid rgba(14, 0, 98, 0.10);
+                width: 46px;
+                height: 46px;
+
+                span {
+                    &.heart-line {
+                        display: block;
+                    }
+
+                    &.heart-filled {
+                        display: none;
+                    }
+                }
+
+                &.favorited {
+                    span {
+                        &.heart-line {
+                            display: none;
+                        }
+
+                        &.heart-filled {
+                            display: block;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: $edu-primary-color;
+                    color: white;
+
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+
+            .project-item-price {
+                strong {
+                    color: rgba(25, 29, 36, 0.70);;
+                }
+            }
+
+            @media screen and (max-width: 1100px) {
+                flex-wrap: wrap;
+
+            }
         }
     }
 
     .project-list-card-item-body {
         padding: 1rem 0;
+
+        a {
+            color: $edu-primary-color;
+        }
     }
 
 
     &:hover {
         background-color: #F7F9FE;
+    }
+}
+
+.project-instruction {
+    .btn-primary {
+        width: 265px;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 
@@ -69,6 +130,45 @@
     p {
         font-size: 0.875rem;
     }
+
+
+    &.attachment-edit-card {
+        position: relative;
+
+        .attachment-display-thumb {
+            position: relative;
+        }
+
+        .attachment-edit-overly {
+            position: absolute;
+            left: -100%;
+            top: -100%;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.38);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+            transition: 0.2s;
+
+            .icon-btn:hover {
+                background-color: $edu-primary-color;
+
+                path {
+                    fill: white;
+                }
+            }
+        }
+
+        &:hover {
+            .attachment-edit-overly {
+                left: 0;
+                top: 0;
+            }
+        }
+    }
 }
 
 
@@ -79,6 +179,7 @@
     padding: 35px 30px;
     margin-bottom: 30px;
     background-color: #fff;
+
     h4 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -110,15 +211,388 @@
         color: $edu-headings-color;
         font-weight: 500;
         font-size: 0.875rem;
+
         path {
             fill: $edu-headings-color;
         }
+
         &:hover {
             color: $edu-primary-color;
+
             path {
                 fill: $edu-primary-color;
             }
         }
     }
 
+}
+
+.seller-admin-project-filter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    .form-input-group {
+        margin-bottom: 0;
+
+        &.vertical-label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .icon-field-wrapper {
+                flex: 1 1 auto;
+                width: 1%;
+                min-width: 0;
+            }
+        }
+    }
+
+    .input-group {
+        grid-column: span 2;
+    }
+}
+
+.seller-project-table {
+    .icon-btn[data-bs-toggle="dropdown"] {
+        &.show {
+            background-color: $edu-primary-color;
+
+            path {
+                fill: white;
+            }
+        }
+    }
+
+    .btn-outline-primary {
+        border-width: 2px;
+    }
+}
+
+.tab-nav {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $edu-border-color;
+
+    .tab-nav-item {
+        padding: 13px 16px;
+        background-color: transparent;
+        border: none;
+
+        &.active {
+            background-color: #0036E3;
+            color: white;
+        }
+    }
+}
+
+.project-tab {
+    .tab-nav {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .page-content {
+        padding: 40px !important;
+    }
+}
+
+.project-expert-card {
+    display: flex;
+    gap: 1rem;
+    padding: 40px;
+    border-bottom: 1px solid $edu-border-color;
+
+    & > div {
+
+        &.project-expert-thumb {
+            flex: 0 0 70px;
+            max-width: 70px;
+        }
+
+        &.project-expert-details {
+            flex: 0 0 calc(100% - 86px);
+            max-width: calc(100% - 86px);
+        }
+    }
+
+    .expert-card-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .project-expert-profile-flag {
+            padding: 4px 16px 2px 16px;
+            display: table;
+            border-radius: 63px;
+            background: $edu-primary-color;
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+        }
+
+        ul.project-expert-meta {
+            list-style: none;
+            margin: 0 0 1rem;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                padding-right: 15px;
+                position: relative;
+                color: rgba(48, 55, 68, 0.60);
+                font-size: 14px;
+
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100%;
+                    position: absolute;
+                    right: 5px;
+                    top: 0;
+                    background-color: $edu-border-color;
+                }
+            }
+        }
+
+        .project-expert-profile-status {
+            padding: 4px 16px 2px 16px;
+            display: table;
+            border-radius: 63px;
+            border: 1px solid $edu-border-color;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn {
+
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            &.btn-md {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+
+            &.btn-icon {
+                height: 46px;
+                width: 46px;
+                padding: 5px !important;
+            }
+
+
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+            border-color: rgba(14, 0, 98, 0.10);
+
+            path {
+                fill: $edu-primary-color;
+            }
+
+            &:hover {
+                background: $edu-primary-color;
+
+                path {
+                    fill: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+.offer-consultation-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $edu-primary-color !important;
+}
+
+.star-ratings {
+    display: flex;
+
+    svg {
+        width: 16px;
+        height: 16px;
+
+        path {
+            fill: #E9B911;
+        }
+    }
+}
+
+.project-secondary-tab {
+    .secondary-tab-nav {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $edu-border-color;
+        padding-left: 40px;
+        padding-right: 40px;
+        gap: 10px;
+
+        .tab-nav-item {
+            padding: 13px 5px;
+            background-color: transparent;
+            border: none;
+            position: relative;
+
+            &.active {
+                color: $edu-primary-color;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 3px;
+                    width: 100%;
+                    background-color: $edu-primary-color;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.large-search-form {
+    padding: 16px 40px;
+    border-bottom: 1px solid $edu-border-color;
+
+    .btn {
+        background-color: #EBEFF7;
+
+        &:hover {
+            background-color: $edu-primary-color;
+
+            path {
+                fill: #ffffff;
+            }
+        }
+    }
+}
+
+
+.btn {
+    &.btn-icon {
+        height: 46px;
+        width: 46px;
+        padding: 5px !important;
+        border-width: 2px;
+
+        &.btn-outline-light {
+            border-color: rgba(14, 0, 98, 0.10);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.btn-favorite {
+    span {
+        &.heart-line {
+            display: block;
+        }
+
+        &.heart-filled {
+            display: none;
+        }
+    }
+
+    &.favorited {
+        span {
+            &.heart-line {
+                display: none;
+            }
+
+            &.heart-filled {
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $edu-primary-color;
+        color: white;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+.project-eoi-trams-condition {
+    a {
+        color: initial;
+    }
+}
+
+.project-eoi-submit-btn {
+    width: 265px;
+}
+
+.tag-input-textarea {
+    position: relative;
+
+    .tag-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 45px 15px 25px;
+    }
+}
+
+.suggestion-skills {
+    strong {
+        color: rgba(48, 55, 68, 0.70);
+        cursor: pointer;
+    }
+}
+
+.find-expert-layout {
+    & > div {
+        position: relative;
+    }
+
+    .toggle-sidebar {
+        position: absolute;
+        left: -20px;
+        background: #191D24;
+    }
+
+    .page-content {
+        padding: 0 !important;
+    }
+}
+
+.modal-form-btn {
+    .btn {
+        border-width: 2px;
+    }
+
+    .btn-outline-light {
+        border-color: #E7E5EF;
+        color: rgba(25, 29, 36, 0.70);
+    }
+}
+
+.modal-form-instruction {
+    a {
+        color: $edu-primary-color;
+        text-decoration: underline;
+    }
 }

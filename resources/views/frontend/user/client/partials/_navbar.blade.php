@@ -5,7 +5,7 @@
     <div class="top-nav-area">
         <div class="logo-area">
             <div class="logo">
-                <a href="{{ route('dashboard') }}">
+                <a href="{{ route('client.dashboard') }}">
                     <img src="{{ asset('assets/frontend/img/logo.png') }}" />
                 </a>
             </div>

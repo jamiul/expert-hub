@@ -26,13 +26,13 @@
     <!-- Modal : Add Work Experience-->
     <div class="modal fade" id="addConsultation" tabindex="-1" aria-labelledby="addConsultationLabel"
          aria-hidden="true">
-        <div class="modal-dialog modal-lg flat-modal">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header p-0 border-0">
+                <div class="modal-header border-0">
                     <h5 class="modal-title" id="exampleModalLabel">Add Consultation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body px-0 pb-4">
+                <div class="modal-body">
                     <ul class="progress-bar-nav-horizontal">
                         <li class="done-item"><strong> Expertise </strong></li>
                         <li class="running-item"><strong> Service fees </strong></li>

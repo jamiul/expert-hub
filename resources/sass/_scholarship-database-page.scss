@@ -57,6 +57,15 @@
 
             &.btn-outline-light {
                 border: 2px solid $edu-border-color;
+
+                &:hover {
+                    background-color: $edu-primary-color;
+                    color: white;
+
+                    path {
+                        fill: white;
+                    }
+                }
             }
 
             &.btn-outline-primary {

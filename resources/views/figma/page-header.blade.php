@@ -155,7 +155,8 @@
             <div class="header-special-menu">
                 <ul class="">
                     <li class="header-search-trigger">
-                        <button class="icon-btn border" onclick="toggleClasses('.main-header .header-search', 'header-search-activated' )">
+                        <button class="icon-btn border"
+                                onclick="toggleClasses('.main-header .header-search', 'header-search-activated' )">
                             <x-icon.search fill="#191D24"/>
                         </button>
                     </li>
@@ -250,15 +251,114 @@
                                     <x-icon.bell fill="#C8C5D4"/>
                                     View All Notification</a>
                             </div>
-
                         </div>
                     </li>
                     <li>
-
-                        <a class="icon-btn border" href="#">
+                        <a class="icon-btn border" onclick="submenuTrigger(this, event)" href="#">
                             <span>99</span>
                             <x-icon.message-line/>
                         </a>
+                        <div class="header-dropdown">
+                            <div class="message-dropdown-inner">
+                                <div class="message-dropdown-item-wrapper">
+                                    <div class="message-dropdown-item message-dropdown-item-unread">
+                                        <div class="message-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="message-dropdown-info">
+                                            <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
+                                                invitation</p>
+                                            <p class="text-sm">
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span class="message-dropdown-time">1m</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="message-dropdown-item">
+                                        <div class="message-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="message-dropdown-info">
+                                            <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
+                                                invitation</p>
+                                            <p class="text-sm">
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span class="message-dropdown-time">1m</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="message-dropdown-item">
+                                        <div class="message-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="message-dropdown-info">
+                                            <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
+                                                invitation</p>
+                                            <p class="text-sm">
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span class="message-dropdown-time">1m</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="message-dropdown-item">
+                                        <div class="message-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="message-dropdown-info">
+                                            <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
+                                                invitation</p>
+                                            <p class="text-sm">
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span class="message-dropdown-time">1m</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="message-dropdown-item">
+                                        <div class="message-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="message-dropdown-info">
+                                            <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
+                                                invitation</p>
+                                            <p class="text-sm">
+                                                <span
+                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                                <span class="message-dropdown-time">1m</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <a href="/figma/client-chatbox-new" class="message-dropdown-view-all">
+                                    <x-icon.message-line fill="#C8C5D4"/>
+                                    View All Message
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="icon-btn border" onclick="submenuTrigger(this, event)" href="#">
@@ -290,9 +390,18 @@
                                         <li><a href="">
                                                 <x-icon.settings-line/>
                                                 Setting</a></li>
-                                        <li><a href="">
-                                                <x-icon.logout-box-line/>
-                                                Logout</a></li>
+
+                                        @auth
+                                            <li>
+                                                <form class="dropdown-logout-form" method="POST"
+                                                      action="{{ route('auth.logout') }}">
+                                                    @csrf
+                                                    <x-icon.logout-box-line/>
+                                                    <button class="bg-light" type="submit">Logout</button>
+                                                </form>
+                                            </li>
+                                        @endauth
+
                                     </ul>
                                 </div>
                             </div>

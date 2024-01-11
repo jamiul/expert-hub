@@ -16,22 +16,18 @@
           </div>
 
           <x-form.input type="text" readonly label="What is your project title?" wire:model="type" placeholder="Academic content writer" value="Academic content writer"/>
-          <x-form.textarea label="Project Description" wire:model="bio" placeholder="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this " value="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this "/>
+
+
           <div class="col admin-sub-title position-relative">
             <label for="subtitle" class="form-label  level-subtitle">Project Description</label>
           <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this </textarea>
           <span class="edux-word-count">0/1000</span>
         </div>
-          <form class="client-form">
-            <div class="form-new">
-              <label>Project Description</label>
-              <textarea type="text" placeholder="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this "></textarea>
-            </div>
-          </form>
+
           <div class="customer-upload">
             <div class="upload-file-user">
               <div class="upload-file-user-img">
-                <img src="images/uploadfile-icon.png"></img>
+                <img src="{{ asset('assets/frontend/img/uploadfile-icon.png') }}" />
               </div>
               <div class="upload-file-user-text">
                 <h4>Customer_file.png</h4>
@@ -39,7 +35,7 @@
               </div>
             </div>
             <div class="dust-img">
-              <img src="images/dust-icon.png"></img>
+            <x-icon.delete/>
             </div>
           </div>
           <div class="client-contant">
@@ -48,9 +44,9 @@
           </div>
           <div class="skillandhit">
             <ul>
-              <li><a href="#">Architecture 1<img src="images/close-i.png"></img></a></li>
-              <li><a href="#">Architecture 2<img src="images/close-i.png"></img></a></li>
-              <li><a href="#">LMS 2<img src="images/close-i.png"></img></a></li>
+              <li><a href="#">Architecture 1<img src="{{ asset('assets/frontend/img/close-i.png') }}"/></a></li>
+              <li><a href="#">Architecture 2<img src="{{ asset('assets/frontend/img/close-i.png') }}"/></a></li>
+              <li><a href="#">LMS 2<img src="{{ asset('assets/frontend/img/close-i.png') }}"/></a></li>
             </ul>
             <p>Type the skills & hit enter</p>
           </div>
@@ -63,7 +59,7 @@
               <div class="col-md-6">
                 <div class="client-job-hourly">
                   <div class="hourly-img">
-                    <img src="images/hourly-icon.png"></img>
+                  <img src="{{ asset('assets/frontend/img/hourly-icon.png') }}"/>
                   </div>
                   <div class="hourly-text">
                     <h4>Hourly rate</h4>
@@ -74,7 +70,7 @@
               <div class="col-md-6">
                 <div class="client-job-hourly">
                   <div class="hourly-img">
-                    <img src="images/hourly-icon1.png"></img>
+                    <img src="{{ asset('assets/frontend/img/hourly-icon1.png') }}"/>
                   </div>
                   <div class="hourly-text">
                     <h4>Fixed price</h4>
@@ -86,6 +82,7 @@
           </div>
           <div class="client-budget">
             <h3>What is your estimate budget?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
 			<div class="custom-select-main">
 			<div class="custom-select select1">
             <select class="select1">
@@ -106,7 +103,7 @@
             <div class="client-detail-carrect">
               <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this </p>
               <ul>
-                <li><a href="#">Curriculum Editor<img src="images/close-i.png"></a></li>
+                <li><a href="#">Curriculum Editor <img src="{{ asset('assets/frontend/img/close-i.png') }}"/> <img src="images/close-i.png"></a></li>
                 <li><a href="#">Assessment Specialist<img src="images/close-i.png"></a></li>
                 <li><a href="#">E-learning Develpper<img src="images/close-i.png"></a></li>
               </ul>

@@ -19,7 +19,7 @@ class Create extends Modal
 
     public function mount()
     {
-        $this->institutions = University::where('country_id', 14)->get();
+        $this->institutions = University::where('country_id', 12)->get();
         $this->degrees = Degree::get();
         $this->fields = Expertise::expertise()->isChild()->get();
         $this->years = years();
@@ -29,9 +29,10 @@ class Create extends Modal
     {
         $this->form->create();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Education::class);
+        $this->dispatch('refresh')->to(\App\Livewire\Profile\Edit\Education::class);
         $this->close();
     }
-    
+
     public function render()
     {
         return view('livewire.profile.education.create');

@@ -7,9 +7,15 @@ use App\Http\Controllers\Frontend\Auth\NewPasswordController;
 use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ConversationController;
+use App\Http\Controllers\Frontend\ClientDashboardController;
+use App\Http\Controllers\Frontend\ClientProfileController;
+use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\ExpertController;
+use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\NotificationsController;
+use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
@@ -34,7 +40,7 @@ Route::view('/components/widgets', 'sidebar-widget');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
-Route::get('/find-experts', [ExpertController::class, 'index'])->name('find.experts');
+Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
@@ -52,12 +58,28 @@ Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middl
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
-Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
-Route::get('/profile/create', [ProfileController::class, 'create'])->middleware('auth')->name('profile.create');
+Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
+Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
+Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
+Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
 
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
+Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
+Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
+Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
 
-Route::get('/projects/create', [ProjectController::class, 'create'])->middleware('auth')->name('projects.create');
+
+Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
+Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
+
+Route::get( '/notifications', [
+    NotificationsController::class,
+    'notifications'
+] )->middleware( [ 'auth' ] )->name('notifications');
+Route::get( '/notification-settings', [
+    NotificationsController::class,
+    'notificationSettings'
+] )->middleware( [ 'auth' ] )->name( 'notifications.settings' );
 
 // Nel test
 Route::get('/conversation/create', [ConversationController::class, 'store'])->middleware('auth')->name('conversation.create');

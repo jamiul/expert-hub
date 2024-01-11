@@ -15,9 +15,31 @@
     }
 }
 
+.icon-field-wrapper {
+    position: relative;
+}
+
+.form-input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
 .form-input-group {
     margin-bottom: 12px;
     position: relative;
+
+    &.label-inline {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
 
     .form-input-label {
         font-size: 0.875rem;
@@ -50,18 +72,11 @@
                 right: 0;
             }
         }
-
-        .form-input-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-        }
     }
 
+
     &.input-field-md {
-        .form-input-field{
+        .form-input-field {
             height: 42px;
         }
     }
@@ -109,6 +124,10 @@
 
     &.input-field-control-lg {
         height: 46px;
+    }
+
+    &.input-field-control-md {
+        height: 42px;
     }
 }
 
@@ -430,6 +449,15 @@ select.input-field-control {
                 }
             }
         }
+    }
+}
+
+.input-group {
+    .input-field-control {
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+        min-width: 0;
     }
 }
 

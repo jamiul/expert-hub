@@ -57,7 +57,7 @@
                                                                     </div>
                                                                     <div class="hire-text">
                                                                         <h4>{{ $team->user->full_name }}</h4>
-                                                                        <p>{{ $team->expertField ? $team->expertField->name : '' }}
+                                                                        <p>{{ $team->expertField ? $team->expertField->parent->name : '' }}
                                                                         </p>
                                                                     </div>
                                                                 </a>

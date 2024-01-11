@@ -34,6 +34,7 @@ class Edit extends Modal
     {
         $this->form->update();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Education::class);
+        $this->dispatch('refresh')->to(\App\Livewire\Profile\Edit\Education::class);
         $this->close();
     }
 

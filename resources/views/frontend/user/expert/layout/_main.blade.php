@@ -6,6 +6,10 @@
     @include('frontend.user.expert.partials._navbar')
 
     @yield('content')
+    @livewire('modal-pro')
+    <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
+
+    <x-toaster />
 
     @include('frontend.layouts.front-footer')
 
@@ -15,7 +19,6 @@
     @include('frontend.layouts.front-js')
 
     @stack('js')
-
 
 </body>
 
