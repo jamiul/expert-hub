@@ -562,3 +562,37 @@
         cursor: pointer;
     }
 }
+
+.find-expert-layout {
+    & > div {
+        position: relative;
+    }
+
+    .toggle-sidebar {
+        position: absolute;
+        left: -20px;
+        background: #191D24;
+    }
+
+    .page-content {
+        padding: 0 !important;
+    }
+}
+
+.modal-form-btn {
+    .btn {
+        border-width: 2px;
+    }
+
+    .btn-outline-light {
+        border-color: #E7E5EF;
+        color: rgba(25, 29, 36, 0.70);
+    }
+}
+
+.modal-form-instruction {
+    a {
+        color: $edu-primary-color;
+        text-decoration: underline;
+    }
+}
