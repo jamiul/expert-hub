@@ -10,7 +10,7 @@ class EoiController extends Controller
 {
     public function create(Project $project)
     {
-        return view('frontend.eoi.create', [
+        return view('frontend.project.eoi.create', [
             'project' => $project
         ]);
     }
