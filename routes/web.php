@@ -71,4 +71,11 @@ Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->mi
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
 
-Route::get('/notifications', [NotificationsController::class, 'notifications'])->middleware(['auth'])->name('notifications');
+Route::get( '/notifications', [
+    NotificationsController::class,
+    'notifications'
+] )->middleware( [ 'auth' ] )->name('notifications');
+Route::get( '/notification-settings', [
+    NotificationsController::class,
+    'notificationSettings'
+] )->middleware( [ 'auth' ] )->name( 'notifications.settings' );
