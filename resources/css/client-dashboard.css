@@ -3006,6 +3006,11 @@ button.btn-with-draw {
   font-style: normal;
 }
 
+.without-draw-button {
+  display: flex;
+  align-items: center;
+}
+
 span.payment-text {
   display: flex;
   justify-content: center;
@@ -8133,9 +8138,208 @@ font-weight: 400;
 /* ============================== Book Consultant End Here ============================= */
 
 
+.edux-billing-method-area {
+  display: flex;
+  width: 100%;
+  gap: 48px;
+}
+.edux-billing-method-content {
+  width: calc(100% - 400px);
+}
+.edux-billing-method-right-sidebar {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  max-width: 400px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  border: 2px solid  #E7E5EF;
+  background: #FFF;
+  width: 100%;
+}
+
+.edux-billing-method-content h2 {
+  color: #191D24;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.edux-billing-method-content p {
+  color: #191D24;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-paypal-billing {
+  display: flex;
+  align-items: center;
+}
+
+.edux-paypal-billing .form-radio-group {
+  margin-bottom: 7px;
+  margin-top: 0px;
+  padding-top: 0px;
+  display: flex;
+}
+
+.edux-btn-paypal{
+  color: #0036E3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  padding: 2px 16px 1px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23px;
+  border: 2px solid #0036E3;
+
+}
+
+.edux-btn-paypal:hover{
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  padding: 2px 16px 1px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23px;
+  border: 2px solid #0036E3;
+  background-color: #0036E3;
+
+}
+
+.eudx-visa-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edux-paypal-visa-billing-area {
+  display: flex;
+  padding: 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 54, 227, 0.20);
+  background: rgba(0, 54, 227, 0.05);
+}
+
+.edux-paypal-visa-billing .edux-btn-border-primary{
+  max-width: 230px;
+}
+.book-expert-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid  #E7E5EF;
+  width: 100%;
+}
+
+.profile-mile-ester {
+  display: flex;
+  align-items: center;
+  gap:8px;
+}
+
+.profile-mile-ester p{
+  margin-bottom: 0px;
+}
+.edux-book-expert-time h4{
+  color:  #191D24;
+  font-family: Colfax;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-total-slot-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid  #E7E5EF;
+}
+.eudx-total-slot-area ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  gap: 16px;
+}
+.eudx-total-slot-area ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  color:#191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-total-slot-count{
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-total-slot-area ul li a{
+  color: #0036E3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+.edux-book-expert-time{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.edux-check-and-fund {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 12px;
+}
+
+.edux-check-and-fund p{
+color:  #191D24;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+margin-bottom: 32px;
+}
+
+.edux-check-and-fund .btn {
+  max-width: 100% !important;
+}
+
+.edux-paypal-billing span{
+  color: #303744;
+  font-family: Colfax;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+}
 
 
-
+.edux-check-and-fund p a{
+  color:  #0036E3;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration-line: underline;
+  }
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
@@ -8418,6 +8622,11 @@ header.client-header {
     margin: 0px auto;
   }
 
+  .edux-paypal-billing span {
+    font-size: 10px;
+
+}
+
   }
 
 @media only screen and (max-width: 991px) {
@@ -8511,6 +8720,21 @@ header.client-header {
   padding: 0px 20px;
 }
 
+.edux-paypal-title {
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+}
+
+.me-2.edux-paypal-title img {
+  width: 32px;
+  height: 32px;
+}
+.edux-paypal-billing {
+  display: flex;
+  align-items: flex-start;
+}
+
 }
 
 
@@ -8519,6 +8743,15 @@ header.client-header {
 
 
 @media only screen and (max-width: 768px) {
+
+  .slot-item-area {
+    padding-right: 0px;
+}
+
+.flatpickr-calendar {
+  width: 100% !important;
+}
+
   ul.edux-selected-slot.edux-selected-slot-more {
     margin: 0px !important;
 }
@@ -8658,6 +8891,36 @@ header.client-header {
   flex-direction: column;
 }
 
+.edux-billing-method-area {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 48px;
+}
+.edux-billing-method-content {
+  width: 100%;
+}
+
+.edux-billing-method-right-sidebar {
+  width: 100%;
+  max-width: 100%;
+}
+
+.edux-paypal-visa-billing .single-button {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.edux-paypal-title {
+  display: flex;
+  flex-direction: row;
+}
+.edux-paypal-billing span {
+  font-size: 15px;
+}
+
 
 }
 
@@ -8707,6 +8970,17 @@ header.client-header {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .edux-paypal-billing span {
+    font-size: 12px;
+}
+
+.edux-btn-paypal {
+
+  font-size: 10px;
+  padding: 2px 10px 1px 10px;
+
+}
 
   .edux-selected-slot li {
     margin: 5px 3px;
@@ -9291,6 +9565,18 @@ ul.progress-bar-nav-horizontal li strong {
 
   .single-slot {
     padding: 5px 35px 3px;
+}
+
+.edux-paypal-visa-billing-area {
+  padding: 16px 5px;
+
+}
+.edux-paypal-visa-billing .edux-btn-border-primary {
+  max-width: 100%;
+}
+.edux-check-and-fund p {
+  font-size: 13px;
+
 }
 
 }
