@@ -52,10 +52,10 @@
                                 <h3 class="mb-2 text-base">What is the rate you'd like to bid for this job?</h3>
                                 <div class="d-flex align-items-center text-sm gap-3">
                                     <div class="">
-                                        Your profile rate: <strong class="fw-medium">$150.00</strong> /hr
+                                        Your profile rate: <strong class="fw-medium">${{ auth()->user()->profile->hourly_rate }}</strong> /hr
                                     </div>
                                     <div class="">
-                                        Client’s budget: <strong class="fw-medium">$200.00</strong> /hr
+                                        Client’s budget: <strong class="fw-medium">${{ $project->budget_start_amount }}</strong> /hr
                                     </div>
                                 </div>
                                 <div class="service-fee-input-area">
@@ -72,7 +72,7 @@
                                                 <div>
                                                     <input type="text"
                                                            class="input-field-control input-field-control-lg"
-                                                           placeholder="$0.00" value="150.00">
+                                                           placeholder="$0.00" value="{{ auth()->user()->profile->hourly_rate }}">
                                                 </div>
                                             </div>
                                         </div>
