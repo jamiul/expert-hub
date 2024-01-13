@@ -38,4 +38,9 @@ class Project extends Model implements HasMedia
             ->withTimestamps();
     }
 
+    public function eois()
+    {
+        return $this->hasMany(Eoi::class);
+    }
+
 }

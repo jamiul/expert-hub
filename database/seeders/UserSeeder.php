@@ -55,10 +55,16 @@ class UserSeeder extends Seeder
             }
             if($user['type'] == ProfileType::Expert->value){
                 $profile = Profile::find($profile_id);
-                $imagePath = database_path('/data/users/'. $user['image']);
+                if($user['image']){
+                    $imagePath = database_path('/data/users/' . $user['image']);
+                    $imageName = $user['image'];
+                }else{
+                    $imagePath = database_path('/data/users/dummy-user.png');
+                    $imageName = 'dummy-user.png';
+                }
                 $profile->addMedia($imagePath)
                     ->preservingOriginal()
-                    ->usingName($user['image'])
+                    ->usingName($imageName)
                     ->toMediaCollection('picture');
                 $profile->update([
                     'expertise_id' => $user['expertise'],
