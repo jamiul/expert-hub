@@ -63,7 +63,7 @@
         <x-form.input type="email" label="Email" wire:model="email" placeholder="Email"/>
         <x-form.password label="Password" wire:model="password" placeholder="Password"/>
         <x-form.input type="number" label="Hourly Rate" wire:model="rate" placeholder="Hourly Rate"/>
-        <x-form.input type="text" readonly label="Type" wire:model="type" placeholder="Type" value="Expert"/>
+        <x-form.input type="text" label="Type" wire:model="type" placeholder="Type" value="Expert"/>
         <x-form.textarea label="Bio" wire:model="bio" placeholder="Bio">
             lorem
         </x-form.textarea>
@@ -121,4 +121,6 @@
 
         <button type="submit">Submit</button>
     </form>
+
 </div>
+

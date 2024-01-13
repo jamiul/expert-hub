@@ -6,6 +6,7 @@
 'inline' => 'false',
 'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
+'tooltip' => null,
 ])
 <div
     x-data="{
@@ -27,7 +28,14 @@
     class="form-input-group {{ $attributes->get('class') }}"
 >
     @if($label) <label class="form-input-label">{{ $label }} @if($required)<span
-            class="form-input-required">*</span>@endif</label>@endif
+            class="form-input-required">*</span>@endif
+        @if($tooltip)
+            <div class="tooltip-wrapper bottom-left">
+                <x-icon.info fill="#BABABA"/>
+                <span class="tooltip-content"> {{$tooltip}} </span>
+            </div>
+        @endif
+    </label>@endif
     <div class="icon-field-wrapper @if($inline == 'true') inline-calendar @endif">
         <input
             type="text"

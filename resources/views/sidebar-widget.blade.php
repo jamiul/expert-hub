@@ -268,7 +268,7 @@
                                         <label class="widget-title-switch">
                                             <input type="checkbox" role="switch" name="project-type">
                                             <span class="switch-label">
-                                                <span class="checkbox-indicator-area">
+                                                <span class="switch-track">
                                                     <span class="switch-indicator"></span>
                                                 </span>
                                                 <span class="switch-default-label" aria-hidden="true">Fixed</span>
@@ -283,6 +283,21 @@
                                           placeholder="Min"/>
                             <x-form.input class="input-field-md" type="text" wire:model="type"
                                           placeholder="Max"/>
+                        </div>
+                    </div>
+                    <div class="filter-widget">
+                        <div class="d-flex gap-3 justify-content-between mb-2">
+                            <h4 class="widget-title mb-0">Available Now</h4>
+                            <span>
+                                <label class="widget-title-switch widget-on-off-switch">
+                                    <input type="checkbox" role="switch" name="project-type">
+                                    <span class="switch-label">
+                                        <span class="switch-track">
+                                            <span class="switch-indicator"></span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </span>
                         </div>
                     </div>
                     <div class="filter-widget">
