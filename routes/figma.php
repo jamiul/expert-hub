@@ -44,6 +44,8 @@ Route::group(['prefix' => 'figma'], function () {
 
     //expert profile
     Route::view('/expert-profile', 'figma.expert-profile');
+    Route::view('/expert-public-profile', 'figma.expert-public-profile');
+    Route::view('/not-avilable-expert-public-profile', 'figma.not-avilable-expert-public-profile');
 
     //expert status
     Route::view('/expert-status', 'figma.expert-status');
