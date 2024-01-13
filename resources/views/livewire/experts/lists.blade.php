@@ -32,7 +32,7 @@
                     </div>
                     <div class="expert-card-header-action">
                         <button wire:click="favourite({{ $expert->id }})"
-                                class="btn btn-icon btn-outline-light btn-favorite m-1 {{ $expert->favourited() ? 'favourited' : ''}}">
+                                class="btn btn-icon btn-outline-light btn-favorite m-1 {{ $expert->favourited() ? 'favorited' : ''}}">
                             <span class="heart-line"> <x-icon.heart fill="#0036E3"/></span>
                             <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
                         </button>

@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Project\Eoi;
 
+use App\Enums\EoiStatus;
 use App\Models\Project;
+use App\Notifications\EOIClientNotification;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -50,10 +52,22 @@ class Create extends Component
             'expert_id' => auth()->user()->profile->id,
             'amount' => $data['amount'],
             'cover_letter' => $data['cover_letter'],
-            'status' => 'Submitted',
+            'status' => EoiStatus::Submitted,
         ]);
-
-        dd($eoi);
+        foreach ($this->attachments as $attachment) {
+            $fileName = $attachment->getClientOriginalName() . '-' . time() . '.' . $attachment->extension();
+            $eoi->addMedia($attachment->getRealPath())
+                ->usingName($fileName)
+                ->toMediaCollection('attachments');
+        }
+        $this->project->client->user->notify(new EOIClientNotification([
+            'title'   => 'New Eoi Submitted',
+            'message' => '',
+            'link'    => $this->project->slug,
+            'button' => 'View proposal',
+            'avatar'  => auth()->user()->profile->picture,
+        ]));
+        $this->redirect(route('projects.show', $this->project));
     }
 
     public function render()
