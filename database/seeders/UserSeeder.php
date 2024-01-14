@@ -52,6 +52,17 @@ class UserSeeder extends Seeder
                     'current_role' => 'Director',
                     'current_organization' => 'Sydney Islamic Business School',
                 ]);
+                if ($user['image']) {
+                    $imagePath = database_path('/data/users/' . $user['image']);
+                    $imageName = $user['image'];
+                } else {
+                    $imagePath = database_path('/data/users/dummy-user.png');
+                    $imageName = 'dummy-user.png';
+                }
+                $profile->addMedia($imagePath)
+                    ->preservingOriginal()
+                    ->usingName($imageName)
+                    ->toMediaCollection('picture');
             }
             if($user['type'] == ProfileType::Expert->value){
                 $profile = Profile::find($profile_id);
