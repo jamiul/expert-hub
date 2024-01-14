@@ -82,6 +82,7 @@
       </div>
     </div>
   </div>
+</div>
   <!--End Modal -->
   <!-- Date time Picker js -->
   @endsection
