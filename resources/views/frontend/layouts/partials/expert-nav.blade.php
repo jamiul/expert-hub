@@ -7,12 +7,12 @@
         </div>
         <nav class="main-header-nav">
             <ul>
-                <li>
+                {{-- <li>
                     <a href="/expert/profile/edit">Profile</a>
                 </li>
                 <li>
                     <a href="/figma/expert-status-analytics">Analytics</a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/figma/expert-services">My Services</a>
                 </li>
@@ -35,14 +35,14 @@
                 <li>
                     <a href="/find-projects">Find Projects</a>
                 </li>
-                <li class="item-has-submenu">
+                {{-- <li class="item-has-submenu">
                     <a href="/figma/expert-notification-settings">Settings</a>
                     <ul>
                         <li><a href="/figma/client-passwordsecurity">Password & Security</a></li>
                         <li><a href="/figma/expert-id-verify">Identity Verification</a></li>
                         <li><a href="/notification-settings">Notification</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </nav>
 

@@ -15,7 +15,7 @@
                     </ul>
                 </li>
                 <li class="item-has-submenu">
-                    <a href="/figma/client-clientaddpayment">Billing & Payments </a>
+                    <a href="/figma/client-clientaddpayment">Reports</a>
                     <ul>
                         <li><a href="/figma/client-clientaddpayment">Add Payment Method</a></li>
                         <li><a href="/figma/client-weeklyreportsummary">Weekly Summery</a></li>
@@ -25,24 +25,24 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('find.experts') }}">Find Experts</a>
+                    <a href="{{ route('find.experts') }}">Experts</a>
                 </li>
                 <li>
-                    <a href="{{ route('scholarship-database') }}">Find Scholarships</a>
+                    <a href="{{ route('scholarship-database') }}">Scholarships</a>
                 </li>
                 <li>
-                    <a href="/find-training">Find Trainings</a>
+                    <a href="/find-training">Trainings</a>
                 </li>
-                <li class="item-has-submenu">
+                {{-- <li class="item-has-submenu">
                     <a href="/figma/client-passwordsecurity">Settings</a>
                     <ul>
                         <li><a href="/figma/client-passwordsecurity">PassWord & Security</a></li>
                         <li><a href="/notification-settings">Notification</a></li>
                     </ul>
-                </li>
-                <li>
+                </li> --}}
+                {{-- <li>
                     <a href="/figma/client-chatbox-new">Message</a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
 
