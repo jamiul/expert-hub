@@ -2,7 +2,7 @@
     <div class="container">
         <div class="heading">
             <h4>Instructor</h4>
-            <h2>Meet Our Scholarship Experts for Consultation</h2>
+            <h2>Meet Our Experts</h2>
         </div>
         <div id="owl-carousel" class="owl-carousel owl-theme">
             <div class="item">
