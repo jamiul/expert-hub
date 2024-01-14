@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Models\MessageRecipient;
+use Auth;
 use Livewire\Component;
 
 class NewMessageCount extends Component
@@ -21,8 +23,8 @@ class NewMessageCount extends Component
     {
         $unread_notifications = auth()->user()->unreadNotifications()->get();
         
-        // $unreadMessageCount          = auth()->user()->unreadNotifications()->count();
-        $unreadMessageCount          = 3;
+        $unreadMessageCount          = MessageRecipient::whereNull('seen_at')->where('recipient_profile_id', '=', auth()->user()->profile->id)->count();
+        // $unreadMessageCount          = 3;
 
         return view( 'livewire.new-message-count', compact( 'unread_notifications', 'unreadMessageCount' ) );
     }
