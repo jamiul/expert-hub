@@ -367,29 +367,29 @@
 .widget-title-switch {
     display: flex;
 
-
     .switch-label {
         display: flex;
         align-items: center;
         cursor: pointer;
         gap: 8px;
 
-        .checkbox-indicator-area {
+        .switch-track {
             padding: 10px;
-            border-radius: 10px;
-            width: 40px;
+            border-radius: 25px;
+            width: 45px;
+            height: 26px;
             background-color: #D3D3D3;
             display: block;
             border: 1px solid #cccccc;
             position: relative;
 
             .switch-indicator {
-                width: 16px;
-                height: 16px;
+                width: 20px;
+                height: 20px;
                 background-color: #ffffff;
                 display: block;
                 position: absolute;
-                left: 2px;
+                left: 4px;
                 border-radius: 20px;
                 top: 2px;
                 transition: 0.2s;
@@ -408,11 +408,11 @@
         &[ role = "switch" ]:checked {
             ~ .switch-label {
                 //display: none;
-                .checkbox-indicator-area {
+                .switch-track {
                     background-color: $edu-primary-color;
 
                     .switch-indicator {
-                        right: 2px;
+                        right: 4px;
                         left: auto;
                     }
                 }
@@ -423,6 +423,56 @@
 
                 .switch-alt-label {
                     display: none;
+                }
+            }
+        }
+    }
+
+    &.widget-on-off-switch {
+
+        .switch-track {
+            width: 60px;
+
+            &:before,
+            &:after {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: 0.2s;
+                font-size: 14px;
+                color: #fff;
+                font-weight: 500;
+                line-height: 12px;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            &:after {
+                right: 5px;
+                content: "OFF";
+            }
+        }
+
+        input {
+            &[ role = "switch" ]:checked {
+                ~ .switch-label {
+                    .switch-track {
+                        background-color: #369450;
+
+                        &:before {
+                            display: block;
+                            content: "ON";
+                            left: 5px;
+                        }
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+
                 }
             }
         }
