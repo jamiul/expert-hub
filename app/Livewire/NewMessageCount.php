@@ -3,29 +3,23 @@
 namespace App\Livewire;
 
 use App\Models\MessageRecipient;
-use Auth;
+use Illuminate\Support\Carbon;
 use Livewire\Component;
 
 class NewMessageCount extends Component
 {
-    public function markAsRead( $id )
+    public function markAsSeen($id)
     {
-        $notification = auth()->user()->notifications()->where( 'id', $id )->first();
+        MessageRecipient::where('id', $id)->update(['seen_at' => Carbon::now()]);
 
-        if ( $notification ) {
-            $notification->markAsRead();
-
-            return redirect( $notification->data['link'] );
-        }
+        return redirect('figma/client-chatbox-new');
     }
 
     public function render()
     {
-        $unread_notifications = auth()->user()->unreadNotifications()->get();
+        $unreadMessages = MessageRecipient::with('message')->whereNull('seen_at')->where('recipient_profile_id', 2)->get();
+        $unreadMessageCount = MessageRecipient::whereNull('seen_at')->where('recipient_profile_id', '=', auth()->user()->profile->id)->count();
         
-        $unreadMessageCount          = MessageRecipient::whereNull('seen_at')->where('recipient_profile_id', '=', auth()->user()->profile->id)->count();
-        // $unreadMessageCount          = 3;
-
-        return view( 'livewire.new-message-count', compact( 'unread_notifications', 'unreadMessageCount' ) );
+        return view('livewire.new-message-count', compact('unreadMessages', 'unreadMessageCount'));
     }
 }

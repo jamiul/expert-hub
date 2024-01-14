@@ -10,4 +10,9 @@ class Message extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function messageRecipients()
+    {
+        return $this->hasMany(MessageRecipient::class);
+    }
 }
