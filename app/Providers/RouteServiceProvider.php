@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/figma.php'));
 
-            Route::middleware(['web'])
+            Route::middleware('web')
                 ->prefix('admin')
                 ->group(base_path('routes/admin.php'));
         });

@@ -12,5 +12,13 @@ class AuthenticatedSessionController extends Controller
         return view('admin.auth.login');
     }
 
-    
+    public function logout()
+    {
+        auth()->guard('admin')->logout();
+
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return redirect()->route('home');
+    }
 }
