@@ -82,8 +82,11 @@
                                     Treds</a>
                                 <a href="#" class="expert-profile-tag">Educational
                                     Research</a>
+
                                 <a href="#" class="expert-profile-tag">System
                                     Development</a>
+
+                                <a href="#" class="expert-profile-tag">+3 More</a>
                             </div>
                       </div>
 
@@ -126,11 +129,7 @@
                         </div>
                         <div class="expert-card-body">
                             <div class="project-expert-summary py-3">
-                                <p>Prof. Miles esther is an accomplished Curriculum
-                                    Development Specialist
-                                    with a distinguished career in education and a track
-                                    record of providing
-                                    consultation services in... <a href="" class="edux-more"> more</a></p>
+                                <p>Prof. Michael is an accomplished Curriculum Development Specialist with a distinguished career in education and a track record of providing consultation services. Holding a PhD in Curriculum and Instruction, Prof. Michael has dedicated expertise in designing innovative curricula, enhancing student engagement, and conducting research on educational best practices particularly in public health education. With a background in curriculum coordination, consultation, and a strong commitment to education, Prof. Michael has made significant contributions to the field. <a href="#">More</a></p>
                             </div>
 
                         </div>
@@ -150,8 +149,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="card card-24 mb-3">
-                                            <div class="card-body">
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body pb-0 pt-0">
                                                 <div class="d-flex gap-3 justify-content-sm-between">
                                                     <div class="mb-2">
                                                         <h6 class="">Director of Curriculum Development</h6>
@@ -169,8 +168,8 @@
 
                                         </div>
 
-                                        <div class="card card-24">
-                                            <div class="card-body">
+                                        <div class="card card-24 border-0">
+                                            <div class="card-body pt-0 pb-0">
                                                 <div class="d-flex gap-3 justify-content-sm-between">
                                                     <div class="mb-2">
                                                         <h6 class="">Director of Curriculum Development</h6>
@@ -195,7 +194,7 @@
 
 
 
-              <div class="consultant-work mb-5 border-0">
+              <div class="consultant-work mb-0 border-0 pt-0">
 
                 <div class="d-flex gap-2 align-items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">

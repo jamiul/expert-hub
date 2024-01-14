@@ -338,7 +338,6 @@ font-size: 14px;
 .portfolio__card .title a:hover { color: #0036E3;text-decoration: underline; }
 
 .portfolio__card .tags span {
-  color: #0036E3;
   font-size: 11px;
   font-weight: 600;
   padding: .25rem .5rem;
@@ -347,7 +346,7 @@ font-size: 14px;
   display: inline-block;
   border-radius: 42px;
   background: #EBEFF7;
-  color: #191D24;
+  color: #6E737C;
   border: 1px solid #EBEFF7;
 }
 
@@ -1128,4 +1127,36 @@ font-weight: 400;
 .find-consultant-details > .container.profile__page > .row .col-md-8 {
   width: calc(100% - 348px);
 }
+}
+
+
+@media only screen and (max-width: 500px) {
+
+  .consultant-work h3 {
+    font-size: 14px;
+
+}
+
+.consultant-work .owl-carousel button.owl-prev {
+  left: -60px;
+}
+
+.portfolioCaousel .owl-nav .owl-prev, .portfolioCaousel .owl-nav .owl-next {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.edux-no-available-booking {
+  padding: 40px 20px;
+
+}
+
+.edux-expert-card-area {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 25px;
+  background-color: #F7F9FE;
+  margin: 32px 0px;
+}
+
 }

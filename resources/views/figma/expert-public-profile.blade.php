@@ -7,7 +7,7 @@
 
 <div class="find-consultant-details">
       <div class="container profile__page edux-profile-page">
-        <div class="row g-0">
+        <div class="edux-billing-method-area">
 
         <div class="col">
         <div class="sidebar-layout left-sidebar-layout find-projects-layout">
@@ -81,12 +81,12 @@
                     <div class="profile-widget user-education-widget">
                         <h4 class="widget-title">Education </h4>
                         <div class="widget-content">
-                            <div class="user-education-box-item">
+                            <div class="user-education-box-item edux-border-bottom">
                                 <p class="text-sm fw-medium mt-1 mb-0">PhD in Public Health</p>
                                 <p class="text-sm fst-italic mb-0">EduExHub University</p>
                                 <p class="text-sm mb-1">1995 - 2000</p>
                             </div>
-                            <div class="user-education-box-item">
+                            <div class="user-education-box-item edux-border-bottom">
                                 <p class="text-sm fw-medium mt-1 mb-0">Master’s in Public Health</p>
                                 <p class="text-sm fst-italic mb-0">EduExHub University</p>
                                 <p class="text-sm mb-1">1993 -1995</p>
@@ -130,7 +130,7 @@
                         <x-icon.info fill="#C8C5D4"/>
                     </button>
                 </div>
-                <div class="consultant-prof1 card-body">
+                <div class="consultant-prof1 card-body border-0 edux-border-bottom">
 
 
 
@@ -160,7 +160,7 @@
                   </div>
                 </div>
 
-                <div class="consultant-prof1 card-body">
+                <div class="consultant-prof1 card-body border-0">
                   <div class="row">
 
                     <div class="col-md-3">
@@ -195,7 +195,7 @@
               <div class="page-block mt-40">
                                 <div class="card card-24">
                                     <div class="card-body">
-                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-0">
                                             <div class="d-flex gap-2 align-items-center">
                                                 <x-icon.user-tie/>
                                                 <h3 class="h5 mb-0">Work Experience</h3>
@@ -205,8 +205,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="card card-24 mb-3">
-                                            <div class="card-body">
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body pb-0 ps-0">
                                                 <div class="d-flex gap-3 justify-content-sm-between">
                                                     <div class="mb-2">
                                                         <h6 class="">Director of Curriculum Development</h6>
@@ -224,8 +224,8 @@
 
                                         </div>
 
-                                        <div class="card card-24">
-                                            <div class="card-body">
+                                        <div class="card card-24 border-0">
+                                            <div class="card-body pt-0 ps-0">
                                                 <div class="d-flex gap-3 justify-content-sm-between">
                                                     <div class="mb-2">
                                                         <h6 class="">Director of Curriculum Development</h6>
@@ -500,8 +500,8 @@
                 </div>
                 <div class="testimonial-button">
                   <a href="#">More Testimonials <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-  <path d="M13.4437 11.9976L8.84375 7.39758L9.89758 6.34375L15.5514 11.9976L9.89758 17.6514L8.84375 16.5976L13.4437 11.9976Z" fill="#0036E3"/>
-</svg> </a>
+                  <path d="M13.4437 11.9976L8.84375 7.39758L9.89758 6.34375L15.5514 11.9976L9.89758 17.6514L8.84375 16.5976L13.4437 11.9976Z" fill="#0036E3"/>
+                </svg> </a>
                 </div>
               </div>
 
