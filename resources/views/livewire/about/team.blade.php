@@ -11,7 +11,7 @@
                         <x-button.link
                             href="{{ route('find.experts') }}"
                             class="btn btn-primary edux-btn-primary"
-                            text="Find Experts"
+                            text="Get Started"
                         />
                     </div>
                 </div>

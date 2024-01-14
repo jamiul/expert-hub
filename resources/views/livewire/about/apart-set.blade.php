@@ -74,7 +74,7 @@
         </div>
 
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="single-button d-flex justify-content-center">
             <x-button.link
                 href="{{ route('auth.login') }}"
@@ -82,5 +82,5 @@
                 text="Get Started"
             />
         </div>
-    </div>
+    </div> -->
 </div>
