@@ -27,6 +27,14 @@
                         </div>
                         <div class="job-post-form">
                             <form wire:submit="save">
+                                <div class="step step-1 my-4">
+                                    <x-form.choice wire:model.change="expertise_id" label="What is your project field">
+                                        <option value="">Select Options</option>
+                                        @foreach ($availableExpertiseFields as $id => $name)
+                                            <option value="{{ $id }}">{{ $name }}</option>
+                                        @endforeach
+                                    </x-form.choice>
+                                </div>
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
                                         <x-form.input type="text" label="What is your project title?" wire:model.blur="title" placeholder="Academic content writer"/>
@@ -76,14 +84,6 @@
                                         </div>
                                     </div> --}}
 
-                                </div>
-                                <div class="step step-3 mt-3">
-                                    <x-form.choice wire:model.change="expertise_id" label="Expertise Field">
-                                        <option value="">Select Expertise Field</option>
-                                        @foreach ($availableExpertiseFields as $id => $name)
-                                            <option value="{{ $id }}">{{ $name }}</option>
-                                        @endforeach
-                                    </x-form.choice>
                                 </div>
                                 <div class="step step-3 mt-3">
                                     <div class="main-form">

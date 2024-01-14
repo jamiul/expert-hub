@@ -7,26 +7,41 @@
         </div>
         <nav class="main-header-nav">
             <ul>
+                <li>
+                    <a href="/expert/profile/edit">Profile</a>
+                </li>
+                <li>
+                    <a href="/figma/expert-status-analytics">Analytics</a>
+                </li>
+                <li>
+                    <a href="/figma/expert-services">My Services</a>
+                </li>
                 <li class="item-has-submenu">
-                    <a href="/figma/client-dashboard">Projects </a>
+                    <a href="/figma/expert-all-contract">My Projects</a>
                     <ul>
-                        <li><a href="">Sub Menu 01</a></li>
-                        <li><a href="">Sub Menu 02</a></li>
-                        <li><a href="">Sub Menu 03</a></li>
-                        <li><a href="">Sub Menu 04</a></li>
-                        <li><a href="">Sub Menu 05</a></li>
+                        <li><a href="/figma/expert-active-contract">Active Contracts</a></li>
+                        <li><a href="/figma/expert-all-contract">All Contracts</a></li>
+                        <li><a href="/figma/expert-work-diary">Work Diary</a></li>
+                        <li><a href="/figma/expert-job-offer/figma/expert-saved-jobs">Job Offers</a></li>
+                        <li><a href="/figma/expert-saved-jobs">Saved Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="item-has-submenu">
+                    <a href="/expert-get-paid">Billing & Payments</a>
+                    <ul>
+                        <li><a href="/expert-get-paid">Get Paid</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/figma/client-dashboardexperthire">Experts</a>
+                    <a href="/find-projects">Find Projects</a>
                 </li>
-
-                <li>
-                    <a href="/figma/client-clientaddpayment">Billing & Payments</a>
-                </li>
-
-                <li>
-                    <a href="/figma/client-passwordsecurity">Settings</a>
+                <li class="item-has-submenu">
+                    <a href="/figma/expert-notification-settings">Settings</a>
+                    <ul>
+                        <li><a href="/figma/client-passwordsecurity">Password & Security</a></li>
+                        <li><a href="/figma/expert-id-verify">Identity Verification</a></li>
+                        <li><a href="/notification-settings">Notification</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -38,13 +53,10 @@
                     <label for="header-search-type">
                         <x-icon.chevron-right width="18" height="18"/>
                     </label>
-                    <input type="text" value="Expert" id="header-search-type">
+                    <input type="text" value="Project" id="header-search-type">
                     <ul>
-                        <li> My Projects</li>
-                        <li> Proposals</li>
-                        <li> All Contracts</li>
-                        <li> Save jobs</li>
-                        <li> Work Diary</li>
+                        <li>Project</li>
+                        <li>Scholarship</li>
                     </ul>
                 </div>
                 <button>
