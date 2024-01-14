@@ -99,6 +99,8 @@
 .form-radio-group .form-radio-options {
     display: flex;
     flex-direction: column;
+    gap: 8px 15px;
+    padding: 5px 0;
 }
 
 .form-radio-group.form-radio-inline .form-radio-options {
@@ -106,7 +108,7 @@
 }
 
 .form-radio-group.form-radio-inline .form-radio-option {
-    margin-right: 15px;
+    /*margin-right: 15px;*/
 }
 
 .form-radio-group .form-radio-field {
@@ -417,6 +419,7 @@
     z-index: 1;
     cursor: pointer;
 }
+
 .edux-sidebar-layout {
     display: grid;
     border-radius: 7px;
@@ -426,7 +429,7 @@
 }
 
 .btn-edux-wishlist.show {
-    background: #0036e3;
+    background: #0036E3;
 }
 
 .btn-edux-wishlist.show svg path {
@@ -445,6 +448,15 @@
     padding: 16px 0;
     align-items: center;
     border-bottom: 1px solid #e7e5ef;
+}
+
+.scholarship-database-content-list-item {
+    display: grid;
+    grid-template-columns: 72px auto 300px;
+    gap: 10px;
+    padding: 16px 0;
+    align-items: center;
+    border-bottom: 1px solid #E7E5EF;
 }
 
 /*@Abdur Rahman todo move to sass */

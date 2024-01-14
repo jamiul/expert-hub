@@ -1,6 +1,7 @@
 @props([
     'name' => $attributes->whereStartsWith('wire:model')->first(),
     'label' => null,
+    'tooltip' => null,
     'id' => $attributes->whereStartsWith('wire:model')->first(),
     'required' => false,
     'options' => [],
@@ -8,13 +9,21 @@
 ])
 
 <div class="form-radio-group @if($inline) form-radio-inline @endif {{ $attributes->get('class') }}">
-    <label class="form-radio-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif</label>
+    <label class="form-radio-label">{{ $label }} @if($required)<span class="form-input-required">*</span>@endif
+        @if($tooltip)
+            <div class="tooltip-wrapper bottom-left">
+                <x-icon.info fill="#BABABA"/>
+                <span class="tooltip-content"> {{$tooltip}} </span>
+            </div>
+        @endif
+
+    </label>
     <div class="form-radio-options">
         @foreach ($options as $key => $value)
             <div class="form-radio-option">
-                <input 
+                <input
                     type="radio"
-                    name="{{ $name }}" 
+                    name="{{ $name }}"
                     id="{{ $value }}"
                     class="form-radio-field form-check-input{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"
                     {{ $attributes->whereDoesntStartWith('class') }}

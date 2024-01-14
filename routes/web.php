@@ -9,12 +9,13 @@ use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\DashboardController;
+use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\NotificationsController;
-use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
@@ -36,6 +37,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/components', 'components');
 Route::view('/components/icons', 'icons');
 Route::view('/components/widgets', 'sidebar-widget');
+Route::view('/components/cards', 'cards');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
@@ -70,6 +72,7 @@ Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->mi
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
+Route::get('/projects/{project}/eoi/create', [EoiController::class, 'create'])->middleware(['auth', 'expert'])->name('eoi.create');
 
 Route::get( '/notifications', [
     NotificationsController::class,
