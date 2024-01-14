@@ -101,7 +101,40 @@
 
                                 <!-- Show content based on selected contactType -->
                                 <div x-show="contactType === 'hourly'" class="hourly-offer-content">
-                                    <h3>I am hourly</h3>
+                                    <div class="form-input-group">
+                                        <label class="form-input-label">Pay by the hours
+                                            <div class="tooltip-wrapper bottom-left">
+                                                <x-icon.info fill="#BABABA"/>
+                                                <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
+                                            </div>
+                                        </label>
+                                        <input name="type" id="type" class="form-input-field" type="text"
+                                               placeholder="Type" value="$100">
+                                        <span class="text-sm py-1">Professor Miles Esther’s profile rate is $200.00/hr </span>
+                                    </div>
+                                    <div class="form-input-group">
+                                        <label class="form-input-label">Weekly Limits
+                                            <div class="tooltip-wrapper bottom-left">
+                                                <x-icon.info fill="#BABABA"/>
+                                                <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
+                                            </div>
+                                        </label>
+                                        <input name="type" id="type" class="form-input-field" type="text"
+                                               placeholder="Type" value="30 hrs / week">
+                                        <span class="text-sm py-1">$3000.00 max/week </span>
+                                    </div>
+                                    <p class="input-field-label d-inline">Manual Time
+                                    <span class="tooltip-wrapper bottom-left">
+                                        <x-icon.info fill="#BABABA"/>
+                                        <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+                                    </span>
+                                    </p>
+                                    <x-form.check wire:model="ManualTime">
+                                        Allow Expert to log time manually if needed
+                                    </x-form.check>
+                                    <x-form.flatpicker tooltip="Lorem ipsum dolor sit amet" label="Start Date"
+                                                       name="datepicker"/>
+
                                 </div>
 
                                 <div x-show="contactType === 'fixed'" class="fixed-price-offer-content">
@@ -160,10 +193,10 @@
                                         <div x-show="fixedProjectType === 'milestoneProject'">
                                             <!-- Content for milestoneProject -->
                                             <p class="input-field-label d-inline">Project Milestones
-                                            <div class="tooltip-wrapper bottom-left">
+                                            <span class="tooltip-wrapper bottom-left">
                                                 <x-icon.info fill="#BABABA"/>
                                                 <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-                                            </div>
+                                            </span>
                                             </p>
                                             <div class="card mb-3">
                                                 <div class="card-body">
