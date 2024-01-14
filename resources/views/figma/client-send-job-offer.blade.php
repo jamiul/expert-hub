@@ -260,7 +260,8 @@
 
                             <div class="mb-40">
                                 <button class="btn btn-md btn-outline-primary my-2 me-2">Back</button>
-                                <button class="btn btn-md btn-primary my-2">Submit</button>
+                             <!--   <button class="btn btn-md btn-primary my-2" >Submit</button>--->
+                                <a class="btn btn-md btn-primary my-2" href="/figma/project/client-send-job-offer-view/" >Submit</a>
                             </div>
 
                         </div>
