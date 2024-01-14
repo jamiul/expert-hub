@@ -16,11 +16,6 @@
                                 <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
                                 <label class="form-radio-title  edux-form-radio-title me-4" for="Male"> <span class="me-1 edux-paypal-title"> <img src="{{ asset('assets/frontend/img/mastercard.png') }}" alt="all-card"> </span> <span>Master ending in 8698</span> </label>
                             </div>
-
-
-
-
-
                             <span class="edux-btn-paypal">Primary</span>
 
                             </div>
