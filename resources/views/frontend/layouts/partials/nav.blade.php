@@ -13,11 +13,10 @@
                         </label>
                         <input type="text" value="Expert" id="header-search-type">
                         <ul>
-                            <li> My Projects</li>
-                            <li> Proposals</li>
-                            <li> All Contracts</li>
-                            <li> Save jobs</li>
-                            <li> Work Diary</li>
+                            <li>Expert</li>
+                            <li>Project</li>
+                            <li>Training</li>
+                            <li>Scholarship</li>
                         </ul>
                     </div>
                     <button>

@@ -15,7 +15,7 @@
                         </div>
                         <div class="notification-dropdown-info">
                             <p class="text-sm fw-medium notification-dropdown-title">{{ @$unread_notification->data['title'] }}</p>
-                            <p class="text-sm">
+                            <p class="text-sm notification-dropdown-body">
                                 <span class="notification-dropdown-message">{{ Str::limit($unread_notification->data['message'], $limit = 150, $end = '...') }}</span>
                                 <span class="notification-dropdown-time">{{ $unread_notification->created_at->diffForHumans() }}</span>
                             </p>

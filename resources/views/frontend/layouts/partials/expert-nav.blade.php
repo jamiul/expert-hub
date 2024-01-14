@@ -7,42 +7,33 @@
         </div>
         <nav class="main-header-nav">
             <ul>
-                <li>
-                    <a href="/expert/profile/edit">Profile</a>
-                </li>
-                <li>
-                    <a href="/figma/expert-status-analytics">Analytics</a>
-                </li>
-                <li>
-                    <a href="/figma/expert-services">My Services</a>
-                </li>
                 <li class="item-has-submenu">
-                    <a href="/figma/expert-all-contract">My Projects</a>
+                    <a href="#">Projects</a>
                     <ul>
-                        <li><a href="/figma/expert-active-contract">Active Contracts</a></li>
-                        <li><a href="/figma/expert-all-contract">All Contracts</a></li>
-                        <li><a href="/figma/expert-work-diary">Work Diary</a></li>
-                        <li><a href="/figma/expert-job-offer/figma/expert-saved-jobs">Job Offers</a></li>
-                        <li><a href="/figma/expert-saved-jobs">Saved Jobs</a></li>
+                        <li><a href="/figma/project/client-job-posts">My project</a></li>
+                        <li><a href="/find-projects">Find project</a></li>
                     </ul>
                 </li>
                 <li class="item-has-submenu">
-                    <a href="/expert-get-paid">Billing & Payments</a>
+                    <a href="#">Reports</a>
                     <ul>
-                        <li><a href="/expert-get-paid">Get Paid</a></li>
+                        <li><a href="/expert/profile/edit">My profile</a></li>
+                        <li><a href="/figma/expert-status-analytics">Analytic</a></li>
+                        <li><a href="/expert-get-paid">Billings & Payment</a></li>
+                    </ul>
+                </li>
+
+                <li class="item-has-submenu">
+                    <a href="#">Services</a>
+                    <ul>
+                        <li><a href="">My Consultation</a></li>
+                        <li><a href="">My Training</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/find-projects">Find Projects</a>
+                    <a href="/find-training">Trainings</a>
                 </li>
-                <li class="item-has-submenu">
-                    <a href="/figma/expert-notification-settings">Settings</a>
-                    <ul>
-                        <li><a href="/figma/client-passwordsecurity">Password & Security</a></li>
-                        <li><a href="/figma/expert-id-verify">Identity Verification</a></li>
-                        <li><a href="/notification-settings">Notification</a></li>
-                    </ul>
-                </li>
+
             </ul>
         </nav>
 
@@ -95,7 +86,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -111,7 +102,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -127,7 +118,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -143,7 +134,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -159,7 +150,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
