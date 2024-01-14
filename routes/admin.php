@@ -1,10 +1,17 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ScholarshipController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix( 'admin' )->name( 'admin.' )->group( function () {
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('admin.login');
+Route::middleware(['admin.auth:admin'])->name('admin.')->group(function(){
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+Route::name( 'admin.' )->group( function () {
     route::get( '/login', [ AdminController::class, 'loginForm' ] )->name( 'login' );
     route::get( '/projects', [ AdminController::class, 'projectList' ] )->name( 'projects' );
     route::get( '/clients', [ AdminController::class, 'clientList' ] )->name( 'clients' );
