@@ -10,4 +10,9 @@ class Participant extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function conversation()
+    {
+        return $this->belongsTo(Conversation::class);
+    }
 }

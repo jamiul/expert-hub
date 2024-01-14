@@ -12,7 +12,7 @@ class NewMessageCount extends Component
     {
         MessageRecipient::where('id', $id)->update(['seen_at' => Carbon::now()]);
 
-        return redirect('figma/client-chatbox-new');
+        return redirect('messaging');
     }
 
     public function render()
