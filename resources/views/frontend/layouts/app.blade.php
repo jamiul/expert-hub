@@ -22,10 +22,10 @@
     <body>
         @auth
             @if(auth()->user()->isClient())
-                @include('frontend.layouts.partials.expert-nav')
+                @include('frontend.layouts.partials.client-nav')
             @endif
             @if(auth()->user()->isExpert())
-                @include('frontend.layouts.partials.client-nav')
+                @include('frontend.layouts.partials.expert-nav')
             @endif
         @endauth
         @guest
