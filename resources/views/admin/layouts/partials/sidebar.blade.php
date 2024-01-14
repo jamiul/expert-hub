@@ -17,9 +17,11 @@
         <ul class="menu">
             <li class="menu-title">Main Menu</li>
             <li>
-                <a href="#">
+                <a href="{{ route('admin.dashboard') }}">
                     <x-icon.home/>
-                    <span>Dashboard</span> </a></li>
+                    <span>Dashboard</span>
+                </a>
+            </li>
             <li class="has-children">
                 <a onclick="submenuTrigger(this, event)" href="#">
                     <x-icon.archive-line/>
@@ -27,7 +29,7 @@
                 <ul>
                     <li class="current-menu-item"><a href="{{ route('admin.projects') }}">Projects</a></li>
                     <li><a href="#" class="inner-link">Trainings</a></li>
-                    <li><a href="/figma/super-admin-scholarship">Scholarsips</a></li>
+                    <li><a href="{{ route('admin.scholarships.index') }}">Scholarsips</a></li>
                 </ul>
             </li>
             <li class="has-children"><a onclick="submenuTrigger(this, event)" href="#">
