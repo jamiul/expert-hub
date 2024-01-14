@@ -4,10 +4,12 @@ namespace App\Livewire\ExpertProfile;
 
 use App\Models\Project;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ProjectList extends Component
 {
-    public $projects = [];
+    use WithPagination;
+
     public $showReadMoreButton = null;
 
     public function readLess()
@@ -20,17 +22,16 @@ class ProjectList extends Component
         $this->showReadMoreButton = $id;
     }
 
+    public function paginationView()
+    {
+        return 'livewire.pagination';
+    }
+
     public function render()
     {
-        $this->projects = Project::with(
-            'client',
-            'expertise',
-            'skills'
-            )
-            ->take(2)
-            ->orderBy('id', 'desc')
-            ->get();
+        $projects = Project::with('client', 'expertise', 'skills');
+        $projects = $projects->orderByDesc('id')->paginate(6);
 
-        return view('livewire.expert-profile.project-list');
+        return view('livewire.expert-profile.project-list', compact('projects'));
     }
 }

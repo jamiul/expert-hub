@@ -80,8 +80,6 @@
                                 {{ Str::limit($project->description, 235) }}
                                 <a href="#project-list-{{$project->id}}" wire:click="readMore({{ $project->id }})" class="link">More</a>
                             @endif
-                            {{-- {{ $project->description ?? '' }} --}}
-                            {{-- <a class="link">More </a> --}}
                         </div>
                         <div class="tag__list d-flex flex-wrap mt-3">
                             <livewire:expert-profile.project-skills :project="$project" />
@@ -94,7 +92,8 @@
             </ul>
             <!--./ul-->
             <!--.pagination-->
-            <div class="pagination">
+            {{ $projects->links() }}
+            {{-- <div class="pagination">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="pagination-left"> Showing 1 to 8 of 100 entries </div>
@@ -129,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--.//pagination-->
         </div>
         <!--.//feed__tab End Here-->
