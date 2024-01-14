@@ -8,25 +8,40 @@
         <nav class="main-header-nav">
             <ul>
                 <li class="item-has-submenu">
-                    <a href="/figma/client-dashboard">Projects </a>
+                    <a href="/figma/client-dashboard">My Projects </a>
                     <ul>
-                        <li><a href="">Sub Menu 01</a></li>
-                        <li><a href="">Sub Menu 02</a></li>
-                        <li><a href="">Sub Menu 03</a></li>
-                        <li><a href="">Sub Menu 04</a></li>
-                        <li><a href="">Sub Menu 05</a></li>
+                        <li><a href="/figma/project/client-job-posts">All Job Posts</a></li>
+                        <li><a href="">All Contacts</a></li>
+                    </ul>
+                </li>
+                <li class="item-has-submenu">
+                    <a href="/figma/client-clientaddpayment">Billing & Payments </a>
+                    <ul>
+                        <li><a href="/figma/client-clientaddpayment">Add Payment Method</a></li>
+                        <li><a href="/figma/client-weeklyreportsummary">Weekly Summery</a></li>
+                        <li><a href="/figma/client-weeklyreporttransction">Transaction History</a></li>
+                        <li><a href="/figma/client-weeklyreporttwobudget">Budgets</a></li>
+                        <li><a href="/figma/client-dashboardatimesheet">Timesheet</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/figma/client-dashboardexperthire">Experts</a>
+                    <a href="{{ route('find.experts') }}">Find Experts</a>
                 </li>
-
                 <li>
-                    <a href="/figma/client-clientaddpayment">Billing & Payments</a>
+                    <a href="{{ route('scholarship-database') }}">Find Scholarships</a>
                 </li>
-
                 <li>
+                    <a href="/find-training">Find Trainings</a>
+                </li>
+                <li class="item-has-submenu">
                     <a href="/figma/client-passwordsecurity">Settings</a>
+                    <ul>
+                        <li><a href="/figma/client-passwordsecurity">PassWord & Security</a></li>
+                        <li><a href="/notification-settings">Notification</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/figma/client-chatbox-new">Message</a>
                 </li>
             </ul>
         </nav>
@@ -40,11 +55,10 @@
                     </label>
                     <input type="text" value="Expert" id="header-search-type">
                     <ul>
-                        <li> My Projects</li>
-                        <li> Proposals</li>
-                        <li> All Contracts</li>
-                        <li> Save jobs</li>
-                        <li> Work Diary</li>
+                        <li>Expert</li>
+                        <li>Scholarship</li>
+                        <li>Training</li>
+                        <li>Consultation</li>
                     </ul>
                 </div>
                 <button>

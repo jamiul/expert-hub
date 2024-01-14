@@ -21,7 +21,12 @@
     </head>
     <body>
         @auth
-            @include('frontend.layouts.partials.auth-nav')
+            @if(auth()->user()->isClient())
+                @include('frontend.layouts.partials.client-nav')
+            @endif
+            @if(auth()->user()->isExpert())
+                @include('frontend.layouts.partials.expert-nav')
+            @endif
         @endauth
         @guest
             @include('frontend.layouts.partials.nav')
