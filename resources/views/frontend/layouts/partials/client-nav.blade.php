@@ -11,7 +11,7 @@
                     <a href="#">Projects</a>
                     <ul>
                         <li><a href="/figma/project/client-job-posts">My project</a></li>
-                        <li><a href="/figma/job-posts">Post a project</a></li>
+                        <li><a href="{{ route('projects.create') }}">Post a project</a></li>
                     </ul>
                 </li>
                 <li class="item-has-submenu">
