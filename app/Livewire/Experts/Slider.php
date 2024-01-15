@@ -17,7 +17,7 @@ class Slider extends Component
     {
         return Profile::whereIn('id', $ids)
                     ->with('user' ,'expertField')
-                    ->limit(5)
+                    ->limit(6)
                     ->get();
     }
 
