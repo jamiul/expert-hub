@@ -1,4 +1,6 @@
-@extends('frontend.layouts.app') @section('content')
+@extends('frontend.layouts.app')
+
+@section('content')
 <section class=" profile-setup">
   <div class="container">
     <div class="row justify-content-center">
@@ -82,6 +84,7 @@
       </div>
     </div>
   </div>
+</div>
   <!--End Modal -->
   <!-- Date time Picker js -->
   @endsection

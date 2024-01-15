@@ -23,7 +23,7 @@
         </div>
 
         <div class="row">
-            <div class="single-button d-flex justify-content-center mt-4">
+            <div class="single-button d-flex justify-content-center">
                 <a href="{{ route('find.experts') }}" class="btn edux-btn-border-primary">View All</a>
             </div>
         </div>
