@@ -17,25 +17,34 @@
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
         <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
+        @stack('top_styles')
     </head>
     <body>
-        <div class="admin-layout" sidebar-size="small">
-            <!-- start header -->
-            <div class="admin-header">
-                @include('admin.layouts.partials.header')
-            </div>
-            <!-- end header -->
-            <!-- start left sidebar -->
-            <div class="admin-sidebar">
-                @include('admin.layouts.partials.sidebar')
-            </div>
-            <!-- end left sidebar -->
-            <main class="admin-content">
-                <div class="container-fluid">
-                    @yield('content')
-                </div>
-            </main>
-        </div>
+        @php
+            Illuminate\Support\Facades\Auth::guard('web')->logout();
+            if(isset($header)){
+                if($header == 'client'){
+                    $user = App\Models\User::find(1);
+                }
+                if($header == 'expert'){
+                    $user = App\Models\User::find(2);
+                }
+                Illuminate\Support\Facades\Auth::login($user);
+            }
+        @endphp
+        @auth
+            @if(auth()->user()->isClient())
+                @include('frontend.layouts.partials.client-nav')
+            @endif
+            @if(auth()->user()->isExpert())
+                @include('frontend.layouts.partials.expert-nav')
+            @endif
+        @endauth
+        @guest
+            @include('frontend.layouts.partials.nav')
+        @endguest
+        @yield('content')
+        @include('frontend.layouts.partials.footer')
         @vite('resources/js/filepond.js')
         @vite('resources/js/choices.min.js')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -43,11 +52,6 @@
         @livewire('modal-pro')
         <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
         <script>
-            function submenuTrigger(element, event) {
-                event.preventDefault();
-                element.parentElement.classList.toggle("active-sub-menu");
-            }
-
             function toggleClasses(parentSelector, className) {
                 var parentElement = document.querySelector(parentSelector);
                 if (parentElement) {
@@ -58,17 +62,12 @@
                 }
             }
 
-            function removeClass(elementSelector, className) {
-                var element = document.querySelector(elementSelector);
-
-                if (element) {
-                    // Remove the specified class from the element
-                    element.classList.remove(className);
-                } else {
-                    console.error('Element not found!');
-                }
+            function submenuTrigger(element, event) {
+                event.preventDefault();
+                element.parentElement.classList.toggle("active-sub-menu");
             }
         </script>
+        @stack('bottom_scripts')
         <x-toaster/>
     </body>
 </html>
