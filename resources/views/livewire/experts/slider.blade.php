@@ -1,8 +1,8 @@
 <div class="about-slider">
     <div class="container">
         <div class="heading">
-            <h4>{{ Str::upper($aboutUsDTO->instructor_subtitle) }}</h4>
-            <h2>{{ Str::headline($aboutUsDTO->instructor_title) }}</h2>
+            <h4>{{ Str::upper($instructor_subtitle) }}</h4>
+            <h2>{{ Str::headline($instructor_title) }}</h2>
         </div>
 
         <div id="owl-carousel" class="owl-carousel owl-theme">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="row">
-            <div class="single-button d-flex justify-content-center">
+            <div class="single-button d-flex justify-content-center mt-4">
                 <a href="{{ route('find.experts') }}" class="btn edux-btn-border-primary">View All</a>
             </div>
         </div>

@@ -13,7 +13,7 @@
         </div>
     </div>
 </section>
-    @include('frontend.find-experts.partials._slider')
+    @livewire('experts.slider')
 @endsection
 
 @push('bottom_scripts')

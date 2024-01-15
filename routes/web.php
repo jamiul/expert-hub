@@ -43,10 +43,9 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
 Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
-Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
+Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
 Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
-Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
 Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
 Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
 

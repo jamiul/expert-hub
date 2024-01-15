@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ScholarshipController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->middleware('admin.guest:admin')->name('admin.login');
 Route::middleware(['admin.auth:admin'])->name('admin.')->group(function(){
@@ -15,7 +16,7 @@ Route::middleware(['admin.auth:admin'])->name('admin.')->group(function(){
     route::get('/clients', [AdminController::class, 'clientList'])->name('clients');
     route::get('/experts', [AdminController::class, 'expertList'])->name('experts');
     route::get('/home-page', [AdminController::class, 'homePage'])->name('homePage');
-    route::get('/about-us', [AdminController::class, 'aboutUs'])->name('aboutUs');
+    route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
     route::get('/project-payment', [AdminController::class, 'projectPayment'])->name('projectPayment');
     route::get('/reviews', [AdminController::class, 'reviewList'])->name('reviews');
 

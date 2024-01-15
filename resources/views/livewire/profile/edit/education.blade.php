@@ -1,7 +1,7 @@
 <div class="profile-edit-widget user-education-edit-widget">
     <h4 class="widget-title">Education
         <button wire:click="$dispatch('modal.open', { component: 'profile.education.create'})"
-            class="icon-btn icon-btn-md">
+            class="icon-btn icon-btn-md {{ ! $editable ? 'd-none' : '' }}">
             <x-icon.add />
         </button>
     </h4>
@@ -16,10 +16,10 @@
                         {{ $education->start_year . '-' }} {{ $education->end_year ?? 'Continuing' }}</p>
                 </div>
                 <div class="ms-auto">
-                    <button wire:click="$dispatch('modal.open', { component: 'profile.education.edit', arguments: { education: {{ $education->id }} }})" class="icon-btn icon-btn-md">
+                    <button wire:click="$dispatch('modal.open', { component: 'profile.education.edit', arguments: { education: {{ $education->id }} }})" class="icon-btn icon-btn-md {{ ! $editable ? 'd-none' : '' }}">
                         <x-icon.edit />
                     </button>
-                    <button wire:click="deleteEducation({{ $education->id }})" class="icon-btn icon-btn-md">
+                    <button wire:click="deleteEducation({{ $education->id }})" class="icon-btn icon-btn-md {{ ! $editable ? 'd-none' : '' }}">
                         <x-icon.delete />
                     </button>
                 </div>

@@ -3,7 +3,7 @@
 @section('content')
     @include('frontend.about-us.partials._banner')
     @include('frontend.about-us.partials._info')
-    @include('frontend.about-us.partials._slider')
+    @livewire('experts.slider')
     @include('frontend.about-us.partials._mission')
     @include('frontend.about-us.partials._eduexhub')
     @include('frontend.about-us.partials._team')
