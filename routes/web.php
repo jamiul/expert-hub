@@ -20,6 +20,8 @@ use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
+use App\Http\Controllers\Webhook\StripeController;
+use App\Http\Controllers\Expert\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,3 +82,17 @@ Route::get( '/notification-settings', [
     NotificationsController::class,
     'notificationSettings'
 ] )->middleware( [ 'auth' ] )->name( 'notifications.settings' );
+
+// Webhooks
+Route::group(['prefix' => 'webhooks'], function (){
+    Route::post( 'stripe', [StripeController::class, 'receiveWebhook'] );
+    Route::post( 'stripe-connect', [StripeController::class, 'receiveConnectWebhook'] );
+    Route::any( 'test', [StripeController::class, 'testWebhook'] );
+});
+
+Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' => 'expert.'], function (){
+    Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+    Route::any('/payment/onboard', [PaymentController::class, 'onboard'])->name('payment.onboard');
+    Route::any('/payment/withdrawal', [PaymentController::class, 'withdrawal'])->name('payment.withdrawal');
+    Route::post('/payment/account-session', [PaymentController::class, 'accountSession'])->name('payment.account_session');
+});

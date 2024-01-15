@@ -32,6 +32,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Profile::class)->where('profiles.type', $this->active_profile);
     }
 
+    public function expert_kyc() {
+        return $this->hasOne(ExpertKYC::class);
+    }
+
+    public function expert_withdrawal() {
+        return $this->hasMany(ExpertWithdrawal::class);
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
