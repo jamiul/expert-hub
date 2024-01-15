@@ -1,10 +1,11 @@
 $edu-admin-sidebar-width: 265px;
 $edu-admin-sm-sidebar-width: 70px;
 $edu-admin-header-height: 76px;
+
 .admin-layout {
 
 
-    & > .admin-header {
+    &>.admin-header {
         position: fixed;
         top: 0;
         right: 0;
@@ -15,7 +16,7 @@ $edu-admin-header-height: 76px;
         padding-left: $edu-admin-sidebar-width + 20px;
     }
 
-    & > .admin-sidebar {
+    &>.admin-sidebar {
         position: fixed;
         left: 0;
         top: 0;
@@ -39,7 +40,7 @@ $edu-admin-header-height: 76px;
 
     }
 
-    & > .admin-content {
+    &>.admin-content {
         padding-left: $edu-admin-sidebar-width + 20px;
         padding-top: $edu-admin-header-height + 15px;
     }
@@ -88,7 +89,7 @@ $edu-admin-header-height: 76px;
                         list-style: none;
 
                         &.has-children {
-                            & > a {
+                            &>a {
 
                                 &:after {
                                     content: "";
@@ -109,7 +110,7 @@ $edu-admin-header-height: 76px;
                             &.active-sub-menu {
                                 background: rgba(0, 0, 0, 0.14);
 
-                                & > a {
+                                &>a {
                                     color: #ffffff;
 
                                     &:after {
@@ -176,9 +177,9 @@ $edu-admin-header-height: 76px;
                     }
 
                     &.menu {
-                        & > li {
+                        &>li {
 
-                            & > a {
+                            &>a {
                                 padding: 11px 25px;
                             }
 
@@ -224,7 +225,7 @@ $edu-admin-header-height: 76px;
 
     .sidebar-menu-wrapper {
         ul.menu {
-            & > li {
+            &>li {
                 white-space: nowrap;
                 position: relative;
 
@@ -232,7 +233,7 @@ $edu-admin-header-height: 76px;
                     display: none;
                 }
 
-                & > a {
+                &>a {
                     padding: 11px 20px;
                     display: block;
 
@@ -255,7 +256,7 @@ $edu-admin-header-height: 76px;
                 }
 
                 &:hover {
-                    & > a {
+                    &>a {
                         width: 260px;
                         background-color: $edu-primary-dark-color;
                         color: #ffffff;
@@ -310,6 +311,7 @@ $edu-admin-header-height: 76px;
 .page-header-inner {
     width: 100%;
     display: flex;
+
     //justify-content: end;
     .header-branding {
         display: flex;
@@ -339,17 +341,17 @@ $edu-admin-header-height: 76px;
         margin-left: auto;
 
 
-        & > ul {
+        &>ul {
             display: inline-flex;
             gap: 15px;
             align-items: center;
 
-            & > li {
+            &>li {
                 list-style: none;
                 display: block;
                 position: relative;
 
-                & > a {
+                &>a {
                     display: flex;
                     align-items: center;
                     gap: 10px;
@@ -369,7 +371,7 @@ $edu-admin-header-height: 76px;
                 }
 
                 &.notification-dropdown-menu {
-                    & > a {
+                    &>a {
                         border-radius: 1.875rem;
                         border: 2px solid $edu-border-color;
                         padding: 8px;
@@ -447,7 +449,7 @@ $edu-admin-header-height: 76px;
         cursor: pointer;
     }
 
-    .status_box input[type="radio"]:checked + label {
+    .status_box input[type="radio"]:checked+label {
         background: #0036E3;
         color: var(--white);
         border-radius: 4px;
@@ -504,20 +506,26 @@ header {
             display: grid;
             align-items: center;
             gap: 20px;
+
             @media screen and (min-width: 950px) {
                 grid-template-columns: 150px auto 260px;
+
                 .header-menu-trigger {
                     display: none;
                 }
+
                 .header-search-trigger {
                     display: none;
                 }
             }
+
             @media screen and (max-width: 950px) {
                 grid-template-columns: 150px auto 60px;
+
                 .header-search-trigger {
                     display: none;
                 }
+
                 .header-special-menu {
                     //border-top: 1px solid rgba(14, 0, 98, 0.10);
                     grid-column-start: 1;
@@ -595,6 +603,7 @@ header {
                 list-style: none;
                 display: inline-block;
                 margin: 0.1rem 1rem 0.1rem 0;
+
                 @media screen and (min-width: 1100px) {
                     margin: 0.1rem 2rem 0.1rem 0;
                 }
@@ -648,6 +657,7 @@ header {
             }
         }
     }
+
     @media screen and (max-width: 950px) {
         display: none;
         position: fixed;
@@ -659,6 +669,7 @@ header {
         max-width: calc(100% - 90px);
         box-shadow: 0 0 10px #cccccc;
         z-index: 5;
+
         ul {
             margin: 0;
             padding: 20px 0;
@@ -691,7 +702,7 @@ header {
     form {
         display: flex;
         align-items: center;
-        max-width: 600px;
+        max-width: 440px;
         border-radius: 4px;
         border: 2px solid $edu-border-color;
         margin: 0 auto;
@@ -764,7 +775,7 @@ header {
                 position: relative;
                 cursor: pointer;
 
-                &:focus ~ {
+                &:focus~ {
                     ul {
                         display: block;
                     }
@@ -808,7 +819,7 @@ header {
         outline: unset !important;
         padding: 0;
 
-        & > span {
+        &>span {
             display: block;
             width: 28px;
             height: 4px;
@@ -817,7 +828,8 @@ header {
             border-radius: 3px;
             position: relative;
 
-            &:before, &:after {
+            &:before,
+            &:after {
                 display: block;
                 content: "";
                 width: 35px;
@@ -849,26 +861,42 @@ header {
             background: #FFF;
             gap: 30px;
             align-items: center;
-            justify-content: space-between;
+            // justify-content: space-between;
             padding: 20px;
+
             @media screen and (min-width: 1300px) {
-                grid-template-columns: 150px auto auto auto;
+                grid-template-columns: 180px auto auto min-content;
+                padding-left: 50px;
+                padding-right: 50px;
+
                 .header-search-trigger {
                     display: none;
                 }
+
+                .header-search {
+                    margin-left: auto;
+                }
             }
+
             @media screen and (min-width: 1000px) and (max-width: 1300px) {
-                grid-template-columns: 150px auto auto;
+                grid-template-columns: 180px auto auto;
+
+                .header-special-menu {
+                    margin-left: auto;
+                }
             }
+
             @media screen and (min-width: 1000px) {
                 .header-menu-trigger {
                     display: none;
                 }
             }
+
             @media screen and (max-width: 1000px) {
-                grid-template-columns: 150px auto 40px;
+                grid-template-columns: 180px auto 40px;
                 gap: 20px;
                 justify-content: inherit;
+
                 .main-header-nav {
                     display: none;
                     position: fixed;
@@ -879,6 +907,7 @@ header {
                     left: 0;
                     z-index: 5;
                 }
+
                 .header-special-menu {
                     margin-left: auto;
                 }
@@ -886,21 +915,21 @@ header {
         }
 
         .header-special-menu {
-            & > ul {
+            &>ul {
                 margin: 0;
                 padding: 0;
                 display: flex;
                 gap: 9px;
 
-                & > li {
+                &>li {
                     list-style: none;
                     display: inline-block;
                     position: relative;
 
-                    & > a {
+                    &>a {
                         //pointer-events: none;
 
-                        & > span {
+                        &>span {
                             position: absolute;
                             width: 20px;
                             height: 20px;
@@ -977,23 +1006,27 @@ header {
 }
 
 .main-header-nav {
-    & > ul {
+    &>ul {
         margin: 0;
         padding: 0;
+
         @media screen and (min-width: 1000px) {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 24px;
 
-            & > li {
+            &>li {
                 list-style: none;
                 display: inline-block;
-                margin: 0.1rem 1rem 0.1rem 0;
+                margin: 0.1rem 0;
 
                 &.item-has-submenu {
                     position: relative;
 
-                    & > a {
+                    &>a {
+                        font-size: 14px;
+                        font-weight: 500;
+
                         &:after {
                             content: "";
                             display: block;
@@ -1019,14 +1052,18 @@ header {
 
                         li {
                             list-style: none;
+
                             //border-bottom: 1px solid $edu-border-color;
                             a {
                                 display: block;
                                 color: inherit;
                                 padding: 0.5rem 1rem;
+                                font-size: 14px;
+                                font-weight: 500;
 
                                 &:hover {
                                     color: $edu-primary-color;
+                                    background-color: #0036E308;
                                 }
                             }
                         }
@@ -1039,10 +1076,12 @@ header {
                     }
                 }
 
-                & > a {
+                &>a {
                     display: flex;
                     padding: 1rem 0;
                     color: $edu-headings-color;
+                    font-size: 14px;
+                    font-weight: 500;
 
                     &:hover {
                         color: $edu-primary-color;
@@ -1050,8 +1089,10 @@ header {
                 }
             }
         }
+
         @media screen and (max-width: 1000px) {
             padding: 20px 0;
+
             li {
                 list-style: none;
                 display: block;
@@ -1105,6 +1146,7 @@ header {
         &.close-menu-animation {
             border: 1px solid #FD6D4D;
             border-radius: 50%;
+
             //background-color: #FD6D4D;
             span {
                 background-color: transparent;
@@ -1178,7 +1220,7 @@ header {
                 display: none;
 
                 &:checked {
-                    + label {
+                    +label {
                         background-color: $edu-primary-color;
                         color: white;
                         border-radius: 4px;
@@ -1202,7 +1244,8 @@ header {
                     list-style: none;
                     display: block;
 
-                    a, .dropdown-logout-form {
+                    a,
+                    .dropdown-logout-form {
                         display: flex;
                         align-items: center;
                         gap: 12px;
@@ -1257,7 +1300,7 @@ header {
                 background-color: rgba(0, 54, 227, 0.05);
             }
 
-            & > div {
+            &>div {
                 &.notification-dropdown-thumb {
                     flex: 0 0 48px;
                     max-width: 48px;
@@ -1373,7 +1416,7 @@ header {
                 background-color: rgba(0, 54, 227, 0.05);
             }
 
-            & > div {
+            &>div {
                 &.message-dropdown-thumb {
                     flex: 0 0 48px;
                     max-width: 48px;
@@ -1479,4 +1522,3 @@ header {
         display: block;
     }
 }
-
