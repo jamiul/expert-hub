@@ -66,19 +66,19 @@
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('find-projects.show', $project) }}">
+                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
                                                 <x-icon.linkedin/>
                                                 Linkedin
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('find-projects.show', $project) }}">
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
                                                 <x-icon.facebook/>
                                                 Facebook
                                             </a>
                                         </li>
-                                        <li x-data="{ projectUrl: '{{ route('find-projects.show', $project) }}' }">
+                                        <li x-data="{ projectUrl: '{{ route('projects.show', $project) }}' }">
                                             <button class="dropdown-item" x-clipboard="projectUrl">
                                                 <x-icon.copy/>
                                                 Copy Link
@@ -165,19 +165,19 @@
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li>
                                                 <a class="dropdown-item" target="_blank"
-                                                   href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('find-projects.show', $project) }}">
+                                                   href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
                                                     <x-icon.linkedin/>
                                                     Linkedin
                                                 </a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" target="_blank"
-                                                   href="https://www.facebook.com/sharer/sharer.php?u={{ route('find-projects.show', $project) }}">
+                                                   href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
                                                     <x-icon.facebook/>
                                                     Facebook
                                                 </a>
                                             </li>
-                                            <li x-data="{ projectUrl: '{{ route('find-projects.show', $project) }}' }">
+                                            <li x-data="{ projectUrl: '{{ route('projects.show', $project) }}' }">
                                                 <button class="dropdown-item" x-clipboard="projectUrl">
                                                     <x-icon.copy/>
                                                     Copy Link
@@ -263,19 +263,19 @@
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('find-projects.show', $project) }}">
+                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
                                                 <x-icon.linkedin/>
                                                 Linkedin
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('find-projects.show', $project) }}">
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
                                                 <x-icon.facebook/>
                                                 Facebook
                                             </a>
                                         </li>
-                                        <li x-data="{ projectUrl: '{{ route('find-projects.show', $project) }}' }">
+                                        <li x-data="{ projectUrl: '{{ route('projects.show', $project) }}' }">
                                             <button class="dropdown-item" x-clipboard="projectUrl">
                                                 <x-icon.copy/>
                                                 Copy Link
