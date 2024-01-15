@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-expert-dashboard-layout')
+@extends('frontend.layouts.figma', ['header' => 'expert'])
 @section('content')
 @vite('resources/default/css/expert-profile.css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
       <div class="container profile__page edux-profile-page">
-        <div class="edux-billing-method-area">
+        <div class="edux-billing-method-area-right">
 
         <div class="col-md-8">
           <div class="edux-no-available-booking mt-5">
@@ -20,7 +20,7 @@
                           <div class="edux-course-curriculum-item">
                               <h3>Course Curriculum Development</h3>
                               <div class="consultant-reviw">
-                                    <ul>
+                                    <ul class="mb-0">
                                       <li class="me-3">12 Ratings</li>
                                         <li> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
                                             <path d="M7.99994 12.3916L11.4583 14.4833C12.0916 14.8666 12.8666 14.3 12.6999 13.5833L11.7833 9.64997L14.8416 6.99997C15.3999 6.51663 15.0999 5.59997 14.3666 5.54163L10.3416 5.19997L8.76661 1.4833C8.48327 0.808301 7.51661 0.808301 7.23327 1.4833L5.65827 5.19163L1.63327 5.5333C0.899939 5.59163 0.599938 6.5083 1.15827 6.99163L4.21661 9.64163L3.29994 13.575C3.13327 14.2916 3.90827 14.8583 4.5416 14.475L7.99994 12.3916Z" fill="#E9B911"></path>
@@ -69,22 +69,15 @@
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
                         <div class="tag-list">
 
-                                <a href="#" class="expert-profile-tag">Communication
-                                    Skills</a>
-                                <a href="#" class="expert-profile-tag">Industry Treds
-                                    Awareness</a>
+                                <a href="#" class="expert-profile-tag">Accreditation Documentation</a>
+                                <a href="#" class="expert-profile-tag">Accreditation</a>
                                 <a href="#" class="expert-profile-tag"> Research</a>
-                                <a href="#" class="expert-profile-tag">System Research
-                                    Development</a>
+                                <a href="#" class="expert-profile-tag">Educational Expertise</a>
                                 <a href="#"
-                                   class="expert-profile-tag">Communication </a>
-                                <a href="#" class="expert-profile-tag">Industry
-                                    Treds</a>
-                                <a href="#" class="expert-profile-tag">Educational
-                                    Research</a>
-
-                                <a href="#" class="expert-profile-tag">System
-                                    Development</a>
+                                   class="expert-profile-tag">Instructionḁl Design</a>
+                                <a href="#" class="expert-profile-tag">Instructionḁl Design</a>
+                                <a href="#" class="expert-profile-tag">Instructionḁl Design</a>
+                                <a href="#" class="expert-profile-tag">Instructionḁl Design</a>
 
                                 <a href="#" class="expert-profile-tag">+3 More</a>
                             </div>
@@ -93,7 +86,9 @@
                       <div class="edux-expert-card-area">
                       <h5>Expert Profile</h5>
 
-                      <div class="project-expert-card p-0 border-0">
+                <div class="project-expert-card p-0 border-0">
+
+                <div class="eudx-project-expert-thumb">
 
                     <div class="project-expert-thumb">
                         <div class="expert-thumb-box">
@@ -103,7 +98,6 @@
                     <div class="project-expert-details">
                         <div class="expert-card-header">
                             <div class="expert-card-header-info">
-
                                 <h3 class="h6 project-expert-name mb-0">Professor Miles
                                     Esther</h3>
                                 <ul class="project-expert-meta">
@@ -111,34 +105,34 @@
                                     <li>Melbourne University</li>
                                     <li>Australia</li>
                                 </ul>
-                                <div class="d-flex gap-3 align-items-center">
-                                    <div><strong class="fw-medium">$200 </strong>/ hr
-                                    </div>
-                                    <div class="star-ratings">
-                                        <x-icon.star-fill/>
-                                        <x-icon.star-fill/>
-                                        <x-icon.star-fill/>
-                                        <x-icon.star-fill/>
-                                        <x-icon.star-fill/>
-                                    </div>
-
-                                </div>
-
                             </div>
-
-                        </div>
-                        <div class="expert-card-body">
-                            <div class="project-expert-summary py-3">
-                                <p>Prof. Michael is an accomplished Curriculum Development Specialist with a distinguished career in education and a track record of providing consultation services. Holding a PhD in Curriculum and Instruction, Prof. Michael has dedicated expertise in designing innovative curricula, enhancing student engagement, and conducting research on educational best practices particularly in public health education. With a background in curriculum coordination, consultation, and a strong commitment to education, Prof. Michael has made significant contributions to the field. <a href="#">More</a></p>
-                            </div>
-
                         </div>
                     </div>
+                  </div>
+
+                    <div class="expert-card-body">
+                          <div class="d-flex gap-3 align-items-center">
+                                      <div><strong class="fw-medium">$200 </strong>/ hr
+                                      </div>
+                                      <div class="star-ratings">
+                                          <x-icon.star-fill/>
+                                          <x-icon.star-fill/>
+                                          <x-icon.star-fill/>
+                                          <x-icon.star-fill/>
+                                          <x-icon.star-fill/>
+                                      </div>
+
+                                  </div>
+                              <div class="project-expert-summary py-3">
+                                  <p>Prof. Michael is an accomplished Curriculum Development Specialist with a distinguished career in education and a track record of providing consultation services. Holding a PhD in Curriculum and Instruction, Prof. Michael has dedicated expertise in designing innovative curricula, enhancing student engagement, and conducting research on educational best practices particularly in public health education. With a background in curriculum coordination, consultation, and a strong commitment to education, Prof. Michael has made significant contributions to the field. <a href="#" class="edux-read-more">More</a></p>
+                              </div>
+
+                        </div>
                 </div>
 
               <div class="page-block">
                                 <div class="card card-24 border-0">
-                                    <div class="card-body">
+                                    <div class="card-body px-0">
                                         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
                                             <div class="d-flex gap-2 align-items-center">
                                                 <x-icon.user-tie/>
@@ -194,7 +188,7 @@
 
 
 
-              <div class="consultant-work mb-0 border-0 pt-0">
+              <div class="consultant-work mb-0 border-0 p-0">
 
                 <div class="d-flex gap-2 align-items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -213,18 +207,7 @@
                     <div class="portfolio__card">
                       <figure class="position-relative">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
-                        <div class="hovered__action__box position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.08975 17.0833C5.67415 17.0833 5.31919 16.9362 5.02485 16.6418C4.73051 16.3475 4.58333 15.9925 4.58333 15.5769V5.00002H3.75V3.75004H7.49998V3.01288H12.5V3.75004H16.25V5.00002H15.4166V15.5769C15.4166 15.9979 15.2708 16.3542 14.9791 16.6458C14.6875 16.9375 14.3312 17.0833 13.9102 17.0833H6.08975ZM14.1666 5.00002H5.83331V15.5769C5.83331 15.6517 5.85735 15.7132 5.90544 15.7612C5.95352 15.8093 6.01496 15.8334 6.08975 15.8334H13.9102C13.9743 15.8334 14.0331 15.8067 14.0865 15.7532C14.1399 15.6998 14.1666 15.641 14.1666 15.5769V5.00002ZM7.83654 14.1667H9.08652V6.66669H7.83654V14.1667ZM10.9134 14.1667H12.1634V6.66669H10.9134V14.1667Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                        </div>
+
                       </figure>
                       <h4 class="fs-6 fw-medium title">
                         <a href="#">Comparative Analysis of Public Health Curricula</a>
@@ -237,18 +220,7 @@
                     <div class="portfolio__card">
                       <figure class="position-relative">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port2.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
-                        <div class="hovered__action__box position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.08975 17.0833C5.67415 17.0833 5.31919 16.9362 5.02485 16.6418C4.73051 16.3475 4.58333 15.9925 4.58333 15.5769V5.00002H3.75V3.75004H7.49998V3.01288H12.5V3.75004H16.25V5.00002H15.4166V15.5769C15.4166 15.9979 15.2708 16.3542 14.9791 16.6458C14.6875 16.9375 14.3312 17.0833 13.9102 17.0833H6.08975ZM14.1666 5.00002H5.83331V15.5769C5.83331 15.6517 5.85735 15.7132 5.90544 15.7612C5.95352 15.8093 6.01496 15.8334 6.08975 15.8334H13.9102C13.9743 15.8334 14.0331 15.8067 14.0865 15.7532C14.1399 15.6998 14.1666 15.641 14.1666 15.5769V5.00002ZM7.83654 14.1667H9.08652V6.66669H7.83654V14.1667ZM10.9134 14.1667H12.1634V6.66669H10.9134V14.1667Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                        </div>
+
                       </figure>
                       <h4 class="fs-6 fw-medium title">
                         <a href="#">Comparative Analysis of Public Health Curricula</a>
@@ -261,18 +233,7 @@
                     <div class="portfolio__card">
                       <figure class="position-relative">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
-                        <div class="hovered__action__box position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.08975 17.0833C5.67415 17.0833 5.31919 16.9362 5.02485 16.6418C4.73051 16.3475 4.58333 15.9925 4.58333 15.5769V5.00002H3.75V3.75004H7.49998V3.01288H12.5V3.75004H16.25V5.00002H15.4166V15.5769C15.4166 15.9979 15.2708 16.3542 14.9791 16.6458C14.6875 16.9375 14.3312 17.0833 13.9102 17.0833H6.08975ZM14.1666 5.00002H5.83331V15.5769C5.83331 15.6517 5.85735 15.7132 5.90544 15.7612C5.95352 15.8093 6.01496 15.8334 6.08975 15.8334H13.9102C13.9743 15.8334 14.0331 15.8067 14.0865 15.7532C14.1399 15.6998 14.1666 15.641 14.1666 15.5769V5.00002ZM7.83654 14.1667H9.08652V6.66669H7.83654V14.1667ZM10.9134 14.1667H12.1634V6.66669H10.9134V14.1667Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                        </div>
+
                       </figure>
 
 
@@ -288,18 +249,7 @@
                     <div class="portfolio__card">
                       <figure class="position-relative">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
-                        <div class="hovered__action__box position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.08975 17.0833C5.67415 17.0833 5.31919 16.9362 5.02485 16.6418C4.73051 16.3475 4.58333 15.9925 4.58333 15.5769V5.00002H3.75V3.75004H7.49998V3.01288H12.5V3.75004H16.25V5.00002H15.4166V15.5769C15.4166 15.9979 15.2708 16.3542 14.9791 16.6458C14.6875 16.9375 14.3312 17.0833 13.9102 17.0833H6.08975ZM14.1666 5.00002H5.83331V15.5769C5.83331 15.6517 5.85735 15.7132 5.90544 15.7612C5.95352 15.8093 6.01496 15.8334 6.08975 15.8334H13.9102C13.9743 15.8334 14.0331 15.8067 14.0865 15.7532C14.1399 15.6998 14.1666 15.641 14.1666 15.5769V5.00002ZM7.83654 14.1667H9.08652V6.66669H7.83654V14.1667ZM10.9134 14.1667H12.1634V6.66669H10.9134V14.1667Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                        </div>
+
                       </figure>
                       <h4 class="fs-6 fw-medium title">
                         <a href="#">Comparative Analysis of Public Health Curricula</a>
@@ -312,18 +262,7 @@
                     <div class="portfolio__card">
                       <figure class="position-relative">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
-                        <div class="hovered__action__box position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M4.29488 16.3333H5.32532L13.0417 8.61692L12.0113 7.58647L4.29488 15.3029V16.3333ZM15.7147 7.71309L12.9023 4.92628L13.9888 3.83976C14.2335 3.5951 14.531 3.47278 14.8814 3.47278C15.2318 3.47278 15.5294 3.5951 15.774 3.83976L16.7884 4.85415C17.0331 5.09881 17.1597 5.39207 17.1682 5.73395C17.1768 6.07582 17.0587 6.36908 16.8141 6.61374L15.7147 7.71309ZM14.8109 8.62974L5.85736 17.5833H3.04492V14.7708L11.9984 5.81728L14.8109 8.62974ZM12.5225 8.09769L12.0113 7.58647L13.0417 8.61692L12.5225 8.09769Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                          <button class="ms-2 btn edit__fab__btn rounded-circle p-0 d-inline-flex justify-content-center align-items-center">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.08975 17.0833C5.67415 17.0833 5.31919 16.9362 5.02485 16.6418C4.73051 16.3475 4.58333 15.9925 4.58333 15.5769V5.00002H3.75V3.75004H7.49998V3.01288H12.5V3.75004H16.25V5.00002H15.4166V15.5769C15.4166 15.9979 15.2708 16.3542 14.9791 16.6458C14.6875 16.9375 14.3312 17.0833 13.9102 17.0833H6.08975ZM14.1666 5.00002H5.83331V15.5769C5.83331 15.6517 5.85735 15.7132 5.90544 15.7612C5.95352 15.8093 6.01496 15.8334 6.08975 15.8334H13.9102C13.9743 15.8334 14.0331 15.8067 14.0865 15.7532C14.1399 15.6998 14.1666 15.641 14.1666 15.5769V5.00002ZM7.83654 14.1667H9.08652V6.66669H7.83654V14.1667ZM10.9134 14.1667H12.1634V6.66669H10.9134V14.1667Z" fill="#0036E3"/>
-                            </svg>
-                          </button>
-                        </div>
+
                       </figure>
                       <h4 class="fs-6 fw-medium title">
                         <a href="#">Comparative Analysis of Public Health Curricula</a>
@@ -341,39 +280,17 @@
               </div> <!-- Consultant work-->
 
 
-              <div class="consultant-testimonial border-0">
-                <h3 class="mb-1"><img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/quote.svg') }}"></img>Testimonials</h3>
+              <div class="consultant-testimonial border-0 p-0">
+                <h3 class="mb-1"><img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/quote.svg') }}"></img>Rating and Review</h3>
 
 
-                <div class="consultant-reviw">
-                  <ul>
-                      <li> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                          <path d="M7.99994 12.3916L11.4583 14.4833C12.0916 14.8666 12.8666 14.3 12.6999 13.5833L11.7833 9.64997L14.8416 6.99997C15.3999 6.51663 15.0999 5.59997 14.3666 5.54163L10.3416 5.19997L8.76661 1.4833C8.48327 0.808301 7.51661 0.808301 7.23327 1.4833L5.65827 5.19163L1.63327 5.5333C0.899939 5.59163 0.599938 6.5083 1.15827 6.99163L4.21661 9.64163L3.29994 13.575C3.13327 14.2916 3.90827 14.8583 4.5416 14.475L7.99994 12.3916Z" fill="#E9B911"></path>
-                        </svg>
-                        </a>
-                      </li>
-                      <li> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                          <path d="M7.99994 12.3916L11.4583 14.4833C12.0916 14.8666 12.8666 14.3 12.6999 13.5833L11.7833 9.64997L14.8416 6.99997C15.3999 6.51663 15.0999 5.59997 14.3666 5.54163L10.3416 5.19997L8.76661 1.4833C8.48327 0.808301 7.51661 0.808301 7.23327 1.4833L5.65827 5.19163L1.63327 5.5333C0.899939 5.59163 0.599938 6.5083 1.15827 6.99163L4.21661 9.64163L3.29994 13.575C3.13327 14.2916 3.90827 14.8583 4.5416 14.475L7.99994 12.3916Z" fill="#E9B911"></path>
-                        </svg>
-                        </a>
-                      </li>
-                      <li> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                          <path d="M7.99994 12.3916L11.4583 14.4833C12.0916 14.8666 12.8666 14.3 12.6999 13.5833L11.7833 9.64997L14.8416 6.99997C15.3999 6.51663 15.0999 5.59997 14.3666 5.54163L10.3416 5.19997L8.76661 1.4833C8.48327 0.808301 7.51661 0.808301 7.23327 1.4833L5.65827 5.19163L1.63327 5.5333C0.899939 5.59163 0.599938 6.5083 1.15827 6.99163L4.21661 9.64163L3.29994 13.575C3.13327 14.2916 3.90827 14.8583 4.5416 14.475L7.99994 12.3916Z" fill="#E9B911"></path>
-                        </svg>
-                        </a>
-                      </li>
-                      <li> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                          <path d="M7.99994 12.3916L11.4583 14.4833C12.0916 14.8666 12.8666 14.3 12.6999 13.5833L11.7833 9.64997L14.8416 6.99997C15.3999 6.51663 15.0999 5.59997 14.3666 5.54163L10.3416 5.19997L8.76661 1.4833C8.48327 0.808301 7.51661 0.808301 7.23327 1.4833L5.65827 5.19163L1.63327 5.5333C0.899939 5.59163 0.599938 6.5083 1.15827 6.99163L4.21661 9.64163L3.29994 13.575C3.13327 14.2916 3.90827 14.8583 4.5416 14.475L7.99994 12.3916Z" fill="#E9B911"></path>
-                        </svg>
-                        </a>
-                      </li>
-                      <li> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                          <path d="M7.99994 12.3916L11.4583 14.4833C12.0916 14.8666 12.8666 14.3 12.6999 13.5833L11.7833 9.64997L14.8416 6.99997C15.3999 6.51663 15.0999 5.59997 14.3666 5.54163L10.3416 5.19997L8.76661 1.4833C8.48327 0.808301 7.51661 0.808301 7.23327 1.4833L5.65827 5.19163L1.63327 5.5333C0.899939 5.59163 0.599938 6.5083 1.15827 6.99163L4.21661 9.64163L3.29994 13.575C3.13327 14.2916 3.90827 14.8583 4.5416 14.475L7.99994 12.3916Z" fill="#E9B911"></path>
-                        </svg>
-                        </a>
-                      </li>
-                  </ul>
-                </div>
+                <div class="star-ratings mt-3">
+                        <x-icon.star-fill/>
+                        <x-icon.star-fill/>
+                        <x-icon.star-fill/>
+                        <x-icon.star-fill/>
+                        <x-icon.star-fill/>
+                    </div>
 
                 <div class="testimonial-text">
                   <p>Prof. Michael Kassiou played a pivotal role in the development of our university curriculum. His expertise, creativity, and dedication to ensuring our program met the highest standards were truly outstanding. We are grateful for his contributions and highly recommend his services to any educational institution.</p>
@@ -400,7 +317,7 @@
                   </div>
                 </div>
                 <div class="testimonial-button">
-                  <a href="#">More Testimonials <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                  <a href="#">More Review & Rating <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
   <path d="M13.4437 11.9976L8.84375 7.39758L9.89758 6.34375L15.5514 11.9976L9.89758 17.6514L8.84375 16.5976L13.4437 11.9976Z" fill="#0036E3"/>
 </svg> </a>
                 </div>
@@ -430,14 +347,14 @@
                     <h6>Scheduling</h6>
                           <div class="form-radio-option edux-radio-option-right">
                                 <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
-                                <label class="form-radio-title  edux-form-radio-title-right me-4" for="Male"> <span class="me-1 edux-paypal-title"> Meeting now</span>
+                                <label class="form-radio-title  edux-form-radio-title-right me-4" for="Male"> <span class="me-1 edux-meeting-title"> Meeting now</span>
                                 <span>Michel is not available right now</span>
                               </label>
                             </div>
 
                             <div class="form-radio-option edux-radio-option-right">
                                 <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
-                                <label class="form-radio-title  edux-form-radio-title-right me-4" for="Male"> <span class="me-1 edux-paypal-title"> Meeting now</span>
+                                <label class="form-radio-title  edux-form-radio-title-right me-4" for="Male"> <span class="me-1 edux-meeting-title"> Meeting now</span>
                                 <span>Michel is not available right now</span>
                               </label>
                             </div>
@@ -454,7 +371,7 @@
                     <div class="edux-check-and-fund">
                         <p><a href="#">See more times</a>  </p>
                         <button type="button" class="btn btn-primary edux-btn-primary">Continue</button>
-                        <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
+                        <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon fw-bold">
                               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                                   <path d="M6.5 14H14.5V12H6.5V14ZM6.5 11H18.5V9H6.5V11ZM6.5 8H18.5V6H6.5V8ZM2.5 22V4C2.5 3.45 2.69583 2.97917 3.0875 2.5875C3.47917 2.19583 3.95 2 4.5 2H20.5C21.05 2 21.5208 2.19583 21.9125 2.5875C22.3042 2.97917 22.5 3.45 22.5 4V16C22.5 16.55 22.3042 17.0208 21.9125 17.4125C21.5208 17.8042 21.05 18 20.5 18H6.5L2.5 22ZM5.65 16H20.5V4H4.5V17.125L5.65 16Z" fill="#0036E3"></path>
                                 </svg>
@@ -654,7 +571,7 @@
 @endsection
 
 
-@push('js')
+@push('bottom_scripts')
 <!-- Expert profile Portfolio slide -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>

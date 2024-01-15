@@ -8158,6 +8158,12 @@ font-weight: 400;
 /* ============================== Book Consultant End Here ============================= */
 
 
+.edux-billing-method-area-right {
+  display: flex;
+  width: 100%;
+  gap: 48px;
+}
+
 .edux-billing-method-area {
   display: flex;
   width: 100%;
@@ -8529,6 +8535,50 @@ margin-bottom: 32px;
   justify-content: space-between;
 }
 
+.edux-no-available-booking .tag-list a{
+background: #F4F6F9;
+color:#6E737C;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+border:none
+}
+
+.eudx-project-expert-thumb {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.edux-expert-card-area .project-expert-card {
+  display: flex;
+  gap: 1rem;
+  padding: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.edux-meeting-title{
+  color:#191D24;
+  font-weight: 500;
+  font-size: 14px;
+}
+.edux-right-schedule p{
+  color:  #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-right-schedule .tag-list a{
+  color:  #191D24;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #EBEFF7;
+}
+
+
   /* ============================================ Expert Profile End ============================================= */
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
@@ -8821,6 +8871,16 @@ header.client-header {
 
 }
 
+
+@media only screen and (max-width: 1025px) {
+  .edux-course-curriculum-item h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+}
+
 @media only screen and (max-width: 995px) {
   .edux-modal-footer {
     margin: 0px auto;
@@ -8996,17 +9056,27 @@ header.client-header {
   width: 100%;
 }
 
+
+.edux-billing-method-area .left-sidebar-layout {
+  grid-template-columns: 100%;
+}
+
 }
 
 
 
 
 @media only screen and (max-width: 768px) {
+
+  .edux-billing-method-area .left-sidebar-layout {
+    grid-template-columns: 100%;
+}
+
   .edux-course-curriculum-area {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 h3, .h3 {
@@ -9209,6 +9279,13 @@ h3, .h3 {
 }
 
 @media only screen and (max-width: 730px) {
+
+  .edux-billing-method-area-right {
+    display: flex;
+    width: 100%;
+    gap: 0px;
+    flex-direction: column;
+}
 
   .edux-chatbox-area {
     display: flex;

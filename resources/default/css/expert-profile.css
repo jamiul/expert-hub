@@ -345,9 +345,9 @@ font-size: 14px;
   border: 1px solid #0036E3;
   display: inline-block;
   border-radius: 42px;
-  background: #EBEFF7;
+  background: #F4F6F9;
   color: #6E737C;
-  border: 1px solid #EBEFF7;
+  border: none;
 }
 
 .portfolio__card .hovered__action__box { border-radius: 4px;background: rgba(0, 0, 0, 0.58);opacity: 0;visibility: hidden;transition: all .3s ease-in-out; }
