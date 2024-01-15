@@ -811,7 +811,7 @@ img.exp-categoryl {
 
 .eduexhub {
     background: #e8ebf699;
-    padding: 50px 0 50px;
+    padding: 80px 0 30px;
     margin-bottom: 100px;
 }
 
@@ -1351,8 +1351,8 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 .about-info .heading {
     text-align: left;
     border-bottom: solid 1px #0e00621a;
-    margin-bottom: 100px;
-    padding: 0 115px 70px;
+    margin-bottom: 80px;
+    padding: 0 80px 70px;
 }
 
 .about-info .heading h2 {
@@ -1372,7 +1372,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .about-slider {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 .about-slider .heading h2 {
@@ -1532,10 +1532,23 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     background: #fff;
 }
 
+
+.about-slider .team-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+
 .about-team {
     background: #f1f3fa;
     margin-bottom: 0;
-    padding: 90px 0;
+    padding: 110px 0 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-team .team-hire .row {
