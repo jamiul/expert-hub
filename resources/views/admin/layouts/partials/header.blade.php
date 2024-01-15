@@ -16,13 +16,13 @@
     </div>
 
     <div class="header-menu">
-        <ul x-data="{ openDropdown: null }">
+        <ul>
             <li class="notification-dropdown-menu">
-                <a @click="openDropdown = (openDropdown === 'notification') ? null : 'notification'" href="#">
+                <a onclick="submenuTrigger(this, event)" href="#">
                     <span>1</span>
                     <x-icon.bell/>
                 </a>
-                <div x-show="openDropdown === 'notification'" class="header-dropdown">
+                <div class="header-dropdown">
                     <div class="notification-dropdown-inner">
                         <div class="notification-dropdown-item-wrapper">
                             <div class="notification-dropdown-item notification-dropdown-item-unread">
@@ -107,7 +107,7 @@
                 </div>
             </li>
             <li class="admin-profile-menu">
-                <a @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
+                <a onclick="submenuTrigger(this, event)" href="#">
                     <span>
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}">
                     </span>
@@ -116,7 +116,7 @@
                           <p class="admin-user-role">Curriculum Expert</p>
                     </span>
                 </a>
-                <div x-show="openDropdown === 'profile'" class="header-dropdown">
+                <div class="header-dropdown">
                     <div class="profile-dropdown-inner">
                         <div class="dropdown-user-thumbnail mb-3">
                             <img

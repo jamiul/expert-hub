@@ -811,7 +811,7 @@ img.exp-categoryl {
 
 .eduexhub {
     background: #e8ebf699;
-    padding: 90px 0 50px;
+    padding: 50px 0 50px;
     margin-bottom: 100px;
 }
 
@@ -1504,7 +1504,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .about-eduexhub {
     background: none;
-    margin-bottom: 50px;
+    margin-bottom:0px;
 }
 
 .about-eduexhub .about-eduexhub-btn {

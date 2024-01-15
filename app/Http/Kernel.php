@@ -66,5 +66,10 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'client' => \App\Http\Middleware\RedirectIfNotAuthenticatedAsClient::class,
         'expert' => \App\Http\Middleware\RedirectIfNotAuthenticatedAsExpert::class,
+        'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+        'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+        'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
+        'admin.guest' => \App\Http\Middleware\AdminRedirectIfAuthenticated::class,
     ];
 }
