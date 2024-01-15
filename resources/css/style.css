@@ -459,7 +459,7 @@ header .header-menu .login-block i {
 
 .require-main {
     background: #e8ebf699;
-    padding: 90px 0;
+    padding: 98px 0;
 }
 
 .require-main .heading h2 {
@@ -515,7 +515,7 @@ header .header-menu .login-block i {
 }
 
 .experts-main {
-    margin: 100px 0;
+    margin: 100px 0 61px;
 }
 
 .experts-main .experts-block {
@@ -575,7 +575,6 @@ header .header-menu .login-block i {
 .categories-main {
     background: #e8ebf699;
     padding: 90px 0;
-    margin-bottom: 100px;
 }
 
 .categories-main .categories-block {
@@ -665,9 +664,6 @@ header .header-menu .login-block i {
     border-radius: 6px 6px 0 0;
 }
 
-.team .team-block .team-img img {
-    margin-top: -28px;
-}
 
 
 
@@ -785,9 +781,7 @@ img.exp-categoryl {
     border-radius: 6px 6px 0 0;
 }
 
-.team .team-block .team-img img {
-    margin-top: -28px;
-}
+
 
 .team .team-block .hire-text {
     box-shadow: 14.755319595336914px 13.202128410339355px 37.27659606933594px
@@ -811,7 +805,7 @@ img.exp-categoryl {
 
 .eduexhub {
     background: #e8ebf699;
-    padding: 80px 0 30px;
+    padding: 100px 0px 50px;
     margin-bottom: 100px;
 }
 
@@ -1351,8 +1345,8 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 .about-info .heading {
     text-align: left;
     border-bottom: solid 1px #0e00621a;
-    margin-bottom: 80px;
-    padding: 0 80px 70px;
+    margin-bottom: 87px;
+    padding: 0 71px 70px;
 }
 
 .about-info .heading h2 {
@@ -1463,7 +1457,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .about-mission {
     background: #f1f3fa;
-    padding: 90px 0;
+    padding: 100px 0;
 }
 
 .about-mission .row {
@@ -1545,10 +1539,15 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 .about-team {
     background: #f1f3fa;
     margin-bottom: 0;
-    padding: 110px 0 90px;
+    padding: 100px 0 90px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.team-text {
+    display: flex;
+    margin: 130px 0px;
 }
 
 .about-team .team-hire .row {
@@ -9451,6 +9450,23 @@ ul.share-links > li {
     }
 }
 
+@media screen and (max-width: 479px) {
+
+    .team-text {
+        display: flex;
+        margin: 30px 0px;
+    }
+
+    .team {
+        margin-bottom: 30px;
+    }
+
+    .eduexhub {
+        padding: 70px 0 30px;
+        margin-bottom: 0px;
+    }
+
+}
 @media screen and (max-width: 479px) {
     .rate-box .btn {
         gap: 14px;
