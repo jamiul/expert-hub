@@ -93,6 +93,18 @@
             </label>
             <input type="file" id="upload-file" class="d-none">
         </div>
+        <div class="flat-uploaded-item-list">
+            <div class="flat-uploaded-item">
+                <div class="uploaded-item-icon"><x-icon.image fill="#0036E3"/> </div>
+                <div class="uploaded-item-info">
+                    <p class="uploaded-file-name text-sm fw-medium mb-0">Customer_file.png</p>
+                    <p class="uploaded-file-info text-sm mb-0"> <span class="uploaded-file-size">456 KB </span>  <span class="uploaded-file-time"> - 21 second left </span></p>
+                </div>
+                <div class="uploaded-item-remove">
+                    <button class="icon-btn"><x-icon.delete/> </button>
+                </div>
+            </div>
+        </div>
         <div class="image-upload-preview">
             <div class="">
                 <div class="uploaded-img-preview">
