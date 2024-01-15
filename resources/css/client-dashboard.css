@@ -8578,6 +8578,28 @@ border:none
   background-color: #EBEFF7;
 }
 
+.about-slider .owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  max-width: 244px;
+  max-height: 244px;
+  border-radius: 5.822px 5.822px 0px 0px;
+}
+
+.about-slider .carousel-text {
+  max-width: 244px;
+  max-height: 80px;
+}
+.about-slider .carousel-text p {
+  margin: 0px 0 0px;
+  font-size: 12px;
+  color: #6E737C;
+}
+
+.about-slider .owl-stage-outer{
+  padding-bottom: 40px;
+}
+
 
   /* ============================================ Expert Profile End ============================================= */
 
