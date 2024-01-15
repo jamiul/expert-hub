@@ -13,6 +13,7 @@ class ProjectList extends Component
 
     public $perPage = 5;
     public $showReadMoreButton = null;
+    public $tab = 'feed';
 
     public function readLess()
     {

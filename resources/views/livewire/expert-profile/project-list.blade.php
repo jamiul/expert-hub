@@ -1,26 +1,36 @@
 <div>
     <ul class="nav nav-tabs px-4 pt-4" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="feedTab-tab" data-bs-toggle="tab" data-bs-target="#feedTab" type="button"
-                role="tab" aria-controls="feedTab" aria-selected="true">My Feed
+            <button
+                wire:click="$set('tab', 'feed')"
+                class="nav-link {{ $tab == 'feed' ? 'active' : '' }}"
+                type="button"
+            >
+            My Feed
             </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="bestMatch-tab" data-bs-toggle="tab" data-bs-target="#bestMatch" type="button"
-                role="tab" aria-controls="bestMatch" aria-selected="false">
+            <button
+                wire:click="$set('tab', 'best')"
+                class="nav-link {{ $tab == 'best' ? 'active' : '' }}"
+                type="button"
+            >
                 Best Match
             </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="savedJobs-tab" data-bs-toggle="tab" data-bs-target="#savedJobs" type="button"
-                role="tab" aria-controls="savedJobs" aria-selected="false">
+            <button
+                wire:click="$set('tab', 'save')"
+                class="nav-link {{ $tab == 'save' ? 'active' : '' }}"
+                type="button"
+            >
                 Saved Jobs
             </button>
         </li>
     </ul> <!-- Tab panes -->
     <div class="tab-content">
         <!--.//feed__tab start Here-->
-        <div class="tab-pane active" id="feedTab" role="tabpanel" aria-labelledby="feedTab-tab">
+        <div class="tab-pane {{ $tab == 'feed' ? 'active' : '' }}" id="feedTab" role="tabpanel" aria-labelledby="feedTab-tab">
             <ul class="feed__list">
                 @forelse ($projects as $project)
                     <li class="feed__card tranisition" id="project-list-{{$project->id}}">
@@ -118,7 +128,7 @@
         <!--.//feed__tab End Here-->
 
         <!--.//feed__tab start Here-->
-        <div class="tab-pane" id="bestMatch" role="tabpanel" aria-labelledby="bestMatch-tab">
+        <div class="tab-pane {{ $tab == 'best' ? 'active' : '' }}" id="bestMatch" role="tabpanel" aria-labelledby="bestMatch-tab">
             <div class="tab-pane" id="#bestMatch" role="tabpanel" aria-labelledby="#bestMatch-tab">
                 <ul class="feed__list">
                     @forelse ($projects as $project)
@@ -217,7 +227,7 @@
             <!--.//feed__tab-->
         </div>
         <!--.//best__match-->
-        <div class="tab-pane" id="savedJobs" role="tabpanel" aria-labelledby="savedJobs-tab">
+        <div class="tab-pane {{ $tab == 'save' ? 'active' : '' }}" id="savedJobs" role="tabpanel" aria-labelledby="savedJobs-tab">
             <ul class="feed__list">
                 @forelse ($favoriteProjects as $project)
                     <li class="feed__card tranisition" id="project-list-{{$project->id}}">
