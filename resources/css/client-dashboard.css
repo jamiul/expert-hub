@@ -8149,11 +8149,11 @@ font-weight: 400;
   font-weight: 500;
 }
 
-.edux-more-read{
+.edux-read-more{
   color: #0036E3;
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
 }
 /* ============================== Book Consultant End Here ============================= */
 
@@ -8442,9 +8442,9 @@ margin-bottom: 32px;
 
   .edux-profile-page .user-profile-skills ul li {
     border-radius: 42px;
-    background: #EBEFF7;
+    background: #F4F6F9;
     color: #6E737C;
-    border: 1px solid #EBEFF7;
+    border: 1px solid #E7E5EF;
 }
 
 .book-expert-profile .tag-list .tag-list a{
@@ -8521,6 +8521,14 @@ margin-bottom: 32px;
 .edux-booking{
   color: #0036E3
 }
+
+
+.consultant-details-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
   /* ============================================ Expert Profile End ============================================= */
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
