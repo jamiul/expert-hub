@@ -25,11 +25,12 @@
             if(isset($header)){
                 if($header == 'client'){
                     $user = App\Models\User::find(1);
+                    Illuminate\Support\Facades\Auth::login($user);
                 }
                 if($header == 'expert'){
                     $user = App\Models\User::find(2);
+                    Illuminate\Support\Facades\Auth::login($user);
                 }
-                Illuminate\Support\Facades\Auth::login($user);
             }
         @endphp
         @auth
