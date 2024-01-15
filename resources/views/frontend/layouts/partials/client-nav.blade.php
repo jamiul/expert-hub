@@ -1,5 +1,6 @@
 <header class="main-header">
     <div class="main-header-container">
+        {{-- @dd(auth()->user()->full_name) --}}
         <div class="header-logo">
             <a href="{{ route('home') }}">
                 <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
@@ -169,16 +170,16 @@
                 <li>
                     <a class="icon-btn border" @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img
-                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
+                            src="{{ auth()->user()->profile->getFirstMediaUrl('picture') }}"/>
                     </a>
                     <div x-show="openDropdown === 'profile'" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
-                                    src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
+                                    src="{{ auth()->user()->profile->getFirstMediaUrl('picture') }}"/>
                             </div>
-                            <div class="dropdown-user-info  mb-3">
-                                <h3 class="h6 mb-1">Dr. Darrell Steward</h3>
+                            <div class="dropdown-user-info mb-3">
+                                <h3 class="h6 mb-1">{{ auth()->user()->full_name }}</h3>
                                 <p class="text-sm">Sydney Islamic business school</p>
                             </div>
                             <div class="dropdown-user-profile-status  mb-3">
@@ -189,9 +190,13 @@
                             </div>
                             <div class="dropdown-user-menu">
                                 <ul>
-                                    <li><a href="">
+                                    <li>
+                                        <a
+                                            href="{{ auth()->user()->active_profile->name == 'Expert' ? route('expert.profile.edit') : route('client.profile.edit') }}">
                                             <x-icon.user/>
-                                            Profile</a></li>
+                                            Profile
+                                        </a>
+                                    </li>
                                     <li><a href="">
                                             <x-icon.settings-line/>
                                             Setting</a></li>

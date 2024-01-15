@@ -8,6 +8,8 @@ use Livewire\Component;
 class Summary extends Component
 {
     public $profile = [];
+    public $expertDashboard = false;
+    public $editable = true;
     // public $today = '';
 
     public function mount()

@@ -52,7 +52,7 @@
                     <span> Page setting</span> </a>
                 <ul class="collapse" id="page-setting-submenu">
                     <li><a href="{{ route('admin.homePage') }}">Home Page</a></li>
-                    <li><a href="{{ route('admin.aboutUs') }}">About US Page</a></li>
+                    <li><a href="{{ route('admin.about-us') }}">About US Page</a></li>
                 </ul>
             </li>
             <li class="menu-title">Employee & Teach</li>

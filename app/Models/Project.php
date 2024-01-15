@@ -29,7 +29,7 @@ class Project extends Model implements HasMedia
     {
         return $this->belongsTo(Expertise::class);
     }
-    
+
     public function skills()
     {
         return $this->belongsToMany(Expertise::class, 'project_skill')
@@ -41,6 +41,11 @@ class Project extends Model implements HasMedia
     public function eois()
     {
         return $this->hasMany(Eoi::class);
+    }
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
     }
 
 }
