@@ -1,5 +1,5 @@
 <li>
-    <a class="icon-btn border"  @click="openDropdown = (openDropdown === 'notification') ? null : 'notification'" href="#">
+    <a class="icon-btn border"  @click.prevent="openDropdown = (openDropdown === 'notification') ? null : 'notification'" href="#">
         <span class="{{$unreadCount > 0 ? '' : 'd-none'}}" wire:poll.keep-alive>{{ $unreadCount }}</span>
         <x-icon.bell/>
     </a>

@@ -70,7 +70,7 @@
                 </li>
                 @livewire('expert-notification-count')
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
+                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
                         <span>99</span>
                         <x-icon.message-line/>
                     </a>
@@ -166,7 +166,7 @@
                     </div>
                 </li>
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
+                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img
                             src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
                     </a>
@@ -196,12 +196,7 @@
                                             Setting</a></li>
                                     @auth
                                         <li>
-                                            <form class="dropdown-logout-form" method="POST"
-                                                  action="{{ route('auth.logout') }}">
-                                                @csrf
-                                                <x-icon.logout-box-line/>
-                                                <button class="bg-light" type="submit">Logout</button>
-                                            </form>
+                                            @livewire('auth.logout')
                                         </li>
                                     @endauth
                                 </ul>

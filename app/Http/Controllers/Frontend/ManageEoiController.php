@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
-class ClientProjectController extends Controller
+class ManageEoiController extends Controller
 {
-    public function show(Project $project)
+    public function index(Project $project)
     {
-        return view('frontend.client.projects.show', [
+        return view('frontend.project.eoi.index', [
             'project' => $project,
         ]);
     }
