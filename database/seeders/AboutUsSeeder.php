@@ -24,7 +24,7 @@ class AboutUsSeeder extends Seeder
             Our comprehensive suite of services caters to a wide spectrum of needs, including but not limited to course accreditations, curriculum development, program design, policy formulation, scholarship advice, and complete educational project management. With our intuitive user interface, you can effortlessly post academic projects, review expressions of interest from our top academic experts, and make informed decisions that align with your project goals. Furthermore, we prioritise security by securely holding payments in escrow until project completion, ensuring satisfaction in every collaboration.',
             'instructor_title' => 'Meet Our Experts',
             'instructor_subtitle' => 'INSTRUCTOR',
-            'instructor_list' => [2, 3, 4, 5, 6, 7, 8],
+            'instructor_list' => [4, 5, 6, 7, 8],
             'mission_title' => 'Our Mission',
             'mission_subtitle' => 'mission',
             'mission_image' => 'mission-img.jpg',

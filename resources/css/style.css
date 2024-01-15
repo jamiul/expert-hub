@@ -2630,7 +2630,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .pagination .pagination-right ul li {
     margin-left: 2px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .pagination .pagination-right ul li a:hover {

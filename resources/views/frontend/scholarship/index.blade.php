@@ -15,7 +15,7 @@
 
             <div class="row mt-60">
                 <div class="col text-center">
-                    @include('frontend.scholarship._instructor')
+                    @livewire('experts.slider')
                 </div>
             </div>
         </div>

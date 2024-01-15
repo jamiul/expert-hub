@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         return Profile::whereIn('id', $ids)
         ->with('user' ,'expertField')
-        ->get();
+        ->limit(5)->get();
 
     }
 

@@ -1,8 +1,8 @@
 <div class="about-slider">
     <div class="container">
         <div class="heading">
-            <h4>{{ Str::upper($aboutUsDTO->instructor_subtitle) }}</h4>
-            <h2>{{ Str::headline($aboutUsDTO->instructor_title) }}</h2>
+            <h4>{{ Str::upper($instructor_subtitle) }}</h4>
+            <h2>{{ Str::headline($instructor_title) }}</h2>
         </div>
 
         <div id="owl-carousel" class="owl-carousel owl-theme">
