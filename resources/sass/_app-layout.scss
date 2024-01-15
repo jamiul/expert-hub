@@ -1128,10 +1128,9 @@ header {
     right: 0;
     background-color: #fff;
     border: 1px solid $edu-border-color;
-    padding: 20px;
     border-radius: 4px;
     box-shadow: 8px 8px 32px rgba(14, 0, 98, 0.1);
-    width: 300px;
+
     top: calc(100% + 28px);
     //display: none;
 
@@ -1150,6 +1149,8 @@ header {
     }
 
     .profile-dropdown-inner {
+        width: 300px;
+        padding: 20px;
 
         .dropdown-user-thumbnail {
             display: flex;
@@ -1239,12 +1240,15 @@ header {
     }
 
     .notification-dropdown-inner {
+        width: 384px;
+        padding: 8px;
+
         .notification-dropdown-item {
             display: flex;
             align-items: center;
             gap: 10px;
             border-bottom: 1px solid $edu-border-color;
-            padding: 5px 20px 5px 5px;
+            padding: 6px 10px 6px 5px;
             position: relative;
             color: inherit;
 
@@ -1267,26 +1271,32 @@ header {
 
                     p {
                         margin: 0;
-                        display: flex;
-                        justify-content: space-between;
 
                         &.notification-dropdown-title {
                             white-space: nowrap;
-                            max-width: 173px;
+                            max-width: max-content;
                             text-overflow: ellipsis;
                             overflow: hidden;
                         }
 
-                        span {
-                            display: inline-block;
+                        &.notification-dropdown-body {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 10px;
 
-                            &.notification-dropdown-message {
+                            span {
+                                display: inline-block;
                                 white-space: nowrap;
-                                max-width: 160px;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
+
+                                &.notification-dropdown-message {
+                                    white-space: nowrap;
+                                    max-width: max-content;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
                             }
                         }
+
                     }
                 }
             }
@@ -1346,12 +1356,15 @@ header {
     }
 
     .message-dropdown-inner {
+        width: 384px;
+        padding: 8px;
+
         .message-dropdown-item {
             display: flex;
             align-items: center;
             gap: 10px;
             border-bottom: 1px solid $edu-border-color;
-            padding: 5px 20px 5px 5px;
+            padding: 6px 10px 6px 5px;
             position: relative;
             color: inherit;
 
@@ -1374,26 +1387,32 @@ header {
 
                     p {
                         margin: 0;
-                        display: flex;
-                        justify-content: space-between;
 
                         &.message-dropdown-title {
                             white-space: nowrap;
-                            max-width: 173px;
+                            max-width: max-content;
                             text-overflow: ellipsis;
                             overflow: hidden;
                         }
 
-                        span {
-                            display: inline-block;
+                        &.message-dropdown-body {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 10px;
 
-                            &.message-dropdown-message {
+                            span {
+                                display: inline-block;
                                 white-space: nowrap;
-                                max-width: 160px;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
+
+                                &.message-dropdown-message {
+                                    white-space: nowrap;
+                                    max-width: max-content;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
                             }
                         }
+
                     }
                 }
             }

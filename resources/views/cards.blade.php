@@ -19,7 +19,7 @@
 
         </div>
         <div class="row">
-            <h4 class="my-5  text-center">Expert Card</h4>
+            <h4 class="my-5  text-center">Expert Card (Project)</h4>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-10">
@@ -96,6 +96,96 @@
                                     Development</a>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="my-5  text-center">Expert Card (Public)</h4>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <div class="expert-profile-flag mb-2">Best Match</div>
+                            <h3 class="h6 expert-name mb-0">Professor Miles
+                                Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+
+                        </div><!--expert-info-->
+                        <div class="expert-card-action">
+                            <button x-data="{ isFavorited: false }"
+                                    class="btn btn-md btn-icon btn-outline-light btn-favorite"
+                                    :class="{ 'favorited': isFavorited }"
+                                    @click="isFavorited = !isFavorited">
+                                                                        <span class="heart-line">
+                                                                            <x-icon.heart/>
+                                                                       </span>
+                                <span class="heart-filled">
+                                                                            <x-icon.heart-filled/>
+                                                                       </span>
+                            </button>
+                            <button class="btn btn-md btn-icon btn-outline-light">
+                                <x-icon.message-line/>
+                            </button>
+                            <button class="btn btn-md btn-outline-primary border-2"> Invite Project</button>
+                        </div>
+                    </div>
+                    <div class="expert-card-body">
+                        <div class="d-flex gap-3 align-items-center">
+                            <div><strong class="fw-medium">$200 </strong>/ hr</div>
+                            <div class="star-ratings">
+                                <x-icon.star-fill/>
+                                <x-icon.star-fill/>
+                                <x-icon.star-fill/>
+                                <x-icon.star-fill/>
+                                <x-icon.star-fill/>
+                            </div>
+                            <div class="expert-profile-status">
+                                Available now
+                            </div>
+                        </div>
+
+                        <div class="expert-summary py-3">
+                            <p class="mb-0">Prof. Miles esther is an accomplished Curriculum
+                                Development Specialist
+                                with a distinguished career in education and a track
+                                record of providing
+                                consultation services in... <a href=""> more</a></p>
+                        </div>
+                        <div class="tag-list expert-tag-list">
+                            <a href="#"
+                               class="expert-tag offer-consultation-btn">
+                                <x-icon.video fill="#0036E3"/>
+                                Offer Consultation</a>
+                            <a href="#" class="expert-tag">Communication
+                                Skills</a>
+                            <a href="#" class="expert-tag">Industry Treds
+                                Awareness</a>
+                            <a href="#" class="expert-tag"> Research</a>
+                            <a href="#" class="expert-tag">System Research
+                                Development</a>
+                            <a href="#"
+                               class="expert-tag">Communication </a>
+                            <a href="#" class="expert-tag">Industry
+                                Treds</a>
+                            <a href="#" class="expert-tag">Educational
+                                Research</a>
+                            <a href="#" class="expert-tag">System
+                                Development</a>
+                        </div>
+
                     </div>
                 </div>
 
@@ -257,4 +347,5 @@
             border-radius: 4px;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 @endsection
