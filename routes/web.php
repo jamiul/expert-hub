@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
+use App\Http\Controllers\Frontend\ClientProjectController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
@@ -68,7 +69,7 @@ Route::get('/client/profile', [ClientProfileController::class, 'index'])->middle
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
-
+Route::get('/client/projects/{project}', [ClientProjectController::class, 'show'])->name('client.projects.show');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
