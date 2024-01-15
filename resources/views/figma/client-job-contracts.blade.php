@@ -4,7 +4,7 @@
     <section class="my-60">
         <div class="container">
             <div class="title-page-wrapper">
-                <div class="title-page-header">
+                <div class="title-page-header pb-3">
                     <h1 class="h5 m-0">All Contract</h1>
                 </div>
                 <div class="title-page-body project-tab" x-data="{ activeTab: 'in-progress-contract' }">
