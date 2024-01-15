@@ -1,48 +1,38 @@
 <header class="main-header">
     <div class="main-header-container">
         <div class="header-logo">
-            <a href="">
+            <a href="{{ route('home') }}">
                 <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
             </a>
         </div>
         <nav class="main-header-nav">
             <ul>
                 <li class="item-has-submenu">
-                    <a href="/figma/client-dashboard">My Projects </a>
+                    <a href="#">Projects</a>
                     <ul>
-                        <li><a href="/figma/project/client-job-posts">All Job Posts</a></li>
-                        <li><a href="">All Contacts</a></li>
+                        <li><a href="/figma/project/client-job-posts">My project</a></li>
+                        <li><a href="/figma/job-posts">Post a project</a></li>
                     </ul>
                 </li>
                 <li class="item-has-submenu">
-                    <a href="/figma/client-clientaddpayment">Billing & Payments </a>
+                    <a href="#">Reports</a>
                     <ul>
-                        <li><a href="/figma/client-clientaddpayment">Add Payment Method</a></li>
-                        <li><a href="/figma/client-weeklyreportsummary">Weekly Summery</a></li>
-                        <li><a href="/figma/client-weeklyreporttransction">Transaction History</a></li>
-                        <li><a href="/figma/client-weeklyreporttwobudget">Budgets</a></li>
-                        <li><a href="/figma/client-dashboardatimesheet">Timesheet</a></li>
+                        <li><a href="">My profile</a></li>
+                        <li><a href="">Analytic</a></li>
+                        <li><a href="">Billings & Payment</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="{{ route('find.experts') }}">Find Experts</a>
-                </li>
-                <li>
-                    <a href="{{ route('scholarship-database') }}">Find Scholarships</a>
+                    <a href="{{ route('find.experts') }}">Experts</a>
                 </li>
                 <li>
-                    <a href="/find-training">Find Trainings</a>
-                </li>
-                <li class="item-has-submenu">
-                    <a href="/figma/client-passwordsecurity">Settings</a>
-                    <ul>
-                        <li><a href="/figma/client-passwordsecurity">PassWord & Security</a></li>
-                        <li><a href="/notification-settings">Notification</a></li>
-                    </ul>
+                    <a href="{{ route('scholarship-database') }}">Scholarships</a>
                 </li>
                 <li>
-                    <a href="/figma/client-chatbox-new">Message</a>
+                    <a href="/find-training">Trainings</a>
                 </li>
+
             </ul>
         </nav>
 
@@ -97,7 +87,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -113,7 +103,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -129,7 +119,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -145,7 +135,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -161,7 +151,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>

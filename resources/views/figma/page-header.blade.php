@@ -138,11 +138,10 @@
                         </label>
                         <input type="text" value="Expert" id="header-search-type">
                         <ul>
-                            <li> My Projects</li>
-                            <li> Proposals</li>
-                            <li> All Contracts</li>
-                            <li> Save jobs</li>
-                            <li> Work Diary</li>
+                            <li>Expert</li>
+                            <li>Project</li>
+                            <li>Training</li>
+                            <li>Scholarship</li>
                         </ul>
                     </div>
                     <button>
@@ -153,7 +152,7 @@
 
 
             <div class="header-special-menu">
-                <ul class="">
+                <ul x-data="{ openDropdown: null }">
                     <li class="header-search-trigger">
                         <button class="icon-btn border"
                                 onclick="toggleClasses('.main-header .header-search', 'header-search-activated' )">
@@ -167,11 +166,11 @@
                     </li>
                     <li>
 
-                        <a class="icon-btn border" onclick="submenuTrigger(this, event)" href="#">
+                        <a class="icon-btn border" @click="openDropdown = (openDropdown === 'notification') ? null : 'notification'" href="#">
                             <span>99</span>
                             <x-icon.bell/>
                         </a>
-                        <div class="header-dropdown">
+                        <div x-show="openDropdown === 'notification'" class="header-dropdown">
                             <div class="notification-dropdown-inner">
                                 <div class="notification-dropdown-item-wrapper">
                                     <div class="notification-dropdown-item notification-dropdown-item-unread">
@@ -181,11 +180,10 @@
                                                 class="" alt="avatar">
                                         </div>
                                         <div class="notification-dropdown-info">
-                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your
-                                                invitation</p>
-                                            <p class="text-sm">
-                                                <span class="notification-dropdown-message">A wonderful serenity has taken</span>
-                                                <span class="notification-dropdown-time">1m</span>
+                                            <p class="text-sm fw-medium notification-dropdown-title"> Front-End Developer to Edit Three Pages Based on Figma Design </p>
+                                            <p class="text-sm notification-dropdown-body">
+                                                <span class="notification-dropdown-message"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, placeat? </span>
+                                                <span class="notification-dropdown-time">1 Year ago</span>
                                             </p>
 
                                         </div>
@@ -200,7 +198,7 @@
                                         <div class="notification-dropdown-info">
                                             <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="notification-dropdown-time">1m</span></p>
 
                                         </div>
@@ -214,7 +212,7 @@
                                         <div class="notification-dropdown-info">
                                             <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="notification-dropdown-time">1m</span></p>
 
                                         </div>
@@ -228,7 +226,7 @@
                                         <div class="notification-dropdown-info">
                                             <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="notification-dropdown-time">1m</span></p>
 
                                         </div>
@@ -242,7 +240,7 @@
                                         <div class="notification-dropdown-info">
                                             <p class="text-sm fw-medium notification-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="notification-dropdown-time">1m</span></p>
                                         </div>
                                     </div>
@@ -254,11 +252,11 @@
                         </div>
                     </li>
                     <li>
-                        <a class="icon-btn border" onclick="submenuTrigger(this, event)" href="#">
+                        <a class="icon-btn border" @click="openDropdown = (openDropdown === 'message') ? null : 'message'"  href="#">
                             <span>99</span>
                             <x-icon.message-line/>
                         </a>
-                        <div class="header-dropdown">
+                        <div x-show="openDropdown === 'message'" class="header-dropdown">
                             <div class="message-dropdown-inner">
                                 <div class="message-dropdown-item-wrapper">
                                     <div class="message-dropdown-item message-dropdown-item-unread">
@@ -270,14 +268,12 @@
                                         <div class="message-dropdown-info">
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm">
-                                                <span
-                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm message-dropdown-body">
+                                            <span
+                                                class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
-
                                         </div>
-
                                     </div>
                                     <div class="message-dropdown-item">
                                         <div class="message-dropdown-thumb">
@@ -288,14 +284,12 @@
                                         <div class="message-dropdown-info">
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm">
-                                                <span
-                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm message-dropdown-body">
+                                            <span
+                                                class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
-
                                         </div>
-
                                     </div>
                                     <div class="message-dropdown-item">
                                         <div class="message-dropdown-thumb">
@@ -306,14 +300,12 @@
                                         <div class="message-dropdown-info">
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm">
-                                                <span
-                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm message-dropdown-body">
+                                            <span
+                                                class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
-
                                         </div>
-
                                     </div>
                                     <div class="message-dropdown-item">
                                         <div class="message-dropdown-thumb">
@@ -324,14 +316,12 @@
                                         <div class="message-dropdown-info">
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm">
-                                                <span
-                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm message-dropdown-body">
+                                            <span
+                                                class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
-
                                         </div>
-
                                     </div>
                                     <div class="message-dropdown-item">
                                         <div class="message-dropdown-thumb">
@@ -342,16 +332,13 @@
                                         <div class="message-dropdown-info">
                                             <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                                 invitation</p>
-                                            <p class="text-sm">
-                                                <span
-                                                    class="message-dropdown-message">A wonderful serenity has taken</span>
+                                            <p class="text-sm message-dropdown-body">
+                                            <span
+                                                class="message-dropdown-message">A wonderful serenity has taken</span>
                                                 <span class="message-dropdown-time">1m</span>
                                             </p>
-
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <a href="/figma/client-chatbox-new" class="message-dropdown-view-all">
                                     <x-icon.message-line fill="#C8C5D4"/>
@@ -361,12 +348,12 @@
                         </div>
                     </li>
                     <li>
-                        <a class="icon-btn border" onclick="submenuTrigger(this, event)" href="#">
+                        <a class="icon-btn border" @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                             <img
                                 src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
                         </a>
 
-                        <div class="header-dropdown">
+                        <div x-show="openDropdown === 'profile'" class="header-dropdown">
                             <div class="profile-dropdown-inner">
                                 <div class="dropdown-user-thumbnail mb-3">
                                     <img
@@ -419,7 +406,7 @@
 
 
     <div class="mb-60"></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"></script>
     <script>
         function toggleClasses(parentSelector, className) {
             var parentElement = document.querySelector(parentSelector);
