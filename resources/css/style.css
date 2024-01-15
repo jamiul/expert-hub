@@ -1395,7 +1395,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .about-slider .carousel-text h4 {
-    color: #303744;
+    color: #191D24;
     font-size: 14px;
     font-weight: 500;
     margin: 0;
@@ -1408,7 +1408,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .about-slider .carousel-text h5 {
-    color: #0036e3;
+    color: #0036E3;
     font-size: 12px;
     font-weight: 400;
     margin: 0;
@@ -1446,14 +1446,14 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 .about-slider .owl-nav .owl-prev {
     position: absolute;
     left: -20px;
-    top: 36%;
+    top: 49%;
     transform: translateY(-36%);
 }
 
 .about-slider .owl-nav .owl-next {
     position: absolute;
     right: -20px;
-    top: 36%;
+    top: 49%;
     transform: translateY(-36%);
 }
 
@@ -2630,7 +2630,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .pagination .pagination-right ul li {
     margin-left: 2px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .pagination .pagination-right ul li a:hover {

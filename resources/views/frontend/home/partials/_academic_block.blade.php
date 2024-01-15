@@ -146,7 +146,7 @@
         </div>
 
         <div class="academic-button">
-            <x-button.link href="{{ route('find-training.index') }}"
+            <x-button.link href="{{ route('find-training') }}"
             text="View All Training" />
         </div>
     </div>

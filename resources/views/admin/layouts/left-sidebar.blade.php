@@ -106,7 +106,7 @@
 
             <ul class="collapse" id="content05">
                 <li><a href="{{ route('admin.homePage') }}" class="inner-link">Home Page</a></li>
-                <li><a href="{{ route('admin.aboutUs') }}" class="inner-link">About US Page</a></li>
+                <li><a href="{{ route('admin.about-us') }}" class="inner-link">About US Page</a></li>
             </ul>
         </li>
 

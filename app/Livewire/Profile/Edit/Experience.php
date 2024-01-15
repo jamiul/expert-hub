@@ -14,6 +14,7 @@ class Experience extends Component
     public $experience = null;
     public $years = [];
     public $showReadMoreButton = null;
+    public $editable = true;
 
     public function mount()
     {
