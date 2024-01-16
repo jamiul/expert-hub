@@ -11,8 +11,8 @@
         <div class="all-project-post">
           <div class="all-project-post-content">
             <ul>
-              <li><a href="#">All Project Posts</a></li>
-              <li><a href="#">All Contracts</a></li>
+              <li><a href="/figma/project/client-job-posts/">All Project Posts</a></li>
+              <li><a href="/figma/project/client-job-contracts/">All Contracts</a></li>
             </ul>
           </div>
           <div class="job-post">
