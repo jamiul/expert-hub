@@ -31,9 +31,9 @@
         </p>
         <div class="my-4 complete-profile-status-edit-widget">
             <p class="text-sm d-flex align-items-center mb-1 gap-3">Complete your profile
-                <button class="icon-btn icon-btn-md {{ ! $editable ? 'd-none' : '' }}">
+                <a class="icon-btn icon-btn-md {{ ! $editable ? 'd-none' : '' }}" href="{{ route('expert.profile.edit') }}">
                     <x-icon.edit />
-                </button>
+                </a>
             </p>
             <div progress-status="40%" class="complete-profile-status-progress-bar"></div>
         </div>
