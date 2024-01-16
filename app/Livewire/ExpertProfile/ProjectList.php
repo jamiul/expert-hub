@@ -13,6 +13,7 @@ class ProjectList extends Component
 
     public $perPage = 5;
     public $showReadMoreButton = null;
+    public $showMore = false;
     public $tab = 'feed';
 
     public function readLess()
@@ -34,6 +35,10 @@ class ProjectList extends Component
     public function paginationView()
     {
         return 'livewire.pagination';
+    }
+    public function toggleShowMore()
+    {
+        $this->showMore = !$this->showMore;
     }
 
     public function render()

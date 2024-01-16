@@ -9,6 +9,8 @@ class ExpertDashboardController extends Controller
 {
     public function index()
     {
-        return view('frontend.expert.dashboard.index');
+        $consultationCount = count(auth()->user()->profile->consultation);
+        $trainingCount = 0;
+        return view('frontend.expert.dashboard.index', compact('consultationCount', 'trainingCount'));
     }
 }
