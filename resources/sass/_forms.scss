@@ -54,6 +54,10 @@
         @include input-field;
         position: relative;
         z-index: 1;
+
+        &:disabled {
+            background-color: #F0F0F0;
+        }
     }
 
     .form-textarea-field {
@@ -461,3 +465,38 @@ select.input-field-control {
     }
 }
 
+.flat-uploaded-item-list {
+
+    .flat-uploaded-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 89, 201, 0.30);
+        background: rgba(0, 89, 201, 0.05);
+        padding: 6px 24px;
+        margin-bottom: 10px;
+
+        .uploaded-file-time {
+            color: rgba(48, 55, 68, 0.70);
+        }
+
+        .uploaded-item-remove {
+            margin-left: auto;
+
+            button {
+                background-color: transparent;
+                padding: 0;
+
+                path {
+                    fill: #303744B2;
+                }
+                &:hover{
+                    path {
+                        fill: #F00;
+                    }
+                }
+            }
+        }
+    }
+}
