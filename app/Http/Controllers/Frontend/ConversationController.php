@@ -16,8 +16,9 @@ class ConversationController extends Controller
 
     public function index()
     {
-        $conversations = Participant::with('conversation')->where('profile_id', Auth::user()->profile->id)->get();
-        return view('frontend.messaging.index', compact('conversations'));
+        // $currentUsersConversations = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->get();
+        
+        return view('frontend.messaging.index');
     }
 
     public function store()
