@@ -128,7 +128,7 @@
                         </div>
                     </li>
                 @empty
-                    <p>No data</p>
+                    <x-empty />
                 @endforelse
 
             </ul>
@@ -247,7 +247,7 @@
                             </div>
                         </li>
                     @empty
-                        <p>No data</p>
+                        <x-empty />
                     @endforelse
 
                 </ul>
@@ -365,12 +365,12 @@
                         </div>
                     </li>
                 @empty
-                    <p>No data</p>
+                    <x-empty />
                 @endforelse
 
             </ul>
 
-            {{ $projects->links() }}
+            {{ $favoriteProjects->links() }}
         </div>
         <!--.//savedJobs-->
     </div>
