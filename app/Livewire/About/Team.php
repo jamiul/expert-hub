@@ -21,7 +21,7 @@ class Team extends Component
     {
         return Profile::whereIn('id', $ids)
         ->with('user' ,'expertField')
-        ->get();
+        ->limit(6)->get();
 
     }
 

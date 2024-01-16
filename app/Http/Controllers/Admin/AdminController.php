@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function loginForm()
-    {
-        return view('admin.auth.login');
-    }
-
     public function projectList()
     {
         return view('figma.admin-projects');
@@ -30,11 +25,6 @@ class AdminController extends Controller
     public function homePage()
     {
         return view('figma.frontentdashboardhome');
-    }
-
-    public function aboutUs()
-    {
-        return view('admin.about-us.index');
     }
 
     public function projectPayment()

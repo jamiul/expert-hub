@@ -2,7 +2,7 @@
     <div class="public-header-main">
         <div class="public-header-container">
             <div class="header-logo">
-                <a href="/"><img src="{{ asset('assets/frontend/img/logo.png') }}"/></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('assets/frontend/img/logo.png') }}"/></a>
             </div>
             <div class="header-search">
                 <form action="">
@@ -13,11 +13,10 @@
                         </label>
                         <input type="text" value="Expert" id="header-search-type">
                         <ul>
-                            <li> My Projects</li>
-                            <li> Proposals</li>
-                            <li> All Contracts</li>
-                            <li> Save jobs</li>
-                            <li> Work Diary</li>
+                            <li>Expert</li>
+                            <li>Project</li>
+                            <li>Training</li>
+                            <li>Scholarship</li>
                         </ul>
                     </div>
                     <button>
