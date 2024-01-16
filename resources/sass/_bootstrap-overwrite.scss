@@ -116,6 +116,10 @@ table {
         color: #fff;
         background-color: $edu-primary-color;
     }
+    &.badge-primary-light {
+        color: $edu-primary-color;
+        background: rgba(0, 54, 227, 0.06);
+    }
 
     &.badge-secondary {
         color: #fff;

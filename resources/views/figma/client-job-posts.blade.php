@@ -13,10 +13,11 @@
                     </div>
                     <div class="seller-admin-project-filter mt-20">
                         <x-form.flatpicker class="vertical-label input-field-md" label="Sort By" name="datepicker"/>
-                        <x-form.choice-static class="input-field-md" wire:model="titles">
+                         
+                        <x-form.select class="input-field-md" wire:model="title">
                             <option value="Mr">Ascending</option>
                             <option value="Mrs">Descending</option>
-                        </x-form.choice-static>
+                        </x-form.select>
                         <div class="input-group">
                             <input type="text" class="input-field-control input-field-control-md"
                                    placeholder="Search by contract, client, or company">

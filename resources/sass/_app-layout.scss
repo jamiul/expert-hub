@@ -211,6 +211,7 @@ $edu-admin-header-height: 76px;
 }
 
 :has(.sidebar-small) {
+
     .admin-sidebar {
         width: 70px;
     }
@@ -225,6 +226,9 @@ $edu-admin-header-height: 76px;
 
     .sidebar-menu-wrapper {
         ul.menu {
+            margin: 0;
+            padding: 0;
+
             &>li {
                 white-space: nowrap;
                 position: relative;
