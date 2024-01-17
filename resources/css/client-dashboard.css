@@ -5545,11 +5545,15 @@ span.edux-word-count {
     margin-top: 20px;
     display: flex;
     align-items: center;
-    background: #0059C90D;
-    border: solid 1px #0059C94D;
+    background: rgba(0, 89, 201, 0.03);
+    border: 1px solid rgba(0, 89, 201, 0.30);
     border-radius: 4px;
     padding: 16px 24px;
 }
+
+
+
+
 
 label.basic-file-upload:hover {
   border-radius: 4px;
