@@ -35,12 +35,13 @@
                         <div class="job-post-form">
                             <form wire:submit="save">
 
-                                    <x-form.choice-static wire:model="titles" label="What is your project field" multiple>
-                                        <option value="your project field">your project field</option>
-                                        <option value="your project field">your project field</option>
-                                        <option value="your project field">your project field</option>
-                                        <option value="your project field">your project field</option>
-                                    </x-form.choice-static>
+                            <x-form.select label="What is your project field" wire:model="What is your project field">
+                                <option value="">Select options</option>
+                                <option value="your project field">your project field</option>
+                                <option value="your project field">your project field</option>
+                                <option value="your project field">your project field</option>
+                                <option value="your project field">your project field</option>
+                            </x-form.select>
 
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
@@ -52,7 +53,7 @@
                                 <div class="step step-2 mb-4">
                                     <div class="main-form position-relative">
                                     <x-form.textarea label="Project Description" wire:model="bio" placeholder="Bio">
-                                    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this
+                                        Write description
                                     </x-form.textarea>
                                     <span class="edux-word-count">0/1000</span>
                                         </div>
