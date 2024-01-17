@@ -15,4 +15,9 @@ class Message extends Model
     {
         return $this->hasMany(MessageRecipient::class);
     }
+
+    public function conversation()
+    {
+        return $this->belongsTo(Conversation::class);
+    }
 }
