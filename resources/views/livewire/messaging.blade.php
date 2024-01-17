@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <div class="chatbox-wrapper">
         <div class="chatbox-contact-area">
@@ -248,6 +249,10 @@
             <div class="chatbox-conversation-area">
                 <div class="chatbox-conversation-inner">
                     <div class="chatbox-message-list">
+                        {{-- dd($conversationMessages) --}}
+                        <!-- TODO: Improve here, remove the if conditional -->
+                    @if($conversationMessages)
+                    @forelse($conversationMessages->messages as $conversationMessage)
                         <div class="chatbox-conversation-message recipient-message" onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -258,10 +263,7 @@
                                     <time> 6:50 PM</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                        parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-                                        necl</p>
+                                    <p>{{$conversationMessage->content}}</p>
                                 </div>
                             </div>
                             <div class="conversation-user-message-action">
@@ -290,6 +292,12 @@
                             </div>
 
                         </div>
+
+                        @empty
+
+                        @endforelse
+                        @endif
+
                         <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -300,10 +308,7 @@
                                     <time> 6:50 PM</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                        parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-                                        necl</p>
+                                    <p>Dummy message 1</p>
                                 </div>
                             </div>
                             <div class="conversation-user-message-action">
@@ -313,6 +318,7 @@
                             </div>
 
                         </div>
+                        
                         <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -323,10 +329,7 @@
                                     <time> 6:50 PM</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                        parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-                                        necl</p>
+                                    <p>Dummay message 2</p>
                                 </div>
                             </div>
                             <div class="conversation-user-message-action">
@@ -336,6 +339,7 @@
                             </div>
 
                         </div>
+                        
                         <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -346,8 +350,7 @@
                                     <time> 6:50 PM</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                        ligula eget dolor.</p>
+                                    <p>Dummy message 3</p>
                                 </div>
                             </div>
                             <div class="conversation-user-message-action">
@@ -357,6 +360,7 @@
                             </div>
 
                         </div>
+                        
                         <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -367,7 +371,7 @@
                                     <time> 6:50 PM</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                    <p>Dummy message 4 </p>
                                 </div>
                             </div>
                             <div class="conversation-user-message-action">
@@ -377,7 +381,9 @@
                             </div>
 
                         </div>
+
                         <div class="separator"><span>12 Oct 2023</span></div>
+                        
                         <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -388,7 +394,7 @@
                                     <time> 6:50 PM</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                    <p>Dummay message 5 </p>
                                 </div>
                             </div>
                             <div class="conversation-user-message-action">
@@ -398,6 +404,7 @@
                             </div>
 
                         </div>
+                        
                         <div class="chatbox-conversation-message message-typing">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -422,7 +429,7 @@
                             <x-icon.expand />
                         </button>
 
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Type your message..."></textarea>
+                        <textarea name="" id="" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
 
 
                         <div class="chatbox-message-editor-helper">
@@ -469,7 +476,7 @@
                                     </div>
                                 </div>
 
-                                <button class="icon-btn send-message">
+                                <button class="icon-btn send-message" wire:click="sendMessage">
                                     <x-icon.send />
                                 </button>
                             </div>
