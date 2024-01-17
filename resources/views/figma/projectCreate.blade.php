@@ -74,6 +74,8 @@
                                         </div>
                                     </div>
 
+                                    <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>Image, pdf, doc, excel (Max 10 MB)</span></p>
+
                                 </div>
                                 <div class="step step-3 mt-3">
                                     <div class="main-form">
@@ -167,8 +169,9 @@
                                     </div>
                                 </div>
 
-                                <div class="form-buttons">
-                                    <button  wire:click="next" type="button" class="edux-btn-primary">Post Job</button>
+                                <div class="single-button edux-btn-post-job mt-3">
+                                    <button type="button" class="btn edux-btn-border-primary">Save As Draft</button>
+                                    <button type="button" class="btn btn-primary edux-btn-primary">Post Project</button>
                                 </div>
 
                             </form>

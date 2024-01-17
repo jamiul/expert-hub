@@ -8,7 +8,7 @@
                         <div class="page-sidebar">
                             <div class="filter-widget border-bottom">
                                 <div class="d-flex justify-content-between">
-                                    <h4 class="h6 mb-0">Filter</h4>
+                                    <h4 class="h6 mb-0">alam</h4>
                                     <button class="btn btn-sm btn-link text-decoration-underline px-0 ">Clear filters
                                     </button>
                                 </div>
