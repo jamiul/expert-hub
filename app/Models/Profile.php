@@ -41,6 +41,11 @@ class Profile extends Model implements HasMedia
         return $this->belongsTo(User::class);
     }
 
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
     public function languages():BelongsToMany
     {
         return $this->belongsToMany(Language::class, 'profile_language')

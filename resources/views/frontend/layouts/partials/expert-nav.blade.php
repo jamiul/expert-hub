@@ -1,33 +1,39 @@
 <header class="main-header">
     <div class="main-header-container">
         <div class="header-logo">
-            <a href="">
+            <a href="{{ route('home') }}">
                 <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
             </a>
         </div>
         <nav class="main-header-nav">
             <ul>
                 <li class="item-has-submenu">
-                    <a href="/figma/client-dashboard">Projects </a>
+                    <a href="#">Projects</a>
                     <ul>
-                        <li><a href="">Sub Menu 01</a></li>
-                        <li><a href="">Sub Menu 02</a></li>
-                        <li><a href="">Sub Menu 03</a></li>
-                        <li><a href="">Sub Menu 04</a></li>
-                        <li><a href="">Sub Menu 05</a></li>
+                        <li><a href="/figma/project/client-job-posts">My project</a></li>
+                        <li><a href="/find-projects">Find project</a></li>
+                    </ul>
+                </li>
+                <li class="item-has-submenu">
+                    <a href="#">Reports</a>
+                    <ul>
+                        <li><a href="/expert/profile/edit">My profile</a></li>
+                        <li><a href="/figma/expert-status-analytics">Analytic</a></li>
+                        <li><a href="/expert-get-paid">Billings & Payment</a></li>
+                    </ul>
+                </li>
+
+                <li class="item-has-submenu">
+                    <a href="#">Services</a>
+                    <ul>
+                        <li><a href="">My Consultation</a></li>
+                        <li><a href="">My Training</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/figma/client-dashboardexperthire">Experts</a>
+                    <a href="/find-training">Trainings</a>
                 </li>
 
-                <li>
-                    <a href="/figma/client-clientaddpayment">Billing & Payments</a>
-                </li>
-
-                <li>
-                    <a href="/figma/client-passwordsecurity">Settings</a>
-                </li>
             </ul>
         </nav>
 
@@ -38,13 +44,10 @@
                     <label for="header-search-type">
                         <x-icon.chevron-right width="18" height="18"/>
                     </label>
-                    <input type="text" value="Expert" id="header-search-type">
+                    <input type="text" value="Project" id="header-search-type">
                     <ul>
-                        <li> My Projects</li>
-                        <li> Proposals</li>
-                        <li> All Contracts</li>
-                        <li> Save jobs</li>
-                        <li> Work Diary</li>
+                        <li>Project</li>
+                        <li>Scholarship</li>
                     </ul>
                 </div>
                 <button>
@@ -67,11 +70,11 @@
                 </li>
                 @livewire('expert-notification-count')
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
+                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
                         <span>99</span>
                         <x-icon.message-line/>
                     </a>
-                    <div x-show="openDropdown === 'message'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'message'" class="header-dropdown">
                         <div class="message-dropdown-inner">
                             <div class="message-dropdown-item-wrapper">
                                 <div class="message-dropdown-item message-dropdown-item-unread">
@@ -83,7 +86,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -99,7 +102,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -115,7 +118,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -131,7 +134,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -147,7 +150,7 @@
                                     <div class="message-dropdown-info">
                                         <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
                                             invitation</p>
-                                        <p class="text-sm">
+                                        <p class="text-sm message-dropdown-body">
                                             <span
                                                 class="message-dropdown-message">A wonderful serenity has taken</span>
                                             <span class="message-dropdown-time">1m</span>
@@ -163,11 +166,11 @@
                     </div>
                 </li>
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
+                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img
                             src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
                     </a>
-                    <div x-show="openDropdown === 'profile'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
@@ -193,12 +196,7 @@
                                             Setting</a></li>
                                     @auth
                                         <li>
-                                            <form class="dropdown-logout-form" method="POST"
-                                                  action="{{ route('auth.logout') }}">
-                                                @csrf
-                                                <x-icon.logout-box-line/>
-                                                <button class="bg-light" type="submit">Logout</button>
-                                            </form>
+                                            @livewire('auth.logout')
                                         </li>
                                     @endauth
                                 </ul>

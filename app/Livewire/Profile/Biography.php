@@ -10,6 +10,7 @@ class Biography extends Component
     public $profile = [];
     public $biography = '';
     public $showReadMoreButton = null;
+    public $editable = true;
 
     public function mount()
     {

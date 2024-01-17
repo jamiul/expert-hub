@@ -6,7 +6,6 @@ use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class AboutApart extends Model implements HasMedia
 {
@@ -23,21 +22,11 @@ class AboutApart extends Model implements HasMedia
         return $this->belongsTo(AboutUs::class, 'about_us_id');
     }
 
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection('icon')
-            ->singleFile()
-            ->registerMediaConversions(function (Media $media = null): void {
-                $this->addMediaConversion('icon_front')
-                ->crop('crop-center',28, 28);
-            });
-    }
-
     public function iconImage()
     {
         $mediaItems = $this->getMedia('icon');
         if (count($mediaItems) > 0) {
-            return $mediaItems[0]->getUrl('icon_front');
+            return $mediaItems[0]->getUrl();
         }
     }
 }

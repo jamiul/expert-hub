@@ -8,13 +8,16 @@ use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
+use App\Http\Controllers\Frontend\ClientProjectController;
 use App\Http\Controllers\Frontend\DashboardController;
+use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
-use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
@@ -44,10 +47,9 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
 Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
-Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training.index');
+Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
 Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
-Route::get('/find-details', [ProjectController::class, 'projectDetails'])->name('project-details');
 Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
 Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
 
@@ -69,10 +71,11 @@ Route::get('/client/profile', [ClientProfileController::class, 'index'])->middle
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
-
+Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
+Route::get('/projects/{project}/eoi/create', [EoiController::class, 'create'])->middleware(['auth', 'expert'])->name('eoi.create');
 
 Route::get( '/notifications', [
     NotificationsController::class,

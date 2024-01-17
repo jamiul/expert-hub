@@ -21,7 +21,12 @@
     </head>
     <body>
         @auth
-            @include('frontend.layouts.partials.auth-nav')
+            @if(auth()->user()->isClient())
+                @include('frontend.layouts.partials.client-nav')
+            @endif
+            @if(auth()->user()->isExpert())
+                @include('frontend.layouts.partials.expert-nav')
+            @endif
         @endauth
         @guest
             @include('frontend.layouts.partials.nav')
@@ -34,6 +39,7 @@
         @vite('resources/js/owl.carousel.min.js')
         @livewire('modal-pro')
         <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
+        @include('frontend.layouts.clientdashboard-front-js')
         <script>
             function toggleClasses(parentSelector, className) {
                 var parentElement = document.querySelector(parentSelector);

@@ -16,8 +16,11 @@ return new class extends Migration
             $table->foreignId('project_id');
             $table->foreignId('expert_id');
             $table->decimal('amount');
-            $table->text('message');
+            $table->text('cover_letter');
             $table->string('status');
+            $table->boolean('is_shortlisted')->default(0);
+            $table->boolean('is_archived')->default(0);
+            $table->boolean('is_messaged')->default(0);
             $table->boolean('is_milestone')->default(0);
             $table->boolean('active')->default(1);
             $table->timestamps();

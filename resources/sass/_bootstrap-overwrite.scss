@@ -16,9 +16,12 @@
     }
 
     &.btn-md {
-        padding: 0.6875rem 1.375rem;
+        padding: 0.6875rem 2rem;
     }
 
+    &.btn-rounded {
+        border-radius: 21px;
+    }
 }
 
 .btn-outline-primary {
@@ -108,9 +111,14 @@ table {
 .badge {
     font-size: 0.875rem;
     font-weight: 500;
+
     &.badge-primary {
         color: #fff;
         background-color: $edu-primary-color;
+    }
+    &.badge-primary-light {
+        color: $edu-primary-color;
+        background: rgba(0, 54, 227, 0.06);
     }
 
     &.badge-secondary {

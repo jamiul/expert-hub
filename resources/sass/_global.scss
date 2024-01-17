@@ -127,6 +127,7 @@ img {
     gap: 8px;
 }
 
+//Padding Space
 .p-40 {
     padding: 40px;
 }
@@ -141,6 +142,29 @@ img {
     padding-bottom: 40px;
 }
 
+.p-20 {
+    padding: 20px;
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+//Margin Space
 .m-40 {
     margin: 40px;
 }
@@ -293,6 +317,7 @@ img {
     &.bottom-left {
         .tooltip-content {
             left: -20px;
+            top: calc(100% + 8px);
         }
     }
 
@@ -587,6 +612,7 @@ ul.progress-bar-nav-horizontal {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    align-items: center;
 
     a {
         padding: 2px 12px;

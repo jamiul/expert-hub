@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-client-dashboard-layout')
+@extends('frontend.layouts.figma', ['header' => 'client'])
 
 @section('content')
     <section class="my-60">
@@ -223,8 +223,8 @@
                                                                 <button class="btn btn-md btn-icon btn-outline-light">
                                                                     <x-icon.message-line/>
                                                                 </button>
-                                                                <button class="btn btn-md btn-outline-primary"> Hire
-                                                                </button>
+                                                                <a class="btn btn-md btn-outline-primary" href="/figma/project/client-send-job-offer/"> Hire
+                                                                </a>
                                                             </div>
                                                         </div>
                                                         <div class="expert-card-body">
@@ -807,6 +807,21 @@
                                                 <div class="page-sidebar" x-show="isSidebarVisible">
                                                     <div class="filter-widget border-bottom">
                                                         <h4 class="h6 mb-3">Filter</h4>
+                                                    </div>
+                                                    <div class="filter-widget">
+                                                        <div class="d-flex gap-3 justify-content-between mb-2">
+                                                            <h4 class="widget-title mb-0">Available Now</h4>
+                                                            <span>
+                                                                <label class="widget-title-switch widget-on-off-switch">
+                                                                    <input type="checkbox" role="switch" name="project-type">
+                                                                    <span class="switch-label">
+                                                                        <span class="switch-track">
+                                                                            <span class="switch-indicator"></span>
+                                                                        </span>
+                                                                    </span>
+                                                                </label>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                     <div class="filter-widget">
                                                         <h4 class="widget-title">Experts by Field</h4>

@@ -22,9 +22,9 @@
                     <div class="d-flex justify-content-end flex-wrap">
                         <a class="btn btn-outline-primary m-1" href="{{ route('find.experts') }}">Find Experts</a>
                         <button wire:click="favourite({{ $scholarship->id }})"
-                                class="btn btn-outline-light m-1 {{ $scholarship->favourited() ? 'favourited' : ''}}">
-                            <span class="favorite-icon"> <x-icon.heart fill="#0036E3"/></span>
-                            <span class="favorite-icon-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
+                                class="btn btn-outline-light btn-favorite m-1 {{ $scholarship->favourited() ? 'favorited' : ''}}">
+                            <span class="heart-line"> <x-icon.heart fill="#0036E3"/></span>
+                            <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
 
 
                         </button>
@@ -95,18 +95,8 @@
                 </div>
             </div>
         @empty
-            <div class="d-flex flex-column align-items-center">
-                <img style="width: 240px;" src="{{ asset('assets/frontend/img/notification.png') }}"
-                     alt="client health">
-                <div style="width: 389px;">
-                    <h3 class="text-center">There are no results that match your search.</h3>
-                    <p class="text-center mb-0 fw-small">Please try adjusting your search keywords or filters.</p>
-                </div>
-            </div>
+            <x-empty />
         @endforelse
-        <hr>
-        <div class="text-center">
-            {{ $scholarships->links() }}
-        </div>
+        {{ $scholarships->links() }}
     </div>
 </div>

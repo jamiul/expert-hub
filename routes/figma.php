@@ -44,6 +44,11 @@ Route::group(['prefix' => 'figma'], function () {
 
     //expert profile
     Route::view('/expert-profile', 'figma.expert-profile');
+    Route::view('/expert-public-profile', 'figma.expert-public-profile');
+    Route::view('/user-consultation-booking-not-valuable', 'figma.not-available-expert-public-profile');
+    Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
+
+
 
     //expert status
     Route::view('/expert-status', 'figma.expert-status');
@@ -53,29 +58,29 @@ Route::group(['prefix' => 'figma'], function () {
     //Client Dashboard
     Route::view('/client-dashboard', 'figma.clientdashboardhome');
     // Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
-    Route::view('/client-dashboardall', 'figma.clientdashboard');
-    Route::view('/client-dashboardhome', 'figma.clientdashboardhome');
+    Route::view('/client-dashboard-all', 'figma.clientdashboard');
+    Route::view('/client-dashboard-home', 'figma.clientdashboardhome');
 
-    Route::view('/client-dashboardexpertconsultant', 'figma.clientdashboardexpertconsultant');
-    Route::view('/client-dashboardexpertconsultantteam', 'figma.clientdashboardexpertconsultantteam');
-    Route::view('/client-dashboardallcontact', 'figma.clientdashboardallcontact');
-    Route::view('/client-dashboardexperthire', 'figma.clientdashboardexperthire');
+    Route::view('/client-dashboard-expert-consultant', 'figma.clientdashboardexpertconsultant');
+    Route::view('/client-dashboard-expert-consultant-team', 'figma.clientdashboardexpertconsultantteam');
+    Route::view('/client-dashboard-all-contact', 'figma.clientdashboardallcontact');
+    Route::view('/client-dashboard-expert-hire', 'figma.clientdashboardexperthire');
 
-    Route::view('/client-clientdashboardexpertsave', 'figma.clientdashboardexpertsave');
+    Route::view('/client-dashboard-expert-save', 'figma.clientdashboardexpertsave');
 
-    Route::view('/client-clientaddpayment', 'figma.clientaddpayment');
-    Route::view('/client-clientvisapaypal', 'figma.clientvisapaypalpayment');
-    Route::view('/client-addpaymentdouable', 'figma.clientaddpaymentdouable');
+    Route::view('/client-client-add-payment', 'figma.clientaddpayment');
+    Route::view('/client-visa-paypal', 'figma.clientvisapaypalpayment');
+    Route::view('/client-add-payment-double', 'figma.clientaddpaymentdouable');
 
-    Route::view('/client-weeklyreportsummary', 'figma.clientweeklyreportsummary');
-    Route::view('/client-weeklyreportsummarydate', 'figma.clientweeklyreportsummarydate');
+    Route::view('/client-weekly-report-summary', 'figma.clientweeklyreportsummary');
+    Route::view('/client-weekly-report-summary-date', 'figma.clientweeklyreportsummarydate');
 
-    Route::view('/client-weeklyreporttransction', 'figma.clientweeklyreporttransaction');
+    Route::view('/client-weekly-report-transaction', 'figma.clientweeklyreporttransaction');
 
-    Route::view('/client-weeklyreporttwobudget', 'figma.clientweeklyreporttwobudget');
-    Route::view('/client-dashboardatimesheet', 'figma.clientdashboardatimesheet');
-    Route::view('/client-passwordsecurity', 'figma.clientdashboardpasswordsecurity');
-    Route::view('/client-notificationsettting', 'figma.clientdashboardnotificationsettting');
+    Route::view('/client-weekly-report-two-budget', 'figma.clientweeklyreporttwobudget');
+    Route::view('/client-dashboard-atime-sheet', 'figma.clientdashboardatimesheet');
+    Route::view('/client-password-security', 'figma.clientdashboardpasswordsecurity');
+    Route::view('/client-notification-setting', 'figma.clientdashboardnotificationsettting');
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
     Route::view('/project-details-view', 'figma.project-details-view');
@@ -129,5 +134,8 @@ Route::group(['prefix' => 'figma'], function () {
 
     //Project
     Route::view('/project/client-job-posts', 'figma.client-job-posts');
+    Route::view('/project/client-job-contracts', 'figma.client-job-contracts');
     Route::view('/project/client-job-post-view', 'figma.client-job-post-view');
+    Route::view('/project/client-send-job-offer', 'figma.client-send-job-offer');
+    Route::view('/project/client-send-job-offer-view', 'figma.client-send-job-offer-view');
 });

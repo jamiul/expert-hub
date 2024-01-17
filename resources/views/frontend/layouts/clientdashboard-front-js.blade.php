@@ -2,6 +2,36 @@
 <script type="text/javascript">
     // common js if required
 
+
+
+
+    $(document).ready(function() {
+              $('.portfolio').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                  0: {
+                    items: 1,
+                    nav: true
+                  },
+                  600: {
+                    items: 3,
+                    nav: false
+                  },
+                  1000: {
+                    items: 3,
+                    nav: true,
+                    dots: false,
+                    loop: false,
+                    margin:0,
+                    autoWidth:false,
+                  }
+                }
+              })
+            });
+
+
     // Owl Caurasel Start Here
     $(document).ready(function() {
               $('.owl-carouselfour').owlCarousel({
@@ -74,6 +104,7 @@
                 }
               })
             });
+
 
 </script>
 

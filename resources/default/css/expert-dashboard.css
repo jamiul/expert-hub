@@ -457,7 +457,7 @@ ul li {
 
 .expert__dashboad .main__content__wrapp .pagination .pagination-right ul li {
   margin-left: 2px;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a {
@@ -1392,6 +1392,8 @@ margin-bottom: 24px;}
 .edux-rating-success p{
   margin-bottom:0px;
 }
+
+
 
 
 @media (min-width: 990px){

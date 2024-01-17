@@ -886,11 +886,15 @@ button.btn.btn-xs.btn-success.btn-preview.active {
   border-bottom: 1px solid #E7E5EF
 }
 
+.edux-border-bottom{
+  border-bottom: 1px solid #E7E5EF !important
+}
+
 .owl-carousel button.owl-prev, button.owl-next {
   width: 44px;
   height: 44px;
   border-radius: 42.84px !important;
-  background: #ddd !important;
+  background: #fff !important;
   color: #000 !important;
   text-decoration: none;
   font-size: 28px !important;
@@ -900,10 +904,13 @@ button.btn.btn-xs.btn-success.btn-preview.active {
 
 .owl-carousel button.owl-prev {
   left: -50px;
-
 }
 
-button.owl-prev {
+.consultant-work .owl-carousel button.owl-prev {
+  left: -83px;
+}
+
+.client-dashboard button.owl-prev {
   display: none !important;
 }
 
@@ -930,6 +937,12 @@ button.owl-prev {
 
 .owl-carousel button.owl-next {
   right: 40px;
+  background: rgba(0, 54, 227, 1) !important;
+  color: #fff !important;
+}
+
+.portfolioCaousel button.owl-next {
+  right: 0px !important;
   background: rgba(0, 54, 227, 1) !important;
   color: #fff !important;
 }
@@ -5532,11 +5545,15 @@ span.edux-word-count {
     margin-top: 20px;
     display: flex;
     align-items: center;
-    background: #0059C90D;
-    border: solid 1px #0059C94D;
+    background: rgba(0, 89, 201, 0.03);
+    border: 1px solid rgba(0, 89, 201, 0.30);
     border-radius: 4px;
     padding: 16px 24px;
 }
+
+
+
+
 
 label.basic-file-upload:hover {
   border-radius: 4px;
@@ -8135,8 +8152,21 @@ font-weight: 400;
   font-style: normal;
   font-weight: 500;
 }
+
+.edux-read-more{
+  color: #0036E3;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
 /* ============================== Book Consultant End Here ============================= */
 
+
+.edux-billing-method-area-right {
+  display: flex;
+  width: 100%;
+  gap: 48px;
+}
 
 .edux-billing-method-area {
   display: flex;
@@ -8158,6 +8188,21 @@ font-weight: 400;
   border: 2px solid  #E7E5EF;
   background: #FFF;
   width: 100%;
+}
+
+.edux-sidebar-expert {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  max-width: 350px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  border: 2px solid  #E7E5EF;
+  background: #FFF;
+  width: 100%;
+  align-items: center;
 }
 
 .edux-billing-method-content h2 {
@@ -8247,12 +8292,26 @@ font-weight: 400;
   gap: 8px;
 }
 
+.edux-radio-option-right {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+}
+
 .edux-form-radio-title {
   display: flex;
   align-items: center;
   gap: 5px;
   justify-content: center;
   min-width: 185px;
+}
+
+.edux-form-radio-title-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  /* min-width: 185px; */
+  flex-direction: column;
 }
 
 .eudx-visa-card {
@@ -8380,6 +8439,199 @@ margin-bottom: 32px;
   font-weight: 500;
   text-decoration-line: underline;
   }
+
+  /* ============================================ Expert Profile ============================================= */
+  .profile__page .user-profile-picture{
+    background: #D2DAF2;
+  }
+
+  .user-profile-info .btn{
+    border-radius: 4px;
+  border: 2px solid  #0036E3;
+  }
+
+  .edux-btn-post-job{
+    display: flex;
+    gap:12px;
+  }
+
+  .edux-supported-file{
+    color:  #6E737C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  }
+
+  .edux-supported-file span{
+    color:  #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  }
+
+  .edux-profile-page .user-profile-skills ul li {
+    border-radius: 42px;
+    background: #F4F6F9;
+    color: #6E737C;
+    border: 1px solid #E7E5EF;
+}
+
+.book-expert-profile .tag-list .tag-list a{
+  color: #6E737C;
+}
+
+  .edux-consultant-prof {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    padding: 10px 32px;
+}
+
+.portfolioCaousel {
+  display: block;
+  width: 100% !important;
+  max-width: 840px !important;
+}
+
+.consultant-reviw ul{
+  display:flex;
+  margin-left: 0px;
+  padding-left: 0px;
+
+}
+.consultant-reviw ul li a {
+  align-items: center;
+  display: inline-flex;
+}
+
+.edux-no-available-booking {
+  display: flex;
+  width: 100%;
+  padding: 40px;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 8px;
+  border: 1px solid  #E7E5EF;
+  background: #FFF;
+}
+
+.book-expert-profileimg {
+  max-height: 538px;
+}
+
+
+.edux-course-curriculum-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edux-order-stream {
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 35px;
+  border: 1px solid rgba(0, 54, 227, 0.10);
+  background: rgba(0, 54, 227, 0.07);
+}
+
+.edux-expert-card-area {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background-color: #F7F9FE;
+  margin: 32px 0px;
+}
+
+.edux-expert-card-area .card-body{
+  background-color: #F7F9FE !important;
+}
+.edux-booking{
+  color: #0036E3
+}
+
+
+.consultant-details-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edux-no-available-booking .tag-list a{
+background: #F4F6F9;
+color:#6E737C;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+border:none
+}
+
+.eudx-project-expert-thumb {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.edux-expert-card-area .project-expert-card {
+  display: flex;
+  gap: 1rem;
+  padding: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.edux-meeting-title{
+  color:#191D24;
+  font-weight: 500;
+  font-size: 14px;
+}
+.edux-right-schedule p{
+  color:  #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-right-schedule .tag-list a{
+  color:  #191D24;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #EBEFF7;
+}
+
+.about-slider .owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  max-width: 244px;
+  max-height: 244px;
+  border-radius: 5.822px 5.822px 0px 0px;
+}
+
+.about-slider .carousel-text {
+  max-width: 244px;
+  max-height: 80px;
+}
+.about-slider .carousel-text p {
+  margin: 0px 0 0px;
+  font-size: 12px;
+  color: #6E737C;
+}
+
+.about-slider .owl-stage-outer{
+  padding-bottom: 40px;
+}
+
+.edux-btn-mt{
+  margin-top: 32px;
+}
+
+
+
+  /* ============================================ Expert Profile End ============================================= */
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/
 
@@ -8671,6 +8923,16 @@ header.client-header {
 
 }
 
+
+@media only screen and (max-width: 1025px) {
+  .edux-course-curriculum-item h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 137%;
+}
+
+}
+
 @media only screen and (max-width: 995px) {
   .edux-modal-footer {
     margin: 0px auto;
@@ -8846,12 +9108,34 @@ header.client-header {
   width: 100%;
 }
 
+
+.edux-billing-method-area .left-sidebar-layout {
+  grid-template-columns: 100%;
+}
+
 }
 
 
 
 
 @media only screen and (max-width: 768px) {
+
+  .edux-billing-method-area .left-sidebar-layout {
+    grid-template-columns: 100%;
+}
+
+  .edux-course-curriculum-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+}
+
+h3, .h3 {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 137%;
+}
 
   .slot-item-area {
     padding-right: 0px;
@@ -9048,6 +9332,13 @@ header.client-header {
 
 @media only screen and (max-width: 730px) {
 
+  .edux-billing-method-area-right {
+    display: flex;
+    width: 100%;
+    gap: 0px;
+    flex-direction: column;
+}
+
   .edux-chatbox-area {
     display: flex;
     flex-direction: row;
@@ -9092,6 +9383,16 @@ header.client-header {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .edux-expert-card-area .icon-btn {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+  .consultant-work h3 {
+    font-size: 14px;
+
+}
 
   .edux-paypal-visa-billing-area {
     padding: 16px 10px;

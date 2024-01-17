@@ -10,14 +10,14 @@
                     </button>
                 </div>
                 @if (is_null($biography))
-                    <button type="button" class="icon-btn icon-btn-md border"
+                    <button type="button" class="icon-btn icon-btn-md border {{ ! $editable ? 'd-none' : '' }}"
                         wire:click="$dispatch('modal.open', { component: 'profile.biography.create'})">
                         <x-icon.add />
                     </button>
                 @else
                     <button
                         wire:click="$dispatch('modal.open', { component: 'profile.biography.edit', arguments: { profile: {{ $profile->id }} }})"
-                        class="icon-btn icon-btn-md border">
+                        class="icon-btn icon-btn-md border {{ ! $editable ? 'd-none' : '' }}">
                         <x-icon.edit />
                     </button>
                 @endif
@@ -30,8 +30,13 @@
                     </p>
                 @else
                     <p>
-                        {{ Str::limit($biography, 300) }}
-                        <a href="#biography" wire:click="readMore({{ $profile->id }})">More</a>
+                        {{ Str::limit($biography, 500) }}
+                        <a
+                            href="#biography"
+                            wire:click="readMore({{ $profile->id }})"
+                        >
+                            {{ (! is_null($biography)) && (Str::wordCount($biography) > 50) ? 'More' : '' }}
+                        </a>
                     </p>
                 @endif
             </div>

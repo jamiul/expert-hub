@@ -8,7 +8,7 @@
                         <div class="page-sidebar">
                             <div class="sidebar-widget">
                                 <p class="text-sm mb-3">{{ $project->type }} <strong class="h5">${{ $project->budget_start_amount }} @if($project->budget_end_amount)- ${{ $project->budget_end_amount }} @endif</strong></p>
-                                <a class="btn btn-primary btn-md w-100" href="/figma/submit-project-proposal">Send EOI</a>
+                                <a class="btn btn-primary btn-md w-100" href="{{ route('eoi.create', $project) }}">Send EOI</a>
                                 <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                     <x-icon.heart width="24" height="24" fill="#0036E3"/>
                                     Save this Project
