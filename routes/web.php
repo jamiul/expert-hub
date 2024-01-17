@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
+use App\Http\Controllers\Frontend\ClientProjectController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Frontend\ExpertDashboardController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
@@ -67,7 +69,7 @@ Route::get('/client/profile', [ClientProfileController::class, 'index'])->middle
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
-
+Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');

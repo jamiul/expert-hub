@@ -19,29 +19,32 @@ class UniversitySeeder extends Seeder
         University::truncate();
         $feed = database_path('data/universities.csv');
         $data = array_map('str_getcsv', file($feed));
-
+        $keys = array_shift($data);
+        //Add label to each value
+        $keyedData = array_map(function ($values) use ($keys) {
+            return array_combine($keys, $values);
+        }, $data);
         $universities = [];
         $countryLookup = Country::pluck('id', 'name')->toArray();
-        foreach ($data as $university) {
-            if(isset($countryLookup[$university[0]])){
-                $universities[] = [
-                    'country_id' => $countryLookup[$university[0]],
-                    'name' => $university[1],
+        foreach ($keyedData as $university) {
+            if(isset($countryLookup[$university['country']])){
+                $universityData = [
+                    'country_id' => $countryLookup[$university['country']],
+                    'name' => $university['university'],
+                    'website' => $university['url'],
                 ];
+                $university_id = DB::table('universities')->insertGetId($universityData);
+                $universityModel = University::find($university_id);
+
+                $logoFileName = $university['logo'];
+                $imagePath = database_path('/data/university-logos/australia/' . $logoFileName);
+                if (file_exists($imagePath)) {
+                    $universityModel->addMedia($imagePath)
+                        ->preservingOriginal()
+                        ->usingName($logoFileName)
+                        ->toMediaCollection('logo');
+                }
             }
         }
-
-        DB::table('universities')->insert($universities);
-        $australianUniversities = University::where('country_id', $countryLookup['Australia'])->get();
-        foreach($australianUniversities as $university){
-            $logoFileName = Str::snake($university->name) . '.png';
-            $imagePath = database_path('/data/university-logos/australia/' . $logoFileName);
-            if(file_exists($imagePath)){
-                $university->addMedia($imagePath)
-                    ->preservingOriginal()
-                    ->usingName($logoFileName)
-                    ->toMediaCollection('logo');
-            }
-        } 
     }
 }
