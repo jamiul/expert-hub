@@ -27,7 +27,7 @@
                 
                 
             </div>
-            <a href="/figma/client-chatbox-new" class="message-dropdown-view-all">
+            <a href="/messaging" class="message-dropdown-view-all">
                 <x-icon.message-line fill="#C8C5D4" />
                 View All Message
             </a>
