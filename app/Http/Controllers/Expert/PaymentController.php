@@ -9,8 +9,10 @@ use App\Models\Profile;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller {
-    public function index() {
+class PaymentController extends Controller
+{
+    public function index()
+    {
         $user = auth()->user();
 
         //if user has no connected account forward to onboard.
@@ -30,7 +32,8 @@ class PaymentController extends Controller {
         return view( 'frontend.expert.payment.index', compact( 'expert_stripe_account', 'balance' ) );
     }
 
-    public function onboard( Request $request ) {
+    public function onboard( Request $request )
+    {
         $user = auth()->user();
 
         $stripe = new \Stripe\StripeClient( [
@@ -194,7 +197,8 @@ class PaymentController extends Controller {
         return view( 'frontend.expert.payment.onboard', compact( 'user' ) );
     }
 
-    public function updateData( Request $request ) {
+    public function updateData( Request $request )
+    {
         $stripe = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );
@@ -213,7 +217,8 @@ class PaymentController extends Controller {
         );
     }
 
-    public function accountSession() {
+    public function accountSession()
+    {
         $stripe = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );
@@ -245,7 +250,8 @@ class PaymentController extends Controller {
         }
     }
 
-    public function withdrawalMethod( Request $request ) {
+    public function withdrawalMethod( Request $request )
+    {
         $user = auth()->user();
 
         if ( $user->profile->stripe_acct_id == '' ) {
@@ -299,7 +305,8 @@ class PaymentController extends Controller {
         return view( 'frontend.expert.payment.withdrawal', compact('user') );
     }
 
-    public function withdraw(Request $request) {
+    public function withdraw(Request $request)
+    {
         $user = auth()->user();
 
         if ( $user->profile->stripe_acct_id == '' ) {
@@ -319,7 +326,8 @@ class PaymentController extends Controller {
         dd($payout);
     }
 
-    public function payout() {
+    public function payout()
+    {
         $stripe = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );

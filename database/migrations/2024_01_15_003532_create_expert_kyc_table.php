@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('expert_k_y_c_s', function (Blueprint $table) {
+        Schema::create('expert_kyc', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->string('business_type')->nullable();
@@ -60,6 +60,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('expert_k_y_c_s');
+        Schema::dropIfExists('expert_kyc');
     }
 };
