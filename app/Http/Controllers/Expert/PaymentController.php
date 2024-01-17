@@ -25,7 +25,9 @@ class PaymentController extends Controller {
         ] );
         $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
 
-        return view( 'frontend.expert.payment.index', compact( 'expert_stripe_account' ) );
+        $balance = $stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
+
+        return view( 'frontend.expert.payment.index', compact( 'expert_stripe_account', 'balance' ) );
     }
 
     public function onboard( Request $request ) {
@@ -243,8 +245,7 @@ class PaymentController extends Controller {
         }
     }
 
-
-    public function withdrawal( Request $request ) {
+    public function withdrawalMethod( Request $request ) {
         $user = auth()->user();
 
         if ( $user->profile->stripe_acct_id == '' ) {
@@ -298,16 +299,24 @@ class PaymentController extends Controller {
         return view( 'frontend.expert.payment.withdrawal', compact('user') );
     }
 
-    public function retrieveBalance() {
+    public function withdraw(Request $request) {
+        $user = auth()->user();
+
+        if ( $user->profile->stripe_acct_id == '' ) {
+            return redirect()->route( 'expert.payment.onboard' );
+        }
+
         $stripe = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );
 
-        $acct_id = 'acct_1OY1WYPniY99fxGK';
+        $amount = $request->withdraw_amount * 100;
+        $payout = $stripe->payouts->create([
+            'amount' => $amount,
+            'currency' => 'usd',
+        ]);
 
-        $balance = $stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
-
-        dd( $balance );
+        dd($payout);
     }
 
     public function payout() {

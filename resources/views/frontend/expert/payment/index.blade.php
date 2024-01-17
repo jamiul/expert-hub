@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.front-expert-dashboard-layout')
 @section('content')
     <!-- sub menu start -->
     <nav class="bg-primary sub__nav">
@@ -22,7 +22,7 @@
                 <div class="col-md-12">
                     <div class="payment-title-area">
                         <div class="payment-title">
-                            <h4>eKYC information</h4>
+                            <h4>Payment information</h4>
                         </div>
                     </div>
                 </div>
@@ -33,8 +33,17 @@
                         details_submitted: {{ $expert_stripe_account->details_submitted ? 'Yes' : 'No' }}<br />
                         payouts_enabled: {{ $expert_stripe_account->payouts_enabled ? 'Enabled' : 'Disabled' }}<br />
 
-                        past_due:
+                        available balance: {{ $balance->available[0]->amount }} {{ $balance->available[0]->currency }}<br />
+                        @if($balance->available[0]->amount > 0)
+                            <form action="{{ route('expert.payment.withdraw') }}" method="post">
+                                <label>Amount: </label>
+                                <input type="number" value="{{ old('withdraw_amount') }}" max="{{ $balance->available[0]->amount }}" name="withdraw_amount" />
+                                <button type="submit" class="btn">Withdraw</button>
+                            </form>
+                        @endif
+                        pending balance: {{ $balance->pending[0]->amount }} {{ $balance->pending[0]->currency }}<br />
                         @if($expert_stripe_account->requirements->past_due)
+                            past_due:
                             <ul>
                                 @foreach($expert_stripe_account->requirements->past_due as $past_due)
                                     <li>{{ $past_due }}</li>
@@ -42,8 +51,8 @@
                             </ul>
                         @endif
 
-                        errors:
                         @if($expert_stripe_account->requirements->errors)
+                            errors:
                             <ul>
                                 @foreach($expert_stripe_account->requirements->errors as $err)
                                     <li>{{ $err->reason }}</li>
