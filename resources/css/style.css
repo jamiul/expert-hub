@@ -459,7 +459,7 @@ header .header-menu .login-block i {
 
 .require-main {
     background: #e8ebf699;
-    padding: 98px 0;
+    padding: 90px 0;
 }
 
 .require-main .heading h2 {
@@ -515,12 +515,10 @@ header .header-menu .login-block i {
 }
 
 .experts-main {
-    margin: 100px 0 61px;
+    padding: 90px 0px;
 }
 
-.experts-main .experts-block {
-    margin-bottom: 50px;
-}
+
 
 .experts-main .experts-block .experts-img img {
     width: 100%;
@@ -805,8 +803,7 @@ img.exp-categoryl {
 
 .eduexhub {
     background: #e8ebf699;
-    padding: 100px 0px 50px;
-    margin-bottom: 100px;
+    padding: 90px 0px;
 }
 
 .eduexhub .heading h2 {
@@ -847,7 +844,7 @@ img.exp-categoryl {
 .eduexhub .tabbable-panel .tab-content .tab-block {
     display: flex;
     min-height: 140px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .eduexhub .tabbable-panel .tab-content .tab-block .tab-text h3 {
@@ -885,7 +882,7 @@ img.exp-categoryl {
 }
 
 .scholarship {
-    margin-bottom: 100px;
+    padding: 90px 0px;
 }
 
 .scholarship .row {
@@ -953,7 +950,6 @@ img.exp-categoryl {
 .academic-block {
     background: #e8ebf699;
     padding: 90px 0;
-    margin-bottom: 100px;
 }
 
 .academic-block .heading h2 {
@@ -1109,7 +1105,7 @@ img.exp-categoryl {
 }
 
 .skillsets {
-    margin-bottom: 100px;
+    padding: 90px 0px;
 }
 
 .skillsets .tabbable-panel {
@@ -1320,7 +1316,12 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .about-banner {
     position: relative;
-    margin-bottom: 70px;
+    /* margin-bottom: 90px; */
+}
+
+.about-info{
+    padding: 90px 0px;
+    border-bottom: solid 1px #0e00621a;
 }
 
 .about-banner .about-img img {
@@ -1344,9 +1345,9 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .about-info .heading {
     text-align: left;
-    border-bottom: solid 1px #0e00621a;
+    /* border-bottom: solid 1px #0e00621a;
     margin-bottom: 87px;
-    padding: 0 71px 70px;
+    padding: 0 71px 70px; */
 }
 
 .about-info .heading h2 {
@@ -1366,7 +1367,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 }
 
 .about-slider {
-    margin-bottom: 80px;
+    padding: 90px 0px;
 }
 
 .about-slider .heading h2 {
@@ -1457,7 +1458,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 
 .about-mission {
     background: #f1f3fa;
-    padding: 100px 0;
+    padding: 90px 0;
 }
 
 .about-mission .row {
@@ -1539,7 +1540,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 .about-team {
     background: #f1f3fa;
     margin-bottom: 0;
-    padding: 100px 0 90px;
+    padding: 90px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9233,7 +9234,7 @@ ul.share-links > li {
     width: 100%;
 }
 
-.btn.btn-outline-primary.active{
+.hourly-fixed-block .rate-box .btn.active{
     border-radius: 4px;
     border: 1px solid rgba(0, 54, 227, 0.30);
     background: rgba(0, 54, 227, 0.03);

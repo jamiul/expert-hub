@@ -255,7 +255,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="single-button d-flex justify-content-center mt-5">
+            <div class="single-button d-flex justify-content-center edux-btn-mt">
                 <x-button.link href="{{ route('find.experts') }}" class="btn edux-btn-border-primary"
                     text="View All Categories" />
             </div>
