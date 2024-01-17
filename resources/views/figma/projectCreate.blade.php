@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.figma', ['header' => 'client'])
 
 @push('top_styles')
     @vite('resources/css/filepond.css')
@@ -34,11 +34,21 @@
                         </div>
                         <div class="job-post-form">
                             <form wire:submit="save">
+
+                                    <x-form.choice-static wire:model="titles" label="What is your project field" multiple>
+                                        <option value="your project field">your project field</option>
+                                        <option value="your project field">your project field</option>
+                                        <option value="your project field">your project field</option>
+                                        <option value="your project field">your project field</option>
+                                    </x-form.choice-static>
+
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
                                         <x-form.input type="text" label="What is your project title?" wire:model="title" placeholder="Academic content writer"/>
                                     </div>
                                 </div>
+
+
                                 <div class="step step-2 mb-4">
                                     <div class="main-form position-relative">
                                     <x-form.textarea label="Project Description" wire:model="bio" placeholder="Bio">
@@ -97,32 +107,31 @@
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
                                                     <div class="rate-box">
-                                                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                            <div class="hourly-check">
-                                                                <input type="radio" class="btn-check" wire:model="type" value="hourly" id="btnradio1" autocomplete="off">
-                                                                <label class="btn btn-outline-primary" for="btnradio1">
+                                                        <div class="btn-group d-flex" role="group" aria-label="Basic radio toggle button group">
+                                                            <div class="form-radio-option">
+                                                                <label class="btn btn-outline-primary active" for="btnradio1">
                                                                     <div class="currency-img">
-                                                                        <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
+                                                                        <input type="radio" name="gender" id="btnradio1" class="form-radio-field form-check-input" wire:model="type" value="hourly">
                                                                     </div>
                                                                     <div class="pay-rate">
-                                                                        <h3>Hourly rate</h3>
+                                                                        <h3>Hourly</h3>
                                                                         <p>Select freelancers based on their hourly rates and pay for the hours worked</p>
                                                                     </div>
                                                                 </label>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="rate-box">
                                                         <div class="fixed-check">
-                                                            <input type="radio" class="btn-check" wire:model="type" value="fixed" id="btnradio2" autocomplete="off">
                                                             <label class="btn btn-outline-primary" for="btnradio2">
                                                                 <div class="currency-img">
-                                                                    <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
+                                                                <input type="radio" name="gender" id="btnradio2" class="form-radio-field form-check-input" wire:model="gender" value="fixed">
                                                                 </div>
                                                                 <div class="pay-rate">
-                                                                    <h3>Fixed price</h3>
+                                                                    <h3>Fixed</h3>
                                                                     <p>Agree on a price upfront, then release payment upon project completion</p>
                                                                 </div>
                                                             </label>
@@ -149,7 +158,9 @@
 
                                             </div>
                                             <div class="col-md-6">
-                                                <x-form.input type="number" min="0" label="End Amount" wire:model="budget_end_amount" placeholder="Type Here"/>
+                                            <div class="form-input-group">
+                                            <label class="form-input-label edux-tooltip-level">End Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    <input name="budget_start_amount" id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model="budget_start_amount" placeholder="Type Here">
+                                            </div>
                                             </div>
                                             </div>
                                         </div>
