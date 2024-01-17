@@ -491,12 +491,136 @@ select.input-field-control {
                 path {
                     fill: #303744B2;
                 }
-                &:hover{
+
+                &:hover {
                     path {
                         fill: #F00;
                     }
                 }
             }
         }
+    }
+}
+
+.recommendation-input-wrapper {
+    padding: 1rem;
+    border: 1px solid #E7E5EF;
+    border-radius: 4px;
+    background-color: #fff;
+
+    .recommendation-input-labels {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1rem;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+        }
+    }
+
+    .recommendation-input-fields {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            gap: 5px;
+        }
+
+        input[type='radio'] {
+            display: block;
+            width: 19px;
+            height: 19px;
+            border: 1px solid #6E737C;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}
+
+.rating-input-wrapper {
+    padding: 1rem;
+    border: 1px solid #E7E5EF;
+    border-radius: 4px;
+    background-color: #fff;
+
+    .rating-input-label {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+    }
+
+    .rating-input-total {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        line-height: 16px;
+        margin-top: 1rem;
+
+        span {
+            display: block;
+        }
+    }
+
+    .rating-input-field-wrapper {
+        display: flex;
+        gap: 45px;
+        font-size: 14px;
+        align-items: center;
+        padding: 5px 0;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+}
+
+
+.rating-input-field {
+    &.rating-selected {
+        label {
+            &.active {
+                path {
+                    fill: #EAA800;
+                }
+            }
+            &:not(.active) {
+                path {
+                    fill: #EAA800;
+                }
+            }
+        }
+
+        input[type="radio"]:checked + label ~ label {
+            path {
+                fill: #E7E5EF;
+            }
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
     }
 }
