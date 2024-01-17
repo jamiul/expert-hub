@@ -44,15 +44,15 @@
                                 shaping the future of public health education and making a lasting impact on
                                 students' careers.
                             </p>
-                            <div class="tag-list mt-40">
-                                <a href="#" class="project-tag">Communication Skills</a>
-                                <a href="#" class="project-tag">Industry Treds Awareness</a>
-                                <a href="#" class="project-tag"> Research</a>
-                                <a href="#" class="project-tag">System Research Development</a>
-                                <a href="#" class="project-tag">Communication </a>
-                                <a href="#" class="project-tag">Industry Treds</a>
-                                <a href="#" class="project-tag">Educational Research</a>
-                                <a href="#" class="project-tag">System Development</a>
+                            <div class="tag-list light-tag-list mt-40">
+                                <a href="#" class="tag">Communication Skills</a>
+                                <a href="#" class="tag">Industry Treds Awareness</a>
+                                <a href="#" class="tag"> Research</a>
+                                <a href="#" class="tag">System Research Development</a>
+                                <a href="#" class="tag">Communication </a>
+                                <a href="#" class="tag">Industry Treds</a>
+                                <a href="#" class="tag">Educational Research</a>
+                                <a href="#" class="tag">System Development</a>
                             </div>
                             <div class="project-bid-area mt-40 mb-20" style="max-width: 740px">
                                 <h3 class="mb-2 text-base">What is the rate you'd like to bid for this job?</h3>
