@@ -64,123 +64,130 @@
                             </div>
                             <!--Project Details-->
                             <div class="card mb-40">
-                            <div x-data="{ contactType: 'fixed', fixedProjectType: 'wholeProject' }" class="card-body">
-                                <h3 class="h6 mb-3">Contact Terms</h3>
+                                <div x-data="{ contactType: 'fixed', fixedProjectType: 'wholeProject' }"
+                                     class="card-body">
+                                    <h3 class="h6 mb-3">Contact Terms</h3>
 
-                                <!-- Radio buttons for Hourly and Fixed -->
-                                <div class="contact-type-card-wrapper mb-3">
-                                    <div class="contact-type-card">
-                                        <input type="radio" name="contactType" value="hourly" id="hourly" class="d-none"
-                                               x-model="contactType">
-                                        <label class="contact-type-card-inner" for="hourly">
-                                            <div>
-                                                <x-icon.hourly-rate/>
-                                            </div>
-                                            <div>
-                                                <h4 class="h6">Hourly rate</h4>
-                                                <p class="text-sm mb-0">Select freelancers based on their hourly rates
-                                                    and pay for the hours worked</p>
-                                            </div>
-                                        </label>
+                                    <!-- Radio buttons for Hourly and Fixed -->
+                                    <div class="contact-type-card-wrapper mb-3">
+                                        <div class="contact-type-card">
+                                            <input type="radio" name="contactType" value="hourly" id="hourly"
+                                                   class="d-none"
+                                                   x-model="contactType">
+                                            <label class="contact-type-card-inner" for="hourly">
+                                                <div>
+                                                    <x-icon.hourly-rate/>
+                                                </div>
+                                                <div>
+                                                    <h4 class="h6">Hourly rate</h4>
+                                                    <p class="text-sm mb-0">Select freelancers based on their hourly
+                                                        rates
+                                                        and pay for the hours worked</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="contact-type-card">
+                                            <input type="radio" name="contactType" value="fixed" id="fixed"
+                                                   class="d-none"
+                                                   x-model="contactType">
+                                            <label class="contact-type-card-inner" for="fixed">
+                                                <div>
+                                                    <x-icon.fixed-rate/>
+                                                </div>
+                                                <div>
+                                                    <h4 class="h6">Fixed price</h4>
+                                                    <p class="text-sm mb-0">Agree on a price upfront, then release
+                                                        payment
+                                                        upon project completion</p>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="contact-type-card">
-                                        <input type="radio" name="contactType" value="fixed" id="fixed" class="d-none"
-                                               x-model="contactType">
-                                        <label class="contact-type-card-inner" for="fixed">
-                                            <div>
-                                                <x-icon.fixed-rate/>
-                                            </div>
-                                            <div>
-                                                <h4 class="h6">Fixed price</h4>
-                                                <p class="text-sm mb-0">Agree on a price upfront, then release payment
-                                                    upon project completion</p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
 
-                                <!-- Show content based on selected contactType -->
-                                <div x-show="contactType === 'hourly'" class="hourly-offer-content">
-                                    <div class="form-input-group">
-                                        <label class="form-input-label">Pay by the hours
-                                            <div class="tooltip-wrapper bottom-left">
-                                                <x-icon.info fill="#BABABA"/>
-                                                <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
-                                            </div>
-                                        </label>
-                                        <input name="type" id="type" class="form-input-field" type="text"
-                                               placeholder="Type" value="$100">
-                                        <span class="text-sm py-1">Professor Miles Esther’s profile rate is $200.00/hr </span>
-                                    </div>
-                                    <div class="form-input-group">
-                                        <label class="form-input-label">Weekly Limits
-                                            <div class="tooltip-wrapper bottom-left">
-                                                <x-icon.info fill="#BABABA"/>
-                                                <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
-                                            </div>
-                                        </label>
-                                        <input name="type" id="type" class="form-input-field" type="text"
-                                               placeholder="Type" value="30 hrs / week">
-                                        <span class="text-sm py-1">$3000.00 max/week </span>
-                                    </div>
-                                    <p class="input-field-label d-inline">Manual Time
-                                    <span class="tooltip-wrapper bottom-left">
+                                    <!-- Show content based on selected contactType -->
+                                    <div x-show="contactType === 'hourly'" class="hourly-offer-content">
+                                        <div class="form-input-group">
+                                            <label class="form-input-label">Pay by the hours
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <x-icon.info fill="#BABABA"/>
+                                                    <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
+                                                </div>
+                                            </label>
+                                            <input name="type" id="type" class="form-input-field" type="text"
+                                                   placeholder="Type" value="$100">
+                                            <span class="text-sm py-1">Professor Miles Esther’s profile rate is $200.00/hr </span>
+                                        </div>
+                                        <div class="form-input-group">
+                                            <label class="form-input-label">Weekly Limits
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <x-icon.info fill="#BABABA"/>
+                                                    <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
+                                                </div>
+                                            </label>
+                                            <input name="type" id="type" class="form-input-field" type="text"
+                                                   placeholder="Type" value="30 hrs / week">
+                                            <span class="text-sm py-1">$3000.00 max/week </span>
+                                        </div>
+                                        <p class="input-field-label d-inline">Manual Time
+                                            <span class="tooltip-wrapper bottom-left">
                                         <x-icon.info fill="#BABABA"/>
                                         <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
                                     </span>
-                                    </p>
-                                    <x-form.check wire:model="ManualTime">
-                                        Allow Expert to log time manually if needed
-                                    </x-form.check>
-                                    <x-form.flatpicker tooltip="Lorem ipsum dolor sit amet" label="Start Date"
-                                                       name="datepicker"/>
+                                        </p>
+                                        <x-form.check wire:model="ManualTime">
+                                            Allow Expert to log time manually if needed
+                                        </x-form.check>
+                                        <x-form.flatpicker tooltip="Lorem ipsum dolor sit amet" label="Start Date"
+                                                           name="datepicker"/>
 
-                                </div>
-
-                                <div x-show="contactType === 'fixed'" class="fixed-price-offer-content">
-                                    <!-- Fixed Price Content -->
-                                    <div class="form-input-group">
-                                        <label class="form-input-label">Pay a fixed price for your project
-                                            <div class="tooltip-wrapper bottom-left">
-                                                <x-icon.info fill="#BABABA"/>
-                                                <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
-                                            </div>
-                                        </label>
-                                        <input name="type" id="type" class="form-input-field" type="text"
-                                               placeholder="Type" value="$100">
-                                        <span class="text-sm py-1">This is the price you and Professor Miles Esther’s have agreed upon </span>
                                     </div>
 
-                                    <!-- Radio buttons for FixedProjectType -->
-                                    <div class="form-radio-group">
-                                        <label class="form-radio-label"
-                                               @click="fixedProjectType = (fixedProjectType === 'wholeProject') ? 'milestoneProject' : 'wholeProject'">
-                                            Deposit funds into Escrow
-                                            <div class="tooltip-wrapper bottom-left">
-                                                <x-icon.info fill="#BABABA"/>
-                                                <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-                                            </div>
-                                        </label>
-                                        <div class="form-radio-options">
-                                            <div class="form-radio-option">
-                                                <input type="radio" name="fixedProjectType" id="whole-project"
-                                                       class="form-radio-field form-check-input"
-                                                       value="wholeProject" x-model="fixedProjectType">
-                                                <label class="form-radio-title" for="whole-project">Deposit $0.00 for
-                                                    the
-                                                    whole project</label>
-                                            </div>
-                                            <div class="form-radio-option">
-                                                <input type="radio" name="fixedProjectType"
-                                                       id="milestone-project"
-                                                       class="form-radio-field form-check-input"
-                                                       value="milestoneProject" x-model="fixedProjectType">
-                                                <label class="form-radio-title" for="milestone-project">Deposit a lesser
-                                                    amount to cover the first milestone</label>
+                                    <div x-show="contactType === 'fixed'" class="fixed-price-offer-content">
+                                        <!-- Fixed Price Content -->
+                                        <div class="form-input-group">
+                                            <label class="form-input-label">Pay a fixed price for your project
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <x-icon.info fill="#BABABA"/>
+                                                    <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur</span>
+                                                </div>
+                                            </label>
+                                            <input name="type" id="type" class="form-input-field" type="text"
+                                                   placeholder="Type" value="$100">
+                                            <span class="text-sm py-1">This is the price you and Professor Miles Esther’s have agreed upon </span>
+                                        </div>
+
+                                        <!-- Radio buttons for FixedProjectType -->
+                                        <div class="form-radio-group">
+                                            <label class="form-radio-label"
+                                                   @click="fixedProjectType = (fixedProjectType === 'wholeProject') ? 'milestoneProject' : 'wholeProject'">
+                                                Deposit funds into Escrow
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <x-icon.info fill="#BABABA"/>
+                                                    <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+                                                </div>
+                                            </label>
+                                            <div class="form-radio-options">
+                                                <div class="form-radio-option">
+                                                    <input type="radio" name="fixedProjectType" id="whole-project"
+                                                           class="form-radio-field form-check-input"
+                                                           value="wholeProject" x-model="fixedProjectType">
+                                                    <label class="form-radio-title" for="whole-project">Deposit $0.00
+                                                        for
+                                                        the
+                                                        whole project</label>
+                                                </div>
+                                                <div class="form-radio-option">
+                                                    <input type="radio" name="fixedProjectType"
+                                                           id="milestone-project"
+                                                           class="form-radio-field form-check-input"
+                                                           value="milestoneProject" x-model="fixedProjectType">
+                                                    <label class="form-radio-title" for="milestone-project">Deposit a
+                                                        lesser
+                                                        amount to cover the first milestone</label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Show content based on selected fixedProjectType -->
+                                        <!-- Show content based on selected fixedProjectType -->
 
                                         <div x-show="fixedProjectType === 'wholeProject'">
                                             <!-- Content for wholeProject -->
@@ -189,11 +196,10 @@
                                         </div>
 
 
-
                                         <div x-show="fixedProjectType === 'milestoneProject'">
                                             <!-- Content for milestoneProject -->
                                             <p class="input-field-label d-inline">Project Milestones
-                                            <span class="tooltip-wrapper bottom-left">
+                                                <span class="tooltip-wrapper bottom-left">
                                                 <x-icon.info fill="#BABABA"/>
                                                 <span class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
                                             </span>
@@ -222,8 +228,8 @@
 
                                         </div>
 
+                                    </div>
                                 </div>
-                            </div>
                             </div>
 
                             <!--Contact Terms-->
@@ -260,8 +266,9 @@
 
                             <div class="mb-40">
                                 <button class="btn btn-md btn-outline-primary my-2 me-2">Back</button>
-                             <!--   <button class="btn btn-md btn-primary my-2" >Submit</button>--->
-                                <a class="btn btn-md btn-primary my-2" href="/figma/project/client-send-job-offer-view/" >Submit</a>
+                                <!--   <button class="btn btn-md btn-primary my-2" >Submit</button>--->
+                                <a class="btn btn-md btn-primary my-2"
+                                   href="/figma/project/client-send-job-offer-view/">Submit</a>
                             </div>
 
                         </div>

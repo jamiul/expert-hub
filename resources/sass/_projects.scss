@@ -607,12 +607,13 @@
 }
 
 .contact-type-card-wrapper {
-    display: flex;
+    display: grid;
     gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
 
     .contact-type-card {
-        flex: 0 0 360px;
-        max-width: 360px;
+        //flex: 0 0 calc(50% - 12px);
+        //max-width: calc(50% - 12px);
     }
 
     .contact-type-card-inner {
@@ -623,6 +624,7 @@
         background: rgba(0, 54, 227, 0.00);
         padding: 30px;
         cursor: pointer;
+        height: 100%;
     }
 
     input[type='radio']:checked + label {

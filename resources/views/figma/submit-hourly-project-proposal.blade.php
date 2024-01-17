@@ -28,16 +28,6 @@
                                             <x-icon.flag fill="#0036E3"/>
                                             Hourly: $200.00
                                         </div>
-
-                                    </div>
-
-                                </div>
-                                <div class="project-item-action d-flex align-items-center gap-2">
-                                    <div>
-                                        <button class="btn btn-icon btn-outline-light btn-favorite">
-                                            <span class="heart-line"><x-icon.heart fill="#0036E3"/></span>
-                                            <span class="heart-filled"><x-icon.heart-filled fill="#0036E3"/></span>
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +57,7 @@
                             <div class="project-bid-area mt-40 mb-20" style="max-width: 740px">
                                 <h3 class="mb-2 text-base">What is the rate you'd like to bid for this job?</h3>
 
-                                <div class="d-flex align-items-center text-sm gap-3">
+                                <div class="d-flex align-items-center text-sm gap-4">
                                     <div class="">
                                         Your profile rate: <strong class="fw-medium">$150.00</strong> /hr
                                     </div>
@@ -98,7 +88,7 @@
                                     </div>
                                     <div class="service-fee-input-row">
                                         <div class="service-fee-description">
-                                            <p class="fw-medium mb-1">10% Expert Service Fee</p>
+                                            <p class="fw-medium mb-1">10% Platform Fee</p>
                                         </div>
                                         <div class="service-fee-input">
                                             <div class="d-flex gap-4 align-items-center">
@@ -138,8 +128,7 @@
                                 <div class="card-body">
                                     <h3 class="mb-4 text-base">Additional details</h3>
                                     <x-form.textarea label="Cover Letter" wire:model="bio" placeholder="max 200 words"/>
-                                    <x-form.textarea label="Additional Question" wire:model="bio"
-                                                     placeholder="max 200 words"/>
+
                                     <div class="image-upload-flat">
                                         <label for="upload-file" class="text-center">
                                             <span> <x-icon.document-upload fill="#0059C999"/> </span>
