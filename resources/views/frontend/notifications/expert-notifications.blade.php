@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-expert-dashboard-layout')
+@extends('frontend.layouts.app')
 @section('content')
     <section class="my-60">
         <div class="container">
