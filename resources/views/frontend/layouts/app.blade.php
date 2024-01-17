@@ -58,5 +58,6 @@
         </script>
         @stack('bottom_scripts')
         <x-toaster/>
+        @include('frontend.layouts.notify')
     </body>
 </html>
