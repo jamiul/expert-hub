@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-expert-dashboard-layout')
+@extends('frontend.layouts.app')
 @section('content')
     <!-- sub menu start -->
     <nav class="bg-primary sub__nav">

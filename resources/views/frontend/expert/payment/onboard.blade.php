@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-expert-dashboard-layout')
+@extends('frontend.layouts.app')
 @section('content')
     @vite('resources/default/css/expert-dashboard.css')
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
