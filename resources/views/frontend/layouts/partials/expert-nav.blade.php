@@ -74,7 +74,7 @@
                         <span>99</span>
                         <x-icon.message-line/>
                     </a>
-                    <div x-show="openDropdown === 'message'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'message'" class="header-dropdown">
                         <div class="message-dropdown-inner">
                             <div class="message-dropdown-item-wrapper">
                                 <div class="message-dropdown-item message-dropdown-item-unread">
@@ -170,7 +170,7 @@
                         <img
                             src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
                     </a>
-                    <div x-show="openDropdown === 'profile'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
