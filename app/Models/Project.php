@@ -43,6 +43,11 @@ class Project extends Model implements HasMedia
         return $this->hasMany(Eoi::class);
     }
 
+    public function invitations()
+    {
+        return $this->hasMany(Invitation::class);
+    }
+
     public function currency()
     {
         return $this->belongsTo(Currency::class);

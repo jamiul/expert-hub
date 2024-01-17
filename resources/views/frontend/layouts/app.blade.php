@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>EduExHub</title>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-clipboard@2.x.x/dist/alpine-clipboard.js" defer></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
@@ -39,7 +40,7 @@
         @vite('resources/js/owl.carousel.min.js')
         @livewire('modal-pro')
         <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
-        @include('frontend.layouts.clientdashboard-front-js')
+        {{-- @include('frontend.layouts.clientdashboard-front-js') --}}
         <script>
             function toggleClasses(parentSelector, className) {
                 var parentElement = document.querySelector(parentSelector);
@@ -58,6 +59,6 @@
         </script>
         @stack('bottom_scripts')
         <x-toaster/>
-        @include('frontend.layouts.notify')
+        {{-- @include('frontend.layouts.notify') --}}
     </body>
 </html>

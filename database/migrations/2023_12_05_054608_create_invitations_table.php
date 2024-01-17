@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('project_id');
             $table->foreignId('expert_id');
-            $table->foreignId('eoi_id');
+            $table->foreignId('eoi_id')->nullable();
             $table->string('status');
             $table->boolean('active')->default(1);
             $table->timestamps();
