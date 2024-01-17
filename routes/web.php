@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
+use App\Http\Controllers\Frontend\FindProjectController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
@@ -47,7 +48,7 @@ Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
-Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
+Route::get('/find-projects', [FindProjectController::class, 'index'])->name('find.projects');
 Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
 Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
 
