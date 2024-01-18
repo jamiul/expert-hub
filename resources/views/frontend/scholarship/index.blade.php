@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <section class="my-60">
+    <section class="mt-60">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="row mt-60">
+            <div class="row">
                 <div class="col text-center">
                     @livewire('experts.slider')
                 </div>
