@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('country_id');
             $table->string('name');
+            $table->string('website')->nullable();
             $table->boolean('is_manual')->default(0);
             $table->boolean('active')->default(1);
             $table->timestamps();

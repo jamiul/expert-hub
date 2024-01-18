@@ -1,9 +1,9 @@
 <li>
-    <a class="icon-btn border"  @click="openDropdown = (openDropdown === 'notification') ? null : 'notification'" href="#">
+    <a class="icon-btn border"  @click.prevent="openDropdown = (openDropdown === 'notification') ? null : 'notification'" href="#">
         <span class="{{$unreadCount > 0 ? '' : 'd-none'}}" wire:poll.keep-alive>{{ $unreadCount }}</span>
         <x-icon.bell/>
     </a>
-    <div class="header-dropdown" wire:ignore.self x-show="openDropdown === 'notification'">
+    <div class="header-dropdown" wire:ignore.self x-cloak x-show="openDropdown === 'notification'">
         <div class="notification-dropdown-inner">
             <div class="notification-dropdown-item-wrapper">
                 @forelse($unread_notifications as $unread_notification)

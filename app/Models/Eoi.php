@@ -23,4 +23,39 @@ class Eoi extends Model implements HasMedia
     {
         $this->addMediaCollection('attachments');
     }
+
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class);
+    }
+
+    public function markAsShortListed()
+    {
+        $this->update(['is_shortlisted' => true]);
+    }
+
+    public function scopeShortListed($query)
+    {
+        return $query->where('is_shortlisted', true);
+    }
+
+    public function markAsArchived()
+    {
+        $this->update(['is_archived' => true]);
+    }
+
+    public function markAsUnArchived()
+    {
+        $this->update(['is_archived' => false]);
+    }
+
+    public function scopeArchived($query)
+    {
+        return $query->where('is_archived', true);
+    }
+
+    public function scopeMessaged($query)
+    {
+        return $query->where('is_messaged', true);
+    }
 }

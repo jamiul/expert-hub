@@ -26,7 +26,7 @@
         @enderror
     </div>
     <div class="autocomplete-field-suggestion">
-        <ul class="" x-show="open" x-on:click.outside="open = false" x-on:keyup.escape.window="open = false">
+        <ul class="" x-cloak x-show="open" x-on:click.outside="open = false" x-on:keyup.escape.window="open = false">
             @forelse ($searchResults as $result)
                 <li wire:key="{{ $result->id }}" x-on:click="open = false; $wire.{{ $selectFunction }}('{{ $result->name }}')"> {{ $result->name }} </li>
             @empty

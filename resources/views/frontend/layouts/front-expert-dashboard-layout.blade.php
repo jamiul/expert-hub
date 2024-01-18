@@ -3,6 +3,8 @@
     @include('frontend.layouts.front-header')
 
     <body>
+        @include('frontend.layouts.notify')
+
         @include('frontend.layouts.front-top-expert-dashboard-navbar')
 
         @yield('content')
@@ -16,6 +18,6 @@
 
         @stack('js')
 
-  
+
     </body>
 </html>
