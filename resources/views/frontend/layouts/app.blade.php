@@ -39,7 +39,6 @@
         @vite('resources/js/owl.carousel.min.js')
         @livewire('modal-pro')
         <script src="{{ asset('vendor/wire-elements-pro/js/overlay-component.js') }}"></script>
-        @include('frontend.layouts.clientdashboard-front-js')
         <script>
             function toggleClasses(parentSelector, className) {
                 var parentElement = document.querySelector(parentSelector);
