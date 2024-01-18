@@ -193,7 +193,7 @@ class StripeController extends Controller {
                 'amount_received'        => $paymentData->amount_received,
                 'application_fee_amount' => $paymentData->application_fee_amount,
                 'currency'               => $paymentData->currency,
-                'customer_id'            => $paymentData->customer_id,
+                'customer_id'            => $paymentData->customer,
                 'description'            => $paymentData->description,
                 'latest_charge_id'       => $paymentData->latest_charge_id,
                 'on_behalf_of'           => $paymentData->on_behalf_of,
