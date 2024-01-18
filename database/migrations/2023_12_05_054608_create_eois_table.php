@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('amount');
             $table->text('cover_letter');
             $table->string('status');
+            $table->string('duration')->nullable();
             $table->boolean('is_shortlisted')->default(0);
             $table->boolean('is_archived')->default(0);
             $table->boolean('is_messaged')->default(0);

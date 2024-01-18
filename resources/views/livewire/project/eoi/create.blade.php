@@ -1,4 +1,6 @@
 <div class="my-60">
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
@@ -56,6 +58,28 @@
                                 <div class="card-body">
                                     <h3 class="mb-4 text-base">Additional details</h3>
                                     <x-form.textarea label="Cover Letter" wire:model.blur="cover_letter" placeholder="max 200 words"/>
+                                    <div
+                                        wire:ignore
+                                        x-data
+                                        x-init="
+                                            FilePond.setOptions({
+                                                allowMultiple: true,
+                                                server: {
+                                                    process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                                                        @this.upload('attachments', file, load, error, progress)
+                                                    },
+                                                    revert: (fileName, load) => {
+                                                        @this.removeUpload('attachments', fileName, load)
+                                                    },
+                                                },
+                                                credits: {},
+                                                labelIdle: '<strong>Clik to upload or drag & drop</strong> <br> Drag & drop any images or documents that might be helpful in explaining your brief here'
+                                            });
+                                            FilePond.create($refs.input);
+                                        "
+                                    >
+                                        <input type="file" x-ref="input">
+                                    </div>
                                     <div class="image-upload-flat">
                                         <label for="upload-file" class="text-center">
                                             <span> <x-icon.document-upload fill="#0059C999"/> </span>

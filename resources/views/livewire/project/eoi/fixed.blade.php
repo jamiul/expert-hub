@@ -63,8 +63,7 @@
                     </div>
                     <div>
                         <x-form.input type="text" label="Deposit Amount"
-                                        wire:model="type" placeholder="$0.00"
-                                        value=""/>
+                                        wire:model="type" placeholder="$0.00"/>
                     </div>
                     <div>
                         <button>
@@ -136,8 +135,9 @@
                         </div>
                         <div class="service-fee-input">
                             <input type="text"
+                                    wire:model="amount"
                                     class="input-field-control input-field-control-lg"
-                                    placeholder="$0.00" value="150.00">
+                                    placeholder="$0.00">
                         </div>
                     </div>
                     <div class="service-fee-input-row border-bottom">
@@ -146,6 +146,7 @@
                         </div>
                         <div class="service-fee-input">
                             <input type="text"
+                                    wire:model="serviceFee"
                                     class="input-field-control input-field-control-lg"
                                     placeholder="$0.00" value="-15.00" disabled>
                         </div>
@@ -158,6 +159,7 @@
                         </div>
                         <div class="service-fee-input">
                             <input type="text"
+                                    wire:model="amountAfterServiceFee"
                                     class="input-field-control input-field-control-lg"
                                     placeholder="$0.00" value="135.00" disabled>
                         </div>
