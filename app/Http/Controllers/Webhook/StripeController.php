@@ -112,7 +112,7 @@ class StripeController extends Controller {
 
             //todo: add data to client specific transaction table
             //todo: update milestone status
-            //todo: send payment notification to Client, Expert & Admin
+            //todo: send payment notification & email to Client, Expert & Admin
 
             Log::info( $paymentData );
         } catch ( \Exception $ex ) {
