@@ -5,7 +5,7 @@
             <h2>Search Experts by Field</h2>
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 mb-5">
                 <div class="experts-block">
                     <div class="experts-img">
                         <a href="#"><img src="{{ asset('assets/frontend/img/experts1.jpg') }}" /></a>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 mb-5">
                 <div class="experts-block">
                     <div class="experts-img">
                         <a href="#"><img src="{{ asset('assets/frontend/img/experts2.jpg') }}" /></a>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 mb-5">
                 <div class="experts-block">
                     <div class="experts-img">
                         <a href="#"><img src="{{ asset('assets/frontend/img/experts3.jpg') }}" /></a>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 mb-5">
                 <div class="experts-block">
                     <div class="experts-img">
                         <a href="#"><img src="{{ asset('assets/frontend/img/experts4.jpg') }}" /></a>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 mb-5">
                 <div class="experts-block">
                     <div class="experts-img">
                         <a href="#"><img src="{{ asset('assets/frontend/img/experts5.jpg') }}" /></a>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 mb-5">
                 <div class="experts-block">
                     <div class="experts-img">
                         <a href="#"><img src="{{ asset('assets/frontend/img/experts6.jpg') }}" /></a>
@@ -103,7 +103,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="single-button d-flex justify-content-center edux-btn-mt">
+            <div class="single-button d-flex justify-content-center">
                 <x-button.link
                     href="{{ route('find.experts') }}"
                     class="btn edux-btn-border-primary"
