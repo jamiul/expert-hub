@@ -80,8 +80,10 @@ class StripeController extends Controller {
 
     private function __paymentReceived( $paymentData ) {
         try {
-            $reference_id   = @$paymentData->metadata->reference_id;
-            $reference_type = @$paymentData->metadata->reference_type;
+            $reference_id   = @$paymentData->metadata->reference_id; //milestone id
+            $reference_type = @$paymentData->metadata->reference_type; //milestone
+
+            //save to generic transaction table
             Transaction::updateOrCreate( [
                 'payment_intent_id' => $paymentData->id
             ], [
@@ -107,6 +109,10 @@ class StripeController extends Controller {
                 'status'                 => $paymentData->status,
                 'livemode'               => $paymentData->livemode
             ] );
+
+            //todo: add data to client specific transaction table
+            //todo: update milestone status
+            //todo: send payment notification to Client, Expert & Admin
 
             Log::info( $paymentData );
         } catch ( \Exception $ex ) {
