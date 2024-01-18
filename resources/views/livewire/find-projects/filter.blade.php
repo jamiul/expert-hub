@@ -33,20 +33,20 @@
     </div>
     <div class="filter-widget">
         <h4 class="widget-title">Project Type</h4>
-        <x-form.check class="mb-2" wire:change="filter" wire:model="fixed">
+        <x-form.check class="mb-2" wire:change="filter" wire:model="projectTypes" value="fixed" id="fixed">
             Fixed Price
         </x-form.check>
         <div class="widget-field-row">
-            <x-form.input class="input-field-md" type="text" wire:model="type" placeholder="Min" />
-            <x-form.input class="input-field-md" type="text" wire:model="type" placeholder="Max" />
+            <x-form.input class="input-field-md" type="text" wire:model="startAmount" placeholder="Min" />
+            <x-form.input class="input-field-md" type="text" wire:model="endAmount" placeholder="Max" />
         </div>
 
-        <x-form.check class="mb-2 mt-1" wire:model="hourly">
+        <x-form.check class="mb-2 mt-1" wire:change="filter" wire:model="projectTypes" value="hourly" id="hourly">
             Hourly
         </x-form.check>
         <div class="widget-field-row">
-            <x-form.input class="input-field-md  mb-0" type="text" wire:model="type" placeholder="Min" />
-            <x-form.input class="input-field-md  mb-0" type="text" wire:model="type" placeholder="Max" />
+            <x-form.input class="input-field-md  mb-0" type="text" placeholder="Min" />
+            <x-form.input class="input-field-md  mb-0" type="text" placeholder="Max" />
         </div>
     </div>
     <div class="filter-widget mb-40">

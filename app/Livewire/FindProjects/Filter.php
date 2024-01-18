@@ -13,10 +13,17 @@ class Filter extends Component
     public $search = '';
 
     #[Url()]
-    public $hourlyRate = '';
+    public $skills = [];
+    public $expertSkills;
 
     #[Url()]
-    public $fixedPrice = '';
+    public $projectTypes = [];
+
+    #[Url()]
+    public $startAmount = [];
+
+    #[Url()]
+    public $endAmount = [];
 
     #[Url()]
     public $selectedCountries = [];
@@ -24,9 +31,7 @@ class Filter extends Component
     public $countries = null;
     public $searchCountry = '';
 
-    #[Url()]
-    public $skills = [];
-    public $expertSkills;
+
 
     public function mount()
     {
@@ -37,9 +42,10 @@ class Filter extends Component
     {
         $filters = [
             'search' => $this->search,
-            'hourlyRate' => $this->hourlyRate,
-            'fields' => $this->fields,
             'skills' => $this->skills,
+            'projectTypes' => $this->projectTypes,
+            'startAmount' => $this->startAmount,
+            'endAmount' => $this->endAmount,
             'selectedCountries' => $this->selectedCountries,
         ];
         $this->dispatch('find-projects-filter', $filters);
@@ -48,10 +54,11 @@ class Filter extends Component
     public function resetFilter()
     {
         $this->search = '';
-        $this->hourlyRate = '';
-        $this->selectedCountries = [];
-        $this->fields = [];
         $this->skills = [];
+        $this->projectTypes = [];
+        $this->startAmount = [];
+        $this->endAmount = [];
+        $this->selectedCountries = [];
 
         $this->filter();
     }

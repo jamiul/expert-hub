@@ -19,10 +19,11 @@ class Lists extends Component
     {
         $this->filtersArray = request()->only(
             'search',
-            'hourlyRate',
-            'selectedCountries',
-            'fields',
             'skills',
+            'projectTypes',
+            'startAmount',
+            'endAmount',
+            'selectedCountries',
         );
     }
 
@@ -50,26 +51,21 @@ class Lists extends Component
         $this->render();
     }
 
-    public function __construct()
-    {
-        $this->filtersArray = request()->only(
-            'search',
-            'level',
-            'studyArea',
-            'scholarshipType',
-            'applicationDeadline',
-            'studentType',
-            'country',
-            'selectedUniversities',
-        );
-    }
-
     public function render()
     {
         $projects = Project::with('client', 'expertise', 'skills');
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
             $projects = $projects->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
+        }
+
+        if (isset($this->filtersArray['projectTypes']) && $this->filtersArray['projectTypes']) {
+            $projectTypes = $this->filtersArray['projectTypes'];
+            $projects = $projects->where(function ($q) use ($projectTypes) {
+                foreach ($projectTypes as $value) {
+                    $q->orWhere('type', $value);
+                }
+            });
         }
 
         if (!empty($this->filtersArray['selectedCountries'])) {
