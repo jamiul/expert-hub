@@ -653,5 +653,13 @@ ul.progress-bar-nav-horizontal {
             color: $edu-primary-color;
         }
     }
+
+    &.light-tag-list {
+        .tag {
+            background-color: #F4F6F9;
+            color: $edu-min-gray-color;
+            font-size: 0.8125rem;
+        }
+    }
 }
 
