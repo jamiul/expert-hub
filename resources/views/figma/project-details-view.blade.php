@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-client-dashboard-layout')
+@extends('frontend.layouts.figma', ['header' => 'guest'])
 @section('content')
     <div class="my-60">
         <div class="container">
@@ -8,7 +8,7 @@
                         <div class="page-sidebar">
                             <div class="sidebar-widget">
                                 <p class="text-sm mb-3">Fixed <strong class="h5">$200.00</strong></p>
-                                <a class="btn btn-primary btn-md w-100" href="/figma/submit-project-proposal">Send EOI</a>
+                                <a class="btn btn-primary btn-md w-100" href="/figma/submit-fixed-project-proposal">Send EOI</a>
                                 <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                     <x-icon.heart width="24" height="24" fill="#0036E3"/>
                                     Save this Project

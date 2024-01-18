@@ -84,7 +84,8 @@ Route::group(['prefix' => 'figma'], function () {
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
     Route::view('/project-details-view', 'figma.project-details-view');
-    Route::view('/submit-project-proposal', 'figma.submit-project-proposal');
+    Route::view('/submit-hourly-project-proposal', 'figma.submit-hourly-project-proposal');
+    Route::view('/submit-fixed-project-proposal', 'figma.submit-fixed-project-proposal');
 
     // Admin dashboard
     Route::view('/super-admin-layout', 'figma.admin-layout');

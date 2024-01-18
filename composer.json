@@ -20,6 +20,7 @@
         "spatie/laravel-activitylog": "^4.7",
         "spatie/laravel-medialibrary": "^10.15",
         "spatie/laravel-permission": "^6.1",
+        "stripe/stripe-php": "^13.9",
         "wire-elements/pro": "^4.0"
     },
     "require-dev": {

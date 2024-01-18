@@ -16,7 +16,7 @@
                         Skillsets</button>
                 </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content" id="myTabContentAll">
                 <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
@@ -38,6 +38,11 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
+
+
+
+
+
                             <div class="accordion">
                                 @foreach ($expertFields->skip($perRowExpert)->take($perRowExpert) as $expertField)
                                     <div class="at-item">
