@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ProjectType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
@@ -15,9 +16,23 @@ class Project extends Model implements HasMedia
 
     protected $guarded = [];
 
+    protected $casts = [
+        'type' => ProjectType::class,
+    ];
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('attachments');
+    }
+
+    public function isHourly()
+    {
+        return $this->type == ProjectType::Hourly;
+    }
+
+    public function isFixed()
+    {
+        return $this->type == ProjectType::Fixed;
     }
 
     public function client()
