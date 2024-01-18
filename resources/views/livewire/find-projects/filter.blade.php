@@ -2,139 +2,57 @@
     <div class="filter-widget border-bottom">
         <div class="d-flex justify-content-between">
             <h4 class="h6 mb-0">Filter</h4>
-            <button class="btn btn-sm btn-link text-decoration-underline px-0 ">Clear filters
+            <button wire:click="resetFilter" class="btn btn-sm btn-link text-decoration-underline px-0 ">
+                Clear filters
             </button>
         </div>
     </div>
     <div class="filter-widget">
-        <x-form.search class="input-field-md" wire:model="skill" placeholder="Search by keyword" />
+        <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find Projects..."/>
     </div>
     <div class="filter-widget">
         <h4 class="widget-title">Project by Categories</h4>
         <div class="widget-accordion use-scroll-content">
+
+            @foreach ($projectCategories as $expertSkill)
             <div class="widget-accordion-item">
                 <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A" />
-                    Course Accreditations
+                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
+                    {{ $expertSkill->name }}
                 </div>
                 <div class="widget-accordion-content">
-                    <x-form.check wire:model="project-category" id="A01">
-                        Accreditation Documentation
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="A02">
-                        Accreditation Process
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="A03">
-                        Accreditation Renewal
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="A04">
-                        Accreditation Reporting
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="A05">
-                        Accreditation Review
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="A06">
-                        Accreditation Documentation
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="A07">
-                        Accreditation Documentation
-                    </x-form.check>
-
+                    @foreach ($expertSkill->children as $child)
+                        <x-form.check wire:change="filter" wire:model="skills" id="{{ Str::slug($child->name) }}-{{ $child->id }}" value="{{ $child->name }}">
+                            {{ $child->name }}
+                        </x-form.check>
+                    @endforeach
                 </div>
             </div>
-            <div class="widget-accordion-item">
-                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A" />
-                    Curriculum Development
-                </div>
-                <div class="widget-accordion-content">
-                    <x-form.check wire:model="project-category" id="B01">
-                        Accreditation Documentation
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="B02">
-                        Accreditation Process
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="B03">
-                        Accreditation Renewal
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="B04">
-                        Accreditation Reporting
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="B05">
-                        Accreditation Review
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="B06">
-                        Accreditation Documentation
-                    </x-form.check>
-                    <x-form.check wire:model="project-category" id="B07">
-                        Accreditation Documentation
-                    </x-form.check>
-
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="filter-widget">
         <h4 class="widget-title">Project Type</h4>
-        <x-form.check class="mb-2" wire:model="fixed">
+        <x-form.check class="mb-2" wire:change="filter" wire:model="projectTypes" value="fixed" id="fixed">
             Fixed Price
         </x-form.check>
         <div class="widget-field-row">
-            <x-form.input class="input-field-md" type="text" wire:model="type" placeholder="Min" />
-            <x-form.input class="input-field-md" type="text" wire:model="type" placeholder="Max" />
+            <x-form.input class="input-field-md" type="text" wire:model="startAmount" placeholder="Min" />
+            <x-form.input class="input-field-md" type="text" wire:model="endAmount" placeholder="Max" />
         </div>
 
-        <x-form.check class="mb-2 mt-1" wire:model="hourly">
+        <x-form.check class="mb-2 mt-1" wire:change="filter" wire:model="projectTypes" value="hourly" id="hourly">
             Hourly
         </x-form.check>
         <div class="widget-field-row">
-            <x-form.input class="input-field-md  mb-0" type="text" wire:model="type" placeholder="Min" />
-            <x-form.input class="input-field-md  mb-0" type="text" wire:model="type" placeholder="Max" />
+            <x-form.input class="input-field-md  mb-0" type="text" placeholder="Min" />
+            <x-form.input class="input-field-md  mb-0" type="text" placeholder="Max" />
         </div>
     </div>
-    {{--                            <div class="filter-widget"> --}}
-    {{--                                <h4 class="widget-title">Location</h4> --}}
-    {{--                                <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/> --}}
-    {{--                            </div> --}}
-    <div class="filter-widget">
-        <h4 class="widget-title">Location</h4>
+    <div class="filter-widget mb-40">
+        <h6 class="filter-widget-title">Location</h6>
         <div class="filter-widget-content">
-            <div class="form-input-group form-input-has-icon autocomplete-field input-field-md" x-data="{ open: false }">
-                <div class="autocomplete-field-wrapper">
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                    <input x-on:click="open = true" wire:model.live.debounce.500ms="country" name="country"
-                        id="country" class="form-input-field" placeholder="Search by Country">
-                    <span class="form-input-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25"
-                            fill="none">
-                            <path fill="#ccc"
-                                d="M19.6 21.5L13.3 15.2C12.8 15.6 12.225 15.9167 11.575 16.15C10.925 16.3833 10.2333 16.5 9.5 16.5C7.68333 16.5 6.14583 15.8708 4.8875 14.6125C3.62917 13.3542 3 11.8167 3 10C3 8.18333 3.62917 6.64583 4.8875 5.3875C6.14583 4.12917 7.68333 3.5 9.5 3.5C11.3167 3.5 12.8542 4.12917 14.1125 5.3875C15.3708 6.64583 16 8.18333 16 10C16 10.7333 15.8833 11.425 15.65 12.075C15.4167 12.725 15.1 13.3 14.7 13.8L21 20.1L19.6 21.5ZM9.5 14.5C10.75 14.5 11.8125 14.0625 12.6875 13.1875C13.5625 12.3125 14 11.25 14 10C14 8.75 13.5625 7.6875 12.6875 6.8125C11.8125 5.9375 10.75 5.5 9.5 5.5C8.25 5.5 7.1875 5.9375 6.3125 6.8125C5.4375 7.6875 5 8.75 5 10C5 11.25 5.4375 12.3125 6.3125 13.1875C7.1875 14.0625 8.25 14.5 9.5 14.5Z">
-                            </path>
-                        </svg>
-                    </span>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
-                <div class="autocomplete-field-suggestion">
-                    <ul class="" x-show="open" x-on:click.outside="open = false"
-                        x-on:keyup.escape.window="open = false" style="">
-                        <!--[if BLOCK]><![endif]-->
-                        <li wire:key="1" x-on:click="open = false; $wire.selectCountry('Afghanistan')">
-                            Afghanistan
-                        </li>
-                        <li wire:key="2" x-on:click="open = false; $wire.selectCountry('Albania')"> Albania
-                        </li>
-                        <li wire:key="3" x-on:click="open = false; $wire.selectCountry('Algeria')"> Algeria
-                        </li>
-                        <li wire:key="4" x-on:click="open = false; $wire.selectCountry('American Samoa')">
-                            American Samoa
-                        </li>
-                        <li wire:key="5" x-on:click="open = false; $wire.selectCountry('Andorra')"> Andorra
-                        </li>
-                        <!--[if ENDBLOCK]><![endif]-->
-                    </ul>
-                </div>
-
-            </div>
+            <x-form.autocomplete class="input-field-md" :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
         </div>
     </div>
 </div>

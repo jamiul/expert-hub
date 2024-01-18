@@ -218,8 +218,8 @@ header .header-menu .login-block i {
     left: 0;
     right: 0;
     margin: 0 calc(50% - 50vw);
+    height: 580px;
 }
-
 .product-slider .carousel-w .carousel-inner .item-text img {
     height: auto !important;
     width: auto;
@@ -228,14 +228,15 @@ header .header-menu .login-block i {
 
 .product-slider .carousel-w .carousel-inner .item-text {
     text-align: left;
-    box-shadow: 9px 9px 36px 0px #0e00621a;
     left: 30px;
-    background: #fff;
-    width: 248px;
-    border-radius: 8px;
-    padding: 20px 25px;
+    max-width: 248px;
+    padding: 10px 10px;
     position: absolute;
-    top: 60px;
+    top: 165px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 9px 9px 36px 0px rgba(14, 0, 98, 0.10);
+    backdrop-filter: blur(7.5px);
 }
 
 .product-slider .carousel-w .carousel-inner .item-text a {
@@ -287,18 +288,20 @@ header .header-menu .login-block i {
 }
 
 .product-slider .carousel-w .hero-contant {
-    width: 50%;
+    width: 80%;
     z-index: 9;
+    padding-bottom: 80px;
 }
 
 .product-slider .carousel-w .carousel-inner {
-    width: 50%;
+    width: 100%;
 }
 
 .product-slider .carousel-w .carousel-inner img {
-    height: 550px;
+    height: 540px;
     object-fit: contain;
     object-position: right;
+    width: 640px;
 }
 
 .product-slider .hero-contant .hero-text h2 {
@@ -323,7 +326,7 @@ header .header-menu .login-block i {
     right: auto;
     bottom: auto;
     width: 100%;
-    margin: 50px 0 70px 0;
+    margin: 20px 0 50px 0;
     box-shadow: 14.755319595336914px 13.202128410339355px 37.27659606933594px 0px #0e00621f;
     padding: 30px 15px !important;
     border-radius: 8px;

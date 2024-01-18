@@ -57,7 +57,7 @@
                     <a href="#">{{ __('Find Training') }}</a>
                 </li>
                 <li>
-                    <a href="{{ url('scholarship-database') }}">{{ __('Scholarships Database') }}</a>
+                    <a href="{{ url('scholarship-database') }}">{{ __('Scholarships') }}</a>
                 </li>
                 <li>
                     <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>
