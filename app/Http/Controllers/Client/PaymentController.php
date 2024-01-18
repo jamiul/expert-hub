@@ -75,6 +75,10 @@ class PaymentController extends Controller
                 'amount'                    => 115.36 * 100,
                 'currency'                  => 'aud',
                 'transfer_group'            => 'ORDER10',
+                'metadata' => [
+                    'reference_id' => 1,
+                    'reference_type' => 'milestone'
+                ]
             ] );
 
         } catch ( \Exception $ex ) {
