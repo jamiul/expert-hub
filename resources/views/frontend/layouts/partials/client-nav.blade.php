@@ -72,11 +72,11 @@
                 </li>
                 @livewire('expert-notification-count')
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
+                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
                         <span>99</span>
                         <x-icon.message-line/>
                     </a>
-                    <div x-show="openDropdown === 'message'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'message'" class="header-dropdown">
                         <div class="message-dropdown-inner">
                             <div class="message-dropdown-item-wrapper">
                                 <div class="message-dropdown-item message-dropdown-item-unread">
@@ -168,11 +168,11 @@
                     </div>
                 </li>
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
+                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img
                             src="{{ auth()->user()->profile->getFirstMediaUrl('picture') }}"/>
                     </a>
-                    <div x-show="openDropdown === 'profile'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
@@ -202,12 +202,7 @@
                                             Setting</a></li>
                                     @auth
                                         <li>
-                                            <form class="dropdown-logout-form" method="POST"
-                                                  action="{{ route('auth.logout') }}">
-                                                @csrf
-                                                <x-icon.logout-box-line/>
-                                                <button class="bg-light" type="submit">Logout</button>
-                                            </form>
+                                            @livewire('auth.logout')
                                         </li>
                                     @endauth
                                 </ul>

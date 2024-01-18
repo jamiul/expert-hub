@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-layout')
+@extends('frontend.layouts.figma', ['header' => 'client'])
 
 @push('top_styles')
     @vite('resources/css/filepond.css')
@@ -34,15 +34,26 @@
                         </div>
                         <div class="job-post-form">
                             <form wire:submit="save">
+
+                            <x-form.select label="What is your project field" wire:model="What is your project field">
+                                <option value="">Select options</option>
+                                <option value="your project field">your project field</option>
+                                <option value="your project field">your project field</option>
+                                <option value="your project field">your project field</option>
+                                <option value="your project field">your project field</option>
+                            </x-form.select>
+
                                 <div class="step step-1 mb-4">
                                     <div class="main-form">
                                         <x-form.input type="text" label="What is your project title?" wire:model="title" placeholder="Academic content writer"/>
                                     </div>
                                 </div>
+
+
                                 <div class="step step-2 mb-4">
                                     <div class="main-form position-relative">
                                     <x-form.textarea label="Project Description" wire:model="bio" placeholder="Bio">
-                                    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this
+                                        Write description
                                     </x-form.textarea>
                                     <span class="edux-word-count">0/1000</span>
                                         </div>
@@ -63,6 +74,8 @@
                                         <x-icon.delete/>
                                         </div>
                                     </div>
+
+                                    <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>Image, pdf, doc, excel (Max 10 MB)</span></p>
 
                                 </div>
                                 <div class="step step-3 mt-3">
@@ -97,32 +110,31 @@
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
                                                     <div class="rate-box">
-                                                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                            <div class="hourly-check">
-                                                                <input type="radio" class="btn-check" wire:model="type" value="hourly" id="btnradio1" autocomplete="off">
-                                                                <label class="btn btn-outline-primary" for="btnradio1">
+                                                        <div class="btn-group d-flex" role="group" aria-label="Basic radio toggle button group">
+                                                            <div class="form-radio-option">
+                                                                <label class="btn btn-outline-primary active" for="btnradio1">
                                                                     <div class="currency-img">
-                                                                        <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
+                                                                        <input type="radio" name="gender" id="btnradio1" class="form-radio-field form-check-input" wire:model="type" value="hourly">
                                                                     </div>
                                                                     <div class="pay-rate">
-                                                                        <h3>Hourly rate</h3>
+                                                                        <h3>Hourly</h3>
                                                                         <p>Select freelancers based on their hourly rates and pay for the hours worked</p>
                                                                     </div>
                                                                 </label>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="rate-box">
                                                         <div class="fixed-check">
-                                                            <input type="radio" class="btn-check" wire:model="type" value="fixed" id="btnradio2" autocomplete="off">
                                                             <label class="btn btn-outline-primary" for="btnradio2">
                                                                 <div class="currency-img">
-                                                                    <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
+                                                                <input type="radio" name="gender" id="btnradio2" class="form-radio-field form-check-input" wire:model="gender" value="fixed">
                                                                 </div>
                                                                 <div class="pay-rate">
-                                                                    <h3>Fixed price</h3>
+                                                                    <h3>Fixed</h3>
                                                                     <p>Agree on a price upfront, then release payment upon project completion</p>
                                                                 </div>
                                                             </label>
@@ -149,15 +161,18 @@
 
                                             </div>
                                             <div class="col-md-6">
-                                                <x-form.input type="number" min="0" label="End Amount" wire:model="budget_end_amount" placeholder="Type Here"/>
+                                            <div class="form-input-group">
+                                            <label class="form-input-label edux-tooltip-level">End Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    <input name="budget_start_amount" id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model="budget_start_amount" placeholder="Type Here">
+                                            </div>
                                             </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-buttons">
-                                    <button  wire:click="next" type="button" class="edux-btn-primary">Post Job</button>
+                                <div class="single-button edux-btn-post-job mt-3">
+                                    <button type="button" class="btn edux-btn-border-primary">Save As Draft</button>
+                                    <button type="button" class="btn btn-primary edux-btn-primary">Post Project</button>
                                 </div>
 
                             </form>

@@ -5545,11 +5545,15 @@ span.edux-word-count {
     margin-top: 20px;
     display: flex;
     align-items: center;
-    background: #0059C90D;
-    border: solid 1px #0059C94D;
+    background: rgba(0, 89, 201, 0.03);
+    border: 1px solid rgba(0, 89, 201, 0.30);
     border-radius: 4px;
     padding: 16px 24px;
 }
+
+
+
+
 
 label.basic-file-upload:hover {
   border-radius: 4px;
@@ -8446,6 +8450,27 @@ margin-bottom: 32px;
   border: 2px solid  #0036E3;
   }
 
+  .edux-btn-post-job{
+    display: flex;
+    gap:12px;
+  }
+
+  .edux-supported-file{
+    color:  #6E737C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  }
+
+  .edux-supported-file span{
+    color:  #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  }
+
   .edux-profile-page .user-profile-skills ul li {
     border-radius: 42px;
     background: #F4F6F9;
@@ -8598,6 +8623,10 @@ border:none
 
 .about-slider .owl-stage-outer{
   padding-bottom: 40px;
+}
+
+.edux-btn-mt{
+  margin-top: 32px;
 }
 
 

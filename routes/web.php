@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
+use App\Http\Controllers\Frontend\ClientProjectController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
@@ -15,12 +16,15 @@ use App\Http\Controllers\Frontend\ExpertDashboardController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
+use App\Http\Controllers\Webhook\StripeController;
+use App\Http\Controllers\Expert\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,7 +71,7 @@ Route::get('/client/profile', [ClientProfileController::class, 'index'])->middle
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
-
+Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
@@ -81,3 +85,24 @@ Route::get( '/notification-settings', [
     NotificationsController::class,
     'notificationSettings'
 ] )->middleware( [ 'auth' ] )->name( 'notifications.settings' );
+
+// Webhooks
+Route::group(['prefix' => 'webhooks'], function (){
+    Route::post( 'stripe', [StripeController::class, 'receiveWebhook'] );
+    Route::post( 'stripe-connect', [StripeController::class, 'receiveConnectWebhook'] );
+    Route::any( 'test', [StripeController::class, 'testWebhook'] );
+});
+
+Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' => 'expert.'], function (){
+    Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+    Route::any('/payment/onboard', [PaymentController::class, 'onboard'])->name('payment.onboard');
+    Route::any('/payment/withdrawal-method', [PaymentController::class, 'withdrawalMethod'])->name('payment.withdrawal');
+    Route::post('/payment/withdraw', [PaymentController::class, 'withdraw'])->name('payment.withdraw');
+    Route::post('/payment/account-session', [PaymentController::class, 'accountSession'])->name('payment.account_session');
+});
+
+Route::group([ 'middleware' => ['auth', 'client'], 'prefix' => 'client', 'as' => 'client.'], function (){
+    Route::get('/payment', [\App\Http\Controllers\Client\PaymentController::class, 'index'])->name('payment.index');
+    Route::post('/create-payment-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createPaymentIntent'])->name('payment.createPaymentIntent');
+    Route::get('/accept-milestone', [\App\Http\Controllers\Client\PaymentController::class, 'acceptMilestone'])->name('payment.acceptMilestone');
+});
