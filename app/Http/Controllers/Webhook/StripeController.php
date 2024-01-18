@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Webhook;
 
 use App\Http\Controllers\Controller;
+use App\Models\PaymentMethod;
+use App\Models\Profile;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -34,9 +36,36 @@ class StripeController extends Controller {
                 $paymentData = $event->data->object;
                 $this->__paymentReceived( $paymentData );
                 break;
+
+            case 'payment_method.attached':
+                $paymentMethod = $event->data->object;
+                $this->__paymentMethodAttached( $paymentMethod );
+                break;
+
+            case 'payment_method.detached':
+                $paymentMethod = $event->data->object;
+                $this->__paymentMethodDetached( $paymentMethod );
+                break;
+
+            case 'transfer.created':
+                $paymentMethod = $event->data->object;
+                $this->__paymentGeneric( $paymentMethod );
+                break;
+
+            case 'payment.created':
+                $paymentMethod = $event->data->object;
+                $this->__paymentGeneric( $paymentMethod );
+                break;
+
+            case 'balance.available':
+                $paymentMethod = $event->data->object;
+                $this->__paymentGeneric( $paymentMethod );
+                break;
+
             case 'account.application.authorized':
                 $this->__handleApplicationAuthorized( $event );
                 break;
+
             default:
                 echo 'Received unknown event type ' . $event->type;
         }
@@ -78,6 +107,75 @@ class StripeController extends Controller {
 
     }
 
+    private function __paymentGeneric($paymentMethod) {
+        Log::info($paymentMethod);
+    }
+
+    private function __paymentMethodAttached($paymentMethod) {
+        try {
+            $stripe_customer_id = $paymentMethod->customer;
+            $customer = Profile::where('stripe_client_id', $stripe_customer_id)->firstOrFail();
+            $user_id = $customer->user_id;
+
+            //delete users payment method if exists.
+            PaymentMethod::where('user_id', $user_id)->where('fingerprint', $paymentMethod->card->fingerprint)->delete();
+
+            //set this card as default if there is no default.
+            $is_default = 0;
+            if(!PaymentMethod::where('user_id',$user_id)->where('is_default', 1)->count()){
+                $is_default = 1;
+                $stripe = new \Stripe\StripeClient( [
+                    "api_key" => env( 'STRIPE_SECRET' ),
+                ] );
+                $stripe->customers->update(
+                    $customer->stripe_client_id,
+                    ['invoice_settings' => [
+                        'default_payment_method' => $paymentMethod->id]
+                    ]
+                );
+            }
+
+            //create or update.
+            $stripe_card = PaymentMethod::updateOrCreate([
+                'user_id' => $user_id,
+                'fingerprint' => $paymentMethod->card->fingerprint
+            ],[
+                'stripe_payment_id' => $paymentMethod->id,
+
+                'address_line1_check' => $paymentMethod->card->checks->address_line1_check,
+                'address_postal_code_check' => $paymentMethod->card->checks->address_postal_code_check,
+                'three_d_secure_usage' => $paymentMethod->card->three_d_secure_usage->supported,
+                'cvc_check' => $paymentMethod->card->checks->cvc_check,
+
+                'funding' => $paymentMethod->card->funding,
+                'brand' => $paymentMethod->card->brand,
+                'exp_month' => $paymentMethod->card->exp_month,
+                'exp_year' => $paymentMethod->card->exp_year,
+                'last4' => $paymentMethod->card->last4,
+
+                'line1' => $paymentMethod->billing_details->address->line1,
+                'line2' => $paymentMethod->billing_details->address->line2,
+                'city' => $paymentMethod->billing_details->address->city,
+                'postal_code' => $paymentMethod->billing_details->address->postal_code,
+                'state' => $paymentMethod->billing_details->address->state,
+                'country' => $paymentMethod->billing_details->address->country ? : $paymentMethod->card->country,
+
+                'name' => ($paymentMethod->billing_details->name) ? : "n/a",
+                'email' => $paymentMethod->billing_details->email,
+                'phone' => $paymentMethod->billing_details->phone,
+
+                'wallet' => isset($paymentMethod->card->wallet) ? $paymentMethod->card->wallet->type : null,
+                'is_default' => $is_default,
+                'livemode' => $paymentMethod->livemode
+            ]);
+        } catch (\Exception $ex){
+            Log::info( $ex->getMessage() );
+            http_response_code( $ex->getCode() );
+            exit();
+        }
+        Log::info($paymentMethod);
+    }
+
     private function __paymentReceived( $paymentData ) {
         try {
             $reference_id   = @$paymentData->metadata->reference_id; //milestone id
@@ -116,6 +214,18 @@ class StripeController extends Controller {
 
             Log::info( $paymentData );
         } catch ( \Exception $ex ) {
+            Log::info( $ex->getMessage() );
+            http_response_code( $ex->getCode() );
+            exit();
+        }
+    }
+
+    private function __paymentMethodDetached($paymentMethod) {
+        Log::info( $paymentMethod->id);
+        try {
+            //delete users payment method if exists.
+            PaymentMethod::where('stripe_payment_id', $paymentMethod->id)->delete();
+        } catch (\Exception $ex){
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
