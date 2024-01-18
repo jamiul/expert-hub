@@ -22,7 +22,7 @@
         @endforelse
     </div>
 
-    <div class="single-button d-flex justify-content-center mt-5">
+    <div class="single-button d-flex justify-content-center edux-btn-mt">
         <x-button.link href="{{ route('scholarship-database') }}" class="btn edux-btn-border-primary"
             text="View all Scholarships 2024" />
     </div>

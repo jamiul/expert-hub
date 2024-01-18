@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="single-button d-flex justify-content-center mt-5">
+            <div class="single-button d-flex justify-content-center edux-btn-mt">
                 <x-button.link
                     href="{{ route('auth.login') }}"
                     class="btn btn-primary edux-btn-primary"

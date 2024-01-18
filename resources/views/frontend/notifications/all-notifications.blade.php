@@ -1,4 +1,4 @@
-@extends('frontend.layouts.register-dashboard-layout')
+@extends('frontend.layouts.app')
 @section('content')
     <main class="main__layout d-flex">
         <div class="main__content__wrapper_register col">
