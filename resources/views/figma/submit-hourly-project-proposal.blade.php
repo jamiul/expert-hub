@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-client-dashboard-layout')
+@extends('frontend.layouts.figma', ['header' => 'client'])
 @section('content')
     <div class="my-60">
         <div class="container">
