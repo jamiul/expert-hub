@@ -251,8 +251,8 @@
                     <div class="chatbox-message-list">
                         {{-- dd($conversationMessages) --}}
                         <!-- TODO: Improve here, remove the if conditional -->
-                    @if($conversationMessages)
-                    @forelse($conversationMessages->messages as $conversationMessage)
+                    @if($currentConversation)
+                    @forelse($currentConversation->messages as $conversationMessage)
                         <div class="chatbox-conversation-message recipient-message" onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
