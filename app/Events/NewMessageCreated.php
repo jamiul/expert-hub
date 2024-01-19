@@ -37,4 +37,13 @@ class NewMessageCreated implements ShouldBroadcast, ShouldDispatchAfterCommit
         ];
     }
 
+    public function broadcastWith( )
+    {
+
+        return [             
+             'conversation_id'=>$this->conversation->id,             
+        ];
+        
+    }
+
 }

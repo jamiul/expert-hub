@@ -9,6 +9,7 @@ use App\Models\Message;
 use App\Models\MessageRecipient;
 use App\Models\Participant;
 use Auth;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -18,7 +19,8 @@ class Messaging extends Component
     public $conversationMessages;
     public $messageBody;
     public $currentConversation;
-
+    
+    
     public function rules()
     {
         return [
@@ -28,34 +30,21 @@ class Messaging extends Component
                 'min:' . MessagingEnum::MessageBodyMin->value,
                 'max:' . MessagingEnum::MessageBdyMax->value
             ],
-
         ];
     }
 
     public function mount()
-    {
-        //When i click new message i can get unread_message_id->message_id->conversation
-        //
-
-        // $newMessageConversation = MessageRecipient::with('message.conversation')->where('id', 3)->first();
-        // $this->conversationMessages = $newMessageConversation->message->conversation->messages;
-
-
-        $participant = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->first();
-        // $this->conversationMessages = $participant?->conversation;
-        $this->currentConversation =  $participant?->conversation;
-        // dd($this->conversationMessages);
-
-        //the new message that i will write for clicking a conversation
-
-
+    {       
+        $participant = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->first();        
+        $this->currentConversation =  $participant?->conversation;                
     }
 
     public function sendMessage()
     {
         // ToDelete: Debugging purpose, delete when you are done
         // $data = $this->validate();
-        // ConversationCreated::dispatch($this->currentConversation);
+        // NewMessageCreated::dispatch($this->currentConversation);
+        
         // return;
         // ToDelete: Debugging purpose, delete when you are done
 
@@ -85,19 +74,29 @@ class Messaging extends Component
     public function getListeners()
     {
         return [
-            "echo-private:messaging.{$this->currentConversation->id},NewMessageCreated" => 'showNewMessage',
+            "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
         ];
     }
 
-    // #[On('echo-private:messaging,ConversationCreated')]
-    public function showNewMessage()
+    
+    public function showNewMessage($event)
     {
+        $messageRecipients = $this->currentConversation->messages->last()->messageRecipients;
+        
+        if($this->currentConversation->id === $event['conversation_id']) {
+            
+            foreach ($messageRecipients as $messageRecipient) {
+                if(is_null($messageRecipient->seen_at)){
+                    $messageRecipient->update(['seen_at' => Carbon::now()]);
+                }                
+            }            
+        }
+
         $this->currentConversation = Conversation::with('messages')->where('id', $this->currentConversation->id)->first();
     }
 
     public function getConversationMessages($conversationId)
-    {
-        // dd($conversationId);
+    {     
         $this->conversationMessages = Conversation::with('messages')->where('id', $conversationId)->first();
         $this->currentConversation = $this->conversationMessages;
     }
@@ -114,7 +113,6 @@ class Messaging extends Component
     public function render()
     {
         $currentUsersConversations = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->get();
-
         return view('livewire.messaging', compact('currentUsersConversations'));
     }
 }
