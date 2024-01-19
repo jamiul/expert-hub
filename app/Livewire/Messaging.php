@@ -20,7 +20,7 @@ class Messaging extends Component
     public $messageBody;
     public $currentConversation;
     
-    
+
     public function rules()
     {
         return [
@@ -86,7 +86,7 @@ class Messaging extends Component
         if($this->currentConversation->id === $event['conversation_id']) {
             
             foreach ($messageRecipients as $messageRecipient) {
-                if(is_null($messageRecipient->seen_at)){
+                if(is_null($messageRecipient->seen_at) && ($messageRecipient->recipient_profile_id === Auth::user()->profile->id) ){
                     $messageRecipient->update(['seen_at' => Carbon::now()]);
                 }                
             }            
