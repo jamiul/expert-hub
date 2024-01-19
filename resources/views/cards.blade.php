@@ -329,6 +329,32 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="pagination">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="pagination-left">
+                                Showing 1 to 6 of
+                                11 results
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="pagination-right">
+                                <ul>
+                                    <li> <x-icon.skip-previous/></li>
+                                    <li> <x-icon.arrow-left/> </li>
+                                    <li class="active"> 1 </li>
+                                    <li> 2 </li>
+                                    <li> <x-icon.arrow-right/> </li>
+                                    <li> <x-icon.skip-next/> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <hr class="my-5">
     <script>

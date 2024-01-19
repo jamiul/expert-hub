@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
+use App\Http\Controllers\Frontend\FindProjectController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
@@ -50,7 +51,7 @@ Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
 Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training');
 Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
-Route::get('/find-projects', [ProjectController::class, 'index'])->name('project');
+Route::get('/find-projects', [FindProjectController::class, 'index'])->name('find.projects');
 Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
 Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
 
@@ -107,6 +108,12 @@ Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' =>
 
 Route::group([ 'middleware' => ['auth', 'client'], 'prefix' => 'client', 'as' => 'client.'], function (){
     Route::get('/payment', [\App\Http\Controllers\Client\PaymentController::class, 'index'])->name('payment.index');
-    Route::post('/create-payment-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createPaymentIntent'])->name('payment.createPaymentIntent');
-    Route::get('/accept-milestone', [\App\Http\Controllers\Client\PaymentController::class, 'acceptMilestone'])->name('payment.acceptMilestone');
+    Route::get('/payment/billing-report', [\App\Http\Controllers\Client\PaymentController::class, 'billingReport'])->name('payment.billing');
+    Route::get('/payment/pay', [\App\Http\Controllers\Client\PaymentController::class, 'pay'])->name('payment.pay');
+    Route::get('/payment/accept-milestone', [\App\Http\Controllers\Client\PaymentController::class, 'acceptMilestone'])->name('payment.acceptMilestone');
+    Route::post('/payment/create-payment-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createPaymentIntent'])->name('payment.createPaymentIntent');
+    Route::post('/payment/create-setup-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createSetupIntent'])->name('payment.createSetupIntent');
+
+    Route::post('/payment/make-default', [\App\Http\Controllers\Client\PaymentController::class, 'makeDefault'])->name('payment.makeDefault');
+    Route::post('/payment/detach-card', [\App\Http\Controllers\Client\PaymentController::class, 'detachCard'])->name('payment.detachCard');
 });

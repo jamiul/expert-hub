@@ -20,7 +20,7 @@
                     <ul>
                         <li><a href="">My profile</a></li>
                         <li><a href="">Analytic</a></li>
-                        <li><a href="">Billings & Payment</a></li>
+                        <li><a href="{{ route('client.payment.index') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
