@@ -13,7 +13,7 @@ class NewMessageCount extends Component
         MessageRecipient::where('id', $id)->update(['seen_at' => Carbon::now()]);
         $this->dispatch('show-new-message', $id);
 
-        // return redirect('messaging');
+        return redirect('messaging');
     }
 
     public function render()
