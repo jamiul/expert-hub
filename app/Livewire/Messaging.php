@@ -16,7 +16,7 @@ use Livewire\Component;
 
 class Messaging extends Component
 {
-    public $conversationMessages;
+    // public $conversationMessages;
     public $messageBody;
     public $currentConversation;
     
@@ -97,8 +97,8 @@ class Messaging extends Component
 
     public function getConversationMessages($conversationId)
     {     
-        $this->conversationMessages = Conversation::with('messages')->where('id', $conversationId)->first();
-        $this->currentConversation = $this->conversationMessages;
+        $this->currentConversation = Conversation::with('messages')->where('id', $conversationId)->first();
+        // $this->currentConversation = $this->conversationMessages;
     }
 
     #[On('show-new-message')]
@@ -107,7 +107,7 @@ class Messaging extends Component
         // dd('getnewMessage:'.$this->currentConversation->id); //TODO: why i am getting $this->currentConversation->id here?
         $newMessageRecipient = MessageRecipient::with('message.conversation')->where('id', $recipientId)->first();
         // $this->conversationMessages = $newMessageConversation->message->conversation->messages;        
-        $this->conversationMessages = $newMessageRecipient->message->conversation;
+        // $this->conversationMessages = $newMessageRecipient->message->conversation;
     }
 
     public function render()
