@@ -104,6 +104,12 @@ Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' =>
 
 Route::group([ 'middleware' => ['auth', 'client'], 'prefix' => 'client', 'as' => 'client.'], function (){
     Route::get('/payment', [\App\Http\Controllers\Client\PaymentController::class, 'index'])->name('payment.index');
-    Route::post('/create-payment-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createPaymentIntent'])->name('payment.createPaymentIntent');
-    Route::get('/accept-milestone', [\App\Http\Controllers\Client\PaymentController::class, 'acceptMilestone'])->name('payment.acceptMilestone');
+    Route::get('/payment/billing-report', [\App\Http\Controllers\Client\PaymentController::class, 'billingReport'])->name('payment.billing');
+    Route::get('/payment/pay', [\App\Http\Controllers\Client\PaymentController::class, 'pay'])->name('payment.pay');
+    Route::get('/payment/accept-milestone', [\App\Http\Controllers\Client\PaymentController::class, 'acceptMilestone'])->name('payment.acceptMilestone');
+    Route::post('/payment/create-payment-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createPaymentIntent'])->name('payment.createPaymentIntent');
+    Route::post('/payment/create-setup-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createSetupIntent'])->name('payment.createSetupIntent');
+
+    Route::post('/payment/make-default', [\App\Http\Controllers\Client\PaymentController::class, 'makeDefault'])->name('payment.makeDefault');
+    Route::post('/payment/detach-card', [\App\Http\Controllers\Client\PaymentController::class, 'detachCard'])->name('payment.detachCard');
 });
