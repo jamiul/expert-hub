@@ -298,7 +298,7 @@
                         @endforelse
                         @endif
 
-                        <div class="chatbox-conversation-message recipient-message">
+                        <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
                             </div>
@@ -317,9 +317,9 @@
                                 </button>
                             </div>
 
-                        </div>
+                        </div> -->
                         
-                        <div class="chatbox-conversation-message">
+                        <!-- <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
                             </div>
@@ -338,9 +338,9 @@
                                 </button>
                             </div>
 
-                        </div>
+                        </div> -->
                         
-                        <div class="chatbox-conversation-message">
+                        <!-- <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
                             </div>
@@ -359,9 +359,9 @@
                                 </button>
                             </div>
 
-                        </div>
+                        </div> -->
                         
-                        <div class="chatbox-conversation-message recipient-message">
+                        <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
                             </div>
@@ -380,11 +380,11 @@
                                 </button>
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <div class="separator"><span>12 Oct 2023</span></div>
                         
-                        <div class="chatbox-conversation-message recipient-message">
+                        <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
                             </div>
@@ -403,7 +403,7 @@
                                 </button>
                             </div>
 
-                        </div>
+                        </div> -->
                         
                         <div class="chatbox-conversation-message message-typing">
                             <div class="conversation-user-thumb">

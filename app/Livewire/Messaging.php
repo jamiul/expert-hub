@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Enums\MessagingEnum;
+use App\Events\NewMessageCreated;
 use App\Models\Conversation;
 use App\Models\Message;
 use App\Models\MessageRecipient;
@@ -52,6 +53,12 @@ class Messaging extends Component
 
     public function sendMessage()
     {
+        // ToDelete: Debugging purpose, delete when you are done
+        // $data = $this->validate();
+        // ConversationCreated::dispatch($this->currentConversation);
+        // return;
+        // ToDelete: Debugging purpose, delete when you are done
+
         DB::transaction(function () {
             $data = $this->validate();
 
@@ -67,10 +74,25 @@ class Messaging extends Component
                     MessageRecipient::create(['message_id' => $message->id, 'recipient_profile_id' => $participant->profile_id]);
                 }
             }
+
+            NewMessageCreated::dispatch($this->currentConversation);
         });
 
 
         $this->reset('messageBody');
+    }
+
+    public function getListeners()
+    {
+        return [
+            "echo-private:messaging.{$this->currentConversation->id},NewMessageCreated" => 'showNewMessage',
+        ];
+    }
+
+    // #[On('echo-private:messaging,ConversationCreated')]
+    public function showNewMessage()
+    {
+        $this->currentConversation = Conversation::with('messages')->where('id', $this->currentConversation->id)->first();
     }
 
     public function getConversationMessages($conversationId)
