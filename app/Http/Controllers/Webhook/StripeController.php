@@ -73,6 +73,11 @@ class StripeController extends Controller {
                 $this->__deleteExternalAccount( $paymentMethod );
                 break;
 
+            case 'charge.refunded': //refund to client if theres any refund request
+                $charge = $event->data->object;
+                $this->__chargeRefund( $charge );
+                break;
+
             case 'balance.available': //after any debit / credit occurs balance updated
                 $paymentMethod = $event->data->object;
                 $this->__paymentGeneric( $paymentMethod );
@@ -344,6 +349,9 @@ class StripeController extends Controller {
         }
     }
 
+    private function __chargeRefund($charge) {
+        Log::info($charge);
+    }
     /*
      * connect webhooks
      * */

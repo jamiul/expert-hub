@@ -104,6 +104,7 @@ Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' =>
 
     //refund make
     Route::get('/payment/refund/{milestone_id}', [PaymentController::class, 'refundMilestone'])->name('payment.refundMilestone');
+    Route::get('/payment/refund-client/{milestone_id}', [PaymentController::class, 'refundToCustomer'])->name('payment.refundToCustomer');
     //temp
     Route::post('/payment/account-session', [PaymentController::class, 'accountSession'])->name('payment.account_session');
 });

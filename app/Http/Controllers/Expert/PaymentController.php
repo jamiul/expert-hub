@@ -7,6 +7,7 @@ use App\Models\ExpertKYC;
 use App\Models\ExpertTransaction;
 use App\Models\ExpertWithdrawal;
 use App\Models\Profile;
+use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Stripe\Exception\InvalidRequestException;
@@ -389,6 +390,17 @@ class PaymentController extends Controller
         );
 
         dd($transfer_refund);
+    }
+
+
+    public function refundToCustomer($milestone_id) {
+        $payment_intent_id = "pi_3Oa9AnBkKAerzo320Zq0g2uK";
+
+        $refund = $this->stripe->refunds->create([
+            'payment_intent' => $payment_intent_id,
+            'amount' => 10 * 100
+        ]);
+        dd($refund);
     }
 
     /*
