@@ -43,7 +43,7 @@ class Lists extends Component
     {
         return 'livewire.pagination';
     }
-    
+
     public function render()
     {
         $experts = Profile::expert()->with('user', 'education');
@@ -76,7 +76,7 @@ class Lists extends Component
             });
         };
         $experts = $experts->orderByDesc('id')->paginate($this->perPage);
-        
+
         return view('livewire.experts.lists', compact('experts'));
     }
 }

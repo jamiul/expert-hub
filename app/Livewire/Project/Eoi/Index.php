@@ -9,6 +9,13 @@ class Index extends Component
 {
     public Project $project;
 
+    public $filteredExperts;
+
+    public function mount()
+    {
+        
+    }
+
     public function addToShortList($id)
     {
         $eoi = $this->project->eois()->find($id);
