@@ -56,7 +56,7 @@
                     @forelse($currentUsersConversations as $conversation)
                     <div class="chatbox-contact-person user-online user-selected" wire:key="{{ $conversation->id }}"  wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
-                            <img src="{{ asset('assets/frontend/img/chat-avatar1.png') }}" alt="avatar">
+                            <img src="{{-- asset('assets/frontend/img/chat-avatar1.png') --}} {{$conversation->conversation->profile->getFirstMediaUrl('picture')}}" alt="avatar">
                         </div>
                         <div class="chatbox-contact-info">
                             <div class="chatbox-contact-info-header">
@@ -223,11 +223,11 @@
                         </button>
                     </div>
                     <div class="chatbox-recipient-thumb">
-                        <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
+                        <img src="{{$currentConversation->profile->getFirstMediaUrl('picture')}}" alt="avatar">
                     </div>
 
                     <div class="chatbox-recipient-info">
-                        <h3>Michel Jhon </h3>
+                        <h3>{{$currentConversation->title}}</h3>
                         <p class="chatbox-recipient-time">5:32 AM GMT+6 | Australia </p>
                         <p class="chatbox-recipient-expertise">Curriculum Expert</p>
                     </div>
@@ -255,12 +255,12 @@
                     @forelse($currentConversation->messages as $conversationMessage)
                         <div class="chatbox-conversation-message recipient-message" onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
-                                <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
+                                <img src="{{-- asset('assets/frontend/img/chat-avatar.png') --}} {{ $conversationMessage->profile->getFirstMediaUrl('picture') }}" alt="avatar">
                             </div>
                             <div class="conversation-user-message">
                                 <div class="conversation-message-header">
-                                    <h6>Michel Jhon</h6>
-                                    <time> 6:50 PM</time>
+                                    <h6>{{ $conversationMessage->profile->user->first_name }}</h6>
+                                    <time> {{ Carbon\Carbon::parse($conversationMessage->created_at)->diffForHumans() }}</time>
                                 </div>
                                 <div class="conversation-message-body">
                                     <p>{{$conversationMessage->content}}</p>
@@ -382,7 +382,7 @@
 
                         </div> -->
 
-                        <div class="separator"><span>12 Oct 2023</span></div>
+                        <!-- <div class="separator"><span>12 Oct 2023</span></div> -->
                         
                         <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
@@ -429,7 +429,7 @@
                             <x-icon.expand />
                         </button>
 
-                        <textarea name="" id="" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
+                        <textarea name="messageBody" id="messageBody" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
 
 
                         <div class="chatbox-message-editor-helper">
@@ -476,7 +476,7 @@
                                     </div>
                                 </div>
 
-                                <button class="icon-btn send-message" wire:click="sendMessage">
+                                <button class="icon-btn send-message" id="sendMessageButton" wire:click="sendMessage">
                                     <x-icon.send />
                                 </button>
                             </div>
@@ -630,3 +630,4 @@
 
     </div>
 </div>
+

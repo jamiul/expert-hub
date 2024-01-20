@@ -71,10 +71,10 @@
     // }
 
 
-    // Function to add class based on window size
+    // // Function to add class based on window size
 
     // function updateClass() {
-    //     console.log("HI");
+    //     // console.log("HI");
     //     var chatboxContentArea = document.querySelector('.chatbox-content-area');
     //     var chatboxConversationSummaryShow = 'chatbox-conversation-summary-show';
 
@@ -87,7 +87,7 @@
     //     }
     // }
 
-    // Wait for the DOM to be fully loaded
+    // // Wait for the DOM to be fully loaded
     // document.addEventListener('DOMContentLoaded', function () {
     //     // Initial call to set the class based on the window size
     //     updateClass();
@@ -96,5 +96,4 @@
     //     window.addEventListener('resize', updateClass);
     // });
 </script>
-
 @endpush

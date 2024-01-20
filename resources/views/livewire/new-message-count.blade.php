@@ -8,7 +8,7 @@
         <div class="message-dropdown-inner">
             <div class="message-dropdown-item-wrapper">
             @forelse($unreadMessages as $unreadMessage)
-                <div class="message-dropdown-item message-dropdown-item-unread" wire:click="markAsSeen('{{ $unreadMessage->id }}')">
+                <div class="message-dropdown-item message-dropdown-item-unread" wire:click="markAsSeen('{{ $unreadMessage->id }}')"  >
                     <div class="message-dropdown-thumb">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="" alt="avatar">
                     </div>

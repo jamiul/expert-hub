@@ -15,10 +15,10 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Messaging extends Component
-{
-    // public $conversationMessages;
+{    
     public $messageBody;
     public $currentConversation;
+    public $currentConversationCreator;
     
 
     public function rules()
@@ -36,26 +36,32 @@ class Messaging extends Component
     public function mount()
     {       
         $participant = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->first();        
-        $this->currentConversation =  $participant?->conversation;                
+        $this->currentConversation =  $participant?->conversation;                               
     }
 
     public function sendMessage()
     {
         // ToDelete: Debugging purpose, delete when you are done
         // $data = $this->validate();
+        
         // NewMessageCreated::dispatch($this->currentConversation);
         
         // return;
         // ToDelete: Debugging purpose, delete when you are done
 
+        
+       
         DB::transaction(function () {
+            
+            
             $data = $this->validate();
-
+            
+            
             $message = Message::create([
                 'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
                 'content' => $data['messageBody'],
-            ]);
-
+            ]);                       
+            
             $participants = $this->currentConversation->participants;
 
             foreach ($participants as $participant) {
@@ -63,12 +69,12 @@ class Messaging extends Component
                     MessageRecipient::create([ 'conversation_id' => $this->currentConversation->id, 
                     'message_id' => $message->id, 'recipient_profile_id' => $participant->profile_id]);
                 }
-            }
-
-            NewMessageCreated::dispatch($this->currentConversation);
+            }            
+        
+            NewMessageCreated::dispatch($this->currentConversation);            
         });
 
-
+        
         $this->reset('messageBody');
     }
 
@@ -81,7 +87,7 @@ class Messaging extends Component
 
     
     public function showNewMessage($event)
-    {
+    {        
         $messageRecipients = $this->currentConversation->messages->last()->messageRecipients;
         
         if($this->currentConversation->id === $event['conversation_id']) {
@@ -98,17 +104,34 @@ class Messaging extends Component
 
     public function getConversationMessages($conversationId)
     {     
-        $this->currentConversation = Conversation::with('messages')->where('id', $conversationId)->first();
-        // $this->currentConversation = $this->conversationMessages;
+        $this->currentConversation = Conversation::with('messages')->where('id', $conversationId)->first();        
     }
 
     #[On('show-new-message')]
     public function getNewMessages($recipientId)
     {
-        // dd('getnewMessage:'.$this->currentConversation->id); //TODO: why i am getting $this->currentConversation->id here?
-        $newMessageRecipient = MessageRecipient::with('message.conversation')->where('id', $recipientId)->first();
-        // $this->conversationMessages = $newMessageConversation->message->conversation->messages;        
-        // $this->conversationMessages = $newMessageRecipient->message->conversation;
+        // dd('from messaging:---'.$recipientId);
+        // // dd('getnewMessage:'.$this->currentConversation->id); //TODO: why i am getting $this->currentConversation->id here?
+        // // $newMessageRecipient = MessageRecipient::with('message.conversation')->where('id', $recipientId)->first();
+        // $newMessageRecipient = MessageRecipient::with('conversation')->where('id', $recipientId)->first();
+        // $conversationId = $newMessageRecipient->conversation->id;
+        // // dd($conversationId $newMessageRecipient->conversation->id);
+        // $unreadMessages = MessageRecipient::where('conversation_id', $conversationId)->where('recipient_profile_id', Auth::user()->profile->id)
+        // ->whereNull('seen_at')->get();
+        // //where conversationid + where seen at null
+        // // $unreadMessages = $newMessageRecipient->conversation::with(['messageRecipients' => function ($query) {
+        // //     $query->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at');
+        // // }])->get();
+
+
+        // // dd($unreadMessages);
+
+        // foreach($unreadMessages as $unreadMessage){
+        //     $unreadMessage->update(['seen_at' => Carbon::now()]);
+        // }
+        
+        // // $this->conversationMessages = $newMessageConversation->message->conversation->messages;        
+        // // $this->conversationMessages = $newMessageRecipient->message->conversation;
     }
 
     public function render()
