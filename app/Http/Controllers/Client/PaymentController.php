@@ -244,12 +244,15 @@ class PaymentController extends Controller {
 
         $CONNECTED_ACCOUNT_ID = 'acct_1OYlT8BCePPNtsZd';
 
+        //todo: first store inside schedule transfer job then process it in 3 days.
         $acceptMilestone = $stripe->transfers->create( [
             'amount'         => 90 * 100,
             'currency'       => 'aud',
             'destination'    => $CONNECTED_ACCOUNT_ID,
             'transfer_group' => 'ORDER10',
         ] );
+        //todo: save transfer into db and implement through webhook
+
         dd( $acceptMilestone );
     }
 

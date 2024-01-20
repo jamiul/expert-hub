@@ -73,29 +73,39 @@ class StripeController extends Controller {
                 $this->__deleteExternalAccount( $paymentMethod );
                 break;
 
-            case 'balance.available':
+            case 'balance.available': //after any debit / credit occurs balance updated
                 $paymentMethod = $event->data->object;
                 $this->__paymentGeneric( $paymentMethod );
                 break;
 
-            case 'payout.created':
+            case 'payout.created': //payout to expert's external bank account created
                 $payout = $event->data->object;
                 $this->__payoutCreated( $payout );
                 break;
 
-            case 'payout.updated':
+            case 'payout.updated': //payout to expert's external bank account status updated
                 $payout = $event->data->object;
                 $this->__payoutUpdated( $payout );
                 break;
 
-            case 'payout.failed':
+            case 'payout.failed': //payout to expert's external bank account failed
                 $payout = $event->data->object;
                 $this->__payoutFailed( $payout );
                 break;
 
-            case 'payout.paid':
+            case 'payout.paid': //payout to expert's external bank account success
                 $payout = $event->data->object;
                 $this->__payoutPaid( $payout );
+                break;
+
+            case 'payment.created': //when money transferred to expert's stripe account
+                $transfer = $event->data->object;
+                $this->__paymentCreated( $transfer );
+                break;
+
+            case 'transfer.reversed': //admin reveresed already transferred amount from expert's stripe account
+                $transfer = $event->data->object;
+                $this->__transferReversed($transfer);
                 break;
 
             case 'account.application.authorized':
@@ -143,6 +153,9 @@ class StripeController extends Controller {
 
     }
 
+    /*
+     * after any debit / credit occurs balance updated
+     * */
     private function __paymentGeneric( $paymentMethod ) {
         Log::info( $paymentMethod );
     }
@@ -383,6 +396,9 @@ class StripeController extends Controller {
         }
     }
 
+    /*
+     * payout to expert's external bank account created
+     * */
     private function __payoutCreated($payout) {
         try {
             $destination_id = $payout->destination;
@@ -435,6 +451,9 @@ class StripeController extends Controller {
         }
     }
 
+    /*
+     * payout to expert's external bank account status updated
+     * */
     private function __payoutUpdated($payout) {
         try {
             $destination_id = $payout->destination;
@@ -477,6 +496,9 @@ class StripeController extends Controller {
         }
     }
 
+    /*
+     * payout to expert's external bank account failed
+     * */
     private function __payoutFailed($payout) {
         try {
             $destination_id = $payout->destination;
@@ -559,6 +581,22 @@ class StripeController extends Controller {
             http_response_code( $ex->getCode() );
             exit();
         }
+    }
+
+    /*
+     * when money transferred to expert's stripe account
+     * */
+    private function __paymentCreated($transfer) {
+        Log::info($transfer);
+        //todo: save into transfer table
+    }
+
+    /*
+     * admin reveresed already transferred amount from expert's stripe account
+     * */
+    private function __transferReversed($transfer) {
+        Log::info($transfer);
+        //todo: update existing transfer data status
     }
 
     private function __handleApplicationAuthorized( $account ) {

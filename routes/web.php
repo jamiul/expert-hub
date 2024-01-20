@@ -99,9 +99,11 @@ Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' =>
     Route::any('/payment/onboard', [PaymentController::class, 'onboard'])->name('payment.onboard');
     Route::any('/payment/withdrawal-methods', [PaymentController::class, 'withdrawalMethod'])->name('payment.withdrawal');
     Route::any('/payment/withdraw', [PaymentController::class, 'withdraw'])->name('payment.withdraw');
-    Route::any('/payment/request-release', [PaymentController::class, 'requstRelease'])->name('payment.requstRelease');
+    Route::any('/payment/request-release', [PaymentController::class, 'requestRelease'])->name('payment.requestRelease');
     Route::get('/payment/billing-report', [PaymentController::class, 'billingReport'])->name('payment.billing');
 
+    //refund make
+    Route::get('/payment/refund/{milestone_id}', [PaymentController::class, 'refundMilestone'])->name('payment.refundMilestone');
     //temp
     Route::post('/payment/account-session', [PaymentController::class, 'accountSession'])->name('payment.account_session');
 });

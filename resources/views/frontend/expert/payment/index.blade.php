@@ -21,7 +21,7 @@
                 </li>
                 {{-- todo: move to dymaic milestone --}}
                 <li class="me-3">
-                    <a href="{{ route('expert.payment.requstRelease') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Milestone Relesae Request</a>
+                    <a href="{{ route('expert.payment.requestRelease') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Milestone Relesae Request</a>
                 </li>
             </ul>
         </div><!--.//container-->

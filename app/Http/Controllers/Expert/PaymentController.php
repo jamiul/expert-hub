@@ -330,10 +330,11 @@ class PaymentController extends Controller
     /*
      * Request client to release a milestone
      * */
-    public function requstRelease(Request $request) {
+    public function requestRelease(Request $request) {
         $user = auth()->user();
 
         if ( $request->isMethod( 'post' ) ) {
+            //make milestone release request
 
         }
 
@@ -365,7 +366,6 @@ class PaymentController extends Controller
         dd( $payout );
     }
 
-
     /*
      * List of transactions /payment/billing-report
      * */
@@ -377,6 +377,18 @@ class PaymentController extends Controller
         $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
 
         return view( 'frontend.expert.payment.billing-report', compact('transactions') );
+    }
+
+    public function refundMilestone($milestone_id) {
+        $refund_amount = 100;
+
+        //reverse already paid fund from freelancer to client
+        $transfer_refund = $this->stripe->transfers->createReversal(
+            'tr_1OaeGSBkKAerzo32ibZwrltw',
+            ['amount' => 9000]
+        );
+
+        dd($transfer_refund);
     }
 
     /*
