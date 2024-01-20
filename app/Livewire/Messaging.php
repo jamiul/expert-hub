@@ -60,7 +60,8 @@ class Messaging extends Component
 
             foreach ($participants as $participant) {
                 if (Auth::user()->profile->id !== $participant->profile_id) {
-                    MessageRecipient::create(['message_id' => $message->id, 'recipient_profile_id' => $participant->profile_id]);
+                    MessageRecipient::create([ 'conversation_id' => $this->currentConversation->id, 
+                    'message_id' => $message->id, 'recipient_profile_id' => $participant->profile_id]);
                 }
             }
 

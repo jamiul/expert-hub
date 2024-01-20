@@ -40,7 +40,7 @@ class ConversationController extends Controller
                 'content' => "I want to discuss with you about a project"
             ]);
 
-            MessageRecipient::create(['message_id' => $message->id, 'recipient_profile_id' => 2]); //TODO:take participant profile id dynamically
+            MessageRecipient::create(['conversation_id' => $conversation->id, 'message_id' => $message->id, 'recipient_profile_id' => 2]); //TODO:take participant profile id dynamically
         });
 
         // ConversationCreated::dispatch();

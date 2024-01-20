@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('message_recipients', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('conversation_id');
             $table->foreignId('message_id');
             $table->foreignId('recipient_profile_id');
             $table->timestamp('seen_at')->nullable();

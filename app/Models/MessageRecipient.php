@@ -15,4 +15,9 @@ class MessageRecipient extends Model
     {
         return $this->belongsTo(Message::class);
     }
+
+    public function conversation()
+    {
+        return $this->belongsTo(Conversation::class);
+    }
 }
