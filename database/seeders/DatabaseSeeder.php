@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(ExpertiseSeeder::class);
         $this->call(CountrySeeder::class);
+        $this->call(StateSeeder::class);
         $this->call(LanguageSeeder::class);
         $this->call(CurrencySeeder::class);
         $this->call(UniversitySeeder::class);

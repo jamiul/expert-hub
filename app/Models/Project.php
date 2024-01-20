@@ -25,6 +25,11 @@ class Project extends Model implements HasMedia
         $this->addMediaCollection('attachments');
     }
 
+    public function getAttachmentsAttribute()
+    {
+        return $this->getMedia('attachments');
+    }
+
     public function isHourly()
     {
         return $this->type == ProjectType::Hourly;

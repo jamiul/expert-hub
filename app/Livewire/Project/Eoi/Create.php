@@ -20,7 +20,7 @@ class Create extends Component
     public $serviceFee;
     public $amountAfterServiceFee;
 
-    #[Validate('required')]
+    #[Validate('nullable')]
     public $duration;
 
     #[Validate('required')]
@@ -79,6 +79,7 @@ class Create extends Component
             'button' => 'View proposal',
             'avatar'  => auth()->user()->profile->picture,
         ]));
+        toast('success', 'Eoi Submitted Successfully');
         $this->redirect(route('projects.show', $this->project));
     }
 
