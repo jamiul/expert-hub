@@ -20,4 +20,9 @@ class Message extends Model
     {
         return $this->belongsTo(Conversation::class);
     }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class, 'sender_profile_id');
+    }
 }

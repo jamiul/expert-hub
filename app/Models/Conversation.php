@@ -25,4 +25,9 @@ class Conversation extends Model
     {
         return $this->hasMany(MessageRecipient::class);
     }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class, 'creator_profile_id');
+    }
 }
