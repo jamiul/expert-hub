@@ -375,7 +375,7 @@
                                                 <div class="expert-wrapper">
                                                     @foreach ($filteredExperts as $expert)
                                                         <x-expert.card :expert="$expert">
-                                                            <x-expert.invite/>
+                                                            <x-expert.invite wire:click="$dispatch('modal.open', { component: 'project.invite', arguments: { expert: {{ $expert->id }}, project: {{ $project->id }} }})"/>
                                                             <x-expert.hire/>
                                                         </x-expert.card>
                                                     @endforeach

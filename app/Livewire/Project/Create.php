@@ -69,7 +69,7 @@ class Create extends Component
                 ->toMediaCollection('attachments');
         }
         $this->notify($project);
-        $this->dispatch('notify', content: 'Job has been created successfully', type: 'success');
+        toast('success', 'Job has been posted successfully');
         return redirect()->route('client.dashboard');
     }
 

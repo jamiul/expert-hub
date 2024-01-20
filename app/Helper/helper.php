@@ -19,3 +19,12 @@ function getGravatar($email)
 {
     return 'https://www.gravatar.com/avatar/' .  md5( strtolower( trim( $email ) ) );
 }
+
+function toast($type, $content, $livewireComponent=null)
+{
+    if($livewireComponent){
+        $livewireComponent->dispatch('notify', content: $content, type: $type);
+    }else{
+        session()->flash('notify', ['type' => $type, 'content' => $content]);
+    }
+}

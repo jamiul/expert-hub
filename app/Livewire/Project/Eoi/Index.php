@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Project\Eoi;
 
+use App\Models\Profile;
 use App\Models\Project;
 use Livewire\Component;
 
@@ -13,7 +14,7 @@ class Index extends Component
 
     public function mount()
     {
-        
+        $this->filteredExperts = Profile::expert()->get();
     }
 
     public function addToShortList($id)

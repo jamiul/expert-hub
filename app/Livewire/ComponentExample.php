@@ -36,7 +36,7 @@ class ComponentExample extends Component
 
     public function showNotification($type)
     {
-        $this->dispatch('notify', content: 'This is a sample '. $type .' notification', type: $type);
+        toast($type, 'Testing', $this);
     }
 
     public function submit()

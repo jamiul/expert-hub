@@ -108,7 +108,7 @@
                                                     <div class="rate-box">
                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                             <div class="hourly-check">
-                                                                <input type="radio" class="btn-check" wire:model.change="type" value="hourly" id="btnradio1" autocomplete="off">
+                                                                <input type="radio" class="btn-check" wire:model.change="type" value="Hourly" id="btnradio1" autocomplete="off">
                                                                 <label class="btn btn-outline-primary" for="btnradio1">
                                                                     <div class="currency-img">
                                                                         <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
@@ -125,7 +125,7 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="rate-box">
                                                         <div class="fixed-check">
-                                                            <input type="radio" class="btn-check" wire:model.change="type" value="fixed" id="btnradio2" autocomplete="off">
+                                                            <input type="radio" class="btn-check" wire:model.change="type" value="Fixed" id="btnradio2" autocomplete="off">
                                                             <label class="btn btn-outline-primary" for="btnradio2">
                                                                 <div class="currency-img">
                                                                     <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
