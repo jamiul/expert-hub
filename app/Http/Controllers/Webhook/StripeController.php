@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Webhook;
 
+use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
+use App\Models\ClientTransaction;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
@@ -107,73 +109,75 @@ class StripeController extends Controller {
 
     }
 
-    private function __paymentGeneric($paymentMethod) {
-        Log::info($paymentMethod);
+    private function __paymentGeneric( $paymentMethod ) {
+        Log::info( $paymentMethod );
     }
 
-    private function __paymentMethodAttached($paymentMethod) {
+    private function __paymentMethodAttached( $paymentMethod ) {
         try {
             $stripe_customer_id = $paymentMethod->customer;
-            $customer = Profile::where('stripe_client_id', $stripe_customer_id)->firstOrFail();
-            $user_id = $customer->user_id;
+            $customer           = Profile::where( 'stripe_client_id', $stripe_customer_id )->firstOrFail();
+            $user_id            = $customer->user_id;
 
             //delete users payment method if exists.
-            PaymentMethod::where('user_id', $user_id)->where('fingerprint', $paymentMethod->card->fingerprint)->delete();
+            PaymentMethod::where( 'user_id', $user_id )->where( 'fingerprint', $paymentMethod->card->fingerprint )->delete();
 
             //set this card as default if there is no default.
             $is_default = 0;
-            if(!PaymentMethod::where('user_id',$user_id)->where('is_default', 1)->count()){
+            if ( ! PaymentMethod::where( 'user_id', $user_id )->where( 'is_default', 1 )->count() ) {
                 $is_default = 1;
-                $stripe = new \Stripe\StripeClient( [
+                $stripe     = new \Stripe\StripeClient( [
                     "api_key" => env( 'STRIPE_SECRET' ),
                 ] );
                 $stripe->customers->update(
                     $customer->stripe_client_id,
-                    ['invoice_settings' => [
-                        'default_payment_method' => $paymentMethod->id]
+                    [
+                        'invoice_settings' => [
+                            'default_payment_method' => $paymentMethod->id
+                        ]
                     ]
                 );
             }
 
             //create or update.
-            $stripe_card = PaymentMethod::updateOrCreate([
-                'user_id' => $user_id,
+            $stripe_card = PaymentMethod::updateOrCreate( [
+                'user_id'     => $user_id,
                 'fingerprint' => $paymentMethod->card->fingerprint
-            ],[
+            ], [
                 'stripe_payment_id' => $paymentMethod->id,
 
-                'address_line1_check' => $paymentMethod->card->checks->address_line1_check,
+                'address_line1_check'       => $paymentMethod->card->checks->address_line1_check,
                 'address_postal_code_check' => $paymentMethod->card->checks->address_postal_code_check,
-                'three_d_secure_usage' => $paymentMethod->card->three_d_secure_usage->supported,
-                'cvc_check' => $paymentMethod->card->checks->cvc_check,
+                'three_d_secure_usage'      => $paymentMethod->card->three_d_secure_usage->supported,
+                'cvc_check'                 => $paymentMethod->card->checks->cvc_check,
 
-                'funding' => $paymentMethod->card->funding,
-                'brand' => $paymentMethod->card->brand,
+                'funding'   => $paymentMethod->card->funding,
+                'brand'     => $paymentMethod->card->brand,
                 'exp_month' => $paymentMethod->card->exp_month,
-                'exp_year' => $paymentMethod->card->exp_year,
-                'last4' => $paymentMethod->card->last4,
+                'exp_year'  => $paymentMethod->card->exp_year,
+                'last4'     => $paymentMethod->card->last4,
 
-                'line1' => $paymentMethod->billing_details->address->line1,
-                'line2' => $paymentMethod->billing_details->address->line2,
-                'city' => $paymentMethod->billing_details->address->city,
+                'line1'       => $paymentMethod->billing_details->address->line1,
+                'line2'       => $paymentMethod->billing_details->address->line2,
+                'city'        => $paymentMethod->billing_details->address->city,
                 'postal_code' => $paymentMethod->billing_details->address->postal_code,
-                'state' => $paymentMethod->billing_details->address->state,
-                'country' => $paymentMethod->billing_details->address->country ? : $paymentMethod->card->country,
+                'state'       => $paymentMethod->billing_details->address->state,
+                'country'     => $paymentMethod->billing_details->address->country ?: $paymentMethod->card->country,
 
-                'name' => ($paymentMethod->billing_details->name) ? : "n/a",
+                'name'  => ( $paymentMethod->billing_details->name ) ?: "n/a",
                 'email' => $paymentMethod->billing_details->email,
                 'phone' => $paymentMethod->billing_details->phone,
 
-                'wallet' => isset($paymentMethod->card->wallet) ? $paymentMethod->card->wallet->type : null,
+                'wallet'     => isset( $paymentMethod->card->wallet ) ? $paymentMethod->card->wallet->type : null,
                 'is_default' => $is_default,
-                'livemode' => $paymentMethod->livemode
-            ]);
-        } catch (\Exception $ex){
+                'livemode'   => $paymentMethod->livemode
+            ] );
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
         }
-        Log::info($paymentMethod);
+        Log::info( $paymentMethod );
     }
 
     private function __paymentReceived( $paymentData ) {
@@ -182,7 +186,7 @@ class StripeController extends Controller {
             $reference_type = @$paymentData->metadata->reference_type; //milestone
 
             //save to generic transaction table
-            Transaction::updateOrCreate( [
+            $stripe_transaction = Transaction::updateOrCreate( [
                 'payment_intent_id' => $paymentData->id
             ], [
                 'reference_id'           => $reference_id,
@@ -201,12 +205,68 @@ class StripeController extends Controller {
                 'payment_method_types'   => @$paymentData->payment_method_types[0],
                 'transfer_group'         => $paymentData->transfer_group,
                 'metadata'               => json_encode( $paymentData->metadata ),
-                'created_time'           => $paymentData->created ? Carbon::createFromTimestamp($paymentData->created)->format('Y-m-d H:i:s') : null,
-                'canceled_at'            => $paymentData->canceled_at ? Carbon::createFromTimestamp($paymentData->canceled_at)->format('Y-m-d H:i:s') : null,
+                'created_time'           => $paymentData->created ? Carbon::createFromTimestamp( $paymentData->created )->format( 'Y-m-d H:i:s' ) : null,
+                'canceled_at'            => $paymentData->canceled_at ? Carbon::createFromTimestamp( $paymentData->canceled_at )->format( 'Y-m-d H:i:s' ) : null,
                 'cancellation_reason'    => $paymentData->cancellation_reason,
                 'status'                 => $paymentData->status,
                 'livemode'               => $paymentData->livemode
             ] );
+
+            //save to client transaction table
+            //todo: calculate client displayable transaction data
+            if ( $reference_type == 'milestone' ) {
+                //todo: read milestone amount from milestone id
+                $milestone_amount = 100;
+                //breakdown charge into pieces
+                $charge = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+                $profile = Profile::where('stripe_client_id', $paymentData->customer)->first();
+
+                //parent transaction
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Fixed Price',
+                    'description'    => "Invoice for for PROJECT NAME",
+                    'user_id'        => $profile->user_id,
+                    'amount'         => $charge['total_amount'],
+                    'charge_type'    => 'debit',
+                    'parent'         => null,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+
+                //child transaction
+                $service_fee      = $charge['service_charge'];
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Service Fee',
+                    'description'    => "Service Fee for Fixed Price - Ref ID $stripe_transaction->id",
+                    'user_id'        => $profile->user_id,
+                    'amount'         => $service_fee,
+                    'charge_type'    => 'credit',
+                    'parent'         => $stripe_transaction->id,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                PaymentHelper::createClientTransaction( $transaction_data );
+
+                //child transaction
+                if ( $charge['contract_initialization_fee'] > 0 ) {
+                    $service_fee      = $charge['contract_initialization_fee'];
+                    $transaction_data = [
+                        'transaction_id' => $stripe_transaction->id,
+                        'milestone_id'   => $reference_id,
+                        'type'           => 'Contract Initialization Fee',
+                        'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $stripe_transaction->id",
+                        'user_id'        => $profile->user_id,
+                        'amount'         => $service_fee,
+                        'charge_type'    => 'credit',
+                        'parent'         => $stripe_transaction->id,
+                        'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                    ];
+                    PaymentHelper::createClientTransaction( $transaction_data );
+                }
+            }
 
             //todo: add data to client specific transaction table
             //todo: update milestone status
@@ -220,12 +280,12 @@ class StripeController extends Controller {
         }
     }
 
-    private function __paymentMethodDetached($paymentMethod) {
-        Log::info( $paymentMethod->id);
+    private function __paymentMethodDetached( $paymentMethod ) {
+        Log::info( $paymentMethod->id );
         try {
             //delete users payment method if exists.
-            PaymentMethod::where('stripe_payment_id', $paymentMethod->id)->delete();
-        } catch (\Exception $ex){
+            PaymentMethod::where( 'stripe_payment_id', $paymentMethod->id )->delete();
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
