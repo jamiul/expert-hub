@@ -33,7 +33,23 @@ class PaymentHelper {
             'milestone_id'   => $transaction_data['milestone_id'],
             'type'           => $transaction_data['type'],
             'description'    => $transaction_data['description'],
-            'user_id'        => $transaction_data['user_id'],
+            'client_id'        => $transaction_data['client_id'],
+            'expert_id'        => $transaction_data['expert_id'],
+            'amount'         => $transaction_data['amount'],
+            'charge_type'    => $transaction_data['charge_type'],
+            'parent'         => $transaction_data['parent'],
+            'status'         => $transaction_data['status'],
+        ] );
+    }
+
+    public static function createExpertTransaction( $transaction_data ) {
+        return ClientTransaction::create( [
+            'transaction_id' => $transaction_data['transaction_id'],
+            'milestone_id'   => $transaction_data['milestone_id'],
+            'type'           => $transaction_data['type'],
+            'description'    => $transaction_data['description'],
+            'client_id'        => $transaction_data['client_id'],
+            'expert_id'        => $transaction_data['expert_id'],
             'amount'         => $transaction_data['amount'],
             'charge_type'    => $transaction_data['charge_type'],
             'parent'         => $transaction_data['parent'],

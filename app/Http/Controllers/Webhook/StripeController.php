@@ -217,6 +217,8 @@ class StripeController extends Controller {
             if ( $reference_type == 'milestone' ) {
                 //todo: read milestone amount from milestone id
                 $milestone_amount = 100;
+                $expert_id = 1; //retrieve it from milestone
+
                 //breakdown charge into pieces
                 $charge = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
                 $profile = Profile::where('stripe_client_id', $paymentData->customer)->first();
@@ -227,7 +229,8 @@ class StripeController extends Controller {
                     'milestone_id'   => $reference_id,
                     'type'           => 'Fixed Price',
                     'description'    => "Invoice for for PROJECT NAME",
-                    'user_id'        => $profile->user_id,
+                    'client_id'        => $profile->user_id,
+                    'expert_id'        => $expert_id,
                     'amount'         => $charge['total_amount'],
                     'charge_type'    => 'debit',
                     'parent'         => null,
@@ -242,7 +245,8 @@ class StripeController extends Controller {
                     'milestone_id'   => $reference_id,
                     'type'           => 'Service Fee',
                     'description'    => "Service Fee for Fixed Price - Ref ID $stripe_transaction->id",
-                    'user_id'        => $profile->user_id,
+                    'client_id'        => $profile->user_id,
+                    'expert_id'        => $expert_id,
                     'amount'         => $service_fee,
                     'charge_type'    => 'credit',
                     'parent'         => $stripe_transaction->id,
@@ -258,7 +262,8 @@ class StripeController extends Controller {
                         'milestone_id'   => $reference_id,
                         'type'           => 'Contract Initialization Fee',
                         'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $stripe_transaction->id",
-                        'user_id'        => $profile->user_id,
+                        'client_id'        => $profile->user_id,
+                        'expert_id'        => $expert_id,
                         'amount'         => $service_fee,
                         'charge_type'    => 'credit',
                         'parent'         => $stripe_transaction->id,

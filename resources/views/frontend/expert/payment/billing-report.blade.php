@@ -5,18 +5,23 @@
         <div class="container">
             <ul class="d-flex">
                 <li class="me-3">
-                    <a href="{{ route('client.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Payment Methods</a>
+                    <a href="{{ route('expert.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Billing & Payment</a>
                 </li>
                 <li class="me-3">
-                    <a href="{{ route('client.payment.billing') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Billing Report</a>
+                    <a href="{{ route('expert.payment.billing') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Billing Report</a>
+                </li>
+                <li class="me-3">
+                    <a href="{{ route('expert.payment.onboard') }}" class="text-white fw-medium px-2 py-3 d-inline-block">eKYC Information</a>
+                </li>
+                <li class="me-3">
+                    <a href="{{ route('expert.payment.withdrawal') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Withdrawal Information</a>
+                </li>
+                <li class="me-3">
+                    <a href="{{ route('expert.payment.withdraw') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Withdraw Now</a>
                 </li>
                 {{-- todo: move to dymaic milestone --}}
                 <li class="me-3">
-                    <a href="{{ route('client.payment.pay') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Fund Milestone</a>
-                </li>
-                {{-- todo: move to dymaic milestone accept --}}
-                <li class="me-3">
-                    <a href="{{ route('client.payment.acceptMilestone') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Release Milestone</a>
+                    <a href="{{ route('expert.payment.requstRelease') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Milestone Relesae Request</a>
                 </li>
             </ul>
         </div><!--.//container-->
@@ -56,7 +61,7 @@
                                     <td style="vertical-align: middle;">{{ $data->created_at->format('M d, Y') }}</td>
                                     <td style="vertical-align: middle;">{{ $data->type }}</td>
                                     <td class="balance-text">{{ $data->description }}</td>
-                                    <td style="vertical-align: middle;">{{ $data->expert->first_name }} {{ $data->expert->last_name }}</td>
+                                    <td style="vertical-align: middle;">{{ $data->user->first_name }} {{ $data->user->last_name }}</td>
                                     <td style="vertical-align: middle;">
                                         <span class="fw-bold">
                                             $

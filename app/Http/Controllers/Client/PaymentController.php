@@ -24,7 +24,7 @@ class PaymentController extends Controller {
         ] );
     }
 
-    private function setStripeCustomer() {
+    private function __setStripeCustomer() {
         $user = auth()->user();
 
         if ( $user->profile->stripe_client_id == '' ) {
@@ -45,7 +45,7 @@ class PaymentController extends Controller {
     public function index() {
         $user = auth()->user();
 
-        $this->setStripeCustomer();
+        $this->__setStripeCustomer();
 
         $payment_methods = PaymentMethod::where( 'user_id', $user->id )->get();
 
@@ -58,7 +58,7 @@ class PaymentController extends Controller {
     public function billingReport() {
         $user = auth()->user();
 
-        $this->setStripeCustomer();
+        $this->__setStripeCustomer();
 
         $transactions = ClientTransaction::where( 'user_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
 
@@ -86,7 +86,7 @@ class PaymentController extends Controller {
     public function createPaymentIntent( Request $request ) {
         $user = auth()->user();
 
-        $this->setStripeCustomer();
+        $this->__setStripeCustomer();
 
         $CONNECTED_ACCOUNT_ID = 'acct_1OYlT8BCePPNtsZd';
         //create payment intent
@@ -131,7 +131,7 @@ class PaymentController extends Controller {
     public function chargeCardOffsession(Request $request) {
         $user = auth()->user();
 
-        $this->setStripeCustomer();
+        $this->__setStripeCustomer();
 
         $CONNECTED_ACCOUNT_ID = 'acct_1OYlT8BCePPNtsZd';
         //create payment intent
@@ -167,7 +167,7 @@ class PaymentController extends Controller {
     public function createSetupIntent( Request $request ) {
         $user = auth()->user();
 
-        $this->setStripeCustomer();
+        $this->__setStripeCustomer();
 
         //create setup intent
         try {

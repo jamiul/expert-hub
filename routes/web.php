@@ -96,8 +96,12 @@ Route::group(['prefix' => 'webhooks'], function (){
 Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' => 'expert.'], function (){
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
     Route::any('/payment/onboard', [PaymentController::class, 'onboard'])->name('payment.onboard');
-    Route::any('/payment/withdrawal-method', [PaymentController::class, 'withdrawalMethod'])->name('payment.withdrawal');
-    Route::post('/payment/withdraw', [PaymentController::class, 'withdraw'])->name('payment.withdraw');
+    Route::any('/payment/withdrawal-methods', [PaymentController::class, 'withdrawalMethod'])->name('payment.withdrawal');
+    Route::any('/payment/withdraw', [PaymentController::class, 'withdraw'])->name('payment.withdraw');
+    Route::any('/payment/request-release', [PaymentController::class, 'requstRelease'])->name('payment.requstRelease');
+    Route::get('/payment/billing-report', [PaymentController::class, 'billingReport'])->name('payment.billing');
+
+    //temp
     Route::post('/payment/account-session', [PaymentController::class, 'accountSession'])->name('payment.account_session');
 });
 

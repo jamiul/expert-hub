@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Expert;
 
 use App\Http\Controllers\Controller;
+use App\Models\ClientTransaction;
 use App\Models\ExpertKYC;
 use App\Models\ExpertWithdrawal;
 use App\Models\Profile;
@@ -11,39 +12,55 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+    public $api_key = null;
+
+    public $stripe = null;
+
+    public function __construct() {
+        $this->api_key = env( 'STRIPE_SECRET' );
+
+        $this->stripe = new \Stripe\StripeClient( [
+            "api_key" => env( 'STRIPE_SECRET' ),
+        ] );
+    }
+
+    private function __checkStripeConnect() {
+        $user = auth()->user();
+
+        if ( $user->profile->stripe_acct_id == '' ) {
+            return redirect()->route( 'expert.payment.onboard' );
+        }
+    }
+    /*
+     * Display summary of Experts Payment & Billing /payment
+     * */
     public function index()
     {
         $user = auth()->user();
 
-        //if user has no connected account forward to onboard.
-        if ( $user->profile->stripe_acct_id == '' ) {
-            return redirect()->route( 'expert.payment.onboard' );
-        }
+        $this->__checkStripeConnect();
+
         $acct_id = $user->profile->stripe_acct_id;
 
         //check if there is any document requires
-        $stripe                = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-        $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
+        $expert_stripe_account = $this->stripe->accounts->retrieve( $acct_id, [] );
 
-        $balance = $stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
+        $balance = $this->stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
 
         return view( 'frontend.expert.payment.index', compact( 'expert_stripe_account', 'balance' ) );
     }
 
+    /*
+     * Expert detailed onboard submit eKYC /payment/onboard
+     * */
     public function onboard( Request $request )
     {
         $user = auth()->user();
 
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-
         //first create stripe connect account if there is no account
         if ( $user->profile->stripe_acct_id == '' ) {
             try {
-                $connected_account = $stripe->accounts->create( [
+                $connected_account = $this->stripe->accounts->create( [
                     'country'          => 'AU',
                     'type'             => 'custom',
                     'capabilities'     => [
@@ -88,7 +105,7 @@ class PaymentController extends Controller
 
             try {
 
-                $acc_update = $stripe->accounts->update(
+                $acc_update = $this->stripe->accounts->update(
                     $acct_id,
                     [
                         'individual' => [
@@ -126,7 +143,7 @@ class PaymentController extends Controller
                     $user_kyc->addMediaFromRequest( 'document_front' )->toMediaCollection( 'individual_verification_document_front' );
 
                     $fp    = fopen( $user_kyc->getMedia( 'individual_verification_document_front' )->last()->getPath(), 'r' );
-                    $files = $stripe->files->create( [
+                    $files = $this->stripe->files->create( [
                         'purpose' => 'identity_document',
                         'file'    => $fp
                     ], [
@@ -139,7 +156,7 @@ class PaymentController extends Controller
                     $user_kyc->addMediaFromRequest( 'document_back' )->toMediaCollection( 'individual_verification_document_back' );
 
                     $fp    = fopen( $user_kyc->getMedia( 'individual_verification_document_back' )->last()->getPath(), 'r' );
-                    $files = $stripe->files->create( [
+                    $files = $this->stripe->files->create( [
                         'purpose' => 'identity_document',
                         'file'    => $fp
                     ], [
@@ -152,7 +169,7 @@ class PaymentController extends Controller
                     $user_kyc->addMediaFromRequest( 'additional_document_front' )->toMediaCollection( 'individual_verification_additional_document_front' );
 
                     $fp = fopen( $user_kyc->getMedia( 'individual_verification_additional_document_front' )->last()->getPath(), 'r' );
-                    $stripe->files->create( [
+                    $this->stripe->files->create( [
                         'purpose' => 'identity_document',
                         'file'    => $fp,
                     ], [
@@ -164,7 +181,7 @@ class PaymentController extends Controller
                     $user_kyc->addMediaFromRequest( 'additional_document_back' )->toMediaCollection( 'individual_verification_additional_document_back' );
 
                     $fp = fopen( $user_kyc->getMedia( 'individual_verification_additional_document_back' )->last()->getPath(), 'r' );
-                    $stripe->files->create( [
+                    $this->stripe->files->create( [
                         'purpose' => 'identity_document',
                         'file'    => $fp,
                     ], [
@@ -186,7 +203,7 @@ class PaymentController extends Controller
         if ( $user->profile->stripe_acct_id ) {
             $acct_id = $user->profile->stripe_acct_id;
 
-            $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
+            $expert_stripe_account = $this->stripe->accounts->retrieve( $acct_id, [] );
 
             view()->share( 'message', $expert_stripe_account->requirements->disabled_reason );
             view()->share( 'currently_due', $expert_stripe_account->requirements->currently_due );
@@ -197,73 +214,15 @@ class PaymentController extends Controller
         return view( 'frontend.expert.payment.onboard', compact( 'user' ) );
     }
 
-    public function updateData( Request $request )
-    {
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-
-        $acct_id = 'acct_1OY1WYPniY99fxGK';
-
-        $stripe->accounts->update(
-            $acct_id,
-            [
-                'business_profile' => [ 'url' => $request->business_profile ],
-                'tos_acceptance'   => [
-                    'date' => strtotime( $request->tos_acceptance_date ),
-                    'ip'   => $request->ip,
-                ],
-            ]
-        );
-    }
-
-    public function accountSession()
-    {
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-
-        try {
-            $account_session = $stripe->accountSessions->create( [
-                'account'    => 'acct_1OY1WYPniY99fxGK',
-                'components' => [
-                    'account_onboarding' => [ 'enabled' => true ],
-//                    'payments' => [
-//                        'enabled' => true,
-//                        'features' => [
-//                            'refund_management' => true,
-//                            'dispute_management' => true,
-//                            'capture_payments' => true,
-//                        ],
-//                    ],
-                ],
-            ] );
-
-            return response()->json( array(
-                'client_secret' => $account_session->client_secret
-            ) );
-        } catch ( \Exception $e ) {
-            error_log( "An error occurred when calling the Stripe API to create an account session: {$e->getMessage()}" );
-            http_response_code( 500 );
-
-            return response()->json( [ 'error' => $e->getMessage() ] );
-        }
-    }
-
+    /*
+     * lists of withdrawal method & Add new withdrawal method /payment/withdrawal-methods
+     * */
     public function withdrawalMethod( Request $request )
     {
         $user = auth()->user();
 
-        if ( $user->profile->stripe_acct_id == '' ) {
-            return redirect()->route( 'expert.payment.onboard' );
-        }
-
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-
         if ( $request->isMethod( 'post' ) ) {
-            $bank_token = $stripe->tokens->create( [
+            $bank_token = $this->stripe->tokens->create( [
                 'bank_account' => [
                     'country'             => $request->country,
                     'currency'            => $request->currency,
@@ -274,7 +233,7 @@ class PaymentController extends Controller
                 ],
             ] );
             if ( $bank_token->id ) {
-                $bank_account = $stripe->accounts->createExternalAccount(
+                $bank_account = $this->stripe->accounts->createExternalAccount(
                     $user->profile->stripe_acct_id,
                     [ 'external_account' => $bank_token->id ]
                 );
@@ -305,38 +264,68 @@ class PaymentController extends Controller
         return view( 'frontend.expert.payment.withdrawal', compact('user') );
     }
 
+    /*
+     * Withdraw fund /payment/withdraw
+     * */
     public function withdraw(Request $request)
     {
         $user = auth()->user();
 
-        if ( $user->profile->stripe_acct_id == '' ) {
-            return redirect()->route( 'expert.payment.onboard' );
+        $withdrawal_methods = ExpertWithdrawal::where('user_id', $user->id)->get();
+
+        $this->__checkStripeConnect();
+
+        $acct_id = $user->profile->stripe_acct_id;
+
+        $balance = $this->stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
+
+        if ( $request->isMethod( 'post' ) ) {
+            $amount = $request->amount * 100;
+            $withdraw_method = $request->withdraw_method;
+            $reference = $request->reference;
+            $save_reference = isset($request->save_reference) ? 1 : 0;
+
+            dd($request->all());
+
+            $payout = $this->stripe->payouts->create( [
+                'amount'   => $amount,
+                'currency' => 'aud',
+            ] );
+
+            dd($payout);
         }
 
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-
-        $amount = $request->withdraw_amount * 100;
-        $payout = $stripe->payouts->create([
-            'amount' => $amount,
-            'currency' => 'usd',
-        ]);
-
-        dd($payout);
+        return view( 'frontend.expert.payment.withdraw', compact('user', 'withdrawal_methods', 'balance') );
     }
 
+    /*
+     * Request client to release a milestone
+     * */
+    public function requstRelease(Request $request) {
+        $user = auth()->user();
+
+        if ( $request->isMethod( 'post' ) ) {
+
+        }
+
+        return view( 'frontend.expert.payment.request_relesae', compact('user') );
+    }
+
+    /*
+     * Admin will create payout
+     * */
     public function payout()
     {
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
+        $user = auth()->user();
 
-        $acct_id = 'acct_1OY1WYPniY99fxGK';
+        $this->__checkStripeConnect();
+
+        $acct_id = $user->profile->stripe_acct_id;
+//        $acct_id = 'acct_1OY1WYPniY99fxGK';
 
         $amount = 100 * 100; //convert to cent
 
-        $payout = $stripe->payouts->create(
+        $payout = $this->stripe->payouts->create(
             [
                 'amount'   => $amount,
                 'currency' => 'aud',
@@ -345,5 +334,55 @@ class PaymentController extends Controller
         );
 
         dd( $payout );
+    }
+
+
+    /*
+     * List of transactions /payment/billing-report
+     * */
+    public function billingReport() {
+        $user = auth()->user();
+
+        $this->setStripeCustomer();
+
+        $transactions = ExpertTransaction::where( 'user_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
+
+        return view( 'frontend.expert.payment.billing-report', compact('transactions') );
+    }
+
+    /*
+     * temp: create account session
+     * */
+    public function accountSession()
+    {
+        $stripe = new \Stripe\StripeClient( [
+            "api_key" => env( 'STRIPE_SECRET' ),
+        ] );
+
+        try {
+            $account_session = $this->stripe->accountSessions->create( [
+                'account'    => 'acct_1OY1WYPniY99fxGK',
+                'components' => [
+                    'account_onboarding' => [ 'enabled' => true ],
+//                    'payments' => [
+//                        'enabled' => true,
+//                        'features' => [
+//                            'refund_management' => true,
+//                            'dispute_management' => true,
+//                            'capture_payments' => true,
+//                        ],
+//                    ],
+                ],
+            ] );
+
+            return response()->json( array(
+                'client_secret' => $account_session->client_secret
+            ) );
+        } catch ( \Exception $e ) {
+            error_log( "An error occurred when calling the Stripe API to create an account session: {$e->getMessage()}" );
+            http_response_code( 500 );
+
+            return response()->json( [ 'error' => $e->getMessage() ] );
+        }
     }
 }
