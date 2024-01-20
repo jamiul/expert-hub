@@ -38,14 +38,14 @@
                         Available Balance: ${{ number_format($balance->available[0]->amount / 100, 2) }}
                     </div>
                 </div>
-                <form action="{{ route('expert.payment.withdraw') }}" method="post">
+                <form method="post">
                     @csrf
                     <ul class="notification__list border rounded-3">
                         <li class="p-4">
                             <label for="">Withdrawal Method</label>
-                            <select class="form-control" name="withdraw_method" id="withdraw_method">
+                            <select class="form-control" name="bank_id" id="bank_id">
                                 @foreach($withdrawal_methods as $withdrawal_method)
-                                    <option value="{{ $withdrawal_method->id }}">A/C {{ $withdrawal_method->account_number }} in {{ $withdrawal_method->currency }}</option>
+                                    <option value="{{ $withdrawal_method->bank_id }}">A/C **** {{ $withdrawal_method->last4 }} in {{ $withdrawal_method->currency }}</option>
                                 @endforeach
                             </select>
                         </li>

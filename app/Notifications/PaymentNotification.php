@@ -20,6 +20,7 @@ class PaymentNotification extends Notification
         $this->message = $data['message'];
         $this->link    = $data['link'];
         $this->avatar  = $data['avatar'];
+        $this->button  = $data['button'];
     }
 
     /**
@@ -55,6 +56,7 @@ class PaymentNotification extends Notification
             'title'   => $this->title,
             'message' => $this->message,
             'link'    => $this->link,
+            'button'    => $this->button,
             'avatar'  => $this->avatar
         ];
     }

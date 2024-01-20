@@ -29,81 +29,93 @@
         </div><!--.//container-->
     </nav>
     <!-- sub menu end -->
-    <main class="expert__dashboad diary__page verification__page py-5">
+    <section class="client-dashboard mx-auto my-5">
         <div class="container">
-            <div class="main__content__wrapp">
-                <div class="px-40 mb-32 pt-37 d-flex align-items-center justify-content-between">
-                    <h1 class="lead-lg fw-medium text-black mb-0">Bank information</h1>
-                    <div>
-                        <!-- <button class="btn btn-primary px-4">Get started Verify</button> -->
+            <div class="row">
+                <div class="history-report-area d-flex justify-content-between">
+                    <div class="all-project history-report">
+                        <h2>Bank Information</h2>
                     </div>
                 </div>
-                <table class="table">
-                    <tr>
-                        <th>routing_number</th>
-                        <th>account_number</th>
-                        <th>default</th>
-                    </tr>
-                    @forelse($user->expert_withdrawal as $method)
-                        <tr>
-                            <td>{{ $method->routing_number }}</td>
-                            <td>{{ $method->account_number }}</td>
-                            <td>{{ $method->default }}</td>
-                        </tr>
-                    @empty
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="balance-table-area d-flex flex-column">
+                        <table class="table table-hover transaction-all">
+                            <tr>
+                                <th>routing_number</th>
+                                <th>account_number</th>
+                                <th>currency</th>
+                                <th>default</th>
+                            </tr>
+                            @forelse($user->expert_withdrawal as $method)
+                                <tr>
+                                    <td>{{ $method->routing_number }}</td>
+                                    <td>**** {{ $method->last4 }}</td>
+                                    <td>{{ $method->currency }}</td>
+                                    <td>{{ $method->is_default }}</td>
+                                </tr>
+                            @empty
 
-                    @endforelse
-                </table>
+                            @endforelse
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-                <form method="post" enctype="multipart/form-data">
-                    @csrf
-                    <ul class="notification__list border rounded-3">
-                        <li class="p-4">
-                            <label for="">country</label>
-                            <select class="form-control" name="country" id="country">
-                                <option value="AU">Australia</option>
-                            </select>
-                        </li>
-                        <li class="p-4">
-                            <label for="">currency</label>
-                            <select class="form-control" name="currency" id="currency">
-                                <option value="AUD">AUD</option>
-                            </select>
-                        </li>
-                        <li class="p-4">
-                            <label for="">account_holder_name</label>
-                            <input type="text" class="form-control" name="account_holder_name" id="account_holder_name" value="{{ old('account_holder_name') }}">
-                        </li>
-                        <li class="p-4">
-                            <label for="">account_holder_type</label>
-                            <select class="form-control" name="account_holder_type" id="account_holder_type">
-                                <option>individual</option>
-                                <option>company</option>
-                            </select>
-                        </li>
-                        <li class="p-4">
-                            <label for="">account_type</label>
-                            <select class="form-control" name="account_type" id="account_type">
-                                <option>savings</option>
-                                <option>checking</option>
-                            </select>
-                        </li>
-                        <li class="p-4">
-                            <label for="">routing_number</label>
-                            <input type="number" class="form-control" name="routing_number" id="routing_number" value="{{ old('routing_number') }}">
-                        </li>
-                        <li class="p-4">
-                            <label for="">account_number</label>
-                            <input type="number" class="form-control" name="account_number" id="account_number" value="{{ old('account_number') }}">
-                        </li>
-                        <li class="p-4">
-                            <button class="btn btn-md px-5 btn-primary" type="submit">Submit</button>
-                        </li>
-                    </ul>
-                </form>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Add new Bank Information</h3>
+                    <form method="post" enctype="multipart/form-data">
+                        @csrf
+                        <ul class="notification__list border rounded-3">
+                            <li class="p-4">
+                                <label for="">country</label>
+                                <select class="form-control" name="country" id="country">
+                                    <option value="AU">Australia</option>
+                                </select>
+                            </li>
+                            <li class="p-4">
+                                <label for="">currency</label>
+                                <select class="form-control" name="currency" id="currency">
+                                    <option value="AUD">AUD</option>
+                                </select>
+                            </li>
+                            <li class="p-4">
+                                <label for="">account_holder_name</label>
+                                <input type="text" class="form-control" name="account_holder_name" id="account_holder_name" value="{{ old('account_holder_name') }}">
+                            </li>
+                            <li class="p-4">
+                                <label for="">account_holder_type</label>
+                                <select class="form-control" name="account_holder_type" id="account_holder_type">
+                                    <option>individual</option>
+                                    <option>company</option>
+                                </select>
+                            </li>
+                            <li class="p-4">
+                                <label for="">account_type</label>
+                                <select class="form-control" name="account_type" id="account_type">
+                                    <option>savings</option>
+                                    <option>checking</option>
+                                </select>
+                            </li>
+                            <li class="p-4">
+                                <label for="">routing_number</label>
+                                <input type="text" class="form-control" name="routing_number" id="routing_number" value="{{ old('routing_number') }}">
+                            </li>
+                            <li class="p-4">
+                                <label for="">account_number</label>
+                                <input type="text" class="form-control" name="account_number" id="account_number" value="{{ old('account_number') }}">
+                            </li>
+                            <li class="p-4">
+                                <button class="btn btn-md px-5 btn-primary" type="submit">Submit</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
     <script>
 
     </script>

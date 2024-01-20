@@ -9,6 +9,7 @@ use App\Models\ExpertWithdrawal;
 use App\Models\Profile;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Stripe\Exception\InvalidRequestException;
 
 class PaymentController extends Controller
 {
@@ -221,41 +222,51 @@ class PaymentController extends Controller
     {
         $user = auth()->user();
 
+        $this->__checkStripeConnect();
+
         if ( $request->isMethod( 'post' ) ) {
-            $bank_token = $this->stripe->tokens->create( [
-                'bank_account' => [
-                    'country'             => $request->country,
-                    'currency'            => $request->currency,
-                    'account_holder_name' => $request->account_holder_name,
-                    'account_holder_type' => $request->account_holder_type,
-                    'routing_number'      => $request->routing_number,
-                    'account_number'      => $request->account_number,
-                ],
-            ] );
-            if ( $bank_token->id ) {
-                $bank_account = $this->stripe->accounts->createExternalAccount(
-                    $user->profile->stripe_acct_id,
-                    [ 'external_account' => $bank_token->id ]
-                );
-                if ( $bank_account ) {
-                    $default=0;
-                    if($user->expert_withdrawal()->where('default', 1)->count() == 0){
-                        $default=1;
-                    }
-                    ExpertWithdrawal::create( [
-                        'user_id'             => $user->id,
-                        'type'                => 'bank_account',
-                        'account_type'        => $request->account_type,
+            try {
+                $bank_token = $this->stripe->tokens->create( [
+                    'bank_account' => [
                         'country'             => $request->country,
                         'currency'            => $request->currency,
                         'account_holder_name' => $request->account_holder_name,
                         'account_holder_type' => $request->account_holder_type,
                         'routing_number'      => $request->routing_number,
                         'account_number'      => $request->account_number,
-                        'default'             => $default,
-                        'status'              => $bank_account->status
-                    ] );
+                    ],
+                ] );
+            } catch (\Stripe\Exception\InvalidRequestException $ex) {
+                error_log($ex->getMessage());
+                return redirect()->back()->withErrors([
+                    'message' => $ex->getMessage()
+                ])->withInput($request->all());
+            } catch (\Exception $ex){
+                error_log($ex->getMessage());
+                return redirect()->back()->withErrors([
+                    'message' => $ex->getMessage()
+                ])->withInput($request->all());
+            }
 
+            if ( $bank_token->id ) {
+                try {
+                    $paymentMethod = $this->stripe->accounts->createExternalAccount(
+                        $user->profile->stripe_acct_id,
+                        [ 'external_account' => $bank_token->id ]
+                    );
+                } catch (\Stripe\Exception\InvalidRequestException $ex) {
+                    error_log($ex->getMessage());
+                    return redirect()->back()->withErrors([
+                        'message' => $ex->getMessage()
+                    ])->withInput($request->all());
+                } catch (\Exception $ex){
+                    error_log($ex->getMessage());
+                    return redirect()->back()->withErrors([
+                        'message' => $ex->getMessage()
+                    ])->withInput($request->all());
+                }
+
+                if ( $paymentMethod ) {
                     return redirect()->route( 'expert.payment.withdrawal' )->with( [ 'message' => 'Bank information added successfully.' ] );
                 }
             }
@@ -281,18 +292,36 @@ class PaymentController extends Controller
 
         if ( $request->isMethod( 'post' ) ) {
             $amount = $request->amount * 100;
-            $withdraw_method = $request->withdraw_method;
             $reference = $request->reference;
             $save_reference = isset($request->save_reference) ? 1 : 0;
 
-            dd($request->all());
+            $bank_info = ExpertWithdrawal::where('user_id', $user->id)
+                                         ->where('bank_id', $request->bank_id)
+                                         ->first();
 
             $payout = $this->stripe->payouts->create( [
+//                'source_type' => 'bank_account',
+                'destination' => $bank_info->bank_id,
                 'amount'   => $amount,
-                'currency' => 'aud',
-            ] );
+                'currency' => $bank_info->currency,
+                'description' => $reference
+            ], ['stripe_account' => $acct_id] );
 
-            dd($payout);
+            try {
+
+
+                return redirect()->route( 'expert.payment' )->with( [ 'message' => 'Withdraw request was successful.' ] );
+            } catch (\Stripe\Exception\InvalidRequestException $ex) {
+                error_log($ex->getMessage());
+                return redirect()->back()->withErrors([
+                    'message' => $ex->getMessage()
+                ])->withInput($request->all());
+            } catch (\Exception $ex){
+                error_log($ex->getMessage());
+                return redirect()->back()->withErrors([
+                    'message' => $ex->getMessage()
+                ])->withInput($request->all());
+            }
         }
 
         return view( 'frontend.expert.payment.withdraw', compact('user', 'withdrawal_methods', 'balance') );

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('expert_transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaction_id');
+            $table->foreignId('transaction_id')->nullable();
             $table->foreignId('milestone_id')->nullable();
             $table->foreignId('expert_id');
             $table->foreignId('client_id')->nullable();

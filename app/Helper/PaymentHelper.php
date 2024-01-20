@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\ClientTransaction;
+use App\Models\ExpertTransaction;
 
 class PaymentHelper {
     public static function calculateMilestoneCharge( $milestone_amount ) {
@@ -43,7 +44,7 @@ class PaymentHelper {
     }
 
     public static function createExpertTransaction( $transaction_data ) {
-        return ClientTransaction::create( [
+        return ExpertTransaction::create( [
             'transaction_id' => $transaction_data['transaction_id'],
             'milestone_id'   => $transaction_data['milestone_id'],
             'type'           => $transaction_data['type'],
