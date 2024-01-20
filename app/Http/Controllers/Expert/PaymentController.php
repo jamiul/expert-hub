@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Expert;
 
 use App\Http\Controllers\Controller;
-use App\Models\ClientTransaction;
 use App\Models\ExpertKYC;
+use App\Models\ExpertTransaction;
 use App\Models\ExpertWithdrawal;
 use App\Models\Profile;
 use Carbon\Carbon;
@@ -343,9 +343,9 @@ class PaymentController extends Controller
     public function billingReport() {
         $user = auth()->user();
 
-        $this->setStripeCustomer();
+        $this->__checkStripeConnect();
 
-        $transactions = ExpertTransaction::where( 'user_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
 
         return view( 'frontend.expert.payment.billing-report', compact('transactions') );
     }

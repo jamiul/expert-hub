@@ -60,7 +60,7 @@ class PaymentController extends Controller {
 
         $this->__setStripeCustomer();
 
-        $transactions = ClientTransaction::where( 'user_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
+        $transactions = ClientTransaction::where( 'client_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
 
         return view( 'frontend.client.payment.billing-report', compact('transactions') );
     }

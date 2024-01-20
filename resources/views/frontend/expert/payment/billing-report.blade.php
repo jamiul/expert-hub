@@ -49,7 +49,7 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Freelancer</th>
+                                <th scope="col">Client</th>
                                 <th scope="col">Amount / Balance</th>
                                 <th scope="col">Ref ID</th>
                             </tr>
@@ -61,7 +61,7 @@
                                     <td style="vertical-align: middle;">{{ $data->created_at->format('M d, Y') }}</td>
                                     <td style="vertical-align: middle;">{{ $data->type }}</td>
                                     <td class="balance-text">{{ $data->description }}</td>
-                                    <td style="vertical-align: middle;">{{ $data->user->first_name }} {{ $data->user->last_name }}</td>
+                                    <td style="vertical-align: middle;">{{ $data->client->first_name }} {{ $data->client->last_name }}</td>
                                     <td style="vertical-align: middle;">
                                         <span class="fw-bold">
                                             $
