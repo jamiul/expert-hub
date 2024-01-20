@@ -12,6 +12,7 @@ class Transaction extends Model
     protected $guarded = [];
 
     protected $fillable = [
+        'charge_id',
         'reference_id',
         'reference_type',
         'payment_intent_id',
@@ -32,6 +33,7 @@ class Transaction extends Model
         'created_time',
         'canceled_at',
         'cancellation_reason',
+        'refunded',
         'status',
         'livemode'
     ];

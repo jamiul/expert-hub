@@ -172,8 +172,9 @@ class StripeController extends Controller {
 
             //save to generic transaction table
             $stripe_transaction = Transaction::updateOrCreate( [
-                'payment_intent_id' => $paymentData->id
+                'charge_id' => $paymentData->latest_charge
             ], [
+                'payment_intent_id' => $paymentData->id,
                 'reference_id'           => $reference_id,
                 'reference_type'         => $reference_type,
                 'object'                 => $paymentData->object,
@@ -349,8 +350,32 @@ class StripeController extends Controller {
         }
     }
 
-    private function __chargeRefund($charge) {
-        Log::info($charge);
+    private function __chargeRefund($paymentData) {
+        $stripe_transaction = Transaction::updateOrCreate( [
+            'charge_id' => $paymentData->id
+        ], [
+            'payment_intent_id' => $paymentData->payment_intent,
+            'object'                 => $paymentData->object,
+            'amount'                 => $paymentData->amount,
+            'amount_captured'        => $paymentData->amount_captured,
+            'amount_refunded'      => $paymentData->amount_refunded,
+            'application_fee_amount' => $paymentData->application_fee_amount,
+            'currency'               => $paymentData->currency,
+            'customer_id'            => $paymentData->customer,
+            'description'            => $paymentData->description,
+            'latest_charge_id'       => $paymentData->latest_charge_id,
+            'on_behalf_of'           => $paymentData->on_behalf_of,
+            'payment_method'         => $paymentData->payment_method,
+            'payment_method_types'   => @$paymentData->payment_method_types[0],
+            'transfer_group'         => $paymentData->transfer_group,
+            'metadata'               => json_encode( $paymentData->metadata ),
+            'created_time'           => $paymentData->created ? Carbon::createFromTimestamp( $paymentData->created )->format( 'Y-m-d H:i:s' ) : null,
+            'canceled_at'            => $paymentData->canceled_at ? Carbon::createFromTimestamp( $paymentData->canceled_at )->format( 'Y-m-d H:i:s' ) : null,
+            'cancellation_reason'    => $paymentData->cancellation_reason,
+            'refunded' => $paymentData->refunded,
+            'status'                 => $paymentData->status,
+            'livemode'               => $paymentData->livemode
+        ] );
     }
     /*
      * connect webhooks
