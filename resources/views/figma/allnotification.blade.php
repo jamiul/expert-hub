@@ -12,6 +12,65 @@
         <div class="row">
             <div class="all-notification">
                 <h4>Notification</h4>
+
+            </div>
+
+            <div class="col-md-12">
+            <div class="separator"><span> New Notification</span></div>
+                    <div class="alert edux-alert edux-alert-success" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="white"/>
+                        </svg>
+                            <p class="mb-0">Your EOI has been submitted successfully!</p>
+
+                        <button type="button" class="close" aria-label="Close">
+                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z" fill="white"></path>
+                            </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="alert edux-alert edux-alert-danger" role="alert">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                             <path d="M12 17C12.2833 17 12.5208 16.9042 12.7125 16.7125C12.9042 16.5208 13 16.2833 13 16C13 15.7167 12.9042 15.4792 12.7125 15.2875C12.5208 15.0958 12.2833 15 12 15C11.7167 15 11.4792 15.0958 11.2875 15.2875C11.0958 15.4792 11 15.7167 11 16C11 16.2833 11.0958 16.5208 11.2875 16.7125C11.4792 16.9042 11.7167 17 12 17ZM11 13H13V7H11V13ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="white"/>
+                        </svg>
+                            <p class="mb-0">Your EOI has been submitted successfully!</p>
+                        <button type="button" class="close" aria-label="Close">
+                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z" fill="white"></path>
+                            </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="alert edux-alert edux-alert-warning" role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 21L12 2L23 21H1ZM12 18C12.2833 18 12.5208 17.9042 12.7125 17.7125C12.9042 17.5208 13 17.2833 13 17C13 16.7167 12.9042 16.4792 12.7125 16.2875C12.5208 16.0958 12.2833 16 12 16C11.7167 16 11.4792 16.0958 11.2875 16.2875C11.0958 16.4792 11 16.7167 11 17C11 17.2833 11.0958 17.5208 11.2875 17.7125C11.4792 17.9042 11.7167 18 12 18ZM11 15H13V10H11V15Z" fill="white"/>
+                            </svg>
+                            <p class="mb-0">Your EOI has been submitted successfully!</p>
+                        <button type="button" class="close" aria-label="Close">
+                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z" fill="white"></path>
+                            </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="alert edux-alert edux-alert-primary" role="alert">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                              <path d="M11 17H13V11H11V17ZM12 9C12.2833 9 12.5208 8.90417 12.7125 8.7125C12.9042 8.52083 13 8.28333 13 8C13 7.71667 12.9042 7.47917 12.7125 7.2875C12.5208 7.09583 12.2833 7 12 7C11.7167 7 11.4792 7.09583 11.2875 7.2875C11.0958 7.47917 11 7.71667 11 8C11 8.28333 11.0958 8.52083 11.2875 8.7125C11.4792 8.90417 11.7167 9 12 9ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z" fill="white"/>
+                            </svg>
+                            <p class="mb-0">Your EOI has been submitted successfully!</p>
+                        <button type="button" class="close" aria-label="Close">
+                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z" fill="white"></path>
+                            </svg>
+                            </span>
+                        </button>
+                    </div>
+
+
             </div>
 
 
@@ -51,96 +110,6 @@
 
                 <div class="separator"><span>End New</span></div>
 
-                <div class="single-alert">
-                    <div class="alert edux-alert-success  fade show d-flex justify-content-between" role="alert">
-                        <div class="alert-item">
-              <span class="alert-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                    d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM8 15L3 10L4.41 8.59L8 12.17L15.59 4.58L17 6L8 15Z"
-                    fill="#5ABC76"/>
-              </svg>
-              </span>
-                            <span class="alert-text">Your EOI has been submitted successfully!</span>
-                        </div>
-                        <button type="button" class="edux-btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none">
-                                <path
-                                    d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z"
-                                    fill="black"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="single-alert">
-                    <div class="alert edux-alert-warning  fade show d-flex justify-content-between" role="alert">
-                        <div class="alert-item">
-              <span class="alert-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path
-                      d="M1 21L12 2L23 21H1ZM12 18C12.2833 18 12.5208 17.9042 12.7125 17.7125C12.9042 17.5208 13 17.2833 13 17C13 16.7167 12.9042 16.4792 12.7125 16.2875C12.5208 16.0958 12.2833 16 12 16C11.7167 16 11.4792 16.0958 11.2875 16.2875C11.0958 16.4792 11 16.7167 11 17C11 17.2833 11.0958 17.5208 11.2875 17.7125C11.4792 17.9042 11.7167 18 12 18ZM11 15H13V10H11V15Z"
-                      fill="#E9B911"/>
-                </svg>
-              </span>
-                            <span class="alert-text">Info message will go here!</span>
-                        </div>
-                        <button type="button" class="edux-btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none">
-                                <path
-                                    d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z"
-                                    fill="black"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="single-alert">
-                    <div class="alert edux-alert-info  fade show d-flex justify-content-between" role="alert">
-                        <div class="alert-item">
-              <span class="alert-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path
-                      d="M11 17H13V11H11V17ZM12 9C12.2833 9 12.5208 8.90417 12.7125 8.7125C12.9042 8.52083 13 8.28333 13 8C13 7.71667 12.9042 7.47917 12.7125 7.2875C12.5208 7.09583 12.2833 7 12 7C11.7167 7 11.4792 7.09583 11.2875 7.2875C11.0958 7.47917 11 7.71667 11 8C11 8.28333 11.0958 8.52083 11.2875 8.7125C11.4792 8.90417 11.7167 9 12 9ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"
-                      fill="#0036E3"/>
-                </svg>
-              </span>
-                            <span class="alert-text">info message will go here</span>
-                        </div>
-                        <button type="button" class="edux-btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none">
-                                <path
-                                    d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z"
-                                    fill="black"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="single-alert">
-                    <div class="alert edux-alert-error  fade show d-flex justify-content-between" role="alert">
-                        <div class="alert-item">
-              <span class="alert-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path
-                      d="M11 17H13V11H11V17ZM12 9C12.2833 9 12.5208 8.90417 12.7125 8.7125C12.9042 8.52083 13 8.28333 13 8C13 7.71667 12.9042 7.47917 12.7125 7.2875C12.5208 7.09583 12.2833 7 12 7C11.7167 7 11.4792 7.09583 11.2875 7.2875C11.0958 7.47917 11 7.71667 11 8C11 8.28333 11.0958 8.52083 11.2875 8.7125C11.4792 8.90417 11.7167 9 12 9ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"
-                      fill="#FF0000"/>
-                </svg>
-              </span>
-                            <span class="alert-text">Error message will go here</span>
-                        </div>
-                        <button type="button" class="edux-btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none">
-                                <path
-                                    d="M6.39953 18.6538L5.3457 17.6L10.9457 12L5.3457 6.40002L6.39953 5.34619L11.9995 10.9462L17.5995 5.34619L18.6534 6.40002L13.0534 12L18.6534 17.6L17.5995 18.6538L11.9995 13.0538L6.39953 18.6538Z"
-                                    fill="black"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
 
