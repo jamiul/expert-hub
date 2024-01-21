@@ -21,7 +21,7 @@
             content: '{{ session('notify')['content'] }}',
         })"
     @endif
-    class="position-fixed bottom-0 end-0 d-flex flex-column pe-4 pb-4 w-full max-w-xs space-y-4 sm:justify-start"
+    class="position-fixed bottom-0 end-0 d-flex flex-column pe-4 pb-4 w-full max-w-xs space-y-4 sm:justify-start z-3"
     role="status"
     aria-live="polite"
 >
@@ -46,32 +46,32 @@
             class="alert-wrapper"
         >
 
-            <div x-show="notification.type === 'success'" class="alert edux-alert alert-success" role="alert">
-                <x-icon.check-circle/>
-                <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
+            <div x-show="notification.type === 'success'" class="alert edux-alert edux-alert-success" role="alert">
+                <x-icon.check-circle fill="#fff"/>
+                <span x-text="notification.content">Success!</span>
                 <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true"><x-icon.close/></span>
+                    <span aria-hidden="true"><x-icon.close fill="#fff"/></span>
                 </button>
             </div>
-            <div x-show="notification.type === 'warning'" class="alert edux-alert alert-warning" role="alert">
-                <x-icon.warning/>
-                <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
+            <div x-show="notification.type === 'warning'" class="alert edux-alert edux-alert-warning" role="alert">
+                <x-icon.warning fill="#fff"/>
+                <span x-text="notification.content">Warning!</span>
                 <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true"><x-icon.close/></span>
+                    <span aria-hidden="true"><x-icon.close fill="#fff"/></span>
                 </button>
             </div>
-            <div x-show="notification.type === 'info'" class="alert edux-alert alert-info" role="alert">
-                <x-icon.info/>
-                <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
+            <div x-show="notification.type === 'info'" class="alert edux-alert edux-alert-primary" role="alert">
+                <x-icon.info fill="#fff"/>
+                <span x-text="notification.content">Info!</span>
                 <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true"><x-icon.close/></span>
+                    <span aria-hidden="true"><x-icon.close fill="#fff"/></span>
                 </button>
             </div>
-            <div x-show="notification.type === 'danger'" class="alert edux-alert alert-danger" role="alert">
-                <x-icon.info/>
-                <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
+            <div x-show="notification.type === 'danger'" class="alert edux-alert edux-alert-danger" role="alert">
+                <x-icon.dangerous fill="#fff"/>
+                <span x-text="notification.content">Danger!</span>
                 <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true"><x-icon.close/></span>
+                    <span aria-hidden="true"><x-icon.close fill="#fff"/></span>
                 </button>
             </div>
         </div>
