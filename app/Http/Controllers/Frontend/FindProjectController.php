@@ -9,6 +9,8 @@ class FindProjectController extends Controller
 {
     public function index()
     {
-        return view('frontend.find-projects.index');
+        $title = "The Work you Want, All in the One Place";
+        
+        return view('frontend.find-projects.index', compact('title'));
     }
 }
