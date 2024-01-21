@@ -8,7 +8,11 @@
                         <div class="page-sidebar">
                             <div class="sidebar-widget">
                                 <p class="text-sm mb-3">{{ $project->type }} <strong class="h5">${{ $project->budget_start_amount }} @if($project->budget_end_amount)- ${{ $project->budget_end_amount }} @endif</strong></p>
-                                <a class="btn btn-primary btn-md w-100" href="{{ route('eoi.create', $project) }}">Send EOI</a>
+                                @if($eoiAlreadySubmitted)
+                                    <p>EOI Already submitted</p>
+                                @else
+                                    <a class="btn btn-primary btn-md w-100" href="{{ route('eoi.create', $project) }}">Send EOI</a>
+                                @endif
                                 <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                     <x-icon.heart width="24" height="24" fill="#0036E3"/>
                                     Save this Project
@@ -93,27 +97,21 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <p class="fw-medium mb-2">Required Skills</p>
+                                    <p class="fw-medium mb-2">Attachments</p>
                                     <div class="attachment-display-wrapper">
-                                        <div class="attachment-display-card">
-                                            <div class="attachment-display-thumb">
-                                                <img src="{{ asset('assets/frontend/img/attachment1.png') }}"/>
+                                        @forelse ($project->attachments as $attachment)
+                                            <div class="attachment-display-card">
+                                                <div class="attachment-display-thumb">
+                                                    <img src="{{ $attachment->getFullUrl() }}"/>
+                                                </div>
+                                                <div class="attachment-display-info">
+                                                    <h6 class="mb-1">{{ $attachment->name }}</h6>
+                                                    <p class="m-0">{{ $attachment->human_readable_size }}</p>
+                                                </div>
                                             </div>
-                                            <div class="attachment-display-info">
-                                                <h6 class="mb-1">File name.jpg</h6>
-                                                <p class="m-0">1.3 MB</p>
-                                            </div>
-                                        </div>
-                                        <div class="attachment-display-card">
-                                            <div class="attachment-display-thumb">
-                                                <img src="{{ asset('assets/frontend/img/attachment2.png') }}"/>
-                                            </div>
-                                            <div class="attachment-display-info">
-                                                <h6 class="mb-1">File name.jpg</h6>
-                                                <p class="m-0">1.3 MB</p>
-                                            </div>
-                                        </div>
-
+                                        @empty
+                                            <p>No file attached</p>
+                                        @endforelse
                                     </div>
                                 </div>
                             </div>
@@ -129,69 +127,27 @@
         <div class="container">
             <h3 class="h5 mb-3">Similar Projects</h3>
             <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="related-project-card">
-                        <h4 class="h6"><a href="">Developing Curriculum for Postgraduate Public Health Developing
-                                Curriculum for Postgraduate Public Health </a></h4>
-                        <div class="d-flex align-items-center my-1 gap-2">
-                            <x-icon.tag fill="#0036E3"/>
-                            Curriculum development
+                @forelse ($similarProjects as $project)
+                    <div class="col-md-4 col-sm-6">
+                        <div class="related-project-card">
+                            <h4 class="h6"><a href="{{ route('projects.show', $project) }}">{{ $project->title }}</a></h4>
+                            <div class="d-flex align-items-center my-1 gap-2">
+                                <x-icon.tag fill="#0036E3"/>
+                                {{ $project->expertise->name }}
+                            </div>
+                            <div class="d-flex align-items-center my-1 gap-2">
+                                <x-icon.clock width="20" height="20" fill="#0036E3"/>
+                                {{ $project->created_at->diffForHumans() }}
+                            </div>
+                            <p class="mt-3 mb-3 text-sm">{{ $project->description }}</p>
+                            <a class="view-project-details" href="{{ route('projects.show', $project) }}">View Details
+                                <x-icon.chevron-right/>
+                            </a>
                         </div>
-                        <div class="d-flex align-items-center my-1 gap-2">
-                            <x-icon.clock width="20" height="20" fill="#0036E3"/>
-                            15 hours ago
-                        </div>
-
-                        <p class="mt-3 mb-3 text-sm">Seeking an experienced Curriculum Developer to create a
-                            cutting-edge curriculum for our postgraduate Seeking an experienced Curriculum Developer to
-                            create a cutting-edge curriculum for our postgraduate</p>
-                        <a class="view-project-details" href="">View Details
-                            <x-icon.chevron-right/>
-                        </a>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="related-project-card">
-                        <h4 class="h6"><a href="">Developing Curriculum for Postgraduate Public Health Developing
-                                Curriculum for Postgraduate Public Health </a></h4>
-                        <div class="d-flex align-items-center my-1 gap-2">
-                            <x-icon.tag fill="#0036E3"/>
-                            Curriculum development
-                        </div>
-                        <div class="d-flex align-items-center my-1 gap-2">
-                            <x-icon.clock width="20" height="20" fill="#0036E3"/>
-                            15 hours ago
-                        </div>
-
-                        <p class="mt-3 mb-3 text-sm">Seeking an experienced Curriculum Developer to create a
-                            cutting-edge curriculum for our postgraduate Seeking an experienced Curriculum Developer to
-                            create a cutting-edge curriculum for our postgraduate</p>
-                        <a class="view-project-details" href="">View Details
-                            <x-icon.chevron-right/>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="related-project-card">
-                        <h4 class="h6"><a href="">Developing Curriculum for Postgraduate Public Health Developing
-                                Curriculum for Postgraduate Public Health </a></h4>
-                        <div class="d-flex align-items-center my-1 gap-2">
-                            <x-icon.tag fill="#0036E3"/>
-                            Curriculum development
-                        </div>
-                        <div class="d-flex align-items-center my-1 gap-2">
-                            <x-icon.clock width="20" height="20" fill="#0036E3"/>
-                            15 hours ago
-                        </div>
-
-                        <p class="mt-3 mb-3 text-sm">Seeking an experienced Curriculum Developer to create a
-                            cutting-edge curriculum for our postgraduate Seeking an experienced Curriculum Developer to
-                            create a cutting-edge curriculum for our postgraduate</p>
-                        <a class="view-project-details" href="">View Details
-                            <x-icon.chevron-right/>
-                        </a>
-                    </div>
-                </div>
+                @empty
+                    
+                @endforelse
             </div>
         </div>
     </div>
