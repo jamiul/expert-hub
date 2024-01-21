@@ -28,10 +28,13 @@ class HomeController extends Controller
         // team list
         $teamList = $this->fetchProfileData($aboutUsDTO->team_list);
 
+        $requireTitle = "Search Academic Expert Made Easy";
+
         return view('frontend.home.index', compact(
             'aboutUsDTO',
             'experts',
-            'teamList'
+            'teamList',
+            'requireTitle'
         ));
     }
 
