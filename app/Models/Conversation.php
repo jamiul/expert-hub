@@ -10,4 +10,24 @@ class Conversation extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function participants()
+    {
+        return $this->hasMany(Participant::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function messageRecipients()
+    {
+        return $this->hasMany(MessageRecipient::class);
+    }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class, 'creator_profile_id');
+    }
 }
